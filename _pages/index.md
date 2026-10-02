@@ -8,7 +8,7 @@ nav: false
 
 # The Latin Josephus Project
 
-For 1000 years, medieval readers eagerly studied the works of the Jewish historian Flavius Josephus (c. 37?100 CE).  They left their notes in the margins of their books.
+For 1000 years, medieval readers eagerly studied the works of the Jewish historian Flavius Josephus (c. 37&ndash;100 CE).  They left their notes in the margins of their books.
 
 This project allows the scholars of today to read Josephus in the Latin versions known during the Middle Ages, including these notes, alongside the original Greek and an English translation.
 
