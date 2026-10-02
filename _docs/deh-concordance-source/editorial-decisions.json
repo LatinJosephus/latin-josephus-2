@@ -1,0 +1,171 @@
+{
+  "version": "0.2",
+  "date": "2026-10-02",
+  "language": "English",
+  "source": "Student answers supplied by Richard M. Pollard in this conversation on 2 October 2026; rendered here in English.",
+  "attribution": {
+    "reported_edition": "Ussani/Mras",
+    "bibliography": [
+      {
+        "volume": "CSEL 66/1",
+        "title": "Hegesippi qui dicitur Historiae libri V. Pars prior: textum criticum continens",
+        "editor": "Vincentius Ussani",
+        "year": 1932
+      },
+      {
+        "volume": "CSEL 66/2",
+        "title": "Hegesippi qui dicitur Historiae libri V. Praefatio et Indices",
+        "editor_of_indices": "Vincentius Ussani",
+        "preface_author": "Karl Mras",
+        "year": 1960
+      }
+    ],
+    "bibliographic_control": "https://csel.at/en/publikationen/csel/",
+    "transcriber_name": null,
+    "transcriber_description": "Richard M. Pollard's student; name to be supplied.",
+    "exact_print_location": "not_yet_verified"
+  },
+  "student_answers_in_english": [
+    "References were taken from the Ussani/Mras edition.",
+    "They indicate parallels between DEH and BJ and/or AJ; the corresponding sections may be of different lengths.",
+    "The references follow the order of the DEH narrative.",
+    "The parentheses are reproduced from the edition; their precise meaning is not currently known.",
+    "The endpoints of the open-ended references probably cannot be specified without checking the passages directly.",
+    "Where no BJ/AJ reference is given, the student understood the material as wholly original to DEH; he noted that Carson may have identified some such passages when discussing added Christian material.",
+    "The omitted entry is DEH I.23.2 = BJ I.187.",
+    "For DEH II.11.3, BJ II.490-493 is correct. The two ranges in DEH V.53.1 genuinely overlap; the student suggested that Ussani may have intended a division because material from BJ Book II is inserted there."
+  ],
+  "confirmed": [
+    {
+      "id": "D01",
+      "topic": "provenance",
+      "decision": "The table transcribes references from the edition identified as Ussani/Mras. Individual printed loci have not yet been checked."
+    },
+    {
+      "id": "D02",
+      "topic": "reference_order",
+      "decision": "Preserve the listed order: the student confirms that it follows the DEH narrative."
+    },
+    {
+      "id": "D03",
+      "topic": "extent",
+      "decision": "References describe passages of variable extent; no exact phrase or full-unit equivalence is asserted."
+    },
+    {
+      "id": "D04",
+      "topic": "addition",
+      "deh": "1.23.2",
+      "action": "add",
+      "references": "1.187",
+      "original_source_row": null,
+      "insert_after_source_row": 65,
+      "authority": "Student answer 7"
+    },
+    {
+      "id": "D05",
+      "topic": "correction",
+      "deh": "2.11.3",
+      "source_cell": "Equivalences!B255",
+      "before": "2.487, 290-293",
+      "after": "2.487, 490-493",
+      "authority": "Student answer 8, following the DEH/Whiston content check"
+    },
+    {
+      "id": "D06",
+      "topic": "overlap",
+      "deh": "5.53.1",
+      "decision": "Preserve both ranges containing BJ 7.369 and preserve the parenthetical BJ 2.487-498. The proposed explanation of an internal division remains a hypothesis."
+    }
+  ],
+  "editorial_policy": [
+    {
+      "id": "P01",
+      "topic": "blank_BJ_AJ_cell",
+      "display": "No BJ/AJ parallel recorded in the transcription of the edition.",
+      "student_interpretation": "Material original to DEH",
+      "qualification": "This does not establish absence of other sources, complete originality, or specifically Christian content. The evidence is the transcription of the edition's parallel references, not an exhaustive independent source search."
+    },
+    {
+      "id": "P02",
+      "topic": "parentheses",
+      "decision": "Retain the parentheses and their position. Their typographical grouping is encoded; their editorial meaning is unresolved. Do not assign certainty or secondary status."
+    },
+    {
+      "id": "P03",
+      "topic": "open_ranges",
+      "decision": "Encode a known start and an unspecified end. A start citation can be linked; no closed excerpt boundary is supplied."
+    },
+    {
+      "id": "P04",
+      "topic": "source_specific_display",
+      "decision": "The concordance is independent of the language displayed. Pollard's DEH English translates the Latin; Whiston's Bellum English translates the Greek. Text-specific coverage and range rendering require separate verification."
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "Q01",
+      "topic": "parentheses",
+      "cells": [
+        "B75",
+        "B89",
+        "B110",
+        "B244",
+        "B311",
+        "B554"
+      ],
+      "decision_needed": "Meaning of parenthetical references in the printed edition."
+    },
+    {
+      "id": "Q02",
+      "topic": "annotations",
+      "cells": [
+        "B19",
+        "B137"
+      ],
+      "decision_needed": "Function of '= historia uetus' and '= alii' as printed annotations."
+    },
+    {
+      "id": "Q03",
+      "topic": "open_end",
+      "cell": "B266",
+      "deh": "2.13.7",
+      "reference": "AJ 15.38 et sqq.",
+      "decision_needed": "Final section only if a closed excerpt is required."
+    },
+    {
+      "id": "Q04",
+      "topic": "open_end",
+      "cell": "B427",
+      "deh": "4.30.2",
+      "reference": "BJ 4.643 et sqq.",
+      "decision_needed": "Final section only if a closed excerpt is required."
+    },
+    {
+      "id": "Q05",
+      "topic": "prologue",
+      "references": [
+        "Prol.1",
+        "Prol.2",
+        "Prol.3"
+      ],
+      "decision_needed": "Whether the Prologue was deliberately excluded and whether parallels should be added. The student's response did not answer this part."
+    },
+    {
+      "id": "Q06",
+      "topic": "residue",
+      "cell": "C555",
+      "value": "\\\\",
+      "decision_needed": "Confirm removal from any cleaned spreadsheet; the source value is retained as data but is not treated as a bibliographic reference."
+    },
+    {
+      "id": "Q07",
+      "topic": "provenance_detail",
+      "decision_needed": "Name of the student and the exact pages, table, or apparatus from which the references were transcribed."
+    },
+    {
+      "id": "Q08",
+      "topic": "production_resolution",
+      "decision_needed": "Verify selected-source passage resolution and comparison rendering against the current v2-development files before integration."
+    }
+  ]
+}
