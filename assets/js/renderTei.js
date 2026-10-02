@@ -422,7 +422,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const rawNiese = params.get("niese");
       if (
         /^[1-9]\d*$/.test(rawNiese || "")
-        && activeWork.nieseBooks?.includes(parseInt(bookNum, 10))
+        && (
+          sectionLevelUsesNiese()
+          || activeWork.nieseBooks?.includes(parseInt(bookNum, 10))
+        )
       ) {
         nieseNum = String(parseInt(rawNiese, 10));
       }
@@ -478,7 +481,11 @@ document.addEventListener("DOMContentLoaded", () => {
     normalizeSourcesForBook();
     pendingUrlUnit = null;
 
-    if (location.nieseNum && supportsNieseSections()) {
+    if (location.nieseNum && sectionLevelUsesNiese()) {
+      state.sectionNum = location.nieseNum;
+      state.nieseNum = null;
+      state.viewingLevel = "section-level";
+    } else if (location.nieseNum && supportsNieseSections()) {
       state.nieseNum = location.nieseNum;
       state.chapterNum = null;
       state.sectionNum = null;
@@ -535,6 +542,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (
       state.viewingLevel === "section-level"
       && state.sectionNum
+      && !sectionLevelUsesNiese()
     ) {
       let urlUnit = String(state.sectionNum);
 
@@ -559,6 +567,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (
+      sectionLevelUsesNiese()
+      && state.viewingLevel === "section-level"
+      && state.sectionNum
+    ) {
+      url.searchParams.set("niese", String(state.sectionNum));
+    } else if (
       state.viewingLevel === "niese-level"
       && state.nieseNum
       && supportsNieseSections()
@@ -619,6 +633,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (
       state.viewingLevel === "section-level"
       && state.sectionNum
+      && !sectionLevelUsesNiese()
     ) {
       let urlUnit = String(state.sectionNum);
 
@@ -641,6 +656,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (
+      sectionLevelUsesNiese()
+      && state.viewingLevel === "section-level"
+      && state.sectionNum
+    ) {
+      orderedParams.set("niese", String(state.sectionNum));
+    } else if (
       state.viewingLevel === "niese-level"
       && state.nieseNum
       && supportsNieseSections()
