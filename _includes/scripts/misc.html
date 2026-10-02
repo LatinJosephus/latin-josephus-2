@@ -1,6 +1,9 @@
 
 <!-- CETEIcean and TEI display JS -->
 <script src="{{ site.baseurl }}/assets/js/CETEI.js"></script>
+{% if page.permalink == '/deh/' %}
+<script src="{{ site.baseurl }}/assets/js/dehParallels.js"></script>
+{% endif %}
 <script src="{{ site.baseurl }}/assets/js/renderTei.js"></script>
 
 {% if site.enable_tooltips %}

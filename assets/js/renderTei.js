@@ -2451,6 +2451,17 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNavigationForms();
     addContraApionemTransmissionNotice();
     syncNavigationControls();
+    // Optional scholarly parallels live outside the textual alignment layer.
+    if (activeWork.slug === "deh") {
+      document.dispatchEvent(new CustomEvent("deh-view-rendered", {
+        detail: {
+          book: parseInt(state.bookNum, 10),
+          chapter: state.chapterNum,
+          num: state.sectionNum,
+          level: state.viewingLevel
+        }
+      }));
+    }
   };
 
   const displayedLatinTarget = (paragraphId) => {

@@ -1,0 +1,43 @@
+.deh-parallel-link {
+  display: block;
+  width: fit-content;
+  margin: .4rem 0 1rem;
+  font-size: .9rem;
+}
+
+#deh-parallels[hidden] { display: none; }
+
+.parallel-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#parallel-unit { max-width: 100%; }
+
+.parallel-evidence, .parallel-identity {
+  margin: .75rem 0;
+  font-size: .9rem;
+  text-align: left;
+}
+
+.parallel-panes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.parallel-panes .pane { min-width: 0; }
+.parallel-panes .pane h3 { margin-bottom: 1rem; }
+.parallel-panes select { max-width: 100%; }
+.parallel-components { padding-left: 1.5rem; }
+.parallel-components > li { margin-bottom: 1.5rem; }
+.parallel-components h4 { font-size: 1.1rem; text-align: left; }
+.parallel-components a { display: block; font-size: .85rem; text-align: left; }
+#parallel-status:empty { display: none; }
+
+@media (max-width: 700px) {
+  .parallel-panes { grid-template-columns: 1fr; }
+}

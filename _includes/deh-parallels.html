@@ -1,0 +1,38 @@
+<section id="deh-parallels" hidden aria-labelledby="parallel-title"
+  data-alignment-url="{{ site.baseurl }}/assets/data/deh-bj-alignment.json"
+  data-xml-base="{{ site.baseurl }}/assets/xml/"
+  data-bellum-url="{{ site.baseurl }}/bellum-judaicum/">
+  <div class="parallel-toolbar">
+    <h2 id="parallel-title">DEH ↔ Bellum parallels — I.1 pilot</h2>
+    <a id="parallel-close">Return to DEH reading</a>
+  </div>
+  <label for="parallel-unit">Recorded correspondence:</label>
+  <select id="parallel-unit"></select>
+  <p class="parallel-evidence">Reported parallels from the working transcription of Ussani/Mras;
+    printed references have not yet been checked individually. Reference order follows the concordance.
+    A parallel does not assert exact verbal equivalence, full-unit correspondence, or dependence between the Latin versions.</p>
+  <p id="parallel-status" role="status" aria-live="polite"></p>
+  <div class="parallel-panes">
+    <article class="pane" aria-labelledby="parallel-deh-title">
+      <h3 id="parallel-deh-title">DEH</h3>
+      <label for="parallel-deh-source">DEH language / source:</label>
+      <select id="parallel-deh-source">
+        <option value="pollard">English — Pollard v1.0</option>
+        <option value="ussani">Latin — Ussani (1932)</option>
+      </select>
+      <p id="parallel-deh-identity" class="parallel-identity"></p>
+      <div id="parallel-deh-text"></div>
+    </article>
+    <article class="pane" aria-labelledby="parallel-bj-title">
+      <h3 id="parallel-bj-title">Bellum Judaicum</h3>
+      <label for="parallel-bj-source">Bellum language / source:</label>
+      <select id="parallel-bj-source">
+        <option value="whiston">English — Whiston</option>
+        <option value="cardwell">Latin — Cardwell (1837)</option>
+      </select>
+      <p id="parallel-bj-identity" class="parallel-identity"></p>
+      <div id="parallel-bj-text"></div>
+    </article>
+  </div>
+  <p><a id="parallel-share">Link to this comparison</a></p>
+</section>
