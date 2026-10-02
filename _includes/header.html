@@ -1,11 +1,9 @@
 <header>
 
     <!-- Nav Bar -->
-    <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
+    <nav id="navbar" class="navbar navbar-light navbar-expand-md {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %} lj-navbar">
     <div class="container">
-      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-       <span class="font-weight-bold">Latin</span>Josephus
-      </a>
+      <a class="navbar-brand lj-brand" href="{{ '/' | relative_url }}" aria-label="Latin Josephus home"><img class="lj-brand__light" src="{{ '/assets/img/brand/bamberg/bamberg-logo-header-light.svg' | relative_url }}" width="624" height="170" alt="" aria-hidden="true"><img class="lj-brand__dark" src="{{ '/assets/img/brand/bamberg/bamberg-logo-header-dark.svg' | relative_url }}" width="624" height="170" alt="" aria-hidden="true"></a>
 
       <!-- Navbar Toggle -->
       <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

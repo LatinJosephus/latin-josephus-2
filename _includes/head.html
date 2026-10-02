@@ -38,10 +38,11 @@
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
 <!-- Styles -->
-{% if site.icon != empty %}
-<link rel="icon"
-  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>">
-{% endif %}
+<!-- Bamberg identity: LI icon, simplified for browser tabs. -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/brand/bamberg/bamberg-favicon-light-32.png' | relative_url }}">
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/img/brand/bamberg/bamberg-micro-icon-light.svg' | relative_url }}">
+<link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="{{ '/assets/img/brand/bamberg/bamberg-micro-icon-dark.svg' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/brand/bamberg/bamberg-favicon-light-180.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | relative_url }}">
 
