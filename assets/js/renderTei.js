@@ -338,6 +338,10 @@ document.addEventListener("DOMContentLoaded", () => {
     activeWork.nieseBooks?.includes(parseInt(state.bookNum, 10))
   );
 
+  const sectionLevelUsesNiese = () => (
+    activeWork.slug === "contra-apionem"
+  );
+
   const citationLocationFromLabel = (label) => {
     const match = String(label || "").match(
       /^\[[^.]+\.(\d+)\.(\d+)\]$/
@@ -2137,6 +2141,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const showSection = state.viewingLevel === "section-level";
     const showNiese = state.viewingLevel === "niese-level" && nieseAvailable;
 
+    const sectionIsNiese = sectionLevelUsesNiese();
+
+    const sectionSelectorLabel = sectionSelectForm.querySelector(
+      'label[for="section-selector"]'
+    );
+    if (sectionSelectorLabel) {
+      sectionSelectorLabel.textContent = sectionIsNiese
+        ? "Select a Niese section:"
+        : "Select a sub-chapter:";
+    }
+
+    const sectionLevelControl = document.getElementById("section-level");
+    const sectionLevelLabel = sectionLevelControl
+      ?.closest(".form-check")
+      ?.querySelector('label[for="section-level"]');
+
+    if (sectionLevelLabel) {
+      sectionLevelLabel.textContent = sectionIsNiese
+        ? "Niese section"
+        : "Sub-chapter";
+    }
+
     chapterSelectForm.classList.toggle("hidden", !showChapter);
     sectionSelectForm.classList.toggle("hidden", !showSection);
     if (nieseSelectForm) nieseSelectForm.classList.toggle("hidden", !showNiese);
@@ -2145,6 +2171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nieseLevelWrapper = nieseLevelControl?.closest(".form-check");
     if (nieseLevelControl) nieseLevelControl.disabled = !nieseAvailable;
     if (nieseLevelWrapper) {
+      nieseLevelWrapper.hidden = !nieseAvailable;
       nieseLevelWrapper.classList.toggle("hidden", !nieseAvailable);
     }
   };
@@ -2392,7 +2419,11 @@ document.addEventListener("DOMContentLoaded", () => {
         state.sectionNum
         && state.viewingLevel === "section-level"
       )
-        ? sectionDisplayLabel()
+        ? (
+          sectionLevelUsesNiese()
+            ? `Niese section ${parseInt(state.sectionNum, 10)}`
+            : sectionDisplayLabel()
+        )
         : "";
 
     updateLanguageUI();
