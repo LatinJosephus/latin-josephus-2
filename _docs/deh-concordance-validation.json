@@ -1,8 +1,14 @@
 {
-  "status": "passed_with_editorial_exceptions",
+  "status": "passed_reviewed_freeze",
   "date": "2026-10-02",
-  "scope": "Candidate data, canonical identities and Niese coordinate presence; not independent print verification or full passage-extraction QA.",
-  "candidate_sha256": "eb41275c5bc6d479b311101012ab3a9d96c07bd6611f401c899d0a97f426ddb1",
+  "scope": "Human-adjudicated scholarly parallels, canonical identities and Niese coordinate presence. Roles do not assert textual dependence; AJ site-support limitations do not invalidate the reviewed dataset.",
+  "reviewed_concordance": {
+    "path": "assets/data/deh-josephus-concordance.json",
+    "sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c",
+    "status": "reviewed_frozen",
+    "date": "2026-10-02",
+    "publication_status": "reviewed_not_published"
+  },
   "source_package": {
     "filename": "DEH_Parallels_v0_2_2026-10-02.zip",
     "sha256": "0ef4cd8a2fd0913dcc9f857afdd883941d164f6fd6a20a75390dd40b474fa3e5",
@@ -14,7 +20,7 @@
   },
   "project_editorial_decisions": {
     "path": "_docs/deh-concordance-editorial-decisions.json",
-    "sha256": "55e552daa2f8a03e0b0e53a5c63e3dc5aaefa4ac3baea59b442ee59807a44174"
+    "sha256": "e0111d56f440662f5928d4356bf55054c1e1dd8c4dfce97feb28d73eee213179"
   },
   "statistics": {
     "records": 555,
@@ -24,15 +30,18 @@
     "no_bj_aj_parallel_recorded": 5,
     "with_other_works_raw_data": 21,
     "with_other_work_reference_strings": 20,
-    "other_works_residue_records": 1,
+    "normalized_other_works_residue_records": 0,
+    "provenance_only_residue_records": 1,
     "normalized_bj_components": 705,
     "normalized_aj_components": 44,
     "parenthetical_expressions": 8,
     "parenthetical_reference_records": 6,
     "normalized_parenthetical_components": 6,
-    "confirmed_parenthetical_components": 1,
+    "supplementary_parallel_components": 6,
+    "primary_parallel_components": 743,
+    "unresolved_parenthetical_meaning_records": 0,
     "source_annotation_records": 2,
-    "open_ended_components": 2,
+    "open_ended_components": 0,
     "unresolved_syntax_records": 0,
     "withheld_package_parse_components": 0
   },
@@ -46,13 +55,16 @@
       "no_bj_aj_parallel_recorded": 1,
       "with_other_works_raw_data": 6,
       "with_other_work_reference_strings": 6,
-      "other_works_residue_records": 0,
+      "normalized_other_works_residue_records": 0,
+      "provenance_only_residue_records": 0,
       "normalized_bj_components": 237,
       "normalized_aj_components": 20,
       "parenthetical_expressions": 5,
       "parenthetical_reference_records": 3,
       "normalized_parenthetical_components": 3,
-      "confirmed_parenthetical_components": 0,
+      "supplementary_parallel_components": 3,
+      "primary_parallel_components": 254,
+      "unresolved_parenthetical_meaning_records": 0,
       "source_annotation_records": 2,
       "open_ended_components": 0,
       "unresolved_syntax_records": 0,
@@ -67,15 +79,18 @@
       "no_bj_aj_parallel_recorded": 1,
       "with_other_works_raw_data": 5,
       "with_other_work_reference_strings": 5,
-      "other_works_residue_records": 0,
+      "normalized_other_works_residue_records": 0,
+      "provenance_only_residue_records": 0,
       "normalized_bj_components": 86,
       "normalized_aj_components": 21,
       "parenthetical_expressions": 1,
       "parenthetical_reference_records": 1,
       "normalized_parenthetical_components": 1,
-      "confirmed_parenthetical_components": 1,
+      "supplementary_parallel_components": 1,
+      "primary_parallel_components": 106,
+      "unresolved_parenthetical_meaning_records": 0,
       "source_annotation_records": 0,
-      "open_ended_components": 1,
+      "open_ended_components": 0,
       "unresolved_syntax_records": 0,
       "withheld_package_parse_components": 0
     },
@@ -88,13 +103,16 @@
       "no_bj_aj_parallel_recorded": 1,
       "with_other_works_raw_data": 2,
       "with_other_work_reference_strings": 2,
-      "other_works_residue_records": 0,
+      "normalized_other_works_residue_records": 0,
+      "provenance_only_residue_records": 0,
       "normalized_bj_components": 91,
       "normalized_aj_components": 1,
       "parenthetical_expressions": 1,
       "parenthetical_reference_records": 1,
       "normalized_parenthetical_components": 1,
-      "confirmed_parenthetical_components": 0,
+      "supplementary_parallel_components": 1,
+      "primary_parallel_components": 91,
+      "unresolved_parenthetical_meaning_records": 0,
       "source_annotation_records": 0,
       "open_ended_components": 0,
       "unresolved_syntax_records": 0,
@@ -109,15 +127,18 @@
       "no_bj_aj_parallel_recorded": 1,
       "with_other_works_raw_data": 4,
       "with_other_work_reference_strings": 4,
-      "other_works_residue_records": 0,
+      "normalized_other_works_residue_records": 0,
+      "provenance_only_residue_records": 0,
       "normalized_bj_components": 109,
       "normalized_aj_components": 0,
       "parenthetical_expressions": 0,
       "parenthetical_reference_records": 0,
       "normalized_parenthetical_components": 0,
-      "confirmed_parenthetical_components": 0,
+      "supplementary_parallel_components": 0,
+      "primary_parallel_components": 109,
+      "unresolved_parenthetical_meaning_records": 0,
       "source_annotation_records": 0,
-      "open_ended_components": 1,
+      "open_ended_components": 0,
       "unresolved_syntax_records": 0,
       "withheld_package_parse_components": 0
     },
@@ -130,13 +151,16 @@
       "no_bj_aj_parallel_recorded": 1,
       "with_other_works_raw_data": 4,
       "with_other_work_reference_strings": 3,
-      "other_works_residue_records": 1,
+      "normalized_other_works_residue_records": 0,
+      "provenance_only_residue_records": 1,
       "normalized_bj_components": 182,
       "normalized_aj_components": 2,
       "parenthetical_expressions": 1,
       "parenthetical_reference_records": 1,
       "normalized_parenthetical_components": 1,
-      "confirmed_parenthetical_components": 0,
+      "supplementary_parallel_components": 1,
+      "primary_parallel_components": 183,
+      "unresolved_parenthetical_meaning_records": 0,
       "source_annotation_records": 0,
       "open_ended_components": 0,
       "unresolved_syntax_records": 0,
@@ -157,11 +181,11 @@
     "pollard_identities_resolved": 555
   },
   "bellum": {
-    "normalized_closed_components": 704,
-    "closed_components_passed": 704,
+    "normalized_closed_components": 705,
+    "closed_components_passed": 705,
     "closed_components_failed": 0,
-    "open_starts_passed": 1,
-    "closed_source_checks_passed": 2112,
+    "open_starts_passed": 0,
+    "closed_source_checks_passed": 2115,
     "canonical_anchor_inventory": [
       {
         "book": 1,
@@ -344,7 +368,7 @@
         "niese_navigation_enabled": false,
         "closed_site_addressable": 0,
         "not_site_addressable": 16,
-        "open_ended": 1,
+        "open_ended": 0,
         "unresolved_syntax": 0
       },
       {
@@ -403,16 +427,416 @@
     "active_scope_changed": false
   },
   "review": {
-    "entries": 40,
-    "unique_deh_units": 38,
+    "entries": 0,
+    "unique_deh_units": 0,
     "categories": {
       "unresolved_parenthetical_syntax": 0,
-      "parenthetical_meaning_unresolved": 5,
-      "open_ended_references": 2,
-      "source_annotations": 2,
-      "aj_site_unavailable": 30,
-      "other_works_residue": 1
+      "parenthetical_meaning_unresolved": 0,
+      "open_ended_references": 0,
+      "source_annotations": 0
     }
+  },
+  "site_support_limitations": {
+    "records": 30,
+    "target_components": 43,
+    "entries": [
+      {
+        "deh": "I.15.3",
+        "xml_id": "latin-deh1-num45",
+        "raw_reference": " 1.138-139 + AJ 14.54",
+        "targets": [
+          {
+            "citation": "AJ XIV.54",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.16.3",
+        "xml_id": "latin-deh1-num48",
+        "raw_reference": " 1.143-144 + AJ 14.59",
+        "targets": [
+          {
+            "citation": "AJ XIV.59",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.24.3",
+        "xml_id": "latin-deh1-num71",
+        "raw_reference": " 1.193-194 + AJ 14.137",
+        "targets": [
+          {
+            "citation": "AJ XIV.137",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.36.2",
+        "xml_id": "latin-deh1-num136",
+        "raw_reference": " 1.435-437 + AJ 15.52, 49",
+        "targets": [
+          {
+            "citation": "AJ XV.52",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XV.49",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.37.1",
+        "xml_id": "latin-deh1-num137",
+        "raw_reference": " 1.437 + AJ 15.55",
+        "targets": [
+          {
+            "citation": "AJ XV.55",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.37.2",
+        "xml_id": "latin-deh1-num138",
+        "raw_reference": " 1.437-439 + AJ 15.23-25",
+        "targets": [
+          {
+            "citation": "AJ XV.23–25",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.37.3",
+        "xml_id": "latin-deh1-num139",
+        "raw_reference": " 1.439 + AJ 15.26-34, 44-49",
+        "targets": [
+          {
+            "citation": "AJ XV.26–34",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XV.44–49",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.37.4",
+        "xml_id": "latin-deh1-num140",
+        "raw_reference": " 1.439-440 + AJ 15.64, 67 (= alii)",
+        "targets": [
+          {
+            "citation": "AJ XV.64",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XV.67",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.37.5",
+        "xml_id": "latin-deh1-num141",
+        "raw_reference": " 1.441 + AJ 15.67, 68-70, 80-86 + BJ 1.442",
+        "targets": [
+          {
+            "citation": "AJ XV.67",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XV.68–70",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XV.80–86",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.37.7",
+        "xml_id": "latin-deh1-num143",
+        "raw_reference": " 1.444 + AJ 15.240-246",
+        "targets": [
+          {
+            "citation": "AJ XV.240–246",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.38.1",
+        "xml_id": "latin-deh1-num144",
+        "raw_reference": " AJ 15.243, 299-300",
+        "targets": [
+          {
+            "citation": "AJ XV.243",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XV.299–300",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.38.2",
+        "xml_id": "latin-deh1-num145",
+        "raw_reference": " AJ 15.237-238",
+        "targets": [
+          {
+            "citation": "AJ XV.237–238",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.40.1",
+        "xml_id": "latin-deh1-num152",
+        "raw_reference": " AJ 16.135 + BJ 1.467-472",
+        "targets": [
+          {
+            "citation": "AJ XVI.135",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "I.45.12",
+        "xml_id": "latin-deh1-num213",
+        "raw_reference": " 1.665-666 + AJ 17.193",
+        "targets": [
+          {
+            "citation": "AJ XVII.193",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.3.4",
+        "xml_id": "latin-deh2-num12",
+        "raw_reference": " 2.178-180 + AJ 18.168",
+        "targets": [
+          {
+            "citation": "AJ XVIII.168",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.4.1",
+        "xml_id": "latin-deh2-num13",
+        "raw_reference": " AJ 18.65-80",
+        "targets": [
+          {
+            "citation": "AJ XVIII.65–80",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.5.1",
+        "xml_id": "latin-deh2-num14",
+        "raw_reference": " AJ 18.85-87",
+        "targets": [
+          {
+            "citation": "AJ XVIII.85–87",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.5.2",
+        "xml_id": "latin-deh2-num15",
+        "raw_reference": " AJ 18.63-64, 116 + BJ 2.182-183",
+        "targets": [
+          {
+            "citation": "AJ XVIII.63–64",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XVIII.116",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.12.1",
+        "xml_id": "latin-deh2-num45",
+        "raw_reference": " AJ 18.63-64",
+        "targets": [
+          {
+            "citation": "AJ XVIII.63–64",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.12.2",
+        "xml_id": "latin-deh2-num46",
+        "raw_reference": " AJ 18.117, 109-115, 124, 116",
+        "targets": [
+          {
+            "citation": "AJ XVIII.117",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XVIII.109–115",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XVIII.124",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XVIII.116",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.12.3",
+        "xml_id": "latin-deh2-num47",
+        "raw_reference": " AJ 20.224-226, 9.216, 222-227",
+        "targets": [
+          {
+            "citation": "AJ XX.224–226",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ IX.216",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ IX.222–227",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.13.1",
+        "xml_id": "latin-deh2-num48",
+        "raw_reference": " AJ 20.230-242 + BJ 1.92-95",
+        "targets": [
+          {
+            "citation": "AJ XX.230–242",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.13.2",
+        "xml_id": "latin-deh2-num49",
+        "raw_reference": " AJ 20.242",
+        "targets": [
+          {
+            "citation": "AJ XX.242",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.13.3",
+        "xml_id": "latin-deh2-num50",
+        "raw_reference": " AJ 20.243 + BJ 1.121",
+        "targets": [
+          {
+            "citation": "AJ XX.243",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.13.5",
+        "xml_id": "latin-deh2-num52",
+        "raw_reference": " 1.15-17 + AJ 20.245",
+        "targets": [
+          {
+            "citation": "AJ XX.245",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.13.6",
+        "xml_id": "latin-deh2-num53",
+        "raw_reference": " AJ 20.245",
+        "targets": [
+          {
+            "citation": "AJ XX.245",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.13.7",
+        "xml_id": "latin-deh2-num54",
+        "raw_reference": " AJ 20.247-249, 15.38 et sqq.",
+        "targets": [
+          {
+            "citation": "AJ XX.247–249",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          },
+          {
+            "citation": "AJ XV.38–56",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "II.13.8",
+        "xml_id": "latin-deh2-num55",
+        "raw_reference": " AJ 20.250-251",
+        "targets": [
+          {
+            "citation": "AJ XX.250–251",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "III.5.2",
+        "xml_id": "latin-deh3-num17",
+        "raw_reference": " 3.29, 7.245 + AJ 18.97",
+        "targets": [
+          {
+            "citation": "AJ XVIII.97",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      },
+      {
+        "deh": "V.50.1",
+        "xml_id": "latin-deh5-num114",
+        "raw_reference": " 7.244-250 + AJ 18.97",
+        "targets": [
+          {
+            "citation": "AJ XVIII.97",
+            "reason": "Niese navigation is not enabled for this AJ book."
+          }
+        ]
+      }
+    ]
+  },
+  "provenance_only_residues": {
+    "records": 1,
+    "entries": [
+      {
+        "deh": "V.53.2",
+        "xml_id": "latin-deh5-num121",
+        "raw_other_works": "  \\\\",
+        "evidence_snapshot": "_docs/deh-concordance-source/workbook-values.json",
+        "source_cell": "Equivalences!C555",
+        "editorial_decision": "P4-D11",
+        "treatment": "Raw evidence only. Reviewed Other works is empty; no bibliographic reference or concordance annotation."
+      }
+    ]
   },
   "canonical_xml_files_checked": 100,
   "canonical_xml_sha256": {
@@ -517,547 +941,5 @@
     "assets/xml/deh/Latin/book-04.xml": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
     "assets/xml/deh/Latin/book-05.xml": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6"
   },
-  "exceptions": [
-    {
-      "category": "source_annotations",
-      "deh": "I.6.4",
-      "xml_id": "latin-deh1-num21",
-      "raw_reference": " 1.77-78 (= historia uetus)",
-      "attempted_interpretation": [
-        "(= historia uetus)"
-      ],
-      "reason": "The source annotation is retained without interpreting its function."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.15.3",
-      "xml_id": "latin-deh1-num45",
-      "raw_reference": " 1.138-139 + AJ 14.54",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XIV.54",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.16.3",
-      "xml_id": "latin-deh1-num48",
-      "raw_reference": " 1.143-144 + AJ 14.59",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XIV.59",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.24.3",
-      "xml_id": "latin-deh1-num71",
-      "raw_reference": " 1.193-194 + AJ 14.137",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XIV.137",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "parenthetical_meaning_unresolved",
-      "deh": "I.26.3",
-      "xml_id": "latin-deh1-num78",
-      "raw_reference": " 1.210-211 (205)",
-      "attempted_interpretation": [
-        "(BJ I.205)"
-      ],
-      "reason": "Citation syntax is parseable, but the inherited parentheses have no established editorial meaning."
-    },
-    {
-      "category": "parenthetical_meaning_unresolved",
-      "deh": "I.29.3",
-      "xml_id": "latin-deh1-num92",
-      "raw_reference": " 1.255-257 (248)",
-      "attempted_interpretation": [
-        "(BJ I.248)"
-      ],
-      "reason": "Citation syntax is parseable, but the inherited parentheses have no established editorial meaning."
-    },
-    {
-      "category": "parenthetical_meaning_unresolved",
-      "deh": "I.30.13",
-      "xml_id": "latin-deh1-num113",
-      "raw_reference": " 1.328-329 (339)",
-      "attempted_interpretation": [
-        "(BJ I.339)"
-      ],
-      "reason": "Citation syntax is parseable, but the inherited parentheses have no established editorial meaning."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.36.2",
-      "xml_id": "latin-deh1-num136",
-      "raw_reference": " 1.435-437 + AJ 15.52, 49",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.52",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XV.49",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.37.1",
-      "xml_id": "latin-deh1-num137",
-      "raw_reference": " 1.437 + AJ 15.55",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.55",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.37.2",
-      "xml_id": "latin-deh1-num138",
-      "raw_reference": " 1.437-439 + AJ 15.23-25",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.23–25",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.37.3",
-      "xml_id": "latin-deh1-num139",
-      "raw_reference": " 1.439 + AJ 15.26-34, 44-49",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.26–34",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XV.44–49",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "source_annotations",
-      "deh": "I.37.4",
-      "xml_id": "latin-deh1-num140",
-      "raw_reference": " 1.439-440 + AJ 15.64, 67 (= alii)",
-      "attempted_interpretation": [
-        "(= alii)"
-      ],
-      "reason": "The source annotation is retained without interpreting its function."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.37.4",
-      "xml_id": "latin-deh1-num140",
-      "raw_reference": " 1.439-440 + AJ 15.64, 67 (= alii)",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.64",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XV.67",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.37.5",
-      "xml_id": "latin-deh1-num141",
-      "raw_reference": " 1.441 + AJ 15.67, 68-70, 80-86 + BJ 1.442",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.67",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XV.68–70",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XV.80–86",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.37.7",
-      "xml_id": "latin-deh1-num143",
-      "raw_reference": " 1.444 + AJ 15.240-246",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.240–246",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.38.1",
-      "xml_id": "latin-deh1-num144",
-      "raw_reference": " AJ 15.243, 299-300",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.243",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XV.299–300",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.38.2",
-      "xml_id": "latin-deh1-num145",
-      "raw_reference": " AJ 15.237-238",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XV.237–238",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.40.1",
-      "xml_id": "latin-deh1-num152",
-      "raw_reference": " AJ 16.135 + BJ 1.467-472",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVI.135",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "I.45.12",
-      "xml_id": "latin-deh1-num213",
-      "raw_reference": " 1.665-666 + AJ 17.193",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVII.193",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.3.4",
-      "xml_id": "latin-deh2-num12",
-      "raw_reference": " 2.178-180 + AJ 18.168",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVIII.168",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.4.1",
-      "xml_id": "latin-deh2-num13",
-      "raw_reference": " AJ 18.65-80",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVIII.65–80",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.5.1",
-      "xml_id": "latin-deh2-num14",
-      "raw_reference": " AJ 18.85-87",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVIII.85–87",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.5.2",
-      "xml_id": "latin-deh2-num15",
-      "raw_reference": " AJ 18.63-64, 116 + BJ 2.182-183",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVIII.63–64",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XVIII.116",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.12.1",
-      "xml_id": "latin-deh2-num45",
-      "raw_reference": " AJ 18.63-64",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVIII.63–64",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.12.2",
-      "xml_id": "latin-deh2-num46",
-      "raw_reference": " AJ 18.117, 109-115, 124, 116",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVIII.117",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XVIII.109–115",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XVIII.124",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XVIII.116",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.12.3",
-      "xml_id": "latin-deh2-num47",
-      "raw_reference": " AJ 20.224-226, 9.216, 222-227",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XX.224–226",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ IX.216",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ IX.222–227",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.13.1",
-      "xml_id": "latin-deh2-num48",
-      "raw_reference": " AJ 20.230-242 + BJ 1.92-95",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XX.230–242",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.13.2",
-      "xml_id": "latin-deh2-num49",
-      "raw_reference": " AJ 20.242",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XX.242",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.13.3",
-      "xml_id": "latin-deh2-num50",
-      "raw_reference": " AJ 20.243 + BJ 1.121",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XX.243",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.13.5",
-      "xml_id": "latin-deh2-num52",
-      "raw_reference": " 1.15-17 + AJ 20.245",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XX.245",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.13.6",
-      "xml_id": "latin-deh2-num53",
-      "raw_reference": " AJ 20.245",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XX.245",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "open_ended_references",
-      "deh": "II.13.7",
-      "xml_id": "latin-deh2-num54",
-      "raw_reference": " AJ 20.247-249, 15.38 et sqq.",
-      "attempted_interpretation": [
-        "AJ XV.38 et sqq."
-      ],
-      "reason": "A starting coordinate is known; the source supplies no endpoint. A closed excerpt must not be inferred."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.13.7",
-      "xml_id": "latin-deh2-num54",
-      "raw_reference": " AJ 20.247-249, 15.38 et sqq.",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XX.247–249",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        },
-        {
-          "citation": "AJ XV.38 et sqq.",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "II.13.8",
-      "xml_id": "latin-deh2-num55",
-      "raw_reference": " AJ 20.250-251",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XX.250–251",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "III.5.2",
-      "xml_id": "latin-deh3-num17",
-      "raw_reference": " 3.29, 7.245 + AJ 18.97",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVIII.97",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "parenthetical_meaning_unresolved",
-      "deh": "III.8.2",
-      "xml_id": "latin-deh3-num26",
-      "raw_reference": " 3.(110-114), 115, 127, 132-134",
-      "attempted_interpretation": [
-        "(BJ III.110–114)"
-      ],
-      "reason": "Citation syntax is parseable, but the inherited parentheses have no established editorial meaning."
-    },
-    {
-      "category": "open_ended_references",
-      "deh": "IV.30.2",
-      "xml_id": "latin-deh4-num72",
-      "raw_reference": " 4.643 et sqq.",
-      "attempted_interpretation": [
-        "BJ IV.643 et sqq."
-      ],
-      "reason": "A starting coordinate is known; the source supplies no endpoint. A closed excerpt must not be inferred."
-    },
-    {
-      "category": "aj_site_unavailable",
-      "deh": "V.50.1",
-      "xml_id": "latin-deh5-num114",
-      "raw_reference": " 7.244-250 + AJ 18.97",
-      "attempted_interpretation": [
-        {
-          "citation": "AJ XVIII.97",
-          "reason": "Niese navigation is not enabled for this AJ book."
-        }
-      ],
-      "reason": "Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated."
-    },
-    {
-      "category": "parenthetical_meaning_unresolved",
-      "deh": "V.53.1",
-      "xml_id": "latin-deh5-num120",
-      "raw_reference": " 7.320-322, 341-359, 323-334, 360-369 (2.487-498), 369-388, 335-336",
-      "attempted_interpretation": [
-        "(BJ II.487–498)"
-      ],
-      "reason": "Citation syntax is parseable, but the inherited parentheses have no established editorial meaning."
-    },
-    {
-      "category": "other_works_residue",
-      "deh": "V.53.2",
-      "xml_id": "latin-deh5-num121",
-      "raw_reference": " 7.389-404",
-      "raw_other_works": "  \\\\",
-      "attempted_interpretation": null,
-      "reason": "Two backslashes in Other works are retained as source residue, not counted as a bibliographic reference."
-    }
-  ]
+  "exceptions": []
 }

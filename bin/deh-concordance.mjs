@@ -1,4 +1,4 @@
-/** Candidate import/audit only. Node standard library + PowerShell 7 XML/ZIP APIs. */
+/** Reviewed concordance freeze/audit only. No UI publication or canonical text writes. */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const files = {
-  candidate: 'assets/data/deh-josephus-concordance-candidate.json',
+  concordance: 'assets/data/deh-josephus-concordance.json',
   workbook: '_docs/deh-concordance-source/workbook-values.json',
   decisions: '_docs/deh-concordance-source/editorial-decisions.json',
   projectDecisions: '_docs/deh-concordance-editorial-decisions.json',
@@ -190,19 +190,36 @@ function resolve(ref, corpus, configuration) {
 }
 
 function normalize(record, corpus, configuration) {
+  const reviewed = structuredClone(record);
+  const recordDecisions = projectEditorial.confirmed.filter(d => d.deh === record.deh.key);
+  for (const decision of recordDecisions) assert.equal(record.josephus.effective_text, decision.raw_source_notation, `Adjudicated source notation changed: ${record.deh.citation}`);
+  const parentheticalDecision = recordDecisions.find(d => d.targets);
+  const closure = recordDecisions.find(d => d.topic === 'closed_endpoint');
+  const annotationDecision = recordDecisions.find(d => d.topic === 'source_annotation');
   const targets = [], annotations = [], unresolved = [];
-  const add = (ref, segment, rawToken, offset, parenthesis = null, editorial = {}) => targets.push({
-    order: targets.length + 1, segment_order: segment.order, ...ref,
-    form: ref.open_ended ? 'open_range' : ref.section_start === ref.section_end ? 'single_section' : 'closed_range',
-    parenthetical: Boolean(parenthesis), parenthetical_placement: parenthesis?.placement || null,
-    normalized_citation: `${parenthesis ? '(' : ''}${citation(ref)}${parenthesis ? ')' : ''}`,
-    raw_token: rawToken, expression_offset: offset,
-    editorial_status: parenthesis ? 'parenthetical_meaning_unresolved' : ref.open_ended ? 'open_end_unresolved' : 'candidate_print_reference_unverified',
-    validation: resolve(ref, corpus, configuration), ...editorial
-  });
+  const add = (sourceRef, segment, rawToken, offset, parenthesis = null) => {
+    let ref = { ...sourceRef };
+    if (sourceRef.open_ended && closure) {
+      assert.deepEqual([sourceRef.work, sourceRef.book, sourceRef.section_start],
+        [closure.closed_target.work, closure.closed_target.book, closure.closed_target.section_start]);
+      ref = { ...ref, section_end: closure.closed_target.section_end, open_ended: false };
+    }
+    const decision = parentheticalDecision || (sourceRef.open_ended ? closure : null);
+    targets.push({
+      order: targets.length + 1, segment_order: segment.order, ...ref,
+      form: ref.open_ended ? 'open_range' : ref.section_start === ref.section_end ? 'single_section' : 'closed_range',
+      parenthetical: Boolean(parenthesis), parenthetical_placement: parenthesis?.placement || null,
+      relationship_role: parenthesis ? 'supplementary_parallel' : 'primary_parallel',
+      normalized_citation: `${parenthesis ? '(' : ''}${citation(ref)}${parenthesis ? ')' : ''}`,
+      raw_token: rawToken, expression_offset: offset,
+      editorial_status: 'reviewed_recorded_parallel',
+      ...(decision ? { editorial_decision: decision.id, adjudication_date: decision.adjudication_date || projectEditorial.date } : {}),
+      validation: resolve(ref, corpus, configuration)
+    });
+  };
   for (const segment of record.josephus.segments) {
     if (segment.parentheses.some(p => p.placement === 'within_reference')) {
-      const decision = projectEditorial.confirmed.find(d => d.deh === record.deh.key);
+      const decision = parentheticalDecision;
       if (decision) {
         assert.equal(segment.literal, decision.raw_source_notation);
         assert.equal(record.josephus.segments.length, 1);
@@ -211,13 +228,11 @@ function normalize(record, corpus, configuration) {
           const { parenthetical, relationship_role, ...ref } = target;
           const parenthesis = parenthetical ? segment.parentheses[0] : null;
           add(ref, segment, parenthesis?.literal || segment.literal,
-            segment.expression_offset + (parenthesis?.offset_start || 0), parenthesis,
-            { relationship_role, editorial_status: 'user_confirmed_interpretation', editorial_decision: decision.id });
+            segment.expression_offset + (parenthesis?.offset_start || 0), parenthesis);
         }
         continue;
       }
-      // Do not turn 2.402(344)-404 into two approved addresses by deleting its
-      // internal notation. Preserve the package's attempt, but emit no target.
+      // An unknown inline notation still requires a human decision.
       unresolved.push({ segment_order: segment.order, raw_token: segment.literal, expression_offset: segment.expression_offset,
         reason: 'Parenthesis interrupts a reference. The package parse attempt is retained in segments, but no normalized target is endorsed.',
         package_parse_attempt: { outer: segment.unparenthesized_reference, parentheses: segment.parentheses } });
@@ -228,15 +243,40 @@ function normalize(record, corpus, configuration) {
       add(segment.unparenthesized_reference, segment, rawToken, segment.expression_offset);
     }
     for (const parenthesis of segment.parentheses) {
-      if (parenthesis.kind === 'text_annotation') annotations.push({ segment_order: segment.order, raw_token: parenthesis.literal,
-        expression_offset: segment.expression_offset + parenthesis.offset_start, content: parenthesis.content, editorial_meaning: 'unresolved' });
+      if (parenthesis.kind === 'text_annotation') {
+        assert.ok(annotationDecision, `Unadjudicated annotation: ${record.deh.citation}`);
+        assert.equal(parenthesis.content, `= ${annotationDecision.annotation.raw_value}`);
+        annotations.push({ segment_order: segment.order, raw_token: parenthesis.literal,
+          expression_offset: segment.expression_offset + parenthesis.offset_start, content: parenthesis.content,
+          ...annotationDecision.annotation, interpretation: annotationDecision.decision,
+          editorial_status: 'human_approved_annotation', editorial_decision: annotationDecision.id,
+          adjudication_date: annotationDecision.adjudication_date });
+      }
       else add(parenthesis.reference, segment, parenthesis.literal, segment.expression_offset + parenthesis.offset_start, parenthesis);
     }
   }
-  const decision = projectEditorial.confirmed.find(d => d.deh === record.deh.key);
-  return { ...record, ...(decision ? { applied_editorial_decisions: [decision.id],
-    resolved_package_questions: [{ id: decision.supersedes_package_question_for_this_record, scope: 'this_record', editorial_decision: decision.id }] } : {}),
-    josephus: { ...record.josephus, normalization_status: unresolved.length ? 'partial_requires_review' : 'syntax_parsed', targets, annotations, unresolved_tokens: unresolved } };
+  if (parentheticalDecision) assert.deepEqual(targets.map(t => ({ work: t.work, book: t.book,
+    section_start: t.section_start, section_end: t.section_end, open_ended: t.open_ended,
+    parenthetical: t.parenthetical, relationship_role: t.relationship_role })), parentheticalDecision.targets,
+  `Parenthetical adjudication disagrees with source order: ${record.deh.citation}`);
+  for (const segment of reviewed.josephus.segments) for (const parenthesis of segment.parentheses) {
+    parenthesis.editorial_meaning = parenthesis.kind === 'parenthetical_reference' ? 'supplementary_parallel' : annotationDecision.annotation.type;
+  }
+  if (recordDecisions.length) {
+    reviewed.applied_editorial_decisions = recordDecisions.map(d => d.id);
+    reviewed.resolved_package_questions = recordDecisions.map(d => ({
+      id: d.supersedes_package_question_for_this_record, scope: 'this_record', editorial_decision: d.id
+    }));
+    reviewed.source.package_questions = [...record.unresolved_questions];
+    reviewed.unresolved_questions = record.unresolved_questions.filter(q => !reviewed.resolved_package_questions.some(r => r.id === q));
+  }
+  const residue = recordDecisions.find(d => d.topic === 'provenance_only_residue');
+  if (residue) {
+    assert.equal(record.source.raw_values.other_works.trim(), residue.raw_other_works);
+    reviewed.other_works = { text: '', status: 'no_reference_recorded' };
+  }
+  return { ...reviewed, josephus: { ...reviewed.josephus,
+    normalization_status: unresolved.length ? 'partial_requires_review' : 'reviewed', targets, annotations, unresolved_tokens: unresolved } };
 }
 
 function pilotSemantics(records) {
@@ -262,25 +302,43 @@ function assertPilot(records) {
 }
 
 function validate(candidate, workbook, decisions, corpus) {
-  assert.equal(candidate.publication_status, 'candidate_only');
+  assert.equal(candidate.status, 'reviewed_frozen');
+  assert.equal(candidate.publication_status, 'reviewed_not_published');
+  assert.equal(candidate.date, '2026-10-02');
   assert.deepEqual(candidate.project_editorial_decisions, { path: files.projectDecisions, sha256: hash(read(files.projectDecisions)) }, 'Project editorial decision provenance changed');
   assert.deepEqual(candidate.canonical_xml_sha256, corpus.xml_sha256, 'Canonical XML changed since import');
   const base = sourceRecords(workbook, decisions, corpus);
   const configuration = readerConfiguration();
   const expected = base.map(r => normalize(r, corpus, configuration));
   assert.deepEqual(candidate.records, expected, 'Candidate differs from raw evidence, canonical citations, ordered parsing, or current coordinate validation');
+  assert.ok(candidate.records.every(r => !r.unresolved_questions.length && !r.josephus.unresolved_tokens.length), 'STOP: a genuine unresolved editorial issue remains');
   assertPilot(candidate.records);
   assert.deepEqual(candidate.records.filter(r => !r.josephus.effective_text).map(r => r.deh.key), noParallelKeys);
   assert.ok(candidate.records.filter(r => !r.josephus.effective_text).every(r => r.josephus.status === 'no_bj_aj_parallel_recorded' && r.josephus.targets.length === 0));
   for (const r of candidate.records) for (const t of r.josephus.targets) {
     assert.equal(r.josephus.effective_text.slice(t.expression_offset, t.expression_offset + t.raw_token.length), t.raw_token, 'Lost target substring/position');
     if (t.work === 'BJ') assert.equal(t.validation.coordinate_status, 'passed', `BJ coordinate failure: ${r.deh.citation} ${t.normalized_citation}`);
+    assert.equal(t.relationship_role, t.parenthetical ? 'supplementary_parallel' : 'primary_parallel');
+    assert.equal(t.open_ended, false, 'STOP: an unadjudicated open target remains');
   }
   assert.deepEqual(candidate.records.find(r => r.deh.key === '1.37.5').josephus.targets.map(t => t.work), ['BJ', 'AJ', 'AJ', 'AJ', 'BJ']);
   const clarified = candidate.records.find(r => r.deh.key === '2.9.2');
   assert.equal(clarified.source.raw_values.josephus.trim(), '2.402(344)-404');
   assert.deepEqual(clarified.josephus.targets.map(t => [t.section_start, t.section_end, t.parenthetical, t.relationship_role]),
     [[402, 404, false, 'primary_parallel'], [344, 344, true, 'supplementary_parallel']], 'User-confirmed II.9.2 interpretation must be preserved');
+  assert.deepEqual(candidate.records.find(r => r.deh.key === '2.13.7').josephus.targets.map(t => [t.work, t.book, t.section_start, t.section_end, t.open_ended]),
+    [['AJ', 20, 247, 249, false], ['AJ', 15, 38, 56, false]]);
+  assert.deepEqual(candidate.records.find(r => r.deh.key === '4.30.2').josephus.targets.map(t => [t.work, t.book, t.section_start, t.section_end, t.open_ended]),
+    [['BJ', 4, 643, 644, false]]);
+  const historia = candidate.records.find(r => r.deh.key === '1.6.4');
+  assert.equal(historia.josephus.targets.length, 1);
+  assert.deepEqual([historia.josephus.annotations[0].type, historia.josephus.annotations[0].raw_value, historia.josephus.annotations[0].target_orders], ['source_label', 'historia uetus', [1]]);
+  const alii = candidate.records.find(r => r.deh.key === '1.37.4');
+  assert.deepEqual([alii.josephus.annotations[0].type, alii.josephus.annotations[0].raw_value, alii.josephus.annotations[0].target_orders], ['alternative_tradition', 'alii', [2, 3]]);
+  assert.ok(alii.josephus.annotations[0].target_orders.every(order => alii.josephus.targets[order - 1].work === 'AJ'));
+  const residue = candidate.records.find(r => r.deh.key === '5.53.2');
+  assert.deepEqual(residue.other_works, { text: '', status: 'no_reference_recorded' });
+  assert.equal(residue.josephus.annotations.length, 0);
   for (let book = 1; book <= 7; book++) {
     const greek = corpus.bellum[book].Greek;
     const full = Array.from({ length: Math.max(...greek) }, (_, i) => i + 1);
@@ -307,13 +365,16 @@ function statistics(records) {
     no_bj_aj_parallel_recorded: records.filter(r => r.josephus.status === 'no_bj_aj_parallel_recorded').length,
     with_other_works_raw_data: records.filter(r => r.source.raw_values?.other_works.trim()).length,
     with_other_work_reference_strings: records.filter(r => r.other_works.status === 'reference_recorded_unparsed').length,
-    other_works_residue_records: records.filter(r => r.other_works.status === 'apparent_non_bibliographic_residue').length,
+    normalized_other_works_residue_records: records.filter(r => r.other_works.status === 'apparent_non_bibliographic_residue').length,
+    provenance_only_residue_records: records.filter(r => r.source.raw_values?.other_works.trim() === '\\\\').length,
     normalized_bj_components: targets.filter(t => t.work === 'BJ').length,
     normalized_aj_components: targets.filter(t => t.work === 'AJ').length,
     parenthetical_expressions: records.flatMap(r => r.josephus.segments.flatMap(s => s.parentheses)).length,
     parenthetical_reference_records: records.filter(r => r.josephus.segments.some(s => s.parentheses.some(p => p.reference))).length,
     normalized_parenthetical_components: targets.filter(t => t.parenthetical).length,
-    confirmed_parenthetical_components: targets.filter(t => t.parenthetical && t.editorial_status === 'user_confirmed_interpretation').length,
+    supplementary_parallel_components: targets.filter(t => t.relationship_role === 'supplementary_parallel').length,
+    primary_parallel_components: targets.filter(t => t.relationship_role === 'primary_parallel').length,
+    unresolved_parenthetical_meaning_records: records.filter(r => r.josephus.targets.some(t => t.editorial_status === 'parenthetical_meaning_unresolved')).length,
     source_annotation_records: records.filter(r => r.josephus.annotations.length).length,
     open_ended_components: targets.filter(t => t.open_ended).length,
     unresolved_syntax_records: records.filter(r => r.josephus.unresolved_tokens.length).length,
@@ -325,9 +386,7 @@ const categoryTitles = {
   unresolved_parenthetical_syntax: 'Unresolved parenthetical syntax',
   parenthetical_meaning_unresolved: 'Parenthetical notation: meaning unresolved',
   open_ended_references: 'Open-ended references',
-  source_annotations: 'Source annotations requiring interpretation',
-  aj_site_unavailable: 'AJ references not currently addressable through site Niese navigation',
-  other_works_residue: 'Other-works source residue'
+  source_annotations: 'Source annotations requiring interpretation'
 };
 
 function exceptions(records) {
@@ -348,19 +407,33 @@ function exceptions(records) {
     const open = j.targets.filter(t => t.open_ended);
     if (open.length) add('open_ended_references', r, open.map(t => t.normalized_citation),
       'A starting coordinate is known; the source supplies no endpoint. A closed excerpt must not be inferred.');
-    if (j.annotations.length) add('source_annotations', r, j.annotations.map(a => a.raw_token),
+    if (j.annotations.some(a => a.editorial_status !== 'human_approved_annotation')) add('source_annotations', r, j.annotations.map(a => a.raw_token),
       'The source annotation is retained without interpreting its function.');
-    const unsupported = j.targets.filter(t => t.work === 'AJ' && !t.validation.site_niese_addressable);
-    if (unsupported.length) add('aj_site_unavailable', r, unsupported.map(t => ({ citation: t.normalized_citation, reason: t.validation.reason })),
-      'Parsed scholarly AJ references cannot yet be promoted to stable closed site targets. No links or textual IDs were fabricated.');
-    if (r.other_works.status === 'apparent_non_bibliographic_residue') add('other_works_residue', r, null,
-      'Two backslashes in Other works are retained as source residue, not counted as a bibliographic reference.', r.source.raw_values.other_works);
   }
   return result;
 }
 
+function siteLimitations(records) {
+  return records.flatMap(r => {
+    const targets = r.josephus.targets.filter(t => t.work === 'AJ' && !t.validation.site_niese_addressable);
+    return targets.length ? [{ deh: r.deh.citation, xml_id: r.deh.xml_id,
+      raw_reference: r.source.raw_values.josephus,
+      targets: targets.map(t => ({ citation: t.normalized_citation, reason: t.validation.reason })) }] : [];
+  });
+}
+
+function sourceResidues(records) {
+  return records.filter(r => r.source.raw_values?.other_works.trim() === '\\\\').map(r => ({
+    deh: r.deh.citation, xml_id: r.deh.xml_id, raw_other_works: r.source.raw_values.other_works,
+    evidence_snapshot: files.workbook, source_cell: r.source.cells.other_works,
+    editorial_decision: 'P4-D11', treatment: 'Raw evidence only. Reviewed Other works is empty; no bibliographic reference or concordance annotation.'
+  }));
+}
+
 function audit(candidate, corpus) {
   const records = candidate.records, targets = records.flatMap(r => r.josephus.targets), review = exceptions(records);
+  const limitations = siteLimitations(records), residues = sourceResidues(records);
+  assert.equal(review.length, 0, 'STOP: unresolved editorial exceptions prevent the reviewed freeze');
   const bj = targets.filter(t => t.work === 'BJ'), aj = targets.filter(t => t.work === 'AJ');
   const configuration = readerConfiguration();
   const ajByBook = Array.from({ length: 20 }, (_, i) => i + 1).map(book => {
@@ -373,9 +446,10 @@ function audit(candidate, corpus) {
         ...u.package_parse_attempt.parentheses.map(p => p.reference)].some(ref => ref?.work === 'AJ' && ref.book === book))).length };
   });
   return {
-    status: 'passed_with_editorial_exceptions', date: candidate.date,
-    scope: 'Candidate data, canonical identities and Niese coordinate presence; not independent print verification or full passage-extraction QA.',
-    candidate_sha256: hash(json(candidate)), source_package: candidate.source_package,
+    status: 'passed_reviewed_freeze', date: candidate.date,
+    scope: 'Human-adjudicated scholarly parallels, canonical identities and Niese coordinate presence. Roles do not assert textual dependence; AJ site-support limitations do not invalidate the reviewed dataset.',
+    reviewed_concordance: { path: files.concordance, sha256: hash(json(candidate)), status: candidate.status, date: candidate.date, publication_status: candidate.publication_status },
+    source_package: candidate.source_package,
     project_editorial_decisions: candidate.project_editorial_decisions,
     statistics: statistics(records),
     by_deh_book: [1, 2, 3, 4, 5].map(book => ({ book, ...statistics(records.filter(r => r.deh.book === book)) })),
@@ -392,15 +466,18 @@ function audit(candidate, corpus) {
     pilot: { approved_records: 11, semantically_matching: 11, discrepancies: 0, active_data_sha256: hash(read(files.pilot)), active_scope_changed: false },
     review: { entries: review.length, unique_deh_units: new Set(review.map(r => r.xml_id)).size,
       categories: Object.fromEntries(Object.keys(categoryTitles).map(category => [category, review.filter(r => r.category === category).length])) },
+    site_support_limitations: { records: limitations.length, target_components: limitations.reduce((n, r) => n + r.targets.length, 0), entries: limitations },
+    provenance_only_residues: { records: residues.length, entries: residues },
     canonical_xml_files_checked: Object.keys(corpus.xml_sha256).length, canonical_xml_sha256: corpus.xml_sha256,
     exceptions: review
   };
 }
 
 function exceptionMarkdown(report) {
-  const lines = ['**DEH–Josephus candidate concordance: editorial exceptions**', '',
-    `Only records requiring review are listed: ${report.review.entries} category entries across ${report.review.unique_deh_units} DEH units. One unit can occur in several categories.`, '',
-    'Raw references are JSON-quoted to preserve whitespace and punctuation. Listed parenthetical cases remain unresolved. DEH II.9.2 was resolved by the user and is recorded separately in the project editorial decisions. BJ canonical failures and pilot discrepancies: both zero.', ''];
+  const lines = ['**DEH–Josephus reviewed concordance: editorial and support report**', '',
+    'Raw evidence is JSON-quoted to preserve whitespace and punctuation. Site-support limitations and provenance-only residues are separate from editorial exceptions.', '',
+    '## A. Unresolved editorial exceptions', '',
+    `None (${report.review.entries}). All six parenthetical cases, both inherited open references, and both source annotations have human-approved adjudications. BJ canonical failures and pilot discrepancies are both zero.`, ''];
   for (const [category, title] of Object.entries(categoryTitles)) {
     const entries = report.exceptions.filter(e => e.category === category);
     if (!entries.length) continue;
@@ -411,17 +488,29 @@ function exceptionMarkdown(report) {
         ...(u.package_parse_attempt.outer ? [citation(u.package_parse_attempt.outer)] : []),
         ...u.package_parse_attempt.parentheses.filter(p => p.reference).map(p => `(${citation(p.reference)})`)
       ].join('; ')).join('; ') + ' — package attempt only; withheld from normalized targets';
-      else if (category === 'aj_site_unavailable') attempted = attempted.map(t => t.citation).join('; ');
       else if (Array.isArray(attempted)) attempted = attempted.join('; ');
       else if (attempted === null) attempted = 'No bibliographic interpretation supplied';
-      const reasons = category === 'aj_site_unavailable' ? ' ' + [...new Set(e.attempted_interpretation.map(t => t.reason))].join(' ') : '';
       lines.push(`- **DEH ${e.deh}** — \`${e.xml_id}\``,
         `  Original BJ/AJ reference: \`${JSON.stringify(e.raw_reference)}\`.`,
         ...(e.raw_other_works !== undefined ? [`  Original Other works: \`${JSON.stringify(e.raw_other_works)}\`.`] : []),
         `  Attempted interpretation: ${attempted}${attempted.endsWith('.') ? '' : '.'}`,
-        `  Review: ${e.reason}${reasons}`, '');
+        `  Review: ${e.reason}`, '');
     }
   }
+  lines.push('## B. Site-support limitations', '',
+    `${report.site_support_limitations.records} DEH records contain ${report.site_support_limitations.target_components} structurally valid AJ components that current Antiquities Niese navigation cannot address. These are valid reviewed parallels, not editorial defects. No unsupported URLs or textual IDs are fabricated.`, '');
+  for (const r of report.site_support_limitations.entries) lines.push(
+    `- **DEH ${r.deh}** — \`${r.xml_id}\``,
+    `  Original BJ/AJ reference: \`${JSON.stringify(r.raw_reference)}\`.`,
+    `  Reviewed AJ targets: ${r.targets.map(t => t.citation).join('; ')}.`,
+    `  Support limitation: ${[...new Set(r.targets.map(t => t.reason))].join(' ')}`, '');
+  lines.push('## C. Source residues / provenance-only artifacts', '',
+    `${report.provenance_only_residues.records} confirmed source residue is retained only as raw evidence.`, '');
+  for (const r of report.provenance_only_residues.entries) lines.push(
+    `- **DEH ${r.deh}** — \`${r.xml_id}\``,
+    `  Original Other works: \`${JSON.stringify(r.raw_other_works)}\`.`,
+    `  Raw snapshot: \`${r.evidence_snapshot}\`, \`${r.source_cell}\`; also preserved in the record's immutable raw-value snapshot.`,
+    `  Approved treatment (${r.editorial_decision}): ${r.treatment}`, '');
   return lines.join('\n').trimEnd() + '\n';
 }
 
@@ -433,14 +522,26 @@ function selfTest(candidate, workbook, decisions, corpus) {
     bj_aj_interleave_lost: c => { c.records.find(r => r.deh.key === '1.37.5').josephus.targets.sort((a, b) => a.work.localeCompare(b.work)); },
     parenthetical_status_lost: c => { c.records.find(r => r.deh.key === '5.53.1').josephus.targets[4].parenthetical = false; },
     overlap_removed: c => { c.records.find(r => r.deh.key === '5.53.1').josephus.targets[5].section_start = 370; },
-    invented_open_endpoint: c => { c.records.find(r => r.deh.key === '4.30.2').josephus.targets[0].section_end = 663; },
+    approved_bj_endpoint_changed: c => { c.records.find(r => r.deh.key === '4.30.2').josephus.targets[0].section_end = 663; },
     confirmed_correction_reverted: c => { c.records.find(r => r.deh.key === '2.11.3').josephus.targets[1].section_start = 290; },
     raw_evidence_lost: c => { c.records[0].source.raw_values.josephus = ''; },
     no_parallel_record_missing: c => { c.records.find(r => r.deh.key === '1.3.1').josephus.status = 'original_material'; },
     confirmed_supplementary_role_lost: c => { c.records.find(r => r.deh.key === '2.9.2').josephus.targets[1].relationship_role = 'primary_parallel'; },
     confirmed_interpretation_provenance_lost: c => { delete c.records.find(r => r.deh.key === '2.9.2').applied_editorial_decisions; },
     confirmed_inline_reference_reordered: c => { c.records.find(r => r.deh.key === '2.9.2').josephus.targets.reverse(); },
-    canonical_bj_endpoint_absent: c => { c.records[0].josephus.targets[0].section_end = 9999; }
+    canonical_bj_endpoint_absent: c => { c.records[0].josephus.targets[0].section_end = 9999; },
+    approved_bj_range_reopened: c => { const t = c.records.find(r => r.deh.key === '4.30.2').josephus.targets[0]; t.section_end = null; t.open_ended = true; },
+    approved_aj_range_reopened: c => { const t = c.records.find(r => r.deh.key === '2.13.7').josephus.targets[1]; t.section_end = null; t.open_ended = true; },
+    parenthetical_uncertainty_reintroduced: c => { c.records.find(r => r.deh.key === '1.26.3').josephus.targets[1].editorial_status = 'parenthetical_meaning_unresolved'; },
+    primary_role_changed: c => { c.records[0].josephus.targets[0].relationship_role = 'supplementary_parallel'; },
+    supplementary_first_sequence_reordered: c => { c.records.find(r => r.deh.key === '3.8.2').josephus.targets.reverse(); },
+    alii_attached_to_bj: c => { c.records.find(r => r.deh.key === '1.37.4').josephus.annotations[0].target_orders = [1]; },
+    historia_made_work_identity: c => { c.records.find(r => r.deh.key === '1.6.4').josephus.annotations[0].type = 'modern_work_identity'; },
+    annotation_promoted_to_target: c => { c.records.find(r => r.deh.key === '1.6.4').josephus.targets.push({ work: 'AJ', book: 1, section_start: 1, section_end: 1 }); },
+    residue_exposed_as_reference: c => { c.records.find(r => r.deh.key === '5.53.2').other_works = { text: '\\\\', status: 'reference_recorded_unparsed' }; },
+    frozen_status_lost: c => { c.status = 'candidate_for_editorial_review'; },
+    raw_open_notation_erased: c => { c.records.find(r => r.deh.key === '2.13.7').source.raw_values.josephus = 'AJ 20.247-249, 15.38-56'; },
+    publication_status_changed: c => { c.publication_status = 'published'; }
   };
   for (const [name, mutate] of Object.entries(mutations)) {
     const copy = structuredClone(candidate); mutate(copy);
@@ -451,10 +552,14 @@ function selfTest(candidate, workbook, decisions, corpus) {
 
 function main() {
   const [command = 'validate', argument] = process.argv.slice(2);
-  assert.ok(['import', 'validate'].includes(command), 'Usage: node bin/deh-concordance.mjs import <zip> | validate [--self-test]');
+  assert.ok(['freeze', 'validate'].includes(command), 'Usage: node bin/deh-concordance.mjs freeze <zip> | validate [--self-test]');
   if (command === 'validate') assert.ok(!argument || argument === '--self-test', 'Unknown validation option');
   projectEditorial = readJSON(files.projectDecisions);
-  assert.equal(projectEditorial.confirmed.length, 1);
+  assert.equal(projectEditorial.version, '2');
+  assert.equal(projectEditorial.date, '2026-10-02');
+  assert.deepEqual(projectEditorial.confirmed.map(d => d.id), ['P3-D01', ...Array.from({ length: 11 }, (_, i) => `P4-D${String(i + 1).padStart(2, '0')}`)]);
+  assert.deepEqual([projectEditorial.confirmed[1].primary_role, projectEditorial.confirmed[1].parenthetical_role], ['primary_parallel', 'supplementary_parallel']);
+  assert.ok(projectEditorial.confirmed.slice(1).every(d => d.authority && d.adjudication_date === '2026-10-02'));
   const clarification = projectEditorial.confirmed[0];
   assert.equal(clarification.id, 'P3-D01');
   assert.equal(clarification.deh, '2.9.2');
@@ -463,9 +568,19 @@ function main() {
     { work: 'BJ', book: 2, section_start: 402, section_end: 404, open_ended: false, parenthetical: false, relationship_role: 'primary_parallel' },
     { work: 'BJ', book: 2, section_start: 344, section_end: 344, open_ended: false, parenthetical: true, relationship_role: 'supplementary_parallel' }
   ]);
+  const parentheticalShapes = {
+    '1.26.3': [[1, 210, 211, false], [1, 205, 205, true]],
+    '1.29.3': [[1, 255, 257, false], [1, 248, 248, true]],
+    '1.30.13': [[1, 328, 329, false], [1, 339, 339, true]],
+    '3.8.2': [[3, 110, 114, true], [3, 115, 115, false], [3, 127, 127, false], [3, 132, 134, false]],
+    '5.53.1': [[7, 320, 322, false], [7, 341, 359, false], [7, 323, 334, false], [7, 360, 369, false], [2, 487, 498, true], [7, 369, 388, false], [7, 335, 336, false]]
+  };
+  for (const [key, expected] of Object.entries(parentheticalShapes)) assert.deepEqual(
+    projectEditorial.confirmed.find(d => d.deh === key).targets.map(t => [t.book, t.section_start, t.section_end, t.parenthetical]), expected,
+    `Fixed parenthetical decision changed: ${key}`);
   const corpus = native(['-Mode', 'Corpus', '-RepoRoot', root]);
   let candidate, workbook, decisions;
-  if (command === 'import') {
+  if (command === 'freeze') {
     assert.ok(argument && !argument.startsWith('--'), 'Supply the source ZIP path');
     const input = native(['-Mode', 'Package', '-PackagePath', path.resolve(argument)]);
     const packaged = JSON.parse(input.files['deh-parallels.json']);
@@ -476,39 +591,47 @@ function main() {
     assert.deepEqual(base, packaged.records, 'STOP: source package differs from source rows, confirmed decisions, or current canonical identities');
     assertPilot(base);
     candidate = {
-      schema_version: '0.2', candidate_extension_version: '1', date: '2026-10-02', status: 'candidate_for_editorial_review', publication_status: 'candidate_only',
+      schema_version: '0.2', concordance_extension_version: '2', date: '2026-10-02', status: 'reviewed_frozen', publication_status: 'reviewed_not_published',
       relation_type: packaged.relation_type,
       scope: { work: 'DEH', numbered_records: 555, prologue_included: false },
       source_package: { filename: path.basename(argument), sha256: input.sha256, entry_sha256: input.hashes },
       package_provenance: packaged.provenance,
       retained_evidence: { workbook_values: files.workbook, editorial_decisions: files.decisions },
       project_editorial_decisions: { path: files.projectDecisions, sha256: hash(read(files.projectDecisions)) },
+      review: { human_approved: true, authority: projectEditorial.authority, adjudication_date: projectEditorial.date,
+        parallel_role_decision: 'P4-D01', phase3_baseline_commit: '0c95013d738ab6f471e34a1fc62d1e76e460b705',
+        raw_evidence_retained: true, site_support_limitations_are_editorial_defects: false },
       conventions: { ...packaged.conventions,
-        parentheses: 'Typographical position preserved. Meaning remains unresolved except for DEH II.9.2, whose primary and parenthetical supplementary roles were explicitly confirmed by the user in project editorial decision P3-D01. No meaning is inferred for other parentheses.',
+        parentheses: 'Parenthetical targets are human-approved supplementary parallels; unparenthesized targets are primary parallels. Parentheses do not mark uncertainty or establish textual dependence. Source sequence and typographical position are preserved.',
         blank_bj_aj_display: "No BJ/AJ parallel is recorded in the edition's references.",
-        normalized_targets: 'josephus.targets is the ordered conservative sequence. josephus.segments retains the package parse as evidence; unresolved inline attempts are not normalized targets.',
-        aj_availability: 'Parsing does not establish current site Niese addressability. No unsupported site links or IDs are generated.' },
+        normalized_targets: 'josephus.targets is the ordered reviewed sequence with adjudicated endpoints. josephus.segments preserves the source-notation parse, including inherited et sqq.; its parenthetical meanings are adjudicated. Original package questions are historical evidence under source.package_questions and have explicit record-level resolutions.',
+        other_works: 'Meaningful source strings remain unnormalized. The V.53.2 backslashes survive only in immutable raw evidence snapshots; its reviewed Other works is empty.',
+        aj_availability: 'AJ site-support limitations are technical limitations, not editorial defects. Parsing does not establish current Niese addressability. No unsupported site links or IDs are generated.' },
       canonical_xml_sha256: corpus.xml_sha256,
       records: base.map(r => normalize(r, corpus, configuration))
     };
     validate(candidate, workbook, decisions, corpus);
+    assert.equal(exceptions(candidate.records).length, 0, 'STOP: editorial exceptions prevent the freeze');
     // All identity, coverage and pilot checks pass before any candidate write.
     write(files.workbook, input.files['source/workbook_values.json']);
     write(files.decisions, input.files['editorial_decisions.json']);
-    write(files.candidate, json(candidate));
+    write(files.concordance, json(candidate));
   } else {
-    candidate = readJSON(files.candidate); workbook = readJSON(files.workbook); decisions = readJSON(files.decisions);
+    candidate = readJSON(files.concordance); workbook = readJSON(files.workbook); decisions = readJSON(files.decisions);
     assert.equal(hash(read(files.workbook)), candidate.source_package.entry_sha256['source/workbook_values.json'], 'Workbook evidence changed');
     assert.equal(hash(read(files.decisions)), candidate.source_package.entry_sha256['editorial_decisions.json'], 'Editorial evidence changed');
     validate(candidate, workbook, decisions, corpus);
   }
   const report = audit(candidate, corpus);
-  if (command === 'import') { write(files.audit, json(report)); write(files.exceptions, exceptionMarkdown(report)); }
+  assert.equal(hash(read(files.concordance)), report.reviewed_concordance.sha256, 'Frozen artifact bytes differ from recorded SHA-256');
+  if (command === 'freeze') { write(files.audit, json(report)); write(files.exceptions, exceptionMarkdown(report)); }
   else { assert.deepEqual(readJSON(files.audit), report, 'Audit is stale'); assert.equal(read(files.exceptions), exceptionMarkdown(report), 'Exception report is stale'); }
   const rejected = argument === '--self-test' ? selfTest(candidate, workbook, decisions, corpus) : [];
-  console.log(json({ status: report.status, statistics: report.statistics, deh: report.deh, bellum: report.bellum,
+  console.log(json({ status: report.status, reviewed_concordance: report.reviewed_concordance, statistics: report.statistics, deh: report.deh, bellum: report.bellum,
     antiquities: { normalized: report.antiquities.normalized_components, site_addressable: report.antiquities.site_addressable_closed, not_site_addressable: report.antiquities.not_site_addressable },
-    pilot: report.pilot, review: report.review, rejected_mutations: rejected }));
+    pilot: report.pilot, review: report.review,
+    site_support_limitations: { records: report.site_support_limitations.records, components: report.site_support_limitations.target_components },
+    provenance_only_residues: report.provenance_only_residues.records, rejected_mutations: rejected }));
 }
 
 try { main(); } catch (error) { console.error(`Concordance audit failed: ${error.message}`); process.exitCode = 1; }
