@@ -1,12 +1,21 @@
 {
   "schema_version": "0.2",
   "date": "2026-10-02",
-  "status": "I.1_pilot_from_working_derivative",
+  "status": "I.1_and_V.53.1_pilot_from_working_derivative",
   "relation_type": "parallel_reported_in_edition",
   "scope": {
     "work": "DEH",
-    "book": 1,
-    "chapter": 1
+    "passages": [
+      {
+        "book": 1,
+        "chapter": 1
+      },
+      {
+        "book": 5,
+        "chapter": 53,
+        "unit": 1
+      }
+    ]
   },
   "source_package": {
     "filename": "DEH_Parallels_v0_2_2026-10-02.zip",
@@ -595,6 +604,149 @@
       },
       "applied_decisions": [],
       "unresolved_questions": []
+    },
+    {
+      "id": "deh-5-53-1",
+      "deh": {
+        "work": "DEH",
+        "book": 5,
+        "chapter": 53,
+        "unit": 1,
+        "citation": "V.53.1",
+        "key": "5.53.1",
+        "xml_id": "latin-deh5-num120"
+      },
+      "source": {
+        "kind": "student_transcription_of_edition",
+        "workbook_row": 554,
+        "cells": {
+          "deh": "Equivalences!A554",
+          "josephus": "Equivalences!B554",
+          "other_works": "Equivalences!C554"
+        },
+        "raw_values": {
+          "deh": "    5.53.1",
+          "josephus": " 7.320-322, 341-359, 323-334, 360-369 (2.487-498), 369-388, 335-336",
+          "other_works": " "
+        }
+      },
+      "josephus": {
+        "effective_text": "7.320-322, 341-359, 323-334, 360-369 (2.487-498), 369-388, 335-336",
+        "status": "references_recorded",
+        "segments": [
+          {
+            "order": 1,
+            "literal": "7.320-322",
+            "separator_before": null,
+            "expression_offset": 0,
+            "unparenthesized_reference": {
+              "work": "BJ",
+              "book": 7,
+              "section_start": 320,
+              "section_end": 322,
+              "open_ended": false
+            },
+            "parentheses": []
+          },
+          {
+            "order": 2,
+            "literal": "341-359",
+            "separator_before": ",",
+            "expression_offset": 11,
+            "unparenthesized_reference": {
+              "work": "BJ",
+              "book": 7,
+              "section_start": 341,
+              "section_end": 359,
+              "open_ended": false
+            },
+            "parentheses": []
+          },
+          {
+            "order": 3,
+            "literal": "323-334",
+            "separator_before": ",",
+            "expression_offset": 20,
+            "unparenthesized_reference": {
+              "work": "BJ",
+              "book": 7,
+              "section_start": 323,
+              "section_end": 334,
+              "open_ended": false
+            },
+            "parentheses": []
+          },
+          {
+            "order": 4,
+            "literal": "360-369 (2.487-498)",
+            "separator_before": ",",
+            "expression_offset": 29,
+            "unparenthesized_reference": {
+              "work": "BJ",
+              "book": 7,
+              "section_start": 360,
+              "section_end": 369,
+              "open_ended": false
+            },
+            "parentheses": [
+              {
+                "literal": "(2.487-498)",
+                "content": "2.487-498",
+                "offset_start": 8,
+                "offset_end_exclusive": 19,
+                "placement": "suffix",
+                "editorial_meaning": "unresolved",
+                "kind": "parenthetical_reference",
+                "reference": {
+                  "work": "BJ",
+                  "book": 2,
+                  "section_start": 487,
+                  "section_end": 498,
+                  "open_ended": false
+                }
+              }
+            ]
+          },
+          {
+            "order": 5,
+            "literal": "369-388",
+            "separator_before": ",",
+            "expression_offset": 50,
+            "unparenthesized_reference": {
+              "work": "BJ",
+              "book": 7,
+              "section_start": 369,
+              "section_end": 388,
+              "open_ended": false
+            },
+            "parentheses": []
+          },
+          {
+            "order": 6,
+            "literal": "335-336",
+            "separator_before": ",",
+            "expression_offset": 59,
+            "unparenthesized_reference": {
+              "work": "BJ",
+              "book": 7,
+              "section_start": 335,
+              "section_end": 336,
+              "open_ended": false
+            },
+            "parentheses": []
+          }
+        ]
+      },
+      "other_works": {
+        "text": "",
+        "status": "no_reference_recorded"
+      },
+      "applied_decisions": [
+        "D06"
+      ],
+      "unresolved_questions": [
+        "Q01"
+      ]
     }
   ]
 }

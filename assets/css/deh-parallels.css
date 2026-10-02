@@ -34,6 +34,13 @@
 .parallel-panes select { max-width: 100%; }
 .parallel-components { padding-left: 1.5rem; }
 .parallel-components > li { margin-bottom: 1.5rem; }
+.parallel-components > li + li { border-top: 1px solid #999; padding-top: 1rem; }
+.parallel-editorial-note {
+  border-left: 3px dashed #666;
+  padding-left: .75rem;
+  font-size: .9rem;
+  text-align: left;
+}
 .parallel-components h4 { font-size: 1.1rem; text-align: left; }
 .parallel-components a { display: block; font-size: .85rem; text-align: left; }
 #parallel-status:empty { display: none; }

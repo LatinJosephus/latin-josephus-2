@@ -3,14 +3,14 @@
   data-xml-base="{{ site.baseurl }}/assets/xml/"
   data-bellum-url="{{ site.baseurl }}/bellum-judaicum/">
   <div class="parallel-toolbar">
-    <h2 id="parallel-title">DEH ↔ Bellum parallels — I.1 pilot</h2>
+    <h2 id="parallel-title">DEH ↔ Bellum parallels — I.1 and V.53.1 pilot</h2>
     <a id="parallel-close">Return to DEH reading</a>
   </div>
   <label for="parallel-unit">Recorded correspondence:</label>
   <select id="parallel-unit"></select>
-  <p class="parallel-evidence">Reported parallels from the working transcription of Ussani/Mras;
-    printed references have not yet been checked individually. Reference order follows the concordance.
-    A parallel does not assert exact verbal equivalence, full-unit correspondence, or dependence between the Latin versions.</p>
+  <p class="parallel-evidence">Parallels transcribed from the references in Ussani/Mras.
+    Printed references have not yet been independently verified. Reference order follows the edition.
+    A parallel indicates corresponding material, not exact verbal equivalence, full-unit correspondence, or dependence between the Latin versions.</p>
   <p id="parallel-status" role="status" aria-live="polite"></p>
   <div class="parallel-panes">
     <article class="pane" aria-labelledby="parallel-deh-title">
@@ -27,8 +27,9 @@
       <h3 id="parallel-bj-title">Bellum Judaicum</h3>
       <label for="parallel-bj-source">Bellum language / source:</label>
       <select id="parallel-bj-source">
-        <option value="whiston">English — Whiston</option>
+        <option value="niese">Greek — Niese</option>
         <option value="cardwell">Latin — Cardwell (1837)</option>
+        <option value="whiston" selected>English — Whiston</option>
       </select>
       <p id="parallel-bj-identity" class="parallel-identity"></p>
       <div id="parallel-bj-text"></div>

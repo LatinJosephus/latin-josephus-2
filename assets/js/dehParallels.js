@@ -1,4 +1,4 @@
-/* DEH I.1 scholarly parallels. Texts and translation alignments remain read-only. */
+/* DEH I.1 and V.53.1 scholarly parallels. Canonical texts remain read-only. */
 document.addEventListener("DOMContentLoaded", () => {
   const panel = document.getElementById("deh-parallels");
   if (!panel) return;
@@ -12,11 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const dehText = document.getElementById("parallel-deh-text");
   const bjText = document.getElementById("parallel-bj-text");
   const sources = {
-    pollard: { work: "deh", language: "English", identity: "Pollard v1.0 — English translation of the Latin DEH." },
-    ussani: { work: "deh", language: "Latin", identity: "Ussani (1932) — Latin DEH." },
-    whiston: { work: "bellum", language: "English", identity: "Whiston — English translation of the Greek Bellum." },
-    cardwell: { work: "bellum", language: "Latin", identity: "Cardwell (1837) — Latin Bellum." }
+    pollard: { work: "deh", language: "English", lang: "en", identity: "Pollard v1.0 — English translation of the Latin DEH." },
+    ussani: { work: "deh", language: "Latin", lang: "la", identity: "Ussani (1932) — Latin DEH." },
+    niese: { work: "bellum", language: "Greek", lang: "grc", identity: "Niese — Greek Bellum." },
+    whiston: { work: "bellum", language: "English", lang: "en", identity: "Whiston — English translation of the Greek Bellum." },
+    cardwell: { work: "bellum", language: "Latin", lang: "la", identity: "Cardwell (1837) — Latin translation of the Bellum." }
   };
+  const romanBooks = ["", "I", "II", "III", "IV", "V", "VI", "VII"];
+  const bellumCitation = ref => `${romanBooks[ref.book]}.${ref.section_start}${
+    ref.section_end !== ref.section_start ? `–${ref.section_end}` : ""
+  }`;
+  const correspondenceComponents = record => record.josephus.segments.flatMap(segment => {
+    // The pilot supports the inherited suffix reference in V.53.1. Keep the
+    // original nested record intact; do not assign the parentheses a meaning.
+    const components = [{ ref: segment.unparenthesized_reference, literal: segment.literal }];
+    segment.parentheses.forEach(parenthesis => {
+      if (parenthesis.placement !== "suffix" || parenthesis.kind !== "parenthetical_reference") {
+        throw new Error("This notation requires editorial review before excerpt display.");
+      }
+      components.push({ ref: parenthesis.reference, literal: parenthesis.literal, parenthesis });
+    });
+    return components;
+  });
+  const componentCitation = component => {
+    const citation = `BJ ${bellumCitation(component.ref)}`;
+    return component.parenthesis ? `(${citation})` : citation;
+  };
+  const correspondenceLabel = record => correspondenceComponents(record)
+    .map(componentCitation).join(", ");
   const tei = new CETEI();
   const textCache = new Map();
   let records = [];
@@ -65,6 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // milestones. Whiston uses its own milestones. Never infer Niese sections
   // from Whiston's sameAs links to Cardwell paragraph IDs.
   const bellumEntries = (data, sourceKey, book) => {
+    if (sourceKey === "niese") {
+      const prefix = `greek-bellum${book}-num`;
+      return [...data.querySelectorAll("tei-p")]
+        .filter(node => node.id.startsWith(prefix) && /^[1-9]\d*$/.test(node.id.slice(prefix.length)))
+        .map(node => ({ number: Number(node.id.slice(prefix.length)), node, wholeSection: true }));
+    }
     const entries = [...data.querySelectorAll('tei-milestone[unit="niese"][n]')]
       .filter(node => /^[1-9]\d*$/.test(node.getAttribute("n")))
       .map(node => ({ number: Number(node.getAttribute("n")), node, paragraph: false }));
@@ -94,6 +123,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const wrapper = document.createElement("tei-div2");
     wrapper.dataset.nieseSection = number;
+    if (start.wholeSection) {
+      // The canonical Greek paragraph is already one complete Niese section.
+      const paragraph = start.node.cloneNode(true);
+      const label = document.createElement("tei-num");
+      label.className = "niese-generated";
+      label.textContent = `[${number}] `;
+      paragraph.prepend(label);
+      wrapper.appendChild(paragraph);
+      return wrapper;
+    }
     const startParagraph = start.paragraph ? start.node : start.node.closest("tei-p");
     const endParagraph = end.paragraph ? end.node : end.node.closest("tei-p");
     const range = document.createRange();
@@ -144,8 +183,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const bjSource = bjMenu.value;
     dehText.replaceChildren();
     bjText.replaceChildren();
-    dehText.lang = sources[dehSource].language === "Latin" ? "la" : "en";
-    bjText.lang = sources[bjSource].language === "Latin" ? "la" : "en";
+    dehText.lang = sources[dehSource].lang;
+    bjText.lang = sources[bjSource].lang;
     status.textContent = "Loading parallel passages…";
     document.getElementById("parallel-deh-title").textContent = `DEH ${record.deh.citation}`;
     document.getElementById("parallel-deh-identity").textContent = sources[dehSource].identity;
@@ -168,18 +207,27 @@ document.addEventListener("DOMContentLoaded", () => {
       components.className = "parallel-components";
       // Iterate the supplied array directly: preserve order and repeated or
       // overlapping sections in separate components, without sorting/merging.
-      for (const [componentIndex, segment] of record.josephus.segments.entries()) {
-        const ref = segment.unparenthesized_reference;
-        if (!ref || ref.work !== "BJ" || ref.open_ended || segment.parentheses.length) {
+      for (const [componentIndex, supplied] of correspondenceComponents(record).entries()) {
+        const ref = supplied.ref;
+        if (!ref || ref.work !== "BJ" || ref.open_ended) {
           throw new Error("This notation requires editorial review before excerpt display.");
         }
         const data = await loadText(bjSource, ref.book);
         const entries = bellumEntries(data, bjSource, ref.book);
         const component = document.createElement("li");
-        component.dataset.reference = segment.literal;
+        component.dataset.reference = supplied.literal;
+        component.dataset.book = ref.book;
         const heading = document.createElement("h4");
-        heading.textContent = `BJ ${segment.literal.includes(".") ? segment.literal : `${ref.book}.${segment.literal}`}`;
+        heading.textContent = componentCitation(supplied);
         component.appendChild(heading);
+        if (supplied.parenthesis) {
+          component.dataset.parenthetical = "true";
+          component.dataset.editorialMeaning = supplied.parenthesis.editorial_meaning;
+          const note = document.createElement("p");
+          note.className = "parallel-editorial-note";
+          note.textContent = "Inherited parentheses; editorial meaning unresolved.";
+          component.appendChild(note);
+        }
         for (let section = ref.section_start; section <= ref.section_end; section += 1) {
           const excerpt = bellumSection(entries, section);
           component.appendChild(namespaceIds(excerpt, `parallel-bj-${componentIndex}-${section}`));
@@ -189,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
         url.searchParams.set("book", ref.book);
         url.searchParams.set("niese", ref.section_start);
         link.href = url;
-        link.textContent = `Open BJ ${ref.book}.${ref.section_start} in the Bellum reader`;
+        link.textContent = `Open BJ ${romanBooks[ref.book]}.${ref.section_start} in the Bellum reader`;
         component.appendChild(link);
         components.appendChild(component);
       }
@@ -212,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const link = document.createElement("a");
         link.className = "deh-parallel-link";
         link.href = comparisonUrl(record);
-        link.textContent = `Compare DEH ${record.deh.citation} with BJ ${record.josephus.effective_text}`;
+        link.textContent = `Compare DEH ${record.deh.citation} with ${correspondenceLabel(record)}`;
         paragraph.after(link);
       });
     });
@@ -232,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     unitMenu.value = record.id;
     dehMenu.value = ["pollard", "ussani"].includes(params.get("deh-source")) ? params.get("deh-source") : "pollard";
-    bjMenu.value = ["whiston", "cardwell"].includes(params.get("bj-source")) ? params.get("bj-source") : "whiston";
+    bjMenu.value = ["whiston", "cardwell", "niese"].includes(params.get("bj-source")) ? params.get("bj-source") : "whiston";
     renderComparison(record);
   };
 
@@ -255,8 +303,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!response.ok) throw new Error("Alignment data unavailable.");
     const data = await response.json();
     // Hard scope guard: no other concordance records become interface entries.
-    records = data.records.filter(record => record.deh.book === 1 && record.deh.chapter === 1);
-    records.forEach(record => unitMenu.add(new Option(`DEH ${record.deh.citation} → BJ ${record.josephus.effective_text}`, record.id)));
+    records = data.records.filter(record => (
+      (record.deh.book === 1 && record.deh.chapter === 1 && record.deh.unit >= 1 && record.deh.unit <= 10)
+      || (record.id === "deh-5-53-1" && record.deh.book === 5 && record.deh.chapter === 53 && record.deh.unit === 1)
+    ));
+    records.forEach(record => unitMenu.add(new Option(`DEH ${record.deh.citation} → ${correspondenceLabel(record)}`, record.id)));
     refresh();
   }).catch(error => {
     if (new URLSearchParams(window.location.search).has("parallel")) {
