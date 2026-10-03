@@ -759,7 +759,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (visibleLabel) return visibleLabel;
     }
 
-    const label = activeWork.slug === "bellum" ? "Sub-chapter" : "Section";
+    const label = ["antiquities", "bellum"].includes(activeWork.slug)
+      ? "Sub-chapter"
+      : "Section";
     return `${label} ${sectionNum}`;
   };
 
@@ -2435,7 +2437,7 @@ document.addEventListener("DOMContentLoaded", () => {
       state.nieseNum
       && state.viewingLevel === "niese-level"
     )
-      ? `Section ${parseInt(state.nieseNum, 10)}`
+      ? `Niese section ${parseInt(state.nieseNum, 10)}`
       : (
         state.sectionNum
         && state.viewingLevel === "section-level"
