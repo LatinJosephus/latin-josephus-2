@@ -1,0 +1,340 @@
+{
+  "schema": "lodge1602-bellum-browser-qa-v1",
+  "date": "2026-10-03",
+  "status": "PASS",
+  "browser": "153.0.8010.53",
+  "engine": "Chromium",
+  "engines_tested": 1,
+  "actual_built_reader": true,
+  "site_build_override": "Only jekyll-responsive-image omitted: installed RMagick binary unavailable; production reader/page/layout/CSS unchanged.",
+  "offline_qa_environment": "HTMLCollection.forEach uses Array.forEach; external CDN shell failures are reported separately.",
+  "lodge": {
+    "counts": {
+      "books": 7,
+      "chapters": 111,
+      "coarse": 704,
+      "niese": 4001
+    },
+    "digest": "f715dd6ce744551c34a25f8fc8f2f99e596e411ea5dddaf9b0c6eacab8e6c71a",
+    "exact_xml_source_words_verified": true,
+    "first_and_final_sections_checked_for_each_book": true,
+    "all_canonical_book_transitions_checked": true,
+    "fixtures": [
+      "preserved source heading, marginal note and damaged reading",
+      "1.24",
+      "3.3",
+      "3.182",
+      "3.183",
+      "6.3",
+      "6.267",
+      "6.356",
+      "6.427",
+      "7.26"
+    ]
+  },
+  "whiston": {
+    "counts": {
+      "books": 7,
+      "chapters": 111,
+      "coarse": 704,
+      "niese": 4001
+    },
+    "digest": "0e84a85f10f49530d6e1badd3d4beba5ed5006b27ced6fa567e8f249bf5b20f5",
+    "exact_xml_source_words_verified": false,
+    "first_and_final_sections_checked_for_each_book": true,
+    "all_canonical_book_transitions_checked": true,
+    "fixtures": [],
+    "baseline_exact_render_digest_match": true
+  },
+  "source_state_qa": {
+    "status": "PASS",
+    "all_book_level_switches": [
+      "1 book",
+      "1 chapter",
+      "1 section",
+      "1 niese",
+      "2 book",
+      "2 chapter",
+      "2 section",
+      "2 niese",
+      "3 book",
+      "3 chapter",
+      "3 section",
+      "3 niese",
+      "4 book",
+      "4 chapter",
+      "4 section",
+      "4 niese",
+      "5 book",
+      "5 chapter",
+      "5 section",
+      "5 niese",
+      "6 book",
+      "6 chapter",
+      "6 section",
+      "6 niese",
+      "7 book",
+      "7 chapter",
+      "7 section",
+      "7 niese"
+    ],
+    "history_back_forward": true
+  },
+  "narrow_native_keyboard_selection": "PASS",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "relevant_console_or_local_http_errors": [],
+  "unrelated_offline_shell_errors": [
+    {
+      "type": "pageerror",
+      "message": "$ is not defined"
+    },
+    {
+      "type": "pageerror",
+      "message": "$ is not defined"
+    },
+    {
+      "type": "pageerror",
+      "message": "$ is not defined"
+    },
+    {
+      "type": "pageerror",
+      "message": "$ is not defined"
+    },
+    {
+      "type": "pageerror",
+      "message": "$ is not defined"
+    },
+    {
+      "type": "pageerror",
+      "message": "$ is not defined"
+    }
+  ],
+  "external_cdn_request_failures": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    },
+    {
+      "url": "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    }
+  ],
+  "inventory": {
+    "status": "PASS",
+    "compatibility_patch_required": true,
+    "historical_paths_checked": 100,
+    "historical_paths_matching": 98,
+    "preserved_baseline_mismatches": [
+      {
+        "path": "assets/xml/antiquities/Greek/book-05.xml",
+        "expected_sha256": "7ce20266db43df7c37c7c242180173f555dd5a0071189b5d6446eac3bd5e3dde",
+        "current_sha256": "29a6b6873f50f3f23b8153f9475aa466d5e0ff933c5e09fb9dadb9c6712880d7"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-05.xml",
+        "expected_sha256": "4e1de36de17c861dac0a47f65054a3ef020103ab1ec63fccb40717b79c7276e7",
+        "current_sha256": "fe5cf33bfeb60e5490f3f257444db4c2808dcfe32a23d18f41c01f9bbab6113a"
+      }
+    ],
+    "unpatched_inventory_count": 107,
+    "exact_exempt_paths": [
+      "assets/xml/bellum/English/Lodge1602/book-01.xml",
+      "assets/xml/bellum/English/Lodge1602/book-02.xml",
+      "assets/xml/bellum/English/Lodge1602/book-03.xml",
+      "assets/xml/bellum/English/Lodge1602/book-04.xml",
+      "assets/xml/bellum/English/Lodge1602/book-05.xml",
+      "assets/xml/bellum/English/Lodge1602/book-06.xml",
+      "assets/xml/bellum/English/Lodge1602/book-07.xml"
+    ],
+    "unexpected_xml_detected": true,
+    "malformed_exempt_xml_rejected": true,
+    "frozen_concordance_sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c"
+  }
+}

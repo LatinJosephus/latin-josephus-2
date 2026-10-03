@@ -139,6 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
             whiston: {
               label: "Whiston",
               directory: "English"
+            },
+            lodge1602: {
+              label: "Lodge (1602)",
+              directory: "English/Lodge1602"
             }
           }
         },
@@ -1535,6 +1539,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     wrapper.querySelectorAll("tei-p").forEach(paragraph => {
+      const lodgeOmission = activeWork.slug === "bellum"
+        && state.sources.English === "lodge1602"
+        && paragraph.querySelector('tei-gap[reason="omitted"][unit="niese-section"]');
+      if (lodgeOmission) return;
       if (!paragraph.textContent.trim() && !paragraph.querySelector("tei-milestone, tei-num")) paragraph.remove();
     });
 

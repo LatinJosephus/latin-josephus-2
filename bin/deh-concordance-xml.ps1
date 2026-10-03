@@ -121,10 +121,16 @@ foreach ($book in 1..20) {
 }
 
 $hashes = [ordered]@{}
+# Lodge is independently verified against its frozen scholarly master. These
+# seven exact paths are outside the historical 100-file DEH hash inventory.
+$lodgeProductionPaths = @(1..7 | ForEach-Object {
+  'assets/xml/bellum/English/Lodge1602/book-' + $_.ToString('00') + '.xml'
+})
 foreach ($file in (Get-ChildItem -LiteralPath (Join-Path $RepoRoot 'assets/xml') -Filter '*.xml' -Recurse -File | Sort-Object FullName)) {
   # Parse every canonical XML file, including sources not used for references.
   $relative = $file.FullName.Substring($RepoRoot.Length + 1).Replace('\', '/')
   $null = Read-Tei $relative
+  if ($lodgeProductionPaths -ccontains $relative) { continue }
   $hashes[$relative] = File-Sha256 $file.FullName
 }
 [ordered]@{deh=$deh; latin_ids=$allLatinIds; english_targets=$englishTargets; bellum=$bellum; antiquities=$antiquities; xml_sha256=$hashes} | ConvertTo-Json -Depth 100 -Compress

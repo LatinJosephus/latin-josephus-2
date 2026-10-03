@@ -45,3 +45,28 @@ tei-num.niese-generated {
   font-size: 0.9em;
   opacity: 0.75;
 }
+
+/* Preserved Lodge TCP material, scoped to the Lodge English witness. */
+#english tei-p[id^="english-lodge1602-"] tei-note[place="margin"] {
+  display: inline;
+  font-size: 0.9em;
+  font-style: italic;
+}
+#english tei-p[id^="english-lodge1602-"] tei-seg:is(
+  [type="tcp-p"], [type="tcp-head"], [type="tcp-byline"],
+  [type="tcp-argument"], [type="tcp-list"], [type="tcp-item"],
+  [type="tcp-trailer"]
+) {
+  display: block;
+  margin-block: 0.35em;
+}
+#english tei-p[id^="english-lodge1602-"] tei-seg[type="tcp-head"] {
+  font-weight: 600;
+}
+#english tei-p[id^="english-lodge1602-"] tei-seg[type="tcp-item"] {
+  margin-inline-start: 1em;
+}
+#english tei-p[id^="english-lodge1602-"] tei-gap[reason="omitted"][unit="niese-section"]::before {
+  content: "[Omitted in Lodge]";
+  font-style: italic;
+}

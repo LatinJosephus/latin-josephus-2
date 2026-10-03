@@ -41,6 +41,20 @@ In 2021, the first 8 books of the *Antiquities* were carefully corrected and man
 
 In spring 2022, the project was moved to this new site built by [Performant Software Solutions](https://www.performantsoftware.com/), with improved functionality. Early medieval annotations began to be integrated into the online edition.  
 
+### Bellum witnesses
+
+The *Bellum Judaicum* reader offers Cardwell (1837) in Latin, Niese in Greek,
+and two independently selectable English translations: Whiston, translated
+from Greek, and Thomas Lodge (1602), whose title page describes his translation
+as “translated out of the Latin, and French”.
+
+Lodge's text comes from EEBO-TCP A04680, released under
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+LatinJosephus supplies its structural correspondence with the site's Cardwell
+chapters and 704 coarse units, together with the independently accepted
+4,001-section Niese alignment. Lodge's original wording and TCP source markup
+are preserved.
+
 ### Corrections
 
 The Latin transcription has been double-checked up to book 8 of the *Antiquities*.  For the rest, the process is ongoing. As such, if you spot an inevitable error or two (or more!), please contact [pollard.richard_matthew@uqam.ca](mailto:pollard.richard_matthew@uqam.ca).
