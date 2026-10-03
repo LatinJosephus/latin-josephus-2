@@ -1,13 +1,18 @@
 <section id="deh-parallels" hidden aria-labelledby="parallel-title"
-  data-alignment-url="{{ site.baseurl }}/assets/data/deh-bj-alignment.json"
+  data-alignment-url="{{ site.baseurl }}/assets/data/deh-josephus-concordance.json"
   data-xml-base="{{ site.baseurl }}/assets/xml/"
   data-bellum-url="{{ site.baseurl }}/bellum-judaicum/">
   <div class="parallel-toolbar">
-    <h2 id="parallel-title">DEH ↔ Bellum parallels — I.1 and V.53.1 pilot</h2>
+    <h2 id="parallel-title">DEH ↔ Bellum parallels</h2>
     <a id="parallel-close">Return to DEH reading</a>
   </div>
-  <label for="parallel-unit">Recorded correspondence:</label>
-  <select id="parallel-unit"></select>
+  <nav class="parallel-navigation" aria-label="DEH passages with Bellum parallels">
+    <label for="parallel-book">Book <select id="parallel-book"></select></label>
+    <label for="parallel-chapter">Chapter <select id="parallel-chapter"></select></label>
+    <label for="parallel-unit">Unit <select id="parallel-unit"></select></label>
+  </nav>
+  <p class="parallel-identity">The Greek Bellum underlies the DEH adaptation.
+    Cardwell is an independent Latin translation of the Bellum.</p>
   <p class="parallel-evidence">Parallels transcribed from the references in Ussani/Mras.
     Printed references have not yet been independently verified. Reference order follows the edition.
     A parallel indicates corresponding material, not exact verbal equivalence, full-unit correspondence, or dependence between the Latin versions.</p>

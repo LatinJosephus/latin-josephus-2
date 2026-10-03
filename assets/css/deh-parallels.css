@@ -15,7 +15,14 @@
   gap: 1rem;
 }
 
-#parallel-unit { max-width: 100%; }
+.parallel-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1rem;
+  margin: .75rem 0;
+}
+.parallel-navigation label { margin: 0; }
+.parallel-navigation select { max-width: 100%; margin-left: .25rem; }
 
 .parallel-evidence, .parallel-identity {
   margin: .75rem 0;
