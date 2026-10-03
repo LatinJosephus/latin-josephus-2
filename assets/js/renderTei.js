@@ -104,12 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // record those boundaries without splitting or renumbering the stable
       // paragraph IDs.
       milestoneChapterBooks: [15, 16, 17, 18, 19, 20],
-      nieseBooks: [1, 2, 3, 4],
+      nieseBooks: [1, 2, 3, 4, 5],
       nieseRanges: {
         1: [27, 346],
         2: [1, 349],
         3: [1, 322],
-        4: [1, 331]
+        4: [1, 331],
+        5: [1, 362]
       }
     },
     "/bellum-judaicum/": {
