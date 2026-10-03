@@ -1559,7 +1559,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const firstParagraph = wrapper.querySelector("tei-p");
     if (firstParagraph) {
-      firstParagraph.insertBefore(makeGeneratedNieseLabel(wanted), firstParagraph.firstChild);
+      let labelContainer = firstParagraph;
+      if (activeWork.slug === "bellum" && state.sources.English === "lodge1602") {
+        const textWalker = document.createTreeWalker(firstParagraph, NodeFilter.SHOW_TEXT, {
+          acceptNode: node => node.data.trim() && !node.parentElement.closest("tei-note, [data-original]")
+            ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP
+        });
+        const firstText = textWalker.nextNode();
+        // Keep the citation with the opening TCP block, including through inline wrappers.
+        const firstBlock = firstText?.parentElement.closest(`tei-seg:is(
+          [type="tcp-p"], [type="tcp-head"], [type="tcp-byline"],
+          [type="tcp-argument"], [type="tcp-list"], [type="tcp-item"], [type="tcp-trailer"]
+        )`);
+        if (firstBlock && firstParagraph.contains(firstBlock)) labelContainer = firstBlock;
+      }
+      labelContainer.insertBefore(makeGeneratedNieseLabel(wanted), labelContainer.firstChild);
     }
     return wrapper;
   };
