@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const chapterSelectMenu = document.getElementById("chapter-selector");
   const englishPane = document.getElementById("english");
   const englishPaneCheckbox = document.getElementById("english-pane-select");
+  const lodgeNotesRow = document.getElementById("lodge-notes-select");
+  const lodgeNotesCheckbox = document.getElementById("lodge-notes-visible");
   const frenchPane = document.getElementById("french");
   const frenchPaneCheckbox = document.getElementById("french-pane-select");
   const greekPane = document.getElementById("greek");
@@ -283,6 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionNum: null,
     nieseNum: null,
     viewingLevel: 'book-level',
+    lodgeNotesVisible: true,
     sources: initialSources
   };
 
@@ -373,6 +376,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "unit",
       "num",
       "niese",
+      ...(activeWork.slug === "bellum" ? ["lodgeNotes"] : []),
       ...sourceParamKeys
     ].some(key => params.has(key));
 
@@ -463,6 +467,7 @@ document.addEventListener("DOMContentLoaded", () => {
       explicitNum,
       nieseNum,
       sourceSelections,
+      lodgeNotesVisible: activeWork.slug !== "bellum" || params.get("lodgeNotes") !== "0",
       hasLocationParams
     };
   };
@@ -476,6 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
     state.nieseNum = null;
 
     state.sources = { ...initialSources };
+    state.lodgeNotesVisible = location.lodgeNotesVisible;
 
     Object.entries(location.sourceSelections || {}).forEach(
       ([language, sourceKey]) => {
@@ -606,13 +612,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Canonicalize parameter order for readable, stable scholarly URLs:
-    // book -> chapter -> unit -> niese -> source selections.
+    // book -> chapter -> unit -> niese -> source selections -> Lodge notes.
     const knownParams = new Set([
       "book",
       "chapter",
       "unit",
       "num",
       "niese",
+      ...(activeWork.slug === "bellum" ? ["lodgeNotes"] : []),
       ...Object.keys(activeWork.languages).map(
         language => language.toLowerCase()
       )
@@ -687,6 +694,10 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       }
     });
+
+    if (activeWork.slug === "bellum" && !state.lodgeNotesVisible) {
+      orderedParams.set("lodgeNotes", "0");
+    }
 
     extras.forEach(([key, value]) => {
       orderedParams.append(key, value);
@@ -2084,6 +2095,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const updateLodgeNotesUI = () => {
+    const isLodge = activeWork.slug === "bellum"
+      && state.sources.English === "lodge1602";
+
+    if (lodgeNotesRow) {
+      lodgeNotesRow.hidden = !isLodge;
+      lodgeNotesRow.classList.toggle("hidden", !isLodge);
+    }
+    if (lodgeNotesCheckbox) lodgeNotesCheckbox.checked = state.lodgeNotesVisible;
+    englishPane?.classList.toggle("lodge-notes-hidden", isLodge && !state.lodgeNotesVisible);
+  };
+
   const updateLanguageUI = () => {
     Object.entries(languagePanes).forEach(([language, pane]) => {
       if (!pane) return;
@@ -2161,6 +2184,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
+    updateLodgeNotesUI();
   };
 
   const updateNavigationForms = () => {
@@ -2914,6 +2938,13 @@ document.addEventListener("DOMContentLoaded", () => {
           state.sources[language] = sourceKey;
         });
       });
+    });
+
+    lodgeNotesCheckbox?.addEventListener("change", () => {
+      if (activeWork.slug !== "bellum" || state.sources.English !== "lodge1602") return;
+      state.lodgeNotesVisible = lodgeNotesCheckbox.checked;
+      updateLodgeNotesUI();
+      syncUrlFromState("push");
     });
 
     highlightCheckbox.addEventListener("change", () => {

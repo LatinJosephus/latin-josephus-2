@@ -70,3 +70,7 @@ tei-num.niese-generated {
   content: "[Omitted in Lodge]";
   font-style: italic;
 }
+
+#english.lodge-notes-hidden tei-p[id^="english-lodge1602-bellum"] tei-note {
+  display: none !important;
+}
