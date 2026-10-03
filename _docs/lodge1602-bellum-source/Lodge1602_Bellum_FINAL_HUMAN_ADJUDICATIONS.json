@@ -1,0 +1,72 @@
+{
+  "schema": "Lodge1602-final-human-adjudication-v1",
+  "recorded_utc": "2026-10-03T16:32:37.317Z",
+  "authority": "Explicit user editorial instruction, 2026-10-03 12:28:30 America/Toronto",
+  "scope": "Exactly Niese I.24 and III.182; all other decisions frozen.",
+  "pre_adjudication_ledger_file": "recovery-evidence/pre-final-human-decisions-4001.json",
+  "pre_adjudication_ledger_sha256": "6ecf485d2fb5f87df264196d3ea3ed3c2694cf4bad2e94390daeb9c89fa2d1b3",
+  "earlier_final_package": {
+    "file": "Lodge1602_Bellum_FINAL_20261003.zip",
+    "sha256": "ff77219346d5376506531fe008610f0d569c124a6b8486e934000f66c4b7aa31"
+  },
+  "frozen_recovery_archive": {
+    "file": "Lodge_WorkBot3_RECOVERY_2026-10-03.zip",
+    "sha256": "d3fbf251f2906c632b72c162eecbb92aa330af0b5d7f5591de00c29b9d0e3218"
+  },
+  "decisions": [
+    {
+      "id": "HUMAN-FINAL-1-24",
+      "citation": "1.24",
+      "resolution": "Move milestone to the first surviving corresponding material after Lodge omits the opening soldier-acclamation clause. Retain OMITTED_AT_BOUNDARY; HIGH; resolved.",
+      "before": {
+        "offset": 12906,
+        "sourceQuote": "to receiue and enioy the imperial dignitie",
+        "confidence": "MEDIUM",
+        "status": "OMITTED_AT_BOUNDARY",
+        "notes": "Lodge abbreviates/recasts the accession sequence. Latin I.24 begins with involuntary acclamation by the troops; Lodge places accession as the purpose of withdrawal in I.23 syntax. Provisional boundary before 'to receiue'; no text moved. Signs and unwilling acclamation are not translated distinctly here.",
+        "review": true,
+        "omission": false,
+        "method": "direct_philological_context_review"
+      },
+      "after": {
+        "offset": 12950,
+        "sourceQuote": "How at that instant when he retired himselfe into Aegypt to establish that estate",
+        "confidence": "HIGH",
+        "status": "OMITTED_AT_BOUNDARY",
+        "notes": "Final human adjudication, 2026-10-03: the first clause of Niese I.24, concerning Vespasian being unwillingly proclaimed emperor by the soldiers, is omitted by Lodge. The milestone is placed immediately before How at that instant when he retired himselfe into Aegypt to establish that estate, the first surviving corresponding material. The phrase to receiue and enioy the imperial dignitie remains in I.23, corresponding to Cardwell imperii causa retractus sit and the Greek withdrawal for the imperial command. Lodge text is unchanged. The former MEDIUM placement and rationale are preserved in final-human-adjudications.json.",
+        "review": false,
+        "omission": false,
+        "method": "final_human_adjudication",
+        "adjudication_id": "HUMAN-FINAL-1-24",
+        "decision_history_file": "final-human-adjudications.json"
+      }
+    },
+    {
+      "id": "HUMAN-FINAL-3-182",
+      "citation": "3.182",
+      "resolution": "Approve existing position as secure; HIGH; resolved. DIRECT_ALIGNMENT replaces the former AMBIGUOUS classification to reflect the final approval.",
+      "before": {
+        "offset": 496949,
+        "sourceQuote": "so that the inhabitants were in great distresse",
+        "confidence": "MEDIUM",
+        "status": "AMBIGUOUS",
+        "notes": "Lodge compresses the water shortage and distress at this point; Cardwell's reference to the devised restriction on drinking is explained only in III.183 and III.184. This is a defensible provisional start of the hardship statement, but the precise correspondence of III.182 requires editorial judgement.",
+        "review": true,
+        "omission": false,
+        "method": "direct_philological_context_review"
+      },
+      "after": {
+        "offset": 496949,
+        "sourceQuote": "so that the inhabitants were in great distresse",
+        "confidence": "HIGH",
+        "status": "DIRECT_ALIGNMENT",
+        "notes": "Final human adjudication, 2026-10-03: the existing milestone immediately before so that the inhabitants were in great distresse; for now there was hardly any water left in the citie. is approved as a secure correspondence to Greek and Cardwell III.182. Its offset is unchanged. III.183 continues to begin Ioseph perceiuing there was abundance of all thinges else. The former MEDIUM/AMBIGUOUS assessment and rationale are preserved in final-human-adjudications.json.",
+        "review": false,
+        "omission": false,
+        "method": "final_human_adjudication",
+        "adjudication_id": "HUMAN-FINAL-3-182",
+        "decision_history_file": "final-human-adjudications.json"
+      }
+    }
+  ]
+}

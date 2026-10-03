@@ -1,0 +1,98 @@
+{
+  "schema": "lodge1602-bellum-validation-v1",
+  "date": "2026-10-03",
+  "status": "PASS",
+  "master_sha256": "18a34bdbbfd199ab482b73ad442c19cd0fb5e70794e9d77aa0a74a1c7ad26fc0",
+  "books": [
+    {
+      "book": 1,
+      "chapters": 34,
+      "coarse": 234,
+      "niese": 673,
+      "decoded_text_utf16": 309389,
+      "production_sha256": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119"
+    },
+    {
+      "book": 2,
+      "chapters": 22,
+      "coarse": 143,
+      "niese": 654,
+      "decoded_text_utf16": 221232,
+      "production_sha256": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592"
+    },
+    {
+      "book": 3,
+      "chapters": 10,
+      "coarse": 88,
+      "niese": 542,
+      "decoded_text_utf16": 127093,
+      "production_sha256": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e"
+    },
+    {
+      "book": 4,
+      "chapters": 11,
+      "coarse": 78,
+      "niese": 663,
+      "decoded_text_utf16": 171552,
+      "production_sha256": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e"
+    },
+    {
+      "book": 5,
+      "chapters": 13,
+      "coarse": 65,
+      "niese": 572,
+      "decoded_text_utf16": 159501,
+      "production_sha256": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b"
+    },
+    {
+      "book": 6,
+      "chapters": 10,
+      "coarse": 50,
+      "niese": 442,
+      "decoded_text_utf16": 114709,
+      "production_sha256": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8"
+    },
+    {
+      "book": 7,
+      "chapters": 11,
+      "coarse": 46,
+      "niese": 455,
+      "decoded_text_utf16": 105507,
+      "production_sha256": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5"
+    }
+  ],
+  "chapters": 111,
+  "coarse_links": 704,
+  "niese": 4001,
+  "HIGH": 4001,
+  "MEDIUM": 0,
+  "LOW": 0,
+  "exact_decoded_text_and_whitespace_preserved": true,
+  "complete_source_tree_and_original_tcp_header_preserved": true,
+  "niese_ids_metadata_and_offsets_preserved": true,
+  "frozen_human_history_byte_identical": true,
+  "original_bellum_xml_byte_identical": 21,
+  "all_original_xml_byte_identical": 100,
+  "safeguards": [
+    "I.24",
+    "III.3",
+    "III.182",
+    "III.183",
+    "VI.3",
+    "VI.267",
+    "VI.356",
+    "VI.427",
+    "VII.26"
+  ],
+  "independent_corruption_tests_rejected": [
+    "text",
+    "whitespace",
+    "id",
+    "coarse_link",
+    "chapter_link",
+    "milestone_metadata",
+    "milestone_link",
+    "header",
+    "extra_attribute"
+  ]
+}

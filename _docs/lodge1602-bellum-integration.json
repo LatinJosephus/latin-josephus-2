@@ -1,0 +1,865 @@
+{
+  "schema": "lodge1602-bellum-production-v1",
+  "date": "2026-10-03",
+  "baseline_commit": "57b89a9d107bb76a2b30c146e401a2c76e25e4c3",
+  "master": {
+    "file": "Lodge1602_Bellum_FINAL_ADJUDICATED_20261003.zip",
+    "sha256": "18a34bdbbfd199ab482b73ad442c19cd0fb5e70794e9d77aa0a74a1c7ad26fc0"
+  },
+  "source_key": "lodge1602",
+  "label": "Lodge (1602)",
+  "language": "English",
+  "translation_source_description": "translated out of the Latin, and French",
+  "tcp_id": "A04680",
+  "licence": "CC0 1.0 Universal",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source_xml_sha256": "3ca2646644d8c91cf35e8575a6ffbdeb5ecbd378c502f53fd9445d7da7431de6",
+  "generator": {
+    "path": "bin/lodge1602-bellum-import.ps1",
+    "sha256": "48c3d4f5d906b0330904aaae6629a501e8081f577d68ff038b429d65709b5d97"
+  },
+  "permitted_changes": [
+    "sameAs on the 704 coarse p elements",
+    "sameAs on the 111 chapter div2 elements",
+    "four identified appended production header provenance nodes per book"
+  ],
+  "counts": {
+    "books": 7,
+    "chapters_including_preface": 111,
+    "coarse_units": 704,
+    "niese": 4001,
+    "HIGH": 4001,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "frozen_evidence_sha256": {
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_SUBCHAPTER_ALIGNMENT_704.tsv": "5a4028741b1a833d7b6c718f76e16c134a47d5b38b24c944b34a0592d762e0f9",
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_NIESE_SEGMENTATION_4001.tsv": "c65acf0caf54dd6954899fe01cd1e57967005592e0882cb483d42a88f56ba31c",
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_SOURCE_MANIFEST.json": "eafe8ecfd9245a874abdc042d589c1c1cf1e69be23b4541beb00b9bb65d5fd50",
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_FINAL_HUMAN_ADJUDICATIONS.json": "27b3be89cd410a18892b91a6453f6e4ba2006264df53c123bbf2ea0d39ac7c44",
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_QA.json": "b5d16c4c7fa63b4ceb36c8e90664d044d05af35f3e940941ce673b3f6bbffdab",
+    "_docs/lodge1602-bellum-source/SHA256SUMS.txt": "54e5ace054c13e900f693e5a2dc0a63260fcb61a8aa0b5a85746e5b45273f331"
+  },
+  "books": [
+    {
+      "book": 1,
+      "candidate_entry": "work/output/Candidates/Lodge1602_Bellum_book-01.xml",
+      "candidate_sha256": "931ed4e8f53b580e8c87cbc12f927df053202ff37da0645bc7fa9ddf2a4c740c",
+      "production_path": "assets/xml/bellum/English/Lodge1602/book-01.xml",
+      "production_sha256": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119"
+    },
+    {
+      "book": 2,
+      "candidate_entry": "work/output/Candidates/Lodge1602_Bellum_book-02.xml",
+      "candidate_sha256": "cf4b01312b23426d92767e5659b8ac311ffafd0d946d1882cda02cd5a621281f",
+      "production_path": "assets/xml/bellum/English/Lodge1602/book-02.xml",
+      "production_sha256": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592"
+    },
+    {
+      "book": 3,
+      "candidate_entry": "work/output/Candidates/Lodge1602_Bellum_book-03.xml",
+      "candidate_sha256": "b4e5ff204539703b38f0bbe8d86a7829e03cf4fcfcbc44a9c9ba00d5c06f833c",
+      "production_path": "assets/xml/bellum/English/Lodge1602/book-03.xml",
+      "production_sha256": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e"
+    },
+    {
+      "book": 4,
+      "candidate_entry": "work/output/Candidates/Lodge1602_Bellum_book-04.xml",
+      "candidate_sha256": "def79fed83a0ac7d75e681bc744849693b5c987edf017c3fe60d291731d82af9",
+      "production_path": "assets/xml/bellum/English/Lodge1602/book-04.xml",
+      "production_sha256": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e"
+    },
+    {
+      "book": 5,
+      "candidate_entry": "work/output/Candidates/Lodge1602_Bellum_book-05.xml",
+      "candidate_sha256": "7c5a1b13d23116d6e871ca49b1ca8b664bec911eba125579ba333d8443f9ebcd",
+      "production_path": "assets/xml/bellum/English/Lodge1602/book-05.xml",
+      "production_sha256": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b"
+    },
+    {
+      "book": 6,
+      "candidate_entry": "work/output/Candidates/Lodge1602_Bellum_book-06.xml",
+      "candidate_sha256": "73281dfd425f028c57087f1b2fadf99c15445e927db328e1368ba1d49899b8cd",
+      "production_path": "assets/xml/bellum/English/Lodge1602/book-06.xml",
+      "production_sha256": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8"
+    },
+    {
+      "book": 7,
+      "candidate_entry": "work/output/Candidates/Lodge1602_Bellum_book-07.xml",
+      "candidate_sha256": "fb5402fcbd16bdf8546d2da59249513bcc3ee72339d3a34d588ebe503dba16d1",
+      "production_path": "assets/xml/bellum/English/Lodge1602/book-07.xml",
+      "production_sha256": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5"
+    }
+  ],
+  "chapter_links": [
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter0",
+      "cardwell_chapter_id": "latin-bellum1-chapter0",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter0"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter1",
+      "cardwell_chapter_id": "latin-bellum1-chapter1",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter1"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter2",
+      "cardwell_chapter_id": "latin-bellum1-chapter2",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter2"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter3",
+      "cardwell_chapter_id": "latin-bellum1-chapter3",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter3"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter4",
+      "cardwell_chapter_id": "latin-bellum1-chapter4",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter4"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter5",
+      "cardwell_chapter_id": "latin-bellum1-chapter5",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter5"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter6",
+      "cardwell_chapter_id": "latin-bellum1-chapter6",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter6"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter7",
+      "cardwell_chapter_id": "latin-bellum1-chapter7",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter7"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter8",
+      "cardwell_chapter_id": "latin-bellum1-chapter8",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter8"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter9",
+      "cardwell_chapter_id": "latin-bellum1-chapter9",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter9"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter10",
+      "cardwell_chapter_id": "latin-bellum1-chapter10",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter10"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter11",
+      "cardwell_chapter_id": "latin-bellum1-chapter11",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter11"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter12",
+      "cardwell_chapter_id": "latin-bellum1-chapter12",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter12"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter13",
+      "cardwell_chapter_id": "latin-bellum1-chapter13",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter13"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter14",
+      "cardwell_chapter_id": "latin-bellum1-chapter14",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter14"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter15",
+      "cardwell_chapter_id": "latin-bellum1-chapter15",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter15"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter16",
+      "cardwell_chapter_id": "latin-bellum1-chapter16",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter16"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter17",
+      "cardwell_chapter_id": "latin-bellum1-chapter17",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter17"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter18",
+      "cardwell_chapter_id": "latin-bellum1-chapter18",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter18"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter19",
+      "cardwell_chapter_id": "latin-bellum1-chapter19",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter19"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter20",
+      "cardwell_chapter_id": "latin-bellum1-chapter20",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter20"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter21",
+      "cardwell_chapter_id": "latin-bellum1-chapter21",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter21"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter22",
+      "cardwell_chapter_id": "latin-bellum1-chapter22",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter22"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter23",
+      "cardwell_chapter_id": "latin-bellum1-chapter23",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter23"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter24",
+      "cardwell_chapter_id": "latin-bellum1-chapter24",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter24"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter25",
+      "cardwell_chapter_id": "latin-bellum1-chapter25",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter25"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter26",
+      "cardwell_chapter_id": "latin-bellum1-chapter26",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter26"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter27",
+      "cardwell_chapter_id": "latin-bellum1-chapter27",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter27"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter28",
+      "cardwell_chapter_id": "latin-bellum1-chapter28",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter28"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter29",
+      "cardwell_chapter_id": "latin-bellum1-chapter29",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter29"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter30",
+      "cardwell_chapter_id": "latin-bellum1-chapter30",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter30"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter31",
+      "cardwell_chapter_id": "latin-bellum1-chapter31",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter31"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter32",
+      "cardwell_chapter_id": "latin-bellum1-chapter32",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter32"
+    },
+    {
+      "book": 1,
+      "lodge_chapter_id": "english-lodge1602-bellum1-chapter33",
+      "cardwell_chapter_id": "latin-bellum1-chapter33",
+      "sameAs": "../../Latin/book-01.xml#latin-bellum1-chapter33"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter1",
+      "cardwell_chapter_id": "latin-bellum2-chapter1",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter1"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter2",
+      "cardwell_chapter_id": "latin-bellum2-chapter2",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter2"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter3",
+      "cardwell_chapter_id": "latin-bellum2-chapter3",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter3"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter4",
+      "cardwell_chapter_id": "latin-bellum2-chapter4",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter4"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter5",
+      "cardwell_chapter_id": "latin-bellum2-chapter5",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter5"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter6",
+      "cardwell_chapter_id": "latin-bellum2-chapter6",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter6"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter7",
+      "cardwell_chapter_id": "latin-bellum2-chapter7",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter7"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter8",
+      "cardwell_chapter_id": "latin-bellum2-chapter8",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter8"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter9",
+      "cardwell_chapter_id": "latin-bellum2-chapter9",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter9"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter10",
+      "cardwell_chapter_id": "latin-bellum2-chapter10",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter10"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter11",
+      "cardwell_chapter_id": "latin-bellum2-chapter11",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter11"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter12",
+      "cardwell_chapter_id": "latin-bellum2-chapter12",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter12"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter13",
+      "cardwell_chapter_id": "latin-bellum2-chapter13",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter13"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter14",
+      "cardwell_chapter_id": "latin-bellum2-chapter14",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter14"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter15",
+      "cardwell_chapter_id": "latin-bellum2-chapter15",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter15"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter16",
+      "cardwell_chapter_id": "latin-bellum2-chapter16",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter16"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter17",
+      "cardwell_chapter_id": "latin-bellum2-chapter17",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter17"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter18",
+      "cardwell_chapter_id": "latin-bellum2-chapter18",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter18"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter19",
+      "cardwell_chapter_id": "latin-bellum2-chapter19",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter19"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter20",
+      "cardwell_chapter_id": "latin-bellum2-chapter20",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter20"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter21",
+      "cardwell_chapter_id": "latin-bellum2-chapter21",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter21"
+    },
+    {
+      "book": 2,
+      "lodge_chapter_id": "english-lodge1602-bellum2-chapter22",
+      "cardwell_chapter_id": "latin-bellum2-chapter22",
+      "sameAs": "../../Latin/book-02.xml#latin-bellum2-chapter22"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter1",
+      "cardwell_chapter_id": "latin-bellum3-chapter1",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter1"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter2",
+      "cardwell_chapter_id": "latin-bellum3-chapter2",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter2"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter3",
+      "cardwell_chapter_id": "latin-bellum3-chapter3",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter3"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter4",
+      "cardwell_chapter_id": "latin-bellum3-chapter4",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter4"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter5",
+      "cardwell_chapter_id": "latin-bellum3-chapter5",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter5"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter6",
+      "cardwell_chapter_id": "latin-bellum3-chapter6",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter6"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter7",
+      "cardwell_chapter_id": "latin-bellum3-chapter7",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter7"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter8",
+      "cardwell_chapter_id": "latin-bellum3-chapter8",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter8"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter9",
+      "cardwell_chapter_id": "latin-bellum3-chapter9",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter9"
+    },
+    {
+      "book": 3,
+      "lodge_chapter_id": "english-lodge1602-bellum3-chapter10",
+      "cardwell_chapter_id": "latin-bellum3-chapter10",
+      "sameAs": "../../Latin/book-03.xml#latin-bellum3-chapter10"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter1",
+      "cardwell_chapter_id": "latin-bellum4-chapter1",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter1"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter2",
+      "cardwell_chapter_id": "latin-bellum4-chapter2",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter2"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter3",
+      "cardwell_chapter_id": "latin-bellum4-chapter3",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter3"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter4",
+      "cardwell_chapter_id": "latin-bellum4-chapter4",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter4"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter5",
+      "cardwell_chapter_id": "latin-bellum4-chapter5",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter5"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter6",
+      "cardwell_chapter_id": "latin-bellum4-chapter6",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter6"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter7",
+      "cardwell_chapter_id": "latin-bellum4-chapter7",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter7"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter8",
+      "cardwell_chapter_id": "latin-bellum4-chapter8",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter8"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter9",
+      "cardwell_chapter_id": "latin-bellum4-chapter9",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter9"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter10",
+      "cardwell_chapter_id": "latin-bellum4-chapter10",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter10"
+    },
+    {
+      "book": 4,
+      "lodge_chapter_id": "english-lodge1602-bellum4-chapter11",
+      "cardwell_chapter_id": "latin-bellum4-chapter11",
+      "sameAs": "../../Latin/book-04.xml#latin-bellum4-chapter11"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter1",
+      "cardwell_chapter_id": "latin-bellum5-chapter1",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter1"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter2",
+      "cardwell_chapter_id": "latin-bellum5-chapter2",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter2"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter3",
+      "cardwell_chapter_id": "latin-bellum5-chapter3",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter3"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter4",
+      "cardwell_chapter_id": "latin-bellum5-chapter4",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter4"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter5",
+      "cardwell_chapter_id": "latin-bellum5-chapter5",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter5"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter6",
+      "cardwell_chapter_id": "latin-bellum5-chapter6",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter6"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter7",
+      "cardwell_chapter_id": "latin-bellum5-chapter7",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter7"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter8",
+      "cardwell_chapter_id": "latin-bellum5-chapter8",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter8"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter9",
+      "cardwell_chapter_id": "latin-bellum5-chapter9",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter9"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter10",
+      "cardwell_chapter_id": "latin-bellum5-chapter10",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter10"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter11",
+      "cardwell_chapter_id": "latin-bellum5-chapter11",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter11"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter12",
+      "cardwell_chapter_id": "latin-bellum5-chapter12",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter12"
+    },
+    {
+      "book": 5,
+      "lodge_chapter_id": "english-lodge1602-bellum5-chapter13",
+      "cardwell_chapter_id": "latin-bellum5-chapter13",
+      "sameAs": "../../Latin/book-05.xml#latin-bellum5-chapter13"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter1",
+      "cardwell_chapter_id": "latin-bellum6-chapter1",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter1"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter2",
+      "cardwell_chapter_id": "latin-bellum6-chapter2",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter2"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter3",
+      "cardwell_chapter_id": "latin-bellum6-chapter3",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter3"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter4",
+      "cardwell_chapter_id": "latin-bellum6-chapter4",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter4"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter5",
+      "cardwell_chapter_id": "latin-bellum6-chapter5",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter5"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter6",
+      "cardwell_chapter_id": "latin-bellum6-chapter6",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter6"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter7",
+      "cardwell_chapter_id": "latin-bellum6-chapter7",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter7"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter8",
+      "cardwell_chapter_id": "latin-bellum6-chapter8",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter8"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter9",
+      "cardwell_chapter_id": "latin-bellum6-chapter9",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter9"
+    },
+    {
+      "book": 6,
+      "lodge_chapter_id": "english-lodge1602-bellum6-chapter10",
+      "cardwell_chapter_id": "latin-bellum6-chapter10",
+      "sameAs": "../../Latin/book-06.xml#latin-bellum6-chapter10"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter1",
+      "cardwell_chapter_id": "latin-bellum7-chapter1",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter1"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter2",
+      "cardwell_chapter_id": "latin-bellum7-chapter2",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter2"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter3",
+      "cardwell_chapter_id": "latin-bellum7-chapter3",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter3"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter4",
+      "cardwell_chapter_id": "latin-bellum7-chapter4",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter4"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter5",
+      "cardwell_chapter_id": "latin-bellum7-chapter5",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter5"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter6",
+      "cardwell_chapter_id": "latin-bellum7-chapter6",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter6"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter7",
+      "cardwell_chapter_id": "latin-bellum7-chapter7",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter7"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter8",
+      "cardwell_chapter_id": "latin-bellum7-chapter8",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter8"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter9",
+      "cardwell_chapter_id": "latin-bellum7-chapter9",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter9"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter10",
+      "cardwell_chapter_id": "latin-bellum7-chapter10",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter10"
+    },
+    {
+      "book": 7,
+      "lodge_chapter_id": "english-lodge1602-bellum7-chapter11",
+      "cardwell_chapter_id": "latin-bellum7-chapter11",
+      "sameAs": "../../Latin/book-07.xml#latin-bellum7-chapter11"
+    }
+  ],
+  "original_xml_sha256": {
+    "assets/xml/antiquities/English/book-01.xml": "b9ad70663c776d0a755a89c197409a9028b8218a678bcfb269a33c924bf10054",
+    "assets/xml/antiquities/English/book-02.xml": "b4dd6644fe4936ad3f36b8dc72a92dca27d5de4c06a82f3e75e41cc612243101",
+    "assets/xml/antiquities/English/book-03.xml": "6cb8f314afd36950b1d945e9f39ed3cfbd74e82bf8bd8c3d1c8fafd7d4e9b424",
+    "assets/xml/antiquities/English/book-04.xml": "a9e80f7ea0836ef2e5e79c86e947e9adb588f93f33925bbb9f21724a33b8f103",
+    "assets/xml/antiquities/English/book-05.xml": "16477425a4efd12e5ae584d24581ef4531c3fd4b9be8a49226defe10870b8df4",
+    "assets/xml/antiquities/English/book-06.xml": "3f80eeedbd414ee1f9b0d72276fcbab01737c93709e899ae6920ed2630172a05",
+    "assets/xml/antiquities/English/book-07.xml": "7dffada6163a5aba1c2a2c7dcd4fa6c6ecd1d7aa89e2343c64d88eeea94c38da",
+    "assets/xml/antiquities/English/book-08.xml": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba",
+    "assets/xml/antiquities/English/book-09.xml": "1cb809169442f5cea410773d322ffec315cd6a4bb0880285b1ea691245c84940",
+    "assets/xml/antiquities/English/book-10.xml": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d",
+    "assets/xml/antiquities/English/book-11.xml": "f8f26004ac52b6080a56ca94ad490e8671d8144f3624c40b9b2e7a516c0e1467",
+    "assets/xml/antiquities/English/book-12.xml": "9cc8da830c8a630c024bf5729004fb224c17f7fabe5b7205cbeab37a34d10a1e",
+    "assets/xml/antiquities/English/book-13.xml": "c2b7b5b4834c608e4dfadfa2956c436b5926fae088d02fc70c98ce5aaf421f3c",
+    "assets/xml/antiquities/English/book-14.xml": "882fede4dfb37fc629cd1b21aaec8553b1fc74888a345891e9d70d8634972e28",
+    "assets/xml/antiquities/English/book-15.xml": "3ebc0c9f4449450a12c3a90b3d71d5120eae03eb8b41d926fd3d4654f565cc81",
+    "assets/xml/antiquities/English/book-16.xml": "b7039309098c70045d7aa26dc8bf47bb5b274f4be79036f1af314879d79adfce",
+    "assets/xml/antiquities/English/book-17.xml": "d790d8c8138235db359479b6d92a230151852e55506fe36a8e502757df0dc678",
+    "assets/xml/antiquities/English/book-18.xml": "edc2d82807c5e3e2c878bebbe81d1a1f1b0a50531e33141989dfadaf34c5b5c1",
+    "assets/xml/antiquities/English/book-19.xml": "33e2d857bacd6648309c4ebc71db6141a92f4f995bca8f3807e89cdc459446d7",
+    "assets/xml/antiquities/English/book-20.xml": "cefd1230d6c1205583c30b6db4825fb948deb8e165775f06e004d643285fb35b",
+    "assets/xml/antiquities/English/preface.xml": "e35e7b31e16cf96d3d3d59279daacef22e10b69b05110d0cdc430bcf933343d9",
+    "assets/xml/antiquities/Greek/book-01.xml": "4a6692da73f420f9c97fa2461e6f01443b6d87f991ecada428fce7180c328bc3",
+    "assets/xml/antiquities/Greek/book-02.xml": "39f9b8d8154d43d34564ec292c0df2759e8532e3ed48e113e6d13064a8eaf800",
+    "assets/xml/antiquities/Greek/book-03.xml": "19cb34b520b700098ad4cc570651b368809302cd0e48c87fda23b8f0d7454d13",
+    "assets/xml/antiquities/Greek/book-04.xml": "02b972540d2634a6b47d01bc9d3786feb15c48bf117a534205436d4e5b5f1a2a",
+    "assets/xml/antiquities/Greek/book-05.xml": "29a6b6873f50f3f23b8153f9475aa466d5e0ff933c5e09fb9dadb9c6712880d7",
+    "assets/xml/antiquities/Greek/book-06.xml": "dfc60dbee242baf83b5437f5ae3c83412061094a027ba9779a48302693d7f371",
+    "assets/xml/antiquities/Greek/book-07.xml": "3efc7b52ad189cc98f7dccb7a525d5a1811674bf83cc1f2baa874818db0b2ed5",
+    "assets/xml/antiquities/Greek/book-08.xml": "8b684917c163de459ada56ef1293da6a8b87515344ccc961419b7e602ebea433",
+    "assets/xml/antiquities/Greek/book-09.xml": "7e0de6f04a5a85953444655e849a6d999eb625f802536aad70c2a407bcbc9811",
+    "assets/xml/antiquities/Greek/book-10.xml": "e49314528e626f47c64e507cbd6a96978419ae1765b059ed6100818e31279089",
+    "assets/xml/antiquities/Greek/book-11.xml": "e74888e1361ab23351ef47717bc204f5cc24dad361472eb0b5f00adfc7098452",
+    "assets/xml/antiquities/Greek/book-12.xml": "cc5ed014ddcc06b1cad376476994ca9833df688f4d68dd17e1f1dea1899b3cf0",
+    "assets/xml/antiquities/Greek/book-13.xml": "ff1177b785ad268e9415e25769bac3fd026d216858c66534ebf8a3f7154ffd57",
+    "assets/xml/antiquities/Greek/book-14.xml": "1bb5f4e4c9aa3a633d2933b015fac4b39d6ba1937a232c4952c102e4740fe555",
+    "assets/xml/antiquities/Greek/book-15.xml": "42015324e54795ad6935e895e4ffcec79f35dd1bb75ab85b0b073e2ba3271341",
+    "assets/xml/antiquities/Greek/book-16.xml": "6f422f698319a11079217767b41b43488be1b090a28413e14bd1962629fe7966",
+    "assets/xml/antiquities/Greek/book-17.xml": "d3630e20ebde5047a3b11683afda597d3852e662a7892d5f8f798c21f7c0be24",
+    "assets/xml/antiquities/Greek/book-18.xml": "392cf74dce10d1a5bccf96e74bc0670a540444796e908a57ad19e4baca27386d",
+    "assets/xml/antiquities/Greek/book-19.xml": "6fdf3e3c490091b82aac1cb8faab179d49d9c45a572bc9cd4c286d674ba1e46e",
+    "assets/xml/antiquities/Greek/book-20.xml": "30590cc6e8ca04a3626d51d4baffb010538648fb9da014e01becf2d3de9fde1a",
+    "assets/xml/antiquities/Greek/preface.xml": "94be08e73b1bd84cfd71f6c5958bebf903b0aeee480ca80cae7219596b1f7c69",
+    "assets/xml/antiquities/Latin/book-01.xml": "468e71ada974c9eec06f3aff35cc14c9cfcb0422a382e0155433f60877eaf2a1",
+    "assets/xml/antiquities/Latin/book-02.xml": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+    "assets/xml/antiquities/Latin/book-03.xml": "061184136a62d3d2782a2029ce20edd9ed74b525229ba630715606e59d337b2c",
+    "assets/xml/antiquities/Latin/book-04.xml": "2a1bb286f244abe4bd2aebd7f4e8a2bf0e26e8ea7d812d5e0b1ee787328e4c24",
+    "assets/xml/antiquities/Latin/book-05.xml": "fe5cf33bfeb60e5490f3f257444db4c2808dcfe32a23d18f41c01f9bbab6113a",
+    "assets/xml/antiquities/Latin/book-06.xml": "2b0846d4a4ff03a99bf7a6334f3a4595e184fddade4536f8d4db8f726e0e9e76",
+    "assets/xml/antiquities/Latin/book-07.xml": "b5a509b7033c41f676f620ad34f716149c8d01afe3662f99985d95e8da11d664",
+    "assets/xml/antiquities/Latin/book-08.xml": "a300124a948ff44b7216b48c18cb929033500f09b71ae944535313f2df88db80",
+    "assets/xml/antiquities/Latin/book-09.xml": "d65b9e3565bb418a819c3b9551a2252bfe006995aa504654239e2d202c96d735",
+    "assets/xml/antiquities/Latin/book-10.xml": "8b2104191d4dba2e7e74ca684146519ed5b5113a5e983a5ceb9a6e970f741d3a",
+    "assets/xml/antiquities/Latin/book-11.xml": "02fcf44d1315f30011d4e88417b7292dda0c1b335d9cfadfec0b5d2f632e9f51",
+    "assets/xml/antiquities/Latin/book-12.xml": "9a20f3b8dfa227b267371cc6400e0f40455d51241225c1ac872092f486ef84bf",
+    "assets/xml/antiquities/Latin/book-13.xml": "2c9642d43273038ce19bdc75f0fe1b478daba2897fb2072094959183b3f42308",
+    "assets/xml/antiquities/Latin/book-14.xml": "ea864c5885cf6dbe00c0914064d59418b54324aa4825e39ce7a925037e170c96",
+    "assets/xml/antiquities/Latin/book-15.xml": "d9bbd47f0878231d31ab8efe1e9c895c10d1ae20a592a5936e8f6afa2ed49232",
+    "assets/xml/antiquities/Latin/book-16.xml": "d3abdec42c496a8375203c606a7aab1867918ef899773352af2c71567513f696",
+    "assets/xml/antiquities/Latin/book-17.xml": "ebb345435b006089e058604369180fdd94509806081fe89bc27348a517c4af91",
+    "assets/xml/antiquities/Latin/book-18.xml": "5c4d1e6486e2229db3e47a4ab7841573427a2da6c9be2457fba1198d8b71bbc4",
+    "assets/xml/antiquities/Latin/book-19.xml": "5fa3b1f9b39d614d99b8d73fbf5675166c1ee0cca47cd4a242b27c5ea70d6a73",
+    "assets/xml/antiquities/Latin/book-20.xml": "f59f763998b9d0e8ffd047603bdb629d58c9b099eeabee386d58bf3347a93509",
+    "assets/xml/antiquities/Latin/preface.xml": "8cc821957a03e694e795bcc29fb40bff9c9952eff06567e2da76b4e4732843d2",
+    "assets/xml/bellum/English/book-01.xml": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+    "assets/xml/bellum/English/book-02.xml": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+    "assets/xml/bellum/English/book-03.xml": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+    "assets/xml/bellum/English/book-04.xml": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+    "assets/xml/bellum/English/book-05.xml": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+    "assets/xml/bellum/English/book-06.xml": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+    "assets/xml/bellum/English/book-07.xml": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+    "assets/xml/bellum/Greek/book-01.xml": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+    "assets/xml/bellum/Greek/book-02.xml": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+    "assets/xml/bellum/Greek/book-03.xml": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+    "assets/xml/bellum/Greek/book-04.xml": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+    "assets/xml/bellum/Greek/book-05.xml": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+    "assets/xml/bellum/Greek/book-06.xml": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+    "assets/xml/bellum/Greek/book-07.xml": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+    "assets/xml/bellum/Latin/book-01.xml": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+    "assets/xml/bellum/Latin/book-02.xml": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+    "assets/xml/bellum/Latin/book-03.xml": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+    "assets/xml/bellum/Latin/book-04.xml": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+    "assets/xml/bellum/Latin/book-05.xml": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+    "assets/xml/bellum/Latin/book-06.xml": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+    "assets/xml/bellum/Latin/book-07.xml": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+    "assets/xml/contra-apionem/English/book-01.xml": "9b88f23d94420125135e64ec850b4c19e46fa357feb73c91d9136c1ba63a569a",
+    "assets/xml/contra-apionem/English/book-02.xml": "5685e7fe801b0157a09e70f68b667637b7b601230edd16a7c609ac59553ee422",
+    "assets/xml/contra-apionem/Greek/book-01.xml": "f2f38401bb9bd7ef456b36400605bd908ba25d394bec8ad8c79b2b9f6df12169",
+    "assets/xml/contra-apionem/Greek/book-02.xml": "134521f8cb973c0272f97fdd9cb97313a33b69b89069b196af1ba722cedb9485",
+    "assets/xml/contra-apionem/Latin/book-01.xml": "7a1f760bc7a67139c5e94e7d280123052eb770ff0d9215ffe39fb2c9ae7a4baf",
+    "assets/xml/contra-apionem/Latin/book-02.xml": "4410962053fa0dab256a6f40380822e34803beefcc3ba2e272faf36049aff58f",
+    "assets/xml/deh/English/book-01.xml": "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
+    "assets/xml/deh/English/book-02.xml": "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
+    "assets/xml/deh/English/book-03.xml": "e5dc0d008801809385c8bcaf43c5ee2d42d861b572968e3ba6f6659543175d6b",
+    "assets/xml/deh/English/book-04.xml": "79068f7cbc2591b38fab9b36ee300d7e173ced0fab7e0dfac1668f56726445bc",
+    "assets/xml/deh/English/book-05.xml": "7658e545360849e75627a3ff771742d5fc06127da7613740c595c21e2aff5298",
+    "assets/xml/deh/Latin/book-01.xml": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+    "assets/xml/deh/Latin/book-02.xml": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+    "assets/xml/deh/Latin/book-03.xml": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+    "assets/xml/deh/Latin/book-04.xml": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+    "assets/xml/deh/Latin/book-05.xml": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6"
+  },
+  "provenance_note": "The master and copied editorial authorities remain frozen. Production SHA-256 values identify structural derivatives; Niese milestones and original Lodge/TCP text are unchanged."
+}

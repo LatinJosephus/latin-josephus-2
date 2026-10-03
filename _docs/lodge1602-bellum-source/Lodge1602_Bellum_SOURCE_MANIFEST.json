@@ -1,0 +1,282 @@
+{
+  "task": "Lodge 1602 Bellum candidate segmentation",
+  "date_utc": "2026-10-03",
+  "source": {
+    "file": "A04680.xml",
+    "sha256": "3ca2646644d8c91cf35e8575a6ffbdeb5ecbd378c502f53fd9445d7da7431de6",
+    "bytes": 6320955,
+    "title": "The famous and memorable vvorkes of Iosephus, a man of much honour and learning among the Iewes. Faithfully translated out of the Latin, and French, by Tho. Lodge Doctor in Physicke",
+    "tcp_id": "A04680",
+    "edition": "London, 1602",
+    "licence": "CC0 1.0 Universal",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "provenance_url": "https://raw.githubusercontent.com/textcreationpartnership/A04680/master/A04680.xml",
+    "provenance_method": "User-supplied official TCP TEI P5; no fetch script executed"
+  },
+  "extraction": {
+    "file": "Lodge1602_Bellum_EXTRACTION.xml",
+    "sha256": "213e5f9bd924617e4d2be88180e473c84796406c6640ce54825fc7827a2d8d6b",
+    "bytes": 1547331,
+    "source_roots": [
+      {
+        "printedBook": 0,
+        "xpath": "/TEI[1]/text[1]/group[1]/text[2]/front[1]/div[3]",
+        "heading": "THE FIRST OF THOSE SEVEN BOOKES, WHICH WERE",
+        "start": 0,
+        "end": 15826,
+        "rawStart": 4120531,
+        "rawEnd": 4143491,
+        "firstPage": {
+          "facs": "tcp:12923:286"
+        },
+        "lastPage": {
+          "n": "557",
+          "facs": "tcp:12923:287"
+        }
+      },
+      {
+        "printedBook": 1,
+        "xpath": "/TEI[1]/text[1]/group[1]/text[2]/body[1]/div[1]",
+        "heading": "THE FIRST BOOKE OF THE WARRES OF THE IEWES,",
+        "start": 15826,
+        "end": 270830,
+        "rawStart": 4143547,
+        "rawEnd": 4523500,
+        "firstPage": {
+          "n": "558",
+          "facs": "tcp:12923:288"
+        },
+        "lastPage": {
+          "n": "606",
+          "facs": "tcp:12923:312"
+        }
+      },
+      {
+        "printedBook": 2,
+        "xpath": "/TEI[1]/text[1]/group[1]/text[2]/body[1]/div[2]",
+        "heading": "THE SECOND BOOKE OF THE WARRES OF THE IEWES,",
+        "start": 270830,
+        "end": 460180,
+        "rawStart": 4523516,
+        "rawEnd": 4807425,
+        "firstPage": {
+          "n": "607",
+          "facs": "tcp:12923:312"
+        },
+        "lastPage": {
+          "n": "644",
+          "facs": "tcp:12923:331"
+        }
+      },
+      {
+        "printedBook": 3,
+        "xpath": "/TEI[1]/text[1]/group[1]/text[2]/body[1]/div[3]",
+        "heading": "THE THIRD BOOKE OF THE WARRES OF THE IEWES,",
+        "start": 460180,
+        "end": 571524,
+        "rawStart": 4807441,
+        "rawEnd": 4966917,
+        "firstPage": {
+          "n": "645",
+          "facs": "tcp:12923:331"
+        },
+        "lastPage": {
+          "n": "666",
+          "facs": "tcp:12923:342"
+        }
+      },
+      {
+        "printedBook": 4,
+        "xpath": "/TEI[1]/text[1]/group[1]/text[2]/body[1]/div[4]",
+        "heading": "THE FOVRTH BOOKE OF THE WARRES OF THE IEWES,",
+        "start": 571524,
+        "end": 647017,
+        "rawStart": 4966933,
+        "rawEnd": 5070215,
+        "firstPage": {
+          "n": "667",
+          "facs": "tcp:12923:342"
+        },
+        "lastPage": {
+          "n": "681",
+          "facs": "tcp:12923:349"
+        }
+      },
+      {
+        "printedBook": 5,
+        "xpath": "/TEI[1]/text[1]/group[1]/text[2]/body[1]/div[5]",
+        "heading": "THE FIFTH BOOKE OF THE WARRES OF THE IEWES,",
+        "start": 647017,
+        "end": 722999,
+        "rawStart": 5070231,
+        "rawEnd": 5181995,
+        "firstPage": {
+          "n": "682",
+          "facs": "tcp:12923:350"
+        },
+        "lastPage": {
+          "n": "696",
+          "facs": "tcp:12923:357"
+        }
+      },
+      {
+        "printedBook": 6,
+        "xpath": "/TEI[1]/text[1]/group[1]/text[2]/body[1]/div[6]",
+        "heading": "THE SIXTH BOOKE OF THE WARRES OF THE IEWES,",
+        "start": 722999,
+        "end": 864813,
+        "rawStart": 5182011,
+        "rawEnd": 5378669,
+        "firstPage": {
+          "n": "697",
+          "facs": "tcp:12923:357"
+        },
+        "lastPage": {
+          "n": "724",
+          "facs": "tcp:12923:371"
+        }
+      },
+      {
+        "printedBook": 7,
+        "xpath": "/TEI[1]/text[1]/group[1]/text[2]/body[1]/div[7]",
+        "heading": "THE SEVENTH BOOKE OF THE WARRES OF THE IEWES,",
+        "start": 864813,
+        "end": 1053320,
+        "rawStart": 5378685,
+        "rawEnd": 5656258,
+        "firstPage": {
+          "n": "725",
+          "facs": "tcp:12923:371"
+        },
+        "lastPage": {
+          "n": "763",
+          "facs": "tcp:12923:390"
+        }
+      }
+    ],
+    "start": "Authorial preface, page 555, tcp:12923:286",
+    "end": "End of printed Book VII; last encoded page 763, tcp:12923:390",
+    "method": "Preserve complete raw XML subtrees for the authorial preface and seven printed Warres books; retain original TCP header; concatenate selected subtrees without inter-subtree formatting whitespace.",
+    "markup": "All source headings, tables of contents, page breaks, marginal notes, character markup and illegibility gaps retained. Analysis stream excludes headings/notes and joins empty EOLhyphen character elements only for finding boundaries; extraction is unchanged.",
+    "excluded": "Bellum title page and Lodge dedication to Anthony Palmer; Antiquities, Life, Contra Apionem, Rule of Reason, index."
+  },
+  "controls": {
+    "units": [
+      234,
+      143,
+      88,
+      78,
+      65,
+      50,
+      46
+    ],
+    "sections": [
+      673,
+      654,
+      542,
+      663,
+      572,
+      442,
+      455
+    ],
+    "total_units": 704,
+    "total_sections": 4001
+  },
+  "input_manifest_discrepancies": [
+    {
+      "path": "SHA256SUMS.txt",
+      "expectedBytes": 3682,
+      "actualBytes": 3772,
+      "expected": "ef3e26d833c6c555f6fe8ef11f8c63973f2115ec14271853e8a4d0fd2498c7e3",
+      "actual": "61d5ac45059635bb651cc4d95ad029e8a4b2dee8e85ab36a886eb6a54cd46a65"
+    }
+  ],
+  "candidate_encoding": {
+    "status": "Editorial candidates",
+    "hierarchy": "div1 book -> div2 frozen Cardwell chapter -> p stable coarse unit -> milestone Niese citation",
+    "source_structure_normalization": "TCP block elements (div, p, head, byline, list, item, argument, closer, opener, signed, trailer, lg, l, table, row, cell) become inline seg type=tcp-element with original XPath corresp. Original type is retained as tcp:type. Other TCP elements/attributes are retained. Source elements crossing a project boundary are closed and reopened, so typography/notes remain well-formed. Original xml:id attributes, if any, are recorded as tcp:xml-id and given distinct Lodge IDs. No added whitespace in candidate body.",
+    "text_invariance": "All source text nodes, including headings, contents, marginal notes, gap descriptions and formatting whitespace, occur once, in original order. XML entity spelling and empty-element serialization may differ; decoded XML text is identical after XML line-ending normalization.",
+    "omission_encoding": "VI.3 is the sole whole-section omission, represented by an empty gap. Twelve OMITTED_AT_BOUNDARY cases concern absent, compressed or displaced opening wording, including resolved I.24. No unresolved zero-length span remains.",
+    "links": "No sameAs alignment claims are emitted; unit correspondence is recorded in the registers.",
+    "analysis_offsets": "UTF-16 offsets into a diagnostic stream of narrative p text excluding note; synthetic newline after each p. These offsets locate evidence and do not define textual authority.",
+    "tsv_escapes": "Literal backslash, tab, CR and LF are represented by \\, \\t, \\r and \\n; unescape to recover exact source excerpts.",
+    "canonical_book_mapping": {
+      "I": "Authorial preface and printed Book I",
+      "II": "Printed Book II",
+      "III": "Printed Book III",
+      "IV": "Printed Books IV and V",
+      "V": "Printed Book VI",
+      "VI": "First part of printed Book VII",
+      "VII": "Remainder of printed Book VII, starting When there was none left to kill, within printed chapter 18"
+    },
+    "confidence": {
+      "books": 7,
+      "units": 704,
+      "sections": 4001,
+      "confidence": {
+        "HIGH": 4001,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "unit_confidence": {
+        "HIGH": 704,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "alignment_status_counts": {
+        "DIRECT_ALIGNMENT": 3892,
+        "OMITTED_AT_BOUNDARY": 12,
+        "SUBSTANTIVE_ALIGNMENT": 90,
+        "LODGE_ADDITION_OR_TRANSPOSITION": 6,
+        "LODGE_OMISSION": 1
+      },
+      "editorial_detail_status_counts": {
+        "DIRECT_ALIGNMENT": 3892,
+        "OMITTED_AT_BOUNDARY": 12,
+        "SUBSTANTIVE_ALIGNMENT": 53,
+        "LODGE_ADDITION_OR_TRANSPOSITION": 6,
+        "SUBSTANTIVE_DIFFERENCE": 36,
+        "LODGE_OMISSION": 1,
+        "PARAPHRASE": 1
+      },
+      "review_cases": 84,
+      "source_queries": 677,
+      "confirmed_omissions": [
+        "6.3"
+      ],
+      "unresolved_zero_length_spans": [],
+      "manually_checked_boundaries": 4001,
+      "philological_alignment_complete": true,
+      "candidate_status": "Editorial candidates"
+    },
+    "status_vocabulary": "SUBSTANTIVE_DIFFERENCE and PARAPHRASE export as SUBSTANTIVE_ALIGNMENT. The two final human decisions supersede their earlier MEDIUM assessments, preserved in history. All other saved decisions are unchanged.",
+    "confidence_scope": "All 4001 placements are HIGH. Retained HIGH review flags concern accepted source divergences, damage, omissions or non-contiguous correspondence, not unchecked boundary placement. Neither resolved human case remains in REVIEW."
+  },
+  "finalized_utc": "2026-10-03T16:43:54.042Z",
+  "recovery": {
+    "file": "Lodge1602_Bellum_RECOVERY.json",
+    "archive_sha256": "d3fbf251f2906c632b72c162eecbb92aa330af0b5d7f5591de00c29b9d0e3218",
+    "recovered_checked_boundaries": 1828,
+    "first_unchecked_at_recovery": "2.201",
+    "continued_boundaries": 2173,
+    "final_checked_boundaries": 4001,
+    "recovered_coarse_approvals": 704,
+    "original_decisions_preserved_except_authorized_human_cases": [
+      "1.24",
+      "3.182"
+    ],
+    "recovered_decisions_sha256": "eb43cd05686d7494b7095daee3528a675ea7231d0bb28a6a50bc3ff9a307d84d",
+    "final_decisions_sha256": "0f791ace73ffe9362e327abf3a36dd11ada01c96bde69a722323e2e8b3a6997a"
+  },
+  "final_human_adjudications": {
+    "file": "Lodge1602_Bellum_FINAL_HUMAN_ADJUDICATIONS.json",
+    "sha256": "27b3be89cd410a18892b91a6453f6e4ba2006264df53c123bbf2ea0d39ac7c44",
+    "citations": [
+      "1.24",
+      "3.182"
+    ],
+    "resolved": true,
+    "former_medium_states_preserved": true,
+    "other_3999_decisions_unchanged": true
+  }
+}

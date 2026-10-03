@@ -1,0 +1,5 @@
+# Keep frozen Lodge evidence and deterministic derivatives byte-identical on Windows.
+/assets/xml/bellum/English/Lodge1602/book-0[1-7].xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/_docs/lodge1602-bellum-source/* -text whitespace=cr-at-eol
+/_docs/lodge1602-bellum-*.json -text whitespace=cr-at-eol
+/bin/lodge1602-bellum-* -text whitespace=cr-at-eol
