@@ -1,0 +1,32 @@
+Latin Josephus typography pilot
+Generated: 2026-10-04T14:16:49-04:00
+Base site HEAD: 5dde6ff0ddfe89fef8088684dc8d1741b9c54809
+
+COELACANTH
+Official upstream: https://gitlab.com/Fuzzypeg/coelacanth
+Upstream commit: 4f30b6372371a63698e7e7a2ed586c67c08f4ce9
+Release package: release/coelacanth_v0.3.0.zip
+Regular: Coelacanth.otf
+Italic: Coelacanth-It.otf
+Bold: Coelacanth-Bold.otf
+Licence: SIL Open Font License 1.1
+Licence copy: licenses/Coelacanth-LICENSE.md
+
+SOURCE SANS 3
+Official upstream: https://github.com/adobe-fonts/source-sans
+Release-branch commit: 87b37a2daaed80fcb8e8ccb0085c4d72ddade12e
+Regular: WOFF2/OTF/SourceSans3-Regular.otf.woff2
+Italic: WOFF2/OTF/SourceSans3-It.otf.woff2
+Semibold: WOFF2/OTF/SourceSans3-Semibold.otf.woff2
+Licence: SIL Open Font License 1.1
+Licence copy: licenses/SourceSans3-LICENSE.md
+
+DESIGN POLICY
+Coelacanth: scholarly text and headings.
+Source Sans 3: navigation, controls, selectors, labels, metadata.
+Fallback stacks remain active.
+font-display: swap is used.
+
+PILOT LIMIT
+The existing Roboto / Roboto Slab Google Fonts request remains in _includes/head.html
+during this review. If accepted for production, remove it in a later cleanup.
