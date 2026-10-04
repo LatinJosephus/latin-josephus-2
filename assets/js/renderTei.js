@@ -1494,6 +1494,58 @@ document.addEventListener("DOMContentLoaded", () => {
     return wrapper;
   };
 
+
+  const bellumGreekRangeView = (data, scope) => {
+    if (!data || !scope || !canonicalFullData) return null;
+
+    const prefix = `latin-${currentIdBase()}-num`;
+    const paragraphs = scope.matches?.("tei-p")
+      ? [scope]
+      : [...scope.querySelectorAll("tei-p")]
+        .filter(paragraph => paragraph.id?.startsWith(prefix));
+    if (!paragraphs.length) return null;
+
+    // Use the original canonical nodes: a copied fragment has no position in
+    // the full Latin book. Cardwell IDs locate ranges, never Niese identities.
+    const rangeStart = document.createRange();
+    rangeStart.setStartBefore(paragraphs[0]);
+    rangeStart.collapse(true);
+    const rangeEnd = document.createRange();
+    rangeEnd.setStartAfter(paragraphs[paragraphs.length - 1]);
+    rangeEnd.collapse(true);
+
+    const entries = latinNieseStartEntries(canonicalFullData);
+    const boundaries = entries.map(entry => {
+      const boundary = document.createRange();
+      if (entry.kind === "paragraph") boundary.setStartBefore(entry.node);
+      else boundary.setStartAfter(entry.node);
+      boundary.collapse(true);
+      return boundary;
+    });
+    const numbers = new Set();
+
+    entries.forEach((entry, index) => {
+      const start = boundaries[index];
+      const end = boundaries[index + 1];
+      // [Niese start, next start) overlaps [Cardwell start, Cardwell end).
+      // Include the citation already running at a coarse-unit boundary.
+      if (
+        start.compareBoundaryPoints(Range.START_TO_START, rangeEnd) < 0
+        && (!end || end.compareBoundaryPoints(Range.START_TO_START, rangeStart) > 0)
+      ) {
+        numbers.add(entry.number);
+      }
+    });
+
+    const greekParagraphs = [...data.querySelectorAll("tei-p[n]")]
+      .filter(paragraph => numbers.has(Number(paragraph.getAttribute("n"))));
+    return wrapAlignedParagraphs(
+      greekParagraphs,
+      scope.matches?.("tei-p") ? "section" : "chapter",
+      scope.getAttribute("n") || state.sectionNum || state.chapterNum
+    );
+  };
+
   const greekNieseView = (data, nieseNum) => {
     if (!data || !nieseNum || !supportsNieseSections()) return null;
 
@@ -1897,6 +1949,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!data) return null;
 
     const usesCanonicalIds = displayedSourceUsesCanonicalIds(language);
+
+    if (
+      activeWork.slug === "bellum"
+      && language === "Greek"
+      && ["chapter-level", "section-level"].includes(state.viewingLevel)
+    ) {
+      const scope = state.viewingLevel === "section-level" && state.sectionNum
+        ? canonicalFullData?.querySelector(
+          `[id="latin-${idBase}-num${state.sectionNum}"]`
+        )
+        : (state.chapterNum ? canonicalChapterScope(state.chapterNum) : null);
+      return scope ? bellumGreekRangeView(data, scope) : data;
+    }
+
     switch(state.viewingLevel) {
       case "book-level":
         return data;
