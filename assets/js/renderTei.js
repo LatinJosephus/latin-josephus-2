@@ -106,14 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // record those boundaries without splitting or renumbering the stable
       // paragraph IDs.
       milestoneChapterBooks: [15, 16, 17, 18, 19, 20],
-      nieseBooks: [1, 2, 3, 4, 5, 6],
+      nieseBooks: [1, 2, 3, 4, 5, 6, 7],
       nieseRanges: {
         1: [27, 346],
         2: [1, 349],
         3: [1, 322],
         4: [1, 331],
         5: [1, 362],
-        6: [1, 378]
+        6: [1, 378],
+        7: [1, 394]
       }
     },
     "/bellum-judaicum/": {
@@ -2500,6 +2501,31 @@ document.addEventListener("DOMContentLoaded", () => {
     greekPane.prepend(notice);
   };
 
+  // Omission apparatus belongs to the rendered view, never the source text.
+  const decorateOmittedGaps = (language, data) => {
+    data.querySelectorAll('tei-gap[reason="omitted"]').forEach(gap => {
+      if (gap.textContent.trim()) return;
+
+      // Retain a source notice without adding a redundant editorial notice.
+      const context = (gap.closest("tei-p") || gap.parentElement).cloneNode(true);
+      context.querySelectorAll(".tei-omission-notice").forEach(notice => notice.remove());
+      if (/\bomitted\s+(?:in|from)\b/i.test(context.textContent)) return;
+
+      // Respect an established presentation, such as the Lodge CSS notice.
+      const hasNotice = ["::before", "::after"].some(pseudo => {
+        const content = window.getComputedStyle(gap, pseudo).content;
+        return content && !["none", "normal", '""', "''"].includes(content);
+      });
+      if (hasNotice) return;
+
+      const notice = document.createElement("span");
+      notice.className = "tei-omission-notice";
+      notice.setAttribute("role", "note");
+      notice.textContent = `[Omitted in this ${language} witness]`;
+      gap.appendChild(notice);
+    });
+  };
+
   const renderUI = () => {
     // Clear panes if text already loaded.
     Object.values(languagePanes).forEach(pane => {
@@ -2538,6 +2564,7 @@ document.addEventListener("DOMContentLoaded", () => {
         decorateNieseMarkers(language, data);
         decorateContraApionemSectionMarkers(language, data);
         pane.appendChild(data);
+        decorateOmittedGaps(language, data);
       }
     });
 
