@@ -1,0 +1,408 @@
+{
+  "status": "PASS_GO_FOR_HUMAN_BROWSER_REVIEW_AND_SINGLE_FOLLOWUP_COMMIT",
+  "date": "2026-10-07",
+  "base_commit": "3d6097a0de8af11d862d5a144d6c7ad16d6e9151",
+  "branch": "antiquities-traditional-navigation",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-traditional-navigation",
+  "canonical_branch": "v2-development",
+  "all_changes_unstaged_uncommitted": true,
+  "registry": {
+    "chapters": 257,
+    "subchapters": 1432,
+    "rows": 1689,
+    "physical_positions": 1441,
+    "statuses": {
+      "CONFIRMED_NIESE_START": 1672,
+      "LOEB_NIESE_NUMBER_DISAGREEMENT": 3,
+      "NIESE_SOURCE_AMBIGUOUS": 11,
+      "CONFIRMED_WITHIN_NIESE": 3
+    },
+    "unresolved": 0
+  },
+  "subchapter_availability": {
+    "chapters_tested": 257,
+    "zero_subchapter_chapters": [
+      "LOEB-01-Chapter-5-0",
+      "LOEB-01-Chapter-9-0",
+      "LOEB-01-Chapter-14-0",
+      "LOEB-01-Chapter-15-0",
+      "LOEB-01-Chapter-17-0",
+      "LOEB-01-Chapter-22-0",
+      "LOEB-03-Chapter-3-0",
+      "LOEB-03-Chapter-13-0",
+      "LOEB-08-Chapter-9-0"
+    ],
+    "ordinary_transitions_and_automatic_restoration": "PASS",
+    "no_synthetic_lower_1": "PASS",
+    "manual_URL_roundtrips": 4,
+    "invalid_manual_subchapters": "EXPLICIT_UNAVAILABLE_RETAINED",
+    "Proem_cleared_selection": "BOOK_VIEW_PASS"
+  },
+  "range_clipping": {
+    "registered_prefix_locations": 119,
+    "English_chapter_heading_locations": 116,
+    "contiguous_numeral_prefix_locations": 3,
+    "level_specific_language_prefix_locators_tested": 227,
+    "VI_xii_8_XIII_and_XIII_1_language_views": 9,
+    "all_executable_language_ranges": 5034,
+    "per_language_executable": {
+      "Greek": 1678,
+      "Latin": 1678,
+      "English": 1678
+    },
+    "expected_Book_IX_unavailable_language_ranges": 33,
+    "first_rendered_narrative_text_matches_certified_locator": "PASS",
+    "entire_registered_inclusive_exclusive_span_projection": "PASS",
+    "duplicate_physical_span_membership": "NONE"
+  },
+  "Book_XI": {
+    "shared_notice_cases": [
+      4,
+      6
+    ],
+    "notice_count_per_case": 1,
+    "placement": "One shared aside before pane-container",
+    "visible_fragment_diagnostics": false,
+    "reader_wording": "Bamberg 78 preserves this passage in an unusual order. Levenson and Martin show that, in this part of Book XI, its manuscript family transposes sections 311–347 and also inserts material from Jewish War 4.105. Chapter and Subchapter views therefore gather the corresponding passages and display them in the order used by Niese and Loeb. Choose Book view to see Bamberg’s manuscript order.",
+    "book_view_links_preserve_unrelated_query_and_fragment": "PASS",
+    "fragment_membership_language_ranges": 18,
+    "generic_two_span_citation_tests": 2,
+    "canonical_partition_no_duplication": "PASS",
+    "Latin_Bellum_4_105_interpolations": "PASS",
+    "Book_Alignment_order_and_XI_XML": "UNCHANGED"
+  },
+  "Niese_I_VII": {
+    "selections": 2456,
+    "language_DOM_comparisons": 7368,
+    "result": "PASS_BYTE_FOR_BYTE_RENDERED_DOM_AGAINST_CERTIFIED_BASE",
+    "public_scope_expanded": false
+  },
+  "Antiquities_alignment_and_books": {
+    "alignment_units": 1441,
+    "language_DOM_comparisons": 4323,
+    "book_or_Proem_views": 21,
+    "result": "PASS_BASE_DOM_AND_WITNESS_ORDER_UNCHANGED",
+    "focused_VI_bindings_and_neighbor_ranges": 5,
+    "Greek_VI_partition": {
+      "three_bindings": 3,
+      "partition": "PASS"
+    },
+    "pane_switching": "PASS"
+  },
+  "protected_works": {
+    "DEH": {
+      "ranges": 1239,
+      "result": "PASS"
+    },
+    "Bellum_Judaicum": {
+      "default_source_ranges": 1441,
+      "both_English_sources_total_ranges": 10340,
+      "both_English_sources_Niese_selections": 7444,
+      "result": "PASS"
+    },
+    "Contra_Apionem": {
+      "ranges": 693,
+      "result": "PASS"
+    },
+    "all_14_book_groups_tested": true,
+    "navigation_semantic_change": false
+  },
+  "URLs_history_panes": {
+    "suite_checks": [
+      "Chapter/Subchapter reload",
+      "Subchapter to Niese",
+      "Back/forward",
+      "Alignment unit",
+      "Language pane toggle",
+      "Book switching",
+      "Proem",
+      "num276b",
+      "Book IX unavailable",
+      "Book VII opening",
+      "Unrelated parameters and fragment"
+    ],
+    "roundtrip_cases": [
+      {
+        "route": "?book=1&chapter=9",
+        "state": {
+          "bookNum": "01",
+          "chapterNum": "9",
+          "subchapterNum": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "unavailable_panes": 0,
+        "result": "PASS"
+      },
+      {
+        "route": "?book=1&chapter=9&subchapter=1",
+        "state": {
+          "bookNum": "01",
+          "chapterNum": "9",
+          "subchapterNum": "1",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "unavailable_panes": 3,
+        "result": "PASS"
+      },
+      {
+        "route": "?book=5&chapter=3&subchapter=2",
+        "state": {
+          "bookNum": "05",
+          "chapterNum": "3",
+          "subchapterNum": "2",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "unavailable_panes": 0,
+        "result": "PASS"
+      },
+      {
+        "route": "?book=5&chapter=3&subchapter=999",
+        "state": {
+          "bookNum": "05",
+          "chapterNum": "3",
+          "subchapterNum": "999",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "unavailable_panes": 3,
+        "result": "PASS"
+      }
+    ],
+    "rendered_required_cases": 18,
+    "duplicate_rendered_DOM_IDs": "NONE",
+    "malformed_generated_URLs": "NONE",
+    "semantics": [
+      "book",
+      "chapter",
+      "subchapter",
+      "unit",
+      "niese"
+    ]
+  },
+  "integrity": {
+    "status": "PASS",
+    "base_commit": "3d6097a0de8af11d862d5a144d6c7ad16d6e9151",
+    "TEI_P5_4.12.0": "PASS",
+    "original_registry_fields_source_evidence_and_fragment_membership": "UNCHANGED",
+    "registry_counts": {
+      "chapters": 257,
+      "subchapters": 1432,
+      "rows": 1689,
+      "physical_positions": 1441,
+      "statuses": {
+        "CONFIRMED_NIESE_START": 1672,
+        "LOEB_NIESE_NUMBER_DISAGREEMENT": 3,
+        "NIESE_SOURCE_AMBIGUOUS": 11,
+        "CONFIRMED_WITHIN_NIESE": 3
+      },
+      "unresolved": 0
+    },
+    "all_63_corpus_XML_files_byte_identical": 63,
+    "topology": {
+      "Latin": {
+        "paragraphs": 1622,
+        "identified_alignment_paragraphs": 1442
+      },
+      "Greek": {
+        "paragraphs": 1681,
+        "identified_alignment_paragraphs": 1442
+      },
+      "English": {
+        "paragraphs": 1600,
+        "identified_alignment_paragraphs": 1442
+      }
+    },
+    "Book_XI_XML_text_node_order_ID_sameAs": "BYTE_IDENTICAL",
+    "new_empty_anchors": 0,
+    "historical_certification_files_verified": 34,
+    "canonical_checkout": "CLEAN_AT_BASE_NO_TASK_WRITES",
+    "canonical_target_hashes": {
+      "_sass/_reader-ui.scss": {
+        "sha256": "a63225b37d6051e9a60599d57c4ee3477c1b21d351216e96be22aaaed2f71001",
+        "bytes": 7368
+      },
+      "assets/js/renderTei.js": {
+        "sha256": "5916b38196da27cb9b8129ae297ed1211613b9820c38d0323450686ba1beeb84",
+        "bytes": 110123
+      },
+      "assets/xml/antiquities/structure.xml": {
+        "sha256": "67d9b18e30516d63f8fe38fb1a35bbb66d1e08269ddcd9be55dc75ba696a3388",
+        "bytes": 17107297
+      }
+    },
+    "frozen_authorities": {
+      "reconciliation": {
+        "manifest_entries_verified": 8,
+        "manifest_sha256": "cfc898b9f051a003de7045dbf352229097855e2c39696a33213c4454be50ff11",
+        "existing_files_match_historical_certification_hashes": "PASS"
+      },
+      "verification": {
+        "manifest_entries_verified": 237,
+        "manifest_sha256": "1a254cd03a3cb01541cb25e2b73f6e926da7ccbb2c724f1df244363d1e323b70",
+        "existing_files_match_historical_certification_hashes": "PASS"
+      }
+    },
+    "existing_changed_files": [
+      "_sass/_reader-ui.scss",
+      "assets/js/renderTei.js",
+      "assets/xml/antiquities/structure.xml"
+    ],
+    "prefix_locations": 119,
+    "prefix_locator_fields": {
+      "English": 224,
+      "Latin": 3
+    },
+    "shared_reader_note_identities": 4
+  },
+  "test_environment": {
+    "browser": "Installed Google Chrome, headless isolated Playwright contexts",
+    "source_test_server": "Actual current renderer, CETEI, XML, stylesheet and display-settings include; no site build",
+    "baseline_renderer": "Git show of certified 3d6097a commit",
+    "legacy_harness_compatibility": "Same HTMLCollection.forEach compatibility adapter used for baseline and patch, as in October 6 certification",
+    "human_local_build_smoke_review": "Still required before commit"
+  },
+  "known_issues_unchanged": [
+    "Book VII opening alignment target defect remains protected",
+    "Book IX current-text lacuna/unavailable policy retained",
+    "Niese VIII–XX public expansion and Bamberg navigation remain out of scope"
+  ],
+  "Git_actions": {
+    "reads_only": true,
+    "staged": false,
+    "committed": false,
+    "pushed": false,
+    "merged": false,
+    "rebased": false,
+    "configuration_changed": false
+  },
+  "evidence_files": [
+    "FOLLOWUP_GATE_QA.json",
+    "BROWSER_QA.json",
+    "ALIGNMENT_ALL_QA.json",
+    "PROTECTED_SOURCE_GATE_QA.json",
+    "XI_MULTISPAN_GATE_QA.json",
+    "VI_ALIGNMENT_GATE_QA.json",
+    "RENDERED_GATE_QA.json",
+    "INTEGRITY_QA.json",
+    "PREFIX_LOCATOR_ADJUDICATION.json",
+    "CHAPTER_AVAILABILITY.json",
+    "NOTICE_THEME_QA.json",
+    "NOTICE_THEME_light.png",
+    "NOTICE_THEME_dark.png",
+    "NOTICE_STYLE_BASELINE.json"
+  ],
+  "notice_theme": {
+    "result": "PASS",
+    "checks": [
+      {
+        "subchapter": 4,
+        "theme": "light",
+        "noticeBackground": "rgb(240, 233, 222)",
+        "proseColor": "rgb(47, 43, 38)",
+        "linkColor": "rgb(163, 65, 48)",
+        "textContrast": 11.65,
+        "linkContrast": 5.19,
+        "WCAG_AA_normal_text": "PASS",
+        "link_underlined": true,
+        "link_hover_focus_contrast": "PASS",
+        "keyboard_focus_outline": "PASS",
+        "ordinary_alert_and_link_unchanged": true,
+        "notice_wording_and_range_DOM_unchanged": true
+      },
+      {
+        "subchapter": 4,
+        "theme": "dark",
+        "noticeBackground": "rgb(49, 44, 39)",
+        "proseColor": "rgb(242, 237, 228)",
+        "linkColor": "rgb(226, 154, 131)",
+        "textContrast": 11.85,
+        "linkContrast": 6.04,
+        "WCAG_AA_normal_text": "PASS",
+        "link_underlined": true,
+        "link_hover_focus_contrast": "PASS",
+        "keyboard_focus_outline": "PASS",
+        "ordinary_alert_and_link_unchanged": true,
+        "notice_wording_and_range_DOM_unchanged": true
+      },
+      {
+        "subchapter": 6,
+        "theme": "light",
+        "noticeBackground": "rgb(240, 233, 222)",
+        "proseColor": "rgb(47, 43, 38)",
+        "linkColor": "rgb(163, 65, 48)",
+        "textContrast": 11.65,
+        "linkContrast": 5.19,
+        "WCAG_AA_normal_text": "PASS",
+        "link_underlined": true,
+        "link_hover_focus_contrast": "PASS",
+        "keyboard_focus_outline": "PASS",
+        "ordinary_alert_and_link_unchanged": true,
+        "notice_wording_and_range_DOM_unchanged": true
+      },
+      {
+        "subchapter": 6,
+        "theme": "dark",
+        "noticeBackground": "rgb(49, 44, 39)",
+        "proseColor": "rgb(242, 237, 228)",
+        "linkColor": "rgb(226, 154, 131)",
+        "textContrast": 11.85,
+        "linkContrast": 6.04,
+        "WCAG_AA_normal_text": "PASS",
+        "link_underlined": true,
+        "link_hover_focus_contrast": "PASS",
+        "keyboard_focus_outline": "PASS",
+        "ordinary_alert_and_link_unchanged": true,
+        "notice_wording_and_range_DOM_unchanged": true
+      }
+    ],
+    "Book_view_link": "PASS",
+    "shared_notice_count": 1,
+    "style_scope": "#traditional-reader-notice only",
+    "palette_variables": [
+      "--lj-brand-surface",
+      "--lj-brand-ink",
+      "--lj-brand-rule",
+      "--lj-brand-accent"
+    ],
+    "no_new_hard_coded_application_colours": true,
+    "test_environment": "Installed Chrome; actual renderer/XML; existing canonical compiled main.css plus unchanged source branding palette and current plain-CSS reader partial; representative lavender alert-secondary rule; no site build",
+    "existing_compiled_stylesheet_sha256": "12a95cc0d24db42d76ba06f970956a63d39c89c914841ce081bd5ccc4e6cfcc2",
+    "screenshots": [
+      "NOTICE_THEME_light.png",
+      "NOTICE_THEME_dark.png"
+    ],
+    "screenshot_visual_inspection": "PASS_LIGHT_AND_DARK",
+    "stylesheet_only_application_change_this_step": true
+  }
+}

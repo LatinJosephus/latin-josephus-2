@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "base_commit": "3d6097a0de8af11d862d5a144d6c7ad16d6e9151",
+  "TEI_P5_4.12.0": "PASS",
+  "original_registry_fields_source_evidence_and_fragment_membership": "UNCHANGED",
+  "registry_counts": {
+    "chapters": 257,
+    "subchapters": 1432,
+    "rows": 1689,
+    "physical_positions": 1441,
+    "statuses": {
+      "CONFIRMED_NIESE_START": 1672,
+      "LOEB_NIESE_NUMBER_DISAGREEMENT": 3,
+      "NIESE_SOURCE_AMBIGUOUS": 11,
+      "CONFIRMED_WITHIN_NIESE": 3
+    },
+    "unresolved": 0
+  },
+  "all_63_corpus_XML_files_byte_identical": 63,
+  "topology": {
+    "Latin": {
+      "paragraphs": 1622,
+      "identified_alignment_paragraphs": 1442
+    },
+    "Greek": {
+      "paragraphs": 1681,
+      "identified_alignment_paragraphs": 1442
+    },
+    "English": {
+      "paragraphs": 1600,
+      "identified_alignment_paragraphs": 1442
+    }
+  },
+  "Book_XI_XML_text_node_order_ID_sameAs": "BYTE_IDENTICAL",
+  "new_empty_anchors": 0,
+  "historical_certification_files_verified": 34,
+  "canonical_checkout": "CLEAN_AT_BASE_NO_TASK_WRITES",
+  "canonical_target_hashes": {
+    "_sass/_reader-ui.scss": {
+      "sha256": "a63225b37d6051e9a60599d57c4ee3477c1b21d351216e96be22aaaed2f71001",
+      "bytes": 7368
+    },
+    "assets/js/renderTei.js": {
+      "sha256": "5916b38196da27cb9b8129ae297ed1211613b9820c38d0323450686ba1beeb84",
+      "bytes": 110123
+    },
+    "assets/xml/antiquities/structure.xml": {
+      "sha256": "67d9b18e30516d63f8fe38fb1a35bbb66d1e08269ddcd9be55dc75ba696a3388",
+      "bytes": 17107297
+    }
+  },
+  "frozen_authorities": {
+    "reconciliation": {
+      "manifest_entries_verified": 8,
+      "manifest_sha256": "cfc898b9f051a003de7045dbf352229097855e2c39696a33213c4454be50ff11",
+      "existing_files_match_historical_certification_hashes": "PASS"
+    },
+    "verification": {
+      "manifest_entries_verified": 237,
+      "manifest_sha256": "1a254cd03a3cb01541cb25e2b73f6e926da7ccbb2c724f1df244363d1e323b70",
+      "existing_files_match_historical_certification_hashes": "PASS"
+    }
+  },
+  "existing_changed_files": [
+    "_sass/_reader-ui.scss",
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/structure.xml"
+  ],
+  "prefix_locations": 119,
+  "prefix_locator_fields": {
+    "English": 224,
+    "Latin": 3
+  },
+  "shared_reader_note_identities": 4
+}

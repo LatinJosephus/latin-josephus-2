@@ -1,0 +1,81 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "subchapter": 4,
+      "theme": "light",
+      "noticeBackground": "rgb(240, 233, 222)",
+      "proseColor": "rgb(47, 43, 38)",
+      "linkColor": "rgb(163, 65, 48)",
+      "textContrast": 11.65,
+      "linkContrast": 5.19,
+      "WCAG_AA_normal_text": "PASS",
+      "link_underlined": true,
+      "link_hover_focus_contrast": "PASS",
+      "keyboard_focus_outline": "PASS",
+      "ordinary_alert_and_link_unchanged": true,
+      "notice_wording_and_range_DOM_unchanged": true
+    },
+    {
+      "subchapter": 4,
+      "theme": "dark",
+      "noticeBackground": "rgb(49, 44, 39)",
+      "proseColor": "rgb(242, 237, 228)",
+      "linkColor": "rgb(226, 154, 131)",
+      "textContrast": 11.85,
+      "linkContrast": 6.04,
+      "WCAG_AA_normal_text": "PASS",
+      "link_underlined": true,
+      "link_hover_focus_contrast": "PASS",
+      "keyboard_focus_outline": "PASS",
+      "ordinary_alert_and_link_unchanged": true,
+      "notice_wording_and_range_DOM_unchanged": true
+    },
+    {
+      "subchapter": 6,
+      "theme": "light",
+      "noticeBackground": "rgb(240, 233, 222)",
+      "proseColor": "rgb(47, 43, 38)",
+      "linkColor": "rgb(163, 65, 48)",
+      "textContrast": 11.65,
+      "linkContrast": 5.19,
+      "WCAG_AA_normal_text": "PASS",
+      "link_underlined": true,
+      "link_hover_focus_contrast": "PASS",
+      "keyboard_focus_outline": "PASS",
+      "ordinary_alert_and_link_unchanged": true,
+      "notice_wording_and_range_DOM_unchanged": true
+    },
+    {
+      "subchapter": 6,
+      "theme": "dark",
+      "noticeBackground": "rgb(49, 44, 39)",
+      "proseColor": "rgb(242, 237, 228)",
+      "linkColor": "rgb(226, 154, 131)",
+      "textContrast": 11.85,
+      "linkContrast": 6.04,
+      "WCAG_AA_normal_text": "PASS",
+      "link_underlined": true,
+      "link_hover_focus_contrast": "PASS",
+      "keyboard_focus_outline": "PASS",
+      "ordinary_alert_and_link_unchanged": true,
+      "notice_wording_and_range_DOM_unchanged": true
+    }
+  ],
+  "Book_view_link": "PASS",
+  "shared_notice_count": 1,
+  "style_scope": "#traditional-reader-notice only",
+  "palette_variables": [
+    "--lj-brand-surface",
+    "--lj-brand-ink",
+    "--lj-brand-rule",
+    "--lj-brand-accent"
+  ],
+  "no_new_hard_coded_application_colours": true,
+  "test_environment": "Installed Chrome; actual renderer/XML; existing canonical compiled main.css plus unchanged source branding palette and current plain-CSS reader partial; representative lavender alert-secondary rule; no site build",
+  "existing_compiled_stylesheet_sha256": "12a95cc0d24db42d76ba06f970956a63d39c89c914841ce081bd5ccc4e6cfcc2",
+  "screenshots": [
+    "NOTICE_THEME_light.png",
+    "NOTICE_THEME_dark.png"
+  ]
+}

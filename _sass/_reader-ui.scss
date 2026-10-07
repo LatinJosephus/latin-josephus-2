@@ -291,3 +291,26 @@ html[data-theme='dark'] #display-settings {
   flex: 0 0 auto;
   margin: 0 0 0 .35rem;
 }
+
+/* Traditional-navigation assembly notice: use the reader palette in both themes. */
+#traditional-reader-notice {
+  background-color: var(--lj-brand-surface);
+  color: var(--lj-brand-ink);
+  border-color: var(--lj-brand-rule);
+}
+
+#traditional-reader-notice a {
+  color: var(--lj-brand-accent);
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+
+#traditional-reader-notice a:hover,
+#traditional-reader-notice a:focus {
+  color: var(--lj-brand-accent);
+}
+
+#traditional-reader-notice a:focus-visible {
+  outline: 2px solid var(--lj-brand-accent);
+  outline-offset: 3px;
+}

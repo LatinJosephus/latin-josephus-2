@@ -333,6 +333,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ? traditionalRows("subchapter", isPreface() ? "" : state.chapterNum)
       .find(row => row.subchapter === String(state.subchapterNum))
     : traditionalRows("chapter").find(row => row.chapter === String(state.chapterNum));
+  const selectAvailableTraditionalSubchapter = () => {
+    const rows = traditionalRows("subchapter", isPreface() ? "" : state.chapterNum);
+    state.subchapterNum = rows[0]?.subchapter || null;
+    if (!state.subchapterNum) state.viewingLevel = isPreface() ? "book-level" : "chapter-level";
+  };
   const structuralUnavailable = (language, reason) => {
     const notice = document.createElement("div");
     notice.className = "alert alert-secondary structural-unavailable";
@@ -354,6 +359,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return {node, paragraph: node.closest("tei-p"), kind: locator.kind};
   };
+  // Display boundaries can include a heading/label before the independent citation/text point.
+  const traditionalRangePoint = (data, locator) => traditionalPoint(data, locator?.["boundary-start"] || locator);
   // Independent witness spans may be assembled in registered canonical order.
   // The resolver knows no book, chapter, source-number correction or transposition case.
   const traditionalRangeView = (language, data, record) => {
@@ -367,9 +374,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (record["verification-status"]) wrapper.dataset.verificationStatus = record["verification-status"];
     if (record["canonical-niese"]) wrapper.dataset.canonicalNiese = record["canonical-niese"];
     for (const [index, span] of spans.entries()) {
-      const start = traditionalPoint(data, span.start);
+      const start = traditionalRangePoint(data, span.start);
       if (!start) return structuralUnavailable(language, "This certified start has no mapped current text.");
-      const end = span.end?.kind === "book-end" ? null : traditionalPoint(data, span.end);
+      const end = span.end?.kind === "book-end" ? null : traditionalRangePoint(data, span.end);
       if (span.end?.kind !== "book-end" && !end)
         return structuralUnavailable(language, "The certified range end has no mapped current text.");
       if (end && (start.node === end.node || !(start.node.compareDocumentPosition(end.node) & Node.DOCUMENT_POSITION_FOLLOWING)))
@@ -409,20 +416,23 @@ document.addEventListener("DOMContentLoaded", () => {
       if (seen.has(node.id)) {node.dataset.sourceId = node.id; node.removeAttribute("id");}
       else seen.add(node.id);
     });
-    const disclosure = record[language]?.["presentation-note"];
-    if (disclosure) {
-      const notice = document.createElement("details");
-      notice.dataset.structuralNotice = "true";
-      const summary = document.createElement("summary"); summary.textContent = "Canonical order from separate witness fragments";
-      const explanation = document.createElement("p"); explanation.textContent = disclosure;
-      const membership = document.createElement("ol");
-      spans.forEach(span => {const item = document.createElement("li"); item.textContent = span.label || span.start.target; membership.appendChild(item);});
-      const url = new URL(window.location.href);
-      ["chapter", "subchapter", "niese", "unit", "num"].forEach(key => url.searchParams.delete(key));
-      const link = document.createElement("a");link.href = url.href;link.textContent = "View the unchanged witness order in Book view";
-      notice.append(summary, explanation, membership, link);wrapper.prepend(notice);
-    }
     return wrapper;
+  };
+  const updateTraditionalNotice = () => {
+    document.getElementById("traditional-reader-notice")?.remove();
+    if (!usesTraditionalStructure() || !["chapter-level", "subchapter-level"].includes(state.viewingLevel)) return;
+    const explanation = traditionalSelection()?.["reader-note"];
+    const panes = document.getElementById("pane-container");
+    if (!explanation || !panes) return;
+    const notice = document.createElement("aside");
+    notice.id = "traditional-reader-notice";
+    notice.className = "alert alert-secondary";
+    notice.dataset.structuralNotice = "true";
+    const text = document.createElement("p"); text.textContent = explanation;
+    const url = new URL(window.location.href);
+    ["chapter", "subchapter", "niese", "unit", "num"].forEach(key => url.searchParams.delete(key));
+    const link = document.createElement("a"); link.href = url.href; link.textContent = "See Bamberg’s manuscript order in Book view";
+    notice.append(text, link); panes.before(notice);
   };
   const antiquitiesUnitView = (language, data) => {
     const canonicalId = `latin-${currentIdBase()}-num${state.sectionNum}`;
@@ -2489,7 +2499,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const showSection = state.viewingLevel === "section-level";
     subchapterSelectForm?.classList.toggle("hidden", !usesTraditionalStructure() || state.viewingLevel !== "subchapter-level");
     const subchapterControl = document.getElementById("subchapter-level");
-    if (subchapterControl) subchapterControl.closest(".form-check").hidden = !usesTraditionalStructure();
+    if (subchapterControl) {
+      subchapterControl.closest(".form-check").hidden = !usesTraditionalStructure();
+      if (usesTraditionalStructure()) {
+        const available = traditionalRows("subchapter", isPreface() ? "" : state.chapterNum).length > 0;
+        subchapterControl.disabled = !available;
+        if (subchapterSelectMenu) subchapterSelectMenu.disabled = !available;
+      }
+    }
     if (usesTraditionalStructure() && state.viewingLevel === "section-level") chapterSelectForm.classList.add("hidden");
     const showNiese = state.viewingLevel === "niese-level" && nieseAvailable;
 
@@ -2814,6 +2831,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateLanguageUI();
     updateNavigationForms();
     addContraApionemTransmissionNotice();
+    updateTraditionalNotice();
     syncNavigationControls();
     // Optional scholarly parallels live outside the textual alignment layer.
     if (activeWork.slug === "deh") {
@@ -3233,7 +3251,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (usesTraditionalStructure()) {
           state.subchapterNum = null;
           state.viewingLevel = state.chapterNum ? (state.viewingLevel === "subchapter-level" ? "subchapter-level" : "chapter-level") : "book-level";
-          if (state.viewingLevel === "subchapter-level") state.subchapterNum = traditionalRows("subchapter", state.chapterNum)[0]?.subchapter || null;
+          if (state.viewingLevel === "subchapter-level") selectAvailableTraditionalSubchapter();
         }
         state.sectionNum = null;
         state.nieseNum = null;
@@ -3253,7 +3271,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!usesTraditionalStructure()) return;
       setState(() => {
         state.subchapterNum = event.target.value || null;
-        state.viewingLevel = state.subchapterNum ? "subchapter-level" : "chapter-level";
+        state.viewingLevel = state.subchapterNum ? "subchapter-level" : (isPreface() ? "book-level" : "chapter-level");
         state.sectionNum = null; state.nieseNum = null;
       });
     });
@@ -3276,8 +3294,8 @@ document.addEventListener("DOMContentLoaded", () => {
           if (["chapter-level", "subchapter-level"].includes(nextLevel)) {
             state.sectionNum = null; state.nieseNum = null;
             if (!isPreface() && !state.chapterNum) state.chapterNum = traditionalRows("chapter")[0]?.chapter || null;
-            state.subchapterNum = nextLevel === "subchapter-level"
-              ? traditionalRows("subchapter", isPreface() ? "" : state.chapterNum)[0]?.subchapter || null : null;
+            state.subchapterNum = null;
+            if (nextLevel === "subchapter-level") selectAvailableTraditionalSubchapter();
             if (isPreface() && nextLevel === "chapter-level") state.viewingLevel = "book-level";
           } else {
             state.chapterNum = null; state.subchapterNum = null;
