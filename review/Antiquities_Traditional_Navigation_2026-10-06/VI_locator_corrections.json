@@ -1,0 +1,176 @@
+{
+  "evidence": {
+    "Latin": {
+      "file": "assets/xml/antiquities/Latin/book-06.xml",
+      "base_blob_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "paragraphs": {
+        "latin-book06-num271": {
+          "sameAs": null,
+          "inherited_num": "[XII.viii]",
+          "text_anchor": "Abiathar itaque abimelech filius qui solus fuerat de sacerdotibus a saul interfectis erutus fugiens ad dauid erumnam suorum omnium et patris interitum declaraui"
+        },
+        "latin-book06-num272": {
+          "sameAs": null,
+          "inherited_num": "[XIII.i]",
+          "text_anchor": "Eo siquidem tempore audiens dauid palaestinos ceilanorum prouinciam deuastare consultus est deum prophetam si eum pugnare praeciperit. Quo dicente quod diuinita"
+        }
+      },
+      "milestones": [
+        {
+          "n": "269",
+          "paragraph": "latin-book06-num271",
+          "edge": "milestone[1]",
+          "offset": 1
+        },
+        {
+          "n": "271",
+          "paragraph": "latin-book06-num272",
+          "edge": "milestone[1]",
+          "offset": 1
+        }
+      ]
+    },
+    "English": {
+      "file": "assets/xml/antiquities/English/book-06.xml",
+      "base_blob_sha256": "a4770771856d20c9aefa64983adb064ad9c15889b57613d807e7117794198f14",
+      "paragraphs": {
+        "english-book06-num271": {
+          "sameAs": "#latin-book06-num271",
+          "inherited_num": "8.",
+          "text_anchor": "But Abiathar, the son of Ahimelech, who alone could be saved out of the family of priests slain by Saul, fled to David, and informed him of the calamity that ha"
+        },
+        "english-book06-num272": {
+          "sameAs": "#latin-book06-num272",
+          "inherited_num": "1.",
+          "text_anchor": "About this time it was that David heard how the Philistines had made an inroad into the country of Keilah, and robbed it; so he offered himself to fight against"
+        }
+      }
+    },
+    "Greek": {
+      "file": "assets/xml/antiquities/Greek/book-06.xml",
+      "base_blob_sha256": "0415434537ab6f1802daeca943f01ad1cf35b7eebca69dbfcf0417e696b25a64",
+      "paragraphs": {
+        "greek-book06-num271": {
+          "sameAs": "#latin-book06-num271",
+          "inherited_num": "[271]",
+          "text_anchor": "Κατὰ δὲ τοῦτον τὸν καιρὸν ἀκούσας ὁ Δαυίδης τοὺς Παλαιστίνους ἐμβεβληκότας εἰς τὴν Κιλλανῶν χώραν καὶ ταύτην διαρπάζοντας δίδωσιν ἑαυτὸν στρατεύειν ἐπ᾽ αὐτοὺς τ"
+        },
+        "greek-book06-num272": {
+          "sameAs": "#latin-book06-num272",
+          "inherited_num": "[272]",
+          "text_anchor": "καὶ παραμείνας τοῖς Κιλλανοῖς ἕως οὗ τὰς ἅλως καὶ τὸν καρπὸν συνεῖλον ἀδεῶς Σαούλῳ τῷ βασιλεῖ μηνύεται παρ᾽ αὐτοῖς ὤν: τὸ γὰρ ἔργον καὶ τὸ κατόρθωμα οὐκ ἔμεινε "
+        }
+      }
+    }
+  },
+  "corrections": [
+    {
+      "identity": "LOEB-06-Chapter-13-0",
+      "language": "Latin",
+      "frozen_v1_1_locator": {
+        "available": "true",
+        "file": "Latin/book-06.xml",
+        "paragraph": "latin-book06-num271",
+        "offset": "0",
+        "anchor": "Abiathar itaque abimelech filius qui solus fuerat de sacerdotibus a saul interfectis erutus fugiens ad dauid erumnam suorum omnium",
+        "kind": "paragraph",
+        "target": "latin-book06-num271"
+      },
+      "verified_current_locator": {
+        "available": "true",
+        "file": "Latin/book-06.xml",
+        "paragraph": "latin-book06-num272",
+        "offset": "1",
+        "anchor": "Eo siquidem tempore audiens dauid palaestinos ceilanorum prouinciam deuastare consultus est deum prophetam si eum pugnar",
+        "kind": "element-edge",
+        "target": "latin-book06-num272",
+        "edge": "milestone[1]"
+      },
+      "base_commit": "f7d9142cad998e8a005adea1a22532b9a78592db",
+      "base_blob_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "authority": "CURRENT_BASE_XML_ADJUDICATION",
+      "source_primary_status_changed": false
+    },
+    {
+      "identity": "LOEB-06-Chapter-13-0",
+      "language": "English",
+      "frozen_v1_1_locator": {
+        "available": "true",
+        "file": "English/book-06.xml",
+        "paragraph": "english-book06-num271",
+        "offset": "0",
+        "anchor": "But Abiathar, the son of Ahimelech, who alone could be saved out of the family of priests slain by Saul, fled to David, and inform",
+        "kind": "paragraph",
+        "target": "english-book06-num271"
+      },
+      "verified_current_locator": {
+        "available": "true",
+        "file": "English/book-06.xml",
+        "paragraph": "english-book06-num272",
+        "offset": "0",
+        "anchor": "About this time it was that David heard how the Philistines had made an inroad into the country of Keilah, and robbed it",
+        "kind": "paragraph",
+        "target": "english-book06-num272"
+      },
+      "base_commit": "f7d9142cad998e8a005adea1a22532b9a78592db",
+      "base_blob_sha256": "a4770771856d20c9aefa64983adb064ad9c15889b57613d807e7117794198f14",
+      "authority": "CURRENT_BASE_XML_ADJUDICATION",
+      "source_primary_status_changed": false
+    },
+    {
+      "identity": "LOEB-06-Subchapter-13-1",
+      "language": "Latin",
+      "frozen_v1_1_locator": {
+        "available": "true",
+        "file": "Latin/book-06.xml",
+        "paragraph": "latin-book06-num271",
+        "offset": "0",
+        "anchor": "Abiathar itaque abimelech filius qui solus fuerat de sacerdotibus a saul interfectis erutus fugiens ad dauid erumnam suorum omnium",
+        "kind": "paragraph",
+        "target": "latin-book06-num271"
+      },
+      "verified_current_locator": {
+        "available": "true",
+        "file": "Latin/book-06.xml",
+        "paragraph": "latin-book06-num272",
+        "offset": "1",
+        "anchor": "Eo siquidem tempore audiens dauid palaestinos ceilanorum prouinciam deuastare consultus est deum prophetam si eum pugnar",
+        "kind": "element-edge",
+        "target": "latin-book06-num272",
+        "edge": "milestone[1]"
+      },
+      "base_commit": "f7d9142cad998e8a005adea1a22532b9a78592db",
+      "base_blob_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "authority": "CURRENT_BASE_XML_ADJUDICATION",
+      "source_primary_status_changed": false
+    },
+    {
+      "identity": "LOEB-06-Subchapter-13-1",
+      "language": "English",
+      "frozen_v1_1_locator": {
+        "available": "true",
+        "file": "English/book-06.xml",
+        "paragraph": "english-book06-num271",
+        "offset": "0",
+        "anchor": "But Abiathar, the son of Ahimelech, who alone could be saved out of the family of priests slain by Saul, fled to David, and inform",
+        "kind": "paragraph",
+        "target": "english-book06-num271"
+      },
+      "verified_current_locator": {
+        "available": "true",
+        "file": "English/book-06.xml",
+        "paragraph": "english-book06-num272",
+        "offset": "0",
+        "anchor": "About this time it was that David heard how the Philistines had made an inroad into the country of Keilah, and robbed it",
+        "kind": "paragraph",
+        "target": "english-book06-num272"
+      },
+      "base_commit": "f7d9142cad998e8a005adea1a22532b9a78592db",
+      "base_blob_sha256": "a4770771856d20c9aefa64983adb064ad9c15889b57613d807e7117794198f14",
+      "authority": "CURRENT_BASE_XML_ADJUDICATION",
+      "source_primary_status_changed": false
+    }
+  ],
+  "primary_statuses_unchanged": true,
+  "alignment_repair_applied": false
+}

@@ -1,0 +1,63 @@
+{
+  "result": "PASS",
+  "registry": {
+    "Chapters": 257,
+    "Subchapters": 1432,
+    "traditional_rows": 1689,
+    "physical_positions": 1441,
+    "alignment_span_records": 3,
+    "primary_statuses": {
+      "CONFIRMED_NIESE_START": 1672,
+      "LOEB_NIESE_NUMBER_DISAGREEMENT": 3,
+      "NIESE_SOURCE_AMBIGUOUS": 11,
+      "CONFIRMED_WITHIN_NIESE": 3
+    },
+    "unresolved": 0,
+    "chapter_openings_without_lower1": 9,
+    "Proem_lower_divisions": 4,
+    "TEI_P5_4.12.0": "PASS"
+  },
+  "text_topology": {
+    "Latin": {
+      "paragraphs": 1622,
+      "identified_alignment_paragraphs": 1442
+    },
+    "Greek": {
+      "paragraphs": 1681,
+      "identified_alignment_paragraphs": 1442
+    },
+    "English": {
+      "paragraphs": 1600,
+      "identified_alignment_paragraphs": 1442
+    }
+  },
+  "added_empty_anchors": {
+    "Latin": 3,
+    "Greek": 7,
+    "English": 3
+  },
+  "source_XML_recovered_exactly_after_removing_13_authorized_anchors": true,
+  "all_1689_identities_source_readings_associations_statuses_and_human_checks_match_frozen_authorities": "PASS",
+  "all_new_anchor_corresp_targets_resolve_to_external_registry": "PASS",
+  "text_projection_original_ids_sameAs_paragraph_order": "PASS",
+  "canonical_checkout_unchanged": "PASS",
+  "frozen_packets_unchanged": "PASS",
+  "protected_other_work_XML_styles_templates_layout_configuration_generated_files": "PASS",
+  "changed_existing_files": [
+    "_includes/display-settings.html",
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/English/book-01.xml",
+    "assets/xml/antiquities/English/book-13.xml",
+    "assets/xml/antiquities/English/book-15.xml",
+    "assets/xml/antiquities/Greek/book-15.xml",
+    "assets/xml/antiquities/Greek/book-16.xml",
+    "assets/xml/antiquities/Greek/book-17.xml",
+    "assets/xml/antiquities/Greek/book-18.xml",
+    "assets/xml/antiquities/Greek/book-19.xml",
+    "assets/xml/antiquities/Greek/book-20.xml",
+    "assets/xml/antiquities/Latin/book-13.xml",
+    "assets/xml/antiquities/Latin/book-15.xml",
+    "assets/xml/antiquities/Latin/book-16.xml"
+  ],
+  "no_commits_push_merge_rebase_or_Git_configuration_change": true
+}

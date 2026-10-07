@@ -1,0 +1,1255 @@
+{
+  "status": "PASS_GO_FOR_HUMAN_REVIEW_AND_COMMIT",
+  "date": "2026-10-06",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-traditional-navigation",
+  "branch": "antiquities-traditional-navigation",
+  "base_commit": "f7d9142cad998e8a005adea1a22532b9a78592db",
+  "source_authorities": {
+    "reconciliation_v1.1_commit": "41e817680549767d36e3f80dbc825682908ea5e6",
+    "reconciliation_v1.1_tag": "antiquities-structure-reconciliation-v1.1",
+    "independent_verification_v1.0_commit": "19308a8ed937525c540827205b0c763768f5ce44",
+    "independent_verification_v1.0_tag": "antiquities-loeb-niese-verification-v1.0"
+  },
+  "integrity": {
+    "result": "PASS",
+    "registry": {
+      "Chapters": 257,
+      "Subchapters": 1432,
+      "traditional_rows": 1689,
+      "physical_positions": 1441,
+      "alignment_span_records": 3,
+      "primary_statuses": {
+        "CONFIRMED_NIESE_START": 1672,
+        "LOEB_NIESE_NUMBER_DISAGREEMENT": 3,
+        "NIESE_SOURCE_AMBIGUOUS": 11,
+        "CONFIRMED_WITHIN_NIESE": 3
+      },
+      "unresolved": 0,
+      "chapter_openings_without_lower1": 9,
+      "Proem_lower_divisions": 4,
+      "TEI_P5_4.12.0": "PASS"
+    },
+    "text_topology": {
+      "Latin": {
+        "paragraphs": 1622,
+        "identified_alignment_paragraphs": 1442
+      },
+      "Greek": {
+        "paragraphs": 1681,
+        "identified_alignment_paragraphs": 1442
+      },
+      "English": {
+        "paragraphs": 1600,
+        "identified_alignment_paragraphs": 1442
+      }
+    },
+    "added_empty_anchors": {
+      "Latin": 3,
+      "Greek": 7,
+      "English": 3
+    },
+    "source_XML_recovered_exactly_after_removing_13_authorized_anchors": true,
+    "all_1689_identities_source_readings_associations_statuses_and_human_checks_match_frozen_authorities": "PASS",
+    "all_new_anchor_corresp_targets_resolve_to_external_registry": "PASS",
+    "text_projection_original_ids_sameAs_paragraph_order": "PASS",
+    "canonical_checkout_unchanged": "PASS",
+    "frozen_packets_unchanged": "PASS",
+    "protected_other_work_XML_styles_templates_layout_configuration_generated_files": "PASS",
+    "changed_existing_files": [
+      "_includes/display-settings.html",
+      "assets/js/renderTei.js",
+      "assets/xml/antiquities/English/book-01.xml",
+      "assets/xml/antiquities/English/book-13.xml",
+      "assets/xml/antiquities/English/book-15.xml",
+      "assets/xml/antiquities/Greek/book-15.xml",
+      "assets/xml/antiquities/Greek/book-16.xml",
+      "assets/xml/antiquities/Greek/book-17.xml",
+      "assets/xml/antiquities/Greek/book-18.xml",
+      "assets/xml/antiquities/Greek/book-19.xml",
+      "assets/xml/antiquities/Greek/book-20.xml",
+      "assets/xml/antiquities/Latin/book-13.xml",
+      "assets/xml/antiquities/Latin/book-15.xml",
+      "assets/xml/antiquities/Latin/book-16.xml"
+    ],
+    "no_commits_push_merge_rebase_or_Git_configuration_change": true
+  },
+  "browser_full_restart": {
+    "traditional": {
+      "rows": 1689,
+      "executable": 5034,
+      "unavailable": 33,
+      "byLanguage": {
+        "Greek": 1678,
+        "Latin": 1678,
+        "English": 1678
+      },
+      "menusChapters": 257,
+      "menusSubchapters": 1432,
+      "physical": 1441
+    },
+    "niese": {
+      "1": {
+        "selections": 320,
+        "language_comparisons": 960,
+        "result": "PASS"
+      },
+      "2": {
+        "selections": 349,
+        "language_comparisons": 1047,
+        "result": "PASS"
+      },
+      "3": {
+        "selections": 322,
+        "language_comparisons": 966,
+        "result": "PASS"
+      },
+      "4": {
+        "selections": 331,
+        "language_comparisons": 993,
+        "result": "PASS"
+      },
+      "5": {
+        "selections": 362,
+        "language_comparisons": 1086,
+        "result": "PASS"
+      },
+      "6": {
+        "selections": 378,
+        "language_comparisons": 1134,
+        "result": "PASS"
+      },
+      "7": {
+        "selections": 394,
+        "language_comparisons": 1182,
+        "result": "PASS"
+      }
+    },
+    "crossWork": [
+      {
+        "work": "deh",
+        "book": 1,
+        "chapters": 47,
+        "ranges": 457,
+        "result": "PASS"
+      },
+      {
+        "work": "deh",
+        "book": 2,
+        "chapters": 18,
+        "ranges": 156,
+        "result": "PASS"
+      },
+      {
+        "work": "deh",
+        "book": 3,
+        "chapters": 26,
+        "ranges": 160,
+        "result": "PASS"
+      },
+      {
+        "work": "deh",
+        "book": 4,
+        "chapters": 33,
+        "ranges": 181,
+        "result": "PASS"
+      },
+      {
+        "work": "deh",
+        "book": 5,
+        "chapters": 53,
+        "ranges": 285,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 1,
+        "chapters": 34,
+        "ranges": 490,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 2,
+        "chapters": 22,
+        "ranges": 302,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 3,
+        "chapters": 10,
+        "ranges": 180,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 4,
+        "chapters": 11,
+        "ranges": 147,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 5,
+        "chapters": 13,
+        "ranges": 131,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 6,
+        "chapters": 10,
+        "ranges": 94,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 7,
+        "chapters": 11,
+        "ranges": 97,
+        "result": "PASS"
+      },
+      {
+        "work": "contra-apionem",
+        "book": 1,
+        "chapters": 35,
+        "ranges": 355,
+        "result": "PASS"
+      },
+      {
+        "work": "contra-apionem",
+        "book": 2,
+        "chapters": 41,
+        "ranges": 338,
+        "result": "PASS"
+      }
+    ],
+    "ui": [
+      "Chapter/Subchapter reload",
+      "Subchapter to Niese",
+      "Back/forward",
+      "Alignment unit",
+      "Language pane toggle",
+      "Book switching",
+      "Proem",
+      "num276b",
+      "Book IX unavailable",
+      "Book VII opening",
+      "Unrelated parameters and fragment"
+    ],
+    "errors": []
+  },
+  "Book_XI_multi_span_gate": {
+    "checks": [
+      {
+        "id": "LOEB-11-Chapter-8-0",
+        "language": "Greek",
+        "spans": 4,
+        "ordered_physical_intervals": [
+          [
+            80652,
+            82563
+          ],
+          [
+            87255,
+            90631
+          ],
+          [
+            82563,
+            87255
+          ],
+          [
+            90631,
+            91817
+          ]
+        ],
+        "incipit": "Κατὰ τοῦτον δὴ τὸν καιρὸν καὶ Φίλιππος ὁ Μακεδόνων βασιλεὺς ἐν Αἰγαῖς ὑπὸ Παυσανίου τοῦ Κεράστου ἐκ δὲ τοῦ τῶν",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-2",
+        "language": "Greek",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            81085,
+            82563
+          ],
+          [
+            87255,
+            87554
+          ]
+        ],
+        "incipit": "Οἱ δὲ τῶν Ἱεροσολυμιτῶν πρεσβύτεροι δεινοπαθοῦντες ἐπὶ τῷ τὸν Ἰαδδοῦ τοῦ ἀρχιερέως ἀδελφὸν ἀλλοφύλῳ συνοικοῦντ",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-3",
+        "language": "Greek",
+        "spans": 1,
+        "ordered_physical_intervals": [
+          [
+            87554,
+            89414
+          ]
+        ],
+        "incipit": "Κατὰ δὲ τοῦτον τὸν καιρὸν Δαρεῖος ἀκούσας, ὅτι τὸν Ἑλλήσποντον διαβὰς Ἀλέξανδρος καὶ τοὺς σατράπας αὐτοῦ τῇ κα",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-4",
+        "language": "Greek",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            89414,
+            90631
+          ],
+          [
+            82563,
+            83331
+          ]
+        ],
+        "incipit": "Νομίσας δὲ καιρὸν ἐπιτήδειον ἔχειν ὁ Σαναβαλλέτης τῆς ἐπιβολῆς Δαρείου μὲν ἀπέγνω, λαβὼν δὲ ὀκτακισχιλίους τῶν",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-5",
+        "language": "Greek",
+        "spans": 1,
+        "ordered_physical_intervals": [
+          [
+            83331,
+            86164
+          ]
+        ],
+        "incipit": "Πυθόμενος δ᾽ αὐτὸν οὐ πόρρω τῆς πόλεως ὄντα πρόεισι μετὰ τῶν ἱερέων καὶ τοῦ πολιτικοῦ πλήθους, ἱεροπρεπῆ καὶ δ",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-6",
+        "language": "Greek",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            86164,
+            87255
+          ],
+          [
+            90631,
+            91817
+          ]
+        ],
+        "incipit": "Ὁ μὲν οὖν Ἀλέξανδρος ταῦτα διοικησάμενος ἐν τοῖς Ἱεροσολύμοις ἐξεστράτευσεν ἐπὶ τὰς ἐχομένας πόλεις. πάντων δ᾽",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Chapter-8-0",
+        "language": "Latin",
+        "spans": 4,
+        "ordered_physical_intervals": [
+          [
+            72567,
+            74460
+          ],
+          [
+            78707,
+            82054
+          ],
+          [
+            74460,
+            78707
+          ],
+          [
+            82054,
+            83384
+          ]
+        ],
+        "incipit": "Per idem tempus et philippi rex macedonum megeisa pausania filius ceraste genus aboreste trahente insidia pass",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-2",
+        "language": "Latin",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            72955,
+            74460
+          ],
+          [
+            78707,
+            79065
+          ]
+        ],
+        "incipit": "Hierosolimorum uero seniores indignabantur quod principes sacerdotum iohaddo frater alienigenę cohabitans uxor",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-3",
+        "language": "Latin",
+        "spans": 1,
+        "ordered_physical_intervals": [
+          [
+            79065,
+            80854
+          ]
+        ],
+        "incipit": "Eodem tempore darius audiens alexandrum hellis pontum transisse satrapasque suos super grannicum fluuium pugna",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-4",
+        "language": "Latin",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            80854,
+            82054
+          ],
+          [
+            74460,
+            75161
+          ]
+        ],
+        "incipit": "Arbitratus autem sanabalath oportunum inuenisse tempus dario iam disperato eligens de suis subiectis VIII ad a",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-5",
+        "language": "Latin",
+        "spans": 1,
+        "ordered_physical_intervals": [
+          [
+            75161,
+            77914
+          ]
+        ],
+        "incipit": "quem audiens esse non longe a ciuitate processit cum sacerdotibus et ciuili multitudine sacram et maiorem alii",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-6",
+        "language": "Latin",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            77914,
+            78707
+          ],
+          [
+            82054,
+            83384
+          ]
+        ],
+        "incipit": "Igitur alexander ita disponens hierosolimam duxit ad reliquas exercitum ciuitatis, et omnibus eum ad quos peru",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Chapter-8-0",
+        "language": "English",
+        "spans": 4,
+        "ordered_physical_intervals": [
+          [
+            97369,
+            99656
+          ],
+          [
+            105297,
+            109302
+          ],
+          [
+            99656,
+            105297
+          ],
+          [
+            109302,
+            110687
+          ]
+        ],
+        "incipit": "ABOUT this time it was that Philip, king of Macedon, was treacherously assaulted and slain at Egae by Pausania",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-2",
+        "language": "English",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            97843,
+            99656
+          ],
+          [
+            105297,
+            105638
+          ]
+        ],
+        "incipit": "But the elders of Jerusalem being very uneasy that the brother of Jaddua the high priest, though married to a ",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-3",
+        "language": "English",
+        "spans": 1,
+        "ordered_physical_intervals": [
+          [
+            105638,
+            107896
+          ]
+        ],
+        "incipit": "About this time it was that Darius heard how Alexander had passed over the Hellespont, and had beaten his lieu",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-4",
+        "language": "English",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            107896,
+            109302
+          ],
+          [
+            99656,
+            100665
+          ]
+        ],
+        "incipit": "But Sanballat thought he had now gotten a proper opportunity to make his attempt, so he renounced Darius, and ",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-5",
+        "language": "English",
+        "spans": 1,
+        "ordered_physical_intervals": [
+          [
+            100665,
+            104083
+          ]
+        ],
+        "incipit": "And when he understood that he was not far from the city, he went out in procession, with the priests and the ",
+        "result": "PASS"
+      },
+      {
+        "id": "LOEB-11-Subchapter-8-6",
+        "language": "English",
+        "spans": 2,
+        "ordered_physical_intervals": [
+          [
+            104083,
+            105297
+          ],
+          [
+            109302,
+            110687
+          ]
+        ],
+        "incipit": "So when Alexander had thus settled matters at Jerusalem, he led his army into the neighboring cities; and when",
+        "result": "PASS"
+      }
+    ],
+    "citationChecks": [
+      {
+        "niese": 326,
+        "language": "Latin",
+        "spans": 2,
+        "result": "PASS",
+        "public_navigation_expansion": false
+      },
+      {
+        "niese": 342,
+        "language": "Latin",
+        "spans": 2,
+        "result": "PASS",
+        "public_navigation_expansion": false
+      }
+    ],
+    "canonical_membership_no_duplication": "PASS",
+    "interpolations_retained": "PASS",
+    "disclosure_and_witness_link": "PASS",
+    "book_and_alignment_views_vs_base": "PASS",
+    "no_corpus_changes": "Verified by independent SHA-256 integrity QA"
+  },
+  "Book_VI_alignment_gate": {
+    "units": [
+      {
+        "unit": "259",
+        "panes": {
+          "Latin": "Haec dicens sacerdos nequaquam satisfecit saul quicum esset in magno terrore neque ueram confessionem credens iussit armatis circum ad stantibus ut eum cum sua ",
+          "English": "When the high priest had spoken thus, he did not persuade Saul, his fear was so prevalent, that he could not give credit to an apology that was very just. So he",
+          "Greek": "Ταῦτα λέγων ὁ ἀρχιερεὺς οὐκ ἔπεισε τὸν Σαοῦλον: δεινὸς γὰρ ὁ φόβος μηδ᾽ ἀληθεῖ πιστεύειν ἀπολογίᾳ: κελεύει δὲ τοῖς ὁπλίταις περιστᾶσιν αὐτὸν ἀποκτεῖναι. μὴ θαρρ"
+        },
+        "pane_switch": "PASS",
+        "result": "PASS"
+      },
+      {
+        "unit": "262",
+        "panes": {
+          "Latin": "porro saul rex crudele sic opus efficiens, et totam generationem sacerdotalem interimens, et neque infantibus misericordiam, nec senibus reuerentiam habens sed ",
+          "English": "Now this king Saul, by perpetrating so barbarous a crime, and murdering the whole family of the high-priestly dignity, by having no pity of the infants, nor rev",
+          "Greek": "Σαοῦλος δὲ ὁ βασιλεὺς ὠμὸν οὕτως ἔργον διαπραξάμενος καὶ γενεὰν ὅλην ἀρχιερατικῆς ἀποσφάξας τιμῆς καὶ μήτ᾽ ἐπὶ νηπίοις λαβὼν οἶκτον μήτ᾽ ἐπὶ γέρουσιν αἰδῶ, κατα"
+        },
+        "pane_switch": "PASS",
+        "result": "PASS"
+      },
+      {
+        "unit": "271",
+        "panes": {
+          "Latin": "Abiathar itaque abimelech filius qui solus fuerat de sacerdotibus a saul interfectis erutus fugiens ad dauid erumnam suorum omnium et patris interitum declaraui",
+          "English": "But Abiathar, the son of Ahimelech, who alone could be saved out of the family of priests slain by Saul, fled to David, and informed him of the calamity that ha",
+          "Greek": "Ὁ δ᾽ Ἀβιάθαρος ὁ τοῦ Ἀβιμελέχου παῖς ὁ μόνος δυνηθεὶς ἐκ τοῦ γένους τῶν ὑπὸ τοῦ Σαούλου φονευθέντων ἱερέων φυγὼν πρὸς Δαυίδην τὴν τῶν οἰκείων αὐτοῦ συμφορὰν ἐδή"
+        },
+        "pane_switch": "PASS",
+        "result": "PASS"
+      },
+      {
+        "unit": "272",
+        "panes": {
+          "Latin": "Eo siquidem tempore audiens dauid palaestinos ceilanorum prouinciam deuastare consultus est deum prophetam si eum pugnare praeciperit. Quo dicente quod diuinita",
+          "English": "About this time it was that David heard how the Philistines had made an inroad into the country of Keilah, and robbed it; so he offered himself to fight against",
+          "Greek": "Κατὰ δὲ τοῦτον τὸν καιρὸν ἀκούσας ὁ Δαυίδης τοὺς Παλαιστίνους ἐμβεβληκότας εἰς τὴν Κιλλανῶν χώραν καὶ ταύτην διαρπάζοντας δίδωσιν ἑαυτὸν στρατεύειν ἐπ᾽ αὐτοὺς τ"
+        },
+        "pane_switch": "PASS",
+        "result": "PASS"
+      },
+      {
+        "unit": "275",
+        "panes": {
+          "Latin": "Dauid autem surgens ex inde uenit in quendam locum zifin qui uocatur noua: ubi ionathas filius saul ueniens ad eum et osculatus securum eum esse dixit, et spem ",
+          "English": "Then David removed thence, and came to a certain place called the New Place, belonging to Ziph; where Jonathan, the son of Saul, came to him, and saluted him, a",
+          "Greek": "Δαυίδης δὲ ἐκεῖθεν ἄρας εἴς τινα τόπον Καινὴν καλουμένην τῆς Ζιφήνης παραγίνεται, εἰς ὃν Ἰωνάθης ὁ τοῦ Σαούλου παῖς συμβαλὼν αὐτῷ καὶ κατασπασάμενος θαρρεῖν τε "
+        },
+        "pane_switch": "PASS",
+        "result": "PASS"
+      }
+    ],
+    "neighboring_units": [
+      "259",
+      "275"
+    ],
+    "alignment_partition": {
+      "three_bindings": 3,
+      "partition": "PASS"
+    },
+    "niese": [
+      {
+        "niese": 269,
+        "language_comparisons": 3,
+        "result": "PASS"
+      },
+      {
+        "niese": 271,
+        "language_comparisons": 3,
+        "result": "PASS"
+      }
+    ],
+    "XML_ID_sameAs_text_topology": "Verified separately by byte integrity script",
+    "generic_data_bindings": true
+  },
+  "rendered_DOM_and_exception_gate": {
+    "checks": [
+      {
+        "book": 1,
+        "chapter": "preface",
+        "subchapter": 2,
+        "state": {
+          "bookNum": "preface",
+          "chapterNum": null,
+          "subchapterNum": "2",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 2,
+        "chapter": 13,
+        "subchapter": 4,
+        "state": {
+          "bookNum": "02",
+          "chapterNum": "13",
+          "subchapterNum": "4",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 53,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 4,
+        "chapter": 8,
+        "subchapter": 32,
+        "state": {
+          "bookNum": "04",
+          "chapterNum": "8",
+          "subchapterNum": "32",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 5,
+        "chapter": 3,
+        "subchapter": 2,
+        "state": {
+          "bookNum": "05",
+          "chapterNum": "3",
+          "subchapterNum": "2",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 6,
+        "chapter": 3,
+        "subchapter": 2,
+        "state": {
+          "bookNum": "06",
+          "chapterNum": "3",
+          "subchapterNum": "2",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 6,
+        "chapter": 12,
+        "subchapter": 8,
+        "state": {
+          "bookNum": "06",
+          "chapterNum": "12",
+          "subchapterNum": "8",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 52,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 6,
+        "chapter": 13,
+        "subchapter": 1,
+        "state": {
+          "bookNum": "06",
+          "chapterNum": "13",
+          "subchapterNum": "1",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 50,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 7,
+        "chapter": 1,
+        "subchapter": 1,
+        "state": {
+          "bookNum": "07",
+          "chapterNum": "1",
+          "subchapterNum": "1",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 8,
+        "chapter": 10,
+        "subchapter": 3,
+        "state": {
+          "bookNum": "08",
+          "chapterNum": "10",
+          "subchapterNum": "3",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 11,
+        "chapter": 8,
+        "subchapter": null,
+        "state": {
+          "bookNum": "11",
+          "chapterNum": "8",
+          "subchapterNum": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 80,
+        "disclosures": 3,
+        "result": "PASS"
+      },
+      {
+        "book": 11,
+        "chapter": 8,
+        "subchapter": 2,
+        "state": {
+          "bookNum": "11",
+          "chapterNum": "8",
+          "subchapterNum": "2",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 50,
+        "disclosures": 3,
+        "result": "PASS"
+      },
+      {
+        "book": 11,
+        "chapter": 8,
+        "subchapter": 3,
+        "state": {
+          "bookNum": "11",
+          "chapterNum": "8",
+          "subchapterNum": "3",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 11,
+        "chapter": 8,
+        "subchapter": 4,
+        "state": {
+          "bookNum": "11",
+          "chapterNum": "8",
+          "subchapterNum": "4",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 50,
+        "disclosures": 3,
+        "result": "PASS"
+      },
+      {
+        "book": 11,
+        "chapter": 8,
+        "subchapter": 5,
+        "state": {
+          "bookNum": "11",
+          "chapterNum": "8",
+          "subchapterNum": "5",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 11,
+        "chapter": 8,
+        "subchapter": 6,
+        "state": {
+          "bookNum": "11",
+          "chapterNum": "8",
+          "subchapterNum": "6",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 60,
+        "disclosures": 3,
+        "result": "PASS"
+      },
+      {
+        "book": 14,
+        "chapter": 10,
+        "subchapter": 19,
+        "state": {
+          "bookNum": "14",
+          "chapterNum": "10",
+          "subchapterNum": "19",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 15,
+        "chapter": 3,
+        "subchapter": 5,
+        "state": {
+          "bookNum": "15",
+          "chapterNum": "3",
+          "subchapterNum": "5",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      },
+      {
+        "book": 16,
+        "chapter": 8,
+        "subchapter": 2,
+        "state": {
+          "bookNum": "16",
+          "chapterNum": "8",
+          "subchapterNum": "2",
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "subchapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "renderedIDs": 47,
+        "disclosures": 0,
+        "result": "PASS"
+      }
+    ],
+    "duplicate_rendered_DOM_IDs": "NONE",
+    "source_language_toggles": "PASS",
+    "Antiquities_labels": "PASS",
+    "witness_order_link": "PASS",
+    "public_XI_XX_Niese_expansion": false
+  },
+  "protected_Bellum_alternative_sources_and_Niese": {
+    "checks": [
+      {
+        "work": "bellum-judaicum",
+        "book": 1,
+        "source": "whiston",
+        "chapters": 34,
+        "niese": 656,
+        "ranges": 1147,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 1,
+        "source": "lodge1602",
+        "chapters": 34,
+        "niese": 656,
+        "ranges": 1147,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 2,
+        "source": "whiston",
+        "chapters": 22,
+        "niese": 641,
+        "ranges": 944,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 2,
+        "source": "lodge1602",
+        "chapters": 22,
+        "niese": 641,
+        "ranges": 944,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 3,
+        "source": "whiston",
+        "chapters": 10,
+        "niese": 534,
+        "ranges": 715,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 3,
+        "source": "lodge1602",
+        "chapters": 10,
+        "niese": 534,
+        "ranges": 715,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 4,
+        "source": "whiston",
+        "chapters": 11,
+        "niese": 580,
+        "ranges": 728,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 4,
+        "source": "lodge1602",
+        "chapters": 11,
+        "niese": 580,
+        "ranges": 728,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 5,
+        "source": "whiston",
+        "chapters": 13,
+        "niese": 526,
+        "ranges": 658,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 5,
+        "source": "lodge1602",
+        "chapters": 13,
+        "niese": 526,
+        "ranges": 658,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 6,
+        "source": "whiston",
+        "chapters": 10,
+        "niese": 350,
+        "ranges": 445,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 6,
+        "source": "lodge1602",
+        "chapters": 10,
+        "niese": 350,
+        "ranges": 445,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 7,
+        "source": "whiston",
+        "chapters": 11,
+        "niese": 435,
+        "ranges": 533,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 7,
+        "source": "lodge1602",
+        "chapters": 11,
+        "niese": 435,
+        "ranges": 533,
+        "result": "PASS"
+      }
+    ],
+    "result": "PASS"
+  },
+  "totals": {
+    "traditional_level_rows": 1689,
+    "physical_positions": 1441,
+    "Chapter_menus": 257,
+    "Subchapter_menus": 1432,
+    "language_cases": 5067,
+    "exact_executable_range_checks": 5034,
+    "expected_missing_Book_IX_range_cases": 33,
+    "current_Antiquities_Niese_selections": 2456,
+    "current_Antiquities_Niese_language_comparisons": 7368,
+    "protected_other_work_book_groups": 14,
+    "protected_other_work_range_checks": 3373,
+    "additional_Bellum_source_range_checks": 10340,
+    "additional_Bellum_source_Niese_selections": 7444
+  },
+  "Book_XI_XML_bytes_order_text_IDs_sameAs": "UNCHANGED",
+  "Book_XI_paragraph_reordering": "WITHDRAWN_NOT_PERFORMED",
+  "Book_XI_specific_renderer_conditionals": "NONE",
+  "Niese_VIII_XX_public_expansion": "NOT_IMPLEMENTED_PER_PHASE_1_SCOPE",
+  "Bamberg_navigation": "NOT_IMPLEMENTED_PER_PHASE_1_SCOPE",
+  "Book_VII_alignment_target_graph": "UNCHANGED; new traditional registry directly selects existing latin-book07-num",
+  "no_staging_commit_push_merge_rebase_or_Git_configuration_change": true,
+  "only_authorized_worktree_branch_creation": true,
+  "site_build": "NOT_RUN; source browser harness used",
+  "harness_qualification": "For differential tests the old renderer receives HTMLCollection.forEach compatibility; production protected-other-work code remains unchanged. Comparisons certify equality with that supplied compatibility.",
+  "diagnostic_history": {
+    "initial_VI_locator_blocker": {
+      "start": "LOEB-06-Subchapter-12-8",
+      "next": "LOEB-06-Chapter-13-0",
+      "Latin": {
+        "start_paragraph": "latin-book06-num271",
+        "start_offset": 1,
+        "end_paragraph": "latin-book06-num271",
+        "end_offset": 0,
+        "result": "REVERSED_RANGE"
+      },
+      "English": {
+        "start_paragraph": "english-book06-num271",
+        "start_offset": 0,
+        "end_paragraph": "english-book06-num271",
+        "end_offset": 0,
+        "result": "EMPTY_RANGE"
+      },
+      "note": "Frozen v1.1 current-language locators require independent adjudication. No replacement locator or new source judgment was supplied."
+    },
+    "previous_XI_single_interval_restart": {
+      "structural_rows_attempted": 967,
+      "language_cases": 2901,
+      "executable_cases": 2866,
+      "unavailable_cases": 35,
+      "passed_complete_interval_and_incipit": 2861,
+      "failed_cases": 5,
+      "failed_incipits": 3,
+      "failed_full_projection_comparisons": 2,
+      "last_book_attempted": 11,
+      "full_corpus_PASS": false
+    },
+    "Book_XI_defect_interpretation": "WITHDRAWN; authentic witness order",
+    "earlier_URL_history_empty_selection_failure": "RESOLVED; explicit selected coordinate now persists"
+  },
+  "final_git": {
+    "implementation_head": "f7d9142cad998e8a005adea1a22532b9a78592db",
+    "implementation_branch": "antiquities-traditional-navigation",
+    "status_short": " M _includes/display-settings.html\n M assets/js/renderTei.js\n M assets/xml/antiquities/English/book-01.xml\n M assets/xml/antiquities/English/book-13.xml\n M assets/xml/antiquities/English/book-15.xml\n M assets/xml/antiquities/Greek/book-15.xml\n M assets/xml/antiquities/Greek/book-16.xml\n M assets/xml/antiquities/Greek/book-17.xml\n M assets/xml/antiquities/Greek/book-18.xml\n M assets/xml/antiquities/Greek/book-19.xml\n M assets/xml/antiquities/Greek/book-20.xml\n M assets/xml/antiquities/Latin/book-13.xml\n M assets/xml/antiquities/Latin/book-15.xml\n M assets/xml/antiquities/Latin/book-16.xml\n?? assets/xml/antiquities/structure.xml\n?? review/Antiquities_Traditional_Navigation_2026-10-06/BASELINE.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_FAILURE.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_PROGRESS.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/FILE_MANIFEST.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/INTEGRITY_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/MARKERS.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/PROTECTED_SOURCE_GATE_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/RENDERED_GATE_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/RENDERER_FORMAT_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/REPORT.md\n?? review/Antiquities_Traditional_Navigation_2026-10-06/SOURCE_AUTHORITY.md\n?? review/Antiquities_Traditional_Navigation_2026-10-06/VII_CURRENT_LOCATOR.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/VII_current_locator_adjudication.md\n?? review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_GATE_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_INTEGRITY_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_REPAIR.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/VI_LOCATOR_GATE_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/VI_locator_corrections.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/VI_xii8_XIII_locator_adjudication.md\n?? review/Antiquities_Traditional_Navigation_2026-10-06/XI_LATIN_PROJECTION_DIAGNOSIS.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/XI_MULTISPAN_GATE_QA.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/XI_MULTISPAN_MEMBERSHIP.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/XI_RANGE_BLOCKER.json\n?? review/Antiquities_Traditional_Navigation_2026-10-06/XI_current_text_multispan_adjudication.md\n?? review/Antiquities_Traditional_Navigation_2026-10-06/XI_viii4_viii5_stop_condition.md\n?? review/Antiquities_Traditional_Navigation_2026-10-06/adjudicate_book_vi.py\n?? review/Antiquities_Traditional_Navigation_2026-10-06/adjudicate_book_xi.py\n?? review/Antiquities_Traditional_Navigation_2026-10-06/finalize_review.py\n?? review/Antiquities_Traditional_Navigation_2026-10-06/navigation.test.cjs\n?? review/Antiquities_Traditional_Navigation_2026-10-06/prepare_registry.py\n?? review/Antiquities_Traditional_Navigation_2026-10-06/tei_all.rng\n?? review/Antiquities_Traditional_Navigation_2026-10-06/verify_integrity.py",
+    "staged_files": "",
+    "diff_check": "PASS",
+    "canonical_head": "f7d9142cad998e8a005adea1a22532b9a78592db",
+    "canonical_branch": "v2-development",
+    "canonical_status_short": ""
+  }
+}
