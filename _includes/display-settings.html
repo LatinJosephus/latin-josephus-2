@@ -49,9 +49,16 @@
           </form>
         </div>
 
+        <div id="subchapter-select">
+          <form class="accordion-row hidden">
+            <label for="subchapter-selector">Select a Subchapter:</label>
+            <select id="subchapter-selector"></select>
+          </form>
+        </div>
+
         <div id="section-select">
           <form class="accordion-row hidden">
-            <label for="section-selector">Select a sub-chapter:</label>
+            <label for="section-selector">{% if page.permalink == "/antiquities/" %}Select an Alignment unit:{% else %}Select a sub-chapter:{% endif %}</label>
             <select id="section-selector"></select>
           </form>
         </div>
@@ -118,9 +125,14 @@
               <label class="form-check-label" for="chapter-level">Chapter</label>
             </div>
 
+            <div class="form-check form-check-inline" hidden>
+              <input class="form-check-input" type="radio" name="level-options" id="subchapter-level" value="subchapter-level" />
+              <label class="form-check-label" for="subchapter-level">Subchapter</label>
+            </div>
+
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="level-options" id="section-level" value="section-level" />
-              <label class="form-check-label" for="section-level">Sub-chapter</label>
+              <label class="form-check-label" for="section-level">{% if page.permalink == "/antiquities/" %}Alignment unit{% else %}Sub-chapter{% endif %}</label>
             </div>
 
             <div class="form-check form-check-inline">
