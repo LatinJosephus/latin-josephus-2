@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const nieseSelectMenu = document.getElementById("niese-selector");
   const subchapterSelectForm = document.querySelector("#subchapter-select form");
   const subchapterSelectMenu = document.getElementById("subchapter-selector");
+  const bambergSelectForm = document.querySelector("#bamberg-select form");
+  const bambergSelectMenu = document.getElementById("bamberg-selector");
+  const bambergPrevious = document.getElementById("bamberg-previous");
+  const bambergNext = document.getElementById("bamberg-next");
   const viewingLevelSelectMenu = document.getElementById("level-select");
 
   const sourceSelectMenus = {
@@ -288,6 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bookNum: activeWork.preface ? activeWork.preface.value : "01",
     chapterNum: null,
     subchapterNum: null,
+    bambergId: null,
     sectionNum: null,
     nieseNum: null,
     viewingLevel: 'book-level',
@@ -301,6 +306,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const usesTraditionalStructure = () => Boolean(activeWork.traditionalStructure);
   let traditionalRegistry = null;
   let alignmentRangeRegistry = [];
+  let bambergRegistry = [];
+  let boundaryRegistry = [];
   let traditionalRegistryRequest = null;
   const loadTraditionalRegistry = async () => {
     if (!usesTraditionalStructure()) return;
@@ -320,6 +327,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ...fields([...item.children].find(el => el.localName === "fs"))}));
         traditionalRegistry = records("traditional-boundaries");
         alignmentRangeRegistry = records("alignment-ranges");
+        bambergRegistry = records("bamberg-boundaries");
+        boundaryRegistry = [...traditionalRegistry, ...bambergRegistry];
       })();
     }
     await traditionalRegistryRequest;
@@ -333,6 +342,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ? traditionalRows("subchapter", isPreface() ? "" : state.chapterNum)
       .find(row => row.subchapter === String(state.subchapterNum))
     : traditionalRows("chapter").find(row => row.chapter === String(state.chapterNum));
+  // Manuscript identity and source order are registry data, independent of labels/citations.
+  const bambergRows = () => bambergRegistry.filter(row => !isPreface() && Number(row.book) === Number(state.bookNum));
+  const bambergSelection = () => bambergRows().find(row => row.id === state.bambergId);
+  const selectAvailableBambergDivision = () => {
+    state.bambergId = bambergRows()[0]?.id || null;
+    if (!state.bambergId) state.viewingLevel = "book-level";
+  };
   const selectAvailableTraditionalSubchapter = () => {
     const rows = traditionalRows("subchapter", isPreface() ? "" : state.chapterNum);
     state.subchapterNum = rows[0]?.subchapter || null;
@@ -365,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // The resolver knows no book, chapter, source-number correction or transposition case.
   const traditionalRangeView = (language, data, record) => {
     if (!record) return structuralUnavailable(language, "Select a valid Chapter or Subchapter.");
-    const endRecord = record.end === "BOOK_END" ? null : traditionalRegistry.find(row => row.id === record.end);
+    const endRecord = record.end === "BOOK_END" ? null : boundaryRegistry.find(row => row.id === record.end);
     const endLocator = record.endLocator || endRecord?.[language];
     const spans = record[language]?.spans || [{start: record[language], end: endLocator || {kind: "book-end"}}];
     const wrapper = document.createElement("tei-div");
@@ -453,6 +469,15 @@ document.addEventListener("DOMContentLoaded", () => {
     paragraphs.forEach(p => wrapper.appendChild(p.cloneNode(true)));
     return wrapper;
   };
+  // Public URLs serialize the frozen source row, never a manuscript label.
+  const bambergIdentityFromUrl = value => {
+    const row = /^(?:0*)([1-9]\d*)$/.exec(value || "");
+    return row ? `B78-table1-row${row[1].padStart(3, "0")}` : value;
+  };
+  const bambergUrlValue = identity => {
+    const row = /^B78-table1-row0*([1-9]\d*)$/.exec(identity || "");
+    return row ? row[1] : identity;
+  };
   const readTraditionalUrl = () => {
     const params = new URLSearchParams(window.location.search);
     const rawBook = params.get("book");
@@ -468,14 +493,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return {bookNum, chapterNum: bookNum === "preface" ? null : positive("chapter"),
       subchapterNum: positive("subchapter"), unitNum: /^[1-9]\d*[a-z]*$/.test(rawUnit || "") ? rawUnit : null,
       nieseNum: activeWork.nieseBooks.includes(Number(bookNum)) ? positive("niese") : null,
+      bambergId: bambergIdentityFromUrl(params.get("bamberg")),
       sourceSelections, hasLocationParams: params.size > 0};
   };
   const applyTraditionalUrl = () => {
     const location = readTraditionalUrl();
     Object.assign(state, {bookNum: location.bookNum, chapterNum: location.chapterNum,
-      subchapterNum: location.subchapterNum, sectionNum: location.unitNum, nieseNum: location.nieseNum,
+      subchapterNum: location.subchapterNum, sectionNum: location.unitNum, nieseNum: location.nieseNum, bambergId: location.bambergId,
       sources: {...initialSources, ...location.sourceSelections}});
-    if (state.nieseNum) {
+    if (state.bambergId !== null) {
+      state.viewingLevel = "bamberg-level"; state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null; state.nieseNum = null;
+    } else if (state.nieseNum) {
       state.viewingLevel = "niese-level"; state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null;
     } else if (state.sectionNum) {
       state.viewingLevel = "section-level"; state.chapterNum = null; state.subchapterNum = null;
@@ -485,11 +513,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const syncTraditionalUrl = mode => {
     const url = new URL(window.location.href);
-    ["book", "chapter", "subchapter", "unit", "num", "niese"].forEach(key => url.searchParams.delete(key));
+    ["book", "chapter", "subchapter", "bamberg", "unit", "num", "niese"].forEach(key => url.searchParams.delete(key));
     url.searchParams.set("book", isPreface() ? "preface" : String(Number(state.bookNum)));
     if (["chapter-level", "subchapter-level"].includes(state.viewingLevel) && state.chapterNum)
       url.searchParams.set("chapter", state.chapterNum);
     if (state.viewingLevel === "subchapter-level" && state.subchapterNum) url.searchParams.set("subchapter", state.subchapterNum);
+    if (state.viewingLevel === "bamberg-level" && state.bambergId !== null) url.searchParams.set("bamberg", bambergUrlValue(state.bambergId));
     if (state.viewingLevel === "section-level" && state.sectionNum) url.searchParams.set("unit", state.sectionNum);
     if (state.viewingLevel === "niese-level" && state.nieseNum) url.searchParams.set("niese", state.nieseNum);
     Object.entries(activeWork.languages).forEach(([language, config]) => {
@@ -2162,6 +2191,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectView = (language, data, idBase) => {
     if (!data) return null;
     if (usesTraditionalStructure()) {
+      if (state.viewingLevel === "bamberg-level") {
+        const record = bambergSelection();
+        return record ? traditionalRangeView(language, data, record)
+          : structuralUnavailable(language, "This book has no matching audited Bamberg division identity.");
+      }
       if (["chapter-level", "subchapter-level"].includes(state.viewingLevel))
         return traditionalRangeView(language, data, traditionalSelection());
       if (state.viewingLevel === "section-level" && state.sectionNum) return antiquitiesUnitView(language, data);
@@ -2494,9 +2528,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const showChapter = (
       state.viewingLevel !== "book-level"
       && state.viewingLevel !== "niese-level"
+      && state.viewingLevel !== "bamberg-level"
       && !isPreface()
     );
     const showSection = state.viewingLevel === "section-level";
+    const bambergControl = document.getElementById("bamberg-level");
+    const bambergAvailable = usesTraditionalStructure() && bambergRows().length > 0;
+    if (bambergControl) bambergControl.disabled = !bambergAvailable;
+    if (bambergSelectMenu) bambergSelectMenu.disabled = !bambergAvailable;
+    bambergSelectForm?.classList.toggle("hidden", !bambergAvailable || state.viewingLevel !== "bamberg-level");
     subchapterSelectForm?.classList.toggle("hidden", !usesTraditionalStructure() || state.viewingLevel !== "subchapter-level");
     const subchapterControl = document.getElementById("subchapter-level");
     if (subchapterControl) {
@@ -2551,6 +2591,10 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionSelectMenu.value = state.sectionNum ?? "";
     if (subchapterSelectMenu) subchapterSelectMenu.value = state.subchapterNum ?? "";
     if (nieseSelectMenu) nieseSelectMenu.value = state.nieseNum ?? "";
+    if (bambergSelectMenu) bambergSelectMenu.value = state.bambergId ?? "";
+    const divisions = bambergRows(), index = divisions.findIndex(row => row.id === state.bambergId);
+    if (bambergPrevious) bambergPrevious.disabled = index <= 0;
+    if (bambergNext) bambergNext.disabled = index < 0 || index >= divisions.length - 1;
 
     const levelControl = document.getElementById(state.viewingLevel);
     if (levelControl) levelControl.checked = true;
@@ -2702,6 +2746,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setChapterSelectOptions();
     setTraditionalSubchapterOptions();
+    setBambergOptions();
     setSectionSelectOptions();
     setNieseSelectOptions();
   };
@@ -2796,7 +2841,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
 
-        if (usesTraditionalStructure()) data.querySelectorAll('tei-anchor[type="traditional-boundary"]').forEach(marker => marker.hidden = true);
+        if (usesTraditionalStructure()) data.querySelectorAll('tei-anchor[type="traditional-boundary"], tei-anchor[type="bamberg-boundary"]').forEach(marker => marker.hidden = true);
         decorateNieseMarkers(language, data);
         decorateContraApionemSectionMarkers(language, data);
         pane.appendChild(data);
@@ -2828,6 +2873,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (usesTraditionalStructure() && state.viewingLevel === "subchapter-level")
       sectionLabel.innerText = state.subchapterNum ? `Subchapter ${state.subchapterNum}` : "";
+    if (usesTraditionalStructure() && state.viewingLevel === "bamberg-level")
+      sectionLabel.innerText = bambergSelection() ? `Bamberg division ${bambergSelection().display}` : "Bamberg division";
     updateLanguageUI();
     updateNavigationForms();
     addContraApionemTransmissionNotice();
@@ -2919,6 +2966,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const setBambergOptions = () => {
+    if (!bambergSelectMenu || !usesTraditionalStructure()) return;
+    bambergSelectMenu.options.length = 0;
+    bambergRows().forEach(row => bambergSelectMenu.add(new Option(row.display, row.id)));
+  };
   const setTraditionalSubchapterOptions = () => {
     if (!subchapterSelectMenu || !usesTraditionalStructure()) return;
     subchapterSelectMenu.options.length = 0;
@@ -3236,7 +3288,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setState(() => {
         state.bookNum = event.target.value;
-        if (usesTraditionalStructure()) { state.subchapterNum = null; state.viewingLevel = "book-level"; }
+        if (usesTraditionalStructure()) {
+          state.subchapterNum = null;
+          if (state.viewingLevel === "bamberg-level") selectAvailableBambergDivision();
+          else { state.bambergId = null; state.viewingLevel = "book-level"; }
+        }
         state.chapterNum = null;
         state.sectionNum = null;
         state.nieseNum = null;
@@ -3249,6 +3305,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setState(() => {
         state.chapterNum = event.target.value;
         if (usesTraditionalStructure()) {
+          state.bambergId = null;
           state.subchapterNum = null;
           state.viewingLevel = state.chapterNum ? (state.viewingLevel === "subchapter-level" ? "subchapter-level" : "chapter-level") : "book-level";
           if (state.viewingLevel === "subchapter-level") selectAvailableTraditionalSubchapter();
@@ -3262,7 +3319,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sectionLabel.innerText = sectionDisplayLabel(event.target.value);
       setState(() => {
         state.sectionNum = event.target.value;
-        if (usesTraditionalStructure()) { state.viewingLevel = "section-level"; state.chapterNum = null; state.subchapterNum = null; }
+        if (usesTraditionalStructure()) { state.bambergId = null; state.viewingLevel = "section-level"; state.chapterNum = null; state.subchapterNum = null; }
         state.nieseNum = null;
       });
     });
@@ -3270,6 +3327,7 @@ document.addEventListener("DOMContentLoaded", () => {
     subchapterSelectMenu?.addEventListener("change", event => {
       if (!usesTraditionalStructure()) return;
       setState(() => {
+        state.bambergId = null;
         state.subchapterNum = event.target.value || null;
         state.viewingLevel = state.subchapterNum ? "subchapter-level" : (isPreface() ? "book-level" : "chapter-level");
         state.sectionNum = null; state.nieseNum = null;
@@ -3279,18 +3337,36 @@ document.addEventListener("DOMContentLoaded", () => {
       nieseSelectMenu.addEventListener("change", (event) => {
         setState(() => {
           state.nieseNum = event.target.value || null;
-          if (usesTraditionalStructure()) { state.subchapterNum = null; state.viewingLevel = "niese-level"; }
+          if (usesTraditionalStructure()) { state.bambergId = null; state.subchapterNum = null; state.viewingLevel = "niese-level"; }
           state.chapterNum = null;
           state.sectionNum = null;
         });
       });
     }
 
+    const selectBamberg = identity => setState(() => {
+      state.bambergId = identity; state.viewingLevel = "bamberg-level";
+      state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null; state.nieseNum = null;
+    });
+    bambergSelectMenu?.addEventListener("change", event => selectBamberg(event.target.value));
+    const advanceBamberg = direction => {
+      const rows = bambergRows(), index = rows.findIndex(row => row.id === state.bambergId);
+      const next = rows[index + direction];
+      if (index >= 0 && next) selectBamberg(next.id);
+    };
+    bambergPrevious?.addEventListener("click", () => advanceBamberg(-1));
+    bambergNext?.addEventListener("click", () => advanceBamberg(1));
     viewingLevelSelectMenu.addEventListener("change", (event) => {
       setState(() => {
         const nextLevel = event.target.value;
         if (usesTraditionalStructure()) {
           state.viewingLevel = nextLevel;
+          if (nextLevel === "bamberg-level") {
+            state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null; state.nieseNum = null;
+            if (!bambergSelection()) selectAvailableBambergDivision();
+            return;
+          }
+          state.bambergId = null;
           if (["chapter-level", "subchapter-level"].includes(nextLevel)) {
             state.sectionNum = null; state.nieseNum = null;
             if (!isPreface() && !state.chapterNum) state.chapterNum = traditionalRows("chapter")[0]?.chapter || null;

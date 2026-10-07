@@ -63,6 +63,17 @@
           </form>
         </div>
 
+        {% if page.permalink == "/antiquities/" %}
+        <div id="bamberg-select">
+          <form class="accordion-row hidden">
+            <label for="bamberg-selector">Select a Bamberg division:</label>
+            <select id="bamberg-selector"></select>
+            <button type="button" id="bamberg-previous" aria-label="Previous Bamberg division">Previous</button>
+            <button type="button" id="bamberg-next" aria-label="Next Bamberg division">Next</button>
+          </form>
+        </div>
+        {% endif %}
+
         <div id="niese-select">
           <form class="accordion-row hidden">
             <label for="niese-selector">Select a Niese section:</label>
@@ -134,6 +145,13 @@
               <input class="form-check-input" type="radio" name="level-options" id="section-level" value="section-level" />
               <label class="form-check-label" for="section-level">{% if page.permalink == "/antiquities/" %}Alignment unit{% else %}Sub-chapter{% endif %}</label>
             </div>
+
+            {% if page.permalink == "/antiquities/" %}
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="level-options" id="bamberg-level" value="bamberg-level" />
+              <label class="form-check-label" for="bamberg-level">Bamberg division</label>
+            </div>
+            {% endif %}
 
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="level-options" id="niese-level" value="niese-level" />
