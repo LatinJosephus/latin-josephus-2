@@ -1,0 +1,80 @@
+{
+  "status": "SUPERSEDED_TEST_HARNESS_DIAGNOSTICS",
+  "description": "Initial diagnostics were generated during adaptation of the existing browser harness. Final gates are identified separately in QA.json. No source boundary was inferred or amended to make a test pass.",
+  "harness_adjustments": [
+    "Inject cleanHTML into the browser instrumentation scope.",
+    "Render independent Antiquities Liquid conditionals without swallowing protected-work controls.",
+    "Await complete asynchronous control rendering rather than the state update alone.",
+    "Use the English pane for cross-work UI checks because DEH has no Greek pane.",
+    "Exclude the new null Bamberg state field from protected-work differential state comparisons.",
+    "Wait for history-triggered rendering and native keyboard change events."
+  ],
+  "initial_diagnostics": {
+    "BROWSER_FAILURE.json": {
+      "error": "TimeoutError: page.waitForFunction: Timeout 60000ms exceeded.",
+      "report": {
+        "traditional": {
+          "rows": 1689,
+          "executable": 5034,
+          "unavailable": 33,
+          "byLanguage": {
+            "Greek": 1678,
+            "Latin": 1678,
+            "English": 1678
+          },
+          "menusChapters": 257,
+          "menusSubchapters": 1432,
+          "physical": 1441
+        },
+        "niese": {
+          "1": {
+            "selections": 320,
+            "language_comparisons": 960,
+            "result": "PASS"
+          },
+          "2": {
+            "selections": 349,
+            "language_comparisons": 1047,
+            "result": "PASS"
+          },
+          "3": {
+            "selections": 322,
+            "language_comparisons": 966,
+            "result": "PASS"
+          },
+          "4": {
+            "selections": 331,
+            "language_comparisons": 993,
+            "result": "PASS"
+          },
+          "5": {
+            "selections": 362,
+            "language_comparisons": 1086,
+            "result": "PASS"
+          },
+          "6": {
+            "selections": 378,
+            "language_comparisons": 1134,
+            "result": "PASS"
+          },
+          "7": {
+            "selections": 394,
+            "language_comparisons": 1182,
+            "result": "PASS"
+          }
+        },
+        "crossWork": [],
+        "ui": [],
+        "errors": [
+          "TypeError: Cannot read properties of null (reading 'addEventListener')"
+        ]
+      }
+    },
+    "BAMBERG_BROWSER_FAILURE.json": {
+      "error": "Error: Negative evidence ordinary fallback"
+    },
+    "INTERACTION_FAILURE.json": {
+      "error": "Error: Protected interaction/DOM semantic regression bellum-judaicum lodge1602"
+    }
+  }
+}

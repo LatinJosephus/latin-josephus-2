@@ -1,0 +1,62 @@
+{
+  "error": "TimeoutError: page.waitForFunction: Timeout 60000ms exceeded.",
+  "report": {
+    "traditional": {
+      "rows": 1689,
+      "executable": 5034,
+      "unavailable": 33,
+      "byLanguage": {
+        "Greek": 1678,
+        "Latin": 1678,
+        "English": 1678
+      },
+      "menusChapters": 257,
+      "menusSubchapters": 1432,
+      "physical": 1441
+    },
+    "niese": {
+      "1": {
+        "selections": 320,
+        "language_comparisons": 960,
+        "result": "PASS"
+      },
+      "2": {
+        "selections": 349,
+        "language_comparisons": 1047,
+        "result": "PASS"
+      },
+      "3": {
+        "selections": 322,
+        "language_comparisons": 966,
+        "result": "PASS"
+      },
+      "4": {
+        "selections": 331,
+        "language_comparisons": 993,
+        "result": "PASS"
+      },
+      "5": {
+        "selections": 362,
+        "language_comparisons": 1086,
+        "result": "PASS"
+      },
+      "6": {
+        "selections": 378,
+        "language_comparisons": 1134,
+        "result": "PASS"
+      },
+      "7": {
+        "selections": 394,
+        "language_comparisons": 1182,
+        "result": "PASS"
+      }
+    },
+    "crossWork": [],
+    "ui": [],
+    "errors": [
+      "TypeError: Cannot read properties of null (reading 'addEventListener')"
+    ]
+  },
+  "status": "SUPERSEDED_TEST_HARNESS_DIAGNOSTIC",
+  "final_authoritative_results": "QA.json and the corresponding final PASS gate JSON"
+}
