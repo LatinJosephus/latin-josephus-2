@@ -1,0 +1,329 @@
+{
+  "result": "PASS",
+  "base": "f393fa1223b38d9ca114e583fcc57d5e34425815",
+  "data_checks": 157,
+  "audit_manifest_entries": 120,
+  "audit_manifest_self_excluded": true,
+  "audit_original_files": 121,
+  "audit_inputs_verified": 504,
+  "new_companions": 9,
+  "new_entries": 109,
+  "per_book": {
+    "1": 19,
+    "2": 8,
+    "3": 10,
+    "4": 5,
+    "6": 15,
+    "7": 12,
+    "8": 12,
+    "9": 16,
+    "10": 12
+  },
+  "registry_before": 30,
+  "registry_after": 39,
+  "Greek_Antiquities_books": 20,
+  "renderer_CSS_changes": 0,
+  "new_narrative_anchors": 0,
+  "browser": {
+    "new_books": 9,
+    "themes": 2,
+    "new_theme_displays": 18,
+    "all_existing_source_records_exact": 30,
+    "per_book_URL_history_interaction_checks": 9,
+    "book_switches": 19,
+    "keyboard": "PASS",
+    "page_errors": 0,
+    "failed_requests": 0,
+    "contents_contrast_light": 14.05,
+    "contents_contrast_dark": 11.85,
+    "VIII_X_public_Niese_still_disabled": true
+  },
+  "traditional": {
+    "rows": 1689,
+    "executable": 5034,
+    "unavailable": 33,
+    "byLanguage": {
+      "Greek": 1678,
+      "Latin": 1678,
+      "English": 1678
+    },
+    "menusChapters": 257,
+    "menusSubchapters": 1432,
+    "physical": 1441
+  },
+  "Niese_I_VII": {
+    "selections": 2456,
+    "language_comparisons": 7368,
+    "differential_DOM": "PASS"
+  },
+  "Bamberg": {
+    "identities": 198,
+    "language_displays": 594,
+    "same_Niese_different_position_pairs": 6,
+    "pair_language_checks": 18,
+    "compact_URLs": "PASS"
+  },
+  "Alignment_units": {
+    "identities": 1441,
+    "language_comparisons": 4323,
+    "Book_and_witness_order": "PASS"
+  },
+  "followup": {
+    "all_chapter_availability_checks": 257,
+    "zero_subchapter_chapters": 9,
+    "structural_prefix_checks": 227,
+    "VI_xii8_XIII_languages": 3,
+    "XI_notice_cases": 2,
+    "URL_cases": 4
+  },
+  "XI_multispan": {
+    "traditional_language_ranges": 18,
+    "generic_citation_checks": 2,
+    "interpolations_preserved": true
+  },
+  "Bellum_source_regression": {
+    "checks": [
+      {
+        "work": "bellum-judaicum",
+        "book": 1,
+        "source": "whiston",
+        "chapters": 34,
+        "niese": 656,
+        "ranges": 1147,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 1,
+        "source": "lodge1602",
+        "chapters": 34,
+        "niese": 656,
+        "ranges": 1147,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 2,
+        "source": "whiston",
+        "chapters": 22,
+        "niese": 641,
+        "ranges": 944,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 2,
+        "source": "lodge1602",
+        "chapters": 22,
+        "niese": 641,
+        "ranges": 944,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 3,
+        "source": "whiston",
+        "chapters": 10,
+        "niese": 534,
+        "ranges": 715,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 3,
+        "source": "lodge1602",
+        "chapters": 10,
+        "niese": 534,
+        "ranges": 715,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 4,
+        "source": "whiston",
+        "chapters": 11,
+        "niese": 580,
+        "ranges": 728,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 4,
+        "source": "lodge1602",
+        "chapters": 11,
+        "niese": 580,
+        "ranges": 728,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 5,
+        "source": "whiston",
+        "chapters": 13,
+        "niese": 526,
+        "ranges": 658,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 5,
+        "source": "lodge1602",
+        "chapters": 13,
+        "niese": 526,
+        "ranges": 658,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 6,
+        "source": "whiston",
+        "chapters": 10,
+        "niese": 350,
+        "ranges": 445,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 6,
+        "source": "lodge1602",
+        "chapters": 10,
+        "niese": 350,
+        "ranges": 445,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 7,
+        "source": "whiston",
+        "chapters": 11,
+        "niese": 435,
+        "ranges": 533,
+        "result": "PASS"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 7,
+        "source": "lodge1602",
+        "chapters": 11,
+        "niese": 435,
+        "ranges": 533,
+        "result": "PASS"
+      }
+    ],
+    "result": "PASS"
+  },
+  "cross_work": [
+    {
+      "work": "deh",
+      "book": 1,
+      "chapters": 47,
+      "ranges": 457,
+      "result": "PASS"
+    },
+    {
+      "work": "deh",
+      "book": 2,
+      "chapters": 18,
+      "ranges": 156,
+      "result": "PASS"
+    },
+    {
+      "work": "deh",
+      "book": 3,
+      "chapters": 26,
+      "ranges": 160,
+      "result": "PASS"
+    },
+    {
+      "work": "deh",
+      "book": 4,
+      "chapters": 33,
+      "ranges": 181,
+      "result": "PASS"
+    },
+    {
+      "work": "deh",
+      "book": 5,
+      "chapters": 53,
+      "ranges": 285,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 1,
+      "chapters": 34,
+      "ranges": 490,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 2,
+      "chapters": 22,
+      "ranges": 302,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 3,
+      "chapters": 10,
+      "ranges": 180,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 4,
+      "chapters": 11,
+      "ranges": 147,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 5,
+      "chapters": 13,
+      "ranges": 131,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 6,
+      "chapters": 10,
+      "ranges": 94,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 7,
+      "chapters": 11,
+      "ranges": 97,
+      "result": "PASS"
+    },
+    {
+      "work": "contra-apionem",
+      "book": 1,
+      "chapters": 35,
+      "ranges": 355,
+      "result": "PASS"
+    },
+    {
+      "work": "contra-apionem",
+      "book": 2,
+      "chapters": 41,
+      "ranges": 338,
+      "result": "PASS"
+    }
+  ],
+  "interaction_configurations": 5,
+  "protected_preexisting_worktree_files": 498,
+  "protected_preexisting_XML_files": 113,
+  "canonical_files_identical": 499,
+  "original_certifications_unchanged": true,
+  "audit_packet_unchanged": true,
+  "no_staged_changes": true,
+  "new_source_changes_only": "Nine companions and nine-record registry extension",
+  "human_review": "GO",
+  "deferred_questions": [
+    "Existing Book V [στιγμα] encoding: separate editorial hold; no alteration."
+  ],
+  "build_qualification": "Disposable Jekyll build excluded review archive and disabled disk cache. Only jekyll-responsive-image omitted from temporary plugin options because local rmagick dependency is unavailable. Production config untouched.",
+  "visual_qualification": "New contents panes are legible and wrap in both themes. The unchanged site chrome has a pale title surface/low-contrast title in dark screenshots; the same pre-existing chrome is visible in BEFORE captures. It is outside this data-only integration and was not altered."
+}

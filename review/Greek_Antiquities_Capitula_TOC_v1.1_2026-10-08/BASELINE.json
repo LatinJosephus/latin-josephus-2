@@ -1,0 +1,4005 @@
+{
+  "base": "f393fa1223b38d9ca114e583fcc57d5e34425815",
+  "branch": "codex/antiquities-greek-capitula-toc-v1.1",
+  "canonical": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development",
+  "worktree": "C:\\workspace\\LatinJosephus-Greek-Capitula-Integration-20261008",
+  "tracked_files": {
+    ".gitattributes": {
+      "sha256": "c4d630019d490597abf4b0e2f7bc81cb197cccb068875664a222dceb0724aebb",
+      "bytes": 363
+    },
+    ".gitignore": {
+      "sha256": "0bb2a6567e105c6037f1d03bee3614ac391810fb6e282c5824ffe5d2d4bac067",
+      "bytes": 114
+    },
+    "404.html": {
+      "sha256": "4e672616e8f887c0f2aed1886b67f1d12ed00c5207394aa68246d568e8b86cf6",
+      "bytes": 256
+    },
+    "CNAME": {
+      "sha256": "69e323ab0be351ceedef0dc1af9e747691e5ce252a68a4fa79b9eeba44d2d9b5",
+      "bytes": 22
+    },
+    "Gemfile": {
+      "sha256": "aee4bc7bb237f6c63bd743bb3897917297aa5dd8c20f9686f192418527da903d",
+      "bytes": 448
+    },
+    "_bibliography/papers.bib": {
+      "sha256": "500291bd8ab5b8c809cad815c8a662f92854ce70bba18ce89a976b6ecab66b8a",
+      "bytes": 2764
+    },
+    "_config.yml": {
+      "sha256": "b1696dacf1edb5796fb43e4224fd8d32b133f9c82333d9248b60dcd93ac4782a",
+      "bytes": 9711
+    },
+    "_data/coauthors.yml": {
+      "sha256": "2bf85080da1cfa1555d20810a02004b428425d924e224ed3be8a94a92cbf7d81",
+      "bytes": 583
+    },
+    "_docs/deh-bj-parallels-pilot.md": {
+      "sha256": "5f86dbd428980c8b2b6ccdfb6fc79946efcb99f3e6eda6eb962582b270f126e9",
+      "bytes": 9731
+    },
+    "_docs/deh-concordance-editorial-decisions.json": {
+      "sha256": "e0111d56f440662f5928d4356bf55054c1e1dd8c4dfce97feb28d73eee213179",
+      "bytes": 12402
+    },
+    "_docs/deh-concordance-exceptions.md": {
+      "sha256": "46ca388259c8eb16efa2e27c2cf0834f6799ebdc987de0e3d5c76e6ed8ea694c",
+      "bytes": 7587
+    },
+    "_docs/deh-concordance-phase3.md": {
+      "sha256": "f3057a5cf10d1ee58f38ac7e2344afd97aeb03cd7a8771e66049751044ec6cfa",
+      "bytes": 12778
+    },
+    "_docs/deh-concordance-phase4.md": {
+      "sha256": "9cbf3059a535bee61529d9cbec6bd69f743c451ee88780afb5b4133c6e41daec",
+      "bytes": 10499
+    },
+    "_docs/deh-concordance-phase5.md": {
+      "sha256": "ef82768535baf0db4a26a947da6e86ece1b10cc6f1119c1cbff583f7870f7ce2",
+      "bytes": 13500
+    },
+    "_docs/deh-concordance-source/editorial-decisions.json": {
+      "sha256": "f2521158af48ae7829662981553c2329b66a816a61b53c60d18168171ef7711d",
+      "bytes": 6486
+    },
+    "_docs/deh-concordance-source/workbook-values.json": {
+      "sha256": "286b7786139805c98baa30535cb945be4da5c6a68f7050febdbe016c8ddcc75b",
+      "bytes": 42914
+    },
+    "_docs/deh-concordance-validation.json": {
+      "sha256": "7fb0c31850021c4f30e62e2399b09cc8f34cfd009cb16c157a62a5ab1eb5a526",
+      "bytes": 36398
+    },
+    "_docs/lodge1602-bellum-browser-qa.json": {
+      "sha256": "b2fc4bcc89911ad354b3d27902d28edd00112a52401177cc915612b9aaec79c2",
+      "bytes": 11392
+    },
+    "_docs/lodge1602-bellum-integration.json": {
+      "sha256": "ca00763587aa7971cba6fdf6ba3387262124b19b95d4dc2bedb355909fef8b80",
+      "bytes": 41226
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_FINAL_HUMAN_ADJUDICATIONS.json": {
+      "sha256": "27b3be89cd410a18892b91a6453f6e4ba2006264df53c123bbf2ea0d39ac7c44",
+      "bytes": 4543
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_NIESE_SEGMENTATION_4001.tsv": {
+      "sha256": "c65acf0caf54dd6954899fe01cd1e57967005592e0882cb483d42a88f56ba31c",
+      "bytes": 4989922
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_QA.json": {
+      "sha256": "b5d16c4c7fa63b4ceb36c8e90664d044d05af35f3e940941ce673b3f6bbffdab",
+      "bytes": 17985
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_SOURCE_MANIFEST.json": {
+      "sha256": "eafe8ecfd9245a874abdc042d589c1c1cf1e69be23b4541beb00b9bb65d5fd50",
+      "bytes": 10715
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_SUBCHAPTER_ALIGNMENT_704.tsv": {
+      "sha256": "5a4028741b1a833d7b6c718f76e16c134a47d5b38b24c944b34a0592d762e0f9",
+      "bytes": 903870
+    },
+    "_docs/lodge1602-bellum-source/SHA256SUMS.txt": {
+      "sha256": "54e5ace054c13e900f693e5a2dc0a63260fcb61a8aa0b5a85746e5b45273f331",
+      "bytes": 1963
+    },
+    "_docs/lodge1602-bellum-validation.json": {
+      "sha256": "faa5e1e65f52f7d7787ed54dc3a7a15b4ff28a20f30a70a9dc60fab426a916cf",
+      "bytes": 2616
+    },
+    "_includes/annotations-bar.html": {
+      "sha256": "8668d24ffd7c263bbd71e1222e9e706dfae8b3e9158653f87b4c95e6c8f97b41",
+      "bytes": 696
+    },
+    "_includes/deh-parallels.html": {
+      "sha256": "8e59cdf2c11469cd71034a6889faafaa867e02ce0b48a4d5e5537b29ee29e10a",
+      "bytes": 2463
+    },
+    "_includes/display-settings.html": {
+      "sha256": "dc3be4a2bd09faec883a834b4f6f21d4e1d49518f97ceb40f5e173513a17224e",
+      "bytes": 7028
+    },
+    "_includes/footer.html": {
+      "sha256": "bce8d0c0d6af5887f16e276ad06818ef404994ff432e39e1560726ac0c70a22c",
+      "bytes": 967
+    },
+    "_includes/head.html": {
+      "sha256": "c7071abe71a008fbe529f227883719cea6bdc6edb95fca14a517a9de39f64ea5",
+      "bytes": 2812
+    },
+    "_includes/header.html": {
+      "sha256": "49e7864b7f0fddbf4d24d1a598a40095c4fbc73d475ef63f48c2e89e4222f02c",
+      "bytes": 3041
+    },
+    "_includes/logos.html": {
+      "sha256": "0f74f4684a2767965b6f1c83570f116e2267768a7857b05481f02d975c4fda9f",
+      "bytes": 429
+    },
+    "_includes/pagination.html": {
+      "sha256": "0fac089918dba3ffa314a6317f542f672fc74913ddb24ecb47cc8b133f12828a",
+      "bytes": 901
+    },
+    "_includes/projects_horizontal.html": {
+      "sha256": "5084e6186da48a6a18f9183111bc2d4e26abc01247b49d5d585045f2f5861d41",
+      "bytes": 1485
+    },
+    "_includes/scripts/analytics.html": {
+      "sha256": "8a231804d0e49883c67c34740596931696734c8aa2f05f88597e538ac8445995",
+      "bytes": 818
+    },
+    "_includes/scripts/bootstrap.html": {
+      "sha256": "9c5100884cccf62e08441818830f0bb2dcf35070cebfc42e226ffb21c22eb464",
+      "bytes": 577
+    },
+    "_includes/scripts/jquery.html": {
+      "sha256": "71033b8a84892bc775b4f27b57e6dc007bbb03f21ad04cda3e0220df4cd63955",
+      "bytes": 190
+    },
+    "_includes/scripts/mansory.html": {
+      "sha256": "810a9a0b933438d04dc72f047a4dec1a023e8d61225e740a8f63b0ce2d718829",
+      "bytes": 349
+    },
+    "_includes/scripts/misc.html": {
+      "sha256": "46fcb6dfc08dbe004f8334a34d7ec80c279224a3163df7f9f4f86607788c2e35",
+      "bytes": 912
+    },
+    "_layouts/book.html": {
+      "sha256": "56e5b715a14074411d2b88894b090a84c23452b3c5fb483d47e4cfb1e3aaeadd",
+      "bytes": 1529
+    },
+    "_layouts/default.html": {
+      "sha256": "fd96452a0f6b370f0441e650415414a154beaec6012c1d775181b77dabb92070",
+      "bytes": 723
+    },
+    "_layouts/info.html": {
+      "sha256": "cbbaa0c446bcf54616c076974901ada5ffea9000b07c982c0ef5f29631bf054f",
+      "bytes": 863
+    },
+    "_layouts/none.html": {
+      "sha256": "78db73fc08139851d7389e05a16e5086cff621f50968888ac5a1e3c3d9300120",
+      "bytes": 12
+    },
+    "_layouts/page.html": {
+      "sha256": "2dd046492aec77c5801828d432608cf2bbfdaea88f11db0ed14b7759223835b4",
+      "bytes": 247
+    },
+    "_pages/about.md": {
+      "sha256": "f94d6284ea3cd625916c84e2a3ff2b77ea0f7d1f7d6400cb814dc887f67f4dd2",
+      "bytes": 10653
+    },
+    "_pages/antiquities.md": {
+      "sha256": "351a7804f400c26d22116a540113f0297118794d215ef3ad29db1d3389a9cb88",
+      "bytes": 101
+    },
+    "_pages/background.md": {
+      "sha256": "de854a590d733c5c1611ecb436077a36f27531d9b267f8eb01f8a7a57629de86",
+      "bytes": 2161
+    },
+    "_pages/bellum-judaicum.md": {
+      "sha256": "792343d6ddeceb5d3ed795ba6666e9a8b95c20e0605492bbe1b3b242faf2d485",
+      "bytes": 113
+    },
+    "_pages/contra-apionem.md": {
+      "sha256": "619779f21ed2d0aa17186acac8d52eefe8f7cca8a40ec2f41c716724819e3d67",
+      "bytes": 110
+    },
+    "_pages/deh.md": {
+      "sha256": "12262bb8c8151358563a6b8f1e6c6072024bc050ece940dbc26252f7fed8f9f5",
+      "bytes": 123
+    },
+    "_pages/dropdown.md": {
+      "sha256": "7353201c5044cae58d91dd2bbbd39ff12aaadd501ed5d9e6455cbcf01a29f05e",
+      "bytes": 377
+    },
+    "_pages/index.md": {
+      "sha256": "3d9c4109367b7b3d7064b0959c867b0236f4173159c755e540025146baf196b0",
+      "bytes": 696
+    },
+    "_sass/_antiquities.scss": {
+      "sha256": "e6c200f3cc568b4ce982b19980b92cb5dc17da17fed5582f95b033007749d226",
+      "bytes": 1460
+    },
+    "_sass/_base.scss": {
+      "sha256": "2165c832f48da4d517f0dd9342e92a0a29e0955a6d0de71b7f3aaf7b57f0de51",
+      "bytes": 11029
+    },
+    "_sass/_branding.scss": {
+      "sha256": "d55663b0d2b2b04ed1f99dce745fb5e50074caee6dbd69ddd1a854b26d373e6c",
+      "bytes": 2550
+    },
+    "_sass/_distill.scss": {
+      "sha256": "0d636779946630e3a06f04609c1b0c7b3fe5279cb046ae34e527a47d4831fe82",
+      "bytes": 1140
+    },
+    "_sass/_layout.scss": {
+      "sha256": "b1da477c9f3ca0a1dccb39df522fca444c8ff5d10f96c8e7126369878652152b",
+      "bytes": 557
+    },
+    "_sass/_reader-ui.scss": {
+      "sha256": "6cd42baefdc71b260eadbccc73498a5aa2b2c20cd4ce163096deb41195a4abe7",
+      "bytes": 7952
+    },
+    "_sass/_themes.scss": {
+      "sha256": "ad1a09f30452a3cda7a98099146e5060adf7f0ada1abcbb56c7e5efc3ecfb22e",
+      "bytes": 1500
+    },
+    "_sass/_typography.scss": {
+      "sha256": "62f9de43494bec68b7f5f8558893c5af04358e143706ffa6a535684029ef7619",
+      "bytes": 2562
+    },
+    "_sass/_variables.scss": {
+      "sha256": "314f351131dd90a37ac22f88c80dcbb9c02341215b598041e4c2b22f8268129d",
+      "bytes": 1323
+    },
+    "assets/bibliography/2018-12-22-distill.bib": {
+      "sha256": "900cea810093195e82387bb6b7cc484e35fbcf2310f3cbe9084c4b57bcc05e1a",
+      "bytes": 307
+    },
+    "assets/css/deh-parallels.css": {
+      "sha256": "5e54381e91738cf4376f2fa7b59582ceb08def5eb297c28b4799683cc225b533",
+      "bytes": 1412
+    },
+    "assets/css/main.scss": {
+      "sha256": "8c776277397e9e4677d379c13d66c45c7a00d81558e2eb971c1c51b2e764aab7",
+      "bytes": 461
+    },
+    "assets/css/tei.css": {
+      "sha256": "f69cd787e47351d1dbf083097ecc3b037791a05309761d865a2e237ac91afeda",
+      "bytes": 2542
+    },
+    "assets/data/deh-bj-alignment.json": {
+      "sha256": "083940a21dec957fd7de35d3191d7e7e9bcb17d36b542ec62cd32e821c70ca7b",
+      "bytes": 20506
+    },
+    "assets/data/deh-josephus-concordance.json": {
+      "sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c",
+      "bytes": 1554044
+    },
+    "assets/fonts/latin-josephus/SOURCE.txt": {
+      "sha256": "793b343a5dd56bf6a21093bcfa59f76e9be0ab419fc5315d151f3e77b33c9fe7",
+      "bytes": 1179
+    },
+    "assets/fonts/latin-josephus/coelacanth-bold.otf": {
+      "sha256": "cf332412e33c8e75bd4a24e2d7750b508331adb520f412106591efec762f5a97",
+      "bytes": 579268
+    },
+    "assets/fonts/latin-josephus/coelacanth-italic.otf": {
+      "sha256": "45ca254ff2657cf19e9f05573ebc6519356f914ef67e887bf34951e889f6f288",
+      "bytes": 510832
+    },
+    "assets/fonts/latin-josephus/coelacanth-regular.otf": {
+      "sha256": "206fd7caad25f852af0df47f61963b12f71620994a8070e4b8f3dd7eecd609ed",
+      "bytes": 518328
+    },
+    "assets/fonts/latin-josephus/licenses/Coelacanth-LICENSE.md": {
+      "sha256": "8b9eb5eb4768595695fd32be3b644f5e5831fe3a33c23d3ae9d450f21a48fb56",
+      "bytes": 4432
+    },
+    "assets/fonts/latin-josephus/licenses/SourceSans3-LICENSE.md": {
+      "sha256": "f9e57d28452ab6162c7fc0d248b5a5e81bf64676a6950d56b2e137c1253f79e8",
+      "bytes": 4485
+    },
+    "assets/fonts/latin-josephus/sourcesans3-italic.woff2": {
+      "sha256": "69c8e1806941beb7071e2cf0bc54ee03cf4d59eab07fcb5418b1c86c52d39a72",
+      "bytes": 121304
+    },
+    "assets/fonts/latin-josephus/sourcesans3-regular.woff2": {
+      "sha256": "63de0da0cc05298e2e9c6e5cef506d8454ca665f6e668a99d94f51174b9256ed",
+      "bytes": 153800
+    },
+    "assets/fonts/latin-josephus/sourcesans3-semibold.woff2": {
+      "sha256": "c248b0a178c362916db7c853ed640db77f184d19a0ed9fa5591fa707d3089635",
+      "bytes": 155624
+    },
+    "assets/img/1.jpg": {
+      "sha256": "d751d58fbc6f84d96f6ba0b3ccfd46b0826a5c7cccf171bf78a0f066d14e5ff0",
+      "bytes": 419879
+    },
+    "assets/img/10.jpg": {
+      "sha256": "0d1e41b116c52263af1132e0894f3cd8aa4b1d3da1a355bbb7db9d00fa3a4710",
+      "bytes": 1124260
+    },
+    "assets/img/11.jpg": {
+      "sha256": "d327b6bc7205d1243d0adf8cd33a64c21f8654e35b5df1fa94b0092751b4d7f8",
+      "bytes": 1322832
+    },
+    "assets/img/12.jpg": {
+      "sha256": "93dcb187cf76d10e8a34d09de5a8d50a60089a30a749dba6ffb199764549a3eb",
+      "bytes": 199369
+    },
+    "assets/img/2.jpg": {
+      "sha256": "d75cc1bcb83bfe4e5a1942990cbf31c51d07f7d56eb0536cf58bf337575ef37c",
+      "bytes": 588114
+    },
+    "assets/img/3.jpg": {
+      "sha256": "f6115277701c7c0869f9c8d6e8008858bbb3db27b6da12455c5903eb13d3a01b",
+      "bytes": 1985564
+    },
+    "assets/img/4.jpg": {
+      "sha256": "6e4e9de7a80c6f00e3784c8f6f34deeaab9f422c773908409cc6a34c74effca3",
+      "bytes": 1858152
+    },
+    "assets/img/5.jpg": {
+      "sha256": "89302686de60c17044213ca5efc3618c0456d8f167b4cfd17487312c278a6cd4",
+      "bytes": 4523306
+    },
+    "assets/img/6.jpg": {
+      "sha256": "1490951e2b79d3f5ae60f9e781ff19dd02e9544e070d0b59b02420ec1429422e",
+      "bytes": 3129579
+    },
+    "assets/img/7.jpg": {
+      "sha256": "f87ec3c315a11dbe5c9e5cc1566cac4d737e67862e96d3d0a97a4fda6ff50d38",
+      "bytes": 978288
+    },
+    "assets/img/8.jpg": {
+      "sha256": "5828754fd7dd35f9cd4512277a70be126df3cc81f3afab5fe662d71e41fdff8b",
+      "bytes": 3556552
+    },
+    "assets/img/9.jpg": {
+      "sha256": "7c8c64d0eb731a60fec8c1fb2acbc20c4a9377c2297896f8806802b60927ea7b",
+      "bytes": 4545306
+    },
+    "assets/img/al-folio-preview.png": {
+      "sha256": "6a8debc22125566d6834666f19d9f61e97bf608a2a3b68ef21475bfcdf4ea894",
+      "bytes": 818713
+    },
+    "assets/img/brand/bamberg/SOURCE.txt": {
+      "sha256": "488165be21ceb57a4501f7f70b726599bfb652f3d05d846b892be5a5f3f4a4ec",
+      "bytes": 1292
+    },
+    "assets/img/brand/bamberg/bamberg-favicon-light-180.png": {
+      "sha256": "b2845ca232a981f8ac9dd968996ba7e747471b093991ba4b661590ba61c84802",
+      "bytes": 1352
+    },
+    "assets/img/brand/bamberg/bamberg-favicon-light-32.png": {
+      "sha256": "c2674f8d93de9578475853c0a9cd90194b281549b8516edce48e6ea1a08eb6b0",
+      "bytes": 323
+    },
+    "assets/img/brand/bamberg/bamberg-logo-header-dark.svg": {
+      "sha256": "38e94fccc86749a86423cc8abbb367cc61b156033a523b80e2045fb3222cd934",
+      "bytes": 4054
+    },
+    "assets/img/brand/bamberg/bamberg-logo-header-light.svg": {
+      "sha256": "fbaf0c0fc266e80a4f8e8e5d45aca39233b4d8200a309256973d4ea61a0f5fd0",
+      "bytes": 4054
+    },
+    "assets/img/brand/bamberg/bamberg-micro-icon-dark.svg": {
+      "sha256": "f7544fd56c9af1c9ff06358ad87d78d2d036f2aee02911fae249a54dd8162a6c",
+      "bytes": 620
+    },
+    "assets/img/brand/bamberg/bamberg-micro-icon-light.svg": {
+      "sha256": "f77eb0af7f74152138037ac81a2a3e1556eb29bf9191a036ec5778e2d66fd389",
+      "bytes": 620
+    },
+    "assets/img/code-screenshot.png": {
+      "sha256": "cfcd6c217b184fb1862620169aa12569799da83e89634b0f60b9c44fa2710184",
+      "bytes": 186000
+    },
+    "assets/img/distill-screenshot.png": {
+      "sha256": "9286c48e46b1269ed7efbd05285ea71158a15e5b3afd79a7a33a5d2f313e4cd4",
+      "bytes": 190635
+    },
+    "assets/img/logo-frqsc.png": {
+      "sha256": "018ae04d06c2d05fa07bd0e14265404f711256a3199edfeb987e127fa6bac6ed",
+      "bytes": 11768
+    },
+    "assets/img/logo-performant.png": {
+      "sha256": "20a8cbfb03d9507e6d4e96310697b165e97558584fcb68034b44d96b19da5885",
+      "bytes": 11438
+    },
+    "assets/img/logo-uqam.svg": {
+      "sha256": "ca8b7e0a22ad1b265061aecdc557a0016a3da90e889094328881efc300d246d1",
+      "bytes": 2417
+    },
+    "assets/img/math-screenshot.png": {
+      "sha256": "ff7379c78c3f00d7563ca90d1ffb36b9c7ec413a3e59b7750cf071958993fa29",
+      "bytes": 192374
+    },
+    "assets/img/pagespeed.svg": {
+      "sha256": "4802c6fedbeb413bcdfb779fe406735626979e4fa8c7e969e2b6581be6b97349",
+      "bytes": 11147
+    },
+    "assets/img/photos-screenshot.png": {
+      "sha256": "6a15230aef1dc3ea55635ceccc54d9e9d7700980ae011cc7f1caae9b1d14f50a",
+      "bytes": 972431
+    },
+    "assets/img/prof_pic.jpg": {
+      "sha256": "855317ee9e69adf8fe7ae6428bf286515baa4afc77fe31a260564998ee8571f8",
+      "bytes": 2309396
+    },
+    "assets/img/projects-screenshot.png": {
+      "sha256": "2f28fc0ade0d3a9af128ef217d0712c79b701651dbe416130820c4b27b9cf608",
+      "bytes": 862044
+    },
+    "assets/img/publications-screenshot.png": {
+      "sha256": "5f4b3b21668d82d935435ab02a4cdfec0b94728a2038eecda49d6869870d390e",
+      "bytes": 215861
+    },
+    "assets/js/CETEI.js": {
+      "sha256": "34d6b3d0d913045ad413b9a83e7f7a6cae05a6a3c1ac8fab1e1340e6c3c413d8",
+      "bytes": 27853
+    },
+    "assets/js/common.js": {
+      "sha256": "764120c310672d5c63541b9e84af7254b5a1c61f8d78ec9c218a54adaa68fe8c",
+      "bytes": 357
+    },
+    "assets/js/dark_mode.js": {
+      "sha256": "1c97de34ec54ea6a4c85a6a23c8dae1c5b05d763f9788c4f29a6aaa0896946ae",
+      "bytes": 253
+    },
+    "assets/js/dehParallels.js": {
+      "sha256": "294f5c6b26d286d05b4b41f6fe409fbddc3c54f9150c25deff9f8d44bbb792f0",
+      "bytes": 10449
+    },
+    "assets/js/dehParallelsCore.js": {
+      "sha256": "55b89d512619970221dcea30150e9ac6306875d55c1e3be64113dd1595692005",
+      "bytes": 9617
+    },
+    "assets/js/distillpub/overrides.js": {
+      "sha256": "279b27ff9e3346214dc2b4c967e7a35375f2fb04a84f33141101d90aeca222b9",
+      "bytes": 1193
+    },
+    "assets/js/distillpub/template.v2.js": {
+      "sha256": "2ac24800167f576873d51c47f885b32ebf085e2016e7c14d58728b825f3e2d0a",
+      "bytes": 292356
+    },
+    "assets/js/distillpub/template.v2.js.map": {
+      "sha256": "2e7902dfeb45cbd76749e8222377545d71e5ca16b45a2827e0d4a36bbd70d89d",
+      "bytes": 602453
+    },
+    "assets/js/distillpub/transforms.v2.js": {
+      "sha256": "d897e3ee01e40284d67bd12dcc653a1a7f22896b617d2ea309b62326a5f47b80",
+      "bytes": 529106
+    },
+    "assets/js/distillpub/transforms.v2.js.map": {
+      "sha256": "f4c4cbd4167209a706c0750b48dc01cb87a19b5d60c756863b056afaa92b48a6",
+      "bytes": 1024816
+    },
+    "assets/js/mansory.js": {
+      "sha256": "752c3c82a380e860df03f3cd74aaf95bf6830cd63d1e6d01fec43e6ae69ba0ff",
+      "bytes": 293
+    },
+    "assets/js/renderTei.js": {
+      "sha256": "fc79f3c95e93bfeff86870f6c5110484cf28bfd778f773f654357441baff5f8c",
+      "bytes": 122070
+    },
+    "assets/js/theme.js": {
+      "sha256": "ca34a333f4b5a4a7793b2d26f3af060be8caa20567122653d27de72cb60608e0",
+      "bytes": 1089
+    },
+    "assets/js/zoom.js": {
+      "sha256": "60239b9f618cd1d1c8f9dc5345ab3a626f68f551a753e165e37a9596ce8e8ec0",
+      "bytes": 274
+    },
+    "assets/pdf/example_pdf.pdf": {
+      "sha256": "0b1d21bdc711ac8d6f7ea421106a517d0827d7a0a1fb58310e59dc31d729c0b2",
+      "bytes": 15879
+    },
+    "assets/resized/1-480x320.jpg": {
+      "sha256": "6ac47275b6b6f47e02d1b60a73f5df73b673487c4ea8bff8980e783f940954de",
+      "bytes": 40240
+    },
+    "assets/resized/1-800x534.jpg": {
+      "sha256": "aeab83127ed98940717f91b93c202b19378526872a4d3190c3fbb5455d0847b2",
+      "bytes": 101194
+    },
+    "assets/resized/10-1400x933.jpg": {
+      "sha256": "ed2605d78e42c13369e0e0ea7affd32138db37912a2e636ef1681084ced04bcc",
+      "bytes": 312631
+    },
+    "assets/resized/10-480x320.jpg": {
+      "sha256": "1d42ab06ab2f997a997253e7794f7328a3484f9a8fd2497fa6ddc23039feba23",
+      "bytes": 29845
+    },
+    "assets/resized/10-800x533.jpg": {
+      "sha256": "5af043eda64bd96db0fed8ba567b1663dc5caeb30858ed831df77fc2db1fecef",
+      "bytes": 75211
+    },
+    "assets/resized/11-1400x1956.jpg": {
+      "sha256": "b586ecf702bc0f2817a4f722d76c63fed0c3c7934de7f8c5c4110870a7b9c605",
+      "bytes": 587020
+    },
+    "assets/resized/11-480x671.jpg": {
+      "sha256": "e578ccb92ef351730abfdc88177e736d53d3e323ddbe8ae9f398e754d1835c45",
+      "bytes": 61222
+    },
+    "assets/resized/11-800x1118.jpg": {
+      "sha256": "a4110f330b46ac8682a28d79cc3ef96fa99e90e629a5670d4dbce5ae3c0a279a",
+      "bytes": 148698
+    },
+    "assets/resized/12-1400x933.jpg": {
+      "sha256": "7982173bb78e9906e76cd2132acaa0931a79f41f580226d230f3827db10918c0",
+      "bytes": 104320
+    },
+    "assets/resized/12-480x320.jpg": {
+      "sha256": "2028e5f6b55d0b8bc5450fb740be18bcde61f7e9d5c7dc8a3f2c0b5d1f03d9a5",
+      "bytes": 13248
+    },
+    "assets/resized/12-800x533.jpg": {
+      "sha256": "2ae8ed3a16180961a711338d49fac1c2910afef3bd51de609fed61bd1a849cd3",
+      "bytes": 27537
+    },
+    "assets/resized/3-1400x933.jpg": {
+      "sha256": "38aa7fbf45c696e6719162c416bf49655e90d1cb8c51d84e90cd8ab5835161fa",
+      "bytes": 318194
+    },
+    "assets/resized/3-480x320.jpg": {
+      "sha256": "f0bc6fe477a0e7803f41863129bc8f7d90a3a89482650287795f816fbd0f08bc",
+      "bytes": 34512
+    },
+    "assets/resized/3-800x533.jpg": {
+      "sha256": "0ff18f829ee062974f8492772b992e42b1944ce0662b4fc129f43b2da028fbe8",
+      "bytes": 79958
+    },
+    "assets/resized/5-1400x933.jpg": {
+      "sha256": "c5cbeb8e164d1ee6901af12cb9d93d34ffd9ce54227d81a80015296422c003ce",
+      "bytes": 269841
+    },
+    "assets/resized/5-480x320.jpg": {
+      "sha256": "8706376c24d31489932d4d4aa40ab412f9fc91da68dc02d80cc44fc0bc12f095",
+      "bytes": 29668
+    },
+    "assets/resized/5-800x533.jpg": {
+      "sha256": "00ecbd10f6985b435366810567114eb619acc82f94f67f8370c9f8bf0a8bb153",
+      "bytes": 67128
+    },
+    "assets/resized/6-1400x933.jpg": {
+      "sha256": "d5e102aea5f776d9a392cb926b58d82b287645b9b96e79ac5ebe6ef756235b38",
+      "bytes": 448181
+    },
+    "assets/resized/6-480x320.jpg": {
+      "sha256": "74a7b0073b327b7437aa05caee22a741ae88d439aa74eb60b5e0aa5284987877",
+      "bytes": 41655
+    },
+    "assets/resized/6-800x533.jpg": {
+      "sha256": "659565f3e5d76dd277f096e7e874ec8784bbed69c66e9bc7a77940d731c82395",
+      "bytes": 105761
+    },
+    "assets/resized/7-1400x933.jpg": {
+      "sha256": "e70107bea257d689559ed50349a08cd43633061534f7d2c2d2ea23e729fe0317",
+      "bytes": 63230
+    },
+    "assets/resized/7-480x320.jpg": {
+      "sha256": "b325e6f7eb4900297373684f16f6f9b2b891a252f67568b06edca6b80107094d",
+      "bytes": 8779
+    },
+    "assets/resized/7-800x533.jpg": {
+      "sha256": "00005761758113f18efb63ff372e212655cd28794c5842dd225a81a4008c063a",
+      "bytes": 17266
+    },
+    "assets/resized/8-1400x973.jpg": {
+      "sha256": "e3e5dc6b6f390b19d2635592a43fd2746cd40119c91e1663fc044bbfcd9147ba",
+      "bytes": 197666
+    },
+    "assets/resized/8-480x334.jpg": {
+      "sha256": "a3e32f96dd5ff44d2bcfab5b5217a7cd5e8961b0c1c4a0738a61a9b672d0b83f",
+      "bytes": 21422
+    },
+    "assets/resized/8-800x556.jpg": {
+      "sha256": "246cfbb0b2515efaec37f1c71cc669ac9f33a6a6b91cab8d1adeb54299c71166",
+      "bytes": 49053
+    },
+    "assets/resized/9-1400x933.jpg": {
+      "sha256": "25d02b9cae7c40659c0cad287f92ad83bedb1e9bb4a397ac5452728a0f0250a0",
+      "bytes": 336619
+    },
+    "assets/resized/9-480x320.jpg": {
+      "sha256": "86d6a0d285d4e338b135b5a6e44b3af3f0828e47eb48324e55ef480ac944eeb6",
+      "bytes": 28907
+    },
+    "assets/resized/9-800x533.jpg": {
+      "sha256": "786d8e1003ab63905a7e941b51f72b1845c447aa3326c6df59143a40045db364",
+      "bytes": 76073
+    },
+    "assets/resized/prof_pic-1400x1867.jpg": {
+      "sha256": "c5ac8ea86182dd1a953701355393a5a254a6c7d6e9ecab1e760827e5cd043e70",
+      "bytes": 480421
+    },
+    "assets/resized/prof_pic-480x640.jpg": {
+      "sha256": "9ecfa18f46da3707bb06ea71513f6feea982de1d7b54d0ec24de9676b1d07bb0",
+      "bytes": 56589
+    },
+    "assets/resized/prof_pic-800x1067.jpg": {
+      "sha256": "ceed5e14f8c8f00a75dca3dcd050acbf9da00e75273e3d0fa4e0b9577361f2ee",
+      "bytes": 130483
+    },
+    "assets/xml/antiquities/English/book-01.xml": {
+      "sha256": "6b695035845cecbe34fcc8c0bf6ffc000945938e9fd9cfe0e1306d3b11665420",
+      "bytes": 123174
+    },
+    "assets/xml/antiquities/English/book-02.xml": {
+      "sha256": "a1d9d3332dcff8626712ea391cbccb53defc53e5aeda1a73b9a0d6a906f388f5",
+      "bytes": 135150
+    },
+    "assets/xml/antiquities/English/book-03.xml": {
+      "sha256": "e3b1efaaf1c39dcd0f7db8b546217a58f065b9193caf6bf882f14c207c03a00c",
+      "bytes": 124832
+    },
+    "assets/xml/antiquities/English/book-04.xml": {
+      "sha256": "f1e9d1ce4f59081e59337c7fcc9cec02b4f2f039223c5a54e53bddee492a23d1",
+      "bytes": 133466
+    },
+    "assets/xml/antiquities/English/book-05.xml": {
+      "sha256": "cca24f0c1ad890a0495092a4c529084f51d525c4a56140cfd6b08289f9f6c945",
+      "bytes": 140779
+    },
+    "assets/xml/antiquities/English/book-06.xml": {
+      "sha256": "a4770771856d20c9aefa64983adb064ad9c15889b57613d807e7117794198f14",
+      "bytes": 162916
+    },
+    "assets/xml/antiquities/English/book-07.xml": {
+      "sha256": "48707b448f1d424ddcbf7e464dbbbceef279629a3ea3030702b042e7e4233cf7",
+      "bytes": 162189
+    },
+    "assets/xml/antiquities/English/book-08.xml": {
+      "sha256": "ab5018bcecc4b2933a5061311e21810548a6ef8ce5ccd09f9a3da5268ca50472",
+      "bytes": 173264
+    },
+    "assets/xml/antiquities/English/book-09.xml": {
+      "sha256": "515c8ee6a9611f1333d51bb6a04361e8f4168a4f3c197faef23db58f361bd587",
+      "bytes": 85486
+    },
+    "assets/xml/antiquities/English/book-10.xml": {
+      "sha256": "1e70950fd9d2500795c401b37b7d49fa560d3f0fd90270b11915bccd718faccf",
+      "bytes": 103795
+    },
+    "assets/xml/antiquities/English/book-11.xml": {
+      "sha256": "2273fecb032b0df11ba3f79857ea8ce59f681ee2a3595583d46ccfee3096f9fc",
+      "bytes": 115917
+    },
+    "assets/xml/antiquities/English/book-12.xml": {
+      "sha256": "d5cee95948e272e04c624808c299588c7fb67c31988b686afd547c73597bbcea",
+      "bytes": 144111
+    },
+    "assets/xml/antiquities/English/book-13.xml": {
+      "sha256": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d",
+      "bytes": 150127
+    },
+    "assets/xml/antiquities/English/book-14.xml": {
+      "sha256": "f342c46cfdcf4b22d1c9f4fa423295077538c51917b570a321e5df1f8d9e24e9",
+      "bytes": 172895
+    },
+    "assets/xml/antiquities/English/book-15.xml": {
+      "sha256": "9f307e78e2c2f9a03335342fb1176620f6328793c379fb81d58b12164a383324",
+      "bytes": 154681
+    },
+    "assets/xml/antiquities/English/book-16.xml": {
+      "sha256": "ab5725b8202b800e9b13b0003f18a71eca2e5d1dfd94bed3d3271b3cbb72f92a",
+      "bytes": 137778
+    },
+    "assets/xml/antiquities/English/book-17.xml": {
+      "sha256": "a235d02f6d8af17961a124c417e3d9e2393f760442facf7963db47a1c7d9d96c",
+      "bytes": 136509
+    },
+    "assets/xml/antiquities/English/book-18.xml": {
+      "sha256": "306c69b86d7effe2f4b92d7a112cdb8e15563e0422c8f413c491bbdc1cd241b3",
+      "bytes": 138249
+    },
+    "assets/xml/antiquities/English/book-19.xml": {
+      "sha256": "73186a567afaadbc036055fca04808e3041843833bf2ec86b2898c1e1f47b605",
+      "bytes": 123972
+    },
+    "assets/xml/antiquities/English/book-20.xml": {
+      "sha256": "7d0813df000bab366ee8d785cdd154fd509db7428b7774739185cd83194cec34",
+      "bytes": 85423
+    },
+    "assets/xml/antiquities/English/preface.xml": {
+      "sha256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+      "bytes": 9976
+    },
+    "assets/xml/antiquities/Greek/book-01.xml": {
+      "sha256": "7c82be2ce7299a389995a93ef905f905db14b79c6a49288569e52cf4fd65d4c9",
+      "bytes": 190259
+    },
+    "assets/xml/antiquities/Greek/book-02.xml": {
+      "sha256": "f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da",
+      "bytes": 203064
+    },
+    "assets/xml/antiquities/Greek/book-03.xml": {
+      "sha256": "967280266aec51e390b057f309157989070185cd3d3ae08102f723eea14a50d7",
+      "bytes": 186284
+    },
+    "assets/xml/antiquities/Greek/book-04.xml": {
+      "sha256": "6a829c561e267d857d3609b01c8afd9cdb533edbb7dd828f5dd72438fbbce4b3",
+      "bytes": 191490
+    },
+    "assets/xml/antiquities/Greek/book-05.xml": {
+      "sha256": "6da4f29227376a81789955f5d1230018a5f1fee4aabbffa398f18aef64f5214c",
+      "bytes": 207587
+    },
+    "assets/xml/antiquities/Greek/book-06.xml": {
+      "sha256": "0415434537ab6f1802daeca943f01ad1cf35b7eebca69dbfcf0417e696b25a64",
+      "bytes": 245859
+    },
+    "assets/xml/antiquities/Greek/book-07.xml": {
+      "sha256": "1ecd613ea829466177ea90f6699e7f44e40fdcf7e0b219504796a7cc1862a18f",
+      "bytes": 253761
+    },
+    "assets/xml/antiquities/Greek/book-08.xml": {
+      "sha256": "010a566202b9f18d6a35528720986a89a1ceb9dd7417866696cd1e74ef85b098",
+      "bytes": 269203
+    },
+    "assets/xml/antiquities/Greek/book-09.xml": {
+      "sha256": "c6958a02b0f55d4bae23d4d33e8695d8a142361e373b1b2828a2b1da7626d403",
+      "bytes": 140219
+    },
+    "assets/xml/antiquities/Greek/book-10.xml": {
+      "sha256": "6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae",
+      "bytes": 165695
+    },
+    "assets/xml/antiquities/Greek/book-11.xml": {
+      "sha256": "2aee7fab8664607c0139532ee7d49cc9a6e6ace0e6e4c34346adac42bc0c4f89",
+      "bytes": 189963
+    },
+    "assets/xml/antiquities/Greek/book-12.xml": {
+      "sha256": "04cca637d71754a2cf277c762d9d6890fc93f052092632add8d4cbf0a6f6aecd",
+      "bytes": 236492
+    },
+    "assets/xml/antiquities/Greek/book-13.xml": {
+      "sha256": "dfde29b8a68309084c4ffee4077452aea1ce1ae6d92cc39108b9d469fbbed279",
+      "bytes": 244131
+    },
+    "assets/xml/antiquities/Greek/book-14.xml": {
+      "sha256": "9db8c651739fab956aa60d9e9926efcb59c10901f04e0756a127a7692259a623",
+      "bytes": 273849
+    },
+    "assets/xml/antiquities/Greek/book-15.xml": {
+      "sha256": "ce29f43ae99296b30e67c2ea7d913282c9e74c46af0cbefef9d5f5a298b4cc27",
+      "bytes": 226347
+    },
+    "assets/xml/antiquities/Greek/book-16.xml": {
+      "sha256": "3fcac31fb8cf2b5970fe62b5ab5832b6506949ca5912fc6633665dce4e8cc785",
+      "bytes": 206335
+    },
+    "assets/xml/antiquities/Greek/book-17.xml": {
+      "sha256": "07a0ab3077b10aa3ba0634ab1ad30b8c106dc715be851e812266f8c2f2b88f29",
+      "bytes": 209526
+    },
+    "assets/xml/antiquities/Greek/book-18.xml": {
+      "sha256": "c00a428cb042469f0f71e4d6b87c46ccf3b44d6e3fbfe55180f878dc97af647e",
+      "bytes": 217786
+    },
+    "assets/xml/antiquities/Greek/book-19.xml": {
+      "sha256": "9e3750336c4a0380d8daa4c1f3f0899dabf8260cab6a3128e1e1aa77970805be",
+      "bytes": 186573
+    },
+    "assets/xml/antiquities/Greek/book-20.xml": {
+      "sha256": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19",
+      "bytes": 138436
+    },
+    "assets/xml/antiquities/Greek/preface.xml": {
+      "sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+      "bytes": 14735
+    },
+    "assets/xml/antiquities/Latin/book-01.xml": {
+      "sha256": "236397efea41558911881fbc807eec7f9b01d6058bbc51610f3550c2df77b973",
+      "bytes": 137003
+    },
+    "assets/xml/antiquities/Latin/book-02.xml": {
+      "sha256": "f7b2476b4b029918da1bef9b1abe9040e4e22c04b1dcce3d621a813b173bea72",
+      "bytes": 143334
+    },
+    "assets/xml/antiquities/Latin/book-03.xml": {
+      "sha256": "8750c56152f750fbc1bd7c5d28e07cc73972bf1a86ed3221f79824e1c0573c97",
+      "bytes": 138032
+    },
+    "assets/xml/antiquities/Latin/book-04.xml": {
+      "sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "bytes": 138791
+    },
+    "assets/xml/antiquities/Latin/book-05.xml": {
+      "sha256": "846ff2e8edbc58bd2283e923353beccc8427f49cecf89415c6bc5272b994f86a",
+      "bytes": 144121
+    },
+    "assets/xml/antiquities/Latin/book-06.xml": {
+      "sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "bytes": 147960
+    },
+    "assets/xml/antiquities/Latin/book-07.xml": {
+      "sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "bytes": 142621
+    },
+    "assets/xml/antiquities/Latin/book-08.xml": {
+      "sha256": "7a94c61dc00d61c683953451c575e8166be03699510f1c7d563c2c5b74edfe5f",
+      "bytes": 148539
+    },
+    "assets/xml/antiquities/Latin/book-09.xml": {
+      "sha256": "80fcbd3c94d84b34eb77fc1cf357f7a07d43d5570f985baa992e02d67aa91440",
+      "bytes": 82350
+    },
+    "assets/xml/antiquities/Latin/book-10.xml": {
+      "sha256": "e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c",
+      "bytes": 96599
+    },
+    "assets/xml/antiquities/Latin/book-11.xml": {
+      "sha256": "5595739cd16e6d87357b25ae114f1a22b1fc70066eb532b465d401b84414464f",
+      "bytes": 99619
+    },
+    "assets/xml/antiquities/Latin/book-12.xml": {
+      "sha256": "ea4e2251b81a1bfa202eecfe7f78a054464386621001093cc2e1099c5c29e41a",
+      "bytes": 117242
+    },
+    "assets/xml/antiquities/Latin/book-13.xml": {
+      "sha256": "c5da61cc5d0539e68308b1e001980fd279dbeba95d2c5cfc64d4602bb1dd43e5",
+      "bytes": 115731
+    },
+    "assets/xml/antiquities/Latin/book-14.xml": {
+      "sha256": "931157718997a35a84951ecebabae6813526c66250fa4f791bd338748fbf62f6",
+      "bytes": 136470
+    },
+    "assets/xml/antiquities/Latin/book-15.xml": {
+      "sha256": "9cf8311568bb98aec57ee5dd6ef1ef93a8acb251c011dab18ffe45c65a3332c8",
+      "bytes": 99016
+    },
+    "assets/xml/antiquities/Latin/book-16.xml": {
+      "sha256": "293902ffb33d2d958235225200ee37d421b30d727bd4483bac0e05c4c2455993",
+      "bytes": 85179
+    },
+    "assets/xml/antiquities/Latin/book-17.xml": {
+      "sha256": "a2c5ac4398551eaab0880d575f8c4272883064ef38013422ad5e2eecdb7e46b6",
+      "bytes": 123835
+    },
+    "assets/xml/antiquities/Latin/book-18.xml": {
+      "sha256": "349ccf8751a0279c0a1f9836dd482a39698f7e3970d7018627c0d227c27dc8e3",
+      "bytes": 128372
+    },
+    "assets/xml/antiquities/Latin/book-19.xml": {
+      "sha256": "ab1c28f03e1a5893057262edfc117b63a1d46ce0b20bb803fb4e1903db439e80",
+      "bytes": 94525
+    },
+    "assets/xml/antiquities/Latin/book-20.xml": {
+      "sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+      "bytes": 69125
+    },
+    "assets/xml/antiquities/Latin/preface.xml": {
+      "sha256": "0c4719d6e120ec414fa75076f471d86aa5af9a11bb810299399118992fa897e8",
+      "bytes": 8188
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-02-contents.xml": {
+      "sha256": "0af258453b21ead4f81d6649083b5ded4f6f6571be6c4fa1a31153020a838786",
+      "bytes": 2700
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-03-contents.xml": {
+      "sha256": "c39dd3333f82180d321ebd89e390637148d44d8c58f329ff6a8246d7e0db8b62",
+      "bytes": 8675
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-04-contents.xml": {
+      "sha256": "f3b923d5d7d409d1038c45072bdb6f00205415a2f17e3dcb27fb7c75851412de",
+      "bytes": 4909
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-05-contents.xml": {
+      "sha256": "2f4f399819a3ce9d1f0a4598e030660cd0a321f41352cc8d58a2692ececed934",
+      "bytes": 3683
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-14-contents.xml": {
+      "sha256": "447f326e75b9791ee8a5ae5e16a9757afec5431f531867b8fa71dffc7885ee87",
+      "bytes": 15025
+    },
+    "assets/xml/antiquities/structure.xml": {
+      "sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56",
+      "bytes": 19344315
+    },
+    "assets/xml/bellum/English/Lodge1602/book-01.xml": {
+      "sha256": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119",
+      "bytes": 627990
+    },
+    "assets/xml/bellum/English/Lodge1602/book-02.xml": {
+      "sha256": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592",
+      "bytes": 464116
+    },
+    "assets/xml/bellum/English/Lodge1602/book-03.xml": {
+      "sha256": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e",
+      "bytes": 290131
+    },
+    "assets/xml/bellum/English/Lodge1602/book-04.xml": {
+      "sha256": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e",
+      "bytes": 359179
+    },
+    "assets/xml/bellum/English/Lodge1602/book-05.xml": {
+      "sha256": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b",
+      "bytes": 320353
+    },
+    "assets/xml/bellum/English/Lodge1602/book-06.xml": {
+      "sha256": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8",
+      "bytes": 246224
+    },
+    "assets/xml/bellum/English/Lodge1602/book-07.xml": {
+      "sha256": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5",
+      "bytes": 231593
+    },
+    "assets/xml/bellum/English/book-01.xml": {
+      "sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+      "bytes": 310858
+    },
+    "assets/xml/bellum/English/book-02.xml": {
+      "sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+      "bytes": 239671
+    },
+    "assets/xml/bellum/English/book-03.xml": {
+      "sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+      "bytes": 157139
+    },
+    "assets/xml/bellum/English/book-04.xml": {
+      "sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+      "bytes": 193824
+    },
+    "assets/xml/bellum/English/book-05.xml": {
+      "sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+      "bytes": 183522
+    },
+    "assets/xml/bellum/English/book-06.xml": {
+      "sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+      "bytes": 136773
+    },
+    "assets/xml/bellum/English/book-07.xml": {
+      "sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+      "bytes": 128876
+    },
+    "assets/xml/bellum/Greek/book-01.xml": {
+      "sha256": "d58bd11884c2e8742e2ee8d585d6a5e8740d1624ccf6fad41c37811427c45969",
+      "bytes": 428147
+    },
+    "assets/xml/bellum/Greek/book-02.xml": {
+      "sha256": "bbd99e5aa819f485df14680242948da6bffe8dd5ff3fd127d9467d399d7d7f64",
+      "bytes": 335499
+    },
+    "assets/xml/bellum/Greek/book-03.xml": {
+      "sha256": "55a7b2d4d1be28b40e52097b2f8a92025a643a7cea3a84a77853a45e8a2d443c",
+      "bytes": 216927
+    },
+    "assets/xml/bellum/Greek/book-04.xml": {
+      "sha256": "a3ae25b99ca75509401f95fc3405341e6c1c882f2d2e3dbec366a1f6dbdebaf9",
+      "bytes": 269943
+    },
+    "assets/xml/bellum/Greek/book-05.xml": {
+      "sha256": "520db5852f3e0299413b2db9a9071c61d4912495c3a06a99198a3c174ca97d9b",
+      "bytes": 246234
+    },
+    "assets/xml/bellum/Greek/book-06.xml": {
+      "sha256": "9380e9d4f6744467a4cd935cb1f6f4501c14283a13a02879564564aa45399b25",
+      "bytes": 186269
+    },
+    "assets/xml/bellum/Greek/book-07.xml": {
+      "sha256": "9b18443363cdef6d252d7d5382f868e7f66318702e0e80554311832cc25a5cc5",
+      "bytes": 191053
+    },
+    "assets/xml/bellum/Latin/book-01.xml": {
+      "sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+      "bytes": 298013
+    },
+    "assets/xml/bellum/Latin/book-02.xml": {
+      "sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+      "bytes": 227296
+    },
+    "assets/xml/bellum/Latin/book-03.xml": {
+      "sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+      "bytes": 139997
+    },
+    "assets/xml/bellum/Latin/book-04.xml": {
+      "sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+      "bytes": 168675
+    },
+    "assets/xml/bellum/Latin/book-05.xml": {
+      "sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+      "bytes": 154170
+    },
+    "assets/xml/bellum/Latin/book-06.xml": {
+      "sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+      "bytes": 111856
+    },
+    "assets/xml/bellum/Latin/book-07.xml": {
+      "sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+      "bytes": 108578
+    },
+    "assets/xml/contra-apionem/English/book-01.xml": {
+      "sha256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+      "bytes": 125731
+    },
+    "assets/xml/contra-apionem/English/book-02.xml": {
+      "sha256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+      "bytes": 122963
+    },
+    "assets/xml/contra-apionem/Greek/book-01.xml": {
+      "sha256": "183e885e7ddd61894f2e5cef1a423689be6cbe3160bf42746b33c1bd47fa2b2e",
+      "bytes": 184738
+    },
+    "assets/xml/contra-apionem/Greek/book-02.xml": {
+      "sha256": "b6d836463f85f717f0b73acbf09a847545ddc3893cb744de21b38575968b4381",
+      "bytes": 162601
+    },
+    "assets/xml/contra-apionem/Latin/book-01.xml": {
+      "sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+      "bytes": 96065
+    },
+    "assets/xml/contra-apionem/Latin/book-02.xml": {
+      "sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+      "bytes": 93029
+    },
+    "assets/xml/deh/English/book-01.xml": {
+      "sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
+      "bytes": 268011
+    },
+    "assets/xml/deh/English/book-02.xml": {
+      "sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
+      "bytes": 112867
+    },
+    "assets/xml/deh/English/book-03.xml": {
+      "sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
+      "bytes": 118793
+    },
+    "assets/xml/deh/English/book-04.xml": {
+      "sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
+      "bytes": 114200
+    },
+    "assets/xml/deh/English/book-05.xml": {
+      "sha256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27",
+      "bytes": 261734
+    },
+    "assets/xml/deh/Latin/book-01.xml": {
+      "sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+      "bytes": 221726
+    },
+    "assets/xml/deh/Latin/book-02.xml": {
+      "sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+      "bytes": 93223
+    },
+    "assets/xml/deh/Latin/book-03.xml": {
+      "sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+      "bytes": 99985
+    },
+    "assets/xml/deh/Latin/book-04.xml": {
+      "sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+      "bytes": 95571
+    },
+    "assets/xml/deh/Latin/book-05.xml": {
+      "sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+      "bytes": 218209
+    },
+    "assets/xml/source-contents.xml": {
+      "sha256": "3d75560ebb1c5aa67647cb735e7d23de05eaa29fbeb6705c47719ca5a6d063f4",
+      "bytes": 34606
+    },
+    "bin/bellum-greek-range-browser-qa.js": {
+      "sha256": "522c9082026ea317a84be1b8baa625c1d5186d051e2397a45f6af6af4bbce60a",
+      "bytes": 9048
+    },
+    "bin/bellum-greek-range-qa.mjs": {
+      "sha256": "40c5044db5ae176b27d5af83108e3cc6721792f4dfce5962dbe033e61c41a795",
+      "bytes": 15988
+    },
+    "bin/cibuild": {
+      "sha256": "ad69860060e890ca61460181dece19508943f4cf06960509da5b8fdd83bb5a1e",
+      "bytes": 25
+    },
+    "bin/deh-concordance-xml.ps1": {
+      "sha256": "926b37bcff2ab3e5da240017c0d2421cfb3c0c1f8e5a0d41f5a53eca8f626698",
+      "bytes": 5966
+    },
+    "bin/deh-concordance.mjs": {
+      "sha256": "ea26f63d146991a9043d61c568b657055cd12077b4da20895f225ff3e5968be3",
+      "bytes": 46994
+    },
+    "bin/deh-parallels-browser-qa.js": {
+      "sha256": "335ad1645ed97e7cf09164eb0f540595c46f325afe5beab0f0ae369f52ecf715",
+      "bytes": 7612
+    },
+    "bin/deh-parallels-qa.mjs": {
+      "sha256": "70cf8b1a71e0ccaaf560efd9f9013ac6748d2424ebd9e8a8157c5ddf9885c4b2",
+      "bytes": 2535
+    },
+    "bin/deploy": {
+      "sha256": "62e5f8dd4bec99c884d5ae7ed526ca1688698598a0be29077d07ef7cca4c3c08",
+      "bytes": 2632
+    },
+    "bin/lodge1602-bellum-browser-qa.js": {
+      "sha256": "c6ff2b8887f6cb15a1dfcb306a5aefff3a544f0b7fe26a4f4b9757578fa5f672",
+      "bytes": 11363
+    },
+    "bin/lodge1602-bellum-import.ps1": {
+      "sha256": "48c3d4f5d906b0330904aaae6629a501e8081f577d68ff038b429d65709b5d97",
+      "bytes": 11903
+    },
+    "bin/lodge1602-bellum-qa.mjs": {
+      "sha256": "5e918d9bce700d35b0daed7cbc84764fc747bf6104d9f28a218b2ec64da4b8f6",
+      "bytes": 11339
+    },
+    "bin/lodge1602-bellum-qa.ps1": {
+      "sha256": "0baae84b82f68f8597f42d2e9e224d2690ebed19b8da6315192f78fc721f792d",
+      "bytes": 13387
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/ALIGNMENT_ALL_QA.json": {
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_BOUNDARY_QA.json": {
+      "sha256": "9e49cf39d0ccfb0b56027b71288157b6592a4b9ae4fb1c4cd6b178bf5a6cbaa9",
+      "bytes": 609270
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_BROWSER_FAILURE.json": {
+      "sha256": "8b4cbf5f7036b27c41d2055e329a15a7bfd3926ad56f5455ff2fa454be7d18e2",
+      "bytes": 196
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_BROWSER_QA.json": {
+      "sha256": "b2f0cc3dddd649ac2fa62508f37ee7829e74f9592937296fad1ec547a37b6133",
+      "bytes": 9200
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_COMPACT_URL_QA.json": {
+      "sha256": "ebc85358d2abc00cc3c5c64c6f6fe1afbe7ce8c1fda7313745f756ffa4bf23df",
+      "bytes": 80060
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_CONTROLS_dark.png": {
+      "sha256": "ea747b4e667ffbf8667f372d9459e8eef48eccdf33556c1b1abcb2f00434ff70",
+      "bytes": 27509
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_CONTROLS_light.png": {
+      "sha256": "e877ed272506daf23e61c56f2a339802d58079bd422cb2180b6282c47846ae3a",
+      "bytes": 26378
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_RANGE_QA.json": {
+      "sha256": "2aad886c17709ec27c6a0da8cb218e29f8de381ce13b1750ff6645b4be91e3ff",
+      "bytes": 353356
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_RECORD_INVENTORY.csv": {
+      "sha256": "dbf5ed46562e60d4da4f6b8455222f59b3757fbbf9939a2eea697dff29385803",
+      "bytes": 210543
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_URL_QA.json": {
+      "sha256": "9f8379e6a0e4e84c45608b45223a768d80b7c0cad85108d00b0e3d9279fec3a0",
+      "bytes": 42850
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BASELINE.json": {
+      "sha256": "94a88e8fe1ae2dde015bc8b94cbd24c829ea02ac82a30362163705f0844f2c38",
+      "bytes": 149092
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BROWSER_FAILURE.json": {
+      "sha256": "0c39ef56a257d4cb683ad3c9a517bf832920c7e46eda00a0383e692f6d75c37c",
+      "bytes": 1455
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BROWSER_PROGRESS.json": {
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BROWSER_QA.json": {
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/COMPACT_URL_CHANGE.json": {
+      "sha256": "6a21ab0ca5395e35262a8e12e3b9a3d53e3385a61cf59164180f9a1ac86c8553",
+      "bytes": 449
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/CURRENT_LOCATOR_GATE_QA.json": {
+      "sha256": "bb8ee8ae12a765c354e813938f49e3f9c9f0ce372d797d3902c5a835419d0495",
+      "bytes": 422617
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/FILE_MANIFEST.json": {
+      "sha256": "0a8240780d01f5b38fd5edbf350e04e9f786f61ef4fee315e0b7f7d0845ddc5e",
+      "bytes": 22331
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/FOLLOWUP_GATE_QA.json": {
+      "sha256": "cf4c9bbf3395d3592aafbf897bcbeff2cf2d2af173bd74b8adbc5302633cfc92",
+      "bytes": 145295
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/INTEGRITY_QA.json": {
+      "sha256": "a312f07eaca22e52a3a711ad36b5fff424d6387fa3c87f5d4d5360011aba22a5",
+      "bytes": 33926
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/INTERACTION_DIFFERENCE.json": {
+      "sha256": "0ff7bc2e3b21d2ec2b718981ed2dae4fb0d0e2f44ce3205e0cb0383d09385b27",
+      "bytes": 4287454
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/INTERACTION_FAILURE.json": {
+      "sha256": "a0043dd35898940a05f4b7f17f841cb48ae32eab146ddfdac1046a9267d0c477",
+      "bytes": 232
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/INTERACTION_QA.json": {
+      "sha256": "ed42d6bb5a8ba765e68d25b5dbd7f11f68ae79a0bd0a8387444f810ebaa0cc2e",
+      "bytes": 2559
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/MARKERS.json": {
+      "sha256": "e08d6d84d04e6bb1412ac6d255dbba570931cde26f48d38c626768313d22f98f",
+      "bytes": 21590
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/NOTICE_THEME_QA.json": {
+      "sha256": "88767f3c063dc384ba8a0bf4e3c00f0d84c7bf1addd229d4859a168f6bdc9024",
+      "bytes": 2738
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/NOTICE_THEME_dark.png": {
+      "sha256": "f18febd8e0299ce056e1217cbcb8a83c631adb00f759a1856610af1ec59b79ca",
+      "bytes": 20850
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/NOTICE_THEME_light.png": {
+      "sha256": "9e9969b6092b4ac31325e47c361c31ed719f9e178a11d3903f9bd4200a0ac3fd",
+      "bytes": 20806
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/PROTECTED_SOURCE_GATE_QA.json": {
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/QA.json": {
+      "sha256": "702a07476f27d79ee447366bc0ea3a7323c99e232c81074c2862787627717672",
+      "bytes": 40478
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/RENDERED_GATE_QA.json": {
+      "sha256": "d0a2b42d87d7976e9e7e0a7dceb6226fe4dea1e4cfa3998738d046e4e29edd08",
+      "bytes": 9870
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/REPORT.md": {
+      "sha256": "815cda3d0c941fface0015f3da4aa53a58329bef288a70f7fd48147ba61051fe",
+      "bytes": 10891
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/SAME_NIESE_DIFFERENT_POSITION_QA.json": {
+      "sha256": "c7ae48660461bb2053a4987741ea87bf2a079b3fb4f1b2be069fa2fa0fa13cbc",
+      "bytes": 6892
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/SOURCE_AUTHORITY.md": {
+      "sha256": "f3b89c70a22ca8e8cf7918806c1bbda87ab4eff637e988e9726c2e3819be7537",
+      "bytes": 3161
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/TEST_DEVELOPMENT_LOG.json": {
+      "sha256": "6b877d6045d46bc844a6460a4c81cab94906c44a75a79bf54fa73340e09b98f1",
+      "bytes": 2679
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/VI_ALIGNMENT_GATE_QA.json": {
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/XI_MULTISPAN_GATE_QA.json": {
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/bamberg.test.cjs": {
+      "sha256": "78aec50c5e3a4d9acdaf2ff73551543a6103e8597d18f5af43e9710c74e6ce3d",
+      "bytes": 16070
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/compact-url.test.cjs": {
+      "sha256": "1f94d34011928a3f39957e32e398503f60db382041efe5b8bce86149d934bdcb",
+      "bytes": 9936
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/finalize_review.py": {
+      "sha256": "c5941f3630fbcad1e68118068a92a517dc3efb1e6908770234aa96a6bee4bc1d",
+      "bytes": 20208
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/interaction.test.cjs": {
+      "sha256": "86b96f0b96f38e06d96c8b406ee1a55b6b40ffc4502f1dd333ddb9f1dcbedaf0",
+      "bytes": 9917
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/navigation.test.cjs": {
+      "sha256": "a214ef30d4423b1231af2bba3b5bcbad8fb6538c2f37330aef876b9ac7885659",
+      "bytes": 45300
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/notice-theme.test.cjs": {
+      "sha256": "e49e2bf9ee75c4794d8ee09dcef9943700d2389212c7ece1f526856fbb9ec4b4",
+      "bytes": 8781
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/patch_renderer.py": {
+      "sha256": "77ecff2f1eba6a29490e3fc5b07a1a814a47db0f17d2fff47faef6d6d6004adc",
+      "bytes": 11516
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/prepare_registry.py": {
+      "sha256": "05fe6d770bf0925d4ff077daf0f1a8c878c4b3e6349a3cb8f1b11e8a19c17513",
+      "bytes": 12704
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/verify_integrity.py": {
+      "sha256": "fafce84ac30fb4af1a590c6ee0070e658791768944316b499ffaa11bbc20c770",
+      "bytes": 7423
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/BASELINE.json": {
+      "sha256": "bd2bab289a97af7788c40e6352abad590556463d20d505ea8c227fcf151b3bef",
+      "bytes": 171661
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_FAILURE.json": {
+      "sha256": "9716c4d0f94dc2ac7c35cc8b6397bc6efa0490293c2e832ba4ae005b2583eebf",
+      "bytes": 3399
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_PROGRESS.json": {
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_QA.json": {
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/FILE_MANIFEST.json": {
+      "sha256": "bd73ef4b0cf9fa8b0f8cdb0f06093d8442daef460cf63694e59973a0923f9a85",
+      "bytes": 14184
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/INTEGRITY_QA.json": {
+      "sha256": "96750b395c117491ebebcf47981819e498c0f046e36528ff76985d28d596692c",
+      "bytes": 2195
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/MARKERS.json": {
+      "sha256": "a5569977c9958329dd6a6f3b77ac4418a3699e0ff3058d253494a9225f52c98b",
+      "bytes": 2622
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/PROTECTED_SOURCE_GATE_QA.json": {
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/QA.json": {
+      "sha256": "4e202ce1fab3da7233cda7ae88c248c669710b9e8b905cc8fa90f762531f2436",
+      "bytes": 41027
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/RENDERED_GATE_QA.json": {
+      "sha256": "1a596011ea2830962543ca07dd6966cb83657249cfc2a4cdb230d2b296454712",
+      "bytes": 9384
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/RENDERER_FORMAT_QA.json": {
+      "sha256": "11b90b536b3c85a799d4f0e1c4574b5a8470c18da6f86db18067e2f96dcaa337",
+      "bytes": 293
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/REPORT.md": {
+      "sha256": "6208fb5814f6cf979140cfed98ff1a310e6974d52818aa7cc339eded88d96193",
+      "bytes": 9460
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/SOURCE_AUTHORITY.md": {
+      "sha256": "f9f4a0e8a78ea30b2f893106c4727f7e0a8c72e6cc140679e37a91432766b519",
+      "bytes": 3756
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VII_CURRENT_LOCATOR.json": {
+      "sha256": "b08f1130512650440ad39c97aca8ade3f99e2239cbb6af4c8d6ff4ecd1b667bf",
+      "bytes": 1227
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VII_current_locator_adjudication.md": {
+      "sha256": "7faa064a24561b5d005e72c00f21108196dd19147c93b15a64458e9f436f15c6",
+      "bytes": 971
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_GATE_QA.json": {
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_INTEGRITY_QA.json": {
+      "sha256": "a392938e31543724f50d6be4a827b5e74a1bae1f9b5429d8eab6f29296757948",
+      "bytes": 290
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_REPAIR.json": {
+      "sha256": "b08451358beb9522607ef3f555c9d90b21f8b473776c4b3a428f02e8e7a6b466",
+      "bytes": 1918
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_LOCATOR_GATE_QA.json": {
+      "sha256": "de4f7552519112dbe8eba3318c2e463a217fa70684a3bbbf28ab9d0e553431ee",
+      "bytes": 3536
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_locator_corrections.json": {
+      "sha256": "867b824c1ad10a15df6ba59f80a2c28d6fd97cc531653c81bf9613a4c31411ac",
+      "bytes": 7972
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_xii8_XIII_locator_adjudication.md": {
+      "sha256": "4b3d4d28e4a1c8f6ad4651416782df2e89e3d06ccbe940dff79d57a5ff4a2271",
+      "bytes": 5326
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_LATIN_PROJECTION_DIAGNOSIS.json": {
+      "sha256": "efeed6da937d21f4731594383bed039734b9188fe69623872df55b53cb4a1a31",
+      "bytes": 2978
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_MULTISPAN_GATE_QA.json": {
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_MULTISPAN_MEMBERSHIP.json": {
+      "sha256": "9b7d81fa1f0917349ace617b440d983dbb8b6cee3f8fb7a0500ebc41bac60bcf",
+      "bytes": 31795
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_RANGE_BLOCKER.json": {
+      "sha256": "f1713967a4c26110a521d63493f24a94e34aa94bc6883bf89ec1ac6cc96f2095",
+      "bytes": 2640
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_current_text_multispan_adjudication.md": {
+      "sha256": "8639f6b8ffff94fb045b3e5f2dd20def780d27548f5a97bc855dac93f3a2670b",
+      "bytes": 6213
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_viii4_viii5_stop_condition.md": {
+      "sha256": "fd6ba10be2ba961ad74d6c99f1ee60b61d71b7915b680916c84ea0e06bf3a858",
+      "bytes": 635
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/adjudicate_book_vi.py": {
+      "sha256": "c87947ec4bc92a7d76cfb4d3f0e795e024cb400f387b48a64e814b51ea4907a7",
+      "bytes": 4191
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/adjudicate_book_xi.py": {
+      "sha256": "c994e7f5d55079002d3085c80e09b942bb05deca2b612de9d7750dc4e6554e65",
+      "bytes": 5904
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/finalize_review.py": {
+      "sha256": "d7f9b3f69a56bbf274f5df2be56e3f31f6c045ed1b60092118cc9d61e578d467",
+      "bytes": 19182
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/navigation.test.cjs": {
+      "sha256": "5388c30b024e624b3751b95f7279a5a4d39e38af6d7ad6cccf9fe09c8229f91c",
+      "bytes": 33899
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/prepare_registry.py": {
+      "sha256": "0891aef6968cdf75c6792c6b32c88cab5476648b9fab8356bafe91b25ce4c7e7",
+      "bytes": 11464
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/tei_all.rng": {
+      "sha256": "b0f115095ead2ccc6933aa3365c6f4a82cba3b2ec7eee7f76bb616d7a63b7e48",
+      "bytes": 1098331
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/verify_integrity.py": {
+      "sha256": "c7950297311aa702d3ecefcf3bf6328ceb959d3da7ffeebcbc3673ea9088030a",
+      "bytes": 7230
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/ALIGNMENT_ALL_QA.json": {
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/BASELINE.json": {
+      "sha256": "d1f83b233a420fda090e1d30f63da16bc9d6b431ec40540d2a29d84f66cc30b4",
+      "bytes": 50177
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/BROWSER_PROGRESS.json": {
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/BROWSER_QA.json": {
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/CHAPTER_AVAILABILITY.json": {
+      "sha256": "336f606d48e70683c21a233dea60f3b428b2f116eb5d73e875b3829bf8651dba",
+      "bytes": 43081
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/FILE_MANIFEST.json": {
+      "sha256": "e0bd96db6a6087cc06b2232648623618f5f51efcc4d10e8793eb50d7b7480f04",
+      "bytes": 8944
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/FOLLOWUP_GATE_QA.json": {
+      "sha256": "d4c9e98e5e8f45e24613f8bf6181abe557f102ae535b0a5569f2eb79ee8fa38e",
+      "bytes": 145187
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/INTEGRITY_QA.json": {
+      "sha256": "2d60ff4bde673bbc10c63bc25df9365e8467cd0d9455fc5b61917c50a07da48f",
+      "bytes": 2302
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/NOTICE_STYLE_BASELINE.json": {
+      "sha256": "2c4e5de65e951b6bd5879311c94b59e12af58b14d2938c1822f6bae134f19737",
+      "bytes": 7812
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/NOTICE_THEME_QA.json": {
+      "sha256": "88767f3c063dc384ba8a0bf4e3c00f0d84c7bf1addd229d4859a168f6bdc9024",
+      "bytes": 2738
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/NOTICE_THEME_dark.png": {
+      "sha256": "f18febd8e0299ce056e1217cbcb8a83c631adb00f759a1856610af1ec59b79ca",
+      "bytes": 20850
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/NOTICE_THEME_light.png": {
+      "sha256": "9e9969b6092b4ac31325e47c361c31ed719f9e178a11d3903f9bd4200a0ac3fd",
+      "bytes": 20806
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/PREFIX_CANDIDATES.json": {
+      "sha256": "f210afe68b46a9ec5fc858a66536705c1828e71cdc24b05c5acc68fde0bc32cc",
+      "bytes": 45736
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/PREFIX_LOCATOR_ADJUDICATION.json": {
+      "sha256": "d8cea04f6a9384e6ca8d31adc7d6a3e01df8cd8a283a03820931336a52287592",
+      "bytes": 109337
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/PROTECTED_SOURCE_GATE_QA.json": {
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/QA.json": {
+      "sha256": "1637377766c6f32a8b258ec7f519e8d8a8ecfd967bf8153c8984908545084880",
+      "bytes": 13470
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/RENDERED_GATE_QA.json": {
+      "sha256": "d51981f3e295c71c20b28085eef133cbd8547b45bced2097cf9def478560481f",
+      "bytes": 9384
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/REPORT.md": {
+      "sha256": "f507ebe70e8be6c4f09ad9945f1d3255ab63e69b195c702dda6936f2a6568e5b",
+      "bytes": 12378
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/VI_ALIGNMENT_GATE_QA.json": {
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/XI_MULTISPAN_GATE_QA.json": {
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/apply_followup.py": {
+      "sha256": "d2cb94bfdbd1cf91b50cbea7f0e48f363a901338ac35ec19bffecffe3778d36e",
+      "bytes": 10413
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/finalize_review.py": {
+      "sha256": "bfdfabc8d2f6639bab31c780abe01d2ee2949fb02b3706c05c638d80c477ebc0",
+      "bytes": 19471
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/navigation.test.cjs": {
+      "sha256": "3673f12992aa619818465f0398403942197fdb7d29152611f0a74eacfaf3815b",
+      "bytes": 44826
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/notice-theme.test.cjs": {
+      "sha256": "4d7ff4d5ac9dcf0e0c3a405ce9ea20eb3530617983b7423475e3b6c079fedc09",
+      "bytes": 8772
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/prepare_tests.py": {
+      "sha256": "50a1e5f536e1d9bf9716769b97c70f2e94f4b90a6ee880ac2fa657745b6bbb9e",
+      "bytes": 13578
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/verify_integrity.py": {
+      "sha256": "ea69eaf2825e775dafd90cf2e8f130e4e4a44704bfa95b7552e1a6fe5b3cb53e",
+      "bytes": 6632
+    },
+    "review/Bellum_Greek_Range_Fix_2026-10-04/QA.json": {
+      "sha256": "820308f0fa8d011fdee2e633dba26cd6200b6ed06aedd0716292c5aee3d71f6c",
+      "bytes": 1458775
+    },
+    "review/Bellum_Greek_Range_Fix_2026-10-04/REPORT.md": {
+      "sha256": "570fb52eac8e8598ac436c2bc34395eff835fc047596fcca3bf6d9f85cc69b53",
+      "bytes": 7820
+    },
+    "review/Source_TOC_Navigation_2026-10-07/ALIGNMENT_ALL_QA.json": {
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_BROWSER_QA.json": {
+      "sha256": "b2f0cc3dddd649ac2fa62508f37ee7829e74f9592937296fad1ec547a37b6133",
+      "bytes": 9200
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_CONTROLS_dark.png": {
+      "sha256": "c68283b0d80e8703a79df7de3762cabc2a155ab905ee41db6be2b326f081a20e",
+      "bytes": 27842
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_CONTROLS_light.png": {
+      "sha256": "46835220577e2c045ec904830bc2c2b366534b87119b41fbbe98fe9b3659de21",
+      "bytes": 26752
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_RANGE_QA.json": {
+      "sha256": "2aad886c17709ec27c6a0da8cb218e29f8de381ce13b1750ff6645b4be91e3ff",
+      "bytes": 353356
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_TRANSCRIPTION_QA_2026-10-08.json": {
+      "sha256": "4237410e4197153072569558fb6ede8a1a633b380424e00de95ea2f3e1c6381d",
+      "bytes": 2211
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_URL_QA.json": {
+      "sha256": "9f8379e6a0e4e84c45608b45223a768d80b7c0cad85108d00b0e3d9279fec3a0",
+      "bytes": 42850
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_WORD_EXTRACTION_2026-10-08.json": {
+      "sha256": "08b5b3b443d6cc44ed64c61c75950feb9edad7f262d16e95e8ba9c41197b4362",
+      "bytes": 96429
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BLATT_TEI_CONCORDANCE_2026-10-08.json": {
+      "sha256": "e2094e586e8825489dd8fe405bbe77be3bc748dc61649f57825260e79a0ee955",
+      "bytes": 20443
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BOOK_V_VARIANCE_REGISTER_2026-10-08.json": {
+      "sha256": "e50852e3624fef5096e0a8f6bb1e56c619e391e12ec71b556e933d65f5582f7a",
+      "bytes": 11574
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BROWSER_PROGRESS.json": {
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BROWSER_QA.json": {
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    "review/Source_TOC_Navigation_2026-10-07/CONTENTS_BROWSER_QA_2026-10-08.json": {
+      "sha256": "7f06ec091f1d8d63fd283ad8807d54df1efaa10e3810a5d5d95ee5f4f11690cb",
+      "bytes": 32575
+    },
+    "review/Source_TOC_Navigation_2026-10-07/CONTENTS_EXPECTATIONS_2026-10-08.json": {
+      "sha256": "9fdc685f02614aa12bb0683dc00a20f6079ae017651abe9af5df22aa6be5408c",
+      "bytes": 122735
+    },
+    "review/Source_TOC_Navigation_2026-10-07/CONTENTS_dark.png": {
+      "sha256": "52b885833844e012a3c2a13b0e9fb826683a0e68a02a0c734ed815fe2fdb1e2e",
+      "bytes": 77289
+    },
+    "review/Source_TOC_Navigation_2026-10-07/CONTENTS_light.png": {
+      "sha256": "df933ba38ecf3b97407ff9f70dc8a3160e5472cf946a1f66b04e62108b4b48b4",
+      "bytes": 77213
+    },
+    "review/Source_TOC_Navigation_2026-10-07/EDITORIAL_DECISIONS_2026-10-08.json": {
+      "sha256": "cbc090c5e0487ac05bd9ab1e56890adc01e8ae9240e144bde9965f76756aea73",
+      "bytes": 1316
+    },
+    "review/Source_TOC_Navigation_2026-10-07/FILE_MANIFEST.json": {
+      "sha256": "ff662b0129118598975d1a47a3a7d974f94e503ce8d19cedf7a212510a98ea6f",
+      "bytes": 27460
+    },
+    "review/Source_TOC_Navigation_2026-10-07/FOLLOWUP_GATE_QA.json": {
+      "sha256": "cf4c9bbf3395d3592aafbf897bcbeff2cf2d2af173bd74b8adbc5302633cfc92",
+      "bytes": 145295
+    },
+    "review/Source_TOC_Navigation_2026-10-07/IMPLEMENTATION_SOURCE.diff": {
+      "sha256": "92fd43396370ea2128b9b49b2d8e2dcf44b6c4f6fb76686f230d95b235743b59",
+      "bytes": 14233
+    },
+    "review/Source_TOC_Navigation_2026-10-07/INTEGRITY_QA_2026-10-08.json": {
+      "sha256": "f744f0c30ceec4975053d2bf9ada0bb606cb02bc4d2f151d5edd74c7b149d59a",
+      "bytes": 44761
+    },
+    "review/Source_TOC_Navigation_2026-10-07/INTERACTION_QA.json": {
+      "sha256": "11efeea480c74757bf7ec0eeef0e8068fe6d61e4b075bd55def0db5fc0c9ac57",
+      "bytes": 2742
+    },
+    "review/Source_TOC_Navigation_2026-10-07/PHASE_B_BASELINE_2026-10-08.json": {
+      "sha256": "af81b3ceb0cc85c65199532140224328a849cca1d70f572c6816e7ee1957ef31",
+      "bytes": 46414
+    },
+    "review/Source_TOC_Navigation_2026-10-07/PROTECTED_SOURCE_GATE_QA.json": {
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    "review/Source_TOC_Navigation_2026-10-07/QA.json": {
+      "sha256": "bb1ce2b115f0d59ffb0774a288e6451a0dee0ba9a89e18d42daea6117010170e",
+      "bytes": 19332
+    },
+    "review/Source_TOC_Navigation_2026-10-07/REPORT.md": {
+      "sha256": "af0a76371133e13d3ed00fd14d7a5fb19aa73328a2479932e27c1a2d9bcbd6e2",
+      "bytes": 17882
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SAME_NIESE_DIFFERENT_POSITION_QA.json": {
+      "sha256": "c7ae48660461bb2053a4987741ea87bf2a079b3fb4f1b2be069fa2fa0fa13cbc",
+      "bytes": 6892
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_AUTHORITY.md": {
+      "sha256": "356b3e0f8d8d77b7201824c0ee427b917a90bea86781acc93d4b82c5bed90f6e",
+      "bytes": 14417
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_TOC_CENSUS.csv": {
+      "sha256": "8a88c1c4e49633a29d110df0e395f071df8a2e6b5a82454359391cf858a26383",
+      "bytes": 64011
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_TOC_CENSUS.json": {
+      "sha256": "b8fbb5cfc72010be0671e15d1c93a47809760fbcb4fdac9f20cba23edb9759ba",
+      "bytes": 946620
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_TOC_ELIGIBILITY_2026-10-08.csv": {
+      "sha256": "fe56dce82b94e00f4888d205adc8678267948d6d616e83cc31873729f0928faf",
+      "bytes": 288070
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_TOC_ELIGIBILITY_2026-10-08.json": {
+      "sha256": "2cec7197260777f7d2d3906b14d6d05403f3acf8c384575dc0bcd18f0b38fad4",
+      "bytes": 373549
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/BEFORE.json": {
+      "sha256": "26164d78e145670e9e1718cb47161328c4dd074ebbda113ca63d225b68826d4d",
+      "bytes": 55243
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/DECISION.md": {
+      "sha256": "bbf31a4a7e628ca0fe1e2213ee2659103c2cfe1b1499ad10f2325fe0be23633d",
+      "bytes": 1783
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/ENTRY_INVENTORY.json": {
+      "sha256": "48d015bd9b5c73bc72615c228f71c9c4947e81a022a64057349c12e8f0862ea6",
+      "bytes": 17830
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/FILE_MANIFEST.json": {
+      "sha256": "0d6bdf299014523c2c7dbcbb58c42fd327649b15e2dc4e8acfffbcdf3d4a1915",
+      "bytes": 56283
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/INTEGRITY_QA.json": {
+      "sha256": "67150c2cab402c41ac1546ade344f354ad8e71c2679baec07c15491112ee69bd",
+      "bytes": 1549
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/QA.json": {
+      "sha256": "e3a4d02cd2ea87a90f00224c698a8d508d23779d72e1c571ce924a30678eba3d",
+      "bytes": 7632
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/TRANSCRIPTION_QA.json": {
+      "sha256": "cdd9b5dc3a52284ec3651c6fc69008874b282324e23affdca64be51af8d7830e",
+      "bytes": 1252
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/XIV_BROWSER_QA.json": {
+      "sha256": "ad3b94ac2132822ab309bea808a53d19643b70ebc2b82d4bb229c1379ef8d803",
+      "bytes": 5116
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/XIV_dark.png": {
+      "sha256": "c4e07470338d802d02ed7491c5a1168ceb8d7a8c45cc845b2802991ede5dd6dc",
+      "bytes": 252015
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/XIV_light.png": {
+      "sha256": "29d257fcff3e806ccf5e55091d2c673059b1945d8f725f0f2842d97b87d0ef5d",
+      "bytes": 250984
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/finalize_xiv.py": {
+      "sha256": "3704946abe359a70ef870dd444c253c618d3919c4f6088eeeaa536d863a57109",
+      "bytes": 17963
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/implement_xiv.py": {
+      "sha256": "2c8f606ea1e1fca8ed30c561cf33f0f15bd0c7b459919b1bf114606f8201068b",
+      "bytes": 13374
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/CONTENTS_EXPECTATIONS_2026-10-08.json": {
+      "sha256": "065007abf4746ecfd0a6f80af008c91ea479b0ee38247c03af80b448c73e02bb",
+      "bytes": 112759
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/FILE_MANIFEST.json": {
+      "sha256": "fcead0dfdc695044e2133020cf44f8ca4dabe83cb6bd18cce70f764c46043492",
+      "bytes": 17498
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/QA.json": {
+      "sha256": "e03b1308c2ae0cc3f2b51cb24213f7309643823aa3481081a64605eb6cefb4ed",
+      "bytes": 10299
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/REPORT.md": {
+      "sha256": "4b37f5e08b751f9155c174cb07890da40b0b6d03bed6d7eb9e29bdf68addd05f",
+      "bytes": 14396
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/SOURCE_AUTHORITY.md": {
+      "sha256": "b508232182b6c6556a01b7596a72f2caece0b04526728b82e6947137ff718773",
+      "bytes": 12951
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/SOURCE_TOC_ELIGIBILITY_2026-10-08.csv": {
+      "sha256": "dfc224571983e173ac9aec62d879fe7b55617681242917add84e0649e4809912",
+      "bytes": 19839
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/SOURCE_TOC_ELIGIBILITY_2026-10-08.json": {
+      "sha256": "6050f1a9cf942d7127d2394fcd801a8d6035ae5b74c57ec8238f79def894a290",
+      "bytes": 368936
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/VERIFIED_CONTENTS_REGISTRY_2026-10-08.json": {
+      "sha256": "78c4188275f9bb55bb45de2200d1d135678c681f087da08dd8b4d57d94accf4e",
+      "bytes": 13955
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/xiv-contents.test.cjs": {
+      "sha256": "502d8327a35cc14d62d67cf16d0fe9c33ba8cefcafa33676790b0be40719e102",
+      "bytes": 11313
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/BAMBERG_NARRATIVE_COMPARISON.csv": {
+      "sha256": "a121bff26b595a7533f2204cd1fa8a4f98849892e83784b0045b2f16befbb88e",
+      "bytes": 2689
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/BOUNDARY_PROPOSAL.csv": {
+      "sha256": "6f0a104fa9141dad4a729c3013bcec7f4c4c3b358ba05514ebd6fc85a9ee85a7",
+      "bytes": 4793
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/FILE_MANIFEST.json": {
+      "sha256": "00b078034b4136eada777898e4674128c2076321aafdf80a0c5aac3443a70cca",
+      "bytes": 88999
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/INTEGRITY_BASELINE.json": {
+      "sha256": "b3d2111658ac7a7e9219a03325694423bfc7f68dfb1e33a24aed95e9a0f960cc",
+      "bytes": 88523
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/PROPOSAL.md": {
+      "sha256": "d9954c3e70c7b8f0ca0460758a3a9f60301eac42d0aa848e9c315f5ba03dad15",
+      "bytes": 24242
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/QA.json": {
+      "sha256": "bc39966aeafe3e69b26e522653bf94ac21b1b4eaa1ea8792f503fd3622f2f4e5",
+      "bytes": 3748
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/SEGMENTATION_PROPOSAL.json": {
+      "sha256": "14785b2c07ee7d96e2ec8e765a6fdfec70fcdb03900c58fd6bf4452137a11299",
+      "bytes": 43459
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/SOURCE_CAPITULA.xml.fragment.txt": {
+      "sha256": "63b38a9828b11c235ee37e8ff2d1da5546569a01b5d1cc5013eb19711038580e",
+      "bytes": 8909
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/SOURCE_PARAGRAPH.xml.fragment.txt": {
+      "sha256": "0284126a6164f2e4fa20deafa45af2ac8b22a394dc8366600703c0836c882725",
+      "bytes": 5733
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/audit_sr061.py": {
+      "sha256": "00a705ddb33252e795c68b2f89ceb29d878c882af0f3d9c0cce182483cfcb226",
+      "bytes": 18021
+    },
+    "review/Source_TOC_Navigation_2026-10-07/VERIFIED_CONTENTS_REGISTRY_2026-10-08.json": {
+      "sha256": "ec470fcc5c95df0e0366871646c5d6b29520b516b08dc6a3ce4b07ff1ed22426",
+      "bytes": 14957
+    },
+    "review/Source_TOC_Navigation_2026-10-07/VI_ALIGNMENT_GATE_QA.json": {
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    "review/Source_TOC_Navigation_2026-10-07/WORD_ITALIC_SPANS_2026-10-08.json": {
+      "sha256": "e2094e586e8825489dd8fe405bbe77be3bc748dc61649f57825260e79a0ee955",
+      "bytes": 20443
+    },
+    "review/Source_TOC_Navigation_2026-10-07/XI_MULTISPAN_GATE_QA.json": {
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    "review/Source_TOC_Navigation_2026-10-07/bamberg-regression.test.cjs": {
+      "sha256": "d4a474554d8b756098b36c9ce067e93a9d77632c9a365fd5dea9f13f3e9dc31e",
+      "bytes": 16069
+    },
+    "review/Source_TOC_Navigation_2026-10-07/contents.test.cjs": {
+      "sha256": "1c9cdacd6487b427dfd69ade1e28ef38a60552ffb582cc860850948c35284157",
+      "bytes": 14189
+    },
+    "review/Source_TOC_Navigation_2026-10-07/development-diagnostics/CONTENTS_BROWSER_FAILURE.json": {
+      "sha256": "897121233a5a827048f947f46c9b6d86fd85e9697e89bd5d7def6a4d70873575",
+      "bytes": 445
+    },
+    "review/Source_TOC_Navigation_2026-10-07/finalize_phase_b.py": {
+      "sha256": "0e820ab633efb4cb3bcbcf5680bc7ac6ce4dbb81082c8eea40325938a7d39f2c",
+      "bytes": 19470
+    },
+    "review/Source_TOC_Navigation_2026-10-07/interaction-regression.test.cjs": {
+      "sha256": "ad6f9d44a96946b3ff1e9d18b6a74f3607f9dcd4837a7f5d34eeff2ea9d462ea",
+      "bytes": 11592
+    },
+    "review/Source_TOC_Navigation_2026-10-07/phase-a-accepted-2026-10-07/FILE_MANIFEST.json": {
+      "sha256": "3b6eae214e5f9f5e279e32bfbd9b763dddfdb5d6d11d309d99386d7de2906cfe",
+      "bytes": 76437
+    },
+    "review/Source_TOC_Navigation_2026-10-07/phase-a-accepted-2026-10-07/QA.json": {
+      "sha256": "2625df88aa26bca3893d55bb1b6bd5564facabdda45a1160e331b3edaedfb79b",
+      "bytes": 3989
+    },
+    "review/Source_TOC_Navigation_2026-10-07/phase-a-accepted-2026-10-07/REPORT.md": {
+      "sha256": "0df0461ea6783b9441778ec3d938227b9a843b00d3fc23a377f2b0c6294d67a4",
+      "bytes": 5537
+    },
+    "review/Source_TOC_Navigation_2026-10-07/phase-a-accepted-2026-10-07/SOURCE_AUTHORITY.md": {
+      "sha256": "bd34d15bdaf6ea9f3440927a48613413660cfcb2c26bfe135d488e9a2052ef1e",
+      "bytes": 9442
+    },
+    "review/Source_TOC_Navigation_2026-10-07/prepare_phase_b.py": {
+      "sha256": "d1e5025c2ea6920a71cb62ddaabfb6976bff34e14441a2ea915dc52f99550939",
+      "bytes": 10115
+    },
+    "review/Source_TOC_Navigation_2026-10-07/regression.test.cjs": {
+      "sha256": "ce183e119ce3866d06ffffa14fdde293222d11721cd38fb4cb802880420ade01",
+      "bytes": 45538
+    },
+    "review/Source_TOC_Navigation_2026-10-07/source_toc_census.py": {
+      "sha256": "4586973a00bbcdf080a58bc227be186b4b012e6dd273b4f58ceef916281d0d9a",
+      "bytes": 35187
+    },
+    "review/Source_TOC_Navigation_2026-10-07/validate_phase_b.py": {
+      "sha256": "1efa9b23e0fb0e3b646117aef4219185c94f2d00dd08a3f2b4dc0e57e5d48d41",
+      "bytes": 9558
+    },
+    "review/Source_TOC_Navigation_2026-10-07/verify_phase_b_integrity.py": {
+      "sha256": "2795df737c93f45f7b8befb9462961ef2465fbfdc81c3b544e10545492c80c87",
+      "bytes": 4520
+    },
+    "review/Source_TOC_Typography_2026-10-08/BASELINE.json": {
+      "sha256": "858be0eeebe314fd01d159a6fb6fa9722784b1c52030d99ace3c02ee3e78c807",
+      "bytes": 120426
+    },
+    "review/Source_TOC_Typography_2026-10-08/BEFORE_tei.css": {
+      "sha256": "9c25a64aebba4c28c13b5ce0ff60b837fe5b850395702f43762e480193c1a96c",
+      "bytes": 2485
+    },
+    "review/Source_TOC_Typography_2026-10-08/BROWSER_QA.json": {
+      "sha256": "48c3cc6a4d83c5a8efa78e0882b37015562ec79686f588b779960cbb7d37a672",
+      "bytes": 5450311
+    },
+    "review/Source_TOC_Typography_2026-10-08/COMPUTED_FONTS.json": {
+      "sha256": "6652abc3dd591a8fee8fdb56c71b8024afd029a70bc403eef7261828220506ae",
+      "bytes": 79381
+    },
+    "review/Source_TOC_Typography_2026-10-08/FILE_MANIFEST.json": {
+      "sha256": "103b0da8af0d7f50a0454ee005fa6ac1e7012d079a9db7f72c2f2de22ff88669",
+      "bytes": 7220
+    },
+    "review/Source_TOC_Typography_2026-10-08/QA.json": {
+      "sha256": "01e71b30090347958d220a270f1cf375aa4308d3dd5d1694ee3f322ec8c9bdfa",
+      "bytes": 5058
+    },
+    "review/Source_TOC_Typography_2026-10-08/REPORT.md": {
+      "sha256": "4902cce801d2404f824f179d587dcc6bf6c9dd014ae178eba203fe3dd4fee688",
+      "bytes": 6556
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-III_dark_after.png": {
+      "sha256": "2e02ea2316f2012fce0d4e3f22abf90ae311ae09dc021bcf20100d3ef73a295d",
+      "bytes": 175396
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-III_dark_before.png": {
+      "sha256": "54edaf553ff825f42819ae45d25708527bdd7870ca862037da81c89d325679d2",
+      "bytes": 164287
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-III_light_after.png": {
+      "sha256": "0f6c10777a1f481521c84e2d179095c876b5932954c788b08a25da27750c32e3",
+      "bytes": 171168
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-III_light_before.png": {
+      "sha256": "d9cd6fd4bf4216b62ece2896ce62230392e4aee5f6c14b71e6f698ee33414243",
+      "bytes": 155728
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-V_dark_after.png": {
+      "sha256": "011057be67553bd9f7552aee0d3b3782978e75e2a1d4c9d754ec69d21a37a54c",
+      "bytes": 326635
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-V_dark_before.png": {
+      "sha256": "4e4f2283067db58c436c04997151f5f08e888d0ce98a28928ad8f8219babbb8f",
+      "bytes": 305550
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-V_light_after.png": {
+      "sha256": "85d79e563f3e0075b7a75fd290d922c1f4768e1ead1aac07cfbc3c28583a26af",
+      "bytes": 316595
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-V_light_before.png": {
+      "sha256": "a78183640de4594bb4bb071fe77376affaf0fc4eefa575dda9cccd31801b431f",
+      "bytes": 289622
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-XIV_dark_after.png": {
+      "sha256": "1f214cce2df4385010e39fcb85f91876d9a64c628d6e26664d566811b8017db1",
+      "bytes": 365224
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-XIV_dark_before.png": {
+      "sha256": "4463da846cdeb8b9d21732a513c36309bbfe4009b297f90a5ae909f270f726cc",
+      "bytes": 346472
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-XIV_light_after.png": {
+      "sha256": "15586fde019564c912eac973c8cc92136be98b7b9958d53c0ec3cbac0bd4e4ce",
+      "bytes": 350826
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-XIV_light_before.png": {
+      "sha256": "baaf2afbdd1222dd3b50fb661d35d90b8192c5bf81a108132ec8e620f5caa033",
+      "bytes": 327270
+    },
+    "review/Source_TOC_Typography_2026-10-08/bellum-Lodge-I_dark_after.png": {
+      "sha256": "46b84017db47ea64ff13204c7849d1d0322f0415a332544b0f4386aa9c702b01",
+      "bytes": 160973
+    },
+    "review/Source_TOC_Typography_2026-10-08/bellum-Lodge-I_dark_before.png": {
+      "sha256": "d40a1a96d4da33e1b9f9cf7ce5a1e6be3ce8732c237722fc98aa5655f7b973c6",
+      "bytes": 156824
+    },
+    "review/Source_TOC_Typography_2026-10-08/bellum-Lodge-I_light_after.png": {
+      "sha256": "c9228c052fdb29623c4e04f42a8d2e854ce1690eee7f8b34288a1e30be857dcf",
+      "bytes": 160023
+    },
+    "review/Source_TOC_Typography_2026-10-08/bellum-Lodge-I_light_before.png": {
+      "sha256": "f66a46e1e55d7c490b40cc85ec1be0aab1916f9bb6c4890a46d353b319f3d8cf",
+      "bytes": 148467
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/INITIAL_GREEK_TEXT_NODE_FIXTURE.json": {
+      "sha256": "bffabf4e660662ffa81ea74f96a9c3970cd074cc37610d67f8e1f5a839764856",
+      "bytes": 17352
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/INITIAL_ORDINARY_FULL_PANE_SCREENSHOT.json": {
+      "sha256": "daac39a5d2500f50c639d32f537f413dd32e86f10d0143085608278740c341e4",
+      "bytes": 1632735
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/ORDINARY_DIFFERENCE.json": {
+      "sha256": "213358c5dc342a28c29eaebf8230afeb3161af3052f38b8ac4cbcf908f41f515",
+      "bytes": 114786
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/ORDINARY_PIXEL_ONLY_FAILURE.json": {
+      "sha256": "788b1f560b35c9ef3cd5fe2cf4726eeb50a9d790e0a8457013509212ea4b5529",
+      "bytes": 2815008
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/README.txt": {
+      "sha256": "e9f5f655772369e11e6b66517ebce928c91aa29eead3631040f165df6e191cf2",
+      "bytes": 560
+    },
+    "review/Source_TOC_Typography_2026-10-08/finalize_qa.py": {
+      "sha256": "eb423bdcc737a541bb103706dadb5dab04f39ad97af93d77c0b5825a5336f51f",
+      "bytes": 11873
+    },
+    "review/Source_TOC_Typography_2026-10-08/typography.test.cjs": {
+      "sha256": "fd02451de0b03b1751eadaf41906c41083e5b379eb3f72dbc6cdf128e2d0f5e4",
+      "bytes": 12951
+    },
+    "robots.txt": {
+      "sha256": "55e292f91dc9f97734c37d6afdbed1c5c918622402659d2ab1c1d37b90b751a5",
+      "bytes": 116
+    }
+  },
+  "canonical_tracked_files": {
+    ".gitattributes": {
+      "sha256": "c4d630019d490597abf4b0e2f7bc81cb197cccb068875664a222dceb0724aebb",
+      "bytes": 363
+    },
+    ".gitignore": {
+      "sha256": "8f5f7d50140d1e7e89656f8def11a5cc6678cd1791d4f2a1d614c9954d342897",
+      "bytes": 124
+    },
+    "404.html": {
+      "sha256": "aa01b726e68c77ccb78e27af52a542c154c8f3a5d6a0753ff47e0604ad88f7eb",
+      "bytes": 265
+    },
+    "CNAME": {
+      "sha256": "a74eed957ddcbcf8d8e5e2ca5891d996f686ba786f675921b93266209db54524",
+      "bytes": 23
+    },
+    "Gemfile": {
+      "sha256": "493ca5c09da26c795103cf9d5787a8441f59a433bbe1a282f08ba812d150ea66",
+      "bytes": 466
+    },
+    "_bibliography/papers.bib": {
+      "sha256": "d348ce82328b72d0de8bd9f33524121033b41bfcdee4e6e93aa3666f923656e4",
+      "bytes": 2836
+    },
+    "_config.yml": {
+      "sha256": "b1696dacf1edb5796fb43e4224fd8d32b133f9c82333d9248b60dcd93ac4782a",
+      "bytes": 9711
+    },
+    "_data/coauthors.yml": {
+      "sha256": "d606b1327acb412b215a634dc0e56cf6450239eb3ff58148a487ebef4bd42e60",
+      "bytes": 601
+    },
+    "_docs/deh-bj-parallels-pilot.md": {
+      "sha256": "5f86dbd428980c8b2b6ccdfb6fc79946efcb99f3e6eda6eb962582b270f126e9",
+      "bytes": 9731
+    },
+    "_docs/deh-concordance-editorial-decisions.json": {
+      "sha256": "e0111d56f440662f5928d4356bf55054c1e1dd8c4dfce97feb28d73eee213179",
+      "bytes": 12402
+    },
+    "_docs/deh-concordance-exceptions.md": {
+      "sha256": "46ca388259c8eb16efa2e27c2cf0834f6799ebdc987de0e3d5c76e6ed8ea694c",
+      "bytes": 7587
+    },
+    "_docs/deh-concordance-phase3.md": {
+      "sha256": "f3057a5cf10d1ee58f38ac7e2344afd97aeb03cd7a8771e66049751044ec6cfa",
+      "bytes": 12778
+    },
+    "_docs/deh-concordance-phase4.md": {
+      "sha256": "9cbf3059a535bee61529d9cbec6bd69f743c451ee88780afb5b4133c6e41daec",
+      "bytes": 10499
+    },
+    "_docs/deh-concordance-phase5.md": {
+      "sha256": "ef82768535baf0db4a26a947da6e86ece1b10cc6f1119c1cbff583f7870f7ce2",
+      "bytes": 13500
+    },
+    "_docs/deh-concordance-source/editorial-decisions.json": {
+      "sha256": "f2521158af48ae7829662981553c2329b66a816a61b53c60d18168171ef7711d",
+      "bytes": 6486
+    },
+    "_docs/deh-concordance-source/workbook-values.json": {
+      "sha256": "286b7786139805c98baa30535cb945be4da5c6a68f7050febdbe016c8ddcc75b",
+      "bytes": 42914
+    },
+    "_docs/deh-concordance-validation.json": {
+      "sha256": "7fb0c31850021c4f30e62e2399b09cc8f34cfd009cb16c157a62a5ab1eb5a526",
+      "bytes": 36398
+    },
+    "_docs/lodge1602-bellum-browser-qa.json": {
+      "sha256": "b2fc4bcc89911ad354b3d27902d28edd00112a52401177cc915612b9aaec79c2",
+      "bytes": 11392
+    },
+    "_docs/lodge1602-bellum-integration.json": {
+      "sha256": "ca00763587aa7971cba6fdf6ba3387262124b19b95d4dc2bedb355909fef8b80",
+      "bytes": 41226
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_FINAL_HUMAN_ADJUDICATIONS.json": {
+      "sha256": "27b3be89cd410a18892b91a6453f6e4ba2006264df53c123bbf2ea0d39ac7c44",
+      "bytes": 4543
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_NIESE_SEGMENTATION_4001.tsv": {
+      "sha256": "c65acf0caf54dd6954899fe01cd1e57967005592e0882cb483d42a88f56ba31c",
+      "bytes": 4989922
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_QA.json": {
+      "sha256": "b5d16c4c7fa63b4ceb36c8e90664d044d05af35f3e940941ce673b3f6bbffdab",
+      "bytes": 17985
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_SOURCE_MANIFEST.json": {
+      "sha256": "eafe8ecfd9245a874abdc042d589c1c1cf1e69be23b4541beb00b9bb65d5fd50",
+      "bytes": 10715
+    },
+    "_docs/lodge1602-bellum-source/Lodge1602_Bellum_SUBCHAPTER_ALIGNMENT_704.tsv": {
+      "sha256": "5a4028741b1a833d7b6c718f76e16c134a47d5b38b24c944b34a0592d762e0f9",
+      "bytes": 903870
+    },
+    "_docs/lodge1602-bellum-source/SHA256SUMS.txt": {
+      "sha256": "54e5ace054c13e900f693e5a2dc0a63260fcb61a8aa0b5a85746e5b45273f331",
+      "bytes": 1963
+    },
+    "_docs/lodge1602-bellum-validation.json": {
+      "sha256": "faa5e1e65f52f7d7787ed54dc3a7a15b4ff28a20f30a70a9dc60fab426a916cf",
+      "bytes": 2616
+    },
+    "_includes/annotations-bar.html": {
+      "sha256": "39db175479cd16bc3fbe07ce34f210be63cbfe15cf28fde20dfcf7ca4e07f56a",
+      "bytes": 722
+    },
+    "_includes/deh-parallels.html": {
+      "sha256": "8e59cdf2c11469cd71034a6889faafaa867e02ce0b48a4d5e5537b29ee29e10a",
+      "bytes": 2463
+    },
+    "_includes/display-settings.html": {
+      "sha256": "dc3be4a2bd09faec883a834b4f6f21d4e1d49518f97ceb40f5e173513a17224e",
+      "bytes": 7028
+    },
+    "_includes/footer.html": {
+      "sha256": "65579fcd7e9c7a48acb4d72c19ad954fb55220bb58547351f96aedd99d456d29",
+      "bytes": 994
+    },
+    "_includes/head.html": {
+      "sha256": "c7071abe71a008fbe529f227883719cea6bdc6edb95fca14a517a9de39f64ea5",
+      "bytes": 2812
+    },
+    "_includes/header.html": {
+      "sha256": "49e7864b7f0fddbf4d24d1a598a40095c4fbc73d475ef63f48c2e89e4222f02c",
+      "bytes": 3041
+    },
+    "_includes/logos.html": {
+      "sha256": "6428d88042c1653c9d97a85b485c4a8229601c216b5fa32c54f37ebdb8d38c92",
+      "bytes": 448
+    },
+    "_includes/pagination.html": {
+      "sha256": "6e8a8371b32b885827244d28e4b3d956d0385e6caf50716540060a513ad6259b",
+      "bytes": 918
+    },
+    "_includes/projects_horizontal.html": {
+      "sha256": "6a53f87e3eda00bdaab56bce1344948321bacd3e696023ba07ce70f3cbbfd1c3",
+      "bytes": 1528
+    },
+    "_includes/scripts/analytics.html": {
+      "sha256": "da64c34a2786f3e06b61efad770d23d123a447e4048a3b23fd64e6f46b77e25c",
+      "bytes": 839
+    },
+    "_includes/scripts/bootstrap.html": {
+      "sha256": "6b7addb9669f09684755cdaf2d609767681efca588e6de1f81018fb5c683bed6",
+      "bytes": 581
+    },
+    "_includes/scripts/jquery.html": {
+      "sha256": "2a7c722de758ed8f9b8812bc25aaa08933b1e686b95ab7740f6badda1a4e643a",
+      "bytes": 192
+    },
+    "_includes/scripts/mansory.html": {
+      "sha256": "448023ae5c75154bae83de8f5b2f63dcac51b2d09ca6d36ad6f397c2234db231",
+      "bytes": 355
+    },
+    "_includes/scripts/misc.html": {
+      "sha256": "46fcb6dfc08dbe004f8334a34d7ec80c279224a3163df7f9f4f86607788c2e35",
+      "bytes": 912
+    },
+    "_layouts/book.html": {
+      "sha256": "56e5b715a14074411d2b88894b090a84c23452b3c5fb483d47e4cfb1e3aaeadd",
+      "bytes": 1529
+    },
+    "_layouts/default.html": {
+      "sha256": "c63e79e42f3dbe3786980fef32d3a6882fc3ff4a12133f812750dadbd2c855e3",
+      "bytes": 756
+    },
+    "_layouts/info.html": {
+      "sha256": "3214dd54424694d056e5c18efdc855aec591d68d0a761f5e4cd54f2e106349c0",
+      "bytes": 900
+    },
+    "_layouts/none.html": {
+      "sha256": "7081266c27060b7d3827c9470ccc36f503d2eb2626d847793b50fcd418cdd92b",
+      "bytes": 13
+    },
+    "_layouts/page.html": {
+      "sha256": "b17d5efd13d738582295d5fb5c05bda51c8b39af47b1197e2d3d92d656ca1a9e",
+      "bytes": 262
+    },
+    "_pages/about.md": {
+      "sha256": "f94d6284ea3cd625916c84e2a3ff2b77ea0f7d1f7d6400cb814dc887f67f4dd2",
+      "bytes": 10653
+    },
+    "_pages/antiquities.md": {
+      "sha256": "538c0d78d442a4240f9f9e916c7b518337bc42f04870be256e48932114f9d3e0",
+      "bytes": 108
+    },
+    "_pages/background.md": {
+      "sha256": "149b57e84db17c0d0db6e14ab2ec1ce173da2a5653bdf289bf0ba93ca622ac0a",
+      "bytes": 2180
+    },
+    "_pages/bellum-judaicum.md": {
+      "sha256": "c5d677551e9df2dcc37b36aef270c5954bc00ed83ff176efc8d1092c81b7882c",
+      "bytes": 120
+    },
+    "_pages/contra-apionem.md": {
+      "sha256": "266f0184fac3a55ed84b9cefabb84a5ae8f0d8d1aecb86dc9250981eff7517e4",
+      "bytes": 117
+    },
+    "_pages/deh.md": {
+      "sha256": "b7a0001e188739f769176dcef18320dffd4a03fb6c2e1c766faf12fa2cfed995",
+      "bytes": 130
+    },
+    "_pages/dropdown.md": {
+      "sha256": "7353201c5044cae58d91dd2bbbd39ff12aaadd501ed5d9e6455cbcf01a29f05e",
+      "bytes": 377
+    },
+    "_pages/index.md": {
+      "sha256": "3d9c4109367b7b3d7064b0959c867b0236f4173159c755e540025146baf196b0",
+      "bytes": 696
+    },
+    "_sass/_antiquities.scss": {
+      "sha256": "a890fac1ef2779340d81cb08d9f4d2a5f4954e6afdc43bc355b18951144320d3",
+      "bytes": 1554
+    },
+    "_sass/_base.scss": {
+      "sha256": "6bb87cf13d5373ec4d300ac6a4a6c736b340c72cc5c5e24b335933c3cea89019",
+      "bytes": 11625
+    },
+    "_sass/_branding.scss": {
+      "sha256": "d55663b0d2b2b04ed1f99dce745fb5e50074caee6dbd69ddd1a854b26d373e6c",
+      "bytes": 2550
+    },
+    "_sass/_distill.scss": {
+      "sha256": "cff8e3be6b966d8bad03d6cdea98f756c10ac473e9b6f3017848339d7d0a7f22",
+      "bytes": 1185
+    },
+    "_sass/_layout.scss": {
+      "sha256": "b4955d3d6a04681ee0b8989852931017d8b6c541afbf804dcdc6db6ccba5e7a5",
+      "bytes": 587
+    },
+    "_sass/_reader-ui.scss": {
+      "sha256": "6cd42baefdc71b260eadbccc73498a5aa2b2c20cd4ce163096deb41195a4abe7",
+      "bytes": 7952
+    },
+    "_sass/_themes.scss": {
+      "sha256": "ad1a09f30452a3cda7a98099146e5060adf7f0ada1abcbb56c7e5efc3ecfb22e",
+      "bytes": 1500
+    },
+    "_sass/_typography.scss": {
+      "sha256": "62f9de43494bec68b7f5f8558893c5af04358e143706ffa6a535684029ef7619",
+      "bytes": 2562
+    },
+    "_sass/_variables.scss": {
+      "sha256": "0bc7fac5bfd7b402cd99c098d123cbac4366c99044d09e90accac18b07136c00",
+      "bytes": 1361
+    },
+    "assets/bibliography/2018-12-22-distill.bib": {
+      "sha256": "e6406f7cd68d832ee12fd7f11d1bac4f01e02f93b9a1eb214c43d2fa36372fd7",
+      "bytes": 314
+    },
+    "assets/css/deh-parallels.css": {
+      "sha256": "5e54381e91738cf4376f2fa7b59582ceb08def5eb297c28b4799683cc225b533",
+      "bytes": 1412
+    },
+    "assets/css/main.scss": {
+      "sha256": "8c776277397e9e4677d379c13d66c45c7a00d81558e2eb971c1c51b2e764aab7",
+      "bytes": 461
+    },
+    "assets/css/tei.css": {
+      "sha256": "f69cd787e47351d1dbf083097ecc3b037791a05309761d865a2e237ac91afeda",
+      "bytes": 2542
+    },
+    "assets/data/deh-bj-alignment.json": {
+      "sha256": "083940a21dec957fd7de35d3191d7e7e9bcb17d36b542ec62cd32e821c70ca7b",
+      "bytes": 20506
+    },
+    "assets/data/deh-josephus-concordance.json": {
+      "sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c",
+      "bytes": 1554044
+    },
+    "assets/fonts/latin-josephus/SOURCE.txt": {
+      "sha256": "793b343a5dd56bf6a21093bcfa59f76e9be0ab419fc5315d151f3e77b33c9fe7",
+      "bytes": 1179
+    },
+    "assets/fonts/latin-josephus/coelacanth-bold.otf": {
+      "sha256": "cf332412e33c8e75bd4a24e2d7750b508331adb520f412106591efec762f5a97",
+      "bytes": 579268
+    },
+    "assets/fonts/latin-josephus/coelacanth-italic.otf": {
+      "sha256": "45ca254ff2657cf19e9f05573ebc6519356f914ef67e887bf34951e889f6f288",
+      "bytes": 510832
+    },
+    "assets/fonts/latin-josephus/coelacanth-regular.otf": {
+      "sha256": "206fd7caad25f852af0df47f61963b12f71620994a8070e4b8f3dd7eecd609ed",
+      "bytes": 518328
+    },
+    "assets/fonts/latin-josephus/licenses/Coelacanth-LICENSE.md": {
+      "sha256": "8b9eb5eb4768595695fd32be3b644f5e5831fe3a33c23d3ae9d450f21a48fb56",
+      "bytes": 4432
+    },
+    "assets/fonts/latin-josephus/licenses/SourceSans3-LICENSE.md": {
+      "sha256": "f9e57d28452ab6162c7fc0d248b5a5e81bf64676a6950d56b2e137c1253f79e8",
+      "bytes": 4485
+    },
+    "assets/fonts/latin-josephus/sourcesans3-italic.woff2": {
+      "sha256": "69c8e1806941beb7071e2cf0bc54ee03cf4d59eab07fcb5418b1c86c52d39a72",
+      "bytes": 121304
+    },
+    "assets/fonts/latin-josephus/sourcesans3-regular.woff2": {
+      "sha256": "63de0da0cc05298e2e9c6e5cef506d8454ca665f6e668a99d94f51174b9256ed",
+      "bytes": 153800
+    },
+    "assets/fonts/latin-josephus/sourcesans3-semibold.woff2": {
+      "sha256": "c248b0a178c362916db7c853ed640db77f184d19a0ed9fa5591fa707d3089635",
+      "bytes": 155624
+    },
+    "assets/img/1.jpg": {
+      "sha256": "d751d58fbc6f84d96f6ba0b3ccfd46b0826a5c7cccf171bf78a0f066d14e5ff0",
+      "bytes": 419879
+    },
+    "assets/img/10.jpg": {
+      "sha256": "0d1e41b116c52263af1132e0894f3cd8aa4b1d3da1a355bbb7db9d00fa3a4710",
+      "bytes": 1124260
+    },
+    "assets/img/11.jpg": {
+      "sha256": "d327b6bc7205d1243d0adf8cd33a64c21f8654e35b5df1fa94b0092751b4d7f8",
+      "bytes": 1322832
+    },
+    "assets/img/12.jpg": {
+      "sha256": "93dcb187cf76d10e8a34d09de5a8d50a60089a30a749dba6ffb199764549a3eb",
+      "bytes": 199369
+    },
+    "assets/img/2.jpg": {
+      "sha256": "d75cc1bcb83bfe4e5a1942990cbf31c51d07f7d56eb0536cf58bf337575ef37c",
+      "bytes": 588114
+    },
+    "assets/img/3.jpg": {
+      "sha256": "f6115277701c7c0869f9c8d6e8008858bbb3db27b6da12455c5903eb13d3a01b",
+      "bytes": 1985564
+    },
+    "assets/img/4.jpg": {
+      "sha256": "6e4e9de7a80c6f00e3784c8f6f34deeaab9f422c773908409cc6a34c74effca3",
+      "bytes": 1858152
+    },
+    "assets/img/5.jpg": {
+      "sha256": "89302686de60c17044213ca5efc3618c0456d8f167b4cfd17487312c278a6cd4",
+      "bytes": 4523306
+    },
+    "assets/img/6.jpg": {
+      "sha256": "1490951e2b79d3f5ae60f9e781ff19dd02e9544e070d0b59b02420ec1429422e",
+      "bytes": 3129579
+    },
+    "assets/img/7.jpg": {
+      "sha256": "f87ec3c315a11dbe5c9e5cc1566cac4d737e67862e96d3d0a97a4fda6ff50d38",
+      "bytes": 978288
+    },
+    "assets/img/8.jpg": {
+      "sha256": "5828754fd7dd35f9cd4512277a70be126df3cc81f3afab5fe662d71e41fdff8b",
+      "bytes": 3556552
+    },
+    "assets/img/9.jpg": {
+      "sha256": "7c8c64d0eb731a60fec8c1fb2acbc20c4a9377c2297896f8806802b60927ea7b",
+      "bytes": 4545306
+    },
+    "assets/img/al-folio-preview.png": {
+      "sha256": "6a8debc22125566d6834666f19d9f61e97bf608a2a3b68ef21475bfcdf4ea894",
+      "bytes": 818713
+    },
+    "assets/img/brand/bamberg/SOURCE.txt": {
+      "sha256": "488165be21ceb57a4501f7f70b726599bfb652f3d05d846b892be5a5f3f4a4ec",
+      "bytes": 1292
+    },
+    "assets/img/brand/bamberg/bamberg-favicon-light-180.png": {
+      "sha256": "b2845ca232a981f8ac9dd968996ba7e747471b093991ba4b661590ba61c84802",
+      "bytes": 1352
+    },
+    "assets/img/brand/bamberg/bamberg-favicon-light-32.png": {
+      "sha256": "c2674f8d93de9578475853c0a9cd90194b281549b8516edce48e6ea1a08eb6b0",
+      "bytes": 323
+    },
+    "assets/img/brand/bamberg/bamberg-logo-header-dark.svg": {
+      "sha256": "38e94fccc86749a86423cc8abbb367cc61b156033a523b80e2045fb3222cd934",
+      "bytes": 4054
+    },
+    "assets/img/brand/bamberg/bamberg-logo-header-light.svg": {
+      "sha256": "fbaf0c0fc266e80a4f8e8e5d45aca39233b4d8200a309256973d4ea61a0f5fd0",
+      "bytes": 4054
+    },
+    "assets/img/brand/bamberg/bamberg-micro-icon-dark.svg": {
+      "sha256": "f7544fd56c9af1c9ff06358ad87d78d2d036f2aee02911fae249a54dd8162a6c",
+      "bytes": 620
+    },
+    "assets/img/brand/bamberg/bamberg-micro-icon-light.svg": {
+      "sha256": "f77eb0af7f74152138037ac81a2a3e1556eb29bf9191a036ec5778e2d66fd389",
+      "bytes": 620
+    },
+    "assets/img/code-screenshot.png": {
+      "sha256": "cfcd6c217b184fb1862620169aa12569799da83e89634b0f60b9c44fa2710184",
+      "bytes": 186000
+    },
+    "assets/img/distill-screenshot.png": {
+      "sha256": "9286c48e46b1269ed7efbd05285ea71158a15e5b3afd79a7a33a5d2f313e4cd4",
+      "bytes": 190635
+    },
+    "assets/img/logo-frqsc.png": {
+      "sha256": "018ae04d06c2d05fa07bd0e14265404f711256a3199edfeb987e127fa6bac6ed",
+      "bytes": 11768
+    },
+    "assets/img/logo-performant.png": {
+      "sha256": "20a8cbfb03d9507e6d4e96310697b165e97558584fcb68034b44d96b19da5885",
+      "bytes": 11438
+    },
+    "assets/img/logo-uqam.svg": {
+      "sha256": "deab7e2b300f0227f1cfd3fcf80d91bf1079d1658f569c99a8f1309fb3462b4e",
+      "bytes": 2442
+    },
+    "assets/img/math-screenshot.png": {
+      "sha256": "ff7379c78c3f00d7563ca90d1ffb36b9c7ec413a3e59b7750cf071958993fa29",
+      "bytes": 192374
+    },
+    "assets/img/pagespeed.svg": {
+      "sha256": "cca1ef17b1e35ae4e9d84fec9a24fe8b358b06de12269070e76c320a005ab6ff",
+      "bytes": 11377
+    },
+    "assets/img/photos-screenshot.png": {
+      "sha256": "6a15230aef1dc3ea55635ceccc54d9e9d7700980ae011cc7f1caae9b1d14f50a",
+      "bytes": 972431
+    },
+    "assets/img/prof_pic.jpg": {
+      "sha256": "855317ee9e69adf8fe7ae6428bf286515baa4afc77fe31a260564998ee8571f8",
+      "bytes": 2309396
+    },
+    "assets/img/projects-screenshot.png": {
+      "sha256": "2f28fc0ade0d3a9af128ef217d0712c79b701651dbe416130820c4b27b9cf608",
+      "bytes": 862044
+    },
+    "assets/img/publications-screenshot.png": {
+      "sha256": "5f4b3b21668d82d935435ab02a4cdfec0b94728a2038eecda49d6869870d390e",
+      "bytes": 215861
+    },
+    "assets/js/CETEI.js": {
+      "sha256": "dd800e5a2f439b2473a7119d655c69ce97adc1119ff411533cba88a3765610f3",
+      "bytes": 28724
+    },
+    "assets/js/common.js": {
+      "sha256": "987c884d93c2610703e1666e1482a956b40ac8a3299880720f3fd31a97f8addd",
+      "bytes": 366
+    },
+    "assets/js/dark_mode.js": {
+      "sha256": "1c97de34ec54ea6a4c85a6a23c8dae1c5b05d763f9788c4f29a6aaa0896946ae",
+      "bytes": 253
+    },
+    "assets/js/dehParallels.js": {
+      "sha256": "294f5c6b26d286d05b4b41f6fe409fbddc3c54f9150c25deff9f8d44bbb792f0",
+      "bytes": 10449
+    },
+    "assets/js/dehParallelsCore.js": {
+      "sha256": "55b89d512619970221dcea30150e9ac6306875d55c1e3be64113dd1595692005",
+      "bytes": 9617
+    },
+    "assets/js/distillpub/overrides.js": {
+      "sha256": "2bebce412f42f1fb0444c4a0283649736d4850b44d5a042b309ef69d610857c4",
+      "bytes": 1212
+    },
+    "assets/js/distillpub/template.v2.js": {
+      "sha256": "67381b84313b1bfcf60ac823b1e026eab52d097c66c1e623fd6712c05f8f11ad",
+      "bytes": 301603
+    },
+    "assets/js/distillpub/template.v2.js.map": {
+      "sha256": "2e7902dfeb45cbd76749e8222377545d71e5ca16b45a2827e0d4a36bbd70d89d",
+      "bytes": 602453
+    },
+    "assets/js/distillpub/transforms.v2.js": {
+      "sha256": "f5c5c43b6ca5ea8642717d310f0edd94fe162ee7fa3dfc2862c6a046bee50f10",
+      "bytes": 542291
+    },
+    "assets/js/distillpub/transforms.v2.js.map": {
+      "sha256": "f4c4cbd4167209a706c0750b48dc01cb87a19b5d60c756863b056afaa92b48a6",
+      "bytes": 1024816
+    },
+    "assets/js/mansory.js": {
+      "sha256": "2bc4be5d8265a4ec1538ae4f27d354c45aa262473d984b06353d4ae3669f5dc3",
+      "bytes": 305
+    },
+    "assets/js/renderTei.js": {
+      "sha256": "fc79f3c95e93bfeff86870f6c5110484cf28bfd778f773f654357441baff5f8c",
+      "bytes": 122070
+    },
+    "assets/js/theme.js": {
+      "sha256": "ca34a333f4b5a4a7793b2d26f3af060be8caa20567122653d27de72cb60608e0",
+      "bytes": 1089
+    },
+    "assets/js/zoom.js": {
+      "sha256": "43a42943a403d03c19fc80bcc73dec44a64e6c8247db5ff6caf80fa23dcd1398",
+      "bytes": 282
+    },
+    "assets/pdf/example_pdf.pdf": {
+      "sha256": "0b1d21bdc711ac8d6f7ea421106a517d0827d7a0a1fb58310e59dc31d729c0b2",
+      "bytes": 15879
+    },
+    "assets/resized/1-480x320.jpg": {
+      "sha256": "6ac47275b6b6f47e02d1b60a73f5df73b673487c4ea8bff8980e783f940954de",
+      "bytes": 40240
+    },
+    "assets/resized/1-800x534.jpg": {
+      "sha256": "aeab83127ed98940717f91b93c202b19378526872a4d3190c3fbb5455d0847b2",
+      "bytes": 101194
+    },
+    "assets/resized/10-1400x933.jpg": {
+      "sha256": "ed2605d78e42c13369e0e0ea7affd32138db37912a2e636ef1681084ced04bcc",
+      "bytes": 312631
+    },
+    "assets/resized/10-480x320.jpg": {
+      "sha256": "1d42ab06ab2f997a997253e7794f7328a3484f9a8fd2497fa6ddc23039feba23",
+      "bytes": 29845
+    },
+    "assets/resized/10-800x533.jpg": {
+      "sha256": "5af043eda64bd96db0fed8ba567b1663dc5caeb30858ed831df77fc2db1fecef",
+      "bytes": 75211
+    },
+    "assets/resized/11-1400x1956.jpg": {
+      "sha256": "b586ecf702bc0f2817a4f722d76c63fed0c3c7934de7f8c5c4110870a7b9c605",
+      "bytes": 587020
+    },
+    "assets/resized/11-480x671.jpg": {
+      "sha256": "e578ccb92ef351730abfdc88177e736d53d3e323ddbe8ae9f398e754d1835c45",
+      "bytes": 61222
+    },
+    "assets/resized/11-800x1118.jpg": {
+      "sha256": "a4110f330b46ac8682a28d79cc3ef96fa99e90e629a5670d4dbce5ae3c0a279a",
+      "bytes": 148698
+    },
+    "assets/resized/12-1400x933.jpg": {
+      "sha256": "7982173bb78e9906e76cd2132acaa0931a79f41f580226d230f3827db10918c0",
+      "bytes": 104320
+    },
+    "assets/resized/12-480x320.jpg": {
+      "sha256": "2028e5f6b55d0b8bc5450fb740be18bcde61f7e9d5c7dc8a3f2c0b5d1f03d9a5",
+      "bytes": 13248
+    },
+    "assets/resized/12-800x533.jpg": {
+      "sha256": "2ae8ed3a16180961a711338d49fac1c2910afef3bd51de609fed61bd1a849cd3",
+      "bytes": 27537
+    },
+    "assets/resized/3-1400x933.jpg": {
+      "sha256": "38aa7fbf45c696e6719162c416bf49655e90d1cb8c51d84e90cd8ab5835161fa",
+      "bytes": 318194
+    },
+    "assets/resized/3-480x320.jpg": {
+      "sha256": "f0bc6fe477a0e7803f41863129bc8f7d90a3a89482650287795f816fbd0f08bc",
+      "bytes": 34512
+    },
+    "assets/resized/3-800x533.jpg": {
+      "sha256": "0ff18f829ee062974f8492772b992e42b1944ce0662b4fc129f43b2da028fbe8",
+      "bytes": 79958
+    },
+    "assets/resized/5-1400x933.jpg": {
+      "sha256": "c5cbeb8e164d1ee6901af12cb9d93d34ffd9ce54227d81a80015296422c003ce",
+      "bytes": 269841
+    },
+    "assets/resized/5-480x320.jpg": {
+      "sha256": "8706376c24d31489932d4d4aa40ab412f9fc91da68dc02d80cc44fc0bc12f095",
+      "bytes": 29668
+    },
+    "assets/resized/5-800x533.jpg": {
+      "sha256": "00ecbd10f6985b435366810567114eb619acc82f94f67f8370c9f8bf0a8bb153",
+      "bytes": 67128
+    },
+    "assets/resized/6-1400x933.jpg": {
+      "sha256": "d5e102aea5f776d9a392cb926b58d82b287645b9b96e79ac5ebe6ef756235b38",
+      "bytes": 448181
+    },
+    "assets/resized/6-480x320.jpg": {
+      "sha256": "74a7b0073b327b7437aa05caee22a741ae88d439aa74eb60b5e0aa5284987877",
+      "bytes": 41655
+    },
+    "assets/resized/6-800x533.jpg": {
+      "sha256": "659565f3e5d76dd277f096e7e874ec8784bbed69c66e9bc7a77940d731c82395",
+      "bytes": 105761
+    },
+    "assets/resized/7-1400x933.jpg": {
+      "sha256": "e70107bea257d689559ed50349a08cd43633061534f7d2c2d2ea23e729fe0317",
+      "bytes": 63230
+    },
+    "assets/resized/7-480x320.jpg": {
+      "sha256": "b325e6f7eb4900297373684f16f6f9b2b891a252f67568b06edca6b80107094d",
+      "bytes": 8779
+    },
+    "assets/resized/7-800x533.jpg": {
+      "sha256": "00005761758113f18efb63ff372e212655cd28794c5842dd225a81a4008c063a",
+      "bytes": 17266
+    },
+    "assets/resized/8-1400x973.jpg": {
+      "sha256": "e3e5dc6b6f390b19d2635592a43fd2746cd40119c91e1663fc044bbfcd9147ba",
+      "bytes": 197666
+    },
+    "assets/resized/8-480x334.jpg": {
+      "sha256": "a3e32f96dd5ff44d2bcfab5b5217a7cd5e8961b0c1c4a0738a61a9b672d0b83f",
+      "bytes": 21422
+    },
+    "assets/resized/8-800x556.jpg": {
+      "sha256": "246cfbb0b2515efaec37f1c71cc669ac9f33a6a6b91cab8d1adeb54299c71166",
+      "bytes": 49053
+    },
+    "assets/resized/9-1400x933.jpg": {
+      "sha256": "25d02b9cae7c40659c0cad287f92ad83bedb1e9bb4a397ac5452728a0f0250a0",
+      "bytes": 336619
+    },
+    "assets/resized/9-480x320.jpg": {
+      "sha256": "86d6a0d285d4e338b135b5a6e44b3af3f0828e47eb48324e55ef480ac944eeb6",
+      "bytes": 28907
+    },
+    "assets/resized/9-800x533.jpg": {
+      "sha256": "786d8e1003ab63905a7e941b51f72b1845c447aa3326c6df59143a40045db364",
+      "bytes": 76073
+    },
+    "assets/resized/prof_pic-1400x1867.jpg": {
+      "sha256": "c5ac8ea86182dd1a953701355393a5a254a6c7d6e9ecab1e760827e5cd043e70",
+      "bytes": 480421
+    },
+    "assets/resized/prof_pic-480x640.jpg": {
+      "sha256": "9ecfa18f46da3707bb06ea71513f6feea982de1d7b54d0ec24de9676b1d07bb0",
+      "bytes": 56589
+    },
+    "assets/resized/prof_pic-800x1067.jpg": {
+      "sha256": "ceed5e14f8c8f00a75dca3dcd050acbf9da00e75273e3d0fa4e0b9577361f2ee",
+      "bytes": 130483
+    },
+    "assets/xml/antiquities/English/book-01.xml": {
+      "sha256": "6b695035845cecbe34fcc8c0bf6ffc000945938e9fd9cfe0e1306d3b11665420",
+      "bytes": 123174
+    },
+    "assets/xml/antiquities/English/book-02.xml": {
+      "sha256": "a1d9d3332dcff8626712ea391cbccb53defc53e5aeda1a73b9a0d6a906f388f5",
+      "bytes": 135150
+    },
+    "assets/xml/antiquities/English/book-03.xml": {
+      "sha256": "e3b1efaaf1c39dcd0f7db8b546217a58f065b9193caf6bf882f14c207c03a00c",
+      "bytes": 124832
+    },
+    "assets/xml/antiquities/English/book-04.xml": {
+      "sha256": "f1e9d1ce4f59081e59337c7fcc9cec02b4f2f039223c5a54e53bddee492a23d1",
+      "bytes": 133466
+    },
+    "assets/xml/antiquities/English/book-05.xml": {
+      "sha256": "cca24f0c1ad890a0495092a4c529084f51d525c4a56140cfd6b08289f9f6c945",
+      "bytes": 140779
+    },
+    "assets/xml/antiquities/English/book-06.xml": {
+      "sha256": "3f80eeedbd414ee1f9b0d72276fcbab01737c93709e899ae6920ed2630172a05",
+      "bytes": 163053
+    },
+    "assets/xml/antiquities/English/book-07.xml": {
+      "sha256": "7dffada6163a5aba1c2a2c7dcd4fa6c6ecd1d7aa89e2343c64d88eeea94c38da",
+      "bytes": 162322
+    },
+    "assets/xml/antiquities/English/book-08.xml": {
+      "sha256": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba",
+      "bytes": 173406
+    },
+    "assets/xml/antiquities/English/book-09.xml": {
+      "sha256": "1cb809169442f5cea410773d322ffec315cd6a4bb0880285b1ea691245c84940",
+      "bytes": 85547
+    },
+    "assets/xml/antiquities/English/book-10.xml": {
+      "sha256": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d",
+      "bytes": 103862
+    },
+    "assets/xml/antiquities/English/book-11.xml": {
+      "sha256": "f8f26004ac52b6080a56ca94ad490e8671d8144f3624c40b9b2e7a516c0e1467",
+      "bytes": 115989
+    },
+    "assets/xml/antiquities/English/book-12.xml": {
+      "sha256": "9cc8da830c8a630c024bf5729004fb224c17f7fabe5b7205cbeab37a34d10a1e",
+      "bytes": 144197
+    },
+    "assets/xml/antiquities/English/book-13.xml": {
+      "sha256": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d",
+      "bytes": 150127
+    },
+    "assets/xml/antiquities/English/book-14.xml": {
+      "sha256": "f342c46cfdcf4b22d1c9f4fa423295077538c51917b570a321e5df1f8d9e24e9",
+      "bytes": 172895
+    },
+    "assets/xml/antiquities/English/book-15.xml": {
+      "sha256": "9f307e78e2c2f9a03335342fb1176620f6328793c379fb81d58b12164a383324",
+      "bytes": 154681
+    },
+    "assets/xml/antiquities/English/book-16.xml": {
+      "sha256": "ab5725b8202b800e9b13b0003f18a71eca2e5d1dfd94bed3d3271b3cbb72f92a",
+      "bytes": 137778
+    },
+    "assets/xml/antiquities/English/book-17.xml": {
+      "sha256": "d790d8c8138235db359479b6d92a230151852e55506fe36a8e502757df0dc678",
+      "bytes": 136585
+    },
+    "assets/xml/antiquities/English/book-18.xml": {
+      "sha256": "edc2d82807c5e3e2c878bebbe81d1a1f1b0a50531e33141989dfadaf34c5b5c1",
+      "bytes": 138321
+    },
+    "assets/xml/antiquities/English/book-19.xml": {
+      "sha256": "33e2d857bacd6648309c4ebc71db6141a92f4f995bca8f3807e89cdc459446d7",
+      "bytes": 124039
+    },
+    "assets/xml/antiquities/English/book-20.xml": {
+      "sha256": "cefd1230d6c1205583c30b6db4825fb948deb8e165775f06e004d643285fb35b",
+      "bytes": 85489
+    },
+    "assets/xml/antiquities/English/preface.xml": {
+      "sha256": "e35e7b31e16cf96d3d3d59279daacef22e10b69b05110d0cdc430bcf933343d9",
+      "bytes": 9991
+    },
+    "assets/xml/antiquities/Greek/book-01.xml": {
+      "sha256": "7c82be2ce7299a389995a93ef905f905db14b79c6a49288569e52cf4fd65d4c9",
+      "bytes": 190259
+    },
+    "assets/xml/antiquities/Greek/book-02.xml": {
+      "sha256": "39f9b8d8154d43d34564ec292c0df2759e8532e3ed48e113e6d13064a8eaf800",
+      "bytes": 203184
+    },
+    "assets/xml/antiquities/Greek/book-03.xml": {
+      "sha256": "967280266aec51e390b057f309157989070185cd3d3ae08102f723eea14a50d7",
+      "bytes": 186284
+    },
+    "assets/xml/antiquities/Greek/book-04.xml": {
+      "sha256": "6a829c561e267d857d3609b01c8afd9cdb533edbb7dd828f5dd72438fbbce4b3",
+      "bytes": 191490
+    },
+    "assets/xml/antiquities/Greek/book-05.xml": {
+      "sha256": "6da4f29227376a81789955f5d1230018a5f1fee4aabbffa398f18aef64f5214c",
+      "bytes": 207587
+    },
+    "assets/xml/antiquities/Greek/book-06.xml": {
+      "sha256": "0415434537ab6f1802daeca943f01ad1cf35b7eebca69dbfcf0417e696b25a64",
+      "bytes": 245859
+    },
+    "assets/xml/antiquities/Greek/book-07.xml": {
+      "sha256": "1ecd613ea829466177ea90f6699e7f44e40fdcf7e0b219504796a7cc1862a18f",
+      "bytes": 253761
+    },
+    "assets/xml/antiquities/Greek/book-08.xml": {
+      "sha256": "8b684917c163de459ada56ef1293da6a8b87515344ccc961419b7e602ebea433",
+      "bytes": 269330
+    },
+    "assets/xml/antiquities/Greek/book-09.xml": {
+      "sha256": "7e0de6f04a5a85953444655e849a6d999eb625f802536aad70c2a407bcbc9811",
+      "bytes": 140280
+    },
+    "assets/xml/antiquities/Greek/book-10.xml": {
+      "sha256": "e49314528e626f47c64e507cbd6a96978419ae1765b059ed6100818e31279089",
+      "bytes": 165761
+    },
+    "assets/xml/antiquities/Greek/book-11.xml": {
+      "sha256": "e74888e1361ab23351ef47717bc204f5cc24dad361472eb0b5f00adfc7098452",
+      "bytes": 190042
+    },
+    "assets/xml/antiquities/Greek/book-12.xml": {
+      "sha256": "cc5ed014ddcc06b1cad376476994ca9833df688f4d68dd17e1f1dea1899b3cf0",
+      "bytes": 236600
+    },
+    "assets/xml/antiquities/Greek/book-13.xml": {
+      "sha256": "dfde29b8a68309084c4ffee4077452aea1ce1ae6d92cc39108b9d469fbbed279",
+      "bytes": 244131
+    },
+    "assets/xml/antiquities/Greek/book-14.xml": {
+      "sha256": "9db8c651739fab956aa60d9e9926efcb59c10901f04e0756a127a7692259a623",
+      "bytes": 273849
+    },
+    "assets/xml/antiquities/Greek/book-15.xml": {
+      "sha256": "ce29f43ae99296b30e67c2ea7d913282c9e74c46af0cbefef9d5f5a298b4cc27",
+      "bytes": 226347
+    },
+    "assets/xml/antiquities/Greek/book-16.xml": {
+      "sha256": "3fcac31fb8cf2b5970fe62b5ab5832b6506949ca5912fc6633665dce4e8cc785",
+      "bytes": 206335
+    },
+    "assets/xml/antiquities/Greek/book-17.xml": {
+      "sha256": "07a0ab3077b10aa3ba0634ab1ad30b8c106dc715be851e812266f8c2f2b88f29",
+      "bytes": 209526
+    },
+    "assets/xml/antiquities/Greek/book-18.xml": {
+      "sha256": "c00a428cb042469f0f71e4d6b87c46ccf3b44d6e3fbfe55180f878dc97af647e",
+      "bytes": 217786
+    },
+    "assets/xml/antiquities/Greek/book-19.xml": {
+      "sha256": "9e3750336c4a0380d8daa4c1f3f0899dabf8260cab6a3128e1e1aa77970805be",
+      "bytes": 186573
+    },
+    "assets/xml/antiquities/Greek/book-20.xml": {
+      "sha256": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19",
+      "bytes": 138436
+    },
+    "assets/xml/antiquities/Greek/preface.xml": {
+      "sha256": "94be08e73b1bd84cfd71f6c5958bebf903b0aeee480ca80cae7219596b1f7c69",
+      "bytes": 14749
+    },
+    "assets/xml/antiquities/Latin/book-01.xml": {
+      "sha256": "236397efea41558911881fbc807eec7f9b01d6058bbc51610f3550c2df77b973",
+      "bytes": 137003
+    },
+    "assets/xml/antiquities/Latin/book-02.xml": {
+      "sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "bytes": 143965
+    },
+    "assets/xml/antiquities/Latin/book-03.xml": {
+      "sha256": "8750c56152f750fbc1bd7c5d28e07cc73972bf1a86ed3221f79824e1c0573c97",
+      "bytes": 138032
+    },
+    "assets/xml/antiquities/Latin/book-04.xml": {
+      "sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "bytes": 138791
+    },
+    "assets/xml/antiquities/Latin/book-05.xml": {
+      "sha256": "846ff2e8edbc58bd2283e923353beccc8427f49cecf89415c6bc5272b994f86a",
+      "bytes": 144121
+    },
+    "assets/xml/antiquities/Latin/book-06.xml": {
+      "sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "bytes": 147960
+    },
+    "assets/xml/antiquities/Latin/book-07.xml": {
+      "sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "bytes": 142621
+    },
+    "assets/xml/antiquities/Latin/book-08.xml": {
+      "sha256": "a300124a948ff44b7216b48c18cb929033500f09b71ae944535313f2df88db80",
+      "bytes": 149056
+    },
+    "assets/xml/antiquities/Latin/book-09.xml": {
+      "sha256": "d65b9e3565bb418a819c3b9551a2252bfe006995aa504654239e2d202c96d735",
+      "bytes": 82657
+    },
+    "assets/xml/antiquities/Latin/book-10.xml": {
+      "sha256": "8b2104191d4dba2e7e74ca684146519ed5b5113a5e983a5ceb9a6e970f741d3a",
+      "bytes": 96881
+    },
+    "assets/xml/antiquities/Latin/book-11.xml": {
+      "sha256": "02fcf44d1315f30011d4e88417b7292dda0c1b335d9cfadfec0b5d2f632e9f51",
+      "bytes": 99869
+    },
+    "assets/xml/antiquities/Latin/book-12.xml": {
+      "sha256": "9a20f3b8dfa227b267371cc6400e0f40455d51241225c1ac872092f486ef84bf",
+      "bytes": 117523
+    },
+    "assets/xml/antiquities/Latin/book-13.xml": {
+      "sha256": "c5da61cc5d0539e68308b1e001980fd279dbeba95d2c5cfc64d4602bb1dd43e5",
+      "bytes": 115731
+    },
+    "assets/xml/antiquities/Latin/book-14.xml": {
+      "sha256": "931157718997a35a84951ecebabae6813526c66250fa4f791bd338748fbf62f6",
+      "bytes": 136470
+    },
+    "assets/xml/antiquities/Latin/book-15.xml": {
+      "sha256": "9cf8311568bb98aec57ee5dd6ef1ef93a8acb251c011dab18ffe45c65a3332c8",
+      "bytes": 99016
+    },
+    "assets/xml/antiquities/Latin/book-16.xml": {
+      "sha256": "293902ffb33d2d958235225200ee37d421b30d727bd4483bac0e05c4c2455993",
+      "bytes": 85179
+    },
+    "assets/xml/antiquities/Latin/book-17.xml": {
+      "sha256": "ebb345435b006089e058604369180fdd94509806081fe89bc27348a517c4af91",
+      "bytes": 124011
+    },
+    "assets/xml/antiquities/Latin/book-18.xml": {
+      "sha256": "5c4d1e6486e2229db3e47a4ab7841573427a2da6c9be2457fba1198d8b71bbc4",
+      "bytes": 128627
+    },
+    "assets/xml/antiquities/Latin/book-19.xml": {
+      "sha256": "5fa3b1f9b39d614d99b8d73fbf5675166c1ee0cca47cd4a242b27c5ea70d6a73",
+      "bytes": 94665
+    },
+    "assets/xml/antiquities/Latin/book-20.xml": {
+      "sha256": "f59f763998b9d0e8ffd047603bdb629d58c9b099eeabee386d58bf3347a93509",
+      "bytes": 69296
+    },
+    "assets/xml/antiquities/Latin/preface.xml": {
+      "sha256": "8cc821957a03e694e795bcc29fb40bff9c9952eff06567e2da76b4e4732843d2",
+      "bytes": 8219
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-02-contents.xml": {
+      "sha256": "0af258453b21ead4f81d6649083b5ded4f6f6571be6c4fa1a31153020a838786",
+      "bytes": 2700
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-03-contents.xml": {
+      "sha256": "c39dd3333f82180d321ebd89e390637148d44d8c58f329ff6a8246d7e0db8b62",
+      "bytes": 8675
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-04-contents.xml": {
+      "sha256": "f3b923d5d7d409d1038c45072bdb6f00205415a2f17e3dcb27fb7c75851412de",
+      "bytes": 4909
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-05-contents.xml": {
+      "sha256": "2f4f399819a3ce9d1f0a4598e030660cd0a321f41352cc8d58a2692ececed934",
+      "bytes": 3683
+    },
+    "assets/xml/antiquities/paratext/bamberg78/book-14-contents.xml": {
+      "sha256": "447f326e75b9791ee8a5ae5e16a9757afec5431f531867b8fa71dffc7885ee87",
+      "bytes": 15025
+    },
+    "assets/xml/antiquities/structure.xml": {
+      "sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56",
+      "bytes": 19344315
+    },
+    "assets/xml/bellum/English/Lodge1602/book-01.xml": {
+      "sha256": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119",
+      "bytes": 627990
+    },
+    "assets/xml/bellum/English/Lodge1602/book-02.xml": {
+      "sha256": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592",
+      "bytes": 464116
+    },
+    "assets/xml/bellum/English/Lodge1602/book-03.xml": {
+      "sha256": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e",
+      "bytes": 290131
+    },
+    "assets/xml/bellum/English/Lodge1602/book-04.xml": {
+      "sha256": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e",
+      "bytes": 359179
+    },
+    "assets/xml/bellum/English/Lodge1602/book-05.xml": {
+      "sha256": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b",
+      "bytes": 320353
+    },
+    "assets/xml/bellum/English/Lodge1602/book-06.xml": {
+      "sha256": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8",
+      "bytes": 246224
+    },
+    "assets/xml/bellum/English/Lodge1602/book-07.xml": {
+      "sha256": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5",
+      "bytes": 231593
+    },
+    "assets/xml/bellum/English/book-01.xml": {
+      "sha256": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+      "bytes": 311180
+    },
+    "assets/xml/bellum/English/book-02.xml": {
+      "sha256": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+      "bytes": 239878
+    },
+    "assets/xml/bellum/English/book-03.xml": {
+      "sha256": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+      "bytes": 157267
+    },
+    "assets/xml/bellum/English/book-04.xml": {
+      "sha256": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+      "bytes": 193945
+    },
+    "assets/xml/bellum/English/book-05.xml": {
+      "sha256": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+      "bytes": 183633
+    },
+    "assets/xml/bellum/English/book-06.xml": {
+      "sha256": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+      "bytes": 136863
+    },
+    "assets/xml/bellum/English/book-07.xml": {
+      "sha256": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+      "bytes": 128964
+    },
+    "assets/xml/bellum/Greek/book-01.xml": {
+      "sha256": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+      "bytes": 428903
+    },
+    "assets/xml/bellum/Greek/book-02.xml": {
+      "sha256": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+      "bytes": 336236
+    },
+    "assets/xml/bellum/Greek/book-03.xml": {
+      "sha256": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+      "bytes": 217552
+    },
+    "assets/xml/bellum/Greek/book-04.xml": {
+      "sha256": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+      "bytes": 270689
+    },
+    "assets/xml/bellum/Greek/book-05.xml": {
+      "sha256": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+      "bytes": 246889
+    },
+    "assets/xml/bellum/Greek/book-06.xml": {
+      "sha256": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+      "bytes": 186794
+    },
+    "assets/xml/bellum/Greek/book-07.xml": {
+      "sha256": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+      "bytes": 191591
+    },
+    "assets/xml/bellum/Latin/book-01.xml": {
+      "sha256": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+      "bytes": 299341
+    },
+    "assets/xml/bellum/Latin/book-02.xml": {
+      "sha256": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+      "bytes": 228066
+    },
+    "assets/xml/bellum/Latin/book-03.xml": {
+      "sha256": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+      "bytes": 140452
+    },
+    "assets/xml/bellum/Latin/book-04.xml": {
+      "sha256": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+      "bytes": 169175
+    },
+    "assets/xml/bellum/Latin/book-05.xml": {
+      "sha256": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+      "bytes": 154607
+    },
+    "assets/xml/bellum/Latin/book-06.xml": {
+      "sha256": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+      "bytes": 112174
+    },
+    "assets/xml/bellum/Latin/book-07.xml": {
+      "sha256": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+      "bytes": 108841
+    },
+    "assets/xml/contra-apionem/English/book-01.xml": {
+      "sha256": "9b88f23d94420125135e64ec850b4c19e46fa357feb73c91d9136c1ba63a569a",
+      "bytes": 126153
+    },
+    "assets/xml/contra-apionem/English/book-02.xml": {
+      "sha256": "5685e7fe801b0157a09e70f68b667637b7b601230edd16a7c609ac59553ee422",
+      "bytes": 123372
+    },
+    "assets/xml/contra-apionem/Greek/book-01.xml": {
+      "sha256": "f2f38401bb9bd7ef456b36400605bd908ba25d394bec8ad8c79b2b9f6df12169",
+      "bytes": 185690
+    },
+    "assets/xml/contra-apionem/Greek/book-02.xml": {
+      "sha256": "134521f8cb973c0272f97fdd9cb97313a33b69b89069b196af1ba722cedb9485",
+      "bytes": 163515
+    },
+    "assets/xml/contra-apionem/Latin/book-01.xml": {
+      "sha256": "7a1f760bc7a67139c5e94e7d280123052eb770ff0d9215ffe39fb2c9ae7a4baf",
+      "bytes": 96104
+    },
+    "assets/xml/contra-apionem/Latin/book-02.xml": {
+      "sha256": "4410962053fa0dab256a6f40380822e34803beefcc3ba2e272faf36049aff58f",
+      "bytes": 93068
+    },
+    "assets/xml/deh/English/book-01.xml": {
+      "sha256": "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
+      "bytes": 268475
+    },
+    "assets/xml/deh/English/book-02.xml": {
+      "sha256": "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
+      "bytes": 113080
+    },
+    "assets/xml/deh/English/book-03.xml": {
+      "sha256": "e5dc0d008801809385c8bcaf43c5ee2d42d861b572968e3ba6f6659543175d6b",
+      "bytes": 118964
+    },
+    "assets/xml/deh/English/book-04.xml": {
+      "sha256": "79068f7cbc2591b38fab9b36ee300d7e173ced0fab7e0dfac1668f56726445bc",
+      "bytes": 114376
+    },
+    "assets/xml/deh/English/book-05.xml": {
+      "sha256": "7658e545360849e75627a3ff771742d5fc06127da7613740c595c21e2aff5298",
+      "bytes": 261992
+    },
+    "assets/xml/deh/Latin/book-01.xml": {
+      "sha256": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+      "bytes": 222074
+    },
+    "assets/xml/deh/Latin/book-02.xml": {
+      "sha256": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+      "bytes": 93367
+    },
+    "assets/xml/deh/Latin/book-03.xml": {
+      "sha256": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+      "bytes": 100143
+    },
+    "assets/xml/deh/Latin/book-04.xml": {
+      "sha256": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+      "bytes": 95752
+    },
+    "assets/xml/deh/Latin/book-05.xml": {
+      "sha256": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+      "bytes": 218474
+    },
+    "assets/xml/source-contents.xml": {
+      "sha256": "3d75560ebb1c5aa67647cb735e7d23de05eaa29fbeb6705c47719ca5a6d063f4",
+      "bytes": 34606
+    },
+    "bin/bellum-greek-range-browser-qa.js": {
+      "sha256": "522c9082026ea317a84be1b8baa625c1d5186d051e2397a45f6af6af4bbce60a",
+      "bytes": 9048
+    },
+    "bin/bellum-greek-range-qa.mjs": {
+      "sha256": "40c5044db5ae176b27d5af83108e3cc6721792f4dfce5962dbe033e61c41a795",
+      "bytes": 15988
+    },
+    "bin/cibuild": {
+      "sha256": "34f5feccc3a35e82012144b7bbc3c8caa6c65b1773c644c025ed24708f3bae40",
+      "bytes": 26
+    },
+    "bin/deh-concordance-xml.ps1": {
+      "sha256": "926b37bcff2ab3e5da240017c0d2421cfb3c0c1f8e5a0d41f5a53eca8f626698",
+      "bytes": 5966
+    },
+    "bin/deh-concordance.mjs": {
+      "sha256": "ea26f63d146991a9043d61c568b657055cd12077b4da20895f225ff3e5968be3",
+      "bytes": 46994
+    },
+    "bin/deh-parallels-browser-qa.js": {
+      "sha256": "335ad1645ed97e7cf09164eb0f540595c46f325afe5beab0f0ae369f52ecf715",
+      "bytes": 7612
+    },
+    "bin/deh-parallels-qa.mjs": {
+      "sha256": "70cf8b1a71e0ccaaf560efd9f9013ac6748d2424ebd9e8a8157c5ddf9885c4b2",
+      "bytes": 2535
+    },
+    "bin/deploy": {
+      "sha256": "3b03a1187f7b1fc856c9dc92344d1d052a3990cc6e20c1fc5cd112d7fa8d7e92",
+      "bytes": 2744
+    },
+    "bin/lodge1602-bellum-browser-qa.js": {
+      "sha256": "c6ff2b8887f6cb15a1dfcb306a5aefff3a544f0b7fe26a4f4b9757578fa5f672",
+      "bytes": 11363
+    },
+    "bin/lodge1602-bellum-import.ps1": {
+      "sha256": "48c3d4f5d906b0330904aaae6629a501e8081f577d68ff038b429d65709b5d97",
+      "bytes": 11903
+    },
+    "bin/lodge1602-bellum-qa.mjs": {
+      "sha256": "5e918d9bce700d35b0daed7cbc84764fc747bf6104d9f28a218b2ec64da4b8f6",
+      "bytes": 11339
+    },
+    "bin/lodge1602-bellum-qa.ps1": {
+      "sha256": "0baae84b82f68f8597f42d2e9e224d2690ebed19b8da6315192f78fc721f792d",
+      "bytes": 13387
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/ALIGNMENT_ALL_QA.json": {
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_BOUNDARY_QA.json": {
+      "sha256": "9e49cf39d0ccfb0b56027b71288157b6592a4b9ae4fb1c4cd6b178bf5a6cbaa9",
+      "bytes": 609270
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_BROWSER_FAILURE.json": {
+      "sha256": "8b4cbf5f7036b27c41d2055e329a15a7bfd3926ad56f5455ff2fa454be7d18e2",
+      "bytes": 196
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_BROWSER_QA.json": {
+      "sha256": "b2f0cc3dddd649ac2fa62508f37ee7829e74f9592937296fad1ec547a37b6133",
+      "bytes": 9200
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_COMPACT_URL_QA.json": {
+      "sha256": "ebc85358d2abc00cc3c5c64c6f6fe1afbe7ce8c1fda7313745f756ffa4bf23df",
+      "bytes": 80060
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_CONTROLS_dark.png": {
+      "sha256": "ea747b4e667ffbf8667f372d9459e8eef48eccdf33556c1b1abcb2f00434ff70",
+      "bytes": 27509
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_CONTROLS_light.png": {
+      "sha256": "e877ed272506daf23e61c56f2a339802d58079bd422cb2180b6282c47846ae3a",
+      "bytes": 26378
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_RANGE_QA.json": {
+      "sha256": "2aad886c17709ec27c6a0da8cb218e29f8de381ce13b1750ff6645b4be91e3ff",
+      "bytes": 353356
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_RECORD_INVENTORY.csv": {
+      "sha256": "dbf5ed46562e60d4da4f6b8455222f59b3757fbbf9939a2eea697dff29385803",
+      "bytes": 210543
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BAMBERG_URL_QA.json": {
+      "sha256": "9f8379e6a0e4e84c45608b45223a768d80b7c0cad85108d00b0e3d9279fec3a0",
+      "bytes": 42850
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BASELINE.json": {
+      "sha256": "94a88e8fe1ae2dde015bc8b94cbd24c829ea02ac82a30362163705f0844f2c38",
+      "bytes": 149092
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BROWSER_FAILURE.json": {
+      "sha256": "0c39ef56a257d4cb683ad3c9a517bf832920c7e46eda00a0383e692f6d75c37c",
+      "bytes": 1455
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BROWSER_PROGRESS.json": {
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/BROWSER_QA.json": {
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/COMPACT_URL_CHANGE.json": {
+      "sha256": "6a21ab0ca5395e35262a8e12e3b9a3d53e3385a61cf59164180f9a1ac86c8553",
+      "bytes": 449
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/CURRENT_LOCATOR_GATE_QA.json": {
+      "sha256": "bb8ee8ae12a765c354e813938f49e3f9c9f0ce372d797d3902c5a835419d0495",
+      "bytes": 422617
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/FILE_MANIFEST.json": {
+      "sha256": "0a8240780d01f5b38fd5edbf350e04e9f786f61ef4fee315e0b7f7d0845ddc5e",
+      "bytes": 22331
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/FOLLOWUP_GATE_QA.json": {
+      "sha256": "cf4c9bbf3395d3592aafbf897bcbeff2cf2d2af173bd74b8adbc5302633cfc92",
+      "bytes": 145295
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/INTEGRITY_QA.json": {
+      "sha256": "a312f07eaca22e52a3a711ad36b5fff424d6387fa3c87f5d4d5360011aba22a5",
+      "bytes": 33926
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/INTERACTION_DIFFERENCE.json": {
+      "sha256": "0ff7bc2e3b21d2ec2b718981ed2dae4fb0d0e2f44ce3205e0cb0383d09385b27",
+      "bytes": 4287454
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/INTERACTION_FAILURE.json": {
+      "sha256": "a0043dd35898940a05f4b7f17f841cb48ae32eab146ddfdac1046a9267d0c477",
+      "bytes": 232
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/INTERACTION_QA.json": {
+      "sha256": "ed42d6bb5a8ba765e68d25b5dbd7f11f68ae79a0bd0a8387444f810ebaa0cc2e",
+      "bytes": 2559
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/MARKERS.json": {
+      "sha256": "e08d6d84d04e6bb1412ac6d255dbba570931cde26f48d38c626768313d22f98f",
+      "bytes": 21590
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/NOTICE_THEME_QA.json": {
+      "sha256": "88767f3c063dc384ba8a0bf4e3c00f0d84c7bf1addd229d4859a168f6bdc9024",
+      "bytes": 2738
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/NOTICE_THEME_dark.png": {
+      "sha256": "f18febd8e0299ce056e1217cbcb8a83c631adb00f759a1856610af1ec59b79ca",
+      "bytes": 20850
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/NOTICE_THEME_light.png": {
+      "sha256": "9e9969b6092b4ac31325e47c361c31ed719f9e178a11d3903f9bd4200a0ac3fd",
+      "bytes": 20806
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/PROTECTED_SOURCE_GATE_QA.json": {
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/QA.json": {
+      "sha256": "702a07476f27d79ee447366bc0ea3a7323c99e232c81074c2862787627717672",
+      "bytes": 40478
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/RENDERED_GATE_QA.json": {
+      "sha256": "d0a2b42d87d7976e9e7e0a7dceb6226fe4dea1e4cfa3998738d046e4e29edd08",
+      "bytes": 9870
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/REPORT.md": {
+      "sha256": "815cda3d0c941fface0015f3da4aa53a58329bef288a70f7fd48147ba61051fe",
+      "bytes": 10891
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/SAME_NIESE_DIFFERENT_POSITION_QA.json": {
+      "sha256": "c7ae48660461bb2053a4987741ea87bf2a079b3fb4f1b2be069fa2fa0fa13cbc",
+      "bytes": 6892
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/SOURCE_AUTHORITY.md": {
+      "sha256": "f3b89c70a22ca8e8cf7918806c1bbda87ab4eff637e988e9726c2e3819be7537",
+      "bytes": 3161
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/TEST_DEVELOPMENT_LOG.json": {
+      "sha256": "6b877d6045d46bc844a6460a4c81cab94906c44a75a79bf54fa73340e09b98f1",
+      "bytes": 2679
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/VI_ALIGNMENT_GATE_QA.json": {
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/XI_MULTISPAN_GATE_QA.json": {
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/bamberg.test.cjs": {
+      "sha256": "78aec50c5e3a4d9acdaf2ff73551543a6103e8597d18f5af43e9710c74e6ce3d",
+      "bytes": 16070
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/compact-url.test.cjs": {
+      "sha256": "1f94d34011928a3f39957e32e398503f60db382041efe5b8bce86149d934bdcb",
+      "bytes": 9936
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/finalize_review.py": {
+      "sha256": "c5941f3630fbcad1e68118068a92a517dc3efb1e6908770234aa96a6bee4bc1d",
+      "bytes": 20208
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/interaction.test.cjs": {
+      "sha256": "86b96f0b96f38e06d96c8b406ee1a55b6b40ffc4502f1dd333ddb9f1dcbedaf0",
+      "bytes": 9917
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/navigation.test.cjs": {
+      "sha256": "a214ef30d4423b1231af2bba3b5bcbad8fb6538c2f37330aef876b9ac7885659",
+      "bytes": 45300
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/notice-theme.test.cjs": {
+      "sha256": "e49e2bf9ee75c4794d8ee09dcef9943700d2389212c7ece1f526856fbb9ec4b4",
+      "bytes": 8781
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/patch_renderer.py": {
+      "sha256": "77ecff2f1eba6a29490e3fc5b07a1a814a47db0f17d2fff47faef6d6d6004adc",
+      "bytes": 11516
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/prepare_registry.py": {
+      "sha256": "05fe6d770bf0925d4ff077daf0f1a8c878c4b3e6349a3cb8f1b11e8a19c17513",
+      "bytes": 12704
+    },
+    "review/Antiquities_Bamberg_Navigation_2026-10-07/verify_integrity.py": {
+      "sha256": "fafce84ac30fb4af1a590c6ee0070e658791768944316b499ffaa11bbc20c770",
+      "bytes": 7423
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/BASELINE.json": {
+      "sha256": "bd2bab289a97af7788c40e6352abad590556463d20d505ea8c227fcf151b3bef",
+      "bytes": 171661
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_FAILURE.json": {
+      "sha256": "9716c4d0f94dc2ac7c35cc8b6397bc6efa0490293c2e832ba4ae005b2583eebf",
+      "bytes": 3399
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_PROGRESS.json": {
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/BROWSER_QA.json": {
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/FILE_MANIFEST.json": {
+      "sha256": "bd73ef4b0cf9fa8b0f8cdb0f06093d8442daef460cf63694e59973a0923f9a85",
+      "bytes": 14184
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/INTEGRITY_QA.json": {
+      "sha256": "96750b395c117491ebebcf47981819e498c0f046e36528ff76985d28d596692c",
+      "bytes": 2195
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/MARKERS.json": {
+      "sha256": "a5569977c9958329dd6a6f3b77ac4418a3699e0ff3058d253494a9225f52c98b",
+      "bytes": 2622
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/PROTECTED_SOURCE_GATE_QA.json": {
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/QA.json": {
+      "sha256": "4e202ce1fab3da7233cda7ae88c248c669710b9e8b905cc8fa90f762531f2436",
+      "bytes": 41027
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/RENDERED_GATE_QA.json": {
+      "sha256": "1a596011ea2830962543ca07dd6966cb83657249cfc2a4cdb230d2b296454712",
+      "bytes": 9384
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/RENDERER_FORMAT_QA.json": {
+      "sha256": "11b90b536b3c85a799d4f0e1c4574b5a8470c18da6f86db18067e2f96dcaa337",
+      "bytes": 293
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/REPORT.md": {
+      "sha256": "6208fb5814f6cf979140cfed98ff1a310e6974d52818aa7cc339eded88d96193",
+      "bytes": 9460
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/SOURCE_AUTHORITY.md": {
+      "sha256": "f9f4a0e8a78ea30b2f893106c4727f7e0a8c72e6cc140679e37a91432766b519",
+      "bytes": 3756
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VII_CURRENT_LOCATOR.json": {
+      "sha256": "b08f1130512650440ad39c97aca8ade3f99e2239cbb6af4c8d6ff4ecd1b667bf",
+      "bytes": 1227
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VII_current_locator_adjudication.md": {
+      "sha256": "7faa064a24561b5d005e72c00f21108196dd19147c93b15a64458e9f436f15c6",
+      "bytes": 971
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_GATE_QA.json": {
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_INTEGRITY_QA.json": {
+      "sha256": "a392938e31543724f50d6be4a827b5e74a1bae1f9b5429d8eab6f29296757948",
+      "bytes": 290
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_ALIGNMENT_REPAIR.json": {
+      "sha256": "b08451358beb9522607ef3f555c9d90b21f8b473776c4b3a428f02e8e7a6b466",
+      "bytes": 1918
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_LOCATOR_GATE_QA.json": {
+      "sha256": "de4f7552519112dbe8eba3318c2e463a217fa70684a3bbbf28ab9d0e553431ee",
+      "bytes": 3536
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_locator_corrections.json": {
+      "sha256": "867b824c1ad10a15df6ba59f80a2c28d6fd97cc531653c81bf9613a4c31411ac",
+      "bytes": 7972
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/VI_xii8_XIII_locator_adjudication.md": {
+      "sha256": "4b3d4d28e4a1c8f6ad4651416782df2e89e3d06ccbe940dff79d57a5ff4a2271",
+      "bytes": 5326
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_LATIN_PROJECTION_DIAGNOSIS.json": {
+      "sha256": "efeed6da937d21f4731594383bed039734b9188fe69623872df55b53cb4a1a31",
+      "bytes": 2978
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_MULTISPAN_GATE_QA.json": {
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_MULTISPAN_MEMBERSHIP.json": {
+      "sha256": "9b7d81fa1f0917349ace617b440d983dbb8b6cee3f8fb7a0500ebc41bac60bcf",
+      "bytes": 31795
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_RANGE_BLOCKER.json": {
+      "sha256": "f1713967a4c26110a521d63493f24a94e34aa94bc6883bf89ec1ac6cc96f2095",
+      "bytes": 2640
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_current_text_multispan_adjudication.md": {
+      "sha256": "8639f6b8ffff94fb045b3e5f2dd20def780d27548f5a97bc855dac93f3a2670b",
+      "bytes": 6213
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/XI_viii4_viii5_stop_condition.md": {
+      "sha256": "fd6ba10be2ba961ad74d6c99f1ee60b61d71b7915b680916c84ea0e06bf3a858",
+      "bytes": 635
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/adjudicate_book_vi.py": {
+      "sha256": "c87947ec4bc92a7d76cfb4d3f0e795e024cb400f387b48a64e814b51ea4907a7",
+      "bytes": 4191
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/adjudicate_book_xi.py": {
+      "sha256": "c994e7f5d55079002d3085c80e09b942bb05deca2b612de9d7750dc4e6554e65",
+      "bytes": 5904
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/finalize_review.py": {
+      "sha256": "d7f9b3f69a56bbf274f5df2be56e3f31f6c045ed1b60092118cc9d61e578d467",
+      "bytes": 19182
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/navigation.test.cjs": {
+      "sha256": "5388c30b024e624b3751b95f7279a5a4d39e38af6d7ad6cccf9fe09c8229f91c",
+      "bytes": 33899
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/prepare_registry.py": {
+      "sha256": "0891aef6968cdf75c6792c6b32c88cab5476648b9fab8356bafe91b25ce4c7e7",
+      "bytes": 11464
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/tei_all.rng": {
+      "sha256": "b0f115095ead2ccc6933aa3365c6f4a82cba3b2ec7eee7f76bb616d7a63b7e48",
+      "bytes": 1098331
+    },
+    "review/Antiquities_Traditional_Navigation_2026-10-06/verify_integrity.py": {
+      "sha256": "c7950297311aa702d3ecefcf3bf6328ceb959d3da7ffeebcbc3673ea9088030a",
+      "bytes": 7230
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/ALIGNMENT_ALL_QA.json": {
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/BASELINE.json": {
+      "sha256": "d1f83b233a420fda090e1d30f63da16bc9d6b431ec40540d2a29d84f66cc30b4",
+      "bytes": 50177
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/BROWSER_PROGRESS.json": {
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/BROWSER_QA.json": {
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/CHAPTER_AVAILABILITY.json": {
+      "sha256": "336f606d48e70683c21a233dea60f3b428b2f116eb5d73e875b3829bf8651dba",
+      "bytes": 43081
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/FILE_MANIFEST.json": {
+      "sha256": "e0bd96db6a6087cc06b2232648623618f5f51efcc4d10e8793eb50d7b7480f04",
+      "bytes": 8944
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/FOLLOWUP_GATE_QA.json": {
+      "sha256": "d4c9e98e5e8f45e24613f8bf6181abe557f102ae535b0a5569f2eb79ee8fa38e",
+      "bytes": 145187
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/INTEGRITY_QA.json": {
+      "sha256": "2d60ff4bde673bbc10c63bc25df9365e8467cd0d9455fc5b61917c50a07da48f",
+      "bytes": 2302
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/NOTICE_STYLE_BASELINE.json": {
+      "sha256": "2c4e5de65e951b6bd5879311c94b59e12af58b14d2938c1822f6bae134f19737",
+      "bytes": 7812
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/NOTICE_THEME_QA.json": {
+      "sha256": "88767f3c063dc384ba8a0bf4e3c00f0d84c7bf1addd229d4859a168f6bdc9024",
+      "bytes": 2738
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/NOTICE_THEME_dark.png": {
+      "sha256": "f18febd8e0299ce056e1217cbcb8a83c631adb00f759a1856610af1ec59b79ca",
+      "bytes": 20850
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/NOTICE_THEME_light.png": {
+      "sha256": "9e9969b6092b4ac31325e47c361c31ed719f9e178a11d3903f9bd4200a0ac3fd",
+      "bytes": 20806
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/PREFIX_CANDIDATES.json": {
+      "sha256": "f210afe68b46a9ec5fc858a66536705c1828e71cdc24b05c5acc68fde0bc32cc",
+      "bytes": 45736
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/PREFIX_LOCATOR_ADJUDICATION.json": {
+      "sha256": "d8cea04f6a9384e6ca8d31adc7d6a3e01df8cd8a283a03820931336a52287592",
+      "bytes": 109337
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/PROTECTED_SOURCE_GATE_QA.json": {
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/QA.json": {
+      "sha256": "1637377766c6f32a8b258ec7f519e8d8a8ecfd967bf8153c8984908545084880",
+      "bytes": 13470
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/RENDERED_GATE_QA.json": {
+      "sha256": "d51981f3e295c71c20b28085eef133cbd8547b45bced2097cf9def478560481f",
+      "bytes": 9384
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/REPORT.md": {
+      "sha256": "f507ebe70e8be6c4f09ad9945f1d3255ab63e69b195c702dda6936f2a6568e5b",
+      "bytes": 12378
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/VI_ALIGNMENT_GATE_QA.json": {
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/XI_MULTISPAN_GATE_QA.json": {
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/apply_followup.py": {
+      "sha256": "d2cb94bfdbd1cf91b50cbea7f0e48f363a901338ac35ec19bffecffe3778d36e",
+      "bytes": 10413
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/finalize_review.py": {
+      "sha256": "bfdfabc8d2f6639bab31c780abe01d2ee2949fb02b3706c05c638d80c477ebc0",
+      "bytes": 19471
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/navigation.test.cjs": {
+      "sha256": "3673f12992aa619818465f0398403942197fdb7d29152611f0a74eacfaf3815b",
+      "bytes": 44826
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/notice-theme.test.cjs": {
+      "sha256": "4d7ff4d5ac9dcf0e0c3a405ce9ea20eb3530617983b7423475e3b6c079fedc09",
+      "bytes": 8772
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/prepare_tests.py": {
+      "sha256": "50a1e5f536e1d9bf9716769b97c70f2e94f4b90a6ee880ac2fa657745b6bbb9e",
+      "bytes": 13578
+    },
+    "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/verify_integrity.py": {
+      "sha256": "ea69eaf2825e775dafd90cf2e8f130e4e4a44704bfa95b7552e1a6fe5b3cb53e",
+      "bytes": 6632
+    },
+    "review/Bellum_Greek_Range_Fix_2026-10-04/QA.json": {
+      "sha256": "820308f0fa8d011fdee2e633dba26cd6200b6ed06aedd0716292c5aee3d71f6c",
+      "bytes": 1458775
+    },
+    "review/Bellum_Greek_Range_Fix_2026-10-04/REPORT.md": {
+      "sha256": "570fb52eac8e8598ac436c2bc34395eff835fc047596fcca3bf6d9f85cc69b53",
+      "bytes": 7820
+    },
+    "review/Source_TOC_Navigation_2026-10-07/ALIGNMENT_ALL_QA.json": {
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_BROWSER_QA.json": {
+      "sha256": "b2f0cc3dddd649ac2fa62508f37ee7829e74f9592937296fad1ec547a37b6133",
+      "bytes": 9200
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_CONTROLS_dark.png": {
+      "sha256": "c68283b0d80e8703a79df7de3762cabc2a155ab905ee41db6be2b326f081a20e",
+      "bytes": 27842
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_CONTROLS_light.png": {
+      "sha256": "46835220577e2c045ec904830bc2c2b366534b87119b41fbbe98fe9b3659de21",
+      "bytes": 26752
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_RANGE_QA.json": {
+      "sha256": "2aad886c17709ec27c6a0da8cb218e29f8de381ce13b1750ff6645b4be91e3ff",
+      "bytes": 353356
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_TRANSCRIPTION_QA_2026-10-08.json": {
+      "sha256": "4237410e4197153072569558fb6ede8a1a633b380424e00de95ea2f3e1c6381d",
+      "bytes": 2211
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_URL_QA.json": {
+      "sha256": "9f8379e6a0e4e84c45608b45223a768d80b7c0cad85108d00b0e3d9279fec3a0",
+      "bytes": 42850
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BAMBERG_WORD_EXTRACTION_2026-10-08.json": {
+      "sha256": "08b5b3b443d6cc44ed64c61c75950feb9edad7f262d16e95e8ba9c41197b4362",
+      "bytes": 96429
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BLATT_TEI_CONCORDANCE_2026-10-08.json": {
+      "sha256": "e2094e586e8825489dd8fe405bbe77be3bc748dc61649f57825260e79a0ee955",
+      "bytes": 20443
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BOOK_V_VARIANCE_REGISTER_2026-10-08.json": {
+      "sha256": "e50852e3624fef5096e0a8f6bb1e56c619e391e12ec71b556e933d65f5582f7a",
+      "bytes": 11574
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BROWSER_PROGRESS.json": {
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    "review/Source_TOC_Navigation_2026-10-07/BROWSER_QA.json": {
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    "review/Source_TOC_Navigation_2026-10-07/CONTENTS_BROWSER_QA_2026-10-08.json": {
+      "sha256": "7f06ec091f1d8d63fd283ad8807d54df1efaa10e3810a5d5d95ee5f4f11690cb",
+      "bytes": 32575
+    },
+    "review/Source_TOC_Navigation_2026-10-07/CONTENTS_EXPECTATIONS_2026-10-08.json": {
+      "sha256": "9fdc685f02614aa12bb0683dc00a20f6079ae017651abe9af5df22aa6be5408c",
+      "bytes": 122735
+    },
+    "review/Source_TOC_Navigation_2026-10-07/CONTENTS_dark.png": {
+      "sha256": "52b885833844e012a3c2a13b0e9fb826683a0e68a02a0c734ed815fe2fdb1e2e",
+      "bytes": 77289
+    },
+    "review/Source_TOC_Navigation_2026-10-07/CONTENTS_light.png": {
+      "sha256": "df933ba38ecf3b97407ff9f70dc8a3160e5472cf946a1f66b04e62108b4b48b4",
+      "bytes": 77213
+    },
+    "review/Source_TOC_Navigation_2026-10-07/EDITORIAL_DECISIONS_2026-10-08.json": {
+      "sha256": "cbc090c5e0487ac05bd9ab1e56890adc01e8ae9240e144bde9965f76756aea73",
+      "bytes": 1316
+    },
+    "review/Source_TOC_Navigation_2026-10-07/FILE_MANIFEST.json": {
+      "sha256": "ff662b0129118598975d1a47a3a7d974f94e503ce8d19cedf7a212510a98ea6f",
+      "bytes": 27460
+    },
+    "review/Source_TOC_Navigation_2026-10-07/FOLLOWUP_GATE_QA.json": {
+      "sha256": "cf4c9bbf3395d3592aafbf897bcbeff2cf2d2af173bd74b8adbc5302633cfc92",
+      "bytes": 145295
+    },
+    "review/Source_TOC_Navigation_2026-10-07/IMPLEMENTATION_SOURCE.diff": {
+      "sha256": "92fd43396370ea2128b9b49b2d8e2dcf44b6c4f6fb76686f230d95b235743b59",
+      "bytes": 14233
+    },
+    "review/Source_TOC_Navigation_2026-10-07/INTEGRITY_QA_2026-10-08.json": {
+      "sha256": "f744f0c30ceec4975053d2bf9ada0bb606cb02bc4d2f151d5edd74c7b149d59a",
+      "bytes": 44761
+    },
+    "review/Source_TOC_Navigation_2026-10-07/INTERACTION_QA.json": {
+      "sha256": "11efeea480c74757bf7ec0eeef0e8068fe6d61e4b075bd55def0db5fc0c9ac57",
+      "bytes": 2742
+    },
+    "review/Source_TOC_Navigation_2026-10-07/PHASE_B_BASELINE_2026-10-08.json": {
+      "sha256": "af81b3ceb0cc85c65199532140224328a849cca1d70f572c6816e7ee1957ef31",
+      "bytes": 46414
+    },
+    "review/Source_TOC_Navigation_2026-10-07/PROTECTED_SOURCE_GATE_QA.json": {
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    "review/Source_TOC_Navigation_2026-10-07/QA.json": {
+      "sha256": "bb1ce2b115f0d59ffb0774a288e6451a0dee0ba9a89e18d42daea6117010170e",
+      "bytes": 19332
+    },
+    "review/Source_TOC_Navigation_2026-10-07/REPORT.md": {
+      "sha256": "af0a76371133e13d3ed00fd14d7a5fb19aa73328a2479932e27c1a2d9bcbd6e2",
+      "bytes": 17882
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SAME_NIESE_DIFFERENT_POSITION_QA.json": {
+      "sha256": "c7ae48660461bb2053a4987741ea87bf2a079b3fb4f1b2be069fa2fa0fa13cbc",
+      "bytes": 6892
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_AUTHORITY.md": {
+      "sha256": "356b3e0f8d8d77b7201824c0ee427b917a90bea86781acc93d4b82c5bed90f6e",
+      "bytes": 14417
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_TOC_CENSUS.csv": {
+      "sha256": "8a88c1c4e49633a29d110df0e395f071df8a2e6b5a82454359391cf858a26383",
+      "bytes": 64011
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_TOC_CENSUS.json": {
+      "sha256": "b8fbb5cfc72010be0671e15d1c93a47809760fbcb4fdac9f20cba23edb9759ba",
+      "bytes": 946620
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_TOC_ELIGIBILITY_2026-10-08.csv": {
+      "sha256": "fe56dce82b94e00f4888d205adc8678267948d6d616e83cc31873729f0928faf",
+      "bytes": 288070
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SOURCE_TOC_ELIGIBILITY_2026-10-08.json": {
+      "sha256": "2cec7197260777f7d2d3906b14d6d05403f3acf8c384575dc0bcd18f0b38fad4",
+      "bytes": 373549
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/BEFORE.json": {
+      "sha256": "26164d78e145670e9e1718cb47161328c4dd074ebbda113ca63d225b68826d4d",
+      "bytes": 55243
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/DECISION.md": {
+      "sha256": "bbf31a4a7e628ca0fe1e2213ee2659103c2cfe1b1499ad10f2325fe0be23633d",
+      "bytes": 1783
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/ENTRY_INVENTORY.json": {
+      "sha256": "48d015bd9b5c73bc72615c228f71c9c4947e81a022a64057349c12e8f0862ea6",
+      "bytes": 17830
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/FILE_MANIFEST.json": {
+      "sha256": "0d6bdf299014523c2c7dbcbb58c42fd327649b15e2dc4e8acfffbcdf3d4a1915",
+      "bytes": 56283
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/INTEGRITY_QA.json": {
+      "sha256": "67150c2cab402c41ac1546ade344f354ad8e71c2679baec07c15491112ee69bd",
+      "bytes": 1549
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/QA.json": {
+      "sha256": "e3a4d02cd2ea87a90f00224c698a8d508d23779d72e1c571ce924a30678eba3d",
+      "bytes": 7632
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/TRANSCRIPTION_QA.json": {
+      "sha256": "cdd9b5dc3a52284ec3651c6fc69008874b282324e23affdca64be51af8d7830e",
+      "bytes": 1252
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/XIV_BROWSER_QA.json": {
+      "sha256": "ad3b94ac2132822ab309bea808a53d19643b70ebc2b82d4bb229c1379ef8d803",
+      "bytes": 5116
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/XIV_dark.png": {
+      "sha256": "c4e07470338d802d02ed7491c5a1168ceb8d7a8c45cc845b2802991ede5dd6dc",
+      "bytes": 252015
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/XIV_light.png": {
+      "sha256": "29d257fcff3e806ccf5e55091d2c673059b1945d8f725f0f2842d97b87d0ef5d",
+      "bytes": 250984
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/finalize_xiv.py": {
+      "sha256": "3704946abe359a70ef870dd444c253c618d3919c4f6088eeeaa536d863a57109",
+      "bytes": 17963
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/implement_xiv.py": {
+      "sha256": "2c8f606ea1e1fca8ed30c561cf33f0f15bd0c7b459919b1bf114606f8201068b",
+      "bytes": 13374
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/CONTENTS_EXPECTATIONS_2026-10-08.json": {
+      "sha256": "065007abf4746ecfd0a6f80af008c91ea479b0ee38247c03af80b448c73e02bb",
+      "bytes": 112759
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/FILE_MANIFEST.json": {
+      "sha256": "fcead0dfdc695044e2133020cf44f8ca4dabe83cb6bd18cce70f764c46043492",
+      "bytes": 17498
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/QA.json": {
+      "sha256": "e03b1308c2ae0cc3f2b51cb24213f7309643823aa3481081a64605eb6cefb4ed",
+      "bytes": 10299
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/REPORT.md": {
+      "sha256": "4b37f5e08b751f9155c174cb07890da40b0b6d03bed6d7eb9e29bdf68addd05f",
+      "bytes": 14396
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/SOURCE_AUTHORITY.md": {
+      "sha256": "b508232182b6c6556a01b7596a72f2caece0b04526728b82e6947137ff718773",
+      "bytes": 12951
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/SOURCE_TOC_ELIGIBILITY_2026-10-08.csv": {
+      "sha256": "dfc224571983e173ac9aec62d879fe7b55617681242917add84e0649e4809912",
+      "bytes": 19839
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/SOURCE_TOC_ELIGIBILITY_2026-10-08.json": {
+      "sha256": "6050f1a9cf942d7127d2394fcd801a8d6035ae5b74c57ec8238f79def894a290",
+      "bytes": 368936
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/prior-effective-metadata/VERIFIED_CONTENTS_REGISTRY_2026-10-08.json": {
+      "sha256": "78c4188275f9bb55bb45de2200d1d135678c681f087da08dd8b4d57d94accf4e",
+      "bytes": 13955
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Implementation_2026-10-08/xiv-contents.test.cjs": {
+      "sha256": "502d8327a35cc14d62d67cf16d0fe9c33ba8cefcafa33676790b0be40719e102",
+      "bytes": 11313
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/BAMBERG_NARRATIVE_COMPARISON.csv": {
+      "sha256": "a121bff26b595a7533f2204cd1fa8a4f98849892e83784b0045b2f16befbb88e",
+      "bytes": 2689
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/BOUNDARY_PROPOSAL.csv": {
+      "sha256": "6f0a104fa9141dad4a729c3013bcec7f4c4c3b358ba05514ebd6fc85a9ee85a7",
+      "bytes": 4793
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/FILE_MANIFEST.json": {
+      "sha256": "00b078034b4136eada777898e4674128c2076321aafdf80a0c5aac3443a70cca",
+      "bytes": 88999
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/INTEGRITY_BASELINE.json": {
+      "sha256": "b3d2111658ac7a7e9219a03325694423bfc7f68dfb1e33a24aed95e9a0f960cc",
+      "bytes": 88523
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/PROPOSAL.md": {
+      "sha256": "d9954c3e70c7b8f0ca0460758a3a9f60301eac42d0aa848e9c315f5ba03dad15",
+      "bytes": 24242
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/QA.json": {
+      "sha256": "bc39966aeafe3e69b26e522653bf94ac21b1b4eaa1ea8792f503fd3622f2f4e5",
+      "bytes": 3748
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/SEGMENTATION_PROPOSAL.json": {
+      "sha256": "14785b2c07ee7d96e2ec8e765a6fdfec70fcdb03900c58fd6bf4452137a11299",
+      "bytes": 43459
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/SOURCE_CAPITULA.xml.fragment.txt": {
+      "sha256": "63b38a9828b11c235ee37e8ff2d1da5546569a01b5d1cc5013eb19711038580e",
+      "bytes": 8909
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/SOURCE_PARAGRAPH.xml.fragment.txt": {
+      "sha256": "0284126a6164f2e4fa20deafa45af2ac8b22a394dc8366600703c0836c882725",
+      "bytes": 5733
+    },
+    "review/Source_TOC_Navigation_2026-10-07/SR-061_Proposal_2026-10-08/audit_sr061.py": {
+      "sha256": "00a705ddb33252e795c68b2f89ceb29d878c882af0f3d9c0cce182483cfcb226",
+      "bytes": 18021
+    },
+    "review/Source_TOC_Navigation_2026-10-07/VERIFIED_CONTENTS_REGISTRY_2026-10-08.json": {
+      "sha256": "ec470fcc5c95df0e0366871646c5d6b29520b516b08dc6a3ce4b07ff1ed22426",
+      "bytes": 14957
+    },
+    "review/Source_TOC_Navigation_2026-10-07/VI_ALIGNMENT_GATE_QA.json": {
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    "review/Source_TOC_Navigation_2026-10-07/WORD_ITALIC_SPANS_2026-10-08.json": {
+      "sha256": "e2094e586e8825489dd8fe405bbe77be3bc748dc61649f57825260e79a0ee955",
+      "bytes": 20443
+    },
+    "review/Source_TOC_Navigation_2026-10-07/XI_MULTISPAN_GATE_QA.json": {
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    "review/Source_TOC_Navigation_2026-10-07/bamberg-regression.test.cjs": {
+      "sha256": "d4a474554d8b756098b36c9ce067e93a9d77632c9a365fd5dea9f13f3e9dc31e",
+      "bytes": 16069
+    },
+    "review/Source_TOC_Navigation_2026-10-07/contents.test.cjs": {
+      "sha256": "1c9cdacd6487b427dfd69ade1e28ef38a60552ffb582cc860850948c35284157",
+      "bytes": 14189
+    },
+    "review/Source_TOC_Navigation_2026-10-07/development-diagnostics/CONTENTS_BROWSER_FAILURE.json": {
+      "sha256": "897121233a5a827048f947f46c9b6d86fd85e9697e89bd5d7def6a4d70873575",
+      "bytes": 445
+    },
+    "review/Source_TOC_Navigation_2026-10-07/finalize_phase_b.py": {
+      "sha256": "0e820ab633efb4cb3bcbcf5680bc7ac6ce4dbb81082c8eea40325938a7d39f2c",
+      "bytes": 19470
+    },
+    "review/Source_TOC_Navigation_2026-10-07/interaction-regression.test.cjs": {
+      "sha256": "ad6f9d44a96946b3ff1e9d18b6a74f3607f9dcd4837a7f5d34eeff2ea9d462ea",
+      "bytes": 11592
+    },
+    "review/Source_TOC_Navigation_2026-10-07/phase-a-accepted-2026-10-07/FILE_MANIFEST.json": {
+      "sha256": "3b6eae214e5f9f5e279e32bfbd9b763dddfdb5d6d11d309d99386d7de2906cfe",
+      "bytes": 76437
+    },
+    "review/Source_TOC_Navigation_2026-10-07/phase-a-accepted-2026-10-07/QA.json": {
+      "sha256": "2625df88aa26bca3893d55bb1b6bd5564facabdda45a1160e331b3edaedfb79b",
+      "bytes": 3989
+    },
+    "review/Source_TOC_Navigation_2026-10-07/phase-a-accepted-2026-10-07/REPORT.md": {
+      "sha256": "0df0461ea6783b9441778ec3d938227b9a843b00d3fc23a377f2b0c6294d67a4",
+      "bytes": 5537
+    },
+    "review/Source_TOC_Navigation_2026-10-07/phase-a-accepted-2026-10-07/SOURCE_AUTHORITY.md": {
+      "sha256": "bd34d15bdaf6ea9f3440927a48613413660cfcb2c26bfe135d488e9a2052ef1e",
+      "bytes": 9442
+    },
+    "review/Source_TOC_Navigation_2026-10-07/prepare_phase_b.py": {
+      "sha256": "d1e5025c2ea6920a71cb62ddaabfb6976bff34e14441a2ea915dc52f99550939",
+      "bytes": 10115
+    },
+    "review/Source_TOC_Navigation_2026-10-07/regression.test.cjs": {
+      "sha256": "ce183e119ce3866d06ffffa14fdde293222d11721cd38fb4cb802880420ade01",
+      "bytes": 45538
+    },
+    "review/Source_TOC_Navigation_2026-10-07/source_toc_census.py": {
+      "sha256": "4586973a00bbcdf080a58bc227be186b4b012e6dd273b4f58ceef916281d0d9a",
+      "bytes": 35187
+    },
+    "review/Source_TOC_Navigation_2026-10-07/validate_phase_b.py": {
+      "sha256": "1efa9b23e0fb0e3b646117aef4219185c94f2d00dd08a3f2b4dc0e57e5d48d41",
+      "bytes": 9558
+    },
+    "review/Source_TOC_Navigation_2026-10-07/verify_phase_b_integrity.py": {
+      "sha256": "2795df737c93f45f7b8befb9462961ef2465fbfdc81c3b544e10545492c80c87",
+      "bytes": 4520
+    },
+    "review/Source_TOC_Typography_2026-10-08/BASELINE.json": {
+      "sha256": "858be0eeebe314fd01d159a6fb6fa9722784b1c52030d99ace3c02ee3e78c807",
+      "bytes": 120426
+    },
+    "review/Source_TOC_Typography_2026-10-08/BEFORE_tei.css": {
+      "sha256": "9c25a64aebba4c28c13b5ce0ff60b837fe5b850395702f43762e480193c1a96c",
+      "bytes": 2485
+    },
+    "review/Source_TOC_Typography_2026-10-08/BROWSER_QA.json": {
+      "sha256": "48c3cc6a4d83c5a8efa78e0882b37015562ec79686f588b779960cbb7d37a672",
+      "bytes": 5450311
+    },
+    "review/Source_TOC_Typography_2026-10-08/COMPUTED_FONTS.json": {
+      "sha256": "6652abc3dd591a8fee8fdb56c71b8024afd029a70bc403eef7261828220506ae",
+      "bytes": 79381
+    },
+    "review/Source_TOC_Typography_2026-10-08/FILE_MANIFEST.json": {
+      "sha256": "103b0da8af0d7f50a0454ee005fa6ac1e7012d079a9db7f72c2f2de22ff88669",
+      "bytes": 7220
+    },
+    "review/Source_TOC_Typography_2026-10-08/QA.json": {
+      "sha256": "01e71b30090347958d220a270f1cf375aa4308d3dd5d1694ee3f322ec8c9bdfa",
+      "bytes": 5058
+    },
+    "review/Source_TOC_Typography_2026-10-08/REPORT.md": {
+      "sha256": "4902cce801d2404f824f179d587dcc6bf6c9dd014ae178eba203fe3dd4fee688",
+      "bytes": 6556
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-III_dark_after.png": {
+      "sha256": "2e02ea2316f2012fce0d4e3f22abf90ae311ae09dc021bcf20100d3ef73a295d",
+      "bytes": 175396
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-III_dark_before.png": {
+      "sha256": "54edaf553ff825f42819ae45d25708527bdd7870ca862037da81c89d325679d2",
+      "bytes": 164287
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-III_light_after.png": {
+      "sha256": "0f6c10777a1f481521c84e2d179095c876b5932954c788b08a25da27750c32e3",
+      "bytes": 171168
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-III_light_before.png": {
+      "sha256": "d9cd6fd4bf4216b62ece2896ce62230392e4aee5f6c14b71e6f698ee33414243",
+      "bytes": 155728
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-V_dark_after.png": {
+      "sha256": "011057be67553bd9f7552aee0d3b3782978e75e2a1d4c9d754ec69d21a37a54c",
+      "bytes": 326635
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-V_dark_before.png": {
+      "sha256": "4e4f2283067db58c436c04997151f5f08e888d0ce98a28928ad8f8219babbb8f",
+      "bytes": 305550
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-V_light_after.png": {
+      "sha256": "85d79e563f3e0075b7a75fd290d922c1f4768e1ead1aac07cfbc3c28583a26af",
+      "bytes": 316595
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-V_light_before.png": {
+      "sha256": "a78183640de4594bb4bb071fe77376affaf0fc4eefa575dda9cccd31801b431f",
+      "bytes": 289622
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-XIV_dark_after.png": {
+      "sha256": "1f214cce2df4385010e39fcb85f91876d9a64c628d6e26664d566811b8017db1",
+      "bytes": 365224
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-XIV_dark_before.png": {
+      "sha256": "4463da846cdeb8b9d21732a513c36309bbfe4009b297f90a5ae909f270f726cc",
+      "bytes": 346472
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-XIV_light_after.png": {
+      "sha256": "15586fde019564c912eac973c8cc92136be98b7b9958d53c0ec3cbac0bd4e4ce",
+      "bytes": 350826
+    },
+    "review/Source_TOC_Typography_2026-10-08/antiquities-XIV_light_before.png": {
+      "sha256": "baaf2afbdd1222dd3b50fb661d35d90b8192c5bf81a108132ec8e620f5caa033",
+      "bytes": 327270
+    },
+    "review/Source_TOC_Typography_2026-10-08/bellum-Lodge-I_dark_after.png": {
+      "sha256": "46b84017db47ea64ff13204c7849d1d0322f0415a332544b0f4386aa9c702b01",
+      "bytes": 160973
+    },
+    "review/Source_TOC_Typography_2026-10-08/bellum-Lodge-I_dark_before.png": {
+      "sha256": "d40a1a96d4da33e1b9f9cf7ce5a1e6be3ce8732c237722fc98aa5655f7b973c6",
+      "bytes": 156824
+    },
+    "review/Source_TOC_Typography_2026-10-08/bellum-Lodge-I_light_after.png": {
+      "sha256": "c9228c052fdb29623c4e04f42a8d2e854ce1690eee7f8b34288a1e30be857dcf",
+      "bytes": 160023
+    },
+    "review/Source_TOC_Typography_2026-10-08/bellum-Lodge-I_light_before.png": {
+      "sha256": "f66a46e1e55d7c490b40cc85ec1be0aab1916f9bb6c4890a46d353b319f3d8cf",
+      "bytes": 148467
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/INITIAL_GREEK_TEXT_NODE_FIXTURE.json": {
+      "sha256": "bffabf4e660662ffa81ea74f96a9c3970cd074cc37610d67f8e1f5a839764856",
+      "bytes": 17352
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/INITIAL_ORDINARY_FULL_PANE_SCREENSHOT.json": {
+      "sha256": "daac39a5d2500f50c639d32f537f413dd32e86f10d0143085608278740c341e4",
+      "bytes": 1632735
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/ORDINARY_DIFFERENCE.json": {
+      "sha256": "213358c5dc342a28c29eaebf8230afeb3161af3052f38b8ac4cbcf908f41f515",
+      "bytes": 114786
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/ORDINARY_PIXEL_ONLY_FAILURE.json": {
+      "sha256": "788b1f560b35c9ef3cd5fe2cf4726eeb50a9d790e0a8457013509212ea4b5529",
+      "bytes": 2815008
+    },
+    "review/Source_TOC_Typography_2026-10-08/development-diagnostics/README.txt": {
+      "sha256": "e9f5f655772369e11e6b66517ebce928c91aa29eead3631040f165df6e191cf2",
+      "bytes": 560
+    },
+    "review/Source_TOC_Typography_2026-10-08/finalize_qa.py": {
+      "sha256": "eb423bdcc737a541bb103706dadb5dab04f39ad97af93d77c0b5825a5336f51f",
+      "bytes": 11873
+    },
+    "review/Source_TOC_Typography_2026-10-08/typography.test.cjs": {
+      "sha256": "fd02451de0b03b1751eadaf41906c41083e5b379eb3f72dbc6cdf128e2d0f5e4",
+      "bytes": 12951
+    },
+    "robots.txt": {
+      "sha256": "3594bd69ae74bbb2a5f014331903ed08c59ba280382747fc0cd5d0410adfb65c",
+      "bytes": 123
+    }
+  },
+  "canonical_index_path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\.git\\index",
+  "canonical_index_sha256": "e42e81496c36c4a28d2eb9b79d0230b1ab51dcbc06ddb07936905ea1c569d672",
+  "audit_manifest_sha256": "4d5bf373b7d9d5c0d656a04b567b591446bafca9b24d4969ec98f73956c75d1b"
+}

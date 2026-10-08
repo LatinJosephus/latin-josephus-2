@@ -1,0 +1,3760 @@
+{
+  "date": "2026-10-08",
+  "audit_workspace": "C:\\workspace\\LatinJosephus-Greek-Capitula-Audit-20261008",
+  "scope": "Read-only Greek Antiquities capitula audit, nine missing books plus Book V control",
+  "canonical_HEAD": "f393fa1223b38d9ca114e583fcc57d5e34425815",
+  "outputs": [
+    {
+      "relative_path": "ADDITIONAL_PRINT_OBSERVATIONS.json",
+      "bytes": 1548,
+      "sha256": "6fde34ef3792f0873e2ed1bcc95b577a9e896371924d1d5d481d5c1480505940",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "BOOK_CONTROL_TABLE.tsv",
+      "bytes": 3364,
+      "sha256": "859cc45517129bc47ea102e98c57c3ac9f3f652eac32fe51abe76ef8992bfd85",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "CANONICAL_TEN_BOOK_INVENTORY.json",
+      "bytes": 36522,
+      "sha256": "56996d4e5beb3c85f497e221ff2ee7c1b15c27b85b80a146ad54b97c09acf760",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_007.png",
+      "bytes": 395158,
+      "sha256": "ad96feaee9c675fa307685ad6c283ff81e4d4814463352cc545c34c093b82413",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_087.png",
+      "bytes": 453577,
+      "sha256": "9f793e5a78cf2b243b419553f616f605d94517154b6550f99eabc0e9c9eb6e0b",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_088.png",
+      "bytes": 593928,
+      "sha256": "463bad996e641173ad92ca07033d1d2e35ad45c983c88adb094560dc120128cf",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_089.png",
+      "bytes": 535003,
+      "sha256": "810f02169b257335422bc8402e0449b32c64705c48907b96760c72906548f0c5",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_090.png",
+      "bytes": 217739,
+      "sha256": "68f3a0646a0b33a1ac8a8c65b2e75f2c12335a6c93eb34428821064b515aba7e",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_091.png",
+      "bytes": 225749,
+      "sha256": "e085517bbf2f2c727fbe7d53ac1ddece5f27ee282466c47aa7469659eeb8749e",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_093.png",
+      "bytes": 985058,
+      "sha256": "d190043b0fae2efc03a5eb49d4e65d6c091875ec9270c342781a71d594c7543c",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_094.png",
+      "bytes": 1127763,
+      "sha256": "b46a5a3e8e5785e0fceff8015b8c225d21b319926fe5684803c73c10352424f4",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_094_detail.png",
+      "bytes": 1096262,
+      "sha256": "bc17e51966845633da94c38b091e9837da756ab00767a3b36ccc438678a26896",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_099.png",
+      "bytes": 1271203,
+      "sha256": "27231f053f58bc1491eae11b4934154e2a38792c8301c779e70654a095128759",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_172.png",
+      "bytes": 842714,
+      "sha256": "169bb1df64190e7509267ecf94e3667147d4d0356f5f1db9a9f75d3ac5ea03f1",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_172_detail.png",
+      "bytes": 1383827,
+      "sha256": "cb371ede47b7644a636b1fd10f75227497922ac6997c51f7d50a4264feb65a85",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_172_punctuation.png",
+      "bytes": 128442,
+      "sha256": "3e9f296b2b6f562df4d89595ccc92b0a851882d59f713ca38e0d51511c6f43c9",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_173.png",
+      "bytes": 1099709,
+      "sha256": "0cc36ef6b2643ecf2356ed9c30345f988d24d59562f8035be6eaa27b9b7a7021",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_247.png",
+      "bytes": 1012103,
+      "sha256": "6a4ba11df9438dd29db21a461be68de494b54ed19e51de228c2dc930b128eb48",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_247_punctuation.png",
+      "bytes": 572416,
+      "sha256": "007cdedb36544e9c4b902e0fc652157f0b2918162723fd35e7079e6d79dd2bb0",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_247_stop_detail.png",
+      "bytes": 136243,
+      "sha256": "fe47849605ae3f7ca9ce75c8ca4e811f2de96c3ddf9546b8d8f470f061b6a38f",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_248.png",
+      "bytes": 1084458,
+      "sha256": "2575232f77555154af458a05de37530aa0b1bae1df2447c9bb6b9917b5db1e07",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_248_detail.png",
+      "bytes": 743300,
+      "sha256": "81ba8bb6475cd19d41fc783c64bc896acc0be6dfe933dc5ea07313aba09879ae",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_313.png",
+      "bytes": 794976,
+      "sha256": "84609c271570f258ad6541b6b17b78ca88a18f6a78883aa8e08f2d1c4f6a7b43",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_314.png",
+      "bytes": 1231208,
+      "sha256": "b2ddd9c5f4cbabcd797b2d94abfdd3b2ab6bb32e6047ccc01181b0785e599f74",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_381.png",
+      "bytes": 1069982,
+      "sha256": "15a17f780680af9a6455417370061669cb84a173018c1aff1170c435c9fbbf37",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_I_PDF_382.png",
+      "bytes": 1094687,
+      "sha256": "705684dd3cf81fefc72e29ebabeacdecea48e9d5cafce9ce82c545c5c2d89760",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_001.png",
+      "bytes": 118600,
+      "sha256": "bc3280ca35fa238badb5f55efd11f7c9f9b11763381674e7dedf0e856ed698f8",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_006.png",
+      "bytes": 246233,
+      "sha256": "06c6887adb21dd0499554c7d9431ee22287d701dc40e9529d4802d72a5a3fd90",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_007.png",
+      "bytes": 309407,
+      "sha256": "310b60f6c4c0d4811fe5308e80f0a0b9645881e9645656aabbfd32187599bb60",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_008.png",
+      "bytes": 179258,
+      "sha256": "b0fe6da0fc394b9067e05482e1e9692f0d0c81cd5326fba65c978acb185b64ba",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_011.png",
+      "bytes": 442309,
+      "sha256": "91b5484b1e1740c75b571a56845c8009330498bf6226071518a520ac8507696d",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_012.png",
+      "bytes": 431629,
+      "sha256": "384e8a75f51ae7035edbe092244aab4fb26c22370619b2d47d99e98ed8fa38ea",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_096.png",
+      "bytes": 350601,
+      "sha256": "d6d66eb649c617fb775a37faa58d45ed1f7febe4ee71d664b5d9eea450b10bbb",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_096_punctuation.png",
+      "bytes": 303767,
+      "sha256": "667a87f3032ae89335a37870f1d9839e746422c24c441b81dfd3ab8480cf944d",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_097.png",
+      "bytes": 424049,
+      "sha256": "24cb74f4e2309af91321968c15dbb823d2d9022ed56f989ac93f7872f2d76f8c",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_184.png",
+      "bytes": 366869,
+      "sha256": "693e2a4dd61addb8e437ae6ce789cb1c16f54b02b00a088c05ae289365032312",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_185.png",
+      "bytes": 425299,
+      "sha256": "df727201a7a630f2c4f2e6094b98c4256631d5c89ac770ff9814c99f81d07a1f",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_275.png",
+      "bytes": 382146,
+      "sha256": "9d6c52250d7a4458ae3efb17dbe7cc8d37b74ebec59d26c7dd32e3a2dd2faee1",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_276.png",
+      "bytes": 501622,
+      "sha256": "67a5a38fab8d1eeba9dd5413d1707e267714a6d673c6c0d0686991439619c6d9",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_336.png",
+      "bytes": 390717,
+      "sha256": "9845e54bb638a71afb00c861656f30dc6bba6b4dccf55610dd9a8ce92571de20",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_336_punctuation.png",
+      "bytes": 281946,
+      "sha256": "2b6545113ea124fc0060de6c8a7c63cb1dfe6751d5ffc25f58fa49cd6305b362",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_336_stop_detail.png",
+      "bytes": 319079,
+      "sha256": "987bfd1e554c817a9f317fbde4626365a1aa4383b66b6477263980c808c54a13",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_337.png",
+      "bytes": 469336,
+      "sha256": "3a3a9c6b1f978bcb87886d8e77ed361ee8898da4bd19957e76039dd49196c8ef",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_337_stop_detail.png",
+      "bytes": 249667,
+      "sha256": "5f2bac27abb2e53f42e063cb6b24622373f26695b20fb8671e616d485f1bce2b",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_II_PDF_338.png",
+      "bytes": 418676,
+      "sha256": "ad87813d2e81d2be19600ab5d9cbf077b15305bb0d32cd298e1c8eb518d52ca6",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_III_PDF_005.png",
+      "bytes": 463850,
+      "sha256": "0f055696cdaea52b2a4cb26a67d0705198c2cbe481425d8be8bd277708acfa4d",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "evidence/Niese_IV_PDF_005.png",
+      "bytes": 425935,
+      "sha256": "b2f60bd5d5db341f67e3e58d633e19f6a3ef4497ea1e598a22c43342bb4c8b93",
+      "role": "visual_source_evidence"
+    },
+    {
+      "relative_path": "GREEK_CAPITULA_COLLATION.json",
+      "bytes": 489359,
+      "sha256": "458c30a478d1fe9c5979a5fb203337fa38c63513ee5bb517ac92cc5baf62d20c",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "GREEK_CAPITULA_INTEGRATION_PLAN.md",
+      "bytes": 6151,
+      "sha256": "a7813fcb41d1bc032d9c9f60d96ae8ebd9a23f828245ee1fcb3bb3c87494dac4",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "GREEK_CAPITULA_MASTER.json",
+      "bytes": 609571,
+      "sha256": "0a4fbe6f1ae95d363d527dcc5131089951345647b893f54a94e7660d7f92d3b2",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "GREEK_CAPITULA_MASTER.tsv",
+      "bytes": 91452,
+      "sha256": "7f50517a065573190c5e057047a02e75ef3d2c9bfbb471d8247fb6269c812963",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "GREEK_CAPITULA_REVIEW.md",
+      "bytes": 1228,
+      "sha256": "b12b2a2894c31ca357f8f6d0ce6a55bb83607ed586bc35934efef60e0a83914f",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "INPUT_BASELINE.json",
+      "bytes": 90161,
+      "sha256": "59ac37af991456d60c965334dc3871541ac180f34ecb5b822dc53899a0f8740c",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "INTEGRITY_QA.json",
+      "bytes": 9208,
+      "sha256": "1975efb57b5774c7e34c3e01f454ba9deb7ce6f78145d1c057f000206675fe63",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "LEGACY_PERSEUS_EXTRACTION.json",
+      "bytes": 153695,
+      "sha256": "9f4964570ef53eb4a96a9387e2e00213306a1f1af70912ed1439d1df32bc050b",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "PDF_INVENTORY_INITIAL.json",
+      "bytes": 102638,
+      "sha256": "b0350ac8a5f58447fa6c7ddd1fa978912162a2bab2725dbf40d371deb193b484",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "PERSEUS_EXTRACTION.json",
+      "bytes": 145907,
+      "sha256": "1842d8e208675c6f60ae2d331e538f2f7bc6292f9ff2873270c1257be9253604",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "PRINT_TRANSCRIPTION_LEDGER.json",
+      "bytes": 654327,
+      "sha256": "9d75f572ada49dc2c1c03fda14ffefb95ee47e92ace56a4e319054a903065651",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "proposed-tei/book-01-contents.xml",
+      "bytes": 8670,
+      "sha256": "a207dc793d50629e1b4968fd657780194221104b50d6cd87f8423a0e4c8e0c0f",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "proposed-tei/book-02-contents.xml",
+      "bytes": 6252,
+      "sha256": "8bbf9b91615d94ae48f398fede9f9e388709f22414463a804d08836cb36f8339",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "proposed-tei/book-03-contents.xml",
+      "bytes": 7531,
+      "sha256": "ec18224bd0dff88d173f6e9b7afffbf98e0b3fd3a58fb210ea302afc4eb664a3",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "proposed-tei/book-04-contents.xml",
+      "bytes": 5166,
+      "sha256": "cdd115cf3e8622d23ef2ac2146c99d14457b3108f05042dc1da6566ac89dea18",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "proposed-tei/book-06-contents.xml",
+      "bytes": 8093,
+      "sha256": "86ff06efecf4cbb1ceff5621ccf70c7b6e7c23b2033b1df6950c1e0c6bd92534",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "proposed-tei/book-07-contents.xml",
+      "bytes": 6943,
+      "sha256": "6135c8e95ebd6ae4fb829797dca284869eb105f098964db61b88c75641b1f768",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "proposed-tei/book-08-contents.xml",
+      "bytes": 7060,
+      "sha256": "16fa639cb136f6c81984a45f177a1f8cbb12b00952b80a2499b3d8c3870a13f6",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "proposed-tei/book-09-contents.xml",
+      "bytes": 10194,
+      "sha256": "01f556da6bf7f2443500f0de8f3183640e44075681449f55b66cf98ab06c83d0",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "proposed-tei/book-10-contents.xml",
+      "bytes": 9663,
+      "sha256": "2d9fb947ef225ae9159b1d39715c0c7660bd3b4998f9e574705b4a9ff7fb51ab",
+      "role": "proposed_TEI"
+    },
+    {
+      "relative_path": "PROPOSED_REGISTRY_ADDITIONS.xml",
+      "bytes": 11359,
+      "sha256": "069ef58be4a7016057e4e9b2a93e78d5bc4e4adbe63b9c1e66c0d57d7654c6be",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "PROPOSED_TEI_INVENTORY.json",
+      "bytes": 2254,
+      "sha256": "b52f80a270846b3712a9db93530dcf1b28f8bb9308e02ae8347b65bf333ddcac",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "QA.json",
+      "bytes": 28739,
+      "sha256": "3d96957241cfa42e3ad5cb8c6d2013418d94eb6a6f8c30946112214ffbc54c66",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "REPORT.md",
+      "bytes": 9031,
+      "sha256": "8d52e721e27856b16f7bca1cac9b5eb02903d1fb050b84a9ee9f4fdaaa548476",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "RESOLVED_DIFFERENCES.tsv",
+      "bytes": 6558,
+      "sha256": "a3771afc806d2f584e6496e19596c4c69cf4e405f98e5744f924486977ed6321",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "scripts/01_bootstrap.py",
+      "bytes": 3747,
+      "sha256": "f01c1b5582f991be5feb9e4c8d9831a350814fdad8cf9224a0f876df68fb1b6a",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/02_locate.py",
+      "bytes": 1855,
+      "sha256": "c40ed1a4cc6e7e86b7b7c51f3ba9efac2c3253a700bbd0e4ca5ea54696f3de98",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/03_render.py",
+      "bytes": 943,
+      "sha256": "0dd2ab0e57daffdb8eafe06148d0e170a53e0d2d049a0e35ad3a2ff20e05b749",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/04_extract_digital.py",
+      "bytes": 5481,
+      "sha256": "557c78469f32b174233057da14d0fd4d78da07ac58eef12979647cffa1b98646",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/05_legacy_witness.py",
+      "bytes": 1523,
+      "sha256": "8c6601e2dd5ad9e00f4adcf005cfa7086becd7ab4ee9048ae33a81e76eb309cc",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/06_details.py",
+      "bytes": 1716,
+      "sha256": "38d1f8c77655d3d2dabb1c6f77aa6df961fc1142f6957595a7f872eba3bcbc0f",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/07_compare_witnesses.py",
+      "bytes": 3190,
+      "sha256": "1a0c91159c8109793e0b68d3fff75791887ffdd36f3e1a26d1c261771c6d94e9",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/08_compile_ledger.py",
+      "bytes": 17849,
+      "sha256": "85d01b29be1d0487bf65ae64d8233b172ee2aa6388e70daab0ad9d05fbdbae00",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/09_prepare_proposals.py",
+      "bytes": 10196,
+      "sha256": "39f4f7f676f81a107994c5e989fa2ecbf835b15dccfbb5bb0e62ed067abb4e40",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/10_validate.py",
+      "bytes": 13320,
+      "sha256": "bd442a4225aa0c8fea4a1e3c6712d54df947db73a2a4eade3e540070170a2c46",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/11_additional_images.py",
+      "bytes": 1089,
+      "sha256": "af0bc4d867bb9b026d684bc3b2dc2019c5b3f7836c20a76d2424f1ce6e238c6a",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/12_write_reports.py",
+      "bytes": 24678,
+      "sha256": "f444ef90b820e63767f46e8d5ef186da6beffd973fe31510ddefc19ee7dec148",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/13_manifest.py",
+      "bytes": 2536,
+      "sha256": "466ff51b47d895a884e5d5dab4f3df06f568de95c115d9e32d3d350de41bceb4",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "scripts/README.md",
+      "bytes": 1927,
+      "sha256": "3de6ae4eae4f47b235d4a16a19bcab9cff16e119cf6766fabb14399d1dbe4928",
+      "role": "reproducible_script_or_instructions"
+    },
+    {
+      "relative_path": "SOURCE_AUTHORITY.md",
+      "bytes": 9490,
+      "sha256": "b8e5ce15f4d8182adebf6242aa49f402ca5b963acb9f79a41c6e60a0b67fa08e",
+      "role": "audit_output"
+    },
+    {
+      "relative_path": "sources/CANONICAL_EARLY_CONTENTS_HISTORY.json",
+      "bytes": 6181,
+      "sha256": "6dc2079a9ef50da55874b8d9c2cdabcca6389cdf2b4e412c432d80d3fa222812",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/CANONICAL_FILE_HISTORY.json",
+      "bytes": 2233,
+      "sha256": "6e0ef7f335258972967d5f87d0a26cfa4a952411a28b3dd96e1fce57a1acb79e",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/DIGITAL_RETRIEVAL.json",
+      "bytes": 7719,
+      "sha256": "84f275e0ee925459e582741e4e458b0184c6e219ab7766503a50e64794253730",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/DIGITAL_RETRIEVAL_2.json",
+      "bytes": 6082,
+      "sha256": "2cd59bcabbc5b36bc719191b8b5e4c5fe966cd69cdccad0897438bda68df3eb4",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/DISPLACED_CONTENTS_SEARCH.json",
+      "bytes": 276,
+      "sha256": "fc15ee64d4da153722623522d5129363df49923e55023b78149d7bbf8388aa22",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/Niese_(1885)_-_Antiquities_VI-X_front_text_locator.json",
+      "bytes": 34942,
+      "sha256": "166ca8fc0e293ce170567e2b90e1a50b234b30690630c6659e6aa036de55317f",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/Niese_(1887)_-_Antiquities_I-V_front_text_locator.json",
+      "bytes": 21314,
+      "sha256": "9a56b40b814aca3e93579f751a798acb792dd17fa9991c4bdf3b435d9e1ccadc",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/Niese_(1890)_-_Antiquities_XVI-XX_front_text_locator.json",
+      "bytes": 17241,
+      "sha256": "4dbbcc71e719bb994bc81a52fc9c0f5ca0be3fafaa778d9eab78984515ec0aed",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/Niese_(1892)_-_Antiquities_XI-XV_front_text_locator.json",
+      "bytes": 28494,
+      "sha256": "3b27dbd0656f5e743bcf6664057b7c82cb92f348c47f7073c61b60edce03843c",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/NIESE_I_PAGE_TEXT_LOCATOR.json",
+      "bytes": 1857343,
+      "sha256": "b2412f936fff564454870e8b7922dba114f4354252247b72850e05a333e8d317",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/NIESE_II_PAGE_TEXT_LOCATOR.json",
+      "bytes": 1685058,
+      "sha256": "edc5739140f65bd7ede84f142902dc6cd46a601646dab18ac4f57c10e2f14b8f",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-02-book.xml",
+      "bytes": 210587,
+      "sha256": "0ee47f1d47b6467fe36e35d223c19de967be517ef89654981068c6e69e4db2cc",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-03-book.xml",
+      "bytes": 194041,
+      "sha256": "bd120e7130fb00c39677e7336afae58b3831ee43c6f49175b77a62a88b90ea4d",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-04-book.xml",
+      "bytes": 197963,
+      "sha256": "cdfe0075b2207cffe4032b54a0a12ebe22072b3d6525d2b23ba02d8ae2f5e088",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-05-book.xml",
+      "bytes": 213511,
+      "sha256": "68c10a828d0b2d53fb8d00c0e29d482e03d939cbff2ca29ca3c607ad12bc72ff",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-06-book.xml",
+      "bytes": 257550,
+      "sha256": "003494155229652a4719d7f46c302cf26d4b992c460fd36fc6500aa871056c9d",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-07-book.xml",
+      "bytes": 263831,
+      "sha256": "3411682079ee7caa14b91336fc1daf8e8ff214ddebf5b805a560874cf6084fb3",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-08-book.xml",
+      "bytes": 279332,
+      "sha256": "7d818d7d8df5569a25c5a86a92747a48497def0686f374c47c35e773e75bf04a",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-09-book.xml",
+      "bytes": 188894,
+      "sha256": "6e4178fd43088355ef8b6a0bcedde9c972e0e967f4bc477cac907f7b5e5de72f",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-10-book.xml",
+      "bytes": 177042,
+      "sha256": "f45310df75ac37bf3953ff60f6b126eb966329da4d7b9bc85f38588c0ca66961",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-I-book.xml",
+      "bytes": 213566,
+      "sha256": "92b28aadc63fdbbd337e08ecb7620bbf84a7b22682f3b73b1ca1597e068ecc43",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper-I-pr.xml",
+      "bytes": 15187,
+      "sha256": "b5233690b5e5383da672c035d4bfde4c2ea3c934bcd1e2fd8fcd32e42e0badf7",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/old-hopper.html",
+      "bytes": 543460,
+      "sha256": "c3e9af5e364af7b9b434eb5bbbe3a27b1cabd385edd375c22b88c4f183dd1618",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/OLD_HOPPER_RETRIEVAL.json",
+      "bytes": 3761,
+      "sha256": "b40b404f122d2a2f35dfb44fa5396fde34d0f84edc43d5028ad5073706a0b7c0",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/perseus-cts.xml",
+      "bytes": 1012,
+      "sha256": "309766d3bbdc8689f2a4d617567ba196ef8b5257cbe7bf4fe4d6c581040aeca8",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/perseus-file-history.json",
+      "bytes": 10210,
+      "sha256": "03ab2d6a672c8a53d59ff164c07331cda8c0a5d3ff5255f04eb19a67bbe40772",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/perseus-grc2-pinned.xml",
+      "bytes": 5344541,
+      "sha256": "64879910ecab63ca197146bf0c6e45849914c12221e1fb858c2a417bd65439f0",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/perseus-grc2.xml",
+      "bytes": 5344541,
+      "sha256": "64879910ecab63ca197146bf0c6e45849914c12221e1fb858c2a417bd65439f0",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/perseus-repository-commit.json",
+      "bytes": 16833,
+      "sha256": "7bb8a1d902ccd1672ad3030bb349ad9498ead0c923423d42890888cd57538870",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/PERSEUS_ALL_ARGUMENTS.json",
+      "bytes": 198951,
+      "sha256": "a33f3e7c47c07f2993121106f0db2cf476ac77affb17fccf8b6e2f41568b455e",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/scaife-grc2.html",
+      "bytes": 3592,
+      "sha256": "d1acced89ff5ff6404149dfc9e27cd8d6e954b398807a42ed4c2b36636fb1c30",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "sources/TARGETED_INSPECTION_INPUTS.json",
+      "bytes": 2302,
+      "sha256": "3d04dd7aacef171f477c95a9274d84549da84ea1d3673cd2ac9f085a2cdf65e5",
+      "role": "downloaded_source_or_source_analysis"
+    },
+    {
+      "relative_path": "VISUAL_INSPECTION_REGISTER.json",
+      "bytes": 55792,
+      "sha256": "63d177384becd47e908ddec57fee8353a532ee4880a5b94519aa69610db36ffb",
+      "role": "audit_output"
+    }
+  ],
+  "output_entry_count": 120,
+  "output_bytes_excluding_manifest": 45622066,
+  "inputs": [
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\.gitattributes",
+      "sha256": "c4d630019d490597abf4b0e2f7bc81cb197cccb068875664a222dceb0724aebb",
+      "bytes": 363,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\.gitignore",
+      "sha256": "8f5f7d50140d1e7e89656f8def11a5cc6678cd1791d4f2a1d614c9954d342897",
+      "bytes": 124,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\404.html",
+      "sha256": "aa01b726e68c77ccb78e27af52a542c154c8f3a5d6a0753ff47e0604ad88f7eb",
+      "bytes": 265,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\CNAME",
+      "sha256": "a74eed957ddcbcf8d8e5e2ca5891d996f686ba786f675921b93266209db54524",
+      "bytes": 23,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\Gemfile",
+      "sha256": "493ca5c09da26c795103cf9d5787a8441f59a433bbe1a282f08ba812d150ea66",
+      "bytes": 466,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_bibliography\\papers.bib",
+      "sha256": "d348ce82328b72d0de8bd9f33524121033b41bfcdee4e6e93aa3666f923656e4",
+      "bytes": 2836,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_config.yml",
+      "sha256": "b1696dacf1edb5796fb43e4224fd8d32b133f9c82333d9248b60dcd93ac4782a",
+      "bytes": 9711,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_data\\coauthors.yml",
+      "sha256": "d606b1327acb412b215a634dc0e56cf6450239eb3ff58148a487ebef4bd42e60",
+      "bytes": 601,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-bj-parallels-pilot.md",
+      "sha256": "5f86dbd428980c8b2b6ccdfb6fc79946efcb99f3e6eda6eb962582b270f126e9",
+      "bytes": 9731,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-concordance-editorial-decisions.json",
+      "sha256": "e0111d56f440662f5928d4356bf55054c1e1dd8c4dfce97feb28d73eee213179",
+      "bytes": 12402,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-concordance-exceptions.md",
+      "sha256": "46ca388259c8eb16efa2e27c2cf0834f6799ebdc987de0e3d5c76e6ed8ea694c",
+      "bytes": 7587,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-concordance-phase3.md",
+      "sha256": "f3057a5cf10d1ee58f38ac7e2344afd97aeb03cd7a8771e66049751044ec6cfa",
+      "bytes": 12778,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-concordance-phase4.md",
+      "sha256": "9cbf3059a535bee61529d9cbec6bd69f743c451ee88780afb5b4133c6e41daec",
+      "bytes": 10499,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-concordance-phase5.md",
+      "sha256": "ef82768535baf0db4a26a947da6e86ece1b10cc6f1119c1cbff583f7870f7ce2",
+      "bytes": 13500,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-concordance-source\\editorial-decisions.json",
+      "sha256": "f2521158af48ae7829662981553c2329b66a816a61b53c60d18168171ef7711d",
+      "bytes": 6486,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-concordance-source\\workbook-values.json",
+      "sha256": "286b7786139805c98baa30535cb945be4da5c6a68f7050febdbe016c8ddcc75b",
+      "bytes": 42914,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\deh-concordance-validation.json",
+      "sha256": "7fb0c31850021c4f30e62e2399b09cc8f34cfd009cb16c157a62a5ab1eb5a526",
+      "bytes": 36398,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-browser-qa.json",
+      "sha256": "b2fc4bcc89911ad354b3d27902d28edd00112a52401177cc915612b9aaec79c2",
+      "bytes": 11392,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-integration.json",
+      "sha256": "ca00763587aa7971cba6fdf6ba3387262124b19b95d4dc2bedb355909fef8b80",
+      "bytes": 41226,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-source\\Lodge1602_Bellum_FINAL_HUMAN_ADJUDICATIONS.json",
+      "sha256": "27b3be89cd410a18892b91a6453f6e4ba2006264df53c123bbf2ea0d39ac7c44",
+      "bytes": 4543,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-source\\Lodge1602_Bellum_NIESE_SEGMENTATION_4001.tsv",
+      "sha256": "c65acf0caf54dd6954899fe01cd1e57967005592e0882cb483d42a88f56ba31c",
+      "bytes": 4989922,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-source\\Lodge1602_Bellum_QA.json",
+      "sha256": "b5d16c4c7fa63b4ceb36c8e90664d044d05af35f3e940941ce673b3f6bbffdab",
+      "bytes": 17985,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-source\\Lodge1602_Bellum_SOURCE_MANIFEST.json",
+      "sha256": "eafe8ecfd9245a874abdc042d589c1c1cf1e69be23b4541beb00b9bb65d5fd50",
+      "bytes": 10715,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-source\\Lodge1602_Bellum_SUBCHAPTER_ALIGNMENT_704.tsv",
+      "sha256": "5a4028741b1a833d7b6c718f76e16c134a47d5b38b24c944b34a0592d762e0f9",
+      "bytes": 903870,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-source\\SHA256SUMS.txt",
+      "sha256": "54e5ace054c13e900f693e5a2dc0a63260fcb61a8aa0b5a85746e5b45273f331",
+      "bytes": 1963,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_docs\\lodge1602-bellum-validation.json",
+      "sha256": "faa5e1e65f52f7d7787ed54dc3a7a15b4ff28a20f30a70a9dc60fab426a916cf",
+      "bytes": 2616,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\annotations-bar.html",
+      "sha256": "39db175479cd16bc3fbe07ce34f210be63cbfe15cf28fde20dfcf7ca4e07f56a",
+      "bytes": 722,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\deh-parallels.html",
+      "sha256": "8e59cdf2c11469cd71034a6889faafaa867e02ce0b48a4d5e5537b29ee29e10a",
+      "bytes": 2463,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\display-settings.html",
+      "sha256": "dc3be4a2bd09faec883a834b4f6f21d4e1d49518f97ceb40f5e173513a17224e",
+      "bytes": 7028,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\footer.html",
+      "sha256": "65579fcd7e9c7a48acb4d72c19ad954fb55220bb58547351f96aedd99d456d29",
+      "bytes": 994,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\head.html",
+      "sha256": "c7071abe71a008fbe529f227883719cea6bdc6edb95fca14a517a9de39f64ea5",
+      "bytes": 2812,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\header.html",
+      "sha256": "49e7864b7f0fddbf4d24d1a598a40095c4fbc73d475ef63f48c2e89e4222f02c",
+      "bytes": 3041,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\logos.html",
+      "sha256": "6428d88042c1653c9d97a85b485c4a8229601c216b5fa32c54f37ebdb8d38c92",
+      "bytes": 448,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\pagination.html",
+      "sha256": "6e8a8371b32b885827244d28e4b3d956d0385e6caf50716540060a513ad6259b",
+      "bytes": 918,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\projects_horizontal.html",
+      "sha256": "6a53f87e3eda00bdaab56bce1344948321bacd3e696023ba07ce70f3cbbfd1c3",
+      "bytes": 1528,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\scripts\\analytics.html",
+      "sha256": "da64c34a2786f3e06b61efad770d23d123a447e4048a3b23fd64e6f46b77e25c",
+      "bytes": 839,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\scripts\\bootstrap.html",
+      "sha256": "6b7addb9669f09684755cdaf2d609767681efca588e6de1f81018fb5c683bed6",
+      "bytes": 581,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\scripts\\jquery.html",
+      "sha256": "2a7c722de758ed8f9b8812bc25aaa08933b1e686b95ab7740f6badda1a4e643a",
+      "bytes": 192,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\scripts\\mansory.html",
+      "sha256": "448023ae5c75154bae83de8f5b2f63dcac51b2d09ca6d36ad6f397c2234db231",
+      "bytes": 355,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_includes\\scripts\\misc.html",
+      "sha256": "46fcb6dfc08dbe004f8334a34d7ec80c279224a3163df7f9f4f86607788c2e35",
+      "bytes": 912,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_layouts\\book.html",
+      "sha256": "56e5b715a14074411d2b88894b090a84c23452b3c5fb483d47e4cfb1e3aaeadd",
+      "bytes": 1529,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_layouts\\default.html",
+      "sha256": "c63e79e42f3dbe3786980fef32d3a6882fc3ff4a12133f812750dadbd2c855e3",
+      "bytes": 756,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_layouts\\info.html",
+      "sha256": "3214dd54424694d056e5c18efdc855aec591d68d0a761f5e4cd54f2e106349c0",
+      "bytes": 900,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_layouts\\none.html",
+      "sha256": "7081266c27060b7d3827c9470ccc36f503d2eb2626d847793b50fcd418cdd92b",
+      "bytes": 13,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_layouts\\page.html",
+      "sha256": "b17d5efd13d738582295d5fb5c05bda51c8b39af47b1197e2d3d92d656ca1a9e",
+      "bytes": 262,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_pages\\about.md",
+      "sha256": "f94d6284ea3cd625916c84e2a3ff2b77ea0f7d1f7d6400cb814dc887f67f4dd2",
+      "bytes": 10653,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_pages\\antiquities.md",
+      "sha256": "538c0d78d442a4240f9f9e916c7b518337bc42f04870be256e48932114f9d3e0",
+      "bytes": 108,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_pages\\background.md",
+      "sha256": "149b57e84db17c0d0db6e14ab2ec1ce173da2a5653bdf289bf0ba93ca622ac0a",
+      "bytes": 2180,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_pages\\bellum-judaicum.md",
+      "sha256": "c5d677551e9df2dcc37b36aef270c5954bc00ed83ff176efc8d1092c81b7882c",
+      "bytes": 120,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_pages\\contra-apionem.md",
+      "sha256": "266f0184fac3a55ed84b9cefabb84a5ae8f0d8d1aecb86dc9250981eff7517e4",
+      "bytes": 117,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_pages\\deh.md",
+      "sha256": "b7a0001e188739f769176dcef18320dffd4a03fb6c2e1c766faf12fa2cfed995",
+      "bytes": 130,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_pages\\dropdown.md",
+      "sha256": "7353201c5044cae58d91dd2bbbd39ff12aaadd501ed5d9e6455cbcf01a29f05e",
+      "bytes": 377,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_pages\\index.md",
+      "sha256": "3d9c4109367b7b3d7064b0959c867b0236f4173159c755e540025146baf196b0",
+      "bytes": 696,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_antiquities.scss",
+      "sha256": "a890fac1ef2779340d81cb08d9f4d2a5f4954e6afdc43bc355b18951144320d3",
+      "bytes": 1554,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_base.scss",
+      "sha256": "6bb87cf13d5373ec4d300ac6a4a6c736b340c72cc5c5e24b335933c3cea89019",
+      "bytes": 11625,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_branding.scss",
+      "sha256": "d55663b0d2b2b04ed1f99dce745fb5e50074caee6dbd69ddd1a854b26d373e6c",
+      "bytes": 2550,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_distill.scss",
+      "sha256": "cff8e3be6b966d8bad03d6cdea98f756c10ac473e9b6f3017848339d7d0a7f22",
+      "bytes": 1185,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_layout.scss",
+      "sha256": "b4955d3d6a04681ee0b8989852931017d8b6c541afbf804dcdc6db6ccba5e7a5",
+      "bytes": 587,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_reader-ui.scss",
+      "sha256": "6cd42baefdc71b260eadbccc73498a5aa2b2c20cd4ce163096deb41195a4abe7",
+      "bytes": 7952,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_themes.scss",
+      "sha256": "ad1a09f30452a3cda7a98099146e5060adf7f0ada1abcbb56c7e5efc3ecfb22e",
+      "bytes": 1500,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_typography.scss",
+      "sha256": "62f9de43494bec68b7f5f8558893c5af04358e143706ffa6a535684029ef7619",
+      "bytes": 2562,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\_sass\\_variables.scss",
+      "sha256": "0bc7fac5bfd7b402cd99c098d123cbac4366c99044d09e90accac18b07136c00",
+      "bytes": 1361,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\bibliography\\2018-12-22-distill.bib",
+      "sha256": "e6406f7cd68d832ee12fd7f11d1bac4f01e02f93b9a1eb214c43d2fa36372fd7",
+      "bytes": 314,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\css\\deh-parallels.css",
+      "sha256": "5e54381e91738cf4376f2fa7b59582ceb08def5eb297c28b4799683cc225b533",
+      "bytes": 1412,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\css\\main.scss",
+      "sha256": "8c776277397e9e4677d379c13d66c45c7a00d81558e2eb971c1c51b2e764aab7",
+      "bytes": 461,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\css\\tei.css",
+      "sha256": "f69cd787e47351d1dbf083097ecc3b037791a05309761d865a2e237ac91afeda",
+      "bytes": 2542,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\data\\deh-bj-alignment.json",
+      "sha256": "083940a21dec957fd7de35d3191d7e7e9bcb17d36b542ec62cd32e821c70ca7b",
+      "bytes": 20506,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\data\\deh-josephus-concordance.json",
+      "sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c",
+      "bytes": 1554044,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\SOURCE.txt",
+      "sha256": "793b343a5dd56bf6a21093bcfa59f76e9be0ab419fc5315d151f3e77b33c9fe7",
+      "bytes": 1179,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\coelacanth-bold.otf",
+      "sha256": "cf332412e33c8e75bd4a24e2d7750b508331adb520f412106591efec762f5a97",
+      "bytes": 579268,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\coelacanth-italic.otf",
+      "sha256": "45ca254ff2657cf19e9f05573ebc6519356f914ef67e887bf34951e889f6f288",
+      "bytes": 510832,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\coelacanth-regular.otf",
+      "sha256": "206fd7caad25f852af0df47f61963b12f71620994a8070e4b8f3dd7eecd609ed",
+      "bytes": 518328,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\licenses\\Coelacanth-LICENSE.md",
+      "sha256": "8b9eb5eb4768595695fd32be3b644f5e5831fe3a33c23d3ae9d450f21a48fb56",
+      "bytes": 4432,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\licenses\\SourceSans3-LICENSE.md",
+      "sha256": "f9e57d28452ab6162c7fc0d248b5a5e81bf64676a6950d56b2e137c1253f79e8",
+      "bytes": 4485,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\sourcesans3-italic.woff2",
+      "sha256": "69c8e1806941beb7071e2cf0bc54ee03cf4d59eab07fcb5418b1c86c52d39a72",
+      "bytes": 121304,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\sourcesans3-regular.woff2",
+      "sha256": "63de0da0cc05298e2e9c6e5cef506d8454ca665f6e668a99d94f51174b9256ed",
+      "bytes": 153800,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\fonts\\latin-josephus\\sourcesans3-semibold.woff2",
+      "sha256": "c248b0a178c362916db7c853ed640db77f184d19a0ed9fa5591fa707d3089635",
+      "bytes": 155624,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\1.jpg",
+      "sha256": "d751d58fbc6f84d96f6ba0b3ccfd46b0826a5c7cccf171bf78a0f066d14e5ff0",
+      "bytes": 419879,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\10.jpg",
+      "sha256": "0d1e41b116c52263af1132e0894f3cd8aa4b1d3da1a355bbb7db9d00fa3a4710",
+      "bytes": 1124260,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\11.jpg",
+      "sha256": "d327b6bc7205d1243d0adf8cd33a64c21f8654e35b5df1fa94b0092751b4d7f8",
+      "bytes": 1322832,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\12.jpg",
+      "sha256": "93dcb187cf76d10e8a34d09de5a8d50a60089a30a749dba6ffb199764549a3eb",
+      "bytes": 199369,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\2.jpg",
+      "sha256": "d75cc1bcb83bfe4e5a1942990cbf31c51d07f7d56eb0536cf58bf337575ef37c",
+      "bytes": 588114,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\3.jpg",
+      "sha256": "f6115277701c7c0869f9c8d6e8008858bbb3db27b6da12455c5903eb13d3a01b",
+      "bytes": 1985564,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\4.jpg",
+      "sha256": "6e4e9de7a80c6f00e3784c8f6f34deeaab9f422c773908409cc6a34c74effca3",
+      "bytes": 1858152,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\5.jpg",
+      "sha256": "89302686de60c17044213ca5efc3618c0456d8f167b4cfd17487312c278a6cd4",
+      "bytes": 4523306,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\6.jpg",
+      "sha256": "1490951e2b79d3f5ae60f9e781ff19dd02e9544e070d0b59b02420ec1429422e",
+      "bytes": 3129579,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\7.jpg",
+      "sha256": "f87ec3c315a11dbe5c9e5cc1566cac4d737e67862e96d3d0a97a4fda6ff50d38",
+      "bytes": 978288,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\8.jpg",
+      "sha256": "5828754fd7dd35f9cd4512277a70be126df3cc81f3afab5fe662d71e41fdff8b",
+      "bytes": 3556552,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\9.jpg",
+      "sha256": "7c8c64d0eb731a60fec8c1fb2acbc20c4a9377c2297896f8806802b60927ea7b",
+      "bytes": 4545306,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\al-folio-preview.png",
+      "sha256": "6a8debc22125566d6834666f19d9f61e97bf608a2a3b68ef21475bfcdf4ea894",
+      "bytes": 818713,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\brand\\bamberg\\SOURCE.txt",
+      "sha256": "488165be21ceb57a4501f7f70b726599bfb652f3d05d846b892be5a5f3f4a4ec",
+      "bytes": 1292,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\brand\\bamberg\\bamberg-favicon-light-180.png",
+      "sha256": "b2845ca232a981f8ac9dd968996ba7e747471b093991ba4b661590ba61c84802",
+      "bytes": 1352,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\brand\\bamberg\\bamberg-favicon-light-32.png",
+      "sha256": "c2674f8d93de9578475853c0a9cd90194b281549b8516edce48e6ea1a08eb6b0",
+      "bytes": 323,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\brand\\bamberg\\bamberg-logo-header-dark.svg",
+      "sha256": "38e94fccc86749a86423cc8abbb367cc61b156033a523b80e2045fb3222cd934",
+      "bytes": 4054,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\brand\\bamberg\\bamberg-logo-header-light.svg",
+      "sha256": "fbaf0c0fc266e80a4f8e8e5d45aca39233b4d8200a309256973d4ea61a0f5fd0",
+      "bytes": 4054,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\brand\\bamberg\\bamberg-micro-icon-dark.svg",
+      "sha256": "f7544fd56c9af1c9ff06358ad87d78d2d036f2aee02911fae249a54dd8162a6c",
+      "bytes": 620,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\brand\\bamberg\\bamberg-micro-icon-light.svg",
+      "sha256": "f77eb0af7f74152138037ac81a2a3e1556eb29bf9191a036ec5778e2d66fd389",
+      "bytes": 620,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\code-screenshot.png",
+      "sha256": "cfcd6c217b184fb1862620169aa12569799da83e89634b0f60b9c44fa2710184",
+      "bytes": 186000,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\distill-screenshot.png",
+      "sha256": "9286c48e46b1269ed7efbd05285ea71158a15e5b3afd79a7a33a5d2f313e4cd4",
+      "bytes": 190635,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\logo-frqsc.png",
+      "sha256": "018ae04d06c2d05fa07bd0e14265404f711256a3199edfeb987e127fa6bac6ed",
+      "bytes": 11768,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\logo-performant.png",
+      "sha256": "20a8cbfb03d9507e6d4e96310697b165e97558584fcb68034b44d96b19da5885",
+      "bytes": 11438,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\logo-uqam.svg",
+      "sha256": "deab7e2b300f0227f1cfd3fcf80d91bf1079d1658f569c99a8f1309fb3462b4e",
+      "bytes": 2442,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\math-screenshot.png",
+      "sha256": "ff7379c78c3f00d7563ca90d1ffb36b9c7ec413a3e59b7750cf071958993fa29",
+      "bytes": 192374,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\pagespeed.svg",
+      "sha256": "cca1ef17b1e35ae4e9d84fec9a24fe8b358b06de12269070e76c320a005ab6ff",
+      "bytes": 11377,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\photos-screenshot.png",
+      "sha256": "6a15230aef1dc3ea55635ceccc54d9e9d7700980ae011cc7f1caae9b1d14f50a",
+      "bytes": 972431,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\prof_pic.jpg",
+      "sha256": "855317ee9e69adf8fe7ae6428bf286515baa4afc77fe31a260564998ee8571f8",
+      "bytes": 2309396,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\projects-screenshot.png",
+      "sha256": "2f28fc0ade0d3a9af128ef217d0712c79b701651dbe416130820c4b27b9cf608",
+      "bytes": 862044,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\img\\publications-screenshot.png",
+      "sha256": "5f4b3b21668d82d935435ab02a4cdfec0b94728a2038eecda49d6869870d390e",
+      "bytes": 215861,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\CETEI.js",
+      "sha256": "dd800e5a2f439b2473a7119d655c69ce97adc1119ff411533cba88a3765610f3",
+      "bytes": 28724,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\common.js",
+      "sha256": "987c884d93c2610703e1666e1482a956b40ac8a3299880720f3fd31a97f8addd",
+      "bytes": 366,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\dark_mode.js",
+      "sha256": "1c97de34ec54ea6a4c85a6a23c8dae1c5b05d763f9788c4f29a6aaa0896946ae",
+      "bytes": 253,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\dehParallels.js",
+      "sha256": "294f5c6b26d286d05b4b41f6fe409fbddc3c54f9150c25deff9f8d44bbb792f0",
+      "bytes": 10449,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\dehParallelsCore.js",
+      "sha256": "55b89d512619970221dcea30150e9ac6306875d55c1e3be64113dd1595692005",
+      "bytes": 9617,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\distillpub\\overrides.js",
+      "sha256": "2bebce412f42f1fb0444c4a0283649736d4850b44d5a042b309ef69d610857c4",
+      "bytes": 1212,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\distillpub\\template.v2.js",
+      "sha256": "67381b84313b1bfcf60ac823b1e026eab52d097c66c1e623fd6712c05f8f11ad",
+      "bytes": 301603,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\distillpub\\template.v2.js.map",
+      "sha256": "2e7902dfeb45cbd76749e8222377545d71e5ca16b45a2827e0d4a36bbd70d89d",
+      "bytes": 602453,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\distillpub\\transforms.v2.js",
+      "sha256": "f5c5c43b6ca5ea8642717d310f0edd94fe162ee7fa3dfc2862c6a046bee50f10",
+      "bytes": 542291,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\distillpub\\transforms.v2.js.map",
+      "sha256": "f4c4cbd4167209a706c0750b48dc01cb87a19b5d60c756863b056afaa92b48a6",
+      "bytes": 1024816,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\mansory.js",
+      "sha256": "2bc4be5d8265a4ec1538ae4f27d354c45aa262473d984b06353d4ae3669f5dc3",
+      "bytes": 305,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\renderTei.js",
+      "sha256": "fc79f3c95e93bfeff86870f6c5110484cf28bfd778f773f654357441baff5f8c",
+      "bytes": 122070,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\theme.js",
+      "sha256": "ca34a333f4b5a4a7793b2d26f3af060be8caa20567122653d27de72cb60608e0",
+      "bytes": 1089,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\js\\zoom.js",
+      "sha256": "43a42943a403d03c19fc80bcc73dec44a64e6c8247db5ff6caf80fa23dcd1398",
+      "bytes": 282,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\pdf\\example_pdf.pdf",
+      "sha256": "0b1d21bdc711ac8d6f7ea421106a517d0827d7a0a1fb58310e59dc31d729c0b2",
+      "bytes": 15879,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\1-480x320.jpg",
+      "sha256": "6ac47275b6b6f47e02d1b60a73f5df73b673487c4ea8bff8980e783f940954de",
+      "bytes": 40240,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\1-800x534.jpg",
+      "sha256": "aeab83127ed98940717f91b93c202b19378526872a4d3190c3fbb5455d0847b2",
+      "bytes": 101194,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\10-1400x933.jpg",
+      "sha256": "ed2605d78e42c13369e0e0ea7affd32138db37912a2e636ef1681084ced04bcc",
+      "bytes": 312631,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\10-480x320.jpg",
+      "sha256": "1d42ab06ab2f997a997253e7794f7328a3484f9a8fd2497fa6ddc23039feba23",
+      "bytes": 29845,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\10-800x533.jpg",
+      "sha256": "5af043eda64bd96db0fed8ba567b1663dc5caeb30858ed831df77fc2db1fecef",
+      "bytes": 75211,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\11-1400x1956.jpg",
+      "sha256": "b586ecf702bc0f2817a4f722d76c63fed0c3c7934de7f8c5c4110870a7b9c605",
+      "bytes": 587020,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\11-480x671.jpg",
+      "sha256": "e578ccb92ef351730abfdc88177e736d53d3e323ddbe8ae9f398e754d1835c45",
+      "bytes": 61222,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\11-800x1118.jpg",
+      "sha256": "a4110f330b46ac8682a28d79cc3ef96fa99e90e629a5670d4dbce5ae3c0a279a",
+      "bytes": 148698,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\12-1400x933.jpg",
+      "sha256": "7982173bb78e9906e76cd2132acaa0931a79f41f580226d230f3827db10918c0",
+      "bytes": 104320,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\12-480x320.jpg",
+      "sha256": "2028e5f6b55d0b8bc5450fb740be18bcde61f7e9d5c7dc8a3f2c0b5d1f03d9a5",
+      "bytes": 13248,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\12-800x533.jpg",
+      "sha256": "2ae8ed3a16180961a711338d49fac1c2910afef3bd51de609fed61bd1a849cd3",
+      "bytes": 27537,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\3-1400x933.jpg",
+      "sha256": "38aa7fbf45c696e6719162c416bf49655e90d1cb8c51d84e90cd8ab5835161fa",
+      "bytes": 318194,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\3-480x320.jpg",
+      "sha256": "f0bc6fe477a0e7803f41863129bc8f7d90a3a89482650287795f816fbd0f08bc",
+      "bytes": 34512,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\3-800x533.jpg",
+      "sha256": "0ff18f829ee062974f8492772b992e42b1944ce0662b4fc129f43b2da028fbe8",
+      "bytes": 79958,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\5-1400x933.jpg",
+      "sha256": "c5cbeb8e164d1ee6901af12cb9d93d34ffd9ce54227d81a80015296422c003ce",
+      "bytes": 269841,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\5-480x320.jpg",
+      "sha256": "8706376c24d31489932d4d4aa40ab412f9fc91da68dc02d80cc44fc0bc12f095",
+      "bytes": 29668,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\5-800x533.jpg",
+      "sha256": "00ecbd10f6985b435366810567114eb619acc82f94f67f8370c9f8bf0a8bb153",
+      "bytes": 67128,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\6-1400x933.jpg",
+      "sha256": "d5e102aea5f776d9a392cb926b58d82b287645b9b96e79ac5ebe6ef756235b38",
+      "bytes": 448181,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\6-480x320.jpg",
+      "sha256": "74a7b0073b327b7437aa05caee22a741ae88d439aa74eb60b5e0aa5284987877",
+      "bytes": 41655,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\6-800x533.jpg",
+      "sha256": "659565f3e5d76dd277f096e7e874ec8784bbed69c66e9bc7a77940d731c82395",
+      "bytes": 105761,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\7-1400x933.jpg",
+      "sha256": "e70107bea257d689559ed50349a08cd43633061534f7d2c2d2ea23e729fe0317",
+      "bytes": 63230,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\7-480x320.jpg",
+      "sha256": "b325e6f7eb4900297373684f16f6f9b2b891a252f67568b06edca6b80107094d",
+      "bytes": 8779,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\7-800x533.jpg",
+      "sha256": "00005761758113f18efb63ff372e212655cd28794c5842dd225a81a4008c063a",
+      "bytes": 17266,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\8-1400x973.jpg",
+      "sha256": "e3e5dc6b6f390b19d2635592a43fd2746cd40119c91e1663fc044bbfcd9147ba",
+      "bytes": 197666,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\8-480x334.jpg",
+      "sha256": "a3e32f96dd5ff44d2bcfab5b5217a7cd5e8961b0c1c4a0738a61a9b672d0b83f",
+      "bytes": 21422,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\8-800x556.jpg",
+      "sha256": "246cfbb0b2515efaec37f1c71cc669ac9f33a6a6b91cab8d1adeb54299c71166",
+      "bytes": 49053,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\9-1400x933.jpg",
+      "sha256": "25d02b9cae7c40659c0cad287f92ad83bedb1e9bb4a397ac5452728a0f0250a0",
+      "bytes": 336619,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\9-480x320.jpg",
+      "sha256": "86d6a0d285d4e338b135b5a6e44b3af3f0828e47eb48324e55ef480ac944eeb6",
+      "bytes": 28907,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\9-800x533.jpg",
+      "sha256": "786d8e1003ab63905a7e941b51f72b1845c447aa3326c6df59143a40045db364",
+      "bytes": 76073,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\prof_pic-1400x1867.jpg",
+      "sha256": "c5ac8ea86182dd1a953701355393a5a254a6c7d6e9ecab1e760827e5cd043e70",
+      "bytes": 480421,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\prof_pic-480x640.jpg",
+      "sha256": "9ecfa18f46da3707bb06ea71513f6feea982de1d7b54d0ec24de9676b1d07bb0",
+      "bytes": 56589,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\resized\\prof_pic-800x1067.jpg",
+      "sha256": "ceed5e14f8c8f00a75dca3dcd050acbf9da00e75273e3d0fa4e0b9577361f2ee",
+      "bytes": 130483,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-01.xml",
+      "sha256": "6b695035845cecbe34fcc8c0bf6ffc000945938e9fd9cfe0e1306d3b11665420",
+      "bytes": 123174,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-02.xml",
+      "sha256": "a1d9d3332dcff8626712ea391cbccb53defc53e5aeda1a73b9a0d6a906f388f5",
+      "bytes": 135150,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-03.xml",
+      "sha256": "e3b1efaaf1c39dcd0f7db8b546217a58f065b9193caf6bf882f14c207c03a00c",
+      "bytes": 124832,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-04.xml",
+      "sha256": "f1e9d1ce4f59081e59337c7fcc9cec02b4f2f039223c5a54e53bddee492a23d1",
+      "bytes": 133466,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-05.xml",
+      "sha256": "cca24f0c1ad890a0495092a4c529084f51d525c4a56140cfd6b08289f9f6c945",
+      "bytes": 140779,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-06.xml",
+      "sha256": "3f80eeedbd414ee1f9b0d72276fcbab01737c93709e899ae6920ed2630172a05",
+      "bytes": 163053,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-07.xml",
+      "sha256": "7dffada6163a5aba1c2a2c7dcd4fa6c6ecd1d7aa89e2343c64d88eeea94c38da",
+      "bytes": 162322,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-08.xml",
+      "sha256": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba",
+      "bytes": 173406,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-09.xml",
+      "sha256": "1cb809169442f5cea410773d322ffec315cd6a4bb0880285b1ea691245c84940",
+      "bytes": 85547,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-10.xml",
+      "sha256": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d",
+      "bytes": 103862,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-11.xml",
+      "sha256": "f8f26004ac52b6080a56ca94ad490e8671d8144f3624c40b9b2e7a516c0e1467",
+      "bytes": 115989,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-12.xml",
+      "sha256": "9cc8da830c8a630c024bf5729004fb224c17f7fabe5b7205cbeab37a34d10a1e",
+      "bytes": 144197,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-13.xml",
+      "sha256": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d",
+      "bytes": 150127,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-14.xml",
+      "sha256": "f342c46cfdcf4b22d1c9f4fa423295077538c51917b570a321e5df1f8d9e24e9",
+      "bytes": 172895,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-15.xml",
+      "sha256": "9f307e78e2c2f9a03335342fb1176620f6328793c379fb81d58b12164a383324",
+      "bytes": 154681,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-16.xml",
+      "sha256": "ab5725b8202b800e9b13b0003f18a71eca2e5d1dfd94bed3d3271b3cbb72f92a",
+      "bytes": 137778,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-17.xml",
+      "sha256": "d790d8c8138235db359479b6d92a230151852e55506fe36a8e502757df0dc678",
+      "bytes": 136585,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-18.xml",
+      "sha256": "edc2d82807c5e3e2c878bebbe81d1a1f1b0a50531e33141989dfadaf34c5b5c1",
+      "bytes": 138321,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-19.xml",
+      "sha256": "33e2d857bacd6648309c4ebc71db6141a92f4f995bca8f3807e89cdc459446d7",
+      "bytes": 124039,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-20.xml",
+      "sha256": "cefd1230d6c1205583c30b6db4825fb948deb8e165775f06e004d643285fb35b",
+      "bytes": 85489,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\preface.xml",
+      "sha256": "e35e7b31e16cf96d3d3d59279daacef22e10b69b05110d0cdc430bcf933343d9",
+      "bytes": 9991,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-01.xml",
+      "sha256": "7c82be2ce7299a389995a93ef905f905db14b79c6a49288569e52cf4fd65d4c9",
+      "bytes": 190259,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-02.xml",
+      "sha256": "39f9b8d8154d43d34564ec292c0df2759e8532e3ed48e113e6d13064a8eaf800",
+      "bytes": 203184,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-03.xml",
+      "sha256": "967280266aec51e390b057f309157989070185cd3d3ae08102f723eea14a50d7",
+      "bytes": 186284,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-04.xml",
+      "sha256": "6a829c561e267d857d3609b01c8afd9cdb533edbb7dd828f5dd72438fbbce4b3",
+      "bytes": 191490,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-05.xml",
+      "sha256": "6da4f29227376a81789955f5d1230018a5f1fee4aabbffa398f18aef64f5214c",
+      "bytes": 207587,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-06.xml",
+      "sha256": "0415434537ab6f1802daeca943f01ad1cf35b7eebca69dbfcf0417e696b25a64",
+      "bytes": 245859,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-07.xml",
+      "sha256": "1ecd613ea829466177ea90f6699e7f44e40fdcf7e0b219504796a7cc1862a18f",
+      "bytes": 253761,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-08.xml",
+      "sha256": "8b684917c163de459ada56ef1293da6a8b87515344ccc961419b7e602ebea433",
+      "bytes": 269330,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-09.xml",
+      "sha256": "7e0de6f04a5a85953444655e849a6d999eb625f802536aad70c2a407bcbc9811",
+      "bytes": 140280,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-10.xml",
+      "sha256": "e49314528e626f47c64e507cbd6a96978419ae1765b059ed6100818e31279089",
+      "bytes": 165761,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-11.xml",
+      "sha256": "e74888e1361ab23351ef47717bc204f5cc24dad361472eb0b5f00adfc7098452",
+      "bytes": 190042,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-12.xml",
+      "sha256": "cc5ed014ddcc06b1cad376476994ca9833df688f4d68dd17e1f1dea1899b3cf0",
+      "bytes": 236600,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-13.xml",
+      "sha256": "dfde29b8a68309084c4ffee4077452aea1ce1ae6d92cc39108b9d469fbbed279",
+      "bytes": 244131,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-14.xml",
+      "sha256": "9db8c651739fab956aa60d9e9926efcb59c10901f04e0756a127a7692259a623",
+      "bytes": 273849,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-15.xml",
+      "sha256": "ce29f43ae99296b30e67c2ea7d913282c9e74c46af0cbefef9d5f5a298b4cc27",
+      "bytes": 226347,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-16.xml",
+      "sha256": "3fcac31fb8cf2b5970fe62b5ab5832b6506949ca5912fc6633665dce4e8cc785",
+      "bytes": 206335,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-17.xml",
+      "sha256": "07a0ab3077b10aa3ba0634ab1ad30b8c106dc715be851e812266f8c2f2b88f29",
+      "bytes": 209526,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-18.xml",
+      "sha256": "c00a428cb042469f0f71e4d6b87c46ccf3b44d6e3fbfe55180f878dc97af647e",
+      "bytes": 217786,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-19.xml",
+      "sha256": "9e3750336c4a0380d8daa4c1f3f0899dabf8260cab6a3128e1e1aa77970805be",
+      "bytes": 186573,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\book-20.xml",
+      "sha256": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19",
+      "bytes": 138436,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Greek\\preface.xml",
+      "sha256": "94be08e73b1bd84cfd71f6c5958bebf903b0aeee480ca80cae7219596b1f7c69",
+      "bytes": 14749,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-01.xml",
+      "sha256": "236397efea41558911881fbc807eec7f9b01d6058bbc51610f3550c2df77b973",
+      "bytes": 137003,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-02.xml",
+      "sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "bytes": 143965,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-03.xml",
+      "sha256": "8750c56152f750fbc1bd7c5d28e07cc73972bf1a86ed3221f79824e1c0573c97",
+      "bytes": 138032,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-04.xml",
+      "sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "bytes": 138791,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-05.xml",
+      "sha256": "846ff2e8edbc58bd2283e923353beccc8427f49cecf89415c6bc5272b994f86a",
+      "bytes": 144121,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-06.xml",
+      "sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "bytes": 147960,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-07.xml",
+      "sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "bytes": 142621,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-08.xml",
+      "sha256": "a300124a948ff44b7216b48c18cb929033500f09b71ae944535313f2df88db80",
+      "bytes": 149056,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-09.xml",
+      "sha256": "d65b9e3565bb418a819c3b9551a2252bfe006995aa504654239e2d202c96d735",
+      "bytes": 82657,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-10.xml",
+      "sha256": "8b2104191d4dba2e7e74ca684146519ed5b5113a5e983a5ceb9a6e970f741d3a",
+      "bytes": 96881,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-11.xml",
+      "sha256": "02fcf44d1315f30011d4e88417b7292dda0c1b335d9cfadfec0b5d2f632e9f51",
+      "bytes": 99869,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-12.xml",
+      "sha256": "9a20f3b8dfa227b267371cc6400e0f40455d51241225c1ac872092f486ef84bf",
+      "bytes": 117523,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-13.xml",
+      "sha256": "c5da61cc5d0539e68308b1e001980fd279dbeba95d2c5cfc64d4602bb1dd43e5",
+      "bytes": 115731,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-14.xml",
+      "sha256": "931157718997a35a84951ecebabae6813526c66250fa4f791bd338748fbf62f6",
+      "bytes": 136470,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-15.xml",
+      "sha256": "9cf8311568bb98aec57ee5dd6ef1ef93a8acb251c011dab18ffe45c65a3332c8",
+      "bytes": 99016,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-16.xml",
+      "sha256": "293902ffb33d2d958235225200ee37d421b30d727bd4483bac0e05c4c2455993",
+      "bytes": 85179,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-17.xml",
+      "sha256": "ebb345435b006089e058604369180fdd94509806081fe89bc27348a517c4af91",
+      "bytes": 124011,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-18.xml",
+      "sha256": "5c4d1e6486e2229db3e47a4ab7841573427a2da6c9be2457fba1198d8b71bbc4",
+      "bytes": 128627,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-19.xml",
+      "sha256": "5fa3b1f9b39d614d99b8d73fbf5675166c1ee0cca47cd4a242b27c5ea70d6a73",
+      "bytes": 94665,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\book-20.xml",
+      "sha256": "f59f763998b9d0e8ffd047603bdb629d58c9b099eeabee386d58bf3347a93509",
+      "bytes": 69296,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\Latin\\preface.xml",
+      "sha256": "8cc821957a03e694e795bcc29fb40bff9c9952eff06567e2da76b4e4732843d2",
+      "bytes": 8219,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\paratext\\bamberg78\\book-02-contents.xml",
+      "sha256": "0af258453b21ead4f81d6649083b5ded4f6f6571be6c4fa1a31153020a838786",
+      "bytes": 2700,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\paratext\\bamberg78\\book-03-contents.xml",
+      "sha256": "c39dd3333f82180d321ebd89e390637148d44d8c58f329ff6a8246d7e0db8b62",
+      "bytes": 8675,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\paratext\\bamberg78\\book-04-contents.xml",
+      "sha256": "f3b923d5d7d409d1038c45072bdb6f00205415a2f17e3dcb27fb7c75851412de",
+      "bytes": 4909,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\paratext\\bamberg78\\book-05-contents.xml",
+      "sha256": "2f4f399819a3ce9d1f0a4598e030660cd0a321f41352cc8d58a2692ececed934",
+      "bytes": 3683,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\paratext\\bamberg78\\book-14-contents.xml",
+      "sha256": "447f326e75b9791ee8a5ae5e16a9757afec5431f531867b8fa71dffc7885ee87",
+      "bytes": 15025,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\structure.xml",
+      "sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56",
+      "bytes": 19344315,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\Lodge1602\\book-01.xml",
+      "sha256": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119",
+      "bytes": 627990,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\Lodge1602\\book-02.xml",
+      "sha256": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592",
+      "bytes": 464116,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\Lodge1602\\book-03.xml",
+      "sha256": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e",
+      "bytes": 290131,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\Lodge1602\\book-04.xml",
+      "sha256": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e",
+      "bytes": 359179,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\Lodge1602\\book-05.xml",
+      "sha256": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b",
+      "bytes": 320353,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\Lodge1602\\book-06.xml",
+      "sha256": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8",
+      "bytes": 246224,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\Lodge1602\\book-07.xml",
+      "sha256": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5",
+      "bytes": 231593,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\book-01.xml",
+      "sha256": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+      "bytes": 311180,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\book-02.xml",
+      "sha256": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+      "bytes": 239878,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\book-03.xml",
+      "sha256": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+      "bytes": 157267,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\book-04.xml",
+      "sha256": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+      "bytes": 193945,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\book-05.xml",
+      "sha256": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+      "bytes": 183633,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\book-06.xml",
+      "sha256": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+      "bytes": 136863,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\English\\book-07.xml",
+      "sha256": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+      "bytes": 128964,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Greek\\book-01.xml",
+      "sha256": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+      "bytes": 428903,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Greek\\book-02.xml",
+      "sha256": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+      "bytes": 336236,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Greek\\book-03.xml",
+      "sha256": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+      "bytes": 217552,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Greek\\book-04.xml",
+      "sha256": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+      "bytes": 270689,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Greek\\book-05.xml",
+      "sha256": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+      "bytes": 246889,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Greek\\book-06.xml",
+      "sha256": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+      "bytes": 186794,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Greek\\book-07.xml",
+      "sha256": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+      "bytes": 191591,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Latin\\book-01.xml",
+      "sha256": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+      "bytes": 299341,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Latin\\book-02.xml",
+      "sha256": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+      "bytes": 228066,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Latin\\book-03.xml",
+      "sha256": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+      "bytes": 140452,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Latin\\book-04.xml",
+      "sha256": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+      "bytes": 169175,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Latin\\book-05.xml",
+      "sha256": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+      "bytes": 154607,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Latin\\book-06.xml",
+      "sha256": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+      "bytes": 112174,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\bellum\\Latin\\book-07.xml",
+      "sha256": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+      "bytes": 108841,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\contra-apionem\\English\\book-01.xml",
+      "sha256": "9b88f23d94420125135e64ec850b4c19e46fa357feb73c91d9136c1ba63a569a",
+      "bytes": 126153,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\contra-apionem\\English\\book-02.xml",
+      "sha256": "5685e7fe801b0157a09e70f68b667637b7b601230edd16a7c609ac59553ee422",
+      "bytes": 123372,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\contra-apionem\\Greek\\book-01.xml",
+      "sha256": "f2f38401bb9bd7ef456b36400605bd908ba25d394bec8ad8c79b2b9f6df12169",
+      "bytes": 185690,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\contra-apionem\\Greek\\book-02.xml",
+      "sha256": "134521f8cb973c0272f97fdd9cb97313a33b69b89069b196af1ba722cedb9485",
+      "bytes": 163515,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\contra-apionem\\Latin\\book-01.xml",
+      "sha256": "7a1f760bc7a67139c5e94e7d280123052eb770ff0d9215ffe39fb2c9ae7a4baf",
+      "bytes": 96104,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\contra-apionem\\Latin\\book-02.xml",
+      "sha256": "4410962053fa0dab256a6f40380822e34803beefcc3ba2e272faf36049aff58f",
+      "bytes": 93068,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\English\\book-01.xml",
+      "sha256": "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
+      "bytes": 268475,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\English\\book-02.xml",
+      "sha256": "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
+      "bytes": 113080,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\English\\book-03.xml",
+      "sha256": "e5dc0d008801809385c8bcaf43c5ee2d42d861b572968e3ba6f6659543175d6b",
+      "bytes": 118964,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\English\\book-04.xml",
+      "sha256": "79068f7cbc2591b38fab9b36ee300d7e173ced0fab7e0dfac1668f56726445bc",
+      "bytes": 114376,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\English\\book-05.xml",
+      "sha256": "7658e545360849e75627a3ff771742d5fc06127da7613740c595c21e2aff5298",
+      "bytes": 261992,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\Latin\\book-01.xml",
+      "sha256": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+      "bytes": 222074,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\Latin\\book-02.xml",
+      "sha256": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+      "bytes": 93367,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\Latin\\book-03.xml",
+      "sha256": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+      "bytes": 100143,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\Latin\\book-04.xml",
+      "sha256": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+      "bytes": 95752,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\deh\\Latin\\book-05.xml",
+      "sha256": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+      "bytes": 218474,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\source-contents.xml",
+      "sha256": "3d75560ebb1c5aa67647cb735e7d23de05eaa29fbeb6705c47719ca5a6d063f4",
+      "bytes": 34606,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\bellum-greek-range-browser-qa.js",
+      "sha256": "522c9082026ea317a84be1b8baa625c1d5186d051e2397a45f6af6af4bbce60a",
+      "bytes": 9048,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\bellum-greek-range-qa.mjs",
+      "sha256": "40c5044db5ae176b27d5af83108e3cc6721792f4dfce5962dbe033e61c41a795",
+      "bytes": 15988,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\cibuild",
+      "sha256": "34f5feccc3a35e82012144b7bbc3c8caa6c65b1773c644c025ed24708f3bae40",
+      "bytes": 26,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\deh-concordance-xml.ps1",
+      "sha256": "926b37bcff2ab3e5da240017c0d2421cfb3c0c1f8e5a0d41f5a53eca8f626698",
+      "bytes": 5966,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\deh-concordance.mjs",
+      "sha256": "ea26f63d146991a9043d61c568b657055cd12077b4da20895f225ff3e5968be3",
+      "bytes": 46994,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\deh-parallels-browser-qa.js",
+      "sha256": "335ad1645ed97e7cf09164eb0f540595c46f325afe5beab0f0ae369f52ecf715",
+      "bytes": 7612,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\deh-parallels-qa.mjs",
+      "sha256": "70cf8b1a71e0ccaaf560efd9f9013ac6748d2424ebd9e8a8157c5ddf9885c4b2",
+      "bytes": 2535,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\deploy",
+      "sha256": "3b03a1187f7b1fc856c9dc92344d1d052a3990cc6e20c1fc5cd112d7fa8d7e92",
+      "bytes": 2744,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\lodge1602-bellum-browser-qa.js",
+      "sha256": "c6ff2b8887f6cb15a1dfcb306a5aefff3a544f0b7fe26a4f4b9757578fa5f672",
+      "bytes": 11363,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\lodge1602-bellum-import.ps1",
+      "sha256": "48c3d4f5d906b0330904aaae6629a501e8081f577d68ff038b429d65709b5d97",
+      "bytes": 11903,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\lodge1602-bellum-qa.mjs",
+      "sha256": "5e918d9bce700d35b0daed7cbc84764fc747bf6104d9f28a218b2ec64da4b8f6",
+      "bytes": 11339,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\bin\\lodge1602-bellum-qa.ps1",
+      "sha256": "0baae84b82f68f8597f42d2e9e224d2690ebed19b8da6315192f78fc721f792d",
+      "bytes": 13387,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\ALIGNMENT_ALL_QA.json",
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_BOUNDARY_QA.json",
+      "sha256": "9e49cf39d0ccfb0b56027b71288157b6592a4b9ae4fb1c4cd6b178bf5a6cbaa9",
+      "bytes": 609270,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_BROWSER_FAILURE.json",
+      "sha256": "8b4cbf5f7036b27c41d2055e329a15a7bfd3926ad56f5455ff2fa454be7d18e2",
+      "bytes": 196,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_BROWSER_QA.json",
+      "sha256": "b2f0cc3dddd649ac2fa62508f37ee7829e74f9592937296fad1ec547a37b6133",
+      "bytes": 9200,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_COMPACT_URL_QA.json",
+      "sha256": "ebc85358d2abc00cc3c5c64c6f6fe1afbe7ce8c1fda7313745f756ffa4bf23df",
+      "bytes": 80060,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_CONTROLS_dark.png",
+      "sha256": "ea747b4e667ffbf8667f372d9459e8eef48eccdf33556c1b1abcb2f00434ff70",
+      "bytes": 27509,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_CONTROLS_light.png",
+      "sha256": "e877ed272506daf23e61c56f2a339802d58079bd422cb2180b6282c47846ae3a",
+      "bytes": 26378,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_RANGE_QA.json",
+      "sha256": "2aad886c17709ec27c6a0da8cb218e29f8de381ce13b1750ff6645b4be91e3ff",
+      "bytes": 353356,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_RECORD_INVENTORY.csv",
+      "sha256": "dbf5ed46562e60d4da4f6b8455222f59b3757fbbf9939a2eea697dff29385803",
+      "bytes": 210543,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BAMBERG_URL_QA.json",
+      "sha256": "9f8379e6a0e4e84c45608b45223a768d80b7c0cad85108d00b0e3d9279fec3a0",
+      "bytes": 42850,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BASELINE.json",
+      "sha256": "94a88e8fe1ae2dde015bc8b94cbd24c829ea02ac82a30362163705f0844f2c38",
+      "bytes": 149092,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BROWSER_FAILURE.json",
+      "sha256": "0c39ef56a257d4cb683ad3c9a517bf832920c7e46eda00a0383e692f6d75c37c",
+      "bytes": 1455,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BROWSER_PROGRESS.json",
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\BROWSER_QA.json",
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\COMPACT_URL_CHANGE.json",
+      "sha256": "6a21ab0ca5395e35262a8e12e3b9a3d53e3385a61cf59164180f9a1ac86c8553",
+      "bytes": 449,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\CURRENT_LOCATOR_GATE_QA.json",
+      "sha256": "bb8ee8ae12a765c354e813938f49e3f9c9f0ce372d797d3902c5a835419d0495",
+      "bytes": 422617,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\FILE_MANIFEST.json",
+      "sha256": "0a8240780d01f5b38fd5edbf350e04e9f786f61ef4fee315e0b7f7d0845ddc5e",
+      "bytes": 22331,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\FOLLOWUP_GATE_QA.json",
+      "sha256": "cf4c9bbf3395d3592aafbf897bcbeff2cf2d2af173bd74b8adbc5302633cfc92",
+      "bytes": 145295,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\INTEGRITY_QA.json",
+      "sha256": "a312f07eaca22e52a3a711ad36b5fff424d6387fa3c87f5d4d5360011aba22a5",
+      "bytes": 33926,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\INTERACTION_DIFFERENCE.json",
+      "sha256": "0ff7bc2e3b21d2ec2b718981ed2dae4fb0d0e2f44ce3205e0cb0383d09385b27",
+      "bytes": 4287454,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\INTERACTION_FAILURE.json",
+      "sha256": "a0043dd35898940a05f4b7f17f841cb48ae32eab146ddfdac1046a9267d0c477",
+      "bytes": 232,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\INTERACTION_QA.json",
+      "sha256": "ed42d6bb5a8ba765e68d25b5dbd7f11f68ae79a0bd0a8387444f810ebaa0cc2e",
+      "bytes": 2559,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\MARKERS.json",
+      "sha256": "e08d6d84d04e6bb1412ac6d255dbba570931cde26f48d38c626768313d22f98f",
+      "bytes": 21590,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\NOTICE_THEME_QA.json",
+      "sha256": "88767f3c063dc384ba8a0bf4e3c00f0d84c7bf1addd229d4859a168f6bdc9024",
+      "bytes": 2738,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\NOTICE_THEME_dark.png",
+      "sha256": "f18febd8e0299ce056e1217cbcb8a83c631adb00f759a1856610af1ec59b79ca",
+      "bytes": 20850,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\NOTICE_THEME_light.png",
+      "sha256": "9e9969b6092b4ac31325e47c361c31ed719f9e178a11d3903f9bd4200a0ac3fd",
+      "bytes": 20806,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\PROTECTED_SOURCE_GATE_QA.json",
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\QA.json",
+      "sha256": "702a07476f27d79ee447366bc0ea3a7323c99e232c81074c2862787627717672",
+      "bytes": 40478,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\RENDERED_GATE_QA.json",
+      "sha256": "d0a2b42d87d7976e9e7e0a7dceb6226fe4dea1e4cfa3998738d046e4e29edd08",
+      "bytes": 9870,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\REPORT.md",
+      "sha256": "815cda3d0c941fface0015f3da4aa53a58329bef288a70f7fd48147ba61051fe",
+      "bytes": 10891,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\SAME_NIESE_DIFFERENT_POSITION_QA.json",
+      "sha256": "c7ae48660461bb2053a4987741ea87bf2a079b3fb4f1b2be069fa2fa0fa13cbc",
+      "bytes": 6892,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\SOURCE_AUTHORITY.md",
+      "sha256": "f3b89c70a22ca8e8cf7918806c1bbda87ab4eff637e988e9726c2e3819be7537",
+      "bytes": 3161,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\TEST_DEVELOPMENT_LOG.json",
+      "sha256": "6b877d6045d46bc844a6460a4c81cab94906c44a75a79bf54fa73340e09b98f1",
+      "bytes": 2679,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\VI_ALIGNMENT_GATE_QA.json",
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\XI_MULTISPAN_GATE_QA.json",
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\bamberg.test.cjs",
+      "sha256": "78aec50c5e3a4d9acdaf2ff73551543a6103e8597d18f5af43e9710c74e6ce3d",
+      "bytes": 16070,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\compact-url.test.cjs",
+      "sha256": "1f94d34011928a3f39957e32e398503f60db382041efe5b8bce86149d934bdcb",
+      "bytes": 9936,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\finalize_review.py",
+      "sha256": "c5941f3630fbcad1e68118068a92a517dc3efb1e6908770234aa96a6bee4bc1d",
+      "bytes": 20208,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\interaction.test.cjs",
+      "sha256": "86b96f0b96f38e06d96c8b406ee1a55b6b40ffc4502f1dd333ddb9f1dcbedaf0",
+      "bytes": 9917,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\navigation.test.cjs",
+      "sha256": "a214ef30d4423b1231af2bba3b5bcbad8fb6538c2f37330aef876b9ac7885659",
+      "bytes": 45300,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\notice-theme.test.cjs",
+      "sha256": "e49e2bf9ee75c4794d8ee09dcef9943700d2389212c7ece1f526856fbb9ec4b4",
+      "bytes": 8781,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\patch_renderer.py",
+      "sha256": "77ecff2f1eba6a29490e3fc5b07a1a814a47db0f17d2fff47faef6d6d6004adc",
+      "bytes": 11516,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\prepare_registry.py",
+      "sha256": "05fe6d770bf0925d4ff077daf0f1a8c878c4b3e6349a3cb8f1b11e8a19c17513",
+      "bytes": 12704,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Bamberg_Navigation_2026-10-07\\verify_integrity.py",
+      "sha256": "fafce84ac30fb4af1a590c6ee0070e658791768944316b499ffaa11bbc20c770",
+      "bytes": 7423,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\BASELINE.json",
+      "sha256": "bd2bab289a97af7788c40e6352abad590556463d20d505ea8c227fcf151b3bef",
+      "bytes": 171661,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\BROWSER_FAILURE.json",
+      "sha256": "9716c4d0f94dc2ac7c35cc8b6397bc6efa0490293c2e832ba4ae005b2583eebf",
+      "bytes": 3399,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\BROWSER_PROGRESS.json",
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\BROWSER_QA.json",
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\FILE_MANIFEST.json",
+      "sha256": "bd73ef4b0cf9fa8b0f8cdb0f06093d8442daef460cf63694e59973a0923f9a85",
+      "bytes": 14184,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\INTEGRITY_QA.json",
+      "sha256": "96750b395c117491ebebcf47981819e498c0f046e36528ff76985d28d596692c",
+      "bytes": 2195,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\MARKERS.json",
+      "sha256": "a5569977c9958329dd6a6f3b77ac4418a3699e0ff3058d253494a9225f52c98b",
+      "bytes": 2622,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\PROTECTED_SOURCE_GATE_QA.json",
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\QA.json",
+      "sha256": "4e202ce1fab3da7233cda7ae88c248c669710b9e8b905cc8fa90f762531f2436",
+      "bytes": 41027,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\RENDERED_GATE_QA.json",
+      "sha256": "1a596011ea2830962543ca07dd6966cb83657249cfc2a4cdb230d2b296454712",
+      "bytes": 9384,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\RENDERER_FORMAT_QA.json",
+      "sha256": "11b90b536b3c85a799d4f0e1c4574b5a8470c18da6f86db18067e2f96dcaa337",
+      "bytes": 293,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\REPORT.md",
+      "sha256": "6208fb5814f6cf979140cfed98ff1a310e6974d52818aa7cc339eded88d96193",
+      "bytes": 9460,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\SOURCE_AUTHORITY.md",
+      "sha256": "f9f4a0e8a78ea30b2f893106c4727f7e0a8c72e6cc140679e37a91432766b519",
+      "bytes": 3756,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\VII_CURRENT_LOCATOR.json",
+      "sha256": "b08f1130512650440ad39c97aca8ade3f99e2239cbb6af4c8d6ff4ecd1b667bf",
+      "bytes": 1227,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\VII_current_locator_adjudication.md",
+      "sha256": "7faa064a24561b5d005e72c00f21108196dd19147c93b15a64458e9f436f15c6",
+      "bytes": 971,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\VI_ALIGNMENT_GATE_QA.json",
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\VI_ALIGNMENT_INTEGRITY_QA.json",
+      "sha256": "a392938e31543724f50d6be4a827b5e74a1bae1f9b5429d8eab6f29296757948",
+      "bytes": 290,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\VI_ALIGNMENT_REPAIR.json",
+      "sha256": "b08451358beb9522607ef3f555c9d90b21f8b473776c4b3a428f02e8e7a6b466",
+      "bytes": 1918,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\VI_LOCATOR_GATE_QA.json",
+      "sha256": "de4f7552519112dbe8eba3318c2e463a217fa70684a3bbbf28ab9d0e553431ee",
+      "bytes": 3536,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\VI_locator_corrections.json",
+      "sha256": "867b824c1ad10a15df6ba59f80a2c28d6fd97cc531653c81bf9613a4c31411ac",
+      "bytes": 7972,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\VI_xii8_XIII_locator_adjudication.md",
+      "sha256": "4b3d4d28e4a1c8f6ad4651416782df2e89e3d06ccbe940dff79d57a5ff4a2271",
+      "bytes": 5326,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\XI_LATIN_PROJECTION_DIAGNOSIS.json",
+      "sha256": "efeed6da937d21f4731594383bed039734b9188fe69623872df55b53cb4a1a31",
+      "bytes": 2978,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\XI_MULTISPAN_GATE_QA.json",
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\XI_MULTISPAN_MEMBERSHIP.json",
+      "sha256": "9b7d81fa1f0917349ace617b440d983dbb8b6cee3f8fb7a0500ebc41bac60bcf",
+      "bytes": 31795,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\XI_RANGE_BLOCKER.json",
+      "sha256": "f1713967a4c26110a521d63493f24a94e34aa94bc6883bf89ec1ac6cc96f2095",
+      "bytes": 2640,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\XI_current_text_multispan_adjudication.md",
+      "sha256": "8639f6b8ffff94fb045b3e5f2dd20def780d27548f5a97bc855dac93f3a2670b",
+      "bytes": 6213,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\XI_viii4_viii5_stop_condition.md",
+      "sha256": "fd6ba10be2ba961ad74d6c99f1ee60b61d71b7915b680916c84ea0e06bf3a858",
+      "bytes": 635,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\adjudicate_book_vi.py",
+      "sha256": "c87947ec4bc92a7d76cfb4d3f0e795e024cb400f387b48a64e814b51ea4907a7",
+      "bytes": 4191,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\adjudicate_book_xi.py",
+      "sha256": "c994e7f5d55079002d3085c80e09b942bb05deca2b612de9d7750dc4e6554e65",
+      "bytes": 5904,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\finalize_review.py",
+      "sha256": "d7f9b3f69a56bbf274f5df2be56e3f31f6c045ed1b60092118cc9d61e578d467",
+      "bytes": 19182,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\navigation.test.cjs",
+      "sha256": "5388c30b024e624b3751b95f7279a5a4d39e38af6d7ad6cccf9fe09c8229f91c",
+      "bytes": 33899,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\prepare_registry.py",
+      "sha256": "0891aef6968cdf75c6792c6b32c88cab5476648b9fab8356bafe91b25ce4c7e7",
+      "bytes": 11464,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\tei_all.rng",
+      "sha256": "b0f115095ead2ccc6933aa3365c6f4a82cba3b2ec7eee7f76bb616d7a63b7e48",
+      "bytes": 1098331,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_2026-10-06\\verify_integrity.py",
+      "sha256": "c7950297311aa702d3ecefcf3bf6328ceb959d3da7ffeebcbc3673ea9088030a",
+      "bytes": 7230,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\ALIGNMENT_ALL_QA.json",
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\BASELINE.json",
+      "sha256": "d1f83b233a420fda090e1d30f63da16bc9d6b431ec40540d2a29d84f66cc30b4",
+      "bytes": 50177,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\BROWSER_PROGRESS.json",
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\BROWSER_QA.json",
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\CHAPTER_AVAILABILITY.json",
+      "sha256": "336f606d48e70683c21a233dea60f3b428b2f116eb5d73e875b3829bf8651dba",
+      "bytes": 43081,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\FILE_MANIFEST.json",
+      "sha256": "e0bd96db6a6087cc06b2232648623618f5f51efcc4d10e8793eb50d7b7480f04",
+      "bytes": 8944,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\FOLLOWUP_GATE_QA.json",
+      "sha256": "d4c9e98e5e8f45e24613f8bf6181abe557f102ae535b0a5569f2eb79ee8fa38e",
+      "bytes": 145187,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\INTEGRITY_QA.json",
+      "sha256": "2d60ff4bde673bbc10c63bc25df9365e8467cd0d9455fc5b61917c50a07da48f",
+      "bytes": 2302,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\NOTICE_STYLE_BASELINE.json",
+      "sha256": "2c4e5de65e951b6bd5879311c94b59e12af58b14d2938c1822f6bae134f19737",
+      "bytes": 7812,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\NOTICE_THEME_QA.json",
+      "sha256": "88767f3c063dc384ba8a0bf4e3c00f0d84c7bf1addd229d4859a168f6bdc9024",
+      "bytes": 2738,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\NOTICE_THEME_dark.png",
+      "sha256": "f18febd8e0299ce056e1217cbcb8a83c631adb00f759a1856610af1ec59b79ca",
+      "bytes": 20850,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\NOTICE_THEME_light.png",
+      "sha256": "9e9969b6092b4ac31325e47c361c31ed719f9e178a11d3903f9bd4200a0ac3fd",
+      "bytes": 20806,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\PREFIX_CANDIDATES.json",
+      "sha256": "f210afe68b46a9ec5fc858a66536705c1828e71cdc24b05c5acc68fde0bc32cc",
+      "bytes": 45736,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\PREFIX_LOCATOR_ADJUDICATION.json",
+      "sha256": "d8cea04f6a9384e6ca8d31adc7d6a3e01df8cd8a283a03820931336a52287592",
+      "bytes": 109337,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\PROTECTED_SOURCE_GATE_QA.json",
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\QA.json",
+      "sha256": "1637377766c6f32a8b258ec7f519e8d8a8ecfd967bf8153c8984908545084880",
+      "bytes": 13470,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\RENDERED_GATE_QA.json",
+      "sha256": "d51981f3e295c71c20b28085eef133cbd8547b45bced2097cf9def478560481f",
+      "bytes": 9384,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\REPORT.md",
+      "sha256": "f507ebe70e8be6c4f09ad9945f1d3255ab63e69b195c702dda6936f2a6568e5b",
+      "bytes": 12378,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\VI_ALIGNMENT_GATE_QA.json",
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\XI_MULTISPAN_GATE_QA.json",
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\apply_followup.py",
+      "sha256": "d2cb94bfdbd1cf91b50cbea7f0e48f363a901338ac35ec19bffecffe3778d36e",
+      "bytes": 10413,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\finalize_review.py",
+      "sha256": "bfdfabc8d2f6639bab31c780abe01d2ee2949fb02b3706c05c638d80c477ebc0",
+      "bytes": 19471,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\navigation.test.cjs",
+      "sha256": "3673f12992aa619818465f0398403942197fdb7d29152611f0a74eacfaf3815b",
+      "bytes": 44826,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\notice-theme.test.cjs",
+      "sha256": "4d7ff4d5ac9dcf0e0c3a405ce9ea20eb3530617983b7423475e3b6c079fedc09",
+      "bytes": 8772,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\prepare_tests.py",
+      "sha256": "50a1e5f536e1d9bf9716769b97c70f2e94f4b90a6ee880ac2fa657745b6bbb9e",
+      "bytes": 13578,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Antiquities_Traditional_Navigation_Followup_2026-10-07\\verify_integrity.py",
+      "sha256": "ea69eaf2825e775dafd90cf2e8f130e4e4a44704bfa95b7552e1a6fe5b3cb53e",
+      "bytes": 6632,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Bellum_Greek_Range_Fix_2026-10-04\\QA.json",
+      "sha256": "820308f0fa8d011fdee2e633dba26cd6200b6ed06aedd0716292c5aee3d71f6c",
+      "bytes": 1458775,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Bellum_Greek_Range_Fix_2026-10-04\\REPORT.md",
+      "sha256": "570fb52eac8e8598ac436c2bc34395eff835fc047596fcca3bf6d9f85cc69b53",
+      "bytes": 7820,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\ALIGNMENT_ALL_QA.json",
+      "sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BAMBERG_BROWSER_QA.json",
+      "sha256": "b2f0cc3dddd649ac2fa62508f37ee7829e74f9592937296fad1ec547a37b6133",
+      "bytes": 9200,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BAMBERG_CONTROLS_dark.png",
+      "sha256": "c68283b0d80e8703a79df7de3762cabc2a155ab905ee41db6be2b326f081a20e",
+      "bytes": 27842,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BAMBERG_CONTROLS_light.png",
+      "sha256": "46835220577e2c045ec904830bc2c2b366534b87119b41fbbe98fe9b3659de21",
+      "bytes": 26752,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BAMBERG_RANGE_QA.json",
+      "sha256": "2aad886c17709ec27c6a0da8cb218e29f8de381ce13b1750ff6645b4be91e3ff",
+      "bytes": 353356,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BAMBERG_TRANSCRIPTION_QA_2026-10-08.json",
+      "sha256": "4237410e4197153072569558fb6ede8a1a633b380424e00de95ea2f3e1c6381d",
+      "bytes": 2211,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BAMBERG_URL_QA.json",
+      "sha256": "9f8379e6a0e4e84c45608b45223a768d80b7c0cad85108d00b0e3d9279fec3a0",
+      "bytes": 42850,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BAMBERG_WORD_EXTRACTION_2026-10-08.json",
+      "sha256": "08b5b3b443d6cc44ed64c61c75950feb9edad7f262d16e95e8ba9c41197b4362",
+      "bytes": 96429,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BLATT_TEI_CONCORDANCE_2026-10-08.json",
+      "sha256": "e2094e586e8825489dd8fe405bbe77be3bc748dc61649f57825260e79a0ee955",
+      "bytes": 20443,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BOOK_V_VARIANCE_REGISTER_2026-10-08.json",
+      "sha256": "e50852e3624fef5096e0a8f6bb1e56c619e391e12ec71b556e933d65f5582f7a",
+      "bytes": 11574,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BROWSER_PROGRESS.json",
+      "sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\BROWSER_QA.json",
+      "sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\CONTENTS_BROWSER_QA_2026-10-08.json",
+      "sha256": "7f06ec091f1d8d63fd283ad8807d54df1efaa10e3810a5d5d95ee5f4f11690cb",
+      "bytes": 32575,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\CONTENTS_EXPECTATIONS_2026-10-08.json",
+      "sha256": "9fdc685f02614aa12bb0683dc00a20f6079ae017651abe9af5df22aa6be5408c",
+      "bytes": 122735,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\CONTENTS_dark.png",
+      "sha256": "52b885833844e012a3c2a13b0e9fb826683a0e68a02a0c734ed815fe2fdb1e2e",
+      "bytes": 77289,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\CONTENTS_light.png",
+      "sha256": "df933ba38ecf3b97407ff9f70dc8a3160e5472cf946a1f66b04e62108b4b48b4",
+      "bytes": 77213,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\EDITORIAL_DECISIONS_2026-10-08.json",
+      "sha256": "cbc090c5e0487ac05bd9ab1e56890adc01e8ae9240e144bde9965f76756aea73",
+      "bytes": 1316,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\FILE_MANIFEST.json",
+      "sha256": "ff662b0129118598975d1a47a3a7d974f94e503ce8d19cedf7a212510a98ea6f",
+      "bytes": 27460,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\FOLLOWUP_GATE_QA.json",
+      "sha256": "cf4c9bbf3395d3592aafbf897bcbeff2cf2d2af173bd74b8adbc5302633cfc92",
+      "bytes": 145295,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\IMPLEMENTATION_SOURCE.diff",
+      "sha256": "92fd43396370ea2128b9b49b2d8e2dcf44b6c4f6fb76686f230d95b235743b59",
+      "bytes": 14233,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\INTEGRITY_QA_2026-10-08.json",
+      "sha256": "f744f0c30ceec4975053d2bf9ada0bb606cb02bc4d2f151d5edd74c7b149d59a",
+      "bytes": 44761,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\INTERACTION_QA.json",
+      "sha256": "11efeea480c74757bf7ec0eeef0e8068fe6d61e4b075bd55def0db5fc0c9ac57",
+      "bytes": 2742,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\PHASE_B_BASELINE_2026-10-08.json",
+      "sha256": "af81b3ceb0cc85c65199532140224328a849cca1d70f572c6816e7ee1957ef31",
+      "bytes": 46414,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\PROTECTED_SOURCE_GATE_QA.json",
+      "sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\QA.json",
+      "sha256": "bb1ce2b115f0d59ffb0774a288e6451a0dee0ba9a89e18d42daea6117010170e",
+      "bytes": 19332,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\REPORT.md",
+      "sha256": "af0a76371133e13d3ed00fd14d7a5fb19aa73328a2479932e27c1a2d9bcbd6e2",
+      "bytes": 17882,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SAME_NIESE_DIFFERENT_POSITION_QA.json",
+      "sha256": "c7ae48660461bb2053a4987741ea87bf2a079b3fb4f1b2be069fa2fa0fa13cbc",
+      "bytes": 6892,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SOURCE_AUTHORITY.md",
+      "sha256": "356b3e0f8d8d77b7201824c0ee427b917a90bea86781acc93d4b82c5bed90f6e",
+      "bytes": 14417,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SOURCE_TOC_CENSUS.csv",
+      "sha256": "8a88c1c4e49633a29d110df0e395f071df8a2e6b5a82454359391cf858a26383",
+      "bytes": 64011,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SOURCE_TOC_CENSUS.json",
+      "sha256": "b8fbb5cfc72010be0671e15d1c93a47809760fbcb4fdac9f20cba23edb9759ba",
+      "bytes": 946620,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SOURCE_TOC_ELIGIBILITY_2026-10-08.csv",
+      "sha256": "fe56dce82b94e00f4888d205adc8678267948d6d616e83cc31873729f0928faf",
+      "bytes": 288070,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SOURCE_TOC_ELIGIBILITY_2026-10-08.json",
+      "sha256": "2cec7197260777f7d2d3906b14d6d05403f3acf8c384575dc0bcd18f0b38fad4",
+      "bytes": 373549,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\BEFORE.json",
+      "sha256": "26164d78e145670e9e1718cb47161328c4dd074ebbda113ca63d225b68826d4d",
+      "bytes": 55243,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\DECISION.md",
+      "sha256": "bbf31a4a7e628ca0fe1e2213ee2659103c2cfe1b1499ad10f2325fe0be23633d",
+      "bytes": 1783,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\ENTRY_INVENTORY.json",
+      "sha256": "48d015bd9b5c73bc72615c228f71c9c4947e81a022a64057349c12e8f0862ea6",
+      "bytes": 17830,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\FILE_MANIFEST.json",
+      "sha256": "0d6bdf299014523c2c7dbcbb58c42fd327649b15e2dc4e8acfffbcdf3d4a1915",
+      "bytes": 56283,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\INTEGRITY_QA.json",
+      "sha256": "67150c2cab402c41ac1546ade344f354ad8e71c2679baec07c15491112ee69bd",
+      "bytes": 1549,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\QA.json",
+      "sha256": "e3a4d02cd2ea87a90f00224c698a8d508d23779d72e1c571ce924a30678eba3d",
+      "bytes": 7632,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\TRANSCRIPTION_QA.json",
+      "sha256": "cdd9b5dc3a52284ec3651c6fc69008874b282324e23affdca64be51af8d7830e",
+      "bytes": 1252,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\XIV_BROWSER_QA.json",
+      "sha256": "ad3b94ac2132822ab309bea808a53d19643b70ebc2b82d4bb229c1379ef8d803",
+      "bytes": 5116,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\XIV_dark.png",
+      "sha256": "c4e07470338d802d02ed7491c5a1168ceb8d7a8c45cc845b2802991ede5dd6dc",
+      "bytes": 252015,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\XIV_light.png",
+      "sha256": "29d257fcff3e806ccf5e55091d2c673059b1945d8f725f0f2842d97b87d0ef5d",
+      "bytes": 250984,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\finalize_xiv.py",
+      "sha256": "3704946abe359a70ef870dd444c253c618d3919c4f6088eeeaa536d863a57109",
+      "bytes": 17963,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\implement_xiv.py",
+      "sha256": "2c8f606ea1e1fca8ed30c561cf33f0f15bd0c7b459919b1bf114606f8201068b",
+      "bytes": 13374,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\prior-effective-metadata\\CONTENTS_EXPECTATIONS_2026-10-08.json",
+      "sha256": "065007abf4746ecfd0a6f80af008c91ea479b0ee38247c03af80b448c73e02bb",
+      "bytes": 112759,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\prior-effective-metadata\\FILE_MANIFEST.json",
+      "sha256": "fcead0dfdc695044e2133020cf44f8ca4dabe83cb6bd18cce70f764c46043492",
+      "bytes": 17498,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\prior-effective-metadata\\QA.json",
+      "sha256": "e03b1308c2ae0cc3f2b51cb24213f7309643823aa3481081a64605eb6cefb4ed",
+      "bytes": 10299,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\prior-effective-metadata\\REPORT.md",
+      "sha256": "4b37f5e08b751f9155c174cb07890da40b0b6d03bed6d7eb9e29bdf68addd05f",
+      "bytes": 14396,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\prior-effective-metadata\\SOURCE_AUTHORITY.md",
+      "sha256": "b508232182b6c6556a01b7596a72f2caece0b04526728b82e6947137ff718773",
+      "bytes": 12951,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\prior-effective-metadata\\SOURCE_TOC_ELIGIBILITY_2026-10-08.csv",
+      "sha256": "dfc224571983e173ac9aec62d879fe7b55617681242917add84e0649e4809912",
+      "bytes": 19839,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\prior-effective-metadata\\SOURCE_TOC_ELIGIBILITY_2026-10-08.json",
+      "sha256": "6050f1a9cf942d7127d2394fcd801a8d6035ae5b74c57ec8238f79def894a290",
+      "bytes": 368936,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\prior-effective-metadata\\VERIFIED_CONTENTS_REGISTRY_2026-10-08.json",
+      "sha256": "78c4188275f9bb55bb45de2200d1d135678c681f087da08dd8b4d57d94accf4e",
+      "bytes": 13955,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Implementation_2026-10-08\\xiv-contents.test.cjs",
+      "sha256": "502d8327a35cc14d62d67cf16d0fe9c33ba8cefcafa33676790b0be40719e102",
+      "bytes": 11313,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\BAMBERG_NARRATIVE_COMPARISON.csv",
+      "sha256": "a121bff26b595a7533f2204cd1fa8a4f98849892e83784b0045b2f16befbb88e",
+      "bytes": 2689,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\BOUNDARY_PROPOSAL.csv",
+      "sha256": "6f0a104fa9141dad4a729c3013bcec7f4c4c3b358ba05514ebd6fc85a9ee85a7",
+      "bytes": 4793,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\FILE_MANIFEST.json",
+      "sha256": "00b078034b4136eada777898e4674128c2076321aafdf80a0c5aac3443a70cca",
+      "bytes": 88999,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\INTEGRITY_BASELINE.json",
+      "sha256": "b3d2111658ac7a7e9219a03325694423bfc7f68dfb1e33a24aed95e9a0f960cc",
+      "bytes": 88523,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\PROPOSAL.md",
+      "sha256": "d9954c3e70c7b8f0ca0460758a3a9f60301eac42d0aa848e9c315f5ba03dad15",
+      "bytes": 24242,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\QA.json",
+      "sha256": "bc39966aeafe3e69b26e522653bf94ac21b1b4eaa1ea8792f503fd3622f2f4e5",
+      "bytes": 3748,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\SEGMENTATION_PROPOSAL.json",
+      "sha256": "14785b2c07ee7d96e2ec8e765a6fdfec70fcdb03900c58fd6bf4452137a11299",
+      "bytes": 43459,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\SOURCE_CAPITULA.xml.fragment.txt",
+      "sha256": "63b38a9828b11c235ee37e8ff2d1da5546569a01b5d1cc5013eb19711038580e",
+      "bytes": 8909,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\SOURCE_PARAGRAPH.xml.fragment.txt",
+      "sha256": "0284126a6164f2e4fa20deafa45af2ac8b22a394dc8366600703c0836c882725",
+      "bytes": 5733,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\SR-061_Proposal_2026-10-08\\audit_sr061.py",
+      "sha256": "00a705ddb33252e795c68b2f89ceb29d878c882af0f3d9c0cce182483cfcb226",
+      "bytes": 18021,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\VERIFIED_CONTENTS_REGISTRY_2026-10-08.json",
+      "sha256": "ec470fcc5c95df0e0366871646c5d6b29520b516b08dc6a3ce4b07ff1ed22426",
+      "bytes": 14957,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\VI_ALIGNMENT_GATE_QA.json",
+      "sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\WORD_ITALIC_SPANS_2026-10-08.json",
+      "sha256": "e2094e586e8825489dd8fe405bbe77be3bc748dc61649f57825260e79a0ee955",
+      "bytes": 20443,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\XI_MULTISPAN_GATE_QA.json",
+      "sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\bamberg-regression.test.cjs",
+      "sha256": "d4a474554d8b756098b36c9ce067e93a9d77632c9a365fd5dea9f13f3e9dc31e",
+      "bytes": 16069,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\contents.test.cjs",
+      "sha256": "1c9cdacd6487b427dfd69ade1e28ef38a60552ffb582cc860850948c35284157",
+      "bytes": 14189,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\development-diagnostics\\CONTENTS_BROWSER_FAILURE.json",
+      "sha256": "897121233a5a827048f947f46c9b6d86fd85e9697e89bd5d7def6a4d70873575",
+      "bytes": 445,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\finalize_phase_b.py",
+      "sha256": "0e820ab633efb4cb3bcbcf5680bc7ac6ce4dbb81082c8eea40325938a7d39f2c",
+      "bytes": 19470,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\interaction-regression.test.cjs",
+      "sha256": "ad6f9d44a96946b3ff1e9d18b6a74f3607f9dcd4837a7f5d34eeff2ea9d462ea",
+      "bytes": 11592,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\phase-a-accepted-2026-10-07\\FILE_MANIFEST.json",
+      "sha256": "3b6eae214e5f9f5e279e32bfbd9b763dddfdb5d6d11d309d99386d7de2906cfe",
+      "bytes": 76437,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\phase-a-accepted-2026-10-07\\QA.json",
+      "sha256": "2625df88aa26bca3893d55bb1b6bd5564facabdda45a1160e331b3edaedfb79b",
+      "bytes": 3989,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\phase-a-accepted-2026-10-07\\REPORT.md",
+      "sha256": "0df0461ea6783b9441778ec3d938227b9a843b00d3fc23a377f2b0c6294d67a4",
+      "bytes": 5537,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\phase-a-accepted-2026-10-07\\SOURCE_AUTHORITY.md",
+      "sha256": "bd34d15bdaf6ea9f3440927a48613413660cfcb2c26bfe135d488e9a2052ef1e",
+      "bytes": 9442,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\prepare_phase_b.py",
+      "sha256": "d1e5025c2ea6920a71cb62ddaabfb6976bff34e14441a2ea915dc52f99550939",
+      "bytes": 10115,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\regression.test.cjs",
+      "sha256": "ce183e119ce3866d06ffffa14fdde293222d11721cd38fb4cb802880420ade01",
+      "bytes": 45538,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\source_toc_census.py",
+      "sha256": "4586973a00bbcdf080a58bc227be186b4b012e6dd273b4f58ceef916281d0d9a",
+      "bytes": 35187,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\validate_phase_b.py",
+      "sha256": "1efa9b23e0fb0e3b646117aef4219185c94f2d00dd08a3f2b4dc0e57e5d48d41",
+      "bytes": 9558,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Navigation_2026-10-07\\verify_phase_b_integrity.py",
+      "sha256": "2795df737c93f45f7b8befb9462961ef2465fbfdc81c3b544e10545492c80c87",
+      "bytes": 4520,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\BASELINE.json",
+      "sha256": "858be0eeebe314fd01d159a6fb6fa9722784b1c52030d99ace3c02ee3e78c807",
+      "bytes": 120426,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\BEFORE_tei.css",
+      "sha256": "9c25a64aebba4c28c13b5ce0ff60b837fe5b850395702f43762e480193c1a96c",
+      "bytes": 2485,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\BROWSER_QA.json",
+      "sha256": "48c3cc6a4d83c5a8efa78e0882b37015562ec79686f588b779960cbb7d37a672",
+      "bytes": 5450311,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\COMPUTED_FONTS.json",
+      "sha256": "6652abc3dd591a8fee8fdb56c71b8024afd029a70bc403eef7261828220506ae",
+      "bytes": 79381,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\FILE_MANIFEST.json",
+      "sha256": "103b0da8af0d7f50a0454ee005fa6ac1e7012d079a9db7f72c2f2de22ff88669",
+      "bytes": 7220,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\QA.json",
+      "sha256": "01e71b30090347958d220a270f1cf375aa4308d3dd5d1694ee3f322ec8c9bdfa",
+      "bytes": 5058,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\REPORT.md",
+      "sha256": "4902cce801d2404f824f179d587dcc6bf6c9dd014ae178eba203fe3dd4fee688",
+      "bytes": 6556,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-III_dark_after.png",
+      "sha256": "2e02ea2316f2012fce0d4e3f22abf90ae311ae09dc021bcf20100d3ef73a295d",
+      "bytes": 175396,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-III_dark_before.png",
+      "sha256": "54edaf553ff825f42819ae45d25708527bdd7870ca862037da81c89d325679d2",
+      "bytes": 164287,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-III_light_after.png",
+      "sha256": "0f6c10777a1f481521c84e2d179095c876b5932954c788b08a25da27750c32e3",
+      "bytes": 171168,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-III_light_before.png",
+      "sha256": "d9cd6fd4bf4216b62ece2896ce62230392e4aee5f6c14b71e6f698ee33414243",
+      "bytes": 155728,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-V_dark_after.png",
+      "sha256": "011057be67553bd9f7552aee0d3b3782978e75e2a1d4c9d754ec69d21a37a54c",
+      "bytes": 326635,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-V_dark_before.png",
+      "sha256": "4e4f2283067db58c436c04997151f5f08e888d0ce98a28928ad8f8219babbb8f",
+      "bytes": 305550,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-V_light_after.png",
+      "sha256": "85d79e563f3e0075b7a75fd290d922c1f4768e1ead1aac07cfbc3c28583a26af",
+      "bytes": 316595,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-V_light_before.png",
+      "sha256": "a78183640de4594bb4bb071fe77376affaf0fc4eefa575dda9cccd31801b431f",
+      "bytes": 289622,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-XIV_dark_after.png",
+      "sha256": "1f214cce2df4385010e39fcb85f91876d9a64c628d6e26664d566811b8017db1",
+      "bytes": 365224,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-XIV_dark_before.png",
+      "sha256": "4463da846cdeb8b9d21732a513c36309bbfe4009b297f90a5ae909f270f726cc",
+      "bytes": 346472,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-XIV_light_after.png",
+      "sha256": "15586fde019564c912eac973c8cc92136be98b7b9958d53c0ec3cbac0bd4e4ce",
+      "bytes": 350826,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\antiquities-XIV_light_before.png",
+      "sha256": "baaf2afbdd1222dd3b50fb661d35d90b8192c5bf81a108132ec8e620f5caa033",
+      "bytes": 327270,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\bellum-Lodge-I_dark_after.png",
+      "sha256": "46b84017db47ea64ff13204c7849d1d0322f0415a332544b0f4386aa9c702b01",
+      "bytes": 160973,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\bellum-Lodge-I_dark_before.png",
+      "sha256": "d40a1a96d4da33e1b9f9cf7ce5a1e6be3ce8732c237722fc98aa5655f7b973c6",
+      "bytes": 156824,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\bellum-Lodge-I_light_after.png",
+      "sha256": "c9228c052fdb29623c4e04f42a8d2e854ce1690eee7f8b34288a1e30be857dcf",
+      "bytes": 160023,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\bellum-Lodge-I_light_before.png",
+      "sha256": "f66a46e1e55d7c490b40cc85ec1be0aab1916f9bb6c4890a46d353b319f3d8cf",
+      "bytes": 148467,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\development-diagnostics\\INITIAL_GREEK_TEXT_NODE_FIXTURE.json",
+      "sha256": "bffabf4e660662ffa81ea74f96a9c3970cd074cc37610d67f8e1f5a839764856",
+      "bytes": 17352,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\development-diagnostics\\INITIAL_ORDINARY_FULL_PANE_SCREENSHOT.json",
+      "sha256": "daac39a5d2500f50c639d32f537f413dd32e86f10d0143085608278740c341e4",
+      "bytes": 1632735,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\development-diagnostics\\ORDINARY_DIFFERENCE.json",
+      "sha256": "213358c5dc342a28c29eaebf8230afeb3161af3052f38b8ac4cbcf908f41f515",
+      "bytes": 114786,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\development-diagnostics\\ORDINARY_PIXEL_ONLY_FAILURE.json",
+      "sha256": "788b1f560b35c9ef3cd5fe2cf4726eeb50a9d790e0a8457013509212ea4b5529",
+      "bytes": 2815008,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\development-diagnostics\\README.txt",
+      "sha256": "e9f5f655772369e11e6b66517ebce928c91aa29eead3631040f165df6e191cf2",
+      "bytes": 560,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\finalize_qa.py",
+      "sha256": "eb423bdcc737a541bb103706dadb5dab04f39ad97af93d77c0b5825a5336f51f",
+      "bytes": 11873,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\review\\Source_TOC_Typography_2026-10-08\\typography.test.cjs",
+      "sha256": "fd02451de0b03b1751eadaf41906c41083e5b379eb3f72dbc6cdf128e2d0f5e4",
+      "bytes": 12951,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\robots.txt",
+      "sha256": "3594bd69ae74bbb2a5f014331903ed08c59ba280382747fc0cd5d0410adfb65c",
+      "bytes": 123,
+      "role": "unchanged_baseline_production_file"
+    },
+    {
+      "path": "C:\\workspace\\Antiquities-Niese-Batch-08-10\\Niese-PDFs\\Niese (1885) - Antiquities VI-X.pdf",
+      "sha256": "040c1570bc25730fa2c98b2f9ae847646af67919b6a634c2685628601de12b44",
+      "bytes": 85478498,
+      "role": "unchanged_source_PDF"
+    },
+    {
+      "path": "C:\\workspace\\Antiquities-Niese-Batch-08-10\\Niese-PDFs\\Niese (1887) - Antiquities I-V.pdf",
+      "sha256": "7e627e6704ca5e42368d7b86889a8ac021b3415739917d2f557d9df3febf79a2",
+      "bytes": 31570762,
+      "role": "unchanged_source_PDF"
+    },
+    {
+      "path": "C:\\workspace\\Antiquities-Niese-Batch-08-10\\Niese-PDFs\\Niese (1890) - Antiquities XVI-XX.pdf",
+      "sha256": "e193c0a74a12fc82d07358b0351fd3006e4a59e2845adffe21f680393e553c00",
+      "bytes": 27898580,
+      "role": "unchanged_source_PDF"
+    },
+    {
+      "path": "C:\\workspace\\Antiquities-Niese-Batch-08-10\\Niese-PDFs\\Niese (1892) - Antiquities XI-XV.pdf",
+      "sha256": "676dcc1e9c66892d9a48177043a74fd4d63eca9932a405ba4db6d03f7cf313ab",
+      "bytes": 32723214,
+      "role": "unchanged_source_PDF"
+    },
+    {
+      "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\.git\\index",
+      "sha256": "e42e81496c36c4a28d2eb9b79d0230b1ab51dcbc06ddb07936905ea1c569d672",
+      "role": "unchanged_Git_index"
+    }
+  ],
+  "self_hash_policy": "This file is excluded from its own inventory to avoid circular hashing. Its SHA-256 is returned separately in the completion response.",
+  "original_sources_not_copied": "Four Niese PDFs and canonical input files remain at their original read-only paths. Raw official digital responses and page PNGs are retained here.",
+  "exclusions": [
+    "FILE_MANIFEST.json itself only"
+  ]
+}
