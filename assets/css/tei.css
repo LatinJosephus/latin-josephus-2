@@ -82,6 +82,9 @@ tei-num.niese-generated {
 }
 
 /* Source contents are independent paratext, never a generated chapter menu. */
+.source-contents {
+  font-family: var(--lj-font-text);
+}
 .source-contents tei-head,
 .source-contents tei-list,
 .source-contents tei-item,
