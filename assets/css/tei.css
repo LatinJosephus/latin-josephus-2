@@ -80,3 +80,20 @@ tei-num.niese-generated {
   font-size: 0.9em;
   margin-inline: 0.25em;
 }
+
+/* Source contents are independent paratext, never a generated chapter menu. */
+.source-contents tei-head,
+.source-contents tei-list,
+.source-contents tei-item,
+.source-contents tei-trailer,
+.source-contents tei-seg[type="tcp-head"],
+.source-contents tei-seg[type="tcp-list"],
+.source-contents tei-seg[type="tcp-item"] { display: block; }
+.source-contents tei-item,
+.source-contents tei-seg[type="tcp-item"] { margin-block: .6em; }
+.source-contents tei-supplied,
+.source-contents tei-hi[rend="italic"] { font-style: italic; }
+.source-contents tei-supplied::before,
+.source-contents tei-supplied::after { content: none; }
+.source-contents-note,
+.source-contents tei-note[type="editorial"] { display: block; font-size: .9em; margin-block: 1em; }
