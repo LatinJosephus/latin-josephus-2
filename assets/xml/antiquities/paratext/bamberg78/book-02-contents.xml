@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Bamberg Msc.Class.78 Antiquities 2: source capitula</title>
+        <respStmt xml:id="human-editor">
+          <resp>Transcription and import authority</resp>
+          <name>Richard M. Pollard; source import documented in the review packet</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>LatinJosephus source paratext; working integration, 2026-10-08.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="bamberg78">Bamberg, Staatsbibliothek, Msc.Class.78<ref target="https://www.digitale-sammlungen.de/en/view/bsb00140762?page=29">[Image 29, f. 13r, added in right margin: https://www.digitale-sammlungen.de/en/view/bsb00140762?page=29]</ref></bibl>
+          <bibl xml:id="word-transcription">Bamberg Msc. Class. 78 - TOC - bks. 2, 3, 4, 5.docx; human-edited working transcription supplied 8 October 2026. SHA-256 2726e418ce518f964261a98d02e9a94b736a4f584208b6844d606e012eb683c9</bibl>
+          <bibl xml:id="blatt">Franz Blatt, ed., The Latin Josephus (Aarhus, 1958), Antiquities I–V. Citation as recorded in the project’s _pages/about.md. Identified by the human editor as the source of italicized supplements; precise supplement page references were not supplied.</bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="contents" subtype="marginal-capitula" source="#bamberg78 #word-transcription" xml:id="bamberg78-ant-02-contents">
+        <head>Incipiunt capitula libri II </head>
+        <list type="capitula">
+          <item n="I">I Quomodo esau et iacob isaac filii habitacula diuiserunt et esau quidem idumaeam tenuit, iacob autem chananeam.</item>
+          <item n="II"><hi rend="italic" xml:id="bamberg78-ant-02-p4-i1"> </hi>II Quomodo Ioseph iunio<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-02-p4-i2">r</supplied> filiorum iacob somniis eis demonstrantibus felicit<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-02-p4-i3">a</supplied>tem futuram inuidiam sustinuit fratrum.</item>
+          <item n="III">III Quomodo idem ipse in aegyptum uenundatus a fratribus propter odium quod habebant factus factusque insignis et clarus ibi fratres habuit sibi subiectos.</item>
+        </list>
+        <note type="editorial" resp="#human-editor">Italicized text has been supplied from Blatt’s edition where trimming of the manuscript margins has removed words.</note>
+      </div>
+    </body>
+  </text>
+</TEI>

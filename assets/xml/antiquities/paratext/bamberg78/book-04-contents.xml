@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Bamberg Msc.Class.78 Antiquities 4: source capitula</title>
+        <respStmt xml:id="human-editor">
+          <resp>Transcription and import authority</resp>
+          <name>Richard M. Pollard; source import documented in the review packet</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>LatinJosephus source paratext; working integration, 2026-10-08.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="bamberg78">Bamberg, Staatsbibliothek, Msc.Class.78<ref target="https://www.digitale-sammlungen.de/en/view/bsb00140762?page=79">[Image 79, f. 38r , added in right margin: https://www.digitale-sammlungen.de/en/view/bsb00140762?page=79]</ref></bibl>
+          <bibl xml:id="word-transcription">Bamberg Msc. Class. 78 - TOC - bks. 2, 3, 4, 5.docx; human-edited working transcription supplied 8 October 2026. SHA-256 2726e418ce518f964261a98d02e9a94b736a4f584208b6844d606e012eb683c9</bibl>
+          <bibl xml:id="blatt">Franz Blatt, ed., The Latin Josephus (Aarhus, 1958), Antiquities I–V. Citation as recorded in the project’s _pages/about.md. Identified by the human editor as the source of italicized supplements; precise supplement page references were not supplied.</bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="contents" subtype="marginal-capitula" source="#bamberg78 #word-transcription" xml:id="bamberg78-ant-04-contents">
+        <head>Haec sunt In qvarto libro ioseppi antiquitatis.</head>
+        <head>Incipiunt Capitula Libri</head>
+        <list type="capitula">
+          <item n="I">I Bellum hebraeor<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p26-i1">um</supplied> <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p26-i2">absque</supplied> notitia \m/oseos cont<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p26-i3">ra cha</supplied>naneos gestum atque <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p26-i4">deuictio</supplied>.</item>
+          <item n="II">II Seditio eorum et <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p27-i1">plebis</supplied> contra mosen e<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p27-i2">t fratrem</supplied> eius de sacerdo<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p27-i3">tio</supplied>.</item>
+          <item n="III">III Ea quae prouene<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p28-i1">runt</supplied> hebraeis in he<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p28-i2">remo </supplied>annis octo et t<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p28-i3">riginta</supplied>.</item>
+          <item n="IIII">IIII Quemadmodum <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p29-i1">cum sichem et og</supplied> haec amorraeor<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p29-i2">um</supplied> <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p29-i3">reges</supplied> uicisset moses et <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p29-i4">eorum</supplied> exercitus perem<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p29-i5">isset</supplied>, diuisit regionem <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p29-i6">eorum</supplied> duabus et medie <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p29-i7">tribubus</supplied> hebraeorum.</item>
+          <item n="V">V Vita moseos &amp; <supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p30-i1">quem</supplied>admodum ex ho<supplied reason="lost" source="#blatt" resp="#human-editor" rend="italic" xml:id="bamberg78-ant-04-p30-i2">minibus</supplied> [...]si est ablatus.</item>
+        </list>
+        <trailer>EXPLICIT CAPITULA.</trailer>
+        <note type="editorial" resp="#human-editor">Italicized text has been supplied from Blatt’s edition where trimming of the manuscript margins has removed words.</note>
+      </div>
+    </body>
+  </text>
+</TEI>
