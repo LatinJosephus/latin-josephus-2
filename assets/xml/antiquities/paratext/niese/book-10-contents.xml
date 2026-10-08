@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Josephus, Antiquities X: Niese printed Greek capitula — proposed companion</title>
+        <respStmt xml:id="audit">
+          <resp>Digital extraction, direct visual print collation, and preparation of this candidate transcription</resp>
+          <name>LatinJosephus Greek Capitula Audit, 8 October 2026</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>External audit proposal only, 2026-10-08. PRINT_VERIFIED; not installed in LatinJosephus. No correspondence with narrative navigation boundaries is asserted.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="niese">Flavii Iosephi Opera, edidit et apparatu critico instruxit Benedictus Niese. Vol. II: Antiquitatum Iudaicarum libri VI–X. Berolini: apud Weidmannos, 1885. <biblScope unit="page">328, 329, 330</biblScope></bibl>
+          <bibl xml:id="scan">Scan: C:\workspace\Antiquities-Niese-Batch-08-10\Niese-PDFs\Niese (1885) - Antiquities VI-X.pdf; SHA-256 040c1570bc25730fa2c98b2f9ae847646af67919b6a634c2685628601de12b44; PDF pages 336, 337, 338.</bibl>
+          <bibl xml:id="perseus-current">Perseus current CTS edition urn:cts:greekLit:tlg0526.tlg001.perseus-grc2; official repository commit 01b725d835e6e733062ffd79e0efdbae1ba06e5c. <ref target="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/01b725d835e6e733062ffd79e0efdbae1ba06e5c/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml">Pinned XML</ref></bibl>
+          <bibl xml:id="perseus-legacy">Legacy Hopper text Perseus:text:1999.01.0145; whole-book XML export independently retained. <ref target="https://www.perseus.tufts.edu/hopper/xmlchunk?doc=Perseus%3Atext%3A1999.01.0145%3Abook%3D10">Book XML</ref></bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <p>Printed theta type is represented as ϑ (U+03D1), numeral-six glyph as ϛ (U+03DB), superscript numeral stroke as ʹ (U+0374), Greek apostrophe as ᾽ (U+1FBD). No NFC/NFKC rewrite of elected output. Lexical final sigma is retained. Exact type shapes and accent placement remain recoverable in images.</p>
+      <p>Unletterspace the spaced heading for readable transcription, join ordinary line-wrap hyphenation, retain one item per printed label. Significant cross-page word in X.6 and continuous editorial bracket group in II are documented. No source words, labels, ordering or punctuation are silently corrected.</p>
+      <p>Literal square brackets reproduce Niese’s editorial printing. They are neither manuscript-loss supplements nor permission to strike out the enclosed text. Digital del markup is documented separately in the collation. Entry identifiers refer only to paratext items, not to narrative coordinates.</p>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="grc">Ancient Greek</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-10-08" who="#audit">Print-verified candidate prepared from the named source scans; raw digital readings and all collation differences retained in the external audit packet.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text xml:lang="grc">
+    <body>
+      <div type="contents" subtype="printed-capitula" source="#niese" xml:id="niese-ant-10-contents">
+        <head type="book-label">X.</head>
+        <head type="contents-heading">Τάδε ἔνεστιν ἐν τῇ δεκάτῃ βίβλῳ τῶν Ἰωσήπου ἱστοριῶν τῆς Ἰουδαϊκῆς ἀρχαιολογίας.</head>
+        <list type="capitula">
+          <item n="αʹ." xml:id="niese-ant-10-capitulum-01"><label>αʹ.</label> Στρατεία τοῦ Ἀσσυρίων βασιλέως Σεναχειρίβου ἐπὶ Ἱεροσόλυμα καὶ πολιορκία τοῦ βασιλέως αὐτῶν Ἐζεκίου.</item>
+          <item n="βʹ." xml:id="niese-ant-10-capitulum-02"><label>βʹ.</label> ὡς ἐφϑάρη τὸ τῶν Ἀσσυρίων στράτευμα λοιμικῶς ἐν μιᾷ νυκτὶ καὶ ὁ βασιλεὺς αὐτῶν ἀναζεύξας οἴκαδε ἐξ ἐπιβουλῆς τῶν τέκνων ἀπέϑανεν.</item>
+          <item n="γʹ." xml:id="niese-ant-10-capitulum-03"><label>γʹ.</label> ὡς τὸν μεταξὺ χρόνον μετ᾽ εἰρήνης Ἐζεκίας διαγαγὼν ἐτελεύτησε διάδοχον τῆς βασιλείας Μανασσῆν καταλιπών.</item>
+          <item n="δʹ." xml:id="niese-ant-10-capitulum-04"><label>δʹ.</label> ὅτι στρατεύσαντες ἐπ᾽ αὐτὸν οἱ Χαλδαίων καὶ Βαβυλωνίων βασιλεῖς καὶ νικήσαντες αὐτὸν αἰχμάλωτον λαβόντες ἤγαγον εἰς Βαβυλῶνα, καὶ κατασχόντες αὐτόϑι πολὺν χρόνον εἰς τὴν [αὐτὴν] βασιλείαν πάλιν ἀπέλυσαν.</item>
+          <item n="εʹ." xml:id="niese-ant-10-capitulum-05"><label>εʹ.</label> ὡς τὸν Αἰγυπτίων βασιλέα Νεχαῶνα στρατευσάμενον ἐπὶ Βαβυλωνίους καὶ ποιούμενον διὰ τῆς Ἰουδαίας τὴν ὁδὸν κωλύων ὁ βασιλεὺς Ἰωσίας ὑπαντᾷ· μάχης δὲ γενομένης τραυματίας κομισϑεὶς εἰς Ἱεροσόλυμα τελευτᾷ καὶ τὸν υἱὸν αὐτοῦ Ἰωάζην ἀπέδειξαν οἱ Ἱεροσολυμῖται βασιλέα.</item>
+          <item n="ϛʹ." xml:id="niese-ant-10-capitulum-06"><label>ϛʹ.</label> ὡς συμβαλὼν ὁ Νεχαὼς τῷ τῶν Βαβυλωνίων βασιλεῖ κατὰ τὸν Εὐφράτην ποταμὸν καὶ ὑποστρέφων εἰς Αἴγυπτον ἧκεν εἰς Ἱεροσόλυμα καὶ τὸν μὲν Ἰωάζην ἤγαγεν εἰς Αἴγυπτον, τὸν δ᾽ ἀδελφὸν αὐτοῦ Ἰωάκειμον ἀνέδειξε βασιλέα τῶν Ἱεροσολυμιτῶν.</item>
+          <item n="ζʹ." xml:id="niese-ant-10-capitulum-07"><label>ζʹ.</label> Ναβουχοδονοσάρου τοῦ τῶν Βαβυλωνίων βασιλέως στρατεία εἰς Συρίαν, καὶ ὡς πᾶσαν αὐτὴν καταστρεψάμενος ἄχρι τῶν ὅρων τῶν Αἰγυπτίων ἀνέβη εἰς Ἱεροσόλυμα καὶ τὸν βασιλέα αὐτῶν Ἰωάκειμον φίλον ἠνάγκασεν εἶναι καὶ σύμμαχον.</item>
+          <item n="ηʹ." xml:id="niese-ant-10-capitulum-08"><label>ηʹ.</label> ὡς μετὰ τὴν ἀναχώρησιν τὴν τοῦ Βαβυλωνίου πάλιν ὁ Ἰωάκειμος ἐφρόνησε τὰ τῶν Αἰγυπτίων καὶ στρατεύσας ἐπ᾽ αὐτὸν ὁ Ναβουχοδονόσαρος καὶ πολιορκήσας τῆς πόλεως παραδούσης ἑαυτὴν μετὰ χρόνον τὸν μὲν Ἰωάκειμον ἀπέκτεινεν, Ἰωάκειμον δὲ τὸν υἱὸν αὐτοῦ κατέστησε βασιλέα· καὶ ὡς πολλὰ χρήματα λαβὼν ἐκ τῶν Ἱεροσολύμων εὐϑέως εἰς Συρίαν ὑπέστρεψεν.</item>
+          <item n="ϑʹ." xml:id="niese-ant-10-capitulum-09"><label>ϑʹ.</label> ὅτι μετανοήσας ἐπὶ τῷ τὸν Ἰωάκειμον ποιῆσαι βασιλέα καὶ στρατεύσας ἐπὶ Ἱεροσόλυμα ἐγκρατὴς τοῦ Ἰωακείμου γίνεται παραδόντος αὐτὸν μετὰ τῆς μητρὸς καὶ τῶν φίλων, ὅπως τ᾽ ἔλαβε πολλοὺς αἰχμαλώτους ὁ Βαβυλώνιος καὶ ἀναϑήματα βαστάσας ἐκ τοῦ ἱεροῦ ἀνέστρεψεν εἰς Βαβυλῶνα τὸν Ἰεχονίου ϑεῖον Σαχχίαν τῶν Ἱεροσολυμιτῶν βασιλέα καταστήσας.</item>
+          <item n="ιʹ." xml:id="niese-ant-10-capitulum-10"><label>ιʹ.</label> ὡς καὶ τοῦτον ἀκούσας βούλεσϑαι πρὸς τοὺς Αἰγυπτίους συμμαχίαν ποιήσασϑαι καὶ φιλίαν στρατεύσας ἐπὶ τὰ Ἱεροσόλυμα κατὰ κράτος αἱρεῖ τῇ πολιορκίᾳ καὶ τὸν ναὸν ἐμπρήσας τὸν τῶν Ἱεροσολυμιτῶν δῆμον καὶ Σεδεκίαν μετῴκισεν εἰς Βαβυλῶνα.</item>
+          <item n="ιαʹ." xml:id="niese-ant-10-capitulum-11"><label>ιαʹ.</label> ὡς Ναβουχοδονόσαρος τελευτήσας διάδοχον καταλείπει τῆς βασιλείας τὸν υἱόν, καὶ ὡς καταλύεται ἡ τούτων ἀρχὴ ὑπὸ Κύρου τοῦ τῶν Περσῶν βασιλέως.</item>
+          <item n="ιβʹ." xml:id="niese-ant-10-capitulum-12"><label>ιβʹ.</label> ὅσα συνέβη τοῖς Ἰουδαίοις κατὰ τοῦτον τὸν καιρὸν παρὰ τοῖς Βαβυλωνίοις.</item>
+        </list>
+        <trailer>περιέχει ἡ βίβλος χρόνον ἐτῶν ρπβʹ μῆνας ϛʹ ἡμέρας ιʹ.</trailer>
+      </div>
+    </body>
+  </text>
+</TEI>

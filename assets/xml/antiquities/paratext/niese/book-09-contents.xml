@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Josephus, Antiquities IX: Niese printed Greek capitula — proposed companion</title>
+        <respStmt xml:id="audit">
+          <resp>Digital extraction, direct visual print collation, and preparation of this candidate transcription</resp>
+          <name>LatinJosephus Greek Capitula Audit, 8 October 2026</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>External audit proposal only, 2026-10-08. PRINT_VERIFIED; not installed in LatinJosephus. No correspondence with narrative navigation boundaries is asserted.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="niese">Flavii Iosephi Opera, edidit et apparatu critico instruxit Benedictus Niese. Vol. II: Antiquitatum Iudaicarum libri VI–X. Berolini: apud Weidmannos, 1885. <biblScope unit="page">267, 268</biblScope></bibl>
+          <bibl xml:id="scan">Scan: C:\workspace\Antiquities-Niese-Batch-08-10\Niese-PDFs\Niese (1885) - Antiquities VI-X.pdf; SHA-256 040c1570bc25730fa2c98b2f9ae847646af67919b6a634c2685628601de12b44; PDF pages 275, 276.</bibl>
+          <bibl xml:id="perseus-current">Perseus current CTS edition urn:cts:greekLit:tlg0526.tlg001.perseus-grc2; official repository commit 01b725d835e6e733062ffd79e0efdbae1ba06e5c. <ref target="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/01b725d835e6e733062ffd79e0efdbae1ba06e5c/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml">Pinned XML</ref></bibl>
+          <bibl xml:id="perseus-legacy">Legacy Hopper text Perseus:text:1999.01.0145; whole-book XML export independently retained. <ref target="https://www.perseus.tufts.edu/hopper/xmlchunk?doc=Perseus%3Atext%3A1999.01.0145%3Abook%3D9">Book XML</ref></bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <p>Printed theta type is represented as ϑ (U+03D1), numeral-six glyph as ϛ (U+03DB), superscript numeral stroke as ʹ (U+0374), Greek apostrophe as ᾽ (U+1FBD). No NFC/NFKC rewrite of elected output. Lexical final sigma is retained. Exact type shapes and accent placement remain recoverable in images.</p>
+      <p>Unletterspace the spaced heading for readable transcription, join ordinary line-wrap hyphenation, retain one item per printed label. Significant cross-page word in X.6 and continuous editorial bracket group in II are documented. No source words, labels, ordering or punctuation are silently corrected.</p>
+      <p>Literal square brackets reproduce Niese’s editorial printing. They are neither manuscript-loss supplements nor permission to strike out the enclosed text. Digital del markup is documented separately in the collation. Entry identifiers refer only to paratext items, not to narrative coordinates.</p>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="grc">Ancient Greek</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-10-08" who="#audit">Print-verified candidate prepared from the named source scans; raw digital readings and all collation differences retained in the external audit packet.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text xml:lang="grc">
+    <body>
+      <div type="contents" subtype="printed-capitula" source="#niese" xml:id="niese-ant-09-contents">
+        <head type="book-label">IX.</head>
+        <head type="contents-heading">Τάδε ἔνεστιν ἐν τῇ ἐνάτῃ τῶν Ἰωσήπου ἱστοριῶν τῆς Ἰουδαϊκῆς ἀρχαιολογίας.</head>
+        <list type="capitula">
+          <item n="αʹ." xml:id="niese-ant-09-capitulum-01"><label>αʹ.</label> Ὡς στρατευσάμενος ὁ Ἀχάβου παῖς Ἰώραμος ἐπὶ Μωαβίτας ἐκράτησεν αὐτῶν.</item>
+          <item n="βʹ." xml:id="niese-ant-09-capitulum-02"><label>βʹ.</label> ὡς ὁ ὁμώνυμος αὐτῷ Ἰώραμος βασιλεύων τῶν Ἱεροσολυμιτῶν τὴν ἀρχὴν πᾶσαν λαβὼν τούς τε ἀδελφοὺς καὶ τοὺς πατρῴους φίλους ἀπέκτεινεν.</item>
+          <item n="γʹ." xml:id="niese-ant-09-capitulum-03"><label>γʹ.</label> ὅτι τῆς Ἰδουμαίας ἀποστάσης καὶ στρατευσάντων ἐπ᾽ αὐτὸν Ἀράβων ἥ τε δύναμις αὐτοῦ πᾶσα διεφϑάρη καὶ οἱ παῖδες αὐτοῦ πάρεξ ἑνὸς ὄντος ἔτι νηπίου καὶ πρὸς τούτοις αὐτὸς ἀσεβὴς γενόμενος κακῶς τὸν βίον κατέστρεψεν.</item>
+          <item n="δʹ." xml:id="niese-ant-09-capitulum-04"><label>δʹ.</label> στρατεία τοῦ Σύρων καὶ Δαμασκοῦ βασιλέως ἐπὶ τὸν τῶν Ἰσραηλιτῶν βασιλέα Ἰώραμον καὶ πῶς πολιορκηϑεὶς οὗτος ἐν Σαμαρείᾳ παραδόξως τὸν κίνδυνον διέφυγεν.</item>
+          <item n="εʹ." xml:id="niese-ant-09-capitulum-05"><label>εʹ.</label> ὡς αὐτὸς Ἰώραμος ἀπέϑανεν ὑπὸ Ἰηοῦ ἀναιρεϑεὶς τοῦ ἱππάρχου καὶ ἡ γενεὰ αὐτοῦ καὶ ὁ τῶν Ἱεροσολύμων βασιλεὺς Ὀχοζίας.</item>
+          <item n="ϛʹ." xml:id="niese-ant-09-capitulum-06"><label>ϛʹ.</label> ὅτι μετὰ τὴν τούτου τελευτὴν ὁ Ἰηοῦς ἐβασίλευσε τῶν Ἰσραηλιτῶν ἐν Σαμαρείᾳ διατρίβων καὶ οἱ παῖδες αὐτοῦ ἐπὶ γενεὰς τέσσαρας.</item>
+          <item n="ζʹ." xml:id="niese-ant-09-capitulum-07"><label>ζʹ.</label> ὡς γυνή τις Ὀϑλία τοὔνομα τῶν Ἱεροσολυμιτῶν ἐβασίλευσεν ἐπὶ ἔτη πέντε καὶ ἀνελὼν αὐτὴν ὁ ἀρχιερεὺς Ἰώδας τὸν Ὀχοζίου παῖδα Ἰωάσην ἀπέδειξε βασιλέα.</item>
+          <item n="ηʹ." xml:id="niese-ant-09-capitulum-08"><label>ηʹ.</label> Ἀζαήλου τοῦ Δαμασκηνῶν βασιλέως ἐπὶ τοὺς Ἰσραηλίτας στρατεία καὶ ὡς πολλὰ κακὰ τήν τε χώραν αὐτῶν διαϑεὶς καὶ τὴν Σαμαρέων πόλιν ὀλίγῳ πάλιν ὕστερον χρόνῳ στρατεύσας ἐπὶ τοὺς Ἱεροσολυμίτας καὶ πολλὰ χρήματα λαβὼν παρὰ τοῦ βασιλέως αὐτῶν εἰς Δαμασκὸν ἀνέζευξεν.</item>
+          <item n="ϑʹ." xml:id="niese-ant-09-capitulum-09"><label>ϑʹ.</label> ὡς Ἀμασίας ὁ τῶν Ἱεροσολυμιτῶν βασιλεὺς στρατευσάμενος ἐπὶ Ἰδουμαίους καὶ Ἀμαληκίτας ἐνίκησεν.</item>
+          <item n="ιʹ." xml:id="niese-ant-09-capitulum-10"><label>ιʹ.</label> ὡς αὐτὸς οὗτος πολεμῶν πρὸς τὸν Ἰσραηλιτῶν βασιλέα Ἰώασον ἡττᾶται μέν, ληφϑεὶς δὲ αἰχμάλωτος καὶ πολλὰ χρήματα δοὺς ἀπελύϑη πάλιν εἰς τὴν ἑαυτοῦ βασιλείαν καὶ ὡς ὁ παῖς αὐτοῦ Ὀζίας τὰ πέριξ ἔϑνη ἐχειρώσατο.</item>
+          <item n="ιαʹ." xml:id="niese-ant-09-capitulum-11"><label>ιαʹ.</label> στρατεία τοῦ τῶν Ἰσραηλιτῶν βασιλέως Ἱεροβάμου ἐπὶ Συρίαν καὶ νίκη.</item>
+          <item n="ιβʹ." xml:id="niese-ant-09-capitulum-12"><label>ιβʹ.</label> ὡς ὁ τῶν Ἀσσυρίων βασιλεὺς στρατευσάμενος ἐπὶ Σαμάρειαν καὶ πολλὰ χρήματα παρὰ Φακέα τοῦ βασιλέως αὐτῶν εἰσπραξάμενος εἰς τὴν οἰκείαν ὑπέστρεψεν.</item>
+          <item n="ιγʹ." xml:id="niese-ant-09-capitulum-13"><label>ιγʹ.</label> ὅτι στρατευσάμενος Ῥαασσεὶν ὁ Δαμασκοῦ βασιλεὺς ἐπὶ Ἱεροσολυμίτας ἠνάγκασεν Ἀχάζην τὸν βασιλέα πέμψαντα χρήματα πολλὰ πρὸς τὸν βασιλέα Ἀσσυρίων πεῖσαι τούτοις αὐτὸν ἐπὶ Δαμασκὸν στρατεύσασϑαι.</item>
+          <item n="ιδʹ." xml:id="niese-ant-09-capitulum-14"><label>ιδʹ.</label> ὡς κατὰ κράτος εἷλεν ὁ τῶν Ἀσσυρίων βασιλεὺς Δαμασκὸν καὶ διέφϑειρε μὲν αὐτῶν τὸν βασιλέα, τοὺς δὲ ἀνϑρώπους ἀναστήσας εἰς Μηδίαν ἕτερα ἔϑνη κατῴκισεν ἐν Δαμασκῷ.</item>
+          <item n="ιεʹ." xml:id="niese-ant-09-capitulum-15"><label>ιεʹ.</label> ὡς Σαλμανάσαρ ὁ τῶν Ἀσσυρίων βασιλεὺς στρατευσάμενος ἐπὶ Σαμάρειαν καὶ πέντε πολιορκήσας ἔτεσιν ἐν αὐτῇ τὸν τῶν Ἰσραηλιτῶν βασιλέα Ὠσῆν παραστησάμενος τὴν πόλιν ἀπέκτεινεν,</item>
+          <item n="ιϛʹ." xml:id="niese-ant-09-capitulum-16"><label>ιϛʹ.</label> καὶ ὡς ὁ Ἀσσύριος τὰς δέκα τῶν Ἰσραηλιτῶν φυλὰς εἰς τὴν Μηδίαν κατοικίσας ἐκ τῆς Περσίδος τὸ τῶν Χουϑαίων ἔϑνος εἰς τὴν ἐκείνων μετήγαγε χώραν, οὓς Ἕλληνες Σαμαρεῖς καλοῦσιν.</item>
+        </list>
+        <trailer>περιέχει ἡ βίβλος χρόνον ἐτῶν ἑκατὸν καὶ πεντήκοντα καὶ ζʹ μηνῶν.</trailer>
+      </div>
+    </body>
+  </text>
+</TEI>

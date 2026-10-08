@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Josephus, Antiquities IV: Niese printed Greek capitula — proposed companion</title>
+        <respStmt xml:id="audit">
+          <resp>Digital extraction, direct visual print collation, and preparation of this candidate transcription</resp>
+          <name>LatinJosephus Greek Capitula Audit, 8 October 2026</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>External audit proposal only, 2026-10-08. PRINT_VERIFIED; not installed in LatinJosephus. No correspondence with narrative navigation boundaries is asserted.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="niese">Flavii Iosephi Opera, edidit et apparatu critico instruxit Benedictus Niese. Vol. I: Antiquitatum Iudaicarum libri I–V. Berolini: apud Weidmannos, 1887. <biblScope unit="page">223</biblScope></bibl>
+          <bibl xml:id="scan">Scan: C:\workspace\Antiquities-Niese-Batch-08-10\Niese-PDFs\Niese (1887) - Antiquities I-V.pdf; SHA-256 7e627e6704ca5e42368d7b86889a8ac021b3415739917d2f557d9df3febf79a2; PDF pages 313.</bibl>
+          <bibl xml:id="perseus-current">Perseus current CTS edition urn:cts:greekLit:tlg0526.tlg001.perseus-grc2; official repository commit 01b725d835e6e733062ffd79e0efdbae1ba06e5c. <ref target="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/01b725d835e6e733062ffd79e0efdbae1ba06e5c/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml">Pinned XML</ref></bibl>
+          <bibl xml:id="perseus-legacy">Legacy Hopper text Perseus:text:1999.01.0145; whole-book XML export independently retained. <ref target="https://www.perseus.tufts.edu/hopper/xmlchunk?doc=Perseus%3Atext%3A1999.01.0145%3Abook%3D4">Book XML</ref></bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <p>Printed theta type is represented as ϑ (U+03D1), numeral-six glyph as ϛ (U+03DB), superscript numeral stroke as ʹ (U+0374), Greek apostrophe as ᾽ (U+1FBD). No NFC/NFKC rewrite of elected output. Lexical final sigma is retained. Exact type shapes and accent placement remain recoverable in images.</p>
+      <p>Unletterspace the spaced heading for readable transcription, join ordinary line-wrap hyphenation, retain one item per printed label. Significant cross-page word in X.6 and continuous editorial bracket group in II are documented. No source words, labels, ordering or punctuation are silently corrected.</p>
+      <p>Literal square brackets reproduce Niese’s editorial printing. They are neither manuscript-loss supplements nor permission to strike out the enclosed text. Digital del markup is documented separately in the collation. Entry identifiers refer only to paratext items, not to narrative coordinates.</p>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="grc">Ancient Greek</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-10-08" who="#audit">Print-verified candidate prepared from the named source scans; raw digital readings and all collation differences retained in the external audit packet.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text xml:lang="grc">
+    <body>
+      <div type="contents" subtype="printed-capitula" source="#niese" xml:id="niese-ant-04-contents">
+        <head type="book-label">IV.</head>
+        <head type="contents-heading">Τάδε ἔνεστιν ἐν τῇ τετάρτῃ τῶν Ἰωσήπου ἱστοριῶν τῆς Ἰουδαϊκῆς ἀρχαιολογίας.</head>
+        <list type="capitula">
+          <item n="αʹ." xml:id="niese-ant-04-capitulum-01"><label>αʹ.</label> Ἑβραίων δίχα τῆς Μωυσέος γνώμης μάχη πρὸς Χαναναίους καὶ ἧττα.</item>
+          <item n="βʹ." xml:id="niese-ant-04-capitulum-02"><label>βʹ.</label> στάσις Κορέου καὶ τοῦ πλήϑους πρὸς Μωυσῆν καὶ τὸν ἀδελφὸν αὐτοῦ περὶ τῆς ἱερωσύνης.</item>
+          <item n="γʹ." xml:id="niese-ant-04-capitulum-03"><label>γʹ.</label> τὰ συμβάντα τοῖς Ἑβραίοις ἐν τῇ ἐρήμῳ ἔτεσιν ὀκτὼ καὶ τριάκοντα.</item>
+          <item n="δʹ." xml:id="niese-ant-04-capitulum-04"><label>δʹ.</label> ὡς Σηχῶνα καὶ Ὤγην τοὺς Ἀμορραίων βασιλεῖς νικήσας Μωυσῆς καὶ τὴν στρατιὰν ἅπασαν αὐτῶν διαφϑείρας κατεκλήρωσεν αὐτῶν τὴν χώραν δυσὶ φυλαῖς καὶ ἡμισείᾳ τῶν Ἑβραίων.</item>
+          <item n="εʹ." xml:id="niese-ant-04-capitulum-05"><label>εʹ.</label> Μωυσέος πολιτεία καὶ πῶς ἐξ ἀνϑρώπων ἠφανίσϑη.</item>
+        </list>
+        <trailer>περιέχει ἡ βίβλος αὕτη χρόνον ἐτῶν τριάκοντα καὶ ὀκτώ.</trailer>
+      </div>
+    </body>
+  </text>
+</TEI>

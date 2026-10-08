@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Josephus, Antiquities VIII: Niese printed Greek capitula — proposed companion</title>
+        <respStmt xml:id="audit">
+          <resp>Digital extraction, direct visual print collation, and preparation of this candidate transcription</resp>
+          <name>LatinJosephus Greek Capitula Audit, 8 October 2026</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>External audit proposal only, 2026-10-08. PRINT_VERIFIED; not installed in LatinJosephus. No correspondence with narrative navigation boundaries is asserted.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="niese">Flavii Iosephi Opera, edidit et apparatu critico instruxit Benedictus Niese. Vol. II: Antiquitatum Iudaicarum libri VI–X. Berolini: apud Weidmannos, 1885. <biblScope unit="page">176, 177</biblScope></bibl>
+          <bibl xml:id="scan">Scan: C:\workspace\Antiquities-Niese-Batch-08-10\Niese-PDFs\Niese (1885) - Antiquities VI-X.pdf; SHA-256 040c1570bc25730fa2c98b2f9ae847646af67919b6a634c2685628601de12b44; PDF pages 184, 185.</bibl>
+          <bibl xml:id="perseus-current">Perseus current CTS edition urn:cts:greekLit:tlg0526.tlg001.perseus-grc2; official repository commit 01b725d835e6e733062ffd79e0efdbae1ba06e5c. <ref target="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/01b725d835e6e733062ffd79e0efdbae1ba06e5c/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml">Pinned XML</ref></bibl>
+          <bibl xml:id="perseus-legacy">Legacy Hopper text Perseus:text:1999.01.0145; whole-book XML export independently retained. <ref target="https://www.perseus.tufts.edu/hopper/xmlchunk?doc=Perseus%3Atext%3A1999.01.0145%3Abook%3D8">Book XML</ref></bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <p>Printed theta type is represented as ϑ (U+03D1), numeral-six glyph as ϛ (U+03DB), superscript numeral stroke as ʹ (U+0374), Greek apostrophe as ᾽ (U+1FBD). No NFC/NFKC rewrite of elected output. Lexical final sigma is retained. Exact type shapes and accent placement remain recoverable in images.</p>
+      <p>Unletterspace the spaced heading for readable transcription, join ordinary line-wrap hyphenation, retain one item per printed label. Significant cross-page word in X.6 and continuous editorial bracket group in II are documented. No source words, labels, ordering or punctuation are silently corrected.</p>
+      <p>Literal square brackets reproduce Niese’s editorial printing. They are neither manuscript-loss supplements nor permission to strike out the enclosed text. Digital del markup is documented separately in the collation. Entry identifiers refer only to paratext items, not to narrative coordinates.</p>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="grc">Ancient Greek</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-10-08" who="#audit">Print-verified candidate prepared from the named source scans; raw digital readings and all collation differences retained in the external audit packet.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text xml:lang="grc">
+    <body>
+      <div type="contents" subtype="printed-capitula" source="#niese" xml:id="niese-ant-08-contents">
+        <head type="book-label">VIII.</head>
+        <head type="contents-heading">Τάδε ἔνεστιν ἐν τῇ ὀγδόῃ τῶν Ἰωσήπου ἱστοριῶν τῆς Ἰουδαϊκῆς ἀρχαιολογίας.</head>
+        <list type="capitula">
+          <item n="αʹ." xml:id="niese-ant-08-capitulum-01"><label>αʹ.</label> Ὡς Σολόμων τὴν βασιλείαν παραλαβὼν τοὺς ἐχϑροὺς ἀνεῖλε.</item>
+          <item n="βʹ." xml:id="niese-ant-08-capitulum-02"><label>βʹ.</label> περὶ τῆς σοφίας αὐτοῦ καὶ συνέσεως καὶ τοῦ πλούτου.</item>
+          <item n="γʹ." xml:id="niese-ant-08-capitulum-03"><label>γʹ.</label> ὅτι πρῶτος τὸν ἐν Ἱεροσολύμοις ναὸν ᾠκοδόμησεν.</item>
+          <item n="δʹ." xml:id="niese-ant-08-capitulum-04"><label>δʹ.</label> ὡς τελευτήσαντος Σολόμωνος ὁ λαὸς ἀποστὰς τοῦ παιδὸς αὐτοῦ Ῥοβοάμου τῶν δέκα φυλῶν τῶν ὑπηκόων τινὰ Ἱεροβόαμον ἀπέδειξε βασιλέα, τῶν δὲ δύο φυλῶν ὁ υἱὸς αὐτοῦ ἐβασίλευσεν.</item>
+          <item n="εʹ." xml:id="niese-ant-08-capitulum-05"><label>εʹ.</label> ὡς Ἴσακος Αἰγυπτίων βασιλεὺς στρατευσάμενος ἐπὶ τὰ Ἱεροσόλυμα καὶ κατασχὼν τὴν πόλιν τὸν πλοῦτον αὐτῆς εἰς Αἴγυπτον μετήνεγκε.</item>
+          <item n="ϛʹ." xml:id="niese-ant-08-capitulum-06"><label>ϛʹ.</label> στρατεία Ἱεροβοάμου τοῦ τῶν Ἰσραηλιτῶν βασιλέως ἐπὶ τὸν υἱὸν τὸν Ῥοβοάμου καὶ ἧττα.</item>
+          <item n="ζʹ." xml:id="niese-ant-08-capitulum-07"><label>ζʹ.</label> ὅτι τὴν Ἱεροβοάμου γενεὰν Βασίνης τις ὄνομα διαφϑείρας αὐτὸς τὴν βασιλείαν ἔσχεν.</item>
+          <item n="ηʹ." xml:id="niese-ant-08-capitulum-08"><label>ηʹ.</label> Αἰϑιόπων ἐπιστρατεία τοῖς Ἱεροσολύμοις βασιλεύοντος αὐτῶν Ἀσάνου τοῦ Ἀβία παιδός, καὶ διαφϑορὰ τοῦ στρατοῦ.</item>
+          <item n="ϑʹ." xml:id="niese-ant-08-capitulum-09"><label>ϑʹ.</label> ὡς τῆς Ἀβεσσάρου γενεᾶς διαφϑαρείσης ἐβασίλευσε τῶν Ἰσραηλιτῶν Ἄμαρις καὶ ὁ υἱὸς αὐτοῦ Ἄχαβος.</item>
+          <item n="ιʹ." xml:id="niese-ant-08-capitulum-10"><label>ιʹ.</label> ὡς Ἄδαδος Δαμασκοῦ καὶ Συρίας βασιλεὺς δὶς ἐπ᾽ Ἄχαβον στρατευσάμενος ἡττήϑη.</item>
+          <item n="ιαʹ." xml:id="niese-ant-08-capitulum-11"><label>ιαʹ.</label> Ἀμμανιτῶν καὶ Μωαβιτῶν στρατευσαμένων ἐπ᾽ Ἰωσαφάτην τὸν Ἱεροσολύμων βασιλέα ἧττα.</item>
+          <item n="ιβʹ." xml:id="niese-ant-08-capitulum-12"><label>ιβʹ.</label> ὡς Ἄχαβος ἐπὶ Σύρους στρατευσάμενος ἡττήϑη τῇ μάχῃ καὶ αὐτὸς ἀπώλετο.</item>
+        </list>
+        <trailer>περιέχει ἡ βίβλος αὕτη ἔτη ἑκατὸν ἑξήκοντα καὶ τρία.</trailer>
+      </div>
+    </body>
+  </text>
+</TEI>

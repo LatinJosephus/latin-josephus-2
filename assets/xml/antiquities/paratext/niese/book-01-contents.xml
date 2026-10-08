@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Josephus, Antiquities I: Niese printed Greek capitula — proposed companion</title>
+        <respStmt xml:id="audit">
+          <resp>Digital extraction, direct visual print collation, and preparation of this candidate transcription</resp>
+          <name>LatinJosephus Greek Capitula Audit, 8 October 2026</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>External audit proposal only, 2026-10-08. PRINT_VERIFIED; not installed in LatinJosephus. No correspondence with narrative navigation boundaries is asserted.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <listBibl>
+          <bibl xml:id="niese">Flavii Iosephi Opera, edidit et apparatu critico instruxit Benedictus Niese. Vol. I: Antiquitatum Iudaicarum libri I–V. Berolini: apud Weidmannos, 1887. <biblScope unit="page">3, 4</biblScope></bibl>
+          <bibl xml:id="scan">Scan: C:\workspace\Antiquities-Niese-Batch-08-10\Niese-PDFs\Niese (1887) - Antiquities I-V.pdf; SHA-256 7e627e6704ca5e42368d7b86889a8ac021b3415739917d2f557d9df3febf79a2; PDF pages 93, 94.</bibl>
+          <bibl xml:id="perseus-current">Perseus current CTS edition urn:cts:greekLit:tlg0526.tlg001.perseus-grc2; official repository commit 01b725d835e6e733062ffd79e0efdbae1ba06e5c. <ref target="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/01b725d835e6e733062ffd79e0efdbae1ba06e5c/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml">Pinned XML</ref></bibl>
+          <bibl xml:id="perseus-legacy">Legacy Hopper text Perseus:text:1999.01.0145; whole-book XML export independently retained. <ref target="https://www.perseus.tufts.edu/hopper/xmlchunk?doc=Perseus%3Atext%3A1999.01.0145%3Abook%3D1">Book XML</ref></bibl>
+        </listBibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <p>Printed theta type is represented as ϑ (U+03D1), numeral-six glyph as ϛ (U+03DB), superscript numeral stroke as ʹ (U+0374), Greek apostrophe as ᾽ (U+1FBD). No NFC/NFKC rewrite of elected output. Lexical final sigma is retained. Exact type shapes and accent placement remain recoverable in images.</p>
+      <p>Unletterspace the spaced heading for readable transcription, join ordinary line-wrap hyphenation, retain one item per printed label. Significant cross-page word in X.6 and continuous editorial bracket group in II are documented. No source words, labels, ordering or punctuation are silently corrected.</p>
+      <p>Literal square brackets reproduce Niese’s editorial printing. They are neither manuscript-loss supplements nor permission to strike out the enclosed text. Digital del markup is documented separately in the collation. Entry identifiers refer only to paratext items, not to narrative coordinates.</p>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="grc">Ancient Greek</language>
+      </langUsage>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2026-10-08" who="#audit">Print-verified candidate prepared from the named source scans; raw digital readings and all collation differences retained in the external audit packet.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text xml:lang="grc">
+    <body>
+      <div type="contents" subtype="printed-capitula" source="#niese" xml:id="niese-ant-01-contents">
+        <head type="book-label">I.</head>
+        <head type="contents-heading">Τάδε ἔνεστιν ἐν τῇ πρώτῃ τῶν Ἰωσήπου ἱστοριῶν τῆς Ἰουδαϊκῆς ἀρχαιολογίας.</head>
+        <p xml:id="niese-ant-01-proem-summary">Προοίμιον περὶ τῆς ὅλης πραγματείας.</p>
+        <list type="capitula">
+          <item n="αʹ." xml:id="niese-ant-01-capitulum-01"><label>αʹ.</label> ἡ τοῦ κόσμου σύστασις καὶ διάταξις τῶν στοιχείων.</item>
+          <item n="βʹ." xml:id="niese-ant-01-capitulum-02"><label>βʹ.</label> περὶ τοῦ γένους Ἀδάμου καὶ τῶν ἀπ᾽ αὐτοῦ δέκα γενεῶν τῶν μέχρι τοῦ κατακλυσμοῦ.</item>
+          <item n="γʹ." xml:id="niese-ant-01-capitulum-03"><label>γʹ.</label> ὡς ὁ κατακλυσμὸς ἐγένετο καὶ ὃν τρόπον Νῶχος σωϑεὶς ἐν λάρνακι μετὰ τῶν συγγενῶν κατῴκησεν ἐν τῷ Σινάρῳ πεδίῳ.</item>
+          <item n="δʹ." xml:id="niese-ant-01-capitulum-04"><label>δʹ.</label> ὡς πύργος, ὃν οἱ παῖδες αὐτοῦ ἐφ᾽ ὕβρει τοῦ ϑεοῦ ᾠκοδόμησαν, καὶ ὡς τὰς φωνὰς αὐτῶν μετέβαλε καὶ ὁ τόπος, ἐν ᾧ τοῦτο γέγονε, Βαβυλὼν ἐκλήϑη.</item>
+          <item n="εʹ." xml:id="niese-ant-01-capitulum-05"><label>εʹ.</label> ὡς οἱ Νώχου ἔγγονοι πᾶσαν τὴν οἰκουμένην ἐπῴκησαν.</item>
+          <item n="ϛʹ." xml:id="niese-ant-01-capitulum-06"><label>ϛʹ.</label> ὅτι τῶν ἐϑνῶν ἕκαστον ἀπὸ τῶν οἰκισάντων προσηγορεύϑη.</item>
+          <item n="ζʹ." xml:id="niese-ant-01-capitulum-07"><label>ζʹ.</label> ὅπως Ἅβραμος ὁ πρόγονος ἡμῶν ἐξελϑὼν ἐκ τῆς Χαλδαίων γῆς κατέσχε τὴν τότε μὲν Χαναναίαν νῦν δὲ Ἰουδαίαν λεγομένην.</item>
+          <item n="ηʹ." xml:id="niese-ant-01-capitulum-08"><label>ηʹ.</label> ὅτι λιμοῦ τὴν Χαναναίαν καταλαβόντος εἰς Αἴγυπτον ἀπῆρε καὶ διατρίψας ἐν αὐτῇ τινα χρόνον ὑπέστρεψεν ὀπίσω.</item>
+          <item n="ϑʹ." xml:id="niese-ant-01-capitulum-09"><label>ϑʹ.</label> ἧττα Σοδομιτῶν Ἀσσυρίων αὐτοῖς ἐπιστρατευσάντων.</item>
+          <item n="ιʹ." xml:id="niese-ant-01-capitulum-10"><label>ιʹ.</label> ὡς Ἅβραμος ἐπὶ τοὺς Ἀσσυρίους ἐκστρατεύσας ἐνίκησε καὶ τοὺς αἰχμαλώτους τῶν Σοδομιτῶν ἔσωσε καὶ τὴν λείαν ἣν ἔλαβον ἀφείλετο.</item>
+          <item n="ιαʹ." xml:id="niese-ant-01-capitulum-11"><label>ιαʹ.</label> πῶς τὸ Σοδομιτῶν ἔϑνος ϑεὸς κατεστρέψατο χολωϑεὶς αὐτοῖς ἐφ᾽ οἷς ἡμάρτανον.</item>
+          <item n="ιβʹ." xml:id="niese-ant-01-capitulum-12"><label>ιβʹ.</label> περὶ Ἰσμαήλου τοῦ Ἁβράμου καὶ τῶν ἐγγόνων αὐτοῦ Ἀράβων.</item>
+          <item n="ιγʹ." xml:id="niese-ant-01-capitulum-13"><label>ιγʹ.</label> περὶ Ἰσάκου, ὃς ἦν γνήσιος παῖς Ἁβράμου.</item>
+          <item n="ιδʹ." xml:id="niese-ant-01-capitulum-14"><label>ιδʹ.</label> περὶ Σάρρας τῆς Ἁβράμου γυναικός, καὶ πῶς τὸν βίον κατέστρεψεν.</item>
+          <item n="ιεʹ." xml:id="niese-ant-01-capitulum-15"><label>ιεʹ.</label> ὡς ἐκ Κατούρης Ἁβράμῳ γαμηϑείσης τὸ τῶν Τρωγλοδυτῶν Ἀράβων ἔϑνος ἐγεννήϑη.</item>
+          <item n="ιϛʹ." xml:id="niese-ant-01-capitulum-16"><label>ιϛʹ.</label> περὶ τῆς Ἁβράμου τελευτῆς.</item>
+          <item n="ιζʹ." xml:id="niese-ant-01-capitulum-17"><label>ιζʹ.</label> περὶ τῆς Ἰσάκου παίδων Ἡσαῦ καὶ Ἰακώβου γενέσεως καὶ διατροφῆς.</item>
+          <item n="ιηʹ." xml:id="niese-ant-01-capitulum-18"><label>ιηʹ.</label> Ἰακώβου φυγὴ εἰς τὴν Μεσοποταμίαν διὰ τὸν ἐκ τἀδελφοῦ φόβον, καὶ ὡς γήμας ἐκεῖ καὶ δώδεκα γεννήσας παῖδας πάλιν εἰς τὴν Χαναναίαν ἐπανῆλϑεν.</item>
+          <item n="ιϑʹ." xml:id="niese-ant-01-capitulum-19"><label>ιϑʹ.</label> ὡς Ἴσακος τελευτήσας ἐτάφη ἐν Νεβρῶνι.</item>
+        </list>
+        <trailer>περιέχει ἡ βίβλος χρόνον ἐτῶν ὡς Ἰώσηπος ͵γηʹ, Ἑβραῖοι ͵αωοβʹ, Εὐσέβιος ͵γυνϑʹ.</trailer>
+      </div>
+    </body>
+  </text>
+</TEI>
