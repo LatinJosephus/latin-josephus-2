@@ -1,0 +1,175 @@
+{
+  "result": "PASS",
+  "date": "2026-10-08",
+  "base_commit": "1cf003beeb03f7b0acf2c42057ace062cdb7ebff",
+  "branch": "codex/source-toc-typography",
+  "worktree": "C:\\workspace\\LatinJosephus-source-toc-typography",
+  "changed_file": {
+    "path": "assets/css/tei.css",
+    "before_sha256": "9c25a64aebba4c28c13b5ce0ff60b837fe5b850395702f43762e480193c1a96c",
+    "after_sha256": "f69cd787e47351d1dbf083097ecc3b037791a05309761d865a2e237ac91afeda",
+    "before_bytes": 2485,
+    "after_bytes": 2542,
+    "lines_added": 3
+  },
+  "integrity": {
+    "tracked_baseline": 469,
+    "modified_tracked_files": [
+      "assets/css/tei.css"
+    ],
+    "other_tracked_files_byte_identical": 468,
+    "XML_files_unchanged": 114,
+    "font_files_unchanged": 9,
+    "historical_review_files_unchanged": 187,
+    "canonical_files_byte_identical": 469,
+    "canonical_clean": true,
+    "completed_TOC_worktree_clean": true,
+    "compiled_main_CSS_unchanged": true,
+    "JS_XML_registry_Sass_templates_unchanged": true,
+    "IDs_sameAs_text_segmentation_unchanged": true,
+    "font_loading_unchanged": true,
+    "no_site_build": true,
+    "no_staging_commit_merge_push_or_Git_config_change": true
+  },
+  "browser": {
+    "contents_scenarios": 16,
+    "before_after_pairs": 8,
+    "ordinary_view_comparisons": 16,
+    "ordinary_pixel_identical_comparisons": 16,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "viewport": "1600 x 1050",
+    "font_stack_matches_narrative": true,
+    "actual_regular_and_italic_Coelacanth_confirmed": true,
+    "italic_nodes_by_display": {
+      "antiquities-III/Latin": 42,
+      "antiquities-V/Latin": 0,
+      "antiquities-V/Greek": 0,
+      "antiquities-XIV/Latin": 8,
+      "antiquities-XIV/Greek": 0,
+      "bellum-Lodge-I/English": 0
+    },
+    "source_text_equal": true,
+    "preserved_style_properties": [
+      "fontStyle",
+      "fontWeight",
+      "fontSize",
+      "lineHeight",
+      "letterSpacing",
+      "wordSpacing",
+      "textIndent",
+      "textAlign",
+      "marginTop",
+      "marginBottom",
+      "marginLeft",
+      "paddingLeft",
+      "color",
+      "backgroundColor"
+    ],
+    "overflow": false,
+    "page_errors": [],
+    "failed_requests": [],
+    "contrast": [
+      {
+        "case": "antiquities-III",
+        "language": "Latin",
+        "theme": "light",
+        "foreground": "rgb(47, 43, 38)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 14.05
+      },
+      {
+        "case": "antiquities-V",
+        "language": "Latin",
+        "theme": "light",
+        "foreground": "rgb(47, 43, 38)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 14.05
+      },
+      {
+        "case": "antiquities-V",
+        "language": "Greek",
+        "theme": "light",
+        "foreground": "rgb(47, 43, 38)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 14.05
+      },
+      {
+        "case": "antiquities-XIV",
+        "language": "Latin",
+        "theme": "light",
+        "foreground": "rgb(47, 43, 38)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 14.05
+      },
+      {
+        "case": "antiquities-XIV",
+        "language": "Greek",
+        "theme": "light",
+        "foreground": "rgb(47, 43, 38)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 14.05
+      },
+      {
+        "case": "bellum-Lodge-I",
+        "language": "English",
+        "theme": "light",
+        "foreground": "rgb(47, 43, 38)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 14.05
+      },
+      {
+        "case": "antiquities-III",
+        "language": "Latin",
+        "theme": "dark",
+        "foreground": "rgb(242, 237, 228)",
+        "background": "rgb(49, 44, 39)",
+        "ratio": 11.85
+      },
+      {
+        "case": "antiquities-V",
+        "language": "Latin",
+        "theme": "dark",
+        "foreground": "rgb(242, 237, 228)",
+        "background": "rgb(49, 44, 39)",
+        "ratio": 11.85
+      },
+      {
+        "case": "antiquities-V",
+        "language": "Greek",
+        "theme": "dark",
+        "foreground": "rgb(242, 237, 228)",
+        "background": "rgb(49, 44, 39)",
+        "ratio": 11.85
+      },
+      {
+        "case": "antiquities-XIV",
+        "language": "Latin",
+        "theme": "dark",
+        "foreground": "rgb(242, 237, 228)",
+        "background": "rgb(49, 44, 39)",
+        "ratio": 11.85
+      },
+      {
+        "case": "antiquities-XIV",
+        "language": "Greek",
+        "theme": "dark",
+        "foreground": "rgb(242, 237, 228)",
+        "background": "rgb(49, 44, 39)",
+        "ratio": 11.85
+      },
+      {
+        "case": "bellum-Lodge-I",
+        "language": "English",
+        "theme": "dark",
+        "foreground": "rgb(242, 237, 228)",
+        "background": "rgb(49, 44, 39)",
+        "ratio": 11.85
+      }
+    ],
+    "test_environment": "Actual renderer, source XML, existing canonical compiled main CSS, existing book-layout MDB/Roboto URLs, and unchanged local font files. Only tei.css differs."
+  },
+  "recommendation": "GO for human browser review. Unstaged and uncommitted."
+}
