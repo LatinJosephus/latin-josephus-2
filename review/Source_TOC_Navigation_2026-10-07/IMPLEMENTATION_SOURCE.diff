@@ -1,0 +1,290 @@
+diff --git a/assets/css/tei.css b/assets/css/tei.css
+index 004056b..322fd7b 100644
+--- a/assets/css/tei.css
++++ b/assets/css/tei.css
+@@ -80,3 +80,20 @@ tei-num.niese-generated {
+   font-size: 0.9em;
+   margin-inline: 0.25em;
+ }
++
++/* Source contents are independent paratext, never a generated chapter menu. */
++.source-contents tei-head,
++.source-contents tei-list,
++.source-contents tei-item,
++.source-contents tei-trailer,
++.source-contents tei-seg[type="tcp-head"],
++.source-contents tei-seg[type="tcp-list"],
++.source-contents tei-seg[type="tcp-item"] { display: block; }
++.source-contents tei-item,
++.source-contents tei-seg[type="tcp-item"] { margin-block: .6em; }
++.source-contents tei-supplied,
++.source-contents tei-hi[rend="italic"] { font-style: italic; }
++.source-contents tei-supplied::before,
++.source-contents tei-supplied::after { content: none; }
++.source-contents-note,
++.source-contents tei-note[type="editorial"] { display: block; font-size: .9em; margin-block: 1em; }
+diff --git a/assets/js/renderTei.js b/assets/js/renderTei.js
+index 9f76cac..45f7aab 100644
+--- a/assets/js/renderTei.js
++++ b/assets/js/renderTei.js
+@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
+     "/bellum-judaicum/": {
+       title: "Bellum Judaicum",
+       slug: "bellum",
++      urlPreferences: {lodgeNotes: {stateKey: "lodgeNotesVisible", defaultValue: true, offValue: "0"}},
+       bookCount: 7,
+       idPrefix: "bellum",
+       paddedBookId: false,
+@@ -301,6 +302,58 @@ document.addEventListener("DOMContentLoaded", () => {
+   };
+ 
+ 
++  // Source paratext is registered independently of every navigation hierarchy.
++  let contentsRegistryRequest;
++  let contentsRegistry = [];
++  const loadContentsRegistry = async () => {
++    if (!contentsRegistryRequest) contentsRegistryRequest = (async () => {
++      const response = await fetch(`/assets/xml/source-contents.xml?v=${teiCacheToken}`);
++      if (!response.ok) throw new Error("The source contents index could not be loaded.");
++      const xml = new DOMParser().parseFromString(await response.text(), "application/xml");
++      if (xml.querySelector("parsererror")) throw new Error("Invalid source contents index.");
++      contentsRegistry = [...xml.getElementsByTagNameNS("http://www.tei-c.org/ns/1.0", "fs")]
++        .filter(fs => fs.getAttribute("type") === "source-contents")
++        .map(fs => Object.fromEntries([...fs.children].map(f => [f.getAttribute("name"),
++          f.firstElementChild.localName === "vColl"
++            ? [...f.firstElementChild.children].map(v => v.textContent) : f.firstElementChild.textContent])));
++    })();
++    await contentsRegistryRequest;
++  };
++  const bookContents = () => contentsRegistry.filter(row => row.status === "VERIFIED"
++    && row.work === activeWork.slug && Number(row.book) === Number(state.bookNum));
++  const hasSourceContents = () => bookContents().some(row =>
++    sourceAvailableForBook(row.language, row.witness));
++  const clearContentsLocation = () => {
++    state.chapterNum = null; state.subchapterNum = null; state.bambergId = null;
++    state.nieseNum = null; state.sectionNum = null; pendingUrlUnit = null;
++  };
++  const contentsView = async language => {
++    const wrapper = document.createElement("section");
++    wrapper.className = "source-contents";
++    const row = bookContents().find(row => row.language === language && row.witness === state.sources[language]);
++    if (!row) {
++      const notice = document.createElement("p"); notice.setAttribute("role", "status");
++      notice.textContent = "No source table of contents is available for this witness.";
++      wrapper.appendChild(notice); return wrapper;
++    }
++    const heading = document.createElement("h4"); heading.textContent = "Table of contents";
++    wrapper.appendChild(heading);
++    if (row.note) { const note = document.createElement("p"); note.className = "source-contents-note";
++      note.textContent = row.note; wrapper.appendChild(note); }
++    let contents;
++    // Preserve paratext verbatim: default note/list decoration may duplicate source text.
++    await tei.getHTML5(`/${row.path}?v=${teiCacheToken}`, data => { contents = data; },
++      node => node.setAttribute("data-processed", ""));
++    for (const selector of row.selectors) {
++      const matches = contents?.querySelectorAll(selector);
++      if (!matches?.length) throw new Error(`Registered source contents unavailable: ${row.path}`);
++      matches.forEach(node => wrapper.appendChild(node.cloneNode(true)));
++    }
++    // Contents are source evidence, without inferred navigation targets.
++    wrapper.querySelectorAll("a").forEach(link => link.replaceWith(...link.childNodes));
++    return wrapper;
++  };
++
+   // Antiquities explicitly opts into certified, source-qualified structure.
+   // Other works keep their existing adapters and URL semantics.
+   const usesTraditionalStructure = () => Boolean(activeWork.traditionalStructure);
+@@ -513,6 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
+   };
+   const syncTraditionalUrl = mode => {
+     const url = new URL(window.location.href);
++    if (url.searchParams.get("view") === "contents") url.searchParams.delete("view");
+     ["book", "chapter", "subchapter", "bamberg", "unit", "num", "niese"].forEach(key => url.searchParams.delete(key));
+     url.searchParams.set("book", isPreface() ? "preface" : String(Number(state.bookNum)));
+     if (["chapter-level", "subchapter-level"].includes(state.viewingLevel) && state.chapterNum)
+@@ -713,7 +767,7 @@ document.addEventListener("DOMContentLoaded", () => {
+     };
+   };
+ 
+-  const applyNavigationFromUrl = () => {
++  const applyNavigationLocation = () => {
+     if (usesTraditionalStructure()) return applyTraditionalUrl();
+     const location = readNavigationFromUrl();
+ 
+@@ -772,10 +826,11 @@ document.addEventListener("DOMContentLoaded", () => {
+     return location.hasLocationParams;
+   };
+ 
+-  const syncUrlFromState = (mode = "replace") => {
++  const syncNavigationLocation = (mode = "replace") => {
+     if (usesTraditionalStructure()) return syncTraditionalUrl(mode);
+     const url = new URL(window.location.href);
+ 
++    if (url.searchParams.get("view") === "contents") url.searchParams.delete("view");
+     const numericBook = /^\d+$/.test(String(state.bookNum))
+       ? String(parseInt(state.bookNum, 10))
+       : String(state.bookNum);
+@@ -957,6 +1012,31 @@ document.addEventListener("DOMContentLoaded", () => {
+     }
+   };
+ 
++  const applyNavigationFromUrl = () => {
++    const requested = applyNavigationLocation();
++    if (new URLSearchParams(window.location.search).get("view") === "contents") {
++      clearContentsLocation(); state.viewingLevel = "contents-level"; return true;
++    }
++    return requested;
++  };
++  const syncUrlFromState = (mode = "replace") => {
++    if (state.viewingLevel !== "contents-level") return syncNavigationLocation(mode);
++    const url = new URL(window.location.href);
++    ["chapter", "subchapter", "bamberg", "niese", "unit", "num"].forEach(key => url.searchParams.delete(key));
++    url.searchParams.set("book", isPreface() ? "preface" : String(Number(state.bookNum)));
++    url.searchParams.set("view", "contents");
++    Object.entries(activeWork.languages).forEach(([language, config]) => {
++      const key = language.toLowerCase(), source = state.sources[language];
++      if (source && source !== config.defaultSource) url.searchParams.set(key, source);
++      else url.searchParams.delete(key);
++    });
++    Object.entries(activeWork.urlPreferences || {}).forEach(([key, preference]) => {
++      if (state[preference.stateKey] === preference.defaultValue) url.searchParams.delete(key);
++      else url.searchParams.set(key, preference.offValue);
++    });
++    if (url.href !== window.location.href) window.history[mode === "push" ? "pushState" : "replaceState"]({}, "", url);
++  };
++
+   const isPreface = () => (
+     activeWork.preface && state.bookNum === activeWork.preface.value
+   );
+@@ -2572,7 +2652,7 @@ document.addEventListener("DOMContentLoaded", () => {
+         : (usesTraditionalStructure() ? "Alignment unit" : "Sub-chapter");
+     }
+ 
+-    chapterSelectForm.classList.toggle("hidden", !showChapter || (usesTraditionalStructure() && showSection));
++    chapterSelectForm.classList.toggle("hidden", !(hasSourceContents() || showChapter) || (usesTraditionalStructure() && showSection));
+     sectionSelectForm.classList.toggle("hidden", !showSection);
+     if (nieseSelectForm) nieseSelectForm.classList.toggle("hidden", !showNiese);
+ 
+@@ -2587,7 +2667,7 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+   const syncNavigationControls = () => {
+     bookSelectMenu.value = state.bookNum;
+-    chapterSelectMenu.value = state.chapterNum ?? "";
++    chapterSelectMenu.value = state.viewingLevel === "contents-level" ? "contents" : state.chapterNum ?? "";
+     sectionSelectMenu.value = state.sectionNum ?? "";
+     if (subchapterSelectMenu) subchapterSelectMenu.value = state.subchapterNum ?? "";
+     if (nieseSelectMenu) nieseSelectMenu.value = state.nieseNum ?? "";
+@@ -2597,6 +2677,7 @@ document.addEventListener("DOMContentLoaded", () => {
+     if (bambergNext) bambergNext.disabled = index < 0 || index >= divisions.length - 1;
+ 
+     const levelControl = document.getElementById(state.viewingLevel);
++    if (state.viewingLevel === "contents-level") viewingLevelSelectMenu.querySelectorAll("input[type=radio]").forEach(control => { control.checked = false; });
+     if (levelControl) levelControl.checked = true;
+   };
+ 
+@@ -2605,7 +2686,7 @@ document.addEventListener("DOMContentLoaded", () => {
+   );
+ 
+   const normalizeNavigationState = () => {
+-    if (usesTraditionalStructure()) return false;
++    if (usesTraditionalStructure() || state.viewingLevel === "contents-level") return false;
+     let changed = false;
+ 
+     if (
+@@ -2699,6 +2780,8 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+   const fetchData = async () => {
+     await loadTraditionalRegistry();
++    await loadContentsRegistry();
++    if (state.viewingLevel === "contents-level" && !hasSourceContents()) state.viewingLevel = "book-level";
+     const filename = currentFilename();
+     const idBase = currentIdBase();
+ 
+@@ -2744,6 +2827,9 @@ document.addEventListener("DOMContentLoaded", () => {
+       viewData[language] = selectView(language, data, idBase);
+     });
+ 
++    if (state.viewingLevel === "contents-level") {
++      for (const language of Object.keys(activeWork.languages)) viewData[language] = await contentsView(language);
++    }
+     setChapterSelectOptions();
+     setTraditionalSubchapterOptions();
+     setBambergOptions();
+@@ -2875,6 +2961,7 @@ document.addEventListener("DOMContentLoaded", () => {
+       sectionLabel.innerText = state.subchapterNum ? `Subchapter ${state.subchapterNum}` : "";
+     if (usesTraditionalStructure() && state.viewingLevel === "bamberg-level")
+       sectionLabel.innerText = bambergSelection() ? `Bamberg division ${bambergSelection().display}` : "Bamberg division";
++    if (state.viewingLevel === "contents-level") { chapterLabel.innerText = "Table of contents"; sectionLabel.innerText = ""; }
+     updateLanguageUI();
+     updateNavigationForms();
+     addContraApionemTransmissionNotice();
+@@ -2978,14 +3065,14 @@ document.addEventListener("DOMContentLoaded", () => {
+     traditionalRows("subchapter", isPreface() ? "" : (state.chapterNum || ""))
+       .forEach(row => subchapterSelectMenu.add(new Option(row.display, row.subchapter)));
+   };
+-  const setChapterSelectOptions = () => {
++  const setChapterNavigationOptions = () => {
+     if (usesTraditionalStructure()) {
+       chapterSelectMenu.options.length = 0;
+       chapterSelectMenu.add(new Option("", ""));
+       traditionalRows("chapter").forEach(row => chapterSelectMenu.add(new Option(row.display, row.chapter)));
+       return;
+     }
+-    if (state.viewingLevel === "book-level") return;
++    if (state.viewingLevel === "book-level" && !hasSourceContents()) return;
+ 
+     let latinChapters = [];
+ 
+@@ -3025,6 +3112,12 @@ document.addEventListener("DOMContentLoaded", () => {
+     );
+   };
+ 
++  const setChapterSelectOptions = () => {
++    setChapterNavigationOptions();
++    [...chapterSelectMenu.options].filter(option => option.value === "contents").forEach(option => option.remove());
++    if (hasSourceContents()) chapterSelectMenu.add(new Option("Table of contents", "contents"), 0);
++  };
++
+   const setSectionSelectOptions = () => {
+     if (usesTraditionalStructure()) {
+       sectionSelectMenu.options.length = 0;
+@@ -3270,7 +3363,14 @@ document.addEventListener("DOMContentLoaded", () => {
+     }
+ 
+     renderUI();
+-    parseAnnotations();
++    if (state.viewingLevel === "contents-level") {
++      annotatedParagraphs = [];
++      annotationsList.replaceChildren();
++      if (annotationsPanel) annotationsPanel.hidden = true;
++      const highlightWrapper = highlightCheckbox?.closest(".form-check");
++      if (highlightWrapper) highlightWrapper.hidden = true;
++    }
++    else parseAnnotations();
+   };
+ 
+   const setState = async (callback) => {
+@@ -3287,7 +3387,9 @@ document.addEventListener("DOMContentLoaded", () => {
+         : `Book ${parseInt(event.target.value)}`;
+ 
+       setState(() => {
++        const keepContents = state.viewingLevel === "contents-level";
+         state.bookNum = event.target.value;
++        if (keepContents) { clearContentsLocation(); return; }
+         if (usesTraditionalStructure()) {
+           state.subchapterNum = null;
+           if (state.viewingLevel === "bamberg-level") selectAvailableBambergDivision();
+@@ -3300,9 +3402,13 @@ document.addEventListener("DOMContentLoaded", () => {
+     });
+ 
+     chapterSelectMenu.addEventListener("change", (event) => {
++      if (event.target.value === "contents") {
++        setState(() => { clearContentsLocation(); state.viewingLevel = "contents-level"; }); return;
++      }
+       chapterLabel.innerText = chapterDisplayLabel(event.target.value);
+ 
+       setState(() => {
++        if (state.viewingLevel === "contents-level") state.viewingLevel = "chapter-level";
+         state.chapterNum = event.target.value;
+         if (usesTraditionalStructure()) {
+           state.bambergId = null;

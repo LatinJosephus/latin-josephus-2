@@ -1,0 +1,316 @@
+{
+  "date": "2026-10-08",
+  "base_commit": "087c0bf651037d83c5156495836510d250bdcf09",
+  "verdict": "GO_FOR_HUMAN_BROWSER_REVIEW",
+  "phase_a_accepted_unchanged": {
+    "verdict": "STOP_AFTER_CENSUS_NO_IMPLEMENTATION",
+    "initial_safety_gate": {
+      "canonical": {
+        "branch": "v2-development",
+        "head": "087c0bf651037d83c5156495836510d250bdcf09",
+        "origin": "087c0bf651037d83c5156495836510d250bdcf09",
+        "status": ""
+      },
+      "worktree": {
+        "branch": "source-toc-navigation",
+        "head": "087c0bf651037d83c5156495836510d250bdcf09",
+        "status_outside_review": ""
+      }
+    },
+    "book_source_census_rows": 104,
+    "census_identities_unique": true,
+    "complete_book_source_matrix": true,
+    "proem_files": 3,
+    "well_formed_production_xml": 107,
+    "status_totals": {
+      "NOT_YET_VERIFIED": 72,
+      "PRESENT_IN_PRODUCTION": 26,
+      "PRESENT_IN_AUTHORITY_OMITTED_FROM_PRODUCTION": 1,
+      "SOURCE_HAS_NO_TOC": 5
+    },
+    "registry_invariants": {
+      "level_rows": 1689,
+      "chapters": 257,
+      "subchapters": 1432,
+      "physical_positions": 1441,
+      "bamberg": 198,
+      "primary_statuses": {
+        "CONFIRMED_NIESE_START": 1672,
+        "LOEB_NIESE_NUMBER_DISAGREEMENT": 3,
+        "NIESE_SOURCE_AMBIGUOUS": 11,
+        "CONFIRMED_WITHIN_NIESE": 3
+      }
+    },
+    "lodge_contents_source_equality": {
+      "lists": 7,
+      "items": 136,
+      "pass": true,
+      "checks": [
+        {
+          "printed_book": 1,
+          "production_book": 1,
+          "items": 21,
+          "decoded_text_identical": true
+        },
+        {
+          "printed_book": 2,
+          "production_book": 2,
+          "items": 28,
+          "decoded_text_identical": true
+        },
+        {
+          "printed_book": 3,
+          "production_book": 3,
+          "items": 19,
+          "decoded_text_identical": true
+        },
+        {
+          "printed_book": 4,
+          "production_book": 4,
+          "items": 7,
+          "decoded_text_identical": true
+        },
+        {
+          "printed_book": 5,
+          "production_book": 4,
+          "items": 14,
+          "decoded_text_identical": true
+        },
+        {
+          "printed_book": 6,
+          "production_book": 5,
+          "items": 16,
+          "decoded_text_identical": true
+        },
+        {
+          "printed_book": 7,
+          "production_book": 6,
+          "items": 31,
+          "decoded_text_identical": true
+        }
+      ]
+    },
+    "whiston_candidate": {
+      "books": 20,
+      "chapter_links": 256,
+      "matching_linked_headings": 243,
+      "printed_provenance_verified": false,
+      "deliberate_omission_established": false
+    },
+    "latin_v_capitula": {
+      "upstream_paragraphs": 14,
+      "production_absence_verified": true,
+      "candidate_reading_variants_preserved": true,
+      "unique_restoration_authority": false
+    },
+    "no_synthetic_contents": true,
+    "no_source_restoration": true,
+    "no_new_structural_source_judgment": true,
+    "no_xml_application_change": true,
+    "existing_worktree_files_byte_identical": true,
+    "existing_worktree_file_count": 382,
+    "inspected_external_files_byte_identical": true,
+    "inspected_external_file_count": 48,
+    "historical_certification_packets_unchanged": true,
+    "canonical_checkout_clean_unchanged": true,
+    "worktree_index_untouched": true,
+    "web_used": false,
+    "site_build_run": false,
+    "browser_url_history_theme_qa": "NOT_RUN_PHASE_B_BLOCKED",
+    "antiquities_navigation_regression": "NOT_RUN; source and application byte identity verified",
+    "bellum_navigation_regression": "NOT_RUN; source and application byte identity verified",
+    "deh_contra_apionem_regression": "NOT_RUN; source and application byte identity verified",
+    "git_actions": "Read-only inspections and explicitly requested branch/worktree creation only; no stage, commit, push, merge, rebase, reset, stash, clean or configuration change",
+    "remaining_source_uncertainties": {
+      "pass": false,
+      "blockers": [
+        "Whiston printed contents / preparation provenance is not established for Antiquities or Bellum.",
+        "Latin Antiquities V upstream contents readings differ; governing transcription not uniquely identified."
+      ],
+      "existing_hold": "Latin Antiquities XIV SR-061 remains untouched; no new source judgment."
+    }
+  },
+  "phase_a_global_NO_GO_superseded_by": "Human per-source verification authorization 2026-10-08",
+  "source_eligibility": {
+    "matrix_rows": 104,
+    "eligible_book_witness_combinations": 29,
+    "unavailable_or_deferred": 75,
+    "Lodge_unique_printed_source_lists": 7,
+    "Lodge_unique_entries": 136,
+    "Latin_XIV": "Deferred SR-061; no re-adjudication"
+  },
+  "Bamberg_entries": {
+    "2": 3,
+    "3": 11,
+    "4": 5,
+    "5": 13
+  },
+  "Bamberg_supplements": {
+    "2": 2,
+    "3": 42,
+    "4": 19,
+    "5": 0
+  },
+  "Word_italic_span_to_TEI": {
+    "total": 64,
+    "supplied_elements": 63,
+    "whitespace_only_hi_elements": 1,
+    "concordance": "64/64 PASS",
+    "invented": 0,
+    "omitted": 0
+  },
+  "TEI_schema": [
+    {
+      "file": "assets\\xml\\antiquities\\paratext\\bamberg78\\book-02-contents.xml",
+      "sha256": "0af258453b21ead4f81d6649083b5ded4f6f6571be6c4fa1a31153020a838786",
+      "schema": "official project-retained TEI P5 tei_all.rng",
+      "result": "PASS"
+    },
+    {
+      "file": "assets\\xml\\antiquities\\paratext\\bamberg78\\book-03-contents.xml",
+      "sha256": "c39dd3333f82180d321ebd89e390637148d44d8c58f329ff6a8246d7e0db8b62",
+      "schema": "official project-retained TEI P5 tei_all.rng",
+      "result": "PASS"
+    },
+    {
+      "file": "assets\\xml\\antiquities\\paratext\\bamberg78\\book-04-contents.xml",
+      "sha256": "f3b923d5d7d409d1038c45072bdb6f00205415a2f17e3dcb27fb7c75851412de",
+      "schema": "official project-retained TEI P5 tei_all.rng",
+      "result": "PASS"
+    },
+    {
+      "file": "assets\\xml\\antiquities\\paratext\\bamberg78\\book-05-contents.xml",
+      "sha256": "2f4f399819a3ce9d1f0a4598e030660cd0a321f41352cc8d58a2692ececed934",
+      "schema": "official project-retained TEI P5 tei_all.rng",
+      "result": "PASS"
+    },
+    {
+      "file": "assets/xml/source-contents.xml",
+      "sha256": "66f6c899236f14569914910c4c6a20fc980f9382d5eeb19ab73aac460701c1d7",
+      "result": "PASS"
+    }
+  ],
+  "contents_browser": {
+    "source_combinations": 104,
+    "supported_URL_history_copy_reload_cases": 29,
+    "book_switching": "PASS",
+    "mixed_availability": "PASS",
+    "source_switching": "PASS",
+    "keyboard": "PASS",
+    "contents_display_has_no_duplicate_DOM_IDs": true,
+    "source_entries_nonclickable": true,
+    "themes": [
+      {
+        "theme": "light",
+        "text": "rgb(47, 43, 38)",
+        "suppliedColor": "rgb(47, 43, 38)",
+        "background": "rgb(250, 248, 242)",
+        "italic": "italic",
+        "brackets": "none",
+        "note": "Italicized text has been supplied from Blatt’s edition where trimming of the manuscript margins has removed words.",
+        "contrast": 13.23,
+        "result": "PASS"
+      },
+      {
+        "theme": "dark",
+        "text": "rgb(242, 237, 228)",
+        "suppliedColor": "rgb(242, 237, 228)",
+        "background": "rgb(49, 44, 39)",
+        "italic": "italic",
+        "brackets": "none",
+        "note": "Italicized text has been supplied from Blatt’s edition where trimming of the manuscript margins has removed words.",
+        "contrast": 11.85,
+        "result": "PASS"
+      }
+    ],
+    "visual_inspection": "Final light and dark PNGs inspected; no overlap/clipping or annotation intrusion.",
+    "note": "Existing Book-view duplicate annotations IDs are baseline source apparatus; unchanged and separately compared, not introduced by contents."
+  },
+  "traditional": {
+    "rows": 1689,
+    "executable": 5034,
+    "unavailable": 33,
+    "byLanguage": {
+      "Greek": 1678,
+      "Latin": 1678,
+      "English": 1678
+    },
+    "menusChapters": 257,
+    "menusSubchapters": 1432,
+    "physical": 1441,
+    "schemes": {
+      "subchapter": 1432,
+      "chapter": 257
+    },
+    "independent_verification_statuses": {
+      "CONFIRMED_NIESE_START": 1672,
+      "LOEB_NIESE_NUMBER_DISAGREEMENT": 3,
+      "NIESE_SOURCE_AMBIGUOUS": 11,
+      "CONFIRMED_WITHIN_NIESE": 3
+    },
+    "synthetic_lower1": 0,
+    "availability_checks": 257,
+    "prefix_checks": 227
+  },
+  "bamberg": {
+    "identities": 198,
+    "language_displays": 594,
+    "compact_URL_round_trips": 198,
+    "same_Niese_different_position_pairs": 6,
+    "pair_language_checks": 18,
+    "result": "PASS"
+  },
+  "niese_antiquities": {
+    "selections": 2456,
+    "three_pane_comparisons": 7368,
+    "public_I_VII_scope": "UNCHANGED"
+  },
+  "alignment_units": {
+    "identities": 1441,
+    "differential_DOM_and_witness_order": "PASS",
+    "Book_VI_bindings": "PASS"
+  },
+  "Book_XI": {
+    "multi_span_language_checks": 18,
+    "internal_Niese_citation_checks": 2,
+    "canonical_membership_interpolations_notice_witness_order": "PASS"
+  },
+  "cross_work": {
+    "range_comparisons": {
+      "deh": 1239,
+      "bellum-judaicum": 1441,
+      "contra-apionem": 693
+    },
+    "Bellum_Whiston_Lodge_ranges": 10340,
+    "Bellum_Niese_source_comparisons": 7444,
+    "Lodge_segmentation_markers": 4001,
+    "notes_toggle_and_contents_URL_preference": "PASS",
+    "keyboard_history_panes_themes": "PASS"
+  },
+  "integrity": {
+    "existing_XML_files_byte_identical": 108,
+    "existing_source_files_unchanged": 380,
+    "canonical_clean_expected_HEAD_and_origin": true,
+    "historical_reviews_unchanged": true,
+    "frozen_external_inputs_unchanged": 48,
+    "new_DOCX_unchanged": true,
+    "new_empty_anchors": 0,
+    "running_text_ID_sameAs_topology_milestones": "UNCHANGED",
+    "Git_writes": "NONE",
+    "site_build": "NONE"
+  },
+  "supporting_evidence": [
+    "CONTENTS_BROWSER_QA_2026-10-08.json",
+    "BAMBERG_TRANSCRIPTION_QA_2026-10-08.json",
+    "BROWSER_QA.json",
+    "BAMBERG_RANGE_QA.json",
+    "BAMBERG_URL_QA.json",
+    "SAME_NIESE_DIFFERENT_POSITION_QA.json",
+    "ALIGNMENT_ALL_QA.json",
+    "PROTECTED_SOURCE_GATE_QA.json",
+    "FOLLOWUP_GATE_QA.json",
+    "XI_MULTISPAN_GATE_QA.json",
+    "INTERACTION_QA.json",
+    "INTEGRITY_QA_2026-10-08.json"
+  ]
+}

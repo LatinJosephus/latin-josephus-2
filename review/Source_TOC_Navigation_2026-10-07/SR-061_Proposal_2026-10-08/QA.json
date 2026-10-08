@@ -1,0 +1,108 @@
+{
+  "status": "PASS_PROPOSAL_ONLY_APPROVAL_PENDING",
+  "unique_ordered_candidate_starts": 8,
+  "candidate_fragments_balanced_xml": 8,
+  "candidate_projection_checks_passed": 8,
+  "lossless_raw_paragraph_partition": true,
+  "held_paragraph_matches_original_SR061_sha256": true,
+  "held_paragraph_text_characters": 5460,
+  "literal_contents_labels_preserved": [
+    "I",
+    "II",
+    "III",
+    "IIII",
+    "XIII",
+    "XIIII",
+    "XV",
+    "XVI",
+    "XVII",
+    "XVIII",
+    "XVIIII",
+    "XX",
+    "XXI",
+    "XXII",
+    "XXIII",
+    "XXIIII",
+    "XXV",
+    "XXVI",
+    "XXVII"
+  ],
+  "literal_contents_labels_count": 19,
+  "proposed_supplied_labels_count": 8,
+  "proposed_total_contents_entries": 27,
+  "herodian_content_wholly_retained_in_VII": true,
+  "no_new_boundary_at_herodian_narrative": true,
+  "inline_markup_preserved": "2 add, 1 del, all 2 milestone / 2 pb / 3 cb elements retained in original order",
+  "frozen_manifest_entries_verified": 8,
+  "frozen_manifest_checks": [
+    {
+      "path": "Antiquities_Bamberg_Niese_Map.csv",
+      "sha256": "146c29df6086e2dec491557a5f721726468c36dee565f4ac3ab3ac9481ecd9df",
+      "pass": true
+    },
+    {
+      "path": "Antiquities_Loeb_Bamberg_Chapter_Concordance.csv",
+      "sha256": "7ec54ee3da187e5b9a3c9abe241dbf6faf9b45cfdb3915b829491a708259533e",
+      "pass": true
+    },
+    {
+      "path": "Antiquities_Loeb_Subchapter_CurrentUnit_Concordance.csv",
+      "sha256": "a3861c470c19c1f7aba8f39e29203737a5ee5ff51b21da06b6878f7efebd046d",
+      "pass": true
+    },
+    {
+      "path": "Antiquities_Structure_Integration_Proposal.md",
+      "sha256": "2d90419b7f9dc3418ecab702fdfbc37035f805fc9b0b03fbf8d64439f5626e69",
+      "pass": true
+    },
+    {
+      "path": "Antiquities_Structure_Reconciliation.json",
+      "sha256": "3f34fa728c5a1ace9de3357173a68665878a922fdf09201fe463a196ea4c66b5",
+      "pass": true
+    },
+    {
+      "path": "Antiquities_Structure_Reconciliation_QA.md",
+      "sha256": "c2eca6fe4cec99bb9dd5ee77358f6aa0c1dcf8e568d18c793448e9904ffd20e0",
+      "pass": true
+    },
+    {
+      "path": "Antiquities_Structure_Reconciliation_Report.md",
+      "sha256": "ff26c6f6db12989852bbcd591e39b92aa0e49b5f719aaf0063cf2ad274ebb8c9",
+      "pass": true
+    },
+    {
+      "path": "FREEZE.md",
+      "sha256": "c3a0d18518e7e2cf7667903a49ddc81c00a50415b7659fbfe018f22b64aeabcd",
+      "pass": true
+    }
+  ],
+  "bamberg_registry_identities_unchanged": 198,
+  "bamberg_book14_identities_unchanged": 27,
+  "contents_index_modified": false,
+  "publication_companion_created": false,
+  "source_xml_modified": false,
+  "source_text_restoration_or_correction_performed": false,
+  "new_manuscript_or_pdf_judgment_introduced": false,
+  "source_images_inspected": false,
+  "browser_QA": "NOT_APPLICABLE: proposal only; no reader change",
+  "git_write_operations": 0,
+  "pre_existing_files_byte_identical": 474,
+  "new_files_outside_proposal_directory": 0,
+  "original_review_history_unchanged": true,
+  "prior_Phase_A_and_Phase_B_review_material_unchanged": true,
+  "canonical_repository_clean": true,
+  "repository_state_after": {
+    "canonical": {
+      "branch": "v2-development",
+      "head": "087c0bf651037d83c5156495836510d250bdcf09",
+      "origin": "087c0bf651037d83c5156495836510d250bdcf09",
+      "status": ""
+    },
+    "worktree": {
+      "branch": "source-toc-navigation",
+      "head": "087c0bf651037d83c5156495836510d250bdcf09",
+      "status": "M assets/css/tei.css\n M assets/js/renderTei.js\n?? assets/xml/antiquities/paratext/\n?? assets/xml/source-contents.xml\n?? review/Source_TOC_Navigation_2026-10-07/"
+    }
+  },
+  "new_review_files_only": true
+}

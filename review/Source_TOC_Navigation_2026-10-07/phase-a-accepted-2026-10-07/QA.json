@@ -1,0 +1,128 @@
+{
+  "verdict": "STOP_AFTER_CENSUS_NO_IMPLEMENTATION",
+  "initial_safety_gate": {
+    "canonical": {
+      "branch": "v2-development",
+      "head": "087c0bf651037d83c5156495836510d250bdcf09",
+      "origin": "087c0bf651037d83c5156495836510d250bdcf09",
+      "status": ""
+    },
+    "worktree": {
+      "branch": "source-toc-navigation",
+      "head": "087c0bf651037d83c5156495836510d250bdcf09",
+      "status_outside_review": ""
+    }
+  },
+  "book_source_census_rows": 104,
+  "census_identities_unique": true,
+  "complete_book_source_matrix": true,
+  "proem_files": 3,
+  "well_formed_production_xml": 107,
+  "status_totals": {
+    "NOT_YET_VERIFIED": 72,
+    "PRESENT_IN_PRODUCTION": 26,
+    "PRESENT_IN_AUTHORITY_OMITTED_FROM_PRODUCTION": 1,
+    "SOURCE_HAS_NO_TOC": 5
+  },
+  "registry_invariants": {
+    "level_rows": 1689,
+    "chapters": 257,
+    "subchapters": 1432,
+    "physical_positions": 1441,
+    "bamberg": 198,
+    "primary_statuses": {
+      "CONFIRMED_NIESE_START": 1672,
+      "LOEB_NIESE_NUMBER_DISAGREEMENT": 3,
+      "NIESE_SOURCE_AMBIGUOUS": 11,
+      "CONFIRMED_WITHIN_NIESE": 3
+    }
+  },
+  "lodge_contents_source_equality": {
+    "lists": 7,
+    "items": 136,
+    "pass": true,
+    "checks": [
+      {
+        "printed_book": 1,
+        "production_book": 1,
+        "items": 21,
+        "decoded_text_identical": true
+      },
+      {
+        "printed_book": 2,
+        "production_book": 2,
+        "items": 28,
+        "decoded_text_identical": true
+      },
+      {
+        "printed_book": 3,
+        "production_book": 3,
+        "items": 19,
+        "decoded_text_identical": true
+      },
+      {
+        "printed_book": 4,
+        "production_book": 4,
+        "items": 7,
+        "decoded_text_identical": true
+      },
+      {
+        "printed_book": 5,
+        "production_book": 4,
+        "items": 14,
+        "decoded_text_identical": true
+      },
+      {
+        "printed_book": 6,
+        "production_book": 5,
+        "items": 16,
+        "decoded_text_identical": true
+      },
+      {
+        "printed_book": 7,
+        "production_book": 6,
+        "items": 31,
+        "decoded_text_identical": true
+      }
+    ]
+  },
+  "whiston_candidate": {
+    "books": 20,
+    "chapter_links": 256,
+    "matching_linked_headings": 243,
+    "printed_provenance_verified": false,
+    "deliberate_omission_established": false
+  },
+  "latin_v_capitula": {
+    "upstream_paragraphs": 14,
+    "production_absence_verified": true,
+    "candidate_reading_variants_preserved": true,
+    "unique_restoration_authority": false
+  },
+  "no_synthetic_contents": true,
+  "no_source_restoration": true,
+  "no_new_structural_source_judgment": true,
+  "no_xml_application_change": true,
+  "existing_worktree_files_byte_identical": true,
+  "existing_worktree_file_count": 382,
+  "inspected_external_files_byte_identical": true,
+  "inspected_external_file_count": 48,
+  "historical_certification_packets_unchanged": true,
+  "canonical_checkout_clean_unchanged": true,
+  "worktree_index_untouched": true,
+  "web_used": false,
+  "site_build_run": false,
+  "browser_url_history_theme_qa": "NOT_RUN_PHASE_B_BLOCKED",
+  "antiquities_navigation_regression": "NOT_RUN; source and application byte identity verified",
+  "bellum_navigation_regression": "NOT_RUN; source and application byte identity verified",
+  "deh_contra_apionem_regression": "NOT_RUN; source and application byte identity verified",
+  "git_actions": "Read-only inspections and explicitly requested branch/worktree creation only; no stage, commit, push, merge, rebase, reset, stash, clean or configuration change",
+  "remaining_source_uncertainties": {
+    "pass": false,
+    "blockers": [
+      "Whiston printed contents / preparation provenance is not established for Antiquities or Bellum.",
+      "Latin Antiquities V upstream contents readings differ; governing transcription not uniquely identified."
+    ],
+    "existing_hold": "Latin Antiquities XIV SR-061 remains untouched; no new source judgment."
+  }
+}
