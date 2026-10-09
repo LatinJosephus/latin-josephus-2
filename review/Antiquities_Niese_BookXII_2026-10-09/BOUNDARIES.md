@@ -2996,7 +2996,7 @@ Latin start: `Post quam autem expoliauit` in `latin-book12-num248`; Unicode book
 
 Temple spoils including curtains, treasures and grief. Inherited label248 here falsely claims another identity.
 
-Limits: Visible inherited label248 retained; executable identity is250. Its predecessor extent depends on pending248–249 adjudication.
+Limits: Visible inherited label248 is retained, with its executable claim suppressed. Executable identity250 starts at the retained [250] marker and Post quam autem expoliauit templum. Adjoining 246–249 extents follow the closed user adjudication.
 
 Print: Niese III p.114, PDF186. [left line 15, preceding pact breach then περιδύσας](evidence/Niese/page-186.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
 
