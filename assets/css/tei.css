@@ -100,3 +100,35 @@ tei-num.niese-generated {
 .source-contents tei-supplied::after { content: none; }
 .source-contents-note,
 .source-contents tei-note[type="editorial"] { display: block; font-size: .9em; margin-block: 1em; }
+
+/* Whiston's compiled index: reversible editorial display, independent of source text.
+   The subtype scope leaves Greek, Bamberg, Lodge and narrative typography untouched. */
+#english .source-contents tei-div[subtype="editorially-compiled-chapter-index"] {
+  text-align: left;
+}
+#english .source-contents tei-div[subtype="editorially-compiled-chapter-index"] tei-choice > tei-orig {
+  display: none;
+}
+#english .source-contents tei-div[subtype="editorially-compiled-chapter-index"] tei-choice > tei-reg {
+  display: inline;
+}
+#english .source-contents tei-div[subtype="editorially-compiled-chapter-index"] tei-note[subtype="provenance"] {
+  font-style: normal;
+}
+
+/* Pair only Whiston compiled-index numerals and headings; continuation lines
+   stay in the text column, independently of book titles and interval summaries. */
+#english .source-contents tei-div[subtype="editorially-compiled-chapter-index"] > tei-list {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: .55em;
+  row-gap: .6em;
+  align-items: start;
+}
+#english .source-contents tei-div[subtype="editorially-compiled-chapter-index"] > tei-list > tei-label {
+  justify-self: end;
+}
+#english .source-contents tei-div[subtype="editorially-compiled-chapter-index"] > tei-list > tei-item {
+  min-width: 0;
+  margin-block: 0;
+}
