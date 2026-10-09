@@ -1,0 +1,22 @@
+{
+  "scope": "ACTUAL_BUILT_IMPLEMENTATION",
+  "mode": "protected-regressions",
+  "errors": [],
+  "consoleErrors": [],
+  "networkFailures": [
+    {
+      "url": "http://127.0.0.1:50821/antiquities/?book=preface",
+      "reason": "net::ERR_NETWORK_ACCESS_DENIED"
+    }
+  ],
+  "started": "2026-10-09T15:31:02.336Z",
+  "antiquities": {
+    "traditional": [],
+    "bamberg": [],
+    "alignment": [],
+    "niese": [],
+    "contents": []
+  },
+  "result": "FAIL",
+  "failure": "Error: page.goto: net::ERR_NETWORK_ACCESS_DENIED at http://127.0.0.1:50821/antiquities/?book=preface\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:50821/antiquities/?book=preface\", waiting until \"domcontentloaded\"\u001b[22m\n"
+}

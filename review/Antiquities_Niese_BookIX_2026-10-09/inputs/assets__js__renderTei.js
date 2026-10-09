@@ -118,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
       nieseBooks: [1, 2, 3, 4, 5, 6, 7],
       nieseIdentityBooks: {
         8: "assets/xml/antiquities/niese/book-08.json",
-        9: "assets/xml/antiquities/niese/book-09.json",
         10: "assets/xml/antiquities/niese/book-10.json"
       },
       nieseRanges: {
@@ -2105,14 +2104,12 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper.appendChild(range.cloneContents());
     }
 
-    const excludedParagraphs = nieseIdentityRegistry()?.excludedNarrativeParagraphs?.[language] || [];
     wrapper.querySelectorAll("tei-p").forEach(paragraph => {
       if (
-        excludedParagraphs.includes(paragraph.id)
-        || (!paragraph.textContent.trim()
+        !paragraph.textContent.trim()
         && !paragraph.querySelector(
           'tei-num, tei-milestone, tei-gap[reason="omitted"]'
-        ))
+        )
       ) {
         paragraph.remove();
       }
@@ -2140,17 +2137,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const antiquitiesNieseContextView = (language, data, nieseNum) => {
     if (!data || !nieseNum || !supportsNieseSections()) return null;
 
-    const identity = nieseIdentityRegistry()?.sections.find(section => section.number === Number(nieseNum));
-    if (identity?.[language]?.available === false) {
-      return antiquitiesNieseExactView(language, data, nieseNum);
-    }
-
     const start = antiquitiesNieseStartEntries(
       activeWork.alignment.language,
       canonicalFullData
     ).find(entry => entry.number === parseInt(nieseNum, 10));
 
     const canonicalParagraph = start?.node?.closest("tei-p") || null;
+    const identity = nieseIdentityRegistry()?.sections.find(section => section.number === Number(nieseNum));
     const canonicalId = canonicalParagraph?.id || identity?.contextTarget || null;
     const paragraphs = canonicalId
       ? alignedParagraphsForCanonicalId(language, data, canonicalId)

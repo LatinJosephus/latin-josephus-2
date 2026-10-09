@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "fixtures": {
+    "status": "PASS",
+    "tests": [
+      "mixed .text/.tail",
+      "UTF-8",
+      "numeric and named entities",
+      "CRLF",
+      "comment exclusion and tail coordinates",
+      "empty element tails",
+      "nested add/del retained",
+      "num excluded with tail retained",
+      "two units",
+      "raw Unicode-byte roundtrip",
+      "note excluded with tail retained",
+      "nested-child tail ownership",
+      "chapter-0 paratext exclusion",
+      "omission-placeholder exclusion",
+      "IX terminal subscription raw-byte exclusion after UTF-8 and entity",
+      "identical wording elsewhere retained"
+    ]
+  },
+  "independent_lxml_text_tail_and_raw_byte_locators": 464,
+  "strictly_ordered_starts": true,
+  "narrative_stream_lengths": {
+    "Greek": 67293,
+    "Latin": 63817,
+    "English": 80690
+  },
+  "excluded": {
+    "Greek": [
+      {
+        "id": "",
+        "reason": "chapter-0 paratext",
+        "text": "περιέχει ἡ βίβλος χρόνον ἐτῶν ἑκατὸν καὶ πεντήκοντα καὶ ζ μηνῶν."
+      },
+      {
+        "id": "greek-book09-num51",
+        "reason": "IX editorial omission placeholder",
+        "text": "***"
+      }
+    ],
+    "Latin": [
+      {
+        "id": "",
+        "reason": "chapter-0 paratext",
+        "text": "  "
+      },
+      {
+        "id": "",
+        "reason": "chapter-0 paratext",
+        "text": "Incipit liber nonus iosepphi historiarum iudaeicae antiquitatis continet hic liber tempus annorum CL et mensium VI"
+      },
+      {
+        "id": "latin-book09-num51",
+        "reason": "IX editorial omission placeholder",
+        "text": "[Lacuna 51–109; cf. Blatt, p. 67]"
+      },
+      {
+        "id": "latin-book09-num288",
+        "reason": "IX Latin terminal subscription label",
+        "text": "explicit liber nonus",
+        "raw_start": 70721,
+        "raw_end": 70741
+      }
+    ],
+    "English": [
+      {
+        "id": "",
+        "reason": "chapter-0 paratext",
+        "text": "Book IX, CONTAINING THE INTERVAL OF ONE HUNDRED AND FIFTY-SEVEN YEARS. FROM THE DEATH OF AHAB TO THE CAPTIVITY OF THE TEN TRIBES."
+      },
+      {
+        "id": "english-book09-num51",
+        "reason": "IX editorial omission placeholder",
+        "text": "***"
+      }
+    ]
+  },
+  "pending": []
+}
