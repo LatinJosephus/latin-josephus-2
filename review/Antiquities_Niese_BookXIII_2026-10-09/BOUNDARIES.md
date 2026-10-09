@@ -1682,3 +1682,663 @@ Limits: Correspondence present; no unresolved boundary alternative identified in
 
 Print: Niese III p.175, PDF247. [Right margin beside οἱ δ᾽ Ἀντιοχεῖς near lower body.](evidence/Niese/page-247.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
 
+## 13.141
+
+Greek: ὁ δὲ βασιλεὺς ὁρῶν τοὺς Ἀντιοχεῖς σῶσαι τὰ τέκνα καὶ τὰς γυναῖκας ἐσπουδακότας καὶ διὰ τοῦτο μηκέτι μαχομένους δι᾽ ἄλλων αὐτοῖς ἐπιτίθεται στενωπῶν, καὶ συμβαλὼν πολλοὺς μὲν αὐτῶν ἀπέκτεινεν, ὡς ἀναγκασθῆναι ῥῖψαι τὰς πανοπλίας καὶ παραδοῦναι αὑτοὺς τῷ Δημητρίῳ.
+
+Latin start: `Rex autem ut uidit` in `latin-book13-num135`; Unicode book offset 31404, node offset 569, raw byte 39075.
+
+Children and wives before the palace provoke the royal counterattack; surrender follows in the same order.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.175, PDF247. [Right margin at the final narrative row, beside συνέβη and the following ὁ δὲ βασιλεὺς.](evidence/Niese/page-247.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.142
+
+Greek: συγγνοὺς δ᾽ αὐτοῖς τῶν τετολμημένων καταπαύει τὴν στάσιν. δωρησάμενος δὲ τοῖς Ἰουδαίοις τὰς ἐκ τῶν σκύλων ὠφελείας καὶ ὡς αἰτιωτάτοις τῆς νίκης αὐτῷ γεγενημένοις εὐχαριστήσας ἀπέπεμψεν εἰς Ἱεροσόλυμα πρὸς Ἰωνάθην μαρτυρῶν αὐτῷ τῆς συμμαχίας.
+
+Latin start: `Qui ueniam eis` in `latin-book13-num135`; Unicode book offset 31633, node offset 0, raw byte 39353.
+
+Pardon, rewards and Jonathan's return close the intervention.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.176, PDF248. [Left margin beside πανοπλίας ending 141; συγγνοὺς follows.](evidence/Niese/page-248.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.143
+
+Greek: ὕστερον δὲ πονηρὸς εἰς αὐτὸν ἐγένετο καὶ τὰς ὑποσχέσεις διεψεύσατο καὶ πόλεμον ἠπείλησεν, εἰ μὴ τοὺς φόρους αὐτῷ πάντας ἀποδώσει, οὓς ὤφειλεν τὸ τῶν Ἰουδαίων ἔθνος ἀπὸ τῶν πρώτων βασιλέων. καὶ ταῦτ᾽ ἐποίησεν ἄν, εἰ μὴ Τρύφων αὐτὸν ἐπέσχεν καὶ τὴν ἐπὶ τὸν Ἰωνάθην αὐτοῦ παρασκευὴν ἀντιμετέσπασεν εἰς τὰς περὶ αὐτοῦ φροντίδας.
+
+Latin start: `Post autem maliuolus` in `latin-book13-num135`; Unicode book offset 31871, node offset 238, raw byte 39591.
+
+Demetrius's later threats and Tryphon's obstruction correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.176, PDF248. [Left margin beside the end of 142; ὕστερον follows.](evidence/Niese/page-248.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.144
+
+Greek: ὑποστρέψας γὰρ ἐκ τῆς Ἀραβίας εἰς τὴν Συρίαν μετὰ τοῦ παιδὸς Ἀντιόχου, μειράκιον δ᾽ ἦν οὗτος τὴν ἡλικίαν, περιτίθησιν αὐτῷ τὸ διάδημα. καὶ προσχωρήσαντος τοῦ στρατιωτικοῦ παντός, ὃ καταλελοίπει τὸν Δημήτριον διὰ τὸ μὴ τυγχάνειν μισθῶν, πόλεμον ἐκφέρει πρὸς τὸν Δημήτριον, καὶ συμβαλὼν αὐτῷ κρατεῖ τῇ μάχῃ καὶ τούς τε ἐλέφαντας καὶ τὴν τῶν Ἀντιοχέων πόλιν λαμβάνει.
+
+Latin start: `Reuersus enim et filiam` in `latin-book13-num135`; Unicode book offset 32164, node offset 531, raw byte 39884.
+
+Arabian return, child diadem and soldiers joining precede Demetrius's defeat; retain the transmitted filiam and compressed military account.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.176, PDF248. [Left margin beside φροντίδας ending 143; ὑποστρέψας follows.](evidence/Niese/page-248.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.145
+
+Greek: Δημήτριος μὲν οὖν ἡττηθεὶς ἀνεχώρησεν εἰς Κιλικίαν, ὁ δὲ παῖς Ἀντίοχος πέμψας πρὸς Ἰωνάθην πρεσβευτὰς καὶ γράμματα φίλον τε καὶ σύμμαχον αὐτὸν ἐποιεῖτο καὶ τὴν ἀρχιερωσύνην ἐβεβαίου καὶ τῶν τεσσάρων παρεχώρει νομῶν, οἳ τῇ χώρᾳ τῶν Ἰουδαίων προσετέθησαν.
+
+Latin start: `Demetrius uero uictus` in `latin-book13-num145`; Unicode book offset 32445, node offset 1, raw byte 40228.
+
+Flight to Cilicia, Antiochus's letter, priesthood and four districts correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.176, PDF248. [Left margin at division 4, Δημήτριος μὲν οὖν.](evidence/Niese/page-248.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.146
+
+Greek: ἔτι γε μὴν σκεύη χρυσᾶ καὶ ἐκπώματα καὶ πορφυρᾶν ἐσθῆτα χρῆσθαι τούτοις ἐπιτρέπων ἀπέστειλεν καὶ πόρπῃ δ᾽ αὐτὸν δωρεῖται χρυσέᾳ καὶ τῶν πρώτων αὐτοῦ καλεῖσθαι φίλων. τὸν ἀδελφὸν δ᾽ αὐτοῦ Σίμωνα στρατηγὸν τῆς στρατιᾶς ἀπὸ κλίμακος τῆς Τυρίων ἕως Αἰγύπτου καθίστησιν.
+
+Latin start: `in super et aurea uasa` in `latin-book13-num145`; Unicode book offset 32676, node offset 232, raw byte 40459.
+
+Royal gifts and Simon's coastal command correspond after the territorial grant.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.176, PDF248. [Left margin beside the preceding Judaean territory clause; ἔτι γε μὴν follows.](evidence/Niese/page-248.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.147
+
+Greek: Ἰωνάθης δ᾽ ἐπὶ τοῖς παρ᾽ Ἀντιόχου γεγενημένοις εἰς αὐτὸν ἡσθεὶς πέμψας πρὸς αὐτόν τε καὶ Τρύφωνα πρεσβευτὰς εἶναί τε φίλος ὡμολόγει καὶ σύμμαχος καὶ πολεμήσειν σὺν αὐτῷ πρὸς Δημήτριον, διδάσκων ὡς οὐδ᾽ αὐτῷ χάριτας ἀποδοίη πολλῶν παρ᾽ αὐτοῦ χρηστῶν ἐν οἷς ἐδεῖτο τυχών, ἀλλὰ προσαδικήσειεν ἀνθ᾽ ὧν εὖ πάθοι.
+
+Latin start: `Ionatha autem de donationibus` in `latin-book13-num145`; Unicode book offset 32933, node offset 489, raw byte 40716.
+
+Gratitude to Antiochus and Tryphon and reproach of Demetrius correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.177, PDF249. [Right margin beside the end of 146; Ἰωνάθης follows.](evidence/Niese/page-249.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.148
+
+Greek: Συγχωρήσαντος οὖν Ἀντιόχου δύναμιν αὐτῷ συναγαγόντι πολλὴν ἔκ τε Συρίας καὶ Φοινίκης τοῖς Δημητρίου πολεμῆσαι στρατηγοῖς εὐθὺς ὥρμησεν εἰς τὰς πόλεις. αἱ δὲ λαμπρῶς μὲν ἐξεδέξαντο, στρατιὰν δ᾽ οὐκ ἔδοσαν.
+
+Latin start: `Concedente igitur antiocho` in `latin-book13-num148`; Unicode book offset 33155, node offset 1, raw byte 41000.
+
+Permission for the campaign and city welcome without troops correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.177, PDF249. [Right margin at division 5, Συγχωρήσαντος.](evidence/Niese/page-249.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.149
+
+Greek: παραγενόμενος δ᾽ ἐκεῖθεν πρὸς Ἀσκάλωνα πόλιν καὶ τῶν Ἀσκαλωνιτῶν φιλοτίμως αὐτῷ μετὰ δώρων ἀπαντησάντων, αὐτούς τε τούτους παρεκάλει καὶ τῶν ἐν τῇ κοίλῃ Συρίᾳ πόλεων ἑκάστην ἀποστᾶσαν Δημητρίου προσθέσθαι μὲν Ἀντιόχῳ, σὺν αὐτῷ δὲ πολεμούσας πειρᾶσθαι παρὰ Δημητρίου δίκην λαμβάνειν ὧν ἁμάρτοι ποτ᾽ εἰς αὐτάς: εἶναι δ᾽ αὐταῖς βουλομέναις ταῦτα φρονεῖν πολλὰς αἰτίας.
+
+Latin start: `Veniens autem ad ascalonam` in `latin-book13-num148`; Unicode book offset 33368, node offset 214, raw byte 41213.
+
+Ascalon reception and exhortation to desert Demetrius correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.177, PDF249. [Right margin beside ἐδέξαντο ending 148; παραγενόμενος follows.](evidence/Niese/page-249.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.150
+
+Greek: πείσας δ᾽ ὁμολογῆσαι πρὸς τὸν Ἀντίοχον συμμαχεῖν τὰς πόλεις εἰς Γάζαν παρεγένετο προσαξόμενος καὶ τὴν παρὰ τούτων εὔνοιαν Ἀντιόχῳ. πολὺ δ᾽ εὗρεν τῆς προσδοκίας τοὺς Γαζαίους ἀλλοτριώτερον ἔχοντας: ἀπέκλεισαν γὰρ αὐτῷ τὰς πύλας καὶ τὸν Δημήτριον ἐγκαταλιπόντες οὐκ ἔγνωσαν Ἀντιόχῳ προσχωρῆσαι.
+
+Latin start: `Cumque flexisset ciuitates` in `latin-book13-num148`; Unicode book offset 33721, node offset 300, raw byte 41631.
+
+Coastal persuasion and Gaza's hostile closed gates correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.177, PDF249. [Right margin beside the preceding coastal clause; πείσας follows.](evidence/Niese/page-249.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.151
+
+Greek: τοῦτο παρώξυνεν εἰς πολιορκίαν τὸν Ἰωνάθην καὶ τῆς χώρας τὴν κάκωσιν: μέρος γὰρ τῆς στρατιᾶς περικαθίσας τῇ Γάζῃ τῷ λοιπῷ τὴν γῆν αὐτὸς ἐπιὼν διέφθειρεν καὶ ἐνεπίμπρα. ταῦτα δὲ πάσχοντας ἑαυτοὺς ὁρῶντες οἱ Γαζῖται καὶ μηδεμίαν ἀπὸ Δημητρίου βοήθειαν αὐτοῖς γινομένην, ἀλλὰ τὸ μὲν λυποῦν ἤδη παρόν, τὸ δ᾽ ὠφελῆσον μακρὰν ἔτι καὶ ἄδηλον εἰ παραγένοιτο, σῶφρον ἔκριναν εἶναι τοῦτ᾽ ἀφέντες παραμένειν ἐκεῖνο θεραπεύειν.
+
+Latin start: `Quo dum ionathas concitatus` in `latin-book13-num148`; Unicode book offset 33986, node offset 565, raw byte 41896.
+
+Siege and ravaging lead to Gaza's submission; the expectation of Demetrius's help is compressed.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.177, PDF249. [Right margin beside the preceding closed-gates clause; τοῦτο follows.](evidence/Niese/page-249.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.152
+
+Greek: πέμψαντες οὖν πρὸς τὸν Ἰωνάθην φιλίαν τε ὡμολόγουν καὶ συμμαχίαν: οἱ μὲν γὰρ ἄνθρωποι πρὸ πείρας τῶν δεινῶν οὐ συνιᾶσιν τὸ συμφέρον, ἀλλ᾽ ὅταν ἔν τινι κακῷ γενόμενοι τύχωσιν, τότε γνωσιμαχήσαντες ἃ μηδ᾽ ὅλως βλαβέντας ἄμεινον ἦν ποιεῖν ταῦθ᾽ ὕστερον ζημιωθέντες αἱροῦνται.
+
+Latin start: `facientes igitur ad ionathan` in `latin-book13-num148`; Unicode book offset 34222, node offset 801, raw byte 42132.
+
+Gaza's embassy and the reflection on human inconsistency correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.178, PDF250. [Left margin beside θεραπεύειν ending 151; πέμψαντες follows.](evidence/Niese/page-250.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.153
+
+Greek: ὁ δὲ συνθέμενος πρὸς αὐτοὺς φιλίαν καὶ λαβὼν ὁμήρους τούτους μὲν ἀπέστειλεν εἰς Ἱεροσόλυμα, αὐτὸς δὲ τὴν χώραν ἅπασαν ἐπῆλθεν ἄχρι Δαμασκοῦ.
+
+Latin start: `Ionathan uero consentiens` in `latin-book13-num148`; Unicode book offset 34455, node offset 174, raw byte 42380.
+
+Consent, hostages and onward journey to Damascus correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.178, PDF250. [Left margin beside ταῦθ᾽ ὕστερον; ὁ δὲ follows.](evidence/Niese/page-250.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.154
+
+Greek: Τῶν δὲ Δημητρίου στρατηγῶν ἀκουσθέντων αὐτῷ προελθεῖν εἰς Κέδασαν σὺν πολλῇ στρατιᾷ, μεταξὺ δ᾽ ἐστὶν αὕτη τῆς τε Τυρίων γῆς καὶ τῆς Γαλιλαίας: ἀπάξειν γὰρ αὐτὸν ἐκ τῆς Συρίας ὑπέλαβον ἐπὶ τὴν τῶν Γαλιλαίων συμμαχίαν: τῆς γὰρ Γαλιλαίας ὄντας αὐτοὺς οὐ περιόψεσθαι πολεμουμένους: ὑπήντησεν αὐτοῖς τὸν ἀδελφὸν Σίμωνα καταλιπὼν ἐν τῇ Ἰουδαίᾳ,
+
+Latin start: `Dum demetrii duces audisset` in `latin-book13-num154`; Unicode book offset 34603, node offset 1, raw byte 42591.
+
+Enemy gathering at Cadas and the Galilean diversion leave Simon behind.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.178, PDF250. [Left margin at division 6, Τῶν δὲ Δημητρίου.](evidence/Niese/page-250.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.155
+
+Greek: ὃς στρατὸν ἐκ τῆς χώρας συναγαγὼν ὡς ἐνῆν ἱκανώτατον τὴν Βεθσούραν πολιορκῶν προσεκάθητο χωρίον τῆς Ἰουδαίας ὀχυρώτατον: κατεῖχεν γὰρ αὐτὸ φρουρὰ Δημητρίου. δεδήλωται δ᾽ ἡμῖν τοῦτο καὶ πρότερον.
+
+Latin start: `Qui multum exercitum` in `latin-book13-num154`; Unicode book offset 34927, node offset 23, raw byte 42928.
+
+Simon's siege and siege equipment at Bethsura correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.178, PDF250. [Left margin beside the end of 154; ὃς στρατὸν follows.](evidence/Niese/page-250.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.156
+
+Greek: ὡς δὲ χώματα μὲν ἐγείραντος τοῦ Σίμωνος, μηχανήματα δ᾽ ἱστάντος καὶ πολλῇ σπουδῇ χρωμένου περὶ τὴν τῆς Βεθσούρου πολιορκίαν ἔδεισαν οἱ φρουροί, μὴ κατὰ κράτος ἐξαιρεθέντος τοῦ χωρίου διαφθαρῶσιν, πέμψαντες πρὸς τὸν Σίμωνα ἠξίουν ὅρκους λαβόντες, ὥστε μηδὲν ὑπ᾽ αὐτοῦ παθεῖν, καταλιπεῖν τὸ χωρίον καὶ πρὸς Δημήτριον ἀπελθεῖν.
+
+Latin start: `Vt uero aggerem composuisse` in `latin-book13-num154`; Unicode book offset 35094, node offset 190, raw byte 43095.
+
+The garrison fears the completed works and asks security; the destination Demetrius is not separately expressed.
+
+Limits: Compressed request; Greek's explicit destination is not separately represented here.
+
+Print: Niese III p.178, PDF250. [Left margin beside πρότερον ending 155; ὡς δὲ follows.](evidence/Niese/page-250.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.157
+
+Greek: ὁ δὲ δοὺς ταύτας αὐτοῖς τὰς πίστεις ἐκβάλλει μὲν ἐκείνους ἐκ τῆς πόλεως, αὐτὸς δὲ φρουρὰν καθίστησιν ἰδίαν.
+
+Latin start: `Qui cum dedisset` in `latin-book13-num154`; Unicode book offset 35348, node offset 444, raw byte 43349.
+
+Security, expulsion of the old garrison and its replacement correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.179, PDF251. [Right margin beside πρὸς Δημήτριον; ὁ δὲ follows.](evidence/Niese/page-251.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.158
+
+Greek: Ἰωνάθης δὲ ἄρας ἐκ τῆς Γαλιλαίας ἀπὸ τῶν ὑδάτων τῶν Γενησάρων λεγομένων, ἐκεῖ γὰρ ἐτύγχανεν ἐστρατοπεδευκώς, εἰς τὸ καλούμενον Ἀσὼρ πεδίον προῆλθεν οὐκ εἰδὼς ὄντας ἐν αὐτῇ τοὺς πολεμίους.
+
+Latin start: `Ionathas autem exiens` in `latin-book13-num158`; Unicode book offset 35430, node offset 1, raw byte 43495.
+
+Jonathan reaches the lake and Asor plain.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.179, PDF251. [Right margin at division 7, Ἰωνάθης δὲ.](evidence/Niese/page-251.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.159
+
+Greek: μαθόντες δὲ πρὸ μιᾶς ἡμέρας οἱ τοῦ Δημητρίου μέλλειν Ἰωνάθην ἐπ᾽ αὐτοὺς βαδίζειν ἐνέδραν αὐτῷ καὶ τοὺς λοχήσοντας ἐν τῷ ὄρει καθίσαντες αὐτοὶ μετὰ τῆς στρατιᾶς ἀπήντων εἰς τὸ πεδίον: οὓς ἰδὼν ὁ Ἰωνάθης ἑτοίμους πρὸς μάχην παρεσκευάζετο καὶ αὐτὸς τοὺς ἰδίους στρατιώτας πρὸς τὸν ἀγῶνα, ὡς ἠδύνατο.
+
+Latin start: `Demetrii uero duces` in `latin-book13-num158`; Unicode book offset 35596, node offset 167, raw byte 43661.
+
+Enemy warning and ambush preparations precede Jonathan's battle preparations.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.179, PDF251. [Right margin beside πολεμίων ending 158; μαθόντες follows.](evidence/Niese/page-251.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.160
+
+Greek: τῶν δὲ εἰς τὴν ἐνέδραν ὑπὸ τῶν Δημητρίου στρατηγῶν κατασταθέντων κατὰ νώτου τοῖς Ἰουδαίοις γενομένων, δείσαντες μὴ μέσοι ληφθέντες ἀπόλωνται, φεύγειν ὥρμησαν.
+
+Latin start: `Illi uero quia demetrii` in `latin-book13-num158`; Unicode book offset 35830, node offset 401, raw byte 43895.
+
+The concealed rear attack drives Jonathan's army to flight.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.179, PDF251. [Right margin beside the end of 159; τῶν δὲ follows.](evidence/Niese/page-251.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.161
+
+Greek: καὶ οἱ μὲν ἄλλοι πάντες τὸν Ἰωνάθην κατέλιπον, ὀλίγοι δέ τινες ὡς περὶ πεντήκοντα τὸν ἀριθμὸν ὑπέμειναν, καὶ Ματθίας ὁ Ἀψαλώμου καὶ Ἰούδας ὁ Χαψέου τῆς ἁπάσης δυνάμεως ἡγεμόνες ὄντες: τολμηρῶς δὲ καὶ μετὰ ἀπογνώσεως εἰς τοὺς πολεμίους ὠσάμενοι τῷ τε θάρσει κατέπληξαν αὐτοὺς καὶ ταῖς χερσὶν ἀπέστρεψαν εἰς φυγήν.
+
+Latin start: `Et ibi quidem omnes` in `latin-book13-num158`; Unicode book offset 35981, node offset 552, raw byte 44046.
+
+Fifty men with Mattathias and Judas stand and rout the enemy.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.179, PDF251. [Right margin beside the preceding flight; καὶ οἱ μὲν follows.](evidence/Niese/page-251.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.162
+
+Greek: οἱ δ᾽ ἀναχωρήσαντες τῶν Ἰωνάθου στρατιωτῶν ὡς εἶδον τοὺς πολεμίους τραπέντας, ἐπισυλλεγέντες ἐκ τῆς φυγῆς ὥρμησαν αὐτοὺς διώκειν καὶ τοῦτ᾽ ἐποίησαν μέχρι Κεδάσων, οὗ τὸ στρατόπεδον ἦν τοῖς πολεμίοις.
+
+Latin start: `Tunc uero milites ionathae` in `latin-book13-num158`; Unicode book offset 36220, node offset 791, raw byte 44285.
+
+Jonathan's soldiers regroup and pursue to Cadas.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.180, PDF252. [Left margin beside the preceding combat clause; οἱ δ᾽ follows.](evidence/Niese/page-252.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.163
+
+Greek: Κρατήσας οὖν Ἰωνάθης τῇ μάχῃ λαμπρῶς καὶ δισχιλίους τῶν ἐχθρῶν ἀποκτείνας ὑπέστρεψεν εἰς Ἱεροσόλυμα. ὁρῶν οὖν, ὅτι πάντ᾽ αὐτῷ κατὰ νοῦν προνοίᾳ θεοῦ χωρεῖ, πρὸς Ῥωμαίους πρεσβευτὰς ἀπέστειλεν, ἀνανεώσασθαι βουλόμενος τὴν γενομένην τῷ ἔθνει πρὸς αὐτοὺς ἔμπροσθεν φιλίαν.
+
+Latin start: `Uictor igitur ionatas` in `latin-book13-num163`; Unicode book offset 36388, node offset 1, raw byte 44518.
+
+Victory, two thousand killed, return and Roman embassy correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.180, PDF252. [Left margin at division 8, Κρατήσας.](evidence/Niese/page-252.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.164
+
+Greek: τοῖς δ᾽ αὐτοῖς πρεσβευταῖς ἐπέστειλεν ἀπὸ τῆς Ῥώμης ἀναστρέφουσιν πρὸς τοὺς Σπαρτιάτας ἀφικέσθαι καὶ τὴν πρὸς αὐτοὺς ὑπομνῆσαι φιλίαν καὶ συγγένειαν. οἱ δ᾽ ὡς ἦλθον εἰς τὴν Ῥώμην παρελθόντες εἰς τὴν βουλὴν αὐτῶν καὶ τὰ παρὰ Ἰωνάθου τοῦ ἀρχιερέως εἰπόντες, ὡς πέμψειεν αὐτοὺς ἐπὶ τῇ τῆς συμμαχίας βεβαιώσει,
+
+Latin start: `suis etiam legatis praecepit` in `latin-book13-num163`; Unicode book offset 36672, node offset 136, raw byte 44867.
+
+Spartan visit and presentation of Jonathan's mandate to Rome precede the ratification clause.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.180, PDF252. [Left margin beside the prior friendship clause; τοῖς δ᾽ follows.](evidence/Niese/page-252.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.165
+
+Greek: τῆς βουλῆς ἐπικυρωσάσης τὰ πρότερον αὐτῇ περὶ τῆς Ἰουδαίων φιλίας ἐγνωσμένα καὶ δούσης ἐπιστολὰς πρὸς ἅπαντας τοὺς βασιλεῖς τῆς Ἀσίας καὶ Εὐρώπης καὶ τῶν πόλεων ἄρχοντας αὐτοῖς κομίζειν, ὅπως ἀσφαλοῦς τῆς εἰς τὴν οἰκείαν κομιδῆς δι᾽ αὐτῶν τύχωσιν, ἀναστρέφοντες εἰς τὴν Σπάρτην παρεγένοντο καὶ τὰς ἐπιστολάς, ἃς ἔλαβον παρὰ Ἰωνάθου, αὐτοῖς ἀπέδοσαν.
+
+Latin start: `quae prius per senatum de iudaeorum amicitiis fuissent statuta` in `latin-book13-num163`; Unicode book offset 36940, node offset 404, raw byte 45135.
+
+Senatorial confirmation is compressed into a relative clause recalling prior enactments, followed by safe-conduct letters; cut at its first identifiable counterpart.
+
+Limits: Changed syntax and tense; Europe is not separately named in this transcription's safe-conduct clause.
+
+Print: Niese III p.180, PDF252. [Left margin beside πέμψειεν ending 164; τῆς βουλῆς follows.](evidence/Niese/page-252.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.166
+
+Greek: τὸ δ᾽ ἀντίγραφον ἦν τόδε: ‘ἀρχιερεὺς Ἰωνάθης τοῦ ἔθνους τῶν Ἰουδαίων καὶ ἡ γερουσία καὶ τὸ κοινὸν τῶν ἱερέων Λακεδαιμονίων ἐφόροις καὶ γερουσίᾳ καὶ δήμῳ τοῖς ἀδελφοῖς χαίρειν. εἰ ἐρρωμένοις ὑμῖν καὶ τὰ κοινὰ καὶ τὰ ἴδια χωρεῖ κατὰ νοῦν, οὕτως ἂν ἔχοι ὡς βουλόμεθα, ἐρρώμεθα δὲ καὶ ἡμεῖς.
+
+Latin start: `cuius exemplar huiusmodi` in `latin-book13-num163`; Unicode book offset 37218, node offset 682, raw byte 45413.
+
+Copy introduction and the letter's address and health greeting correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.180, PDF252. [Left margin beside the preceding sender clause; τὸ δ᾽ ἀντίγραφον follows.](evidence/Niese/page-252.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.167
+
+Greek: ἐπειδὴ τοῖς ἔμπροσθεν χρόνοις κομισθείσης Ὀνίᾳ τῷ γενομένῳ ἀρχιερεῖ παρ᾽ ἡμῖν παρὰ Ἀρέως τοῦ βασιλεύσαντος ὑμῶν ἐπιστολῆς διὰ Δημοτέλους περὶ τῆς ὑπαρχούσης ὑμῖν πρὸς ἡμᾶς συγγενείας, ἧς ὑποτέτακται τὸ ἀντίγραφον, τήν τε ἐπιστολὴν ἐδεξάμεθα προθύμως καὶ τῷ Δημοτέλει καὶ τῷ Ἀρεῖ εὐνοϊκῶς διετέθημεν, οὐ δεόμενοι τῆς τοιαύτης ἀποδείξεως διὰ τὸ ἐκ τῶν ἱερῶν ἡμῶν πεπιστεῦσθαι γραμμάτων,
+
+Latin start: `inprioribus tamen temporibus` in `latin-book13-num163`; Unicode book offset 37490, node offset 954, raw byte 45685.
+
+Earlier Onias-Areus letter and Demoteles establish kinship; preserve the transmitted wording.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.181, PDF253. [Right margin beside ἡμεῖς ending 166; ἐπειδὴ follows.](evidence/Niese/page-253.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.168
+
+Greek: τὸ μὲν προκατάρχειν τῆς ἀναγνωρίσεως οὐδὲ δοκιμάζομεν μὴ καὶ προαρπάζειν δοκῶμεν τὴν παρ᾽ ὑμῶν διδομένην δόξαν, πολλῶν δὲ χρόνων διαγενομένων ἀπὸ τῆς ἐξ ἀρχῆς ἀναποληθείσης ἡμῖν οἰκειότητος ἐν ταῖς ἱεραῖς καὶ ἐπωνύμοις ἡμέραις θυσίας τῷ θεῷ προσφέροντες καὶ ὑπὲρ τῆς ὑμετέρας σωτηρίας τε καὶ νίκης αὐτὸν παρακαλοῦμεν.
+
+Latin start: `Initium uero recognitionis` in `latin-book13-num163`; Unicode book offset 37842, node offset 1306, raw byte 46037.
+
+Renewal without preempting Spartan glory, sacrificial remembrance and prayer correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.181, PDF253. [Right margin beside the end of 167; τὸ μὲν follows.](evidence/Niese/page-253.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.169
+
+Greek: πολλῶν δ᾽ ἡμᾶς πολέμων περιστάντων διὰ τὴν τῶν γειτνιώντων πλεονεξίαν οὔθ᾽ ὑμῖν οὔτ᾽ ἄλλῳ τῶν προσηκόντων ἡμῖν ἐνοχλεῖν ἐκρίναμεν. καταγωνισάμενοι δὲ τοὺς πολεμίους πέμποντες πρὸς Ῥωμαίους Νουμήνιον τὸν Ἀντιόχου καὶ Ἀντίπατρον τὸν Ἰάσονος τῶν ἀπὸ τῆς γερουσίας ὄντων παρ᾽ ἡμῖν ἐν τιμῇ, ἐδώκαμεν αὐτοῖς καὶ πρὸς ὑμᾶς ἐπιστολάς, ὅπως ἀνανεώσωνται τὴν πρὸς ὑμᾶς ἡμῖν συγγένειαν.
+
+Latin start: `et cum multa nos circumstetissent` in `latin-book13-num163`; Unicode book offset 38104, node offset 1568, raw byte 46299.
+
+Wars, kinship, unaided endurance and Numinius/Antipater's Roman and Spartan mission correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.181, PDF253. [Right margin beside the prior prayer; πολλῶν follows.](evidence/Niese/page-253.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.170
+
+Greek: καλῶς οὖν ποιήσετε καὶ αὐτοὶ γράφοντες ἡμῖν καὶ περὶ ὧν ἂν δέησθε ἐπιστέλλοντες, ὡς εἰς ἅπαντα προθυμησομένοις ὑπὲρ τῆς ὑμετέρας προαιρέσεως.’ οἱ μὲν οὖν Λακεδαιμόνιοι τούς τε πρεσβευτὰς φιλοφρόνως ὑπεδέξαντο καὶ ψήφισμα ποιησάμενοι περὶ συμμαχίας καὶ φιλίας πρὸς αὐτοὺς ἀπέστειλαν.
+
+Latin start: `Bene igitur facitis` in `latin-book13-num163`; Unicode book offset 38443, node offset 286, raw byte 46651.
+
+Request for a reciprocal letter and Spartan reception and decree close the episode.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.181, PDF253. [Right margin near the bottom narrative rows beside the preceding kinship clause; καλῶς follows.](evidence/Niese/page-253.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.171
+
+Greek: Κατὰ δὲ τὸν χρόνον τοῦτον τρεῖς αἱρέσεις τῶν Ἰουδαίων ἦσαν, αἳ περὶ τῶν ἀνθρωπίνων πραγμάτων διαφόρως ὑπελάμβανον, ὧν ἡ μὲν Φαρισαίων ἐλέγετο, ἡ δὲ Σαδδουκαίων, ἡ τρίτη δὲ Ἐσσηνῶν.
+
+Latin start: `Eodem tempore tres` in `latin-book13-num171`; Unicode book offset 38691, node offset 3, raw byte 46962.
+
+Three Jewish sects are listed; preserve the preceding transmitted quotation mark.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.182, PDF254. [Left margin at division 9, Κατὰ δὲ.](evidence/Niese/page-254.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.172
+
+Greek: οἱ μὲν οὖν Φαρισαῖοι τινὰ καὶ οὐ πάντα τῆς εἱμαρμένης ἔργον εἶναι λέγουσιν, τινὰ δ᾽ ἐφ᾽ ἑαυτοῖς ὑπάρχειν συμβαίνειν τε καὶ μὴ γίνεσθαι. τὸ δὲ τῶν Ἐσσηνῶν γένος πάντων τὴν εἱμαρμένην κυρίαν ἀποφαίνεται καὶ μηδὲν ὃ μὴ κατ᾽ ἐκείνης ψῆφον ἀνθρώποις ἀπαντᾶν.
+
+Latin start: `Igitur pharisei dicebant` in `latin-book13-num171`; Unicode book offset 38845, node offset 157, raw byte 47116.
+
+Pharisaic partial fate and Essene total fate correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.182, PDF254. [Left margin beside the sect names; οἱ μὲν follows.](evidence/Niese/page-254.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.173
+
+Greek: Σαδδουκαῖοι δὲ τὴν μὲν εἱμαρμένην ἀναιροῦσιν οὐδὲν εἶναι ταύτην ἀξιοῦντες οὐδὲ κατ᾽ αὐτὴν τὰ ἀνθρώπινα τέλος λαμβάνειν, ἅπαντα δὲ ἐφ᾽ ἡμῖν αὐτοῖς κεῖσθαι, ὡς καὶ τῶν ἀγαθῶν αἰτίους ἡμᾶς γινομένους καὶ τὰ χείρω παρὰ τὴν ἡμετέραν ἀβουλίαν λαμβάνοντας. ἀλλὰ περὶ μὲν τούτων ἀκριβεστέραν πεποίημαι δήλωσιν ἐν τῇ δευτέρᾳ βίβλῳ τῆς Ἰουδαϊκῆς πραγματείας.
+
+Latin start: `sadducei fatum quidem` in `latin-book13-num171`; Unicode book offset 39048, node offset 360, raw byte 47319.
+
+Sadducean rejection of fate and the reference to book two correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.182, PDF254. [Left margin beside the preceding Essene sentence; Σαδδουκαῖοι follows.](evidence/Niese/page-254.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.174
+
+Greek: Οἱ δὲ τοῦ Δημητρίου στρατηγοὶ τὴν γεγενημένην ἧτταν ἀναμαχέσασθαι βουλόμενοι, πλείω τῆς προτέρας δύναμιν συναγαγόντες ἦλθον ἐπὶ τὸν Ἰωνάθην. ὁ δὲ ἐπιόντας πυθόμενος ὀξέως ἀπήντησεν αὐτοῖς εἰς τὴν Ἀμαθῖτιν: οὐ γὰρ ἔγνω σχολὴν αὐτοῖς παρασχεῖν, ὥστ᾽ εἰς τὴν Ἰουδαίαν ἐμβαλεῖν.
+
+Latin start: `Demetrii autem duces` in `latin-book13-num174`; Unicode book offset 39313, node offset 1, raw byte 47646.
+
+Renewed enemy invasion and Jonathan's march to Hamath correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.182, PDF254. [Left margin at division 10, Οἱ δὲ τοῦ Δημητρίου.](evidence/Niese/page-254.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.175
+
+Greek: στρατοπεδευσάμενος δὲ τῶν πολεμίων ἄπωθεν σταδίοις πεντήκοντα πέμπει τοὺς κατοψομένους αὐτῶν τὴν παρεμβολὴν καὶ πῶς εἶεν ἐστρατοπεδευκότες. τῶν δὲ κατασκόπων πάντ᾽ αὐτῷ φρασάντων καί τινας συλλαβόντων νυκτός, οἳ αὐτοῖς μέλλειν ἐπιτίθεσθαι τοὺς πολεμίους ἐμήνυον, προγνοὺς ἠσφαλίσατο,
+
+Latin start: `Castraque disponens` in `latin-book13-num174`; Unicode book offset 39576, node offset 264, raw byte 47909.
+
+Camp distance, scouts, captured enemies and advance intelligence correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.182, PDF254. [Left margin beside the preceding battle plan; στρατοπεδευσάμενος follows.](evidence/Niese/page-254.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.176
+
+Greek: προφυλακάς τε ποιησάμενος ἔξω τοῦ στρατοπέδου καὶ τὴν δύναμιν δι᾽ ὅλης τῆς νυκτὸς ἐν τοῖς ὅπλοις ἔχων ἅπασαν καὶ παρηγγελκὼς αὐτοῖς τὰς ψυχὰς ἐρρωμένους εἶναι καὶ ταῖς διανοίαις οὕτως ἔχειν, ὡς καὶ διὰ τῆς νυκτὸς εἰ δεήσειε μαχεσομένους, ὥστε μὴ λαθεῖν αὐτῶν τὴν προαίρεσιν.
+
+Latin start: `custodias extra` in `latin-book13-num174`; Unicode book offset 39803, node offset 491, raw byte 48136.
+
+Night guards, armed army and encouragement correspond to Jonathan's preparations.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.183, PDF255. [Right margin beside the opening continuation of 175; προφυλακάς follows.](evidence/Niese/page-255.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.177
+
+Greek: οἱ δὲ τοῦ Δημητρίου στρατηγοὶ πυθόμενοι τὸν Ἰωνάθην ἐγνωκότα οὐκέτι τὴν γνώμην ἦσαν ὑγιεῖς, ἀλλ᾽ ἐτάραττεν αὐτοὺς τὸ καταφώρους τοῖς ἐχθροῖς γεγονέναι καὶ μηδενὶ προσδοκᾶν αὐτῶν ἐπικρατήσειν ἑτέρῳ τῆς ἐπιβουλῆς διημαρτημένης: ἐκ γὰρ τοῦ φανεροῦ διακινδυνεύοντες οὐκ ἐνόμιζον εἶναι τοῖς Ἰωνάθου ἀξιόμαχοι.
+
+Latin start: `Demetrii uero duces cum audissent` in `latin-book13-num174`; Unicode book offset 39986, node offset 167, raw byte 48384.
+
+Enemy recognition of Jonathan's preparations produces fear.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.183, PDF255. [Right margin beside the end of 176; οἱ δὲ follows.](evidence/Niese/page-255.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.178
+
+Greek: φυγὴν οὖν ἐβουλεύσαντο, καὶ πυρὰ καύσαντες πολλά, ὡς ὁρῶντες οἱ πολέμιοι μένειν αὐτοὺς ὑπολάβοιεν, ἀνεχώρησαν. ὁ δὲ Ἰωνάθης ἕωθεν προσμίξας αὐτῶν τῷ στρατοπέδῳ καὶ καταλαβὼν ἔρημον αὐτό, συνεὶς ὅτι πεφεύγασιν ἐδίωκεν.
+
+Latin start: `fugam meditati sunt` in `latin-book13-num174`; Unicode book offset 40209, node offset 390, raw byte 48607.
+
+Flight concealed by camp fires and Jonathan's subsequent pursuit correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.183, PDF255. [Right margin beside ἀξιόμαχοι ending 177; φυγὴν follows.](evidence/Niese/page-255.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.179
+
+Greek: οὐ μέντοι φθάνει καταλαβεῖν: ἤδη γὰρ τὸν Ἐλεύθερον ποταμὸν διαβεβηκότες ἦσαν ἐν ἀσφαλεῖ. ποιησάμενος οὖν ἐκεῖθεν τὴν ὑποστροφὴν εἰς τὴν Ἀραβίαν καὶ πολεμήσας τοὺς Ναβατηνοὺς καὶ πολλὴν αὐτῶν λείαν ἀπελάσας καὶ λαβὼν αἰχμαλώτους ἐλθὼν εἰς Δαμασκὸν ἐκεῖ πάντα ἀπέδοτο.
+
+Latin start: `quod nullatenus ualuit` in `latin-book13-num174`; Unicode book offset 40444, node offset 625, raw byte 48842.
+
+Failure to catch those across Eleutherus, Arabian campaign and Damascus booty correspond despite changed syntax.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.183, PDF255. [Right margin beside ἐδίωκεν ending 178; οὐ μέντοι follows.](evidence/Niese/page-255.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.180
+
+Greek: ὑπὸ δὲ τὸν αὐτὸν καιρὸν καὶ Σίμων ὁ ἀδελφὸς αὐτοῦ τὴν Ἰουδαίαν ἅπασαν ἐπελθὼν καὶ τὴν Παλαιστίνην ἕως Ἀσκάλωνος ἠσφαλίσατο φρουρίοις, καὶ ποιήσας ταῦτα καὶ τοῖς οἰκοδομήμασιν ὀχυρώτατα καὶ ταῖς φυλακαῖς ἦλθεν εἰς Ἰόππην καὶ καταλαβόμενος αὐτὴν εἰσήγαγεν μεγάλην φρουράν: ἤκουσε γὰρ τοὺς Ἰοππηνοὺς βουλομένους τοῖς Δημητρίου στρατηγοῖς παραδοῦναι τὴν πόλιν.
+
+Latin start: `Per idem tempus frater eius` in `latin-book13-num174`; Unicode book offset 40668, node offset 849, raw byte 49066.
+
+Simon's capture and fortification of Joppa correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.183, PDF255. [Right margin beside the preceding booty clause; ὑπὸ δὲ follows.](evidence/Niese/page-255.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.181
+
+Greek: Ταῦτ᾽ οὖν διοικησάμενοι ὅ τε Σίμων καὶ Ἰωνάθης ἦλθον εἰς Ἱεροσόλυμα. συναγαγὼν δὲ τὸν λαὸν ἅπαντα εἰς τὸ ἱερὸν Ἰωνάθης συνεβουλεύετο τά τε τείχη τῶν Ἱεροσολυμιτῶν ἐπισκευάσαι καὶ τὸ καθῃρημένον τοῦ περὶ τὸ ἱερὸν περιβόλου πάλιν ἀναστῆσαι καὶ πύργοις ὑψηλοῖς ἐξοχυρῶσαι τὰ περὶ αὐτό,
+
+Latin start: `Haec ergo postquamd` in `latin-book13-num181`; Unicode book offset 40959, node offset 1, raw byte 49420.
+
+Jerusalem return, report and decision to repair walls and temple correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.184, PDF256. [Left margin at division 11, Ταῦτ᾽ οὖν.](evidence/Niese/page-256.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.182
+
+Greek: πρὸς τούτοις δὲ καὶ μέσον τῆς πόλεως ἄλλο τεῖχος ἀνοικοδομησαμένους ἀποφράξαι τοῖς ἐν τῇ ἄκρᾳ φρουροῖς τὴν πόλιν καὶ τῆς εὐπορίας αὐτοὺς τῶν σιτίων τοῦτον ἀποκλεῖσαι τὸν τρόπον, ἔτι γε μὴν καὶ τὰ ἐν τῇ χώρᾳ φρούρια ποιῆσαι πολὺ τῆς ὑπαρχούσης αὐτοῖς ἀσφαλείας ὀχυρώτερα.
+
+Latin start: `nec non et in media` in `latin-book13-num181`; Unicode book offset 41208, node offset 250, raw byte 49669.
+
+Internal wall to isolate the citadel and strengthening fortresses correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.184, PDF256. [Left margin beside καὶ πύργοις; πρὸς τούτοις follows.](evidence/Niese/page-256.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.183
+
+Greek: τῆς δὲ γνώμης καὶ τῷ πλήθει δοκιμασθείσης καλῶς ἔχειν αὐτὸς μὲν τὰ κατὰ τὴν πόλιν ᾠκοδόμει, Σίμωνα δὲ τὰ κατὰ τὴν χώραν ἐξέπεμψεν ἀσφαλισόμενον.
+
+Latin start: `Cui dum et populus` in `latin-book13-num181`; Unicode book offset 41387, node offset 429, raw byte 49848.
+
+Popular assent, building works and Simon's mission correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.184, PDF256. [Left margin beside ὀχυρώτερα; τῆς δὲ γνώμης follows.](evidence/Niese/page-256.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.184
+
+Greek: ὁ δὲ Δημήτριος διαβὰς εἰς τὴν Μεσοποταμίαν ἧκεν ταύτην τε βουλόμενος καὶ τὴν Βαβυλῶνα κατασχεῖν,
+
+Latin start: `Demetrius autem.` in `latin-book13-num181`; Unicode book offset 41523, node offset 565, raw byte 49984.
+
+Demetrius crosses to Mesopotamia seeking Babylon; the upper provinces begin the following interval.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.184, PDF256. [Left margin beside Simon's territorial mission; ὁ δὲ Δημήτριος follows.](evidence/Niese/page-256.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.185
+
+Greek: καὶ τῶν ἄνω σατραπειῶν ἐγκρατὴς γενόμενος ἐντεῦθεν ποιεῖσθαι τὰς ὅλης τῆς βασιλείας ἀφορμάς: καὶ γὰρ οἱ ταύτῃ κατοικοῦντες Ἕλληνες καὶ Μακεδόνες συνεχῶς ἐπρεσβεύοντο πρὸς αὐτόν, εἰ πρὸς αὐτοὺς ἀφίκοιτο, παραδώσειν μὲν αὑτοὺς ὑπισχνούμενοι, συγκαταπολεμήσειν δὲ Ἀρσάκην τὸν Πάρθων βασιλέα.
+
+Latin start: `et superioribus prouinciis obtinere` in `latin-book13-num181`; Unicode book offset 41607, node offset 67, raw byte 50081.
+
+The upper provinces and Greek/Macedonian invitations and promise of aid correspond within a coordinated Latin object construction.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.184, PDF256. [Left margin beside κατασχεῖν ending 184; καὶ τῶν ἄνω follows.](evidence/Niese/page-256.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.186
+
+Greek: ταύταις ἐπαρθεὶς ταῖς ἐλπίσιν ὥρμησεν πρὸς αὐτούς, εἰ καταστρέψαιτο τοὺς Πάρθους καὶ γένοιτ᾽ αὐτῷ δύναμις, τὸν Τρύφωνα πολεμῆσαι διεγνωκὼς καὶ τῆς Συρίας ἐκβαλεῖν. δεξαμένων δὲ αὐτὸν προθύμως τῶν ἐν τῇ χώρᾳ, συναγαγὼν δύναμιν ἐπολέμησεν πρὸς τὸν Ἀρσάκην, καὶ τὴν στρατιὰν πᾶσαν ἀποβαλὼν αὐτὸς ζῶν ἐλήφθη, καθὼς καὶ ἐν ἄλλοις δεδήλωται.
+
+Latin start: `qua spe subitus egreditur` in `latin-book13-num181`; Unicode book offset 41903, node offset 363, raw byte 50377.
+
+Encouraged campaign against the Parthians and eventual capture correspond; battle defeat is compressed.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.184, PDF256. [Left margin beside the promise of joint war; ταύταις follows and continues PDF257.](evidence/Niese/page-256.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.187
+
+Greek: Τρύφων δ᾽ ἐπειδὴ τὰ περὶ τὸν Δημήτριον ἔγνω τοιοῦτο λαβόντα τέλος οὐκέτ᾽ ἦν Ἀντιόχῳ βέβαιος, ἀλλ᾽ ἐπεβούλευεν ὥστ᾽ αὐτὸν ἀποκτείνας τὴν βασιλείαν αὐτὸς κατασχεῖν. ἐνεπόδιζέ γε μὴν αὐτοῦ τὴν προαίρεσιν ταύτην ὁ παρὰ Ἰωνάθου φόβος φίλου τυγχάνοντος Ἀντιόχῳ, καὶ διὰ τοῦτ᾽ ἐκποδὼν ποιήσασθαι τὸν Ἰωνάθην πρῶτον ἔγνω καὶ τότε τοῖς περὶ τὸν Ἀντίοχον ἐγχειρεῖν.
+
+Latin start: `Trifon uero cum mortem` in `latin-book13-num187`; Unicode book offset 42229, node offset 10, raw byte 50816.
+
+Tryphon's plot against Antiochus and Jonathan corresponds after the preserved plain VIIII label; retain Latin death against Greek's report of Demetrius's capture.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.185, PDF257. [Right margin at VI.1, Τρύφων.](evidence/Niese/page-257.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.188
+
+Greek: ἀπάτῃ δ᾽ αὐτὸν καὶ δόλῳ κρίνας ἀνελεῖν εἰς Βαιθσὰν ἐκ τῆς Ἀντιοχείας παραγίνεται τὴν καλουμένην ὑφ᾽ Ἑλλήνων Σκυθόπολιν, εἰς ἣν μετὰ τεσσάρων αὐτῷ μυριάδων Ἰωνάθης ἀπήντησεν ἐπιλέκτου στρατοῦ: πολεμήσοντα γὰρ αὐτὸν ἥκειν ὑπελάμβανεν.
+
+Latin start: `fraudibus ergo uel dolo` in `latin-book13-num187`; Unicode book offset 42541, node offset 322, raw byte 51128.
+
+Journey to the city and Jonathan's military reception correspond; retain transmitted Bethsuram and quadraginta rather than emend them.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.185, PDF257. [Right margin at ἀπάτῃ.](evidence/Niese/page-257.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.189
+
+Greek: ὁ δ᾽ ἕτοιμον εἰς μάχην γνοὺς τὸν Ἰωνάθην ὑπέρχεται δώροις αὐτὸν καὶ φιλοφρονήσει, καὶ τοῖς ἡγεμόσιν αὐτοῦ πειθαρχεῖν Ἰωνάθῃ προσέταξεν, τούτοις πιστώσασθαι βουλόμενος εὔνοιαν καὶ πᾶσαν ὑπόνοιαν ἐξελεῖν εἰς τὸ καταφρονήσαντα λαβεῖν ἀφύλακτον οὐδὲν προορώμενον.
+
+Latin start: `Trifon uero cum ionatham` in `latin-book13-num187`; Unicode book offset 42751, node offset 532, raw byte 51338.
+
+Feigned gifts and obedience attempt to remove Jonathan's suspicions.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.185, PDF257. [Right margin beside the preceding army clause; ὁ δ᾽ follows.](evidence/Niese/page-257.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.190
+
+Greek: τήν τε στρατιὰν συνεβούλευεν ἀπολῦσαι: καὶ γὰρ νῦν οὐ δεόντως αὐτὴν ἐπάγεσθαι, πολέμου μὲν οὐκ ὄντος, εἰρήνης δὲ ἐχούσης τὰ πράγματα: κατασχόντα μέντοι γε περὶ αὐτὸν ὀλίγους εἰς Πτολεμαΐδα συνελθεῖν παρεκάλει: παραδώσειν γὰρ αὐτῷ τὴν πόλιν τά τε ἄλλα πάνθ᾽ ὅσα κατὰ τὴν χώραν ἐστὶν ὀχυρώματα ποιήσειν ἐπ᾽ αὐτῷ: καὶ γὰρ τούτων ἕνεκα παρεῖναι.
+
+Latin start: `et persuasit ei` in `latin-book13-num187`; Unicode book offset 43008, node offset 789, raw byte 51595.
+
+Dismissal of the army, peace pretext and offer of Ptolemais correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.185, PDF257. [Right margin at τήν τε στρατιὰν.](evidence/Niese/page-257.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.191
+
+Greek: Ὁ μὲν οὖν Ἰωνάθης οὐδὲν τούτων ὑπονοήσας, ἀλλ᾽ ὑπ᾽ εὐνοίας καὶ γνώμης ἀληθοῦς τὸν Τρύφωνα συμβουλεῦσαι ταῦτα πιστεύσας τὴν μὲν στρατιὰν ἀπέλυσεν, τρισχιλίους δὲ κατασχὼν μόνους τοὺς μὲν δισχιλίους ἐν τῇ Γαλιλαίᾳ κατέλιπεν, αὐτὸς δὲ μετὰ τῶν χιλίων ἧκεν εἰς Πτολεμαΐδα σὺν Τρύφωνι.
+
+Latin start: `Ionatha uero nihil suspicans` in `latin-book13-num191`; Unicode book offset 43298, node offset 1, raw byte 52014.
+
+Jonathan trusts Tryphon and divides the army; preserve mille tantum milibus.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.186, PDF258. [Left margin at division 2, Ὁ μὲν οὖν.](evidence/Niese/page-258.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.192
+
+Greek: τῶν δ᾽ ἐν τῇ Πτολεμαΐδι κλεισάντων τὰς πύλας, τοῦτο γὰρ ἦν αὐτοῖς ὑπὸ τοῦ Τρύφωνος προστεταγμένον, Ἰωνάθην ἐζώγρησεν, τοὺς δὲ σὺν αὐτῷ πάντας ἀπέκτεινεν. ἔπεμψεν δὲ καὶ ἐπὶ τοὺς ἐν τῇ Γαλιλαίᾳ καταλειφθέντας δισχιλίους, ὅπως ἂν καὶ τούτους ἀπολέσωσιν:
+
+Latin start: `Vt uero intrauit ptolomaidam` in `latin-book13-num191`; Unicode book offset 43546, node offset 249, raw byte 52262.
+
+Closed gates, Jonathan's capture, slaughter and dispatch to Galilee correspond.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.186, PDF258. [Left margin beside the preceding Ptolemais arrival; τῶν δ᾽ follows.](evidence/Niese/page-258.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.193
+
+Greek: ἀλλ᾽ οὗτοι μὲν ὑπὸ φήμης τῶν περὶ τὸν Ἰωνάθην συμβεβηκότων ἔφθησαν πρὶν ἢ τοὺς ὑπὸ Τρύφωνος ἀπεσταλμένους ἀφικέσθαι φραξάμενοι τοῖς ὅπλοις ἐκ τῆς χώρας ἀπελθεῖν. οἱ δ᾽ ἐπ᾽ αὐτοὺς πεμφθέντες ἰδόντες ἑτοίμους ὑπὲρ τῶν ψυχῶν ἀγωνίζεσθαι μηδὲν αὐτοῖς ἐνοχλήσαντες πρὸς τὸν Τρύφωνα ὑπέστρεψαν.
+
+Latin start: `Sed hi cum fama preueniente` in `latin-book13-num191`; Unicode book offset 43791, node offset 494, raw byte 52507.
+
+Advance warning enables the two thousand to escape; Tryphon's men withdraw.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.186, PDF258. [Left margin beside the preceding two-thousand clause; ἀλλ᾽ follows.](evidence/Niese/page-258.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.194
+
+Greek: Οἱ δ᾽ ἐν τοῖς Ἱεροσολύμοις ἀκούσαντες τὴν Ἰωνάθου σύλληψιν καὶ τὴν τῶν σὺν αὐτῷ στρατιωτῶν ἀπώλειαν αὐτόν τε ἐκεῖνον ἐπὶ τοῖς συμβεβηκόσιν ὠλοφύροντο καὶ δεινὴ τἀνδρὸς ἐπιζήτησις παρὰ πᾶσιν ἦν,
+
+Latin start: `Hierosolimitae tamen` in `latin-book13-num194`; Unicode book offset 44050, node offset 1, raw byte 52831.
+
+Jerusalem's mourning and search for Jonathan correspond; Latin anticipates death while Greek describes capture.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.186, PDF258. [Left margin at division 3, Οἱ δ᾽.](evidence/Niese/page-258.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
+## 13.195
+
+Greek: δέος τε μέγα καὶ κατὰ λόγον αὐτοῖς ἐμπεσὸν ἐλύπει, μὴ τῆς Ἰωνάθου ἀνδρείας ἅμα καὶ προνοίας ἀφῃρημένων τὰ πέριξ ἔθνη χαλεπῶς ἔχοντα πρὸς αὐτοὺς καὶ διὰ Ἰωνάθην ἠρεμοῦντα νῦν αὐτοῖς ἐπισυστῇ καὶ πολεμοῦντες εἰς τοὺς περὶ τῶν ἐσχάτων κινδύνους ἀναγκάζωνται καθίστασθαι.
+
+Latin start: `Magnus autem timor` in `latin-book13-num194`; Unicode book offset 44197, node offset 148, raw byte 52978.
+
+Fear of attack without Jonathan's courage and foresight corresponds; retain the changed formulation of the neighbours' hostility.
+
+Limits: Correspondence present; no unresolved boundary alternative identified in reviewed adjoining context.
+
+Print: Niese III p.186, PDF258. [Left margin beside the prior mourning clause; δέος follows.](evidence/Niese/page-258.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
+
