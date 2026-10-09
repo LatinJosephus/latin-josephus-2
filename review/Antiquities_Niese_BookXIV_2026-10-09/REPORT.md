@@ -2,7 +2,7 @@
 
 Pinned baseline: `ad3158b7a86dea6997510b3de17f2e510c23367c`. Branch: `antiquities-niese-14-15`. This book is **not ready for integration**.
 
-Expected identities: **491**, established from the complete Greek XML census and independently inspected printed opening and terminal section. Interior print verification and Latin correspondence remain explicitly separate. Visually verified Greek rows: 183; individually reviewed Latin candidates: 183; represented starts: 182 (36 retained, 146 added milestones). Verified whole-section unavailabilities in this transcription: []. Unreviewed Latin candidates: 308.
+Expected identities: **491**, established from the complete Greek XML census and independently inspected printed opening and terminal section. Interior print verification and Latin correspondence remain explicitly separate. Visually verified Greek rows: 288; individually reviewed Latin candidates: 288; represented starts: 285 (65 retained, 220 added milestones). Verified whole-section unavailabilities in this transcription: [238, 239]. Unreviewed Latin candidates: 203.
 
 Pending editorial decisions: 162. Full narrative partition and final Latin extent remain provisional. The final adopted starts and any unresolved predecessor intervals must not be treated as complete extents.
 
