@@ -5,7 +5,7 @@ sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[2];PACK=Path(__file__).resolve().parent
 RUNTIME=Path('C:/workspace/Antiquities-Niese-12-13-runtime-20261009')
 sys.path.insert(0,str(ROOT/'review/Antiquities_Niese_BookX_2026-10-08'))
-from mixed_mapper import Book,digest,fixtures
+from mixed_mapper_batch import Book,digest,fixtures
 def save(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 def packet(b):return ROOT/f'review/Antiquities_Niese_Book{"XII" if b==12 else "XIII"}_2026-10-09'
 def books(b):return {lang:Book(packet(b)/'inputs'/f'{lang}-book-{b:02}.xml') for lang in ['Greek','Latin','English']}
