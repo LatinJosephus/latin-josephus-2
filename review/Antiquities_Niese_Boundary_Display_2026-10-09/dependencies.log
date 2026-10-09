@@ -1,0 +1,312 @@
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [349 kB]
+Fetched 9388 kB in 1s (7023 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+pkg-config is already the newest version (1.8.1-1).
+pkg-config set to manually installed.
+libmagickwand-dev is already the newest version (8:6.9.11.60+dfsg-1.6+deb12u13).
+imagemagick is already the newest version (8:6.9.11.60+dfsg-1.6+deb12u13).
+git is already the newest version (1:2.39.5-0+deb12u3).
+The following additional packages will be installed:
+  libabsl20220623 libann0 libavif15 libcdt5 libcgraph6 libgav1-1 libgd3
+  libgts-0.7-5 libgvc6 libgvpr2 liblab-gamut1 libpathplan4 librav1e0
+  libsvtav1enc1 libxaw7 libxmu6 libxpm4 libyuv0
+Suggested packages:
+  gsfonts graphviz-doc libgd-tools
+Recommended packages:
+  fonts-liberation2 libgts-bin
+The following NEW packages will be installed:
+  build-essential graphviz libabsl20220623 libann0 libavif15 libcdt5
+  libcgraph6 libgav1-1 libgd3 libgts-0.7-5 libgvc6 libgvpr2 liblab-gamut1
+  libpathplan4 librav1e0 libsvtav1enc1 libxaw7 libxmu6 libxpm4 libyuv0
+0 upgraded, 20 newly installed, 0 to remove and 22 not upgraded.
+Need to get 6317 kB of archives.
+After this operation, 23.6 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bookworm/main amd64 build-essential amd64 12.9 [7704 B]
+Get:2 http://deb.debian.org/debian bookworm/main amd64 libann0 amd64 1.1.2+doc-9+b1 [25.1 kB]
+Get:3 http://deb.debian.org/debian bookworm/main amd64 libcdt5 amd64 2.42.2-7+deb12u1 [39.6 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 libcgraph6 amd64 2.42.2-7+deb12u1 [63.0 kB]
+Get:5 http://deb.debian.org/debian bookworm/main amd64 libabsl20220623 amd64 20220623.1-1+deb12u2 [391 kB]
+Get:6 http://deb.debian.org/debian bookworm/main amd64 libgav1-1 amd64 0.18.0-1+b1 [332 kB]
+Get:7 http://deb.debian.org/debian bookworm/main amd64 librav1e0 amd64 0.5.1-6 [763 kB]
+Get:8 http://deb.debian.org/debian bookworm/main amd64 libsvtav1enc1 amd64 1.4.1+dfsg-1 [2121 kB]
+Get:9 http://deb.debian.org/debian bookworm/main amd64 libyuv0 amd64 0.0~git20230123.b2528b0-1 [168 kB]
+Get:10 http://deb.debian.org/debian bookworm/main amd64 libavif15 amd64 0.11.1-1+deb12u1 [94.4 kB]
+Get:11 http://deb.debian.org/debian bookworm/main amd64 libxpm4 amd64 1:3.5.12-1.1+deb12u1 [48.6 kB]
+Get:12 http://deb.debian.org/debian-security bookworm-security/main amd64 libgd3 amd64 2.3.3-9+deb12u1 [124 kB]
+Get:13 http://deb.debian.org/debian bookworm/main amd64 libgts-0.7-5 amd64 0.7.6+darcs121130-5+b1 [160 kB]
+Get:14 http://deb.debian.org/debian bookworm/main amd64 libpathplan4 amd64 2.42.2-7+deb12u1 [41.9 kB]
+Get:15 http://deb.debian.org/debian bookworm/main amd64 libgvc6 amd64 2.42.2-7+deb12u1 [679 kB]
+Get:16 http://deb.debian.org/debian bookworm/main amd64 libgvpr2 amd64 2.42.2-7+deb12u1 [189 kB]
+Get:17 http://deb.debian.org/debian bookworm/main amd64 liblab-gamut1 amd64 2.42.2-7+deb12u1 [197 kB]
+Get:18 http://deb.debian.org/debian bookworm/main amd64 libxmu6 amd64 2:1.1.3-3 [60.1 kB]
+Get:19 http://deb.debian.org/debian bookworm/main amd64 libxaw7 amd64 2:1.0.14-1 [201 kB]
+Get:20 http://deb.debian.org/debian bookworm/main amd64 graphviz amd64 2.42.2-7+deb12u1 [611 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 6317 kB in 1s (11.5 MB/s)
+Selecting previously unselected package build-essential.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 23263 files and directories currently installed.)
+Preparing to unpack .../00-build-essential_12.9_amd64.deb ...
+Unpacking build-essential (12.9) ...
+Selecting previously unselected package libann0.
+Preparing to unpack .../01-libann0_1.1.2+doc-9+b1_amd64.deb ...
+Unpacking libann0 (1.1.2+doc-9+b1) ...
+Selecting previously unselected package libcdt5:amd64.
+Preparing to unpack .../02-libcdt5_2.42.2-7+deb12u1_amd64.deb ...
+Unpacking libcdt5:amd64 (2.42.2-7+deb12u1) ...
+Selecting previously unselected package libcgraph6:amd64.
+Preparing to unpack .../03-libcgraph6_2.42.2-7+deb12u1_amd64.deb ...
+Unpacking libcgraph6:amd64 (2.42.2-7+deb12u1) ...
+Selecting previously unselected package libabsl20220623:amd64.
+Preparing to unpack .../04-libabsl20220623_20220623.1-1+deb12u2_amd64.deb ...
+Unpacking libabsl20220623:amd64 (20220623.1-1+deb12u2) ...
+Selecting previously unselected package libgav1-1:amd64.
+Preparing to unpack .../05-libgav1-1_0.18.0-1+b1_amd64.deb ...
+Unpacking libgav1-1:amd64 (0.18.0-1+b1) ...
+Selecting previously unselected package librav1e0:amd64.
+Preparing to unpack .../06-librav1e0_0.5.1-6_amd64.deb ...
+Unpacking librav1e0:amd64 (0.5.1-6) ...
+Selecting previously unselected package libsvtav1enc1:amd64.
+Preparing to unpack .../07-libsvtav1enc1_1.4.1+dfsg-1_amd64.deb ...
+Unpacking libsvtav1enc1:amd64 (1.4.1+dfsg-1) ...
+Selecting previously unselected package libyuv0:amd64.
+Preparing to unpack .../08-libyuv0_0.0~git20230123.b2528b0-1_amd64.deb ...
+Unpacking libyuv0:amd64 (0.0~git20230123.b2528b0-1) ...
+Selecting previously unselected package libavif15:amd64.
+Preparing to unpack .../09-libavif15_0.11.1-1+deb12u1_amd64.deb ...
+Unpacking libavif15:amd64 (0.11.1-1+deb12u1) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../10-libxpm4_1%3a3.5.12-1.1+deb12u1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.12-1.1+deb12u1) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../11-libgd3_2.3.3-9+deb12u1_amd64.deb ...
+Unpacking libgd3:amd64 (2.3.3-9+deb12u1) ...
+Selecting previously unselected package libgts-0.7-5:amd64.
+Preparing to unpack .../12-libgts-0.7-5_0.7.6+darcs121130-5+b1_amd64.deb ...
+Unpacking libgts-0.7-5:amd64 (0.7.6+darcs121130-5+b1) ...
+Selecting previously unselected package libpathplan4:amd64.
+Preparing to unpack .../13-libpathplan4_2.42.2-7+deb12u1_amd64.deb ...
+Unpacking libpathplan4:amd64 (2.42.2-7+deb12u1) ...
+Selecting previously unselected package libgvc6.
+Preparing to unpack .../14-libgvc6_2.42.2-7+deb12u1_amd64.deb ...
+Unpacking libgvc6 (2.42.2-7+deb12u1) ...
+Selecting previously unselected package libgvpr2:amd64.
+Preparing to unpack .../15-libgvpr2_2.42.2-7+deb12u1_amd64.deb ...
+Unpacking libgvpr2:amd64 (2.42.2-7+deb12u1) ...
+Selecting previously unselected package liblab-gamut1:amd64.
+Preparing to unpack .../16-liblab-gamut1_2.42.2-7+deb12u1_amd64.deb ...
+Unpacking liblab-gamut1:amd64 (2.42.2-7+deb12u1) ...
+Selecting previously unselected package libxmu6:amd64.
+Preparing to unpack .../17-libxmu6_2%3a1.1.3-3_amd64.deb ...
+Unpacking libxmu6:amd64 (2:1.1.3-3) ...
+Selecting previously unselected package libxaw7:amd64.
+Preparing to unpack .../18-libxaw7_2%3a1.0.14-1_amd64.deb ...
+Unpacking libxaw7:amd64 (2:1.0.14-1) ...
+Selecting previously unselected package graphviz.
+Preparing to unpack .../19-graphviz_2.42.2-7+deb12u1_amd64.deb ...
+Unpacking graphviz (2.42.2-7+deb12u1) ...
+Setting up libabsl20220623:amd64 (20220623.1-1+deb12u2) ...
+Setting up libxmu6:amd64 (2:1.1.3-3) ...
+Setting up libxpm4:amd64 (1:3.5.12-1.1+deb12u1) ...
+Setting up liblab-gamut1:amd64 (2.42.2-7+deb12u1) ...
+Setting up libxaw7:amd64 (2:1.0.14-1) ...
+Setting up libsvtav1enc1:amd64 (1.4.1+dfsg-1) ...
+Setting up librav1e0:amd64 (0.5.1-6) ...
+Setting up libgts-0.7-5:amd64 (0.7.6+darcs121130-5+b1) ...
+Setting up libpathplan4:amd64 (2.42.2-7+deb12u1) ...
+Setting up libann0 (1.1.2+doc-9+b1) ...
+Setting up libgav1-1:amd64 (0.18.0-1+b1) ...
+Setting up build-essential (12.9) ...
+Setting up libcdt5:amd64 (2.42.2-7+deb12u1) ...
+Setting up libcgraph6:amd64 (2.42.2-7+deb12u1) ...
+Setting up libyuv0:amd64 (0.0~git20230123.b2528b0-1) ...
+Setting up libavif15:amd64 (0.11.1-1+deb12u1) ...
+Setting up libgd3:amd64 (2.3.3-9+deb12u1) ...
+Setting up libgvc6 (2.42.2-7+deb12u1) ...
+Setting up libgvpr2:amd64 (2.42.2-7+deb12u1) ...
+Setting up graphviz (2.42.2-7+deb12u1) ...
+Processing triggers for libc-bin (2.36-9+deb12u14) ...
+Successfully installed bundler-4.0.22
+1 gem installed
+Fetching gem metadata from https://rubygems.org/.........
+Resolving dependencies...
+Fetching rake 13.4.2
+Installing rake 13.4.2
+Fetching base64 0.3.0
+Fetching bigdecimal 4.1.3
+Fetching concurrent-ruby 1.3.8
+Fetching connection_pool 3.0.2
+Fetching drb 2.2.3
+Fetching i18n 1.15.2
+Fetching json 2.21.2
+Fetching logger 1.7.0
+Fetching prism 1.9.0
+Fetching minitest 6.0.6
+Fetching securerandom 0.4.1
+Fetching tzinfo 2.0.6
+Fetching uri 1.1.2
+Fetching activesupport 8.1.4
+Fetching public_suffix 7.0.5
+Fetching addressable 2.9.0
+Fetching latex-decode 0.4.2
+Installing bigdecimal 4.1.3 with native extensions
+Fetching racc 1.8.1
+Fetching bibtex-ruby 6.2.0
+Fetching date 3.6.0
+Fetching forwardable 1.4.0
+Installing json 2.21.2 with native extensions
+Fetching namae 1.2.0
+Fetching observer 0.1.2
+Fetching stringio 3.2.0
+Fetching time 0.5.0
+Fetching open-uri 0.5.0
+Fetching citeproc 2.0.0
+Fetching set 1.1.3
+Fetching singleton 0.3.0
+Fetching csl 2.5.0
+Installing racc 1.8.1 with native extensions
+Fetching citeproc-ruby 2.3.0
+Fetching colorator 1.1.0
+Fetching csl-styles 2.1.0
+Fetching csv 3.3.6
+Fetching eventmachine 1.2.7
+Installing date 3.6.0 with native extensions
+Installing stringio 3.2.0 with native extensions
+Fetching http_parser.rb 0.8.1
+Fetching em-websocket 0.5.3
+Fetching timeout 0.6.1
+Fetching net-protocol 0.4.0
+Fetching net-http 0.10.0
+Fetching faraday-net_http 3.4.4
+Fetching faraday 2.14.4
+Fetching ffi 1.17.4 (x86_64-linux-gnu)
+Installing prism 1.9.0 with native extensions
+Fetching forwardable-extended 2.6.0
+Fetching gemoji 4.1.0
+Installing eventmachine 1.2.7 with native extensions
+Fetching google-protobuf 4.36.2 (x86_64-linux-gnu)
+Fetching nokogiri 1.19.4 (x86_64-linux-gnu)
+Fetching html-pipeline 2.14.3
+Installing http_parser.rb 0.8.1 with native extensions
+Fetching sass-embedded 1.105.1 (x86_64-linux-gnu)
+Fetching jekyll-sass-converter 3.1.0
+Fetching rb-fsevent 0.11.2
+Fetching rb-inotify 0.11.1
+Fetching listen 3.10.1
+Fetching jekyll-watch 2.2.1
+Fetching kramdown 2.5.2
+Fetching kramdown-parser-gfm 1.1.0
+Fetching liquid 4.0.4
+Fetching mercenary 0.4.0
+Fetching pathutil 0.16.2
+Fetching rouge 4.7.0
+Fetching safe_yaml 1.0.5
+Fetching unicode-display_width 2.6.0
+Fetching terminal-table 3.0.2
+Fetching webrick 1.9.2
+Fetching jekyll 4.4.1
+Fetching jekyll-archives 2.3.0
+Fetching jekyll-diagrams 0.10.0
+Fetching jekyll-email-protect 1.1.0
+Fetching jekyll-feed 0.18.0
+Fetching sawyer 0.9.3
+Fetching octokit 6.1.1
+Fetching jekyll-github-metadata 2.16.1
+Fetching jekyll-paginate-v2 3.0.0
+Fetching rmagick 4.3.0
+Fetching jekyll-responsive-image 1.6.0
+Fetching jekyll-scholar 7.3.0
+Fetching jekyll-sitemap 1.4.0
+Fetching jekyll-target-blank 2.0.2
+Fetching jekyll-twitter-plugin 2.1.0
+Fetching jemoji 0.13.0
+Fetching unicode_utils 1.4.0
+Installing connection_pool 3.0.2
+Installing concurrent-ruby 1.3.8
+Installing drb 2.2.3
+Installing i18n 1.15.2
+Installing logger 1.7.0
+Installing securerandom 0.4.1
+Installing uri 1.1.2
+Installing minitest 6.0.6
+Installing tzinfo 2.0.6
+Installing base64 0.3.0
+Installing rmagick 4.3.0 with native extensions
+Installing public_suffix 7.0.5
+Installing latex-decode 0.4.2
+Installing addressable 2.9.0
+Installing forwardable 1.4.0
+Installing bibtex-ruby 6.2.0
+Installing activesupport 8.1.4
+Installing observer 0.1.2
+Installing namae 1.2.0
+Installing time 0.5.0
+Installing open-uri 0.5.0
+Installing singleton 0.3.0
+Installing set 1.1.3
+Installing citeproc 2.0.0
+Installing citeproc-ruby 2.3.0
+Installing csl 2.5.0
+Installing colorator 1.1.0
+Installing csv 3.3.6
+Installing timeout 0.6.1
+Installing em-websocket 0.5.3
+Installing net-protocol 0.4.0
+Installing faraday-net_http 3.4.4
+Installing net-http 0.10.0
+Installing forwardable-extended 2.6.0
+Installing faraday 2.14.4
+Installing gemoji 4.1.0
+Installing ffi 1.17.4 (x86_64-linux-gnu)
+Installing html-pipeline 2.14.3
+Installing jekyll-sass-converter 3.1.0
+Installing rb-inotify 0.11.1
+Installing jekyll-watch 2.2.1
+Installing google-protobuf 4.36.2 (x86_64-linux-gnu)
+Installing kramdown-parser-gfm 1.1.0
+Installing rb-fsevent 0.11.2
+Installing listen 3.10.1
+Installing kramdown 2.5.2
+Installing mercenary 0.4.0
+Installing liquid 4.0.4
+Installing safe_yaml 1.0.5
+Installing pathutil 0.16.2
+Installing unicode-display_width 2.6.0
+Installing terminal-table 3.0.2
+Installing webrick 1.9.2
+Installing jekyll-archives 2.3.0
+Installing nokogiri 1.19.4 (x86_64-linux-gnu)
+Installing jekyll 4.4.1
+Installing rouge 4.7.0
+Installing jekyll-feed 0.18.0
+Installing jekyll-email-protect 1.1.0
+Installing sawyer 0.9.3
+Installing sass-embedded 1.105.1 (x86_64-linux-gnu)
+Installing jekyll-github-metadata 2.16.1
+Installing jekyll-paginate-v2 3.0.0
+Installing jekyll-responsive-image 1.6.0
+Installing octokit 6.1.1
+Installing csl-styles 2.1.0
+Installing jekyll-scholar 7.3.0
+Installing jekyll-sitemap 1.4.0
+Installing jemoji 0.13.0
+Installing jekyll-target-blank 2.0.2
+Installing unicode_utils 1.4.0
+Installing jekyll-twitter-plugin 2.1.0
+Installing jekyll-diagrams 0.10.0
+Bundle complete! 15 Gemfile dependencies, 83 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+Post-install message from html-pipeline:
+-------------------------------------------------
+Thank you for installing html-pipeline!
+You must bundle Filter gem dependencies.
+See html-pipeline README.md for more details.
+https://github.com/jch/html-pipeline#dependencies
+-------------------------------------------------
