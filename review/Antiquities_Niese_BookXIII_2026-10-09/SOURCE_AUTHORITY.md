@@ -15,3 +15,5 @@ Accepted VIII/X method and certification records are pinned in the batch baselin
 Printed numeral position is an observation; the exact Greek word choice is recorded separately. SameAs and paragraph IDs identify comparison windows only. Unreviewed candidates remain explicitly unapproved. English/Whiston remains broader aligned context and is unchanged. No claim is made about the cause of missing or different Latin wording.
 
 The opening PDF223 has an erroneous XII running head, above the actual XIII opening and its immediately preceding XIII contents. The XIII narrative starts Τίνα μὲν οὖν; the terminal PDF305 prints XIII.432–433 and its book-13 subscription. The streams are not joined.
+
+Supplementary visual control and image hashes: SOURCE_CONTROL_XIII.md and SOURCE_CONTROL_XIII.json record Niese contents PDF221–222, Loeb contents PDF9, decision control PDF344–348 and independent ending PDF458–459. Loeb places the future-book announcement in apparatus; Niese prints it in the terminal body at 433. The final Latin assessment survives; no wording is reconstructed. The authoritative identity count remains the independently reviewed Niese census.
