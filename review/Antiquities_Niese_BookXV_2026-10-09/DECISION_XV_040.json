@@ -1,7 +1,7 @@
 {
   "book": 15,
   "section": 40,
-  "status": "PENDING_USER_EDITORIAL_DECISION",
+  "status": "USER_APPROVED_B",
   "Latin_paragraph": "latin-book15-num39",
   "Latin": " Itaque rex herodes statim principatu sacerdotii anandum praeter legem exuit, seditiones domesticas pacando, nam non licebat aliquem honore semel accepto fraudari, quod prius antiochus epifanis destruxit, dum auferret ab hiesu sacerdotium et ordinaret fratrem eius oniam. Secundus autem aristobolus hyrcanum fratrem suum priuauit. Tertius herodes principatum sacerdotii adulescenti tradidit aristobolo.",
   "Greek": {
@@ -134,5 +134,32 @@
   "contextual_review": "Latin sections 31-50 and Greek 31-50 inspected. The origins, family, earlier favour and prior appointment in 39-40 are compressed out here. Removal, domestic motive, illegality and prohibition survive with reordering. This is partial correspondence, not whole-section absence; no cause of compression or claim about the whole Latin tradition is inferred.",
   "recommendation": "B",
   "source_sha256": null,
-  "reader_certified": false
+  "reader_certified": false,
+  "adopted_option": "B",
+  "rejected_options": [
+    "A",
+    "C"
+  ],
+  "authority": "Direct user reply to XV.40 decision request, 2026-10-09",
+  "approved_physical_placement": {
+    "stable_id": "latin-book15-num39",
+    "paragraph": 23,
+    "xpath": "/*/*[2]/*/*[2]/*[3]/*[8]",
+    "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[8]/cb[1]/tail()",
+    "node_offset": 78,
+    "unit_offset": 78,
+    "book_offset": 8085,
+    "raw_byte": 12253,
+    "left": "xtris datis, reconciliantur omni suspicione sublata. Itaque rex herodes statim principatu sacerdotii anandum praeter legem exuit, ",
+    "right": "seditiones domesticas pacando, nam non licebat aliquem honore semel accepto fraudari, quod prius antiochus epifanis destruxit, dum auferret ab hiesu sacerdotium et ordinaret fratrem eius oniam. Secundus autem aristobolus hyrcanum fratrem su",
+    "parsed_unit_sha256": "b0a026d81469b579ab27929bc5b9e751a48ea26019a54447982e8c8cbdb70f7a",
+    "raw_unit_sha256": "53b142a0514ced35004a83cace6cfd3f151ce53982e4b2f6c8a209351a7a8e3e",
+    "source_unit_offset": 78
+  },
+  "correspondence_qualification_separate_from_placement": true,
+  "reader_notes": {
+    "39": "The Latin compresses material from Greek XV.39–40 into one removal statement. The phrase praeter legem, corresponding to the statement in Greek §40 that Herod acted unlawfully, occurs earlier and remains in this Latin interval. See the reciprocal note at XV.40.",
+    "40": "Partial correspondence: the Latin compresses material from Greek XV.39–40 into one removal statement. Seditiones domesticas pacando corresponds to the household-disturbance phrase within Greek §40. Praeter legem, corresponding to the statement in Greek §40 that Herod acted unlawfully, occurs earlier and remains in the Latin interval assigned to XV.39. This displayed Latin interval supplies only part of the Greek section."
+  },
+  "adjoining_intervals_39_40_end_before_41_verified": true
 }
