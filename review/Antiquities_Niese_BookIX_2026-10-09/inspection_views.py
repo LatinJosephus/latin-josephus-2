@@ -15,7 +15,7 @@ else:
   ims=[]
   for page in range(first,min(first+2,336)):
    im=Image.open(P/'evidence'/f'Niese-pdf-{page:03}.png').convert('RGB');w,h=im.size
-   im=im.crop((int(w*.17),int(h*.085),int(w*.92),int(h*.61)));ims.append((page,im))
+   im=im.crop((int(w*.17),int(h*.085),int(w*.92),int(h*.71)));ims.append((page,im))
   width=sum(im.width for _,im in ims);height=max(im.height for _,im in ims)+30
   sheet=Image.new('RGB',(width,height),'white');d=ImageDraw.Draw(sheet);x=0
   for page,im in ims:sheet.paste(im,(x,30));d.text((x+15,5),f'Niese II printed {page-8}, PDF {page}',fill='black');x+=im.width
