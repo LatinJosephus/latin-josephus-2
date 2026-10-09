@@ -1,0 +1,341 @@
+{
+  "scope": "PROTECTED_BASELINE_CHECK_AFTER_ASSIGNED_CORPUS_AND_ANONYMOUS_PARAGRAPH_SUPPORT",
+  "started": "2026-10-09T15:59:03.227Z",
+  "result": "FAIL",
+  "browserExceptions": [],
+  "consoleErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:55646/antiquities/?book=1&niese=27",
+      "error": "net::ERR_HTTP_RESPONSE_CODE_FAILURE"
+    }
+  ],
+  "books": {
+    "8": {
+      "selections": 420,
+      "representedLatin": 420,
+      "unavailable": [],
+      "unique_executable_identities": "PASS",
+      "all_internal_markers_in_broader_views": {
+        "chapter": {
+          "rows": 15,
+          "internal_sections_present_once": 337,
+          "chapters_without_subdivisions": [],
+          "missingOrRepeated": []
+        },
+        "subchapter": {
+          "rows": 83,
+          "internal_sections_present_once": 328,
+          "chapters_without_subdivisions": [
+            {
+              "niese": 237,
+              "chapter": "LOEB-08-Chapter-9-0"
+            },
+            {
+              "niese": 238,
+              "chapter": "LOEB-08-Chapter-9-0"
+            },
+            {
+              "niese": 239,
+              "chapter": "LOEB-08-Chapter-9-0"
+            },
+            {
+              "niese": 240,
+              "chapter": "LOEB-08-Chapter-9-0"
+            },
+            {
+              "niese": 241,
+              "chapter": "LOEB-08-Chapter-9-0"
+            },
+            {
+              "niese": 242,
+              "chapter": "LOEB-08-Chapter-9-0"
+            },
+            {
+              "niese": 243,
+              "chapter": "LOEB-08-Chapter-9-0"
+            },
+            {
+              "niese": 244,
+              "chapter": "LOEB-08-Chapter-9-0"
+            },
+            {
+              "niese": 245,
+              "chapter": "LOEB-08-Chapter-9-0"
+            }
+          ],
+          "missingOrRepeated": []
+        }
+      }
+    },
+    "10": {
+      "selections": 281,
+      "representedLatin": 280,
+      "unavailable": [
+        108
+      ],
+      "unique_executable_identities": "PASS",
+      "all_internal_markers_in_broader_views": {
+        "chapter": {
+          "rows": 11,
+          "internal_sections_present_once": 230,
+          "chapters_without_subdivisions": [],
+          "missingOrRepeated": []
+        },
+        "subchapter": {
+          "rows": 52,
+          "internal_sections_present_once": 230,
+          "chapters_without_subdivisions": [],
+          "missingOrRepeated": []
+        }
+      }
+    }
+  },
+  "criticalURLs": [
+    {
+      "book": 8,
+      "niese": 1,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 186,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 187,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 254,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 255,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 256,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 367,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": true,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 368,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 369,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 8,
+      "niese": 420,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 1,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 18,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 33,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 101,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 102,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": true,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 107,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 108,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": true,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 109,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 149,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 150,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 151,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 213,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 248,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 276,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": true,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 277,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    },
+    {
+      "book": 10,
+      "niese": 281,
+      "exact_rendered_intervals": "PASS",
+      "LatinAbsence": false,
+      "qualified": false,
+      "English_broader_context": true,
+      "duplicateIDs": 0
+    }
+  ],
+  "protectedURLs": [],
+  "changed_reader_sha256": "b89d321e22d877e9cc48fd6470298a0525749e70e35e8c5344778a966e921f69",
+  "certified_production_build_hashes": "IDENTICAL_EXCEPT_AUTHORIZED_READER_CHANGE_MATCHING_WORKTREE",
+  "local_origins": [
+    "http://127.0.0.1:55644",
+    "http://127.0.0.1:55645",
+    "http://127.0.0.1:55646"
+  ],
+  "reload_history_navigation_panes_themes": "PASS",
+  "non_contiguous_availability": "PASS",
+  "failure": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:55646/antiquities/?book=1&niese=27\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:55646/antiquities/?book=1&niese=27\", waiting until \"domcontentloaded\"\u001b[22m\n"
+}
