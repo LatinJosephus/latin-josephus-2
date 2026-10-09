@@ -10,4 +10,4 @@ The accepted VIII/X audit, implementation and integration packets at the pinned 
 
 Frozen structural research: `C:\Users\Pollard_R\Mon disque\Latin Josephus Project\LatinJosephus-Recovery\latinjosephus-next\review\Antiquities_Loeb_Niese_Verification_2026-10-05`. Structural rows locate windows and do not certify exact Niese starts. The transcription is the Latin textual base; no claim of physical loss or of the whole tradition follows from absent correspondence here.
 
-Current status: 288 individually reviewed Latin candidates, 285 represented starts, 2 verified unavailabilities and 1 pending editorial cuts. The printed range is 1–491. Full-book reader certification remains incomplete; CHECKPOINT_CERTIFICATE.json distinguishes exact byte recovery and limited local reader QA from the full gate.
+Current status: 491 individually reviewed Latin candidates, 487 represented starts, 2 verified unavailabilities and 2 pending editorial cuts. The printed range is 1–491. Full-book reader certification remains incomplete; CHECKPOINT_CERTIFICATE.json distinguishes exact byte recovery and limited local reader QA from the full gate.
