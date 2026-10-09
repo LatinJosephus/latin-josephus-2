@@ -118,7 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
       nieseBooks: [1, 2, 3, 4, 5, 6, 7],
       nieseIdentityBooks: {
         8: "assets/xml/antiquities/niese/book-08.json",
-        10: "assets/xml/antiquities/niese/book-10.json"
+        10: "assets/xml/antiquities/niese/book-10.json",
+        12: "assets/xml/antiquities/niese/book-12.json"
       },
       nieseRanges: {
         1: [27, 346],
@@ -2066,7 +2067,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (index === -1) return null;
 
     const start = entries[index];
-    const end = entries[index + 1] || null;
+    // An explicit narrative end can precede a preserved book subscription.
+    const terminal = language === "Latin"
+      ? data.querySelector('tei-milestone[unit="niese-end"]') : null;
+    const end = entries[index + 1] || (terminal ? {node: terminal, kind: "end"} : null);
     const book = start.node.closest("tei-div1") || data.querySelector("tei-div1") || data;
     const wrapper = document.createElement("tei-div2");
     wrapper.setAttribute("type", "niese-section");
