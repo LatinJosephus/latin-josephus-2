@@ -4,6 +4,8 @@ ROOT=Path(__file__).resolve().parents[2]
 def save(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 for b,roman,total in [(14,'XIV',491),(15,'XV',425)]:
  P=ROOT/f'review/Antiquities_Niese_Book{roman}_2026-10-09'
+ if (P/'CERTIFICATION.json').exists():
+  print(b,'complete certified registry retained');continue
  rows=json.loads((P/'BOUNDARIES.json').read_text())
  if b==14:
   limits={5:'The Greek temple-precinct assault is not explicitly expressed in this Latin interval; Hyrcanus’s retreat and detention of the family survive.',
@@ -24,6 +26,9 @@ for b,roman,total in [(14,'XIV',491),(15,'XV',425)]:
  exceptions=[]
  if b==14:exceptions=[dict(paragraph='latin-book14-num25',label='[II.ii.26]',visibleClaim=26,actualSection=25),
   dict(paragraph='latin-book14-num133',label='[VIII.ii.133]',visibleClaim=133,actualSection=133)]
+ if b==14:
+  for n in [199,230,237]:
+   if rows[n-1].get('implementation_approved'):exceptions.append(dict(paragraph=f'latin-book14-num{n}',label=None,visibleClaim=n,actualSection=n,reason='Visible label is within a reviewed section or its predecessor; the adopted milestone supplies the actual executable start.'))
  # Assert the exact inherited visible label from the frozen XML, not a guess.
  if b==14:
   import sys
