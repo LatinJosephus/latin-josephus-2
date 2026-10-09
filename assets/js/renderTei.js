@@ -2083,6 +2083,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const startParagraph = start.node.closest("tei-p");
     const endParagraph = end ? end.node.closest("tei-p") : null;
 
+    // A leading milestone can follow a preserved, non-executable citation
+    // label in the next paragraph. Do not display that label-only prefix as
+    // the tail of the preceding Niese section. Keep any narrative or other
+    // markup before the milestone, and leave the source paragraph untouched.
+    let endNode = end?.node;
+    if (end?.kind === "milestone" && endParagraph
+      && endParagraph !== startParagraph) {
+      const prefixRange = document.createRange();
+      prefixRange.setStart(endParagraph, 0);
+      prefixRange.setEndBefore(end.node);
+      const prefix = prefixRange.cloneContents();
+      const labels = [...prefix.querySelectorAll("tei-num")];
+      labels.forEach(label => label.remove());
+      if (labels.length && !prefix.textContent.trim() && !prefix.querySelector("*")) {
+        endNode = endParagraph;
+      }
+    }
+
     const setRangeStart = range => {
       if (start.kind === "num") {
         range.setStartBefore(start.node);
@@ -2103,7 +2121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setRangeStart(range);
 
       if (end) {
-        range.setEndBefore(end.node);
+        range.setEndBefore(endNode);
       } else {
         range.setEnd(book, book.childNodes.length);
       }
