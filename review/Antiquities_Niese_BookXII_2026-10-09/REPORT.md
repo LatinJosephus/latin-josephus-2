@@ -1,0 +1,11 @@
+# Antiquities XII: locally certified
+
+Status: LOCAL_CERTIFIED_READY_FOR_COORDINATED_INTEGRATION. Independently reviewed 434 Greek starts and 434 Latin candidates, with 433 nonempty Latin intervals. 68 starts are retained, 365 Latin section milestones added, 1 narrative end markers added, and 1 independently verified Greek marker operations adopted. Explicit operations and byte coordinates are in APPROVED_MARKER_PLAN.json.
+
+No pending editorial decisions. Sections without independent Latin intervals: [248]; see the recorded correspondence and reader notices rather than infer whole-section absence. Source words, whitespace, spelling, punctuation, transmitted order, labels, paragraphs, apparatus, IDs and sameAs are preserved. Independent inverse recovery and node/raw-byte locator validation passed. English bytes and Whiston behavior are unchanged.
+
+Every new identity was actually selected in our own local build. Exact intervals, Greek/English context, qualifications, final extent, full narrative partition and every actual chapter/subchapter range passed. Deep links, previous/next, reload/history, pane switching, unique IDs and light/dark themes passed. Protected Antiquities I–VIII/X, contents, traditional/Bamberg, Alignment, Whiston, Bellum including Lodge and other affected works passed comparison with our frozen baseline. The two precisely bounded inherited exceptions are documented in the batch packet.
+
+Published baseline: 3,157 selectable identities. This book adds 434 local selections and 433 nonempty Latin intervals; these totals are distinct. Pinned base: ad3158b7a86dea6997510b3de17f2e510c23367c. Evidence HEAD before this certificate: 3a7bc3e042570f653c80ef5816bc259ee6f8e6c6. Canonical HEAD observed at sealing: cea765de5d990646b4d4dc079bac1c0da46ca107. Branch: antiquities-niese-12-13. Worktree: C:\workspace\LatinJosephus-antiquities-niese-12-13. Runtime: C:\workspace\Antiquities-Niese-12-13-runtime-20261009. QA origins and actual profile isolation are recorded in browser evidence.
+
+CERTIFICATE.json binds the evidence hashes; FILE_MANIFEST.json lists exact packet bytes. SOURCE_AUTHORITY.md and BASELINE.json retain absolute sources and provenance. BOUNDARIES.json/BOUNDARIES.md retain the individual reviews. This certificate authorizes readiness for coordinated integration only; nothing has been merged, pushed or published.

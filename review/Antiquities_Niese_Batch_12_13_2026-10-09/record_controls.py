@@ -1,0 +1,10 @@
+"""Preserve actually inspected independent controls; no OCR-derived approval."""
+from prepare_review import *
+d=packet(12);dest=d/'evidence/Loeb';dest.mkdir(exist_ok=True)
+for name in ['opening-014','opening-015','decision-138','decision-139','decision-140']:shutil.copyfile(RUNTIME/f'loeb-{name}.png',dest/f'PDF-{name[-3:]}.png')
+for n in [143,144]:shutil.copyfile(RUNTIME/f'niese-xii-contents-{n}.png',d/'evidence/Niese'/f'page-{n}.png')
+save(d/'CONTROL_OBSERVATIONS.json',{'edition':'Loeb VII, Ralph Marcus, 1966 printing','PDF_source':str(Path('C:/workspace/Loeb Josephus Volumes/josephus jewish antiquities books XII-XIV VII (Unknown) (z-library.sk, 1lib.sk, z-lib.sk).pdf')),'observations':[{'PDF_pages':[14,15],'printed_pages':[2,3],'observed':'XII opening implicit 1 followed by explicit 2–4; Greek/English independently corroborate opening identity.'},{'PDF_pages':[138,139,140],'printed_pages':[126,127,128],'observed':'Greek 248 dating/second capture; 249 not sparing those admitting him because of temple wealth; 250 temple spoils. Full Greek/English clauses visually inspected, agreeing with Niese cuts and decision-packet correspondence.'}],'Niese_contents_observation':{'PDF_pages':[143,144],'printed_pages':[71,72],'observed':'XII arguments and duration statement precede body opening at p73/PDF145; excluded from narrative coordinates.'},'image_hashes':{str(p.relative_to(d)):digest(p.read_bytes()) for p in dest.glob('*.png')}})
+transition=PACK/'evidence/transition';transition.mkdir(parents=True,exist_ok=True)
+for n in [238,239,240,241]:shutil.copyfile(RUNTIME/f'loeb-transition-{n}.png',transition/f'Loeb_PDF{n}.png')
+save(PACK/'TRANSITION_CONTROL.json',{'edition':'Loeb VII (1966 printing), independently visually examined','PDF_pages':[238,239,240,241],'printed_pages':[226,227,228,229],'XII':'Greek/English 433–434 and narrative end; confirms Niese XII ending without borrowing XIII text.','XIII':'Independent Greek/English opening 1 followed by 2–5; confirms new book identity.','images':[{'path':str(p),'sha256':digest(p.read_bytes())} for p in transition.glob('*.png')]})
+print('Previously inspected control images and observations preserved.')

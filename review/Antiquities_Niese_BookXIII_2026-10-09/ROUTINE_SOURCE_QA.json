@@ -1,0 +1,50 @@
+{
+  "book": 13,
+  "result": "PASS",
+  "status": "PROVISIONAL_ROUTINE_STAGE_NOT_CERTIFIED",
+  "checks": [
+    {
+      "language": "Greek",
+      "source_sha256": "5d8895efde76b679083a7c08b5f236d5f3e9d8e9dadb75e6fc3661da1200007c",
+      "two_independent_exact_recovery_methods": "PASS",
+      "narrative_unchanged": "PASS",
+      "frozen_node_UTF8_locators_checked": 433
+    },
+    {
+      "language": "Latin",
+      "source_sha256": "39cebe5e8af28662a638fa6dcb5222c2496f5dc2f293936a35c52c72ed6eb3dd",
+      "two_independent_exact_recovery_methods": "PASS",
+      "narrative_unchanged": "PASS",
+      "frozen_node_UTF8_locators_checked": 431
+    }
+  ],
+  "anonymous_269_ID_preserved_and_explicit_marker_found": true,
+  "PDFs_and_frozen_inputs_unchanged": true,
+  "English_unchanged": true,
+  "pending_representations": [
+    213,
+    214,
+    216
+  ],
+  "excluded_adjoining_extent": 212,
+  "whole_section_absence_claims": [],
+  "mixed_content_fixtures": {
+    "status": "PASS",
+    "tests": [
+      "mixed .text/.tail",
+      "UTF-8",
+      "numeric and named entities",
+      "CRLF",
+      "comment exclusion and tail coordinates",
+      "empty element tails",
+      "nested add/del retained",
+      "num excluded with tail retained",
+      "two units",
+      "raw Unicode-byte roundtrip",
+      "note excluded with tail retained",
+      "nested-child tail ownership",
+      "chapter-0 paratext exclusion",
+      "omission-placeholder exclusion"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+import sys
+sys.path.insert(0,str(__import__('pathlib').Path(__file__).resolve().parents[1]/'Antiquities_Niese_Batch_12_13_2026-10-09'))
+from prepare_review import *
+d=packet(13);bs=books(13);l=bs['Latin'];rows=json.loads((d/'BOUNDARIES.json').read_text(encoding='utf8'))
+controls={'Niese':[221,222],'Loeb':[9,344,345,346,347,348,458,459]}
+images=[{'edition':edition,'PDF_page':page,'path':str(d/'evidence'/edition/f'page-{page}.png'),'sha256':digest((d/'evidence'/edition/f'page-{page}.png').read_bytes()),'status':'VISUALLY_INSPECTED','observation_record':str(d/'SOURCE_CONTROL_XIII.md')} for edition,pages in controls.items() for page in pages]
+save(d/'SOURCE_CONTROL_XIII.json',{'book':13,'date':'2026-10-09','status':'VISUALLY_INSPECTED','images':images,'source_PDF_hashes':{s['path']:s['sha256'] for s in json.loads((d/'BASELINE.json').read_text(encoding='utf8'))['printed_sources']},'narrative_span_authority':'Niese III 151–233, explicit 433; Loeb terminal running heading 432 is an independently recorded edition difference, not a census authority','decision_controls':'Loeb 332–336 independently confirms 212–218; Latin correspondence is separately reviewed.'})
+decision=json.loads((d/'DECISION_XIII_213_216.json').read_text(encoding='utf8'))
+a=rows[213]['Latin']['locator'];u=next(u for u in l.units if u['id']=='latin-book13-num213');z=l.locate(l.first_content(u['book_start']));assert l.stream[z['book_offset']:].startswith('Itaque iudaei feliciter')
+start=rows[211]['Latin']['locator'];end=rows[214]['Latin']['locator']
+decision['alternative_exact_extents']={name:{'212':{'start':start,'end_exclusive':cut,'text':l.stream[start['book_offset']:cut['book_offset']]},'214':{'start':cut,'end_exclusive':end,'text':l.stream[cut['book_offset']:end['book_offset']]}} for name,cut in [('A',a),('B',z)]}
+decision['independent_control']=str(d/'SOURCE_CONTROL_XIII.json');save(d/'DECISION_XIII_213_216.json',decision)
+with (d/'DECISION_XIII_213_216.md').open('a',encoding='utf8') as f:f.write('\nIndependent control subsequently examined: Loeb VII pp.332–336, PDF344–348, linked and described in SOURCE_CONTROL_XIII.md. Both A and B now have full text/tail-node, Unicode and raw UTF-8 locators and complete adjoining 212/214 extents in alternative_exact_extents in the JSON. The frozen input hashes remain unchanged. No pending cut or absence representation has been applied to repository identity data.\n')
+with (d/'SOURCE_AUTHORITY.md').open('a',encoding='utf8') as f:f.write('\nSupplementary visual control and image hashes: SOURCE_CONTROL_XIII.md and SOURCE_CONTROL_XIII.json record Niese contents PDF221–222, Loeb contents PDF9, decision control PDF344–348 and independent ending PDF458–459. Loeb places the future-book announcement in apparatus; Niese prints it in the terminal body at 433. The final Latin assessment survives; no wording is reconstructed. The authoritative identity count remains the independently reviewed Niese census.\n')
+print('Book XIII control supplement and exact alternative extents recorded')

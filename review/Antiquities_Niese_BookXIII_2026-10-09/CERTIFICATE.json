@@ -1,0 +1,39 @@
+{
+  "book": 13,
+  "status": "LOCAL_CERTIFIED_READY_FOR_COORDINATED_INTEGRATION",
+  "base_commit": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "evidence_HEAD": "2b0e001e8225ac580fd3613f9f921253c2bc593c",
+  "canonical_HEAD_read_at_seal": "cea765de5d990646b4d4dc079bac1c0da46ca107",
+  "canonical_advance": true,
+  "branch": "antiquities-niese-12-13",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13",
+  "runtime": "C:\\workspace\\Antiquities-Niese-12-13-runtime-20261009",
+  "published_baseline_selectable": 3157,
+  "local_added_selectable": 433,
+  "local_added_nonempty_Latin_intervals": 431,
+  "Greek_marker_operations": 1,
+  "Latin_section_milestones": 348,
+  "Latin_end_markers": 0,
+  "retained_Latin_starts": 83,
+  "no_independent_Latin_intervals": [
+    213,
+    216
+  ],
+  "whole_section_absence_claims": [
+    213,
+    216
+  ],
+  "pending_editorial_decisions": [],
+  "source_recovery": "PASS: independent raw tag removal and stored exact inverse against pinned LF bytes; all narrative, IDs, sameAs and English preserved",
+  "reader_QA": "PASS: every selection, interval, language context, qualification and actual chapter/subchapter range; deep links, history, navigation, reload and themes",
+  "protected_QA": "PASS; exact inherited exceptions separately reproduced in frozen baseline and candidate",
+  "evidence_sha256": {
+    "FINAL_SOURCE_QA.json": "d23eaaf4daf4e90a7c3d4d4dd658817826b4afb24dc14ab3eed11a8cfdf1ae46",
+    "IMPLEMENTATION_BROWSER_QA.json": "77622e3c04fe20c5c974189d5a74720d9bd95b8457585e1b9850c25e31ba5069",
+    "RANGE_BROWSER_QA.json": "d8bace1f4185352552549bcaf26d889735a99dd5160e04427c2bd6fb876e2424",
+    "FINAL_VISUAL_REVIEW.json": "66f935b84e89b2be5a38533e920b7f7c663e37da9abddd705329086768c34711",
+    "PROTECTED_BROWSER_QA.json": "605e3b41f7cb0aa49beb30088dadc9e455ed34c87c1ee5663fd4dc2e860dd486",
+    "BOUNDED_BASELINE_EXCEPTIONS.json": "d5a2c4aee4292398e967e97c748d72f489231377cd28975482271683f7ddca29"
+  },
+  "integration_limit": "Local certification only; reconcile against then-current canonical code. No merge, push, preview change or deployment."
+}

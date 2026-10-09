@@ -1,0 +1,14 @@
+{
+  "book": 13,
+  "date": "2026-10-09",
+  "initial_rehearsal_failure": ["Latin 268 interval mismatch", "Latin 269 interval mismatch"],
+  "cause": "The inherited generic milestone census required a containing tei-p[id], so the explicit milestone in the preserved anonymous paragraph was skipped and 269 was merged into 268.",
+  "source_paragraph_ID_added": false,
+  "shared_reader_change": "Accept an explicit Niese milestone inside a body tei-p, retaining apparatus exclusions and numeric/range checks. Citation num elements retain the existing paragraph-ID requirement.",
+  "reader_support_commit": "88fb92d",
+  "English_context": "Existing identity contextTarget fallback to latin-book13-num267; verified against the exact preserved English sameAs paragraph, rather than just a nonempty pane.",
+  "successful_rehearsal": "ROUTINE_REHEARSAL_BROWSER_QA.json",
+  "range_rehearsal": "ROUTINE_RANGE_BROWSER_QA.json",
+  "visuals_inspected": ["ROUTINE_READER_269_light.png", "ROUTINE_READER_274_dark.png", "ROUTINE_READER_433_light.png"],
+  "qualification": "The rehearsal is not final book certification; XIII.212 adjoining extent and 213,214,216 representations remain excluded pending adjudication."
+}
