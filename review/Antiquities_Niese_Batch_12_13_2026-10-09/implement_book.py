@@ -63,7 +63,12 @@ def implement(b,apply=False):
   for query in ['//@xml:id','//@sameAs']:
    assert parsed.tree.xpath(query,namespaces={'xml':'http://www.w3.org/XML/1998/namespace'})==bs[lang].tree.xpath(query,namespaces={'xml':'http://www.w3.org/XML/1998/namespace'})
   rel=f'assets/xml/antiquities/{lang}/book-{b:02}.xml';target=ROOT/rel
-  assert target.read_bytes() in [before,after]
+  current=target.read_bytes()
+  if current not in [before,after]:
+   routine=json.loads((d/'ROUTINE_IMPLEMENTATION_PRESERVATION.json').read_text(encoding='utf8'))
+   prior=next(s for s in routine['source_records'] if s['language']==lang)
+   assert routine['status']=='PROVISIONAL_ROUTINE_MARKERS_APPLIED' and digest(current)==prior['after_sha256']
+   assert patch(current,prior['inverse_operations'])==before
   outputs[target]=after
   preservation.append({'language':lang,'path':str(target),'before_sha256':digest(before),'after_sha256':digest(after),'reverse_sha256':digest(recovered),'exact_byte_recovery':True,'narrative_unchanged':True,'IDs_sameAs_unchanged':True,'newline':'LF' if b'\r' not in before else 'CRLF','BOM':before.startswith(b'\xef\xbb\xbf'),'operations':ops,'inverse_operations':inverse})
  english=ROOT/f'assets/xml/antiquities/English/book-{b:02}.xml';assert english.read_bytes()==bs['English'].raw
