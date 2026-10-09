@@ -4,7 +4,7 @@
     "Greek": {
       "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\assets\\xml\\antiquities\\Greek\\book-09.xml",
       "before_sha256": "c6958a02b0f55d4bae23d4d33e8695d8a142361e373b1b2828a2b1da7626d403",
-      "after_sha256": "ae851f4a5fbb941f64c1ca1dbbc6fe95e1d478f0f115e4d3843343efa72bcfd5",
+      "after_sha256": "3bc7dcdef2e994181b9faa62564c544e4ce2d620ef0509bbc3435861b4f560aa",
       "authorized_operations": [
         {
           "niese": 1,
@@ -39,6 +39,7 @@
         {
           "niese": 181,
           "kind": "INSERT_VERIFIED_GREEK_NUM",
+          "authority": "Niese printed line independently checked with Loeb; routine correction",
           "at": 75785,
           "delete": 0,
           "before_hex": "",
@@ -69,6 +70,7 @@
         {
           "niese": 216,
           "kind": "INSERT_VERIFIED_GREEK_NUM",
+          "authority": "Niese printed line independently checked with Loeb; routine correction",
           "at": 95168,
           "delete": 0,
           "before_hex": "",
@@ -86,6 +88,37 @@
             "right": "τὸν αὐτὸν δὲ τρόπον καὶ Ὀζίας ὁ τοῦ Ἀμασία υἱός,  ἔτος ἤδη τέταρτον πρὸς τοῖς δέκα βασιλεύοντος Ἱεροβοάμου, τῶν δύο φυλῶν ἐβασίλευσεν ἐν Ἱεροσολύμοις μητρὸς ὢν Ἀχίας μὲν τοὔνομα ἀστῆς δὲ τὸ γένος. ἀγαθὸς δὲ ἦν καὶ δίκαιος τὴν φύσιν καὶ μεγα",
             "parsed_unit_sha256": "ba2344cd3dabe1e8c482bc8ffabd8d0bb272ad7be4ebfb6adf3cb3d5a52157c1",
             "raw_unit_sha256": "3172cca9bf04cc5cd52049886efc9f028496124c981cccf0262038a7c3fd4672"
+          }
+        },
+        {
+          "niese": 240,
+          "kind": "REMOVE_OLD_GREEK_NUM_ONLY",
+          "at": 109396,
+          "delete": 16,
+          "before_hex": "3c6e756d3e5b3234305d3c2f6e756d3e",
+          "after_hex": ""
+        },
+        {
+          "niese": 240,
+          "kind": "INSERT_ADJUDICATED_GREEK_NUM",
+          "authority": "User adjudication of DECISION_240.md",
+          "at": 109337,
+          "delete": 0,
+          "before_hex": "",
+          "after_hex": "3c6e756d3e5b3234305d3c2f6e756d3e",
+          "target_locator": {
+            "stable_id": "greek-book09-num239",
+            "paragraph": 39,
+            "xpath": "/*/*/*/*[2]/*[2]/*[38]",
+            "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[38]/num[1]/tail()",
+            "node_offset": 324,
+            "unit_offset": 324,
+            "book_offset": 52397,
+            "raw_byte": 109337,
+            "left": "ρασσόμενος καὶ κλυδωνιζόμενος οἰχήσεται φεύγων λεγόντων πρὸς ἀλλήλους ‘στῆτε καὶ μείνατε καὶ χρυσὸν αὑτοῖς καὶ ἄργυρον ἁρπάσατε.’ ",
+            "right": "ἔσται δ᾽ οὐδεὶς βουλησόμενος:  σώζειν γὰρ αὑτῶν ἐθελήσουσι τὰς ψυχὰς μᾶλλον ἢ τὰ κτήματα: δεινὴ γὰρ αὐτοὺς ἐν ἀλλήλοις ἔρις ἕξει καὶ θρῆνος πάρεσίς τε τῶν μελῶν, αἵ τε ὄψεις ὑπὸ τοῦ φόβου μέλαιναι τελέως αὐτοῖς γενήσονται.  ‘ποῦ δὲ ἔσται τὸ",
+            "parsed_unit_sha256": "2c539c9e1474f8504119f3707b33279d115928645c9a37d0245c8c68b37a4c88",
+            "raw_unit_sha256": "98ec34ae2a51815cee73f4f929c77b7c1ed90879fe963e853b874ee97bd2467c"
           }
         }
       ],
@@ -119,6 +152,18 @@
           "delete": 0,
           "before_hex": "",
           "after_hex": "3c6e756d3e5b3231365d3c2f6e756d3e"
+        },
+        {
+          "at": 109351,
+          "delete": 16,
+          "before_hex": "3c6e756d3e5b3234305d3c2f6e756d3e",
+          "after_hex": ""
+        },
+        {
+          "at": 109426,
+          "delete": 0,
+          "before_hex": "",
+          "after_hex": "3c6e756d3e5b3234305d3c2f6e756d3e"
         }
       ],
       "reversed_sha256": "c6958a02b0f55d4bae23d4d33e8695d8a142361e373b1b2828a2b1da7626d403",
@@ -5328,7 +5373,7 @@
       "CRLF": 0
     }
   },
-  "status": "PROVISIONAL",
+  "status": "ALL_DECISIONS_CLOSED",
   "expected_sections": 291,
   "represented_Latin_candidates": 232,
   "unavailable_sections": [
@@ -5395,10 +5440,8 @@
   "retained_Latin_starts": 46,
   "implemented_Latin_milestones": 185,
   "Greek_opening_additions": 1,
-  "Greek_marker_moves": 2,
-  "pending_editorial_decisions": [
-    240
-  ],
+  "Greek_marker_moves": 3,
+  "pending_editorial_decisions": [],
   "mixed_content_fixtures": {
     "status": "PASS",
     "tests": [
