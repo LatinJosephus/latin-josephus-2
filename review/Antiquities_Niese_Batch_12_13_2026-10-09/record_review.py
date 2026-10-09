@@ -8,8 +8,8 @@ def independent_node(book,loc):
  text=el[0].tail if tail else el[0].text
  assert text is not None
  node=next(n for n in book.nodes if n['path']==path)
- assert text==node['text']
- k=loc['node_offset'];assert text[k:]==node['text'][k:]
+ assert text==node.get('source_node_text',node['text'])
+ k=loc['node_offset'];assert k<len(text)
  raw=book.raw[loc['raw_byte']:]
  expected=text[k]
  if raw.startswith(b'&'):assert raw[:raw.index(b';')+1].decode() in ['&amp;','&lt;','&gt;','&quot;','&apos;',f'&#{ord(expected)};',f'&#x{ord(expected):x};']
@@ -39,10 +39,11 @@ def apply(b):
  assert all(a['Latin']['locator']['book_offset']<z['Latin']['locator']['book_offset'] for a,z in zip(positioned,positioned[1:]))
  for i,r in enumerate(positioned):
   end=positioned[i+1]['Latin']['locator'] if i+1<len(positioned) else None
-  r['Latin']['extent_status']='CLOSED_BY_REVIEWED_NEXT_START' if end else 'OPEN_UNTIL_NEXT_BOUNDARY_REVIEW'
+  r['Latin']['extent_status']='CLOSED_BY_REVIEWED_NEXT_START' if end else ('CLOSED_BY_DOCUMENTED_NARRATIVE_END' if r['niese']==len(rows) else 'OPEN_UNTIL_NEXT_BOUNDARY_REVIEW')
   if end:r['Latin']['end_book_offset']=end['book_offset'];r['Latin']['interval']=l.stream[r['Latin']['locator']['book_offset']:end['book_offset']]
+  elif r['niese']==len(rows):r['Latin']['end_book_offset']=len(l.stream);r['Latin']['interval']=l.stream[r['Latin']['locator']['book_offset']:]
  save(d/'CANDIDATE_REGISTER.json',rows);save(d/'BOUNDARIES.json',rows)
- reviewed=[r for r in rows if r['Latin']['review_status']=='INDIVIDUALLY_REVIEWED'];print('Book',b,'Greek inspected',len(observations),'Latin reviewed',len(reviewed),'locators validated',len(reviewed),'approved routine boundaries',sum(r['implementation_approved'] for r in rows))
+ reviewed=[r for r in rows if r['Latin']['review_status']=='INDIVIDUALLY_REVIEWED'];print('Book',b,'Greek inspected',len(observations),'Latin reviewed',len(reviewed),'locators validated',sum(bool(r['Latin']['locator']) for r in reviewed),'approved boundaries',sum(r['implementation_approved'] for r in rows))
  with (d/'BOUNDARIES.md').open('w',encoding='utf8',newline='\n') as f:
   f.write(f'# Book {b}: individual boundary review\n\nProvisional while review is incomplete. XML candidates are not source approval.\n\n')
   for r in reviewed:

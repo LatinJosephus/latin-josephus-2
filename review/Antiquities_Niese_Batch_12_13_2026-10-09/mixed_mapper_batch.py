@@ -80,10 +80,46 @@ class Book:
   for u in self.units:
    lxmltext=''.join(u['element'].xpath('.//text()[not(ancestor::t:num) and not(ancestor::t:note) and not(ancestor::t:app) and not(ancestor::t:rdg)]',namespaces=NS))
    assert u['text']==('' if u['excluded_reason'] else lxmltext),(u['id'],u['text'],lxmltext)
+  self.inline_excluded=[]
+  self.project_inline_paratext()
+ def project_inline_paratext(self):
+  # These exact, independently inspected transcription labels are plain text,
+  # not num elements. Projection never changes XML bytes or source node offsets.
+  tokens={'latin-book13-num35':['III','III.'],'latin-book13-num62':['V.'],'latin-book13-num83':['VI.'],'latin-book13-num86':['VII.'],'latin-book13-num131':['VIII.'],'latin-book13-num187':['VIIII.'],'latin-book13-num223':['X.'],'latin-book13-num225':['XI.'],'latin-book13-num228':['XII.'],'latin-book13-num230':['XIII.'],'latin-book13-num236':['XIIII'],'latin-book13-num267':['XV.'],'latin-book13-num270':['XVI.'],'latin-book13-num301':['XVII'],'latin-book13-num320':['XVIII.'],'latin-book13-num324':['XVIIII.'],'latin-book13-num372':['XXIII.'],'latin-book13-num387':['XXIIII'],'latin-book13-num405':['XXV.']}
+  oldstream=self.stream;cuts=[]
+  for u in self.units:
+   for token in tokens.get(u['id'],[]):
+    suffix='' if token.endswith('.') else r'(?![A-Za-z.])'
+    hits=list(re.finditer(r'(?<![A-Za-z])'+re.escape(token)+suffix,u['text']))
+    assert len(hits)==1,(u['id'],token,len(hits))
+    m=hits[0];cuts.append((u['book_start']+m.start(),u['book_start']+m.end(),'plain traditional division label'))
+   if u['id']=='latin-book12-num426':
+    text='Flauii iosepp FLAUII IOSEPPI IUDAEICAE ANTIQUITATIS LIBER DUODECIMUS EXPLICIT'
+    assert u['text'].endswith(text)
+    start=u['book_start']+u['text'].index(text);cuts.append((start,start+len(text),'terminal book subscription'))
+  if not cuts:return
+  cuts.sort()
+  def remap(k):return k-sum(max(0,min(k,z)-a) for a,z,_ in cuts if a<k)
+  for a,z,reason in cuts:
+   loc=self.locate(a);self.inline_excluded.append({'reason':reason,'text':oldstream[a:z],'original_locator':loc,'original_end_book_offset':z})
+  newnodes=[]
+  for u in self.units:
+   nodes=[];text=''
+   for n in u['nodes']:
+    a=n['book_start'];z=a+len(n['text']);edges=[a]+[v for c,d,_ in cuts for v in [max(a,c),min(z,d)] if a<v<z]+[z];edges=sorted(set(edges))
+    for start,end in zip(edges,edges[1:]):
+     if any(c<=start<d for c,d,_ in cuts):continue
+     k=start-a;q=end-a;part={**n,'text':n['text'][k:q],'source_node_text':n['text'],'source_node_offset':k,'raw_positions':n['raw_positions'][k:q],'unit_start':len(text),'book_start':remap(start)}
+     nodes.append(part);newnodes.append(part);text+=part['text']
+   u['book_start']=remap(u['book_start']);u['nodes']=nodes;u['text']=text
+  for label in self.labels:
+   label['book_offset']=remap(label['book_offset']);u=self.units[label['unit']-1];label['unit_offset']=label['book_offset']-u['book_start']
+  self.nodes=newnodes;self.stream=''.join(n['text'] for n in newnodes)
+  assert self.stream==''.join(oldstream[i] for i in range(len(oldstream)) if not any(a<=i<z for a,z,_ in cuts))
  def locate(self,offset):
   n=next(n for n in self.nodes if n['book_start']<=offset<n['book_start']+len(n['text']))
   u=self.units[n['unit']-1];k=offset-n['book_start']
-  return dict(stable_id=u['id'],paragraph=u['index'],xpath=u['xpath'],text_node_path=n['path'],node_offset=k,unit_offset=n['unit_start']+k,book_offset=offset,raw_byte=n['raw_positions'][k],left=self.stream[max(0,offset-130):offset],right=self.stream[offset:offset+240],parsed_unit_sha256=u['parsed_hash'],raw_unit_sha256=u['raw_hash'])
+  return dict(stable_id=u['id'],paragraph=u['index'],xpath=u['xpath'],text_node_path=n['path'],node_offset=k+n.get('source_node_offset',0),unit_offset=n['unit_start']+k,book_offset=offset,raw_byte=n['raw_positions'][k],left=self.stream[max(0,offset-130):offset],right=self.stream[offset:offset+240],parsed_unit_sha256=u['parsed_hash'],raw_unit_sha256=u['raw_hash'])
  def first_content(self,offset):
   while offset<len(self.stream) and self.stream[offset].isspace():offset+=1
   return offset
