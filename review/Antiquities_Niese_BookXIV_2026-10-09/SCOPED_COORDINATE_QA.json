@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "Greek": {
+    "nodes_verified": 495,
+    "method": "Independent lxml .text/.tail lookup, Unicode code point comparison, and raw UTF-8/entity decoder roundtrip"
+  },
+  "Latin": {
+    "nodes_verified": 318,
+    "method": "Independent lxml .text/.tail lookup, Unicode code point comparison, and raw UTF-8/entity decoder roundtrip"
+  },
+  "Latin_stream_codepoints": 110653,
+  "Greek_stream_codepoints": 124574,
+  "Latin_narrative_stream_sha256": "5d2996a63b3e2d93ef769c474b4dcdd0f8683e724445e877903a3545e169e63c",
+  "frozen_source_sha256": "931157718997a35a84951ecebabae6813526c66250fa4f791bd338748fbf62f6",
+  "raw_cuts_unchanged": true,
+  "scope_change": "Exclude marginal s/ss sigla and literal XIV X. chapter label, preserving word corrections and all original bytes."
+}
