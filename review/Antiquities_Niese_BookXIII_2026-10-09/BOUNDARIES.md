@@ -2540,9 +2540,9 @@ Greek: καὶ περὶ μὲν τῆς Ἰωνάθου ταφῆς καὶ τ�
 
 Latin start: `De sepultura quidem ionathae` in `latin-book13-num208`; Unicode book offset 49029, node offset 443, raw byte 58094.
 
-Monument summary and four-year high priesthood correspond, followed by a changed connective into the dating material of 214.
+Monument summary and Jonathan's four-year high priesthood continue through the appended documentary dating formula; the latter corresponds to Greek214 and continues as the prosperity statement in physical interval214. The full transmitted sentence is retained under212, as approved in B.
 
-Limits: The following dating formula belongs to Greek 214, before the paragraph labelled 213.
+Limits: Partial correspondence with Greek214 is distributed between physical intervals212 and214. No earlier dating material is absent or reconstructed.
 
 Print: Niese III p.190, PDF262. [Left margin beside σώζονται; καὶ περὶ follows.](evidence/Niese/page-262.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
 
@@ -2552,19 +2552,19 @@ Greek: Σίμων δὲ κατασταθεὶς ἀρχιερεὺς ὑπὸ τ
 
 Latin: Complete reviewed Latin paragraphs 208,213,218 contain no identifiable account of Simon being appointed high priest, freeing the people from Macedonian tribute, or the 170-year Seleucid chronology.
 
-Limits: No independent Latin interval proposed; no claim about physical loss or the entire Latin tradition. Awaiting editorial approval.
+Limits: No independent Latin interval under the approved B representation and individual full-source review. No neighbouring material is assigned to create one; cause remains unknown.
 
-Status: PENDING_USER_DECISION
+Status: USER_APPROVED
 
 ## 13.214
 
 Greek: τοσαύτη δ᾽ ἦν ἡ τοῦ πλήθους περὶ τὸν Σίμωνα φιλοτιμία, ὥστ᾽ ἐν τοῖς πρὸς ἀλλήλους συμβολαίοις καὶ τοῖς δημοσίοις γράμμασιν ἐπὶ πρώτου ἔτους γράφειν Σίμωνος καὶ εὐεργέτου Ἰουδαίων καὶ ἐθνάρχου: εὐτύχησαν γὰρ ἐπ᾽ αὐτοῦ σφόδρα καὶ τῶν ἐχθρῶν τῶν περιοίκων ἐκράτησαν.
 
-Latin start: `in mutuis documentis publicisque` in `latin-book13-num208`; Unicode book offset 49262, node offset 676, raw byte 58327.
+Latin start: `Itaque iudaei feliciter` in `latin-book13-num213`; Unicode book offset 49375, node offset 1, raw byte 58505.
 
-The dating formula for Simon's first year occurs here, before the retained label 213; prosperity resumes in the next paragraph. Proposed cut follows mortis eius.
+The ensuing prosperity-and-victories statement corresponds to the surviving ending of Greek214. The documentary dating formula survives earlier within interval212, with a reciprocal notice. The inherited visible [VI.vii.213] label and paragraph identity are retained but its executable213 claim is suppressed.
 
-Limits: Reordered and partial correspondence; approval pending for separation from 212.
+Limits: Partial correspondence distributed between two physical intervals: documentary dating in212 and ensuing prosperity and victories in214. Cause unknown; no reconstructed transition.
 
 Print: Niese III p.190, PDF262. [Left margin beside κατέσχεν ending 213; τοσαύτη follows.](evidence/Niese/page-262.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
 
@@ -2586,9 +2586,9 @@ Greek: καὶ δὴ τοῦτ᾽ ἔπειθεν εἰς ἐκκλησίαν κ
 
 Latin: Complete reviewed Latin paragraphs 208,213,218 contain no identifiable account of the assembly persuasion and warnings about the former garrison and possible foreign restoration; the collective demolition survives at 217.
 
-Limits: No independent Latin interval proposed; no claim about physical loss or the entire Latin tradition. Awaiting editorial approval.
+Limits: No independent Latin interval under the approved B representation and individual full-source review. No neighbouring material is assigned to create one; cause remains unknown.
 
-Status: PENDING_USER_DECISION
+Status: USER_APPROVED
 
 ## 13.217
 
@@ -2598,7 +2598,7 @@ Latin start: `quo multitudo cunctique ingressi` in `latin-book13-num213`; Unicod
 
 Collective demolition, continuous three-year work and temple prominence correspond; Greek's renewed persuasion is compressed.
 
-Limits: The persuasion account of 216 has no independently identifiable counterpart; pending editorial disposition.
+Limits: The assembly persuasion and warnings of216 have no independently identifiable counterpart in the reviewed context. Collective demolition survives in217, and the closing Simon formula resumes within218; no neighbouring interval is manufactured for216.
 
 Print: Niese III p.191, PDF263. [Right margin beside the preceding warnings; ταῦτα follows.](evidence/Niese/page-263.png). Word assessment: XML_WORD_START_CONFIRMED_FROM_PRINT.
 
