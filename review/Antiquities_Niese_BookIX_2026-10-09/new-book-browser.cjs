@@ -6,7 +6,7 @@ async function listen(server,preferred=0){
  return `http://127.0.0.1:${server.address().port}`;
 }
 async function main(){
- const report={scope:'ACTUAL_LOCAL_IX_BUILD',started:new Date().toISOString(),editorial_pending:pending,errors:[],consoleErrors:[],networkFailures:[]};
+ const report={scope:'ACTUAL_LOCAL_IX_BUILD',phase:pending.length?'PRE_EXPLICIT_240_RESOLUTION':'POST_EXPLICIT_240_RESOLUTION',started:new Date().toISOString(),editorial_pending:pending,errors:[],consoleErrors:[],networkFailures:[],source_SHA256:Object.fromEntries(['assets/js/renderTei.js','assets/xml/antiquities/Greek/book-09.xml','assets/xml/antiquities/Latin/book-09.xml','assets/xml/antiquities/English/book-09.xml','assets/xml/antiquities/niese/book-09.json'].map(rel=>[rel,require('crypto').createHash('sha256').update(fs.readFileSync(path.join(root,rel))).digest('hex')]))};
  const servers=[serve(path.join(build,'site')),serve(path.join(build,'baseline-site')),serve(path.join(build,'site'),false)];
  const origins=[await listen(servers[0],8909),await listen(servers[1]),await listen(servers[2])];report.origins=origins;
  const context=await chromium.launchPersistentContext('C:/workspace/Antiquities-Niese-09-runtime-20261009/profile-ix',{headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',viewport:{width:1500,height:1000}});
@@ -37,9 +37,10 @@ async function main(){
    const duplicate=await page.evaluate(()=>{const ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return ids.filter((id,i)=>ids.indexOf(id)!==i);});if(duplicate.length)throw Error('Duplicate DOM IDs '+n+': '+duplicate.join(','));
    const links=await page.locator('#latin a,#english a,#greek a').evaluateAll(nodes=>nodes.map(a=>({href:a.getAttribute('href'),brokenFragment:a.getAttribute('href')?.startsWith('#')&&!document.getElementById(a.getAttribute('href').slice(1))})));
    if(links.some(a=>a.href?.includes('undefined')||a.brokenFragment))throw Error('Unresolved IX reader link '+n+': '+JSON.stringify(links));
-   report.actual_selector_events.push({n,result:'PASS',Latin:actual.Latin.unavailable?'PENDING_OR_UNAVAILABLE':'REPRESENTED',Greek:actual.Greek.unavailable?'UNAVAILABLE':'REPRESENTED',English:actual.English.unavailable?'UNAVAILABLE':'BROADER_CONTEXT',digest:digest(actual)});
+   report.actual_selector_events.push({n,result:'PASS',Latin:actual.Latin.unavailable?(pending.length&&[239,240].includes(n)?'PENDING':'UNAVAILABLE'):'REPRESENTED',Greek:actual.Greek.unavailable?'UNAVAILABLE':'REPRESENTED',English:actual.English.unavailable?'UNAVAILABLE':'BROADER_CONTEXT',digest:digest(actual)});
   }
   report.identity_counts={selected:menu.length,Greek_starts:starts.Greek.length,Latin_starts:starts.Latin.length,expected_Latin_intervals:232,unavailable:59,pending_boundary:pending};
+  if(!pending.length&&(starts.Latin.length!==232||starts.Greek.length!==232||report.actual_selector_events.filter(e=>e.Latin==='REPRESENTED').length!==232||report.actual_selector_events.filter(e=>e.Latin==='UNAVAILABLE').length!==59))throw Error('Final represented/unavailable arithmetic');
   console.log('IX actual selector events passed',menu.length);
   // Drive every existing Chapter/Subchapter range and compare its actual rendered extent
   // to the frozen baseline, stripping only the expressly authorized marker differences.
@@ -53,15 +54,20 @@ async function main(){
   },canonicalHTML.toString());
   // Registry uses level rather than kind in some frozen versions; fail on empty coverage.
   if(!Object.keys(baseline.chapters).length)throw Error('No actual IX chapter registry rows captured');
-  await open('/antiquities/?book=9');report.traditional_ranges=[];
+  await open('/antiquities/?book=9');report.traditional_ranges=[];report.final_boundary_containing_views=[];
   for(const [kind,records] of Object.entries(baseline))for(const {row,views} of Object.values(records)){
    await page.check('#chapter-level');await page.evaluate(()=>window.__qaPending);await change('#chapter-selector',String(row.chapter));
    if(kind==='subchapters'){await page.check('#subchapter-level');await page.evaluate(()=>window.__qaPending);await change('#subchapter-selector',String(row.subchapter));}
    const actual=await page.evaluate(htmlCode=>{const html=eval('('+htmlCode+')');return Object.fromEntries(Object.entries(window.__qa.view()).map(([l,v])=>[l,html(v,9,l)]));},canonicalHTML.toString());
    if(JSON.stringify(actual)!==JSON.stringify(views))throw Error('Actual traditional extent '+row.id);
+   if(!pending.length&&views.Latin?.includes('id="latin-book09-num239"')){
+    const texts=await capture();const membership=Object.fromEntries(['Latin','Greek'].map(lang=>[lang,[239,240,241].map(n=>({n,complete:texts[lang].text.includes(normalize(expected[9][lang][n]))}))]));
+    if(Object.values(membership).every(items=>items.every(item=>item.complete)))report.final_boundary_containing_views.push({id:row.id,kind,chapter:row.chapter,subchapter:row.subchapter,complete_239_241:membership,result:'PASS'});
+   }
    report.traditional_ranges.push({id:row.id,kind,chapter:row.chapter,subchapter:row.subchapter,unavailable:Object.fromEntries(Object.entries(views).map(([l,v])=>[l,v?.includes('structural-unavailable')||false])),result:'PASS'});
   }
   console.log('IX actual traditional range events passed',report.traditional_ranges.length);
+  if(!pending.length&&(!report.final_boundary_containing_views.some(v=>v.kind==='chapters')||!report.final_boundary_containing_views.some(v=>v.kind==='subchapters')))throw Error('Final boundary containing Chapter/Subchapter completeness');
   report.navigation=[];
   for(const n of [1,49,50,51,52,108,109,110,111,180,181,182,215,216,217,238,239,240,241,290,291]){
    await open(`/antiquities/?book=9&niese=${n}`);verify(n,await capture());await page.reload();await page.waitForFunction(()=>window.__qaReady);verify(n,await capture());
@@ -76,7 +82,7 @@ async function main(){
   for(const theme of ['light','dark']){await page.evaluate(t=>setTheme(t),theme);await page.waitForTimeout(550);await page.waitForFunction(()=>[...document.querySelectorAll('.lj-brand img')].every(im=>im.complete&&im.naturalWidth>0));const styles=await page.evaluate(()=>({theme:document.documentElement.dataset.theme,stored:localStorage.getItem('theme'),background:getComputedStyle(document.body).backgroundColor,noticeColor:getComputedStyle(document.querySelector('.niese-correspondence-note')).color,brandImagesLoaded:true}));if(styles.theme!==theme||styles.stored!==theme)throw Error('Theme application');report.themes.push(styles);await page.screenshot({path:path.join(packet,`IX110-${theme}.png`),fullPage:true});}
   if(report.themes[0].background===report.themes[1].background)throw Error('Theme did not change background');
   report.uninstrumented=[];
-  for(const n of [1,50,51,80,109,110,111,181,216,239,240,291]){await open(`/antiquities/?book=9&niese=${n}`,2);verify(n,await capture());report.uninstrumented.push({book:9,n,result:'PASS'});}
+  for(const n of [1,50,51,80,109,110,111,181,216,239,240,241,291]){await open(`/antiquities/?book=9&niese=${n}`,2);verify(n,await capture());report.uninstrumented.push({book:9,n,result:'PASS'});if([239,240,241].includes(n))await page.screenshot({path:path.join(packet,`IX${n}-final-production.png`),fullPage:true});}
   // Accepted exceptions and difficult neighbouring extents use unmodified production code.
   report.accepted_controls=[];
   for(const [b,n] of [[8,186],[8,187],[8,255],[8,367],[8,368],[8,369],[10,101],[10,102],[10,108],[10,109],[10,150],[10,151],[10,276],[10,277]]){await open(`/antiquities/?book=${b}&niese=${n}`,2);const actual=await capture();verify(n,actual,b);if(b===10&&n===108&&(!actual.Greek.text||!actual.English.text))throw Error('Independent X.108 Greek/English accessibility');report.accepted_controls.push({book:b,n,result:'PASS'});}

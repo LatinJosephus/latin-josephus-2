@@ -22,6 +22,10 @@ for lang in ['Latin','Greek','English']:
         locname=lang+'_locator';sectionname=lang+'_section';represented=[r for r in rows if r[locname]]
         first=represented[0][locname]['book_offset'];assert not before.stream[:first].strip();assert ''.join(r[sectionname] for r in represented)==before.stream[first:]
         results[lang]['complete_reviewed_partition']=True;results[lang]['leading_whitespace_codepoints']=first;results[lang]['reviewed_intervals']=len(represented);results[lang]['final_extent']=represented[-1][sectionname][-250:]
+        if lang=='Greek':
+            actual_starts={int(re.findall(r'\d+',m['text'])[-1]):b.first_content(m['book_offset']) for m in b.labels}
+            assert actual_starts=={r['niese']:r['Greek_locator']['book_offset'] for r in represented}
+            results[lang]['actual_starts']=len(actual_starts)
         if lang=='Latin':
             milestones=b.tree.xpath('//t:milestone[@unit="niese"]/@n',namespaces={'t':'http://www.tei-c.org/ns/1.0'});assert list(map(int,milestones))==[n for n in ids['new_milestones'] if n not in ids['pending']]
             actual_starts={int(re.findall(r'\d+',m['text'])[-1]):b.first_content(m['book_offset']) for m in b.labels}
@@ -37,5 +41,8 @@ for name,control in base['controls'].items():
     if 'absolute_path' in control and 'sha256' in control:assert digest(Path(control['absolute_path']).read_bytes())==control['sha256']
 changed=subprocess.check_output(['git','diff','--name-only',base['base'],'--','assets','_includes'],cwd=W).decode().splitlines()
 assert set(changed)=={'assets/js/renderTei.js','assets/xml/antiquities/Greek/book-09.xml','assets/xml/antiquities/Latin/book-09.xml','assets/xml/antiquities/niese/book-09.json'},changed
-write(P/'SOURCE_PRESERVATION_QA.json',{'result':'PASS','frozen_base':base['base'],'pending':ids['pending'],'sources':results,'only_production_paths_changed':changed,'all_other_books_unchanged':True,'English_source_unchanged':True,'display_settings_unchanged':True,'PDF_hashes_rechecked':True,'reader_build_byte_equal':(W/'assets/js/renderTei.js').read_bytes()==(R/'build/site/assets/js/renderTei.js').read_bytes(),'registry_build_byte_equal':(W/'assets/xml/antiquities/niese/book-09.json').read_bytes()==(R/'build/site/assets/xml/antiquities/niese/book-09.json').read_bytes()})
+assert all(s['source_build_byte_equal'] for s in results.values())
+assert (W/'assets/js/renderTei.js').read_bytes()==(R/'build/site/assets/js/renderTei.js').read_bytes()
+assert (W/'assets/xml/antiquities/niese/book-09.json').read_bytes()==(R/'build/site/assets/xml/antiquities/niese/book-09.json').read_bytes()
+write(P/'SOURCE_PRESERVATION_QA.json',{'result':'PASS','phase':'POST_EXPLICIT_240_RESOLUTION' if not ids['pending'] else 'PRE_EXPLICIT_240_RESOLUTION','frozen_base':base['base'],'pending':ids['pending'],'sources':results,'only_production_paths_changed':changed,'all_other_books_unchanged':True,'English_source_unchanged':True,'display_settings_unchanged':True,'PDF_hashes_rechecked':True,'reader_build_byte_equal':True,'registry_build_byte_equal':True})
 print('PASS: byte recovery, frozen stream partition, scoped source changes and built asset checks')

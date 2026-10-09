@@ -2,6 +2,14 @@ from pathlib import Path
 import json
 from mixed_mapper import Book
 P=Path(__file__).resolve().parent
+decision_path=P/'EDITORIAL_DECISIONS.json'
+if decision_path.exists():
+    decision=json.loads(decision_path.read_text(encoding='utf8')).get('240',{})
+    if decision.get('status')=='CLOSED_EXPLICIT_USER_EDITORIAL_RESOLUTION':
+        packet=json.loads((P/'DECISION_240_ALTERNATIVES.json').read_text(encoding='utf8'))
+        assert packet['adopted_alternative']==decision['choice']
+        print('Closed adjudication and original alternatives retained; no pending packet regenerated.')
+        raise SystemExit(0)
 base=json.loads((P/'BASELINE.json').read_text(encoding='utf8'));rows=json.loads((P/'BOUNDARIES.json').read_text(encoding='utf8'))
 books={lang:Book(raw=Path(base['inputs'][f'assets/xml/antiquities/{lang}/book-09.xml']['snapshot']).read_bytes()) for lang in ['Greek','Latin']}
 alternatives={}

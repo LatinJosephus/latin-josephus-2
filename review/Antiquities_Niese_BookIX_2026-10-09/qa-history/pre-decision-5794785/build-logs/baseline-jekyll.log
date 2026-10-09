@@ -1,8 +1,8 @@
 To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
 WARNING: Nokogiri was built against libxml version 2.13.9, but has dynamically loaded 2.9.14
-Configuration file: /work/_config.yml
-            Source: /work
-       Destination: /out/site
+Configuration file: /work-baseline/_config.yml
+            Source: /work-baseline
+       Destination: /out/baseline-site
  Incremental build: disabled. Enable with --incremental
       Generating... 
        Jekyll Feed: Generating feed for posts
@@ -17,7 +17,7 @@ More info and automated migrator: https://sass-lang.com/d/import
 7 │   "variables",
   │   ^^^^^^^^^^^
   ╵
-    /work/assets/css/main.scss 7:3  root stylesheet
+    /work-baseline/assets/css/main.scss 7:3  root stylesheet
 DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 
 More info and automated migrator: https://sass-lang.com/d/import
@@ -26,7 +26,7 @@ More info and automated migrator: https://sass-lang.com/d/import
 8 │   "themes",
   │   ^^^^^^^^
   ╵
-    /work/assets/css/main.scss 8:3  root stylesheet
+    /work-baseline/assets/css/main.scss 8:3  root stylesheet
 DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 
 More info and automated migrator: https://sass-lang.com/d/import
@@ -35,7 +35,7 @@ More info and automated migrator: https://sass-lang.com/d/import
 9 │   "layout",
   │   ^^^^^^^^
   ╵
-    /work/assets/css/main.scss 9:3  root stylesheet
+    /work-baseline/assets/css/main.scss 9:3  root stylesheet
 DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 
 More info and automated migrator: https://sass-lang.com/d/import
@@ -44,7 +44,7 @@ More info and automated migrator: https://sass-lang.com/d/import
 10 │   "base",
    │   ^^^^^^
    ╵
-    /work/assets/css/main.scss 10:3  root stylesheet
+    /work-baseline/assets/css/main.scss 10:3  root stylesheet
 DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
 
 More info and automated migrator: https://sass-lang.com/d/import
@@ -53,7 +53,7 @@ More info and automated migrator: https://sass-lang.com/d/import
 11 │   "distill",
    │   ^^^^^^^^^
    ╵
-    /work/assets/css/main.scss 11:3  root stylesheet
+    /work-baseline/assets/css/main.scss 11:3  root stylesheet
 DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
 Use color.adjust instead.
 
@@ -63,8 +63,8 @@ More info and automated migrator: https://sass-lang.com/d/import
 15 │ $light-cyan-color:    lighten($cyan-color, 25%);
    │                       ^^^^^^^^^^^^^^^^^^^^^^^^^
    ╵
-    /work/_sass/_variables.scss 15:23  @import
-    /work/assets/css/main.scss 7:3     root stylesheet
+    /work-baseline/_sass/_variables.scss 15:23  @import
+    /work-baseline/assets/css/main.scss 7:3     root stylesheet
 DEPRECATION WARNING [color-functions]: lighten() is deprecated. Suggestions:
 
 color.scale($color, $lightness: 44.5804195804%)
@@ -76,8 +76,8 @@ More info: https://sass-lang.com/d/color-functions
 15 │ $light-cyan-color:    lighten($cyan-color, 25%);
    │                       ^^^^^^^^^^^^^^^^^^^^^^^^^
    ╵
-    /work/_sass/_variables.scss 15:23  @import
-    /work/assets/css/main.scss 7:3     root stylesheet
+    /work-baseline/_sass/_variables.scss 15:23  @import
+    /work-baseline/assets/css/main.scss 7:3     root stylesheet
 DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
 Use color.adjust instead.
 
@@ -87,8 +87,8 @@ More info and automated migrator: https://sass-lang.com/d/import
 22 │ $light-purple-color:  lighten($purple-color, 25%);
    │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
    ╵
-    /work/_sass/_variables.scss 22:23  @import
-    /work/assets/css/main.scss 7:3     root stylesheet
+    /work-baseline/_sass/_variables.scss 22:23  @import
+    /work-baseline/assets/css/main.scss 7:3     root stylesheet
 DEPRECATION WARNING [color-functions]: lighten() is deprecated. Suggestions:
 
 color.scale($color, $lightness: 39.84375%)
@@ -100,8 +100,8 @@ More info: https://sass-lang.com/d/color-functions
 22 │ $light-purple-color:  lighten($purple-color, 25%);
    │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
    ╵
-    /work/_sass/_variables.scss 22:23  @import
-    /work/assets/css/main.scss 7:3     root stylesheet
+    /work-baseline/_sass/_variables.scss 22:23  @import
+    /work-baseline/assets/css/main.scss 7:3     root stylesheet
 DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
 Use color.adjust instead.
 
@@ -111,8 +111,8 @@ More info and automated migrator: https://sass-lang.com/d/import
 28 │ $grey-color-light:    lighten($grey-color, 40%);
    │                       ^^^^^^^^^^^^^^^^^^^^^^^^^
    ╵
-    /work/_sass/_variables.scss 28:23  @import
-    /work/assets/css/main.scss 7:3     root stylesheet
+    /work-baseline/_sass/_variables.scss 28:23  @import
+    /work-baseline/assets/css/main.scss 7:3     root stylesheet
 DEPRECATION WARNING [color-functions]: lighten() is deprecated. Suggestions:
 
 color.scale($color, $lightness: 81.6%)
@@ -124,9 +124,9 @@ More info: https://sass-lang.com/d/color-functions
 28 │ $grey-color-light:    lighten($grey-color, 40%);
    │                       ^^^^^^^^^^^^^^^^^^^^^^^^^
    ╵
-    /work/_sass/_variables.scss 28:23  @import
-    /work/assets/css/main.scss 7:3     root stylesheet
+    /work-baseline/_sass/_variables.scss 28:23  @import
+    /work-baseline/assets/css/main.scss 7:3     root stylesheet
 WARNING: 4 repetitive deprecation warnings omitted.
 Run in verbose mode to see all warnings.
-                    done in 8.901 seconds.
+                    done in 9.07 seconds.
  Auto-regeneration: disabled. Use --watch to enable.
