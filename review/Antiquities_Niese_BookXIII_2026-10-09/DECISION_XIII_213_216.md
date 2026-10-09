@@ -1,0 +1,38 @@
+# Decision required: XIII.213, 214 and 216
+
+Niese III (1892), printed pp.190–191, PDF262–263: [213–214](evidence/Niese/page-262.png), [215–218](evidence/Niese/page-263.png). Greek213 describes Simon’s appointment, freedom from Macedonian tribute and the 170-year chronology. Greek214 gives the first-year dating formula, then prosperity. Greek216 gives an assembly persuasion and warnings about the former garrison and foreign restoration. All Latin paragraphs208,213,218 and Greek208–219 were reviewed. Cause of missing correspondence remains unknown; no physical-loss or tradition-wide claim is proposed.
+
+**A — recommended.** No independent Latin interval for213 or216. Preserve Greek/English addressability and display explicit contextual absence notices. Latin212 ends after `et de labore quidem mortis eius `; Latin214 starts `in mutuis documentis publicisque monumentis primi anni simonis benefactoris et iudaeorum principis scriptum est.` in paragraph208. It continues across preserved visible label213 into `Itaque iudaei feliciter aduersarios uicinos superauerunt,` (the prosperity ending of Greek214), and ends before `cum simon gazara ciuitatem` (215). Qualify214 as reordered and syntactically attached to Jonathan’s death in this transcription; give212 a reciprocal notice. Latin215 ends before `quo multitudo cunctique ingressi` (217);216 gets no manufactured cut. Keep all words and order.
+
+**B.** Keep the entire death-and-dating sentence under212, and start214 at `Itaque iudaei feliciter` in paragraph213, with notices that214’s dating formula survives earlier within212. The disposition of213/216 remains as in A. This keeps the Latin sentence whole but leaves the principal dating counterpart outside214’s own interval.
+
+The complete extracts and exact proposed source locators are in DECISION_XIII_213_216.json. No source changes have been applied.
+
+Greek 212: καὶ περὶ μὲν τῆς Ἰωνάθου ταφῆς καὶ τῆς τῶν μνημείων οἰκοδομίας τοῖς οἰκείοις Σίμωνος τοσαύτην σπουδὴν οἴδαμεν γενομένην. ἀπέθανεν δὲ Ἰωνάθης ἀρχιερατεύων ἔτη τέσσαρα προστὰς τοῦ γένους. καὶ τὰ μὲν περὶ τῆς τούτου τελευτῆς ἐν τούτοις ἦν.
+
+Greek 213: Σίμων δὲ κατασταθεὶς ἀρχιερεὺς ὑπὸ τοῦ πλήθους τῷ πρώτῳ τῆς ἀρχιερωσύνης ἔτει τῆς ἐπὶ τοῖς Μακεδόσι δουλείας τὸν λαὸν ἠλευθέρωσεν ὡς μηκέτι φόρους αὐτοῖς τελεῖν: ἡ δὲ ἐλευθερία καὶ τὸ ἀνείσφορον τοῖς Ἰουδαίοις μετὰ ἑβδομήκοντα καὶ ἑκατὸν ἔτη τῶν Συρίας βασιλέων ἐξ οὗ χρόνου Σέλευκος ὁ Νικάτωρ ἐπικληθεὶς κατέσχεν Συρίαν ὑπῆρξεν.
+
+Greek 214: τοσαύτη δ᾽ ἦν ἡ τοῦ πλήθους περὶ τὸν Σίμωνα φιλοτιμία, ὥστ᾽ ἐν τοῖς πρὸς ἀλλήλους συμβολαίοις καὶ τοῖς δημοσίοις γράμμασιν ἐπὶ πρώτου ἔτους γράφειν Σίμωνος καὶ εὐεργέτου Ἰουδαίων καὶ ἐθνάρχου: εὐτύχησαν γὰρ ἐπ᾽ αὐτοῦ σφόδρα καὶ τῶν ἐχθρῶν τῶν περιοίκων ἐκράτησαν.
+
+Greek 215: κατεστρέψατο γὰρ Σίμων Γάζαρά τε πόλιν καὶ Ἰόππην καὶ Ἰάμνειαν, ἐκπολιορκήσας δὲ καὶ τὴν ἐν τοῖς Ἱεροσολύμοις ἄκραν εἰς ἔδαφος αὐτὴν καθεῖλεν, ὡς ἂν μὴ τοῖς ἐχθροῖς ὁρμητήριον ᾖ καταλαμβανομένοις αὐτὴν τοῦ κακῶς ποιεῖν, ὡς καὶ τότε. καὶ τοῦτο ποιήσας ἄριστον ἐδόκει καὶ συμφέρον καὶ τὸ ὄρος ἐφ᾽ οὗ τὴν ἄκραν εἶναι συνέβαινεν καθελεῖν, ὅπως ὑψηλότερον ᾖ τὸ ἱερόν.
+
+Greek 216: καὶ δὴ τοῦτ᾽ ἔπειθεν εἰς ἐκκλησίαν καλέσας τὸ πλῆθος ὑπ᾽ αὐτοῦ γίνεσθαι, ὧν τε ἔπαθον ὑπὸ τῶν φρουρῶν καὶ τῶν φυγάδων Ἰουδαίων ὑπομιμνήσκων, ἅ τε πάθοιεν ἄν, εἰ πάλιν κατάσχοι τὴν βασιλείαν ἀλλόφυλος φρουρᾶς ἐν αὐτῇ κατασταθείσης.
+
+Greek 217: ταῦτα λέγων πείθει τὸ πλῆθος παραινῶν αὐτῷ τὰ συμφέροντα. καὶ πάντες προσβαλόντες καθῄρουν τὸ ὄρος καὶ μήτε νυκτὸς μήθ᾽ ἡμέρας ἀπολυόμενοι τοῦ ἔργου τρισὶν αὐτὸ τοῖς πᾶσιν ἔτεσιν κατήγαγον εἰς ἔδαφος καὶ πεδινὴν λειότητα. καὶ τὸ λοιπὸν ἐξεῖχεν ἁπάντων τὸ ἱερὸν τῆς ἄκρας καὶ τοῦ ὄρους ἐφ᾽ ᾧ ἦν καθῃρημένων. καὶ τὰ μὲν ἐπὶ Σίμωνος πραχθέντα τοῦτον εἶχεν τὸν τρόπον.
+
+Greek 218: Μετ᾽ οὐ πολὺ δὲ τῆς αἰχμαλωσίας τῆς Δημητρίου τὸν Ἀλεξάνδρου υἱὸν Ἀντίοχον, ὃς καὶ Θεὸς ἐπεκλήθη, Τρύφων διέφθειρεν ἐπιτροπεύων αὐτοῦ τέσσαρα βασιλεύσαντα ἔτη. καὶ τὸν μέν, ὡς χειριζόμενος ἀποθάνοι, διήγγειλεν:
+
+Greek 219: τοὺς δὲ φίλους καὶ τοὺς οἰκειοτάτους διέπεμπε πρὸς τοὺς στρατιώτας, ἐπαγγελλόμενος αὐτοῖς χρήματα πολλὰ δώσειν, εἰ βασιλέα χειροτονήσουσιν αὐτόν, Δημήτριον μὲν ὑπὸ Πάρθων αἰχμάλωτον γεγονέναι μηνύων, τὸν δ᾽ ἀδελφὸν αὐτοῦ Ἀντίοχον παρελθόντα εἰς τὴν ἀρχὴν πολλὰ ποιήσειν αὐτοῖς κακὰ τῆς ἀποστάσεως ἀμυνόμενον.
+
+Latin latin-book13-num208 (complete):
+
+> Quod cognoscentes hi qui in arce hiersololitana erant ad trifonem dirigunt, rogantes eum ad se ocius properare, quatinus alimenta eis praeberet. Ille uero per noctem illam equitatum parauit quasi ierosolimis ascensurus, sed niue uehementi ea nocte cadente iter inuium reperit, equis uel peditibus suis. Qua causa obstante nequiuit ad hierosolimam trifon ascendere, sed reuertentes ad cirien et prope galaditiden ingressus, ionathan ibi perimi uel sepeliri iussit, et ita ad antionchiam peruenit. Simon autem ad iasca ciuitate transferens ossa fratris,sepeliit in patria sua, luctum maximum omni super eum populo faciente. Tunc simon ingentem mausoleum fabricans patri suo fratribusque sepulturam ex albo et polito construxit opus mirabile con spicuumque faciens cuius et portam undique columnis sustentantibus ex uno lapide uisu mirabilem statuit, in super et pirami das septem parentibus, uel unicuique germanorum singulas superposuit, magnitudine uel decore lucentes quae hactenus seruantur. De sepultura quidem ionathae et de aedificatione monumentorum hoc studium simonis agnouimus. Defunctus uero est ionathas principatum agens sacerdotii, perque annos quattuor gentem continuit iudaeorum, et de labore quidem mortis eius in mutuis documentis publicisque monumentis primi anni simonis benefactoris et iudaeorum principis scriptum est.
+
+Latin latin-book13-num213 (complete):
+
+> Itaque iudaei feliciter aduersarios uicinos superauerunt, cum simon gazara ciuitatem uel ioppen uel iamniam deuastaret arcemque hierosolimorum deponeret, ne foret inimicis refugium inde percurrente ledere eos possent. Quod cum fecisset, optimum et utile putauit etiam montem super quem ars constituta erat destruere, quo multitudo cunctique ingressi montem destruebant, et nec die nec nocte cessantes per tres annos deposuerunt ad solum, campumque planissimum fecerunt, ita ut eminentius templum excelleret arce uel monte depositis.
+
+Latin latin-book13-num218 (complete):
+
+> Post captiuitatem " demetrii, ea quae temporibus symonis gesta sunt hunc contirient modum. Post captiuitatem " demetrii, non multo post alexandri filium antiochum qui theos nominabatur, trifon interemit tutor eius quarto imperii eius anno, amicos autem et familiares suos ad milites transmisit, multas dare pollicetur pecunias si eum regem ordinarent. Nam demetrium a parthis captum nuntiabat teneri, fratrem uero eius  antiochum si principatum optineret multa pessima eis facturum esse dicebat, dum proditionem eorum ulcisceretur. Qui cum sperassent afluentia pecuniarum sub regno trifonis frui, principem eum constitutuunt. Trifon autem ut regni insignia suscepit, continuo nequitiam suam patefecit, et innotuit omnibus quia quod priuatus humiliter multitudim obsequebatur, non hoc uoluntate bona sed inpossibilitate faciebat. Postquam uero regnum adeptus est exuens se simulatione uerus trifon apparuit, coepitque potius extraneos quam clientes diligere. Pro quare exercitus eius recedens ab eo ad cleopatram demetrii uxorem contulit se quae tunc in seleucia cum filiis erat conclusa, errantem uero fratrem demetrii antiochum qui soter dicebatur nullaque ciuitate eum amittente trifonis timore, mittit cleopatra ad suas eum nuptias et ad imperium inuitans. Quem ad hoc inuitauit suadentibus amicis et timore uolentibus trifoni ciuitatem seleutiam aperire.
+

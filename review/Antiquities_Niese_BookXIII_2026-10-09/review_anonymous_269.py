@@ -1,0 +1,8 @@
+import sys
+sys.path.insert(0,str(__import__('pathlib').Path(__file__).resolve().parents[1]/'Antiquities_Niese_Batch_12_13_2026-10-09'))
+from record_review import *
+d=packet(13); c=json.loads((d/'LATIN_REVIEW_CHOICES.json').read_text(encoding='utf8')); o=json.loads((d/'PRINT_OBSERVATIONS.json').read_text(encoding='utf8')); l=books(13)['Latin'];units=[u for u in l.units if u['text'].startswith('Alexander autem regnum accipiens')];assert len(units)==1;u=units[0]
+c['269']={'phrase':'Alexander autem regnum accipiens','unit_index':u['index'],'assessment':'The entire anonymous paragraph independently corresponds to Alexander Zebinas taking the kingdom, alliance with Hyrcanus, defeat and death against Antiochus Grypus. Greek sameAs to num267 does not prove the physical start. Preserve the anonymous paragraph and every transmitted name.','limits':'Correspondence present in an anonymous paragraph; use exact text-node/raw-byte coordinates, with the inherited num267 alignment window only for English context.'}
+o['269']={'edition':'Niese III, 1892','printed_page':201,'PDF_page':273,'image':'evidence/Niese/page-273.png','observed_numeral_position':'Right margin beside the preceding death; Ἀλέξανδρος follows.','word_boundary_status':'XML_WORD_START_CONFIRMED_FROM_PRINT','editorial_word_choice':'Keep the XML start following visual examination of the full printed clause.'}
+save(d/'LATIN_REVIEW_CHOICES.json',c);save(d/'PRINT_OBSERVATIONS.json',o);apply(13)
+save(d/'ANONYMOUS_PARAGRAPH_269.json',{'unit_index':u['index'],'source_xml_id':None,'text':u['text'],'unit_hash':u['raw_hash'],'locator':l.locate(u['book_start']),'contextTarget':'latin-book13-num267','no_source_ID_addition':True})
