@@ -76,7 +76,9 @@ def implement(b,apply=False):
   for path,raw in outputs.items():path.write_bytes(raw)
   save(ROOT/f'assets/xml/antiquities/niese/book-{b:02}.json',registry)
  save(d/'IMPLEMENTATION_PRESERVATION.json',{'book':b,'status':'APPLIED_AWAITING_READER_CERTIFICATION' if apply else 'REHEARSAL_ONLY','source_records':preservation,'English_unchanged':True,'Greek_marker_additions':1,'Greek_marker_moves':0,'retained_Latin_starts':len(retained),'Latin_section_milestones':plan['Latin_section_milestones'],'Latin_end_milestones':plan['Latin_end_milestones'],'represented_Latin_intervals':len(positioned),'expected_sections':len(rows),'no_independent_Latin_intervals':plan['no_independent_Latin_intervals'],'pending_decisions':[]})
- save(d/'EXPECTED_INTERVALS.json',{'book':b,'Greek':{str(r['niese']):r['Greek']['section'] for r in rows},'Latin':{str(r['niese']):r['Latin'].get('interval') if r['Latin']['locator'] else None for r in rows},'GreekFull':g.stream,'LatinFull':l.stream,'registry':registry,'exclusions':plan['narrative_exclusions']})
+ english_context={str(s['number']):''.join(u['text'] for u in bs['English'].units if s['contextTarget'] in u['element'].get('sameAs','').replace('#','').split()) for s in sections}
+ assert all(v.strip() for v in english_context.values())
+ save(d/'EXPECTED_INTERVALS.json',{'book':b,'Greek':{str(r['niese']):r['Greek']['section'] for r in rows},'Latin':{str(r['niese']):r['Latin'].get('interval') if r['Latin']['locator'] else None for r in rows},'English':english_context,'GreekFull':g.stream,'LatinFull':l.stream,'registry':registry,'exclusions':plan['narrative_exclusions']})
  save(d/'EXECUTABLE_IDENTITIES.json',{'book':b,'retained':plan['retained_starts'],'inserted':[x['niese'] for x in operations['Latin'] if x['kind']=='INSERT_LATIN_SECTION_MILESTONE'],'suppressed':suppressed,'no_independent_Latin_interval':plan['no_independent_Latin_intervals']})
  print(json.dumps({k:plan[k] for k in ['book','sections','represented_Latin_intervals','Latin_section_milestones','Latin_end_milestones','no_independent_Latin_intervals','suppressed_executable_claims']},ensure_ascii=False,indent=2));print('APPLIED' if apply else 'REHEARSAL')
 

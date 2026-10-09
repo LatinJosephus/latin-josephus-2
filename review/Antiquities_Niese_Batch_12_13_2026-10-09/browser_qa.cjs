@@ -93,7 +93,7 @@ async function main(){
     const text=eval('('+code+')'),v=window.__qa.view(),ids=[...document.querySelectorAll('[id]')].map(x=>x.id);
     return {n:window.__qa.getState().nieseNum,Greek:text(v.Greek,exclusions.Greek),Latin:text(v.Latin,exclusions.Latin),English:text(v.English),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i)};
    },{code:narrative.toString(),exclusions:expected.exclusions});
-   if(actual.n!==String(n)||actual.Greek!==norm(expected.Greek[n])||actual.Latin!==norm(expected.Latin[n])||!actual.English||actual.duplicates.length)throw Error(`Rendered selection ${b}.${n}`);
+   if(actual.n!==String(n)||actual.Greek!==norm(expected.Greek[n])||actual.Latin!==norm(expected.Latin[n])||!actual.English||(expected.English&&actual.English!==norm(expected.English[n]))||actual.duplicates.length)throw Error(`Rendered selection ${b}.${n}`);
    report.actual_select_events.push(n);
   }
   report.navigation=[];
@@ -160,6 +160,31 @@ async function main(){
    const broader=await page.locator('#latin').textContent();
    const clauses=['centesima quinquagesima tertia olimpiade','Ingres susque','nec non etiam eos','multasque abeo','Post quam autem expoliauit templum'];
    let at=-1;for(const phrase of clauses){const next=broader.indexOf(phrase);if(next<=at||next!==broader.lastIndexOf(phrase))throw Error('Adjoining 246–250 order/multiplicity '+phrase);at=next;}report.adjudicated_broader_range={route:'/antiquities/?book=12&chapter=5',all_approved_clauses_once_and_transmitted_order:'PASS'};
+  }
+  if(b===13&&!routine){
+   await open('/antiquities/?book=13&chapter=6');
+   const phrases=['De sepultura quidem ionathae','in mutuis documentis publicisque','Itaque iudaei feliciter','cum simon gazara ciuitatem','quo multitudo cunctique ingressi'];
+   const broader=await page.locator('#latin').textContent();let at=-1;
+   for(const phrase of phrases){const next=broader.indexOf(phrase);if(next<=at||next!==broader.lastIndexOf(phrase))throw Error('Adjudicated 212–217 order/multiplicity '+phrase);at=next;}
+   if(!broader.includes('[VI.vii.213]'))throw Error('Inherited XIII label lost');
+   const nieseData=await page.evaluate(()=>({starts:window.__qa.antiquitiesNieseStartEntries('Latin',window.__qa.getData().Latin).map(e=>e.number),paragraph:window.__qa.getData().Latin.querySelector('[id="latin-book13-num213"]')?.outerHTML}));
+   if(nieseData.starts.includes(213)||nieseData.starts.includes(216)||!nieseData.starts.includes(214)||!nieseData.paragraph.includes('[VI.vii.213]'))throw Error('Inherited/approved XIII identities');
+   const containing=await page.evaluate(()=>{
+    const q=window.__qa,data=q.getData(),date='in mutuis documentis publicisque',prosperity='Itaque iudaei feliciter';
+    return q.bambergRows().filter(r=>{const t=q.traditionalRangeView('Latin',data.Latin,r)?.textContent||'';return t.includes(date)||t.includes(prosperity);}).map(r=>r.id);
+   });
+   report.adjudicated_containing_views=[];
+   for(const route of ['/antiquities/?book=13&chapter=6','/antiquities/?book=13&chapter=6&subchapter=6','/antiquities/?book=13&chapter=6&subchapter=7','/antiquities/?book=13&num=208','/antiquities/?book=13&num=213',...containing.map(id=>`/antiquities/?book=13&bamberg=${id}`)]){
+    const captures=[];for(const which of [1,0]){await open(route,which);captures.push(await page.evaluate(({code})=>Object.fromEntries(['Latin','Greek','English'].map(l=>[l,eval('('+code+')')(document.getElementById(l.toLowerCase()),13,l)])),{code:originalHTML.toString()}));}
+    if(JSON.stringify(captures[0])!==JSON.stringify(captures[1]))throw Error('Adjudicated containing view source DOM '+route);
+    report.adjudicated_containing_views.push({route,three_witness_text_markup_order:'PASS',digest:hash(captures[1])});
+   }
+   await open('/antiquities/?book=13&niese=212');const before=await page.locator('#latin').textContent();
+   if(!before.includes('in mutuis documentis publicisque')||before.includes('Itaque iudaei feliciter')||!before.includes(expected.registry.sections[211].Latin.note))throw Error('Approved212 interval/reciprocal notice');
+   await open('/antiquities/?book=13&niese=214');const after=await page.locator('#latin').evaluate((node,{code,exclusions})=>eval('('+code+')')(node,exclusions),{code:narrative.toString(),exclusions:expected.exclusions.Latin});
+   if(after!==norm('Itaque iudaei feliciter aduersarios uicinos superauerunt,')||!await page.locator('#latin').textContent().then(t=>t.includes(expected.registry.sections[213].Latin.note)))throw Error('Approved214 interval/reciprocal notice');
+   const english=await page.locator('#english').textContent();if(!english.includes('in the first year of Simon')||!english.includes('very happy'))throw Error('Approved214 unchanged English context');
+   report.adjudicated_broader_range={route:'/antiquities/?book=13&chapter=6',all_approved_clauses_once_and_transmitted_order:'PASS',inherited_label_visible:true,executable213_suppressed:true,English214_original_context:'PASS'};
   }
  }else{
   report.antiquities=[];
