@@ -1,6 +1,6 @@
 # Book 13: individual boundary review
 
-Provisional while review is incomplete. XML candidates are not source approval.
+All individual reviews and decisions are closed; see CERTIFICATE.json for final local implementation and reader certification.
 
 ## 13.1
 
