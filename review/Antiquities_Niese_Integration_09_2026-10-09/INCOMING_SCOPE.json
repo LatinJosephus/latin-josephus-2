@@ -1,0 +1,1845 @@
+{
+  "base": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "source_HEAD": "b2766fc0a0f9ab8dfb1c4667fbb9c5c4d6eac659",
+  "production_count": 4,
+  "review_count": 200,
+  "total": 204,
+  "files": [
+    {
+      "path": "assets/js/renderTei.js",
+      "status": "M",
+      "category": "production",
+      "incoming_Git_blob_id": "47afd9a219f837fedbb60c5e0f42f9f4e2ef4b05",
+      "incoming_Git_blob_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+      "certified_source_worktree_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+      "bytes": 126623
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-09.xml",
+      "status": "M",
+      "category": "production",
+      "incoming_Git_blob_id": "a156d84b061fd1f6b5d252c35f8df96d27bd4a47",
+      "incoming_Git_blob_sha256": "3bc7dcdef2e994181b9faa62564c544e4ce2d620ef0509bbc3435861b4f560aa",
+      "certified_source_worktree_sha256": "3bc7dcdef2e994181b9faa62564c544e4ce2d620ef0509bbc3435861b4f560aa",
+      "bytes": 140233
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "status": "M",
+      "category": "production",
+      "incoming_Git_blob_id": "b0e13714e6dc4ba11dafedbc556eb67e1843fced",
+      "incoming_Git_blob_sha256": "206ca5bed674f7ebaa750dd8357c82d90510cb71162477a8214c5b8ccbd284c0",
+      "certified_source_worktree_sha256": "206ca5bed674f7ebaa750dd8357c82d90510cb71162477a8214c5b8ccbd284c0",
+      "bytes": 88441
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-09.json",
+      "status": "A",
+      "category": "production",
+      "incoming_Git_blob_id": "6073313c73a58057427dbf6e402da05cbbe03189",
+      "incoming_Git_blob_sha256": "6841225c3a111474028c69c86c7bbca817d9fc849a3dd2b8cf6ec87cdffec02e",
+      "certified_source_worktree_sha256": "6841225c3a111474028c69c86c7bbca817d9fc849a3dd2b8cf6ec87cdffec02e",
+      "bytes": 92991
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/.gitignore",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c18dd8d83ceed1806b50b0aaa46beb7e335fff13",
+      "incoming_Git_blob_sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+      "certified_source_worktree_sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+      "bytes": 13
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/BASELINE.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "61d941a909477b9442d0ca11952652be1999ad09",
+      "incoming_Git_blob_sha256": "a84a6a8ad239c8a6356bf1009cb72ed4cd69d5917923eb186cca86f92e9edcc0",
+      "certified_source_worktree_sha256": "a84a6a8ad239c8a6356bf1009cb72ed4cd69d5917923eb186cca86f92e9edcc0",
+      "bytes": 7561
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/BELLUM_SOURCE_FAILURE.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "83c747f17aea4ea3a5c232622cc2cb8f52c35a87",
+      "incoming_Git_blob_sha256": "4ca73c32e0ba93ddb97cfa20d6d2f4e8c041442154c5e1cb2920bcde66949067",
+      "certified_source_worktree_sha256": "4ca73c32e0ba93ddb97cfa20d6d2f4e8c041442154c5e1cb2920bcde66949067",
+      "bytes": 418
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/BOUNDARIES.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "6f75c71fb449345a1331e97055e12d2c067341fc",
+      "incoming_Git_blob_sha256": "67906bb4b155aee208b7dea46b1273730b7e068473b1d7fd9f4aa057a84aea8a",
+      "certified_source_worktree_sha256": "67906bb4b155aee208b7dea46b1273730b7e068473b1d7fd9f4aa057a84aea8a",
+      "bytes": 1115404
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/BOUNDARIES.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "fe390b4b8da40249d435e5dadbb07abb920cf529",
+      "incoming_Git_blob_sha256": "3a27e390764bdc74ab80416150a5c8caf5d598ed0ebf964cf182143a25953082",
+      "certified_source_worktree_sha256": "3a27e390764bdc74ab80416150a5c8caf5d598ed0ebf964cf182143a25953082",
+      "bytes": 81383
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/BUILD_RECORD.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "29721c14a6307fc2524b0343181a3561afde4b42",
+      "incoming_Git_blob_sha256": "fcf7dfef79ef89b57ee81520cab67f47fee31ca8c13f92655d7cf0b5434ce77f",
+      "certified_source_worktree_sha256": "fcf7dfef79ef89b57ee81520cab67f47fee31ca8c13f92655d7cf0b5434ce77f",
+      "bytes": 2710
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/CERTIFICATION.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "d6e5df88ac71539a7f587218e4c72bccf607f123",
+      "incoming_Git_blob_sha256": "b14641a7d6c031796f4c147450855e5e37dafe45bc34cb273cf89cc5a803226c",
+      "certified_source_worktree_sha256": "b14641a7d6c031796f4c147450855e5e37dafe45bc34cb273cf89cc5a803226c",
+      "bytes": 3932
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/CONTROL_SEARCH.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "6d6c151d55a80e230902a758842dace752ed4c29",
+      "incoming_Git_blob_sha256": "a248618e5c3bf5bea989fb23bd3268953cdf4c6020bea7beeecf3ea97cbf0db4",
+      "certified_source_worktree_sha256": "a248618e5c3bf5bea989fb23bd3268953cdf4c6020bea7beeecf3ea97cbf0db4",
+      "bytes": 1745
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/DECISION_240.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c413cdc14bcfe31fd2c71b878d2ea7bf689094f8",
+      "incoming_Git_blob_sha256": "b6a020537e19a44f40759315b325a9efdd6d4780d8a7662ab908669869fa08de",
+      "certified_source_worktree_sha256": "b6a020537e19a44f40759315b325a9efdd6d4780d8a7662ab908669869fa08de",
+      "bytes": 3638
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/DECISION_240_ALTERNATIVES.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "5c248689ec58e5a1506a327e4b4f4c177ffcdbe9",
+      "incoming_Git_blob_sha256": "1138556e370728b15cfd429fc2fd606cdce0ab3896c4ff01d074393864a98e7d",
+      "certified_source_worktree_sha256": "1138556e370728b15cfd429fc2fd606cdce0ab3896c4ff01d074393864a98e7d",
+      "bytes": 10741
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/EDITORIAL_DECISIONS.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "dbf1776bd393e10c15c0e04d4c930b978c4996c7",
+      "incoming_Git_blob_sha256": "a325304a5765d90c03f4e01a151dde607e962f6e17c4cef5201f7ad717ceb252",
+      "certified_source_worktree_sha256": "a325304a5765d90c03f4e01a151dde607e962f6e17c4cef5201f7ad717ceb252",
+      "bytes": 1121
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/EDITORIAL_HISTORY.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "aa578aaed93d7dea353ebbef26ae9c0d5739a87c",
+      "incoming_Git_blob_sha256": "4531e58601acd7bdc090c58c1a8d3ff976fd25f45581b8349ef2efea01a4e278",
+      "certified_source_worktree_sha256": "4531e58601acd7bdc090c58c1a8d3ff976fd25f45581b8349ef2efea01a4e278",
+      "bytes": 2591
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/EXECUTABLE_IDENTITIES.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0133b8ab406e2383a0011f94aa8c50bf2b5e9941",
+      "incoming_Git_blob_sha256": "5316a83641fdc12e9e496d2030fac68cdb59dfe0eb76c7556c6ac7ae60b9c247",
+      "certified_source_worktree_sha256": "5316a83641fdc12e9e496d2030fac68cdb59dfe0eb76c7556c6ac7ae60b9c247",
+      "bytes": 2758
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/EXECUTABLE_TOOLS.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "4eced79a652126327da2376fb5486a10a821c54b",
+      "incoming_Git_blob_sha256": "4e36d6dd810f2e670a1bec428dec65023e234bc369bf6c44a2b29c0e01f82479",
+      "certified_source_worktree_sha256": "4e36d6dd810f2e670a1bec428dec65023e234bc369bf6c44a2b29c0e01f82479",
+      "bytes": 1191
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/EXPECTED_INTERVALS.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "2349a5f506843419df378003e362790cf3b7a2c1",
+      "incoming_Git_blob_sha256": "aacb8c30f4d92f9f23587456e6f3fcd8057ed2d9d55392b26e168f4e3d7afb48",
+      "certified_source_worktree_sha256": "aacb8c30f4d92f9f23587456e6f3fcd8057ed2d9d55392b26e168f4e3d7afb48",
+      "bytes": 885420
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/FAILED_BROWSER_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "50fd5dae5a46c1b5a68cc6883e097a04ed64373b",
+      "incoming_Git_blob_sha256": "18b29465a1e579778f919c4b23e82544d03f5157eb572f13add9b6903634608c",
+      "certified_source_worktree_sha256": "18b29465a1e579778f919c4b23e82544d03f5157eb572f13add9b6903634608c",
+      "bytes": 713
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/FILE_MANIFEST.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "cdc55fb342208269babce96698e46cf7ff514440",
+      "incoming_Git_blob_sha256": "19525e4cd6bebb9ee13083b24fd9ea51abf4db9409c5023aeaf4aea6c1d8599e",
+      "certified_source_worktree_sha256": "19525e4cd6bebb9ee13083b24fd9ea51abf4db9409c5023aeaf4aea6c1d8599e",
+      "bytes": 90779
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/FINAL_BOUNDARY_239_241.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "dc5df6e1e20efa8efc3d955211a553b23f4ba30c",
+      "incoming_Git_blob_sha256": "d6965c72cf2663ec6eee2cc912d514443da6956a9dd42c2f61fe596454f3f73a",
+      "certified_source_worktree_sha256": "d6965c72cf2663ec6eee2cc912d514443da6956a9dd42c2f61fe596454f3f73a",
+      "bytes": 25094
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/FINAL_BOUNDARY_239_241.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "cb82e15c0176d61fe66130631024498a78938d35",
+      "incoming_Git_blob_sha256": "140b0afc2b4b63e9a279ab257efe068eaedc7e2bf819d30ed466daf0ee2e00bd",
+      "certified_source_worktree_sha256": "140b0afc2b4b63e9a279ab257efe068eaedc7e2bf819d30ed466daf0ee2e00bd",
+      "bytes": 3814
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/GREEK_MARKER_PLAN.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "4c79d2b4d586d6dffdb7ead5c4a159a4aaee8d28",
+      "incoming_Git_blob_sha256": "e20788dae07582fd33583b99fcb6ef302d4f5137397aa1f62546fe2765ef1609",
+      "certified_source_worktree_sha256": "e20788dae07582fd33583b99fcb6ef302d4f5137397aa1f62546fe2765ef1609",
+      "bytes": 6188
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/IMPLEMENTATION_PRESERVATION.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "1f4fe8fd2d5293c006ebb825c5fdee4270ac8657",
+      "incoming_Git_blob_sha256": "5690f83070bc001873f3598a4d7ff9c7680cfd29a9d58b16171ffd36e1a0da17",
+      "certified_source_worktree_sha256": "5690f83070bc001873f3598a4d7ff9c7680cfd29a9d58b16171ffd36e1a0da17",
+      "bytes": 280957
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/INHERITED_ISSUES_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c571f2322389272a01a03acece0db6b7c7e593ab",
+      "incoming_Git_blob_sha256": "43c763e070b829f5b1ba54a420e50f4c2b5182f0833a779c98b733d57ef7dddb",
+      "certified_source_worktree_sha256": "43c763e070b829f5b1ba54a420e50f4c2b5182f0833a779c98b733d57ef7dddb",
+      "bytes": 2906
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/INITIAL_GREEK_CENSUS.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e123281dac4853cde2fb162447da8295a7d35481",
+      "incoming_Git_blob_sha256": "52acf98ff2eeea8b3d9e3b7871996680f7b199dedfb83be6c2cb12824056047c",
+      "certified_source_worktree_sha256": "52acf98ff2eeea8b3d9e3b7871996680f7b199dedfb83be6c2cb12824056047c",
+      "bytes": 882740
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/IX110-dark.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "640aff106c0cf03df5eb6ee76dc49b106813ffd3",
+      "incoming_Git_blob_sha256": "95c1283818e4073c16ab2791ae746bdbf00fdb9302dad74c6b4a623c1ad5237c",
+      "certified_source_worktree_sha256": "95c1283818e4073c16ab2791ae746bdbf00fdb9302dad74c6b4a623c1ad5237c",
+      "bytes": 260198
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/IX110-light.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e9b172c1d0465fa07c87abc408e01c2a52062fc1",
+      "incoming_Git_blob_sha256": "8fa689156b0ca4dfd7aa6fe95154707752f55d7fe4f8a3a7df145c5311a34207",
+      "certified_source_worktree_sha256": "8fa689156b0ca4dfd7aa6fe95154707752f55d7fe4f8a3a7df145c5311a34207",
+      "bytes": 258335
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/IX239-final-production.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c6f2631ecae292507b73ffaf738693f990add28f",
+      "incoming_Git_blob_sha256": "d59f37ea637100cb2aac96473fb3a2be844956672c537ac97103c2753063a1b1",
+      "certified_source_worktree_sha256": "d59f37ea637100cb2aac96473fb3a2be844956672c537ac97103c2753063a1b1",
+      "bytes": 231968
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/IX240-final-production.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "87bcbdf2b999e2512e2429e2cc98213c74734f3d",
+      "incoming_Git_blob_sha256": "c0b6f1cb8f31fce74831d47bf89d0ce8108cfd70370f571edba8450477cab53c",
+      "certified_source_worktree_sha256": "c0b6f1cb8f31fce74831d47bf89d0ce8108cfd70370f571edba8450477cab53c",
+      "bytes": 207727
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/IX241-final-production.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "a31ed03e8a72a5ce9d7e534abffa5e836a13e217",
+      "incoming_Git_blob_sha256": "7b38c7367046317f522302832b627f24351e1c512aed19e30f91e5cb49f96280",
+      "certified_source_worktree_sha256": "7b38c7367046317f522302832b627f24351e1c512aed19e30f91e5cb49f96280",
+      "bytes": 193757
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/LATIN_REVIEW_NOTES.txt",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8b747f281f0a82f525515f0c7b42aafa2ad18be4",
+      "incoming_Git_blob_sha256": "03eddad38abb430a37f85a7aedb7582fc49f7cd64e4e4bd7766b448b2529bb7a",
+      "certified_source_worktree_sha256": "03eddad38abb430a37f85a7aedb7582fc49f7cd64e4e4bd7766b448b2529bb7a",
+      "bytes": 17543
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/METHOD_SOURCE_MANIFEST.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "f90f687f35e6d54fb0e90e7622f020fe3089be28",
+      "incoming_Git_blob_sha256": "fdea296ca002c9e856a2dce990ac5bc9ea111bef24c663cf21c0bf74a7fa3854",
+      "certified_source_worktree_sha256": "fdea296ca002c9e856a2dce990ac5bc9ea111bef24c663cf21c0bf74a7fa3854",
+      "bytes": 3329
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/NEW_BOOK_BROWSER_FAILURE.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8eef555d82afbf19e1bbedee1aeb823c343b1883",
+      "incoming_Git_blob_sha256": "e69b3c6f69c3054aaff8783be34a7f23e2734702ea45fb2d2d07bd0a0da5d606",
+      "certified_source_worktree_sha256": "e69b3c6f69c3054aaff8783be34a7f23e2734702ea45fb2d2d07bd0a0da5d606",
+      "bytes": 86712
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/NEW_BOOK_BROWSER_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e6e2ad38097432e768a1a28b68b9cb70d2fb6fa9",
+      "incoming_Git_blob_sha256": "4b25af612c59f00bce8d068f30c74a869562feefbeb9c3cf0c09f6dc2e5efa16",
+      "certified_source_worktree_sha256": "4b25af612c59f00bce8d068f30c74a869562feefbeb9c3cf0c09f6dc2e5efa16",
+      "bytes": 92209
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/PRINT_PAGE_CENSUS.txt",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "82e076ce98de2e2e4b4ec9e93f8e6ad1b9a4125d",
+      "incoming_Git_blob_sha256": "5fbc8f325bc062b8473134787cbbc34b6e424ab40f63c6e32f621d14c9988bb4",
+      "certified_source_worktree_sha256": "5fbc8f325bc062b8473134787cbbc34b6e424ab40f63c6e32f621d14c9988bb4",
+      "bytes": 730
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/PROTECTED_BROWSER_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "5a408236cccebdd6f0a00142b78c9fadcc2fe97c",
+      "incoming_Git_blob_sha256": "b2b82354a4e7985da9ff8416bf53a23d7286a4444f93dc0570c32d9c903b8b9f",
+      "certified_source_worktree_sha256": "b2b82354a4e7985da9ff8416bf53a23d7286a4444f93dc0570c32d9c903b8b9f",
+      "bytes": 21048
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/PROTECTED_EVIDENCE_APPLICABILITY.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "ce13b5463c5809fe1f1547fbd31f930ae7021857",
+      "incoming_Git_blob_sha256": "b696a0b11731cbdb35ecfda7db95ebf1f7d6d1ef38cd7e67cb7ebfbd0edd258f",
+      "certified_source_worktree_sha256": "b696a0b11731cbdb35ecfda7db95ebf1f7d6d1ef38cd7e67cb7ebfbd0edd258f",
+      "bytes": 767
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/PROTECTED_SOURCE_GATE_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0f8a647bd592cbb1100cab33c9e53709f3f571e3",
+      "incoming_Git_blob_sha256": "6a66642b0247599abeb16bbd4133bbdbad5b3a1d88c9fb9708387bb9332d4970",
+      "certified_source_worktree_sha256": "6a66642b0247599abeb16bbd4133bbdbad5b3a1d88c9fb9708387bb9332d4970",
+      "bytes": 3088
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/REGISTER_VALIDATION.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "d3e72c33b27fc739c466a8953219d57c72c86e06",
+      "incoming_Git_blob_sha256": "864095080f553dbdb53fcdf6337be949308e78bffe9f9a48a76de5cf96534255",
+      "certified_source_worktree_sha256": "864095080f553dbdb53fcdf6337be949308e78bffe9f9a48a76de5cf96534255",
+      "bytes": 2332
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/REPORT.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "7b136fb84efacd8aa4582e78a43213858dd81f6e",
+      "incoming_Git_blob_sha256": "f3c79ee04e14d6ecdb587c74051dfbec053a8360577e7b7541039570998fe762",
+      "certified_source_worktree_sha256": "f3c79ee04e14d6ecdb587c74051dfbec053a8360577e7b7541039570998fe762",
+      "bytes": 8455
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/SHARED_SUPPORT.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "cf81e1e4b9b9374e70aa4944f74c5470d8766fcf",
+      "incoming_Git_blob_sha256": "b354d50a2f1b6bdb6a93ec741d8bf03fff2e46f1a0ea6ae7853e855dfba666c2",
+      "certified_source_worktree_sha256": "b354d50a2f1b6bdb6a93ec741d8bf03fff2e46f1a0ea6ae7853e855dfba666c2",
+      "bytes": 1227
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_AUTHORITY.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "34918d1342ba179af6de89286d55d93a49398b05",
+      "incoming_Git_blob_sha256": "2d3d341d3ce41a58562cf5e997fc90089c6dd2766953253bdc08ef7c008b96a3",
+      "certified_source_worktree_sha256": "2d3d341d3ce41a58562cf5e997fc90089c6dd2766953253bdc08ef7c008b96a3",
+      "bytes": 10183
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_INVENTORY.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b07b6f84191bc23480ddc963375823cd87a5f8d9",
+      "incoming_Git_blob_sha256": "63e2b22a2868612f7436e4d5ffa784705f133eead429d86b60ccdb0f5c551330",
+      "certified_source_worktree_sha256": "63e2b22a2868612f7436e4d5ffa784705f133eead429d86b60ccdb0f5c551330",
+      "bytes": 397132
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_PRESERVATION_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "603d029469c8b974c8142cc5321288c54064aae8",
+      "incoming_Git_blob_sha256": "252230c7d417ba72f6a5f2a0aadbfbab1572a78606af4fe2938f6c4016699f1b",
+      "certified_source_worktree_sha256": "252230c7d417ba72f6a5f2a0aadbfbab1572a78606af4fe2938f6c4016699f1b",
+      "bytes": 4634
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/bellum-witness-gate.cjs",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c49db95c1f11c5d4bc93f382896dca3220f02079",
+      "incoming_Git_blob_sha256": "2ed277b25da7867a83d2bc64d9b9d25b7b46f6f00abcbe8def00a686a4118182",
+      "certified_source_worktree_sha256": "2ed277b25da7867a83d2bc64d9b9d25b7b46f6f00abcbe8def00a686a4118182",
+      "bytes": 6501
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/bottom_views.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "d99adef5f21c63457f200ed896d10cbd1439ad4d",
+      "incoming_Git_blob_sha256": "2a03616b33f32c44fe7ecefd2a75ef8413cae84908fdb8306d9e4747cc6fdd3d",
+      "certified_source_worktree_sha256": "2a03616b33f32c44fe7ecefd2a75ef8413cae84908fdb8306d9e4747cc6fdd3d",
+      "bytes": 790
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/build-logs/baseline-jekyll.log",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "d2e4dd88a9ba07fd37c3c8ab47a6def24d5a0171",
+      "incoming_Git_blob_sha256": "aa014c349b4897ab722283b5009e23546be96182a47734cc5cbcc684f9c57842",
+      "certified_source_worktree_sha256": "aa014c349b4897ab722283b5009e23546be96182a47734cc5cbcc684f9c57842",
+      "bytes": 5070
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/build-logs/jekyll.log",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "295fd6d916e4780b0ad4b97db045b1eb7767f9b0",
+      "incoming_Git_blob_sha256": "e0862cda4a71da1046f56ba9a79c320a5453d4ecf7d75d0d51cfd455611d14de",
+      "certified_source_worktree_sha256": "e0862cda4a71da1046f56ba9a79c320a5453d4ecf7d75d0d51cfd455611d14de",
+      "bytes": 4890
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/build.sh",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "2f7922640e81918a10136ed2e02f07d64f1dc0f4",
+      "incoming_Git_blob_sha256": "becee4769b4f9ed52f9048ed4fef527248cf5c914ff91c3a4c8566b65fd7672c",
+      "certified_source_worktree_sha256": "becee4769b4f9ed52f9048ed4fef527248cf5c914ff91c3a4c8566b65fd7672c",
+      "bytes": 995
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/close_decision_240.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "3e2eb02d39aaab4d26d5a0e3c20c5290ed0552f1",
+      "incoming_Git_blob_sha256": "1c3cf17e31c64afe6bdb3df3dacb43baa109c343bcf55c00cd28760b5d6d5fa9",
+      "certified_source_worktree_sha256": "1c3cf17e31c64afe6bdb3df3dacb43baa109c343bcf55c00cd28760b5d6d5fa9",
+      "bytes": 4667
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/editorial_packet.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "653805bea4bfaf798361b81951e82a978da9f162",
+      "incoming_Git_blob_sha256": "fac6ed89e3123c3bf2f86ce11b399dc1a284c6f9013a0b84844cf3b3e3955c32",
+      "certified_source_worktree_sha256": "fac6ed89e3123c3bf2f86ce11b399dc1a284c6f9013a0b84844cf3b3e3955c32",
+      "bytes": 3652
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-112.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "61b408e136dbe70b54947e31d35a9cf7896da31d",
+      "incoming_Git_blob_sha256": "754c97165caf4f55f5dee460c4de85eef2f836ae48bc370c9fc3429545fcf38f",
+      "certified_source_worktree_sha256": "754c97165caf4f55f5dee460c4de85eef2f836ae48bc370c9fc3429545fcf38f",
+      "bytes": 108598
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-128.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8d86f6272216ce5fdfa53121944563ee05a4e041",
+      "incoming_Git_blob_sha256": "0f27b8b6062c981cf0579c74da9e8344a1971dc109c9c1bf0ee6569411c3da73",
+      "certified_source_worktree_sha256": "0f27b8b6062c981cf0579c74da9e8344a1971dc109c9c1bf0ee6569411c3da73",
+      "bytes": 103477
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-142.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "56d49805e58908ddabae0e5515f4cbf2af5be38d",
+      "incoming_Git_blob_sha256": "f12e089c4f28a9a732459f6b319ee39fc73f17398faee42a92a25770797a109f",
+      "certified_source_worktree_sha256": "f12e089c4f28a9a732459f6b319ee39fc73f17398faee42a92a25770797a109f",
+      "bytes": 109423
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-162.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "6fd1a66339e329c786f26a39c1cbd4bc0a72a50f",
+      "incoming_Git_blob_sha256": "e25627699c3de2b1bb02b65cdcdfc721d9c4361336e901b7d6bf7215e72fb062",
+      "certified_source_worktree_sha256": "e25627699c3de2b1bb02b65cdcdfc721d9c4361336e901b7d6bf7215e72fb062",
+      "bytes": 103427
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-001.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "5ba6f4f16df0aafcdda305e2f63f215a3bfd6cd9",
+      "incoming_Git_blob_sha256": "2e1a6726dfa6c885aa36104490f7325f909c39637a6d33ab679d71c9973eab51",
+      "certified_source_worktree_sha256": "2e1a6726dfa6c885aa36104490f7325f909c39637a6d33ab679d71c9973eab51",
+      "bytes": 46429
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-002.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "2fd4d1d57ba936757f84a9cfb136cc5af24eee71",
+      "incoming_Git_blob_sha256": "1ba979884e4bb8b34dc2139ab7a161c424d6ec36a4885468cadefd940caf6eaa",
+      "certified_source_worktree_sha256": "1ba979884e4bb8b34dc2139ab7a161c424d6ec36a4885468cadefd940caf6eaa",
+      "bytes": 7562
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-003.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "942d72b6b52b491e8ce0417c0494c7d3f12ba968",
+      "incoming_Git_blob_sha256": "b9e8be3130a1b61bc0da1aeee6019b599a67976ee6173068b499f63be0ccdd8d",
+      "certified_source_worktree_sha256": "b9e8be3130a1b61bc0da1aeee6019b599a67976ee6173068b499f63be0ccdd8d",
+      "bytes": 4968
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-004.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e87305183133c785f6777b6f17762ca619afc848",
+      "incoming_Git_blob_sha256": "392ed41c10dfdbc47d17090bcc705ef4b95c57eca6e61fd6fe73018eb0a99fa7",
+      "certified_source_worktree_sha256": "392ed41c10dfdbc47d17090bcc705ef4b95c57eca6e61fd6fe73018eb0a99fa7",
+      "bytes": 6702
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-005.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "edc9f84edda4c24a1e48bdaf63de20924ef65b9e",
+      "incoming_Git_blob_sha256": "ff84cab5deec271a83c755db99cb9f803001106f52e2f5f354a680376efefefc",
+      "certified_source_worktree_sha256": "ff84cab5deec271a83c755db99cb9f803001106f52e2f5f354a680376efefefc",
+      "bytes": 22907
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-006.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "410149163b5b236c1ea6228a7bb6a4f6a37a9201",
+      "incoming_Git_blob_sha256": "b65c23502d885fce5a9e4c3d0456d8b4e0154a892800d8161ef5a0950b4fc808",
+      "certified_source_worktree_sha256": "b65c23502d885fce5a9e4c3d0456d8b4e0154a892800d8161ef5a0950b4fc808",
+      "bytes": 14299
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-007.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "38720654532b9914a619eadc621397f38909ddc9",
+      "incoming_Git_blob_sha256": "3dac6ebe5cd7ddb541dcc74990950c09cc65163e7a86d2c536c418db6690530a",
+      "certified_source_worktree_sha256": "3dac6ebe5cd7ddb541dcc74990950c09cc65163e7a86d2c536c418db6690530a",
+      "bytes": 33187
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-008.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "18633de1a204d525c83ba4d0cd3e49c20eb9309f",
+      "incoming_Git_blob_sha256": "5cd4cf4c940dc8c0b6cf080b5002d3fd1a380e11168f290e90ef7dca2ce4997c",
+      "certified_source_worktree_sha256": "5cd4cf4c940dc8c0b6cf080b5002d3fd1a380e11168f290e90ef7dca2ce4997c",
+      "bytes": 30558
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-009.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "a9bcbd4ebdab83cf56c095646bf3a819531483b5",
+      "incoming_Git_blob_sha256": "35782fa0fcf8cfc0df59fbe4ec6d512f2868e0bb1dfd49967dc8e9332ca49d28",
+      "certified_source_worktree_sha256": "35782fa0fcf8cfc0df59fbe4ec6d512f2868e0bb1dfd49967dc8e9332ca49d28",
+      "bytes": 23756
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-010.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "9e030820f70d77b6d153c2610f934f9676012b0c",
+      "incoming_Git_blob_sha256": "266e7678451ea367982cd2d1a62e418935ba8c19cac304cdd600902086c34bde",
+      "certified_source_worktree_sha256": "266e7678451ea367982cd2d1a62e418935ba8c19cac304cdd600902086c34bde",
+      "bytes": 20426
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-011.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "52af33e2a8914b37aec39aee48abc60b2a2d1f8e",
+      "incoming_Git_blob_sha256": "b5bb966865384b059e72626c42f8cbdeb89e3757231914c93ab6807201fcb575",
+      "certified_source_worktree_sha256": "b5bb966865384b059e72626c42f8cbdeb89e3757231914c93ab6807201fcb575",
+      "bytes": 53230
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-012.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "75251e5a5e8b700765bbd59fd2975c93721c11d9",
+      "incoming_Git_blob_sha256": "2601ec07db7a4731f24baead6f3260aae712d3b57322e7b717905f07fa6787cf",
+      "certified_source_worktree_sha256": "2601ec07db7a4731f24baead6f3260aae712d3b57322e7b717905f07fa6787cf",
+      "bytes": 53386
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-016.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "2ee74a234c3151a5b588d3490dcc742ad722eb87",
+      "incoming_Git_blob_sha256": "abde56fc730dbb1d9015153d9f1322da1acc4531a74642e92eaa78fd161907dd",
+      "certified_source_worktree_sha256": "abde56fc730dbb1d9015153d9f1322da1acc4531a74642e92eaa78fd161907dd",
+      "bytes": 34712
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-017.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "1c0f7313c339d89ef87083592581983424a07f81",
+      "incoming_Git_blob_sha256": "5f3a7b1cb9090ad95d6e218a8c0c24abbd65c0b2df67b362565a387259cb535f",
+      "certified_source_worktree_sha256": "5f3a7b1cb9090ad95d6e218a8c0c24abbd65c0b2df67b362565a387259cb535f",
+      "bytes": 31133
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-018.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "124c3e7e58efeb31198af37509f01b0df7317877",
+      "incoming_Git_blob_sha256": "0a031a354ce5ae72516d7602a990f501079f9c83c5483873da98517b12c3cadc",
+      "certified_source_worktree_sha256": "0a031a354ce5ae72516d7602a990f501079f9c83c5483873da98517b12c3cadc",
+      "bytes": 36698
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-019.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0e9ec5e6d6fb84886c5be688572f2d9d224d3ae9",
+      "incoming_Git_blob_sha256": "850cb5f3a0738ff026f1033741740d39912ab13ea8bd7d0e4dda24c63d25bdf0",
+      "certified_source_worktree_sha256": "850cb5f3a0738ff026f1033741740d39912ab13ea8bd7d0e4dda24c63d25bdf0",
+      "bytes": 81918
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-020.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "25560fb2114032499449ba5e2a9518d519de7eed",
+      "incoming_Git_blob_sha256": "8e583dcf1a08722f43a4bb5c2566633534c46a522978e6fe08b565ce226f1e5b",
+      "certified_source_worktree_sha256": "8e583dcf1a08722f43a4bb5c2566633534c46a522978e6fe08b565ce226f1e5b",
+      "bytes": 69126
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-021.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "a3fcf9fca315114b1b5b5deef1484d64aa63550a",
+      "incoming_Git_blob_sha256": "367ed404f8cdbf80168b89d6150ddf33d4256458690fd1c1ac578e5440152057",
+      "certified_source_worktree_sha256": "367ed404f8cdbf80168b89d6150ddf33d4256458690fd1c1ac578e5440152057",
+      "bytes": 83077
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-022.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "261e9cdbd720923540c06c1dd930f1e4764d3434",
+      "incoming_Git_blob_sha256": "4948f922183f0be1c4dca72cc0c8507d8bc5c6acb8210e3dd7764bb6f447833f",
+      "certified_source_worktree_sha256": "4948f922183f0be1c4dca72cc0c8507d8bc5c6acb8210e3dd7764bb6f447833f",
+      "bytes": 75321
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-023.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "1b863cf03a09f22f5034b6a8f075db9fe44d6dac",
+      "incoming_Git_blob_sha256": "9b354ffc05bd9b9c71d638f440b5b953610ba69e8e7eac7279218936433e064e",
+      "certified_source_worktree_sha256": "9b354ffc05bd9b9c71d638f440b5b953610ba69e8e7eac7279218936433e064e",
+      "bytes": 81218
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-024.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c38349427d81e5d8fd78d5a457b81594578e1c99",
+      "incoming_Git_blob_sha256": "57b594553fc6c2f8b0faa49316eef8279dc5014864f1a74650b80d14b58b6992",
+      "certified_source_worktree_sha256": "57b594553fc6c2f8b0faa49316eef8279dc5014864f1a74650b80d14b58b6992",
+      "bytes": 74858
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-167.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "bb4d41697c1fc1f132c5f813cfeeafef07a15c5d",
+      "incoming_Git_blob_sha256": "66787d9eedcb7722dba73892631d863154a4372993d3a8388344f81cba8e7a43",
+      "certified_source_worktree_sha256": "66787d9eedcb7722dba73892631d863154a4372993d3a8388344f81cba8e7a43",
+      "bytes": 64456
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-168.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "42eb637e1d8f5c60fc3fce1538044bdad109c08a",
+      "incoming_Git_blob_sha256": "5edcd173672baf2709513d3aa4fba4adcfc6e919dd9d5808c8408586c6ef9e7f",
+      "certified_source_worktree_sha256": "5edcd173672baf2709513d3aa4fba4adcfc6e919dd9d5808c8408586c6ef9e7f",
+      "bytes": 52349
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-169.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "d4d0fc3564d12091d8980614ef4ff2715576f49c",
+      "incoming_Git_blob_sha256": "880ec9e39ddc0093a99f316854666028054cea28fb8a5f95e51687e117781993",
+      "certified_source_worktree_sha256": "880ec9e39ddc0093a99f316854666028054cea28fb8a5f95e51687e117781993",
+      "bytes": 54224
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-170.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "78eb989c04858a0be624cde2823459184d74c0c5",
+      "incoming_Git_blob_sha256": "6191210de937dc4176ab66475372fb83dbbf4021f4cf86b93876d85f5768e1c3",
+      "certified_source_worktree_sha256": "6191210de937dc4176ab66475372fb83dbbf4021f4cf86b93876d85f5768e1c3",
+      "bytes": 35723
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-171.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "56ebfe16cb5fd2ad84d253117302147bbb2fa7e2",
+      "incoming_Git_blob_sha256": "6df5da17c324ba3c99099291b4216ce8e91f2571fa46a316a8bb48461b2035b1",
+      "certified_source_worktree_sha256": "6df5da17c324ba3c99099291b4216ce8e91f2571fa46a316a8bb48461b2035b1",
+      "bytes": 35171
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-172.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "06a08bbd636a1d194be1faf54ac9651a41045d58",
+      "incoming_Git_blob_sha256": "2077c78a5db441dd2fe423a982490baae1d7f02c383a16eab833901de3da972f",
+      "certified_source_worktree_sha256": "2077c78a5db441dd2fe423a982490baae1d7f02c383a16eab833901de3da972f",
+      "bytes": 38385
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-001.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "869d9451bc1b486ee196046001f812b1a2f66283",
+      "incoming_Git_blob_sha256": "32ef98bf22bfe7a64e51a790a4b7c6dbeb0381571424942088ae58ac6465c36e",
+      "certified_source_worktree_sha256": "32ef98bf22bfe7a64e51a790a4b7c6dbeb0381571424942088ae58ac6465c36e",
+      "bytes": 13257
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-002.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c186a1d2ab67ff309d9f02f4a49bab50909e5e90",
+      "incoming_Git_blob_sha256": "6a6704d38c374525ac092438610e371f7e3bf90496926b2b7efac22458aedd73",
+      "certified_source_worktree_sha256": "6a6704d38c374525ac092438610e371f7e3bf90496926b2b7efac22458aedd73",
+      "bytes": 9462
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-003.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "d186e09a227ec26901116a5dabea81ec0ee0604c",
+      "incoming_Git_blob_sha256": "7b4a5ee0f70252ec9a9e68fc66ff068cbf94744e8ec1df8f78b79f5622fc005e",
+      "certified_source_worktree_sha256": "7b4a5ee0f70252ec9a9e68fc66ff068cbf94744e8ec1df8f78b79f5622fc005e",
+      "bytes": 30977
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-004.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "7c8e4a74a330abe4996306ac565f8fc08dd552b4",
+      "incoming_Git_blob_sha256": "785a9e3cfc0ec6128711acca76b66e01fe38809657447b06dd8500e57ae55bcf",
+      "certified_source_worktree_sha256": "785a9e3cfc0ec6128711acca76b66e01fe38809657447b06dd8500e57ae55bcf",
+      "bytes": 37421
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-005.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "4317758f8fc78f424b1fda3c7dd7b6dd93570ab5",
+      "incoming_Git_blob_sha256": "8eef5d0bd6668cd82ae72013ba1dcfad80593c55be7c63f3518ddafc06112a14",
+      "certified_source_worktree_sha256": "8eef5d0bd6668cd82ae72013ba1dcfad80593c55be7c63f3518ddafc06112a14",
+      "bytes": 26180
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-006.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "27ae127c37be02df103ac38aa392c5eddd360edb",
+      "incoming_Git_blob_sha256": "97ad300c19a658cf5aca37a23ae5e5fedff7e8629284e4a87466529d1732283a",
+      "certified_source_worktree_sha256": "97ad300c19a658cf5aca37a23ae5e5fedff7e8629284e4a87466529d1732283a",
+      "bytes": 28826
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-007.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8869a167068bbfc0c9a855f2197099242189d728",
+      "incoming_Git_blob_sha256": "0f8875eaf94a90922d942a3ed93db4603816da74beeb4da81d725f0e95b58840",
+      "certified_source_worktree_sha256": "0f8875eaf94a90922d942a3ed93db4603816da74beeb4da81d725f0e95b58840",
+      "bytes": 36520
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-008.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "ab4d47a00e7be2f8335a462a208ce1bd1d48c138",
+      "incoming_Git_blob_sha256": "5fa1671e413339006380ada9e679c7b96cbfb4abb8615989ab6364e708218272",
+      "certified_source_worktree_sha256": "5fa1671e413339006380ada9e679c7b96cbfb4abb8615989ab6364e708218272",
+      "bytes": 21267
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-009.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "dc490f1a78d8f26cd97048368275d562792ba1ce",
+      "incoming_Git_blob_sha256": "76f561aff12a0b539f58434b86f955d977733d618d8ae25b540341143cdf60cf",
+      "certified_source_worktree_sha256": "76f561aff12a0b539f58434b86f955d977733d618d8ae25b540341143cdf60cf",
+      "bytes": 10199
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-010.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "070e06992f0ff529fb874e066fadddaeadfde987",
+      "incoming_Git_blob_sha256": "87278addc646440237378583675af80ab578c95ad6ed69a2e61e560c6d5cc932",
+      "certified_source_worktree_sha256": "87278addc646440237378583675af80ab578c95ad6ed69a2e61e560c6d5cc932",
+      "bytes": 7816
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-011.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "9a23cba2b0e7ae104e0272c955b8cf5dd8cea139",
+      "incoming_Git_blob_sha256": "8f5a7e01ef6f98fcaae5901d9a902e6243a898352ff134d26101ba6bd71fe604",
+      "certified_source_worktree_sha256": "8f5a7e01ef6f98fcaae5901d9a902e6243a898352ff134d26101ba6bd71fe604",
+      "bytes": 37787
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-012.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "cc0b529d99982d90afcad5e0f051a187eb5f53ed",
+      "incoming_Git_blob_sha256": "6a4d51f8c22da4d39a32bda1dfbe2ea9dcd57f9a1049a526c27c0a772558cbe9",
+      "certified_source_worktree_sha256": "6a4d51f8c22da4d39a32bda1dfbe2ea9dcd57f9a1049a526c27c0a772558cbe9",
+      "bytes": 42820
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-275.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "a771559ea042a9bb5b355d11cbc0123e1ddd2a06",
+      "incoming_Git_blob_sha256": "7b4b59d3850c712f87cefb8cb4acff8469f505e303aeb7e2f4c25c2891d93dbb",
+      "certified_source_worktree_sha256": "7b4b59d3850c712f87cefb8cb4acff8469f505e303aeb7e2f4c25c2891d93dbb",
+      "bytes": 37735
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-276.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "5a073f7e229e4a7d6230dde6e6329e18d7f55356",
+      "incoming_Git_blob_sha256": "5ffbcdffcc27b860d502cb7600bfd374270da1f9c0dc1e3e4c531f9e1f9bf27d",
+      "certified_source_worktree_sha256": "5ffbcdffcc27b860d502cb7600bfd374270da1f9c0dc1e3e4c531f9e1f9bf27d",
+      "bytes": 50136
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-277.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "cd88bc7b36f625856162e3b017f7f15635cc5d1e",
+      "incoming_Git_blob_sha256": "b0182022c77e18e7b31e1ebdaba3a7ea171c53e9cab6d48d9e68e70f090d943b",
+      "certified_source_worktree_sha256": "b0182022c77e18e7b31e1ebdaba3a7ea171c53e9cab6d48d9e68e70f090d943b",
+      "bytes": 48406
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-278.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "ba2d17f466758928662b4798d04da51b194e59d8",
+      "incoming_Git_blob_sha256": "b5f0d96842c3fbd705bf27d0f1b06af791ff6eee1f4c60864eaa0b7143a613e3",
+      "certified_source_worktree_sha256": "b5f0d96842c3fbd705bf27d0f1b06af791ff6eee1f4c60864eaa0b7143a613e3",
+      "bytes": 49975
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-279.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "5a74d550e4a1425ca2a834b4da6c04fb9c5d307d",
+      "incoming_Git_blob_sha256": "042ad56a9315ff40808199524e032152e340aef15f12571e79993976c2a8ce45",
+      "certified_source_worktree_sha256": "042ad56a9315ff40808199524e032152e340aef15f12571e79993976c2a8ce45",
+      "bytes": 62989
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-280.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c9f7632258beeb72d9bd14fb9d6b3cbaea41040c",
+      "incoming_Git_blob_sha256": "482dc6a3f06ad9f189b991e987454c303e18f7850d67aabf4444e8e481ea998d",
+      "certified_source_worktree_sha256": "482dc6a3f06ad9f189b991e987454c303e18f7850d67aabf4444e8e481ea998d",
+      "bytes": 64358
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-281.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "55c2795aff8cbd60b3cb0cc434a063a685facfc6",
+      "incoming_Git_blob_sha256": "5ea1c79417ef3946e0eae467eab6a68a8e6fe70520919fce794267122c5941e0",
+      "certified_source_worktree_sha256": "5ea1c79417ef3946e0eae467eab6a68a8e6fe70520919fce794267122c5941e0",
+      "bytes": 62516
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-282.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "a3be9bf436671b56156852f469ff44a537786992",
+      "incoming_Git_blob_sha256": "015fef0f6246310d2b2d5c013db440f5a63733077c2a16c198f0d43f4d7b6c66",
+      "certified_source_worktree_sha256": "015fef0f6246310d2b2d5c013db440f5a63733077c2a16c198f0d43f4d7b6c66",
+      "bytes": 61937
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-283.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "3f573450fcacc016d12da86a17b18a3ca87b1137",
+      "incoming_Git_blob_sha256": "5867ed48b8b3d9ef488d125ad2f1114728c5139c0cdd43b7cfc54ae5abc93b99",
+      "certified_source_worktree_sha256": "5867ed48b8b3d9ef488d125ad2f1114728c5139c0cdd43b7cfc54ae5abc93b99",
+      "bytes": 61903
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-284.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "20b130fc05e820590c88f5b25909f757206d7d77",
+      "incoming_Git_blob_sha256": "585b05127c82c65b0727cf1f1910b74541fa25e56aa48b098e4ff943adadb210",
+      "certified_source_worktree_sha256": "585b05127c82c65b0727cf1f1910b74541fa25e56aa48b098e4ff943adadb210",
+      "bytes": 63542
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-285.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0b83ce95482cb3369f3d17f91bcb44c8428c107f",
+      "incoming_Git_blob_sha256": "031776bc098dec4b648aeaf53162d393b4746b8bb1c41f42bd286e959d2644d2",
+      "certified_source_worktree_sha256": "031776bc098dec4b648aeaf53162d393b4746b8bb1c41f42bd286e959d2644d2",
+      "bytes": 62798
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-286.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "cd35ce67a132639275acc06f9f9d9eeaa18278bc",
+      "incoming_Git_blob_sha256": "4ecf15e113dcf1720017c52a47d9329584846ee4cdf0172c4479e02e4fcda7cf",
+      "certified_source_worktree_sha256": "4ecf15e113dcf1720017c52a47d9329584846ee4cdf0172c4479e02e4fcda7cf",
+      "bytes": 63231
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-287.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "ab458ecd32d89f8b7ace2f5420105a24ef0d0939",
+      "incoming_Git_blob_sha256": "7ba578baabbb701fbd81f419c4991780e54b1399e540ab3f6afc268bc7568a80",
+      "certified_source_worktree_sha256": "7ba578baabbb701fbd81f419c4991780e54b1399e540ab3f6afc268bc7568a80",
+      "bytes": 64398
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-288.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c8ee52135f89b353c299f85aa5b8e38624a172e5",
+      "incoming_Git_blob_sha256": "d6bfdd205fc9931b4236e35c4ec1f470f5fc7301052ac2acfef243e4f0d382d3",
+      "certified_source_worktree_sha256": "d6bfdd205fc9931b4236e35c4ec1f470f5fc7301052ac2acfef243e4f0d382d3",
+      "bytes": 63815
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-289.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "de1ebe9d5311df3a2c356be8b490ba9ab1c5913c",
+      "incoming_Git_blob_sha256": "fbc608d32cfcd7171b416f3c59f9cfa98e81db277896861fdbca56fb7b4740bd",
+      "certified_source_worktree_sha256": "fbc608d32cfcd7171b416f3c59f9cfa98e81db277896861fdbca56fb7b4740bd",
+      "bytes": 65261
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-290.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "58ddb2aa85b7e746d07b5a1208d9a6a51c2ded9e",
+      "incoming_Git_blob_sha256": "ddf0aba14f1188e32b20e4fbb1640060293f6b8cb989d2771e2296fedca3c93b",
+      "certified_source_worktree_sha256": "ddf0aba14f1188e32b20e4fbb1640060293f6b8cb989d2771e2296fedca3c93b",
+      "bytes": 63817
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-291.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "aa6c406e57ff9797f281864ce6c24106c27777af",
+      "incoming_Git_blob_sha256": "e70d9a202d55047e4555585d8061b686919fecf81899e9765778af76d6ed55f2",
+      "certified_source_worktree_sha256": "e70d9a202d55047e4555585d8061b686919fecf81899e9765778af76d6ed55f2",
+      "bytes": 63151
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-292.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "420d773f1fe35a190982a80bee35a5e7d5a08a47",
+      "incoming_Git_blob_sha256": "4c64cde0274f2302af266d38fbd3117d45fe19421e5d2a45ff53a0e140c49e9a",
+      "certified_source_worktree_sha256": "4c64cde0274f2302af266d38fbd3117d45fe19421e5d2a45ff53a0e140c49e9a",
+      "bytes": 63313
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-293.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "36af1bfc8a045f956f17dde00b0b581ad461e246",
+      "incoming_Git_blob_sha256": "088dbb0292608d40b092fbb2e6b7d2132db0913b9daba5bf808ddab15c9b7c7b",
+      "certified_source_worktree_sha256": "088dbb0292608d40b092fbb2e6b7d2132db0913b9daba5bf808ddab15c9b7c7b",
+      "bytes": 62720
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-294.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "81f9f305433440c2ae5456f76a877d8bd86cf3e8",
+      "incoming_Git_blob_sha256": "b17715255ac0956f70c590c636690ed1eb7aa1522b3d2f7e31474494a363749e",
+      "certified_source_worktree_sha256": "b17715255ac0956f70c590c636690ed1eb7aa1522b3d2f7e31474494a363749e",
+      "bytes": 62447
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-295.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "baa22718a3d7dae4e34511b72c8414d759d6adbe",
+      "incoming_Git_blob_sha256": "7ba8160a0e40b0156219702ae32a63e6dbe3be6496af48093c51a6aebdfeeec7",
+      "certified_source_worktree_sha256": "7ba8160a0e40b0156219702ae32a63e6dbe3be6496af48093c51a6aebdfeeec7",
+      "bytes": 62276
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-296.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "4587bfdfd72a6afb604375bebb3c8089790f1a63",
+      "incoming_Git_blob_sha256": "86eb3c550bfd2baa78b97544580fa0db4d5679e0becac4e04f36d8a2be9fa76b",
+      "certified_source_worktree_sha256": "86eb3c550bfd2baa78b97544580fa0db4d5679e0becac4e04f36d8a2be9fa76b",
+      "bytes": 63652
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-297.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b471f29042399d92d32e5294e6f75b61e3ab8647",
+      "incoming_Git_blob_sha256": "26b7cc13929098788a07035f77fdf5588db1a55bb35f5e68546e027e424327db",
+      "certified_source_worktree_sha256": "26b7cc13929098788a07035f77fdf5588db1a55bb35f5e68546e027e424327db",
+      "bytes": 60808
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-298.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "f5abce9f83f2531f60bc3f2c9ab1af8f78fd2d8f",
+      "incoming_Git_blob_sha256": "1ee14678c818f126e0dbdc597df7ef88867bdfee3afa04cf7b8f7e08b56f2392",
+      "certified_source_worktree_sha256": "1ee14678c818f126e0dbdc597df7ef88867bdfee3afa04cf7b8f7e08b56f2392",
+      "bytes": 63040
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-299.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b7402f59e2c8fd6a213ef42d63707175c0af4d24",
+      "incoming_Git_blob_sha256": "1ab3b043c7ad63ca843ebc0b739d24da7f16880ef93a91ef6bb93dae19a53764",
+      "certified_source_worktree_sha256": "1ab3b043c7ad63ca843ebc0b739d24da7f16880ef93a91ef6bb93dae19a53764",
+      "bytes": 64336
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-300.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e43c2a0a7a93775976343b0e3ddeb506eacfb211",
+      "incoming_Git_blob_sha256": "5bd0b4980ecfc96b242b5406689831cc57e70af0e36c700f8fdd905c8bb4ea13",
+      "certified_source_worktree_sha256": "5bd0b4980ecfc96b242b5406689831cc57e70af0e36c700f8fdd905c8bb4ea13",
+      "bytes": 63700
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-301.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e495e6aaa25f96a30fb029acccc85ec7052ec746",
+      "incoming_Git_blob_sha256": "b13b9edefdba3ed7f47fd0a1ab10eda334066d9a135da445b8ba3586a1dd51ce",
+      "certified_source_worktree_sha256": "b13b9edefdba3ed7f47fd0a1ab10eda334066d9a135da445b8ba3586a1dd51ce",
+      "bytes": 63739
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-302.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "ff43bc0a1610bab6b77bf65f1fbc99124f718915",
+      "incoming_Git_blob_sha256": "cb9a51f75d651b5dd33136cff86771079023611c9d2185db24d675cf4e2e3f89",
+      "certified_source_worktree_sha256": "cb9a51f75d651b5dd33136cff86771079023611c9d2185db24d675cf4e2e3f89",
+      "bytes": 63764
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-303.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "32609d81edbf97175734ddccd6bca52060ea0e3e",
+      "incoming_Git_blob_sha256": "e786c3353365b1ee17e80e6eaa78e9a333f5600dd3a6dbf1f827be6fc197cd6c",
+      "certified_source_worktree_sha256": "e786c3353365b1ee17e80e6eaa78e9a333f5600dd3a6dbf1f827be6fc197cd6c",
+      "bytes": 62996
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-304.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "afa43a11c994c61ea4ed240ae97bba5ffa41397c",
+      "incoming_Git_blob_sha256": "4924e0d2312b2474ad4c75242e0f33bda35d7da730635755b15b78d0b7ac7a6c",
+      "certified_source_worktree_sha256": "4924e0d2312b2474ad4c75242e0f33bda35d7da730635755b15b78d0b7ac7a6c",
+      "bytes": 64631
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-305.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c7b79c62633237a0a1301d207da40dd07df10085",
+      "incoming_Git_blob_sha256": "4bbbc8ba0b087fe6e999835a3aa6305c6d17985d93514e553504e60c7d6456aa",
+      "certified_source_worktree_sha256": "4bbbc8ba0b087fe6e999835a3aa6305c6d17985d93514e553504e60c7d6456aa",
+      "bytes": 63191
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-306.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "38056ce4a03968b0997f5a5b305b1c2740e745e9",
+      "incoming_Git_blob_sha256": "b2161ea9a5220370c0135e89f5ef7989eeadf7ec448e6b0a0aba69d2e9755962",
+      "certified_source_worktree_sha256": "b2161ea9a5220370c0135e89f5ef7989eeadf7ec448e6b0a0aba69d2e9755962",
+      "bytes": 63017
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-307.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "eca96e58ec315bd381f14dfd767d844044ae1c76",
+      "incoming_Git_blob_sha256": "2b732df4f01a66f7e8c89bf9ec50adc6baa10e563feccbe45521fb52e597ce68",
+      "certified_source_worktree_sha256": "2b732df4f01a66f7e8c89bf9ec50adc6baa10e563feccbe45521fb52e597ce68",
+      "bytes": 64881
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-308.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b11dfa237b999166914569693314c70f1f9a1524",
+      "incoming_Git_blob_sha256": "6d170dbde91664050cdab914d6d310d30c242c1ec643dd3c0b7602f92d4577a7",
+      "certified_source_worktree_sha256": "6d170dbde91664050cdab914d6d310d30c242c1ec643dd3c0b7602f92d4577a7",
+      "bytes": 62701
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-309.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "2195e7c9c92d8b5fb735eb3b2339721ce1c0d7a1",
+      "incoming_Git_blob_sha256": "fea1e322865df22c116617d97f7cfead6716fcbbf21714d033cc6ab80e962ed5",
+      "certified_source_worktree_sha256": "fea1e322865df22c116617d97f7cfead6716fcbbf21714d033cc6ab80e962ed5",
+      "bytes": 61899
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-310.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "61f3f342d0fe13c90d0efee338e91be8f8e7a7b1",
+      "incoming_Git_blob_sha256": "af2af77b00bf60e665afe0439e32f1533cd5bd56c63fb49c7d6a66d05c8e9827",
+      "certified_source_worktree_sha256": "af2af77b00bf60e665afe0439e32f1533cd5bd56c63fb49c7d6a66d05c8e9827",
+      "bytes": 63984
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-311.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "5f6175ece3831add4ee172ac11353fbe24931632",
+      "incoming_Git_blob_sha256": "9f0f8edd8f9efd27bdab36fcd7f1d028f7b6bbfb5abcd44f1a5a73004b197d2e",
+      "certified_source_worktree_sha256": "9f0f8edd8f9efd27bdab36fcd7f1d028f7b6bbfb5abcd44f1a5a73004b197d2e",
+      "bytes": 66189
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-312.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "2618e31fe172c6c31ae627cf2bcd9a1e8fb6ba8e",
+      "incoming_Git_blob_sha256": "98dc99822851c64bf28bb49cb7d9bc8fde9bd4da775002150155f6641fe30658",
+      "certified_source_worktree_sha256": "98dc99822851c64bf28bb49cb7d9bc8fde9bd4da775002150155f6641fe30658",
+      "bytes": 62062
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-313.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "7c9034b05507e7682595ae4ae83167b5b7101a54",
+      "incoming_Git_blob_sha256": "514dc5d088404382e05ca0f5a1a17ad63b451468b314d6d915716b327fe31b87",
+      "certified_source_worktree_sha256": "514dc5d088404382e05ca0f5a1a17ad63b451468b314d6d915716b327fe31b87",
+      "bytes": 65210
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-314.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "a74882ff014080c245ee47d397246d5a251312b8",
+      "incoming_Git_blob_sha256": "731e00f7cfddf9b19c922e914ef60ba6acff48ea6babcbb14781129e5f30a120",
+      "certified_source_worktree_sha256": "731e00f7cfddf9b19c922e914ef60ba6acff48ea6babcbb14781129e5f30a120",
+      "bytes": 63504
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-315.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "f7bf36c944577c7d039ef957e2154a0a5cf32426",
+      "incoming_Git_blob_sha256": "dee9d1a18cd40e5f5efd852cf0d1ff1f77a6b8e07787372e76ef05415508f211",
+      "certified_source_worktree_sha256": "dee9d1a18cd40e5f5efd852cf0d1ff1f77a6b8e07787372e76ef05415508f211",
+      "bytes": 64144
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-316.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "d7a55d2729b4435b971f13dbd6d792ea10e77c3d",
+      "incoming_Git_blob_sha256": "7bfb26c6b0e356dc1dbfb09f71e0686e99113c16734faba2d2255f9b0bf3fd4e",
+      "certified_source_worktree_sha256": "7bfb26c6b0e356dc1dbfb09f71e0686e99113c16734faba2d2255f9b0bf3fd4e",
+      "bytes": 63991
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-317.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "86da764dadc0d1da87371b71f01880202ab719f9",
+      "incoming_Git_blob_sha256": "90826082bfcf4077ecada6d3609fc7ab98f6f71d21cdbdcaa5539bf4937d99e9",
+      "certified_source_worktree_sha256": "90826082bfcf4077ecada6d3609fc7ab98f6f71d21cdbdcaa5539bf4937d99e9",
+      "bytes": 64340
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-318.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "93fe409942e7290d469a98624f9af91c3ef1d253",
+      "incoming_Git_blob_sha256": "b4bcec07ccc847e5f26fef91e3012ddbb259e55604e9d797c923fbb0ca93d9ea",
+      "certified_source_worktree_sha256": "b4bcec07ccc847e5f26fef91e3012ddbb259e55604e9d797c923fbb0ca93d9ea",
+      "bytes": 66025
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-319.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "56d39c835e2050dce854d83651d42796e5143ed4",
+      "incoming_Git_blob_sha256": "ce97e49002b62fb82547a195d4965cc629629cfa3394acd420b2a11e170b487f",
+      "certified_source_worktree_sha256": "ce97e49002b62fb82547a195d4965cc629629cfa3394acd420b2a11e170b487f",
+      "bytes": 62606
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-320.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "f35fc6a7c7e712274df49471853929806a09ec07",
+      "incoming_Git_blob_sha256": "4aeacabdf8e77e5bcd80574e518880714328e59b1a144f9ce09163103175b20a",
+      "certified_source_worktree_sha256": "4aeacabdf8e77e5bcd80574e518880714328e59b1a144f9ce09163103175b20a",
+      "bytes": 65753
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-321.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "199f8cd1bf2ea97ea8ed9f3430440a5ea0f8b05d",
+      "incoming_Git_blob_sha256": "79884ac26c2f4820dbb8fb63c0c178db2406d8b2840365423e25d9c158cab5aa",
+      "certified_source_worktree_sha256": "79884ac26c2f4820dbb8fb63c0c178db2406d8b2840365423e25d9c158cab5aa",
+      "bytes": 62684
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-322.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "1ff75d4a63008030f637158b5772fa92243cc642",
+      "incoming_Git_blob_sha256": "65cbc177b9101d1a9aa432e22c5048a1f6db71c61345a8e71b061d7278ac50a6",
+      "certified_source_worktree_sha256": "65cbc177b9101d1a9aa432e22c5048a1f6db71c61345a8e71b061d7278ac50a6",
+      "bytes": 68538
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-323.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "a3e8d26ece731c2a3182d4bdda3c50e54f77309f",
+      "incoming_Git_blob_sha256": "95122f57d3063c3d1e19d10f8b2772d623089b7e971e65bed36c937c55c2ff75",
+      "certified_source_worktree_sha256": "95122f57d3063c3d1e19d10f8b2772d623089b7e971e65bed36c937c55c2ff75",
+      "bytes": 64798
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-324.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b560d7bcbb8b0f2aa237be5dba2739f6cab6be90",
+      "incoming_Git_blob_sha256": "92309ee42b52688278b9ccd0926f30ddc2240b07f4c46c961d81b8ebd67f6094",
+      "certified_source_worktree_sha256": "92309ee42b52688278b9ccd0926f30ddc2240b07f4c46c961d81b8ebd67f6094",
+      "bytes": 66215
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-325.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "5a6413520ab072995435458cdfb96c5629f7022f",
+      "incoming_Git_blob_sha256": "7acdff30af615ffcfb31fc1f6cc22e9f1a8976583ba531da96ccb2bc31345bd2",
+      "certified_source_worktree_sha256": "7acdff30af615ffcfb31fc1f6cc22e9f1a8976583ba531da96ccb2bc31345bd2",
+      "bytes": 62578
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-326.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8f189ee359ec294aff29972ff6d0125b8a10a7a5",
+      "incoming_Git_blob_sha256": "16b4c674152da544db92377a0b43fb31b37efbb381c9d0b596545d277f05fce7",
+      "certified_source_worktree_sha256": "16b4c674152da544db92377a0b43fb31b37efbb381c9d0b596545d277f05fce7",
+      "bytes": 63916
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-327.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "706064c7cb92d084cd2c684adb1281a8d54eb6f9",
+      "incoming_Git_blob_sha256": "c2caf19b8d2bb42c7090974200cc88e07d6822195684b8a54dc709698c39d5c1",
+      "certified_source_worktree_sha256": "c2caf19b8d2bb42c7090974200cc88e07d6822195684b8a54dc709698c39d5c1",
+      "bytes": 65644
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-328.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "f6e22b89dc8eacdca6483d6e6210047a9eabd388",
+      "incoming_Git_blob_sha256": "6eeeba13e58ecbf2b1ae1fba2c75b748415bfef187e318d720f5e88e0fb7ffc1",
+      "certified_source_worktree_sha256": "6eeeba13e58ecbf2b1ae1fba2c75b748415bfef187e318d720f5e88e0fb7ffc1",
+      "bytes": 61884
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-329.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "7a3a9783fc7e97fbdbd5f63488edc21fa8e3fd3e",
+      "incoming_Git_blob_sha256": "c45eb4cae3f4ddd73eff662a24ee8954fa548b0d5de5342c93b3b73f7be36a6d",
+      "certified_source_worktree_sha256": "c45eb4cae3f4ddd73eff662a24ee8954fa548b0d5de5342c93b3b73f7be36a6d",
+      "bytes": 62882
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-330.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "af9bb9fb739395e4e88389ec8722324869d328f7",
+      "incoming_Git_blob_sha256": "dabd730d5557e4b40afda5d7e757a58bd67c126bfc2c60a2b1b08694fa60d5a1",
+      "certified_source_worktree_sha256": "dabd730d5557e4b40afda5d7e757a58bd67c126bfc2c60a2b1b08694fa60d5a1",
+      "bytes": 62466
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-331.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "fa78f13a83cf499a07df020df71a39be9f674861",
+      "incoming_Git_blob_sha256": "35f33d6732449a00325e6e467fab7d9f2ad0c1d2d628d1a5717baaf001a921a0",
+      "certified_source_worktree_sha256": "35f33d6732449a00325e6e467fab7d9f2ad0c1d2d628d1a5717baaf001a921a0",
+      "bytes": 64814
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-332.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "4d3a7f4337d18edb7f5f9e78684fcb095a692c6c",
+      "incoming_Git_blob_sha256": "21706e39ca34804492faf21073f232064b8bd564ef9aa7a792e0b98d5653ce3d",
+      "certified_source_worktree_sha256": "21706e39ca34804492faf21073f232064b8bd564ef9aa7a792e0b98d5653ce3d",
+      "bytes": 62963
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-333.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0580694ba00e54b432cf7d9b1e56fc070e3fdbb1",
+      "incoming_Git_blob_sha256": "7c1a51710b890c89eae379c7ebe58225f7c8b6667fd875163644512330c2e752",
+      "certified_source_worktree_sha256": "7c1a51710b890c89eae379c7ebe58225f7c8b6667fd875163644512330c2e752",
+      "bytes": 63449
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-334.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e1c8513f17ab2900bf7c93aeecd852f44af57e8d",
+      "incoming_Git_blob_sha256": "dcae2b02a41666ebcafe27ee920d95185817e14bd9a3217f32843344dc28fb8a",
+      "certified_source_worktree_sha256": "dcae2b02a41666ebcafe27ee920d95185817e14bd9a3217f32843344dc28fb8a",
+      "bytes": 62621
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-335.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "041721a7ecf6cefe094bff2823825d1411642afc",
+      "incoming_Git_blob_sha256": "e123af41f25d853d5cdf40e176b37f39f478f4c06e4bc774e490ef0194eda492",
+      "certified_source_worktree_sha256": "e123af41f25d853d5cdf40e176b37f39f478f4c06e4bc774e490ef0194eda492",
+      "bytes": 54076
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-336.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c997d3690dd999840641d3b404e59495117a3bd9",
+      "incoming_Git_blob_sha256": "b57297c21b53ce6c41d021cab1ea5da2452b392882a4714beb78055ddbc7b926",
+      "certified_source_worktree_sha256": "b57297c21b53ce6c41d021cab1ea5da2452b392882a4714beb78055ddbc7b926",
+      "bytes": 38984
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-337.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b02254f041698fe0ad5cae1a9135f3a033f9b407",
+      "incoming_Git_blob_sha256": "d692163af962550446163081015ac7f19eb43cd8d6fd9cc94c818b80e0b02de1",
+      "certified_source_worktree_sha256": "d692163af962550446163081015ac7f19eb43cd8d6fd9cc94c818b80e0b02de1",
+      "bytes": 48003
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-338.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "dead5994d8d251b0168663815bebde894e8f06e9",
+      "incoming_Git_blob_sha256": "0e370516a1f58daa0d893c212a7ad3d73a16354bb6819dd4f378a3a65bdacb31",
+      "certified_source_worktree_sha256": "0e370516a1f58daa0d893c212a7ad3d73a16354bb6819dd4f378a3a65bdacb31",
+      "bytes": 42021
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/finalize_evidence.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "f88ab5b0ce3220b7676e43f84de7de5f832cf0d5",
+      "incoming_Git_blob_sha256": "df979076c502b39522625a96ae8332ec267e2883043feb1e4fbb1008fedbf808",
+      "certified_source_worktree_sha256": "df979076c502b39522625a96ae8332ec267e2883043feb1e4fbb1008fedbf808",
+      "bytes": 19478
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/implement.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8ec1729da2a63ec5c3004a0edc202fac0bc3fccb",
+      "incoming_Git_blob_sha256": "404a7fe65dadfcee461919b0343478539bb2490e3dd16a9043b099c8ec84be6f",
+      "certified_source_worktree_sha256": "404a7fe65dadfcee461919b0343478539bb2490e3dd16a9043b099c8ec84be6f",
+      "bytes": 6931
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/inherited-issues.cjs",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "47b4029f594a3dd98da995eb67e5702d972dcf35",
+      "incoming_Git_blob_sha256": "28ccb9b4caaad75d2e3f7490c5ba440413016c24139e9a61a37514a0adc071d4",
+      "certified_source_worktree_sha256": "28ccb9b4caaad75d2e3f7490c5ba440413016c24139e9a61a37514a0adc071d4",
+      "bytes": 3184
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/_includes__display-settings.html",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "488f1eabeb6f00284412e5a8a492f849c257f40d",
+      "incoming_Git_blob_sha256": "56dbc944d350c627562fa0d85d843ee8fe3cb94fe47d7cd17fa019991e6e3315",
+      "certified_source_worktree_sha256": "56dbc944d350c627562fa0d85d843ee8fe3cb94fe47d7cd17fa019991e6e3315",
+      "bytes": 7311
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__js__renderTei.js",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "6f8a3e3979edd386b8b9fa0563190082dc58effd",
+      "incoming_Git_blob_sha256": "4ace5e81d4f452aec87d52ab798d7b3453041e24096d15461e2054d1be38ba21",
+      "certified_source_worktree_sha256": "4ace5e81d4f452aec87d52ab798d7b3453041e24096d15461e2054d1be38ba21",
+      "bytes": 126283
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__English__book-09.xml",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "2080b2eecfaf81cc751d276a07205f12a73f294c",
+      "incoming_Git_blob_sha256": "515c8ee6a9611f1333d51bb6a04361e8f4168a4f3c197faef23db58f361bd587",
+      "certified_source_worktree_sha256": "515c8ee6a9611f1333d51bb6a04361e8f4168a4f3c197faef23db58f361bd587",
+      "bytes": 85486
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__Greek__book-09.xml",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "300ae01210480c3faf9f9167caeab4b48316caa5",
+      "incoming_Git_blob_sha256": "c6958a02b0f55d4bae23d4d33e8695d8a142361e373b1b2828a2b1da7626d403",
+      "certified_source_worktree_sha256": "c6958a02b0f55d4bae23d4d33e8695d8a142361e373b1b2828a2b1da7626d403",
+      "bytes": 140219
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__Latin__book-09.xml",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b242a274f38d0678ad088df8318a2ca234d91551",
+      "incoming_Git_blob_sha256": "80fcbd3c94d84b34eb77fc1cf357f7a07d43d5570f985baa992e02d67aa91440",
+      "certified_source_worktree_sha256": "80fcbd3c94d84b34eb77fc1cf357f7a07d43d5570f985baa992e02d67aa91440",
+      "bytes": 82350
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__structure.xml",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e1c38f1590f719b577a1dddb4a145d118f0035bb",
+      "incoming_Git_blob_sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56",
+      "certified_source_worktree_sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56",
+      "bytes": 19344315
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/inspection_views.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "3c251807cf963c6cdc1d121cbf465b25fbdd4255",
+      "incoming_Git_blob_sha256": "a527f64cdc75a6d239af8ec891dadcf9114c94f361b52da3fb2bc0aab3359604",
+      "certified_source_worktree_sha256": "a527f64cdc75a6d239af8ec891dadcf9114c94f361b52da3fb2bc0aab3359604",
+      "bytes": 1086
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/locate_controls.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "792bf71ef1a10734df8e44f4e4366109ad222579",
+      "incoming_Git_blob_sha256": "aadcf4a348a892a745fb7af76b8e1ebfe44c5b7a0aaa51aebc35b38df52d7b14",
+      "certified_source_worktree_sha256": "aadcf4a348a892a745fb7af76b8e1ebfe44c5b7a0aaa51aebc35b38df52d7b14",
+      "bytes": 736
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/mixed_mapper.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c138eee304552dfcc7ed0a22e4345b111ce5eeae",
+      "incoming_Git_blob_sha256": "bcafb99ef9c424f7fc4eb71696f6d792418258b90dbff08a3643392ec82b86de",
+      "certified_source_worktree_sha256": "bcafb99ef9c424f7fc4eb71696f6d792418258b90dbff08a3643392ec82b86de",
+      "bytes": 8615
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/new-book-browser.cjs",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0e094da374b48d359a1b3c44e3e0d49b40b2be92",
+      "incoming_Git_blob_sha256": "36ad0ecb34c8c34a9675d2d7421492c039490d8cea7e04fca1476302bd807bb1",
+      "certified_source_worktree_sha256": "36ad0ecb34c8c34a9675d2d7421492c039490d8cea7e04fca1476302bd807bb1",
+      "bytes": 13715
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/prepare_evidence.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "adaa772ffb63de688144351bf03bec21985b5410",
+      "incoming_Git_blob_sha256": "68ea366375df1ee540d65da449cd9fab7af3c0904bebc038155d101afd49c3d7",
+      "certified_source_worktree_sha256": "68ea366375df1ee540d65da449cd9fab7af3c0904bebc038155d101afd49c3d7",
+      "bytes": 3041
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/prepare_qa.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "3a70413411f303808e611146854587bed275a3a7",
+      "incoming_Git_blob_sha256": "d6850eed453e11f4d837cb26864e0892909434e63a4d8661b1bae860745b900d",
+      "certified_source_worktree_sha256": "d6850eed453e11f4d837cb26864e0892909434e63a4d8661b1bae860745b900d",
+      "bytes": 2405
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/protected-browser.cjs",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "35b2de6e654008bc6c462ccfc0abd5f98b49de7b",
+      "incoming_Git_blob_sha256": "2c080e32c16d70e78f3b4a918f3f55a24c76f2702034014c0bc260e7832fab5d",
+      "certified_source_worktree_sha256": "2c080e32c16d70e78f3b4a918f3f55a24c76f2702034014c0bc260e7832fab5d",
+      "bytes": 9314
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-common.cjs",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b3a0d08dda8dc65146ef0c9854c24a99ce48764b",
+      "incoming_Git_blob_sha256": "e5e89331453b48e7efcb21aeb7ca4465b2da06102f970b8e49913b4ea5740a59",
+      "certified_source_worktree_sha256": "e5e89331453b48e7efcb21aeb7ca4465b2da06102f970b8e49913b4ea5740a59",
+      "bytes": 3366
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/attempt-2-required-Latin-pane-harness.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8eef555d82afbf19e1bbedee1aeb823c343b1883",
+      "incoming_Git_blob_sha256": "e69b3c6f69c3054aaff8783be34a7f23e2734702ea45fb2d2d07bd0a0da5d606",
+      "certified_source_worktree_sha256": "e69b3c6f69c3054aaff8783be34a7f23e2734702ea45fb2d2d07bd0a0da5d606",
+      "bytes": 86712
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/BOUNDARIES.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e66f032d7a0e6aaba6ef2eade02929b5252b919e",
+      "incoming_Git_blob_sha256": "c350d81e49ca7e2f517f424d246e54d4fdc45dfa00905d74ee7d07237f3a4376",
+      "certified_source_worktree_sha256": "c350d81e49ca7e2f517f424d246e54d4fdc45dfa00905d74ee7d07237f3a4376",
+      "bytes": 1115098
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/BOUNDARIES.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c3c03db97398cd61198cb6c18acfa4bded2f4dfe",
+      "incoming_Git_blob_sha256": "4f3cd419dc73517e0bdc3c7c724916b3e6d9224de9a5cee2718a20aef7460999",
+      "certified_source_worktree_sha256": "4f3cd419dc73517e0bdc3c7c724916b3e6d9224de9a5cee2718a20aef7460999",
+      "bytes": 81240
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/BUILD_RECORD.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8008c0d785d364732ac7454c4c4ab5dd25ddd24f",
+      "incoming_Git_blob_sha256": "1bb803666a149599a2ec25d38dd361db60c67a8e8d45d09ee30fec08165fc166",
+      "certified_source_worktree_sha256": "1bb803666a149599a2ec25d38dd361db60c67a8e8d45d09ee30fec08165fc166",
+      "bytes": 2559
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/CERTIFICATION.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e3f5795a50703aa6b4c7211351600bbbcd1c7cb5",
+      "incoming_Git_blob_sha256": "1f18434d37057414fbe0f2d2b68038105cd86c0dd4ea467f17d1beb511bc1b18",
+      "certified_source_worktree_sha256": "1f18434d37057414fbe0f2d2b68038105cd86c0dd4ea467f17d1beb511bc1b18",
+      "bytes": 2186
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/DECISION_240_ALTERNATIVES.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "82608fc0573dae5bc6fda3e5267e52d6e35b6551",
+      "incoming_Git_blob_sha256": "673aa9968eee1d011391abefd328c71531a35c9ca500f34d157553a70b33ce49",
+      "certified_source_worktree_sha256": "673aa9968eee1d011391abefd328c71531a35c9ca500f34d157553a70b33ce49",
+      "bytes": 9529
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/EDITORIAL_HISTORY.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "1465127d060af598a8be97fc0f07ffce5af51fdf",
+      "incoming_Git_blob_sha256": "295046969b2d78be2319956902ebfc7cec02c83d903623a10e69f8a8eea38a91",
+      "certified_source_worktree_sha256": "295046969b2d78be2319956902ebfc7cec02c83d903623a10e69f8a8eea38a91",
+      "bytes": 1483
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/EXPECTED_INTERVALS.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0c72ee7c2e285f1549e3c50d74c831d7088f9cb9",
+      "incoming_Git_blob_sha256": "9630b8d6235ff7b1b951bec35a0d517104a2fb26295320cade3613a63eb18f4d",
+      "certified_source_worktree_sha256": "9630b8d6235ff7b1b951bec35a0d517104a2fb26295320cade3613a63eb18f4d",
+      "bytes": 885420
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/FILE_MANIFEST.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "7c6cc45e1ab5f51b7db3bbef007715fd1582b2a9",
+      "incoming_Git_blob_sha256": "2b8b667c8bde297cf323b9671026e7a721f7b5d184c482fc7a4673ecf9e702b6",
+      "certified_source_worktree_sha256": "2b8b667c8bde297cf323b9671026e7a721f7b5d184c482fc7a4673ecf9e702b6",
+      "bytes": 74920
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/IMPLEMENTATION_PRESERVATION.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "3a0f56c46bf72098c1ba9a820cbef547f1c8560a",
+      "incoming_Git_blob_sha256": "a1a41230fab500743935d52a9eb5ad0f690ca65d01f2b14cae9aa75fb56f52f4",
+      "certified_source_worktree_sha256": "a1a41230fab500743935d52a9eb5ad0f690ca65d01f2b14cae9aa75fb56f52f4",
+      "bytes": 277118
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/INHERITED_ISSUES_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c571f2322389272a01a03acece0db6b7c7e593ab",
+      "incoming_Git_blob_sha256": "43c763e070b829f5b1ba54a420e50f4c2b5182f0833a779c98b733d57ef7dddb",
+      "certified_source_worktree_sha256": "43c763e070b829f5b1ba54a420e50f4c2b5182f0833a779c98b733d57ef7dddb",
+      "bytes": 2906
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/IX110-dark.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "374f731d303affd8f3aaffa5f93dfa33fb2d04b8",
+      "incoming_Git_blob_sha256": "a43dd068ca543ac38efb5447a8e11a93c4619d81c539b9c49b4a52745bf2186f",
+      "certified_source_worktree_sha256": "a43dd068ca543ac38efb5447a8e11a93c4619d81c539b9c49b4a52745bf2186f",
+      "bytes": 260961
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/IX110-light.png",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8c4d916c8f550cae6cbdd937585ef24e953cf49d",
+      "incoming_Git_blob_sha256": "8c03eef486e409c524c2628755fb375875afa3a4b59cd958a4834b7520a34f5d",
+      "certified_source_worktree_sha256": "8c03eef486e409c524c2628755fb375875afa3a4b59cd958a4834b7520a34f5d",
+      "bytes": 259452
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/NEW_BOOK_BROWSER_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "46a4ff0d5bb640d033a54efbce311f105d272268",
+      "incoming_Git_blob_sha256": "86c6b3ed2f24cc7937417edf1ac879aa5d77760a207ee7c2b147e71a5bb3d4ef",
+      "certified_source_worktree_sha256": "86c6b3ed2f24cc7937417edf1ac879aa5d77760a207ee7c2b147e71a5bb3d4ef",
+      "bytes": 90783
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/PRE_DECISION_ADDITIONAL_ARTIFACTS.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "7aea36552e4e81248d19b572268ac27f16e96b59",
+      "incoming_Git_blob_sha256": "003ca37814f1e51724a5d854260e09a6b38f8a3a247518091ea940941474c419",
+      "certified_source_worktree_sha256": "003ca37814f1e51724a5d854260e09a6b38f8a3a247518091ea940941474c419",
+      "bytes": 746
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/PRE_DECISION_EVIDENCE.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8154f23857fb9efe61be5582e49bd1991865f90d",
+      "incoming_Git_blob_sha256": "f1253b901b31eb8a7930f46d0a5b5ba532035e33c5ffbd43de0b33174769a56f",
+      "certified_source_worktree_sha256": "f1253b901b31eb8a7930f46d0a5b5ba532035e33c5ffbd43de0b33174769a56f",
+      "bytes": 2710
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/PROTECTED_BROWSER_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "5a408236cccebdd6f0a00142b78c9fadcc2fe97c",
+      "incoming_Git_blob_sha256": "b2b82354a4e7985da9ff8416bf53a23d7286a4444f93dc0570c32d9c903b8b9f",
+      "certified_source_worktree_sha256": "b2b82354a4e7985da9ff8416bf53a23d7286a4444f93dc0570c32d9c903b8b9f",
+      "bytes": 21048
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/PROTECTED_SOURCE_GATE_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0f8a647bd592cbb1100cab33c9e53709f3f571e3",
+      "incoming_Git_blob_sha256": "6a66642b0247599abeb16bbd4133bbdbad5b3a1d88c9fb9708387bb9332d4970",
+      "certified_source_worktree_sha256": "6a66642b0247599abeb16bbd4133bbdbad5b3a1d88c9fb9708387bb9332d4970",
+      "bytes": 3088
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/REPORT.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "0564a46e37b27d6b126fff8e7a4983b3aeb4da2d",
+      "incoming_Git_blob_sha256": "8984abe7e35bd96cc4d410ce37cb8934937901f220a1667eb1f91ae47225b33c",
+      "certified_source_worktree_sha256": "8984abe7e35bd96cc4d410ce37cb8934937901f220a1667eb1f91ae47225b33c",
+      "bytes": 7486
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/SOURCE_AUTHORITY.md",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "05a7e45121fcf1126576c1c8742e34c1238741cc",
+      "incoming_Git_blob_sha256": "5241954cfe6b91b7a9b6106c62109436963c90b0d88d40fd97d4287418e45a8b",
+      "certified_source_worktree_sha256": "5241954cfe6b91b7a9b6106c62109436963c90b0d88d40fd97d4287418e45a8b",
+      "bytes": 7782
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/SOURCE_PRESERVATION_QA.json",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "c152fe4311a25bf92e5925ab680be5c54239a743",
+      "incoming_Git_blob_sha256": "d37be08a20c1e8e01a110290bd72fff27bb05c896b71e23923b36b8cc3954f4a",
+      "certified_source_worktree_sha256": "d37be08a20c1e8e01a110290bd72fff27bb05c896b71e23923b36b8cc3954f4a",
+      "bytes": 4574
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/build-logs/baseline-jekyll.log",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "f81e1e2997f8f89350851dd7b1c550eaaaceb9f0",
+      "incoming_Git_blob_sha256": "e4642241ebbe3da0568e5df0b7ed0784b663634c9eecd9accb19c3d0f7ecf496",
+      "certified_source_worktree_sha256": "e4642241ebbe3da0568e5df0b7ed0784b663634c9eecd9accb19c3d0f7ecf496",
+      "bytes": 5069
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/pre-decision-5794785/build-logs/jekyll.log",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "235f8b3080f2100143da13fff0bb47aa1e705f70",
+      "incoming_Git_blob_sha256": "7a87f96860338529ba90ed3947c4ba1d7eed1fe50b71e6a267ef44e60a32da4e",
+      "certified_source_worktree_sha256": "7a87f96860338529ba90ed3947c4ba1d7eed1fe50b71e6a267ef44e60a32da4e",
+      "bytes": 4890
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/register_boundaries.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "4632fbc9e96c0cbeba85483d78c8c276ca2dec57",
+      "incoming_Git_blob_sha256": "122a63aed58b16798b97a3d1a4208e931b1b797267a9ed6fec71c18862cc062f",
+      "certified_source_worktree_sha256": "122a63aed58b16798b97a3d1a4208e931b1b797267a9ed6fec71c18862cc062f",
+      "bytes": 10096
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/start_audit.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "8821b3837a0414e4fc0ffa369ae5626cdffe246c",
+      "incoming_Git_blob_sha256": "ca13bf1217bb639143feca3efce17b9d4389ccf7eafc24b395d42795efc0a762",
+      "certified_source_worktree_sha256": "ca13bf1217bb639143feca3efce17b9d4389ccf7eafc24b395d42795efc0a762",
+      "bytes": 4443
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/verify_final_boundary.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "e67a9211fd4c71f5279c1cd5e167e39dff4ddfc3",
+      "incoming_Git_blob_sha256": "b9eb2f216f6d0f446639c2823d90e69d7e0b30e94f80cebab80008d1986f4660",
+      "certified_source_worktree_sha256": "b9eb2f216f6d0f446639c2823d90e69d7e0b30e94f80cebab80008d1986f4660",
+      "bytes": 4900
+    },
+    {
+      "path": "review/Antiquities_Niese_BookIX_2026-10-09/verify_preservation.py",
+      "status": "A",
+      "category": "review",
+      "incoming_Git_blob_id": "b38a14f715df31c9f64ee956f66aab5e57989b1f",
+      "incoming_Git_blob_sha256": "dd4e70197461bfce34ab22b51d3dbfe2ecf32ff9add77be8c0261dc7b59902d9",
+      "certified_source_worktree_sha256": "dd4e70197461bfce34ab22b51d3dbfe2ecf32ff9add77be8c0261dc7b59902d9",
+      "bytes": 5207
+    }
+  ]
+}
