@@ -1,6 +1,6 @@
 # Book XIV: complete local certification
 
-**Ready for coordinated integration.** Baseline `ad3158b7a86dea6997510b3de17f2e510c23367c`; isolated branch `antiquities-niese-14-15`; implementation parent `9a097c0c8526d8d9ded20ccbadb54ca4119a0315`. Actual worktree: `C:\workspace\LatinJosephus-antiquities-niese-14-15`. Canonical observed HEAD: `cea765de5d990646b4d4dc079bac1c0da46ca107`; frozen inputs were not advanced.
+**Ready for coordinated integration.** Baseline `ad3158b7a86dea6997510b3de17f2e510c23367c`; isolated branch `antiquities-niese-14-15`; implementation parent `7c38c7c8cc0e135051ed6da4f1630656d96fb7ab`. Actual worktree: `C:\workspace\LatinJosephus-antiquities-niese-14-15`. Canonical observed HEAD: `cea765de5d990646b4d4dc079bac1c0da46ca107`; frozen inputs were not advanced.
 
 All **491** printed Greek identities and Latin candidates were individually reviewed. Latin has **489 nonempty intervals**, **383 added milestones**, **106 retained starts** and verified unavailabilities **[238, 239]**. No editorial decision remains pending. Unavailability concerns this transcription; its cause is unknown and no physical-loss or whole-tradition claim is made. Partial correspondence stays separate from physical placement confidence.
 

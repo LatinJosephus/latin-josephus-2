@@ -29,15 +29,21 @@
   "visual_screenshots_inspected": [
     {
       "path": "review\\Antiquities_Niese_BookXIV_2026-10-09\\evidence\\local-reader-full-14-358-light.png",
-      "observation": "Correct358 beginning, interrupted surviving357 tail and resumed358 construction; full precise correspondence notice readable; independent Whiston context and Greek358 displayed."
+      "observation": "Correct358 beginning, interrupted surviving357 tail and resumed358 construction; full precise correspondence notice readable; independent Whiston context and Greek358 displayed.",
+      "sha256": "9bdeb7e8a8de8bd6d5955d8a82918602cd6beb1b4b61d887cdfae474fefda9d3",
+      "fresh_final_bytes_visually_inspected": true
     },
     {
       "path": "review\\Antiquities_Niese_BookXIV_2026-10-09\\evidence\\local-reader-full-14-358-dark.png",
-      "observation": "Same source text and qualification legible in dark theme; header logo decoded and visible."
+      "observation": "Same source text and qualification legible in dark theme; header logo decoded and visible.",
+      "sha256": "74cc2a604eafbadf7f145aec93b6627007a0ec11d7dbd3929b59a99439da702f",
+      "fresh_final_bytes_visually_inspected": true
     },
     {
       "path": "review\\Antiquities_Niese_BookXIV_2026-10-09\\evidence\\local-reader-full-14-availability.png",
-      "observation": "Latin238 unavailability explained without supplied text; Greek238 and preserved English broader witness list displayed independently."
+      "observation": "Latin238 unavailability explained without supplied text; Greek238 and preserved English broader witness list displayed independently.",
+      "sha256": "4eaaf4a00907c4d3545d495a01b6322a79eed26fce64bb6b989d559dadf27095",
+      "fresh_final_bytes_visually_inspected": true
     }
   ],
   "scope": "Actual final local build with production book registry. Visual observations supplement all-selection and containing-view checks; no identity data injected.",
@@ -61,5 +67,7 @@
       "current_sha256": "4eaaf4a00907c4d3545d495a01b6322a79eed26fce64bb6b989d559dadf27095",
       "identical": false
     }
-  ]
+  ],
+  "final_screenshot_inspection_at": "2026-10-09T18:23:55.915679+00:00",
+  "final_screenshot_inspection_method": "All three current final-run images opened and visually examined through view_image after the rerun. Earlier screenshot hashes differ and are retained as history; these observations concern the actual current bytes."
 }
