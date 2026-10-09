@@ -26,15 +26,7 @@
       "Loeb_PDF_page": 128
     }
   ],
-  "pending": [
-    {
-      "section": 240,
-      "packet": "DECISION_240.md",
-      "machine_packet": "DECISION_240_ALTERNATIVES.json",
-      "recommendation": "A",
-      "user_decision_received": false
-    }
-  ],
+  "pending": [],
   "availability_review": {
     "sections": "51–109",
     "whole_section_unavailable_in_this_file": [
@@ -45,5 +37,28 @@
     "physical_cause": "NOT_ESTABLISHED",
     "tradition_wide_absence": "NOT_INFERRED",
     "partial_surviving_section": 110
-  }
+  },
+  "explicit_user_resolutions": [
+    {
+      "status": "CLOSED_EXPLICIT_USER_EDITORIAL_RESOLUTION",
+      "choice": "A",
+      "recorded_at_UTC": "2026-10-09T16:26:09.611114+00:00",
+      "authority": "Direct user adjudication in this assignment on 2026-10-09",
+      "classification": "Explicit editorial resolution of the word-level ambiguity in the printed numeral placement",
+      "Greek_start": "immediately before ἔσται δ᾽",
+      "Latin_start": "immediately before et nullus",
+      "rationale": "Keep the statement that nobody will comply together with its explanation that saving their lives takes priority over saving their possessions.",
+      "printed_observation": "Niese and Loeb numerals identify a line containing both possible clause starts; the printed numeral does not unambiguously fix the cut at ἔσται.",
+      "rejected_alternative": {
+        "choice": "B",
+        "Greek_start": "σώζειν γὰρ",
+        "Latin_start": "dum animas suas",
+        "status": "REJECTED_BY_EXPLICIT_USER_RESOLUTION",
+        "was_inherited_Greek_cut": true
+      },
+      "exact_locator_authority": "DECISION_240_ALTERNATIVES.json: alternatives.A"
+    }
+  ],
+  "prior_provisional_commit": "5794785c61beb6fee7e7fade6275092c42ddef77",
+  "additional_Greek_marker_relocation": 240
 }

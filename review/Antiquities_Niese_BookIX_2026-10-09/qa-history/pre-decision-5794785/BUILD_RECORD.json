@@ -1,0 +1,51 @@
+{
+  "result": "PASS",
+  "frozen_baseline": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "full_build_implementation_commit": "ed61ef79cfa19a238ab16e89a99e5795d4224769",
+  "build_script_absolute": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\build.sh",
+  "runtime": "C:\\workspace\\Antiquities-Niese-09-runtime-20261009",
+  "source_mount_read_only": true,
+  "baseline_from_git_archive": true,
+  "implementation_and_baseline_Jekyll_builds": "SUCCESS_EXIT_0",
+  "static_refresh": [
+    {
+      "path": "assets/xml/antiquities/niese/book-09.json",
+      "reason": "Refine the IX.110 partial-correspondence notice without changing source intervals; ordinary unprocessed static JSON copied byte-for-byte after full build",
+      "source_commit": "570beaa755a0367149994e8b2e6cc9e50515f627"
+    }
+  ],
+  "assets": {
+    "assets/js/renderTei.js": {
+      "source_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+      "served_build_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+      "byte_equal": true
+    },
+    "assets/xml/antiquities/Greek/book-09.xml": {
+      "source_sha256": "ae851f4a5fbb941f64c1ca1dbbc6fe95e1d478f0f115e4d3843343efa72bcfd5",
+      "served_build_sha256": "ae851f4a5fbb941f64c1ca1dbbc6fe95e1d478f0f115e4d3843343efa72bcfd5",
+      "byte_equal": true
+    },
+    "assets/xml/antiquities/Latin/book-09.xml": {
+      "source_sha256": "3585aca07101f3ef19c85b5e5bc8770514ad493b271f57dde304973a753a47fd",
+      "served_build_sha256": "3585aca07101f3ef19c85b5e5bc8770514ad493b271f57dde304973a753a47fd",
+      "byte_equal": true
+    },
+    "assets/xml/antiquities/niese/book-09.json": {
+      "source_sha256": "2ba565782b539c60d26501bb137981243e13799e40eb892b3b6b1881e3bc690a",
+      "served_build_sha256": "2ba565782b539c60d26501bb137981243e13799e40eb892b3b6b1881e3bc690a",
+      "byte_equal": true
+    }
+  },
+  "log_hashes": {
+    "baseline-jekyll.log": "e4642241ebbe3da0568e5df0b7ed0784b663634c9eecd9accb19c3d0f7ecf496",
+    "jekyll.log": "7a87f96860338529ba90ed3947c4ba1d7eed1fe50b71e6a267ef44e60a32da4e"
+  },
+  "tool_identities": "EXECUTABLE_TOOLS.json",
+  "QA_origin": "http://127.0.0.1:8909",
+  "separate_profiles": [
+    "C:\\workspace\\Antiquities-Niese-09-runtime-20261009\\profile-ix",
+    "C:\\workspace\\Antiquities-Niese-09-runtime-20261009\\profile-protected",
+    "C:\\workspace\\Antiquities-Niese-09-runtime-20261009\\profile-bellum",
+    "C:\\workspace\\Antiquities-Niese-09-runtime-20261009\\profile-inherited-issues"
+  ]
+}

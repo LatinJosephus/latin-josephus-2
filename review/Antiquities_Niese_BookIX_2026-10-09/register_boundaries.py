@@ -26,7 +26,9 @@ gstarts={int(re.findall(r'\d+',m['text'])[-1]):g.first_content(m['book_offset'])
 choices={1:gstarts[1],181:g.stream.index('τρία βέλη'),216:g.stream.index('τὸν αὐτὸν δὲ τρόπον')}
 decision=read(P/'EDITORIAL_DECISIONS.json') if (P/'EDITORIAL_DECISIONS.json').exists() else {'240':{'status':'PENDING','choice':None}}
 if decision['240']['choice']=='A':
-    choices[240]=g.stream.index('ἔσται δ᾽ οὐδεὶς');notes[240]=('et nullus hanc uoluntatem','Adjudicated A: refusal and explanation are kept together; see DECISION_240.md and EDITORIAL_DECISIONS.json.')
+    packet=read(P/'DECISION_240_ALTERNATIVES.json')['alternatives']['A']
+    gloc=packet['Greek']['chosen_cut'];assert g.locate(gloc['book_offset'])==gloc
+    choices[240]=gloc['book_offset'];notes[240]=('et nullus hanc uoluntatem','Explicit user editorial resolution A of the shared-line word ambiguity: refusal and explanation are kept together. The printed numeral does not itself unambiguously fix the word; see DECISION_240.md and EDITORIAL_DECISIONS.json.')
 elif decision['240']['choice']=='B':notes[240]=('dum animas suas','Adjudicated B: inherited Greek causal-clause start retained; see decision history.')
 gstarts.update(choices)
 initial=read(P/'INITIAL_GREEK_CENSUS.json');lstarts={};rows=[];exceptions=[];retained=[]
@@ -35,6 +37,7 @@ for n,(anchor,reason) in notes.items():
     matches=[m.start() for m in re.finditer(re.escape(anchor),u['text'])]
     assert len(matches)==1,(n,target,anchor,matches)
     lstarts[n]=u['book_start']+matches[0]
+    if n==240 and decision['240']['choice']=='A':assert l.locate(lstarts[n])==packet['Latin']['chosen_cut']
 assert sorted(lstarts)==sorted(gstarts)
 assert all(lstarts[a]<lstarts[b] for a,b in zip(sorted(lstarts),sorted(lstarts)[1:])),[(a,b) for a,b in zip(sorted(lstarts),sorted(lstarts)[1:]) if lstarts[a]>=lstarts[b]]
 for label in l.labels:
@@ -49,6 +52,9 @@ for n in range(1,292):
     r={'niese':n,'expected_identity':True,'Greek_print_verification':{'status':'VISUALLY_VERIFIED','edition':'Niese, Opera II, Berlin 1885','printed_page':pages[n]-8,'PDF_page':pages[n],'image':f'evidence/Niese-pdf-{pages[n]:03}.png','numeral_position':'implicit section 1 at book opening, no printed numeral' if n==1 else 'right margin beside narrative line; exact chosen word is recorded separately','observation_authority':'full narrative page manually inspected; lower-body supplement checked where needed'},'Latin_review_status':'INDIVIDUALLY_REVIEWED' if available else 'CONTEXTUALLY_VERIFIED_UNAVAILABLE','physical_placement_status':'LOCATED' if available else 'NO_NARRATIVE_START_IN_THIS_FILE','correspondence':'PARTIAL_SURVIVING_TAIL' if n==110 else ('REPRESENTED_WITH_RECORDED_LIMITS' if available else 'UNAVAILABLE_IN_PINNED_TRANSCRIPTIONS'),'correspondence_limits':notes[n][1] if available else 'Greek, Latin and English files each replace the entire 51–109 span with their preserved editorial placeholder. Printed Greek has the span; its cause and the broader Latin tradition are not inferred. Context reviewed across 49–50, placeholder and 110–111.','Greek_locator':g.locate(gp) if available else None,'Latin_locator':l.locate(lp) if available else None,'Greek_section':g.stream[gp:ge] if available else None,'Latin_section':l.stream[lp:le] if available else None,'Latin_paragraph_id':initial[n-1]['latin_target'],'Latin_chosen_anchor':notes[n][0] if available else None,'inherited_start_retained':n in retained,'Latin_end_book_offset':le if available else None,'Greek_end_book_offset':ge if available else None,'editorial_decision_status':'PENDING' if n==240 and decision['240']['status']=='PENDING' else 'CLOSED_ROUTINE_OR_AUTHORIZED','implementation_approved':not(n==240 and decision['240']['status']=='PENDING'),'outstanding_editorial_decision':n==240 and decision['240']['status']=='PENDING'}
     rows.append(r)
     r['extent_status']='PENDING_ADJOINING_BOUNDARY' if n in [239,240] and decision['240']['status']=='PENDING' else ('REVIEWED_REPRESENTED_INTERVAL' if available else 'UNAVAILABLE_IDENTITY_WITHOUT_INTERVAL')
+    if n==240 and decision['240']['choice']:
+        r['editorial_decision_status']='CLOSED_EXPLICIT_USER_EDITORIAL_RESOLUTION'
+        r['Greek_word_cut_authority']='Explicit user resolution of the shared-line numeral ambiguity; observed line does not unambiguously identify the exact word.'
     for lang in ['Greek','Latin']:
         if r[lang+'_locator']:r[lang+'_locator']['input_sha256']=base['inputs'][f'assets/xml/antiquities/{lang}/book-09.xml']['worktree_sha256']
 def validate_locator(book,loc):

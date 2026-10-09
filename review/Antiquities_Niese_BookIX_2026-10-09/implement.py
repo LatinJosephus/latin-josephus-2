@@ -29,7 +29,7 @@ for lang in languages:
         loc=plan['opening_addition']['locator'];tag=b'<num>[1]</num>';ops.append({'niese':1,'kind':'ADD_IMPLICIT_OPENING_IDENTITY','at':loc['raw_byte'],'delete':0,'before_hex':'','after_hex':tag.hex(),'target_locator':loc})
         for r in plan['relocations']:
             n=r['niese'];assert rows[n-1]['implementation_approved'];tag=f'<num>[{n}]</num>'.encode();at=r['original_label']['raw_start'];end=raw.index(b'</num>',at)+6;assert raw[at:end]==tag
-            ops.extend([{'niese':n,'kind':'REMOVE_OLD_GREEK_NUM_ONLY','at':at,'delete':end-at,'before_hex':tag.hex(),'after_hex':''},{'niese':n,'kind':'INSERT_VERIFIED_GREEK_NUM','at':r['chosen_locator']['raw_byte'],'delete':0,'before_hex':'','after_hex':tag.hex(),'target_locator':r['chosen_locator']}])
+            ops.extend([{'niese':n,'kind':'REMOVE_OLD_GREEK_NUM_ONLY','at':at,'delete':end-at,'before_hex':tag.hex(),'after_hex':''},{'niese':n,'kind':'INSERT_ADJUDICATED_GREEK_NUM' if n==240 else 'INSERT_VERIFIED_GREEK_NUM','authority':r['authority'],'at':r['chosen_locator']['raw_byte'],'delete':0,'before_hex':'','after_hex':tag.hex(),'target_locator':r['chosen_locator']}])
     output=patch(raw,ops)
     # Resume only the original or the prior output from this same recorded assignment.
     allowed=[raw,output]
