@@ -1,0 +1,76 @@
+{
+  "implementation_HEAD": "967d258bae44b591bb354b89d46b917526183656",
+  "baseline_HEAD": "92f009a668507ece4b82bdc4040a2b40b1f2cae7",
+  "archive": "C:\\workspace\\Antiquities-Niese-09-integration-runtime-20261009\\canonical-before-IX.tar",
+  "archive_sha256": "bb90df7be378b5c42b6d9b64f307d0fa415302ef07e1729c64cc7c26ba620f78",
+  "runtime": "C:\\workspace\\Antiquities-Niese-09-integration-runtime-20261009",
+  "source_read_only": true,
+  "build_script": "C:\\workspace\\LatinJosephus-antiquities-niese-09-integration\\review\\Antiquities_Niese_Integration_09_2026-10-09\\build.sh",
+  "image": "sha256:dba270af6994f64e45ee3dd2b85225a2a0d01f29c04508c7a3c7c8dbf59d2a85",
+  "build_configuration": "Complete repository Jekyll configuration; no omitted plugins or static refresh",
+  "result": "PASS",
+  "actual_two_source_build_exit_code": 0,
+  "no_static_refresh": true,
+  "logs": {
+    "baseline-jekyll.log": "b04b4141e4cf5a605d4ceb778429364ff689b68015ef53b2366edf8d23f7737b",
+    "jekyll.log": "8784ab397a49e220d4f476355f009933ff649d914b3ca6d44ef41192fec1d187"
+  },
+  "built_assets": {
+    "assets/css/tei.css": {
+      "worktree_sha256": "2ddb3be3d442ef7f953164f94bc54f33c8a2a186bdeeceb61a07ce38ece1c93f",
+      "built_sha256": "2ddb3be3d442ef7f953164f94bc54f33c8a2a186bdeeceb61a07ce38ece1c93f",
+      "byte_equal": true,
+      "certified_IX_file": false,
+      "current_canonical_advance_file": true
+    },
+    "assets/js/renderTei.js": {
+      "worktree_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+      "built_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+      "byte_equal": true,
+      "certified_IX_file": true,
+      "current_canonical_advance_file": false
+    },
+    "assets/xml/antiquities/Greek/book-09.xml": {
+      "worktree_sha256": "3bc7dcdef2e994181b9faa62564c544e4ce2d620ef0509bbc3435861b4f560aa",
+      "built_sha256": "3bc7dcdef2e994181b9faa62564c544e4ce2d620ef0509bbc3435861b4f560aa",
+      "byte_equal": true,
+      "certified_IX_file": true,
+      "current_canonical_advance_file": false
+    },
+    "assets/xml/antiquities/Latin/book-09.xml": {
+      "worktree_sha256": "206ca5bed674f7ebaa750dd8357c82d90510cb71162477a8214c5b8ccbd284c0",
+      "built_sha256": "206ca5bed674f7ebaa750dd8357c82d90510cb71162477a8214c5b8ccbd284c0",
+      "byte_equal": true,
+      "certified_IX_file": true,
+      "current_canonical_advance_file": false
+    },
+    "assets/xml/antiquities/niese/book-09.json": {
+      "worktree_sha256": "6841225c3a111474028c69c86c7bbca817d9fc849a3dd2b8cf6ec87cdffec02e",
+      "built_sha256": "6841225c3a111474028c69c86c7bbca817d9fc849a3dd2b8cf6ec87cdffec02e",
+      "byte_equal": true,
+      "certified_IX_file": true,
+      "current_canonical_advance_file": false
+    },
+    "assets/xml/antiquities/paratext/whiston/book-09-contents.xml": {
+      "worktree_sha256": "b0abebda34324463d3684258272b4301816ece9d17e31def20c53d15d8b292b2",
+      "built_sha256": "b0abebda34324463d3684258272b4301816ece9d17e31def20c53d15d8b292b2",
+      "byte_equal": true,
+      "certified_IX_file": false,
+      "current_canonical_advance_file": true
+    },
+    "assets/xml/source-contents.xml": {
+      "worktree_sha256": "80ce03fb99b7627646dde07e869665840b670244892d724fe1f2a8845eed5c10",
+      "built_sha256": "80ce03fb99b7627646dde07e869665840b670244892d724fe1f2a8845eed5c10",
+      "byte_equal": true,
+      "certified_IX_file": false,
+      "current_canonical_advance_file": true
+    }
+  },
+  "QA_origins": [
+    "http://127.0.0.1:8910",
+    "http://127.0.0.1:52935",
+    "http://127.0.0.1:52936"
+  ],
+  "isolated_browser_profile": "C:\\workspace\\Antiquities-Niese-09-integration-runtime-20261009\\profile-integration",
+  "tool_identities": "EXECUTABLE_TOOLS.json"
+}

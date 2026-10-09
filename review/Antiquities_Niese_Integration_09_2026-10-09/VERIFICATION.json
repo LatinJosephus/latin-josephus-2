@@ -1,0 +1,154 @@
+{
+  "result": "PASS_READY_FOR_CANONICAL_FAST_FORWARD_AND_NORMAL_PUSH",
+  "tested_merge_HEAD": "967d258bae44b591bb354b89d46b917526183656",
+  "merge_parents": [
+    "df3598b3ec25edf61e215f7375c5d5dbcdbc4df0",
+    "b2766fc0a0f9ab8dfb1c4667fbb9c5c4d6eac659"
+  ],
+  "actual_canonical_preparation_HEAD": "92f009a668507ece4b82bdc4040a2b40b1f2cae7",
+  "certified_source_HEAD": "b2766fc0a0f9ab8dfb1c4667fbb9c5c4d6eac659",
+  "certified_source_branch_unchanged": true,
+  "incoming_production_count": 4,
+  "incoming_review_count": 200,
+  "incoming_total": 204,
+  "production_resolution_count": 0,
+  "incoming_all_exact": true,
+  "canonical_advance_preserved": true,
+  "IX_exhaustive_certification_retained": true,
+  "focused_combined_build_QA": "PASS",
+  "source_byte_recovery": "PASS",
+  "represented_Latin_intervals": 232,
+  "retained_Latin_starts": 46,
+  "added_Latin_milestones": 186,
+  "unavailable_IX_identities": 59,
+  "IX_selectable_identities": 291,
+  "previous_selectable_baseline": 3157,
+  "resulting_selectable_total": 3448,
+  "editorial_decisions_pending": [],
+  "Greek_opening_added": 1,
+  "Greek_relocations": [
+    181,
+    216,
+    240
+  ],
+  "actual_IX_focus_selections": [
+    1,
+    50,
+    51,
+    109,
+    110,
+    180,
+    181,
+    182,
+    215,
+    216,
+    217,
+    239,
+    240,
+    241,
+    291
+  ],
+  "actual_unmodified_production_selections": [
+    1,
+    50,
+    51,
+    109,
+    110,
+    181,
+    216,
+    239,
+    240,
+    241,
+    291
+  ],
+  "covered_containing_views": [
+    {
+      "chapter": 11,
+      "subchapter": null,
+      "level": "chapter",
+      "complete_239_241": true,
+      "full_baseline_projection": "PASS",
+      "result": "PASS"
+    },
+    {
+      "chapter": 11,
+      "subchapter": "3",
+      "level": "subchapter",
+      "complete_239_241": true,
+      "full_baseline_projection": "PASS",
+      "result": "PASS"
+    }
+  ],
+  "protected_checks": [
+    {
+      "book": 8,
+      "n": 367,
+      "result": "PASS",
+      "digest": "57fb58799556ee3c8c12e0838be6de28931914e1b70860565a1e8f761b4a2b6d"
+    },
+    {
+      "book": 8,
+      "n": 369,
+      "result": "PASS",
+      "digest": "fa96fbd8142cb57a94ad1349aefc674f1de4c12d5ef465a5eb1f8d541c455fa0"
+    },
+    {
+      "book": 10,
+      "n": 108,
+      "result": "PASS",
+      "digest": "42116966185f35247e1a00e25a92cf8b92987e371046283d9037f7f44bd1f571"
+    },
+    {
+      "route": "/antiquities/?book=1&chapter=1&subchapter=1",
+      "result": "PASS",
+      "current_canonical_projection": "74bf806540ac7171c3471c1fa7078232fc46aa5436ee1fc6e78b7d6f58b7f12e"
+    },
+    {
+      "route": "/antiquities/?book=1&bamberg=B78-table1-row002",
+      "result": "PASS",
+      "current_canonical_projection": "fae5b2d5a62e85f090b18e1042829817d3d6a23a7fd3b75fbafa42a6a63b211f"
+    },
+    {
+      "route": "/antiquities/?book=8&unit=1",
+      "result": "PASS",
+      "current_canonical_projection": "aa7825c956b6885b5b2e7ff7275f4d75ac17f00f83d9715334bb79cede1e117c"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "result": "PASS",
+      "current_canonical_projection": "d0e0fbaa5154ab88968072041907854d1886982d1600cb7f780d989e8ca1fa10"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1&english=lodge1602",
+      "result": "PASS",
+      "current_canonical_projection": "eddb83dbdfc01ba5321695e462cae30df39b600b7e3a4a304feea99f1f4129ce"
+    }
+  ],
+  "Whiston_contents_checks": [
+    {
+      "book": 8,
+      "English": 15,
+      "Greek": 12,
+      "current_canonical_projection": "PASS",
+      "result": "PASS"
+    },
+    {
+      "book": 9,
+      "English": 14,
+      "Greek": 16,
+      "current_canonical_projection": "PASS",
+      "result": "PASS"
+    },
+    {
+      "book": 10,
+      "English": 11,
+      "Greek": 12,
+      "current_canonical_projection": "PASS",
+      "result": "PASS"
+    }
+  ],
+  "actual_protected_navigation_events": "NAVIGATION_CONTROLS_QA.json",
+  "source_certification_sha256": "b14641a7d6c031796f4c147450855e5e37dafe45bc34cb273cf89cc5a803226c",
+  "no_preview_or_deployment": true,
+  "recorded_UTC": "2026-10-09T17:42:28.902967+00:00"
+}

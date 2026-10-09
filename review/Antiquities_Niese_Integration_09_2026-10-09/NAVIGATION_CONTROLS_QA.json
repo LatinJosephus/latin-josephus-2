@@ -1,0 +1,95 @@
+{
+  "scope": "ACTUAL_PROTECTED_NAVIGATION_EVENTS",
+  "checks": [
+    {
+      "kind": "traditional",
+      "actual_state": {
+        "bookNum": "01",
+        "chapterNum": "1",
+        "subchapterNum": "1",
+        "bambergId": null,
+        "sectionNum": null,
+        "nieseNum": null,
+        "viewingLevel": "subchapter-level",
+        "lodgeNotesVisible": true,
+        "sources": {
+          "Latin": "bamberg78",
+          "English": "whiston",
+          "Greek": "niese"
+        }
+      },
+      "pane_projection_digest": "74bf806540ac7171c3471c1fa7078232fc46aa5436ee1fc6e78b7d6f58b7f12e",
+      "current_canonical_comparison": "PASS",
+      "result": "PASS"
+    },
+    {
+      "kind": "bamberg",
+      "actual_state": {
+        "bookNum": "01",
+        "chapterNum": null,
+        "subchapterNum": null,
+        "bambergId": "B78-table1-row006",
+        "sectionNum": null,
+        "nieseNum": null,
+        "viewingLevel": "bamberg-level",
+        "lodgeNotesVisible": true,
+        "sources": {
+          "Latin": "bamberg78",
+          "English": "whiston",
+          "Greek": "niese"
+        }
+      },
+      "pane_projection_digest": "d1db4c45925cd1ffea1c84a8975f5a6aa0dcf539da6011465d6e18deb85d9ba0",
+      "current_canonical_comparison": "PASS",
+      "result": "PASS"
+    },
+    {
+      "kind": "alignment",
+      "actual_state": {
+        "bookNum": "08",
+        "chapterNum": null,
+        "subchapterNum": null,
+        "bambergId": null,
+        "sectionNum": "3",
+        "nieseNum": null,
+        "viewingLevel": "section-level",
+        "lodgeNotesVisible": true,
+        "sources": {
+          "Latin": "bamberg78",
+          "English": "whiston",
+          "Greek": "niese"
+        }
+      },
+      "pane_projection_digest": "288819559d69ee57c488485d0013bcd48f7dd964e34fe7ced99fc4438c9efa01",
+      "current_canonical_comparison": "PASS",
+      "result": "PASS"
+    },
+    {
+      "kind": "Bellum",
+      "actual_state": {
+        "bookNum": "01",
+        "chapterNum": null,
+        "subchapterNum": null,
+        "bambergId": null,
+        "sectionNum": null,
+        "nieseNum": "1",
+        "viewingLevel": "niese-level",
+        "lodgeNotesVisible": true,
+        "sources": {
+          "Latin": "cardwell",
+          "English": "lodge1602",
+          "Greek": "current"
+        }
+      },
+      "pane_projection_digest": "eddb83dbdfc01ba5321695e462cae30df39b600b7e3a4a304feea99f1f4129ce",
+      "current_canonical_comparison": "PASS",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "origins": [
+    "http://127.0.0.1:49934",
+    "http://127.0.0.1:49935"
+  ],
+  "result": "PASS"
+}
