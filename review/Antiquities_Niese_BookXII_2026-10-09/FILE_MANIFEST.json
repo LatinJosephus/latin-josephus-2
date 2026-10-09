@@ -1,6 +1,11 @@
 {
-  "status": "PROVISIONAL_REVIEW_IN_PROGRESS",
+  "status": "PROVISIONAL_IMPLEMENTED_AWAITING_CERTIFICATION",
   "files": [
+    {
+      "path": "APPROVED_MARKER_PLAN.json",
+      "sha256": "00c9a1b6a797aac1fcbb164dff7d4cbc57be57728925a84a1ed2f2027ec690a3",
+      "bytes": 464477
+    },
     {
       "path": "BASELINE.json",
       "sha256": "846ce1317b2dae38be74217e00c2669a6e7e3c40e44ced1a8f79b82ac00fb962",
@@ -8,18 +13,23 @@
     },
     {
       "path": "BOUNDARIES.json",
-      "sha256": "c4f5b0bc54a4cc0b561ce73b2f3f579a6a33ecbfb82d2e72106159882cc09f29",
-      "bytes": 1700255
+      "sha256": "781d7022a84d57f9404bf1e38e2f4e5c54d1e0bef15b13f436c5f3dc3f229e1d",
+      "bytes": 2109494
     },
     {
       "path": "BOUNDARIES.md",
-      "sha256": "df0598ac02c62fcf4a6bc353eadf5239fae02ea61b0d32fdc6788d30746ddb6e",
-      "bytes": 269497
+      "sha256": "16d391839e7767e103a838608e61a93846b88adf142b5a529d7b1868e76675eb",
+      "bytes": 431441
     },
     {
       "path": "CANDIDATE_REGISTER.json",
-      "sha256": "c4f5b0bc54a4cc0b561ce73b2f3f579a6a33ecbfb82d2e72106159882cc09f29",
-      "bytes": 1700255
+      "sha256": "781d7022a84d57f9404bf1e38e2f4e5c54d1e0bef15b13f436c5f3dc3f229e1d",
+      "bytes": 2109494
+    },
+    {
+      "path": "CONTROL_OBSERVATIONS.json",
+      "sha256": "ea645af87655922e06b5853a537204117c64017da638ae191eb9155acee4f1be",
+      "bytes": 1679
     },
     {
       "path": "DECISION_XII_248_249.json",
@@ -35,6 +45,41 @@
       "path": "EDITORIAL_DECISIONS.json",
       "sha256": "37aca81ba4f613e597d786be9170c497d20b5b6969aa5bf7d3f6a34e3d38e83e",
       "bytes": 2454
+    },
+    {
+      "path": "evidence/Loeb/PDF-014.png",
+      "sha256": "14ff7cabaab697888c1cf654c41d0aab7ccf2a95470db08d6502bbd34440bafd",
+      "bytes": 370148
+    },
+    {
+      "path": "evidence/Loeb/PDF-015.png",
+      "sha256": "7bebc2a7a4480d4072da9fd301470df9d2c5f1bb8000291c747a9b807da3377c",
+      "bytes": 417369
+    },
+    {
+      "path": "evidence/Loeb/PDF-138.png",
+      "sha256": "ffab8df5f030a2487fe66b2911e88a5e8b11e03f3990a638ea507c790443501c",
+      "bytes": 537014
+    },
+    {
+      "path": "evidence/Loeb/PDF-139.png",
+      "sha256": "cd52494be43f8670d62a513e0534e7b4b82103930d41b9760a18da2b4e795878",
+      "bytes": 620117
+    },
+    {
+      "path": "evidence/Loeb/PDF-140.png",
+      "sha256": "3b47f30df04933fcc4bf5e692756c92fa3f6cc5e55895b7e28d973dcea9cbd86",
+      "bytes": 426239
+    },
+    {
+      "path": "evidence/Niese/page-143.png",
+      "sha256": "7a34c60027c86c317968677ca58821817de24c9be0f799c29b84f8c17cd57d23",
+      "bytes": 667551
+    },
+    {
+      "path": "evidence/Niese/page-144.png",
+      "sha256": "2247dbcce21ddba8cc02b764354f1b81d813d08855f0e590a9f493da9a35eeaf",
+      "bytes": 802026
     },
     {
       "path": "evidence/Niese/page-145.png",
@@ -427,6 +472,16 @@
       "bytes": 504282
     },
     {
+      "path": "EXECUTABLE_IDENTITIES.json",
+      "sha256": "7fd0c12c226103f582342423e80d91d7e166937e64b6288e6cea0a46a7b6a193",
+      "bytes": 24333
+    },
+    {
+      "path": "EXPECTED_INTERVALS.json",
+      "sha256": "282ed2aea0536bb6a230204993cd947aa0d6a2022c6ab7222550909986e0631d",
+      "bytes": 750032
+    },
+    {
       "path": "FROZEN_PRINT_STARTS.json",
       "sha256": "c7ac1976525c5a6a9348d5efab731bec5b9837316b82e4dbb07c6f231cd4644e",
       "bytes": 115943
@@ -435,6 +490,11 @@
       "path": "GREEK_CENSUS.json",
       "sha256": "81f9f8e736f7150c45305875117ca8b5551bd7e9adf50ac499b5d44066704c62",
       "bytes": 116413
+    },
+    {
+      "path": "IMPLEMENTATION_PRESERVATION.json",
+      "sha256": "4b305b0eb20540c9e3d77c5478e95ce52ad936e5915dc2c914fcc595502566d1",
+      "bytes": 537526
     },
     {
       "path": "inputs/English-book-12.xml",
@@ -453,8 +513,8 @@
     },
     {
       "path": "LATIN_REVIEW_CHOICES.json",
-      "sha256": "1211f2d6a8b8eba6dd1b05f8b0cb1deac76eafbc3d397232e2fd3ca5bd6dd469",
-      "bytes": 46894
+      "sha256": "00d874794e46fe08baae504e91944a476662d94a9d36f4aa0a4d821c90dea605",
+      "bytes": 71288
     },
     {
       "path": "LATIN_TEXT_NODE_LEDGER.json",
@@ -468,8 +528,8 @@
     },
     {
       "path": "PRINT_OBSERVATIONS.json",
-      "sha256": "6539c316b1213bb7c9fa532db7271e4fe4d9ed0a3355cc00f14bf395b86c3465",
-      "bytes": 114701
+      "sha256": "48abf14fc6bdaa3d826086ae19461af3e277bc9cf70b38a855133d5fe8dc4c94",
+      "bytes": 184747
     },
     {
       "path": "PRINTED_COVERAGE_REFERENCE.json",
@@ -478,8 +538,8 @@
     },
     {
       "path": "QA.json",
-      "sha256": "d7d6bf8af44509882879110b6674ea95c881404ebd4708bd43733f8af534a109",
-      "bytes": 590
+      "sha256": "cacbcff412b3a44ffe0cabc50155dd65ced3cdcbb8d462491d3e47f837c9080e",
+      "bytes": 572
     },
     {
       "path": "record_decision_248_249.py",
@@ -488,8 +548,8 @@
     },
     {
       "path": "REPORT.md",
-      "sha256": "70cc506a9272a78fa692c177093cda48f1e64c90361142a31e675f7909aa1c6b",
-      "bytes": 1263
+      "sha256": "112b4d5748c184625a7e9573dd0734cfcbb602591e0202696b630580b4d2bfc2",
+      "bytes": 1285
     },
     {
       "path": "review_031_050.py",
@@ -530,6 +590,56 @@
       "path": "review_231_265.json",
       "sha256": "a03b54d92ceab7c35396519a26ceeede7c5b7a6c4e6596a55ea5697429a83140",
       "bytes": 8517
+    },
+    {
+      "path": "review_266_300.json",
+      "sha256": "e0852e2d7ca53be5184554f2bfb76f72f8a374c8fa33fa649a7fce9ef756ec02",
+      "bytes": 7590
+    },
+    {
+      "path": "review_266_300.txt",
+      "sha256": "9782404da587b08c53b990b2904755a2fcc31b47f297141eaa0294765c5b387e",
+      "bytes": 4633
+    },
+    {
+      "path": "review_301_335.json",
+      "sha256": "d973a5fe0aab38293d5fcb03776658c79b4c496c3770cc3d67a0b7e765e94ecd",
+      "bytes": 7565
+    },
+    {
+      "path": "review_301_335.txt",
+      "sha256": "6ef4a565bb542a26c9c3e6801a75f17c2e8d4369dfbca332a3a3fab5c77b0670",
+      "bytes": 4571
+    },
+    {
+      "path": "review_336_370.json",
+      "sha256": "e95e2d3c2a50bb0a549ca2ce8724eac3091d1112787c96c8f1983e384bfab827",
+      "bytes": 7641
+    },
+    {
+      "path": "review_336_370.txt",
+      "sha256": "1e3260dd04ea4f3f86878f59c325185231e0419cddec17eb970dbff513c89e25",
+      "bytes": 4650
+    },
+    {
+      "path": "review_371_405.json",
+      "sha256": "e9de39f1825c9f2e7ee3dfff08c764daad1bf367678133b36257e40a8e7e33b6",
+      "bytes": 7369
+    },
+    {
+      "path": "review_371_405.txt",
+      "sha256": "e4edd63a94526109a63055197799589a2b1eb45fefc9aa2fb7c4c85aede4fd6a",
+      "bytes": 4412
+    },
+    {
+      "path": "review_406_434.json",
+      "sha256": "ca851137daa008751192fe9c46fdb66ecfc54bd2e433c06ae4597a191e4846fb",
+      "bytes": 6323
+    },
+    {
+      "path": "review_406_434.txt",
+      "sha256": "d44f3a888c5b27f4b51c356220946830bf6ee452137c733b21c1b0ee543788ab",
+      "bytes": 3818
     },
     {
       "path": "SOURCE_AUTHORITY.md",
