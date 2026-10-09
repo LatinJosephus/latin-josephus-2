@@ -2,6 +2,7 @@ from pathlib import Path
 import json,sys,re,pdfplumber
 from PIL import Image,ImageDraw
 P=Path(__file__).resolve().parent; W=P.parents[1];R=Path('C:/workspace/Antiquities-Niese-09-runtime-20261009')
+if (P/'BOUNDARIES.json').exists():raise SystemExit('Initial evidence preparation is frozen. Use register_boundaries.py with the reviewed local mapper; do not overwrite final methodology.')
 src=W/'review/Antiquities_Niese_BookX_2026-10-08/mixed_mapper.py'; dst=P/'mixed_mapper.py'
 raw=src.read_bytes();raw=raw.replace(b"else ('English editorial omission placeholder'",b"else ('IX editorial omission placeholder' if attrs.get('xml:id') in {'latin-book09-num51','greek-book09-num51','english-book09-num51'} else ('English editorial omission placeholder'")
 raw=raw.replace(b"else '')\r\n",b"else ''))\r\n").replace(b"else '')\n",b"else ''))\n")

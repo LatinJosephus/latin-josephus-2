@@ -58,6 +58,13 @@ class Book:
    if not cur:return
    if any(s['tag']=='num' for s in stack):self.labels[-1]['text']+=t;return
    if cur['excluded_reason'] or any(s['tag'] in {'note','app','rdg'} for s in stack):return
+   if cur['id']=='latin-book09-num288' and t.endswith('explicit liber nonus'):
+    label='explicit liber nonus';full_positions=raw_char_positions(self.raw,parser.CurrentByteIndex,t)
+    # This exact unmarked subscription is the terminal suffix of this source paragraph.
+    assert self.raw[full_positions[-1]+len(t[-1].encode('utf8')):].startswith(b'</p>')
+    self.excluded.append(dict(id=cur['id'],reason='IX Latin terminal subscription label',text=label,raw_start=full_positions[len(t)-len(label)],raw_end=full_positions[-1]+len(t[-1].encode('utf8'))))
+    t=t[:-len(label)]
+    if not t:return
    parent=stack[-1]
    if last_closed is not None and last_closed['path'].startswith(parent['path']+'/'):
     path=last_closed['path']+'/tail()'
@@ -79,6 +86,7 @@ class Book:
   parser.Parse(self.raw,True)
   for u in self.units:
    lxmltext=''.join(u['element'].xpath('.//text()[not(ancestor::t:num) and not(ancestor::t:note) and not(ancestor::t:app) and not(ancestor::t:rdg)]',namespaces=NS))
+   if u['id']=='latin-book09-num288':assert lxmltext.endswith('explicit liber nonus');lxmltext=lxmltext[:-len('explicit liber nonus')]
    assert u['text']==('' if u['excluded_reason'] else lxmltext),(u['id'],u['text'],lxmltext)
  def locate(self,offset):
   n=next(n for n in self.nodes if n['book_start']<=offset<n['book_start']+len(n['text']))

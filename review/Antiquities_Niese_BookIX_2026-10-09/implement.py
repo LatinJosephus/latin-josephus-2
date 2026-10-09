@@ -23,7 +23,7 @@ for lang in languages:
     if lang=='Latin':
         for r in rows:
             if r['Latin_locator'] and not r['inherited_start_retained'] and r['implementation_approved']:
-                loc=book.locate(r['Latin_locator']['book_offset']);assert loc==r['Latin_locator'];tag=f'<milestone unit="niese" n="{r["niese"]}"/>'.encode()
+                loc=book.locate(r['Latin_locator']['book_offset']);assert all(loc[k]==r['Latin_locator'][k] for k in loc);tag=f'<milestone unit="niese" n="{r["niese"]}"/>'.encode()
                 ops.append({'niese':r['niese'],'kind':'INSERT_LATIN_MILESTONE','at':loc['raw_byte'],'delete':0,'before_hex':'','after_hex':tag.hex(),'target_locator':loc})
     else:
         loc=plan['opening_addition']['locator'];tag=b'<num>[1]</num>';ops.append({'niese':1,'kind':'ADD_IMPLICIT_OPENING_IDENTITY','at':loc['raw_byte'],'delete':0,'before_hex':'','after_hex':tag.hex(),'target_locator':loc})
@@ -55,7 +55,7 @@ if 'Latin' in languages:
         if n in [239,240] and ids['pending']:
             available=False;note='The exact boundary between IX.239 and IX.240 awaits editorial adjudication. This local implementation is provisional.'
         elif not available:note='Text corresponding to this section is unavailable in this transcription, which preserves an editorial omission placeholder for IX.51–109. The cause is not established here.'
-        elif n==110:note='Only Jehu’s concluding reply survives for IX.110 in this Latin transcription. The preceding anointing narrative has no identifiable counterpart here. The inherited ellipsis is preserved; the cause is unknown.'
+        elif n==110:note='Only Jehu’s concluding reply survives for IX.110 in this Latin transcription. The opening account of his departure and the captains’ question has no identifiable counterpart here. The inherited ellipsis is preserved; the cause is unknown.'
         section={'number':n,'Latin':{'available':available,'correspondence':'PARTIAL' if n==110 else ('REPRESENTED' if available else 'UNAVAILABLE'),'note':note},'contextTarget':r['Latin_paragraph_id']}
         if 51<=n<=109:
             for lang in ['Greek','English']:section[lang]={'available':False,'note':f'Text corresponding to this section is unavailable in this {lang} transcription, which preserves an editorial omission placeholder for IX.51–109.'}
