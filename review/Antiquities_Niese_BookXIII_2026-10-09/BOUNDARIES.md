@@ -414,7 +414,7 @@ Print: Niese III p.157, PDF229. [right line3, preceding withdrawal then ὁ δ�
 
 Greek: Ἔτει δ᾽ ἑξηκοστῷ καὶ ἑκατοστῷ τὸν Ἀντιόχου τοῦ Ἐπιφανοῦς υἱὸν Ἀλέξανδρον ἀναβάντα εἰς Συρίαν συνέβη καταλαβέσθαι Πτολεμαΐδα ἐκ προδοσίας τῶν ἔνδον στρατιωτῶν: ἀπεχθῶς γὰρ εἶχον πρὸς τὸν Δημήτριον διὰ τὴν ὑπερηφανίαν αὐτοῦ καὶ τὸ δυσέντευκτον.
 
-Latin start: `Anno uero sexagesimo` in `latin-book13-num35`; Unicode book offset 6299, node offset 5, raw byte 11691.
+Latin start: `Anno uero sexagesimo` in `latin-book13-num35`; Unicode book offset 6296, node offset 5, raw byte 11691.
 
 Retained narrative start after inherited III: Alexander, year160 and Ptolemais betrayal.
 
@@ -426,7 +426,7 @@ Print: Niese III p.157, PDF229. [right line7, II.1 Ἔτει](evidence/Niese/pag
 
 Greek: ἀποκλείσας γὰρ αὑτὸν εἰς τετραπύργιόν τι βασίλειον, ὃ κατεσκεύασεν αὐτὸς οὐκ ἄπωθεν τῆς Ἀντιοχείας, οὐδένα προσίετο, ἀλλὰ περὶ τὰ πράγματα ῥάθυμος ἦν καὶ ὀλίγωρος, ὅθεν αὐτῷ καὶ μᾶλλον τὸ παρὰ τῶν ὑποτεταγμένων μῖσος ἐξήφθη, καθὼς ἤδη καὶ ἐν ἄλλοις δεδηλώκαμεν.
 
-Latin start: `quia dum se clausisset` in `latin-book13-num35`; Unicode book offset 6518, node offset 224, raw byte 11910.
+Latin start: `quia dum se clausisset` in `latin-book13-num35`; Unicode book offset 6515, node offset 224, raw byte 11910.
 
 Demetrius withdraws into the tower, neglects affairs and earns hatred; causal syntax continues previous Latin clause.
 
@@ -438,7 +438,7 @@ Print: Niese III p.157, PDF229. [right line11 after δυσέντευκτον, �
 
 Greek: γενόμενον οὖν ἐν Πτολεμαΐδι τὸν Ἀλέξανδρον ἀκούσας ὁ Δημήτριος ἦγεν ἅπασαν ἀναλαβὼν ἐπ᾽ αὐτὸν τὴν δύναμιν. ἔπεμψεν δὲ καὶ πρὸς Ἰωνάθην πρέσβεις περὶ συμμαχίας καὶ εὐνοίας: φθάσαι γὰρ τὸν Ἀλέξανδρον διέγνω, μὴ προδιαλεχθεὶς ἐκεῖνος αὐτῷ σχῇ τὴν παρ᾽ αὐτοῦ βοήθειαν.
 
-Latin start: `Igitur in pto` in `latin-book13-num35`; Unicode book offset 6747, node offset 75, raw byte 12152.
+Latin start: `Igitur in pto` in `latin-book13-num35`; Unicode book offset 6744, node offset 75, raw byte 12152.
 
 Alexander at Ptolemais; Demetrius assembles forces and approaches Jonathan before his rival.
 
@@ -450,7 +450,7 @@ Print: Niese III p.157, PDF229. [right line15 preceding notice and γενόμε�
 
 Greek: τοῦτο δ᾽ ἐποίει φοβηθείς, μὴ μνησικακήσας ὁ Ἰωνάθης αὐτῷ τῆς ἔχθρας συνεπιθῆται. προσέταξεν οὖν αὐτῷ συναθροίζειν δύναμιν καὶ κατασκευάζειν ὅπλα καὶ τοὺς ὁμήρους, οὓς τῶν Ἰουδαίων ἐνέκλεισε Βακχίδης ἐν τῇ ἄκρᾳ τῶν Ἱεροσολύμων, ἀπολαβεῖν.
 
-Latin start: `aut ionatha memor malorum` in `latin-book13-num35`; Unicode book offset 6979, node offset 218, raw byte 12425.
+Latin start: `aut ionatha memor malorum` in `latin-book13-num35`; Unicode book offset 6976, node offset 218, raw byte 12425.
 
 Fear of Jonathan remembering hostility motivates gathering forces and returning hostages.
 
@@ -462,7 +462,7 @@ Print: Niese III p.157, PDF229. [right line19 preceding βοήθειαν, το�
 
 Greek: τοιούτων οὖν αὐτῷ τῶν παρὰ Δημητρίου προσπεσόντων ὁ Ἰωνάθης παραγενόμενος εἰς τὰ Ἱεροσόλυμα τὴν ἐπιστολὴν ἀνέγνω τοῦ βασιλέως ἀκουόντων τοῦ τε λαοῦ καὶ τῶν φρουρούντων τὴν ἀκρόπολιν.
 
-Latin start: `Talibus ergo` in `latin-book13-num35`; Unicode book offset 7159, node offset 398, raw byte 12605.
+Latin start: `Talibus ergo` in `latin-book13-num35`; Unicode book offset 7156, node offset 398, raw byte 12605.
 
 Jonathan receives orders and publicly reads the letter.
 
@@ -474,7 +474,7 @@ Print: Niese III p.157, PDF229. [right line23 preceding hostages, τοιούτω
 
 Greek: ἀναγνωσθέντων δὲ τούτων οἱ ἀσεβεῖς καὶ φυγάδες οἱ ἐκ τῆς ἀκροπόλεως λίαν ἔδεισαν ἐπιτετροφότος Ἰωνάθῃ τοῦ βασιλέως στρατιὰν συλλέγειν καὶ τοὺς ὁμήρους ἀπολαβεῖν. ὁ δὲ τοῖς γονεῦσιν ἑκάστῳ τὸν ἴδιον ἀπέδωκεν.
 
-Latin start: `Quibus relectis` in `latin-book13-num35`; Unicode book offset 7319, node offset 558, raw byte 12765.
+Latin start: `Quibus relectis` in `latin-book13-num35`; Unicode book offset 7316, node offset 558, raw byte 12765.
 
 Fugitives fear the authority and release hostages.
 
@@ -486,7 +486,7 @@ Print: Niese III p.158, PDF230. [left line1 preceding citadel, ἀναγνωσθ
 
 Greek: καὶ οὕτως μὲν Ἰωνάθης ἐν Ἱεροσολύμοις τὴν μονὴν ἐποιεῖτο καινίζων τὰ κατὰ τὴν πόλιν καὶ πρὸς τὴν αὐτοῦ βούλησιν κατασκευάζων ἕκαστον. ἐκέλευσε γὰρ οἰκοδομηθῆναι καὶ τὰ τείχη τῆς πόλεως ἐκ λίθων τετραγώνων, ὡς ἂν ᾖ καὶ πρὸς τοὺς πολέμους ἀσφαλέστερα.
 
-Latin start: `et quidem ionathas` in `latin-book13-num35`; Unicode book offset 7511, node offset 750, raw byte 12957.
+Latin start: `et quidem ionathas` in `latin-book13-num35`; Unicode book offset 7508, node offset 750, raw byte 12957.
 
 Jonathan renovates Jerusalem and its walls.
 
@@ -498,7 +498,7 @@ Print: Niese III p.158, PDF230. [left line5 preceding ἀπέδωκεν, καὶ
 
 Greek: ταῦτα δ᾽ ὁρῶντες οἱ τῶν φρουρίων τῶν ἐν τῇ Ἰουδαίᾳ φύλακες ἐκλιπόντες αὐτὰ πάντες ἔφυγον εἰς Ἀντιόχειαν πάρεξ τῶν ἐν Βαιθσούρᾳ πόλει καὶ τῶν ἐν τῇ ἄκρᾳ τῶν Ἱεροσολύμων: οὗτοι γὰρ ἡ πλείων μοῖρα τῶν ἀσεβῶν καὶ πεφευγότων Ἰουδαίων ἦσαν καὶ διὰ τοῦτο τὰς φρουρὰς οὐκ ἐγκατέλιπον.
 
-Latin start: `Quae uidentes custodes` in `latin-book13-num35`; Unicode book offset 7713, node offset 952, raw byte 13159.
+Latin start: `Quae uidentes custodes` in `latin-book13-num35`; Unicode book offset 7710, node offset 952, raw byte 13159.
 
 Garrisons withdraw except Bethsura and citadel; explanation of their refuge.
 
@@ -510,7 +510,7 @@ Print: Niese III p.158, PDF230. [left line9 preceding walls, ταῦτα δ᾽](
 
 Greek: Γνοὺς δὲ ὁ Ἀλέξανδρος τάς τε ὑποσχέσεις, ἃς ἐποιήσατο Δημήτριος πρὸς Ἰωνάθην, καὶ τὴν ἀνδρείαν αὐτοῦ καὶ ὁπόσα διέθηκεν πολεμῶν τοὺς Μακεδόνας καὶ πάλιν οἷα πεπονθὼς αὐτὸς εἴη ὑπὸ Δημητρίου καὶ Βακχίδου τοῦ Δημητρίου στρατηγοῦ, σύμμαχον οὐκ ἂν εὑρεῖν Ἰωνάθου ἀμείνω πρὸς τοὺς φίλους ἔλεγεν ἐν τῷ παρόντι καιρῷ, ὃς καὶ πρὸς τοὺς πολέμους ἐστὶν ἀνδρεῖος, καὶ μῖσος οἰκεῖον ἔχει πρὸς Δημήτριον πολλὰ πεπονθὼς ὑπ᾽ αὐτοῦ κακὰ καὶ πεποιηκώς.
 
-Latin start: `Cognoscens autem alexander` in `latin-book13-num43`; Unicode book offset 7978, node offset 1, raw byte 13612.
+Latin start: `Cognoscens autem alexander` in `latin-book13-num43`; Unicode book offset 7971, node offset 1, raw byte 13612.
 
 Alexander seeks alliance after hearing promises and recalling hostile treatment.
 
@@ -522,7 +522,7 @@ Print: Niese III p.158, PDF230. [left line14 lower2 Γνοὺς](evidence/Niese/
 
 Greek: ‘εἰ τοιγαροῦν δοκεῖ φίλον ποιεῖσθαι αὐτὸν κατὰ Δημητρίου, νῦν ἐστιν οὐκ ἄλλοτε χρησιμώτερον παρακαλεῖν αὐτὸν ἐπὶ τὴν συμμαχίαν.’ δόξαν οὖν αὐτῷ καὶ τοῖς φίλοις πέμπειν πρὸς τὸν Ἰωνάθην γράφει τοιαύτην ἐπιστολήν:
 
-Latin start: `Igitur si uidete` in `latin-book13-num43`; Unicode book offset 8400, node offset 423, raw byte 14034.
+Latin start: `Igitur si uidete` in `latin-book13-num43`; Unicode book offset 8393, node offset 423, raw byte 14034.
 
 Advice to offer friendship and letter introduction.
 
@@ -534,7 +534,7 @@ Print: Niese III p.158, PDF230. [left line21 preceding κακὰ καὶ πεπ�
 
 Greek: ‘βασιλεὺς Ἀλέξανδρος Ἰωνάθῃ τῷ ἀδελφῷ χαίρειν. τὴν μὲν ἀνδρείαν σου καὶ πίστιν ἀκηκόαμεν πάλαι καὶ διὰ τοῦτο πεπόμφαμεν πρὸς σὲ περὶ φιλίας καὶ συμμαχίας. χειροτονοῦμεν δέ σε σήμερον ἀρχιερέα τῶν Ἰουδαίων καὶ φίλον ἐμὸν καλεῖσθαι. ἀπέσταλκά σοι καὶ δωρεὰς στολὴν πορφυρᾶν καὶ στέφανον χρύσεον καὶ παρακαλῶ τιμηθέντα ὑφ᾽ ἡμῶν ὅμοιον γίνεσθαι περὶ ἡμᾶς.’
 
-Latin start: `Rex alexander ionathae` in `latin-book13-num43`; Unicode book offset 8609, node offset 85, raw byte 14308.
+Latin start: `Rex alexander ionathae` in `latin-book13-num43`; Unicode book offset 8602, node offset 85, raw byte 14308.
 
 Salutation, high priest appointment and gifts.
 
@@ -546,7 +546,7 @@ Print: Niese III p.158, PDF230. [left line24 preceding introduction, βασιλ�
 
 Greek: Δεξάμενος δὲ ὁ Ἰωνάθης τὴν ἐπιστολὴν ἐνδύεται μὲν τὴν ἱερατικὴν στολὴν τῆς σκηνοπηγίας ἐνστάσης μετὰ ἔτη τέσσαρα ἢ τὸν ἀδελφὸν αὐτοῦ Ἰούδαν ἀποθανεῖν: καὶ γὰρ οὐδὲ κατὰ τοῦτον τὸν χρόνον ἀρχιερεύς τις ἐγεγόνει: συνάγει δὲ δύναμιν πολλὴν καὶ πλῆθος ὅπλων ἐχάλκευεν.
 
-Latin start: `Suscipiens epistolam ionathas` in `latin-book13-num46`; Unicode book offset 8965, node offset 1, raw byte 14727.
+Latin start: `Suscipiens epistolam ionathas` in `latin-book13-num46`; Unicode book offset 8958, node offset 1, raw byte 14727.
 
 Tabernacles appointment after four years and manufacture of weapons.
 
@@ -558,7 +558,7 @@ Print: Niese III p.159, PDF231. [right line6 lower3 Δεξάμενος](evidence
 
 Greek: Δημήτριον δὲ σφόδρα ταῦτ᾽ ἐλύπησεν μαθόντα καὶ τῆς βραδυτῆτος ἑαυτὸν ἐποίησεν αἰτιᾶσθαι, ὅτι μὴ προλαβὼν Ἀλέξανδρον αὐτὸς ἐφιλανθρωπεύσατο τὸν Ἰωνάθην, ἀλλ᾽ ἐκείνῳ καταλίποι καιρὸν εἰς τοῦτο. γράφει τοίνυν καὶ αὐτὸς ἐπιστολὴν τῷ Ἰωνάθῃ καὶ τῷ δήμῳ δηλοῦσαν τάδε:
 
-Latin start: `Quod factum ut peruenit` in `latin-book13-num46`; Unicode book offset 9260, node offset 296, raw byte 15022.
+Latin start: `Quod factum ut peruenit` in `latin-book13-num46`; Unicode book offset 9253, node offset 296, raw byte 15022.
 
 Demetrius regrets the delay and introduces his letter.
 
@@ -570,7 +570,7 @@ Print: Niese III p.159, PDF231. [right line10 preceding weapons, Δημήτρι�
 
 Greek: ‘βασιλεὺς Δημήτριος Ἰωνάθῃ καὶ τῷ ἔθνει τῶν Ἰουδαίων χαίρειν. ἐπειδὴ διετηρήσατε τὴν πρὸς ἡμᾶς φιλίαν καὶ πειράσασιν ὑμᾶς τοῖς ἐμοῖς ἐχθροῖς οὐ προσέθεσθε, καὶ ταύτην μὲν ὑμῶν ἐπαινῶ τὴν πίστιν καὶ παρακαλῶ δὲ τοῖς αὐτοῖς ἐμμένειν ἀποληψομένους ἀμοιβὰς παρ᾽ ἡμῶν καὶ χάριτας.
 
-Latin start: `Rex demetrius ionathae` in `latin-book13-num46`; Unicode book offset 9532, node offset 568, raw byte 15294.
+Latin start: `Rex demetrius ionathae` in `latin-book13-num46`; Unicode book offset 9525, node offset 568, raw byte 15294.
 
 Greeting, thanks for fidelity and promise of recompense.
 
@@ -582,7 +582,7 @@ Print: Niese III p.159, PDF231. [right line14 preceding introduction, βασιλ
 
 Greek: τοὺς γὰρ πλείστους ὑμῶν ἀνήσω τῶν φόρων καὶ τῶν συντάξεων, ἃς ἐτελεῖτε τοῖς πρὸ ἐμοῦ βασιλεῦσιν καὶ ἐμοί, νῦν τε ὑμῖν ἀφίημι τοὺς φόρους, οὓς ἀεὶ παρέχετε. πρὸς τούτοις καὶ τὴν τιμὴν ὑμῖν χαρίζομαι τῶν ἁλῶν καὶ τῶν στεφάνων, οὓς προσεφέρετε ἡμῖν, καὶ ἀντὶ τῶν τρίτων τοῦ καρποῦ καὶ τοῦ ἡμίσους τοῦ ξυλίνου καρποῦ τὸ γινόμενον ἐμοὶ μέρος ὑμῖν ἀφίημι ἀπὸ τῆς σήμερον ἡμέρας.
 
-Latin start: `per quam mercamini uectigalium` in `latin-book13-num46`; Unicode book offset 9772, node offset 808, raw byte 15534.
+Latin start: `per quam mercamini uectigalium` in `latin-book13-num46`; Unicode book offset 9765, node offset 808, raw byte 15534.
 
 Remission of taxes including fruit contributions; relative construction begins the corresponding promise.
 
@@ -594,7 +594,7 @@ Print: Niese III p.159, PDF231. [right line19 preceding χάριτας, τοὺ�
 
 Greek: καὶ ὑπὲρ κεφαλῆς ἑκάστης ὃ ἔδει μοι δίδοσθαι τῶν ἐν τῇ Ἰουδαίᾳ κατοικούντων καὶ τῶν τριῶν τοπαρχιῶν τῶν τῇ Ἰουδαίᾳ προσκειμένων Σαμαρείας καὶ Γαλιλαίας καὶ Περαίας, τούτους παραχωρῶ ὑμῖν ἀπὸ τοῦ νῦν εἰς τὸν ἅπαντα χρόνον.
 
-Latin start: `Sed et censum singulorum` in `latin-book13-num46`; Unicode book offset 10149, node offset 1185, raw byte 15911.
+Latin start: `Sed et censum singulorum` in `latin-book13-num46`; Unicode book offset 10142, node offset 1185, raw byte 15911.
 
 Poll tax remission in Judaea and three districts.
 
@@ -606,7 +606,7 @@ Print: Niese III p.160, PDF232. [left line1 preceding day, καὶ ὑπὲρ κ
 
 Greek: καὶ τὴν Ἱεροσολυμιτῶν πόλιν ἱερὰν καὶ ἄσυλον εἶναι βούλομαι καὶ ἐλευθέραν ἕως τῶν ὅρων αὐτῆς ἀπὸ τῆς δεκάτης καὶ τῶν τελῶν. τὴν δὲ ἄκραν ἐπιτρέπω τῷ ἀρχιερεῖ ὑμῶν Ἰωνάθῃ, οὓς δ᾽ ἂν αὐτὸς δοκιμάσῃ πιστοὺς καὶ φίλους τούτους ἐν αὐτῇ φρουροὺς καταστῆσαι, ἵνα φυλάσσωσιν ἡμῖν αὐτήν.
 
-Latin start: `ciuitatemque hierosolimorum` in `latin-book13-num46`; Unicode book offset 10368, node offset 10, raw byte 16143.
+Latin start: `ciuitatemque hierosolimorum` in `latin-book13-num46`; Unicode book offset 10361, node offset 10, raw byte 16143.
 
 Jerusalem privileges and citadel custody.
 
@@ -618,7 +618,7 @@ Print: Niese III p.160, PDF232. [left line5 preceding all time, καὶ τὴν]
 
 Greek: καὶ Ἰουδαίων δὲ τοὺς αἰχμαλωτισθέντας καὶ δουλεύοντας ἐν τῇ ἡμετέρᾳ ἀφίημι ἐλευθέρους. κελεύω δὲ μηδὲ ἀγγαρεύεσθαι τὰ Ἰουδαίων ὑποζύγια: τὰ δὲ σάββατα καὶ ἑορτὴν ἅπασαν καὶ τρεῖς καὶ πρὸ τῆς ἑορτῆς ἡμέρας ἔστωσαν ἀτελεῖς.
 
-Latin start: `captiuosque iudaeorum` in `latin-book13-num46`; Unicode book offset 10644, node offset 286, raw byte 16419.
+Latin start: `captiuosque iudaeorum` in `latin-book13-num46`; Unicode book offset 10637, node offset 286, raw byte 16419.
 
 Freedom of captives and animals; Sabbath and festival privileges.
 
@@ -630,7 +630,7 @@ Print: Niese III p.160, PDF232. [left line9 preceding custody, καὶ Ἰουδ
 
 Greek: τὸν αὐτὸν τρόπον καὶ τοὺς ἐν τῇ ἐμῇ κατοικοῦντας Ἰουδαίους ἐλευθέρους καὶ ἀνεπηρεάστους ἀφίημι, καὶ τοῖς στρατεύεσθαι μετ᾽ ἐμοῦ βουλομένοις ἐπιτρέπω καὶ μέχρις τρισμυρίων ἐξέστω τοῦτο: τῶν δ᾽ αὐτῶν, ὅποι ἂν ἀπίωσι, τεύξονται ὧν καὶ τὸ ἐμὸν στράτευμα μεταλαμβάνει. καταστήσω δ᾽ αὐτῶν οὓς μὲν εἰς τὰ φρούρια, τινὰς δὲ περὶ τὴν φυλακὴν τοὐμοῦ σώματος, καὶ ἡγεμόνας δὲ ποιήσω τῶν περὶ τὴν ἐμὴν αὐλήν.
 
-Latin start: `eodem modo iudeos` in `latin-book13-num46`; Unicode book offset 10882, node offset 524, raw byte 16657.
+Latin start: `eodem modo iudeos` in `latin-book13-num46`; Unicode book offset 10875, node offset 524, raw byte 16657.
 
 Other Jews receive freedom; thirty thousand volunteers and court appointments.
 
@@ -642,7 +642,7 @@ Print: Niese III p.160, PDF232. [left line13 preceding ἀτελεῖς, τὸν
 
 Greek: ἐπιτρέπω δὲ καὶ τοῖς πατρῴοις χρῆσθαι νόμοις καὶ τούτους φυλάττειν, καὶ τοῖς τρισὶν τοῖς προσκειμένοις τῇ Ἰουδαίᾳ νομοῖς ὑποτάσσεσθαι βούλομαι, καὶ τῷ ἀρχιερεῖ δὲ ἐπιμελὲς εἶναι, ἵνα μηδὲ εἷς Ἰουδαῖος ἄλλο ἔχῃ ἱερὸν προσκυνεῖν ἢ μόνον τὸ ἐν Ἱεροσολύμοις.
 
-Latin start: `praecipio uero meis` in `latin-book13-num46`; Unicode book offset 11204, node offset 846, raw byte 16979.
+Latin start: `praecipio uero meis` in `latin-book13-num46`; Unicode book offset 11197, node offset 846, raw byte 16979.
 
 Native laws, attachment of districts and temple jurisdiction.
 
@@ -654,7 +654,7 @@ Print: Niese III p.160, PDF232. [left line19 preceding leaders, ἐπιτρέπ�
 
 Greek: δίδωμι δ᾽ ἐκ τῶν ἐμῶν καὶ εἰς τὴν δαπάνην τῶν θυσιῶν κατ᾽ ἔτος μυριάδας πεντεκαίδεκα, τὰ δὲ περισσεύοντα τῶν χρημάτων ὑμέτερα εἶναι βούλομαι: τὰς δὲ μυρίας δραχμάς, ἃς ἐλάμβανον ἐκ τοῦ ἱεροῦ οἱ βασιλεῖς, ὑμῖν ἀφίημι διὰ τὸ προσήκειν αὐτὰς τοῖς ἱερεῦσιν τοῖς λειτουργοῦσιν τῷ ἱερῷ.
 
-Latin start: `Praebeo etiam adsumptus` in `latin-book13-num46`; Unicode book offset 11425, node offset 1067, raw byte 17200.
+Latin start: `Praebeo etiam adsumptus` in `latin-book13-num46`; Unicode book offset 11418, node offset 1067, raw byte 17200.
 
 Sacrificial grant and remitted temple revenue.
 
@@ -666,7 +666,7 @@ Print: Niese III p.160, PDF232. [left line23 preceding Ἱεροσολύμοις
 
 Greek: καὶ ὅσοι δ᾽ ἂν φύγωσιν εἰς τὸ ἱερὸν τὸ ἐν Ἱεροσολύμοις καὶ εἰς τὰ ἀπ᾽ αὐτοῦ χρηματίζοντα ἢ βασιλικὰ ὀφείλοντες χρήματα ἢ δι᾽ ἄλλην αἰτίαν, ἀπολελύσθωσαν οὗτοι καὶ τὰ ὑπάρχοντα αὐτοῖς σῶα ἔστω.
 
-Latin start: `Qui cumque autem ad templum` in `latin-book13-num46`; Unicode book offset 11684, node offset 1326, raw byte 17459.
+Latin start: `Qui cumque autem ad templum` in `latin-book13-num46`; Unicode book offset 11677, node offset 1326, raw byte 17459.
 
 Asylum for debtors and protection of property.
 
@@ -678,7 +678,7 @@ Print: Niese III p.161, PDF233. [right line5 preceding priests, καὶ ὅσο�
 
 Greek: ἐπιτρέπω δὲ καὶ ἀνακαινίζειν τὸ ἱερὸν καὶ οἰκοδομεῖν τῆς εἰς ταῦτα δαπάνης ἐκ τῶν ἐμῶν γινομένης, καὶ τὰ τείχη δὲ συγχωρῶ τὰ τῆς πόλεως οἰκοδομεῖσθαι καὶ πύργους ὑψηλοὺς ἐγείρειν καὶ ταῦτα ἐκ τῶν ἐμῶν ἀνιστᾶν πάντα. εἰ δέ τι καὶ φρούριόν ἐστιν, ὃ συμφέρει τῇ χώρᾳ τῇ Ἰουδαίων ὀχυρὸν εἶναι, καὶ τοῦτ᾽ ἐκ τῶν ἐμῶν κατασκευασθήτω.’
 
-Latin start: `Renouari uero` in `latin-book13-num46`; Unicode book offset 11888, node offset 1530, raw byte 17663.
+Latin start: `Renouari uero` in `latin-book13-num46`; Unicode book offset 11881, node offset 1530, raw byte 17663.
 
 Treasury funds temple, walls and fortresses.
 
@@ -690,7 +690,7 @@ Print: Niese III p.161, PDF233. [right line8 preceding property, ἐπιτρέπ
 
 Greek: Ταῦτα μὲν ὑπισχνούμενος καὶ χαριζόμενος ἔγραψεν τοῖς Ἰουδαίοις Δημήτριος. Ἀλέξανδρος δὲ ὁ βασιλεὺς δύναμιν μεγάλην συναγαγὼν μισθοφόρων καὶ τῶν προσθεμένων ἐκ τῆς Συρίας αὐτῷ στρατιωτῶν ἐπὶ τὸν Δημήτριον ἐστράτευσεν.
 
-Latin start: `Haec quidem promittens` in `latin-book13-num58`; Unicode book offset 12166, node offset 1, raw byte 18003.
+Latin start: `Haec quidem promittens` in `latin-book13-num58`; Unicode book offset 12159, node offset 1, raw byte 18003.
 
 Author closes Demetrius offer; Alexander gathers forces.
 
@@ -702,7 +702,7 @@ Print: Niese III p.161, PDF233. [right line14 lower4 Ταῦτα](evidence/Niese
 
 Greek: καὶ μάχης γενομένης τὸ μὲν εὐώνυμον κέρας τοῦ Δημητρίου τρέπεται τοὺς ἐναντίους εἰς φυγὴν καὶ ἐδίωξεν ἄχρι πολλοῦ κτείνει τε συχνοὺς αὐτῶν καὶ διαρπάζει τὸ στρατόπεδον, τὸ δὲ δεξιόν, οὗ συνέβαινεν εἶναι τὸν Δημήτριον, ἡττᾶται.
 
-Latin start: `Pugnaque commissa` in `latin-book13-num58`; Unicode book offset 12354, node offset 124, raw byte 18256.
+Latin start: `Pugnaque commissa` in `latin-book13-num58`; Unicode book offset 12347, node offset 124, raw byte 18256.
 
 Battle outcomes on left and right wings.
 
@@ -714,7 +714,7 @@ Print: Niese III p.161, PDF233. [right line17 preceding attack, καὶ μάχη
 
 Greek: καὶ οἱ μὲν ἄλλοι πάντες ἔφυγον, Δημήτριος δὲ γενναίως μαχόμενος οὐκ ὀλίγους μὲν ἀναιρεῖ τῶν πολεμίων, διώκων δὲ τοὺς ἄλλους ἐλαύνει τὸν ἵππον εἰς τέλμα βαθὺ καὶ δυσεκπόρευτον, ἔνθα συνέβη πεσόντος αὐτῷ τοῦ ἵππου μὴ δυνάμενον διαφυγεῖν ἀναιρεθῆναι.
 
-Latin start: `Alii quidem omnes` in `latin-book13-num58`; Unicode book offset 12546, node offset 316, raw byte 18448.
+Latin start: `Alii quidem omnes` in `latin-book13-num58`; Unicode book offset 12539, node offset 316, raw byte 18448.
 
 Other soldiers flee; Demetrius remains and becomes trapped in mud.
 
@@ -726,7 +726,7 @@ Print: Niese III p.161, PDF233. [right line21 preceding ἡττᾶται, κα�
 
 Greek: τὸ γὰρ συμβεβηκὸς περὶ αὐτὸν ἰδόντες οἱ πολέμιοι ἀνέστρεψαν καὶ κυκλωσάμενοι τὸν Δημήτριον πάντες ἐπ᾽ αὐτὸν ἠκόντιζον. ὁ δὲ πεζὸς ὢν γενναίως ἀπεμάχετο, καὶ τελευταῖον τραύματα λαβὼν πολλὰ καὶ μηκέτ᾽ ἀντέχειν δυνάμενος κατέπεσεν. καὶ τέλος μὲν τοιοῦτον τὸν Δημήτριον κατέλαβεν ἔτη βασιλεύσαντα ἕνδεκα, ὡς καὶ ἐν ἄλλοις δεδηλώκαμεν.
 
-Latin start: `Nam uidentes hostes` in `latin-book13-num58`; Unicode book offset 12730, node offset 500, raw byte 18632.
+Latin start: `Nam uidentes hostes` in `latin-book13-num58`; Unicode book offset 12723, node offset 500, raw byte 18632.
 
 Enemies surround Demetrius; final stand and death after eleven years.
 
@@ -738,7 +738,7 @@ Print: Niese III p.162, PDF234. [left line1 preceding ἀναιρεθῆναι, 
 
 Greek: Ὁ δὲ Ὀνίου τοῦ ἀρχιερέως υἱὸς ὁμώνυμος δὲ ὢν τῷ πατρί, ὃς ἐν Ἀλεξανδρείᾳ φυγὼν πρὸς τὸν βασιλέα Πτολεμαῖον τὸν ἐπικαλούμενον Φιλομήτορα διῆγεν, ὡς καὶ πρότερον εἰρήκαμεν, ἰδὼν τὴν Ἰουδαίαν κακουμένην ὑπὸ τῶν Μακεδόνων καὶ τῶν βασιλέων αὐτῶν,
 
-Latin start: `Oniae uero principis` in `latin-book13-num62`; Unicode book offset 13056, node offset 3, raw byte 19064.
+Latin start: `Oniae uero principis` in `latin-book13-num62`; Unicode book offset 13047, node offset 3, raw byte 19064.
 
 Onias lineage, flight and welcome in Egypt after persecution.
 
@@ -750,7 +750,7 @@ Print: Niese III p.162, PDF234. [left line7 III.1 Ὁ δὲ Ὀνίου](evidenc
 
 Greek: βουλόμενος αὑτῷ δόξαν καὶ μνήμην αἰώνιον κατασκευάσαι, διέγνω πέμψας πρὸς Πτολεμαῖον τὸν βασιλέα καὶ τὴν βασίλισσαν Κλεοπάτραν αἰτήσασθαι παρ᾽ αὐτῶν ἐξουσίαν, ὅπως οἰκοδομήσειεν ναὸν ἐν Αἰγύπτῳ παραπλήσιον τῷ ἐν Ἱεροσολύμοις καὶ Λευίτας καὶ ἱερεῖς ἐκ τοῦ ἰδίου γένους καταστήσῃ.
 
-Latin start: `uolensque memoriam` in `latin-book13-num62`; Unicode book offset 13251, node offset 198, raw byte 19259.
+Latin start: `uolensque memoriam` in `latin-book13-num62`; Unicode book offset 13242, node offset 198, raw byte 19259.
 
 Onias seeks lasting fame by founding temple and priestly service.
 
@@ -762,7 +762,7 @@ Print: Niese III p.162, PDF234. [left line11 preceding kings, βουλόμενο
 
 Greek: τοῦτο δ᾽ ἐβούλετο θαρρῶν μάλιστα τῷ προφήτῃ Ἡσαΐᾳ, ὃς ἔμπροσθεν ἔτεσιν ἑξακοσίοις πλέον γεγονὼς προεῖπεν, ὡς δεῖ πάντως ἐν Αἰγύπτῳ οἰκοδομηθῆναι ναὸν τῷ μεγίστῳ θεῷ ὑπ᾽ ἀνδρὸς Ἰουδαίου. διὰ ταῦτα οὖν ἐπηρμένος Ὀνίας γράφει Πτολεμαίῳ καὶ Κλεοπάτρᾳ τοιαύτην ἐπιστολήν:
 
-Latin start: `quod desiderabat confidens` in `latin-book13-num62`; Unicode book offset 13493, node offset 440, raw byte 19501.
+Latin start: `quod desiderabat confidens` in `latin-book13-num62`; Unicode book offset 13484, node offset 440, raw byte 19501.
 
 Prophecy cited to support temple project and introduce letter.
 
@@ -774,7 +774,7 @@ Print: Niese III p.162, PDF234. [left line15 preceding καταστήσῃ, το
 
 Greek: ‘πολλὰς καὶ μεγάλας ὑμῖν χρείας τετελεκὼς ἐν τοῖς κατὰ πόλεμον ἔργοις μετὰ τῆς τοῦ θεοῦ βοηθείας, καὶ γενόμενος ἔν τε τῇ κοίλῃ Συρίᾳ καὶ Φοινίκῃ, καὶ εἰς Λεόντων δὲ πόλιν τοῦ Ἡλιοπολίτου σὺν τοῖς Ἰουδαίοις καὶ εἰς ἄλλους τόπους ἀφικόμενος τοῦ ἔθνους,
 
-Latin start: `Multa uel maxima` in `latin-book13-num62`; Unicode book offset 13726, node offset 673, raw byte 19735.
+Latin start: `Multa uel maxima` in `latin-book13-num62`; Unicode book offset 13717, node offset 673, raw byte 19735.
 
 Letter invokes prior services and Jewish communities visited.
 
@@ -786,7 +786,7 @@ Print: Niese III p.162, PDF234. [left line20 preceding introduction, πολλὰ
 
 Greek: καὶ πλείστους εὑρὼν παρὰ τὸ καθῆκον ἔχοντας ἱερὰ καὶ διὰ τοῦτο δύσνους ἀλλήλοις, ὃ καὶ Αἰγυπτίοις συμβέβηκεν διὰ τὸ πλῆθος τῶν ἱερῶν καὶ τὸ περὶ τὰς θρησκείας οὐχ ὁμόδοξον, ἐπιτηδειότατον εὑρὼν τόπον ἐν τῷ προσαγορευομένῳ τῆς ἀγρίας Βουβάστεως ὀχυρώματι βρύοντα ποικίλης ὕλης καὶ τῶν ἱερῶν ζῴων μεστόν,
 
-Latin start: `preter constitutiones templa` in `latin-book13-num62`; Unicode book offset 13906, node offset 853, raw byte 19915.
+Latin start: `preter constitutiones templa` in `latin-book13-num62`; Unicode book offset 13897, node offset 853, raw byte 19915.
 
 Irregular temples, discord and suitable site for a common sanctuary.
 
@@ -798,7 +798,7 @@ Print: Niese III p.162, PDF234. [left line24 preceding τοῦ ἔθνους, κ
 
 Greek: δέομαι συγχωρῆσαί μοι τὸ ἀδέσποτον ἀνακαθάραντι ἱερὸν καὶ συμπεπτωκὸς οἰκοδομῆσαι ναὸν τῷ μεγίστῳ θεῷ καθ᾽ ὁμοίωσιν τοῦ ἐν Ἱεροσολύμοις αὐτοῖς μέτροις ὑπὲρ σοῦ καὶ τῆς σῆς γυναικὸς καὶ τῶν τέκνων, ἵν᾽ ἔχωσιν οἱ τὴν Αἴγυπτον κατοικοῦντες Ἰουδαῖοι εἰς αὐτὸ συνιόντες κατὰ τὴν πρὸς ἀλλήλους ὁμόνοιαν ταῖς σαῖς ἐξυπηρετεῖν χρείαις:
 
-Latin start: `et peto concedendum` in `latin-book13-num62`; Unicode book offset 14193, node offset 135, raw byte 20215.
+Latin start: `et peto concedendum` in `latin-book13-num62`; Unicode book offset 14184, node offset 135, raw byte 20215.
 
 Request to purify and build a temple for royal family and Jewish concord.
 
@@ -810,7 +810,7 @@ Print: Niese III p.163, PDF235. [right line2 preceding animals, δέομαι](ev
 
 Greek: καὶ γὰρ Ἡσαΐας ὁ προφήτης τοῦτο προεῖπεν: ἔσται θυσιαστήριον ἐν Αἰγύπτῳ κυρίῳ τῷ θεῷ: καὶ πολλὰ δὲ προεφήτευσεν ἄλλα τοιαῦτα διὰ τὸν τόπον.’
 
-Latin start: `Nam et hesdras propheta` in `latin-book13-num62`; Unicode book offset 14531, node offset 473, raw byte 20553.
+Latin start: `Nam et hesdras propheta` in `latin-book13-num62`; Unicode book offset 14522, node offset 473, raw byte 20553.
 
 Prophetic Egyptian altar proof.
 
@@ -822,7 +822,7 @@ Print: Niese III p.163, PDF235. [right line7 preceding needs, καὶ γὰρ](e
 
 Greek: Καὶ ταῦτα μὲν ὁ Ὀνίας τῷ βασιλεῖ Πτολεμαίῳ γράφει. κατανοήσειε δ᾽ ἄν τις αὐτοῦ τὴν εὐσέβειαν καὶ Κλεοπάτρας τῆς ἀδελφῆς αὐτοῦ καὶ γυναικὸς ἐξ ἧς ἀντέγραψαν ἐπιστολῆς: τὴν γὰρ ἁμαρτίαν καὶ τὴν τοῦ νόμου παράβασιν εἰς τὴν Ὀνίου κεφαλὴν ἀνέθεσαν:
 
-Latin start: `Haec quidem onias` in `latin-book13-num69`; Unicode book offset 14643, node offset 1, raw byte 20728.
+Latin start: `Haec quidem onias` in `latin-book13-num69`; Unicode book offset 14634, node offset 1, raw byte 20728.
 
 Author introduces royal response and allocates responsibility.
 
@@ -834,7 +834,7 @@ Print: Niese III p.163, PDF235. [right line10 lower2 Καὶ ταῦτα](eviden
 
 Greek: ἀντέγραψαν γὰρ οὕτως: ‘βασιλεὺς Πτολεμαῖος καὶ βασίλισσα Κλεοπάτρα Ὀνίᾳ χαίρειν. ἀνέγνωμέν σου τὴν ἐπιστολὴν ἀξιοῦντος ἐπιτραπῆναί σοι τὸ ἐν Λεόντων πόλει τοῦ Ἡλιοπολίτου ἱερὸν συμπεπτωκὸς ἀνακαθᾶραι, προσαγορευόμενον δὲ τῆς ἀγρίας Βουβάστεως. διὸ καὶ θαυμάζομεν, εἰ ἔσται τῷ θεῷ κεχαρισμένον τὸ καθιδρυσόμενον ἱερὸν ἐν ἀσελγεῖ τόπῳ καὶ πλήρει ζῴων ἱερῶν.
 
-Latin start: `scribentes haec` in `latin-book13-num69`; Unicode book offset 14868, node offset 226, raw byte 20953.
+Latin start: `scribentes haec` in `latin-book13-num69`; Unicode book offset 14859, node offset 226, raw byte 20953.
 
 Royal letter introduction and opening response on the unsuitable sacred site.
 
