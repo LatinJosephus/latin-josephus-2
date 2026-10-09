@@ -71,6 +71,6 @@ No canonical merge, branch push, preview update or deployment has occurred. Rema
  print(roman,status['Latin_individually_reviewed'],len(adopted),status['added_Latin_milestones'],'pending',pending,'remaining',len(status['remaining_Latin_reviews']))
 canonical=Path(r'C:\Users\Pollard_R\Git\LatinJosephus-v2-development')
 save(BATCH/'CANONICAL_HEAD_OBSERVATIONS.json',dict(initial=PIN,current=git('rev-parse','HEAD',cwd=canonical),frozen_assignment_inputs_changed=False))
-names=git('diff','--name-only',PIN,'--').splitlines();allowed=['assets/js/renderTei.js','assets/xml/antiquities/niese/book-15.json',*[f'assets/xml/antiquities/{language}/book-{b:02}.xml' for b in [14,15] for language in ['Greek','Latin']]]
+names=git('diff','--name-only',PIN,'--').splitlines();allowed=['assets/js/renderTei.js','assets/xml/antiquities/niese/book-14.json','assets/xml/antiquities/niese/book-15.json',*[f'assets/xml/antiquities/{language}/book-{b:02}.xml' for b in [14,15] for language in ['Greek','Latin']]]
 assert all(n in allowed or n.startswith(('review/Antiquities_Niese_BookXIV_2026-10-09/','review/Antiquities_Niese_BookXV_2026-10-09/','review/Antiquities_Niese_Batch_14_15_2026-10-09/')) for n in names),names
 save(BATCH/'CHANGED_FILE_SCOPE.json',dict(pinned_commit=PIN,tracked_changed_files=names,allowed_production_files=allowed,scope='PASS',other_books_changed=False,canonical_changed=False,preview_changed=False))
