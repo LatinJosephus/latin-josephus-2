@@ -1,0 +1,107 @@
+{
+  "checks": [
+    {
+      "work": "deh",
+      "source": "default",
+      "URL_reload": "PASS",
+      "back_forward": "PASS",
+      "keyboard": "PASS",
+      "pane_switch": "PASS",
+      "light_dark_controls": "PASS",
+      "differential_DOM": "PASS",
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "source": "whiston",
+      "URL_reload": "PASS",
+      "back_forward": "PASS",
+      "keyboard": "PASS",
+      "pane_switch": "PASS",
+      "light_dark_controls": "PASS",
+      "differential_DOM": "PASS",
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "source": "lodge1602",
+      "URL_reload": "PASS",
+      "back_forward": "PASS",
+      "keyboard": "PASS",
+      "pane_switch": "PASS",
+      "light_dark_controls": "PASS",
+      "differential_DOM": "PASS",
+      "result": "PASS"
+    },
+    {
+      "work": "contra-apionem",
+      "source": "default",
+      "URL_reload": "PASS",
+      "back_forward": "PASS",
+      "keyboard": "PASS",
+      "pane_switch": "PASS",
+      "light_dark_controls": "PASS",
+      "differential_DOM": "PASS",
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "source": "lodge1602",
+      "notes_toggle_and_contents_preference": "PASS",
+      "source_switch": "PASS",
+      "result": "PASS"
+    }
+  ],
+  "themes": [
+    {
+      "theme": "light",
+      "styles": {
+        "bamberg-selector": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "visible": true,
+          "contrast": 21
+        },
+        "bamberg-previous": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(240, 240, 240)",
+          "visible": true,
+          "contrast": 18.43
+        },
+        "bamberg-next": {
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(240, 240, 240)",
+          "visible": true,
+          "contrast": 18.43
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "theme": "dark",
+      "styles": {
+        "bamberg-selector": {
+          "color": "rgb(242, 237, 228)",
+          "background": "rgb(37, 34, 31)",
+          "visible": true,
+          "contrast": 13.57
+        },
+        "bamberg-previous": {
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(107, 107, 107)",
+          "visible": true,
+          "contrast": 5.33
+        },
+        "bamberg-next": {
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(107, 107, 107)",
+          "visible": true,
+          "contrast": 5.33
+        }
+      },
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS",
+  "test_environment": "Actual fresh combined Jekyll site, renderer, CETEI, source XML and selectors; no historical build reuse"
+}
