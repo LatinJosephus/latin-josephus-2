@@ -1,0 +1,985 @@
+{
+  "book": 10,
+  "cases": [
+    {
+      "reason": "Niese pp.334–335 confirms Greek 18 and editorial lacuna signals. Latin pnum15 has an extended ritual procession before Turbatur ergo rex which is not in the corresponding Greek; the existing “chapter 2 starts here” note is markup, not narrative. Greek verification does not settle how that additional Latin material belongs to the citation extents.",
+      "recommendation": "Preserve the procession and note in their present order; retain Turbatur ergo rex as the first corresponding candidate for 18 and document the broader preceding Latin extent.",
+      "alternatives": "An explicitly contextual locator may include the procession; do not manufacture Greek counterparts or relocate the chapter.",
+      "decision": "Approve the contextual extent policy around 17–18 and the cut at Turbatur ergo rex.",
+      "book": 10,
+      "niese": 18,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 18,
+        "pdf_page": 342,
+        "printed_page": 334,
+        "image": "evidence/print-collation/niese-II-pdf-342.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "ταραχθεὶς οὖν ὑπὸ τούτων ὁ βασιλεὺς Σεναχείριμος * ἐπὶ τὸν ἱερέα τὸν Ἡφαίστου στρατεῦσαι ἔλεγεν * ὡς οὗτος ὁ βασιλεὺς ἐπὶ τὸν τῶν Αἰγυπτίων ἔλθοι βασιλέα ἱερέα ὄντα τοῦ Ἡφαίστου, πολιορκῶν δὲ τὸ Πηλούσιον ἔλυσε τὴν πολιορκίαν ἐξ αἰτίας τοια",
+        "ocr_assistance_only": {
+          "score": 0.9538,
+          "ocr_word": "ταραχθείς",
+          "ocr_bbox": [
+            417.13,
+            254.02499999999998,
+            463.984,
+            263.025
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "Αιγυπτίους ήκειν διεγνωκότα ποιήσασθαι την πορείαν διά τής ερή 10",
+          "18 μου και έξαίφνης εις τήν τών Ασσυρίων εμβαλείν ταραχθείς ούν",
+          "υπό τούτων ο βασιλεύς Σεναχείριμος ιακ έπι τον ιερέα τον Ηφαίστου",
+          "στρατεύσαι έλεγεν ιακ ώς ούτος ο βασιλεύς έπι τόν των Αιγυπτίων"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": "ταραχθεὶς οὖν ὑπὸ τούτων ὁ βασιλεὺς Σεναχείριμος * ἐπὶ τὸν ἱερέα τὸν Ἡφαίστου στρατεῦσαι ἔλεγεν * ὡς οὗτος ὁ βασιλεὺς ἐπὶ τὸν τῶν Αἰγυπτίων ἔλθοι βασιλέα ἱερέα ὄντα τοῦ Ἡφαίστου, πολιορκῶν δὲ τὸ Πηλούσιον ἔλυσε τὴν πολιορκίαν ἐξ αἰτίας τοια",
+        "greek_locator": {
+          "stable_id": "greek-book10-num15",
+          "paragraph": 5,
+          "xpath": "/*/*/*/*[2]/*[2]/*[4]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[4]/num[4]/tail()",
+          "node_offset": 1,
+          "unit_offset": 1261,
+          "book_offset": 5304,
+          "raw_byte": 11556,
+          "left": " ἐπὶ συμμαχίᾳ τοῖς Αἰγυπτίοις ἥκειν διεγνωκότα ποιήσασθαι τὴν πορείαν διὰ τῆς ἐρήμου καὶ ἐξαίφνης εἰς τὴν τῶν Ἀσσυρίων ἐμβαλεῖν.  ",
+          "right": "ταραχθεὶς οὖν ὑπὸ τούτων ὁ βασιλεὺς Σεναχείριμος * ἐπὶ τὸν ἱερέα τὸν Ἡφαίστου στρατεῦσαι ἔλεγεν * ὡς οὗτος ὁ βασιλεὺς ἐπὶ τὸν τῶν Αἰγυπτίων ἔλθοι βασιλέα ἱερέα ὄντα τοῦ Ἡφαίστου, πολιορκῶν δὲ τὸ Πηλούσιον ἔλυσε τὴν πολιορκίαν ἐξ αἰτίας τοια",
+          "parsed_unit_sha256": "a63dafc51f8c2f2c9402ee768b50448c6ece75a98fbc9d6cb29aa41df6316782",
+          "raw_unit_sha256": "a32008befd9a38d0b875afdc76c1b2d53e5c2420b30914c844626fbbcb67a798"
+        },
+        "latin_anchor_phrase": "Turbatur ergo rex",
+        "latin_locator": {
+          "stable_id": "latin-book10-num15",
+          "paragraph": 4,
+          "xpath": "/*/*[2]/*/*[2]/*[2]/*[4]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[4]/unclear[2]/tail()",
+          "node_offset": 18,
+          "unit_offset": 1263,
+          "book_offset": 4847,
+          "raw_byte": 7415,
+          "left": "m tharachem cum multo exercitu ad aegyptiorum uenire solacium et per desertum iter facerent ut subito assyriorum castra inrueret. ",
+          "right": "Turbatur ergo rex sennacherim ad sacerdotem,  suae restituebat, et potum conuiuia conuersi per septem dies summa laetitia fruebantur, ad restaurationem regenerationemque patriae festiua gratulatione celebrent postea omnis principes tribuum ",
+          "parsed_unit_sha256": "91ef762f1215be716c762497423d8b5c545cfa7a1d01ca5b55c541c4389e8af8",
+          "raw_unit_sha256": "bf6577ee6165ffd7136f6747e6abb993dc8d252d63fe04717f81cf41e66e1fe7"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Canonical Greek 33 follows ἴσθι and precedes φησίν, splitting the speech opening. Niese p.338 prints 33 at the line beginning ὁ δὲ προφήτης ὑποτυχών; Loeb p.174 supports the response clause as the section transition.",
+      "recommendation": "Propose moving the Greek start to ὁ δὲ προφήτης ὑποτυχών and Latin to Cui propheta respondens. Keep Scito in quid and the following speech together in 33; adjust proposed 32 extent accordingly.",
+      "alternatives": "Retain the old cut at φησίν / in quid non post multum, or at Scito with an explicit speech-order approximation.",
+      "decision": "Accept or reject the proposed paired relocation of 33.",
+      "greek_proposal": "ὁ δὲ προφήτης ὑποτυχὼν",
+      "latin_proposal": "Cui propheta respondens",
+      "loeb": [
+        190
+      ],
+      "book": 10,
+      "niese": 33,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 33,
+        "pdf_page": 346,
+        "printed_page": 338,
+        "image": "evidence/print-collation/niese-II-pdf-346.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": ", φησίν, ‘οὐ μετ᾽ ὀλίγον χρόνον εἰς Βαβυλῶνά σου τοῦτον μετατεθησόμενον τὸν πλοῦτον καὶ τοὺς ἐκγόνους εὐνουχισθησομένους καὶ ἀπολέσαντας τὸ ἄνδρας εἶναι τῷ Βαβυλωνίῳ δουλεύσοντας βασιλεῖ: ταῦτα γὰρ προλέγειν τὸν θεόν.’",
+        "ocr_assistance_only": {
+          "score": 0.9846,
+          "ocr_word": "φησίν,",
+          "ocr_bbox": [
+            320.55,
+            169.23000000000002,
+            351.93,
+            179.23000000000002
+          ],
+          "margin_delta_lines": null
+        },
+        "ocr_neighbouring_lines": [
+          "τήν δύναμιν κέ τούτου στοχαζόμενοι σημαίνειν έχωσι τώ βασιλεί.",
+          "33δ εδ προφήτης υποτυχών , ίσθι, φησίν, ύο μετ’ ολίγον χρόνον εις 5",
+          "Βαβυλώνά σου τούτον μετατεθησόμενον τον πλούτον και τούς έκ",
+          "γόνους ευνουχισθησομένους και άπολέσαντας ότ άνδρας είναι τώ"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "DISAGREES_WITH_FROZEN_PROPOSED_RELOCATION",
+        "canonical_word_cut_verified": false,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": ", φησίν, ‘οὐ μετ᾽ ὀλίγον χρόνον εἰς Βαβυλῶνά σου τοῦτον μετατεθησόμενον τὸν πλοῦτον καὶ τοὺς ἐκγόνους εὐνουχισθησομένους καὶ ἀπολέσαντας τὸ ἄνδρας εἶναι τῷ Βαβυλωνίῳ δουλεύσοντας βασιλεῖ: ταῦτα γὰρ προλέγειν τὸν θεόν.’",
+        "greek_locator": {
+          "stable_id": "greek-book10-num30",
+          "paragraph": 8,
+          "xpath": "/*/*/*/*[2]/*[2]/*[7]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[7]/num[4]/tail()",
+          "node_offset": 1,
+          "unit_offset": 764,
+          "book_offset": 9678,
+          "raw_byte": 20612,
+          "left": "ὐτοῖς, ὅπως ἰδόντες τὸν πλοῦτον καὶ τὴν δύναμιν ἐκ τούτου στοχαζόμενοι σημαίνειν ἔχωσι τῷ βασιλεῖ. ὁ δὲ προφήτης ὑποτυχών ‘ἴσθι’  ",
+          "right": ", φησίν, ‘οὐ μετ᾽ ὀλίγον χρόνον εἰς Βαβυλῶνά σου τοῦτον μετατεθησόμενον τὸν πλοῦτον καὶ τοὺς ἐκγόνους εὐνουχισθησομένους καὶ ἀπολέσαντας τὸ ἄνδρας εἶναι τῷ Βαβυλωνίῳ δουλεύσοντας βασιλεῖ: ταῦτα γὰρ προλέγειν τὸν θεόν.’  ὁ δ᾽ Ἐζεκίας λυπηθεὶ",
+          "parsed_unit_sha256": "9fd60b4f5bf81c5f75a7e1e3beca59dfd113e9f9a445d86324326e7fbf15b837",
+          "raw_unit_sha256": "4e2290b4a73f929e112a07c031d3a4696f623fda0acf80e32f80fa9765385fad"
+        },
+        "latin_anchor_phrase": "in quid non post multum",
+        "latin_locator": {
+          "stable_id": "latin-book10-num30",
+          "paragraph": 7,
+          "xpath": "/*/*[2]/*/*[2]/*[3]/*[2]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[2]/expan[1]/tail()",
+          "node_offset": 175,
+          "unit_offset": 664,
+          "book_offset": 9392,
+          "raw_byte": 12693,
+          "left": "ndisse ei uniuersa ut uidentes diuitias et uirtutem regni cognoscetrent et regi suo renum tiarent. Cui propheta respondens. Scito ",
+          "right": "in quid non post multum tempus ad babyloniam filios tuos et diuitias transmigran das, insuper et nepotes tuos eunuchos esse fa sciendos, et ammissuros uirile nomen et regi babyloniae seruituros. Haec enim praedixit deus. Ezechias autem cont",
+          "parsed_unit_sha256": "54267b398a458b7eb8608f08d4d351025dcf7d7d35427c25ac1af72b1c892705",
+          "raw_unit_sha256": "b79b0f06358e7ea183a88d5c09ad80ee4ab1ae45f03f1e20849d2d4bb76e90a2"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": {
+        "approved": false,
+        "apply": false,
+        "kind": "RELOCATION_RECOMMENDED",
+        "greek_phrase_as_canonical": "ὁ δὲ προφήτης ὑποτυχών ‘ἴσθι’  , φησίν, ‘οὐ μετ᾽ ὀλίγον χρόνον εἰς Βαβυλῶνά σου το",
+        "greek_locator": {
+          "stable_id": "greek-book10-num30",
+          "paragraph": 8,
+          "xpath": "/*/*/*/*[2]/*[2]/*[7]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[7]/num[3]/tail()",
+          "node_offset": 254,
+          "unit_offset": 733,
+          "book_offset": 9647,
+          "raw_byte": 20535,
+          "left": "ῖν αὐτούς: ἐπιδεῖξαι δὲ πάντ᾽ αὐτοῖς, ὅπως ἰδόντες τὸν πλοῦτον καὶ τὴν δύναμιν ἐκ τούτου στοχαζόμενοι σημαίνειν ἔχωσι τῷ βασιλεῖ. ",
+          "right": "ὁ δὲ προφήτης ὑποτυχών ‘ἴσθι’  , φησίν, ‘οὐ μετ᾽ ὀλίγον χρόνον εἰς Βαβυλῶνά σου τοῦτον μετατεθησόμενον τὸν πλοῦτον καὶ τοὺς ἐκγόνους εὐνουχισθησομένους καὶ ἀπολέσαντας τὸ ἄνδρας εἶναι τῷ Βαβυλωνίῳ δουλεύσοντας βασιλεῖ: ταῦτα γὰρ προλέγειν τ",
+          "parsed_unit_sha256": "9fd60b4f5bf81c5f75a7e1e3beca59dfd113e9f9a445d86324326e7fbf15b837",
+          "raw_unit_sha256": "4e2290b4a73f929e112a07c031d3a4696f623fda0acf80e32f80fa9765385fad"
+        },
+        "latin_phrase_as_canonical": "Cui propheta respondens. Scito in quid non post multum tempus ad babyloniam filios ",
+        "latin_locator": {
+          "stable_id": "latin-book10-num30",
+          "paragraph": 7,
+          "xpath": "/*/*[2]/*/*[2]/*[3]/*[2]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[2]/expan[1]/tail()",
+          "node_offset": 144,
+          "unit_offset": 633,
+          "book_offset": 9361,
+          "raw_byte": 12662,
+          "left": " eos a suo rege uenisse et ostendisse ei uniuersa ut uidentes diuitias et uirtutem regni cognoscetrent et regi suo renum tiarent. ",
+          "right": "Cui propheta respondens. Scito in quid non post multum tempus ad babyloniam filios tuos et diuitias transmigran das, insuper et nepotes tuos eunuchos esse fa sciendos, et ammissuros uirile nomen et regi babyloniae seruituros. Haec enim prae",
+          "parsed_unit_sha256": "54267b398a458b7eb8608f08d4d351025dcf7d7d35427c25ac1af72b1c892705",
+          "raw_unit_sha256": "b79b0f06358e7ea183a88d5c09ad80ee4ab1ae45f03f1e20849d2d4bb76e90a2"
+        },
+        "neighbouring_extents": {
+          "previous_niese": 32,
+          "current_niese": 33,
+          "following_niese": 34,
+          "previous_Greek_end_changes_from": 9678,
+          "previous_Greek_end_changes_to": 9647,
+          "previous_Latin_end_changes_from": 9392,
+          "previous_Latin_end_changes_to": 9361,
+          "following_start_unchanged": 9898,
+          "rule": "Only proposed adjacent extents change. No text moves, disappears or overlaps; interval endpoints are half-open book offsets. No actual section or XML is changed."
+        },
+        "existing_Greek_marker_on_pinned_input": {
+          "raw_start": 20596,
+          "raw_end_exclusive": 20611,
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[7]/num[4]",
+          "exact_XML": "<num>[33]</num>",
+          "replacement_location": "greek_locator above, measured against original input before any removal; no executable patch or replacement has been approved."
+        }
+      }
+    },
+    {
+      "reason": "Greek and Latin distribute the search of houses and streets differently; et domos et uicos is embedded before the later summary Perscrutatus est autem ciuitatem.",
+      "recommendation": "Prefer the earliest surviving counterpart et domos et uicos, preserving Latin order and documenting the reordered scope.",
+      "alternatives": "Begin at Perscrutatus est autem ciuitatem as a convenient larger cut but acknowledge the earlier counterpart.",
+      "decision": "Choose the embedded first counterpart or an explicitly approximate later locator.",
+      "book": 10,
+      "niese": 69,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 69,
+        "pdf_page": 353,
+        "printed_page": 345,
+        "image": "evidence/print-collation/niese-II-pdf-353.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "τὰς οἰκίας τε καὶ τὰς κώμας ἠρεύνησε καὶ τὰς πόλεις, μή τις ἔνδον ἔχοι τι τῶν εἰδώλων ὑπονοῶν. οὐ μὴν ἀλλὰ καὶ τὰ τοῖς βασιλευομένοις ἐφεστῶτα ἅρματα, ἃ κατεσκεύασαν οἱ πρόγονοι, καὶ εἴ τι ἄλλο τοιοῦτον ἦν ᾧ προσεκύνουν ὡς θεῷ ἐβάστασε:",
+        "ocr_assistance_only": {
+          "score": 1.0,
+          "ocr_word": "τάς",
+          "ocr_bbox": [
+            220.38,
+            334.91,
+            238.85000000000002,
+            344.91
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "λιπείν έπεισε, τον δε πάτριον και μέγιστον θεόν ευσεβείν και",
+          "τούτω προσανέχειν\" τάς οικίας τε καί τάς κώμας ήρεύνησε και τάς 69",
+          "πόλεις, μή τις ένδον έχοι τι τών ειδώλων υπονοών, ού μήν άλλά",
+          "και τά τους βασιλευομένους έφεστώτα άρματα, ά κατεσκεύασαν οι"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": "τὰς οἰκίας τε καὶ τὰς κώμας ἠρεύνησε καὶ τὰς πόλεις, μή τις ἔνδον ἔχοι τι τῶν εἰδώλων ὑπονοῶν. οὐ μὴν ἀλλὰ καὶ τὰ τοῖς βασιλευομένοις ἐφεστῶτα ἅρματα, ἃ κατεσκεύασαν οἱ πρόγονοι, καὶ εἴ τι ἄλλο τοιοῦτον ἦν ᾧ προσεκύνουν ὡς θεῷ ἐβάστασε:",
+        "greek_locator": {
+          "stable_id": "greek-book10-num68",
+          "paragraph": 15,
+          "xpath": "/*/*/*/*[2]/*[2]/*[14]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[14]/num[2]/tail()",
+          "node_offset": 1,
+          "unit_offset": 313,
+          "book_offset": 19508,
+          "raw_byte": 40969,
+          "left": "ὶ τὰς τιμὰς τὰς πρὸς τοὺς ἀλλοτρίους θεοὺς ἐγκαταλιπεῖν ἔπεισε, τὸν δὲ πάτριον καὶ μέγιστον θεὸν εὐσεβεῖν καὶ τούτῳ προσανέχειν:  ",
+          "right": "τὰς οἰκίας τε καὶ τὰς κώμας ἠρεύνησε καὶ τὰς πόλεις, μή τις ἔνδον ἔχοι τι τῶν εἰδώλων ὑπονοῶν. οὐ μὴν ἀλλὰ καὶ τὰ τοῖς βασιλευομένοις ἐφεστῶτα ἅρματα, ἃ κατεσκεύασαν οἱ πρόγονοι, καὶ εἴ τι ἄλλο τοιοῦτον ἦν ᾧ προσεκύνουν ὡς θεῷ ἐβάστασε:  κα",
+          "parsed_unit_sha256": "d0e9f3f0869dbb4c5903fbbbe8fc95e297dbb191632ebd901bbd47e57a83a289",
+          "raw_unit_sha256": "aa11ce189c5fa32f018b371402e9c568f775c8d3cc12118a9ed0f64967b15971"
+        },
+        "latin_anchor_phrase": "et domos et uicos",
+        "latin_locator": {
+          "stable_id": "latin-book10-num68",
+          "paragraph": 14,
+          "xpath": "/*/*[2]/*/*[2]/*[5]/*[6]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[5]/p[6]/num[1]/tail()",
+          "node_offset": 242,
+          "unit_offset": 242,
+          "book_offset": 18565,
+          "raw_byte": 23088,
+          "left": "nt, eis que suasit et impios actos et honores deorum extraneorum relinquerent, et patrium maximumque colerent deum eique dicarent ",
+          "right": "et domos et uicos. Perscrutatus est autem ciuitatem nequod forte idolum habentes intra sua tecta celarent, nec nos et curros qui aedificati fuerant apri oribus regibus et quae que alia huius modi erant quae uelut deos adorabant cuncta parit",
+          "parsed_unit_sha256": "6eb8b810d02cfb9840fadd5e4611c9dbd9ecb996be52386d669914b946b2d06a",
+          "raw_unit_sha256": "072d3799f217b8d7f086fc79866ef6c8bfa8329dee6be0a8bfb2e4cdc654439c"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Greek opens with bringing captives to imprisonment. The immediate Latin first securely corresponds at simulet ioachim nomine sedechiam, compressing the appointment of the uncle.",
+      "recommendation": "Retain the surviving appointment counterpart and record a partial-prefix omission; do not mark all of 102 unavailable.",
+      "alternatives": "Display broader context without exact start; no supplied narrative.",
+      "decision": "Approve the partial-survival citation treatment.",
+      "book": 10,
+      "niese": 102,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 102,
+        "pdf_page": 360,
+        "printed_page": 352,
+        "image": "evidence/print-collation/niese-II-pdf-360.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "τούτους δὴ κομισθέντας πρὸς αὑτὸν εἶχεν ἐν φυλακῇ: τὸν δὲ θεῖον τοῦ Ἰωακείμου Σαχχίαν ἀπέδειξε βασιλέα ὅρκους παρ᾽ αὐτοῦ λαβών, ἦ μὴν φυλάξειν αὐτῷ τὴν χώραν καὶ μηδὲν νεωτερίσειν μηδὲ τοῖς Αἰγυπτίοις εὐνοήσειν.",
+        "ocr_assistance_only": {
+          "score": 1.0,
+          "ocr_word": "τούτους",
+          "ocr_bbox": [
+            385.07,
+            188.235,
+            422.582,
+            197.235
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "δε ούτοι πάντες εις μυρίους όκτακοσίους τριακονταδύο, και τον",
+          "102 Ιωάκεμον μετά τής μητρός και των φίλων τούτους δή κομισθέν",
+          "τας προς αυτόν είχεν εν φυλακή, τον δε θείον του Ιωακείμου Σαχ",
+          "χίαν απέδειξε βασιλέα όρκους παρ’ αυτού λαβών, ή μήν φυλάξει"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": "τούτους δὴ κομισθέντας πρὸς αὑτὸν εἶχεν ἐν φυλακῇ: τὸν δὲ θεῖον τοῦ Ἰωακείμου Σαχχίαν ἀπέδειξε βασιλέα ὅρκους παρ᾽ αὐτοῦ λαβών, ἦ μὴν φυλάξειν αὐτῷ τὴν χώραν καὶ μηδὲν νεωτερίσειν μηδὲ τοῖς Αἰγυπτίοις εὐνοήσειν.",
+        "greek_locator": {
+          "stable_id": "greek-book10-num99",
+          "paragraph": 21,
+          "xpath": "/*/*/*/*[2]/*[2]/*[20]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[20]/num[4]/tail()",
+          "node_offset": 1,
+          "unit_offset": 834,
+          "book_offset": 28064,
+          "raw_byte": 58676,
+          "left": "υς ἄγειν πρὸς αὑτόν, ἦσαν δὲ οὗτοι πάντες εἰς μυρίους ὀκτακοσίους τριακονταδύο, καὶ τὸν Ἰωάκειμον μετὰ τῆς μητρὸς καὶ τῶν φίλων.  ",
+          "right": "τούτους δὴ κομισθέντας πρὸς αὑτὸν εἶχεν ἐν φυλακῇ: τὸν δὲ θεῖον τοῦ Ἰωακείμου Σαχχίαν ἀπέδειξε βασιλέα ὅρκους παρ᾽ αὐτοῦ λαβών, ἦ μὴν φυλάξειν αὐτῷ τὴν χώραν καὶ μηδὲν νεωτερίσειν μηδὲ τοῖς Αἰγυπτίοις εὐνοήσειν. Σαχχίας δ᾽ ἦν ἐτῶν μὲν εἴκοσ",
+          "parsed_unit_sha256": "b8b4a5be7f85c46438ba02a1be41b474b289c4ba12447e42711b34f3b3a7baeb",
+          "raw_unit_sha256": "d2017d4e740398aa2b3fe6505679993838730df4d820c2fd87354653ceb583db"
+        },
+        "latin_anchor_phrase": "simulet ioachim nomine",
+        "latin_locator": {
+          "stable_id": "latin-book10-num99",
+          "paragraph": 20,
+          "xpath": "/*/*[2]/*/*[2]/*[7]/*[1]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[1]/num[1]/tail()",
+          "node_offset": 788,
+          "unit_offset": 788,
+          "book_offset": 26534,
+          "raw_byte": 31873,
+          "left": "ptiuos sumerent pariter et artifices eosque ad se ligatos adducerent, qui omnis fuerunt decem milia et octingenti triginti et duo ",
+          "right": "simulet ioachim nomine sedechiam constituit regem, accipiens abeo iusiurandum ut ei prouintiam custodiret et nihil ostiliter ageret nec faueret aegyptiis. Sedechias autem quidem annorumviginti et unum quando accepit regnum et nomen matris e",
+          "parsed_unit_sha256": "d1934bba9e5d389f611bf2efed95e1607423ce4a85e2d27b860d23cd304d0c48",
+          "raw_unit_sha256": "1c43a55fa7191d8e71f4f085b9d248660a263db96a02abcb2256df994df49a27"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Greek μὴ ταὐτόν says that the prophets did not agree; canonical Latin eo quod idem uterque lacks the corresponding negation. This is a textual difference, not permission to repair the transcription.",
+      "recommendation": "Retain the physical candidate and record the negation difference; preserve idem verbatim.",
+      "alternatives": "Withhold exact semantic equivalence while still providing a contextual citation locator.",
+      "decision": "Approve citation representation despite the recorded semantic difference.",
+      "loeb": [
+        232
+      ],
+      "book": 10,
+      "niese": 107,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 107,
+        "pdf_page": 361,
+        "printed_page": 353,
+        "image": "evidence/print-collation/niese-II-pdf-361.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "καὶ διὰ τὸ μὴ ταὐτὸν αὐτοὺς ἑκατέρους λέγειν καὶ περὶ ὧν συμφωνεῖν ἐδόκουν ὡς οὐδ᾽ ἐκεῖνα ἀληθῆ λέγουσι καταγνούς: καίτοι πάντ᾽ αὐτῷ κατὰ τὰς προφητείας ἀπήντησεν, ἅπερ εὐκαιρότερον δηλώσομεν.",
+        "ocr_assistance_only": {
+          "score": 1.0,
+          "ocr_word": "και",
+          "ocr_bbox": [
+            307.4,
+            268.13,
+            323.26,
+            278.13
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "D - α ν Ση ν ν ν ν ν Υ - D ν",
+          "αύτόν δ Βαβυλώνιος άξει βασιλεύς. και διά τό μή ταύτόν αύτούς 107",
+          "έκατέρoυς λέγειν και περί ών συμφωνείν έδόκουν ώς ουδ' εκείνα",
+          "άληθή λέγουσι καταγνούς, καίτοι πάντ’ αυτώ κατά τάς προφη"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": "καὶ διὰ τὸ μὴ ταὐτὸν αὐτοὺς ἑκατέρους λέγειν καὶ περὶ ὧν συμφωνεῖν ἐδόκουν ὡς οὐδ᾽ ἐκεῖνα ἀληθῆ λέγουσι καταγνούς: καίτοι πάντ᾽ αὐτῷ κατὰ τὰς προφητείας ἀπήντησεν, ἅπερ εὐκαιρότερον δηλώσομεν.",
+        "greek_locator": {
+          "stable_id": "greek-book10-num103",
+          "paragraph": 22,
+          "xpath": "/*/*/*/*[2]/*[2]/*[21]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[21]/num[5]/tail()",
+          "node_offset": 1,
+          "unit_offset": 1315,
+          "book_offset": 29590,
+          "raw_byte": 61830,
+          "left": "ὲ Ἰεζεκίηλος εἰπὼν οὐκ ὄψεσθαι Βαβυλῶνα τὸν Σαχχίαν τοῦ Ἱερεμίου φάσκοντος αὐτῷ, ὅτι δεδεμένον αὐτὸν ὁ Βαβυλώνιος ἄξει βασιλεύς.  ",
+          "right": "καὶ διὰ τὸ μὴ ταὐτὸν αὐτοὺς ἑκατέρους λέγειν καὶ περὶ ὧν συμφωνεῖν ἐδόκουν ὡς οὐδ᾽ ἐκεῖνα ἀληθῆ λέγουσι καταγνούς: καίτοι πάντ᾽ αὐτῷ κατὰ τὰς προφητείας ἀπήντησεν, ἅπερ εὐκαιρότερον δηλώσομεν. Τὴν συμμαχίαν δὲ τὴν πρὸς τοὺς Βαβυλωνίους ἐπ᾽ ",
+          "parsed_unit_sha256": "b43f8e19eb1eb002304acdd51f499a14b9c15ff496cbee82a97e675e554236ec",
+          "raw_unit_sha256": "ad65368ee679c14adbb90fd728bd74898b63f5c2b0716b58b327bda9fbf51de9"
+        },
+        "latin_anchor_phrase": "eo quod idem uterque",
+        "latin_locator": {
+          "stable_id": "latin-book10-num103",
+          "paragraph": 21,
+          "xpath": "/*/*[2]/*/*[2]/*[7]/*[2]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[2]/cb[1]/tail()",
+          "node_offset": 1258,
+          "unit_offset": 1289,
+          "book_offset": 27977,
+          "raw_byte": 33394,
+          "left": "dabat autem ezechiel dicens. Quia sedechias babyloniam non uideret cum hieremias dixisset quia uinctum eum rex babyloniae duceret ",
+          "right": "eo quod idem uterque dixissent etiam illi quae non concordabant non esse uera dicebat, licet ei omnia secundum eorum euenirent prophetias quae tamen oportunius declarauimus. Interea dum hoc cognouisset babyloniae rex castra mouit aduersus e",
+          "parsed_unit_sha256": "53a7492f0252d75d83c5e9432828ad8fb9a2482b80d1b7aaf0cafc910b31627c",
+          "raw_unit_sha256": "f59c473fc5646145ebb9bffe62f06dcbcc58a73507f20cf51cadf844a78dfb2b"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Niese pp.353–354 and Loeb p.216 attest the eight-year alliance, breach and transfer to the Egyptians. No counterpart was found in the canonical Latin passage or the whole-book search. The inherited [VII.iii.108] precedes the surviving siege narrative corresponding to 109. The missing counterpart is established for this transcription; its cause is not established by these printed witnesses or by a physical manuscript inspection.",
+      "recommendation": "Keep 108 unavailable with no supplied text or automatic gap. Preserve the later siege narrative and inherited label; a future data locator must prevent the textual label from creating a false 108 identity.",
+      "alternatives": "Hold the whole citation unavailable until a non-textual absence display is approved; do not label 109 as 108 or infer an omission cause.",
+      "decision": "Approve an unavailable 108 state and an independent 109 locator while retaining the inherited label.",
+      "loeb": [
+        232
+      ],
+      "book": 10,
+      "niese": 108,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 108,
+        "pdf_page": 361,
+        "printed_page": 353,
+        "image": "evidence/print-collation/niese-II-pdf-361.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "Τὴν συμμαχίαν δὲ τὴν πρὸς τοὺς Βαβυλωνίους ἐπ᾽ ἔτη ὀκτὼ κατασχὼν διέλυσε τὰς πρὸς αὐτοὺς πίστεις καὶ τοῖς Αἰγυπτίοις προστίθεται καταλύσειν τοὺς Βαβυλωνίους ἐλπίσας, αἳ μετ᾽ ἐκείνων ἐγένοντο.",
+        "ocr_assistance_only": {
+          "score": 1.0,
+          "ocr_word": "Την",
+          "ocr_bbox": [
+            156.43,
+            323.36,
+            178.042,
+            335.36
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "ν ν ν ν ν ν Λ 2 2 -1",
+          "3. Την συμμαχίαν δε τήν πρός τούς Βαβυλωνίους έπ' έτη 108",
+          "όκτώ κατασχών διέλυσε τάς προς αυτούς πίστες και τους Αιγυπ"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "UNAVAILABLE",
+      "checkpoint_confidence": "HIGH_ABSENCE_IN_THIS_TRANSCRIPTION",
+      "earlier_candidate": {
+        "classification": "UNAVAILABLE",
+        "confidence": "HIGH_ABSENCE_IN_THIS_TRANSCRIPTION",
+        "print_start_verified": true,
+        "greek_start": "Τὴν συμμαχίαν δὲ τὴν πρὸς τοὺς Βαβυλωνίους ἐπ᾽ ἔτη ὀκτὼ κατασχὼν διέλυσε τὰς πρὸς αὐτοὺς πίστεις καὶ τοῖς Αἰγυπτίοις προστίθεται καταλύσειν τοὺς Βαβυλωνίους ἐλπίσας, αἳ μετ᾽ ἐκείνων ἐγένοντο.",
+        "greek_locator": {
+          "stable_id": "greek-book10-num108",
+          "paragraph": 23,
+          "xpath": "/*/*/*/*[2]/*[2]/*[22]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[22]/num[1]/tail()",
+          "node_offset": 1,
+          "unit_offset": 1,
+          "book_offset": 29783,
+          "raw_byte": 62301,
+          "left": "εῖν ἐδόκουν ὡς οὐδ᾽ ἐκεῖνα ἀληθῆ λέγουσι καταγνούς: καίτοι πάντ᾽ αὐτῷ κατὰ τὰς προφητείας ἀπήντησεν, ἅπερ εὐκαιρότερον δηλώσομεν. ",
+          "right": "Τὴν συμμαχίαν δὲ τὴν πρὸς τοὺς Βαβυλωνίους ἐπ᾽ ἔτη ὀκτὼ κατασχὼν διέλυσε τὰς πρὸς αὐτοὺς πίστεις καὶ τοῖς Αἰγυπτίοις προστίθεται καταλύσειν τοὺς Βαβυλωνίους ἐλπίσας, αἳ μετ᾽ ἐκείνων ἐγένοντο.  μαθὼν δὲ τοῦτο ὁ τῶν Βαβυλωνίων βασιλεὺς ἐστράτ",
+          "parsed_unit_sha256": "baf27b6383b446c808627578077adec0bfa3de5c2e32130b893d081e9288885e",
+          "raw_unit_sha256": "97039e364089cbe55bfd20fbe03bea6936abbbc3b94d9f370e5fd839b3132da5"
+        },
+        "latin_anchor_phrase": null,
+        "latin_locator": null,
+        "placement": "NO_LATIN_START"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Interea dum hoc cognouisset opens Latin pnum108 and securely corresponds to Greek 109, not 108. The printed 109 line contains the end of the absent alliance paragraph followed by μαθὼν δὲ τοῦτο, the new siege narrative.",
+      "recommendation": "Retain the 109 candidate at the existing narrative start. Preserve [VII.iii.108] and paragraph identity; an eventual citation registry override must replace its executable citation claim without changing its visible text.",
+      "alternatives": "Keep Niese disabled until the reader supports this data distinction.",
+      "decision": "Approve the displaced-label representation jointly with 108.",
+      "loeb": [
+        232
+      ],
+      "book": 10,
+      "niese": 109,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 109,
+        "pdf_page": 362,
+        "printed_page": 354,
+        "image": "evidence/print-collation/niese-II-pdf-362.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "μαθὼν δὲ τοῦτο ὁ τῶν Βαβυλωνίων βασιλεὺς ἐστράτευσεν ἐπ᾽ αὐτὸν καὶ τὴν χώραν κακώσας αὐτοῦ καὶ τὰ φρούρια λαβὼν ἐπ᾽ αὐτὴν ἧκε τὴν τῶν Ἱεροσολυμιτῶν πόλιν πολιορκήσων αὐτήν.",
+        "ocr_assistance_only": {
+          "score": 0.9846,
+          "ocr_word": "μαθών",
+          "ocr_bbox": [
+            246.92,
+            124.38499999999999,
+            283.23099999999994,
+            135.385
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "τίους προστίθεται καταλύσειν τούς Βαβυλωνίους έλπίσας, αι μετ'",
+          "109 έκείνων έγένοντο. μαθών δε τούτο δ τών Βαβυλωνίων βασιλεύς",
+          "έστράτευσεν έπ' αυτόν και την χώραν κακώσας αυτού και τα φρού",
+          "ρια λαβών έπ' αυτήν ήκε τήν τών Ιεροσολυμιτών πόλιν πολιορ"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": "μαθὼν δὲ τοῦτο ὁ τῶν Βαβυλωνίων βασιλεὺς ἐστράτευσεν ἐπ᾽ αὐτὸν καὶ τὴν χώραν κακώσας αὐτοῦ καὶ τὰ φρούρια λαβὼν ἐπ᾽ αὐτὴν ἧκε τὴν τῶν Ἱεροσολυμιτῶν πόλιν πολιορκήσων αὐτήν.",
+        "greek_locator": {
+          "stable_id": "greek-book10-num108",
+          "paragraph": 23,
+          "xpath": "/*/*/*/*[2]/*[2]/*[22]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[22]/num[2]/tail()",
+          "node_offset": 1,
+          "unit_offset": 194,
+          "book_offset": 29976,
+          "raw_byte": 62696,
+          "left": "ν διέλυσε τὰς πρὸς αὐτοὺς πίστεις καὶ τοῖς Αἰγυπτίοις προστίθεται καταλύσειν τοὺς Βαβυλωνίους ἐλπίσας, αἳ μετ᾽ ἐκείνων ἐγένοντο.  ",
+          "right": "μαθὼν δὲ τοῦτο ὁ τῶν Βαβυλωνίων βασιλεὺς ἐστράτευσεν ἐπ᾽ αὐτὸν καὶ τὴν χώραν κακώσας αὐτοῦ καὶ τὰ φρούρια λαβὼν ἐπ᾽ αὐτὴν ἧκε τὴν τῶν Ἱεροσολυμιτῶν πόλιν πολιορκήσων αὐτήν.  ὁ δ᾽ Αἰγύπτιος ἀκούσας ἐν οἷς ἐστιν ὁ σύμμαχος αὐτοῦ Σαχχίας ἀναλα",
+          "parsed_unit_sha256": "baf27b6383b446c808627578077adec0bfa3de5c2e32130b893d081e9288885e",
+          "raw_unit_sha256": "97039e364089cbe55bfd20fbe03bea6936abbbc3b94d9f370e5fd839b3132da5"
+        },
+        "latin_anchor_phrase": "Interea dum hoc cognouisset",
+        "latin_locator": {
+          "stable_id": "latin-book10-num108",
+          "paragraph": 22,
+          "xpath": "/*/*[2]/*/*[2]/*[8]/*[1]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[8]/p[1]/num[1]/tail()",
+          "node_offset": 1,
+          "unit_offset": 1,
+          "book_offset": 28151,
+          "raw_byte": 33679,
+          "left": "ae non concordabant non esse uera dicebat, licet ei omnia secundum eorum euenirent prophetias quae tamen oportunius declarauimus. ",
+          "right": "Interea dum hoc cognouisset babyloniae rex castra mouit aduersus eum et afflicta prouincia et monitiones eius una diripiens ad ipsam hierosolimorum ciuitatem obsedendam cum magno ueniebat exericitu. Rex autem aegyptius audiens quia sedechia",
+          "parsed_unit_sha256": "640d9630aaeb7b44a0760f7840f68c980887acbbbf64934bb55993e1f0111a50",
+          "raw_unit_sha256": "3ab02c90cbdb3e33a7ba5c6acd2bd7d1b015a7277e1281d25e8906efab42a3b0"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Greek 150 starts in the final portion of Greek pnum144, but Rex autem pontifices opens Latin pnum151 under [VIII.vi.151]. A paragraph-number or sameAs-only window would lose the real counterpart.",
+      "recommendation": "Use Rex autem pontifices as the 150 locator across the existing paragraph boundary; preserve all IDs, sameAs and chapter structure.",
+      "alternatives": "Keep Niese unavailable until certified locators handle the displacement.",
+      "decision": "Approve the 150 locator and suppression of the false inherited 151 start jointly with 151.",
+      "loeb": [
+        256
+      ],
+      "book": 10,
+      "niese": 150,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 150,
+        "pdf_page": 370,
+        "printed_page": 362,
+        "image": "evidence/print-collation/niese-II-pdf-370.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "ὁ δὲ βασιλεὺς τοῦ μὲν ἀρχιερέως καὶ τῶν ἡγεμόνων ἐκέλευσεν ἐκεῖ τὰς κεφαλὰς ἀποτεμεῖν, αὐτὸς δὲ πάντας τοὺς αἰχμαλώτους καὶ τὸν Σαχχίαν εἰς Βαβυλῶνα δέσμιον ἐπήγετο καὶ Ἰωσάδακον τὸν ἀρχιερέα ὄντα υἱὸν Σαραία τοῦ ἀρχιερέως, ὃν ἀπέκτεινεν ὁ ",
+        "ocr_assistance_only": {
+          "score": 0.9846,
+          "ocr_word": "δε",
+          "ocr_bbox": [
+            436.43,
+            304.24,
+            447.94,
+            314.24
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "ήγεμόνας εξήκοντα, ούς άπαντας μεθ’ ών εσύλησε σκευών έκόμισε",
+          "150 πρός τόν βασιλέα εις Σαλάβαθα πόλιν τής Συρίας. δ δε βασιλεύς",
+          "τού μεν άρχιερέως και των ηγεμόνων έκέλευσεν εκεί τάς κεφαλάς",
+          "άποτεμεϊν, αυτός δε πάντας τους αιχμαλώτους και τόν Σαχχίαν"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": "ὁ δὲ βασιλεὺς τοῦ μὲν ἀρχιερέως καὶ τῶν ἡγεμόνων ἐκέλευσεν ἐκεῖ τὰς κεφαλὰς ἀποτεμεῖν, αὐτὸς δὲ πάντας τοὺς αἰχμαλώτους καὶ τὸν Σαχχίαν εἰς Βαβυλῶνα δέσμιον ἐπήγετο καὶ Ἰωσάδακον τὸν ἀρχιερέα ὄντα υἱὸν Σαραία τοῦ ἀρχιερέως, ὃν ἀπέκτεινεν ὁ ",
+        "greek_locator": {
+          "stable_id": "greek-book10-num144",
+          "paragraph": 31,
+          "xpath": "/*/*/*/*[2]/*[2]/*[30]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[30]/num[7]/tail()",
+          "node_offset": 1,
+          "unit_offset": 1694,
+          "book_offset": 41632,
+          "raw_byte": 86833,
+          "left": "α αὐτοῦ καὶ ἄλλους ἡγεμόνας ἑξήκοντα, οὓς ἅπαντας μεθ᾽ ὧν ἐσύλησε σκευῶν ἐκόμισε πρὸς τὸν βασιλέα εἰς Σαλάβαθα πόλιν τῆς Συρίας.  ",
+          "right": "ὁ δὲ βασιλεὺς τοῦ μὲν ἀρχιερέως καὶ τῶν ἡγεμόνων ἐκέλευσεν ἐκεῖ τὰς κεφαλὰς ἀποτεμεῖν, αὐτὸς δὲ πάντας τοὺς αἰχμαλώτους καὶ τὸν Σαχχίαν εἰς Βαβυλῶνα δέσμιον ἐπήγετο καὶ Ἰωσάδακον τὸν ἀρχιερέα ὄντα υἱὸν Σαραία τοῦ ἀρχιερέως, ὃν ἀπέκτεινεν ὁ ",
+          "parsed_unit_sha256": "9ec395a17dfa428308f52e2eb164fc138e0d6aa37f079a6dfaf2ba537866100b",
+          "raw_unit_sha256": "ca2a4c3e5579abc635ce98e3f3fce9d96607623fd53463a43371b46a70805402"
+        },
+        "latin_anchor_phrase": "Rex autem pontifices",
+        "latin_locator": {
+          "stable_id": "latin-book10-num151",
+          "paragraph": 31,
+          "xpath": "/*/*[2]/*/*[2]/*[8]/*[10]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[8]/p[10]/num[1]/tail()",
+          "node_offset": 1,
+          "unit_offset": 1,
+          "book_offset": 39385,
+          "raw_byte": 46130,
+          "left": " principes saxaginta sexaginta quos omnes cum uasis quae depredatus est deduxit ad regem in arabatha prouintiae syriae ciuitatem. ",
+          "right": "Rex autem pontifices quidem et principum ubi capita iussit abscidi. Ipse uero omnes captiuos et sedechiam deduxit in babyloniam. Uinctum uero circum egit et iosadach pontifices filium sareae pontificis quaem occidit babylonius in arabatha s",
+          "parsed_unit_sha256": "d364758353011bf89e119f0b1c85c65218b4f20556559fac3fa1c12efb449ad0",
+          "raw_unit_sha256": "8bd496a0290a0c4d430771c445a0faef0b6d7c063fc7a79f654ec9dacb5a07a4"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Niese p.362 and Loeb p.240 start 151 at Ἐπεὶ δὲ τὸ γένος, securely corresponding to Igitur quia genus explanauimus inside Latin pnum151. The inherited label at the beginning of that paragraph belongs physically to 150.",
+      "recommendation": "Retain the secure internal 151 candidate and the literal inherited label. A data-level override must keep the label from creating an earlier false 151 identity.",
+      "alternatives": "Keep Niese disabled until independently certified locators are supported.",
+      "decision": "Approve the non-textual override and internal locator jointly with 150.",
+      "loeb": [
+        256
+      ],
+      "book": 10,
+      "niese": 151,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 151,
+        "pdf_page": 370,
+        "printed_page": 362,
+        "image": "evidence/print-collation/niese-II-pdf-370.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "Ἐπεὶ δὲ τὸ γένος διεξήλθομεν τὸ τῶν βασιλέων καὶ τίνες ἦσαν δεδηλώκαμεν καὶ τοὺς χρόνους αὐτῶν, ἀναγκαῖον ἡγησάμην καὶ τῶν ἀρχιερέων εἰπεῖν τὰ ὀνόματα καὶ τίνες ἦσαν οἱ τὴν ἀρχιερωσύνην καταδείξαντες ἐπὶ τοῖς βασιλεῦσι.",
+        "ocr_assistance_only": {
+          "score": 1.0,
+          "ocr_word": "Επει",
+          "ocr_bbox": [
+            189.28,
+            387.52,
+            214.61200000000002,
+            399.52
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "βαθά πόλει της Συρίας, ώς και πρότερον ήμύν δεδήλωτα.",
+          "151 6. Επει δε τό γένος διεξήλθομεν τό τών βασιλέων και τίνες",
+          "ήσαν δεδηλώκαμεν και τους χρόνους αυτών, αναγκαίον ήγησάμην",
+          "και τών άρχιερέων είπεϊντά ονόματα και τίνες ήσαν οι τήν άρχιε"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "INTERNAL-BUT-EXACT",
+      "checkpoint_confidence": "HIGH",
+      "earlier_candidate": {
+        "classification": "INTERNAL-BUT-EXACT",
+        "confidence": "HIGH",
+        "print_start_verified": true,
+        "greek_start": "Ἐπεὶ δὲ τὸ γένος διεξήλθομεν τὸ τῶν βασιλέων καὶ τίνες ἦσαν δεδηλώκαμεν καὶ τοὺς χρόνους αὐτῶν, ἀναγκαῖον ἡγησάμην καὶ τῶν ἀρχιερέων εἰπεῖν τὰ ὀνόματα καὶ τίνες ἦσαν οἱ τὴν ἀρχιερωσύνην καταδείξαντες ἐπὶ τοῖς βασιλεῦσι.",
+        "greek_locator": {
+          "stable_id": "greek-book10-num151",
+          "paragraph": 32,
+          "xpath": "/*/*/*/*[2]/*[2]/*[31]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[31]/num[1]/tail()",
+          "node_offset": 1,
+          "unit_offset": 1,
+          "book_offset": 41944,
+          "raw_byte": 87538,
+          "left": " ἀρχιερέα ὄντα υἱὸν Σαραία τοῦ ἀρχιερέως, ὃν ἀπέκτεινεν ὁ Βαβυλώνιος ἐν Ἀριβαθᾶ πόλει τῆς Συρίας, ὡς καὶ πρότερον ἡμῖν δεδήλωται. ",
+          "right": "Ἐπεὶ δὲ τὸ γένος διεξήλθομεν τὸ τῶν βασιλέων καὶ τίνες ἦσαν δεδηλώκαμεν καὶ τοὺς χρόνους αὐτῶν, ἀναγκαῖον ἡγησάμην καὶ τῶν ἀρχιερέων εἰπεῖν τὰ ὀνόματα καὶ τίνες ἦσαν οἱ τὴν ἀρχιερωσύνην καταδείξαντες ἐπὶ τοῖς βασιλεῦσι.  πρῶτος μὲν οὖν Σάδω",
+          "parsed_unit_sha256": "7c024671e341aba8ee2730fadee9b6316dd84ffa1bf9da0b0c938a596bf27968",
+          "raw_unit_sha256": "bd640905a8cad35d13c82b748d2499514d9792c55f85d1137eae774dd7e0fb0f"
+        },
+        "latin_anchor_phrase": "Igitur quia genus explanauimus",
+        "latin_locator": {
+          "stable_id": "latin-book10-num151",
+          "paragraph": 31,
+          "xpath": "/*/*[2]/*/*[2]/*[8]/*[10]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[8]/p[10]/num[1]/tail()",
+          "node_offset": 289,
+          "unit_offset": 289,
+          "book_offset": 39673,
+          "raw_byte": 46418,
+          "left": "osadach pontifices filium sareae pontificis quaem occidit babylonius in arabatha syriae ciuitatem sicut dudum iam designatum est. ",
+          "right": "Igitur quia genus explanauimus, et qui fuerunt et eorum tempora cuncta narrauimus. Necessarium uidi caui etiam nomina reserare pontificum qui pontificatum regum temporibus habuerunt. Primus siquidem sadoch pontifex templi quod salomon eadif",
+          "parsed_unit_sha256": "d364758353011bf89e119f0b1c85c65218b4f20556559fac3fa1c12efb449ad0",
+          "raw_unit_sha256": "8bd496a0290a0c4d430771c445a0faef0b6d7c063fc7a79f654ec9dacb5a07a4"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Between 212’s instruction to sacrifice and the statue narrative, Latin retains the broken transition Cui etiam rea. Greek 213 begins the king’s construction of the golden statue; rex dum fecisset is secure narrative correspondence but allocation of the broken words is uncertain.",
+      "recommendation": "Prefer rex dum fecisset as the cut, leaving Cui etiam rea in the preceding extent and documenting the damaged transition.",
+      "alternatives": "Begin at Cui etiam rea and explicitly mark uncertain scope; do not complete or delete the words.",
+      "decision": "Choose which side of the cut retains Cui etiam rea.",
+      "book": 10,
+      "niese": 213,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 213,
+        "pdf_page": 384,
+        "printed_page": 376,
+        "image": "evidence/print-collation/niese-II-pdf-384.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "ὁ βασιλεὺς κατασκευάσας χρύσεον ἀνδριάντα πηχῶν τὸ μὲν ὕψος ἑξήκοντα τὸ πλάτος δὲ ἕξ, στήσας αὐτὸν ἐν τῷ μεγάλῳ τῆς Βαβυλῶνος πεδίῳ καὶ μέλλων καθιεροῦν αὐτὸν συνεκάλεσεν ἐξ ἁπάσης ἧς ἦρχε γῆς τοὺς πρώτους πρῶτον αὐτοῖς προστάξας, ὅταν σημα",
+        "ocr_assistance_only": {
+          "score": 0.9538,
+          "ocr_word": "βασιλεύς",
+          "ocr_bbox": [
+            280.33,
+            351.305,
+            321.397,
+            360.305
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "βασκανίας είς κίνδυνον έμπεσεΐν συνέβη τώ βασιλε προσκρούσαν",
+          "213 τας εξαιτίας τοιαύτης\" δ βασιλεύς κατασκευάσας χρύσεον άνδριάντα",
+          "πηχών ότ μέν ύψος εξήκοντα οτ πλάτος εδ έξ, στήσας αυτόν νέ",
+          "τώ μεγάλωτης Βαβυλώνος πεδίω και μέλλων καθιερούν αυτόν συνε"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": "ὁ βασιλεὺς κατασκευάσας χρύσεον ἀνδριάντα πηχῶν τὸ μὲν ὕψος ἑξήκοντα τὸ πλάτος δὲ ἕξ, στήσας αὐτὸν ἐν τῷ μεγάλῳ τῆς Βαβυλῶνος πεδίῳ καὶ μέλλων καθιεροῦν αὐτὸν συνεκάλεσεν ἐξ ἁπάσης ἧς ἦρχε γῆς τοὺς πρώτους πρῶτον αὐτοῖς προστάξας, ὅταν σημα",
+        "greek_locator": {
+          "stable_id": "greek-book10-num211",
+          "paragraph": 45,
+          "xpath": "/*/*/*/*[2]/*[2]/*[44]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[44]/num[3]/tail()",
+          "node_offset": 1,
+          "unit_offset": 445,
+          "book_offset": 59873,
+          "raw_byte": 124759,
+          "left": "αὶ τοὺς συγγενεῖς αὐτοῦ, οὓς ὑπὸ φθόνου καὶ βασκανίας εἰς κίνδυνον ἐμπεσεῖν συνέβη τῷ βασιλεῖ προσκρούσαντας ἐξ αἰτίας τοιαύτης:  ",
+          "right": "ὁ βασιλεὺς κατασκευάσας χρύσεον ἀνδριάντα πηχῶν τὸ μὲν ὕψος ἑξήκοντα τὸ πλάτος δὲ ἕξ, στήσας αὐτὸν ἐν τῷ μεγάλῳ τῆς Βαβυλῶνος πεδίῳ καὶ μέλλων καθιεροῦν αὐτὸν συνεκάλεσεν ἐξ ἁπάσης ἧς ἦρχε γῆς τοὺς πρώτους πρῶτον αὐτοῖς προστάξας, ὅταν σημα",
+          "parsed_unit_sha256": "87a920d0294ae290edb68dafece51d58f5cc1bb241dfe20f6d693ff5234eb95e",
+          "raw_unit_sha256": "41522acd33f4299a81f5661dc28413c23ab837ba85bbf3b3b3221c487794724c"
+        },
+        "latin_anchor_phrase": "rex dum fecisset",
+        "latin_locator": {
+          "stable_id": "latin-book10-num211",
+          "paragraph": 44,
+          "xpath": "/*/*[2]/*/*[2]/*[10]/*[5]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[10]/p[5]/num[1]/tail()",
+          "node_offset": 218,
+          "unit_offset": 218,
+          "book_offset": 56463,
+          "raw_byte": 65708,
+          "left": "helis et procidens in faciem eo modo quo deus adoratur eum salutauit daniel ei que sacrificari quasi deo praecepit. Cui etiam rea ",
+          "right": "rex dum fecisset statuam auream altitudine sexaginta cubitorum latitudine sex et eam statuisset in maximo babyloniae campo decicaturus eam conuocauit terrae cui praeerat preerat. Principes uniuersas eis primo praecipiens ut dum audirent tub",
+          "parsed_unit_sha256": "1090c5da5165404db23dbb0e44e8f0c5552cd4a3a3a15a7f3fcfebcac3f068c3",
+          "raw_unit_sha256": "7fb62a6ba0e8ac1404817b7edfd12d763e8e762b569b2ad0ce9d67e5d9881917"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    },
+    {
+      "reason": "Greek 248 starts the summary of Nebuchadnezzar’s descendants. Latin nepus nepos nabucodonosor regis is attached to the preceding regnal sentence, before cui talem terminum; the first counterpart therefore crosses the sentence logic.",
+      "recommendation": "Prefer nepus nepos as the first counterpart, preserving the repeated forms and Latin order. Document that this is not a shared syntactic sentence boundary.",
+      "alternatives": "Begin at cui talem terminum, explicitly assigning the earlier genealogical counterpart to 247; or withhold an exact locator.",
+      "decision": "Choose the earliest genealogical counterpart or an explicitly approximate later cut.",
+      "book": 10,
+      "niese": 248,
+      "human_decision": null,
+      "implementation_approved": false,
+      "greek_source": {
+        "book": 10,
+        "niese": 248,
+        "pdf_page": 392,
+        "printed_page": 384,
+        "image": "evidence/print-collation/niese-II-pdf-392.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "τῶν μὲν οὖν Ναβουχοδονοσόρου τοῦ βασιλέως ἐγγόνων τὸ τέλος τοιοῦτον παρειλήφαμεν γενόμενον: Δαρείῳ δὲ τῷ καταλύσαντι τὴν Βαβυλωνίων ἡγεμονίαν μετὰ Κύρου τοῦ συγγενοῦς ἔτος ἦν ἑξηκοστὸν καὶ δεύτερον, ὅτε τὴν Βαβυλῶνα εἷλεν, ὃς ἦν Ἀστυάγους υ",
+        "ocr_assistance_only": {
+          "score": 0.9692,
+          "ocr_word": "τών",
+          "ocr_bbox": [
+            246.35,
+            360.32000000000005,
+            266.32,
+            370.32000000000005
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "την αίρεσιν τής Βαβυλώνος συνέβη γενέσθαι, βασιλεύσαντος αυτού",
+          "248 έπτακαίδεκα έτη. τών μεν ούν Ναβουχοδονοσόρου τού βασιλέως"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "AGREES_WITH_FROZEN_CLAUSE_LOCATOR",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "checkpoint_classification": "REQUIRES_ADJUDICATION",
+      "checkpoint_confidence": "PENDING_EDITORIAL_VERIFICATION",
+      "earlier_candidate": {
+        "classification": "REQUIRES_ADJUDICATION",
+        "confidence": "PENDING_EDITORIAL_VERIFICATION",
+        "print_start_verified": false,
+        "greek_start": "τῶν μὲν οὖν Ναβουχοδονοσόρου τοῦ βασιλέως ἐγγόνων τὸ τέλος τοιοῦτον παρειλήφαμεν γενόμενον: Δαρείῳ δὲ τῷ καταλύσαντι τὴν Βαβυλωνίων ἡγεμονίαν μετὰ Κύρου τοῦ συγγενοῦς ἔτος ἦν ἑξηκοστὸν καὶ δεύτερον, ὅτε τὴν Βαβυλῶνα εἷλεν, ὃς ἦν Ἀστυάγους υ",
+        "greek_locator": {
+          "stable_id": "greek-book10-num245",
+          "paragraph": 50,
+          "xpath": "/*/*/*/*[2]/*[2]/*[49]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[49]/num[4]/tail()",
+          "node_offset": 1,
+          "unit_offset": 692,
+          "book_offset": 70137,
+          "raw_byte": 145838,
+          "left": "ὐτὸν στρατεύσαντος: Βαλτάσαρος γάρ ἐστιν, ἐφ᾽ οὗ τὴν αἵρεσιν τῆς Βαβυλῶνος συνέβη γενέσθαι, βασιλεύσαντος αὐτοῦ ἑπτακαίδεκα ἔτη.  ",
+          "right": "τῶν μὲν οὖν Ναβουχοδονοσόρου τοῦ βασιλέως ἐγγόνων τὸ τέλος τοιοῦτον παρειλήφαμεν γενόμενον: Δαρείῳ δὲ τῷ καταλύσαντι τὴν Βαβυλωνίων ἡγεμονίαν μετὰ Κύρου τοῦ συγγενοῦς ἔτος ἦν ἑξηκοστὸν καὶ δεύτερον, ὅτε τὴν Βαβυλῶνα εἷλεν, ὃς ἦν Ἀστυάγους υ",
+          "parsed_unit_sha256": "cb41a33c0fc8df2ff140024fe54fcd36c04cec26669021ca8fe36f5b959501e5",
+          "raw_unit_sha256": "fda81e338d1ffc9676b59c990640aa4aa47594641c83085171ce3a0b9363b613"
+        },
+        "latin_anchor_phrase": "nepus nepos nabucodonosor regis",
+        "latin_locator": {
+          "stable_id": "latin-book10-num245",
+          "paragraph": 49,
+          "xpath": "/*/*[2]/*/*[2]/*[10]/*[10]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[10]/p[10]/cb[1]/tail()",
+          "node_offset": 63,
+          "unit_offset": 634,
+          "book_offset": 66284,
+          "raw_byte": 76635,
+          "left": "ege aduersus eum fortissime dimicantem. Balthasar enim his sub quo capi contigit babyloniam cum regnasset iam decem et octo annis ",
+          "right": "nepus nepos nabucodonosor regis cui talem terminum fuisse percipimUs. Darius autem astiagis filius quia babyloniorum principatum destruixit cum cyro cognato suo annum habebat sexagesimum et secundum cum babylon fuisset in uasta qui tamen al",
+          "parsed_unit_sha256": "6d96f4244acf46b205ac15d534c37f68b0aa203d2d84620d670b9da64449448f",
+          "raw_unit_sha256": "2fe34d5187d328ebbb988d987de449eeb9fa373d3edd478d23c4177af71d0744"
+        },
+        "placement": "PROPOSED_INTERNAL_MILESTONE"
+      },
+      "proposed_candidate": null
+    }
+  ]
+}

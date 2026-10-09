@@ -1,0 +1,81 @@
+{
+  "book": 10,
+  "status": "PROPOSALS_ONLY_NOT_APPLIED",
+  "proposals": [
+    {
+      "niese": 1,
+      "kind": "EXPLICIT_OPENING_LABEL_PROPOSAL",
+      "approved": false,
+      "apply": false,
+      "greek_locator": {
+        "stable_id": "greek-book10-num1",
+        "paragraph": 2,
+        "xpath": "/*/*/*/*[2]/*[2]/*[1]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/text()",
+        "node_offset": 0,
+        "unit_offset": 0,
+        "book_offset": 0,
+        "raw_byte": 633,
+        "left": "",
+        "right": "Ἐζεκίου δὲ τοῦ τῶν δύο φυλῶν βασιλέως τέταρτον ἤδη καὶ δέκατον ἔτος τῆς ἡγεμονίας ἔχοντος ὁ τῶν Βαβυλωνίων βασιλεὺς Σεναχείριμος ὄνομα στρατεύει μετὰ πολλῆς παρασκευῆς ἐπ᾽ αὐτὸν κατὰ κράτος τε ἁπάσας αἱρεῖ τὰς πόλεις τὰς τῆς Ἰούδα φυλῆς καὶ",
+        "parsed_unit_sha256": "9468a468cc44aea67141f7fa5c3341a90cd9a914e42512c94c2f49fad498ad40",
+        "raw_unit_sha256": "8319d55f0d62ee013cd9d4ab49086c60e57d71e4939202a645512415e27912c5"
+      },
+      "reason": "Existing printed citation 1 is implicit at the verified opening. Greek XML has nums 2..end only; this proposal represents the existing opening identity, not an additional citation. Exact marker syntax remains for a later approved implementation."
+    },
+    {
+      "niese": 33,
+      "approved": false,
+      "apply": false,
+      "kind": "RELOCATION_RECOMMENDED",
+      "greek_phrase_as_canonical": "ὁ δὲ προφήτης ὑποτυχών ‘ἴσθι’  , φησίν, ‘οὐ μετ᾽ ὀλίγον χρόνον εἰς Βαβυλῶνά σου το",
+      "greek_locator": {
+        "stable_id": "greek-book10-num30",
+        "paragraph": 8,
+        "xpath": "/*/*/*/*[2]/*[2]/*[7]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[7]/num[3]/tail()",
+        "node_offset": 254,
+        "unit_offset": 733,
+        "book_offset": 9647,
+        "raw_byte": 20535,
+        "left": "ῖν αὐτούς: ἐπιδεῖξαι δὲ πάντ᾽ αὐτοῖς, ὅπως ἰδόντες τὸν πλοῦτον καὶ τὴν δύναμιν ἐκ τούτου στοχαζόμενοι σημαίνειν ἔχωσι τῷ βασιλεῖ. ",
+        "right": "ὁ δὲ προφήτης ὑποτυχών ‘ἴσθι’  , φησίν, ‘οὐ μετ᾽ ὀλίγον χρόνον εἰς Βαβυλῶνά σου τοῦτον μετατεθησόμενον τὸν πλοῦτον καὶ τοὺς ἐκγόνους εὐνουχισθησομένους καὶ ἀπολέσαντας τὸ ἄνδρας εἶναι τῷ Βαβυλωνίῳ δουλεύσοντας βασιλεῖ: ταῦτα γὰρ προλέγειν τ",
+        "parsed_unit_sha256": "9fd60b4f5bf81c5f75a7e1e3beca59dfd113e9f9a445d86324326e7fbf15b837",
+        "raw_unit_sha256": "4e2290b4a73f929e112a07c031d3a4696f623fda0acf80e32f80fa9765385fad"
+      },
+      "latin_phrase_as_canonical": "Cui propheta respondens. Scito in quid non post multum tempus ad babyloniam filios ",
+      "latin_locator": {
+        "stable_id": "latin-book10-num30",
+        "paragraph": 7,
+        "xpath": "/*/*[2]/*/*[2]/*[3]/*[2]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[2]/expan[1]/tail()",
+        "node_offset": 144,
+        "unit_offset": 633,
+        "book_offset": 9361,
+        "raw_byte": 12662,
+        "left": " eos a suo rege uenisse et ostendisse ei uniuersa ut uidentes diuitias et uirtutem regni cognoscetrent et regi suo renum tiarent. ",
+        "right": "Cui propheta respondens. Scito in quid non post multum tempus ad babyloniam filios tuos et diuitias transmigran das, insuper et nepotes tuos eunuchos esse fa sciendos, et ammissuros uirile nomen et regi babyloniae seruituros. Haec enim prae",
+        "parsed_unit_sha256": "54267b398a458b7eb8608f08d4d351025dcf7d7d35427c25ac1af72b1c892705",
+        "raw_unit_sha256": "b79b0f06358e7ea183a88d5c09ad80ee4ab1ae45f03f1e20849d2d4bb76e90a2"
+      },
+      "neighbouring_extents": {
+        "previous_niese": 32,
+        "current_niese": 33,
+        "following_niese": 34,
+        "previous_Greek_end_changes_from": 9678,
+        "previous_Greek_end_changes_to": 9647,
+        "previous_Latin_end_changes_from": 9392,
+        "previous_Latin_end_changes_to": 9361,
+        "following_start_unchanged": 9898,
+        "rule": "Only proposed adjacent extents change. No text moves, disappears or overlaps; interval endpoints are half-open book offsets. No actual section or XML is changed."
+      },
+      "existing_Greek_marker_on_pinned_input": {
+        "raw_start": 20596,
+        "raw_end_exclusive": 20611,
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[7]/num[4]",
+        "exact_XML": "<num>[33]</num>",
+        "replacement_location": "greek_locator above, measured against original input before any removal; no executable patch or replacement has been approved."
+      }
+    }
+  ]
+}

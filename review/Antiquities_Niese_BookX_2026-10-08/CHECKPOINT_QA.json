@@ -1,0 +1,86 @@
+{
+  "status": "AUDIT_TECHNICAL_PASS_IMPLEMENTATION_NO_GO",
+  "book": 10,
+  "source_preservation": {
+    "Greek": {
+      "XML_parse": "PASS",
+      "bytes_unchanged": "PASS",
+      "all_xml_ids_unchanged": "PASS",
+      "all_sameAs_unchanged": "PASS",
+      "div2_structure_and_labels_unchanged": "PASS",
+      "all_existing_milestones_unchanged": "PASS",
+      "before_sha256": "6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae",
+      "after_sha256": "6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae"
+    },
+    "Latin": {
+      "XML_parse": "PASS",
+      "bytes_unchanged": "PASS",
+      "all_xml_ids_unchanged": "PASS",
+      "all_sameAs_unchanged": "PASS",
+      "div2_structure_and_labels_unchanged": "PASS",
+      "all_existing_milestones_unchanged": "PASS",
+      "before_sha256": "e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c",
+      "after_sha256": "e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c"
+    },
+    "English": {
+      "XML_parse": "PASS",
+      "bytes_unchanged": "PASS",
+      "all_xml_ids_unchanged": "PASS",
+      "all_sameAs_unchanged": "PASS",
+      "div2_structure_and_labels_unchanged": "PASS",
+      "all_existing_milestones_unchanged": "PASS",
+      "before_sha256": "1e70950fd9d2500795c401b37b7d49fa560d3f0fd90270b11915bccd718faccf",
+      "after_sha256": "1e70950fd9d2500795c401b37b7d49fa560d3f0fd90270b11915bccd718faccf"
+    }
+  },
+  "candidate_inventory": {
+    "expected": 281,
+    "records": 281,
+    "classifications": {
+      "EXACT": 46,
+      "REQUIRES_ADJUDICATION": 233,
+      "UNAVAILABLE": 1,
+      "INTERNAL-BUT-EXACT": 1
+    },
+    "existing_label_claims": 52,
+    "retained_candidate_starts": 50,
+    "proposed_unapproved_milestones": 230,
+    "unavailable": [
+      108
+    ],
+    "arithmetic": "PASS_WITH_EXPLICIT_UNAVAILABLE_RECORD",
+    "unique_Greek_census": "PASS",
+    "independent_full_print_collation": "INCOMPLETE"
+  },
+  "mixed_content": {
+    "fixtures": {
+      "status": "PASS",
+      "tests": [
+        "mixed .text/.tail",
+        "UTF-8",
+        "numeric and named entities",
+        "CRLF",
+        "comment exclusion and tail coordinates",
+        "empty element tails",
+        "nested add/del retained",
+        "num excluded with tail retained",
+        "two units",
+        "raw Unicode-byte roundtrip",
+        "note excluded with tail retained",
+        "nested-child tail ownership",
+        "chapter-0 paratext exclusion",
+        "omission-placeholder exclusion"
+      ]
+    },
+    "independent_lxml_text_node_and_raw_byte_checks": 280,
+    "all_locators_resolve": "PASS",
+    "XML_reserialization_performed": false
+  },
+  "technical_rehearsal": "PASS_IN_MEMORY_ONLY",
+  "new_milestones_applied": 0,
+  "Greek_repairs_applied": 0,
+  "implementation_GO": false,
+  "implementation_browser_QA": "NOT_RUN: no certified VIII/X implementation exists",
+  "baseline_browser_QA": "../Antiquities_Niese_Batch_08_10_2026-10-08/REGRESSION_SUMMARY.json",
+  "human_cases": "REVIEW_CASES.md"
+}

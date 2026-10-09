@@ -1,0 +1,26 @@
+# Antiquities X: completed local implementation and certification
+
+**GO for review of the locally committed implementation. Canonical integration, push and public deployment remain unauthorized.** This certificate supersedes historical NO-GO status only for the accepted segmentation scope. The original audit reports and decision history are preserved unchanged from `fb8a65e2a6c7d6e5426f3b4751d30e67528b1a28`; their historical statements are not current implementation status.
+
+Implementation base: `a48021588e0840330388a6055a97bd0f7c2cf827` on the fresh `antiquities-niese-08-10-implementation` branch. Production inputs came from the current canonical commit, including its Greek source-contents integration; no old production file was copied from the audit branch. Actual target bytes are UTF-8 without BOM, LF. They equal the frozen audit Git blobs. Canonical-checkout CRLF hashes remain separately recorded in BASELINE.json. Locators were regenerated against target mixed text nodes and checked against accepted narrative coordinates, paragraph IDs, node paths and context.
+
+Inventory: **281 Greek sections = 50 retained Latin starts + 230 new milestones + unavailable 108**. Represented Latin intervals: **280**. Confidence classifications: `{"EXACT": 50, "INTERNAL-BUT-EXACT": 230, "UNAVAILABLE": 1}`. Routine checks outstanding: **0**; editorial decisions outstanding: **0**. Confidence in a physical locator is distinct from a qualified translation correspondence.
+
+Explicit 1 added; 33 relocated to ὁ δὲ προφήτης ὑποτυχών.
+
+X.102 begins at nomine sedechiam, the first identifiable surviving counterpart; simulet ioachim remains with 101. Unexpressed opening details are qualified, without reconstruction. 108 is unavailable: its eight-year Babylonian alliance, repudiation of pledges and turn towards Egypt in hope of overcoming Babylonian power lack an identifiable Latin counterpart. Cause undetermined; later Egyptian narrative survives. 276 remains available at Et haec, with quae omnia at 277: the concluding Greek Roman-rule/devastation notice has no identifiable counterpart, cause undetermined. X.18 is entirely within latin-book10-num15; its pb/cb markers are page/column changes, not a paragraph crossing. The interval after Turbatur includes the ritual/restoration material. Preserve Cui etiam rea with 212, both nepus and nepos at 248, and both recorded discrepancies at 107.
+
+The two inherited-label exceptions are in assets/xml/antiquities/niese/book-10.json and IMPLEMENTATION_QA.json. Their visible labels remain unchanged. Only executable identity recognition is suppressed, and the approved internal milestones supply the correct starts. Paragraphs, IDs, sameAs, spelling, punctuation, whitespace, apparatus and traditional/Bamberg divisions are preserved. No gap or supplied text was added.
+
+Preservation: removing only the 230 authorized Latin milestones recovers the target input bytes exactly. Reversing the authorized Greek marker edits also recovers the corresponding input exactly. IMPLEMENTED_EXTENTS.json independently reconstructs complete narrative partitions, including narrative whitespace: no overlapping, missing or empty represented interval. Expected marker edits are separate from unchanged narrative.
+
+Actual built-site browser certification: all **281** selector events and exact Greek/Latin intervals pass, with unique executable starts and rendered IDs. English remains explicitly broader aligned context. The shared NEW_BOOK_BROWSER_QA.json and UI_SUPPLEMENT_QA.json record deep links, reload, rendered previous/next and Back/Forward transitions, pane switching and both themes. All exceptions and partial correspondences also pass with the uninstrumented production reader. IX remains disabled and switching back restores VIII/X. X.108 keeps independently available Greek and English while displaying a Latin absence notice.
+
+Protected regressions passed against the actual canonical build and the established range suites: 257 Chapters, 1,432 Subchapters, 5,034 executable traditional displays, 33 unavailable states, 198 Bamberg identities/594 displays, 1,441 Alignment units, all 2,456 prior Antiquities Niese selections, XI multi-span, VI.xii.8/XIII and the nine chapters lacking a printed lower 1. Current source contents/TOCs, Whiston, all 4,001 Bellum citation anchors in both Whiston and Lodge, Lodge note toggle, DEH and Contra Apionem are preserved. New-book browser results are additional to historical audit rehearsals.
+
+| Target source | Before SHA-256 | After SHA-256 |
+| --- | --- | --- |
+| Greek | `6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae` | `764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7` |
+| Latin | `e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c` | `5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26` |
+
+Per-book data and review records form a separate implementation commit, depending on the shared generic reader commit. The per-book availability declaration is the only shared-code change needed in that commit. Full reproducibility and shared dependency details are in ../Antiquities_Niese_Implementation_08_10_2026-10-09/REPORT.md. No unresolved issue remains within the authorized scope.

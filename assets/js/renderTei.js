@@ -117,7 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
       milestoneChapterBooks: [15, 16, 17, 18, 19, 20],
       nieseBooks: [1, 2, 3, 4, 5, 6, 7],
       nieseIdentityBooks: {
-        8: "assets/xml/antiquities/niese/book-08.json"
+        8: "assets/xml/antiquities/niese/book-08.json",
+        10: "assets/xml/antiquities/niese/book-10.json"
       },
       nieseRanges: {
         1: [27, 346],

@@ -1,0 +1,89 @@
+{
+  "18": {
+    "kind": "INTERPOLATION_AND_LACUNA",
+    "reason": "Latin pnum15 has an extended ritual procession not represented in the corresponding Greek/Whiston; the existing chapter 2 starts here is a note, not running narrative. Preserve both. Greek 18 includes editorial lacuna signals. Turbatur ergo rex is a candidate after the addition; verify its extent.",
+    "alternatives": [],
+    "human_decision": null,
+    "print_page_verified": false
+  },
+  "33": {
+    "kind": "REORDERED",
+    "reason": "Greek num33 follows ἴσθι and precedes φησίν; Latin Scito in quid non post multum puts speech-introduction words at the boundary. Do not silently treat the whole direct speech as the same exact point.",
+    "alternatives": [
+      "Scito",
+      "in quid non post multum"
+    ],
+    "human_decision": null,
+    "print_page_verified": false
+  },
+  "69": {
+    "kind": "REORDERED",
+    "reason": "Greek house-search material is divided differently in Latin eique dicarent et domos et uicos. Perscrutatus est autem ciuitatem. Select a defensible physical point rather than a convenient sentence start.",
+    "alternatives": [
+      "et domos et uicos",
+      "Perscrutatus est autem ciuitatem"
+    ],
+    "human_decision": null,
+    "print_page_verified": false
+  },
+  "102": {
+    "kind": "PARTIAL_OMISSION",
+    "reason": "Greek opens with bringing captives to be imprisoned. That action is absent from the immediate Latin, whose first secure counterpart is simul et ioachim nomine sedechiam (canonical spelling simulet). Review partial omission and compression.",
+    "alternatives": [],
+    "human_decision": null,
+    "print_page_verified": false
+  },
+  "107": {
+    "kind": "NEGATION_DIFFERENCE",
+    "reason": "Greek μὴ ταὐτὸν says the prophets did not say the same thing; Latin eo quod idem uterque lacks the corresponding negation. Preserve the transcription, record the difference, and do not repair wording during segmentation.",
+    "alternatives": [],
+    "human_decision": null,
+    "print_page_verified": false
+  },
+  "108": {
+    "kind": "UNAVAILABLE",
+    "reason": "Greek eight-year alliance, breach of treaty, and transfer to the Egyptians have no counterpart in this canonical Latin. [VII.iii.108] introduces Interea dum hoc cognouisset, the secure counterpart of 109. Whole-book search found the other eight-year and Egyptian passages in different contexts, not a displaced 108.",
+    "alternatives": [],
+    "human_decision": null,
+    "print_page_verified": true,
+    "niese_printed_pages": [
+      353,
+      354
+    ]
+  },
+  "109": {
+    "kind": "DISPLACED_INHERITED_LABEL",
+    "reason": "Interea dum hoc cognouisset at the beginning of Latin pnum108 corresponds to Greek 109. The existing 108 composite label cannot become a genuine 108 citation merely because the ID has that number.",
+    "alternatives": [],
+    "human_decision": null,
+    "print_page_verified": false
+  },
+  "150": {
+    "kind": "CROSS_PARAGRAPH_SHIFT",
+    "reason": "Greek 150 is at the end of Greek pnum144; its Latin counterpart Rex autem pontifices opens Latin pnum151 under [VIII.vi.151]. The Greek sameAs window alone misses this transfer. Preserve both paragraph IDs and labels.",
+    "alternatives": [],
+    "human_decision": null,
+    "print_page_verified": true,
+    "niese_printed_pages": [
+      362,
+      362
+    ]
+  },
+  "213": {
+    "kind": "TRUNCATED_TRANSITION",
+    "reason": "Between ei que sacrificari quasi deo praecepit (212) and rex dum fecisset statuam auream (213), Latin has the broken transition Cui etiam rea. A boundary at rex dum is plausible but the residual wording requires review; do not complete or delete it.",
+    "alternatives": [],
+    "human_decision": null,
+    "print_page_verified": false
+  },
+  "248": {
+    "kind": "REORDERED_GENEALOGY",
+    "reason": "Latin nepus nepos nabucodonosor regis supplies genealogy that belongs to Greek 248 before cui talem terminum, but is attached to the preceding sentence. The alternative cui talem terminum omits that first counterpart.",
+    "alternatives": [
+      "nepus nepos nabucodonosor regis",
+      "cui talem terminum"
+    ],
+    "human_decision": null,
+    "print_page_verified": false
+  }
+}
