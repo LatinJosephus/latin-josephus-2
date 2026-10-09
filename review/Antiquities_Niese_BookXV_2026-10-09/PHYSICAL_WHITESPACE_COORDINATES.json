@@ -1,0 +1,42 @@
+{
+  "book": 15,
+  "changes": [
+    {
+      "number": 1,
+      "previous": {
+        "stable_id": "latin-book15-num1",
+        "paragraph": 14,
+        "xpath": "/*/*[2]/*/*[2]/*[2]/*[1]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/add[1]/tail()",
+        "node_offset": 1,
+        "unit_offset": 1,
+        "book_offset": 1,
+        "raw_byte": 3440,
+        "left": " ",
+        "right": "Sossius quidem et herodes qualiter ierosolima coeperunt, nec non et antigonum captiuum in superiore uolumine demonstrauimus. Sequentia uero nunc explanabo cum totius iudeae principatum herodes sumpsisset. Quantoscumque priuatos sui fautores",
+        "parsed_unit_sha256": "d2f3fa8f9c75840c78312e78a3feabf4e43e50602ae5f6ac872b3d3d5af6a14b",
+        "raw_unit_sha256": "ed4f6e526a1905cb45f100ca474e825a226f5556d95a18fcf007b657609fb04b",
+        "source_unit_offset": 2
+      },
+      "actual": {
+        "stable_id": "latin-book15-num1",
+        "paragraph": 14,
+        "xpath": "/*/*[2]/*/*[2]/*[2]/*[1]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/add[1]/tail()",
+        "node_offset": 0,
+        "unit_offset": 0,
+        "book_offset": 0,
+        "raw_byte": 3439,
+        "left": "",
+        "right": " Sossius quidem et herodes qualiter ierosolima coeperunt, nec non et antigonum captiuum in superiore uolumine demonstrauimus. Sequentia uero nunc explanabo cum totius iudeae principatum herodes sumpsisset. Quantoscumque priuatos sui fautore",
+        "parsed_unit_sha256": "d2f3fa8f9c75840c78312e78a3feabf4e43e50602ae5f6ac872b3d3d5af6a14b",
+        "raw_unit_sha256": "ed4f6e526a1905cb45f100ca474e825a226f5556d95a18fcf007b657609fb04b",
+        "source_unit_offset": 1
+      },
+      "kind": "OPENING_MILESTONE_BEFORE_PRESERVED_LEADING_SPACE"
+    }
+  ],
+  "semantic_incipits_unchanged": true,
+  "narrative_bytes_unchanged": true,
+  "reason": "Executable markers delimit narrative whitespace as well as words. Retained num positions include their following whitespace; the new XV opening milestone precedes its original leading space, so all narrative characters belong to the partition."
+}

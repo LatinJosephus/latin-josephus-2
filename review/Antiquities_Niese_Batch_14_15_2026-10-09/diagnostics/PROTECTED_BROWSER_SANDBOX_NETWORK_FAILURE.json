@@ -1,0 +1,23 @@
+{
+  "scope": "PROTECTED_BASELINE_CHECK_ON_ASSIGNMENT_LOCAL_BUILD_BEFORE_LATIN_CHECKPOINT",
+  "started": "2026-10-09T15:34:25.191Z",
+  "result": "FAIL",
+  "browserExceptions": [],
+  "consoleErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:50085/antiquities/?book=8&niese=1",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    }
+  ],
+  "books": {},
+  "criticalURLs": [],
+  "protectedURLs": [],
+  "certified_production_build_hashes": "IDENTICAL",
+  "local_origins": [
+    "http://127.0.0.1:50085",
+    "http://127.0.0.1:50086",
+    "http://127.0.0.1:50087"
+  ],
+  "failure": "Error: page.goto: net::ERR_NETWORK_ACCESS_DENIED at http://127.0.0.1:50085/antiquities/?book=8&niese=1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:50085/antiquities/?book=8&niese=1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+}

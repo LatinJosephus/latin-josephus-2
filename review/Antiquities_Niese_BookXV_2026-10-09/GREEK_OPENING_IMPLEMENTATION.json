@@ -1,0 +1,50 @@
+{
+  "book": 15,
+  "status": "GREEK_OPENING_APPLIED_BOOK_LOCALLY_CERTIFIED",
+  "marker": "<num>[1]</num>",
+  "addition_count": 1,
+  "corrections": 0,
+  "moves": 0,
+  "reason": "Independently verified implicit printed opening identity; chronological summary above printed rule excluded.",
+  "Niese_printed_page": 333,
+  "Niese_PDF_page": 405,
+  "image": "evidence/Niese-III-PDF405.jpg",
+  "printed_marginal_1_glyph": false,
+  "locator_on_frozen_input": {
+    "stable_id": "greek-book15-num1",
+    "paragraph": 17,
+    "xpath": "/*/*/*/*[2]/*[2]/*[1]",
+    "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/anchor[1]/tail()",
+    "node_offset": 0,
+    "unit_offset": 0,
+    "book_offset": 0,
+    "raw_byte": 3864,
+    "left": "",
+    "right": "Σόσσιος μὲν οὖν καὶ Ἡρώδης ὡς κατὰ κράτος ἔλαβον Ἱεροσόλυμα καὶ πρὸς τούτοις αἰχμάλωτον Ἀντίγονον, ἡ πρὸ ταύτης ἡμῖν ἐδήλωσεν βίβλος: τὰ δ᾽ ἐκείνῃ συνεχῆ νῦν ἐροῦμεν.  ἐπειδὴ γὰρ τῆς ὅλης Ἰουδαίας ἐνεχειρίσθη τὴν ἀρχὴν Ἡρώδης, τοῦ κατὰ τὴν ",
+    "parsed_unit_sha256": "8bf2da8930c7faa960c7f254b670b0b68eb4397652ba1e13a4ec845caa1cc1e2",
+    "raw_unit_sha256": "ec730827af98158fd3f1630cfea02398b767a082369cce15a759be0aba4b95b7",
+    "source_unit_offset": 34
+  },
+  "source_sha256": "ce29f43ae99296b30e67c2ea7d913282c9e74c46af0cbefef9d5f5a298b4cc27",
+  "after_sha256": "d7b93caaf77bc2bfa7ef46aed5edd8af80408e93796c23fdb5cfc8e969b2eaf0",
+  "reverse_sha256": "ce29f43ae99296b30e67c2ea7d913282c9e74c46af0cbefef9d5f5a298b4cc27",
+  "exact_byte_recovery": true,
+  "narrative_unchanged": true,
+  "IDs_sameAs_unchanged": true,
+  "scope": {
+    "nodes_verified": 427,
+    "method": "Independent lxml .text/.tail lookup, Unicode code point comparison, and raw UTF-8/entity decoder roundtrip"
+  },
+  "original_chronological_summary_preserved": true,
+  "operation": {
+    "at": 3864,
+    "delete": 0,
+    "insert": "<num>[1]</num>"
+  },
+  "inverse": {
+    "at": 3864,
+    "delete": 14,
+    "expected": "<num>[1]</num>"
+  },
+  "reader_certified": true
+}

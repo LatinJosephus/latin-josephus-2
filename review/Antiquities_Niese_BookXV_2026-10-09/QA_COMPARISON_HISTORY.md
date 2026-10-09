@@ -1,0 +1,9 @@
+# Narrative comparator correction
+
+The first build3 comparison passed XIV's 160 adjoining intervals and XV's intervals through 124, then failed at XV.125 because the retained literal source chapter label `VII ` appeared at the end of the displayed interval. The independently recorded narrative scope excludes that literal label, while preserving its source bytes and display. The comparator initially stripped labels only at paragraph openings and required a correction to recognize the independently identified text-node prefix when an interval ends after it.
+
+The corrected comparator removes that exact label from narrative comparison and leaves the built reader and source markup unchanged. A fresh run passed all 146 complete XV intervals in the contiguous checkpoint. This was a comparison failure, recorded and resolved; no source difference or additional browser error was waived. The literal label remains visible in the reader.
+
+Full certification harness corrections are retained in FULL_READER_QA_HARNESS_FAILURE_1–4.json: read unavailable notes from the existing structural-unavailable element; count raw markers in detached traditional views whose wrapper has no tei-body ancestor; explicitly enable Greek and English panes and await all three rendered identities; respect the reader's fixed primary Latin pane. Fresh full checks passed after these harness corrections. No production reader change or waived source mismatch resulted.
+
+Visual inspection found the test server had served SVG branding as application/octet-stream. The server now supplies image/svg+xml and verifies both header images decode with nonzero dimensions. The refreshed light/dark XV.40 and XV.338 availability images were inspected. This was a test-server content-type defect, not a repository asset defect. VISUAL_READER_QA.json records the passing fresh display checks.

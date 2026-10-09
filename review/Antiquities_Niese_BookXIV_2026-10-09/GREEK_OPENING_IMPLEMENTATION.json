@@ -1,0 +1,50 @@
+{
+  "book": 14,
+  "status": "GREEK_OPENING_APPLIED_BOOK_LOCALLY_CERTIFIED",
+  "marker": "<num>[1]</num>",
+  "addition_count": 1,
+  "corrections": 0,
+  "moves": 0,
+  "reason": "Independently verified implicit printed opening identity; chronological summary above printed rule excluded.",
+  "Niese_printed_page": 239,
+  "Niese_PDF_page": 311,
+  "image": "evidence/Niese-III-PDF311.jpg",
+  "printed_marginal_1_glyph": false,
+  "locator_on_frozen_input": {
+    "stable_id": "greek-book14-num1",
+    "paragraph": 39,
+    "xpath": "/*/*/*/*[2]/*[2]/*[1]",
+    "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/text()",
+    "node_offset": 34,
+    "unit_offset": 0,
+    "book_offset": 0,
+    "raw_byte": 13030,
+    "left": "",
+    "right": "Τῶν δὲ περὶ Ἀλεξάνδραν τὴν βασίλισσαν καὶ τὸν θάνατον αὐτῆς ἐν τῇ πρὸ ταύτης ἡμῖν βίβλῳ δεδηλωμένων τὰ τούτοις ἀκόλουθα καὶ προσεχῆ νῦν ἐροῦμεν, οὐκ ἄλλου τινὸς ἢ τοῦ μηδὲν παραλιπεῖν τῶν πραγμάτων ἢ δι᾽ ἄγνοιαν ἢ διὰ κάματον τῆς μνήμης προ",
+    "parsed_unit_sha256": "361e6d57168b011cefc64d561b1f0fda0d652168070ce0b2c6b94da9545ad596",
+    "raw_unit_sha256": "9c5465a56f90a84a1c222c5f386301f5a54f148da8afdfcbc27963e25225d2ac",
+    "source_unit_offset": 34
+  },
+  "source_sha256": "9db8c651739fab956aa60d9e9926efcb59c10901f04e0756a127a7692259a623",
+  "after_sha256": "afd794b3f7370f740bab151fe5fdf1c73f699d8af72229fc5dc0f0502eab995e",
+  "reverse_sha256": "9db8c651739fab956aa60d9e9926efcb59c10901f04e0756a127a7692259a623",
+  "exact_byte_recovery": true,
+  "narrative_unchanged": true,
+  "IDs_sameAs_unchanged": true,
+  "scope": {
+    "nodes_verified": 495,
+    "method": "Independent lxml .text/.tail lookup, Unicode code point comparison, and raw UTF-8/entity decoder roundtrip"
+  },
+  "original_chronological_summary_preserved": true,
+  "operation": {
+    "at": 13030,
+    "delete": 0,
+    "insert": "<num>[1]</num>"
+  },
+  "inverse": {
+    "at": 13030,
+    "delete": 14,
+    "expected": "<num>[1]</num>"
+  },
+  "reader_certified": true
+}

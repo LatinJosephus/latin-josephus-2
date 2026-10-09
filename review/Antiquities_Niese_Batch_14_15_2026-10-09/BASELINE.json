@@ -1,0 +1,74 @@
+{
+  "base_commit": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "canonical_observed_HEAD": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "branch": "antiquities-niese-14-15",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15",
+  "runtime": "C:\\workspace\\Antiquities-Niese-14-15-runtime-20261009",
+  "canonical": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development",
+  "timestamp": "2026-10-09T15:08:54.621263+00:00",
+  "proposed_paths_unused_before_creation": true,
+  "applicable_AGENTS_files_found": [],
+  "preferred_origin": "http://127.0.0.1:8914/",
+  "scope_books": [
+    14,
+    15
+  ],
+  "shared_files": [
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\assets\\js\\renderTei.js",
+      "bytes": 126283,
+      "sha256": "4ace5e81d4f452aec87d52ab798d7b3453041e24096d15461e2054d1be38ba21"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\_includes\\display-settings.html",
+      "bytes": 7311,
+      "sha256": "56dbc944d350c627562fa0d85d843ee8fe3cb94fe47d7cd17fa019991e6e3315"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\assets\\xml\\antiquities\\structure.xml",
+      "bytes": 19344315,
+      "sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\_config.yml",
+      "bytes": 9711,
+      "sha256": "b1696dacf1edb5796fb43e4224fd8d32b133f9c82333d9248b60dcd93ac4782a"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\Gemfile",
+      "bytes": 448,
+      "sha256": "aee4bc7bb237f6c63bd743bb3897917297aa5dd8c20f9686f192418527da903d"
+    }
+  ],
+  "published_baseline_selections": 3157,
+  "published_preview_commit": "714159a395dd3a728e10de392c16cfaf5769e335",
+  "publication_record": {
+    "path": "C:\\workspace\\Antiquities-Niese-Preview-08-10-2026-10-09\\PUBLICATION_SUMMARY.json",
+    "bytes": 8613,
+    "sha256": "6b35e6a978a5334665007a8f0b1bd8bcaeb9d4acbb9599220107766d0acfe6ec"
+  },
+  "mixed_mapper_source": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\review\\Antiquities_Niese_BookVIII_2026-10-08\\mixed_mapper.py",
+    "bytes": 7049,
+    "sha256": "b201515f0d91d4dda7ff0965f0c703142f87d71e8225567ffff4136afcd74cf2"
+  },
+  "mixed_mapper_fixtures": {
+    "status": "PASS",
+    "tests": [
+      "mixed .text/.tail",
+      "UTF-8",
+      "numeric and named entities",
+      "CRLF",
+      "comment exclusion and tail coordinates",
+      "empty element tails",
+      "nested add/del retained",
+      "num excluded with tail retained",
+      "two units",
+      "raw Unicode-byte roundtrip",
+      "note excluded with tail retained",
+      "nested-child tail ownership",
+      "chapter-0 paratext exclusion",
+      "omission-placeholder exclusion"
+    ]
+  }
+}
