@@ -78,6 +78,10 @@
           <form class="accordion-row hidden">
             <label for="niese-selector">Select a Niese section:</label>
             <select id="niese-selector"></select>
+            {% if page.permalink == "/antiquities/" %}
+            <button type="button" id="niese-previous" aria-label="Previous Niese section">Previous</button>
+            <button type="button" id="niese-next" aria-label="Next Niese section">Next</button>
+            {% endif %}
           </form>
         </div>
 

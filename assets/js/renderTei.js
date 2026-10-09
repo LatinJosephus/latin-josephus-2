@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const bambergSelectMenu = document.getElementById("bamberg-selector");
   const bambergPrevious = document.getElementById("bamberg-previous");
   const bambergNext = document.getElementById("bamberg-next");
+  const niesePrevious = document.getElementById("niese-previous");
+  const nieseNext = document.getElementById("niese-next");
   const viewingLevelSelectMenu = document.getElementById("level-select");
 
   const sourceSelectMenus = {
@@ -114,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // paragraph IDs.
       milestoneChapterBooks: [15, 16, 17, 18, 19, 20],
       nieseBooks: [1, 2, 3, 4, 5, 6, 7],
+      nieseIdentityBooks: {},
       nieseRanges: {
         1: [27, 346],
         2: [1, 349],
@@ -545,7 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rawUnit = params.get("unit") || params.get("num");
     return {bookNum, chapterNum: bookNum === "preface" ? null : positive("chapter"),
       subchapterNum: positive("subchapter"), unitNum: /^[1-9]\d*[a-z]*$/.test(rawUnit || "") ? rawUnit : null,
-      nieseNum: activeWork.nieseBooks.includes(Number(bookNum)) ? positive("niese") : null,
+      nieseNum: supportsNieseBook(bookNum) ? positive("niese") : null,
       bambergId: bambergIdentityFromUrl(params.get("bamberg")),
       sourceSelections, hasLocationParams: params.size > 0};
   };
@@ -636,9 +639,26 @@ document.addEventListener("DOMContentLoaded", () => {
     activeWork.urlUnitScope === "chapter"
   );
 
-  const supportsNieseSections = () => (
-    activeWork.nieseBooks?.includes(parseInt(state.bookNum, 10))
+  const supportsNieseBook = book => Boolean(
+    activeWork.nieseBooks?.includes(Number(book))
+    || activeWork.nieseIdentityBooks?.[Number(book)]
   );
+  const supportsNieseSections = () => supportsNieseBook(state.bookNum);
+  const nieseIdentityRegistries = new Map();
+  const nieseIdentityRegistry = () => nieseIdentityRegistries.get(Number(state.bookNum)) || null;
+  const loadNieseIdentityRegistry = async () => {
+    const book = Number(state.bookNum), path = activeWork.nieseIdentityBooks?.[book];
+    if (!path || nieseIdentityRegistries.has(book)) return;
+    const response = await fetch(`/${path}?v=${teiCacheToken}`);
+    if (!response.ok) throw new Error("The Niese identity registry could not be loaded.");
+    const registry = await response.json();
+    const [first, last] = registry.range || [];
+    if (registry.schema !== 1 || registry.book !== book || !Number.isInteger(first)
+      || !Number.isInteger(last) || registry.sections?.length !== last - first + 1
+      || registry.sections.some((section, index) => section.number !== first + index))
+      throw new Error("Invalid Niese identity registry.");
+    nieseIdentityRegistries.set(book, registry);
+  };
 
   const sectionLevelUsesNiese = () => (
     activeWork.slug === "contra-apionem"
@@ -728,7 +748,7 @@ document.addEventListener("DOMContentLoaded", () => {
         /^[1-9]\d*$/.test(rawNiese || "")
         && (
           sectionLevelUsesNiese()
-          || activeWork.nieseBooks?.includes(parseInt(bookNum, 10))
+          || supportsNieseBook(bookNum)
         )
       ) {
         nieseNum = String(parseInt(rawNiese, 10));
@@ -1964,7 +1984,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const antiquitiesNieseRange = () => (
-    activeWork.nieseRanges?.[parseInt(state.bookNum, 10)] || null
+    nieseIdentityRegistry()?.range || activeWork.nieseRanges?.[parseInt(state.bookNum, 10)] || null
   );
 
   const antiquitiesNieseStartEntries = (language, data) => {
@@ -1983,6 +2003,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const entries = [];
 
     data.querySelectorAll("tei-num").forEach(num => {
+      // Header folio numbers and apparatus numbers are not narrative citations.
+      if (!num.closest("tei-body") || !num.closest("tei-p[id]")
+        || num.closest("tei-note, tei-app, tei-rdg")) return;
+      if (language === "Latin" && nieseIdentityRegistry()?.suppressedLatinLabels.some(rule =>
+        rule.paragraph === num.closest("tei-p")?.id && rule.label === num.textContent.trim())) return;
       const number = antiquitiesNieseLabelNumber(num);
       if (!Number.isInteger(number) || number < first || number > last) return;
 
@@ -1995,6 +2020,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (language === "Latin") {
       data.querySelectorAll('tei-milestone[unit="niese"][n]').forEach(marker => {
+        if (!marker.closest("tei-body") || !marker.closest("tei-p[id]")
+          || marker.closest("tei-note, tei-app, tei-rdg")) return;
         const rawNumber = marker.getAttribute("n");
         if (!/^[1-9]\d*$/.test(rawNumber || "")) return;
 
@@ -2023,6 +2050,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!data || !nieseNum || !supportsNieseSections()) return null;
 
     const wanted = parseInt(nieseNum, 10);
+    const identity = nieseIdentityRegistry()?.sections.find(section => section.number === wanted);
+    if (identity?.[language]?.available === false) {
+      const wrapper = document.createElement("tei-div2");
+      wrapper.setAttribute("type", "niese-section"); wrapper.setAttribute("n", String(wanted));
+      wrapper.dataset.syntheticSection = "niese-derived";
+      wrapper.appendChild(structuralUnavailable(language, identity[language].note || "This section is unavailable in this source."));
+      return wrapper;
+    }
     const entries = antiquitiesNieseStartEntries(language, data);
     const index = entries.findIndex(entry => entry.number === wanted);
     if (index === -1) return null;
@@ -2087,6 +2122,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    if (identity?.[language]?.note) {
+      const note = document.createElement("p");
+      note.className = "alert alert-secondary niese-correspondence-note";
+      note.setAttribute("role", "note"); note.textContent = identity[language].note;
+      wrapper.insertBefore(note, wrapper.firstChild);
+    }
     return wrapper;
   };
 
@@ -2099,7 +2140,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ).find(entry => entry.number === parseInt(nieseNum, 10));
 
     const canonicalParagraph = start?.node?.closest("tei-p") || null;
-    const canonicalId = canonicalParagraph?.id || null;
+    const identity = nieseIdentityRegistry()?.sections.find(section => section.number === Number(nieseNum));
+    const canonicalId = canonicalParagraph?.id || identity?.contextTarget || null;
     const paragraphs = canonicalId
       ? alignedParagraphsForCanonicalId(language, data, canonicalId)
       : [];
@@ -2148,10 +2190,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const canonicalNieseStartEntries = () => {
     if (activeWork.slug === "antiquities") {
-      return antiquitiesNieseStartEntries(
+      const entries = antiquitiesNieseStartEntries(
         activeWork.alignment.language,
         canonicalFullData
       );
+      const registry = nieseIdentityRegistry();
+      if (!registry) return entries;
+      return registry.sections.map(section => entries.find(entry => entry.number === section.number)
+        || {number: section.number, kind: "unavailable"});
     }
 
     return latinNieseStartEntries(canonicalFullData);
@@ -2175,6 +2221,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         marker.classList.add("niese-marker");
         marker.textContent = `[${parseInt(rawNumber, 10)}]`;
+        const note = nieseIdentityRegistry()?.sections.find(section => section.number === Number(rawNumber))?.[language]?.note;
+        if (note) marker.title = note;
       });
       return;
     }
@@ -2675,6 +2723,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const divisions = bambergRows(), index = divisions.findIndex(row => row.id === state.bambergId);
     if (bambergPrevious) bambergPrevious.disabled = index <= 0;
     if (bambergNext) bambergNext.disabled = index < 0 || index >= divisions.length - 1;
+    const citations = canonicalNieseStartEntries(), citationIndex = citations.findIndex(entry => entry.number === Number(state.nieseNum));
+    if (niesePrevious) niesePrevious.disabled = citationIndex <= 0;
+    if (nieseNext) nieseNext.disabled = citationIndex < 0 || citationIndex >= citations.length - 1;
 
     const levelControl = document.getElementById(state.viewingLevel);
     if (state.viewingLevel === "contents-level") viewingLevelSelectMenu.querySelectorAll("input[type=radio]").forEach(control => { control.checked = false; });
@@ -2781,6 +2832,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchData = async () => {
     await loadTraditionalRegistry();
     await loadContentsRegistry();
+    await loadNieseIdentityRegistry();
     if (state.viewingLevel === "contents-level" && !hasSourceContents()) state.viewingLevel = "book-level";
     const filename = currentFilename();
     const idBase = currentIdBase();
@@ -3462,6 +3514,16 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     bambergPrevious?.addEventListener("click", () => advanceBamberg(-1));
     bambergNext?.addEventListener("click", () => advanceBamberg(1));
+    const advanceNiese = direction => {
+      const entries = canonicalNieseStartEntries(), index = entries.findIndex(entry => entry.number === Number(state.nieseNum));
+      const next = entries[index + direction];
+      if (index >= 0 && next) setState(() => {
+        state.nieseNum = String(next.number); state.viewingLevel = "niese-level";
+        state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null; state.bambergId = null;
+      });
+    };
+    niesePrevious?.addEventListener("click", () => advanceNiese(-1));
+    nieseNext?.addEventListener("click", () => advanceNiese(1));
     viewingLevelSelectMenu.addEventListener("change", (event) => {
       setState(() => {
         const nextLevel = event.target.value;
