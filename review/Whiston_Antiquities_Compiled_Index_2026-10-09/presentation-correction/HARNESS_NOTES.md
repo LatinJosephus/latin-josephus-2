@@ -1,0 +1,5 @@
+The first updated validation included technical notes moved from item bodies into source metadata in its inline-markup comparison. That check was corrected to compare the preserved source inline markup separately and to require every relocated technical note in metadata. This was a test expectation correction; no source wording was changed. The failed assertion was Whiston-Ant-02-09_inline_markup_and_attributes. Final results are from rerunning the corrected validator.
+
+The first CSS differential probe assumed every existing Greek TOC used tei-item; Book V uses its accepted paragraph encoding. The probe was expanded to compare the wrapper and every source heading/paragraph/item/supplement, without changing source data. The timeout log is preserved as CSS_SCOPE_INITIAL.log.
+
+A differential check caught intermediate font size/weight values while the existing 750 ms theme transition was still running (16 versus 16.1078 px). CSS_DIFFERENCE.json preserves the values. The browser probes now wait 900 ms after setting a theme before measuring, without disabling or changing production transitions. Both-theme contents QA is rerun with that timing.

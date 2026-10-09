@@ -1,0 +1,9 @@
+# Human decisions before implementation
+
+1. **Governing edition and feature label — all books.** No complete 1737 image source was established. The accessible 1741 Vol. I covers I–III; the 1784 scan cuts off XX.11. The 1856 Alden & Beardsley scan supports a consistent 256-heading candidate. Electronic lists do not prove a first-edition TOC. **Recommendation:** approve “Whiston’s chapter headings (compiled index)” with an explicit 1856 source and editorial-arrangement note. This leaves the form of the 1737 “Contents” open.
+
+2. **III.8 — terminal punctuation.** The faded 1856 impression at p. 92 / PDF page 104 reads OF THE PRIESTHOOD OF AARON; a final point is not securely visible. Gutenberg, Chicago and Perseus have a point. The candidate adds none. **Recommendation:** inspect a clearer 1856 copy or approve a qualified no-added-punctuation treatment. Do not silently certify either the point’s absence or its supply. Evidence: print-images/1856-recheck-104.jpg.
+
+3. **III.15 — faded middle clause and punctuation.** At 1856 p. 101 / PDF page 113, the candidate is “THAT THEY SHOULD CONTINUE IN THE WILDERNESS FOR FORTY YEARS”. Gutenberg and Perseus support it, but the impression alone does not establish every letter and punctuation mark securely. The proposal marks the candidate clause as unclear and explains the qualification. **Recommendation:** obtain a clearer impression and approve the exact reading before classifying Book III as fully verified. Evidence: print-images/III15-close.jpg and print-images/1856-recheck-113.jpg. Digital agreement has not been silently converted into certain print evidence.
+
+These are the three approval decisions isolated by this audit. Other documented electronic variants have proposed resolutions grounded in the identified print witness. No change to canonical narrative text is proposed or authorized here.

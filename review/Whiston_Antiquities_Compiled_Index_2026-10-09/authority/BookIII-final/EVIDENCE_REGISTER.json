@@ -1,0 +1,660 @@
+{
+  "audit_date": "2026-10-09",
+  "original_workspace": "C:\\workspace\\LatinJosephus-Whiston-Contents-Audit-20261008",
+  "original_manifest_sha256": "6c74c1e98987483b4193a34f457f2671429ef93e5050b1e114ddd83a86b7aa08",
+  "editions": {
+    "1856-Toronto": {
+      "title": "The Works of Flavius Josephus, the Learned and Authentic Jewish Historian",
+      "translator": "William Whiston",
+      "place": "Auburn and Rochester",
+      "publisher": "Alden & Beardsley",
+      "date": 1856,
+      "holding": "University of Toronto, Kelly Library",
+      "provider": "Internet Archive",
+      "identifier": "worksofflaviusj00joseuoft",
+      "title_source": "C:\\workspace\\LatinJosephus-Whiston-Contents-Audit-20261008\\print-images\\1856-page-0011.jpg",
+      "title_original_PDF_page": 11,
+      "original_pdf": "C:\\workspace\\LatinJosephus-Whiston-Contents-Audit-20261008\\sources\\Whiston1856.pdf",
+      "original_pdf_sha256": "2753e37ffc9567d4f10a079bc7f7e11d10386fa16c31167503a89c34a038e912"
+    },
+    "1856-UIUC": {
+      "title": "The Works of Flavius Josephus, the Learned and Authentic Jewish Historian",
+      "translator": "William Whiston",
+      "place": "Auburn and Rochester",
+      "publisher": "Alden & Beardsley",
+      "date": 1856,
+      "holding": "University of Illinois at Urbana-Champaign",
+      "provider": "Google Books",
+      "identifier": "Sm9BAQAAMAAJ",
+      "title_source": "sources/google-1856-UIUC-PP7.jpg",
+      "holding_evidence": "sources/google-1856-UIUC-PP1.jpg",
+      "bibliographic_url": "https://books.google.com/books?id=Sm9BAQAAMAAJ",
+      "qualification": "Distinct held copy verified from library leaf and title image; identical heading setting. No claim about priority of impressions within the 1856 edition."
+    },
+    "1741": {
+      "title": "The Genuine Works of Flavius Josephus, the Jewish Historian",
+      "translator": "William Whiston",
+      "volume": "I",
+      "place": "Dublin",
+      "printer": "R. Reilly",
+      "publisher": "George Ewing",
+      "date": 1741,
+      "holding": "British Library, according to Google metadata",
+      "provider": "Google Books",
+      "identifier": "6mwoL_GaNu4C",
+      "title_source": "C:\\workspace\\LatinJosephus-Whiston-Contents-Audit-20261008\\sources\\google1741_PP9.jpg",
+      "title_page_id": "PP9"
+    },
+    "1784": {
+      "title": "The Genuine Works of Flavius Josephus, the Jewish Historian",
+      "translator": "William Whiston",
+      "volume": "I",
+      "place": "Newcastle upon Tyne",
+      "printer_publisher": "L. Dinsdale and T. Angus",
+      "date": 1784,
+      "holding": "Uttarpara Jaykrishna Public Library, Hooghly",
+      "provider": "Internet Archive / DLI",
+      "identifier": "dli.bengal.10689.4952",
+      "title_source": "C:\\workspace\\LatinJosephus-Whiston-Contents-Audit-20261008\\print-images\\1784-page-0002.png",
+      "title_original_PDF_page": 2,
+      "original_pdf": "C:\\workspace\\LatinJosephus-Whiston-Contents-Audit-20261008\\sources\\Whiston1784_VolI.pdf",
+      "original_pdf_sha256": "0ca21fc696f668334c16d01b83b8277fd4b16d465294543f39056baa20360dd4"
+    }
+  },
+  "cases": [
+    {
+      "id": "Whiston-Ant-03-08",
+      "book": 3,
+      "chapter": 8,
+      "printed_witnesses": {
+        "1856-Toronto": {
+          "label": "CHAPTER VIII.",
+          "lines": [
+            "OF THE PRIESTHOOD OF AARON"
+          ],
+          "reading": "OF THE PRIESTHOOD OF AARON",
+          "printed_page": 92,
+          "pdf_page": 104,
+          "image_url": "https://iiif.archive.org/iiif/worksofflaviusj00joseuoft%24104/full/full/0/default.jpg",
+          "source": "sources/1856-original-IIIF-page-104.jpg",
+          "status": "PRINT_VERIFIED",
+          "confidence": "HIGH",
+          "observations": "No terminal point after AARON. Entire word ending and following blank space are visible. The separate point after VIII belongs to the chapter label.",
+          "crop": {
+            "id": "1856-Toronto-III8",
+            "source_file": "sources/1856-original-IIIF-page-104.jpg",
+            "source_sha256": "5c0d13f307d68021bbc02860376bc59e00024ea6de5708ea6641ef7411b27fb4",
+            "source_dimensions": [
+              1456,
+              2506
+            ],
+            "crop_pixels": [
+              109,
+              1416,
+              692,
+              1559
+            ],
+            "unaltered_crop": "evidence/final-1856-Toronto-III8-unaltered.png",
+            "enhanced_crop": "evidence/final-1856-Toronto-III8-enhanced.png",
+            "enhancement": "Grayscale, contrast factor 1.35, 2x Lanczos enlargement; no sharpening, inpainting or reconstruction. Untouched source and exact source-pixel crop retained."
+          }
+        },
+        "1856-UIUC": {
+          "label": "CHAPTER VIII.",
+          "lines": [
+            "OF THE PRIESTHOOD OF AARON"
+          ],
+          "reading": "OF THE PRIESTHOOD OF AARON",
+          "printed_page": 92,
+          "page_id": "PA92",
+          "page_url": "https://books.google.com/books?id=Sm9BAQAAMAAJ&pg=PA92",
+          "source": "sources/google-1856-UIUC-PA92.jpg",
+          "status": "PRINT_VERIFIED",
+          "confidence": "HIGH",
+          "observations": "Independent held copy likewise has no final point in the summary. The label’s own point and nearby narrative punctuation are visible.",
+          "crop": {
+            "id": "1856-UIUC-III8",
+            "source_file": "sources/google-1856-UIUC-PA92.jpg",
+            "source_sha256": "a93c47161ad6c489bc7473494201f675b86b6ccde6bd841db2c1cc600f066c66",
+            "source_dimensions": [
+              575,
+              924
+            ],
+            "crop_pixels": [
+              58,
+              536,
+              305,
+              587
+            ],
+            "unaltered_crop": "evidence/final-1856-UIUC-III8-unaltered.png",
+            "enhanced_crop": "evidence/final-1856-UIUC-III8-enhanced.png",
+            "enhancement": "Grayscale, contrast factor 1.35, 2x Lanczos enlargement; no sharpening, inpainting or reconstruction. Untouched source and exact source-pixel crop retained."
+          }
+        },
+        "1741": {
+          "label": "CHAP. VIII.",
+          "lines": [
+            "Of the Prieſthood of Aaron."
+          ],
+          "reading": "Of the Prieſthood of Aaron.",
+          "printed_page": 441,
+          "page_id": "PA441",
+          "page_url": "https://books.google.com/books?id=6mwoL_GaNu4C&pg=PA441",
+          "source": "sources/google-1741-PA441.jpg",
+          "status": "PRINT_VERIFIED",
+          "confidence": "HIGH",
+          "typography": "Italic chapter summary; long s retained as ſ. Letterspacing in the CHAP label is a type treatment, not a different numeral.",
+          "observations": "Terminal point is clearly printed after Aaron.",
+          "crop": {
+            "id": "1741-III8",
+            "source_file": "sources/google-1741-PA441.jpg",
+            "source_sha256": "7ed77b998c284c2c84ce5129f4e87ee9ec4596ea975abc817d488971f1427b1d",
+            "source_dimensions": [
+              575,
+              950
+            ],
+            "crop_pixels": [
+              115,
+              443,
+              377,
+              494
+            ],
+            "unaltered_crop": "evidence/final-1741-III8-unaltered.png",
+            "enhanced_crop": "evidence/final-1741-III8-enhanced.png",
+            "enhancement": "Grayscale, contrast factor 1.35, 2x Lanczos enlargement; no sharpening, inpainting or reconstruction. Untouched source and exact source-pixel crop retained."
+          }
+        },
+        "1784": {
+          "label": "CHAP. VIII.",
+          "lines": [
+            "Of the Prieſthood of Aaron."
+          ],
+          "reading": "Of the Prieſthood of Aaron.",
+          "printed_page": 87,
+          "pdf_page": 94,
+          "IIIF_leaf": 93,
+          "image_url": "https://iiif.archive.org/iiif/dli.bengal.10689.4952%2493/full/full/0/default.jpg",
+          "source": "sources/1784-verified-IIIF-leaf-93.jpg",
+          "status": "PRINT_VERIFIED",
+          "confidence": "HIGH",
+          "typography": "Italic chapter summary; long s retained.",
+          "observations": "Terminal point is plainly visible despite degraded surrounding page text.",
+          "crop": {
+            "id": "1784-III8",
+            "source_file": "sources/1784-verified-IIIF-leaf-93.jpg",
+            "source_sha256": "625cc6986f52ffbb6c59e35d78e03f7ed25bad5c5eb6a5e57d851964eece22b7",
+            "source_dimensions": [
+              2432,
+              3060
+            ],
+            "crop_pixels": [
+              170,
+              1643,
+              1216,
+              1867
+            ],
+            "unaltered_crop": "evidence/final-1784-III8-unaltered.png",
+            "enhanced_crop": "evidence/final-1784-III8-enhanced.png",
+            "enhancement": "Grayscale, contrast factor 1.35, 2x Lanczos enlargement; no sharpening, inpainting or reconstruction. Untouched source and exact source-pixel crop retained."
+          }
+        }
+      },
+      "digital_witnesses": {
+        "gutenberg_index": {
+          "text_raw": " CHAPTER 8. Of The Priesthood Of Aaron. ",
+          "html": "<a href=\"#link32HCH0008\" class=\"pginternal\"> CHAPTER 8. Of The Priesthood Of Aaron. </a>",
+          "xpath": "/html/body/blockquote/div/p[50]/a",
+          "target": "link32HCH0008"
+        },
+        "gutenberg_linked": {
+          "text_raw": "\r\n      CHAPTER 8. Of The Priesthood Of Aaron.\r\n    ",
+          "html": "<h3>&#13;\n      CHAPTER 8. Of The Priesthood Of Aaron.&#13;\n    </h3>",
+          "xpath": "/html/body/h3[51]",
+          "url": "https://www.gutenberg.org/cache/epub/2848/pg2848-images.html#link32HCH0008"
+        },
+        "uchicago": {
+          "label_raw": "\nChapter 8.",
+          "heading_raw": "\nOf the priesthood of Aaron.",
+          "heading_html": "<p class=\"contents\">\nOf the priesthood of <i>Aaron</i>.</p>",
+          "xpath": "/html/body/p[60]",
+          "url": "https://penelope.uchicago.edu/josephus/ant-3.html",
+          "footnote_markers": []
+        },
+        "canonical": {
+          "heading_raw": "CHAPTER 8. Of The Priesthood Of Aaron.",
+          "heading_xml": "<p xmlns=\"http://www.tei-c.org/ns/1.0\">CHAPTER 8. Of The Priesthood Of Aaron.</p>",
+          "xpath": "/*/*/*/*[2]/*[9]/*[1]",
+          "wrapper_id": "english-book03-chapter8",
+          "wrapper_sameAs": "#latin-book03-chapter8"
+        },
+        "perseus": {
+          "heading_raw": "OF THE PRIESTHOOD OF AARON.",
+          "heading_xml": "<head xmlns=\"http://www.tei-c.org/ns/1.0\" rend=\"align(center)\">OF THE PRIESTHOOD OF AARON.</head>",
+          "xpath": "/*/*[2]/*/*/*[3]/*[40]/*[3]",
+          "digital_section": "188",
+          "edition": "Auburn and Rochester, NY: Alden and Beardsley, 1856 (Perseus metadata; print not independently checked)"
+        }
+      },
+      "actual_canonical_check": {
+        "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-03.xml",
+        "sha256": "e3b1efaaf1c39dcd0f7db8b546217a58f065b9193caf6bf882f14c207c03a00c",
+        "xpath": "/*/*/*/*[2]/*[9]/*[1]",
+        "reading_raw": "CHAPTER 8. Of The Priesthood Of Aaron."
+      },
+      "differences_from_1856": {
+        "1856-UIUC": [],
+        "1741": [
+          {
+            "operation": "replace",
+            "1856": "F",
+            "other": "f"
+          },
+          {
+            "operation": "replace",
+            "1856": "THE",
+            "other": "the"
+          },
+          {
+            "operation": "replace",
+            "1856": "RIESTHOOD",
+            "other": "rieſthood"
+          },
+          {
+            "operation": "replace",
+            "1856": "OF",
+            "other": "of"
+          },
+          {
+            "operation": "replace",
+            "1856": "ARON",
+            "other": "aron."
+          }
+        ],
+        "1784": [
+          {
+            "operation": "replace",
+            "1856": "F",
+            "other": "f"
+          },
+          {
+            "operation": "replace",
+            "1856": "THE",
+            "other": "the"
+          },
+          {
+            "operation": "replace",
+            "1856": "RIESTHOOD",
+            "other": "rieſthood"
+          },
+          {
+            "operation": "replace",
+            "1856": "OF",
+            "other": "of"
+          },
+          {
+            "operation": "replace",
+            "1856": "ARON",
+            "other": "aron."
+          }
+        ]
+      },
+      "adopted_reading": "OF THE PRIESTHOOD OF AARON",
+      "verification_status": "PRINT_VERIFIED_WITH_VARIANT",
+      "confidence": "HIGH",
+      "integration_text_ready": true,
+      "qualification": "No final point is added to the 1856 reading. Earlier printed points are retained as a genuine edition punctuation difference."
+    },
+    {
+      "id": "Whiston-Ant-03-15",
+      "book": 3,
+      "chapter": 15,
+      "printed_witnesses": {
+        "1856-Toronto": {
+          "label": "CHAPTER XV.",
+          "lines": [
+            "HOW MOSES WAS DISPLEASED AT THIS, AND",
+            "FORETOLD THAT GOD WAS ANGRY, AND",
+            "THAT THEY SHOULD CONTINUE IN THE WIL-",
+            "DERNESS FOR FORTY YEARS, AND NOT,",
+            "DURING THAT TIME, EITHER RETURN INTO",
+            "EGYPT, OR TAKE POSSESSION OF CANAAN."
+          ],
+          "reading": "HOW MOSES WAS DISPLEASED AT THIS, AND FORETOLD THAT GOD WAS ANGRY, AND THAT THEY SHOULD CONTINUE IN THE WILDERNESS FOR FORTY YEARS, AND NOT, DURING THAT TIME, EITHER RETURN INTO EGYPT, OR TAKE POSSESSION OF CANAAN.",
+          "printed_page": 101,
+          "pdf_page": 113,
+          "image_url": "https://iiif.archive.org/iiif/worksofflaviusj00joseuoft%24113/full/full/0/default.jpg",
+          "source": "sources/1856-original-IIIF-page-113.jpg",
+          "status": "PRINT_VERIFIED",
+          "confidence": "HIGH",
+          "observations": "Original colour image establishes CONTINUE, WIL-/DERNESS, FORTY YEARS and all seven comma/full-stop positions. SHOULD and CONTINUE have tight typesetting; the orthographic words remain distinct. Joining WIL-/DERNESS follows the accepted audit’s declared wrap policy.",
+          "crop": {
+            "id": "1856-Toronto-III15",
+            "source_file": "sources/1856-original-IIIF-page-113.jpg",
+            "source_sha256": "5b8fdd345dce6fe4a2f346c2e2069fc4b05e7fdea3c68dbc1ef34d402f269caf",
+            "source_dimensions": [
+              1456,
+              2506
+            ],
+            "crop_pixels": [
+              681,
+              842,
+              1376,
+              1138
+            ],
+            "unaltered_crop": "evidence/final-1856-Toronto-III15-unaltered.png",
+            "enhanced_crop": "evidence/final-1856-Toronto-III15-enhanced.png",
+            "enhancement": "Grayscale, contrast factor 1.35, 2x Lanczos enlargement; no sharpening, inpainting or reconstruction. Untouched source and exact source-pixel crop retained."
+          }
+        },
+        "1856-UIUC": {
+          "label": "CHAPTER XV.",
+          "lines": [
+            "HOW MOSES WAS DISPLEASED AT THIS, AND",
+            "FORETOLD THAT GOD WAS ANGRY, AND",
+            "THAT THEY SHOULD CONTINUE IN THE WIL-",
+            "DERNESS FOR FORTY YEARS, AND NOT,",
+            "DURING THAT TIME, EITHER RETURN INTO",
+            "EGYPT, OR TAKE POSSESSION OF CANAAN."
+          ],
+          "reading": "HOW MOSES WAS DISPLEASED AT THIS, AND FORETOLD THAT GOD WAS ANGRY, AND THAT THEY SHOULD CONTINUE IN THE WILDERNESS FOR FORTY YEARS, AND NOT, DURING THAT TIME, EITHER RETURN INTO EGYPT, OR TAKE POSSESSION OF CANAAN.",
+          "printed_page": 101,
+          "page_id": "PA101",
+          "page_url": "https://books.google.com/books?id=Sm9BAQAAMAAJ&pg=PA101",
+          "source": "sources/google-1856-UIUC-PA101.jpg",
+          "status": "PRINT_VERIFIED",
+          "confidence": "HIGH",
+          "observations": "Separate held copy confirms the complete wording and punctuation, including a comma after YEARS and a final point after CANAAN.",
+          "crop": {
+            "id": "1856-UIUC-III15",
+            "source_file": "sources/google-1856-UIUC-PA101.jpg",
+            "source_sha256": "388dfdbba70dc6fd67d2bc6dfe469fc42bd1213c44e3d1f1ea5ca404c36f07fe",
+            "source_dimensions": [
+              575,
+              952
+            ],
+            "crop_pixels": [
+              285,
+              327,
+              532,
+              440
+            ],
+            "unaltered_crop": "evidence/final-1856-UIUC-III15-unaltered.png",
+            "enhanced_crop": "evidence/final-1856-UIUC-III15-enhanced.png",
+            "enhancement": "Grayscale, contrast factor 1.35, 2x Lanczos enlargement; no sharpening, inpainting or reconstruction. Untouched source and exact source-pixel crop retained."
+          }
+        },
+        "1741": {
+          "label": "CHAP. XV.",
+          "lines": [
+            "How Moſes was diſpleaſed at this ; and foretold, that God",
+            "was angry ; and that they ſhould continue in the wilderneſs",
+            "for forty years : and not [during that time] either return",
+            "into Egypt, or take poſſeſſion of Canaan."
+          ],
+          "reading": "How Moſes was diſpleaſed at this ; and foretold, that God was angry ; and that they ſhould continue in the wilderneſs for forty years : and not [during that time] either return into Egypt, or take poſſeſſion of Canaan.",
+          "printed_page": 464,
+          "page_id": "PA464",
+          "page_url": "https://books.google.com/books?id=6mwoL_GaNu4C&pg=PA464",
+          "source": "sources/google-1741-PA464.jpg",
+          "status": "PRINT_VERIFIED",
+          "confidence": "HIGH",
+          "typography": "Italic summary; long s and source brackets retained; printed line grouping separately recorded.",
+          "observations": "CONTINUE is clear. Semicolons after this and angry, comma after foretold, colon after years, and brackets around during that time are actual earlier-edition readings.",
+          "crop": {
+            "id": "1741-III15",
+            "source_file": "sources/google-1741-PA464.jpg",
+            "source_sha256": "1696e9160e30cf5b6432d8b96353ac601a39f0c8d291a4b20469c018bc39f1ff",
+            "source_dimensions": [
+              575,
+              940
+            ],
+            "crop_pixels": [
+              125,
+              272,
+              539,
+              382
+            ],
+            "unaltered_crop": "evidence/final-1741-III15-unaltered.png",
+            "enhanced_crop": "evidence/final-1741-III15-enhanced.png",
+            "enhancement": "Grayscale, contrast factor 1.35, 2x Lanczos enlargement; no sharpening, inpainting or reconstruction. Untouched source and exact source-pixel crop retained."
+          }
+        },
+        "1784": {
+          "label": "CHAP. XV.",
+          "lines": [
+            "How Moſes was diſpleaſed at this ; and foretold,",
+            "that God was angry, and that they ſhould con-",
+            "tinue in the Wilderneſs for forty Years, and",
+            "not [during that Time] either return into E-",
+            "gypt, or take Poſſeſſion of Canaan."
+          ],
+          "reading": "How Moſes was diſpleaſed at this ; and foretold, that God was angry, and that they ſhould continue in the Wilderneſs for forty Years, and not [during that Time] either return into Egypt, or take Poſſeſſion of Canaan.",
+          "diplomatic_with_unclear": "⟦How Moſes was diſpleaſed⟧ at this ; and foretold, that God was angry, and that they ſhould con-\ntinue in the Wilderneſs for forty Years, and not [⟦during⟧ that Time] either return into E-\ngypt, or take Poſſeſſion of Canaan.",
+          "unclear_spans": [
+            {
+              "text": "How Moſes was diſpleaſed",
+              "reason": "Broken/degraded ink makes some letter strokes incomplete; this is a collated reading, not secure every-letter typography."
+            },
+            {
+              "text": "during",
+              "reason": "Low-ink lower strokes; contextual reading retained with qualification."
+            }
+          ],
+          "printed_page": 100,
+          "pdf_page": 107,
+          "IIIF_leaf": 106,
+          "image_url": "https://iiif.archive.org/iiif/dli.bengal.10689.4952%24106/full/full/0/default.jpg",
+          "source": "sources/1784-verified-IIIF-leaf-106.jpg",
+          "status": "PRINT_VERIFIED_WITH_REVIEW",
+          "confidence": "QUALIFIED_CONTROL",
+          "typography": "Italic; long s and source brackets retained. Con-/tinue and E-/gypt are physical wrap divisions.",
+          "observations": "The substantive continue / forty Years clause, source brackets, comma after angry, comma after Years and final point are visible. Some initial words and during remain degraded; do not upgrade this control to a complete every-glyph certification.",
+          "crop": {
+            "id": "1784-III15",
+            "source_file": "sources/1784-verified-IIIF-leaf-106.jpg",
+            "source_sha256": "37ffda8b1814dd6e803486ad8db17def9fa71cb5a6160e10d136d6df2de286e1",
+            "source_dimensions": [
+              2432,
+              3060
+            ],
+            "crop_pixels": [
+              61,
+              759,
+              1240,
+              1196
+            ],
+            "unaltered_crop": "evidence/final-1784-III15-unaltered.png",
+            "enhanced_crop": "evidence/final-1784-III15-enhanced.png",
+            "enhancement": "Grayscale, contrast factor 1.35, 2x Lanczos enlargement; no sharpening, inpainting or reconstruction. Untouched source and exact source-pixel crop retained."
+          }
+        }
+      },
+      "digital_witnesses": {
+        "gutenberg_index": {
+          "text_raw": " CHAPTER 15. How Moses Was Displeased At This,\r\n        And Foretold That God Was Angry And That They Should Continue In The\r\n        Wilderness For Forty Years And Not, During That Time, Either Return Into\r\n        Egypt Or Take Possession Of Canaan. ",
+          "html": "<a href=\"#link32HCH0015\" class=\"pginternal\"> CHAPTER 15. How Moses Was Displeased At This,&#13;\n        And Foretold That God Was Angry And That They Should Continue In The&#13;\n        Wilderness For Forty Years And Not, During That Time, Either Return Into&#13;\n        Egypt Or Take Possession Of Canaan. </a>",
+          "xpath": "/html/body/blockquote/div/p[57]/a",
+          "target": "link32HCH0015"
+        },
+        "gutenberg_linked": {
+          "text_raw": "\r\n      CHAPTER 15. How Moses Was Displeased At This, And Foretold That God Was\r\n      Angry And That They Should Continue In The Wilderness For Forty Years And\r\n      Not, During That Time, Either Return Into Egypt Or Take Possession Of\r\n      Canaan.\r\n    ",
+          "html": "<h3>&#13;\n      CHAPTER 15. How Moses Was Displeased At This, And Foretold That God Was&#13;\n      Angry And That They Should Continue In The Wilderness For Forty Years And&#13;\n      Not, During That Time, Either Return Into Egypt Or Take Possession Of&#13;\n      Canaan.&#13;\n    </h3>",
+          "xpath": "/html/body/h3[58]",
+          "url": "https://www.gutenberg.org/cache/epub/2848/pg2848-images.html#link32HCH0015"
+        },
+        "uchicago": {
+          "label_raw": "\nChapter 15.",
+          "heading_raw": "\nHow Moses was displeased at this; and foretold, that God was angry; and that they should continue in the wilderness for forty years: and not [during that time] either return into Egypt, or take possession of Canaan.",
+          "heading_html": "<p class=\"contents\">\nHow <i>Moses</i> was displeased at this; and foretold, that God was angry; and that they should continue in the wilderness for forty years: and not [during that time] either return into <i>Egypt</i>, or take possession of <i>Canaan</i>.</p>",
+          "xpath": "/html/body/p[112]",
+          "url": "https://penelope.uchicago.edu/josephus/ant-3.html",
+          "footnote_markers": []
+        },
+        "canonical": {
+          "heading_raw": "CHAPTER 15. How Moses Was Displeased At This, And Foretold That God Was Angry And That They Should Continue In The Wilderness For Forty Years And Not, During That Time, Either Return Into Egypt Or Take Possession Of Canaan.",
+          "heading_xml": "<p xmlns=\"http://www.tei-c.org/ns/1.0\">CHAPTER 15. How Moses Was Displeased At This, And Foretold That God Was Angry And That They Should Continue In The Wilderness For Forty Years And Not, During That Time, Either Return Into Egypt Or Take Possession Of Canaan.</p>",
+          "xpath": "/*/*/*/*[2]/*[16]/*[1]",
+          "wrapper_id": "english-book03-chapter15",
+          "wrapper_sameAs": "#latin-book03-chapter15"
+        },
+        "perseus": {
+          "heading_raw": "HOW MOSES WAS DISPLEASED AT THIS, AND FORETOLD THAT GOD WAS\nANGRY AND THAT THEY SHOULD CONTINUE IN THE WILDERNESS FOR FORTY YEARS AND\nNOT, DURING THAT TIME, EITHER RETURN INTO EGYPT OR TAKE POSSESSION OF CANAAN.",
+          "heading_xml": "<head xmlns=\"http://www.tei-c.org/ns/1.0\" rend=\"align(center)\">HOW MOSES WAS DISPLEASED AT THIS, AND FORETOLD THAT GOD WAS\nANGRY AND THAT THEY SHOULD CONTINUE IN THE WILDERNESS FOR FORTY YEARS AND\nNOT, DURING THAT TIME, EITHER RETURN INTO EGYPT OR TAKE POSSESSION OF CANAAN.</head>",
+          "xpath": "/*/*[2]/*/*/*[3]/*[78]/*[3]",
+          "digital_section": "311",
+          "edition": "Auburn and Rochester, NY: Alden and Beardsley, 1856 (Perseus metadata; print not independently checked)"
+        }
+      },
+      "actual_canonical_check": {
+        "path": "C:\\Users\\Pollard_R\\Git\\LatinJosephus-v2-development\\assets\\xml\\antiquities\\English\\book-03.xml",
+        "sha256": "e3b1efaaf1c39dcd0f7db8b546217a58f065b9193caf6bf882f14c207c03a00c",
+        "xpath": "/*/*/*/*[2]/*[16]/*[1]",
+        "reading_raw": "CHAPTER 15. How Moses Was Displeased At This, And Foretold That God Was Angry And That They Should Continue In The Wilderness For Forty Years And Not, During That Time, Either Return Into Egypt Or Take Possession Of Canaan."
+      },
+      "differences_from_1856": {
+        "1856-UIUC": [],
+        "1741": [
+          {
+            "operation": "replace",
+            "1856": "OW",
+            "other": "ow"
+          },
+          {
+            "operation": "replace",
+            "1856": "OSES",
+            "other": "oſes"
+          },
+          {
+            "operation": "replace",
+            "1856": "WAS",
+            "other": "was"
+          },
+          {
+            "operation": "replace",
+            "1856": "DISPLEASED",
+            "other": "diſpleaſed"
+          },
+          {
+            "operation": "replace",
+            "1856": "AT",
+            "other": "at"
+          },
+          {
+            "operation": "replace",
+            "1856": "THIS",
+            "other": "this ; and foretold"
+          },
+          {
+            "operation": "replace",
+            "1856": "AND FORETOLD THAT",
+            "other": "that"
+          },
+          {
+            "operation": "replace",
+            "1856": "OD",
+            "other": "od"
+          },
+          {
+            "operation": "replace",
+            "1856": "WAS",
+            "other": "was"
+          },
+          {
+            "operation": "replace",
+            "1856": "ANGRY",
+            "other": "angry ; and that they ſhould continue in the wilderneſs for forty years : and not [during that time] either return into Egypt"
+          },
+          {
+            "operation": "replace",
+            "1856": "AND",
+            "other": "or"
+          },
+          {
+            "operation": "replace",
+            "1856": "THAT",
+            "other": "take"
+          },
+          {
+            "operation": "replace",
+            "1856": "THEY",
+            "other": "poſſeſſion"
+          },
+          {
+            "operation": "replace",
+            "1856": "SHOULD",
+            "other": "of"
+          },
+          {
+            "operation": "replace",
+            "1856": "ONTINUE IN THE WILDERNESS FOR FORTY YEARS, AND NOT, DURING THAT TIME, EITHER RETURN INTO EGYPT, OR TAKE POSSESSION OF CANAAN",
+            "other": "anaan"
+          }
+        ],
+        "1784": [
+          {
+            "operation": "replace",
+            "1856": "OW",
+            "other": "ow"
+          },
+          {
+            "operation": "replace",
+            "1856": "OSES",
+            "other": "oſes was diſpleaſed at this ; and foretold, that God was angry, and that they ſhould continue in the"
+          },
+          {
+            "operation": "replace",
+            "1856": "AS",
+            "other": "ilderneſs"
+          },
+          {
+            "operation": "replace",
+            "1856": "DISPLEASED",
+            "other": "for"
+          },
+          {
+            "operation": "replace",
+            "1856": "AT",
+            "other": "forty Years, and not [during that"
+          },
+          {
+            "operation": "replace",
+            "1856": "HIS",
+            "other": "ime] either return into Egypt"
+          },
+          {
+            "operation": "replace",
+            "1856": "AND",
+            "other": "or"
+          },
+          {
+            "operation": "replace",
+            "1856": "FORETOLD",
+            "other": "take"
+          },
+          {
+            "operation": "replace",
+            "1856": "THAT",
+            "other": "Poſſeſſion"
+          },
+          {
+            "operation": "replace",
+            "1856": "GOD WAS ANGRY, AND THAT THEY SHOULD",
+            "other": "of"
+          },
+          {
+            "operation": "replace",
+            "1856": "ONTINUE IN THE WILDERNESS FOR FORTY YEARS, AND NOT, DURING THAT TIME, EITHER RETURN INTO EGYPT, OR TAKE POSSESSION OF CANAAN",
+            "other": "anaan"
+          }
+        ]
+      },
+      "adopted_reading": "HOW MOSES WAS DISPLEASED AT THIS, AND FORETOLD THAT GOD WAS ANGRY, AND THAT THEY SHOULD CONTINUE IN THE WILDERNESS FOR FORTY YEARS, AND NOT, DURING THAT TIME, EITHER RETURN INTO EGYPT, OR TAKE POSSESSION OF CANAAN.",
+      "verification_status": "PRINT_VERIFIED_WITH_VARIANT",
+      "confidence": "HIGH",
+      "integration_text_ready": true,
+      "qualification": "Printed 1856 wording certified directly; earlier typography is not imported. 1784 III.15 remains a qualified control and does not determine the adopted text."
+    }
+  ],
+  "unclear_notation": "⟦...⟧ in the 1784 diplomatic control marks damaged/unsecure letters; it is not a source bracket. Actual source brackets are ordinary [ ].",
+  "visual_method": "Source images and exact source-pixel crops were inspected. Restrained grayscale/contrast/enlargement is a viewing aid, not replacement authority. OCR/search snippets located pages only."
+}

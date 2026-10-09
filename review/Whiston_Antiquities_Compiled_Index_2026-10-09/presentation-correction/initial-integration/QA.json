@@ -1,0 +1,254 @@
+{
+  "result": "PASS",
+  "date": "2026-10-09",
+  "base_commit": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "source_audit": [
+    {
+      "root": "C:\\workspace\\LatinJosephus-Whiston-Contents-Audit-20261008",
+      "manifest_sha256": "6c74c1e98987483b4193a34f457f2671429ef93e5050b1e114ddd83a86b7aa08",
+      "entries_verified": 342,
+      "recorded_checks_passed": 78
+    },
+    {
+      "root": "C:\\workspace\\LatinJosephus-Whiston-BookIII-Adjudication-20261009",
+      "manifest_sha256": "356f8dbaece44e1c686a98f6e4c5b59dbc2c4818341e4aa9fd4986f350175591",
+      "entries_verified": 106,
+      "recorded_checks_passed": 37
+    }
+  ],
+  "source_schema_data_checks": 201,
+  "companions": 20,
+  "headings": 256,
+  "per_book": [
+    22,
+    16,
+    15,
+    8,
+    11,
+    14,
+    15,
+    15,
+    14,
+    11,
+    8,
+    11,
+    16,
+    16,
+    11,
+    11,
+    13,
+    9,
+    9,
+    11
+  ],
+  "III8": "1856 has no terminal point",
+  "III15": "Certified full clause and punctuation preserved",
+  "V3": "THEM, not old canonical THE",
+  "registry": {
+    "before": 39,
+    "added": 20,
+    "after": 59,
+    "original_records_and_bytes_preserved": true
+  },
+  "renderer_changes": 0,
+  "CSS_changes": 0,
+  "narrative_XML_changes": 0,
+  "new_anchors": 0,
+  "browser": {
+    "books": 20,
+    "both_theme_displays": 40,
+    "existing_contents_exact": 39,
+    "URL_history_pane_roundtrips": 20,
+    "Book_switches": 19,
+    "keyboard": "PASS",
+    "Coelacanth": "PASS",
+    "contrast_light": 13.96,
+    "contrast_dark": 11.85,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "overflow": 0,
+    "duplicate_DOM_IDs": 0,
+    "screenshots": 24,
+    "manual_screenshot_inspection": [
+      "AFTER_Whiston-3_light.png",
+      "AFTER_Whiston-5_dark.png",
+      "III8_light.png",
+      "AFTER_Whiston-3_dark_last.png",
+      "BEFORE_Whiston-5_dark.png",
+      "AFTER_Whiston-20_light_last.png"
+    ],
+    "VIII_X_Niese_not_enabled": true
+  },
+  "traditional": {
+    "rows": 1689,
+    "executable": 5034,
+    "unavailable": 33,
+    "byLanguage": {
+      "Greek": 1678,
+      "Latin": 1678,
+      "English": 1678
+    },
+    "menusChapters": 257,
+    "menusSubchapters": 1432,
+    "physical": 1441
+  },
+  "Niese_I_VII": {
+    "selections": 2456,
+    "language_comparisons": 7368,
+    "unchanged": "PASS"
+  },
+  "Bamberg": {
+    "identities": 198,
+    "language_displays": 594,
+    "same_Niese_different_position_pairs": 6,
+    "pair_language_checks": 18,
+    "compact_URLs": "PASS"
+  },
+  "Alignment_units": {
+    "identities": 1441,
+    "language_comparisons": 4323,
+    "witness_order": "PASS"
+  },
+  "followup": {
+    "chapter_availability_checks": 257,
+    "zero_subchapter_chapters": 9,
+    "prefix_clipping_checks": 227,
+    "VI_boundary_language_checks": 3,
+    "XI_shared_notice_cases": 2,
+    "URL_cases": 4
+  },
+  "XI_multispan": {
+    "language_ranges": 18,
+    "generic_internal_citation_checks": 2,
+    "interpolations_preserved": true,
+    "no_duplication": true,
+    "Book_and_alignment_witness_order_preserved": true
+  },
+  "cross_work": [
+    {
+      "work": "deh",
+      "book": 1,
+      "chapters": 47,
+      "ranges": 457,
+      "result": "PASS"
+    },
+    {
+      "work": "deh",
+      "book": 2,
+      "chapters": 18,
+      "ranges": 156,
+      "result": "PASS"
+    },
+    {
+      "work": "deh",
+      "book": 3,
+      "chapters": 26,
+      "ranges": 160,
+      "result": "PASS"
+    },
+    {
+      "work": "deh",
+      "book": 4,
+      "chapters": 33,
+      "ranges": 181,
+      "result": "PASS"
+    },
+    {
+      "work": "deh",
+      "book": 5,
+      "chapters": 53,
+      "ranges": 285,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 1,
+      "chapters": 34,
+      "ranges": 490,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 2,
+      "chapters": 22,
+      "ranges": 302,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 3,
+      "chapters": 10,
+      "ranges": 180,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 4,
+      "chapters": 11,
+      "ranges": 147,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 5,
+      "chapters": 13,
+      "ranges": 131,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 6,
+      "chapters": 10,
+      "ranges": 94,
+      "result": "PASS"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 7,
+      "chapters": 11,
+      "ranges": 97,
+      "result": "PASS"
+    },
+    {
+      "work": "contra-apionem",
+      "book": 1,
+      "chapters": 35,
+      "ranges": 355,
+      "result": "PASS"
+    },
+    {
+      "work": "contra-apionem",
+      "book": 2,
+      "chapters": 41,
+      "ranges": 338,
+      "result": "PASS"
+    }
+  ],
+  "Bellum_Whiston_and_Lodge": {
+    "source_book_configurations": 14,
+    "currently_selectable_Niese_coordinates_per_source": {
+      "whiston": 3722,
+      "lodge1602": 3722
+    },
+    "differential_ranges": "PASS",
+    "accepted_Lodge_segmentation_XML": "Byte-identical",
+    "notes_and_source_switching": "PASS"
+  },
+  "interaction_configurations": 5,
+  "interaction_themes": 2,
+  "integrity": {
+    "canonical_files_identical": 595,
+    "protected_worktree_files_identical": 594,
+    "protected_XML_files_identical": 122,
+    "canonical_inventory_sha256": "7336de6f97e205b5eb10d69b4ec773362c9552b711c2f6c8609186a58dfdd3e2",
+    "protected_worktree_inventory_sha256": "5ce6cdfcaa08d9ff7f5b58b6fc324db46220615a845b8f6cafb8a7d6bdf26dd4",
+    "Git_indices_identical": true,
+    "both_external_packets_unchanged": true,
+    "prior_certifications_unchanged": true,
+    "no_staged_changes": true
+  },
+  "human_review": "GO",
+  "test_harness_qualification": "Initial test-only selector and baseline-interception mistakes were corrected; diagnostics preserved in HARNESS_ADJUSTMENTS.md. Final full browser suite uses explicit unavailable-state assertions for baseline screenshots.",
+  "build_qualification": "Disposable Jekyll build outside repository; review archive excluded; disk cache disabled. Local jekyll-responsive-image alone omitted from temporary plugin options because rmagick is missing. Production config unchanged.",
+  "unrelated_existing_presentation_issue": "Dark-mode title/header chrome has pre-existing low contrast, visible in verified BEFORE and AFTER captures; source contents pass contrast. No CSS change authorized or made."
+}

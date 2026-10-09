@@ -1,0 +1,10 @@
+locator.evaluate: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('#greek .source-contents tei-item').first()
+
+    at C:\workspace\LatinJosephus-Whiston-Index-Integration-20261009\review\Whiston_Antiquities_Compiled_Index_2026-10-09\css-scope.test.cjs:21:214 {
+  log: [
+    "  - waiting for locator('#greek .source-contents tei-item').first()"
+  ],
+  name: 'TimeoutError'
+}

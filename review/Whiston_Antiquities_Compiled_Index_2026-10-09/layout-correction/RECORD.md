@@ -1,0 +1,23 @@
+# Final Whiston chapter-entry layout correction — 9 October 2026
+
+**GO for final human visual approval.** This correction changes only assets/css/tei.css in production. No XML, registry, JavaScript, source reading, font declaration, navigation or canonical file changed. Work remains unstaged and uncommitted on codex/whiston-antiquities-compiled-index at a48021588e0840330388a6055a97bd0f7c2cf827.
+
+Actual DOM inspection found alternating tei-label and tei-item elements under tei-list[type="simple"]. Labels were inline; items were block with .6em vertical margins. The block item therefore forced its heading to a new line. DOM_BEFORE_QA.json preserves the computed positions/styles.
+
+Three new CSS selectors apply only beneath #english .source-contents tei-div[subtype="editorially-compiled-chapter-index"] > tei-list. The list uses a max-content numeral column and minmax(0,1fr) text column. Right-aligned numerals have a .55em gap; a .6em row gap replaces item vertical margins. Continuations remain in the heading column. Titles, provenance and interval paragraphs are outside the grid and stay on their existing lines. There is no global label/item change or JavaScript change. Coelacanth, left alignment, sentence case, font sizes and theme colours are unchanged.
+
+Before CSS SHA-256: `dbb5713e02685a82437eda7ab00a1f0d2add76cf8188180d6cb377aa688098ea`.
+After CSS SHA-256: `2ddb3be3d442ef7f953164f94bc54f33c8a2a186bdeeceb61a07ce38ece1c93f`.
+All previous CSS bytes remain as the prefix; FILE_CHANGES.json records the sole production change. All 143 XML files (including all twenty Whiston companions and the registry), 614 protected source files and 1079 canonical files remain byte-identical. Both Git indices and both HEADs are unchanged. Canonical ad3158b was read only; no other worktree was touched.
+
+Executed layout QA: twenty books × two themes × two widths = **80 complete displays**, **1,024 numeral/heading geometry checks**, **942 wrapped entry displays** and **2822 continuation-line alignment checks**. All numerals share the heading’s first line; all continuations align with the text. The gap measures 8.796875 px; text columns measure 272–344 px. No overlapping rows, duplicate IDs, overflow or clipping occurred. Roman order and all original/display readings remain exact. One provenance note remains visible. Book III/XII title/interval geometry and styles compare identically before/after in both themes and widths.
+
+The full contents suite passed forty Whiston displays and all fifty-nine records (all thirty-nine earlier source lists exact), twenty URL/reload/history/pane round trips, nineteen book switches and keyboard operation. Sixteen differential style comparisons prove Greek, Bamberg, Lodge and ordinary Antiquities/DEH/Apion typography unchanged. Established source/schema checks passed 1,052/1,052; final integrity and geometry cross-checks passed 43/43.
+
+Full relevant regressions were rerun: 5,034 traditional executable ranges and 33 expected unavailable states; 2,456 I–VII Niese selections; 198 Bamberg identities / 594 displays and all six different-position pairs; 1,441 Alignment units; all 257 availability and 227 clipping checks; eighteen XI multi-span and two generic internal-citation checks; fourteen DEH/Bellum/Apion book configurations, fourteen Bellum Whiston/Lodge configurations and five protected interaction configurations. Book VI boundaries, Book XI witness order and missing-text policy remain unchanged.
+
+Thirty-two focused before/after screenshots cover Books III and XII, both themes and widths, including long-heading details. Earlier approved presentation evidence is unchanged under presentation-correction/. Prior root reports, QA, scripts, manifest and all twenty-six root screenshots are preserved under prior-certification/. Its copied manifest describes the full earlier packet, not just that subset. No source-audit packet or archival source data was rewritten.
+
+Reproduction: build_disposable.rb into the disposable site; layout-qa.test.cjs (use --before with the pre-patch build for baseline captures); layout-contents-regression.test.cjs; layout-css-scope.test.cjs; validate.py; existing regression.test.cjs and its four gates; bamberg-regression.test.cjs; interaction-regression.test.cjs; layout-validate.py; certify-layout.py. Test-only responsive probes and corrected administrative XML-count expectations are documented in HARNESS_NOTES.md. No unexecuted test is marked passed. Existing temporary-build qualifications are unchanged; production configuration and generated site files were not edited.
+
+No residual issue or scholarly decision remains for this layout correction. Stop for final human visual approval. No commit, merge or push occurred.

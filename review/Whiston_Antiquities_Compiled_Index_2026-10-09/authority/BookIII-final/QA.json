@@ -1,0 +1,296 @@
+{
+  "date": "2026-10-09",
+  "checks": [
+    {
+      "name": "original_manifest_identity",
+      "result": "PASS",
+      "detail": "6c74c1e98987483b4193a34f457f2671429ef93e5050b1e114ddd83a86b7aa08"
+    },
+    {
+      "name": "original_342_entries_byte_identical",
+      "result": "PASS",
+      "detail": {
+        "verified_entries": 342,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "original_343_file_inventory_unchanged",
+      "result": "PASS",
+      "detail": 343
+    },
+    {
+      "name": "canonical_tracked_files_unchanged",
+      "result": "PASS",
+      "detail": {
+        "files_checked": 595,
+        "changes": []
+      }
+    },
+    {
+      "name": "canonical_index_unchanged",
+      "result": "PASS",
+      "detail": "5589e84299c91c70ff17161c70f62561a8409a1e9399bd2d7b988dcccaa37ece"
+    },
+    {
+      "name": "canonical_state_unchanged",
+      "result": "PASS",
+      "detail": {
+        "HEAD": "a48021588e0840330388a6055a97bd0f7c2cf827",
+        "origin": "a48021588e0840330388a6055a97bd0f7c2cf827",
+        "branch": "v2-development",
+        "status": ""
+      }
+    },
+    {
+      "name": "all_256_heading_texts_unchanged",
+      "result": "PASS",
+      "detail": 256
+    },
+    {
+      "name": "only_two_master_records_superseded",
+      "result": "PASS",
+      "detail": [
+        "Whiston-Ant-03-08",
+        "Whiston-Ant-03-15"
+      ]
+    },
+    {
+      "name": "other_19_book_records_unchanged",
+      "result": "PASS",
+      "detail": 19
+    },
+    {
+      "name": "other_13_BookIII_records_unchanged",
+      "result": "PASS",
+      "detail": 13
+    },
+    {
+      "name": "BookIII_15_records_present",
+      "result": "PASS",
+      "detail": 15
+    },
+    {
+      "name": "zero_heading_reading_holds_remain",
+      "result": "PASS",
+      "detail": {
+        "books": 20,
+        "chapter_records": 256,
+        "gutenberg_index_linked_matches": 243,
+        "gutenberg_index_linked_discrepancies": 13,
+        "canonical_explicit_headings": 116,
+        "canonical_heading_absences": 140,
+        "perseus_headings": 253,
+        "heading_statuses": {
+          "PRINT_VERIFIED": 126,
+          "PRINT_VERIFIED_WITH_VARIANT": 130
+        },
+        "fully_ready_books_before_edition_approval": 20
+      }
+    },
+    {
+      "name": "III8_independent1856_text_agreement",
+      "result": "PASS",
+      "detail": "OF THE PRIESTHOOD OF AARON"
+    },
+    {
+      "name": "III8_adopted_text_is1856",
+      "result": "PASS",
+      "detail": "PRINT_VERIFIED_WITH_VARIANT"
+    },
+    {
+      "name": "III15_independent1856_text_agreement",
+      "result": "PASS",
+      "detail": "HOW MOSES WAS DISPLEASED AT THIS, AND FORETOLD THAT GOD WAS ANGRY, AND THAT THEY SHOULD CONTINUE IN THE WILDERNESS FOR FORTY YEARS, AND NOT, DURING THAT TIME, EITHER RETURN INTO EGYPT, OR TAKE POSSESSION OF CANAAN."
+    },
+    {
+      "name": "III15_adopted_text_is1856",
+      "result": "PASS",
+      "detail": "PRINT_VERIFIED_WITH_VARIANT"
+    },
+    {
+      "name": "III8_1856_no_terminal_point",
+      "result": "PASS",
+      "detail": "OF THE PRIESTHOOD OF AARON"
+    },
+    {
+      "name": "III8_earlier_points_preserved",
+      "result": "PASS",
+      "detail": [
+        "Of the Prieſthood of Aaron.",
+        "Of the Prieſthood of Aaron."
+      ]
+    },
+    {
+      "name": "III15_clause_and_punctuation",
+      "result": "PASS",
+      "detail": "HOW MOSES WAS DISPLEASED AT THIS, AND FORETOLD THAT GOD WAS ANGRY, AND THAT THEY SHOULD CONTINUE IN THE WILDERNESS FOR FORTY YEARS, AND NOT, DURING THAT TIME, EITHER RETURN INTO EGYPT, OR TAKE POSSESSION OF CANAAN."
+    },
+    {
+      "name": "1784_damage_not_silently_certified",
+      "result": "PASS",
+      "detail": [
+        {
+          "text": "How Moſes was diſpleaſed",
+          "reason": "Broken/degraded ink makes some letter strokes incomplete; this is a collated reading, not secure every-letter typography."
+        },
+        {
+          "text": "during",
+          "reason": "Low-ink lower strokes; contextual reading retained with qualification."
+        }
+      ]
+    },
+    {
+      "name": "crop_exact_source_pixels_1856-Toronto-III8",
+      "result": "PASS",
+      "detail": [
+        109,
+        1416,
+        692,
+        1559
+      ]
+    },
+    {
+      "name": "crop_exact_source_pixels_1856-Toronto-III15",
+      "result": "PASS",
+      "detail": [
+        681,
+        842,
+        1376,
+        1138
+      ]
+    },
+    {
+      "name": "crop_exact_source_pixels_1856-UIUC-III8",
+      "result": "PASS",
+      "detail": [
+        58,
+        536,
+        305,
+        587
+      ]
+    },
+    {
+      "name": "crop_exact_source_pixels_1856-UIUC-III15",
+      "result": "PASS",
+      "detail": [
+        285,
+        327,
+        532,
+        440
+      ]
+    },
+    {
+      "name": "crop_exact_source_pixels_1741-III8",
+      "result": "PASS",
+      "detail": [
+        115,
+        443,
+        377,
+        494
+      ]
+    },
+    {
+      "name": "crop_exact_source_pixels_1741-III15",
+      "result": "PASS",
+      "detail": [
+        125,
+        272,
+        539,
+        382
+      ]
+    },
+    {
+      "name": "crop_exact_source_pixels_1784-III8",
+      "result": "PASS",
+      "detail": [
+        170,
+        1643,
+        1216,
+        1867
+      ]
+    },
+    {
+      "name": "crop_exact_source_pixels_1784-III15",
+      "result": "PASS",
+      "detail": [
+        61,
+        759,
+        1240,
+        1196
+      ]
+    },
+    {
+      "name": "downloaded_source_hashes_unchanged",
+      "result": "PASS",
+      "detail": {
+        "acquisition_hashes_checked": 24,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "derived_TEI_schema_valid",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "derived_TEI_15_entries_labels_IDs",
+      "result": "PASS",
+      "detail": 15
+    },
+    {
+      "name": "derived_TEI_heading_text_projection_unchanged",
+      "result": "PASS",
+      "detail": 15
+    },
+    {
+      "name": "derived_TEI_matches_all15_master_readings",
+      "result": "PASS",
+      "detail": 15
+    },
+    {
+      "name": "superseded_TEI_unclear_and_provisional_removed",
+      "result": "PASS",
+      "detail": "Certifications changed; display strings unchanged."
+    },
+    {
+      "name": "no_narrative_targets_added",
+      "result": "PASS",
+      "detail": "No inferred chapter/Niese links."
+    },
+    {
+      "name": "current_canonical_two_readings_match_accepted_audit",
+      "result": "PASS",
+      "detail": 2
+    },
+    {
+      "name": "UTF8_primary_data",
+      "result": "PASS",
+      "detail": 5
+    }
+  ],
+  "totals": {
+    "executed": 37,
+    "passed": 37,
+    "failed": 0,
+    "original_packet_files": 343,
+    "original_manifest_entries_verified": 342,
+    "canonical_files_checked": 595,
+    "BookIII_headings": 15,
+    "secure_heading_readings_after_adjudication": 256,
+    "resolved_cases": 2,
+    "qualified_earlier_control_cases": 1
+  },
+  "canonical_final_state": {
+    "HEAD": "a48021588e0840330388a6055a97bd0f7c2cf827",
+    "origin": "a48021588e0840330388a6055a97bd0f7c2cf827",
+    "branch": "v2-development",
+    "status": ""
+  },
+  "edition_choice_requires_human_approval": true,
+  "not_run": [
+    "Website/browser implementation or navigation regressions: read-only source mission, no production change."
+  ],
+  "git_operations": "Read-only --no-optional-locks queries only. No Git write operation.",
+  "write_scope": "C:\\workspace\\LatinJosephus-Whiston-BookIII-Adjudication-20261009"
+}
