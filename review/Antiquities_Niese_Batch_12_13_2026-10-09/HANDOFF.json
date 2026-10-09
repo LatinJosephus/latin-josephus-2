@@ -1,7 +1,7 @@
 {
   "base_commit": "ad3158b7a86dea6997510b3de17f2e510c23367c",
-  "recorded_HEAD": "405a029669f61bea8a02d1f2a8f903399096f51a",
-  "canonical_HEAD_at_handoff": "92f009a668507ece4b82bdc4040a2b40b1f2cae7",
+  "recorded_HEAD_before_handoff_commit": "ba6bc70db875c265c282319138d78933dae14231",
+  "canonical_HEAD_at_handoff": "cea765de5d990646b4d4dc079bac1c0da46ca107",
   "canonical_advance": true,
   "branch": "antiquities-niese-12-13",
   "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13",
@@ -9,27 +9,43 @@
   "packets": {
     "12": {
       "path": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13\\review\\Antiquities_Niese_BookXII_2026-10-09",
-      "QA": {
+      "certificate": {
         "book": 12,
         "status": "LOCAL_CERTIFIED_READY_FOR_COORDINATED_INTEGRATION",
-        "expected_sections": 434,
-        "Greek_print_starts_visually_examined": 434,
-        "Latin_individually_reviewed": 434,
-        "validated_Latin_locators": 433,
-        "approved_representations": 434,
-        "review_remaining": 0,
-        "Latin_section_milestones_applied": 365,
-        "Latin_end_milestones_applied": 1,
-        "Greek_marker_additions_applied": 1,
+        "base_commit": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+        "evidence_HEAD": "3a7bc3e042570f653c80ef5816bc259ee6f8e6c6",
+        "canonical_HEAD_read_at_seal": "cea765de5d990646b4d4dc079bac1c0da46ca107",
+        "canonical_advance": true,
+        "branch": "antiquities-niese-12-13",
+        "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13",
+        "runtime": "C:\\workspace\\Antiquities-Niese-12-13-runtime-20261009",
+        "published_baseline_selectable": 3157,
+        "local_added_selectable": 434,
+        "local_added_nonempty_Latin_intervals": 433,
+        "Greek_marker_operations": 1,
+        "Latin_section_milestones": 365,
+        "Latin_end_markers": 1,
+        "retained_Latin_starts": 68,
         "no_independent_Latin_intervals": [
           248
         ],
-        "pending_editorial_cases": [],
-        "reader_certification": "PASS: see CERTIFICATE.json and its bound source/browser/range/protected evidence",
-        "completion_certificate": true,
-        "final_reader_enabled": true
+        "whole_section_absence_claims": [],
+        "pending_editorial_decisions": [],
+        "source_recovery": "PASS: independent raw tag removal and stored exact inverse against pinned LF bytes; all narrative, IDs, sameAs and English preserved",
+        "reader_QA": "PASS: every selection, interval, language context, qualification and actual chapter/subchapter range; deep links, history, navigation, reload and themes",
+        "protected_QA": "PASS; exact inherited exceptions separately reproduced in frozen baseline and candidate",
+        "evidence_sha256": {
+          "FINAL_SOURCE_QA.json": "3e532739cb1f597f0f655afcd95801d4d0c7f4e055fb1e2e94d8405711de2b2f",
+          "IMPLEMENTATION_BROWSER_QA.json": "4494054d2fa7ea3a64dbf4363b5cbf6c20193c41dcbc5207d2a3565b0f45f972",
+          "RANGE_BROWSER_QA.json": "67698c4f17bb1ddaa0a3bf793e2fa5134cc0a93f7de555e5135da2c4aacfdbdb",
+          "FINAL_VISUAL_REVIEW.json": "5ec5351e8d23325a51d353dacf642a9a1c244da01fae4e769d8088952a905125",
+          "PROTECTED_BROWSER_QA.json": "605e3b41f7cb0aa49beb30088dadc9e455ed34c87c1ee5663fd4dc2e860dd486",
+          "BOUNDED_BASELINE_EXCEPTIONS.json": "d5a2c4aee4292398e967e97c748d72f489231377cd28975482271683f7ddca29"
+        },
+        "integration_limit": "Local certification only; reconcile against then-current canonical code. No merge, push, preview change or deployment."
       },
-      "manifest_sha256": "798a24b4c72017a5bef834c36c43ac060a81857e2bab52ad6c3f4c5d9297ccb5",
+      "manifest_sha256": "c887ec3a183f6c4445366fc171768e0a32d6fe80444ddce9df89699c351bb2a3",
+      "qualified_reader_notices": 16,
       "corpus_sha256": {
         "Greek": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec",
         "Latin": "11fd83d1d8f61573db08ec32a600423242fca6c0e29ef32898c1dde876238a42",
@@ -38,67 +54,90 @@
     },
     "13": {
       "path": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13\\review\\Antiquities_Niese_BookXIII_2026-10-09",
-      "QA": {
+      "certificate": {
         "book": 13,
-        "status": "PROVISIONAL_ROUTINE_MARKERS_APPLIED_PENDING_DECISION",
-        "expected_sections": 433,
-        "Greek_print_starts_visually_examined": 433,
-        "Latin_individually_reviewed": 433,
-        "validated_Latin_locators": 431,
-        "approved_representations": 430,
-        "review_remaining": 0,
-        "Latin_section_milestones_applied": 347,
-        "Latin_end_milestones_applied": 0,
-        "Greek_marker_additions_applied": 1,
-        "no_independent_Latin_intervals": [],
-        "pending_editorial_cases": [
+        "status": "LOCAL_CERTIFIED_READY_FOR_COORDINATED_INTEGRATION",
+        "base_commit": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+        "evidence_HEAD": "2b0e001e8225ac580fd3613f9f921253c2bc593c",
+        "canonical_HEAD_read_at_seal": "cea765de5d990646b4d4dc079bac1c0da46ca107",
+        "canonical_advance": true,
+        "branch": "antiquities-niese-12-13",
+        "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13",
+        "runtime": "C:\\workspace\\Antiquities-Niese-12-13-runtime-20261009",
+        "published_baseline_selectable": 3157,
+        "local_added_selectable": 433,
+        "local_added_nonempty_Latin_intervals": 431,
+        "Greek_marker_operations": 1,
+        "Latin_section_milestones": 348,
+        "Latin_end_markers": 0,
+        "retained_Latin_starts": 83,
+        "no_independent_Latin_intervals": [
           213,
-          214,
           216
         ],
-        "reader_certification": "NOT_YET_PERFORMED",
-        "completion_certificate": false,
-        "routine_reader_QA": "See separately marked ROUTINE_REHEARSAL_BROWSER_QA.json; no final certification",
-        "final_reader_enabled": false
+        "whole_section_absence_claims": [
+          213,
+          216
+        ],
+        "pending_editorial_decisions": [],
+        "source_recovery": "PASS: independent raw tag removal and stored exact inverse against pinned LF bytes; all narrative, IDs, sameAs and English preserved",
+        "reader_QA": "PASS: every selection, interval, language context, qualification and actual chapter/subchapter range; deep links, history, navigation, reload and themes",
+        "protected_QA": "PASS; exact inherited exceptions separately reproduced in frozen baseline and candidate",
+        "evidence_sha256": {
+          "FINAL_SOURCE_QA.json": "d23eaaf4daf4e90a7c3d4d4dd658817826b4afb24dc14ab3eed11a8cfdf1ae46",
+          "IMPLEMENTATION_BROWSER_QA.json": "77622e3c04fe20c5c974189d5a74720d9bd95b8457585e1b9850c25e31ba5069",
+          "RANGE_BROWSER_QA.json": "d8bace1f4185352552549bcaf26d889735a99dd5160e04427c2bd6fb876e2424",
+          "FINAL_VISUAL_REVIEW.json": "66f935b84e89b2be5a38533e920b7f7c663e37da9abddd705329086768c34711",
+          "PROTECTED_BROWSER_QA.json": "605e3b41f7cb0aa49beb30088dadc9e455ed34c87c1ee5663fd4dc2e860dd486",
+          "BOUNDED_BASELINE_EXCEPTIONS.json": "d5a2c4aee4292398e967e97c748d72f489231377cd28975482271683f7ddca29"
+        },
+        "integration_limit": "Local certification only; reconcile against then-current canonical code. No merge, push, preview change or deployment."
       },
-      "manifest_sha256": "ec65cc82b991e6b29940a796b309de703b5e4938f8de4cfe381c17c917228e17",
+      "manifest_sha256": "977aded3ed9af5c1a406874101c9ca3680138275b4d5bfcc8cecc73e208da869",
+      "qualified_reader_notices": 35,
       "corpus_sha256": {
         "Greek": "5d8895efde76b679083a7c08b5f236d5f3e9d8e9dadb75e6fc3661da1200007c",
-        "Latin": "39cebe5e8af28662a638fa6dcb5222c2496f5dc2f293936a35c52c72ed6eb3dd",
+        "Latin": "027129ef38b5b59621bd6b080d49f232ee4750f6672100ca0bd36c5bead696ec",
         "English": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d"
       }
     }
   },
   "published_baseline_selectable": 3157,
-  "certified_local_added_selectable": 434,
-  "certified_local_added_nonempty_Latin_intervals": 433,
-  "current_branch_selectable_total": 3591,
-  "XIII_provisional_rehearsal_selectable": 433,
-  "XIII_staged_physical_Latin_starts": 430,
-  "XIII_final_certification": false,
-  "XIII_pending_representations": [
-    213,
-    214,
-    216
-  ],
-  "XIII_current_recommendation": "B; see updated per-book decision packet and English-context consequences",
-  "integration_readiness": {
-    "XII": "READY through separate scoped corpus, support and certification commits",
-    "XIII": "NOT_READY; routine source stage and rehearsal passed, adjudication and final implementation/certification remain",
-    "batch": "NOT_READY as a combined integration"
+  "batch_counts": {
+    "local_added_selectable": 867,
+    "local_added_nonempty_Latin_intervals": 864,
+    "Latin_section_milestones": 713,
+    "Latin_end_markers": 1,
+    "retained_Latin_starts": 151,
+    "Greek_marker_operations": 2
   },
-  "scope_verified": "Only XII/XIII corpus and review files plus documented minimal shared reader/audit support",
+  "current_isolated_branch_selectable_total": 4024,
+  "count_scope": "4024 is the frozen-baseline isolated local build total, not current canonical or publication; canonical now includes IX independently",
+  "XIII_213_216_statuses": {
+    "213": "NO_INDEPENDENT_LATIN_INTERVAL; no identifiable separate liberation-account counterpart in full reviewed transcription",
+    "214": "PARTIAL_DISTRIBUTED_WITH_212; start immediately before Itaque iudaei feliciter",
+    "215": "PRESENT; unchanged independently reviewed interval",
+    "216": "NO_INDEPENDENT_LATIN_INTERVAL; no identifiable assembly/warning counterpart in full reviewed transcription"
+  },
+  "pending_editorial_decisions": [],
+  "integration_readiness": {
+    "XII": "READY",
+    "XIII": "READY",
+    "batch": "READY_FOR_COORDINATED_INTEGRATION"
+  },
+  "scope_verified": "Only assigned XII/XIII corpus and review files plus separately committed minimal shared reader/audit support",
+  "integration_context_sha256": "9d3b95be6afce3d2935158c1de98b383310d6c751d29df089620d646eeed18f1",
   "publication_actions": {
     "merge": false,
     "push": false,
-    "preview_changed": false,
+    "preview_changed_by_this_assignment": false,
     "deploy": false
   },
   "changed_files": [
     {
       "path": "assets/js/renderTei.js",
-      "sha256": "26c6a25dea0f7759547c3681b07a29f04cdd79afd8bcd8d05634080b05b9ca46",
-      "bytes": 126648
+      "sha256": "55935c0ae49cf64543044562c210f610e2d9cb1216843521afcd2f637f734c70",
+      "bytes": 126705
     },
     {
       "path": "assets/xml/antiquities/Greek/book-12.xml",
@@ -117,13 +156,18 @@
     },
     {
       "path": "assets/xml/antiquities/Latin/book-13.xml",
-      "sha256": "39cebe5e8af28662a638fa6dcb5222c2496f5dc2f293936a35c52c72ed6eb3dd",
-      "bytes": 127094
+      "sha256": "027129ef38b5b59621bd6b080d49f232ee4750f6672100ca0bd36c5bead696ec",
+      "bytes": 127127
     },
     {
       "path": "assets/xml/antiquities/niese/book-12.json",
       "sha256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
       "bytes": 87373
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-13.json",
+      "sha256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+      "bytes": 91344
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/BASELINE.json",
@@ -136,9 +180,19 @@
       "bytes": 2989
     },
     {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/CANONICAL_READER_ADVANCE.diff",
+      "sha256": "4e74761d12efed4296674bff1b1cd929a039518e0caca94012b957dfa9d652fa",
+      "bytes": 2128
+    },
+    {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/FROZEN_REFERENCE_VERIFICATION.json",
       "sha256": "e4c77cfb88c630c299f995c5b65cec760025ad6c175daffb0a2ae38588aa03d6",
       "bytes": 95722
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/INTEGRATION_CONTEXT.json",
+      "sha256": "9d3b95be6afce3d2935158c1de98b383310d6c751d29df089620d646eeed18f1",
+      "bytes": 80372
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/Loeb_VII_title_PDF007.png",
@@ -152,13 +206,13 @@
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/PROTECTED_BROWSER_QA.json",
-      "sha256": "534f9076ce1f67146d52d09b4d995fc29a5b516fd2e724fc79c8f0d5112ededf",
-      "bytes": 11483
+      "sha256": "605e3b41f7cb0aa49beb30088dadc9e455ed34c87c1ee5663fd4dc2e860dd486",
+      "bytes": 11484
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/READER_SUPPORT.md",
-      "sha256": "a83bb9eb7c4a5db9197f706a060d3c7f32a1591c3671f9223056590d1b9316f5",
-      "bytes": 1951
+      "sha256": "ec90a2a1d5091519a2badd715d5d13a4d653ef4c1e8cab4cf3077cec0908d74c",
+      "bytes": 2878
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/TITLE_OBSERVATIONS.json",
@@ -192,8 +246,8 @@
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/browser_qa.cjs",
-      "sha256": "e3cb17d8aac1ab5be311f3fdd8c031751c58cb14d262be828b4437e459acfef1",
-      "bytes": 24774
+      "sha256": "e9ba6a892fc04234b33e39c6185a11ed9186f22d8c90765eeca490c9197ea5bd",
+      "bytes": 28311
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/build.sh",
@@ -207,8 +261,8 @@
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/certify_book.py",
-      "sha256": "9957b869ba0a0c982a6889f75976543610c7a72854f23b3aa0a1c7fde309c3b6",
-      "bytes": 6855
+      "sha256": "224dbc9483e2387398f41cf5a9b7f53c60df9a4f0f33596780cf4f3099eaeaab",
+      "bytes": 6933
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/checkpoint.py",
@@ -222,7 +276,7 @@
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/evidence/build/candidate-jekyll.log",
-      "sha256": "d83fea43fd109c5985cda63bd808243bd9d1887ddf7860e1217023e5cde61016",
+      "sha256": "43a1ca685bb3dd0c74615b316cf424be7efbeb70b243a953eda4e21a96b886ae",
       "bytes": 4890
     },
     {
@@ -246,19 +300,34 @@
       "bytes": 369590
     },
     {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/final_handoff.py",
+      "sha256": "49ed0cca6349f8de928bfc33a74711fcb1560c15ec0c760d394f6c633aae8ded",
+      "bytes": 10072
+    },
+    {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/freeze_sources.py",
       "sha256": "f14d0a834e21036c792fa3d5243215453593393ffaf76b841043b4d2c81f8e52",
       "bytes": 6120
     },
     {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/handoff.py",
+      "sha256": "2ffea9a7b1eb830d1710db2a2fb02852933109f39fe88fa5c172b865f91a930b",
+      "bytes": 6842
+    },
+    {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/implement_book.py",
-      "sha256": "8554084d3b77c98548407863be2214b737137285b36572991a47904a180e16c5",
-      "bytes": 8055
+      "sha256": "e8d8ce4edcea64b90433a5f505a491cc1683256c061b710f3e2e16379236d609",
+      "bytes": 8319
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/initial_observations.py",
       "sha256": "cda887a72c88756bcf689e94b85f2c54e183641c1867810b783eefd51c2543d7",
       "bytes": 7889
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/integration_context.py",
+      "sha256": "46fe6fb31ec67bcf9f126e159c2b62f0213ad8facc27fadec9ec2eaa737da57d",
+      "bytes": 4713
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/mixed_mapper_batch.py",
@@ -274,6 +343,11 @@
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/record_controls.py",
       "sha256": "16dcb773585c5c94ad2cb871dc44a18accbbe0f417437d3347f29337738738aa",
       "bytes": 2178
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/record_final_visual.py",
+      "sha256": "971673cf277bbcd68079fed73e7fbe05969726a7548f2a0c6e87c216dbe26383",
+      "bytes": 3989
     },
     {
       "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/record_review.py",
@@ -306,44 +380,74 @@
       "bytes": 1259
     },
     {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/APPROVED_MARKER_PLAN.json",
+      "sha256": "c153631e9fc3d708b019edfbd1c19bc12a8571298ff9c11c616bab0b53d2e1ec",
+      "bytes": 475045
+    },
+    {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/BASELINE.json",
       "sha256": "87b63533289c2c2da0c34f8492c6bd88bd83e8ff614ab01f50a0f8e6a3b0769a",
       "bytes": 200655
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/BOUNDARIES.json",
-      "sha256": "119fc2786ee4aa87fedc4e034f10a73c39ac5bb7e4598295bffb9e42132b1329",
-      "bytes": 2134959
+      "sha256": "9fb4bcac6559cf127ea06905ea9e800722dcb1751742a3a475847af6d322e526",
+      "bytes": 2138008
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/BOUNDARIES.md",
-      "sha256": "e220e15ed1e64250ff45edc7d0f84458415c2cd2ca0184523cb97dd9dc905c8b",
-      "bytes": 448894
+      "sha256": "490175f458a6d24372f47a74fe4c520c1364df6ccf87a41759b634daa09d646c",
+      "bytes": 454817
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/CANDIDATE_REGISTER.json",
-      "sha256": "119fc2786ee4aa87fedc4e034f10a73c39ac5bb7e4598295bffb9e42132b1329",
-      "bytes": 2134959
+      "sha256": "9fb4bcac6559cf127ea06905ea9e800722dcb1751742a3a475847af6d322e526",
+      "bytes": 2138008
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/CERTIFICATE.json",
+      "sha256": "b0dc641499b34f3ec91b23fa6722566fa7daf85b2c8485cfc6e4cce2d6adb3b2",
+      "bytes": 2110
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/DECISION_XIII_213_216.json",
-      "sha256": "58060371168c0a443fe3728017143a52112fafbeb5c9b496d518b50b880b5838",
-      "bytes": 89022
+      "sha256": "37d3eaff1f2e3537da5a7bf9150471546303580012326ebb8924ab2886865ca0",
+      "bytes": 99027
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/DECISION_XIII_213_216.md",
-      "sha256": "1ae01e27b22cf98f38df65620881dbc1ab6640a949b22fe41993f5529980bfe2",
-      "bytes": 12143
+      "sha256": "6d75ff820f93745bd7822ddeef156951ba28dc4f16c03e907d759264a0a2e4c5",
+      "bytes": 12977
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/EDITORIAL_DECISIONS.json",
-      "sha256": "a4d75568f5aff52bf59c8d6b77865491a63dea03205869b3cd1d4bd455e44873",
-      "bytes": 82
+      "sha256": "346a3d6067deffa2076922cdf2135f74006c89d76ed0e542c42e7a85da5fb4a9",
+      "bytes": 9724
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/EXECUTABLE_IDENTITIES.json",
+      "sha256": "7bf2bce4653ad84e378a62676c8e01112af4ad9e117fea5130a772a61d8f6bf0",
+      "bytes": 28737
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/EXPECTED_INTERVALS.json",
+      "sha256": "7b418446413f2e7f8a90719e2788c2127e848e64730280621327531f78d94ced",
+      "bytes": 1663286
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/FILE_MANIFEST.json",
-      "sha256": "ec65cc82b991e6b29940a796b309de703b5e4938f8de4cfe381c17c917228e17",
-      "bytes": 26740
+      "sha256": "977aded3ed9af5c1a406874101c9ca3680138275b4d5bfcc8cecc73e208da869",
+      "bytes": 40192
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/FINAL_SOURCE_QA.json",
+      "sha256": "d23eaaf4daf4e90a7c3d4d4dd658817826b4afb24dc14ab3eed11a8cfdf1ae46",
+      "bytes": 2714
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/FINAL_VISUAL_REVIEW.json",
+      "sha256": "66f935b84e89b2be5a38533e920b7f7c663e37da9abddd705329086768c34711",
+      "bytes": 3328
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/FROZEN_PRINT_STARTS.json",
@@ -356,9 +460,19 @@
       "bytes": 116151
     },
     {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/IMPLEMENTATION_BROWSER_QA.json",
+      "sha256": "77622e3c04fe20c5c974189d5a74720d9bd95b8457585e1b9850c25e31ba5069",
+      "bytes": 45737
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/IMPLEMENTATION_PRESERVATION.json",
+      "sha256": "d254007357844d6b9be4ec0011513fcdf72d9596dfd06bd2b6d0df5977bc9665",
+      "bytes": 511213
+    },
+    {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/LATIN_REVIEW_CHOICES.json",
-      "sha256": "73d08316067116a3c2e152fdcc0c5c979c65b476d91c866d230e58bed545e68d",
-      "bytes": 82303
+      "sha256": "db7d2f0bd45f07651a3c6f8b628ec38d688a79b937d2c4f5e1c84994eaf9fd39",
+      "bytes": 85308
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/LATIN_TEXT_NODE_LEDGER.json",
@@ -382,13 +496,118 @@
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/QA.json",
-      "sha256": "b2e5582286d8467536f41946d1dcacbd6af889c1823fdba68b9dce3212286616",
-      "bytes": 735
+      "sha256": "c6484847990da7898cfbcb4aeb138b83b5751e568f6e349dd24255c6db0e8c52",
+      "bytes": 678
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/QUALIFIED_CORRESPONDENCE.json",
       "sha256": "e2c8cf56113f8aa55abc1a0f03c42aa28a9753c73908754aca641a2a745322a1",
       "bytes": 7889
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/RANGE_BROWSER_QA.json",
+      "sha256": "d8bace1f4185352552549bcaf26d889735a99dd5160e04427c2bd6fb876e2424",
+      "bytes": 67358
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_1_dark.png",
+      "sha256": "f110011fa5b4fdb3f2506a01e7f6f957c57b37166bdcbaaac10736721e4aa8be",
+      "bytes": 315419
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_1_light.png",
+      "sha256": "00b910d8010dd1c569f97e0e794bf5d48ef21d0fc18e3179c9006dbe4e61930c",
+      "bytes": 313656
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_212_dark.png",
+      "sha256": "609f737a8eb1aa412e1637f8af082e04e69b0831e98168dc3554ab20cb3f73cb",
+      "bytes": 322241
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_212_light.png",
+      "sha256": "5275170fcd9817438f79dddbe83a221c0a74c1f2c85619e4539e40d419aa5947",
+      "bytes": 318993
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_213_dark.png",
+      "sha256": "b1091ac6897aa47bbf271c957de17422056151814d192cd86b2de2e3f4c1aaaa",
+      "bytes": 378993
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_213_light.png",
+      "sha256": "6b6ba9415ddf5455019cb8a3b57ad76919296aec86975d5e8ae416ea6ffeeed5",
+      "bytes": 376680
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_214_dark.png",
+      "sha256": "d6c4161564ca138cbf71bd2f6722b432d1e722b0b953d9324b4574947d0c5259",
+      "bytes": 374614
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_214_light.png",
+      "sha256": "34966709c7bc74d27b216b267eba57d303b2b063d07d6e63c8a795a195a792b3",
+      "bytes": 372140
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_215_dark.png",
+      "sha256": "b632902bd1edcb53acf3040f5c0deffb17c058f5a5ffe9aaf8ab3f4fe93a9c39",
+      "bytes": 352320
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_215_light.png",
+      "sha256": "ec9cbffeb316236997c8186f321aec886e420d6587b665da60646d907cefeb5f",
+      "bytes": 349448
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_216_dark.png",
+      "sha256": "30d2bfc5bb6b933216dbed440367586b88c08cb6b175f1acf1ef89e850555233",
+      "bytes": 352545
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_216_light.png",
+      "sha256": "ddf2a85908821bbe09a070dd3abbb2753cce42998f15658e0c0a4b4b0f6594c3",
+      "bytes": 350735
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_217_dark.png",
+      "sha256": "50f305c771b7515899a70411385847baa7c3e77ed2c0a19060b93791f70a93ec",
+      "bytes": 373709
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_217_light.png",
+      "sha256": "43f86cee80ecaf27efaec2e0e41ff071b1036dfdc8eb1ff1c9fe15c39b174de2",
+      "bytes": 372035
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_269_dark.png",
+      "sha256": "899c6d1e4d6016f01dbbb279ed8eceec408c5cea22c2bb1474b2297c9c645070",
+      "bytes": 212266
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_269_light.png",
+      "sha256": "abb421a42b3ea94aa7496a02418b7c1e0480fd5041845f9dd6b1069c6a264ec1",
+      "bytes": 210784
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_274_dark.png",
+      "sha256": "1004bb95a64172a97a8f43667e93518aa7e26bff45f984a03f5a58734536f526",
+      "bytes": 288237
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_274_light.png",
+      "sha256": "44c0e6eb67a946e9a6dd5c871901ca319dac7548d7928489ec8582ab96b73b5f",
+      "bytes": 287726
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_433_dark.png",
+      "sha256": "a8b2442f9d082879a7ac60f124012210ae8bb506e539e83d3bd1ac8ed28402c7",
+      "bytes": 308557
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_433_light.png",
+      "sha256": "f7f8447fd8f4e678520b95e66b7d37f097c0cbc966b91fc6158a4792cd337f8e",
+      "bytes": 306671
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_ANONYMOUS_269_DIAGNOSTIC.json",
@@ -397,8 +616,8 @@
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/REPORT.md",
-      "sha256": "937134f50d94d2dec49ea609a1ee82f5dbf9aef91bf3c92e6a076b0956b4daac",
-      "bytes": 1781
+      "sha256": "2dea8ace92c9bd6ccbf757bbf1c7f6a823b5da071c5673dbaeb8832e8b5f9ada",
+      "bytes": 2386
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_EXPECTED_INTERVALS.json",
@@ -507,8 +726,8 @@
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/SOURCE_AUTHORITY.md",
-      "sha256": "603ad5605c59064d760616bd1e9992a7ba3af021f657b45f1e0c81e440d527c3",
-      "bytes": 3677
+      "sha256": "1595c23d9aa3dee68be22b6bce0a38f37e8138e178dc4d7563f00e9e14090939",
+      "bytes": 4167
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/SOURCE_CONTROL_XIII.json",
@@ -519,6 +738,11 @@
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/SOURCE_CONTROL_XIII.md",
       "sha256": "468a6f5c42ee18b2e3632030554bed04397c4e440925ab86a03643f6df8e043b",
       "bytes": 3119
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/adopt_B.py",
+      "sha256": "49f47c8bfb0deff246020f23489b7cd4a126ec2ac458ec949dd4d65de2595f26",
+      "bytes": 7721
     },
     {
       "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-344.png",
@@ -1152,8 +1376,8 @@
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/CERTIFICATE.json",
-      "sha256": "aa88fe0fb7f2dba06a685825049cf73c24ab1be75ef25a656b906a772c690bab",
-      "bytes": 1981
+      "sha256": "01598510986de27f025320f10ecf940313b7fe8212f763667ae0db3caca69dff",
+      "bytes": 2081
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/CONTROL_OBSERVATIONS.json",
@@ -1187,13 +1411,18 @@
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/FILE_MANIFEST.json",
-      "sha256": "798a24b4c72017a5bef834c36c43ac060a81857e2bab52ad6c3f4c5d9297ccb5",
-      "bytes": 30055
+      "sha256": "c887ec3a183f6c4445366fc171768e0a32d6fe80444ddce9df89699c351bb2a3",
+      "bytes": 30258
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/FINAL_SOURCE_QA.json",
-      "sha256": "c562fbcc6f3e6a5a685c67b88de6a6cab59a8de383dc2efe80f338558a89be52",
+      "sha256": "3e532739cb1f597f0f655afcd95801d4d0c7f4e055fb1e2e94d8405711de2b2f",
       "bytes": 2685
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/FINAL_VISUAL_REVIEW.json",
+      "sha256": "5ec5351e8d23325a51d353dacf642a9a1c244da01fae4e769d8088952a905125",
+      "bytes": 2652
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/FROZEN_PRINT_STARTS.json",
@@ -1207,7 +1436,7 @@
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/IMPLEMENTATION_BROWSER_QA.json",
-      "sha256": "cafe6b536e740f1e7413530c913ee540c7cdac11d8341538b68e31c6f5d37a13",
+      "sha256": "4494054d2fa7ea3a64dbf4363b5cbf6c20193c41dcbc5207d2a3565b0f45f972",
       "bytes": 34494
     },
     {
@@ -1247,13 +1476,13 @@
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/RANGE_BROWSER_QA.json",
-      "sha256": "187801db9e4c5edb0f03aea3a6a8bd0408907e7d36e833bb76bdf673a97ad0eb",
-      "bytes": 54291
+      "sha256": "67698c4f17bb1ddaa0a3bf793e2fa5134cc0a93f7de555e5135da2c4aacfdbdb",
+      "bytes": 54290
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_1_dark.png",
-      "sha256": "11e7e127782a68bd365854fab80e2679d6e20345596aea73a74375c3d6636992",
-      "bytes": 422223
+      "sha256": "85f82c6b610b8a0cfe3f36347690e752912e8e8df1a38939dc4b5c2230f30a45",
+      "bytes": 422305
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_1_light.png",
@@ -1262,63 +1491,63 @@
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_246_dark.png",
-      "sha256": "af0afa320c7e7f99dc6e2d291213464690a32995fd9d478a96c0700a6759af17",
-      "bytes": 232441
+      "sha256": "ff8f43cc3511508ffa5f218eac84e2d63b378e83db4d1c29e0fe8cefd982c4aa",
+      "bytes": 232085
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_246_light.png",
-      "sha256": "334ecf2b91193ffe8cb057a34ee049058bd892c560784fdb2774a51771e90fd1",
-      "bytes": 229961
+      "sha256": "48806c75390bfd7028dd3643234cd3a3df414facccdf4cb5115e9810653e175e",
+      "bytes": 229937
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_247_dark.png",
-      "sha256": "aec8da8db0f90555bf7be3c8e78804360252858134df6e837f038eeca60d2760",
-      "bytes": 173617
+      "sha256": "f50a7aa2b22a43d12680c8d1db07c7ed3f108c2ce095ef7c6b9823c090e31e8d",
+      "bytes": 173241
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_247_light.png",
-      "sha256": "55b8aeec0a87fea117c587ee9ac69222e87d85fb442153702d92b570de43dbdb",
-      "bytes": 173911
+      "sha256": "0b8b25512e7d7e27ce16c4fabf50bbad41079b830b8a28c64bb6a0fb56801762",
+      "bytes": 172087
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_248_dark.png",
-      "sha256": "46e4c75054985e2b8c2e02dc9d1bf1348aee47fa0aaa4bd56d54f4fbbd3c5412",
-      "bytes": 494225
+      "sha256": "c45c4132056980a4e91d852254f39ab9906386e4edb05aaf9f2127a22e2147a4",
+      "bytes": 494281
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_248_light.png",
-      "sha256": "afa615a86d4f0bd3b364c4b83b7a492b7fd33404ef496ca4a036063a6682728a",
-      "bytes": 492181
+      "sha256": "5f4f8e0403db5f396025b4ccf74876ab486ec293c79ddac63ab9be84bd9010e9",
+      "bytes": 492228
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_249_dark.png",
-      "sha256": "32d2728bc6aee57343a4a56c08e42f11a65deb4b52a199081def1c95ebc3757f",
-      "bytes": 209160
+      "sha256": "a8c72cf6f61652b69885a8f66c8165f4ecb205ae97aa1159b0ea616c5ce50e3f",
+      "bytes": 208030
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_249_light.png",
-      "sha256": "c5603e5284da07db6aed229fbcfa348983823d8dbad9ecb3903c85bb7ec90a95",
-      "bytes": 206932
+      "sha256": "26b93ed565ec071801aae06327422bf614e5e212e16e466f8e63fa9b7996208a",
+      "bytes": 206740
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_434_dark.png",
-      "sha256": "70a1cf96c9dedd8d5f82690237e1ec33d17a7c41a4a9fe85cb0fb9bfe636547b",
-      "bytes": 356601
+      "sha256": "075901cb971177cad83ef0d725abdb74d8e19e51822b219248d1054d0ffb1348",
+      "bytes": 356251
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_434_light.png",
-      "sha256": "0fe91e7f004b005bd894eec76444167bfa44ca9311cd81c0b6664e1488ea7934",
-      "bytes": 354565
+      "sha256": "473be9ac55dc7c1cdad3a7111ba3d3406e174738f7c43606f9b2102dc22e5c23",
+      "bytes": 354152
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/REPORT.md",
-      "sha256": "bfc6b7abf4475dd04344582d5d54d0ccb86a683d037b74baa233bfdc1e47ed54",
+      "sha256": "d636a315fc20462df17ad980b3a799128216ef62196edc9001d942c0d329f25b",
       "bytes": 2380
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/SOURCE_AUTHORITY.md",
-      "sha256": "dfa7435f907d39b3f836d00541a408c61d922c7b61caa91d685515637289ac58",
-      "bytes": 3899
+      "sha256": "6c05df99ebced0509a144bc647e0bd8e7863c5610775c30a80c2ce2b615bdbc8",
+      "bytes": 4389
     },
     {
       "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Loeb/PDF-014.png",
@@ -1861,7 +2090,8 @@
       "bytes": 3818
     }
   ],
-  "commits": [
+  "manifest_self_exclusion": "HANDOFF.json and batch REPORT.md excluded from their own hash list; final Git commit identifies exact handoff bytes",
+  "commits_before_handoff": [
     {
       "commit": "f896fff896cb135cdf39d0bddacae84672b46b4d",
       "subject": "Freeze shared XII-XIII source provenance and isolated build method"
@@ -1977,6 +2207,38 @@
     {
       "commit": "405a029669f61bea8a02d1f2a8f903399096f51a",
       "subject": "audit: record rebuilt branch protected comparisons and build evidence"
+    },
+    {
+      "commit": "e66c19b6b8e65e472817baaa5442de26c209230a",
+      "subject": "audit: hand off certified XII and independently staged XIII pending adjudication"
+    },
+    {
+      "commit": "25d83ca927a05c398f4872b0185a93c1b6e32acf",
+      "subject": "audit XIII: adopt approved B and recompute distributed 212–214 correspondence"
+    },
+    {
+      "commit": "91c7838cd85bb9f96502d4868e8c00478becc02e",
+      "subject": "corpus XIII: implement approved 214 opening and qualified identity states"
+    },
+    {
+      "commit": "9ae4ee4358436e14db966fb562f3c19d10adf773",
+      "subject": "reader: enable adjudicated XIII Niese identities locally"
+    },
+    {
+      "commit": "d9dde1ab61ca97796149be4e8ba4ad3704dfaae4",
+      "subject": "audit: verify exact English contexts and adjudicated XIII containing views"
+    },
+    {
+      "commit": "2b0e001e8225ac580fd3613f9f921253c2bc593c",
+      "subject": "audit: record final batch reader regression and canonical integration context"
+    },
+    {
+      "commit": "3a7bc3e042570f653c80ef5816bc259ee6f8e6c6",
+      "subject": "certify XIII: seal all approved identities and final local reader evidence"
+    },
+    {
+      "commit": "ba6bc70db875c265c282319138d78933dae14231",
+      "subject": "certify XII: retain accepted qualifications and bind final batch reader checks"
     }
   ]
 }
