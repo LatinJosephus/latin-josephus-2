@@ -1,0 +1,73 @@
+{
+  "source_records": [
+    {
+      "path": "C:\\workspace\\Antiquities-Niese-Preview-08-10-2026-10-09\\PUBLICATION_SUMMARY.json",
+      "sha256": "6b35e6a978a5334665007a8f0b1bd8bcaeb9d4acbb9599220107766d0acfe6ec"
+    },
+    {
+      "path": "C:\\workspace\\Antiquities-Niese-Preview-08-10-2026-10-09\\APPARATUS_LINK_DIAGNOSTIC.json",
+      "sha256": "847c512a419a5fc793a8dd7e276b4409d15483a20d7806b9aa773edadb5aef97"
+    },
+    {
+      "path": "C:\\workspace\\Antiquities-Niese-Preview-08-10-2026-10-09\\LINK_SCAN_INHERITED_ISSUE_QA.json",
+      "sha256": "629ccec3ee1821d1c236b8b974955d17765b9c4ffedbcb26ddb02c2a2b36cbb9"
+    }
+  ],
+  "checks": [
+    {
+      "build": "frozen_baseline",
+      "apparatus_route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+      "hyperlinks": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "broken_hyperlinks": 3,
+      "distinct_broken_targets": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "unsupported_route": "/antiquities/?book=1&niese=1",
+      "unsupported_error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "inventory": {
+        "value": "",
+        "firstSupported": "27"
+      },
+      "supported_I_27": "PASS"
+    },
+    {
+      "build": "candidate",
+      "apparatus_route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+      "hyperlinks": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "broken_hyperlinks": 3,
+      "distinct_broken_targets": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "unsupported_route": "/antiquities/?book=1&niese=1",
+      "unsupported_error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "inventory": {
+        "value": "",
+        "firstSupported": "27"
+      },
+      "supported_I_27": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

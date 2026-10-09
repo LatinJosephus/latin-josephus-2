@@ -1,0 +1,23 @@
+{
+  "starting_canonical": "cea765de5d990646b4d4dc079bac1c0da46ca107",
+  "certified_tip": "76083c2831afdb4853f7d7ebab0db6c64c18d914",
+  "manual_conflicts": 1,
+  "conflict_path": "assets/js/renderTei.js",
+  "conflict_region": "Antiquities nieseIdentityBooks map",
+  "resolution": "Keep canonical IX entry and certified XII/XIII entries alongside VIII/X",
+  "automatically_combined_certified_changes": [
+    "Explicit Niese milestones can locate the existing anonymous XIII paragraph",
+    "Explicit niese-end bounds the final XII selection before the preserved subscription"
+  ],
+  "canonical_reader_changes_preserved": [
+    "IX availability and identity registry",
+    "Registry-defined excluded narrative paragraphs",
+    "Unavailable language exact view before context fallback"
+  ],
+  "validation": "Merged renderer byte-equals current canonical blob plus exactly the three recorded certified additions; all six incoming corpus/registry blobs equal the certified tip",
+  "canonical_renderer_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+  "certified_renderer_sha256": "55935c0ae49cf64543044562c210f610e2d9cb1216843521afcd2f637f734c70",
+  "merged_renderer_sha256": "babb2088700d343da9f6c2e6de05ab40a94b8633a32fddebd9f8a3c9f2d04cca",
+  "narrative_or_editorial_changes": false,
+  "result": "PASS"
+}
