@@ -1,0 +1,47 @@
+{
+  "book": 8,
+  "result": "PASS",
+  "expected_sections": 420,
+  "retained_inherited_starts": 83,
+  "new_Latin_milestones": 337,
+  "represented_Latin_intervals": 420,
+  "unavailable": [],
+  "confidence_counts": {
+    "EXACT": 83,
+    "INTERNAL-BUT-EXACT": 337
+  },
+  "remaining_routine_review": 0,
+  "remaining_editorial_decisions": 0,
+  "partitions": {
+    "Greek": {
+      "intervals": 420,
+      "complete_byte_independent_Unicode_narrative_partition": true,
+      "characters": 129443,
+      "sha256": "19740e38e246d55ad3c80c382790274302c783a250f8b6e565d0b41dea2b8dd4",
+      "adjacent_no_overlap_no_loss": true
+    },
+    "Latin": {
+      "intervals": 420,
+      "complete_byte_independent_Unicode_narrative_partition": true,
+      "characters": 122742,
+      "sha256": "c45a4128b4daac9933f44c1a5d84434a7f2e572579b0a416a74658bf276a9a79",
+      "adjacent_no_overlap_no_loss": true
+    }
+  },
+  "inherited_label_exceptions": [
+    {
+      "paragraph": "latin-book08-num187",
+      "label": "[VII.iv.187]",
+      "visibleClaim": 187,
+      "actualSection": 186
+    },
+    {
+      "paragraph": "latin-book08-num255",
+      "label": "[X.iii.255]",
+      "visibleClaim": 255,
+      "actualSection": 255
+    }
+  ],
+  "source_preservation": "BYTE_EXACT",
+  "all_print_and_editorial_qualifications_retained": true
+}

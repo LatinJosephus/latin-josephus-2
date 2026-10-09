@@ -1,0 +1,683 @@
+{
+  "book": 8,
+  "status": "APPROVED_LOCAL_IMPLEMENTATION_UNAPPLIED",
+  "source_sha256": "010a566202b9f18d6a35528720986a89a1ceb9dd7417866696cd1e74ef85b098",
+  "explicit_labels": 419,
+  "explicit_sequence": [
+    2,
+    420
+  ],
+  "implicit_printed_opening": 1,
+  "opening_label_is_not_an_additional_section": true,
+  "proposals": [
+    {
+      "book": 8,
+      "niese": 1,
+      "kind": "OPENING_LABEL_ADDITION_PROPOSED_SEPARATELY",
+      "original_num": null,
+      "original_locator": {
+        "stable_id": "greek-book08-num1",
+        "paragraph": 2,
+        "xpath": "/*/*/*/*[2]/*[2]/*[1]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/text()",
+        "node_offset": 0,
+        "unit_offset": 0,
+        "book_offset": 0,
+        "raw_byte": 517,
+        "left": "",
+        "right": "Περὶ μὲν οὖν Δαυίδου καὶ τῆς ἀρετῆς αὐτοῦ καὶ ὅσων ἀγαθῶν αἴτιος γενόμενος τοῖς ὁμοφύλοις πολέμους τε καὶ μάχας ὅσας κατορθώσας γηραιὸς ἐτελεύτησεν, ἐν τῇ πρὸ ταύτης βίβλῳ δεδηλώκαμεν.  Σολόμωνος δὲ τοῦ παιδὸς αὐτοῦ νέου τὴν ἡλικίαν ἔτι ὄντ",
+        "parsed_unit_sha256": "8a0b2fb450ef9cee56589af5238f31900220c6886bf5546060b18a3ec23a6968",
+        "raw_unit_sha256": "e1ea70294f8ece75b5650c81822507566aa58d43e39bf676649fd656a053c613"
+      },
+      "chosen_locator": {
+        "stable_id": "greek-book08-num1",
+        "paragraph": 2,
+        "xpath": "/*/*/*/*[2]/*[2]/*[1]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/text()",
+        "node_offset": 0,
+        "unit_offset": 0,
+        "book_offset": 0,
+        "raw_byte": 517,
+        "left": "",
+        "right": "Περὶ μὲν οὖν Δαυίδου καὶ τῆς ἀρετῆς αὐτοῦ καὶ ὅσων ἀγαθῶν αἴτιος γενόμενος τοῖς ὁμοφύλοις πολέμους τε καὶ μάχας ὅσας κατορθώσας γηραιὸς ἐτελεύτησεν, ἐν τῇ πρὸ ταύτης βίβλῳ δεδηλώκαμεν.  Σολόμωνος δὲ τοῦ παιδὸς αὐτοῦ νέου τὴν ἡλικίαν ἔτι ὄντ",
+        "parsed_unit_sha256": "8a0b2fb450ef9cee56589af5238f31900220c6886bf5546060b18a3ec23a6968",
+        "raw_unit_sha256": "e1ea70294f8ece75b5650c81822507566aa58d43e39bf676649fd656a053c613"
+      },
+      "Greek_elected_phrase": "Περὶ μὲν οὖν Δαυίδου καὶ τῆς ἀρετῆς αὐτοῦ καὶ ὅσων ἀγαθ",
+      "print_evidence": {
+        "book": 8,
+        "niese": 1,
+        "pdf_page": 185,
+        "printed_page": 177,
+        "image": "evidence/print-collation/niese-II-pdf-185.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "Περὶ μὲν οὖν Δαυίδου καὶ τῆς ἀρετῆς αὐτοῦ καὶ ὅσων ἀγαθῶν αἴτιος γενόμενος τοῖς ὁμοφύλοις πολέμους τε καὶ μάχας ὅσας κατορθώσας γηραιὸς ἐτελεύτησεν, ἐν τῇ πρὸ ταύτης βίβλῳ δεδηλώκαμεν.",
+        "ocr_assistance_only": {
+          "score": 0.9846,
+          "ocr_word": "Περί",
+          "ocr_bbox": [
+            175.12,
+            194.625,
+            200.013,
+            205.625
+          ],
+          "margin_delta_lines": null
+        },
+        "ocr_neighbouring_lines": [
+          "περιέχει ή βίβλος αύτη έτη εκατόν εξήκοντα και τρία",
+          "Ι. 1. Περί μεν ούν Δαυίδου και της αρετής αυτού και όσων",
+          "άγαθών αίτιος γενόμενος τους όμοφύλους πολέμους τε και μάχας",
+          "όσας κατορθώσας γηραιός ετελεύτησεν, έν τη πρό ταύτης βίβλω"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "IMPLICIT_PRINTED_OPENING_VERIFIED",
+        "canonical_word_cut_verified": true,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "word_authority": "Printed clause position read with syntax and retained independent controls",
+      "unambiguously_word_tagged_in_Niese": null,
+      "candidate_adjudicated": true,
+      "production_application_authorized": true,
+      "applied": false
+    },
+    {
+      "book": 8,
+      "niese": 59,
+      "kind": "ADJUDICATED_RELOCATION_CANDIDATE",
+      "original_num": {
+        "unit": 15,
+        "id": "greek-book08-num57",
+        "book_offset": 17416,
+        "unit_offset": 675,
+        "raw_start": 36560,
+        "text": "[59]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[9]/num[3]"
+      },
+      "original_locator": {
+        "stable_id": "greek-book08-num57",
+        "paragraph": 15,
+        "xpath": "/*/*/*/*[2]/*[3]/*[9]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[9]/num[3]/tail()",
+        "node_offset": 1,
+        "unit_offset": 676,
+        "book_offset": 17417,
+        "raw_byte": 36576,
+        "left": "οίησε κόπτοντας ἐπὶ μῆνα ἕνα ἐν Λιβάνῳ ὄρει δύο μῆνας ἀναπαύεσθαι παραγινομένους ἐπὶ τὰ οἰκεῖα, μέχρις οὗ πάλιν οἱ δισμύριοι τὴν  ",
+        "right": "ἐργασίαν ἀναπληρώσωσι κατὰ τὸν ὡρισμένον χρόνον ἔπειθ᾽ οὕτως συνέβαινε τοῖς πρώτοις μυρίοις διὰ τετάρτου μηνὸς ἀπαντᾶν ἐπὶ τὸ ἔργον. ἐγεγόνει δ᾽ ἐπίτροπος τοῦ φόρου τούτου Ἀδώραμος. ἦσαν δ᾽ ἐκ τῶν παροίκων οὓς Δαυίδης καταλελοίπει τῶν μὲν π",
+        "parsed_unit_sha256": "b02d7c882fb04b5c3b770160581f10abd7b9f8e48427002d9f7d835647a1e499",
+        "raw_unit_sha256": "ec8a542a3b54b2f91f4e18b24b8951f43e609970c199f46628076f654edb2169"
+      },
+      "chosen_locator": {
+        "stable_id": "greek-book08-num57",
+        "paragraph": 15,
+        "xpath": "/*/*/*/*[2]/*[3]/*[9]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[9]/num[3]/tail()",
+        "node_offset": 49,
+        "unit_offset": 724,
+        "book_offset": 17465,
+        "raw_byte": 36671,
+        "left": "μῆνας ἀναπαύεσθαι παραγινομένους ἐπὶ τὰ οἰκεῖα, μέχρις οὗ πάλιν οἱ δισμύριοι τὴν  ἐργασίαν ἀναπληρώσωσι κατὰ τὸν ὡρισμένον χρόνον ",
+        "right": "ἔπειθ᾽ οὕτως συνέβαινε τοῖς πρώτοις μυρίοις διὰ τετάρτου μηνὸς ἀπαντᾶν ἐπὶ τὸ ἔργον. ἐγεγόνει δ᾽ ἐπίτροπος τοῦ φόρου τούτου Ἀδώραμος. ἦσαν δ᾽ ἐκ τῶν παροίκων οὓς Δαυίδης καταλελοίπει τῶν μὲν παρακομιζόντων τὴν λιθίαν καὶ τὴν ἄλλην ὕλην ἑπτὰ",
+        "parsed_unit_sha256": "b02d7c882fb04b5c3b770160581f10abd7b9f8e48427002d9f7d835647a1e499",
+        "raw_unit_sha256": "ec8a542a3b54b2f91f4e18b24b8951f43e609970c199f46628076f654edb2169"
+      },
+      "Greek_elected_phrase": "ἔπειθ᾽ οὕτως",
+      "print_evidence": {
+        "book": 8,
+        "niese": 59,
+        "pdf_page": 197,
+        "printed_page": 189,
+        "image": "evidence/print-collation/niese-II-pdf-197.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "ἐργασίαν ἀναπληρώσωσι κατὰ τὸν ὡρισμένον χρόνον ἔπειθ᾽ οὕτως συνέβαινε τοῖς πρώτοις μυρίοις διὰ τετάρτου μηνὸς ἀπαντᾶν ἐπὶ τὸ ἔργον. ἐγεγόνει δ᾽ ἐπίτροπος τοῦ φόρου τούτου Ἀδώραμος. ἦσαν δ᾽ ἐκ τῶν παροίκων οὓς Δαυίδης καταλελοίπει τῶν μὲν π",
+        "ocr_assistance_only": {
+          "score": 0.9846,
+          "ocr_word": "εργασίαν",
+          "ocr_bbox": [
+            118.34,
+            225.72500000000002,
+            159.848,
+            234.72500000000002
+          ],
+          "margin_delta_lines": null
+        },
+        "ocr_neighbouring_lines": [
+          "παραγινομένους επί άτ οικεία, μέχρις ύο πάλιν ιο δεσμύριοι τήν",
+          "εργασίαν άναπληρώσωσι κατά τόν ώρισμένον χρόνον έπειθ’ ούτως 95",
+          "10 συνέβαινε τους πρώτους μυρίος διά τετάρτου μηνός άπαντάν έπι",
+          "οτ έργον. έγεγόνει 'δ επίτροπος του φόρου τούτου Αδώραμος,"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "DISAGREES_WITH_FROZEN_PROPOSED_RELOCATION",
+        "canonical_word_cut_verified": false,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "word_authority": "Printed clause position read with syntax and retained independent controls",
+      "unambiguously_word_tagged_in_Niese": null,
+      "candidate_adjudicated": true,
+      "production_application_authorized": true,
+      "applied": false
+    },
+    {
+      "book": 8,
+      "niese": 110,
+      "kind": "ADJUDICATED_RELOCATION_CANDIDATE",
+      "original_num": {
+        "unit": 26,
+        "id": "greek-book08-num106",
+        "book_offset": 33260,
+        "unit_offset": 1446,
+        "raw_start": 69359,
+        "text": "[110]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[5]/p[2]/num[5]"
+      },
+      "original_locator": {
+        "stable_id": "greek-book08-num106",
+        "paragraph": 26,
+        "xpath": "/*/*/*/*[2]/*[5]/*[2]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[5]/p[2]/num[5]/tail()",
+        "node_offset": 1,
+        "unit_offset": 1447,
+        "book_offset": 33261,
+        "raw_byte": 69376,
+        "left": "ντων ἅπαντα καθὼς ἀποβέβηκεν ἤδη τὰ πολλὰ καὶ γενήσεται τὰ λείποντα δηλώσειε, καὶ ὡς αὐτὸς ἐπιθείη τὸ ὄνομα μήπω γεγεννημένῳ καὶ  ",
+        "right": "τίς μέλλοι καλεῖσθαι προείποι καὶ ὅτι τὸν ναὸν οὗτος οἰκοδομήσει αὐτῷ βασιλεὺς μετὰ τὴν τοῦ πατρὸς τελευτὴν γενόμενος: ἃ βλέποντας κατὰ τὴν ἐκείνου προφητείαν ἐπιτελῆ τὸν θεὸν εὐλογεῖν ἠξίου καὶ περὶ μηδενὸς ἀπογινώσκειν ὧν ὑπέσχηται πρὸς ε",
+        "parsed_unit_sha256": "118c338dd5e9e8ac75ae6c1027028e21f6cadd8d35166f1038e9760b0ccd04e1",
+        "raw_unit_sha256": "2ff6a0ae12948df45766e5cd89dc9e12b148b3ffdb7d1de4024abb72f04f3de3"
+      },
+      "chosen_locator": {
+        "stable_id": "greek-book08-num106",
+        "paragraph": 26,
+        "xpath": "/*/*/*/*[2]/*[5]/*[2]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[5]/p[2]/num[4]/tail()",
+        "node_offset": 237,
+        "unit_offset": 1395,
+        "book_offset": 33209,
+        "raw_byte": 69257,
+        "left": "καὶ τὴν πρόνοιαν, ὅτι Δαυίδῃ τῷ πατρὶ περὶ τῶν μελλόντων ἅπαντα καθὼς ἀποβέβηκεν ἤδη τὰ πολλὰ καὶ γενήσεται τὰ λείποντα δηλώσειε, ",
+        "right": "καὶ ὡς αὐτὸς ἐπιθείη τὸ ὄνομα μήπω γεγεννημένῳ καὶ  τίς μέλλοι καλεῖσθαι προείποι καὶ ὅτι τὸν ναὸν οὗτος οἰκοδομήσει αὐτῷ βασιλεὺς μετὰ τὴν τοῦ πατρὸς τελευτὴν γενόμενος: ἃ βλέποντας κατὰ τὴν ἐκείνου προφητείαν ἐπιτελῆ τὸν θεὸν εὐλογεῖν ἠξί",
+        "parsed_unit_sha256": "118c338dd5e9e8ac75ae6c1027028e21f6cadd8d35166f1038e9760b0ccd04e1",
+        "raw_unit_sha256": "2ff6a0ae12948df45766e5cd89dc9e12b148b3ffdb7d1de4024abb72f04f3de3"
+      },
+      "Greek_elected_phrase": "καὶ ὡς αὐτὸς ἐπιθείη",
+      "print_evidence": {
+        "book": 8,
+        "niese": 110,
+        "pdf_page": 208,
+        "printed_page": 200,
+        "image": "evidence/print-collation/niese-II-pdf-208.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "τίς μέλλοι καλεῖσθαι προείποι καὶ ὅτι τὸν ναὸν οὗτος οἰκοδομήσει αὐτῷ βασιλεὺς μετὰ τὴν τοῦ πατρὸς τελευτὴν γενόμενος: ἃ βλέποντας κατὰ τὴν ἐκείνου προφητείαν ἐπιτελῆ τὸν θεὸν εὐλογεῖν ἠξίου καὶ περὶ μηδενὸς ἀπογινώσκειν ὧν ὑπέσχηται πρὸς ε",
+        "ocr_assistance_only": {
+          "score": 1.0,
+          "ocr_word": "τις",
+          "ocr_bbox": [
+            144.86,
+            233.87,
+            160.12,
+            243.87
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "δηλώσειε, και ώς αυτός επιθείη το όνομα μήπω γεγεννημένω και",
+          "110 τις μέλλοι καλείσθαι προείποι και ότι τον ναόν ούτος οικοδομήσει 10",
+          "αυτώ βασιλεύς μετά τήν του πατρός τελευτήν γενόμενος, ά βλέπον",
+          "τας κατά τήν εκείνου προφητείαν επιτελή τόν θεόν εύλογείν ήξίου"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "WORD_START_REQUIRES_SOURCE_INTERPRETATION",
+        "canonical_word_cut_verified": false,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": "VIII.110: Niese II p.200/PDF208; Loeb control PDF pages [638]. Canonical Greek 110 begins at τίς μέλλοι, after the naming clause has already begun in 109. Niese p.200 puts the numeral at that continuation line; Loeb p.630 puts 110 at the earlier καὶ ὡς αὐτὸς naming clause. The marginal lines differ, and neither print supplies a word-delimiting tag. All attempted pages are legible and were read; the concrete obstacle is marginal-line precision, not access or unfinished page reading.",
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "word_authority": "EDITORIAL_CHOICE; Niese marginal line position and independent Loeb control retained separately in print_collation",
+      "unambiguously_word_tagged_in_Niese": false,
+      "candidate_adjudicated": true,
+      "production_application_authorized": true,
+      "applied": false
+    },
+    {
+      "book": 8,
+      "niese": 172,
+      "kind": "RETAIN_EXISTING_WORD_LOCATOR",
+      "original_num": {
+        "unit": 38,
+        "id": "greek-book08-num165",
+        "book_offset": 52413,
+        "unit_offset": 2030,
+        "raw_start": 109091,
+        "text": "[172]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[5]/num[8]"
+      },
+      "original_locator": {
+        "stable_id": "greek-book08-num165",
+        "paragraph": 38,
+        "xpath": "/*/*/*/*[2]/*[7]/*[5]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[5]/num[8]/tail()",
+        "node_offset": 1,
+        "unit_offset": 2031,
+        "book_offset": 52414,
+        "raw_byte": 109108,
+        "left": "έγω δὲ τὴν σοφίαν καὶ τὴν φρόνησιν, καὶ ὧν ἡ βασιλεία σοι δίδωσιν, οὐ ψευδὴς ἄρα ἡ φήμη πρὸς ἡμᾶς διῆλθεν, ἀλλ᾽ οὖσα ἀληθὴς πολὺ  ",
+        "right": "καταδεεστέραν τὴν εὐδαιμονίαν ἀπέφηνεν ἧς ὁρῶ νῦν παροῦσα τὰς μὲν γὰρ ἀκοὰς πείθειν ἐπεχείρει μόνον, τὸ δὲ ἀξίωμα τῶν πραγμάτων οὐχ οὕτως ἐποίει γνώριμον, ὡς ἡ ὄψις αὐτὸ καὶ τὸ παρ᾽ αὐτοῖς εἶναι συνίστησιν. ἐγὼ γοῦν οὐδὲ τοῖς ἀπαγγελλομένοι",
+        "parsed_unit_sha256": "e14efd8a113e36593f5e7312950b9a894b81be661166d4f515d9d76cdffe9f3f",
+        "raw_unit_sha256": "b7571eb69b695e692a1c800c0c1044d5bf29c9c93d60bd9315a6c19a7831e6d2"
+      },
+      "chosen_locator": {
+        "stable_id": "greek-book08-num165",
+        "paragraph": 38,
+        "xpath": "/*/*/*/*[2]/*[7]/*[5]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[5]/num[8]/tail()",
+        "node_offset": 1,
+        "unit_offset": 2031,
+        "book_offset": 52414,
+        "raw_byte": 109108,
+        "left": "έγω δὲ τὴν σοφίαν καὶ τὴν φρόνησιν, καὶ ὧν ἡ βασιλεία σοι δίδωσιν, οὐ ψευδὴς ἄρα ἡ φήμη πρὸς ἡμᾶς διῆλθεν, ἀλλ᾽ οὖσα ἀληθὴς πολὺ  ",
+        "right": "καταδεεστέραν τὴν εὐδαιμονίαν ἀπέφηνεν ἧς ὁρῶ νῦν παροῦσα τὰς μὲν γὰρ ἀκοὰς πείθειν ἐπεχείρει μόνον, τὸ δὲ ἀξίωμα τῶν πραγμάτων οὐχ οὕτως ἐποίει γνώριμον, ὡς ἡ ὄψις αὐτὸ καὶ τὸ παρ᾽ αὐτοῖς εἶναι συνίστησιν. ἐγὼ γοῦν οὐδὲ τοῖς ἀπαγγελλομένοι",
+        "parsed_unit_sha256": "e14efd8a113e36593f5e7312950b9a894b81be661166d4f515d9d76cdffe9f3f",
+        "raw_unit_sha256": "b7571eb69b695e692a1c800c0c1044d5bf29c9c93d60bd9315a6c19a7831e6d2"
+      },
+      "Greek_elected_phrase": "καταδεεστέραν",
+      "print_evidence": {
+        "book": 8,
+        "niese": 172,
+        "pdf_page": 222,
+        "printed_page": 214,
+        "image": "evidence/print-collation/niese-II-pdf-222.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "καταδεεστέραν τὴν εὐδαιμονίαν ἀπέφηνεν ἧς ὁρῶ νῦν παροῦσα τὰς μὲν γὰρ ἀκοὰς πείθειν ἐπεχείρει μόνον, τὸ δὲ ἀξίωμα τῶν πραγμάτων οὐχ οὕτως ἐποίει γνώριμον, ὡς ἡ ὄψις αὐτὸ καὶ τὸ παρ᾽ αὐτοῖς εἶναι συνίστησιν. ἐγὼ γοῦν οὐδὲ τοῖς ἀπαγγελλομένοι",
+        "ocr_assistance_only": {
+          "score": 0.9846,
+          "ocr_word": "καταδεεστέραν",
+          "ocr_bbox": [
+            148.47,
+            224.33500000000004,
+            218.904,
+            233.33500000000004
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "ψευδής άρα ή φήμη προς ημάς διήλθεν, άλλ’ ούσα άληθής πολύ",
+          "172 καταδεεστέραν τήν ευδαιμονίαν άπέφηνενής δρώ νύν παρούσα τάς",
+          "μεν γάρ άκοάς πείθεν επεχείρει μόνον, το δε άξίωμα τών πραγ 10",
+          "μάτων ουχ ούτως έποίει γνώριμον, ώς ή όψις αυτό και τό παρ'"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "WORD_START_REQUIRES_SOURCE_INTERPRETATION",
+        "canonical_word_cut_verified": false,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": "VIII.172: Niese II p.214/PDF222; Loeb control PDF pages [670]. Canonical Greek 172 starts at καταδεεστέραν within the comparative clause. Niese p.214 places 172 at that line; Loeb p.662 places 172 later on the same comparative clause at ἀπέφηνεν. The next explanatory τὰς μὲν γὰρ clause is another credible logical cut. Latin Licet multorum minor corresponds to the comparative phrase; nam opinio begins the explanation. All attempted pages are legible and were read; the concrete obstacle is marginal-line precision, not access or unfinished page reading.",
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "word_authority": "EDITORIAL_CHOICE; Niese marginal line position and independent Loeb control retained separately in print_collation",
+      "unambiguously_word_tagged_in_Niese": false,
+      "candidate_adjudicated": true,
+      "production_application_authorized": true,
+      "applied": false
+    },
+    {
+      "book": 8,
+      "niese": 245,
+      "kind": "ADJUDICATED_RELOCATION_CANDIDATE",
+      "original_num": {
+        "unit": 53,
+        "id": "greek-book08-num236",
+        "book_offset": 75425,
+        "unit_offset": 2980,
+        "raw_start": 157009,
+        "text": "[245]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[10]/p[1]/num[10]"
+      },
+      "original_locator": {
+        "stable_id": "greek-book08-num236",
+        "paragraph": 53,
+        "xpath": "/*/*/*/*[2]/*[10]/*",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[10]/p[1]/num[10]/tail()",
+        "node_offset": 1,
+        "unit_offset": 2981,
+        "book_offset": 75426,
+        "raw_byte": 157026,
+        "left": " ἐπενηνεγμένων. ἐδήλου δ᾽ αὐτῷ καὶ τὸν θάνατον τοῦ τὰ σημεῖα ταῦτα προειρηκότος ὡς ὑπὸ λέοντος ἀπώλετο: οὕτως οὐδὲ ἓν οὔτ᾽ εἶχεν  ",
+        "right": "οὔτ᾽ ἐφθέγξατο προφήτου. ταῦτα εἰπὼν πείθει τὸν βασιλέα καὶ τὴν διάνοιαν αὐτοῦ τελέως ἀποστρέψας ἀπὸ τοῦ θεοῦ καὶ τῶν ὁσίων ἔργων καὶ δικαίων ἐπὶ τὰς ἀσεβεῖς πράξεις παρώρμησεν. οὕτως δ᾽ ἐξύβρισεν εἰς τὸ θεῖον καὶ παρηνόμησεν, ὡς οὐδὲν ἄλλο",
+        "parsed_unit_sha256": "dd7e4568acd05d1bbf9c59dda4f58b4bf5babef9d76c635e6dc754bba69b9e1b",
+        "raw_unit_sha256": "485c0456bdbff7c32c1d21483a2ab3d2ed6f5ba5ca9d83fe6e32d0aa74187208"
+      },
+      "chosen_locator": {
+        "stable_id": "greek-book08-num236",
+        "paragraph": 53,
+        "xpath": "/*/*/*/*[2]/*[10]/*",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[10]/p[1]/num[10]/tail()",
+        "node_offset": 26,
+        "unit_offset": 3006,
+        "book_offset": 75451,
+        "raw_byte": 157075,
+        "left": " αὐτῷ καὶ τὸν θάνατον τοῦ τὰ σημεῖα ταῦτα προειρηκότος ὡς ὑπὸ λέοντος ἀπώλετο: οὕτως οὐδὲ ἓν οὔτ᾽ εἶχεν  οὔτ᾽ ἐφθέγξατο προφήτου. ",
+        "right": "ταῦτα εἰπὼν πείθει τὸν βασιλέα καὶ τὴν διάνοιαν αὐτοῦ τελέως ἀποστρέψας ἀπὸ τοῦ θεοῦ καὶ τῶν ὁσίων ἔργων καὶ δικαίων ἐπὶ τὰς ἀσεβεῖς πράξεις παρώρμησεν. οὕτως δ᾽ ἐξύβρισεν εἰς τὸ θεῖον καὶ παρηνόμησεν, ὡς οὐδὲν ἄλλο καθ᾽ ἡμέραν ζητεῖν ἢ τί ",
+        "parsed_unit_sha256": "dd7e4568acd05d1bbf9c59dda4f58b4bf5babef9d76c635e6dc754bba69b9e1b",
+        "raw_unit_sha256": "485c0456bdbff7c32c1d21483a2ab3d2ed6f5ba5ca9d83fe6e32d0aa74187208"
+      },
+      "Greek_elected_phrase": "ταῦτα εἰπὼν πείθει",
+      "print_evidence": {
+        "book": 8,
+        "niese": 245,
+        "pdf_page": 237,
+        "printed_page": 229,
+        "image": "evidence/print-collation/niese-II-pdf-237.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "οὔτ᾽ ἐφθέγξατο προφήτου. ταῦτα εἰπὼν πείθει τὸν βασιλέα καὶ τὴν διάνοιαν αὐτοῦ τελέως ἀποστρέψας ἀπὸ τοῦ θεοῦ καὶ τῶν ὁσίων ἔργων καὶ δικαίων ἐπὶ τὰς ἀσεβεῖς πράξεις παρώρμησεν. οὕτως δ᾽ ἐξύβρισεν εἰς τὸ θεῖον καὶ παρηνόμησεν, ὡς οὐδὲν ἄλλο",
+        "ocr_assistance_only": {
+          "score": 1.0,
+          "ocr_word": "ούτ’",
+          "ocr_bbox": [
+            111.48,
+            365.56,
+            132.55999999999997,
+            375.56
+          ],
+          "margin_delta_lines": 0
+        },
+        "ocr_neighbouring_lines": [
+          "προειρηκότος ώς ύπό λέοντος απώλετο ούτως ουδε εν ούτ είχεν",
+          "ούτ’ έφθέγξατο προφήτου. * ταύτα είπών πείθει τον βασιλέα και 245",
+          "20 τήν διάνοιαν αυτού τελέως αποστρέψας άπό τού θεού και τών",
+          "όσίων έργων και δικαίων επί τάς άσεβείς πράξεις παρώρμησεν"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "DISAGREES_WITH_FROZEN_PROPOSED_RELOCATION",
+        "canonical_word_cut_verified": false,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "word_authority": "Printed clause position read with syntax and retained independent controls",
+      "unambiguously_word_tagged_in_Niese": null,
+      "candidate_adjudicated": true,
+      "production_application_authorized": true,
+      "applied": false
+    },
+    {
+      "book": 8,
+      "niese": 353,
+      "kind": "ADJUDICATED_RELOCATION_CANDIDATE",
+      "original_num": {
+        "unit": 74,
+        "id": "greek-book08-num347",
+        "book_offset": 109023,
+        "unit_offset": 1685,
+        "raw_start": 226860,
+        "text": "[353]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[14]/p[7]/num[7]"
+      },
+      "original_locator": {
+        "stable_id": "greek-book08-num347",
+        "paragraph": 74,
+        "xpath": "/*/*/*/*[2]/*[14]/*[7]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[14]/p[7]/num[7]/tail()",
+        "node_offset": 1,
+        "unit_offset": 1686,
+        "book_offset": 109024,
+        "raw_byte": 226877,
+        "left": "ν τὸν Νεμεσαίου παῖδα, ἐκ Δαμασκοῦ δὲ τῶν Σύρων Ἀζάηλον: ἀντ᾽ αὐτοῦ δὲ προφήτην Ἐλισσαῖον ὑπ᾽ αὐτοῦ γενήσεσθαι ἐκ πόλεως Ἀβέλας:  ",
+        "right": "διαφθερεῖ δὲ τοῦ ἀσεβοῦς ὄχλου τοὺς μὲν Ἀζάηλος τοὺς δὲ Ἰηοῦς. ὁ δ᾽ Ἠλίας ὑποστρέφει ταῦτ᾽ ἀκούσας εἰς τὴν Ἑβραίων χώραν καὶ τὸν Σαφάτου παῖδα Ἐλισσαῖον καταλαβὼν ἀροῦντα καὶ μετ᾽ αὐτοῦ τινας ἄλλους ἐλαύνοντας ζεύγη δώδεκα προσελθὼν ἐπέρριψ",
+        "parsed_unit_sha256": "ff42df6e7886acd5a18fcba39a297dd76b82f6d90b5d92eaae94efa67b0decc0",
+        "raw_unit_sha256": "5dedbe2e94ef271181a3aef78b9c0938482f53963ddbc60cc8cf49d1dfa33ffa"
+      },
+      "chosen_locator": {
+        "stable_id": "greek-book08-num347",
+        "paragraph": 74,
+        "xpath": "/*/*/*/*[2]/*[14]/*[7]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[14]/p[7]/num[7]/tail()",
+        "node_offset": 64,
+        "unit_offset": 1749,
+        "book_offset": 109087,
+        "raw_byte": 227004,
+        "left": "ὐτοῦ δὲ προφήτην Ἐλισσαῖον ὑπ᾽ αὐτοῦ γενήσεσθαι ἐκ πόλεως Ἀβέλας:  διαφθερεῖ δὲ τοῦ ἀσεβοῦς ὄχλου τοὺς μὲν Ἀζάηλος τοὺς δὲ Ἰηοῦς. ",
+        "right": "ὁ δ᾽ Ἠλίας ὑποστρέφει ταῦτ᾽ ἀκούσας εἰς τὴν Ἑβραίων χώραν καὶ τὸν Σαφάτου παῖδα Ἐλισσαῖον καταλαβὼν ἀροῦντα καὶ μετ᾽ αὐτοῦ τινας ἄλλους ἐλαύνοντας ζεύγη δώδεκα προσελθὼν ἐπέρριψεν αὐτῷ τὸ ἴδιον ἱμάτιον.  ὁ δ᾽ Ἐλισσαῖος εὐθέως προφητεύειν ἤρ",
+        "parsed_unit_sha256": "ff42df6e7886acd5a18fcba39a297dd76b82f6d90b5d92eaae94efa67b0decc0",
+        "raw_unit_sha256": "5dedbe2e94ef271181a3aef78b9c0938482f53963ddbc60cc8cf49d1dfa33ffa"
+      },
+      "Greek_elected_phrase": "ὁ δ᾽ Ἠλίας",
+      "print_evidence": {
+        "book": 8,
+        "niese": 353,
+        "pdf_page": 260,
+        "printed_page": 252,
+        "image": "evidence/print-collation/niese-II-pdf-260.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "διαφθερεῖ δὲ τοῦ ἀσεβοῦς ὄχλου τοὺς μὲν Ἀζάηλος τοὺς δὲ Ἰηοῦς. ὁ δ᾽ Ἠλίας ὑποστρέφει ταῦτ᾽ ἀκούσας εἰς τὴν Ἑβραίων χώραν καὶ τὸν Σαφάτου παῖδα Ἐλισσαῖον καταλαβὼν ἀροῦντα καὶ μετ᾽ αὐτοῦ τινας ἄλλους ἐλαύνοντας ζεύγη δώδεκα προσελθὼν ἐπέρριψ",
+        "ocr_assistance_only": {
+          "score": 0.9538,
+          "ocr_word": "διαφθερεί",
+          "ocr_bbox": [
+            369.13,
+            421.37,
+            418.43,
+            431.37
+          ],
+          "margin_delta_lines": -1
+        },
+        "ocr_neighbouring_lines": [
+          "μασκού εδ τών Σύρων Αζάηλον άντ’ αυτού εδ προφήτην Ελισσαίον",
+          "ύπ’ αυτού γενήσεσθαι κέ πόλεως Αβέλας διαφθερεί εδ τού άσε",
+          "353 βους όχλου τούς μέν Αζάηλος τούς εδ Ίηούς\" .δ 'δ Ηλίας υπο",
+          "στρέφει ταύτ’ άκούσας εις τήν Εβραίων χώραν και τον Σαφάτου"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "DISAGREES_WITH_FROZEN_PROPOSED_RELOCATION",
+        "canonical_word_cut_verified": false,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "word_authority": "Printed clause position read with syntax and retained independent controls",
+      "unambiguously_word_tagged_in_Niese": null,
+      "candidate_adjudicated": true,
+      "production_application_authorized": true,
+      "applied": false
+    },
+    {
+      "book": 8,
+      "niese": 368,
+      "kind": "ADJUDICATED_RELOCATION_CANDIDATE",
+      "original_num": {
+        "unit": 76,
+        "id": "greek-book08-num363",
+        "book_offset": 113547,
+        "unit_offset": 1374,
+        "raw_start": 236246,
+        "text": "[368]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[15]/p[1]/num[6]"
+      },
+      "original_locator": {
+        "stable_id": "greek-book08-num363",
+        "paragraph": 76,
+        "xpath": "/*/*/*/*[2]/*[15]/*[1]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[15]/p[1]/num[6]/tail()",
+        "node_offset": 1,
+        "unit_offset": 1375,
+        "book_offset": 113548,
+        "raw_byte": 236263,
+        "left": "υς, οἷς ἐρευνήσασι τά τε βασίλεια καὶ τοὺς τῶν φίλων καὶ συγγενῶν οἴκους ἐκέλευε διδόναι πᾶν ὅ τι ἂν ἐν αὐτοῖς εὕρωσι κάλλιστον,  ",
+        "right": "τὰ δ᾽ ἀπαρέσαντα σοὶ καταλείψουσιν. Ἄχαβος δ᾽ ἀγασθεὶς ἐπὶ τῇ δευτέρᾳ πρεσβείᾳ τοῦ τῶν Σύρων βασιλέως συναγαγὼν εἰς ἐκκλησίαν τὸ πλῆθος ἔλεγεν, ὡς αὐτὸς μὲν ἑτοίμως εἶχεν ὑπὲρ σωτηρίας αὐτοῦ καὶ εἰρήνης καὶ γυναῖκας τὰς ἰδίας προέσθαι τῷ πο",
+        "parsed_unit_sha256": "3b363e905e04fc0fac34c1db5c070d2ab26725a7cb5e279dffb8d47337a08e74",
+        "raw_unit_sha256": "08988b1ff4007188e5a6e9f52b5d4b34aa8cda75f00867c6cda90b6e66ed4285"
+      },
+      "chosen_locator": {
+        "stable_id": "greek-book08-num363",
+        "paragraph": 76,
+        "xpath": "/*/*/*/*[2]/*[15]/*[1]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[15]/p[1]/num[6]/tail()",
+        "node_offset": 37,
+        "unit_offset": 1411,
+        "book_offset": 113584,
+        "raw_byte": 236333,
+        "left": "ὶ τοὺς τῶν φίλων καὶ συγγενῶν οἴκους ἐκέλευε διδόναι πᾶν ὅ τι ἂν ἐν αὐτοῖς εὕρωσι κάλλιστον,  τὰ δ᾽ ἀπαρέσαντα σοὶ καταλείψουσιν. ",
+        "right": "Ἄχαβος δ᾽ ἀγασθεὶς ἐπὶ τῇ δευτέρᾳ πρεσβείᾳ τοῦ τῶν Σύρων βασιλέως συναγαγὼν εἰς ἐκκλησίαν τὸ πλῆθος ἔλεγεν, ὡς αὐτὸς μὲν ἑτοίμως εἶχεν ὑπὲρ σωτηρίας αὐτοῦ καὶ εἰρήνης καὶ γυναῖκας τὰς ἰδίας προέσθαι τῷ πολεμίῳ καὶ τὰ τέκνα καὶ πάσης παραχωρ",
+        "parsed_unit_sha256": "3b363e905e04fc0fac34c1db5c070d2ab26725a7cb5e279dffb8d47337a08e74",
+        "raw_unit_sha256": "08988b1ff4007188e5a6e9f52b5d4b34aa8cda75f00867c6cda90b6e66ed4285"
+      },
+      "Greek_elected_phrase": "Ἄχαβος δ᾽ ἀγασθείς",
+      "print_evidence": {
+        "book": 8,
+        "niese": 368,
+        "pdf_page": 264,
+        "printed_page": 256,
+        "image": "evidence/print-collation/niese-II-pdf-264.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "τὰ δ᾽ ἀπαρέσαντα σοὶ καταλείψουσιν. Ἄχαβος δ᾽ ἀγασθεὶς ἐπὶ τῇ δευτέρᾳ πρεσβείᾳ τοῦ τῶν Σύρων βασιλέως συναγαγὼν εἰς ἐκκλησίαν τὸ πλῆθος ἔλεγεν, ὡς αὐτὸς μὲν ἑτοίμως εἶχεν ὑπὲρ σωτηρίας αὐτοῦ καὶ εἰρήνης καὶ γυναῖκας τὰς ἰδίας προέσθαι τῷ πο",
+        "ocr_assistance_only": {
+          "score": 1.0,
+          "ocr_word": "τα",
+          "ocr_bbox": [
+            327.93,
+            166.25,
+            340.53999999999996,
+            176.25
+          ],
+          "margin_delta_lines": -1
+        },
+        "ocr_neighbouring_lines": [
+          "και τούς τών φίλων και συγγενών οίκους έκέλευε διδόναι πάν ότι",
+          "άν εν αυτοίς εύρωσε κάλλιστον, τα δ’ άπαρέσαντα σοί καταλεί",
+          "368 ψουσιν.\" Αχαβος δ’ άγασθείς επί τή δευτέρα πρεσβεία τού τών",
+          "Σύρων βασιλέως συναγαγών εις έκκλησίαν τό πλήθος έλεγεν, ώς"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "WORD_START_REQUIRES_SOURCE_INTERPRETATION",
+        "canonical_word_cut_verified": false,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": "VIII.368: Niese II p.256/PDF264; Loeb control PDF pages [776, 777]. Both Niese p.256 and Loeb p.768 put 368 beside the hyphenated ending of καταλείψουσιν, followed by Ἄχαβος δ᾽ ἀγασθείς. Neither marginal position alone identifies whether the cut precedes the preceding τὰ δ᾽ clause or the new Ahab sentence. Loeb English p.769 distinguishes the closing embassy quotation from “But Achab”. All attempted pages are legible and were read; the concrete obstacle is marginal-line precision, not access or unfinished page reading.",
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "word_authority": "EDITORIAL_CHOICE; Niese marginal line position and independent Loeb control retained separately in print_collation",
+      "unambiguously_word_tagged_in_Niese": false,
+      "candidate_adjudicated": true,
+      "production_application_authorized": true,
+      "applied": false
+    },
+    {
+      "book": 8,
+      "niese": 409,
+      "kind": "ADJUDICATED_RELOCATION_CANDIDATE",
+      "original_num": {
+        "unit": 84,
+        "id": "greek-book08-num401",
+        "book_offset": 126079,
+        "unit_offset": 2377,
+        "raw_start": 262220,
+        "text": "[409]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[16]/p[4]/num[9]"
+      },
+      "original_locator": {
+        "stable_id": "greek-book08-num401",
+        "paragraph": 84,
+        "xpath": "/*/*/*/*[2]/*[16]/*[4]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[16]/p[4]/num[9]/tail()",
+        "node_offset": 1,
+        "unit_offset": 2378,
+        "book_offset": 126080,
+        "raw_byte": 262237,
+        "left": "ὺς γὰρ ῥαπισθεὶς ὑπ᾽ ἐμοῦ βλαψάτω μου τὴν χεῖρα, ὥσπερ Ἰάδαος τὴν Ἱεροβοάμου τοῦ βασιλέως συλλαβεῖν θελήσαντος ἀπεξήρανε δεξιάν:  ",
+        "right": "‘ἀκήκοας γὰρ οἶμαι τοῦτο πάντως γενόμενον.’ ὡς οὖν πλήξαντος αὐτοῦ τὸν Μιχαίαν μηδὲν συνέβη παθεῖν, Ἄχαβος θαρρήσας ἄγειν τὴν στρατιὰν πρόθυμος ἦν ἐπὶ τὸν Σύρον: ἐνίκα γὰρ οἶμαι τὸ χρεὼν καὶ πιθανωτέρους ἐποίει τοῦ ἀληθοῦς τοὺς ψευδοπροφήτα",
+        "parsed_unit_sha256": "28ea6ca522d69834321147e779981cd5798c3edee745ffa90cc263d5d3018f8d",
+        "raw_unit_sha256": "3ee2e6d41bc1c446430b674abc5bd27fb82e7f2078cce4b39120e51fcc435062"
+      },
+      "chosen_locator": {
+        "stable_id": "greek-book08-num401",
+        "paragraph": 84,
+        "xpath": "/*/*/*/*[2]/*[16]/*[4]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[16]/p[4]/num[9]/tail()",
+        "node_offset": 45,
+        "unit_offset": 2422,
+        "book_offset": 126124,
+        "raw_byte": 262324,
+        "left": "ῖρα, ὥσπερ Ἰάδαος τὴν Ἱεροβοάμου τοῦ βασιλέως συλλαβεῖν θελήσαντος ἀπεξήρανε δεξιάν:  ‘ἀκήκοας γὰρ οἶμαι τοῦτο πάντως γενόμενον.’ ",
+        "right": "ὡς οὖν πλήξαντος αὐτοῦ τὸν Μιχαίαν μηδὲν συνέβη παθεῖν, Ἄχαβος θαρρήσας ἄγειν τὴν στρατιὰν πρόθυμος ἦν ἐπὶ τὸν Σύρον: ἐνίκα γὰρ οἶμαι τὸ χρεὼν καὶ πιθανωτέρους ἐποίει τοῦ ἀληθοῦς τοὺς ψευδοπροφήτας, ἵνα λάβῃ τὴν ἀφορμὴν τοῦ τέλους. Σεδεκίας",
+        "parsed_unit_sha256": "28ea6ca522d69834321147e779981cd5798c3edee745ffa90cc263d5d3018f8d",
+        "raw_unit_sha256": "3ee2e6d41bc1c446430b674abc5bd27fb82e7f2078cce4b39120e51fcc435062"
+      },
+      "Greek_elected_phrase": "ὡς οὖν πλήξαντος",
+      "print_evidence": {
+        "book": 8,
+        "niese": 409,
+        "pdf_page": 272,
+        "printed_page": 264,
+        "image": "evidence/print-collation/niese-II-pdf-272.jpg",
+        "image_inspected": true,
+        "canonical_greek_start": "‘ἀκήκοας γὰρ οἶμαι τοῦτο πάντως γενόμενον.’ ὡς οὖν πλήξαντος αὐτοῦ τὸν Μιχαίαν μηδὲν συνέβη παθεῖν, Ἄχαβος θαρρήσας ἄγειν τὴν στρατιὰν πρόθυμος ἦν ἐπὶ τὸν Σύρον: ἐνίκα γὰρ οἶμαι τὸ χρεὼν καὶ πιθανωτέρους ἐποίει τοῦ ἀληθοῦς τοὺς ψευδοπροφήτα",
+        "ocr_assistance_only": {
+          "score": 0.9846,
+          "ocr_word": "άκή",
+          "ocr_bbox": [
+            473.78,
+            275.76,
+            496.352,
+            287.76
+          ],
+          "margin_delta_lines": -1
+        },
+        "ocr_neighbouring_lines": [
+          "πισθεις ύπ’ έμού βλαψάτω μου την χειρα, ώσπερ Ιάδαoς τήν Ιερο",
+          "βοάμου τού βασιλέως συλλαβείν θελήσαντος άπεξήρανε δεξιάν άκή",
+          "409 κοας γάρ ομαι τούτο πάντως γενόμενον\" ώς oύν πλήξαντος αυτού",
+          "τον Μιχαίαν μηδεν συνέβη παθεΐν, Αχαβος θαρρήσας άγειν την 15"
+        ],
+        "manual_page_override": false,
+        "verification_method": "Direct visual pass of every relevant body page, comparing canonical incipits and marginal lines in sequence. OCR only locates; it is not source authority. Marginal line position is interpreted with syntax, adjacent extents and explicit independent controls for exceptions.",
+        "greek_print_status": "DISAGREES_WITH_FROZEN_PROPOSED_RELOCATION",
+        "canonical_word_cut_verified": false,
+        "routine_image_collation_complete": true,
+        "verification_obstacle": null,
+        "printed_line_is_not_a_word_tag": true,
+        "agreement_scope": "Citation identity and passage location, interpreting the marginal line with its clause context. This is not a full spelling/variant collation or a claim that the print embeds word delimiters.",
+        "confidence_scope": "Greek source collation only; does not promote Latin classification or approve implementation."
+      },
+      "word_authority": "Printed clause position read with syntax and retained independent controls",
+      "unambiguously_word_tagged_in_Niese": null,
+      "candidate_adjudicated": true,
+      "production_application_authorized": true,
+      "applied": false
+    }
+  ],
+  "resolved_assessments_retained": [
+    256,
+    314,
+    376,
+    377
+  ],
+  "authorization": {
+    "authority": "Direct user approval and implementation authorization, 2026-10-08",
+    "scope": "Isolated implementation worktree, local certification and local commits",
+    "canonical_integration": false,
+    "push": false,
+    "public_deployment": false
+  }
+}

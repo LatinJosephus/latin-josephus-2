@@ -1,0 +1,1 @@
+The final approved plan is frozen by final_adjudication.py. Run it only on the audit checkpoint with unchanged audit input hashes. Earlier generators reproduce historical NO-GO states; use a separate historical checkout for them. Implementation must regenerate byte locators against its own pinned actual target bytes.
