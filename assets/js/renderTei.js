@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nieseIdentityBooks: {
         8: "assets/xml/antiquities/niese/book-08.json",
         10: "assets/xml/antiquities/niese/book-10.json",
+        14: "assets/xml/antiquities/niese/book-14.json",
         15: "assets/xml/antiquities/niese/book-15.json"
       },
       nieseRanges: {
