@@ -1,0 +1,46 @@
+{
+  "book": 12,
+  "result": "PASS",
+  "inspected_at_UTC": "2026-10-09T18:06:20.642231+00:00",
+  "method": "Actual final local-reader PNGs opened using view_image and visually examined; automated selection/range evidence covers all identities and both themes",
+  "screenshots": [
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13\\review\\Antiquities_Niese_BookXII_2026-10-09\\READER_248_dark.png",
+      "sha256": "c45c4132056980a4e91d852254f39ab9906386e4edb05aaf9f2127a22e2147a4",
+      "observed": "No independent Latin interval notice explicitly identifies dating material in XII.246; Greek 248 and unchanged English context are visible. Notice wraps within the Latin pane in dark theme."
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13\\review\\Antiquities_Niese_BookXII_2026-10-09\\READER_249_light.png",
+      "sha256": "26b93ed565ec071801aae06327422bf614e5e212e16e466f8e63fa9b7996208a",
+      "observed": "The full surviving nec non etiam eos clause and resumed 247 ending appear in transmitted order, with partial/reordered qualification. Greek 249 and unchanged English context are visible in light theme."
+    }
+  ],
+  "scope": "Final local build from the pinned baseline with both XII/XIII enabled; no canonical or published browser claimed as new-book certification",
+  "accepted_XII_preservation": [
+    {
+      "path": "assets/xml/antiquities/Greek/book-12.xml",
+      "sha256": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec",
+      "equals_completed_XII_handoff_commit": "e66c19b6b8e65e472817baaa5442de26c209230a"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-12.xml",
+      "sha256": "11fd83d1d8f61573db08ec32a600423242fca6c0e29ef32898c1dde876238a42",
+      "equals_completed_XII_handoff_commit": "e66c19b6b8e65e472817baaa5442de26c209230a"
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-12.json",
+      "sha256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+      "equals_completed_XII_handoff_commit": "e66c19b6b8e65e472817baaa5442de26c209230a"
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/EDITORIAL_DECISIONS.json",
+      "sha256": "37aca81ba4f613e597d786be9170c497d20b5b6969aa5bf7d3f6a34e3d38e83e",
+      "equals_completed_XII_handoff_commit": "e66c19b6b8e65e472817baaa5442de26c209230a"
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/QUALIFIED_CORRESPONDENCE.json",
+      "sha256": "d5f08ddfe3466f4b5a6ab4bbffff1440980e65eae0431c9d149996f78d9d28be",
+      "equals_completed_XII_handoff_commit": "e66c19b6b8e65e472817baaa5442de26c209230a"
+    }
+  ]
+}
