@@ -71,6 +71,6 @@ write(P/'REGISTER_VALIDATION.json',{'status':'PASS','fixtures':fixtures(),'indep
 lines=['# IX boundary review','',f'291 printed identities; {len(lstarts)} represented Latin intervals; 59 unavailable identities; {len(retained)} retained starts; {len(lstarts)-len(retained)} new milestone candidates.','', '| § | Print page / PDF | Latin paragraph and start | Review and correspondence limits | Decision |','|---|---|---|---|---|']
 for r in rows:
     loc=r['Latin_locator'];cut=(f"{loc['stable_id']} · {r['Latin_chosen_anchor']} · node {loc['node_offset']}, UTF-8 byte {loc['raw_byte']}" if loc else 'Unavailable; preserved source placeholder')
-    lines.append(f"| {r['niese']} | [{pages[r['niese']]-8} / {pages[r['niese']]}]({r['Greek_print_verification']['image']}) | {cut} | {r['correspondence_limits']} | {r['editorial_decision_status']} |")
+    lines.append(f"| {r['niese']} | [{pages[r['niese']]-8} / {pages[r['niese']]}]({r['Greek_print_verification']['image']}) | {cut} | {r['correspondence_limits']} | {r['editorial_decision_status']} / {r['extent_status']} |")
 (P/'BOUNDARIES.md').write_text('\n'.join(lines)+'\n',encoding='utf8',newline='\n')
 print(json.dumps({'represented':len(lstarts),'retained':len(retained),'milestones':len(lstarts)-len(retained),'suppressed':exceptions,'pending':decision},ensure_ascii=False,indent=2))

@@ -1,0 +1,1213 @@
+{
+  "frozen_base": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "production_changes": {
+    "assets/js/renderTei.js": {
+      "source_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+      "served_build_sha256": "59290d5046ed6d267e469999ea1e6ab7761e670475d64b40f842c5a8ef7c0e86",
+      "byte_equal": true
+    },
+    "assets/xml/antiquities/Greek/book-09.xml": {
+      "source_sha256": "ae851f4a5fbb941f64c1ca1dbbc6fe95e1d478f0f115e4d3843343efa72bcfd5",
+      "served_build_sha256": "ae851f4a5fbb941f64c1ca1dbbc6fe95e1d478f0f115e4d3843343efa72bcfd5",
+      "byte_equal": true
+    },
+    "assets/xml/antiquities/Latin/book-09.xml": {
+      "source_sha256": "3585aca07101f3ef19c85b5e5bc8770514ad493b271f57dde304973a753a47fd",
+      "served_build_sha256": "3585aca07101f3ef19c85b5e5bc8770514ad493b271f57dde304973a753a47fd",
+      "byte_equal": true
+    },
+    "assets/xml/antiquities/niese/book-09.json": {
+      "source_sha256": "2ba565782b539c60d26501bb137981243e13799e40eb892b3b6b1881e3bc690a",
+      "served_build_sha256": "2ba565782b539c60d26501bb137981243e13799e40eb892b3b6b1881e3bc690a",
+      "byte_equal": true
+    }
+  },
+  "Git_changed_files": [
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/Greek/book-09.xml",
+    "assets/xml/antiquities/Latin/book-09.xml",
+    "assets/xml/antiquities/niese/book-09.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/.gitignore",
+    "review/Antiquities_Niese_BookIX_2026-10-09/BASELINE.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/BELLUM_SOURCE_FAILURE.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/BOUNDARIES.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/BOUNDARIES.md",
+    "review/Antiquities_Niese_BookIX_2026-10-09/BUILD_RECORD.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/CERTIFICATION.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/CONTROL_SEARCH.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/DECISION_240.md",
+    "review/Antiquities_Niese_BookIX_2026-10-09/DECISION_240_ALTERNATIVES.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/EDITORIAL_HISTORY.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/EXECUTABLE_IDENTITIES.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/EXECUTABLE_TOOLS.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/EXPECTED_INTERVALS.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/FAILED_BROWSER_QA.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/FILE_MANIFEST.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/GREEK_MARKER_PLAN.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/IMPLEMENTATION_PRESERVATION.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/INHERITED_ISSUES_QA.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/INITIAL_GREEK_CENSUS.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/IX110-dark.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/IX110-light.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/LATIN_REVIEW_NOTES.txt",
+    "review/Antiquities_Niese_BookIX_2026-10-09/METHOD_SOURCE_MANIFEST.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/NEW_BOOK_BROWSER_FAILURE.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/NEW_BOOK_BROWSER_QA.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/PRINT_PAGE_CENSUS.txt",
+    "review/Antiquities_Niese_BookIX_2026-10-09/PROTECTED_BROWSER_QA.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/PROTECTED_SOURCE_GATE_QA.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/REGISTER_VALIDATION.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/REPORT.md",
+    "review/Antiquities_Niese_BookIX_2026-10-09/SHARED_SUPPORT.md",
+    "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_AUTHORITY.md",
+    "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_INVENTORY.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_PRESERVATION_QA.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/bellum-witness-gate.cjs",
+    "review/Antiquities_Niese_BookIX_2026-10-09/bottom_views.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/build-logs/baseline-jekyll.log",
+    "review/Antiquities_Niese_BookIX_2026-10-09/build-logs/jekyll.log",
+    "review/Antiquities_Niese_BookIX_2026-10-09/build.sh",
+    "review/Antiquities_Niese_BookIX_2026-10-09/editorial_packet.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-112.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-128.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-142.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-162.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-001.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-002.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-003.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-004.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-005.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-006.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-007.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-008.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-009.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-010.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-011.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-012.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-016.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-017.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-018.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-019.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-020.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-021.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-022.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-023.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-024.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-167.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-168.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-169.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-170.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-171.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-172.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-001.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-002.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-003.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-004.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-005.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-006.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-007.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-008.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-009.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-010.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-011.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-012.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-275.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-276.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-277.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-278.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-279.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-280.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-281.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-282.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-283.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-284.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-285.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-286.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-287.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-288.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-289.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-290.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-291.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-292.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-293.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-294.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-295.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-296.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-297.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-298.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-299.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-300.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-301.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-302.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-303.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-304.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-305.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-306.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-307.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-308.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-309.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-310.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-311.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-312.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-313.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-314.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-315.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-316.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-317.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-318.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-319.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-320.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-321.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-322.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-323.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-324.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-325.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-326.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-327.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-328.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-329.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-330.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-331.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-332.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-333.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-334.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-335.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-336.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-337.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-338.png",
+    "review/Antiquities_Niese_BookIX_2026-10-09/finalize_evidence.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/implement.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/inherited-issues.cjs",
+    "review/Antiquities_Niese_BookIX_2026-10-09/inputs/_includes__display-settings.html",
+    "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__js__renderTei.js",
+    "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__English__book-09.xml",
+    "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__Greek__book-09.xml",
+    "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__Latin__book-09.xml",
+    "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__structure.xml",
+    "review/Antiquities_Niese_BookIX_2026-10-09/inspection_views.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/locate_controls.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/mixed_mapper.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/new-book-browser.cjs",
+    "review/Antiquities_Niese_BookIX_2026-10-09/prepare_evidence.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/prepare_qa.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/protected-browser.cjs",
+    "review/Antiquities_Niese_BookIX_2026-10-09/qa-common.cjs",
+    "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/attempt-2-required-Latin-pane-harness.json",
+    "review/Antiquities_Niese_BookIX_2026-10-09/register_boundaries.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/start_audit.py",
+    "review/Antiquities_Niese_BookIX_2026-10-09/verify_preservation.py"
+  ],
+  "review_files": [
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\.gitignore",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/.gitignore",
+      "bytes": 13,
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\BASELINE.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/BASELINE.json",
+      "bytes": 7561,
+      "sha256": "a84a6a8ad239c8a6356bf1009cb72ed4cd69d5917923eb186cca86f92e9edcc0"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\bellum-witness-gate.cjs",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/bellum-witness-gate.cjs",
+      "bytes": 6501,
+      "sha256": "2ed277b25da7867a83d2bc64d9b9d25b7b46f6f00abcbe8def00a686a4118182"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\BELLUM_SOURCE_FAILURE.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/BELLUM_SOURCE_FAILURE.json",
+      "bytes": 418,
+      "sha256": "4ca73c32e0ba93ddb97cfa20d6d2f4e8c041442154c5e1cb2920bcde66949067"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\bottom_views.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/bottom_views.py",
+      "bytes": 790,
+      "sha256": "2a03616b33f32c44fe7ecefd2a75ef8413cae84908fdb8306d9e4747cc6fdd3d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\BOUNDARIES.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/BOUNDARIES.json",
+      "bytes": 1115098,
+      "sha256": "c350d81e49ca7e2f517f424d246e54d4fdc45dfa00905d74ee7d07237f3a4376"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\BOUNDARIES.md",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/BOUNDARIES.md",
+      "bytes": 81240,
+      "sha256": "4f3cd419dc73517e0bdc3c7c724916b3e6d9224de9a5cee2718a20aef7460999"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\build-logs\\baseline-jekyll.log",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/build-logs/baseline-jekyll.log",
+      "bytes": 5069,
+      "sha256": "e4642241ebbe3da0568e5df0b7ed0784b663634c9eecd9accb19c3d0f7ecf496"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\build-logs\\jekyll.log",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/build-logs/jekyll.log",
+      "bytes": 4890,
+      "sha256": "7a87f96860338529ba90ed3947c4ba1d7eed1fe50b71e6a267ef44e60a32da4e"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\build.sh",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/build.sh",
+      "bytes": 995,
+      "sha256": "becee4769b4f9ed52f9048ed4fef527248cf5c914ff91c3a4c8566b65fd7672c"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\BUILD_RECORD.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/BUILD_RECORD.json",
+      "bytes": 2559,
+      "sha256": "1bb803666a149599a2ec25d38dd361db60c67a8e8d45d09ee30fec08165fc166"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\CERTIFICATION.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/CERTIFICATION.json",
+      "bytes": 2186,
+      "sha256": "1f18434d37057414fbe0f2d2b68038105cd86c0dd4ea467f17d1beb511bc1b18"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\CONTROL_SEARCH.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/CONTROL_SEARCH.json",
+      "bytes": 1745,
+      "sha256": "a248618e5c3bf5bea989fb23bd3268953cdf4c6020bea7beeecf3ea97cbf0db4"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\DECISION_240.md",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/DECISION_240.md",
+      "bytes": 2617,
+      "sha256": "6d490c2e8b515073c7b12499d55732d3998f3338537fe801e525c5372e431182"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\DECISION_240_ALTERNATIVES.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/DECISION_240_ALTERNATIVES.json",
+      "bytes": 9529,
+      "sha256": "673aa9968eee1d011391abefd328c71531a35c9ca500f34d157553a70b33ce49"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\EDITORIAL_HISTORY.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/EDITORIAL_HISTORY.json",
+      "bytes": 1483,
+      "sha256": "295046969b2d78be2319956902ebfc7cec02c83d903623a10e69f8a8eea38a91"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\editorial_packet.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/editorial_packet.py",
+      "bytes": 3138,
+      "sha256": "8e1e72319865ad5bdce708fc9162180a408e11acf0473d81e6873fadb9353582"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-control-112.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-112.png",
+      "bytes": 108598,
+      "sha256": "754c97165caf4f55f5dee460c4de85eef2f836ae48bc370c9fc3429545fcf38f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-control-128.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-128.png",
+      "bytes": 103477,
+      "sha256": "0f27b8b6062c981cf0579c74da9e8344a1971dc109c9c1bf0ee6569411c3da73"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-control-142.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-142.png",
+      "bytes": 109423,
+      "sha256": "f12e089c4f28a9a732459f6b319ee39fc73f17398faee42a92a25770797a109f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-control-162.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-control-162.png",
+      "bytes": 103427,
+      "sha256": "e25627699c3de2b1bb02b65cdcdfc721d9c4361336e901b7d6bf7215e72fb062"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-001.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-001.png",
+      "bytes": 46429,
+      "sha256": "2e1a6726dfa6c885aa36104490f7325f909c39637a6d33ab679d71c9973eab51"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-002.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-002.png",
+      "bytes": 7562,
+      "sha256": "1ba979884e4bb8b34dc2139ab7a161c424d6ec36a4885468cadefd940caf6eaa"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-003.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-003.png",
+      "bytes": 4968,
+      "sha256": "b9e8be3130a1b61bc0da1aeee6019b599a67976ee6173068b499f63be0ccdd8d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-004.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-004.png",
+      "bytes": 6702,
+      "sha256": "392ed41c10dfdbc47d17090bcc705ef4b95c57eca6e61fd6fe73018eb0a99fa7"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-005.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-005.png",
+      "bytes": 22907,
+      "sha256": "ff84cab5deec271a83c755db99cb9f803001106f52e2f5f354a680376efefefc"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-006.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-006.png",
+      "bytes": 14299,
+      "sha256": "b65c23502d885fce5a9e4c3d0456d8b4e0154a892800d8161ef5a0950b4fc808"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-007.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-007.png",
+      "bytes": 33187,
+      "sha256": "3dac6ebe5cd7ddb541dcc74990950c09cc65163e7a86d2c536c418db6690530a"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-008.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-008.png",
+      "bytes": 30558,
+      "sha256": "5cd4cf4c940dc8c0b6cf080b5002d3fd1a380e11168f290e90ef7dca2ce4997c"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-009.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-009.png",
+      "bytes": 23756,
+      "sha256": "35782fa0fcf8cfc0df59fbe4ec6d512f2868e0bb1dfd49967dc8e9332ca49d28"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-010.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-010.png",
+      "bytes": 20426,
+      "sha256": "266e7678451ea367982cd2d1a62e418935ba8c19cac304cdd600902086c34bde"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-011.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-011.png",
+      "bytes": 53230,
+      "sha256": "b5bb966865384b059e72626c42f8cbdeb89e3757231914c93ab6807201fcb575"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-012.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-012.png",
+      "bytes": 53386,
+      "sha256": "2601ec07db7a4731f24baead6f3260aae712d3b57322e7b717905f07fa6787cf"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-016.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-016.png",
+      "bytes": 34712,
+      "sha256": "abde56fc730dbb1d9015153d9f1322da1acc4531a74642e92eaa78fd161907dd"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-017.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-017.png",
+      "bytes": 31133,
+      "sha256": "5f3a7b1cb9090ad95d6e218a8c0c24abbd65c0b2df67b362565a387259cb535f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-018.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-018.png",
+      "bytes": 36698,
+      "sha256": "0a031a354ce5ae72516d7602a990f501079f9c83c5483873da98517b12c3cadc"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-019.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-019.png",
+      "bytes": 81918,
+      "sha256": "850cb5f3a0738ff026f1033741740d39912ab13ea8bd7d0e4dda24c63d25bdf0"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-020.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-020.png",
+      "bytes": 69126,
+      "sha256": "8e583dcf1a08722f43a4bb5c2566633534c46a522978e6fe08b565ce226f1e5b"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-021.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-021.png",
+      "bytes": 83077,
+      "sha256": "367ed404f8cdbf80168b89d6150ddf33d4256458690fd1c1ac578e5440152057"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-022.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-022.png",
+      "bytes": 75321,
+      "sha256": "4948f922183f0be1c4dca72cc0c8507d8bc5c6acb8210e3dd7764bb6f447833f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-023.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-023.png",
+      "bytes": 81218,
+      "sha256": "9b354ffc05bd9b9c71d638f440b5b953610ba69e8e7eac7279218936433e064e"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-024.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-024.png",
+      "bytes": 74858,
+      "sha256": "57b594553fc6c2f8b0faa49316eef8279dc5014864f1a74650b80d14b58b6992"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-167.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-167.png",
+      "bytes": 64456,
+      "sha256": "66787d9eedcb7722dba73892631d863154a4372993d3a8388344f81cba8e7a43"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-168.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-168.png",
+      "bytes": 52349,
+      "sha256": "5edcd173672baf2709513d3aa4fba4adcfc6e919dd9d5808c8408586c6ef9e7f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-169.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-169.png",
+      "bytes": 54224,
+      "sha256": "880ec9e39ddc0093a99f316854666028054cea28fb8a5f95e51687e117781993"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-170.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-170.png",
+      "bytes": 35723,
+      "sha256": "6191210de937dc4176ab66475372fb83dbbf4021f4cf86b93876d85f5768e1c3"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-171.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-171.png",
+      "bytes": 35171,
+      "sha256": "6df5da17c324ba3c99099291b4216ce8e91f2571fa46a316a8bb48461b2035b1"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Loeb-pdf-172.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Loeb-pdf-172.png",
+      "bytes": 38385,
+      "sha256": "2077c78a5db441dd2fe423a982490baae1d7f02c383a16eab833901de3da972f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-001.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-001.png",
+      "bytes": 13257,
+      "sha256": "32ef98bf22bfe7a64e51a790a4b7c6dbeb0381571424942088ae58ac6465c36e"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-002.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-002.png",
+      "bytes": 9462,
+      "sha256": "6a6704d38c374525ac092438610e371f7e3bf90496926b2b7efac22458aedd73"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-003.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-003.png",
+      "bytes": 30977,
+      "sha256": "7b4a5ee0f70252ec9a9e68fc66ff068cbf94744e8ec1df8f78b79f5622fc005e"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-004.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-004.png",
+      "bytes": 37421,
+      "sha256": "785a9e3cfc0ec6128711acca76b66e01fe38809657447b06dd8500e57ae55bcf"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-005.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-005.png",
+      "bytes": 26180,
+      "sha256": "8eef5d0bd6668cd82ae72013ba1dcfad80593c55be7c63f3518ddafc06112a14"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-006.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-006.png",
+      "bytes": 28826,
+      "sha256": "97ad300c19a658cf5aca37a23ae5e5fedff7e8629284e4a87466529d1732283a"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-007.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-007.png",
+      "bytes": 36520,
+      "sha256": "0f8875eaf94a90922d942a3ed93db4603816da74beeb4da81d725f0e95b58840"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-008.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-008.png",
+      "bytes": 21267,
+      "sha256": "5fa1671e413339006380ada9e679c7b96cbfb4abb8615989ab6364e708218272"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-009.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-009.png",
+      "bytes": 10199,
+      "sha256": "76f561aff12a0b539f58434b86f955d977733d618d8ae25b540341143cdf60cf"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-010.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-010.png",
+      "bytes": 7816,
+      "sha256": "87278addc646440237378583675af80ab578c95ad6ed69a2e61e560c6d5cc932"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-011.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-011.png",
+      "bytes": 37787,
+      "sha256": "8f5a7e01ef6f98fcaae5901d9a902e6243a898352ff134d26101ba6bd71fe604"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-012.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-012.png",
+      "bytes": 42820,
+      "sha256": "6a4d51f8c22da4d39a32bda1dfbe2ea9dcd57f9a1049a526c27c0a772558cbe9"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-275.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-275.png",
+      "bytes": 37735,
+      "sha256": "7b4b59d3850c712f87cefb8cb4acff8469f505e303aeb7e2f4c25c2891d93dbb"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-276.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-276.png",
+      "bytes": 50136,
+      "sha256": "5ffbcdffcc27b860d502cb7600bfd374270da1f9c0dc1e3e4c531f9e1f9bf27d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-277.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-277.png",
+      "bytes": 48406,
+      "sha256": "b0182022c77e18e7b31e1ebdaba3a7ea171c53e9cab6d48d9e68e70f090d943b"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-278.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-278.png",
+      "bytes": 49975,
+      "sha256": "b5f0d96842c3fbd705bf27d0f1b06af791ff6eee1f4c60864eaa0b7143a613e3"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-279.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-279.png",
+      "bytes": 62989,
+      "sha256": "042ad56a9315ff40808199524e032152e340aef15f12571e79993976c2a8ce45"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-280.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-280.png",
+      "bytes": 64358,
+      "sha256": "482dc6a3f06ad9f189b991e987454c303e18f7850d67aabf4444e8e481ea998d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-281.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-281.png",
+      "bytes": 62516,
+      "sha256": "5ea1c79417ef3946e0eae467eab6a68a8e6fe70520919fce794267122c5941e0"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-282.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-282.png",
+      "bytes": 61937,
+      "sha256": "015fef0f6246310d2b2d5c013db440f5a63733077c2a16c198f0d43f4d7b6c66"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-283.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-283.png",
+      "bytes": 61903,
+      "sha256": "5867ed48b8b3d9ef488d125ad2f1114728c5139c0cdd43b7cfc54ae5abc93b99"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-284.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-284.png",
+      "bytes": 63542,
+      "sha256": "585b05127c82c65b0727cf1f1910b74541fa25e56aa48b098e4ff943adadb210"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-285.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-285.png",
+      "bytes": 62798,
+      "sha256": "031776bc098dec4b648aeaf53162d393b4746b8bb1c41f42bd286e959d2644d2"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-286.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-286.png",
+      "bytes": 63231,
+      "sha256": "4ecf15e113dcf1720017c52a47d9329584846ee4cdf0172c4479e02e4fcda7cf"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-287.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-287.png",
+      "bytes": 64398,
+      "sha256": "7ba578baabbb701fbd81f419c4991780e54b1399e540ab3f6afc268bc7568a80"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-288.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-288.png",
+      "bytes": 63815,
+      "sha256": "d6bfdd205fc9931b4236e35c4ec1f470f5fc7301052ac2acfef243e4f0d382d3"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-289.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-289.png",
+      "bytes": 65261,
+      "sha256": "fbc608d32cfcd7171b416f3c59f9cfa98e81db277896861fdbca56fb7b4740bd"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-290.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-290.png",
+      "bytes": 63817,
+      "sha256": "ddf0aba14f1188e32b20e4fbb1640060293f6b8cb989d2771e2296fedca3c93b"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-291.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-291.png",
+      "bytes": 63151,
+      "sha256": "e70d9a202d55047e4555585d8061b686919fecf81899e9765778af76d6ed55f2"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-292.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-292.png",
+      "bytes": 63313,
+      "sha256": "4c64cde0274f2302af266d38fbd3117d45fe19421e5d2a45ff53a0e140c49e9a"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-293.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-293.png",
+      "bytes": 62720,
+      "sha256": "088dbb0292608d40b092fbb2e6b7d2132db0913b9daba5bf808ddab15c9b7c7b"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-294.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-294.png",
+      "bytes": 62447,
+      "sha256": "b17715255ac0956f70c590c636690ed1eb7aa1522b3d2f7e31474494a363749e"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-295.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-295.png",
+      "bytes": 62276,
+      "sha256": "7ba8160a0e40b0156219702ae32a63e6dbe3be6496af48093c51a6aebdfeeec7"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-296.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-296.png",
+      "bytes": 63652,
+      "sha256": "86eb3c550bfd2baa78b97544580fa0db4d5679e0becac4e04f36d8a2be9fa76b"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-297.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-297.png",
+      "bytes": 60808,
+      "sha256": "26b7cc13929098788a07035f77fdf5588db1a55bb35f5e68546e027e424327db"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-298.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-298.png",
+      "bytes": 63040,
+      "sha256": "1ee14678c818f126e0dbdc597df7ef88867bdfee3afa04cf7b8f7e08b56f2392"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-299.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-299.png",
+      "bytes": 64336,
+      "sha256": "1ab3b043c7ad63ca843ebc0b739d24da7f16880ef93a91ef6bb93dae19a53764"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-300.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-300.png",
+      "bytes": 63700,
+      "sha256": "5bd0b4980ecfc96b242b5406689831cc57e70af0e36c700f8fdd905c8bb4ea13"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-301.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-301.png",
+      "bytes": 63739,
+      "sha256": "b13b9edefdba3ed7f47fd0a1ab10eda334066d9a135da445b8ba3586a1dd51ce"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-302.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-302.png",
+      "bytes": 63764,
+      "sha256": "cb9a51f75d651b5dd33136cff86771079023611c9d2185db24d675cf4e2e3f89"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-303.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-303.png",
+      "bytes": 62996,
+      "sha256": "e786c3353365b1ee17e80e6eaa78e9a333f5600dd3a6dbf1f827be6fc197cd6c"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-304.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-304.png",
+      "bytes": 64631,
+      "sha256": "4924e0d2312b2474ad4c75242e0f33bda35d7da730635755b15b78d0b7ac7a6c"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-305.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-305.png",
+      "bytes": 63191,
+      "sha256": "4bbbc8ba0b087fe6e999835a3aa6305c6d17985d93514e553504e60c7d6456aa"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-306.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-306.png",
+      "bytes": 63017,
+      "sha256": "b2161ea9a5220370c0135e89f5ef7989eeadf7ec448e6b0a0aba69d2e9755962"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-307.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-307.png",
+      "bytes": 64881,
+      "sha256": "2b732df4f01a66f7e8c89bf9ec50adc6baa10e563feccbe45521fb52e597ce68"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-308.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-308.png",
+      "bytes": 62701,
+      "sha256": "6d170dbde91664050cdab914d6d310d30c242c1ec643dd3c0b7602f92d4577a7"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-309.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-309.png",
+      "bytes": 61899,
+      "sha256": "fea1e322865df22c116617d97f7cfead6716fcbbf21714d033cc6ab80e962ed5"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-310.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-310.png",
+      "bytes": 63984,
+      "sha256": "af2af77b00bf60e665afe0439e32f1533cd5bd56c63fb49c7d6a66d05c8e9827"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-311.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-311.png",
+      "bytes": 66189,
+      "sha256": "9f0f8edd8f9efd27bdab36fcd7f1d028f7b6bbfb5abcd44f1a5a73004b197d2e"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-312.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-312.png",
+      "bytes": 62062,
+      "sha256": "98dc99822851c64bf28bb49cb7d9bc8fde9bd4da775002150155f6641fe30658"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-313.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-313.png",
+      "bytes": 65210,
+      "sha256": "514dc5d088404382e05ca0f5a1a17ad63b451468b314d6d915716b327fe31b87"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-314.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-314.png",
+      "bytes": 63504,
+      "sha256": "731e00f7cfddf9b19c922e914ef60ba6acff48ea6babcbb14781129e5f30a120"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-315.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-315.png",
+      "bytes": 64144,
+      "sha256": "dee9d1a18cd40e5f5efd852cf0d1ff1f77a6b8e07787372e76ef05415508f211"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-316.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-316.png",
+      "bytes": 63991,
+      "sha256": "7bfb26c6b0e356dc1dbfb09f71e0686e99113c16734faba2d2255f9b0bf3fd4e"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-317.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-317.png",
+      "bytes": 64340,
+      "sha256": "90826082bfcf4077ecada6d3609fc7ab98f6f71d21cdbdcaa5539bf4937d99e9"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-318.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-318.png",
+      "bytes": 66025,
+      "sha256": "b4bcec07ccc847e5f26fef91e3012ddbb259e55604e9d797c923fbb0ca93d9ea"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-319.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-319.png",
+      "bytes": 62606,
+      "sha256": "ce97e49002b62fb82547a195d4965cc629629cfa3394acd420b2a11e170b487f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-320.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-320.png",
+      "bytes": 65753,
+      "sha256": "4aeacabdf8e77e5bcd80574e518880714328e59b1a144f9ce09163103175b20a"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-321.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-321.png",
+      "bytes": 62684,
+      "sha256": "79884ac26c2f4820dbb8fb63c0c178db2406d8b2840365423e25d9c158cab5aa"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-322.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-322.png",
+      "bytes": 68538,
+      "sha256": "65cbc177b9101d1a9aa432e22c5048a1f6db71c61345a8e71b061d7278ac50a6"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-323.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-323.png",
+      "bytes": 64798,
+      "sha256": "95122f57d3063c3d1e19d10f8b2772d623089b7e971e65bed36c937c55c2ff75"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-324.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-324.png",
+      "bytes": 66215,
+      "sha256": "92309ee42b52688278b9ccd0926f30ddc2240b07f4c46c961d81b8ebd67f6094"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-325.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-325.png",
+      "bytes": 62578,
+      "sha256": "7acdff30af615ffcfb31fc1f6cc22e9f1a8976583ba531da96ccb2bc31345bd2"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-326.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-326.png",
+      "bytes": 63916,
+      "sha256": "16b4c674152da544db92377a0b43fb31b37efbb381c9d0b596545d277f05fce7"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-327.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-327.png",
+      "bytes": 65644,
+      "sha256": "c2caf19b8d2bb42c7090974200cc88e07d6822195684b8a54dc709698c39d5c1"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-328.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-328.png",
+      "bytes": 61884,
+      "sha256": "6eeeba13e58ecbf2b1ae1fba2c75b748415bfef187e318d720f5e88e0fb7ffc1"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-329.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-329.png",
+      "bytes": 62882,
+      "sha256": "c45eb4cae3f4ddd73eff662a24ee8954fa548b0d5de5342c93b3b73f7be36a6d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-330.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-330.png",
+      "bytes": 62466,
+      "sha256": "dabd730d5557e4b40afda5d7e757a58bd67c126bfc2c60a2b1b08694fa60d5a1"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-331.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-331.png",
+      "bytes": 64814,
+      "sha256": "35f33d6732449a00325e6e467fab7d9f2ad0c1d2d628d1a5717baaf001a921a0"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-332.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-332.png",
+      "bytes": 62963,
+      "sha256": "21706e39ca34804492faf21073f232064b8bd564ef9aa7a792e0b98d5653ce3d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-333.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-333.png",
+      "bytes": 63449,
+      "sha256": "7c1a51710b890c89eae379c7ebe58225f7c8b6667fd875163644512330c2e752"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-334.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-334.png",
+      "bytes": 62621,
+      "sha256": "dcae2b02a41666ebcafe27ee920d95185817e14bd9a3217f32843344dc28fb8a"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-335.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-335.png",
+      "bytes": 54076,
+      "sha256": "e123af41f25d853d5cdf40e176b37f39f478f4c06e4bc774e490ef0194eda492"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-336.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-336.png",
+      "bytes": 38984,
+      "sha256": "b57297c21b53ce6c41d021cab1ea5da2452b392882a4714beb78055ddbc7b926"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-337.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-337.png",
+      "bytes": 48003,
+      "sha256": "d692163af962550446163081015ac7f19eb43cd8d6fd9cc94c818b80e0b02de1"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\evidence\\Niese-pdf-338.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/evidence/Niese-pdf-338.png",
+      "bytes": 42021,
+      "sha256": "0e370516a1f58daa0d893c212a7ad3d73a16354bb6819dd4f378a3a65bdacb31"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\EXECUTABLE_IDENTITIES.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/EXECUTABLE_IDENTITIES.json",
+      "bytes": 2769,
+      "sha256": "e088a84b9d071e7b1b8d1207a0332bd2d39922738462e8a2f01e0590903e5683"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\EXECUTABLE_TOOLS.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/EXECUTABLE_TOOLS.json",
+      "bytes": 1191,
+      "sha256": "4e36d6dd810f2e670a1bec428dec65023e234bc369bf6c44a2b29c0e01f82479"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\EXPECTED_INTERVALS.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/EXPECTED_INTERVALS.json",
+      "bytes": 885420,
+      "sha256": "9630b8d6235ff7b1b951bec35a0d517104a2fb26295320cade3613a63eb18f4d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\FAILED_BROWSER_QA.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/FAILED_BROWSER_QA.json",
+      "bytes": 713,
+      "sha256": "18b29465a1e579778f919c4b23e82544d03f5157eb572f13add9b6903634608c"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\finalize_evidence.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/finalize_evidence.py",
+      "bytes": 15539,
+      "sha256": "c6e84f2f4b33e8b061736dd2ec1e11f413ef073f3c5867adbb2a490a3ccfefd6"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\GREEK_MARKER_PLAN.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/GREEK_MARKER_PLAN.json",
+      "bytes": 4510,
+      "sha256": "186bd55c15b9e44c41dd6148efc90f28943db77a3067b0c0f6fdfa6e525355a3"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\implement.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/implement.py",
+      "bytes": 6858,
+      "sha256": "e186db53063ee1501d1377127ff1fd83c947b7728ce37d0b8c1c187d5c2762f9"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\IMPLEMENTATION_PRESERVATION.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/IMPLEMENTATION_PRESERVATION.json",
+      "bytes": 277118,
+      "sha256": "a1a41230fab500743935d52a9eb5ad0f690ca65d01f2b14cae9aa75fb56f52f4"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\inherited-issues.cjs",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/inherited-issues.cjs",
+      "bytes": 3184,
+      "sha256": "28ccb9b4caaad75d2e3f7490c5ba440413016c24139e9a61a37514a0adc071d4"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\INHERITED_ISSUES_QA.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/INHERITED_ISSUES_QA.json",
+      "bytes": 2906,
+      "sha256": "43c763e070b829f5b1ba54a420e50f4c2b5182f0833a779c98b733d57ef7dddb"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\INITIAL_GREEK_CENSUS.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/INITIAL_GREEK_CENSUS.json",
+      "bytes": 882740,
+      "sha256": "52acf98ff2eeea8b3d9e3b7871996680f7b199dedfb83be6c2cb12824056047c"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\inputs\\_includes__display-settings.html",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/_includes__display-settings.html",
+      "bytes": 7311,
+      "sha256": "56dbc944d350c627562fa0d85d843ee8fe3cb94fe47d7cd17fa019991e6e3315"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\inputs\\assets__js__renderTei.js",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__js__renderTei.js",
+      "bytes": 126283,
+      "sha256": "4ace5e81d4f452aec87d52ab798d7b3453041e24096d15461e2054d1be38ba21"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\inputs\\assets__xml__antiquities__English__book-09.xml",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__English__book-09.xml",
+      "bytes": 85486,
+      "sha256": "515c8ee6a9611f1333d51bb6a04361e8f4168a4f3c197faef23db58f361bd587"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\inputs\\assets__xml__antiquities__Greek__book-09.xml",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__Greek__book-09.xml",
+      "bytes": 140219,
+      "sha256": "c6958a02b0f55d4bae23d4d33e8695d8a142361e373b1b2828a2b1da7626d403"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\inputs\\assets__xml__antiquities__Latin__book-09.xml",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__Latin__book-09.xml",
+      "bytes": 82350,
+      "sha256": "80fcbd3c94d84b34eb77fc1cf357f7a07d43d5570f985baa992e02d67aa91440"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\inputs\\assets__xml__antiquities__structure.xml",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__xml__antiquities__structure.xml",
+      "bytes": 19344315,
+      "sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\inspection_views.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/inspection_views.py",
+      "bytes": 1086,
+      "sha256": "a527f64cdc75a6d239af8ec891dadcf9114c94f361b52da3fb2bc0aab3359604"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\IX110-dark.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/IX110-dark.png",
+      "bytes": 260961,
+      "sha256": "a43dd068ca543ac38efb5447a8e11a93c4619d81c539b9c49b4a52745bf2186f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\IX110-light.png",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/IX110-light.png",
+      "bytes": 259452,
+      "sha256": "8c03eef486e409c524c2628755fb375875afa3a4b59cd958a4834b7520a34f5d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\LATIN_REVIEW_NOTES.txt",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/LATIN_REVIEW_NOTES.txt",
+      "bytes": 17543,
+      "sha256": "03eddad38abb430a37f85a7aedb7582fc49f7cd64e4e4bd7766b448b2529bb7a"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\locate_controls.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/locate_controls.py",
+      "bytes": 736,
+      "sha256": "aadcf4a348a892a745fb7af76b8e1ebfe44c5b7a0aaa51aebc35b38df52d7b14"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\METHOD_SOURCE_MANIFEST.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/METHOD_SOURCE_MANIFEST.json",
+      "bytes": 3329,
+      "sha256": "fdea296ca002c9e856a2dce990ac5bc9ea111bef24c663cf21c0bf74a7fa3854"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\mixed_mapper.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/mixed_mapper.py",
+      "bytes": 8615,
+      "sha256": "bcafb99ef9c424f7fc4eb71696f6d792418258b90dbff08a3643392ec82b86de"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\new-book-browser.cjs",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/new-book-browser.cjs",
+      "bytes": 12033,
+      "sha256": "7f03011aeb62b385ced4b16c467ce356dc9aeecfa281366adfb97c1ce7e0e66d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\NEW_BOOK_BROWSER_FAILURE.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/NEW_BOOK_BROWSER_FAILURE.json",
+      "bytes": 86712,
+      "sha256": "e69b3c6f69c3054aaff8783be34a7f23e2734702ea45fb2d2d07bd0a0da5d606"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\NEW_BOOK_BROWSER_QA.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/NEW_BOOK_BROWSER_QA.json",
+      "bytes": 90783,
+      "sha256": "86c6b3ed2f24cc7937417edf1ac879aa5d77760a207ee7c2b147e71a5bb3d4ef"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\prepare_evidence.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/prepare_evidence.py",
+      "bytes": 3041,
+      "sha256": "68ea366375df1ee540d65da449cd9fab7af3c0904bebc038155d101afd49c3d7"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\prepare_qa.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/prepare_qa.py",
+      "bytes": 2405,
+      "sha256": "d6850eed453e11f4d837cb26864e0892909434e63a4d8661b1bae860745b900d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\PRINT_PAGE_CENSUS.txt",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/PRINT_PAGE_CENSUS.txt",
+      "bytes": 730,
+      "sha256": "5fbc8f325bc062b8473134787cbbc34b6e424ab40f63c6e32f621d14c9988bb4"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\protected-browser.cjs",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/protected-browser.cjs",
+      "bytes": 9314,
+      "sha256": "2c080e32c16d70e78f3b4a918f3f55a24c76f2702034014c0bc260e7832fab5d"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\PROTECTED_BROWSER_QA.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/PROTECTED_BROWSER_QA.json",
+      "bytes": 21048,
+      "sha256": "b2b82354a4e7985da9ff8416bf53a23d7286a4444f93dc0570c32d9c903b8b9f"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\PROTECTED_SOURCE_GATE_QA.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/PROTECTED_SOURCE_GATE_QA.json",
+      "bytes": 3088,
+      "sha256": "6a66642b0247599abeb16bbd4133bbdbad5b3a1d88c9fb9708387bb9332d4970"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\qa-common.cjs",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-common.cjs",
+      "bytes": 3366,
+      "sha256": "e5e89331453b48e7efcb21aeb7ca4465b2da06102f970b8e49913b4ea5740a59"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\qa-history\\attempt-2-required-Latin-pane-harness.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-history/attempt-2-required-Latin-pane-harness.json",
+      "bytes": 86712,
+      "sha256": "e69b3c6f69c3054aaff8783be34a7f23e2734702ea45fb2d2d07bd0a0da5d606"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\register_boundaries.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/register_boundaries.py",
+      "bytes": 9450,
+      "sha256": "db583aea2fb0bd0abb9e9d3fa734324ec3705f0acc04ada3fd597962b486f7fe"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\REGISTER_VALIDATION.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/REGISTER_VALIDATION.json",
+      "bytes": 2343,
+      "sha256": "ba949d0de8def22fd163c566304151c4132bbea5d2090daa7933eaf0726c0d83"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\REPORT.md",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/REPORT.md",
+      "bytes": 7486,
+      "sha256": "8984abe7e35bd96cc4d410ce37cb8934937901f220a1667eb1f91ae47225b33c"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\SHARED_SUPPORT.md",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/SHARED_SUPPORT.md",
+      "bytes": 1227,
+      "sha256": "b354d50a2f1b6bdb6a93ec741d8bf03fff2e46f1a0ea6ae7853e855dfba666c2"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\SOURCE_AUTHORITY.md",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_AUTHORITY.md",
+      "bytes": 7782,
+      "sha256": "5241954cfe6b91b7a9b6106c62109436963c90b0d88d40fd97d4287418e45a8b"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\SOURCE_INVENTORY.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_INVENTORY.json",
+      "bytes": 397132,
+      "sha256": "63e2b22a2868612f7436e4d5ffa784705f133eead429d86b60ccdb0f5c551330"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\SOURCE_PRESERVATION_QA.json",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/SOURCE_PRESERVATION_QA.json",
+      "bytes": 4574,
+      "sha256": "d37be08a20c1e8e01a110290bd72fff27bb05c896b71e23923b36b8cc3954f4a"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\start_audit.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/start_audit.py",
+      "bytes": 4443,
+      "sha256": "ca13bf1217bb639143feca3efce17b9d4389ccf7eafc24b395d42795efc0a762"
+    },
+    {
+      "absolute_path": "C:\\workspace\\LatinJosephus-antiquities-niese-09\\review\\Antiquities_Niese_BookIX_2026-10-09\\verify_preservation.py",
+      "relative_path": "review/Antiquities_Niese_BookIX_2026-10-09/verify_preservation.py",
+      "bytes": 4712,
+      "sha256": "ef71991345dd4a87371c4d2eb3b2fc1776c05800dc074cb1fd972daf5dadda6a"
+    }
+  ],
+  "self_hash_exclusions": [
+    "FILE_MANIFEST.json"
+  ]
+}

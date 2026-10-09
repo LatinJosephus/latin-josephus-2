@@ -1,0 +1,76 @@
+{
+  "publicationPath": "C:/workspace/Antiquities-Niese-Preview-08-10-2026-10-09/PUBLICATION_SUMMARY.json",
+  "publicationSHA256": "6b35e6a978a5334665007a8f0b1bd8bcaeb9d4acbb9599220107766d0acfe6ec",
+  "baseline": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "origins": [
+    "http://127.0.0.1:61804",
+    "http://127.0.0.1:61805"
+  ],
+  "checks": [
+    {
+      "origin": "http://127.0.0.1:61804",
+      "route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+      "hrefs": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "brokenLinks": 3,
+      "distinctTargets": 2,
+      "status": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "result": "MATCHES_PRECISE_INHERITED_EXCEPTION"
+    },
+    {
+      "origin": "http://127.0.0.1:61804",
+      "unsupported_I_1": {
+        "selectorValue": "",
+        "firstSupported": "27"
+      },
+      "error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "supported_I_27": "PASS",
+      "result": "MATCHES_PRECISE_INHERITED_EXCEPTION"
+    },
+    {
+      "origin": "http://127.0.0.1:61805",
+      "route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+      "hrefs": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "brokenLinks": 3,
+      "distinctTargets": 2,
+      "status": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "result": "MATCHES_PRECISE_INHERITED_EXCEPTION"
+    },
+    {
+      "origin": "http://127.0.0.1:61805",
+      "unsupported_I_1": {
+        "selectorValue": "",
+        "firstSupported": "27"
+      },
+      "error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "supported_I_27": "PASS",
+      "result": "MATCHES_PRECISE_INHERITED_EXCEPTION"
+    }
+  ],
+  "result": "PASS"
+}

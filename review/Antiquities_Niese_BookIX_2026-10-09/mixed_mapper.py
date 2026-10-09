@@ -110,5 +110,10 @@ def fixtures():
  assert '/add[1]/tail()' in b2.locate(4)['text_node_path']
  b3=Book(raw=b'<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div2 n="0"><p>Title</p></div2><div2 n="1"><p><num>[1]</num>A</p><p><num>[2]</num>Omitted in Bamberg MS</p><p>B</p></div2></body></text></TEI>')
  assert b3.stream=='AB' and len(b3.excluded)==2
- return dict(status='PASS',tests=['mixed .text/.tail','UTF-8','numeric and named entities','CRLF','comment exclusion and tail coordinates','empty element tails','nested add/del retained','num excluded with tail retained','two units','raw Unicode-byte roundtrip','note excluded with tail retained','nested-child tail ownership','chapter-0 paratext exclusion','omission-placeholder exclusion'])
+ b4=Book(raw='<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div2><p xml:id="latin-book09-num288">Ω&amp;Z. explicit liber nonus</p></div2></body></text></TEI>'.encode('utf8'))
+ assert b4.stream=='Ω&Z. ' and b4.excluded[-1]['reason']=='IX Latin terminal subscription label'
+ label=b4.excluded[-1];assert b4.raw[label['raw_start']:label['raw_end']]==b'explicit liber nonus'
+ b5=Book(raw=b'<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div2><p xml:id="other">explicit liber nonus</p></div2></body></text></TEI>')
+ assert b5.stream=='explicit liber nonus' and not b5.excluded
+ return dict(status='PASS',tests=['mixed .text/.tail','UTF-8','numeric and named entities','CRLF','comment exclusion and tail coordinates','empty element tails','nested add/del retained','num excluded with tail retained','two units','raw Unicode-byte roundtrip','note excluded with tail retained','nested-child tail ownership','chapter-0 paratext exclusion','omission-placeholder exclusion','IX terminal subscription raw-byte exclusion after UTF-8 and entity','identical wording elsewhere retained'])
 if __name__=='__main__':print(fixtures())
