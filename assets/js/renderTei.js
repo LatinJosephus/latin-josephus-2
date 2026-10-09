@@ -2024,7 +2024,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (language === "Latin") {
       data.querySelectorAll('tei-milestone[unit="niese"][n]').forEach(marker => {
-        if (!marker.closest("tei-body") || !marker.closest("tei-p[id]")
+        // Certified milestones can locate an anonymous transmitted paragraph.
+        if (!marker.closest("tei-body") || !marker.closest("tei-p")
           || marker.closest("tei-note, tei-app, tei-rdg")) return;
         const rawNumber = marker.getAttribute("n");
         if (!/^[1-9]\d*$/.test(rawNumber || "")) return;
