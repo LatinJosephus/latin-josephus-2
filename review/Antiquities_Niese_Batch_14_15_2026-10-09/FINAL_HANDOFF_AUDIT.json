@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "observed_at": "2026-10-09T18:27:21.177629+00:00",
+  "pinned_commit": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "audited_parent_commit": "1cfc0d6944f7d47eac0ee57ee02b611891a2b638",
+  "branch": "antiquities-niese-14-15",
+  "canonical_observed_HEAD": "cea765de5d990646b4d4dc079bac1c0da46ca107",
+  "frozen_inputs_advanced": false,
+  "books": [
+    {
+      "book": 14,
+      "status": "READY_FOR_COORDINATED_INTEGRATION",
+      "certificate": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\review\\Antiquities_Niese_BookXIV_2026-10-09\\CERTIFICATION.json",
+      "certificate_sha256": "505c69abf4ef07c5c897858c39481e8c2495a121d6e45e2490268985e1930f96",
+      "manifest_sha256": "fdcc11b5654255ff9a354748f0a1841fad3b461267daafbd1bbb708a18c922cd",
+      "manifest_files_verified": 246,
+      "all_boundaries_complete": true,
+      "byte_exact_recovery_verified_now": true,
+      "all_final_source_and_build_hashes_match": true,
+      "all_selection_checks": 491,
+      "actual_containing_view_checks": 127,
+      "selectable_identities": 491,
+      "nonempty_Latin_intervals": 489,
+      "added_Latin_milestones": 383,
+      "retained_starts": 106,
+      "unavailable_sections": [
+        238,
+        239
+      ],
+      "suppressed_labels": [
+        {
+          "paragraph": "latin-book14-num25",
+          "label": "[II.ii.26]",
+          "visibleClaim": 26,
+          "actualSection": 25,
+          "replacementExecutableSection": 26,
+          "reason": "actualSection identifies the first narrative words following this excluded visible label; replacementExecutableSection is supplied independently by an adopted milestone. Suppression matches only the original paragraph and visible label."
+        },
+        {
+          "paragraph": "latin-book14-num133",
+          "label": "[VIII.ii.133]",
+          "visibleClaim": 133,
+          "actualSection": 132,
+          "replacementExecutableSection": 133,
+          "reason": "actualSection identifies the first narrative words following this excluded visible label; replacementExecutableSection is supplied independently by an adopted milestone. Suppression matches only the original paragraph and visible label."
+        },
+        {
+          "paragraph": "latin-book14-num199",
+          "label": "[X.iv.199]",
+          "visibleClaim": 199,
+          "actualSection": 198,
+          "reason": "actualSection identifies the first narrative words following this excluded visible label; replacementExecutableSection is supplied independently by an adopted milestone. Suppression matches only the original paragraph and visible label.",
+          "replacementExecutableSection": 199
+        },
+        {
+          "paragraph": "latin-book14-num230",
+          "label": "[230]",
+          "visibleClaim": 230,
+          "actualSection": 230,
+          "reason": "actualSection identifies the first narrative words following this excluded visible label; replacementExecutableSection is supplied independently by an adopted milestone. Suppression matches only the original paragraph and visible label.",
+          "replacementExecutableSection": 230
+        },
+        {
+          "paragraph": "latin-book14-num431",
+          "label": "[XV.vi.431]",
+          "visibleClaim": 431,
+          "actualSection": 430,
+          "reason": "actualSection identifies the first narrative words following this excluded visible label; replacementExecutableSection is supplied independently by an adopted milestone. Suppression matches only the original paragraph and visible label.",
+          "replacementExecutableSection": 431
+        }
+      ]
+    },
+    {
+      "book": 15,
+      "status": "READY_FOR_COORDINATED_INTEGRATION",
+      "certificate": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\review\\Antiquities_Niese_BookXV_2026-10-09\\CERTIFICATION.json",
+      "certificate_sha256": "37763de9321ec4b632d07b51fdad66e096bb6dc18c5147667be965c3ab94ff3f",
+      "manifest_sha256": "137ccc12d20c1374c26445f9a67ad2d7ebb473dc305f26806464c0007127de46",
+      "manifest_files_verified": 224,
+      "all_boundaries_complete": true,
+      "byte_exact_recovery_verified_now": true,
+      "all_final_source_and_build_hashes_match": true,
+      "all_selection_checks": 425,
+      "actual_containing_view_checks": 78,
+      "selectable_identities": 425,
+      "nonempty_Latin_intervals": 423,
+      "added_Latin_milestones": 423,
+      "retained_starts": 0,
+      "unavailable_sections": [
+        338,
+        347
+      ],
+      "suppressed_labels": []
+    }
+  ],
+  "production_changed_file_count": 7,
+  "production_scope": "FINAL_PRODUCTION_SCOPE.json",
+  "per_book_manifests_exact": true,
+  "final_browser_certificate_hashes_match_actual_production_and_build": true,
+  "independent_partition_and_locator_certificates_current": true,
+  "source_inverse_verified_now": true,
+  "shared_protected_gate": "PROTECTED_COMPLETE_EXISTING_BOOKS_BROWSER_QA_build5.json",
+  "book_transition_gate": "BOOK_XIV_XV_TRANSITION_READER_QA.json",
+  "new_selection_checks": 916,
+  "new_actual_containing_view_checks": 205,
+  "published_selectable_baseline": 3157,
+  "added_local_selectable": 916,
+  "local_total_selectable": 4073,
+  "added_local_nonempty_Latin_intervals": 912,
+  "published_added_coverage": 0,
+  "canonical_merged": false,
+  "pushed": false,
+  "preview_updated": false
+}

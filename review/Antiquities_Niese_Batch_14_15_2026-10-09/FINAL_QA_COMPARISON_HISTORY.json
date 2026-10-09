@@ -1,0 +1,23 @@
+{
+  "status": "ALL_FINAL_GATES_PASS",
+  "transition_harness_failure": "BOOK_TRANSITION_QA_HARNESS_FAILURE_1.json",
+  "cause": "The XIV opening check incorrectly searched for lowercase alexandram instead of the frozen opening Alexandrae. XV transition had already passed; no browser error occurred.",
+  "correction": "Compare actual opening with the complete independently frozen section1 interval for each book.",
+  "reader_changed_for_failure": false,
+  "final_result": "BOOK_XIV_XV_TRANSITION_READER_QA.json",
+  "earlier_XV_full_harness_history": "QA_COMPARISON_HISTORY.md",
+  "final_handoff_audit_setup": {
+    "initial_result": "KeyError before final audit completion",
+    "cause": "The first audit script looked for status in the English certificate, whose accepted schema uses result. The protected browser certificate also uses result.",
+    "correction": "Accept each certificate's actual status/result field, requiring PASS.",
+    "production_or_QA_data_changed": false,
+    "final_result": "FINAL_HANDOFF_AUDIT.json: PASS"
+  },
+  "XIV_descriptive_label_metadata": {
+    "record": "../Antiquities_Niese_BookXIV_2026-10-09/INHERITED_LABEL_METADATA_CORRECTION.json",
+    "coordinate_check_correction": "An excluded label at paragraph25 maps to trailing whitespace in24. actualSection is defined as the section of the first narrative words following the label: Deus belongs to25. All five first-word owners were independently checked against frozen locators.",
+    "reader_section_extents_or_source_words_changed": false,
+    "final_reader_rerun": "All491 selections and127 actual containing views passed using the corrected production registry; earlier registry certificates retained as history.",
+    "final_screenshot_followup": "Current light, dark and unavailable-Latin screenshots were freshly inspected after their rerun hashes differed from the earlier inspected images. The actual final bytes and observations are recorded in the per-book visual certificate."
+  }
+}

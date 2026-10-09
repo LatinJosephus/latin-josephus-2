@@ -9,8 +9,12 @@ def load(name):return json.loads((P/name).read_text())
 def save(path,x):path.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 def git(*args,cwd=ROOT):return subprocess.check_output(['git',*args],cwd=cwd).decode().strip()
 partition=load('COMPLETE_PARTITION_QA.json');reader=load('FULL_READER_QA.json');english=load('ENGLISH_CONTEXT_READER_QA.json')
+visual=load('READER_DECISIONS_AND_VISUAL_QA.json')
 protected=json.loads((BATCH/f'PROTECTED_COMPLETE_EXISTING_BOOKS_BROWSER_QA_{build}.json').read_text())
-assert all(q['status' if 'status' in q else 'result']=='PASS' for q in [partition,reader,english,protected])
+assert all(q['status' if 'status' in q else 'result']=='PASS' for q in [partition,reader,english,visual,protected])
+assert Path(visual['build']).resolve()==site.resolve()
+assert digest((P/'FULL_READER_QA.json').read_bytes())==visual['full_reader_certificate_sha256']
+assert json.loads((BATCH/'BOOK_XIV_XV_TRANSITION_READER_QA.json').read_text())['status']=='PASS'
 assert len(reader['selections'])==len(english['selections'])==partition['expected_sections']
 assert Path(reader['local_build']).resolve()==Path(english['local_build']).resolve()==site.resolve()
 assert not reader['registry_injected'] and not reader['browserErrors'] and not english['browserErrors']
@@ -28,7 +32,7 @@ for record in reader['built_files']:
  raw=(site/record['path']).read_bytes();assert digest(raw)==record['sha256']==digest((ROOT/record['path']).read_bytes())
  target=snapshot/('renderTei.js' if record['path'].endswith('renderTei.js') else 'IDENTITY_REGISTRY.json' if record['path'].endswith('.json') else record['path'].split('/')[-2]+'.xml')
  target.write_bytes(raw)
-for name in ['FULL_READER_QA.json','ENGLISH_CONTEXT_READER_QA.json']: (snapshot/name).write_bytes((P/name).read_bytes())
+for name in ['FULL_READER_QA.json','ENGLISH_CONTEXT_READER_QA.json','READER_DECISIONS_AND_VISUAL_QA.json']: (snapshot/name).write_bytes((P/name).read_bytes())
 (P/'LOCAL_BUILD_LOG.txt').write_bytes((site.parent/'jekyll.log').read_bytes())
 canonical=Path(r'C:\Users\Pollard_R\Git\LatinJosephus-v2-development');canon=git('rev-parse','HEAD',cwd=canonical)
 certificate=dict(book=b,status='READY_FOR_COORDINATED_INTEGRATION',certified_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),pinned_commit=PIN,canonical_observed_HEAD=canon,frozen_inputs_advanced=False,branch=git('branch','--show-current'),implementation_parent_commit=git('rev-parse','HEAD'),worktree=str(ROOT),review_directory=str(P),runtime_directory=str(site.parents[1]),local_origin=reader['origin'],local_build=str(site),
@@ -59,7 +63,19 @@ Published baseline: **3,157 selectable identities**. This book adds **{partition
 
 Evidence: [certificate](CERTIFICATION.json), [boundary register](BOUNDARIES.json), [human review](BOUNDARIES_REVIEW.tsv), [source/partition checks](COMPLETE_PARTITION_QA.json), [reader QA](FULL_READER_QA.json), [English context checks](ENGLISH_CONTEXT_READER_QA.json), [source authority](SOURCE_AUTHORITY.md), [decisions](DECISION_HISTORY.json), [implementation](LATIN_IMPLEMENTATION.json), [exact file manifest](FILE_MANIFEST.json). Historical partial checkpoints are retained as history and are superseded by this complete certificate.
 '''
-if b!=15:report=report.replace(report[report.index('XV.40 uses'):report.index('Published baseline:')],'')
+if b!=15:
+ report=report.replace(report[report.index('XV.40 uses'):report.index('Published baseline:')],'''XIV.162 uses approved A before `antipatrum, faciebat`, preserving `tractaretque` in161 and the affirmative `hyrcani fidem transgressus est` with an explicit qualification. XIV.358 uses approved A before `Quibus uerbis compulsus`: reciprocal notices identify the surviving357 tail and resumed358 construction. XIV.388 uses approved B before `senatu uero dimisso`: the death reference survives in387 before the seven-day passage. All rejected alternatives and reasons remain recorded. The adjoining161–163,357–359 and387–389 intervals and actual containing views are reader-verified. No cause of reordering is inferred.
+
+''')
+report+='\nBoth books are locally enabled in this batch: XIV491 plus XV425 adds916 selections to the3157 baseline, giving4073 local selectable identities. Their489 plus423 nonempty Latin intervals add912 represented intervals. These totals describe the local build; published added coverage remains0.\n'
+certificate['local_combined_selectable_total']=4073
+certificate['local_combined_added_selectable_coverage']=916
+certificate['local_combined_added_nonempty_Latin_intervals']=912
+certificate['actual_containing_view_checks']=len(reader.get('containing_views',[]))
+certificate['decision_and_visual_certificate']='READER_DECISIONS_AND_VISUAL_QA.json'
+certificate['visual_screenshots_inspected']=True
+certificate['book_transition_certificate']=str(BATCH/'BOOK_XIV_XV_TRANSITION_READER_QA.json')
+save(P/'CERTIFICATION.json',certificate)
 (P/'REPORT.md').write_text(report,encoding='utf8',newline='\n')
 files=[dict(path=str(f),relative_path=f.relative_to(ROOT).as_posix(),bytes=f.stat().st_size,sha256=digest(f.read_bytes())) for f in sorted(P.rglob('*')) if f.is_file() and f.name!='FILE_MANIFEST.json']
 save(P/'FILE_MANIFEST.json',dict(book=b,pinned_commit=PIN,files=files,manifest_excludes_itself=True,note='Image presence alone does not imply inspection; per-row observations record actual inspection.'))

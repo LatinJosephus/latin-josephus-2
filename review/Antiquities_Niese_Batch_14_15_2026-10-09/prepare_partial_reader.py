@@ -25,10 +25,10 @@ for b,roman,total in [(14,'XIV',491),(15,'XV',425)]:
  if b==15:rows[0]['print_observation']['printed_numeral_observation']='Implicit opening: no marginal 1; body chapter heading and running range independently identify the opening.'
  exceptions=[]
  if b==14:exceptions=[dict(paragraph='latin-book14-num25',label='[II.ii.26]',visibleClaim=26,actualSection=25),
-  dict(paragraph='latin-book14-num133',label='[VIII.ii.133]',visibleClaim=133,actualSection=133)]
+  dict(paragraph='latin-book14-num133',label='[VIII.ii.133]',visibleClaim=133,actualSection=132)]
  if b==14:
   for n in [199,230,431]:
-   if rows[n-1].get('implementation_approved'):exceptions.append(dict(paragraph=f'latin-book14-num{n}',label=None,visibleClaim=n,actualSection=n,reason='Visible label is within a reviewed section or its predecessor; the adopted milestone supplies the actual executable start.'))
+   if rows[n-1].get('implementation_approved'):exceptions.append(dict(paragraph=f'latin-book14-num{n}',label=None,visibleClaim=n,actualSection={199:198,230:230,431:430}[n],reason='actualSection identifies the first narrative words following this excluded visible label; the adopted milestone supplies the independently verified executable start for visibleClaim.'))
  # Assert the exact inherited visible label from the frozen XML, not a guess.
  if b==14:
   import sys
