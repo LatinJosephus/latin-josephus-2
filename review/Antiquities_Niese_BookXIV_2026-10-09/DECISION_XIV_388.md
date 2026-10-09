@@ -19,3 +19,11 @@ Inspected Niese III p310–311/PDF382–383 and independent Loeb VII Greek p652/
 ![Loeb652](evidence/Loeb-PDF664.jpg)
 
 ![Loeb653](evidence/Loeb-PDF665.jpg)
+
+## Adopted decision and reader notices
+
+B approved by the human user, 2026-10-09. No Greek boundary or English change.
+
+XIV.387: Distributed/reordered correspondence: quem postea interfecit, quod apto tempore referemus, the relative clause concerning the young man’s later death, survives here and corresponds to Greek XIV.388. It remains in the preserved Latin sequence before the subsequent seven-day passage corresponding to Greek XIV.387. See the reciprocal notice at388; no cause of the different ordering is inferred.
+
+XIV.388: Distributed/reordered correspondence: the death reference of Greek XIV.388 survives earlier within the Latin interval for387, at quem postea interfecit, quod apto tempore referemus. This interval begins with senatu uero dimisso, the senate’s dismissal and ensuing procession. The death reference is not absent and has not been moved, duplicated or rewritten; see387.

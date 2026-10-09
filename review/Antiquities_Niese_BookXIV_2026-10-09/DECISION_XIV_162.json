@@ -1,7 +1,7 @@
 {
   "book": 14,
   "section": 162,
-  "status": "PENDING_USER_EDITORIAL_DECISION",
+  "status": "USER_APPROVED_A",
   "source_sha256": "931157718997a35a84951ecebabae6813526c66250fa4f791bd338748fbf62f6",
   "Latin_paragraph": "latin-book14-num158",
   "Latin": "  Sed cum tardum et segnem hyrcanum uidisset, priorem filium suum ducem in hierosolimis ordinauit, secundum uero herodem galileae tutorem demonstrauit. Adhuc omnino iuuenem, nam quindecim annorum tunc erat cui nihil offuit iuuentus, dum prudentiam super aetatem haberet. Qui cum occasionem inuenisset statim ad uirtutis ostentationem prorupit. Siquidem ezechiam principem latronum conprehensum qui syriam cum magna turba uexabat, fecit interimi cum multis praedonibus. Quo facto nimium a syris amplectitur, unde et in amorem eius exarserunt quod a latrociniis prouincia horum  esset erepta. Laudabant ergo eum per ciuitates et per uicos, quod pacem eis prestitisset et tuitionem praediorum suorum inuenissent. Qua propter et sexto caesari cognato magni caesaris, tunc totam regenti syriam amicus factus est. Cum uero aemulatio pro factis herodis fafailum fratrem eius intrasset, studuit non minor tali gloria repperiri, et ierosolimi tas fauores sibi parabat, dum et ciuitatem haberet et populi negotia non ignoraret, tractaretque antipatrum, faciebat ab omni gente tamquam esset omnium dominus, honorari tamen ex tali claritate qualia saepius contingunt, hyrcani fidem transgressus est. ",
@@ -128,5 +128,37 @@
   "contextual_review": "Latin 158–167 and Greek 158–175 individually read. Greek 161 describes Phasael’s conduct; 162 turns to the resulting honours of Antipater. The Latin has the preserved sequence tractaretque antipatrum, faciebat. No punctuation correction, replacement with tractaret. quae or reconstructed word is authorized. The source also reverses Greek 162’s denial of disloyalty; retain transgressus est without correction.",
   "correspondence_status": "PRESENT_WITH_SYNTAX_AND_WORDING_DIFFERENCE",
   "placement_status": "PENDING_EDITORIAL_CHOICE",
-  "reader_certified": false
+  "reader_certified": false,
+  "adopted_option": "A",
+  "rejected_options": [
+    {
+      "option": "B",
+      "reason": "Would leave Antipater’s name with the preceding Phasael material, separated from faciebat … honorari."
+    },
+    {
+      "option": "C",
+      "reason": "Would take tractaretque away from the concluding verb associated with Phasael’s handling of populi negotia."
+    }
+  ],
+  "authority": "Direct human message 2026-10-09 approving both162A and388B.",
+  "approved_physical_placement": {
+    "stable_id": "latin-book14-num158",
+    "paragraph": 56,
+    "xpath": "/*/*[2]/*/*[2]/*[2]/*[2]/*/*/*/*[38]",
+    "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/argument[1]/floatingText[1]/body[1]/div1[1]/div2[1]/p[37]/add[2]/tail()",
+    "node_offset": 455,
+    "unit_offset": 1031,
+    "book_offset": 37412,
+    "raw_byte": 53758,
+    "left": " gloria repperiri, et ierosolimi tas fauores sibi parabat, dum et ciuitatem haberet et populi negotia non ignoraret, tractaretque ",
+    "right": "antipatrum, faciebat ab omni gente tamquam esset omnium dominus, honorari tamen ex tali claritate qualia saepius contingunt, hyrcani fidem transgressus est.  Potentissimi uero iudaeorum antipatrum uidentes cum filiis extolli per fauorem gen",
+    "parsed_unit_sha256": "f9643585ce17ff74b53d67c7b3d4a9dd4ae7d61c66a6971614700f08ef3ace27",
+    "raw_unit_sha256": "6794cc160c19ad504b4815db335fed77e35faf86e1fd3be7d58a46cb7f1c8129",
+    "source_unit_offset": 1034
+  },
+  "correspondence_qualification_separate_from_placement": true,
+  "reader_notes": {
+    "161": "The approved boundary interpretation leaves tractaretque here as the concluding verb associated with Phasael’s handling of populi negotia. Antipatrum begins the following faciebat … honorari construction at162. The difficult wording and punctuation are preserved; see162.",
+    "162": "The approved boundary begins before antipatrum, faciebat, retaining Antipatrum with the following faciebat … honorari construction. Tractaretque remains in161 as the concluding verb associated with Phasael’s handling of populi negotia. The comma after antipatrum and the difficult syntax are preserved. The later affirmative hyrcani fidem transgressus est differs from the Greek denial of disloyalty: no negative has been supplied. This interval must not be read as unqualified semantic equivalence."
+  }
 }

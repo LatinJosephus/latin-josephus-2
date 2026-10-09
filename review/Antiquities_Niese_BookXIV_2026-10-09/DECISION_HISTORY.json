@@ -854,5 +854,93 @@
     "adopted": true,
     "neighbour_extents_recomputed": true,
     "planned_milestones_total": 381
+  },
+  {
+    "kind": "EXPLICIT_USER_DECISION",
+    "section": 162,
+    "adopted": "A",
+    "exact_phrase": "antipatrum, faciebat",
+    "exact_locator": {
+      "stable_id": "latin-book14-num158",
+      "paragraph": 56,
+      "xpath": "/*/*[2]/*/*[2]/*[2]/*[2]/*/*/*/*[38]",
+      "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/argument[1]/floatingText[1]/body[1]/div1[1]/div2[1]/p[37]/add[2]/tail()",
+      "node_offset": 455,
+      "unit_offset": 1031,
+      "book_offset": 37412,
+      "raw_byte": 53758,
+      "left": " gloria repperiri, et ierosolimi tas fauores sibi parabat, dum et ciuitatem haberet et populi negotia non ignoraret, tractaretque ",
+      "right": "antipatrum, faciebat ab omni gente tamquam esset omnium dominus, honorari tamen ex tali claritate qualia saepius contingunt, hyrcani fidem transgressus est.  Potentissimi uero iudaeorum antipatrum uidentes cum filiis extolli per fauorem gen",
+      "parsed_unit_sha256": "f9643585ce17ff74b53d67c7b3d4a9dd4ae7d61c66a6971614700f08ef3ace27",
+      "raw_unit_sha256": "6794cc160c19ad504b4815db335fed77e35faf86e1fd3be7d58a46cb7f1c8129",
+      "source_unit_offset": 1034
+    },
+    "rejected_alternatives": [
+      {
+        "option": "B",
+        "reason": "Would leave Antipater’s name with the preceding Phasael material, separated from faciebat … honorari."
+      },
+      {
+        "option": "C",
+        "reason": "Would take tractaretque away from the concluding verb associated with Phasael’s handling of populi negotia."
+      }
+    ],
+    "authority": "Direct human message 2026-10-09 approving both162A and388B.",
+    "reader_notes": {
+      "161": "The approved boundary interpretation leaves tractaretque here as the concluding verb associated with Phasael’s handling of populi negotia. Antipatrum begins the following faciebat … honorari construction at162. The difficult wording and punctuation are preserved; see162.",
+      "162": "The approved boundary begins before antipatrum, faciebat, retaining Antipatrum with the following faciebat … honorari construction. Tractaretque remains in161 as the concluding verb associated with Phasael’s handling of populi negotia. The comma after antipatrum and the difficult syntax are preserved. The later affirmative hyrcani fidem transgressus est differs from the Greek denial of disloyalty: no negative has been supplied. This interval must not be read as unqualified semantic equivalence."
+    },
+    "Greek_boundary_changed": false,
+    "English_changed": false,
+    "source_words_changed": false,
+    "neighbouring_extents_recomputed": [
+      161,
+      162,
+      163
+    ]
+  },
+  {
+    "kind": "EXPLICIT_USER_DECISION",
+    "section": 388,
+    "adopted": "B",
+    "exact_phrase": "senatu uero dimisso",
+    "exact_locator": {
+      "stable_id": "latin-book14-num386",
+      "paragraph": 114,
+      "xpath": "/*/*[2]/*/*[2]/*[2]/*[2]/*/*/*/*[96]",
+      "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/argument[1]/floatingText[1]/body[1]/div1[1]/div2[1]/p[95]/num[1]/tail()",
+      "node_offset": 509,
+      "unit_offset": 509,
+      "book_offset": 87007,
+      "raw_byte": 110289,
+      "left": " tempore referemus. Sed cum intra septimum diem contulisset ei senatus quod nullatenus sperauit, et ab italia discedere fecisset, ",
+      "right": "senatu uero dimisso, herodem medium habentes, antonius et caesar exierunt. Praecedentibus aliis consularibus immolaturi  et deposituri senatus consultum in capitolio, herodem autem primo die regni pauit antonius cuius initium fuit centesima",
+      "parsed_unit_sha256": "4a535331e94a70ab62824ceffd93f26460a176a0669237853a1c8cc4a641ef07",
+      "raw_unit_sha256": "2a2aab1558e1056e5201520d14fca2c42e0c93e360104912bdf3ab1c22fdf3e1",
+      "source_unit_offset": 509
+    },
+    "rejected_alternatives": [
+      {
+        "option": "A",
+        "reason": "Would assign the intervening seven-day clause of Greek387 to Latin388."
+      },
+      {
+        "option": "C",
+        "reason": "Would open388 with the seven-day passage corresponding to Greek387."
+      }
+    ],
+    "authority": "Direct human message 2026-10-09 approving both162A and388B.",
+    "reader_notes": {
+      "387": "Distributed/reordered correspondence: quem postea interfecit, quod apto tempore referemus, the relative clause concerning the young man’s later death, survives here and corresponds to Greek XIV.388. It remains in the preserved Latin sequence before the subsequent seven-day passage corresponding to Greek XIV.387. See the reciprocal notice at388; no cause of the different ordering is inferred.",
+      "388": "Distributed/reordered correspondence: the death reference of Greek XIV.388 survives earlier within the Latin interval for387, at quem postea interfecit, quod apto tempore referemus. This interval begins with senatu uero dimisso, the senate’s dismissal and ensuing procession. The death reference is not absent and has not been moved, duplicated or rewritten; see387."
+    },
+    "Greek_boundary_changed": false,
+    "English_changed": false,
+    "source_words_changed": false,
+    "neighbouring_extents_recomputed": [
+      387,
+      388,
+      389
+    ]
   }
 ]
