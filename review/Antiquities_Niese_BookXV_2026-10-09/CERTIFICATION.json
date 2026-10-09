@@ -1,17 +1,17 @@
 {
   "book": 15,
   "status": "READY_FOR_COORDINATED_INTEGRATION",
-  "certified_at": "2026-10-09T17:16:35.138679+00:00",
+  "certified_at": "2026-10-09T18:07:33.862002+00:00",
   "pinned_commit": "ad3158b7a86dea6997510b3de17f2e510c23367c",
-  "canonical_observed_HEAD": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "canonical_observed_HEAD": "cea765de5d990646b4d4dc079bac1c0da46ca107",
   "frozen_inputs_advanced": false,
   "branch": "antiquities-niese-14-15",
-  "implementation_parent_commit": "d90af4cd14b9c3ab3910cea793f6347747e588eb",
+  "implementation_parent_commit": "38a231a6d0283195ce519ed484dc1cd5d2d186b9",
   "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15",
   "review_directory": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\review\\Antiquities_Niese_BookXV_2026-10-09",
   "runtime_directory": "C:\\workspace\\Antiquities-Niese-14-15-runtime-20261009",
   "local_origin": "http://127.0.0.1:8914",
-  "local_build": "C:\\workspace\\Antiquities-Niese-14-15-runtime-20261009\\build4\\site",
+  "local_build": "C:\\workspace\\Antiquities-Niese-14-15-runtime-20261009\\build5\\site",
   "expected_sections": 425,
   "Greek_print_verified": 425,
   "Latin_individually_reviewed": 425,
@@ -75,7 +75,7 @@
   "source_preservation": "COMPLETE_PARTITION_QA.json",
   "reader_certificate": "FULL_READER_QA.json",
   "independent_English_context_certificate": "ENGLISH_CONTEXT_READER_QA.json",
-  "protected_certificate": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\review\\Antiquities_Niese_Batch_14_15_2026-10-09\\PROTECTED_COMPLETE_EXISTING_BOOKS_BROWSER_QA_build4.json",
+  "protected_certificate": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\review\\Antiquities_Niese_Batch_14_15_2026-10-09\\PROTECTED_COMPLETE_EXISTING_BOOKS_BROWSER_QA_build5.json",
   "published_baseline_selectable": 3157,
   "added_local_selectable_coverage": 425,
   "published_coverage_added": 0,
@@ -86,8 +86,8 @@
   "built_production_files": [
     {
       "path": "assets/js/renderTei.js",
-      "sha256": "579ac21df21d24bee65864504c65c10c350ecdfb95c0ff63ce8b0102f2603315",
-      "bytes": 126336
+      "sha256": "3701bed90b5cb31ff4a1ff52d25c2a41923b3e61c189012cc137f77862b3b1c5",
+      "bytes": 126393
     },
     {
       "path": "assets/xml/antiquities/niese/book-15.json",
@@ -110,6 +110,11 @@
       "bytes": 154681
     }
   ],
-  "visual_reader_certificate": "VISUAL_READER_QA.json",
-  "visual_screenshots_inspected": true
+  "local_combined_selectable_total": 4073,
+  "local_combined_added_selectable_coverage": 916,
+  "local_combined_added_nonempty_Latin_intervals": 912,
+  "actual_containing_view_checks": 78,
+  "decision_and_visual_certificate": "READER_DECISIONS_AND_VISUAL_QA.json",
+  "visual_screenshots_inspected": true,
+  "book_transition_certificate": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15\\review\\Antiquities_Niese_Batch_14_15_2026-10-09\\BOOK_XIV_XV_TRANSITION_READER_QA.json"
 }
