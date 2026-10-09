@@ -48,7 +48,8 @@ function originalHTML(node,book,language){
 }
 async function main(){
  const mode=process.argv.includes('--protected')?'protected':process.argv.includes('--ranges')?'ranges':'new-book',b=Number(process.argv.find(a=>/^--book=/.test(a))?.split('=')[1]||12);
- const report={mode,scope:'OWN_LOCAL_BUILDS',started:new Date().toISOString(),browserExceptions:[],consoleErrors:[],failedRequests:[]};
+ const routine=process.argv.includes('--routine');
+ const report={mode,scope:routine?'PROVISIONAL_ROUTINE_REHEARSAL_NOT_CERTIFIED':'OWN_LOCAL_BUILDS',started:new Date().toISOString(),browserExceptions:[],consoleErrors:[],failedRequests:[]};
  const servers=[serve(path.join(runtime,'site')),serve(path.join(runtime,'baseline-site')),serve(path.join(runtime,'site'),false)];
  async function listen(s,port){try{await new Promise((r,j)=>{s.once('error',j);s.listen(port,'127.0.0.1',r);});}catch(e){if(e.code!=='EADDRINUSE')throw e;await new Promise((r,j)=>{s.once('error',j);s.listen(0,'127.0.0.1',r);});}}
  await listen(servers[0],8912);for(const s of servers.slice(1))await listen(s,0);
@@ -62,7 +63,8 @@ async function main(){
  async function change(selector,value){await page.selectOption(selector,value);await page.evaluate(()=>window.__qaPending);}
  try{
  if(mode==='new-book'){
-  const expected=load(path.join(packet(b),'EXPECTED_INTERVALS.json')),max=Object.keys(expected.Greek).length;
+  const expected=load(path.join(packet(b),routine?'ROUTINE_EXPECTED_INTERVALS.json':'EXPECTED_INTERVALS.json')),max=Object.keys(expected.Greek).length;
+  if(routine)report.excluded_from_final_certification=expected.excluded_from_final_certification;
   await open(`/antiquities/?book=${b}&niese=1`);
   const projection=await page.evaluate(({expected,code})=>{
    const text=eval('('+code+')'),q=window.__qa,data=q.getData(),errors=[],records=[],starts={};
@@ -75,6 +77,7 @@ async function main(){
      if(l==='Latin'&&!section.Latin.available&&!v?.querySelector('.structural-unavailable'))errors.push(`${n} unavailable state missing`);
      if(l==='Latin'&&section.Latin.note&&!v?.textContent.includes(section.Latin.note))errors.push(`${n} exact explanatory notice missing`);
      if(l==='English'&&(!v?.querySelector('.niese-context-note')||!record[l]))errors.push(`English ${n} broader context missing`);
+     if(l==='English'&&expected.English&&record[l]!==String(expected.English[n]).replace(/\s+/g,' ').trim())errors.push(`English ${n} source context mismatch`);
      const ids=[...v?.querySelectorAll('[id]')||[]].map(x=>x.id);if(ids.length!==new Set(ids).size)errors.push(`${l} ${n} repeated DOM ID`);
     }records.push(record);
    }
@@ -94,14 +97,14 @@ async function main(){
    report.actual_select_events.push(n);
   }
   report.navigation=[];
-  const cases=b===12?[1,147,148,246,247,248,249,250,331,332,366,367,434]:[1,433];
+  const cases=b===12?[1,147,148,246,247,248,249,250,331,332,366,367,434]:[1,37,38,105,106,111,115,116,117,170,171,186,187,212,213,214,215,216,217,218,237,269,274,306,333,334,347,365,378,386,415,420,427,432,433];
   async function rendered(n){await page.waitForFunction(n=>window.__qaRenderedState?.nieseNum===String(n),n);const actual=await page.locator('#latin').evaluate((node,{code,exclusions})=>eval('('+code+')')(node,exclusions),{code:narrative.toString(),exclusions:expected.exclusions.Latin});if(actual!==norm(expected.Latin[n]))throw Error('Navigation interval '+n);}
   for(const n of cases){
    await open(`/antiquities/?book=${b}&niese=${n}`);await rendered(n);await page.reload();await page.waitForFunction(()=>window.__qaReady);await rendered(n);
    if(n<max){await page.click('#niese-next');await rendered(n+1);await page.click('#niese-previous');await rendered(n);await page.goBack();await rendered(n+1);await page.goForward();await rendered(n);}else if(!await page.locator('#niese-next').isDisabled())throw Error('Final next endpoint');
    if(n===1&&!await page.locator('#niese-previous').isDisabled())throw Error('First previous endpoint');
    for(const lang of ['english','greek']){await page.uncheck(`#${lang}-pane-select`);await page.check(`#${lang}-pane-select`);}if(!await page.locator('#latin-pane-select').isDisabled())throw Error('Fixed Latin pane control changed');await rendered(n);
-   const themes=[];for(const theme of ['light','dark']){await page.evaluate(t=>setTheme(t),theme);await page.waitForTimeout(550);themes.push(await page.evaluate(()=>({theme:document.documentElement.dataset.theme,stored:localStorage.getItem('theme'),background:getComputedStyle(document.body).backgroundColor})));if([1,248,249,434].includes(n))await page.screenshot({path:path.join(packet(b),`READER_${n}_${theme}.png`),fullPage:true});}
+   const themes=[];for(const theme of ['light','dark']){await page.evaluate(t=>setTheme(t),theme);await page.waitForTimeout(550);themes.push(await page.evaluate(()=>({theme:document.documentElement.dataset.theme,stored:localStorage.getItem('theme'),background:getComputedStyle(document.body).backgroundColor})));if((b===12?[1,248,249,434]:[1,213,214,216,269,274,433]).includes(n))await page.screenshot({path:path.join(packet(b),`${routine?'ROUTINE_':''}READER_${n}_${theme}.png`),fullPage:true});}
    if(themes[0].background===themes[1].background||themes.some(t=>t.theme!==t.stored))throw Error('Theme application');report.navigation.push({n,reload_history_previous_next:'PASS',pane_switches:'PASS',themes});
   }
   report.uninstrumented=[];
@@ -115,7 +118,7 @@ async function main(){
     results.push({kind,rows:rows.length,counts});
    }return results;
   });
-  const allInserted=load(path.join(packet(b),'EXECUTABLE_IDENTITIES.json')).inserted;
+  const allInserted=(routine?expected:load(path.join(packet(b),'EXECUTABLE_IDENTITIES.json'))).inserted;
   for(const range of report.broader_ranges){const missing=allInserted.filter(n=>(range.counts[n]||0)!==1);if(range.kind==='chapter'&&missing.length)throw Error('Chapter marker completeness '+missing);range.markers_present_once=allInserted.length-missing.length;range.without_subchapter=missing;}
   // Drive every actual Chapter and Subchapter selector; compare its final DOM
   // with the range resolver and the unchanged baseline in protected mode.
@@ -126,7 +129,7 @@ async function main(){
   await open(`/antiquities/?book=${b}`);if(b===12&&!await page.locator('#latin').textContent().then(t=>t.includes('LIBER DUODECIMUS EXPLICIT')))throw Error('Colophon lost in book view');
   await change('#book-selector','09');if(!await page.locator('#niese-level').isDisabled())throw Error('IX enabled');await change('#book-selector',String(b));await page.check('#niese-level');await page.evaluate(()=>window.__qaPending);await change('#niese-selector','1');report.book_switching='PASS';
  }else if(mode==='ranges'){
-  const expected=load(path.join(packet(b),'EXPECTED_INTERVALS.json'));report.actual_ranges=[];
+  const expected=load(path.join(packet(b),routine?'ROUTINE_EXPECTED_INTERVALS.json':'EXPECTED_INTERVALS.json'));report.actual_ranges=[];
   await open(`/antiquities/?book=${b}`);
   const rows=await page.evaluate(()=>window.__qa.traditionalRows('chapter').concat(window.__qa.traditionalRows('subchapter')));
   for(const row of rows){
@@ -150,8 +153,8 @@ async function main(){
    },{row,code:narrative.toString(),exclusions:expected.exclusions});
    report.actual_ranges.push(details);
   }
-  const focused=b===12?[246,247,248,249,434]:[1,433];report.visuals=[];
-  for(const n of focused){await open(`/antiquities/?book=${b}&niese=${n}`);for(const theme of ['light','dark']){await page.evaluate(t=>setTheme(t),theme);await page.waitForTimeout(550);const p=path.join(packet(b),`READER_${n}_${theme}.png`);await page.screenshot({path:p,fullPage:true});report.visuals.push(path.basename(p));}if(!await page.locator('.lj-brand__light').evaluate(n=>n.complete&&n.naturalWidth>0))throw Error('Local SVG logo serving');}
+  const focused=b===12?[246,247,248,249,434]:[1,213,214,216,269,274,433];report.visuals=[];
+  for(const n of focused){await open(`/antiquities/?book=${b}&niese=${n}`);for(const theme of ['light','dark']){await page.evaluate(t=>setTheme(t),theme);await page.waitForTimeout(550);const p=path.join(packet(b),`${routine?'ROUTINE_':''}READER_${n}_${theme}.png`);await page.screenshot({path:p,fullPage:true});report.visuals.push(path.basename(p));}if(!await page.locator('.lj-brand__light').evaluate(n=>n.complete&&n.naturalWidth>0))throw Error('Local SVG logo serving');}
   if(b===12){
    await open('/antiquities/?book=12&chapter=5');
    const broader=await page.locator('#latin').textContent();
@@ -192,7 +195,7 @@ async function main(){
   await open('/bellum-judaicum/?book=1&niese=1&english=lodge1602');const before=await page.locator('#english').innerHTML();await page.uncheck('#lodge-notes-visible');if(!await page.locator('#english').evaluate(n=>n.classList.contains('lodge-notes-hidden')))throw Error('Lodge hide');await page.reload();await page.waitForFunction(()=>window.__qaReady);if(await page.locator('#lodge-notes-visible').isChecked())throw Error('Lodge reload');await page.check('#lodge-notes-visible');if(before!==await page.locator('#english').innerHTML())throw Error('Lodge restore');await change('#english-source-selector','whiston');if(await page.locator('#lodge-notes-select').isVisible())throw Error('Whiston switching');report.Lodge_Whiston_switching='PASS';
  }
  if(report.browserExceptions.length||report.consoleErrors.length||report.failedRequests.length)throw Error('Browser/network errors');report.result='PASS';report.finished=new Date().toISOString();
- save(mode==='new-book'?path.join(packet(b),'IMPLEMENTATION_BROWSER_QA.json'):mode==='ranges'?path.join(packet(b),'RANGE_BROWSER_QA.json'):path.join(__dirname,'PROTECTED_BROWSER_QA.json'),report);console.log('PASS',mode,b);
+ save(mode==='new-book'?path.join(packet(b),routine?'ROUTINE_REHEARSAL_BROWSER_QA.json':'IMPLEMENTATION_BROWSER_QA.json'):mode==='ranges'?path.join(packet(b),routine?'ROUTINE_RANGE_BROWSER_QA.json':'RANGE_BROWSER_QA.json'):path.join(__dirname,'PROTECTED_BROWSER_QA.json'),report);console.log('PASS',mode,b,report.scope);
  }catch(e){report.result='FAIL';report.failure=String(e);save(path.join(runtime,`FAILED_${mode}_${b}.json`),report);throw e;}
  finally{await context.close();for(const s of servers)await new Promise(r=>s.close(r));}
 }
