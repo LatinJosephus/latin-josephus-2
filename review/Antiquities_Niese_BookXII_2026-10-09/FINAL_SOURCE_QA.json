@@ -1,0 +1,64 @@
+{
+  "book": 12,
+  "result": "PASS",
+  "checks": [
+    {
+      "language": "Greek",
+      "expected_sections": 434,
+      "physical_intervals": 434,
+      "nonempty_intervals": 434,
+      "leading_whitespace_characters": 0,
+      "full_narrative_partition": "PASS",
+      "all_node_and_UTF8_locators": "PASS",
+      "exact_inverse_and_independent_tag_removal": "PASS",
+      "source_narrative_IDs_sameAs_preserved": "PASS",
+      "source_sha256_before": "04cca637d71754a2cf277c762d9d6890fc93f052092632add8d4cbf0a6f6aecd",
+      "source_sha256_after": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec",
+      "build_sha256": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec"
+    },
+    {
+      "language": "Latin",
+      "expected_sections": 434,
+      "physical_intervals": 433,
+      "nonempty_intervals": 433,
+      "leading_whitespace_characters": 1,
+      "full_narrative_partition": "PASS",
+      "all_node_and_UTF8_locators": "PASS",
+      "exact_inverse_and_independent_tag_removal": "PASS",
+      "source_narrative_IDs_sameAs_preserved": "PASS",
+      "source_sha256_before": "ea4e2251b81a1bfa202eecfe7f78a054464386621001093cc2e1099c5c29e41a",
+      "source_sha256_after": "11fd83d1d8f61573db08ec32a600423242fca6c0e29ef32898c1dde876238a42",
+      "build_sha256": "11fd83d1d8f61573db08ec32a600423242fca6c0e29ef32898c1dde876238a42"
+    }
+  ],
+  "English_bytes_unchanged": true,
+  "English_sha256": "d5cee95948e272e04c624808c299588c7fb67c31988b686afd547c73597bbcea",
+  "registry_build_sha256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+  "renderer_build_sha256": "6ca67f3facc8cdd752c0ef116d80777eceb321c91d06d61f4e27d5366851dd82",
+  "mixed_content_fixtures": {
+    "status": "PASS",
+    "tests": [
+      "mixed .text/.tail",
+      "UTF-8",
+      "numeric and named entities",
+      "CRLF",
+      "comment exclusion and tail coordinates",
+      "empty element tails",
+      "nested add/del retained",
+      "num excluded with tail retained",
+      "two units",
+      "raw Unicode-byte roundtrip",
+      "note excluded with tail retained",
+      "nested-child tail ownership",
+      "chapter-0 paratext exclusion",
+      "omission-placeholder exclusion"
+    ]
+  },
+  "inline_projection_fixture": "PASS: preserved full source-node offsets across exclusions, entity, nested text/tail and multiple slices",
+  "no_independent_Latin_intervals": [
+    248
+  ],
+  "whole_section_Latin_absence_claims": [],
+  "pending_editorial_decisions": [],
+  "verification_HEAD": "a6198228c9716f4588a1066d4a5206fccbdf99a7"
+}
