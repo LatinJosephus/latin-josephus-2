@@ -1,0 +1,1982 @@
+{
+  "base_commit": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "recorded_HEAD": "405a029669f61bea8a02d1f2a8f903399096f51a",
+  "canonical_HEAD_at_handoff": "92f009a668507ece4b82bdc4040a2b40b1f2cae7",
+  "canonical_advance": true,
+  "branch": "antiquities-niese-12-13",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13",
+  "runtime": "C:\\workspace\\Antiquities-Niese-12-13-runtime-20261009",
+  "packets": {
+    "12": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13\\review\\Antiquities_Niese_BookXII_2026-10-09",
+      "QA": {
+        "book": 12,
+        "status": "LOCAL_CERTIFIED_READY_FOR_COORDINATED_INTEGRATION",
+        "expected_sections": 434,
+        "Greek_print_starts_visually_examined": 434,
+        "Latin_individually_reviewed": 434,
+        "validated_Latin_locators": 433,
+        "approved_representations": 434,
+        "review_remaining": 0,
+        "Latin_section_milestones_applied": 365,
+        "Latin_end_milestones_applied": 1,
+        "Greek_marker_additions_applied": 1,
+        "no_independent_Latin_intervals": [
+          248
+        ],
+        "pending_editorial_cases": [],
+        "reader_certification": "PASS: see CERTIFICATE.json and its bound source/browser/range/protected evidence",
+        "completion_certificate": true,
+        "final_reader_enabled": true
+      },
+      "manifest_sha256": "798a24b4c72017a5bef834c36c43ac060a81857e2bab52ad6c3f4c5d9297ccb5",
+      "corpus_sha256": {
+        "Greek": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec",
+        "Latin": "11fd83d1d8f61573db08ec32a600423242fca6c0e29ef32898c1dde876238a42",
+        "English": "d5cee95948e272e04c624808c299588c7fb67c31988b686afd547c73597bbcea"
+      }
+    },
+    "13": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-12-13\\review\\Antiquities_Niese_BookXIII_2026-10-09",
+      "QA": {
+        "book": 13,
+        "status": "PROVISIONAL_ROUTINE_MARKERS_APPLIED_PENDING_DECISION",
+        "expected_sections": 433,
+        "Greek_print_starts_visually_examined": 433,
+        "Latin_individually_reviewed": 433,
+        "validated_Latin_locators": 431,
+        "approved_representations": 430,
+        "review_remaining": 0,
+        "Latin_section_milestones_applied": 347,
+        "Latin_end_milestones_applied": 0,
+        "Greek_marker_additions_applied": 1,
+        "no_independent_Latin_intervals": [],
+        "pending_editorial_cases": [
+          213,
+          214,
+          216
+        ],
+        "reader_certification": "NOT_YET_PERFORMED",
+        "completion_certificate": false,
+        "routine_reader_QA": "See separately marked ROUTINE_REHEARSAL_BROWSER_QA.json; no final certification",
+        "final_reader_enabled": false
+      },
+      "manifest_sha256": "ec65cc82b991e6b29940a796b309de703b5e4938f8de4cfe381c17c917228e17",
+      "corpus_sha256": {
+        "Greek": "5d8895efde76b679083a7c08b5f236d5f3e9d8e9dadb75e6fc3661da1200007c",
+        "Latin": "39cebe5e8af28662a638fa6dcb5222c2496f5dc2f293936a35c52c72ed6eb3dd",
+        "English": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d"
+      }
+    }
+  },
+  "published_baseline_selectable": 3157,
+  "certified_local_added_selectable": 434,
+  "certified_local_added_nonempty_Latin_intervals": 433,
+  "current_branch_selectable_total": 3591,
+  "XIII_provisional_rehearsal_selectable": 433,
+  "XIII_staged_physical_Latin_starts": 430,
+  "XIII_final_certification": false,
+  "XIII_pending_representations": [
+    213,
+    214,
+    216
+  ],
+  "XIII_current_recommendation": "B; see updated per-book decision packet and English-context consequences",
+  "integration_readiness": {
+    "XII": "READY through separate scoped corpus, support and certification commits",
+    "XIII": "NOT_READY; routine source stage and rehearsal passed, adjudication and final implementation/certification remain",
+    "batch": "NOT_READY as a combined integration"
+  },
+  "scope_verified": "Only XII/XIII corpus and review files plus documented minimal shared reader/audit support",
+  "publication_actions": {
+    "merge": false,
+    "push": false,
+    "preview_changed": false,
+    "deploy": false
+  },
+  "changed_files": [
+    {
+      "path": "assets/js/renderTei.js",
+      "sha256": "26c6a25dea0f7759547c3681b07a29f04cdd79afd8bcd8d05634080b05b9ca46",
+      "bytes": 126648
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-12.xml",
+      "sha256": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec",
+      "bytes": 236506
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-13.xml",
+      "sha256": "5d8895efde76b679083a7c08b5f236d5f3e9d8e9dadb75e6fc3661da1200007c",
+      "bytes": 244145
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-12.xml",
+      "sha256": "11fd83d1d8f61573db08ec32a600423242fca6c0e29ef32898c1dde876238a42",
+      "bytes": 129222
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-13.xml",
+      "sha256": "39cebe5e8af28662a638fa6dcb5222c2496f5dc2f293936a35c52c72ed6eb3dd",
+      "bytes": 127094
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-12.json",
+      "sha256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+      "bytes": 87373
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/BASELINE.json",
+      "sha256": "4bf818086f942c8232355b68df4225af6186149ba0833c9a8d4561ece9b7b9f6",
+      "bytes": 10982
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/BOUNDED_BASELINE_EXCEPTIONS.json",
+      "sha256": "d5a2c4aee4292398e967e97c748d72f489231377cd28975482271683f7ddca29",
+      "bytes": 2989
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/FROZEN_REFERENCE_VERIFICATION.json",
+      "sha256": "e4c77cfb88c630c299f995c5b65cec760025ad6c175daffb0a2ae38588aa03d6",
+      "bytes": 95722
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/Loeb_VII_title_PDF007.png",
+      "sha256": "6456c71b5023072a090e3402fb7723ea3a634f7a04ca31f0afea2756c778e395",
+      "bytes": 742230
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/Niese_III_title_PDF005.png",
+      "sha256": "c54e3a238aefd086f18ac43961858b2550b09c69ac2dffe46a2920d92107829d",
+      "bytes": 836401
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/PROTECTED_BROWSER_QA.json",
+      "sha256": "534f9076ce1f67146d52d09b4d995fc29a5b516fd2e724fc79c8f0d5112ededf",
+      "bytes": 11483
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/READER_SUPPORT.md",
+      "sha256": "a83bb9eb7c4a5db9197f706a060d3c7f32a1591c3671f9223056590d1b9316f5",
+      "bytes": 1951
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/TITLE_OBSERVATIONS.json",
+      "sha256": "45d3ea722f06c3f20bf35dda00c71b0f53e126c84b3e7558d78a1f14af898665",
+      "bytes": 439
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/TRANSITION_CONTROL.json",
+      "sha256": "afc154cfa3fd3300a604ddc012139e3d6abc9b39b2db0a451a6fadfb3701189b",
+      "bytes": 1439
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/apply_qualifications.py",
+      "sha256": "b394dd85b021844fd9ede4125966555d0c119be45de2ba595d2e24140816ca98",
+      "bytes": 838
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/author_batch.py",
+      "sha256": "e4118298832500799716996a028cf23c8e5440813acb0a9d0b13148b40c579cd",
+      "bytes": 941
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/author_compact.py",
+      "sha256": "35f34bcb213679be3d7cbb25fd37547ef1c8b74f8f9c44d0259ed7e2ea8f3a9a",
+      "bytes": 739
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/baseline_exceptions.cjs",
+      "sha256": "d571d9182c8afcdee1009eba6add8705acba709654d6de319c86054035625ba3",
+      "bytes": 3592
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/browser_qa.cjs",
+      "sha256": "e3cb17d8aac1ab5be311f3fdd8c031751c58cb14d262be828b4437e459acfef1",
+      "bytes": 24774
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/build.sh",
+      "sha256": "ac3d61e41fe44daafca3a8d90a40a63c76822bb7dc8831c71bd2f0a5b7635165",
+      "bytes": 652
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/build_candidate.sh",
+      "sha256": "41d1781961ecb2a7af80b72d0cde62882c73d42b020eb34a3dc8fec812ed8ddb",
+      "bytes": 684
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/certify_book.py",
+      "sha256": "9957b869ba0a0c982a6889f75976543610c7a72854f23b3aa0a1c7fde309c3b6",
+      "bytes": 6855
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/checkpoint.py",
+      "sha256": "ca0e48b23016ed215d268dfb5ee33088d3164c4d4a94a4e7f6f0d69cae81ecb8",
+      "bytes": 4734
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/evidence/build/baseline-jekyll.log",
+      "sha256": "6cbb7138d374d93e9c5abeaff587f556d1c9f312e0a29810f37f0e39ab22f587",
+      "bytes": 4899
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/evidence/build/candidate-jekyll.log",
+      "sha256": "d83fea43fd109c5985cda63bd808243bd9d1887ddf7860e1217023e5cde61016",
+      "bytes": 4890
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/evidence/transition/Loeb_PDF238.png",
+      "sha256": "386e930f12f081b26a7553b1411f487200b12bd569fce7214568711b8d90a15d",
+      "bytes": 177826
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/evidence/transition/Loeb_PDF239.png",
+      "sha256": "9df69d5918303dc7bc0dfb799c0438d4ab0a7666ef17e17afb2867f0b27fd45a",
+      "bytes": 229381
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/evidence/transition/Loeb_PDF240.png",
+      "sha256": "1bd2961ce3673507912c52538f9b41d46123b4aa7cd0695266a37c02b754c8f4",
+      "bytes": 395294
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/evidence/transition/Loeb_PDF241.png",
+      "sha256": "75f7bfe4b3ae7692a0ebc6a8a168e4d2fcb44bcb3f718e367bf00ae1f9618dc1",
+      "bytes": 369590
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/freeze_sources.py",
+      "sha256": "f14d0a834e21036c792fa3d5243215453593393ffaf76b841043b4d2c81f8e52",
+      "bytes": 6120
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/implement_book.py",
+      "sha256": "8554084d3b77c98548407863be2214b737137285b36572991a47904a180e16c5",
+      "bytes": 8055
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/initial_observations.py",
+      "sha256": "cda887a72c88756bcf689e94b85f2c54e183641c1867810b783eefd51c2543d7",
+      "bytes": 7889
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/mixed_mapper_batch.py",
+      "sha256": "13872895aeb6364a9e75d4eb2f7520a7489ca5f0191980043ea0d02208ce20b8",
+      "bytes": 10054
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/prepare_review.py",
+      "sha256": "4d3391e068fe0a361774f7a697b438cf0eba5c067b28db832a67faf36f87eb76",
+      "bytes": 4859
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/record_controls.py",
+      "sha256": "16dcb773585c5c94ad2cb871dc44a18accbbe0f417437d3347f29337738738aa",
+      "bytes": 2178
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/record_review.py",
+      "sha256": "8e5b77622f6a60dd8c10fe5c1f2c49b46d8730cfcfbc7187f377233022238267",
+      "bytes": 6061
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/rehearse_routine.py",
+      "sha256": "49d23ff02f48cfe9a6ff00389ddd8d22af77fa5957fb9c67f800a494e4a42ead",
+      "bytes": 3809
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/stage_routine.py",
+      "sha256": "c5fd98e3ad74968a7a4767afb5700ee184e3cb9e0f0ecd0c78490b0635aba2f5",
+      "bytes": 4061
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/verify_book.py",
+      "sha256": "4614bef1434953daca865e3b095ed292b073aaa110a204fb77d696e5e29481fd",
+      "bytes": 4902
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/verify_routine.py",
+      "sha256": "d65bf47060e1dd8929cf897b4d6c670ab9c0557630ace8198e6760aa773aa098",
+      "bytes": 2648
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ANONYMOUS_PARAGRAPH_269.json",
+      "sha256": "78a71ae17816186b9e1d696482799ccd1aaf83166aba5297e7c9862ae2c075e0",
+      "bytes": 1259
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/BASELINE.json",
+      "sha256": "87b63533289c2c2da0c34f8492c6bd88bd83e8ff614ab01f50a0f8e6a3b0769a",
+      "bytes": 200655
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/BOUNDARIES.json",
+      "sha256": "119fc2786ee4aa87fedc4e034f10a73c39ac5bb7e4598295bffb9e42132b1329",
+      "bytes": 2134959
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/BOUNDARIES.md",
+      "sha256": "e220e15ed1e64250ff45edc7d0f84458415c2cd2ca0184523cb97dd9dc905c8b",
+      "bytes": 448894
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/CANDIDATE_REGISTER.json",
+      "sha256": "119fc2786ee4aa87fedc4e034f10a73c39ac5bb7e4598295bffb9e42132b1329",
+      "bytes": 2134959
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/DECISION_XIII_213_216.json",
+      "sha256": "58060371168c0a443fe3728017143a52112fafbeb5c9b496d518b50b880b5838",
+      "bytes": 89022
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/DECISION_XIII_213_216.md",
+      "sha256": "1ae01e27b22cf98f38df65620881dbc1ab6640a949b22fe41993f5529980bfe2",
+      "bytes": 12143
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/EDITORIAL_DECISIONS.json",
+      "sha256": "a4d75568f5aff52bf59c8d6b77865491a63dea03205869b3cd1d4bd455e44873",
+      "bytes": 82
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/FILE_MANIFEST.json",
+      "sha256": "ec65cc82b991e6b29940a796b309de703b5e4938f8de4cfe381c17c917228e17",
+      "bytes": 26740
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/FROZEN_PRINT_STARTS.json",
+      "sha256": "f6625405aff952b78fb4adf97891215a3f90caa0aa6998a29abcb4dbf69c7c87",
+      "bytes": 151275
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/GREEK_CENSUS.json",
+      "sha256": "4edaa3f13b7a5d0c9dcc4598770d9b7c40a5470ee6bd44ee8c155ddcca2d7dec",
+      "bytes": 116151
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/LATIN_REVIEW_CHOICES.json",
+      "sha256": "73d08316067116a3c2e152fdcc0c5c979c65b476d91c866d230e58bed545e68d",
+      "bytes": 82303
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/LATIN_TEXT_NODE_LEDGER.json",
+      "sha256": "d99d81fced12aaca47e3d9541b6dc684b7e0f98b80e0a921562ca9abb3ff89f5",
+      "bytes": 1480094
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/NARRATIVE_EXCLUSION_REVISION.json",
+      "sha256": "37d6c289885f3cf78c602b0df6c0e0090de67cc00015b46980bf957848fc085c",
+      "bytes": 10319
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/PRINTED_COVERAGE_REFERENCE.json",
+      "sha256": "9362c308075911ca7b06218e60916e8fc0092533a8f2304b9234c0323fb0739a",
+      "bytes": 372
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/PRINT_OBSERVATIONS.json",
+      "sha256": "fb03e76f811fe86add8d6b8154be2d275113852ed6590e235b7dbbf41ddfa7e6",
+      "bytes": 191630
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/QA.json",
+      "sha256": "b2e5582286d8467536f41946d1dcacbd6af889c1823fdba68b9dce3212286616",
+      "bytes": 735
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/QUALIFIED_CORRESPONDENCE.json",
+      "sha256": "e2c8cf56113f8aa55abc1a0f03c42aa28a9753c73908754aca641a2a745322a1",
+      "bytes": 7889
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/READER_ANONYMOUS_269_DIAGNOSTIC.json",
+      "sha256": "2050573d5feb91fa832420f8b78642118db8fea943662be2acf077ffb28f44e4",
+      "bytes": 1200
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/REPORT.md",
+      "sha256": "937134f50d94d2dec49ea609a1ee82f5dbf9aef91bf3c92e6a076b0956b4daac",
+      "bytes": 1781
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_EXPECTED_INTERVALS.json",
+      "sha256": "45a3523638b023da04004f11087033eee3fc80d0c9cd08f3ed9dde6b15c34f40",
+      "bytes": 1340353
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_IMPLEMENTATION_PRESERVATION.json",
+      "sha256": "7e3013b5bae8c1616e0e03023150ff2c90f5965f61a50265bfa3045da56bf7d5",
+      "bytes": 66595
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_MARKER_PLAN.json",
+      "sha256": "f806cff654d887ae40777372998c1bd22f9319bb8d8653a008fe46baaade8f4c",
+      "bytes": 413309
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_RANGE_BROWSER_QA.json",
+      "sha256": "eaba061b64d5bc7c93a020b58048ca402266dfc6a1d3dccdddfd5f396667ae1d",
+      "bytes": 65779
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_1_dark.png",
+      "sha256": "67c7c0cdbb9794c1f67293af4fc2e17a12a1b014f9ec92aaf6d73d3efbb93efa",
+      "bytes": 315853
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_1_light.png",
+      "sha256": "00b910d8010dd1c569f97e0e794bf5d48ef21d0fc18e3179c9006dbe4e61930c",
+      "bytes": 313656
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_213_dark.png",
+      "sha256": "55680554083e23ebcd4d32a1a0d9cfdd957e9d355cf2df357d6fb36ec55216bd",
+      "bytes": 343609
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_213_light.png",
+      "sha256": "01b8d2034950c4252dfc77a3768220fb08e2352764f0e1dc412b988b7692c3d5",
+      "bytes": 343370
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_214_dark.png",
+      "sha256": "7c53f16b0d2eaa7ad0f5985452d45157ef817b76029159a72b5828f7f1e1661d",
+      "bytes": 279443
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_214_light.png",
+      "sha256": "43fd7df80abac0ef5ddb04a43b2963618e8dc0fbfef287f33b6ed9c6bf1be9e3",
+      "bytes": 278301
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_216_dark.png",
+      "sha256": "281e1e6de6a49388ec75c280631c3c9683d4ae361a7ee99d776295b34cf3eb78",
+      "bytes": 329586
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_216_light.png",
+      "sha256": "5ffa5f6960069359094e3e0be2e78e67c02561d8b367ee236673894b42e9a029",
+      "bytes": 331302
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_269_dark.png",
+      "sha256": "32fd6611d3a8de2c93b406a57135517666fe754f9b8a2ad81289985a4273e1ef",
+      "bytes": 212396
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_269_light.png",
+      "sha256": "fd884271138afe174da0bf6f2cf79c04238868374e553a157caca9f5b25f082a",
+      "bytes": 211109
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_274_dark.png",
+      "sha256": "bc11e76279ca514788cf9b5f3aefda5b8f36c79c70732a5c3448b701c020ce0f",
+      "bytes": 288819
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_274_light.png",
+      "sha256": "27c04c013c965a493c42b2ec3787309050e51f4f01cc7e62b01e8e4d9699dd9f",
+      "bytes": 288110
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_433_dark.png",
+      "sha256": "7d82eae5132c0606e471df9e5a67e9a3c427b46ec25da0f057e07646355c7fca",
+      "bytes": 309065
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_READER_433_light.png",
+      "sha256": "6953ab00695dcaf378d51de42180b10f5a736d27d6733c895794066bcae4ddc2",
+      "bytes": 306693
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_REGISTRY_REHEARSAL.json",
+      "sha256": "03929804a5bc1157cad752a6c8c61802a69b8e8b07fcf8df32412391460146d4",
+      "bytes": 89916
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_REHEARSAL_BROWSER_QA.json",
+      "sha256": "4ecc1923c4da8c733196218e38bf1bc5944469d382d83954e10bd448fd5d0af0",
+      "bytes": 43522
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/ROUTINE_SOURCE_QA.json",
+      "sha256": "57e501a5d9d0a717a0290d6ed26f7dd62396f62dfbff39027be7371edcdd2f39",
+      "bytes": 1457
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/SOURCE_AUTHORITY.md",
+      "sha256": "603ad5605c59064d760616bd1e9992a7ba3af021f657b45f1e0c81e440d527c3",
+      "bytes": 3677
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/SOURCE_CONTROL_XIII.json",
+      "sha256": "19feac8a6268a6c8d86883dca4544e3d041af0ee13cef3778c8f37d593427c29",
+      "bytes": 5610
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/SOURCE_CONTROL_XIII.md",
+      "sha256": "468a6f5c42ee18b2e3632030554bed04397c4e440925ab86a03643f6df8e043b",
+      "bytes": 3119
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-344.png",
+      "sha256": "f9961a95eefa2ee2c028208df548785358933be669c6bd729cb1c94721265a84",
+      "bytes": 582349
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-345.png",
+      "sha256": "aa1291cd4ef014e215aee5952a00a36a94b1c90233d183a3285e20cb6130ab60",
+      "bytes": 527854
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-346.png",
+      "sha256": "8aca921f0d0714d4fc53cdd8c212a2fd7970f1d8c8673fd9359f9d4913321029",
+      "bytes": 514882
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-347.png",
+      "sha256": "59e9dfad3ea2bed6b57a418c4d3755122133b89e62de42d5f339838c107c6966",
+      "bytes": 522336
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-348.png",
+      "sha256": "b19f37f9e51b10fc6cc2cb3f8faf82db8ac47ae5c26391277080a758fd4a6b30",
+      "bytes": 530828
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-458.png",
+      "sha256": "22498b23295545df7d2c882c398d952947c337cb19d2643bd6f6af6b95b3ce71",
+      "bytes": 144537
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-459.png",
+      "sha256": "eb2766540ab0dfa5d2c7b2265760a57f14ef9ae42993fde986b1072c15ca35c2",
+      "bytes": 131644
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Loeb/page-9.png",
+      "sha256": "811a5ed4fbfe8ba69dd0dbfcbff00cca06ef23ececca5f58aea51cfde97526b2",
+      "bytes": 747407
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-221.png",
+      "sha256": "f8d09580d2b5ac377c3c2b3a79a7a1e22c5093482ce1f7edb8056a2ef1cd3433",
+      "bytes": 711094
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-222.png",
+      "sha256": "c489469201d6edeb2bca3387276baad5a25c241630c21d416e19c693ae418dfa",
+      "bytes": 987057
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-223.png",
+      "sha256": "77ddf6624fe8681a1452edbbfa474fe0ddd220c203478d02f0532cfa737180b4",
+      "bytes": 1108014
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-224.png",
+      "sha256": "5827f6cf1e55ea13dc30c2cbe001cea3137b108f8feca5fa0c41de7bf8da3db1",
+      "bytes": 1199688
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-225.png",
+      "sha256": "99fdc43752048eeb233cd8787acbdfb5ba29bec626fed38c16e794b0b20d62f5",
+      "bytes": 1103800
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-226.png",
+      "sha256": "d8ce4a9059cd07b82b3c283d3db9ec9dfca14d9f93d6716c493a8b20288d4e74",
+      "bytes": 1281617
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-227.png",
+      "sha256": "988b2daa8922f1127efabfe36a418f6f23d9755922b5383b993f8f50b5cb164b",
+      "bytes": 1287435
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-228.png",
+      "sha256": "57b5c8ac9d22ab1d2056002ee5c8a6b3ba4abba9f311850962d859df1a1632cf",
+      "bytes": 1235958
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-229.png",
+      "sha256": "1445b2a40d2a11f7ad44faca0a1892f1ad926bd0b654284950778d31b04e4b3c",
+      "bytes": 1236857
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-230.png",
+      "sha256": "320423abf3ecabd8c25eb6b8fe2165acabf3a7b6ddc3572cf7fa674fa8251cf5",
+      "bytes": 1224339
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-231.png",
+      "sha256": "c2c60ed9bc4e4ca047382c3627f5be95ddab90084dac688a990a237c0468ece9",
+      "bytes": 1225598
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-232.png",
+      "sha256": "6ab17fa4ca8da1211e5d725b72e2382e01a7b2f82589a4e3c3ab3155a6742684",
+      "bytes": 1213447
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-233.png",
+      "sha256": "8dd5703d486966683e98a72279c27bb839a80a408de597d5fd11527a37ab8049",
+      "bytes": 970765
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-234.png",
+      "sha256": "8b6ac641139c550555031c753bb2042af049d121a48500d5c6859730f5a12e0f",
+      "bytes": 1051661
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-235.png",
+      "sha256": "549ff98fb7a94e40b231c8bb2203fc07839cdcc0e82f521af85e82bf301ad129",
+      "bytes": 1031287
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-236.png",
+      "sha256": "6683247fb6b32b9c62b8aa211802cf386cd2fe22df6c903ef39d2d98a75f8dbe",
+      "bytes": 1062464
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-237.png",
+      "sha256": "984caab7184d6091bb83f7d21a5a5f43bdbf089da58b4b7bbb9d18b0f58325a5",
+      "bytes": 1029070
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-238.png",
+      "sha256": "6f26e87de9d9c76968cff4029b8a322ded218ef6bf29213f478d1cbea2c037bd",
+      "bytes": 1079549
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-239.png",
+      "sha256": "095c1b566b6c8bfdf5059a80834708ec4b29e0bf3e5fa977bf3e88a7b48e13a9",
+      "bytes": 1127417
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-240.png",
+      "sha256": "888cf9a285de78c9bfefb062d735ceef805284e834c61c2556afd397c9445472",
+      "bytes": 1015203
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-241.png",
+      "sha256": "e83545561b501534982700cad641351131ccb8f318b4839ab216fefdda71b5c2",
+      "bytes": 918084
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-242.png",
+      "sha256": "02e119adf3bb12f0c8af570380e5238aa9c1f1ff046acb57e018c381d3ba8b61",
+      "bytes": 1052186
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-243.png",
+      "sha256": "a16fb97ccb5add886bc0b10a512949e015a1b25fd106bcdfe7cef75fa2b48211",
+      "bytes": 1045162
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-244.png",
+      "sha256": "e92b6c44828c15393aa75cd2758affdd4e11cdfadd8f59b4c24e501da87fb2ba",
+      "bytes": 1150420
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-245.png",
+      "sha256": "8e27d9dee94a307482256e8f4c3d3579bed814ed340e08856b86007f437c716d",
+      "bytes": 1001426
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-246.png",
+      "sha256": "c4539b73daacedfaccccb1ab656900457ee42fedcbaa5c0ab5622dc4bdb0fd3c",
+      "bytes": 1083654
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-247.png",
+      "sha256": "027166665ea4780f5827d75b7292bb8c106c2d36f2f13b79bc29cc8b9ca5c981",
+      "bytes": 1064759
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-248.png",
+      "sha256": "97eb8c78d5fad1299de0636e1f0a822831ed815af5fb2e49b05c51d7ea7c2903",
+      "bytes": 996755
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-249.png",
+      "sha256": "5b226ecceaf1cf85adf5dcb480f18c9be705f3510fd35ac7a465a7678a4828a1",
+      "bytes": 1190442
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-250.png",
+      "sha256": "3a4aa1d5b0f20cb4a11ac8b9bd3644e99c85847bbd7870c429819c6165090e01",
+      "bytes": 1219925
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-251.png",
+      "sha256": "0aa065a1b3e64d51710df2e86d0d14a69ca2aff687db448314f4b3f74b939230",
+      "bytes": 1138651
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-252.png",
+      "sha256": "47fb3d6f454c58c654ad5e0bab8eb19fc1a68f2a0fecf491c20180a387cedc6f",
+      "bytes": 1241965
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-253.png",
+      "sha256": "be1cec82b11cbf8a22519a255d1deec910d496b50786283be623520d488de7b1",
+      "bytes": 1169634
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-254.png",
+      "sha256": "db9e8757778ce6f3dbc6fb0db16b6619ecae38d035274b58858c75c82b2ff51f",
+      "bytes": 1171951
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-255.png",
+      "sha256": "0abab9929982541650ca83abec94f5b35bafc699d62b82e68ba596e56bc68417",
+      "bytes": 1225941
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-256.png",
+      "sha256": "4b3c6074e67b2ddcfbdc7462193a3ca4bc61cf6ef7c1d462ca7b99a7235bd5f2",
+      "bytes": 1192191
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-257.png",
+      "sha256": "06864fdd2a2a79e3899123d4e2857386debb368ad9bea4816bc5bcf0cd49f35d",
+      "bytes": 1157897
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-258.png",
+      "sha256": "0c28638bb76c0e198bf0ebd5be69ef7e9b3938eb38547ef7e72cfac94e9fa707",
+      "bytes": 1136094
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-259.png",
+      "sha256": "e03471a00a2fbdbf440d20d71424735732e50693e1b333c8f7e80eeb3329b2e9",
+      "bytes": 1202950
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-260.png",
+      "sha256": "9a09254c41cbcb6ce772c29d3faa9ef68a7cd0c739e73130ce8d70d9e28c876a",
+      "bytes": 1131804
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-261.png",
+      "sha256": "a19363c787ab2a421a272300e8806b2b78d46fc0726efbe1a939a412687b98a3",
+      "bytes": 1219719
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-262.png",
+      "sha256": "805b9a98e29d0c14e85b3f16ed0dfdebc1db3445e09226ed93241f1d48d50167",
+      "bytes": 1143295
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-263.png",
+      "sha256": "181bf6ea0b75450e792039592e0209926fdf47734262f18967950cdc4d67510b",
+      "bytes": 1177695
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-264.png",
+      "sha256": "4ad838327ae3afd8068c09cd13fec01492c2cb314c726fc1a8f85b9eaf361b75",
+      "bytes": 1230254
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-265.png",
+      "sha256": "936d282edb56b377532a6d747b2952cc59b8753aca79aa6af218a7de554f7026",
+      "bytes": 1227861
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-266.png",
+      "sha256": "9329f9da39841b8a9c96e51cfaf62513618b09632921bd565d599328b51795c2",
+      "bytes": 1159632
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-267.png",
+      "sha256": "6e55f1b50f48605dc216263f823024e45dacb12e2b135833a25ca05ca08d321f",
+      "bytes": 1096036
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-268.png",
+      "sha256": "d7da5625b36b63976877094488acd9da23430eb173ed027419372bf5fe3b90fa",
+      "bytes": 1287246
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-269.png",
+      "sha256": "05671dadd8596b406e71e70306673580f340f93c4f3ccfeef4fd793f8f3001a1",
+      "bytes": 1201793
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-270.png",
+      "sha256": "72df8341e9e46edca4a70bd05181c06d84e241e964cfe53b45bf917e054db840",
+      "bytes": 1176761
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-271.png",
+      "sha256": "8d46f6ffb02035841114c032c0b7249e30bf021bb6f192a126abf9e245a2ce87",
+      "bytes": 1157754
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-272.png",
+      "sha256": "b132ddf81e76384c049e73d73022dbc88d2b35ee3070fb683309cbe6785b6591",
+      "bytes": 1216882
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-273.png",
+      "sha256": "7ca60d0363d67767d838f4ab14e8ecd0249c6300c128f3f832a9d807361ffb05",
+      "bytes": 1268361
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-274.png",
+      "sha256": "80a069aa51778d1d64755df34d56d5ed9b094c821e6953d4fee881b5b4d38d0b",
+      "bytes": 1199148
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-275.png",
+      "sha256": "e3f25b490a4b330ed38cdb25eb9e65a49098aa961571db3b28b42b02f3e17f5c",
+      "bytes": 1198872
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-276.png",
+      "sha256": "e9fb09ce0d05f414f2108fbd466d85b532cbbe24c60750d9419f18b185ff03df",
+      "bytes": 1152612
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-277.png",
+      "sha256": "d0a611a2e487906c33a4fed526332512cb4f9752fb8e947f3da69132410a9680",
+      "bytes": 1304854
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-278.png",
+      "sha256": "d7c98263f8216951fc985086a65cb777f86588c51696b0c5b698340cde44d370",
+      "bytes": 1121864
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-279.png",
+      "sha256": "5fb173bdff32464989d5ac0b1bf4c116f988b8b6f0505bdd9068fc4f4e5e27d8",
+      "bytes": 1139260
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-280.png",
+      "sha256": "a8a2ea3e8fee206e39b799591d4e51fd2927b9db30c355ca07c370713c54ba5e",
+      "bytes": 1249607
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-281.png",
+      "sha256": "266866d058a66e9c52f71873a09108c2dd0173a3d2cf826188be3fce5d7a7e6a",
+      "bytes": 1192230
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-282.png",
+      "sha256": "87635e4f92926b3b39f23a06aa0aef3b40f0e2287037dba6f9c704e9d4afc2b5",
+      "bytes": 1161782
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-283.png",
+      "sha256": "9489b6bf13f4910b67dcee3e22100fbb77a6a197c8574582de71ef54227e21e0",
+      "bytes": 1131694
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-284.png",
+      "sha256": "8da54e16e6b911f473610f27f1f68fa687a127a0771515a3abe6762d9e0acab9",
+      "bytes": 1233663
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-285.png",
+      "sha256": "54256f4b119fcda685ae3b65bc52db05667d4f215e595dd7c79057f6ae4652a9",
+      "bytes": 1224456
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-286.png",
+      "sha256": "12203568acd1dbbe65d355c1066fb60943c5a02112ce2bcaf6a10efebb44db47",
+      "bytes": 1169631
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-287.png",
+      "sha256": "c11926b5f1c02b7a4cdb3c66a731ead7997c5646d5ca6c5f04032ea561b7d255",
+      "bytes": 1267714
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-288.png",
+      "sha256": "bf4937bef776133b4b29b85497e4f15839d0917b4699791ee1ede0d8016e55de",
+      "bytes": 1189297
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-289.png",
+      "sha256": "88dead6c503a8192b862d2f1e4fc6c8cb2d167e534f010a1b17adf690caedabc",
+      "bytes": 1217395
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-290.png",
+      "sha256": "99572cfd8d48faa5859a13629efdea45a7052a9b21652dc36d004dcc7cffd7ee",
+      "bytes": 1168171
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-291.png",
+      "sha256": "9bf6f4bb5bd5be3b3eef1eb32cb0e36be859e6a00c58a5c2c76cd4a8a404c766",
+      "bytes": 1265240
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-292.png",
+      "sha256": "fda1c2db5bb6349deaa0e022297f668ad52631767858f2585ce83c835888188a",
+      "bytes": 1193704
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-293.png",
+      "sha256": "9073a532312785095addce05ceb5859ea6c7ec56601d5b8fd70171cf9f94a4a9",
+      "bytes": 1198309
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-294.png",
+      "sha256": "3c0c3aca48c65205ca3f7161ed581e028c041cccebcf26d2275835a56d78673a",
+      "bytes": 1171412
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-295.png",
+      "sha256": "fad99419fbf61c1e1a4007c69fd509e294176d1a8dc963d7d92146781b5a7427",
+      "bytes": 1167734
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-296.png",
+      "sha256": "1ca901b124e69ee8a1ed79ba727d0da8f661b4beef3c10460a20a3eef40284ab",
+      "bytes": 1190142
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-297.png",
+      "sha256": "5961e07376a85369f0bc5c01f4fc754d3b98902e973d48c0a9ce1547c17de33a",
+      "bytes": 1012023
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-298.png",
+      "sha256": "525f2205d553158bdd55017bc562b76ebabdc98362043e1d9776718e92c54cb7",
+      "bytes": 1129696
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-299.png",
+      "sha256": "e677825bcdb746dfd0698e4f76462a82fde294b0202cc34306ee8758f1dd8c82",
+      "bytes": 986919
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-300.png",
+      "sha256": "c19853db47fa11394d30a0a1e322fb78e0d4651f55b629f243edbb9a948f518d",
+      "bytes": 1123736
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-301.png",
+      "sha256": "fce662adb5b9d405d0a8922b2a000ebfb32f7ee2085ae30b2bc1f45d6b13b1db",
+      "bytes": 1167019
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-302.png",
+      "sha256": "f7efa0b6c55bcee66111b35f2d6097a97ee69bf09bb8ae51013681658583082d",
+      "bytes": 1072519
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-303.png",
+      "sha256": "2d5f2b987335e72202867ca9e05c5117ff0afd20808dc2488c3791fa25f780d4",
+      "bytes": 1101761
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-304.png",
+      "sha256": "c71b5681c65d603bf87174a8b97ef9d88ebe5e57d7e4a8b8ce68ae1159382677",
+      "bytes": 1141113
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/Niese/page-305.png",
+      "sha256": "aa6c4089b5340308b91c4d6decd2315e8cd299302ea88610d8a7406dcb2c7613",
+      "bytes": 615147
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/niese-223.png",
+      "sha256": "77ddf6624fe8681a1452edbbfa474fe0ddd220c203478d02f0532cfa737180b4",
+      "bytes": 1108014
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/evidence/niese-305.png",
+      "sha256": "aa6c4089b5340308b91c4d6decd2315e8cd299302ea88610d8a7406dcb2c7613",
+      "bytes": 615147
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/exclude_contents_duration.py",
+      "sha256": "7438de6ef807192dadf91264d39193a58c81218639175dde102beb58895efc48",
+      "bytes": 1593
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/inputs/English-book-13.xml",
+      "sha256": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d",
+      "bytes": 150127
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/inputs/Greek-book-13.xml",
+      "sha256": "dfde29b8a68309084c4ffee4077452aea1ce1ae6d92cc39108b9d469fbbed279",
+      "bytes": 244131
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/inputs/Latin-book-13.xml",
+      "sha256": "c5da61cc5d0539e68308b1e001980fd279dbeba95d2c5cfc64d4602bb1dd43e5",
+      "bytes": 115731
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/prepare_decision_213_216.py",
+      "sha256": "275129612269d9fe5ecd759ba0ef864a42fb74e825aad81994bbd63811c4db5e",
+      "bytes": 4517
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/record_English_consequences.py",
+      "sha256": "c2c1155cbc061b18212fd5d9d320d05067c3099ba5b43c1d0bd69a02d934447e",
+      "bytes": 4510
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/record_control_supplement.py",
+      "sha256": "90ba83587b95aa47d8c2551814a4ab06e1c81550c9b083651927ff1da164b351",
+      "bytes": 3044
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_001_035.json",
+      "sha256": "dbd8aac77b722812aefa4f191ce4d2390c36a95c6fc3f03a98f7d1063bba176e",
+      "bytes": 7649
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_036_070.json",
+      "sha256": "9f403f126c6f1338eaaf56c4e388617d11f6c2503605c664badd115680a64c31",
+      "bytes": 7586
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_071_105.json",
+      "sha256": "fb67bdfb053e6300ee34350ab523a68ee3c8c1c669605341f5a5d1b105a651e5",
+      "bytes": 10797
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_071_105.txt",
+      "sha256": "bc5da535ca0459091dfe7a22677eb956e32df753c47b6f72c227aa16403dd998",
+      "bytes": 7908
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_106_140.json",
+      "sha256": "0d65ec72d63fc1a9a3b497f19601fa6a99023fd9c82d7d5e948042ff77bec35a",
+      "bytes": 11521
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_106_140.txt",
+      "sha256": "cb12fe3b733f4d4325842eb2819f76fd124ef2ce6513e9d146308887d2790755",
+      "bytes": 8496
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_141_195.json",
+      "sha256": "43739daa509a2ca43831fec8abd159c6b6ce2a8e28a0b35e32b2ee280d959957",
+      "bytes": 14883
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_141_195.txt",
+      "sha256": "ba25a6ae23e142deff07e638fc64c5bfc622d9492c3d250b358fd054374759ba",
+      "bytes": 10391
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_196_263.json",
+      "sha256": "9ded9e521e41206040cfae4e0d00923f09815c94d1a99850c4e348f13f1f475b",
+      "bytes": 17801
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_196_263.txt",
+      "sha256": "92ccc1999c9ca1cf8b44a61f44b4ba02e8adf03bd997902a2ab431865c7fa4eb",
+      "bytes": 12346
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_264_333.json",
+      "sha256": "28c06a7eb6db2ce2e93268186ff203c676397f2f78364e2ad206f66ff5e327b0",
+      "bytes": 17252
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_264_333.txt",
+      "sha256": "58f1fe2806a57c1d41378ac5586dd56fa9ccb80d6312aa41d19ed34ad412e74c",
+      "bytes": 11609
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_334_360.json",
+      "sha256": "64902aed26c237c6c7d68588e8a3a996973dde0d0b2f9ac5b29813049bf1c864",
+      "bytes": 6894
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_334_360.txt",
+      "sha256": "0dbe2306e49f793fd7d91700af84a32bebd7c863d219bc52805d788732ed5dd6",
+      "bytes": 4670
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_361_396.json",
+      "sha256": "de382e2cc7197f1574e82d6f43816c76ff15485409f59b89c03aff87c50d93d3",
+      "bytes": 9503
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_361_396.txt",
+      "sha256": "8fc17d8b562da7589d0b238f51ebe10dcbc65d953599fe9a9c8e640d9d72b175",
+      "bytes": 6550
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_397_433.json",
+      "sha256": "d620de21ec785c74a0d4f506cb5116098830b6e149d33ad675cc5242b10243c2",
+      "bytes": 10804
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_397_433.txt",
+      "sha256": "e5d428a1d37223a96fece6e8db1c68b9461ffe19f04a91df314eb95217680500",
+      "bytes": 7736
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXIII_2026-10-09/review_anonymous_269.py",
+      "sha256": "51e5cf73aacc6373af51b7edea8aa901e374372403ae4f46d111b238417cc92c",
+      "bytes": 1706
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/APPROVED_MARKER_PLAN.json",
+      "sha256": "00c9a1b6a797aac1fcbb164dff7d4cbc57be57728925a84a1ed2f2027ec690a3",
+      "bytes": 464477
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/BASELINE.json",
+      "sha256": "846ce1317b2dae38be74217e00c2669a6e7e3c40e44ced1a8f79b82ac00fb962",
+      "bytes": 182954
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/BOUNDARIES.json",
+      "sha256": "99969b32aacbc9f2165bc5d0bf87be0670b9e0a4af5a50255bca098c03e68a0a",
+      "bytes": 2112578
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/BOUNDARIES.md",
+      "sha256": "992bc7d1572c3aec1fd79409deab54bd22486fbcae2d59e2ddd0a20fb91fc64c",
+      "bytes": 436811
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/CANDIDATE_REGISTER.json",
+      "sha256": "99969b32aacbc9f2165bc5d0bf87be0670b9e0a4af5a50255bca098c03e68a0a",
+      "bytes": 2112578
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/CERTIFICATE.json",
+      "sha256": "aa88fe0fb7f2dba06a685825049cf73c24ab1be75ef25a656b906a772c690bab",
+      "bytes": 1981
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/CONTROL_OBSERVATIONS.json",
+      "sha256": "ea645af87655922e06b5853a537204117c64017da638ae191eb9155acee4f1be",
+      "bytes": 1679
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/DECISION_XII_248_249.json",
+      "sha256": "4805355d313236a866fbe6cba0674f2ad92a0094b9646a12895ce36781a4dc08",
+      "bytes": 39762
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/DECISION_XII_248_249.md",
+      "sha256": "9b502572ded79e9099971593ffb077cff741d7b00f97d9acc89d0ea0400b572a",
+      "bytes": 3649
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/EDITORIAL_DECISIONS.json",
+      "sha256": "37aca81ba4f613e597d786be9170c497d20b5b6969aa5bf7d3f6a34e3d38e83e",
+      "bytes": 2454
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/EXECUTABLE_IDENTITIES.json",
+      "sha256": "7fd0c12c226103f582342423e80d91d7e166937e64b6288e6cea0a46a7b6a193",
+      "bytes": 24333
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/EXPECTED_INTERVALS.json",
+      "sha256": "bae7b1f95fd4459cde454c684d0336fba9fd0de1d7cf2dba19c058e2958d166b",
+      "bytes": 752943
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/FILE_MANIFEST.json",
+      "sha256": "798a24b4c72017a5bef834c36c43ac060a81857e2bab52ad6c3f4c5d9297ccb5",
+      "bytes": 30055
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/FINAL_SOURCE_QA.json",
+      "sha256": "c562fbcc6f3e6a5a685c67b88de6a6cab59a8de383dc2efe80f338558a89be52",
+      "bytes": 2685
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/FROZEN_PRINT_STARTS.json",
+      "sha256": "c7ac1976525c5a6a9348d5efab731bec5b9837316b82e4dbb07c6f231cd4644e",
+      "bytes": 115943
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/GREEK_CENSUS.json",
+      "sha256": "81f9f8e736f7150c45305875117ca8b5551bd7e9adf50ac499b5d44066704c62",
+      "bytes": 116413
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/IMPLEMENTATION_BROWSER_QA.json",
+      "sha256": "cafe6b536e740f1e7413530c913ee540c7cdac11d8341538b68e31c6f5d37a13",
+      "bytes": 34494
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/IMPLEMENTATION_PRESERVATION.json",
+      "sha256": "4b305b0eb20540c9e3d77c5478e95ce52ad936e5915dc2c914fcc595502566d1",
+      "bytes": 537526
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/LATIN_REVIEW_CHOICES.json",
+      "sha256": "d399c461897aa486a3477a229de746f057784b00afba60e81da7a5e2928407ee",
+      "bytes": 74948
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/LATIN_TEXT_NODE_LEDGER.json",
+      "sha256": "cce0a9ae4615d2fd450f88821c95525d643183ea4c055b35e2f227f7674d5fc3",
+      "bytes": 1450531
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/PRINTED_COVERAGE_REFERENCE.json",
+      "sha256": "563bf3410c880817e49110e205feb76d9a35e9c6aaeb8d62547c43db57d08091",
+      "bytes": 370
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/PRINT_OBSERVATIONS.json",
+      "sha256": "48abf14fc6bdaa3d826086ae19461af3e277bc9cf70b38a855133d5fe8dc4c94",
+      "bytes": 184747
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/QA.json",
+      "sha256": "95d8d6a13fb93a9c5be32b88604ea602599217c6071273f624ed47df470ea1e1",
+      "bytes": 669
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/QUALIFIED_CORRESPONDENCE.json",
+      "sha256": "d5f08ddfe3466f4b5a6ab4bbffff1440980e65eae0431c9d149996f78d9d28be",
+      "bytes": 3526
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/RANGE_BROWSER_QA.json",
+      "sha256": "187801db9e4c5edb0f03aea3a6a8bd0408907e7d36e833bb76bdf673a97ad0eb",
+      "bytes": 54291
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_1_dark.png",
+      "sha256": "11e7e127782a68bd365854fab80e2679d6e20345596aea73a74375c3d6636992",
+      "bytes": 422223
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_1_light.png",
+      "sha256": "d725174afefc9e2194dfb25512cfa2f8aac25a39fe8232386777b24633c1cf9b",
+      "bytes": 419812
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_246_dark.png",
+      "sha256": "af0afa320c7e7f99dc6e2d291213464690a32995fd9d478a96c0700a6759af17",
+      "bytes": 232441
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_246_light.png",
+      "sha256": "334ecf2b91193ffe8cb057a34ee049058bd892c560784fdb2774a51771e90fd1",
+      "bytes": 229961
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_247_dark.png",
+      "sha256": "aec8da8db0f90555bf7be3c8e78804360252858134df6e837f038eeca60d2760",
+      "bytes": 173617
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_247_light.png",
+      "sha256": "55b8aeec0a87fea117c587ee9ac69222e87d85fb442153702d92b570de43dbdb",
+      "bytes": 173911
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_248_dark.png",
+      "sha256": "46e4c75054985e2b8c2e02dc9d1bf1348aee47fa0aaa4bd56d54f4fbbd3c5412",
+      "bytes": 494225
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_248_light.png",
+      "sha256": "afa615a86d4f0bd3b364c4b83b7a492b7fd33404ef496ca4a036063a6682728a",
+      "bytes": 492181
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_249_dark.png",
+      "sha256": "32d2728bc6aee57343a4a56c08e42f11a65deb4b52a199081def1c95ebc3757f",
+      "bytes": 209160
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_249_light.png",
+      "sha256": "c5603e5284da07db6aed229fbcfa348983823d8dbad9ecb3903c85bb7ec90a95",
+      "bytes": 206932
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_434_dark.png",
+      "sha256": "70a1cf96c9dedd8d5f82690237e1ec33d17a7c41a4a9fe85cb0fb9bfe636547b",
+      "bytes": 356601
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/READER_434_light.png",
+      "sha256": "0fe91e7f004b005bd894eec76444167bfa44ca9311cd81c0b6664e1488ea7934",
+      "bytes": 354565
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/REPORT.md",
+      "sha256": "bfc6b7abf4475dd04344582d5d54d0ccb86a683d037b74baa233bfdc1e47ed54",
+      "bytes": 2380
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/SOURCE_AUTHORITY.md",
+      "sha256": "dfa7435f907d39b3f836d00541a408c61d922c7b61caa91d685515637289ac58",
+      "bytes": 3899
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Loeb/PDF-014.png",
+      "sha256": "14ff7cabaab697888c1cf654c41d0aab7ccf2a95470db08d6502bbd34440bafd",
+      "bytes": 370148
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Loeb/PDF-015.png",
+      "sha256": "7bebc2a7a4480d4072da9fd301470df9d2c5f1bb8000291c747a9b807da3377c",
+      "bytes": 417369
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Loeb/PDF-138.png",
+      "sha256": "ffab8df5f030a2487fe66b2911e88a5e8b11e03f3990a638ea507c790443501c",
+      "bytes": 537014
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Loeb/PDF-139.png",
+      "sha256": "cd52494be43f8670d62a513e0534e7b4b82103930d41b9760a18da2b4e795878",
+      "bytes": 620117
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Loeb/PDF-140.png",
+      "sha256": "3b47f30df04933fcc4bf5e692756c92fa3f6cc5e55895b7e28d973dcea9cbd86",
+      "bytes": 426239
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-143.png",
+      "sha256": "7a34c60027c86c317968677ca58821817de24c9be0f799c29b84f8c17cd57d23",
+      "bytes": 667551
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-144.png",
+      "sha256": "2247dbcce21ddba8cc02b764354f1b81d813d08855f0e590a9f493da9a35eeaf",
+      "bytes": 802026
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-145.png",
+      "sha256": "f6ebbd9e64678e5be13ac2f0c3b534e088367f1a2c0afcb9dfe0d5c27bc458a8",
+      "bytes": 1144492
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-146.png",
+      "sha256": "271891623572490962a578caaf62d32ad310a137e414c583b597c3604f28926c",
+      "bytes": 1179012
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-147.png",
+      "sha256": "0c4af8bb346012fd20f2ea1893507a4f5e7e4a8a5465071397e51f446863f3f0",
+      "bytes": 1135741
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-148.png",
+      "sha256": "17e69d39872aeaba3106cb483804c8370571e7bcb41a5313bfc7bd0a7b7113c8",
+      "bytes": 1088018
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-149.png",
+      "sha256": "9a1d523d27eb32eb03c458b14b60dd32e12763c1636864366e54519c374a0dd6",
+      "bytes": 1168072
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-150.png",
+      "sha256": "d4b8885ce539a1b439146ca67b62ab9bafadc55e7531b1c88a15bb28da33d629",
+      "bytes": 1086376
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-151.png",
+      "sha256": "381099d34affd6deaaf58300ff16b7b5d7723a4a71b3feb98f51ce9581fc13bd",
+      "bytes": 1091672
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-152.png",
+      "sha256": "4ec31eae3d8b95c39191397f97a216c55f727942ac1eed84fa54835cf49ad396",
+      "bytes": 1154995
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-153.png",
+      "sha256": "314174909eb43a02bd6af89a019967f514f498a7429f51501f01bb573ec7eca3",
+      "bytes": 1129057
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-154.png",
+      "sha256": "d904e3bed08130a8ad7060d5a429fd853678b7870e1bcf5e8d39e2a99321e03a",
+      "bytes": 1118050
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-155.png",
+      "sha256": "60955f1e30e9b30a4beb80935ad5ed6baf12d76b58273fca1d1096b093ee950c",
+      "bytes": 1125086
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-156.png",
+      "sha256": "a9d9a5093f5bd628c66a897c57586cba5706bb080d3712db6a2013acf23aece7",
+      "bytes": 1169916
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-157.png",
+      "sha256": "10b0c7fcca2db1e627cf734e0d9e91182ac10964272993c0ac2ead832295d677",
+      "bytes": 1102114
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-158.png",
+      "sha256": "a920c0f229ab289200086b08ba88fd22f7d4c8e9d1d882e83246a847f615f0a6",
+      "bytes": 1088529
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-159.png",
+      "sha256": "65e5854b18e8aeb13e5d6d037f2b7129936d10c51b12e96a998e635d61d32d18",
+      "bytes": 1235482
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-160.png",
+      "sha256": "ab3a77fc0c496ce268a6ca2c02d99467face10fad312d42fccc05878ed049d2b",
+      "bytes": 1146044
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-161.png",
+      "sha256": "f885f2a92f6afdd8e4faa8a6b64522893a16d2af7df705380955afa373a4394f",
+      "bytes": 1120616
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-162.png",
+      "sha256": "346325fc4449bf2272c8bd51d9180a5e39d3b16f1b49076b7dfd94507f4168bf",
+      "bytes": 1116408
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-163.png",
+      "sha256": "758604d2bbd4a127064979b8c7d1f59a6072b0a185ccb1a449e4df5a87f552f5",
+      "bytes": 1151630
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-164.png",
+      "sha256": "3d081a6f59a8fe233de50d131fed5454a2282f3e468873e41831348d0f54e8e8",
+      "bytes": 1117812
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-165.png",
+      "sha256": "21af2d401219397f1c0129ec7810114189a3f005195325cf0c93b5862e6e3300",
+      "bytes": 1166077
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-166.png",
+      "sha256": "657f289f9d1448638b10a7c340ba8a0934de3f8e7b333ac126b239d7aa278533",
+      "bytes": 1048098
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-167.png",
+      "sha256": "abceb1eaa5473fb00ef2410667e4205ed2c1c5e82f3e911ab46dae4a62db37a2",
+      "bytes": 1113793
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-168.png",
+      "sha256": "b186ce832316725ff5f6105b159b360d2c321f5847f99fb512266bdc67e0c24b",
+      "bytes": 1170644
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-169.png",
+      "sha256": "79507ac616f9eb232c95621eaf2b370c836477dba7e7728aa9d67d560a0a0225",
+      "bytes": 1107257
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-170.png",
+      "sha256": "19da3b1263586dabb666d8bc0a3a6d5f7197bf4877f6a25ea4ca6177db5937ee",
+      "bytes": 1178540
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-171.png",
+      "sha256": "a7fddda9c03d243eefdd5a7c3e543d887b47c5edf1e68aa87f2b8b3a43ea4edf",
+      "bytes": 1084971
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-172.png",
+      "sha256": "22d96da99c255aa1bc4f8e49f3aafa54adc1f95899b3c7d8f728216fc2b790ec",
+      "bytes": 1137932
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-173.png",
+      "sha256": "d13969e394da6a4830730f9f019718801c299c5e1914c346f7d0c99a12040934",
+      "bytes": 1147799
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-174.png",
+      "sha256": "e0635a43feb7c5fffa61c2f961ecdd2eb482a31e910940192a42e319e12ad7a2",
+      "bytes": 1098157
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-175.png",
+      "sha256": "12bc4aa0006ce9fa083883ce4fad14a03f88b118b8a0f41b416bd54b057e7d6a",
+      "bytes": 1047255
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-176.png",
+      "sha256": "810890f134cc5a6e9e99bd286337f74854c8e02db6bb0d0e9b1ad6e4cfab5125",
+      "bytes": 1181694
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-177.png",
+      "sha256": "da747a9acc94867ae2521c89cdcaa57ff24245fc082f9a1c4b817115812bc1a1",
+      "bytes": 1165326
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-178.png",
+      "sha256": "7f2288a3e70dc7154c9a097c129fb50072566bb025dda2ca786e0e8c340af905",
+      "bytes": 1114119
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-179.png",
+      "sha256": "a6bdc9419feee1408c77cd3a220fd73e1f3de6ee781f766d812525e80070135e",
+      "bytes": 1020578
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-180.png",
+      "sha256": "256d302d42218284e7dcdd74a711f688beb36ef49698916393eb66b5ac4350e6",
+      "bytes": 1160466
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-181.png",
+      "sha256": "84b319cff45fe6ec4c756d13658d0e3c4d94bb35fe06873a84738866050a0990",
+      "bytes": 1195349
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-182.png",
+      "sha256": "4e640fedc801a2bf0d382682138bffb7361706e3fd4853d16d6d0ebd46b0c0fb",
+      "bytes": 1004698
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-183.png",
+      "sha256": "7c38585b65b5e2540445a8a682cbf8af68a19504343801db9ecf9096df2f53e8",
+      "bytes": 1096089
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-184.png",
+      "sha256": "81615364ab96b140403eb5e244414bb7b7a69c6f90ebd34acb7863296e3e2e73",
+      "bytes": 1138315
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-185.png",
+      "sha256": "c09e0776922dde90284fe90dcd0b6987a2cbfc49f8cd4abb3c220b0cd0fd67c3",
+      "bytes": 1221383
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-186.png",
+      "sha256": "e379df47d8cf817cb9588eac9728caaac6b0a19a609bfa936162a79e4c2cd011",
+      "bytes": 1208361
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-187.png",
+      "sha256": "e75641e86cdff08b200f9ba866663737b338282dd70d1ca5a189abcd59facca8",
+      "bytes": 1118576
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-188.png",
+      "sha256": "4dfdcee6a05d000ba3a859361d60ea11225f0f803d783a003d0993e285d60414",
+      "bytes": 1193942
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-189.png",
+      "sha256": "5b1f627a6d350354f6444af1a30bebb75d82641b5698a8c395bb3d32ee3f4055",
+      "bytes": 1214935
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-190.png",
+      "sha256": "8ee79ede29c281fbb576b4c941e8fe34dc95ea3d136e81df7652ee148a036063",
+      "bytes": 1166123
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-191.png",
+      "sha256": "d9cd4bbcbc59fb0825a57c8e60c82db332e8549afcff94e81b3f2ec7632b2c99",
+      "bytes": 1200374
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-192.png",
+      "sha256": "4d4c58a87c033b163c7b5a85837bfdfcf6d0ff7f15e742b25df5f8a47c4d3ad3",
+      "bytes": 1169074
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-193.png",
+      "sha256": "10dc4acb1d6c9e43e7ff883eb38c8f11e2090d8d1a0d96ac32f0725f650681e5",
+      "bytes": 1150692
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-194.png",
+      "sha256": "5fb5da09230cb152f8f2a94785f5a53a30964c787cb0ecb1f8473f022b54822b",
+      "bytes": 1198117
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-195.png",
+      "sha256": "a05a307c623600dbe84dbad593acd5632c56d02a25ee701abcb73758b14cfdd6",
+      "bytes": 1263941
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-196.png",
+      "sha256": "35af899370eb6f4285cf6be0ebd1a09de6f6d4119008ab0dc15cd2d4f6f5fd91",
+      "bytes": 1193912
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-197.png",
+      "sha256": "6ac55dc76cf3a9432b4bd3b14521623bc7341e8f11af6aa257f5aefa1d7b288c",
+      "bytes": 1118187
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-198.png",
+      "sha256": "887c299c03101e6b023deac02e00c8376da64116d7473f93841cbd14f39a12fa",
+      "bytes": 1173964
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-199.png",
+      "sha256": "cbf07f9421af8f9f2dde81fda64e67795dac9f57aeea79b985f9a995287ed3ea",
+      "bytes": 1209504
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-200.png",
+      "sha256": "2da3e25c5d8e8e25da05eecde40e4ed097a6fde862e9aa266d872cb263f1c16b",
+      "bytes": 1153413
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-201.png",
+      "sha256": "222c200cc1caa06cdb42c2f8b41fe4a67513b6439bad28c472c5c15446d4fc1f",
+      "bytes": 1163448
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-202.png",
+      "sha256": "ea28fe011f360699d562edd1befbf4098b5551f034b79c2102c09b5f31a66def",
+      "bytes": 1173398
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-203.png",
+      "sha256": "8cece8d1565ebd04038d70c751143a01aa8a93e76b64faa0382bbb81a8e50b9e",
+      "bytes": 1036368
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-204.png",
+      "sha256": "38cf76bf47ca05fa4cab58dcab4dc23cf8a9108565a8d9dbfb11e4b2b5ee460e",
+      "bytes": 1200779
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-205.png",
+      "sha256": "2bdc7d93ab375520d961be188c6ffff06f2271278c60c792e0062f2551878a23",
+      "bytes": 1169994
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-206.png",
+      "sha256": "8cffdd2b32c8f1d178e10f53088cf9f0601e0ab82e1b8a1609ffa66124adfdfe",
+      "bytes": 1160080
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-207.png",
+      "sha256": "249fbddf2e1fd71d8a0f1c88c9cb8c6e087977c410937c26a49aec45e036fd5a",
+      "bytes": 1107998
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-208.png",
+      "sha256": "76e2095a7dca890a5b36ddebf5a30ee8682ed4569a48115dcea6f21d9f569958",
+      "bytes": 1162923
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-209.png",
+      "sha256": "15887156c41f2c2e6f7557b0920f409fd0b3034b25376da5c2ab0e93ca39e1c6",
+      "bytes": 1137759
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-210.png",
+      "sha256": "e950573e60d914d648f561c7e4a129cf3a769463febd115a2a453c49c12dc2e2",
+      "bytes": 1150190
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-211.png",
+      "sha256": "c9eefbed1ec6a3cbdf76f4333955ea6f8cfe2197f9fc32e08b07a3ae13558e5e",
+      "bytes": 1137459
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-212.png",
+      "sha256": "d447842f95805468a8b76e8a434bc9ef4898b22a11d634c764e52cbf2164b9c5",
+      "bytes": 1181024
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-213.png",
+      "sha256": "b07d90a462c988175726b221883e62913588e6c1a04c2fe035ec2a0db9369c21",
+      "bytes": 1206389
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-214.png",
+      "sha256": "5cb5ab7bfeea3751d4cd5c4983a0444292c9bb586b2f5198a0d1673198a50fcd",
+      "bytes": 1141907
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-215.png",
+      "sha256": "3bfe118a26af441440f5ba60f79b29227356089e54643a043a1b6470935873ea",
+      "bytes": 1085668
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-216.png",
+      "sha256": "543697356156ac713e151024bf351707c5710a23c15fc31d626dad7a6c144cb0",
+      "bytes": 1149411
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-217.png",
+      "sha256": "389772322688f520f2c3fa6f7f01650677161fff4df0f22a0cb6fdd403a8da81",
+      "bytes": 1080958
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-218.png",
+      "sha256": "d57b8e86a82ca15f6163b0a1b52c189f8b8722d392cb788cad145ea680414157",
+      "bytes": 1243784
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-219.png",
+      "sha256": "1ee699875108df480c77b79f00913e3d9809bb01a2a5c41b1725ff6a5dff8609",
+      "bytes": 1155777
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/Niese/page-220.png",
+      "sha256": "a55137fad3ad96cc832fc7f8e996062fd77cbf2a632c00e68f256f000138aa1e",
+      "bytes": 504282
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/niese-145.png",
+      "sha256": "f6ebbd9e64678e5be13ac2f0c3b534e088367f1a2c0afcb9dfe0d5c27bc458a8",
+      "bytes": 1144492
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/evidence/niese-220.png",
+      "sha256": "a55137fad3ad96cc832fc7f8e996062fd77cbf2a632c00e68f256f000138aa1e",
+      "bytes": 504282
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/inputs/English-book-12.xml",
+      "sha256": "d5cee95948e272e04c624808c299588c7fb67c31988b686afd547c73597bbcea",
+      "bytes": 144111
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/inputs/Greek-book-12.xml",
+      "sha256": "04cca637d71754a2cf277c762d9d6890fc93f052092632add8d4cbf0a6f6aecd",
+      "bytes": 236492
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/inputs/Latin-book-12.xml",
+      "sha256": "ea4e2251b81a1bfa202eecfe7f78a054464386621001093cc2e1099c5c29e41a",
+      "bytes": 117242
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/make_decision_packet.py",
+      "sha256": "07e7781554e9a88f4288bfd5855a8832563cef971364d262827ecb9ea8c4e500",
+      "bytes": 1306
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/record_decision_248_249.py",
+      "sha256": "3aaa980197919790997a7aa127ea68e0f77cf764af622a2c6e8c83c430204959",
+      "bytes": 3170
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_031_050.py",
+      "sha256": "cf57001f4e36dbdc4cba510e70d28b3ab00716427c3975ed1b7d3ca77c7efe61",
+      "bytes": 5528
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_051_070.py",
+      "sha256": "5a619588e075e0a937babde489e2a808d23c06a2d09d4d4b450ea9b77b8e3677",
+      "bytes": 5301
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_071_090.py",
+      "sha256": "2b4f8939114c2a421c3cfdd433bca0acea709ee205e161bff6bef00b6b6e2c2c",
+      "bytes": 5335
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_091_130.py",
+      "sha256": "b6dac08b44d5706251a72ca6eba7feb434eb25b2f105b7830679cf630e83aeef",
+      "bytes": 8593
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_131_160.json",
+      "sha256": "e44c860da22ae9a135a802fd5b04d2dfbe429f6fb2ef05b467bc77e90d376059",
+      "bytes": 7510
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_161_195.json",
+      "sha256": "c2b7f0da95949f87b2e7a0f585ee4afc06a61373c8b2ea4348c0184cbc4bae18",
+      "bytes": 7772
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_196_230.json",
+      "sha256": "6e708ec379fd34c0a56980544428da04ec3af0f2a303bdded36964ef5806924d",
+      "bytes": 7887
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_231_265.json",
+      "sha256": "a03b54d92ceab7c35396519a26ceeede7c5b7a6c4e6596a55ea5697429a83140",
+      "bytes": 8517
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_266_300.json",
+      "sha256": "e0852e2d7ca53be5184554f2bfb76f72f8a374c8fa33fa649a7fce9ef756ec02",
+      "bytes": 7590
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_266_300.txt",
+      "sha256": "9782404da587b08c53b990b2904755a2fcc31b47f297141eaa0294765c5b387e",
+      "bytes": 4633
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_301_335.json",
+      "sha256": "d973a5fe0aab38293d5fcb03776658c79b4c496c3770cc3d67a0b7e765e94ecd",
+      "bytes": 7565
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_301_335.txt",
+      "sha256": "6ef4a565bb542a26c9c3e6801a75f17c2e8d4369dfbca332a3a3fab5c77b0670",
+      "bytes": 4571
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_336_370.json",
+      "sha256": "e95e2d3c2a50bb0a549ca2ce8724eac3091d1112787c96c8f1983e384bfab827",
+      "bytes": 7641
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_336_370.txt",
+      "sha256": "1e3260dd04ea4f3f86878f59c325185231e0419cddec17eb970dbff513c89e25",
+      "bytes": 4650
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_371_405.json",
+      "sha256": "e9de39f1825c9f2e7ee3dfff08c764daad1bf367678133b36257e40a8e7e33b6",
+      "bytes": 7369
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_371_405.txt",
+      "sha256": "e4edd63a94526109a63055197799589a2b1eb45fefc9aa2fb7c4c85aede4fd6a",
+      "bytes": 4412
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_406_434.json",
+      "sha256": "ca851137daa008751192fe9c46fdb66ecfc54bd2e433c06ae4597a191e4846fb",
+      "bytes": 6323
+    },
+    {
+      "path": "review/Antiquities_Niese_BookXII_2026-10-09/review_406_434.txt",
+      "sha256": "d44f3a888c5b27f4b51c356220946830bf6ee452137c733b21c1b0ee543788ab",
+      "bytes": 3818
+    }
+  ],
+  "commits": [
+    {
+      "commit": "f896fff896cb135cdf39d0bddacae84672b46b4d",
+      "subject": "Freeze shared XII-XIII source provenance and isolated build method"
+    },
+    {
+      "commit": "0cc747253cc4cb802527092513459f215f7529b2",
+      "subject": "Freeze independent Book XIII inputs and printed endpoints"
+    },
+    {
+      "commit": "59e4af2b385b61a719832f581a8217b01676c806",
+      "subject": "Audit Book XII opening and boundaries 1-50 against frozen sources"
+    },
+    {
+      "commit": "95997cebb72d628135e07739cc473ae8709d2e54",
+      "subject": "audit(antiquities-12): review Niese starts 51 through 195"
+    },
+    {
+      "commit": "b565de873e52c9a79a65660ff9669bc994c55ddc",
+      "subject": "audit: preserve duration paratext and adjudicated interval states"
+    },
+    {
+      "commit": "8138556c8cb7f119bfe4028fbe4c18e5de3817aa",
+      "subject": "audit(XII): review 196-265 and adjudicate displaced 248-249 correspondence"
+    },
+    {
+      "commit": "b73de45e385615659f7217cbbff76665e0ead16e",
+      "subject": "audit(XIII): review 1-70 and exclude printed contents duration"
+    },
+    {
+      "commit": "fab393b9df7723b9476e2d5dd7fa758624442945",
+      "subject": "audit: preserve projected narrative coordinates and per-book marker machinery"
+    },
+    {
+      "commit": "a291fb63a4fe500a5629c4323bcfb09e4fff40a3",
+      "subject": "audit XII: complete 434 boundary reviews and approved marker plan"
+    },
+    {
+      "commit": "5d9912aec6551685a68e11bd5b5a0ccdd47d75b0",
+      "subject": "Greek XII: mark independently verified implicit opening identity"
+    },
+    {
+      "commit": "c78837457c7fc43ed3e4853e5117d6e20378b78e",
+      "subject": "Latin XII: implement reviewed Niese intervals and qualified correspondence"
+    },
+    {
+      "commit": "8ed7549fa79e3e77dcf8c2e875430ae2e6412bbd",
+      "subject": "reader: enable XII identities and respect explicit final narrative boundary"
+    },
+    {
+      "commit": "e672d237ec3f9853c9b6d15b87d6f6b1dc33680e",
+      "subject": "audit XIII: validate projected plain-label coordinates without changing sources"
+    },
+    {
+      "commit": "1f2fa3ec21f2fd6b71b02e668cc22c1146bc9356",
+      "subject": "audit XIII: individually review printed and Latin starts 71 through 140"
+    },
+    {
+      "commit": "f6284afd94510977924bfa2ea1661fed15fcc73a",
+      "subject": "XII: expose reviewed partial and displaced correspondence limits"
+    },
+    {
+      "commit": "a6198228c9716f4588a1066d4a5206fccbdf99a7",
+      "subject": "QA: isolate local browser certification and protected baseline comparisons"
+    },
+    {
+      "commit": "3b7324ecd15aa283d09cadc28801b79f074794c7",
+      "subject": "Audit: bind source recovery and per-book reader certificates"
+    },
+    {
+      "commit": "f5483e3601746697d456217531f017a99140e76d",
+      "subject": "Antiquities XII: certify 434 local selections and preserved source bytes"
+    },
+    {
+      "commit": "d201dfc569ad6bff8b484bc70f0f66355722a0b2",
+      "subject": "Antiquities XIII: review each start 141–195 against printed Greek and Latin"
+    },
+    {
+      "commit": "d3213cbce251492c459a4f095a487638c358be85",
+      "subject": "audit: support anonymous paragraph locators and inherited English context"
+    },
+    {
+      "commit": "d0153fab57eb263ae74841c452d4c99da57379a0",
+      "subject": "audit: complete XIII boundary review and record pending 213–216 alternatives"
+    },
+    {
+      "commit": "3df77bb5dd04a85925975b63332ed3fa53111ad0",
+      "subject": "audit: stage approved markers independently of pending representations"
+    },
+    {
+      "commit": "ce889cf3c50f2a8e625d928c89346b8a7caea74f",
+      "subject": "corpus: mark independently printed implicit XIII opening identity"
+    },
+    {
+      "commit": "288ef24fa7b86eb535ed4422ecd5de28398936a6",
+      "subject": "corpus: add approved XIII Latin milestones excluding pending cut"
+    },
+    {
+      "commit": "88fb92d211e2329e1b2b5e5de4efff48fc8a518b",
+      "subject": "reader: select explicit Niese milestones in anonymous Latin paragraphs"
+    },
+    {
+      "commit": "642c767c01f6979e204452ffb7bf3fdbceb3afd0",
+      "subject": "audit: distinguish routine rehearsal from completed reader certification"
+    },
+    {
+      "commit": "429eb4495ea5d174ace6b513405f53118489445a",
+      "subject": "audit: refresh XII certificate against anonymous-paragraph reader support"
+    },
+    {
+      "commit": "3d15c3fe321e95cd2f2d52e06cefcf15f5816e50",
+      "subject": "audit: preserve XIII routine implementation QA and updated decision history"
+    },
+    {
+      "commit": "405a029669f61bea8a02d1f2a8f903399096f51a",
+      "subject": "audit: record rebuilt branch protected comparisons and build evidence"
+    }
+  ]
+}
