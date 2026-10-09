@@ -27,7 +27,7 @@ for m in matches:
  validate(l,r['Latin_locator']);starts.append((n,off))
 # Retained labels are read from original label positions, not semantic incipits.
 for r in rows:
- if r['physical_placement_status'].startswith('RETAINED'):
+ if r['physical_placement_status'].startswith('RETAIN'):
   label=next(v for v in l.labels if v['id']==r['Latin_paragraph_id'])
   assert r['Latin_locator']['book_offset']==label['book_offset'];validate(l,r['Latin_locator'])
   starts.append((r['number'],label['book_offset']))

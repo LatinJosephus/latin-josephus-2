@@ -27,7 +27,7 @@ for b,roman,total in [(14,'XIV',491),(15,'XV',425)]:
  if b==14:exceptions=[dict(paragraph='latin-book14-num25',label='[II.ii.26]',visibleClaim=26,actualSection=25),
   dict(paragraph='latin-book14-num133',label='[VIII.ii.133]',visibleClaim=133,actualSection=133)]
  if b==14:
-  for n in [199,230,237]:
+  for n in [199,230,431]:
    if rows[n-1].get('implementation_approved'):exceptions.append(dict(paragraph=f'latin-book14-num{n}',label=None,visibleClaim=n,actualSection=n,reason='Visible label is within a reviewed section or its predecessor; the adopted milestone supplies the actual executable start.'))
  # Assert the exact inherited visible label from the frozen XML, not a guess.
  if b==14:
