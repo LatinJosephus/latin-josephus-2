@@ -1,0 +1,2464 @@
+{
+  "mode": "preflight",
+  "result": "PASS",
+  "canonical_HEAD": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "refreshed_origin": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "implementation_HEAD": "2b07ac23143d7fa551753aee1d7051da5a77b99a",
+  "recorded_base": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "audit_checkpoint": "fb8a65e2a6c7d6e5426f3b4751d30e67528b1a28",
+  "incoming_sequence": [
+    "7133a3e1c61b8138505b65f9436b288d2370839c",
+    "6d82c7745a428b39a07a81a636b6b60db3853e8d",
+    "43b3320f42bd7564da5b218f85f665ed7a12b127",
+    "2b07ac23143d7fa551753aee1d7051da5a77b99a"
+  ],
+  "incoming_files": [
+    {
+      "path": "_includes/display-settings.html",
+      "Git_blob_sha256": "56dbc944d350c627562fa0d85d843ee8fe3cb94fe47d7cd17fa019991e6e3315",
+      "bytes": 7311
+    },
+    {
+      "path": "assets/js/renderTei.js",
+      "Git_blob_sha256": "4ace5e81d4f452aec87d52ab798d7b3453041e24096d15461e2054d1be38ba21",
+      "bytes": 126283
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-08.xml",
+      "Git_blob_sha256": "3ae0e04f7ccb24c05bdcb166f40a143098c4f5c73be74e1edc2985b1a09cbb9e",
+      "bytes": 269217
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-10.xml",
+      "Git_blob_sha256": "764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7",
+      "bytes": 165709
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-08.xml",
+      "Git_blob_sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "bytes": 159579
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-10.xml",
+      "Git_blob_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "bytes": 104103
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-08.json",
+      "Git_blob_sha256": "f5b9773bd744535f695ac6f6875f0563d8a6a5c91bb69a42cc860d3ed84460f6",
+      "bytes": 80538
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-10.json",
+      "Git_blob_sha256": "8646d7f86b5241f65433eff8d1cb5cf8c520676bd8be9ea99e6e4e54743f7853",
+      "bytes": 54517
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/ADJUDICATION_MODIFIED_FILES.json",
+      "Git_blob_sha256": "134c944437d7b3c4f74d81a68ec2b7dad8db26c5ce3a85e2af7c5d1c4c792396",
+      "bytes": 4070
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/ADJUDICATION_SUMMARY.json",
+      "Git_blob_sha256": "309a4523762210e6bc49579d3f3b66908828c66ad06b92b23e8cd1d99bbb8a31",
+      "bytes": 1484
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/ADJUDICATION_SUMMARY.md",
+      "Git_blob_sha256": "6ce1cdd456c66fc6f5db8a5b5f4c85b64b782ac69340d2d710b7ec0e56bdd0f5",
+      "bytes": 859
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/ADJUDICATION_VERIFICATION.json",
+      "Git_blob_sha256": "95761938067499a28a9d74855a463333523442fb4245bb6276d68d3ab8c5f6cb",
+      "bytes": 6309
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/ALIGNMENT_ALL_QA.json",
+      "Git_blob_sha256": "328076d782b8f637b45f44a836d11f728165e3ab9064e5eb4e3f426a0e8c33d9",
+      "bytes": 3480
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/ARTIFACT_STATUS.md",
+      "Git_blob_sha256": "0ddd6f129fa8f0351ef1681853f75810dc9d6181041b7d810aab3c4789dfc2a2",
+      "bytes": 510
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/AVAILABILITY_CURRENT_BASELINE_QA.json",
+      "Git_blob_sha256": "3d5bf6817b3b74e61491a334ce44e2736e5fbd19e3cf5f009a8d5ca027e3dbd4",
+      "bytes": 1881
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/AVAILABILITY_QA.json",
+      "Git_blob_sha256": "3d5bf6817b3b74e61491a334ce44e2736e5fbd19e3cf5f009a8d5ca027e3dbd4",
+      "bytes": 1881
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BAMBERG_BROWSER_QA.json",
+      "Git_blob_sha256": "b2f0cc3dddd649ac2fa62508f37ee7829e74f9592937296fad1ec547a37b6133",
+      "bytes": 9200
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BAMBERG_CONTROLS_dark.png",
+      "Git_blob_sha256": "13f274a6de02626039618ce410357cee9ff2b05f85d6d2e956b751e3a56e9b52",
+      "bytes": 39272
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BAMBERG_CONTROLS_light.png",
+      "Git_blob_sha256": "cb2fa456b12f63d330789d44718eb3faa2f0a6c943fb779f66b63d3f16f84a70",
+      "bytes": 41985
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BAMBERG_CURRENT_CONTROLS_dark.png",
+      "Git_blob_sha256": "0045a55ea578dfa5c809e92ae5e7f0f09b29a65fcb758e82ed37acfa07f40bfa",
+      "bytes": 40116
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BAMBERG_CURRENT_CONTROLS_light.png",
+      "Git_blob_sha256": "cb2fa456b12f63d330789d44718eb3faa2f0a6c943fb779f66b63d3f16f84a70",
+      "bytes": 41985
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BAMBERG_RANGE_QA.json",
+      "Git_blob_sha256": "2aad886c17709ec27c6a0da8cb218e29f8de381ce13b1750ff6645b4be91e3ff",
+      "bytes": 353356
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BAMBERG_URL_QA.json",
+      "Git_blob_sha256": "9f8379e6a0e4e84c45608b45223a768d80b7c0cad85108d00b0e3d9279fec3a0",
+      "bytes": 42850
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BOOK_RESULTS.json",
+      "Git_blob_sha256": "d110e8ba6ce712a1c74074432344552a4769d4eeb901899ce80983d2dab66f06",
+      "bytes": 2368
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BROWSER_PROGRESS.json",
+      "Git_blob_sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/BROWSER_QA.json",
+      "Git_blob_sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/CANONICAL_ADVANCE.json",
+      "Git_blob_sha256": "8f803d8005654dcae287ef363cc4606e5d9b60590c180dc39b5c057647c7fb57",
+      "bytes": 3626
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/CANONICAL_ADVANCE_FOLLOWUP.json",
+      "Git_blob_sha256": "c0b0f709e67dcecf44abf00b8bc9324e6fe6f74f660102989bcd2c9acee994dc",
+      "bytes": 11693
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/COMMITTED_CHECKPOINT.json",
+      "Git_blob_sha256": "3b057550d5555795a8fd4530ee85fb76e859ef9155c4e96ac349f2d4e9a18809",
+      "bytes": 356
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/CONTENTS_BROWSER_QA_2026-10-08.json",
+      "Git_blob_sha256": "c80c73cc8ce33dd0c536528b6e7720dd14a3c3ffc3f201dbf05ee384e27977fb",
+      "bytes": 32575
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/CONTENTS_CURRENT_BASELINE_QA.json",
+      "Git_blob_sha256": "c80c73cc8ce33dd0c536528b6e7720dd14a3c3ffc3f201dbf05ee384e27977fb",
+      "bytes": 32575
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/CONTENTS_CURRENT_dark.png",
+      "Git_blob_sha256": "12d52892a7f0c5b6f3ee62f47ad250ae14beb3018de148d83011cb59262aefee",
+      "bytes": 132588
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/CONTENTS_CURRENT_light.png",
+      "Git_blob_sha256": "1f1566b4412a3ee3a3c7a70c3427e1ce3e8445a8be7c65de38c4e009469a705f",
+      "bytes": 126920
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/CONTENTS_EXPECTATIONS_2026-10-08.json",
+      "Git_blob_sha256": "9fdc685f02614aa12bb0683dc00a20f6079ae017651abe9af5df22aa6be5408c",
+      "bytes": 122735
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/FILE_MANIFEST.json",
+      "Git_blob_sha256": "15b9d62ed429b12972086e80255b5a7299dae4129b0d5975ecc0605867abeb51",
+      "bytes": 81460
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/FINAL_ADJUDICATION.json",
+      "Git_blob_sha256": "309a4523762210e6bc49579d3f3b66908828c66ad06b92b23e8cd1d99bbb8a31",
+      "bytes": 1484
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/FINAL_REVIEW_FILES.json",
+      "Git_blob_sha256": "f28394c46efc555d683f4c64fff001570c78d0f6eb351cd9a3b9f3fac2126a3b",
+      "bytes": 5484
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/FOLLOWUP_GATE_QA.json",
+      "Git_blob_sha256": "cf4c9bbf3395d3592aafbf897bcbeff2cf2d2af173bd74b8adbc5302633cfc92",
+      "bytes": 145295
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/FOLLOWUP_MODIFIED_FILES.json",
+      "Git_blob_sha256": "3a5e9c89d9759d34a267caf56b5afb9d7e07508e5d9c83f188e57235d1fab933",
+      "bytes": 20637
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/FOLLOWUP_QA.json",
+      "Git_blob_sha256": "bc844166af4f534501c561320ea94b321f1fe3acd535c810b0597b2c00965d0f",
+      "bytes": 5219
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/FROZEN_SOURCE_VERIFICATION.json",
+      "Git_blob_sha256": "569e3756d4eee4d7693b7c8ceb5e6a019632768b04f0e95512623d2dc392ce83",
+      "bytes": 69441
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/INTERACTION_CURRENT_BASELINE_QA.json",
+      "Git_blob_sha256": "602cd39b8490f53d155703d26e048f806ad0cb5aedb6e8a9f2c4c2f4685a0fb9",
+      "bytes": 2701
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/INTERACTION_QA.json",
+      "Git_blob_sha256": "602cd39b8490f53d155703d26e048f806ad0cb5aedb6e8a9f2c4c2f4685a0fb9",
+      "bytes": 2701
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/JEKYLL_CURRENT.log",
+      "Git_blob_sha256": "6b1aa9c25ae3d755d588f978280b798a9b4db10ca4ed478347d1c448402f2f21",
+      "bytes": 4896
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/JEKYLL_INITIAL.log",
+      "Git_blob_sha256": "072c499df125c9bb4c10edc5b59e547e6e4f57b0b9f3a3c6b4a76952198f1508",
+      "bytes": 4891
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/METHOD_SOURCE_MANIFEST.json",
+      "Git_blob_sha256": "7c930868036c25ce9325a2c96cd14fedd89692b318518846da72bf15f96a6b64",
+      "bytes": 3147
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/MODIFIED_FILES.json",
+      "Git_blob_sha256": "3364c2c4c3264d7258b3824f1c39c741a1c00b69315005942eed1142b417d4de",
+      "bytes": 11112
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/PRE_FINAL_ADJUDICATION_SUMMARY.md",
+      "Git_blob_sha256": "2962859506d80f03b0a9feabba7c56afb66ddc4ea25e9a38d28151fd58f80e38",
+      "bytes": 4832
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/PRE_FINAL_REPORT.md",
+      "Git_blob_sha256": "2962859506d80f03b0a9feabba7c56afb66ddc4ea25e9a38d28151fd58f80e38",
+      "bytes": 4832
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/PRINT_COLLATION_SUMMARY.json",
+      "Git_blob_sha256": "80d53082aca88f1dfd8762eaf328e5ac14ee658aaafee2503ca252cb0e4e7a96",
+      "bytes": 5286
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/PRINT_COLLATION_SUMMARY.md",
+      "Git_blob_sha256": "70c9128d908f33537ceb5138f581d07c070ccde783235735bb2ae315447cd690",
+      "bytes": 4411
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/PRINT_EVIDENCE_MANIFEST.json",
+      "Git_blob_sha256": "365ec4090958f66bd436ec59acd25eef2815f0c5b335a82174316747210bd4fd",
+      "bytes": 102263
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/PROTECTED_SOURCE_GATE_QA.json",
+      "Git_blob_sha256": "6eac25d88ebab03af1a4323ceec1f506f0e7f7b649bc031f68f0196bd5304c1c",
+      "bytes": 2520
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/QA.json",
+      "Git_blob_sha256": "1005d17a3e5c493f13b84eb8753494cc83036b19c3e0e3a53d67b4c22ce624ab",
+      "bytes": 3147
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/REGRESSION_SUMMARY.json",
+      "Git_blob_sha256": "35dad19201bc039925a7d90082722a323f2ac235bbac0223030145763eb439f3",
+      "bytes": 3396
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/REPORT.md",
+      "Git_blob_sha256": "6ce1cdd456c66fc6f5db8a5b5f4c85b64b782ac69340d2d710b7ec0e56bdd0f5",
+      "bytes": 859
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/REPOSITORY_INTEGRITY_QA.json",
+      "Git_blob_sha256": "5cf696d9adf6a674adfcab8c24815535da88566175e270805aa10811e4a44d7d",
+      "bytes": 356538
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/REPRODUCE.md",
+      "Git_blob_sha256": "89603a34a8568a33608ba65b24748b162faa0dd44b8a2be1173e29a5ae1ddc34",
+      "bytes": 471
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/REPRODUCIBILITY_QA.json",
+      "Git_blob_sha256": "e9557c4790bdc277fc6f26f3b6d51f167a6cc36dc4d3b2f3769b38e9b7fad0f0",
+      "bytes": 1817
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/SAME_NIESE_DIFFERENT_POSITION_QA.json",
+      "Git_blob_sha256": "c7ae48660461bb2053a4987741ea87bf2a079b3fb4f1b2be069fa2fa0fa13cbc",
+      "bytes": 6892
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/SOURCE_MANIFEST.json",
+      "Git_blob_sha256": "7d88c8fa83be333e2eace07819351f8cd3f9b362534a65129811859dbde6061e",
+      "bytes": 81951
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/SOURCE_SEARCH.json",
+      "Git_blob_sha256": "1d9e56710f7013121fe60b21cf4bc9843ec8aa3d7697f652487bd38be16881a3",
+      "bytes": 22904
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/TEST_HARNESS_NOTES.md",
+      "Git_blob_sha256": "53d7360c2e0d69ba8f0fe05618fd42eb4e051327d4e9291835d2259ea2c07221",
+      "bytes": 2525
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/VI_ALIGNMENT_GATE_QA.json",
+      "Git_blob_sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/VI_LOCATOR_GATE_QA.json",
+      "Git_blob_sha256": "0243ad1ab3c058dd3e4bd760b884b1e02fd0e12c55d91d9c012edda61f6f5ce2",
+      "bytes": 3999
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/XI_MULTISPAN_GATE_QA.json",
+      "Git_blob_sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/availability-current.test.cjs",
+      "Git_blob_sha256": "88c794dcc1c4e222a53df4bcc1b1333505eef70bd5e678c5691efc5901e32dc2",
+      "bytes": 6798
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/availability.test.cjs",
+      "Git_blob_sha256": "0e77401e6f17965bf9c5e72dafa199de469a98ce9e61f79c0b80947914892238",
+      "bytes": 6773
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/bamberg-regression.test.cjs",
+      "Git_blob_sha256": "7ed9f1427a2a1140ea3481ed6bd341948cdceb57cc20436e4fd913934934f5d0",
+      "bytes": 15931
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/build-current.sh",
+      "Git_blob_sha256": "f19742c9d7b4ce736251ceb706175df89da499fec7f152fbaa02f3e712480e96",
+      "bytes": 577
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/build.sh",
+      "Git_blob_sha256": "9e2bb92322f36c3e361da7d291f652bfc1511ba53ea6538653292e085bc49370",
+      "bytes": 541
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/candidate_adjudication.py",
+      "Git_blob_sha256": "3d778ac1e23a21ef7616c85da163f0daef7b393ea1f352c65c67c8e95b63a63d",
+      "bytes": 23678
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/contents-current.test.cjs",
+      "Git_blob_sha256": "01ff2609abc10c683219f1401d894cc47dc2752bc56f40bff355b0d1a355297f",
+      "bytes": 14071
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/contents.test.cjs",
+      "Git_blob_sha256": "7ce2defb93d0ec1eba1656ee54a7f83504908e79f0720526d545890aa6434c1c",
+      "bytes": 14049
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/development-diagnostics/BROWSER_FAILURE.json",
+      "Git_blob_sha256": "08552f1596e924fd7d64ea42a980330951d82d120b66d4e02fcaf31f356f0620",
+      "bytes": 2274
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/development-diagnostics/INTERACTION_DIFFERENCE.json",
+      "Git_blob_sha256": "7ebec8f80d9b65c4a8cecac0aa46ed1b4f92c4eeccc3e2d8f11eb928dc2ba1ea",
+      "bytes": 49002
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/development-diagnostics/INTERACTION_FAILURE.json",
+      "Git_blob_sha256": "378a69068ca9a0bbbade2d8ed36bf57daf07c0426dded41937698ba59e6b9fed",
+      "bytes": 74
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/final_adjudication.py",
+      "Git_blob_sha256": "76d721b0c86741f40d22210a6fe1d4f4e8d202ddee5f3407fc8ffc2edd0dd400",
+      "bytes": 17372
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/finish_adjudication.py",
+      "Git_blob_sha256": "6910731d36de26daf06a3195b1446524f6926b9af90cd383a0e14705c9ac0eb9",
+      "bytes": 37097
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/followup_collation.py",
+      "Git_blob_sha256": "e7a4d438b152e10380718839e49055a8fc2841d08f20765f69a4a0962fb391db",
+      "bytes": 28896
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/followup_decisions.py",
+      "Git_blob_sha256": "48912176e264741930e8fbf1a3dd4d231003a7b6a08fb36b2305ddf05c5eee01",
+      "bytes": 23518
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/inspect_batch.py",
+      "Git_blob_sha256": "a7a3c3b4bd470f58379cd3d83ae5621f65be2e0fb5e5550f276d8a0d2d8960c0",
+      "bytes": 3821
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/interaction-regression-current.test.cjs",
+      "Git_blob_sha256": "30b3750e18eebe3eac3a2dff710f1cb68657fe5a34a5a7aa1762a98b434bf478",
+      "bytes": 11547
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/interaction-regression.test.cjs",
+      "Git_blob_sha256": "eebee5495dfaf6ab1a71b9dd2cbaee976b432e0aaf69ee1ae7f7c36592c01e07",
+      "bytes": 11490
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/pdf-metadata.json",
+      "Git_blob_sha256": "adda5c1a06c257048ded390a0f723ff84e9c02679f9280ab93703fc1a06eb9cd",
+      "bytes": 1897
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/record_latin_reviews.py",
+      "Git_blob_sha256": "24f7a94969f9be880879804a77d64f5370926cf560726adbc01fe33098d84b5d",
+      "bytes": 1349
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/regression.test.cjs",
+      "Git_blob_sha256": "cefea5f4dab4bc2f84cb21e4a8fbb6bc841f2e799e4a6bb9c50563139a226aa2",
+      "bytes": 45874
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/reproduce_print_evidence.py",
+      "Git_blob_sha256": "aede053d08a90dc7567a5481afbe257e59e6fcc71000c8b4afdf756d2430fcf0",
+      "bytes": 1664
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/source_verify.py",
+      "Git_blob_sha256": "9b522549180dcf951aaefc28b9ef2dc54543a5333231a6d0326ba429ab584889",
+      "bytes": 2612
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/verify_adjudication.py",
+      "Git_blob_sha256": "8856d750f400efc9d896991ca12cdd0f89d7d803e480a6309303387baf9ee68f",
+      "bytes": 16772
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/verify_followup.py",
+      "Git_blob_sha256": "3240c2e2e60273657def7d96be4d7133994c81bb5477a67b225baec6e26e0c95",
+      "bytes": 12104
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/verify_repository.py",
+      "Git_blob_sha256": "10032d5a26a78f241bb994dd715c165032b8f1792c4b3358f171604f7ce30747",
+      "bytes": 3330
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/ABSENCE_SEARCH.json",
+      "Git_blob_sha256": "69ebdbc9e17b853cba04c56fffdfa1b18b706f2ad193ab1d89c82fb3d7dd2d6b",
+      "bytes": 75211
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/ADJUDICATED_GREEK_PROPOSALS.json",
+      "Git_blob_sha256": "8c36a3e1a28a411b7b6d64070f418e1930d32184a2318e0c3056dfc5e46fcc60",
+      "bytes": 48275
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/ADJUDICATION_HISTORY.json",
+      "Git_blob_sha256": "ae845d3bf71475be1d4df9de445ad31addd6b4199c0165457c09346fe1208dd6",
+      "bytes": 356987
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/ADJUDICATION_QA.json",
+      "Git_blob_sha256": "9aae33df054506b494e83dfb6046adb6cc3f7371c1139aa616efe28d22783267",
+      "bytes": 7534
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/ARTIFACT_STATUS.md",
+      "Git_blob_sha256": "65d649d94232a25a096047caf0f778652ca5c39953c7d284859f08d491b885ae",
+      "bytes": 553
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/AUDIT_RESULT.json",
+      "Git_blob_sha256": "9aae33df054506b494e83dfb6046adb6cc3f7371c1139aa616efe28d22783267",
+      "bytes": 7534
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/BASELINE.json",
+      "Git_blob_sha256": "a52a68edb72f7f11cdb75eba76bcf29f5410beb5c224f4df5402ace1ab179005",
+      "bytes": 760941
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/BOUNDARIES.json",
+      "Git_blob_sha256": "6e57bec2f09f737a790885c8760e27d1290a3fe2dc83960012afc28749e853f8",
+      "bytes": 7621377
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/BOUNDARIES.tsv",
+      "Git_blob_sha256": "481f6528b0e7410e11fcf13493db9998992ff75807d2cead2ee5568a05da19fe",
+      "bytes": 975428
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/CANDIDATE_ANCHORS.json",
+      "Git_blob_sha256": "69f974fb2e2eabdcfd10c9eea24526c8007a4fc793dbf9a1290f05e26cf0ce74",
+      "bytes": 16596
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/CANDIDATE_DRY_RUN.json",
+      "Git_blob_sha256": "16f64c03d71c4632cf7b18d90294fcf35ae88d389819e6d21fbc54a71a7172fa",
+      "bytes": 602
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/CASES.json",
+      "Git_blob_sha256": "1902d4cd28999d7cf65197062fac6812ed709e3edfc01f0f2706a1257405b9d2",
+      "bytes": 6573
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/CHECKPOINT_AUDIT_RESULT.json",
+      "Git_blob_sha256": "c0ff77dc81d98fcf3070307782da7721757f440c89c1326cdc6a8d2155a2e60b",
+      "bytes": 1110
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/CHECKPOINT_QA.json",
+      "Git_blob_sha256": "f447f60fb83a84e92d7833b5a8345d028f9f874f136f59ccb9db8fb91a52921c",
+      "bytes": 3109
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/COLLATION_SUMMARY.json",
+      "Git_blob_sha256": "fb107448387cf6a96aa14ab291fce37985c91bdb232f7c8e0f20aa2125b39028",
+      "bytes": 1874
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/CONFIDENCE_CROSSTAB.json",
+      "Git_blob_sha256": "62d40134f13a1cc3936506af11be02838abf9c5618a4f46b41ae6f60a553ec10",
+      "bytes": 879
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/DECISION_HISTORY.json",
+      "Git_blob_sha256": "16a0e05ab0630cc6345c806b17b2130903657022d0ce7b27edbac7badd092286",
+      "bytes": 1472144
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/EXECUTABLE_IDENTITIES.json",
+      "Git_blob_sha256": "06590936565fae656d61d9a3f0378ba72176022b730aa3331ed06d944c976242",
+      "bytes": 578721
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/FILE_MANIFEST.json",
+      "Git_blob_sha256": "1cdb1a1873d9c12a7db7f2f38c5f4e4d0ac30825758a81f356b5526fe2acdbe4",
+      "bytes": 29229
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/FINAL_DECISIONS.json",
+      "Git_blob_sha256": "8e2cc72d9d95ea2a187f273a6b3560214d47a2295c3b6d5579e86ba2b09ffacb",
+      "bytes": 581
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/FOLLOWUP_DECISIONS.json",
+      "Git_blob_sha256": "51bea3d22bd67d9b07eb8cd1cf8428e35f99832fea51ad150d7c22b768ce068b",
+      "bytes": 177337
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/FROZEN_PRINT_STARTS.json",
+      "Git_blob_sha256": "1277687cf53227840ca98d7ee4e268a097d54b4119df1ce2bf7e2bdb0b8f17e4",
+      "bytes": 113966
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/GREEK_INCIPIT_CHECKS.json",
+      "Git_blob_sha256": "8b4971a67573789d3ef45f9b5041c763125a8285249eddc4248e5df19b289779",
+      "bytes": 745
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/GREEK_REPAIR_PROPOSALS.json",
+      "Git_blob_sha256": "a56f71596a4d1371963309690f53a9e4d4895c6b7d60a23ec7f3baaafbb8ed17",
+      "bytes": 27135
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/IMPLEMENTATION_BROWSER_QA.json",
+      "Git_blob_sha256": "05b5c78e5a0c9dc3bcd610ad128627677dcea3b875416b6f570f717203e87ffb",
+      "bytes": 412
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/IMPLEMENTATION_FILE_MANIFEST.json",
+      "Git_blob_sha256": "d21b1ac478ef6cfd4afe138104e6a30a7d894edd558df795133ab0f832f8797d",
+      "bytes": 38824
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/IMPLEMENTATION_PRESERVATION.json",
+      "Git_blob_sha256": "ef582d6f670d2f52e1ff8378a545d15854248d02e8d8caa1031caa544799b5bc",
+      "bytes": 505729
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/IMPLEMENTATION_QA.json",
+      "Git_blob_sha256": "ab13bc8246546d3836bb42642542fb78f0445abb8526b5538cacfa234bf7552e",
+      "bytes": 1312
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/IMPLEMENTATION_REPORT.md",
+      "Git_blob_sha256": "ef3a51701fa050ef16c595b6b39eea83965b6098fb2962112c1bd9bf80af560f",
+      "bytes": 5117
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/IMPLEMENTATION_SOURCE_AUTHORITY.md",
+      "Git_blob_sha256": "e8242511c1d9669c7081b4b8f4e0c499c387d4c668e34474a07ea156af15d83a",
+      "bytes": 1549
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/IMPLEMENTED_EXTENTS.json",
+      "Git_blob_sha256": "d4064cfec9b06eafc28cf323855d027b24669427e26c666ab163655356b5f1be",
+      "bytes": 175770
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/INSERTION_PLAN.json",
+      "Git_blob_sha256": "9113ed56f704ef5ac57455792fe41b4b9416b36bd6fa8ce926718a455c3e6f3b",
+      "bytes": 349755
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/LATIN_INDIVIDUAL_REVIEWS.json",
+      "Git_blob_sha256": "7b1c292673bfdb1f3e197bc1e0ac24e869906098b8ac5bfac7f4fffb3f907d44",
+      "bytes": 121840
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/LATIN_TEXT_NODE_LEDGER.json",
+      "Git_blob_sha256": "3810315ce71afcd553d5aabf4fa5cab172c8e56c9b044ac35ce89137691805f3",
+      "bytes": 1900855
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRE_FINAL_BOUNDARIES.json",
+      "Git_blob_sha256": "5df0278d683ece77754f7f11de596022b95635a2e26df75176cedbd1a144efbc",
+      "bytes": 7468497
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRE_FINAL_INSERTION_PLAN.json",
+      "Git_blob_sha256": "86ecdf87513480d55e3d6a2919cc7e047168a5f8a137d7831293572d693fc598",
+      "bytes": 553
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRE_FINAL_QA.json",
+      "Git_blob_sha256": "5a437b9d3b8a3bc86f0db5f1028869a980ee0f82a59ba99c2e358f990c0bb51e",
+      "bytes": 7089
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRE_FINAL_REPORT.md",
+      "Git_blob_sha256": "fd88f6876df5f76c06f088349aa5ae0178e800ccafbc6327984439d2d62bb7f7",
+      "bytes": 3209
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRE_FINAL_REVIEW_CASES.md",
+      "Git_blob_sha256": "fb03f4c1c7845577192cfa88003da553d614d7a1793d51c1a050338688df42b0",
+      "bytes": 65560
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRINTED_SOURCES.json",
+      "Git_blob_sha256": "d446be0b7635a1524f4cbe48bec3158e6efa90c3aee98030c2df3c6618b8e3e2",
+      "bytes": 1166
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRINT_CHECKPOINT_REVIEW_CASES.md",
+      "Git_blob_sha256": "fe234e73be52c0f3c893524480348233baac4f3370d3aa55e77c6e59b92b7d12",
+      "bytes": 83809
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRINT_COLLATION.json",
+      "Git_blob_sha256": "2864c8b40d0f15701f7b0e7954b41fc56c5309f167787578bfc1c91720596378",
+      "bytes": 922584
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/PRINT_OBSERVATIONS.json",
+      "Git_blob_sha256": "d7481223b1cca4332c610772adb64a8fec76bf00e99d57795ab85c87997d9c57",
+      "bytes": 733250
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/QA.json",
+      "Git_blob_sha256": "9aae33df054506b494e83dfb6046adb6cc3f7371c1139aa616efe28d22783267",
+      "bytes": 7534
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/REPORT.md",
+      "Git_blob_sha256": "83f20f55f8777573b0da24bf4e8a194bbf2f8887ce81af142067c8ebf067e95f",
+      "bytes": 1593
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/REPRODUCE.md",
+      "Git_blob_sha256": "d5a2256b76b6b0ec44f089781f8643b1eab03a04467a06ddf5508caecb83a73d",
+      "bytes": 319
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/REVIEW_CASES.md",
+      "Git_blob_sha256": "4e985c3b96b6e1441cffceaafcf1a7014165ae3f49dacc253de70b39f646f0b8",
+      "bytes": 1295
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/SOURCE_AUTHORITY.md",
+      "Git_blob_sha256": "d8465faa76da0b2019ffeeb6cbc65a29d5544991067bd66e450755111231d80b",
+      "bytes": 10175
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/STRUCTURE_REFERENCE.json",
+      "Git_blob_sha256": "5db70df7911f1e7507596bb8b5069582c81917e9effb82e084eeed987ba717a3",
+      "bytes": 230977
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/VERIFICATION_OBSTACLES.json",
+      "Git_blob_sha256": "a20d4b59f080ff2cb025afdff546de9317efc922eb0718ae1d558adcf50e6e18",
+      "bytes": 366
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/XML_SOURCE_NOTES.json",
+      "Git_blob_sha256": "e9a23f39b59b4c6b71c30a2ce7d74d45c9b543530ae73b7f71afe502153379f1",
+      "bytes": 370
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/absence_search.py",
+      "Git_blob_sha256": "f7788bbfaaeed4e6a9ac3c31323c0a8cd016a9904a1c5f4064d10a644b30e414",
+      "bytes": 2231
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/audit_book.py",
+      "Git_blob_sha256": "beda686cf7713b76be0140dab44423b72befc9d797a51657d4c629ffb57ceea7",
+      "bytes": 10492
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/loeb-V-title.png",
+      "Git_blob_sha256": "901af6251818b74235afdac232be61eb17c4ad4d5154512054e665cbc2292d32",
+      "bytes": 222390
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/loeb-VIII-255-718.png",
+      "Git_blob_sha256": "8a2d4950951cb1c89f05c35436e34624bcec6912e0bb5eb33873da086251e01b",
+      "bytes": 515959
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/loeb-VIII-255-719.png",
+      "Git_blob_sha256": "b03ec5eeba72df4a5762e6a4d0102477ba015550b86f75da12596ff416dfd5d7",
+      "bytes": 537471
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/loeb-VIII-opening-580.png",
+      "Git_blob_sha256": "f00f7de998c4b7fb1ec80c44ad486e505929ca596f71b72cc7f08d39be57a374",
+      "bytes": 389633
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese-VIII-255.png",
+      "Git_blob_sha256": "ade59ad1550d8184a0b9f763d355e7b65f236abc728eb46d3b5ffdd93bfd7917",
+      "bytes": 381525
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese-VIII-end.png",
+      "Git_blob_sha256": "3da679d381cc441ff5edb6ea3a662ac38de42a678352d1bee14f8b3410776ad9",
+      "bytes": 382134
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese-VIII-opening.png",
+      "Git_blob_sha256": "770eacda7e60120feb5df73c148ddb726981cb4b52ad2d8b17431e09ad07e3b4",
+      "bytes": 325478
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese-critical-225.png",
+      "Git_blob_sha256": "09e475d995864b9bbb88af61aef159f6a7412baf674b76f2e5cad68e7f39b4bf",
+      "bytes": 365540
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese-critical-264.png",
+      "Git_blob_sha256": "ec511d0bc6ad369e130e427b4832f593f29d8302b990639588b4aa08df955805",
+      "bytes": 355682
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese-title.png",
+      "Git_blob_sha256": "9222696f537095923467d054a9bbe13ecce89611c6e8813814e5566fcdd95ccb",
+      "bytes": 101259
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese08-calibration-186.png",
+      "Git_blob_sha256": "71278cb3f9e0ad38aa657b93e277146625aab4ff9c9db8306948ad8264c2f31a",
+      "bytes": 320672
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese08-calibration-187.png",
+      "Git_blob_sha256": "3fcfd36f7c279a14b63cd6fdb576c0a3aa2e27b0e85d5c16d6c869c081240b1e",
+      "bytes": 325653
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese08-calibration-188.png",
+      "Git_blob_sha256": "e9f08404961b70561d1047f828fbaef787aa516d163eedbcda65fc8cf12d55c7",
+      "bytes": 325090
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese08-calibration-189.png",
+      "Git_blob_sha256": "08b69ac11adb1f7a25033b971440789c321113aef98de6f2c06c7beb03fd72b2",
+      "bytes": 321198
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese08-calibration-190.png",
+      "Git_blob_sha256": "fce38d08257d380bf7f5d855d9b92269828dfd10512c76327418d76d09fa2e8d",
+      "bytes": 315835
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese08-calibration-191.png",
+      "Git_blob_sha256": "d91c04754512b79a8a51965dfb31fb1e16c3f6ba0eb73fc38310ae8c3f8d210d",
+      "bytes": 325605
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/niese08-calibration-192.png",
+      "Git_blob_sha256": "bc8bd31fa9dc5a663692a14f35a7c9db49b5927635822325b22194d77769b66e",
+      "bytes": 324212
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-608.png",
+      "Git_blob_sha256": "3280531a9886a65778621b0a6b78cae2621e27556812e901c4cccfa6ad720687",
+      "bytes": 302876
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-638.png",
+      "Git_blob_sha256": "8aa99bff5de7e98eae9e3468a3f6e63d22338c2e0dc780af36ba69aa3d421b3d",
+      "bytes": 309752
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-670.png",
+      "Git_blob_sha256": "f0b6b9e4d6ba448dd92d4336e5540926f35073d365dbdb4dcfd6402670008d47",
+      "bytes": 311343
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-712.png",
+      "Git_blob_sha256": "568db65d6cddb708fa57de1657aa169cdef5a66d217765bfa267367f8dd85866",
+      "bytes": 307603
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-718.png",
+      "Git_blob_sha256": "f3d9178911c54ccb60272c9fa82adea3fbd7320c5d14df319b47adebc1c226ef",
+      "bytes": 313204
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-768.png",
+      "Git_blob_sha256": "b1e2acc26319afab643dbc6d7044984be7b5fe2f86c298fa79252a73fb0500e1",
+      "bytes": 318837
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-770.png",
+      "Git_blob_sha256": "a18b0269b2debe7ce93a8cdaa586ed7215c57a7fce33befed82365b41df18ef6",
+      "bytes": 295690
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-776.png",
+      "Git_blob_sha256": "819fa38ac7a3f50a091d78adfde6a5512a67ba9f572238cf9938bf82a210684e",
+      "bytes": 296676
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-777.png",
+      "Git_blob_sha256": "5ff410eb99c3697d49719eb137365979f34118092e7aab3d668f4606ab6adf00",
+      "bytes": 313069
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-778.png",
+      "Git_blob_sha256": "61cf8dd78dc400263ecc733ffb9831b9ce52a05dc0806a30c31199cf4086be5d",
+      "bytes": 302889
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-780.png",
+      "Git_blob_sha256": "9aa4900cece6b788d165fc6576d157492e07df85f2d1cde4bc29a351d04ead6d",
+      "bytes": 302038
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-798.png",
+      "Git_blob_sha256": "a2546fab8cbbb4e9e3381ae5395760c4cbb41e222b32bed841cded18f88bcd3f",
+      "bytes": 301373
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/loeb-V-followup-799.png",
+      "Git_blob_sha256": "e54f0831d7d44ad359ecad4f0380fdd9d0b5b6d2aa635f7c47390e07a474d6ee",
+      "bytes": 321951
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-185.jpg",
+      "Git_blob_sha256": "aab91c67eadb84f94d31f42d63bef90fe60e8eea1293b62c6066de239b95dbaa",
+      "bytes": 281028
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-186.jpg",
+      "Git_blob_sha256": "861a43f674332a51485d8d12efe13f8fc80ec9999c12e9a75d0392ea37d735e2",
+      "bytes": 327477
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-187.jpg",
+      "Git_blob_sha256": "2f310a3dfef92d12591007d4e19714368ba86a964746b4d3b5344523b6f9c39b",
+      "bytes": 329785
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-188.jpg",
+      "Git_blob_sha256": "39433300acfa64c1aa0a925948853495d0adc8233e52fdd8b97c078fa3625aeb",
+      "bytes": 327619
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-189.jpg",
+      "Git_blob_sha256": "7aed42c94e2334150adc95a4a312d78eecb15a405ea4f5aafceca6226c28c941",
+      "bytes": 326082
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-190.jpg",
+      "Git_blob_sha256": "020ab7fe0f855a7e09239b57de6cb14d8e938f7470a7453763b9e437418a0a44",
+      "bytes": 322759
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-191.jpg",
+      "Git_blob_sha256": "e56d9fa44a045bc46e1d49f9016ab59a188fa07e646cca90272c3fcadc9f2f73",
+      "bytes": 332388
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-192.jpg",
+      "Git_blob_sha256": "e72466a200d932fbdcb8886b3bef2c6945567baecf2fbcf32441f7e4cd5f3d18",
+      "bytes": 327037
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-193.jpg",
+      "Git_blob_sha256": "d95e1f431da7fe4a6007639d731c082ecdba6455bf3896c15a4d4ab4d38ddd5e",
+      "bytes": 320146
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-194.jpg",
+      "Git_blob_sha256": "4d26016e6ca6aa50eeb78fe05165c20b2d5d2b3e5966813c0b2d7ac3cd3790b8",
+      "bytes": 332789
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-195.jpg",
+      "Git_blob_sha256": "e257696ffa7ce5c068e3610faa7ef14663535f57d372675b8116932cd0d2516c",
+      "bytes": 325280
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-196.jpg",
+      "Git_blob_sha256": "a859cfd1189cc21b287bcc644f0a807501818879575eac7ffe6105bd0d52c20e",
+      "bytes": 309576
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-197.jpg",
+      "Git_blob_sha256": "f999d3ab9aa45a0f005f4cfa0b73cf8a48e6905490acfd9c0080e5b477926312",
+      "bytes": 318741
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-198.jpg",
+      "Git_blob_sha256": "566832daa93afceb889b1784d9ec7e09bd378c9c9f4a850ed89cc06dea2c7038",
+      "bytes": 321409
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-199.jpg",
+      "Git_blob_sha256": "da4e9948966109ac56e33fb9fdc53a490e9dce321bd41f01365c43da6911baf2",
+      "bytes": 324097
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-200.jpg",
+      "Git_blob_sha256": "8180dcc44e4460869c381b346c16285f6c5b18ecbb576a014291b828f174e723",
+      "bytes": 321121
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-201.jpg",
+      "Git_blob_sha256": "b35c5074fe6c2479a210248a0b6bd6d4bb33823fbd789cd84b674d6d4aa1ff30",
+      "bytes": 321547
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-202.jpg",
+      "Git_blob_sha256": "b40ffa531fe5e659b326e051cad5a01dcc44e451a502b50ef7678c84be24b382",
+      "bytes": 325976
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-203.jpg",
+      "Git_blob_sha256": "f972fd542c2a7ce379b5487253cdbf08f29dc36defe88581b5cf2e957ac66c25",
+      "bytes": 334867
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-204.jpg",
+      "Git_blob_sha256": "c184dfc293e198ea09408ae4757ffad5997454f2ee5794f42d3b9433dcb92503",
+      "bytes": 323794
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-205.jpg",
+      "Git_blob_sha256": "0e6e713764ba0e37c28507e3fb3952198fc3218086f7541a83256b8a6af1d84f",
+      "bytes": 321233
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-206.jpg",
+      "Git_blob_sha256": "2107c871a0e2a214691287a4266888b192015a55c8116d0153d683d8916a4674",
+      "bytes": 340394
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-207.jpg",
+      "Git_blob_sha256": "c15ed9e0c3b9fae52bdb1b9708601185213ab213e4b06dba07354c43341aaa06",
+      "bytes": 334799
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-208.jpg",
+      "Git_blob_sha256": "99af52a8e7c2da1c52a6b1c33fa0ef86b31574727c0de194de7f33e3b58edba3",
+      "bytes": 328651
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-209.jpg",
+      "Git_blob_sha256": "f77accd4a19af42ad266bf00ded261af77b8a6563f10d1c90360c07de7016612",
+      "bytes": 319325
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-210.jpg",
+      "Git_blob_sha256": "ceaff78518d9cfa889493940b1be300a8ba2fb053eb5186c983f2ddd5a4a7660",
+      "bytes": 333553
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-211.jpg",
+      "Git_blob_sha256": "0dcb68fb5157400b6c379c94deb3ee07a8e27407428cccd4171dcd868639286b",
+      "bytes": 335281
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-212.jpg",
+      "Git_blob_sha256": "5a28e3731fef6e82a50cbaa6924c921d377f308ce5385e9982b12b3957d869f4",
+      "bytes": 325153
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-213.jpg",
+      "Git_blob_sha256": "7bb7a0f209a2687b45f4bddb7a27ecfd446f88d4e0b005f346a80448618b52d2",
+      "bytes": 324552
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-214.jpg",
+      "Git_blob_sha256": "45e567dc7b1f4df36fa1d991fe1a28f059c5b01779719839bf6ba662be789592",
+      "bytes": 312945
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-215.jpg",
+      "Git_blob_sha256": "25be7f208697db23da0393597606611275849186e673152e1964359bca37df7f",
+      "bytes": 333244
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-216.jpg",
+      "Git_blob_sha256": "d63039df844e6530ec5171a473631201f9f1feaef19af4864621dc570d292c71",
+      "bytes": 329457
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-217.jpg",
+      "Git_blob_sha256": "d40c9b8677627e6bf7b05c57107eb3207a724701e4b4f80325fee67a2ce77f17",
+      "bytes": 328630
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-218.jpg",
+      "Git_blob_sha256": "48c9ffb75342415a6727672467cca4ead6740f80cfd520ce990c3d2a2f7c3e30",
+      "bytes": 327874
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-219.jpg",
+      "Git_blob_sha256": "ef93aeb08b5482a81595574806135fb8009068005908280a1934b03ee9aad4a8",
+      "bytes": 333632
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-220.jpg",
+      "Git_blob_sha256": "0db2ca6ae6fe487d5cae79a92e68bcbf0396a6997a0d0f994e6c94764fa8be04",
+      "bytes": 335051
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-221.jpg",
+      "Git_blob_sha256": "170887b231256a2446f95c64ba824e503516a1f103c3e84753a28d519fb24965",
+      "bytes": 334205
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-222.jpg",
+      "Git_blob_sha256": "540714553b216201d6755517d535ea796e08787174a4c83209e361871dea1155",
+      "bytes": 329316
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-223.jpg",
+      "Git_blob_sha256": "b4b754585646f5e77eeed4eeb7b435426adcf403605308b06a7c2a73506b2d9b",
+      "bytes": 313872
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-224.jpg",
+      "Git_blob_sha256": "c9a1602b1332e6acc740d28c5c5f655c82bba15ddac067d9e52f910cd480ad7e",
+      "bytes": 317089
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-225.jpg",
+      "Git_blob_sha256": "591a55dac538b0e1fbd812982d252cc05bdeb0d54100b3ae44414ddd00de1a76",
+      "bytes": 324286
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-226.jpg",
+      "Git_blob_sha256": "3c53860737c74c623e3f00207f9035adea6732c2f56c1ca7267c604009582a17",
+      "bytes": 329698
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-227.jpg",
+      "Git_blob_sha256": "9baf03379b0bb02aa3517790e04f3e624394f9bb08c519b9dae241e2056651d7",
+      "bytes": 318932
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-228.jpg",
+      "Git_blob_sha256": "fc23cd5493cebf04c5fa71770e4d2ffe2921db3c1535be27b0a522ee03a56da6",
+      "bytes": 324508
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-229.jpg",
+      "Git_blob_sha256": "bf551d51876eefb8a760d7f1a6f43db6ab8325e768eeef968ba45b3ef3e37e39",
+      "bytes": 338050
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-230.jpg",
+      "Git_blob_sha256": "f4c7af7dbdd5729a48faf9a6a6bfaf13afd68b08ad5b98d037bfd7c1e2b5a934",
+      "bytes": 324853
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-231.jpg",
+      "Git_blob_sha256": "81816796e6cf48471597644c4f32eefd0860dbe171f1e8077179dc22c0b3d9a3",
+      "bytes": 331306
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-232.jpg",
+      "Git_blob_sha256": "8150a04a0863ff044b4e140bf01dfb689e653515ea62450c60cdbdf3ea8ec3d0",
+      "bytes": 335055
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-233.jpg",
+      "Git_blob_sha256": "b997150c7afdfbac0161ce8285aceb947534e147d9c16d7439427af22976feca",
+      "bytes": 329633
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-234.jpg",
+      "Git_blob_sha256": "5de54ab9bbe4d18a2e1b956edda01ac724f97829c6092f78ea61c5791e69c9da",
+      "bytes": 322824
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-235.jpg",
+      "Git_blob_sha256": "95c14e0c381e8083aee300fde6c4bf09970c94d090e099c935272bb4017d06b1",
+      "bytes": 328505
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-236.jpg",
+      "Git_blob_sha256": "620e280a54f06bce86c3ca90252ad970d38c0b7a160bc34d63903e2f5bcf9c5f",
+      "bytes": 322789
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-237.jpg",
+      "Git_blob_sha256": "7486b45acdf674d1ec8614b31438568573d7c4c1afc9be579c7d25b978633057",
+      "bytes": 328748
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-238.jpg",
+      "Git_blob_sha256": "f8ce4a5a8bbd546393751e2b37d102f54e1bf3f1297e961fc1572da847d9bc33",
+      "bytes": 320369
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-239.jpg",
+      "Git_blob_sha256": "9cdcd4491f4fadf19945b4b63d53cb57dea09f3734623e647f5c2966228b2e60",
+      "bytes": 321170
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-240.jpg",
+      "Git_blob_sha256": "981b7db4c2d5cb5aba0aa9a37784cc3947702f5073b2fbd89e1e3e604206c5d1",
+      "bytes": 331895
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-241.jpg",
+      "Git_blob_sha256": "4b6beccbebd1d11df0352e79d19d6eb68f3e32445fbdf33c04f24dc58eaaa074",
+      "bytes": 319435
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-242.jpg",
+      "Git_blob_sha256": "7ba2370a86cdf01a056d5db320ce1edf63848a13e50b1ce50fea9c005d6fdb51",
+      "bytes": 326832
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-243.jpg",
+      "Git_blob_sha256": "7349e79a7d435dc387b8b06643fcf7ac4853fab08ef9ba7a00dc49bf2446b9b7",
+      "bytes": 329790
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-244.jpg",
+      "Git_blob_sha256": "8a1ae0db6ea3e0053f88eb7da5d500b2fbefe7eecedeed23b037676316128d71",
+      "bytes": 331686
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-245.jpg",
+      "Git_blob_sha256": "9382b292338d5476ad322977b72a7acee227d9fa1e77cf3f2590f3d3abb19362",
+      "bytes": 322560
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-246.jpg",
+      "Git_blob_sha256": "d82f7aab03fd950a31c607efea1efd4edce559a75ae973807d13b9957250f713",
+      "bytes": 330849
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-247.jpg",
+      "Git_blob_sha256": "d916ad2a8b526d7cb52494df40c697c9b0dc85b94198194c388ce175a446ca9f",
+      "bytes": 324749
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-248.jpg",
+      "Git_blob_sha256": "691c64acfaaedffad0ac64ca38caeb01976537f62778d6b320a7e20402826880",
+      "bytes": 319202
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-249.jpg",
+      "Git_blob_sha256": "6114460474d37a141561d4de2b247c85a1e8510f6fab7979c7c95d63a412ffa0",
+      "bytes": 339904
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-250.jpg",
+      "Git_blob_sha256": "1ac90b95270897fac58f9438e9aa60a931819915609a04091056492a0a89f312",
+      "bytes": 338790
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-251.jpg",
+      "Git_blob_sha256": "7bccb52c77bbe6b68ad4c5ecbaabda8b97e186ab6cde364a246592214fb3f178",
+      "bytes": 334815
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-252.jpg",
+      "Git_blob_sha256": "c176bd420da3feec9bbd12d598a3151f3c8f87c4824cf3b8eaa860ea0f4d0eea",
+      "bytes": 342933
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-253.jpg",
+      "Git_blob_sha256": "7ebd534347905bf296a146dc0f5f2f883657dca59210eec7145a3ea91b5f3770",
+      "bytes": 338349
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-254.jpg",
+      "Git_blob_sha256": "03a2639e3ded2ca5b7b62482c93a704f16bafeb3766b35118f3d5b00d1ed2792",
+      "bytes": 330830
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-255.jpg",
+      "Git_blob_sha256": "bb999d135764b15780a53a7ce9581c90ee0815163e29308cf7f50defd1228444",
+      "bytes": 330104
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-256.jpg",
+      "Git_blob_sha256": "c9f005e10edcf8b280353a5a787960ba4cac25f733cb1a5510aa9c2842516850",
+      "bytes": 333300
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-257.jpg",
+      "Git_blob_sha256": "e4e01bc86491c6c280c5921d8bfc72616b14ee2387fc99fb4174fac65af11b6a",
+      "bytes": 329407
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-258.jpg",
+      "Git_blob_sha256": "00db0203ad89bd4d9f630472c8b00fabaed521b74130ffcb7245d24dcf985e41",
+      "bytes": 325712
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-259.jpg",
+      "Git_blob_sha256": "74be31c04af8cf0ea9a16fb3557a783349289c80b744ed31b355dfc3ac18ad21",
+      "bytes": 329180
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-260.jpg",
+      "Git_blob_sha256": "8aa54f7c84f06e32d31c2b24b5b73feb851dee3bcada7431df644cc4be61e40d",
+      "bytes": 323463
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-261.jpg",
+      "Git_blob_sha256": "508980eddb8fffc96b90e2eaeebc58d5a7e6c8db5b476a7649ae859eba0389cf",
+      "bytes": 330021
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-262.jpg",
+      "Git_blob_sha256": "d5e342140d4a94b6d69e01254d4f42576d6ff4400492a468c6301ba666c7fef5",
+      "bytes": 338665
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-263.jpg",
+      "Git_blob_sha256": "ee9a227c75ecf99608d4cb4fe9fbe44f69b5f669d2e83c03e668bea92cfde204",
+      "bytes": 330759
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-264.jpg",
+      "Git_blob_sha256": "e4eb4d3eb8353e80a3c0dd3cf74f13b82c8974af08572b86780d27eaec7a7578",
+      "bytes": 324789
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-265.jpg",
+      "Git_blob_sha256": "d11ff933283e03647a71b32715bf460f97166dd409a0f1c6b2c74ddfd2951215",
+      "bytes": 327571
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-266.jpg",
+      "Git_blob_sha256": "f235fa44027e6044a454018a615c486041f18dad6fb8297a75a3b4b3d976dc52",
+      "bytes": 329847
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-267.jpg",
+      "Git_blob_sha256": "21ebc856d7b0666664cdb5bf86ed67468d86f6bd6a33aa2ffa83acf12e9eb5ff",
+      "bytes": 328597
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-268.jpg",
+      "Git_blob_sha256": "77532a21944e94b38a22fbcee4d72f89c7b363df1b5c0b26ff438a6820eef156",
+      "bytes": 322105
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-269.jpg",
+      "Git_blob_sha256": "48716e5dc47ea4713ccb84b998345fa89b26d11601bac7ac35f7170d4963d972",
+      "bytes": 329666
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-270.jpg",
+      "Git_blob_sha256": "997b737ac1a0d8b61cb2e591e7d1f556a66f94f8d12c9cb86fe58348e983281a",
+      "bytes": 327475
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-271.jpg",
+      "Git_blob_sha256": "22a7704e198dc05d4f3aad103126316f1d19a5ff071031d3402d4692a6a4ab9e",
+      "bytes": 332398
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-272.jpg",
+      "Git_blob_sha256": "f78118d2f6fc7d04c3d609e24f03873cde4b0ef0ef496c6b8ea26233ff0ab879",
+      "bytes": 334023
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-273.jpg",
+      "Git_blob_sha256": "2bfaac8daf122250b1d4632bbf54ed7ceef1ed935dfa2297896c970effe13019",
+      "bytes": 318050
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/evidence/print-collation/niese-II-pdf-274.jpg",
+      "Git_blob_sha256": "aaeab861100696507f736f6671867966f60a8cd700fd6bc52f4a0660a183c5cd",
+      "bytes": 349224
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/mixed_mapper.py",
+      "Git_blob_sha256": "b201515f0d91d4dda7ff0965f0c703142f87d71e8225567ffff4136afcd74cf2",
+      "bytes": 7049
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/structure_reference.py",
+      "Git_blob_sha256": "68b2fa31b0991f3977f568718f84d6fcc94767b0e07d6d92e953b2c4e72452b0",
+      "bytes": 1704
+    },
+    {
+      "path": "review/Antiquities_Niese_BookVIII_2026-10-08/verify_packet.py",
+      "Git_blob_sha256": "9c0989e26362f3811c5878f7e42be3f8e16018821b80c45f37f25b74a181da9c",
+      "bytes": 5340
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/ABSENCE_SEARCH.json",
+      "Git_blob_sha256": "cfe07ba79780595c19aa14c63ee53c616f6e3b5ed6ec324d21b5289a01cc0fa4",
+      "bytes": 73125
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/ADJUDICATED_GREEK_PROPOSALS.json",
+      "Git_blob_sha256": "adc464e02f2d6554750f4b8572528989bc0aa58f2fe96250b11c4f36ea859580",
+      "bytes": 11537
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/ADJUDICATION_HISTORY.json",
+      "Git_blob_sha256": "d9501669868b51eea8736d1934d850f9a271e4d2f209fd7420ceecf3daaeaa32",
+      "bytes": 224614
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/ADJUDICATION_QA.json",
+      "Git_blob_sha256": "412822820a45c5bf149b6d82a10bc4d9c014ceabbf86e8eb121d725d82e3b218",
+      "bytes": 6891
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/ARTIFACT_STATUS.md",
+      "Git_blob_sha256": "65d649d94232a25a096047caf0f778652ca5c39953c7d284859f08d491b885ae",
+      "bytes": 553
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/AUDIT_RESULT.json",
+      "Git_blob_sha256": "412822820a45c5bf149b6d82a10bc4d9c014ceabbf86e8eb121d725d82e3b218",
+      "bytes": 6891
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/BASELINE.json",
+      "Git_blob_sha256": "e02b6fbf1b163becebe3029cb464f32a1dd7f1b699255e8e78386d5c5d35d962",
+      "bytes": 499530
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/BOUNDARIES.json",
+      "Git_blob_sha256": "37ee2695023dc286a6cacf31bd3b070a9387cd38c89d299b7a2f754aafb5c058",
+      "bytes": 5035208
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/BOUNDARIES.tsv",
+      "Git_blob_sha256": "8d052e4341a8b79fb09c4f07054e2cae67946b06742f437391901d79330dc6b6",
+      "bytes": 651448
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/CANDIDATE_ANCHORS.json",
+      "Git_blob_sha256": "fff61a1afe4932ee7b23e57d6107279f74df74ad37e79d6f5ba023b0174c3eb8",
+      "bytes": 10867
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/CANDIDATE_DRY_RUN.json",
+      "Git_blob_sha256": "4e4b33a52ab222e3a9c948b838d976db0c5d199cdbd7bff2bd08f12e7a4e84d3",
+      "bytes": 602
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/CASES.json",
+      "Git_blob_sha256": "db162a973af2ecd177b9150e2b3605ca2fdaba27e84325561e40958ebe53ebb3",
+      "bytes": 4296
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/CHECKPOINT_AUDIT_RESULT.json",
+      "Git_blob_sha256": "482d8166bd96c78d5fb07e6122f9388b98b40d46aee5453fa0171239ab3ab930",
+      "bytes": 1052
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/CHECKPOINT_QA.json",
+      "Git_blob_sha256": "1354b00f14be2613632c4cde72d8a5ef3f0c22ddcbb633eba5fcd908dc4acd55",
+      "bytes": 3110
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/COLLATION_SUMMARY.json",
+      "Git_blob_sha256": "b6b338039f095458bb65ee0764c7d40db19481be9cae51e2961c659891e0fb32",
+      "bytes": 1709
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/CONFIDENCE_CROSSTAB.json",
+      "Git_blob_sha256": "3b25d85fcc13d4fd58baeaf26cdbd4e08b042ef80c766e421fbfdac6536b0799",
+      "bytes": 870
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/DECISION_HISTORY.json",
+      "Git_blob_sha256": "1178726ee70dd5561822a5838a75f2a96e09dfa52a4be09450b420c5432c9332",
+      "bytes": 964142
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/EXECUTABLE_IDENTITIES.json",
+      "Git_blob_sha256": "3ddbbaf49c4785746e1f6bcb6b7001a4ec5e96aceb140c6d0703e31ba329116b",
+      "bytes": 378710
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/FILE_MANIFEST.json",
+      "Git_blob_sha256": "de09cefe3a904acc6fcd60975a9e7df3bc5258d987b70055d3ddc53779d4d0a6",
+      "bytes": 21761
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/FINAL_DECISIONS.json",
+      "Git_blob_sha256": "b06f73e645fcf8ba43edace355d76d4b3d16ab9fcbe85c67b2d0ac390ca3bbba",
+      "bytes": 39348
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/FOLLOWUP_DECISIONS.json",
+      "Git_blob_sha256": "c9e4be04668fc42f4f2316497bea09940a033b102a5b6f11501bf3b367161c65",
+      "bytes": 73630
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/FROZEN_PRINT_STARTS.json",
+      "Git_blob_sha256": "45e30e57cc9e91772f62a71b130871f5369a44ab98d4c412a5cf7591c754bf14",
+      "bytes": 72587
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/GREEK_INCIPIT_CHECKS.json",
+      "Git_blob_sha256": "463f459d2ba79ee4071aa810b94e9446104a57a1471286d15aa40524f4a2df34",
+      "bytes": 2748
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/GREEK_REPAIR_PROPOSALS.json",
+      "Git_blob_sha256": "38931b8dc6c5060bf6f0d47bdbedc7cdf1fe9fe21f7d16940bc77076937294d4",
+      "bytes": 5145
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/IMPLEMENTATION_BROWSER_QA.json",
+      "Git_blob_sha256": "66cb8b6a825877f5d5adbdc4114ef2c1da6f5d81de0942f636f9dc7a9659b44f",
+      "bytes": 413
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/IMPLEMENTATION_FILE_MANIFEST.json",
+      "Git_blob_sha256": "d92d31d5b81c8ddbbeb30c475f73862832172ced46cafac05973f65f8dd8a02e",
+      "bytes": 29109
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/IMPLEMENTATION_PRESERVATION.json",
+      "Git_blob_sha256": "92a22bf4b771080189fdfede7d59eb8121aac5793c614e7f600563c0d655530e",
+      "bytes": 339161
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/IMPLEMENTATION_QA.json",
+      "Git_blob_sha256": "861d5d40cc78f54f8b8c94ee65f818b02eaed170717dfcb12c39fd69894a994c",
+      "bytes": 1347
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/IMPLEMENTATION_REPORT.md",
+      "Git_blob_sha256": "ec93a8bb67314eb29260049cb1a589c4b0a2d0d8fd293a23b9825c413c46a4b1",
+      "bytes": 5267
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/IMPLEMENTATION_SOURCE_AUTHORITY.md",
+      "Git_blob_sha256": "8d88ee8af8958e69cb3ea743b0b89fd4062f55d47521f5865f3a7f744d5bbb40",
+      "bytes": 1547
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/IMPLEMENTED_EXTENTS.json",
+      "Git_blob_sha256": "8aa031b1c9838a7cf4f569e85573f5d2cac7e0296c033e932cfee2a3ee8206fd",
+      "bytes": 117115
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/INSERTION_PLAN.json",
+      "Git_blob_sha256": "cd643010694b77300d6ac2d49ac552ce3b7f7d8555410e3c2957e19d2d8f6209",
+      "bytes": 238699
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/LATIN_INDIVIDUAL_REVIEWS.json",
+      "Git_blob_sha256": "738e24586c541622262a31691a5f0e4a7ee0cda710150592eeb9a3494725e797",
+      "bytes": 85580
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/LATIN_TEXT_NODE_LEDGER.json",
+      "Git_blob_sha256": "84a52db8ae1c282124ca54f6bb4df7a630fbbfc5b55aa3975362761e1d702c6f",
+      "bytes": 1239774
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRE_FINAL_BOUNDARIES.json",
+      "Git_blob_sha256": "526fb66e9808345d4a04e610c00b1e94fbb1f3c69392de5d963071d81561558f",
+      "bytes": 4930818
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRE_FINAL_INSERTION_PLAN.json",
+      "Git_blob_sha256": "6f5f1841de94e5f8ab3983a3c0c231f2c1e5c79641e8e689b3538cbbe9f7d5fd",
+      "bytes": 595
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRE_FINAL_QA.json",
+      "Git_blob_sha256": "270565878afe0c52a1cc67ec91a0a1d513e14eb04eab47c54db8c73c276cafc2",
+      "bytes": 6754
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRE_FINAL_REPORT.md",
+      "Git_blob_sha256": "29ef305170dec4ea7a368fa25c510af91fefd79c0c324800078e5089f7ee6c37",
+      "bytes": 3265
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRE_FINAL_REVIEW_CASES.md",
+      "Git_blob_sha256": "f0e94fd405bcf4191fc90993b93173032e837b8726f5a2432a1524f60032605c",
+      "bytes": 40232
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRINTED_SOURCES.json",
+      "Git_blob_sha256": "1446d411abc44c28399bf1204c7670fdc9bdab72490cc279f350a6c5febcc303",
+      "bytes": 1199
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRINT_CHECKPOINT_REVIEW_CASES.md",
+      "Git_blob_sha256": "916c06e43879c2f8c60ae68131aa26211554f9e7a034126724c58e5e43b0c546",
+      "bytes": 36674
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRINT_COLLATION.json",
+      "Git_blob_sha256": "4a755773e36b79fec5533ef21e1c15c685c511aeae0012567e8c3b45f8b48177",
+      "bytes": 567870
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/PRINT_OBSERVATIONS.json",
+      "Git_blob_sha256": "68c9204903b8fe7d6794977bfaf92344d34ff7fc98a673e20cb3e10d4ed1bd42",
+      "bytes": 486194
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/QA.json",
+      "Git_blob_sha256": "412822820a45c5bf149b6d82a10bc4d9c014ceabbf86e8eb121d725d82e3b218",
+      "bytes": 6891
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/REPORT.md",
+      "Git_blob_sha256": "81c2fb0730fc43a44df71a0f1e44900352995b4d0e9cd731844bf6c5811aec36",
+      "bytes": 3631
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/REPRODUCE.md",
+      "Git_blob_sha256": "d5a2256b76b6b0ec44f089781f8643b1eab03a04467a06ddf5508caecb83a73d",
+      "bytes": 319
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/REVIEW_CASES.md",
+      "Git_blob_sha256": "4f3da15a6e616b74f71484bf811d70f35d1cae8cbaf6313ebe036610deaa0422",
+      "bytes": 3332
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/SOURCE_AUTHORITY.md",
+      "Git_blob_sha256": "43569cc50663539d53089352b729d5b6998086271ad56a5d54445cc6e66d1f4c",
+      "bytes": 9670
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/STRUCTURE_REFERENCE.json",
+      "Git_blob_sha256": "3e78d03e6d90e81f929121d358dc806422a39b9810fbbdb605aab4db27ae2409",
+      "bytes": 143140
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/VERIFICATION_OBSTACLES.json",
+      "Git_blob_sha256": "a20d4b59f080ff2cb025afdff546de9317efc922eb0718ae1d558adcf50e6e18",
+      "bytes": 366
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/XML_SOURCE_NOTES.json",
+      "Git_blob_sha256": "7020956d4c385be1355cbf69fd6d3dd3f6236b23eb230815ce415a8b26b5423b",
+      "bytes": 377
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/absence_search.py",
+      "Git_blob_sha256": "f7788bbfaaeed4e6a9ac3c31323c0a8cd016a9904a1c5f4064d10a644b30e414",
+      "bytes": 2231
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/audit_book.py",
+      "Git_blob_sha256": "beda686cf7713b76be0140dab44423b72befc9d797a51657d4c629ffb57ceea7",
+      "bytes": 10492
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/loeb-VI-title-007.png",
+      "Git_blob_sha256": "38f7e52652afd068378adcb7622befeb5925d64ae804f231874fde1b45005dba",
+      "bytes": 363734
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/loeb-VI-title-008.png",
+      "Git_blob_sha256": "5fb8fbdf3808aace8cacb3618c3e9cb2f9638821ed433d6bb61d6f68e62e154a",
+      "bytes": 318519
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/loeb-X-critical-233.png",
+      "Git_blob_sha256": "82db9007fba3b154e0b4a4f52d410a89fe70ea72c00e99e6ed879236969efcfa",
+      "bytes": 1049830
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/loeb-X-critical-256.png",
+      "Git_blob_sha256": "a503b18eb64af393098fab2fa76a9d2d96fb7fd89bd3d48246040047483803c6",
+      "bytes": 826412
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/loeb-X-critical-257.png",
+      "Git_blob_sha256": "153f513d1ab1501fe68296a1cb460343a86b6ca4a96ec7a571604a48a922e78b",
+      "bytes": 952964
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/loeb-X-opening-172.png",
+      "Git_blob_sha256": "04c869e4dc675719b7309bea8bafc02462f9f57888ea5155c96f1487f6cf9175",
+      "bytes": 560140
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/loeb-X-opening-173.png",
+      "Git_blob_sha256": "65a50d90b850802b7e5e588b638d1b6bb0ab62836472535ed34531037c4b2cb5",
+      "bytes": 773134
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/niese-X-3-7.png",
+      "Git_blob_sha256": "3519b54681fbd75ee6973e4113bed2fff86b5d9b81a88b620a514bf1edeb7681",
+      "bytes": 335415
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/niese-X-colophon.png",
+      "Git_blob_sha256": "d5913d0f51c48131e1650af9e702cf220b98674d9ea2da4852b6338fa49e0d85",
+      "bytes": 119878
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/niese-X-opening.png",
+      "Git_blob_sha256": "cd1f6d20c8a1bbf418b92006a440a8455d52d9275a06f90d3bb64ef8b8f3975b",
+      "bytes": 320345
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/niese-critical-361.png",
+      "Git_blob_sha256": "2e152f137e9d780d5816be519fcd5dfaffc96d8fdd54bca33887fa919f88c795",
+      "bytes": 351368
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/niese-critical-370.png",
+      "Git_blob_sha256": "5e84e8a4b14e3e799da33274ce7dddfcdf8d1eb3065ac36fc273684128f926e3",
+      "bytes": 361315
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/niese-title.png",
+      "Git_blob_sha256": "9222696f537095923467d054a9bbe13ecce89611c6e8813814e5566fcdd95ccb",
+      "bytes": 101259
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/loeb-VI-followup-190.png",
+      "Git_blob_sha256": "836ba90f269033dfcbece15e7ac21464dec2d8ed8a40abc00d19675a078d9cab",
+      "bytes": 393604
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/loeb-VI-followup-232.png",
+      "Git_blob_sha256": "f9cb4bb883d6fc7d8734844fde225b2d03bdc1b78f277536c92fe3c7e9b34dcd",
+      "bytes": 417856
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/loeb-VI-followup-256.png",
+      "Git_blob_sha256": "0df0922a5f58fb984d81b125153af4822db419d2bcff2c3d3b121c2657a12c28",
+      "bytes": 414842
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-338.jpg",
+      "Git_blob_sha256": "052f2a84cda8125939a3f7e6837ebfbe5931b9380282bed1b6754dc22336ff96",
+      "bytes": 281021
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-339.jpg",
+      "Git_blob_sha256": "13a3457aac165e6377de84f8e966cd6e57b71e1a871b8ff9966b02d21d282caa",
+      "bytes": 336883
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-340.jpg",
+      "Git_blob_sha256": "1ad8d89ec1c78bda0ab1d94fbff1a47f64f8b1a3a4ba7192fe435e017b48db68",
+      "bytes": 327992
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-341.jpg",
+      "Git_blob_sha256": "b6c82d2608c19a25296c1c189a9c7a9d5c8f1b3e3b99aa2e0ab6e9c1f703c867",
+      "bytes": 331744
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-342.jpg",
+      "Git_blob_sha256": "d52157c7effca1a839ae1dbc1b3aff493b59a581123868dec9fca263ad5097f5",
+      "bytes": 332060
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-343.jpg",
+      "Git_blob_sha256": "ee5c8be974fc3e13b4f47b77b66180b28da05d29b1b5bff2ac94b54d54c26d4a",
+      "bytes": 317900
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-344.jpg",
+      "Git_blob_sha256": "9e6c0a3215b62c4216a85ee3c0c6a21996310c67f13221e4cabe17e4b827a3ef",
+      "bytes": 320705
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-345.jpg",
+      "Git_blob_sha256": "6ac35f6254f707d4173854c967b8344d5c9ba1a3b87d6edecde39e7a8d4c8cf3",
+      "bytes": 315505
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-346.jpg",
+      "Git_blob_sha256": "3299295464c8284dbf13cf4eff0e24dc43e2a32a7fabad2134bfc1162e97055c",
+      "bytes": 317955
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-347.jpg",
+      "Git_blob_sha256": "38a6b894617805dcf2ea19b5dd8f207b3515f4e3cc90fe1f34e20957148a2743",
+      "bytes": 332155
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-348.jpg",
+      "Git_blob_sha256": "6b0c44d1b7fd1aea23573c959ea48f85af2ce02ed0670be82ba66f203ca8e11f",
+      "bytes": 323243
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-349.jpg",
+      "Git_blob_sha256": "6a30fa26f4b210e5c5028e33e2b6abcde9c0ae691dbb3f2baf6e6cb707357e71",
+      "bytes": 330308
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-350.jpg",
+      "Git_blob_sha256": "99d9cc2f01ab4a364dd5935e457f97efe26a0a63c56191cc2127be3d1b9fa401",
+      "bytes": 324698
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-351.jpg",
+      "Git_blob_sha256": "335af5ae172b02ad03cd27ac9ce972874aed4b347332e22e6a7d5be7ca6d4a19",
+      "bytes": 330677
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-352.jpg",
+      "Git_blob_sha256": "d60431a9fe55433f0488bc47468f705113178014ff4533327e5e6e99fbdc57aa",
+      "bytes": 310551
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-353.jpg",
+      "Git_blob_sha256": "66de8bb18b4c945ed8a704a531052b78c93ef3c342b677a8a4b61f76fd49c7f7",
+      "bytes": 326261
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-354.jpg",
+      "Git_blob_sha256": "193430d44a80362e7a8b0d30a9f5caf22d8c17f4474fe00ae2042ab49c3e109f",
+      "bytes": 315929
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-355.jpg",
+      "Git_blob_sha256": "6a08b1e8cdd931edce80f2164ba35b9fe4cc146d90bc231bcee4f4f75e770e21",
+      "bytes": 329298
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-356.jpg",
+      "Git_blob_sha256": "8596209c9715f0553669af62339d3bb25609950448f54ab361ac08aa3df11c36",
+      "bytes": 329777
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-357.jpg",
+      "Git_blob_sha256": "9ff57015b6f11190ce1302285cc05effb1b2ae19f92b017dc945a9c7206a724f",
+      "bytes": 323700
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-358.jpg",
+      "Git_blob_sha256": "f069cf09a13cfb21971337a00377f3fc3d9b2b0455c804d2a0cccb3bc76905b5",
+      "bytes": 323966
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-359.jpg",
+      "Git_blob_sha256": "04d32a502cd97f4f4b3d91c346230bbf9794191965c2674651ba79ae43551662",
+      "bytes": 306223
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-360.jpg",
+      "Git_blob_sha256": "d682783519894a6a22d66e8be7a08bf5e85f05cb6a8a41e14125e933030e6648",
+      "bytes": 319894
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-361.jpg",
+      "Git_blob_sha256": "4058c66a1d167beb206c6c965446371bb603f744388adfa5792285a4c8f1a659",
+      "bytes": 321476
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-362.jpg",
+      "Git_blob_sha256": "003102c03e09ba4dfdc5b7e6c61ca23e6ab41e175a9b63a9717c179fa8cd2401",
+      "bytes": 328669
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-363.jpg",
+      "Git_blob_sha256": "3dff37dabbd7bd0b387829ce29368132f2241742cfb35227e3f6d73ff72668c2",
+      "bytes": 339574
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-364.jpg",
+      "Git_blob_sha256": "3aef9f5725eec6a8e5c5336d672b5ef66bb82c0e26c0ed316a05fd4fd1dc8c66",
+      "bytes": 329267
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-365.jpg",
+      "Git_blob_sha256": "8e47797567107d8ee9fd421c25eb581480c8acfe7d711cdc2fc0ac652e49fec5",
+      "bytes": 318525
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-366.jpg",
+      "Git_blob_sha256": "a2df0c8cc5f0a8c7172161aa3f69db6ca903edbfbc61490d0b20eadd9fd18185",
+      "bytes": 328567
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-367.jpg",
+      "Git_blob_sha256": "1977d74585e88de17494c7bea68caffdbea2cac72956701d2d97ffc91e817f99",
+      "bytes": 330842
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-368.jpg",
+      "Git_blob_sha256": "2776566bfc114f5c97a2be771687c02957bd04945414d684ddfcff17acc1a97a",
+      "bytes": 342074
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-369.jpg",
+      "Git_blob_sha256": "ad67017abc9661a9f46c390d53e1672dbc8f977152889d8827247c4cdac137e8",
+      "bytes": 313177
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-370.jpg",
+      "Git_blob_sha256": "d81dbf69abed84d9623da13217ca1c46900fe29f33b41eb29e54ad9804ef3793",
+      "bytes": 335206
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-371.jpg",
+      "Git_blob_sha256": "ab1dfb2177ddfcaf8be2674204463943c248dfcfba7d3c6786214a5d56610168",
+      "bytes": 324239
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-372.jpg",
+      "Git_blob_sha256": "7f453a563902700e62ff55746165a954797b9f19fe8df82b2bb9628976fd3d07",
+      "bytes": 332931
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-373.jpg",
+      "Git_blob_sha256": "a552b9f5d83e6755922a35853922fbed00a24de919b8a313d328e387542b16bb",
+      "bytes": 323367
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-374.jpg",
+      "Git_blob_sha256": "86a931c1a0d7b6890b422cd5eb00e154ec3e57439486873091f6d8cd4eb361fd",
+      "bytes": 333711
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-375.jpg",
+      "Git_blob_sha256": "c47209e517c717e44a97d39a30c81ed04d88eb8d3e7a7299afc172aa5f34c971",
+      "bytes": 318944
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-376.jpg",
+      "Git_blob_sha256": "e8e4c94237751f61d75350446d33d25c166449d3f5160673dd7b326386b0f0a9",
+      "bytes": 316802
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-377.jpg",
+      "Git_blob_sha256": "d542ef7b6959438cfdc6998ccf8b438d15747c694c7996e254d7b293962bc3b5",
+      "bytes": 338512
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-378.jpg",
+      "Git_blob_sha256": "a6b6463b0fc79695dde6f906ebedcd47f38481ba52e8fe5d21d66ad3e20e69b1",
+      "bytes": 318616
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-379.jpg",
+      "Git_blob_sha256": "5cfb712a8c22a4c4f656b8e57228a82c4b2fd77d1847c4d12147bbee4dbbb003",
+      "bytes": 327187
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-380.jpg",
+      "Git_blob_sha256": "9b392c592bed290de46af917171e37426b4618b770b8fc4fd691fe0396e03ac2",
+      "bytes": 317281
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-381.jpg",
+      "Git_blob_sha256": "e4dd0c5faa9821a473ed29971b682d7cf104c6ecde3bac68cff81acdea6a9cc1",
+      "bytes": 329697
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-382.jpg",
+      "Git_blob_sha256": "0778f5a4d76a7dbb6dfe71bc1858303854346e103724e222b4cc3ba1a0e6712e",
+      "bytes": 320917
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-383.jpg",
+      "Git_blob_sha256": "48302afd2df8b7a79c98dea52c5a37f03cf90ebbbfe8ea9294e1884ed4bafc49",
+      "bytes": 322099
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-384.jpg",
+      "Git_blob_sha256": "9b181d8e2615dac494e5cc9a06eaee762f26bee5fcc4dc4d98b6677e1307d96d",
+      "bytes": 335107
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-385.jpg",
+      "Git_blob_sha256": "5cef730544e55a73897a1dbba1bae85f587dd33d5d8ace7ae31eb4206d92257e",
+      "bytes": 321166
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-386.jpg",
+      "Git_blob_sha256": "026b01803bc71e2ff6d19c02464405ed086c7b3b9925cfffa03b08790c4ce03b",
+      "bytes": 333130
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-387.jpg",
+      "Git_blob_sha256": "1db5568149361879893be7cc4083301b5a1663c3f2d2d8cecc446260b71e1618",
+      "bytes": 350038
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-388.jpg",
+      "Git_blob_sha256": "c0373fc5684b687da525c04c2b6cdb9a4859292329362fe27fdde95f31157dd1",
+      "bytes": 338757
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-389.jpg",
+      "Git_blob_sha256": "b9855823613bb84f446658a7f429e61ab8ecbede354fd182d0acedda3d2c5a15",
+      "bytes": 348734
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-390.jpg",
+      "Git_blob_sha256": "60ab311c0e660ca5cc01a0fdace8ad6479659d88bcd6d08874a4cbf851b32126",
+      "bytes": 327948
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-391.jpg",
+      "Git_blob_sha256": "fae8ed7a1784b687a3388bd56e1c8da3866f3ccecfe690ecdafdd40a7896969a",
+      "bytes": 318631
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-392.jpg",
+      "Git_blob_sha256": "09dc523990c60c2c15de3fd34838a1a6f826a373253dfd8336a65b6a3482cba2",
+      "bytes": 330891
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-393.jpg",
+      "Git_blob_sha256": "48e64bfc757e0f747940a4de70e58afe7e13e50784aeef64fc544856952f4c65",
+      "bytes": 322351
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-394.jpg",
+      "Git_blob_sha256": "938f91a3686bf1cc38e6b23d81f43e74066bd282305901b1dc190cdfb834f4c3",
+      "bytes": 328355
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-395.jpg",
+      "Git_blob_sha256": "bd5f6ddba0d1eefe390178ddd4591d7a42faf702b8a10edfd91292b56cecbed5",
+      "bytes": 327474
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-396.jpg",
+      "Git_blob_sha256": "d8b66d58d82eecb66725367ca55b09c1a567a01ccd71035625663d2803131aad",
+      "bytes": 331112
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-397.jpg",
+      "Git_blob_sha256": "c73baf49c60ddd07bd2c4cb7e78bf8fec5f27e4c8c5b8d470b5f02d95c43665b",
+      "bytes": 350926
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-398.jpg",
+      "Git_blob_sha256": "6c973ffcbcc1c5fcfb8227cf403952cf9443c58168ca3950be1b7cb43f934efd",
+      "bytes": 331074
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-399.jpg",
+      "Git_blob_sha256": "9ca6394e321a5c87423223b1eee7623ca7cb17cf1d70edb54211decb6fe1f33e",
+      "bytes": 320994
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/evidence/print-collation/niese-II-pdf-400.jpg",
+      "Git_blob_sha256": "7744a8246e8ebc52312cc3511ccc61ca555ebe3709b49d115ec9c449035c1156",
+      "bytes": 105470
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/mixed_mapper.py",
+      "Git_blob_sha256": "b201515f0d91d4dda7ff0965f0c703142f87d71e8225567ffff4136afcd74cf2",
+      "bytes": 7049
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/structure_reference.py",
+      "Git_blob_sha256": "68b2fa31b0991f3977f568718f84d6fcc94767b0e07d6d92e953b2c4e72452b0",
+      "bytes": 1704
+    },
+    {
+      "path": "review/Antiquities_Niese_BookX_2026-10-08/verify_packet.py",
+      "Git_blob_sha256": "9c0989e26362f3811c5878f7e42be3f8e16018821b80c45f37f25b74a181da9c",
+      "bytes": 5340
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/AUDIT_RECORDS_PRESERVED.json",
+      "Git_blob_sha256": "55ed2dad04e4a66a4e0e1529b30134bbb5d34520cec2d264593cf6cd7d44e7ec",
+      "bytes": 118922
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_102_dark.png",
+      "Git_blob_sha256": "6274af83b7733251c13d1ef73a61db452f44e8b3ce20894a4e45d85b1790ff0c",
+      "bytes": 250107
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_102_light.png",
+      "Git_blob_sha256": "46417c8ef98adc2e8157beee37217a8147a7abf83cbc9bdaa1c271b1b9bb65e3",
+      "bytes": 248178
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_108_dark.png",
+      "Git_blob_sha256": "822d5534c8b4102a2d37c169edcd9a0c756b363c39c8074203f8881899a56d8b",
+      "bytes": 425444
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_108_light.png",
+      "Git_blob_sha256": "cb320b7fc57aa3102ec722483de589f20d2fc020e3e1cd88341a9e53d8590b49",
+      "bytes": 426262
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_109_dark.png",
+      "Git_blob_sha256": "11bf174503d9c9b5be261df7dd3dba2e29960e70a3944d0d53874f9345778137",
+      "bytes": 419053
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_109_light.png",
+      "Git_blob_sha256": "4d8096e75a1b3c752e8909db52f775b687416e1fa0fea6494cdd676f05266c7f",
+      "bytes": 418580
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_150_dark.png",
+      "Git_blob_sha256": "5ea2cfa014038ac9e099ccfdde9394b5bd6c851485f32fa6c467e2db74391943",
+      "bytes": 228804
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_150_light.png",
+      "Git_blob_sha256": "97ebda35719b994b0f997b185e59739f6871ccd98326ab29998bbcc97a9e2f1a",
+      "bytes": 226662
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_151_dark.png",
+      "Git_blob_sha256": "4e245945b222c72dfaafced1db15f1f4b78c3ab5cb6654ff636c5ab73e45926a",
+      "bytes": 212938
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_151_light.png",
+      "Git_blob_sha256": "04b318b048074e084aea4850f9781b921d668e52c149386e16d107a00546c11d",
+      "bytes": 212005
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_18_dark.png",
+      "Git_blob_sha256": "5ec78a5416303e4f62cc7edd921d227f600adcaffb2f6e98a3d5a1d04e68e97c",
+      "bytes": 461802
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_18_light.png",
+      "Git_blob_sha256": "ea9d59218cbdf07a7ae00a6d6d582ad73d49f60e638bbdd231ad58cc9320ac7d",
+      "bytes": 460218
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_1_dark.png",
+      "Git_blob_sha256": "6803d97ff8e03d239838533ac2bad540f07dbfa2d067d8e0368f32d08ce0130e",
+      "bytes": 270090
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_1_light.png",
+      "Git_blob_sha256": "fb98fd76f84e0a942f76841dc2c249e671eb07381c48bfda24b9d37f60bede40",
+      "bytes": 268498
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_276_dark.png",
+      "Git_blob_sha256": "ed22a75f13fd32b5ea93caf49c95937548c0ddb52c77ccc644bd040b97f34721",
+      "bytes": 841084
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_276_light.png",
+      "Git_blob_sha256": "64d2e3a5897dbebd4be3479bf1cadccb0e34deeb0fb72857cbf69580313d4e55",
+      "bytes": 841339
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_277_dark.png",
+      "Git_blob_sha256": "f03880ebe729d7c0079a53cbdaec34c97a66d98ca0f1b19baeb94b92e8df05a7",
+      "bytes": 831727
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_277_light.png",
+      "Git_blob_sha256": "c58c8966acab6ef5d06c29246bfbe4bd22f669408c987cb489fc55978c40ddca",
+      "bytes": 833330
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_281_dark.png",
+      "Git_blob_sha256": "881ccd67b0f445012088ea8970eaba7b850eea76b093c897a642829e4a8140b9",
+      "bytes": 817438
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK10_281_light.png",
+      "Git_blob_sha256": "1d0f9955fba05e044ece63ed50f0c707526bf9f99df4092e2ea52d6c98d7e366",
+      "bytes": 819278
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_187_dark.png",
+      "Git_blob_sha256": "438b6ba88e999cfba430aad85bf5fe1dde2c451907f222e4284bd03017457c67",
+      "bytes": 236094
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_187_light.png",
+      "Git_blob_sha256": "0149996c0cf197c95fdd265ff1467197b3b25a1ab331a7f7ff6934c0361e1d25",
+      "bytes": 234790
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_1_dark.png",
+      "Git_blob_sha256": "58dfaadb4322eaf763631f17f9d4bd84727e6b54f6694ac3422dfebf6a86d3b4",
+      "bytes": 177406
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_1_light.png",
+      "Git_blob_sha256": "a978978822a8d4fb1416fa2aa3cfc16276db21843fa46bc0b62bfd8d20f6213a",
+      "bytes": 177127
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_255_dark.png",
+      "Git_blob_sha256": "a459ea99b09e1cdc89d7a487b954258eb361f140c88228ece8119db8b84dce89",
+      "bytes": 309317
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_255_light.png",
+      "Git_blob_sha256": "cacb64c64a171f7cd02d12b9c77d9fb2619057a3d98e3dbdb550438af1ec5430",
+      "bytes": 305643
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_367_dark.png",
+      "Git_blob_sha256": "303eeee397e2e194d8c045d220c458696e5ca69b11a0780d6f788350535fd282",
+      "bytes": 428285
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_367_light.png",
+      "Git_blob_sha256": "51163c8e92283079992143a2947ccad5c5af488a18760ca505139cc8f516ec71",
+      "bytes": 429642
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_368_dark.png",
+      "Git_blob_sha256": "60293a817536b38a91b7dcb9653f44ada14a2a87b11d4e1ac8f7a42bdfe0330d",
+      "bytes": 440019
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_368_light.png",
+      "Git_blob_sha256": "d642935b89afb1efca7432378565f375183b26922bc91aa8adccdedf08061f06",
+      "bytes": 439049
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_369_dark.png",
+      "Git_blob_sha256": "8d4c7ddf7ab95c551d50c5fa8ed4cda292422da121dfc8fa631ec57055ed2a7a",
+      "bytes": 441815
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_369_light.png",
+      "Git_blob_sha256": "de6f39f44f726354f873ea6a482266afe2f7a9b6d0a9c54bff84c57ff535b918",
+      "bytes": 441412
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_420_dark.png",
+      "Git_blob_sha256": "707ffde396f8aa404e7807a378fe22ff14cad91fe4a2592c130863fe27152a80",
+      "bytes": 281182
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_420_light.png",
+      "Git_blob_sha256": "5617537bbb6ed6330270df2f64bf544c4469c76df1bf7924c1cd7cb1f78e3c78",
+      "bytes": 279745
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_59_dark.png",
+      "Git_blob_sha256": "e44732b122ae13fc450d0c11e2d67a57532bd8f1d058d5409fd1be4fae57361b",
+      "bytes": 289462
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BOOK8_59_light.png",
+      "Git_blob_sha256": "356c30137d7a18ddd29b9a2f58eb16eea864b12607add1fe7d90e90387eaa385",
+      "bytes": 288670
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BROWSER_PROGRESS.json",
+      "Git_blob_sha256": "933df40ba81fa5709d7b5ab952f6a64a326e089bed8b0013f58eb8dcad20124f",
+      "bytes": 271
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/BROWSER_QA.json",
+      "Git_blob_sha256": "8a72373a17df09cb4a9eb3a2c5dfeacb9543a7fa6bdf882f45976fe928a03b6d",
+      "bytes": 3052
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/CERTIFICATION.json",
+      "Git_blob_sha256": "1c0421988e3721030dec17372c69fc5d1df5fb62e1800c71b97bb6678c3ec321",
+      "bytes": 7721
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/COMMIT_SCOPE.json",
+      "Git_blob_sha256": "cbc9d5971a5cba7ec286f9fea2ee14b06a66e329a56a322b4d7fbabb4e73ebe1",
+      "bytes": 41857
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/EXPECTED_INTERVALS.json",
+      "Git_blob_sha256": "cdd9303bc746ca9110bbcfc9661d2c6ed9c1b79c94eef7e90fed78e93bbcd549",
+      "bytes": 1243262
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/FILE_MANIFEST.json",
+      "Git_blob_sha256": "abad303d0c89595bf72a624457766e626e4842a1e399b825865d78b5f56c6462",
+      "bytes": 101357
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/FOLLOWUP_GATE_QA.json",
+      "Git_blob_sha256": "cf4c9bbf3395d3592aafbf897bcbeff2cf2d2af173bd74b8adbc5302633cfc92",
+      "bytes": 145295
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/NEW_BOOK_BROWSER_QA.json",
+      "Git_blob_sha256": "c9f68291049c9b71f25d1b92364ccfd3902a4ec73d74af2265df21261a508881",
+      "bytes": 5257
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/PRINT_INPUTS_UNCHANGED.json",
+      "Git_blob_sha256": "7176f300d2b8252b84d755212f1fa278d466e722f49a01b92deb20415c182de6",
+      "bytes": 39457
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/PROTECTED_BROWSER_QA.json",
+      "Git_blob_sha256": "4e2886a3c61676b56557c0629b87c5e7beb7ec36dc88bf5888f49962b2c41475",
+      "bytes": 20935
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/PROTECTED_SOURCE_GATE_QA.json",
+      "Git_blob_sha256": "e05613f17c48ab2700a37ed50c8eab73c144bc1ab702223b4da66b18c3f28730",
+      "bytes": 3050
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/READER_CHANGES.md",
+      "Git_blob_sha256": "a61f158eca089cc1b8b0f9e2f23bd348f99017dab160d686dc015eb1383a93a4",
+      "bytes": 1150
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/RENDERED_GATE_QA.json",
+      "Git_blob_sha256": "ef1cd320900d01f38afcc0e4d5cf53140bb9b03f76cfb0fd0b623700de4d22e8",
+      "bytes": 9870
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/REPORT.md",
+      "Git_blob_sha256": "82cfc7e89a153313fddb37f35847e48faacb17e57f944c88e795ae4c67ce197d",
+      "bytes": 6324
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/TARGET_BASELINE.json",
+      "Git_blob_sha256": "374f858579416132be3aa8e1a008b4475a32a49035bd6add2af3ec14b692bba5",
+      "bytes": 844767
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/UI_SUPPLEMENT_QA.json",
+      "Git_blob_sha256": "ec6e6fc0d3a42d18e5ff1365c18de82f42861fb1af596dc1a8c8401465fc74e4",
+      "bytes": 7910
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/UNCHANGED_BASE_FILES.json",
+      "Git_blob_sha256": "1dac6dd24ebcea6c9ac5d8bf7264c94a974d888e0cf5a6ca04276d2ce6186469",
+      "bytes": 157391
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/VI_ALIGNMENT_GATE_QA.json",
+      "Git_blob_sha256": "87e744565d3dbc7e1ca1208123b1674fe7a0a526b745a63c23705d843a7b0600",
+      "bytes": 4525
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/VI_LOCATOR_GATE_QA.json",
+      "Git_blob_sha256": "0243ad1ab3c058dd3e4bd760b884b1e02fd0e12c55d91d9c012edda61f6f5ce2",
+      "bytes": 3999
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/XI_MULTISPAN_GATE_QA.json",
+      "Git_blob_sha256": "6057282d65fa95015ca0c60b5fb6c47318611e5e34d1c63fc7b1a5cace026182",
+      "bytes": 8529
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/baseline-jekyll.log",
+      "Git_blob_sha256": "74496d8a9f1e16676e7907492a3ecbb51b4ae5f77a7dd14fbb1f4110e2f9c887",
+      "bytes": 5076
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/browser-certify.cjs",
+      "Git_blob_sha256": "998d128a5e97d3ab46ef566c920c99e657706cc80f8e0603afdcec89dc036982",
+      "bytes": 18822
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/build.sh",
+      "Git_blob_sha256": "17040700445578d15138390212bb89f7bbcf905cc630f452601286bc03c4272b",
+      "bytes": 978
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/commit_local.py",
+      "Git_blob_sha256": "5f3921a1310eaf49ba21f2b7244c875588b54c1008e2f9ab4dd1fcf5a95fcede",
+      "bytes": 4926
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/dependencies.log",
+      "Git_blob_sha256": "393f62a7482c064df0cdd9ce0dc3cf3f8d0112ba79b9b8b72bafbb33c678143b",
+      "bytes": 14553
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/diagnostics/FAILED_BROWSER_QA.json",
+      "Git_blob_sha256": "c52a4fe6a9aad4e34c1532b7c29f464f28afa93d5fc6c06ca31d9fee9ee03808",
+      "bytes": 2093
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/diagnostics/FAIL_cross_deh_1.json",
+      "Git_blob_sha256": "c87ec5affa58dc082d0b7df2aa881aa25cc848650e23080a481c7fd29b1e3c4b",
+      "bytes": 1336530
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/diagnostics/RESOLVED.md",
+      "Git_blob_sha256": "d09df1b8e51be12a6f1614774477d5e1feb17807ed051756a8c245778b28193d",
+      "bytes": 1034
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/established-regressions.test.cjs",
+      "Git_blob_sha256": "684b37c5d252ead55440b99f8e162d6b9bea5ea268c48516b9f3f3db9abfec2b",
+      "bytes": 45610
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/finalize_packets.py",
+      "Git_blob_sha256": "0a0008b1bd30474a80ba3c1c43931358cd32fb89ac1ca53c486df6e4b8622c14",
+      "bytes": 20990
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/implement.py",
+      "Git_blob_sha256": "50cd1fa27d3b0eb05af32c8281b397bd35815905191444822075765a7d843030",
+      "bytes": 8327
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/inputs/Greek-book-08.xml",
+      "Git_blob_sha256": "010a566202b9f18d6a35528720986a89a1ceb9dd7417866696cd1e74ef85b098",
+      "bytes": 269203
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/inputs/Greek-book-10.xml",
+      "Git_blob_sha256": "6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae",
+      "bytes": 165695
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/inputs/Latin-book-08.xml",
+      "Git_blob_sha256": "7a94c61dc00d61c683953451c575e8166be03699510f1c7d563c2c5b74edfe5f",
+      "bytes": 148539
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/inputs/Latin-book-10.xml",
+      "Git_blob_sha256": "e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c",
+      "bytes": 96599
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/jekyll.log",
+      "Git_blob_sha256": "f86763516e50cb839be7e755de36ac1c39b92338ee51a3973f8f6c74b59b11dd",
+      "bytes": 4890
+    },
+    {
+      "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/verify_implementation.py",
+      "Git_blob_sha256": "3f41cf97cfc4465178418833d9705de115fb9cb2bb52caeb32cf7039ddd4f323",
+      "bytes": 9957
+    }
+  ],
+  "incoming_count": 477,
+  "production_scope": [
+    "_includes/display-settings.html",
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/Greek/book-08.xml",
+    "assets/xml/antiquities/Greek/book-10.xml",
+    "assets/xml/antiquities/Latin/book-08.xml",
+    "assets/xml/antiquities/Latin/book-10.xml",
+    "assets/xml/antiquities/niese/book-08.json",
+    "assets/xml/antiquities/niese/book-10.json"
+  ],
+  "review_files": 469,
+  "approved_audit_files_byte_exact": 381,
+  "books": {
+    "8": {
+      "sections": 420,
+      "retained_inherited_starts": 83,
+      "Latin_milestones": 337,
+      "Latin_intervals": 420,
+      "unavailable": [],
+      "inherited_exceptions": [
+        {
+          "paragraph": "latin-book08-num187",
+          "label": "[VII.iv.187]",
+          "visibleClaim": 187,
+          "actualSection": 186
+        },
+        {
+          "paragraph": "latin-book08-num255",
+          "label": "[X.iii.255]",
+          "visibleClaim": 255,
+          "actualSection": 255
+        }
+      ]
+    },
+    "10": {
+      "sections": 281,
+      "retained_inherited_starts": 50,
+      "Latin_milestones": 230,
+      "Latin_intervals": 280,
+      "unavailable": [
+        108
+      ],
+      "inherited_exceptions": [
+        {
+          "paragraph": "latin-book10-num108",
+          "label": "[VII.iii.108]",
+          "visibleClaim": 108,
+          "actualSection": 109
+        },
+        {
+          "paragraph": "latin-book10-num151",
+          "label": "[VIII.vi.151]",
+          "visibleClaim": 151,
+          "actualSection": 150
+        }
+      ]
+    }
+  },
+  "total_Antiquities_selections": 3157,
+  "canonical_checkouts": [],
+  "certification_reused": "All certified production inputs and committed outputs unchanged"
+}

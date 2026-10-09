@@ -1,0 +1,90 @@
+{
+  "result": "PASS",
+  "canonical_before": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "canonical_after_data_integration": "2b07ac23143d7fa551753aee1d7051da5a77b99a",
+  "implementation_source": "2b07ac23143d7fa551753aee1d7051da5a77b99a",
+  "method": "FAST_FORWARD",
+  "conflicts": [],
+  "additional_production_changes": [],
+  "additional_changes": "This review-only integration verification packet",
+  "incoming_production_files": 8,
+  "incoming_review_files": 469,
+  "incoming_scope_verified": 477,
+  "audit_checkpoint": "fb8a65e2a6c7d6e5426f3b4751d30e67528b1a28",
+  "approved_audit_files_preserved": 381,
+  "certification_reused": true,
+  "sources": [
+    {
+      "path": "_includes/display-settings.html",
+      "certified_and_canonical_Git_SHA256": "56dbc944d350c627562fa0d85d843ee8fe3cb94fe47d7cd17fa019991e6e3315",
+      "canonical_checkout_SHA256": "56dbc944d350c627562fa0d85d843ee8fe3cb94fe47d7cd17fa019991e6e3315",
+      "fresh_build_identical": false
+    },
+    {
+      "path": "assets/js/renderTei.js",
+      "certified_and_canonical_Git_SHA256": "4ace5e81d4f452aec87d52ab798d7b3453041e24096d15461e2054d1be38ba21",
+      "canonical_checkout_SHA256": "4ace5e81d4f452aec87d52ab798d7b3453041e24096d15461e2054d1be38ba21",
+      "fresh_build_identical": true
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-08.xml",
+      "certified_and_canonical_Git_SHA256": "3ae0e04f7ccb24c05bdcb166f40a143098c4f5c73be74e1edc2985b1a09cbb9e",
+      "canonical_checkout_SHA256": "3ae0e04f7ccb24c05bdcb166f40a143098c4f5c73be74e1edc2985b1a09cbb9e",
+      "fresh_build_identical": true
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-10.xml",
+      "certified_and_canonical_Git_SHA256": "764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7",
+      "canonical_checkout_SHA256": "764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7",
+      "fresh_build_identical": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-08.xml",
+      "certified_and_canonical_Git_SHA256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "canonical_checkout_SHA256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "fresh_build_identical": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-10.xml",
+      "certified_and_canonical_Git_SHA256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "canonical_checkout_SHA256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "fresh_build_identical": true
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-08.json",
+      "certified_and_canonical_Git_SHA256": "f5b9773bd744535f695ac6f6875f0563d8a6a5c91bb69a42cc860d3ed84460f6",
+      "canonical_checkout_SHA256": "f5b9773bd744535f695ac6f6875f0563d8a6a5c91bb69a42cc860d3ed84460f6",
+      "fresh_build_identical": true
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-10.json",
+      "certified_and_canonical_Git_SHA256": "8646d7f86b5241f65433eff8d1cb5cf8c520676bd8be9ea99e6e4e54743f7853",
+      "canonical_checkout_SHA256": "8646d7f86b5241f65433eff8d1cb5cf8c520676bd8be9ea99e6e4e54743f7853",
+      "fresh_build_identical": true
+    }
+  ],
+  "VIII": {
+    "selections": 420,
+    "Latin_intervals": 420,
+    "milestones": 337
+  },
+  "X": {
+    "selections": 281,
+    "Latin_intervals": 280,
+    "milestones": 230,
+    "Latin_unavailable": 108,
+    "Greek_English_independently_available": true
+  },
+  "total_Antiquities_selections": 3157,
+  "IX_disabled": true,
+  "canonical_focused_critical_URLs": 26,
+  "protected_route_comparisons": 15,
+  "browser_exceptions": 0,
+  "console_errors": 0,
+  "request_failures": 0,
+  "origin_refreshed_before_integration": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "origin_refreshed_after_smoke": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "public_preview_refresh_performed": false,
+  "deployment_performed": false,
+  "segmentation_decisions_reopened": false
+}
