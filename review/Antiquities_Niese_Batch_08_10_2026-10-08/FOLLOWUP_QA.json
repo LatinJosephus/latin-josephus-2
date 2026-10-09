@@ -1,0 +1,108 @@
+{
+  "result": "PASS",
+  "scope": "Audit integrity, source preservation, mixed-content locators and file scope; not scholarly certification",
+  "canonical_branch": "v2-development",
+  "canonical_HEAD": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "origin_tracking_HEAD": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "canonical_working_tree": "CLEAN",
+  "worktree_branch": "antiquities-niese-08-10",
+  "worktree_HEAD": "39c9b60803f38806872a9c0a6a905c92ffa03d3e",
+  "staged_files": [],
+  "checkpoint_commit_file_counts": {
+    "8": 43,
+    "10": 39,
+    "batch": 59
+  },
+  "base_files_verified": {
+    "isolated_base_files": 469,
+    "current_canonical_files": 595
+  },
+  "all_base_tracked_files_byte_or_checkout_normalization_unchanged": true,
+  "frozen_research_files_rechecked": 245,
+  "PDF_files_rechecked": 3,
+  "inputs_and_outputs": [
+    {
+      "book": 8,
+      "language": "Greek",
+      "path": "assets/xml/antiquities/Greek/book-08.xml",
+      "worktree_before_sha256": "010a566202b9f18d6a35528720986a89a1ceb9dd7417866696cd1e74ef85b098",
+      "worktree_after_sha256": "010a566202b9f18d6a35528720986a89a1ceb9dd7417866696cd1e74ef85b098",
+      "canonical_before_sha256": "8b684917c163de459ada56ef1293da6a8b87515344ccc961419b7e602ebea433",
+      "canonical_after_sha256": "8b684917c163de459ada56ef1293da6a8b87515344ccc961419b7e602ebea433"
+    },
+    {
+      "book": 8,
+      "language": "Latin",
+      "path": "assets/xml/antiquities/Latin/book-08.xml",
+      "worktree_before_sha256": "7a94c61dc00d61c683953451c575e8166be03699510f1c7d563c2c5b74edfe5f",
+      "worktree_after_sha256": "7a94c61dc00d61c683953451c575e8166be03699510f1c7d563c2c5b74edfe5f",
+      "canonical_before_sha256": "a300124a948ff44b7216b48c18cb929033500f09b71ae944535313f2df88db80",
+      "canonical_after_sha256": "a300124a948ff44b7216b48c18cb929033500f09b71ae944535313f2df88db80"
+    },
+    {
+      "book": 8,
+      "language": "English",
+      "path": "assets/xml/antiquities/English/book-08.xml",
+      "worktree_before_sha256": "ab5018bcecc4b2933a5061311e21810548a6ef8ce5ccd09f9a3da5268ca50472",
+      "worktree_after_sha256": "ab5018bcecc4b2933a5061311e21810548a6ef8ce5ccd09f9a3da5268ca50472",
+      "canonical_before_sha256": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba",
+      "canonical_after_sha256": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba"
+    },
+    {
+      "book": 10,
+      "language": "Greek",
+      "path": "assets/xml/antiquities/Greek/book-10.xml",
+      "worktree_before_sha256": "6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae",
+      "worktree_after_sha256": "6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae",
+      "canonical_before_sha256": "e49314528e626f47c64e507cbd6a96978419ae1765b059ed6100818e31279089",
+      "canonical_after_sha256": "e49314528e626f47c64e507cbd6a96978419ae1765b059ed6100818e31279089"
+    },
+    {
+      "book": 10,
+      "language": "Latin",
+      "path": "assets/xml/antiquities/Latin/book-10.xml",
+      "worktree_before_sha256": "e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c",
+      "worktree_after_sha256": "e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c",
+      "canonical_before_sha256": "8b2104191d4dba2e7e74ca684146519ed5b5113a5e983a5ceb9a6e970f741d3a",
+      "canonical_after_sha256": "8b2104191d4dba2e7e74ca684146519ed5b5113a5e983a5ceb9a6e970f741d3a"
+    },
+    {
+      "book": 10,
+      "language": "English",
+      "path": "assets/xml/antiquities/English/book-10.xml",
+      "worktree_before_sha256": "1e70950fd9d2500795c401b37b7d49fa560d3f0fd90270b11915bccd718faccf",
+      "worktree_after_sha256": "1e70950fd9d2500795c401b37b7d49fa560d3f0fd90270b11915bccd718faccf",
+      "canonical_before_sha256": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d",
+      "canonical_after_sha256": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d"
+    }
+  ],
+  "per_book": {
+    "8": {
+      "register_records": 420,
+      "all_checkpoint_classifications_and_candidates_preserved": true,
+      "all_original_and_proposed_mixed_content_locators_verified": true,
+      "all_sources_byte_unchanged": true,
+      "print_images": 90,
+      "NO_GO": true,
+      "new_book_browser_QA": "NOT RUN: no implementation or enablement"
+    },
+    "10": {
+      "register_records": 281,
+      "all_checkpoint_classifications_and_candidates_preserved": true,
+      "all_original_and_proposed_mixed_content_locators_verified": true,
+      "all_sources_byte_unchanged": true,
+      "print_images": 63,
+      "NO_GO": true,
+      "new_book_browser_QA": "NOT RUN: no implementation or enablement"
+    }
+  },
+  "evidence_images": 169,
+  "new_milestones": 0,
+  "Greek_repairs_applied": 0,
+  "cumulative_certified_Niese_coverage": 2456,
+  "new_book_browser_tests": "NOT RUN; books remain disabled",
+  "regression_evidence": "Existing actual built-site regression/browser results retained in checkpoint; no production change in addendum.",
+  "manifest_hashes_checked": true,
+  "followup_changes": "UNSTAGED AND UNCOMMITTED",
+  "no_push_performed": true
+}

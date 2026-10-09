@@ -1,0 +1,111 @@
+{
+  "status": "PROTECTED_BASELINE_REGRESSIONS_PASS_NEW_BOOK_IMPLEMENTATIONS_NOT_CERTIFIED",
+  "initial_certified_base": "1cf003beeb03f7b0acf2c42057ace062cdb7ebff",
+  "current_certified_canonical": "f393fa1223b38d9ca114e583fcc57d5e34425815",
+  "initial_build": "C:\\workspace\\Antiquities-Niese-Batch-08-10\\local-build\\site",
+  "current_build": "C:\\workspace\\Antiquities-Niese-Batch-08-10\\local-build-current\\site",
+  "builds": "Dedicated disposable Jekyll builds, canonical read-only for second build; no public Pages checkout or shared build used.",
+  "traditional": {
+    "chapters": 257,
+    "subchapters": 1432,
+    "language_displays": 5034,
+    "unavailable": 33,
+    "all": "PASS",
+    "evidence": "BROWSER_QA.json"
+  },
+  "bamberg": {
+    "identities": 198,
+    "three_language_displays": 594,
+    "all": "PASS",
+    "evidence": [
+      "BAMBERG_BROWSER_QA.json",
+      "BAMBERG_RANGE_QA.json",
+      "BAMBERG_URL_QA.json",
+      "SAME_NIESE_DIFFERENT_POSITION_QA.json"
+    ]
+  },
+  "existing_Antiquities_Niese": {
+    "books": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "selections": 2456,
+    "newly_enabled": 0,
+    "all": "PASS",
+    "evidence": "BROWSER_QA.json"
+  },
+  "alignment": {
+    "units": 1441,
+    "all": "PASS",
+    "evidence": "ALIGNMENT_ALL_QA.json"
+  },
+  "protected_special_cases": {
+    "XI_multi_span": "PASS",
+    "VI_xii_8_and_XIII": "PASS",
+    "nine_chapters_without_printed_lower_1": "PASS",
+    "evidence": [
+      "XI_MULTISPAN_GATE_QA.json",
+      "VI_ALIGNMENT_GATE_QA.json",
+      "VI_LOCATOR_GATE_QA.json",
+      "FOLLOWUP_GATE_QA.json",
+      "BROWSER_QA.json"
+    ]
+  },
+  "Bellum": {
+    "Niese_citations": 4001,
+    "Greek_Latin_Cardwell_ranges": "PASS",
+    "English_Whiston_and_Lodge": "PASS",
+    "Lodge_note_toggle": "PASS",
+    "existing_Greek_range_repair": "PASS",
+    "evidence": [
+      "PROTECTED_SOURCE_GATE_QA.json",
+      "INTERACTION_QA.json"
+    ]
+  },
+  "DEH_and_Contra_Apionem": {
+    "navigation_ranges_and_deep_links": "PASS",
+    "evidence": [
+      "BROWSER_QA.json",
+      "INTERACTION_QA.json"
+    ]
+  },
+  "TOC": {
+    "source_combinations": 104,
+    "source_contents_rows": 30,
+    "Latin_XIV_supplied_V_XII": "PASS",
+    "history_panes_themes": "PASS",
+    "current_typography_baseline": "PASS",
+    "evidence": [
+      "CONTENTS_BROWSER_QA_2026-10-08.json",
+      "CONTENTS_CURRENT_BASELINE_QA.json"
+    ]
+  },
+  "availability": {
+    "unsupported": [
+      8,
+      9,
+      10
+    ],
+    "VII_IX_VII_switch": "PASS",
+    "exact_new_book_Niese_tests": "NOT_RUN: neither book implemented",
+    "evidence": [
+      "AVAILABILITY_QA.json",
+      "AVAILABILITY_CURRENT_BASELINE_QA.json"
+    ]
+  },
+  "known_existing_issue": {
+    "interface_duplicate_DOM_id": "annotations",
+    "sources": [
+      "converted TEI standOff xml:id=annotations",
+      "fixed annotations accordion id=annotations"
+    ],
+    "text_pane_duplicate_ID_checks": "PASS",
+    "baseline_scope": "Existing unchanged UI issue; not hidden or repaired in this audit."
+  },
+  "current_baseline_reconciliation": "Only CSS and typography review packet changed. Full source/renderer/registry/template hash equivalence verified; TOC, interaction, theme and availability tests rerun against fresh current build."
+}

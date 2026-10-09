@@ -1,0 +1,57 @@
+{
+  "status": "APPROVED_LOCAL_IMPLEMENTATION_UNAPPLIED",
+  "authorization": {
+    "authority": "Direct user approval and implementation authorization, 2026-10-08",
+    "scope": "Isolated implementation worktree, local certification and local commits",
+    "canonical_integration": false,
+    "push": false,
+    "public_deployment": false
+  },
+  "books": {
+    "8": {
+      "expected_sections": 420,
+      "inherited_candidate_starts": 83,
+      "proposed_milestones": 337,
+      "unavailable": [],
+      "partial_survival": [
+        367
+      ],
+      "partial_correspondence": [],
+      "classifications": {
+        "EXACT": 83,
+        "INTERNAL-BUT-EXACT": 337
+      },
+      "unresolved_editorial_decisions": 0
+    },
+    "10": {
+      "expected_sections": 281,
+      "inherited_candidate_starts": 50,
+      "proposed_milestones": 230,
+      "unavailable": [
+        108
+      ],
+      "partial_survival": [],
+      "partial_correspondence": [
+        276
+      ],
+      "classifications": {
+        "EXACT": 50,
+        "INTERNAL-BUT-EXACT": 230,
+        "UNAVAILABLE": 1
+      },
+      "unresolved_editorial_decisions": 0
+    }
+  },
+  "new_Latin_milestones": 567,
+  "represented_Latin_intervals": 700,
+  "unavailable_Latin_sections": [
+    {
+      "book": 10,
+      "niese": 108
+    }
+  ],
+  "outstanding_routine_checks": 0,
+  "outstanding_editorial_decisions": 0,
+  "production_changes_in_audit_branch": [],
+  "audit_parent_HEAD": "dec5f783b1af936803150536ed5aaa031b21c479"
+}

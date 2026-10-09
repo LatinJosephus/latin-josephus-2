@@ -1,0 +1,176 @@
+{
+  "status": "CANDIDATE_AUDIT_PRINT_COLLATION_ADDENDUM_IMPLEMENTATION_NOT_APPROVED",
+  "checkpoint_commits": {
+    "8": "cc86a1d3ef3626a04b44032b9c8fc60293a44bff",
+    "10": "da28ec5abd7084fe5199549e2e38488171505c0e",
+    "batch": "39c9b60803f38806872a9c0a6a905c92ffa03d3e"
+  },
+  "base": "1cf003beeb03f7b0acf2c42057ace062cdb7ebff",
+  "books": {
+    "8": {
+      "book": 8,
+      "citations": 420,
+      "explicit_Greek_labels": 419,
+      "missing_explicit_Greek_label": 1,
+      "routine_print_collation_records": 420,
+      "body_pages": 90,
+      "greek_status_counts": {
+        "IMPLICIT_PRINTED_OPENING_VERIFIED": 1,
+        "AGREES_WITH_FROZEN_CLAUSE_LOCATOR": 410,
+        "DISAGREES_WITH_FROZEN_PROPOSED_RELOCATION": 4,
+        "WORD_START_REQUIRES_SOURCE_INTERPRETATION": 3,
+        "PRINT_NUMERAL_ANOMALY_XML_SEQUENCE_INDEPENDENTLY_SUPPORTED": 2
+      },
+      "verification_work_states": {
+        "GREEK_VERIFIED_WITH_SECURE_LATIN_COUNTERPART": 85,
+        "GREEK_COLLATED_LATIN_CANDIDATE_AWAITING_INDIVIDUAL_VERIFICATION": 317,
+        "GREEK_COLLATED_LATIN_OR_REPRESENTATION_EDITORIAL_DECISION": 14,
+        "GREEK_START_AWAITING_WORD_LEVEL_SOURCE_DECISION": 3,
+        "ABSENCE_OR_SOURCE_ANOMALY_REQUIRES_REPRESENTATION_DECISION": 1
+      },
+      "classification_counts": {
+        "EXACT": 81,
+        "REQUIRES_ADJUDICATION": 337,
+        "INTERNAL-BUT-EXACT": 1,
+        "UNAVAILABLE": 1
+      },
+      "placement_classification_crosstab": {
+        "INHERITED_START": {
+          "EXACT": 81,
+          "REQUIRES_ADJUDICATION": 2
+        },
+        "PROPOSED_INTERNAL_MILESTONE": {
+          "REQUIRES_ADJUDICATION": 335,
+          "INTERNAL-BUT-EXACT": 1
+        },
+        "NO_LATIN_START": {
+          "UNAVAILABLE": 1
+        }
+      },
+      "placement_confidence_crosstab": {
+        "INHERITED_START": {
+          "HIGH": 81,
+          "PENDING_EDITORIAL_VERIFICATION": 2
+        },
+        "PROPOSED_INTERNAL_MILESTONE": {
+          "PENDING_EDITORIAL_VERIFICATION": 335,
+          "HIGH": 1
+        },
+        "NO_LATIN_START": {
+          "HIGH_ABSENCE_IN_THIS_TRANSCRIPTION": 1
+        }
+      },
+      "human_decision_sections": [
+        59,
+        83,
+        87,
+        97,
+        110,
+        167,
+        172,
+        187,
+        224,
+        245,
+        255,
+        334,
+        353,
+        367,
+        368,
+        369,
+        408,
+        409
+      ],
+      "resolved_source_case_sections": [
+        256,
+        314,
+        376,
+        377
+      ],
+      "new_milestones_applied": 0,
+      "Greek_repairs_applied": 0,
+      "book_implementation": "NO_GO",
+      "certified": false,
+      "checkpoint_commit": "cc86a1d3ef3626a04b44032b9c8fc60293a44bff",
+      "checkpoint_register_sha256": "d62d50639e2a93d9ed370c648ea6a22a600509b49e90ea07bb8d29ba9045bf8c"
+    },
+    "10": {
+      "book": 10,
+      "citations": 281,
+      "explicit_Greek_labels": 280,
+      "missing_explicit_Greek_label": 1,
+      "routine_print_collation_records": 281,
+      "body_pages": 63,
+      "greek_status_counts": {
+        "IMPLICIT_PRINTED_OPENING_VERIFIED": 1,
+        "AGREES_WITH_FROZEN_CLAUSE_LOCATOR": 279,
+        "DISAGREES_WITH_FROZEN_PROPOSED_RELOCATION": 1
+      },
+      "verification_work_states": {
+        "GREEK_VERIFIED_WITH_SECURE_LATIN_COUNTERPART": 46,
+        "GREEK_COLLATED_LATIN_CANDIDATE_AWAITING_INDIVIDUAL_VERIFICATION": 224,
+        "GREEK_COLLATED_LATIN_OR_REPRESENTATION_EDITORIAL_DECISION": 10,
+        "ABSENCE_OR_SOURCE_ANOMALY_REQUIRES_REPRESENTATION_DECISION": 1
+      },
+      "classification_counts": {
+        "EXACT": 46,
+        "REQUIRES_ADJUDICATION": 233,
+        "UNAVAILABLE": 1,
+        "INTERNAL-BUT-EXACT": 1
+      },
+      "placement_classification_crosstab": {
+        "INHERITED_START": {
+          "EXACT": 46,
+          "REQUIRES_ADJUDICATION": 4
+        },
+        "PROPOSED_INTERNAL_MILESTONE": {
+          "REQUIRES_ADJUDICATION": 229,
+          "INTERNAL-BUT-EXACT": 1
+        },
+        "NO_LATIN_START": {
+          "UNAVAILABLE": 1
+        }
+      },
+      "placement_confidence_crosstab": {
+        "INHERITED_START": {
+          "HIGH": 46,
+          "PENDING_EDITORIAL_VERIFICATION": 4
+        },
+        "PROPOSED_INTERNAL_MILESTONE": {
+          "PENDING_EDITORIAL_VERIFICATION": 229,
+          "HIGH": 1
+        },
+        "NO_LATIN_START": {
+          "HIGH_ABSENCE_IN_THIS_TRANSCRIPTION": 1
+        }
+      },
+      "human_decision_sections": [
+        18,
+        33,
+        69,
+        102,
+        107,
+        108,
+        109,
+        150,
+        151,
+        213,
+        248
+      ],
+      "resolved_source_case_sections": [],
+      "new_milestones_applied": 0,
+      "Greek_repairs_applied": 0,
+      "book_implementation": "NO_GO",
+      "certified": false,
+      "checkpoint_commit": "da28ec5abd7084fe5199549e2e38488171505c0e",
+      "checkpoint_register_sha256": "e832690c99810a4124f4091cd4304fa4c943a5bc9548064ffc78a2a78e7fa50c"
+    }
+  },
+  "total_citations_audited": 701,
+  "new_citations_enabled": 0,
+  "existing_certified_Antiquities_Niese_selections": 2456,
+  "cumulative_certified_Antiquities_Niese_selections": 2456,
+  "all_human_decisions_null": true,
+  "new_Greek_or_Latin_edits": false,
+  "push_authorized": false,
+  "followup_changes_left_unstaged": true
+}

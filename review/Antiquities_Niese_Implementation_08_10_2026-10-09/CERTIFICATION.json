@@ -1,0 +1,221 @@
+{
+  "base": "a48021588e0840330388a6055a97bd0f7c2cf827",
+  "audit_checkpoint": "fb8a65e2a6c7d6e5426f3b4751d30e67528b1a28",
+  "result": "PASS",
+  "books": {
+    "8": {
+      "book": 8,
+      "result": "PASS",
+      "expected_sections": 420,
+      "retained_inherited_starts": 83,
+      "new_Latin_milestones": 337,
+      "represented_Latin_intervals": 420,
+      "unavailable": [],
+      "confidence_counts": {
+        "EXACT": 83,
+        "INTERNAL-BUT-EXACT": 337
+      },
+      "remaining_routine_review": 0,
+      "remaining_editorial_decisions": 0,
+      "partitions": {
+        "Greek": {
+          "intervals": 420,
+          "complete_byte_independent_Unicode_narrative_partition": true,
+          "characters": 129443,
+          "sha256": "19740e38e246d55ad3c80c382790274302c783a250f8b6e565d0b41dea2b8dd4",
+          "adjacent_no_overlap_no_loss": true
+        },
+        "Latin": {
+          "intervals": 420,
+          "complete_byte_independent_Unicode_narrative_partition": true,
+          "characters": 122742,
+          "sha256": "c45a4128b4daac9933f44c1a5d84434a7f2e572579b0a416a74658bf276a9a79",
+          "adjacent_no_overlap_no_loss": true
+        }
+      },
+      "inherited_label_exceptions": [
+        {
+          "paragraph": "latin-book08-num187",
+          "label": "[VII.iv.187]",
+          "visibleClaim": 187,
+          "actualSection": 186
+        },
+        {
+          "paragraph": "latin-book08-num255",
+          "label": "[X.iii.255]",
+          "visibleClaim": 255,
+          "actualSection": 255
+        }
+      ],
+      "source_preservation": "BYTE_EXACT",
+      "all_print_and_editorial_qualifications_retained": true
+    },
+    "10": {
+      "book": 10,
+      "result": "PASS",
+      "expected_sections": 281,
+      "retained_inherited_starts": 50,
+      "new_Latin_milestones": 230,
+      "represented_Latin_intervals": 280,
+      "unavailable": [
+        108
+      ],
+      "confidence_counts": {
+        "EXACT": 50,
+        "INTERNAL-BUT-EXACT": 230,
+        "UNAVAILABLE": 1
+      },
+      "remaining_routine_review": 0,
+      "remaining_editorial_decisions": 0,
+      "partitions": {
+        "Greek": {
+          "intervals": 281,
+          "complete_byte_independent_Unicode_narrative_partition": true,
+          "characters": 79845,
+          "sha256": "fb133bbb4879ffbfd7f5b32b978555018be7f0cc6f204381abfcd48310fc9914",
+          "adjacent_no_overlap_no_loss": true
+        },
+        "Latin": {
+          "intervals": 280,
+          "complete_byte_independent_Unicode_narrative_partition": true,
+          "characters": 75516,
+          "sha256": "af64e58da9a6e14e2bb9a0fcefdf0be3686edb2f04b89262c1be37f3edd51f77",
+          "adjacent_no_overlap_no_loss": true
+        }
+      },
+      "inherited_label_exceptions": [
+        {
+          "paragraph": "latin-book10-num108",
+          "label": "[VII.iii.108]",
+          "visibleClaim": 108,
+          "actualSection": 109
+        },
+        {
+          "paragraph": "latin-book10-num151",
+          "label": "[VIII.vi.151]",
+          "visibleClaim": 151,
+          "actualSection": 150
+        }
+      ],
+      "source_preservation": "BYTE_EXACT",
+      "all_print_and_editorial_qualifications_retained": true
+    }
+  },
+  "preservation": [
+    {
+      "book": 8,
+      "language": "Greek",
+      "path": "assets/xml/antiquities/Greek/book-08.xml",
+      "base_Git_blob_sha256": "010a566202b9f18d6a35528720986a89a1ceb9dd7417866696cd1e74ef85b098",
+      "target_before_sha256": "010a566202b9f18d6a35528720986a89a1ceb9dd7417866696cd1e74ef85b098",
+      "target_after_sha256": "3ae0e04f7ccb24c05bdcb166f40a143098c4f5c73be74e1edc2985b1a09cbb9e",
+      "newline": "LF",
+      "BOM": false,
+      "exact_inverse_byte_recovery": true,
+      "narrative_ID_sameAs_paragraph_divisions_unchanged": true
+    },
+    {
+      "book": 8,
+      "language": "Latin",
+      "path": "assets/xml/antiquities/Latin/book-08.xml",
+      "base_Git_blob_sha256": "7a94c61dc00d61c683953451c575e8166be03699510f1c7d563c2c5b74edfe5f",
+      "target_before_sha256": "7a94c61dc00d61c683953451c575e8166be03699510f1c7d563c2c5b74edfe5f",
+      "target_after_sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "newline": "LF",
+      "BOM": false,
+      "exact_inverse_byte_recovery": true,
+      "narrative_ID_sameAs_paragraph_divisions_unchanged": true
+    },
+    {
+      "book": 10,
+      "language": "Greek",
+      "path": "assets/xml/antiquities/Greek/book-10.xml",
+      "base_Git_blob_sha256": "6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae",
+      "target_before_sha256": "6e4d4495ea48de1addd6a94ca81d34044621e6ddf2e716d1b8ff6db760caa5ae",
+      "target_after_sha256": "764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7",
+      "newline": "LF",
+      "BOM": false,
+      "exact_inverse_byte_recovery": true,
+      "narrative_ID_sameAs_paragraph_divisions_unchanged": true
+    },
+    {
+      "book": 10,
+      "language": "Latin",
+      "path": "assets/xml/antiquities/Latin/book-10.xml",
+      "base_Git_blob_sha256": "e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c",
+      "target_before_sha256": "e1f56d981c25bdf2f6f53842d8e624bc8e3fae22de4c4eed1dcd35ce4ce1872c",
+      "target_after_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "newline": "LF",
+      "BOM": false,
+      "exact_inverse_byte_recovery": true,
+      "narrative_ID_sameAs_paragraph_divisions_unchanged": true
+    }
+  ],
+  "mixed_content_fixtures": {
+    "status": "PASS",
+    "tests": [
+      "mixed .text/.tail",
+      "UTF-8",
+      "numeric and named entities",
+      "CRLF",
+      "comment exclusion and tail coordinates",
+      "empty element tails",
+      "nested add/del retained",
+      "num excluded with tail retained",
+      "two units",
+      "raw Unicode-byte roundtrip",
+      "note excluded with tail retained",
+      "nested-child tail ownership",
+      "chapter-0 paratext exclusion",
+      "omission-placeholder exclusion"
+    ]
+  },
+  "unchanged_base_files": 589,
+  "built_production_files": [
+    {
+      "path": "assets/js/renderTei.js",
+      "sha256": "4ace5e81d4f452aec87d52ab798d7b3453041e24096d15461e2054d1be38ba21"
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-08.xml",
+      "sha256": "3ae0e04f7ccb24c05bdcb166f40a143098c4f5c73be74e1edc2985b1a09cbb9e"
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-10.xml",
+      "sha256": "764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-08.xml",
+      "sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-10.xml",
+      "sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26"
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-08.json",
+      "sha256": "f5b9773bd744535f695ac6f6875f0563d8a6a5c91bb69a42cc860d3ed84460f6"
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-10.json",
+      "sha256": "8646d7f86b5241f65433eff8d1cb5cf8c520676bd8be9ea99e6e4e54743f7853"
+    }
+  ],
+  "actual_browser_QA": "PASS",
+  "coverage": {
+    "existing_Antiquities_Niese_selections": 2456,
+    "new_selections": 701,
+    "total": 3157,
+    "new_Latin_intervals": 700,
+    "Latin_absence_states": 1,
+    "traditional_chapters": 257,
+    "traditional_subchapters": 1432,
+    "traditional_executable_three_language_ranges": 5034,
+    "traditional_unavailable_states": 33,
+    "Bamberg_identities": 198,
+    "Bamberg_three_language_displays": 594,
+    "Alignment_units": 1441,
+    "Bellum_Niese_per_English_source": 4001
+  },
+  "printed_PDFs_and_frozen_evidence_unchanged": true
+}

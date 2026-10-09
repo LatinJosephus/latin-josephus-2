@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "book": 8,
+      "regeneration_byte_identical": true,
+      "regenerated_files": {
+        "BOUNDARIES.json": "d62d50639e2a93d9ed370c648ea6a22a600509b49e90ea07bb8d29ba9045bf8c",
+        "BOUNDARIES.tsv": "fbfb5a552afc38a38417edc34c8c8535299bfa579fab2ba531608ff793bf3373",
+        "LATIN_TEXT_NODE_LEDGER.json": "3810315ce71afcd553d5aabf4fa5cab172c8e56c9b044ac35ce89137691805f3",
+        "CANDIDATE_DRY_RUN.json": "f6b363db5ed7ce8511255961615ff9fe230de82c249481fd313c7389fd652d44",
+        "INSERTION_PLAN.json": "0b200c24d0b7b95d8f1fbc0537b1df66c400c3567889cff297dcd3428a5b3b67",
+        "AUDIT_RESULT.json": "c0ff77dc81d98fcf3070307782da7721757f440c89c1326cdc6a8d2155a2e60b"
+      },
+      "wrong_Greek_hash_rejected_before_register_write": true,
+      "guard_is": "read-only audit source gate, not application authorization",
+      "result": "PASS"
+    },
+    {
+      "book": 10,
+      "regeneration_byte_identical": true,
+      "regenerated_files": {
+        "BOUNDARIES.json": "e832690c99810a4124f4091cd4304fa4c943a5bc9548064ffc78a2a78e7fa50c",
+        "BOUNDARIES.tsv": "25571ccbc91501f1cae4fc023795bcbfb777875d2c9369939d3294003a736f90",
+        "LATIN_TEXT_NODE_LEDGER.json": "84a52db8ae1c282124ca54f6bb4df7a630fbbfc5b55aa3975362761e1d702c6f",
+        "CANDIDATE_DRY_RUN.json": "860f1eba6080b60fa35d14051b65f31fb5ada797d9c6893f04d20f4740a8d346",
+        "INSERTION_PLAN.json": "80160bd369bec4e3b379154441a7c99c0c9146890f6b36759c298794d9a659d5",
+        "AUDIT_RESULT.json": "482d8166bd96c78d5fb07e6122f9388b98b40d46aee5453fa0171239ab3ab930"
+      },
+      "wrong_Greek_hash_rejected_before_register_write": true,
+      "guard_is": "read-only audit source gate, not application authorization",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}
