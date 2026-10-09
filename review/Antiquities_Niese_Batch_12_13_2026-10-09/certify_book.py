@@ -7,13 +7,14 @@ b=int(sys.argv[1]); d=packet(b)
 read=lambda p:json.loads(p.read_text(encoding='utf8'))
 src=read(d/'FINAL_SOURCE_QA.json'); browser=read(d/'IMPLEMENTATION_BROWSER_QA.json'); ranges=read(d/'RANGE_BROWSER_QA.json')
 protected=read(PACK/'PROTECTED_BROWSER_QA.json'); exceptions=read(PACK/'BOUNDED_BASELINE_EXCEPTIONS.json')
-for record in [src,browser,ranges,protected,exceptions]: assert record['result']=='PASS'
+visual=read(d/'FINAL_VISUAL_REVIEW.json')
+for record in [src,browser,ranges,protected,exceptions,visual]: assert record['result']=='PASS'
 assert not src['pending_editorial_decisions']
 plan=read(d/'APPROVED_MARKER_PLAN.json'); rows=read(d/'BOUNDARIES.json')
 if isinstance(rows,dict): rows=rows['boundaries']
 head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
 canonical=subprocess.check_output(['git','-C',r'C:\Users\Pollard_R\Git\LatinJosephus-v2-development','rev-parse','HEAD'],text=True).strip()
-evidence={p.name:sha(p.read_bytes()) for p in [d/'FINAL_SOURCE_QA.json',d/'IMPLEMENTATION_BROWSER_QA.json',d/'RANGE_BROWSER_QA.json',PACK/'PROTECTED_BROWSER_QA.json',PACK/'BOUNDED_BASELINE_EXCEPTIONS.json']}
+evidence={p.name:sha(p.read_bytes()) for p in [d/'FINAL_SOURCE_QA.json',d/'IMPLEMENTATION_BROWSER_QA.json',d/'RANGE_BROWSER_QA.json',d/'FINAL_VISUAL_REVIEW.json',PACK/'PROTECTED_BROWSER_QA.json',PACK/'BOUNDED_BASELINE_EXCEPTIONS.json']}
 count=browser['projections']['identities']; intervals=browser['projections']['Latin_starts']
 cert={'book':b,'status':'LOCAL_CERTIFIED_READY_FOR_COORDINATED_INTEGRATION','base_commit':BASE,'evidence_HEAD':head,'canonical_HEAD_read_at_seal':canonical,'canonical_advance':canonical!=BASE,'branch':'antiquities-niese-12-13','worktree':str(ROOT),'runtime':str(RUNTIME),'published_baseline_selectable':3157,'local_added_selectable':count,'local_added_nonempty_Latin_intervals':intervals,'Greek_marker_operations':len(plan['Greek_authorized_marker_operations']),'Latin_section_milestones':sum(x['kind']=='INSERT_LATIN_SECTION_MILESTONE' for x in plan['Latin_authorized_marker_operations']),'Latin_end_markers':sum(x['kind']!='INSERT_LATIN_SECTION_MILESTONE' for x in plan['Latin_authorized_marker_operations']),'retained_Latin_starts':intervals-sum(x['kind']=='INSERT_LATIN_SECTION_MILESTONE' for x in plan['Latin_authorized_marker_operations']),'no_independent_Latin_intervals':src['no_independent_Latin_intervals'],'whole_section_absence_claims':src['whole_section_Latin_absence_claims'],'pending_editorial_decisions':[],'source_recovery':'PASS: independent raw tag removal and stored exact inverse against pinned LF bytes; all narrative, IDs, sameAs and English preserved','reader_QA':'PASS: every selection, interval, language context, qualification and actual chapter/subchapter range; deep links, history, navigation, reload and themes','protected_QA':'PASS; exact inherited exceptions separately reproduced in frozen baseline and candidate','evidence_sha256':evidence,'integration_limit':'Local certification only; reconcile against then-current canonical code. No merge, push, preview change or deployment.'}
 save(d/'CERTIFICATE.json',cert)

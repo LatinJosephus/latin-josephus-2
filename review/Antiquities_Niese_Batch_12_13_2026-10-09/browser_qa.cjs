@@ -153,7 +153,7 @@ async function main(){
    },{row,code:narrative.toString(),exclusions:expected.exclusions});
    report.actual_ranges.push(details);
   }
-  const focused=b===12?[246,247,248,249,434]:[1,213,214,216,269,274,433];report.visuals=[];
+  const focused=b===12?[246,247,248,249,434]:[1,212,213,214,215,216,217,269,274,433];report.visuals=[];
   for(const n of focused){await open(`/antiquities/?book=${b}&niese=${n}`);for(const theme of ['light','dark']){await page.evaluate(t=>setTheme(t),theme);await page.waitForTimeout(550);const p=path.join(packet(b),`${routine?'ROUTINE_':''}READER_${n}_${theme}.png`);await page.screenshot({path:p,fullPage:true});report.visuals.push(path.basename(p));}if(!await page.locator('.lj-brand__light').evaluate(n=>n.complete&&n.naturalWidth>0))throw Error('Local SVG logo serving');}
   if(b===12){
    await open('/antiquities/?book=12&chapter=5');
