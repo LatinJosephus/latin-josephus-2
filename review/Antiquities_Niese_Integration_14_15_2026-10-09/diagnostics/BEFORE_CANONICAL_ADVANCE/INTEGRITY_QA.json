@@ -1,0 +1,1080 @@
+{
+  "result": "PASS",
+  "tested_production_commit": "cf082405078a849530b3c128c543e58304601e73",
+  "source_tip": "48a5b5ce711eb63a9071c0f06c22d9b5414e6607",
+  "frozen_source_base": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "actual_canonical_start": "81126ce116045433cb5cf22945cc3711701ac3ca",
+  "incoming_review_files_byte_identical": 531,
+  "incoming_corpus_files_byte_identical": 4,
+  "incoming_XIV_registry_byte_identical": true,
+  "XV_registry_certified_bytes_recovered_by_removing_one_integration_metadata_line": true,
+  "XV_accepted_sections_notes_range_representation_unchanged": true,
+  "canonical_protected_Git_blobs_unchanged": 2470,
+  "canonical_actual_working_bytes_unchanged": true,
+  "integration_checkout_working_variants": [
+    {
+      "path": ".gitignore",
+      "canonical_working_sha256": "8f5f7d50140d1e7e89656f8def11a5cc6678cd1791d4f2a1d614c9954d342897",
+      "integration_working_sha256": "0bb2a6567e105c6037f1d03bee3614ac391810fb6e282c5824ffe5d2d4bac067",
+      "unchanged_Git_blob": "154f43588f894af39679985963c7ee88b7f67d7f",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 10,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "404.html",
+      "canonical_working_sha256": "aa01b726e68c77ccb78e27af52a542c154c8f3a5d6a0753ff47e0604ad88f7eb",
+      "integration_working_sha256": "4e672616e8f887c0f2aed1886b67f1d12ed00c5207394aa68246d568e8b86cf6",
+      "unchanged_Git_blob": "f7a54dd26a4182a5345fe5468553c4a1509b5209",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 9,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "CNAME",
+      "canonical_working_sha256": "a74eed957ddcbcf8d8e5e2ca5891d996f686ba786f675921b93266209db54524",
+      "integration_working_sha256": "69e323ab0be351ceedef0dc1af9e747691e5ce252a68a4fa79b9eeba44d2d9b5",
+      "unchanged_Git_blob": "8db159fc826c4fb03e2af2ebf58022e4910efe01",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 1,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "Gemfile",
+      "canonical_working_sha256": "493ca5c09da26c795103cf9d5787a8441f59a433bbe1a282f08ba812d150ea66",
+      "integration_working_sha256": "aee4bc7bb237f6c63bd743bb3897917297aa5dd8c20f9686f192418527da903d",
+      "unchanged_Git_blob": "31a554ce2beca0fd5f1dd032e0d440cc2d8745af",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 18,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_bibliography/papers.bib",
+      "canonical_working_sha256": "d348ce82328b72d0de8bd9f33524121033b41bfcdee4e6e93aa3666f923656e4",
+      "integration_working_sha256": "500291bd8ab5b8c809cad815c8a662f92854ce70bba18ce89a976b6ecab66b8a",
+      "unchanged_Git_blob": "7ed262b72c940a495caf6f7ad0ec0c1b0e2ec4f9",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 72,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_data/coauthors.yml",
+      "canonical_working_sha256": "d606b1327acb412b215a634dc0e56cf6450239eb3ff58148a487ebef4bd42e60",
+      "integration_working_sha256": "2bf85080da1cfa1555d20810a02004b428425d924e224ed3be8a94a92cbf7d81",
+      "unchanged_Git_blob": "0c1c954a395ba46be5e6c0513afeff5e9a118468",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 18,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/annotations-bar.html",
+      "canonical_working_sha256": "39db175479cd16bc3fbe07ce34f210be63cbfe15cf28fde20dfcf7ca4e07f56a",
+      "integration_working_sha256": "8668d24ffd7c263bbd71e1222e9e706dfae8b3e9158653f87b4c95e6c8f97b41",
+      "unchanged_Git_blob": "73d862e5446c90483fe0deb3ba9e8397cb418a8a",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 26,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/footer.html",
+      "canonical_working_sha256": "65579fcd7e9c7a48acb4d72c19ad954fb55220bb58547351f96aedd99d456d29",
+      "integration_working_sha256": "bce8d0c0d6af5887f16e276ad06818ef404994ff432e39e1560726ac0c70a22c",
+      "unchanged_Git_blob": "2e3452184cfa4a35c5ca09dabd986728053c4624",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 27,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/logos.html",
+      "canonical_working_sha256": "6428d88042c1653c9d97a85b485c4a8229601c216b5fa32c54f37ebdb8d38c92",
+      "integration_working_sha256": "0f74f4684a2767965b6f1c83570f116e2267768a7857b05481f02d975c4fda9f",
+      "unchanged_Git_blob": "22cdf6ab4ef9c17a611017257ac37c55446bdaea",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 19,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/pagination.html",
+      "canonical_working_sha256": "6e8a8371b32b885827244d28e4b3d956d0385e6caf50716540060a513ad6259b",
+      "integration_working_sha256": "0fac089918dba3ffa314a6317f542f672fc74913ddb24ecb47cc8b133f12828a",
+      "unchanged_Git_blob": "6761017550417d591716575a0abfeacb426b13b8",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 17,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/projects_horizontal.html",
+      "canonical_working_sha256": "6a53f87e3eda00bdaab56bce1344948321bacd3e696023ba07ce70f3cbbfd1c3",
+      "integration_working_sha256": "5084e6186da48a6a18f9183111bc2d4e26abc01247b49d5d585045f2f5861d41",
+      "unchanged_Git_blob": "e0dd5f20349ce6380ffa8cdb72460f5ceb64e2bd",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 43,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/scripts/analytics.html",
+      "canonical_working_sha256": "da64c34a2786f3e06b61efad770d23d123a447e4048a3b23fd64e6f46b77e25c",
+      "integration_working_sha256": "8a231804d0e49883c67c34740596931696734c8aa2f05f88597e538ac8445995",
+      "unchanged_Git_blob": "504d39b49568165ff96ce32627a0f88cb8e291b6",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 21,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/scripts/bootstrap.html",
+      "canonical_working_sha256": "6b7addb9669f09684755cdaf2d609767681efca588e6de1f81018fb5c683bed6",
+      "integration_working_sha256": "9c5100884cccf62e08441818830f0bb2dcf35070cebfc42e226ffb21c22eb464",
+      "unchanged_Git_blob": "2c5d4ee066dad81ead68f270e17ed2a83afaa96c",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 4,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/scripts/jquery.html",
+      "canonical_working_sha256": "2a7c722de758ed8f9b8812bc25aaa08933b1e686b95ab7740f6badda1a4e643a",
+      "integration_working_sha256": "71033b8a84892bc775b4f27b57e6dc007bbb03f21ad04cda3e0220df4cd63955",
+      "unchanged_Git_blob": "8de7788d3e189db88fb4bf1b715ba75ed42259fe",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 2,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_includes/scripts/mansory.html",
+      "canonical_working_sha256": "448023ae5c75154bae83de8f5b2f63dcac51b2d09ca6d36ad6f397c2234db231",
+      "integration_working_sha256": "810a9a0b933438d04dc72f047a4dec1a023e8d61225e740a8f63b0ce2d718829",
+      "unchanged_Git_blob": "5a93a9eeda315152d5a71f1b6e60d1edeb0d41a1",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 6,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_layouts/default.html",
+      "canonical_working_sha256": "c63e79e42f3dbe3786980fef32d3a6882fc3ff4a12133f812750dadbd2c855e3",
+      "integration_working_sha256": "fd96452a0f6b370f0441e650415414a154beaec6012c1d775181b77dabb92070",
+      "unchanged_Git_blob": "2a210f1ce040c093b723016aa0f9a62f2febac4d",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 33,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_layouts/info.html",
+      "canonical_working_sha256": "3214dd54424694d056e5c18efdc855aec591d68d0a761f5e4cd54f2e106349c0",
+      "integration_working_sha256": "cbbaa0c446bcf54616c076974901ada5ffea9000b07c982c0ef5f29631bf054f",
+      "unchanged_Git_blob": "d8bcb43c9744bf19a49483ab962fa12ea0919fd2",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 37,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_layouts/none.html",
+      "canonical_working_sha256": "7081266c27060b7d3827c9470ccc36f503d2eb2626d847793b50fcd418cdd92b",
+      "integration_working_sha256": "78db73fc08139851d7389e05a16e5086cff621f50968888ac5a1e3c3d9300120",
+      "unchanged_Git_blob": "b92f6522338a7b9d0045a3b8aa6b0fb4e7af85d3",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 1,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_layouts/page.html",
+      "canonical_working_sha256": "b17d5efd13d738582295d5fb5c05bda51c8b39af47b1197e2d3d92d656ca1a9e",
+      "integration_working_sha256": "2dd046492aec77c5801828d432608cf2bbfdaea88f11db0ed14b7759223835b4",
+      "unchanged_Git_blob": "10b9ab4f66fa73334cc68709012ebc053210b6dd",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 15,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_pages/antiquities.md",
+      "canonical_working_sha256": "538c0d78d442a4240f9f9e916c7b518337bc42f04870be256e48932114f9d3e0",
+      "integration_working_sha256": "351a7804f400c26d22116a540113f0297118794d215ef3ad29db1d3389a9cb88",
+      "unchanged_Git_blob": "700c807732110619cc1b1f9e349871c497c2e6ab",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 7,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_pages/background.md",
+      "canonical_working_sha256": "149b57e84db17c0d0db6e14ab2ec1ce173da2a5653bdf289bf0ba93ca622ac0a",
+      "integration_working_sha256": "de854a590d733c5c1611ecb436077a36f27531d9b267f8eb01f8a7a57629de86",
+      "unchanged_Git_blob": "0b061872e58fc164192f73cec3b007b30ce6cdc2",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 19,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_pages/bellum-judaicum.md",
+      "canonical_working_sha256": "c5d677551e9df2dcc37b36aef270c5954bc00ed83ff176efc8d1092c81b7882c",
+      "integration_working_sha256": "792343d6ddeceb5d3ed795ba6666e9a8b95c20e0605492bbe1b3b242faf2d485",
+      "unchanged_Git_blob": "a5b070bc460565d9433b0df67b4a1e8995c7bbb5",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 7,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_pages/contra-apionem.md",
+      "canonical_working_sha256": "266f0184fac3a55ed84b9cefabb84a5ae8f0d8d1aecb86dc9250981eff7517e4",
+      "integration_working_sha256": "619779f21ed2d0aa17186acac8d52eefe8f7cca8a40ec2f41c716724819e3d67",
+      "unchanged_Git_blob": "00397ad70a96dc12c89d4a5f7b2f0e44f5f12d26",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 7,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_pages/deh.md",
+      "canonical_working_sha256": "b7a0001e188739f769176dcef18320dffd4a03fb6c2e1c766faf12fa2cfed995",
+      "integration_working_sha256": "12262bb8c8151358563a6b8f1e6c6072024bc050ece940dbc26252f7fed8f9f5",
+      "unchanged_Git_blob": "a079de5bb722c802b479c7f597ea504a85321637",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 7,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_sass/_antiquities.scss",
+      "canonical_working_sha256": "a890fac1ef2779340d81cb08d9f4d2a5f4954e6afdc43bc355b18951144320d3",
+      "integration_working_sha256": "e6c200f3cc568b4ce982b19980b92cb5dc17da17fed5582f95b033007749d226",
+      "unchanged_Git_blob": "e2ef6458d8bbefb5f5f77a8e0da69fc8bad1dc87",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 94,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_sass/_base.scss",
+      "canonical_working_sha256": "6bb87cf13d5373ec4d300ac6a4a6c736b340c72cc5c5e24b335933c3cea89019",
+      "integration_working_sha256": "2165c832f48da4d517f0dd9342e92a0a29e0955a6d0de71b7f3aaf7b57f0de51",
+      "unchanged_Git_blob": "37445a81443543d098b3d37c331385cf94791177",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 596,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_sass/_distill.scss",
+      "canonical_working_sha256": "cff8e3be6b966d8bad03d6cdea98f756c10ac473e9b6f3017848339d7d0a7f22",
+      "integration_working_sha256": "0d636779946630e3a06f04609c1b0c7b3fe5279cb046ae34e527a47d4831fe82",
+      "unchanged_Git_blob": "24eb4b432899f755f70d931a05cbcd7d1e5141ad",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 45,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_sass/_layout.scss",
+      "canonical_working_sha256": "b4955d3d6a04681ee0b8989852931017d8b6c541afbf804dcdc6db6ccba5e7a5",
+      "integration_working_sha256": "b1da477c9f3ca0a1dccb39df522fca444c8ff5d10f96c8e7126369878652152b",
+      "unchanged_Git_blob": "aebd776f34fa4115e35b5f1d26b091451639fa58",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 30,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "_sass/_variables.scss",
+      "canonical_working_sha256": "0bc7fac5bfd7b402cd99c098d123cbac4366c99044d09e90accac18b07136c00",
+      "integration_working_sha256": "314f351131dd90a37ac22f88c80dcbb9c02341215b598041e4c2b22f8268129d",
+      "unchanged_Git_blob": "0eca9842fe2a2fe609f779d304985c050d8540be",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 38,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/bibliography/2018-12-22-distill.bib",
+      "canonical_working_sha256": "e6406f7cd68d832ee12fd7f11d1bac4f01e02f93b9a1eb214c43d2fa36372fd7",
+      "integration_working_sha256": "900cea810093195e82387bb6b7cc484e35fbcf2310f3cbe9084c4b57bcc05e1a",
+      "unchanged_Git_blob": "2b06f3c99f2aa7fb9c3fadd655df5a8087093531",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 7,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/img/logo-uqam.svg",
+      "canonical_working_sha256": "deab7e2b300f0227f1cfd3fcf80d91bf1079d1658f569c99a8f1309fb3462b4e",
+      "integration_working_sha256": "ca8b7e0a22ad1b265061aecdc557a0016a3da90e889094328881efc300d246d1",
+      "unchanged_Git_blob": "1c6bf2116af626b912402ec512a056358b4469be",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 25,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/img/pagespeed.svg",
+      "canonical_working_sha256": "cca1ef17b1e35ae4e9d84fec9a24fe8b358b06de12269070e76c320a005ab6ff",
+      "integration_working_sha256": "4802c6fedbeb413bcdfb779fe406735626979e4fa8c7e969e2b6581be6b97349",
+      "unchanged_Git_blob": "473cb50f3ae27da0d13a98e9423769e1ef9907f5",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 230,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/js/CETEI.js",
+      "canonical_working_sha256": "dd800e5a2f439b2473a7119d655c69ce97adc1119ff411533cba88a3765610f3",
+      "integration_working_sha256": "34d6b3d0d913045ad413b9a83e7f7a6cae05a6a3c1ac8fab1e1340e6c3c413d8",
+      "unchanged_Git_blob": "ec70f668f9a4685be91661ee47f7dd27a189336c",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 871,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/js/common.js",
+      "canonical_working_sha256": "987c884d93c2610703e1666e1482a956b40ac8a3299880720f3fd31a97f8addd",
+      "integration_working_sha256": "764120c310672d5c63541b9e84af7254b5a1c61f8d78ec9c218a54adaa68fe8c",
+      "unchanged_Git_blob": "02730e8a48746c9d3b6336169df0e5ec5397c66b",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 9,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/js/distillpub/overrides.js",
+      "canonical_working_sha256": "2bebce412f42f1fb0444c4a0283649736d4850b44d5a042b309ef69d610857c4",
+      "integration_working_sha256": "279b27ff9e3346214dc2b4c967e7a35375f2fb04a84f33141101d90aeca222b9",
+      "unchanged_Git_blob": "7e4dba7e50f493cbd8b1d7160043a742bc6d1d38",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 19,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/js/distillpub/template.v2.js",
+      "canonical_working_sha256": "67381b84313b1bfcf60ac823b1e026eab52d097c66c1e623fd6712c05f8f11ad",
+      "integration_working_sha256": "2ac24800167f576873d51c47f885b32ebf085e2016e7c14d58728b825f3e2d0a",
+      "unchanged_Git_blob": "4ddc61fcff6468bbf1f3aac2ca82c70e4b5126d0",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 9247,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/js/distillpub/transforms.v2.js",
+      "canonical_working_sha256": "f5c5c43b6ca5ea8642717d310f0edd94fe162ee7fa3dfc2862c6a046bee50f10",
+      "integration_working_sha256": "d897e3ee01e40284d67bd12dcc653a1a7f22896b617d2ea309b62326a5f47b80",
+      "unchanged_Git_blob": "2d12d32394db92f2e43e709550f57fef68753b97",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 13185,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/js/mansory.js",
+      "canonical_working_sha256": "2bc4be5d8265a4ec1538ae4f27d354c45aa262473d984b06353d4ae3669f5dc3",
+      "integration_working_sha256": "752c3c82a380e860df03f3cd74aaf95bf6830cd63d1e6d01fec43e6ae69ba0ff",
+      "unchanged_Git_blob": "054f3a080ce007f1e6da2bcb571883ca8b9eb17f",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 12,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/js/zoom.js",
+      "canonical_working_sha256": "43a42943a403d03c19fc80bcc73dec44a64e6c8247db5ff6caf80fa23dcd1398",
+      "integration_working_sha256": "60239b9f618cd1d1c8f9dc5345ab3a626f68f551a753e165e37a9596ce8e8ec0",
+      "unchanged_Git_blob": "c8610d6118ddb3e9dc16fb9ac86350cebe3f037c",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 8,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-06.xml",
+      "canonical_working_sha256": "3f80eeedbd414ee1f9b0d72276fcbab01737c93709e899ae6920ed2630172a05",
+      "integration_working_sha256": "a4770771856d20c9aefa64983adb064ad9c15889b57613d807e7117794198f14",
+      "unchanged_Git_blob": "74def86fbe3a048448ef4df09eb420cff111e79e",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 137,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-07.xml",
+      "canonical_working_sha256": "7dffada6163a5aba1c2a2c7dcd4fa6c6ecd1d7aa89e2343c64d88eeea94c38da",
+      "integration_working_sha256": "48707b448f1d424ddcbf7e464dbbbceef279629a3ea3030702b042e7e4233cf7",
+      "unchanged_Git_blob": "d4afae0870a100da6b3843d0e72f0d8306466408",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 133,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-08.xml",
+      "canonical_working_sha256": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba",
+      "integration_working_sha256": "ab5018bcecc4b2933a5061311e21810548a6ef8ce5ccd09f9a3da5268ca50472",
+      "unchanged_Git_blob": "2d8fca981be23430ac1cc802ca5db8123a6fe7b1",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 142,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-09.xml",
+      "canonical_working_sha256": "1cb809169442f5cea410773d322ffec315cd6a4bb0880285b1ea691245c84940",
+      "integration_working_sha256": "515c8ee6a9611f1333d51bb6a04361e8f4168a4f3c197faef23db58f361bd587",
+      "unchanged_Git_blob": "2080b2eecfaf81cc751d276a07205f12a73f294c",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 61,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-10.xml",
+      "canonical_working_sha256": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d",
+      "integration_working_sha256": "1e70950fd9d2500795c401b37b7d49fa560d3f0fd90270b11915bccd718faccf",
+      "unchanged_Git_blob": "f3da25865e77124bf2520266de3ac5a2e1739657",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 67,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-11.xml",
+      "canonical_working_sha256": "f8f26004ac52b6080a56ca94ad490e8671d8144f3624c40b9b2e7a516c0e1467",
+      "integration_working_sha256": "2273fecb032b0df11ba3f79857ea8ce59f681ee2a3595583d46ccfee3096f9fc",
+      "unchanged_Git_blob": "80923b5da7e3374069140fb9cd9707c2e23cd977",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 72,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-12.xml",
+      "canonical_working_sha256": "9cc8da830c8a630c024bf5729004fb224c17f7fabe5b7205cbeab37a34d10a1e",
+      "integration_working_sha256": "d5cee95948e272e04c624808c299588c7fb67c31988b686afd547c73597bbcea",
+      "unchanged_Git_blob": "b6b3548d13602523e87c3ba7141fc614506f9dd8",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 86,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-17.xml",
+      "canonical_working_sha256": "d790d8c8138235db359479b6d92a230151852e55506fe36a8e502757df0dc678",
+      "integration_working_sha256": "a235d02f6d8af17961a124c417e3d9e2393f760442facf7963db47a1c7d9d96c",
+      "unchanged_Git_blob": "872626d8dd7b4fb4cc620ad923b80823587aa29d",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 76,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-18.xml",
+      "canonical_working_sha256": "edc2d82807c5e3e2c878bebbe81d1a1f1b0a50531e33141989dfadaf34c5b5c1",
+      "integration_working_sha256": "306c69b86d7effe2f4b92d7a112cdb8e15563e0422c8f413c491bbdc1cd241b3",
+      "unchanged_Git_blob": "d93e3515a6ec37d131ffcd3702eff3156d6643b0",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 72,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-19.xml",
+      "canonical_working_sha256": "33e2d857bacd6648309c4ebc71db6141a92f4f995bca8f3807e89cdc459446d7",
+      "integration_working_sha256": "73186a567afaadbc036055fca04808e3041843833bf2ec86b2898c1e1f47b605",
+      "unchanged_Git_blob": "91a59842748a7b2f979f578646515902a4461f87",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 67,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-20.xml",
+      "canonical_working_sha256": "cefd1230d6c1205583c30b6db4825fb948deb8e165775f06e004d643285fb35b",
+      "integration_working_sha256": "7d0813df000bab366ee8d785cdd154fd509db7428b7774739185cd83194cec34",
+      "unchanged_Git_blob": "43cf16157ae0387befb535e7821e01a603bc85c2",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 66,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/English/preface.xml",
+      "canonical_working_sha256": "e35e7b31e16cf96d3d3d59279daacef22e10b69b05110d0cdc430bcf933343d9",
+      "integration_working_sha256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+      "unchanged_Git_blob": "a5bdf0e3f4821868e49f3b9bbe5a11835d8a6b6e",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 15,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-02.xml",
+      "canonical_working_sha256": "39f9b8d8154d43d34564ec292c0df2759e8532e3ed48e113e6d13064a8eaf800",
+      "integration_working_sha256": "f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da",
+      "unchanged_Git_blob": "8fc6badfc0eed8f1cf5f91a4f0dbf3250498ae6d",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 120,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-11.xml",
+      "canonical_working_sha256": "e74888e1361ab23351ef47717bc204f5cc24dad361472eb0b5f00adfc7098452",
+      "integration_working_sha256": "2aee7fab8664607c0139532ee7d49cc9a6e6ace0e6e4c34346adac42bc0c4f89",
+      "unchanged_Git_blob": "83e5aa2341e4f93ddcf4202d1a8a0befa8dc55fb",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 79,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/preface.xml",
+      "canonical_working_sha256": "94be08e73b1bd84cfd71f6c5958bebf903b0aeee480ca80cae7219596b1f7c69",
+      "integration_working_sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+      "unchanged_Git_blob": "ae0ddae75099e12103204719bb44ca2b0aac4253",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 14,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-02.xml",
+      "canonical_working_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "integration_working_sha256": "f7b2476b4b029918da1bef9b1abe9040e4e22c04b1dcce3d621a813b173bea72",
+      "unchanged_Git_blob": "5eda6b63f7f9720479ecd73541f8794665600d27",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 631,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-11.xml",
+      "canonical_working_sha256": "02fcf44d1315f30011d4e88417b7292dda0c1b335d9cfadfec0b5d2f632e9f51",
+      "integration_working_sha256": "5595739cd16e6d87357b25ae114f1a22b1fc70066eb532b465d401b84414464f",
+      "unchanged_Git_blob": "c50334d6051e41280b8368d186ad55279059104b",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 250,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "canonical_working_sha256": "ebb345435b006089e058604369180fdd94509806081fe89bc27348a517c4af91",
+      "integration_working_sha256": "a2c5ac4398551eaab0880d575f8c4272883064ef38013422ad5e2eecdb7e46b6",
+      "unchanged_Git_blob": "a5644973c8bdea9c9a8f9f471620d3b2b0973ac5",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 176,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "canonical_working_sha256": "5c4d1e6486e2229db3e47a4ab7841573427a2da6c9be2457fba1198d8b71bbc4",
+      "integration_working_sha256": "349ccf8751a0279c0a1f9836dd482a39698f7e3970d7018627c0d227c27dc8e3",
+      "unchanged_Git_blob": "46ac28bebe122bf3b520a0c71430b1893276b12e",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 255,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-19.xml",
+      "canonical_working_sha256": "5fa3b1f9b39d614d99b8d73fbf5675166c1ee0cca47cd4a242b27c5ea70d6a73",
+      "integration_working_sha256": "ab1c28f03e1a5893057262edfc117b63a1d46ce0b20bb803fb4e1903db439e80",
+      "unchanged_Git_blob": "880c1caf6e77aa7e7da80a493be07812b960b2f9",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 140,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-20.xml",
+      "canonical_working_sha256": "f59f763998b9d0e8ffd047603bdb629d58c9b099eeabee386d58bf3347a93509",
+      "integration_working_sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+      "unchanged_Git_blob": "b55720c5f0e48fc781f0e37d4ab295fce16a51ee",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 171,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/preface.xml",
+      "canonical_working_sha256": "8cc821957a03e694e795bcc29fb40bff9c9952eff06567e2da76b4e4732843d2",
+      "integration_working_sha256": "0c4719d6e120ec414fa75076f471d86aa5af9a11bb810299399118992fa897e8",
+      "unchanged_Git_blob": "7326c786f2e6ba00583aa8834c31253084b2d191",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 31,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-01.xml",
+      "canonical_working_sha256": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+      "integration_working_sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+      "unchanged_Git_blob": "7846170c58374574df7da802adeb11d5637c175d",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 322,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-02.xml",
+      "canonical_working_sha256": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+      "integration_working_sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+      "unchanged_Git_blob": "b0274854e07cd8d44fefdb01a8f5ba90c13fcfba",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 207,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-03.xml",
+      "canonical_working_sha256": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+      "integration_working_sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+      "unchanged_Git_blob": "ba3d425ef689ff7517a3e17692864a229d4b5bc1",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 128,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-04.xml",
+      "canonical_working_sha256": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+      "integration_working_sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+      "unchanged_Git_blob": "1bc11024533443da1e073c1ade7dbe4de37a9615",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 121,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-05.xml",
+      "canonical_working_sha256": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+      "integration_working_sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+      "unchanged_Git_blob": "08627c02c2e91b224f28b81949f99571bdb9ceb3",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 111,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-06.xml",
+      "canonical_working_sha256": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+      "integration_working_sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+      "unchanged_Git_blob": "c1bb82da05e28b44f60da3de4094c173a147e29b",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 90,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-07.xml",
+      "canonical_working_sha256": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+      "integration_working_sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+      "unchanged_Git_blob": "73c72f0fb87c4d80f8745afa7e3056ba78cfdb80",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 88,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-01.xml",
+      "canonical_working_sha256": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+      "integration_working_sha256": "d58bd11884c2e8742e2ee8d585d6a5e8740d1624ccf6fad41c37811427c45969",
+      "unchanged_Git_blob": "ab89ed7ce2a0f94463a5a076e0ed400455cf5a89",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 756,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-02.xml",
+      "canonical_working_sha256": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+      "integration_working_sha256": "bbd99e5aa819f485df14680242948da6bffe8dd5ff3fd127d9467d399d7d7f64",
+      "unchanged_Git_blob": "edb103cf9684ffec15f41e51bdc4633ddc40b7a5",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 737,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-03.xml",
+      "canonical_working_sha256": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+      "integration_working_sha256": "55a7b2d4d1be28b40e52097b2f8a92025a643a7cea3a84a77853a45e8a2d443c",
+      "unchanged_Git_blob": "b90c8a415227f3cc80ea777820f994af9ddafc89",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 625,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-04.xml",
+      "canonical_working_sha256": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+      "integration_working_sha256": "a3ae25b99ca75509401f95fc3405341e6c1c882f2d2e3dbec366a1f6dbdebaf9",
+      "unchanged_Git_blob": "ba3fa1045e6278dadcad684c7a820f38ad222582",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 746,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-05.xml",
+      "canonical_working_sha256": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+      "integration_working_sha256": "520db5852f3e0299413b2db9a9071c61d4912495c3a06a99198a3c174ca97d9b",
+      "unchanged_Git_blob": "5e3b41283b2b32386121b0181261687d94873223",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 655,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-06.xml",
+      "canonical_working_sha256": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+      "integration_working_sha256": "9380e9d4f6744467a4cd935cb1f6f4501c14283a13a02879564564aa45399b25",
+      "unchanged_Git_blob": "b82549e3ab1447770a8bcc230d421715a9ccb5be",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 525,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-07.xml",
+      "canonical_working_sha256": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+      "integration_working_sha256": "9b18443363cdef6d252d7d5382f868e7f66318702e0e80554311832cc25a5cc5",
+      "unchanged_Git_blob": "bf769e881e42a756f5e2a8cd79a3292e5dcd417d",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 538,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-01.xml",
+      "canonical_working_sha256": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+      "integration_working_sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+      "unchanged_Git_blob": "2d4816ec5bbd369b5741c58059dc0b208088ae3e",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 1328,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-02.xml",
+      "canonical_working_sha256": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+      "integration_working_sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+      "unchanged_Git_blob": "8c1883811e09a65d7776b0ba8407103a1e2a196f",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 770,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-03.xml",
+      "canonical_working_sha256": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+      "integration_working_sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+      "unchanged_Git_blob": "0d8795c5a014f7c833af951f429cd29ad565a5b7",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 455,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-04.xml",
+      "canonical_working_sha256": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+      "integration_working_sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+      "unchanged_Git_blob": "f636549d8f16a8a6ff880baeb59af621da11d458",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 500,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-05.xml",
+      "canonical_working_sha256": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+      "integration_working_sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+      "unchanged_Git_blob": "3e29cf396991396d33aad61259383da51b8847da",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 437,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-06.xml",
+      "canonical_working_sha256": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+      "integration_working_sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+      "unchanged_Git_blob": "2ff4a1057d086789ef6b729e8c85eb283b6979d6",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 318,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-07.xml",
+      "canonical_working_sha256": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+      "integration_working_sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+      "unchanged_Git_blob": "aed3b7c5ad1030c379f1d48e322c2f5446cc2ba9",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 263,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/contra-apionem/English/book-01.xml",
+      "canonical_working_sha256": "9b88f23d94420125135e64ec850b4c19e46fa357feb73c91d9136c1ba63a569a",
+      "integration_working_sha256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+      "unchanged_Git_blob": "eb3aa538b7a4270a0791ae6bc9d60aad89472671",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 422,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/contra-apionem/English/book-02.xml",
+      "canonical_working_sha256": "5685e7fe801b0157a09e70f68b667637b7b601230edd16a7c609ac59553ee422",
+      "integration_working_sha256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+      "unchanged_Git_blob": "7224c9169d6c68c883e3fbc1282c5157ffb9f2dc",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 409,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/contra-apionem/Greek/book-01.xml",
+      "canonical_working_sha256": "f2f38401bb9bd7ef456b36400605bd908ba25d394bec8ad8c79b2b9f6df12169",
+      "integration_working_sha256": "183e885e7ddd61894f2e5cef1a423689be6cbe3160bf42746b33c1bd47fa2b2e",
+      "unchanged_Git_blob": "9d6b94e77668d49a641eb91f98568073c76c79ea",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 952,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/contra-apionem/Greek/book-02.xml",
+      "canonical_working_sha256": "134521f8cb973c0272f97fdd9cb97313a33b69b89069b196af1ba722cedb9485",
+      "integration_working_sha256": "b6d836463f85f717f0b73acbf09a847545ddc3893cb744de21b38575968b4381",
+      "unchanged_Git_blob": "9146923656c19831b3b89a677745baf6ea9ed126",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 914,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/contra-apionem/Latin/book-01.xml",
+      "canonical_working_sha256": "7a1f760bc7a67139c5e94e7d280123052eb770ff0d9215ffe39fb2c9ae7a4baf",
+      "integration_working_sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+      "unchanged_Git_blob": "08d2846368e1e69b8a2213aba38477bf1aff0ee2",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 39,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/contra-apionem/Latin/book-02.xml",
+      "canonical_working_sha256": "4410962053fa0dab256a6f40380822e34803beefcc3ba2e272faf36049aff58f",
+      "integration_working_sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+      "unchanged_Git_blob": "c5afc257f0f26b969a4990ba3097df70fa67f0a3",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 39,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/English/book-01.xml",
+      "canonical_working_sha256": "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
+      "integration_working_sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
+      "unchanged_Git_blob": "7e3bde633371ca99914a476bf2011bdc2121a644",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 464,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/English/book-02.xml",
+      "canonical_working_sha256": "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
+      "integration_working_sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
+      "unchanged_Git_blob": "b335677459f34c2799c7103513f9005ad37f7b42",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 213,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/English/book-03.xml",
+      "canonical_working_sha256": "e5dc0d008801809385c8bcaf43c5ee2d42d861b572968e3ba6f6659543175d6b",
+      "integration_working_sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
+      "unchanged_Git_blob": "ba96dbc265d3efafc9e7cd61942d57052b83ed0c",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 171,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/English/book-04.xml",
+      "canonical_working_sha256": "79068f7cbc2591b38fab9b36ee300d7e173ced0fab7e0dfac1668f56726445bc",
+      "integration_working_sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
+      "unchanged_Git_blob": "2cb83b5c8bbc7e5be72c95f04bfd10e10d4a31ca",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 176,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/English/book-05.xml",
+      "canonical_working_sha256": "7658e545360849e75627a3ff771742d5fc06127da7613740c595c21e2aff5298",
+      "integration_working_sha256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27",
+      "unchanged_Git_blob": "a8baccc3ee2bc9da8a0bf9eb32850e56939ba444",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 258,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-01.xml",
+      "canonical_working_sha256": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+      "integration_working_sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+      "unchanged_Git_blob": "39f7e8fc50c948b40e20883ead14eb03647e22c7",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 348,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-02.xml",
+      "canonical_working_sha256": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+      "integration_working_sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+      "unchanged_Git_blob": "199ea82b88c36767057db75c389eae28029e1ee8",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 144,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-03.xml",
+      "canonical_working_sha256": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+      "integration_working_sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+      "unchanged_Git_blob": "daba4aa0c734bde547d4cab56e0714eb02e495ab",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 158,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-04.xml",
+      "canonical_working_sha256": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+      "integration_working_sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+      "unchanged_Git_blob": "d903f5b7718ee2acb8c788014e330b98398233b9",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 181,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-05.xml",
+      "canonical_working_sha256": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+      "integration_working_sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+      "unchanged_Git_blob": "156c4607b828afce278c79d8393e86cec64e1d54",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 265,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "bin/cibuild",
+      "canonical_working_sha256": "34f5feccc3a35e82012144b7bbc3c8caa6c65b1773c644c025ed24708f3bae40",
+      "integration_working_sha256": "ad69860060e890ca61460181dece19508943f4cf06960509da5b8fdd83bb5a1e",
+      "unchanged_Git_blob": "d5c9e1956fe7275c25ffaba455459971419b7dac",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 1,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "bin/deploy",
+      "canonical_working_sha256": "3b03a1187f7b1fc856c9dc92344d1d052a3990cc6e20c1fc5cd112d7fa8d7e92",
+      "integration_working_sha256": "62e5f8dd4bec99c884d5ae7ed526ca1688698598a0be29077d07ef7cca4c3c08",
+      "unchanged_Git_blob": "070e2f750e738b1303e85604e7a2f9720148287e",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 112,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    },
+    {
+      "path": "robots.txt",
+      "canonical_working_sha256": "3594bd69ae74bbb2a5f014331903ed08c59ba280382747fc0cd5d0410adfb65c",
+      "integration_working_sha256": "55e292f91dc9f97734c37d6afdbed1c5c918622402659d2ab1c1d37b90b751a5",
+      "unchanged_Git_blob": "a450fbe28faafb9e30c663c2082d3c87a656eaf1",
+      "difference_only_checkout_line_endings": true,
+      "canonical_CRLF": 7,
+      "integration_CRLF": 0,
+      "comparison_is_read_only_no_bytes_normalized": true
+    }
+  ],
+  "books": [
+    {
+      "book": 14,
+      "identities": 491,
+      "Latin_intervals": 489,
+      "retained_starts": 106,
+      "added_milestones": 383,
+      "unavailable": [
+        238,
+        239
+      ],
+      "Greek_additions": [
+        1
+      ],
+      "Greek_corrections": [],
+      "Greek_moves": [],
+      "exact_Latin_inverse": true,
+      "exact_Greek_inverse": true,
+      "all_original_markup_IDs_sameAs_partitions_preserved": true,
+      "independent_locator_certificate_sha256": "b9f5db07ce673525b527663d11cd7a0cfba906a000e10c63de4795b73bc15134",
+      "locator_evidence_reused_because_input_and_output_bytes_identical": true,
+      "source_frozen_English_sha256": "f342c46cfdcf4b22d1c9f4fa423295077538c51917b570a321e5df1f8d9e24e9",
+      "current_canonical_English_sha256": "f342c46cfdcf4b22d1c9f4fa423295077538c51917b570a321e5df1f8d9e24e9",
+      "integration_English_sha256": "f342c46cfdcf4b22d1c9f4fa423295077538c51917b570a321e5df1f8d9e24e9",
+      "two_English_baselines_equal": true
+    },
+    {
+      "book": 15,
+      "identities": 425,
+      "Latin_intervals": 423,
+      "retained_starts": 0,
+      "added_milestones": 423,
+      "unavailable": [
+        338,
+        347
+      ],
+      "Greek_additions": [
+        1
+      ],
+      "Greek_corrections": [],
+      "Greek_moves": [],
+      "exact_Latin_inverse": true,
+      "exact_Greek_inverse": true,
+      "all_original_markup_IDs_sameAs_partitions_preserved": true,
+      "independent_locator_certificate_sha256": "5419dd51a288cc9965132a0341c151be292287bab6dde14b70e33955771e6069",
+      "locator_evidence_reused_because_input_and_output_bytes_identical": true,
+      "source_frozen_English_sha256": "9f307e78e2c2f9a03335342fb1176620f6328793c379fb81d58b12164a383324",
+      "current_canonical_English_sha256": "9f307e78e2c2f9a03335342fb1176620f6328793c379fb81d58b12164a383324",
+      "integration_English_sha256": "9f307e78e2c2f9a03335342fb1176620f6328793c379fb81d58b12164a383324",
+      "two_English_baselines_equal": true
+    }
+  ],
+  "source_certificates_unchanged": true,
+  "source_byte_recovery_without_normalization": true
+}

@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "starting_canonical": "81126ce116045433cb5cf22945cc3711701ac3ca",
+  "certified_tip": "48a5b5ce711eb63a9071c0f06c22d9b5414e6607",
+  "manual_conflict_paths": [
+    "assets/js/renderTei.js"
+  ],
+  "conflict_regions": [
+    "Antiquities nieseIdentityBooks map",
+    "Canonical comment explaining anonymous-paragraph milestones"
+  ],
+  "resolution": "Keep canonical IX/XII/XIII and VIII/X registrations; add XIV/XV. Retain the canonical explanatory comment and its already-compatible anonymous-paragraph guard.",
+  "validation": "Merged renderer byte-equals starting canonical blob plus exactly two registry entries. All six incoming corpus/registry files and531 incoming review files equal the certified tip.",
+  "incoming_anonymous_paragraph_behavior": "Already supplied identically by integrated XIII; no further shared logic change required.",
+  "canonical_IX_exclusions_unavailable_witness_and_XII_terminal_behavior_preserved": true,
+  "current_Whiston_preserved": true,
+  "narrative_or_editorial_changes": false,
+  "canonical_renderer_sha256": "babb2088700d343da9f6c2e6de05ab40a94b8633a32fddebd9f8a3c9f2d04cca",
+  "merged_renderer_sha256": "e4e9fea53d6f9c8f991d90b44b8b337accddf162aec70f312a404fbb1dbb12c8"
+}

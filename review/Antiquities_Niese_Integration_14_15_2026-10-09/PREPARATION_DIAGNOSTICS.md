@@ -1,0 +1,20 @@
+# Integration preparation diagnostics
+
+The predecessor report, all 111 manifest entries, certificate evidence hashes, full IX/XII/XIII/Whiston ancestry, seven production blobs and direct remote tip were verified before the isolated merge.
+
+Git reported one conflicted production path, `assets/js/renderTei.js`, in two regions: the book registry map and the current canonical explanatory comment for anonymous paragraphs. Both were resolved by preserving current canonical and adding only XIV/XV map entries. The anonymous-paragraph behavior already matches the certified incoming requirement. `PRODUCTION_RESOLUTION.json` verifies the exact minimal result.
+
+A generic whole-merge whitespace check flagged the certified incoming CRLF endings as trailing whitespace and prevented the first commit attempt. No certified source bytes were changed to satisfy that generic check. The incoming files were independently verified byte-for-byte against the certified source, including their exact line endings; the newly reconciled renderer passed its scoped whitespace check. The subsequent merge commit preserves all certified files and the validated resolution.
+
+An initial read-only Docker inventory was denied by the sandbox's named-pipe restriction; the authorized elevated inventory succeeded. This was an environment access restriction, not a build result or an automatic approval-review rejection.
+
+
+The first disposable Git-archive extraction using the filtered tar API failed under Windows filesystem restrictions. A premature build launch had also left an empty directory named build.sh where a recipe file was expected. Its resolved path was verified inside this assignment's runtime and it was empty before nonrecursive removal. Trusted archive members were then extracted with destination containment checks; the recipe was saved and subsequent complete builds succeeded. These preparation failures were not represented as completed builds.
+
+The initial protected XV Bamberg comparison exposed a real truncation caused by new Niese milestones changing an inherited milestone ordinal. The exact failure and pre-fix results remain in diagnostics/. The separately committed reader compatibility fix is documented in STRUCTURAL_LOCATOR_COMPATIBILITY.json; the final full builds, all916 selections,205 containing views and full protected comparisons passed afterward. No editorial cut or narrative bytes changed.
+
+An early concurrent XV browser attempt found preferred8915 occupied. The suite now selects a free fallback port without stopping any service. The predecessor fixture initially lacked the presumed English field; corrected checks use actual current-canonical English rather than manufacturing a fixture. The failed attempt is retained.
+
+The first post-build protected pass read an older BUILD_RECORD while integrity finalization was finishing. It did exercise the final site, but its obsolete embedded provenance disqualifies it as final certification; it is retained as diagnostics/FINAL_BUILD_STALE_PROVENANCE_PROTECTED_BROWSER_QA.json. The protected suite was rerun after the final record. One invocation omitted --protected and performed an additional XII-only check; final certification uses the explicit protected mode. Local browser reruns initially hit ERR_NETWORK_ACCESS_DENIED under the sandbox. Authorized escalated localhost runs succeeded. No automatic approval-review rejection occurred.
+
+The first promotion pre-gate correctly stopped when canonical had advanced to c28efbd while the remote remained81126ce. Its documented reader-only fix and all28 review files were frozen separately in CANONICAL_ADVANCE.json and merged cleanly in f483aab. The original BASELINE.json and81126ce archive were not replaced. The full builds and all executable gates were rerun using the actual c28efbd baseline. An app thread inventory request did not complete within the bounded preparation window and was terminated; no claim is made to have inspected another chat through that service. The filesystem report, manifests, code, actual clean checkout and direct remote evidence were inspected successfully instead.

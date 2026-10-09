@@ -1,0 +1,84 @@
+{
+  "source_scripts": [
+    {
+      "source": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15-integration\\review\\Antiquities_Niese_Batch_14_15_2026-10-09\\full-reader-qa.cjs",
+      "sha256": "1458f953cda6cbd9f9f88a69aa63d21f1e7fb0580c27de916356ff868b3bb668"
+    },
+    {
+      "source": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15-integration\\review\\Antiquities_Niese_Batch_14_15_2026-10-09\\book-transition-qa.cjs",
+      "sha256": "ffcdcd8d45c35bc2f72519dd082a9bf0340646bb956cf7898ee76076fc9a35c3"
+    },
+    {
+      "source": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15-integration\\review\\Antiquities_Niese_Integration_12_13_2026-10-09\\qa-common.cjs",
+      "sha256": "ffdb5739c6657a61c5eb496e9f3bd6d7ce71cca1c13d97d6214c1bd5de867f76"
+    },
+    {
+      "source": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15-integration\\review\\Antiquities_Niese_Integration_12_13_2026-10-09\\ix-protected.cjs",
+      "sha256": "3e1132fe382383aa66fa843b6fdc79469a00443acf7773dfe48ff272d2189ca3"
+    },
+    {
+      "source": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15-integration\\review\\Antiquities_Niese_Integration_12_13_2026-10-09\\book-browser.cjs",
+      "sha256": "eb920056f20526a0e8554df567a93834a12e08ba8a428391a2bed2c901bfcf6e"
+    },
+    {
+      "source": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15-integration\\review\\Antiquities_Niese_Integration_12_13_2026-10-09\\whiston-layout.cjs",
+      "sha256": "f09049e23d2c71ff52c06a26cb11e7935570949c000d0afbaddc9c3fdedbeb08"
+    },
+    {
+      "source": "C:\\workspace\\LatinJosephus-antiquities-niese-14-15-integration\\review\\Antiquities_Niese_Integration_12_13_2026-10-09\\baseline-exceptions.cjs",
+      "sha256": "30743fa861d93290e782df3e25aeaab8323d4454236d0f90d60fed709d8b4fc2"
+    }
+  ],
+  "inputs": "Accepted source expected XIV/XV intervals, decisions and Greek register; current-canonical XII/XIII expected intervals and Whiston contents. No identity data injected.",
+  "changes": [
+    "Own integration paths, outputs and independent profiles; fresh candidate and starting-canonical builds",
+    "Merged availability includes IX XII/XIII XIV/XV; compare prior sets and require exactly916 additions",
+    "Preserve source certificates: fresh book QA and images written under integration books/",
+    "Protected DOM comparisons strip only incoming XIV/XV marker additions in broader original-source views; all current canonical logic retained",
+    "Explicit Whiston XIV/XV index and Contents/Niese roundtrip checks added",
+    "Local servers fall back to an available port when preferred8915 is occupied; each suite has its own browser profile.",
+    "XV built registry comparison removes exactly the new integration metadata line before checking the certified hash; actual built hashes still bind the full registry bytes.",
+    "Predecessor XII/XIII fixtures contain Greek/Latin; English independently compared to actual current-canonical panes and hashes rather than an absent fixture field.",
+    "Full protected run uses --protected; one accidental default-mode rerun additionally checked all XII selections but did not replace the protected result.",
+    "Final protected rerun follows final BUILD_RECORD creation; a previous final-build run with stale provenance is retained only in diagnostics."
+  ],
+  "current_English": "Actual integration-start English hashes are frozen separately. XIV/XV English bytes currently equal source-frozen English; accepted source expected contexts remain applicable.",
+  "final_helpers": [
+    {
+      "path": "full-reader-integration.cjs",
+      "sha256": "3d94880e0c85d8e3aca2a701972bd81ff48067f9b8cfe10d6106d0dbdf2344d3"
+    },
+    {
+      "path": "book-browser.cjs",
+      "sha256": "5a03782ed63761a8c5a74d511a0c1fa69f0e96d14c844c72a23b5d20965f71d1"
+    },
+    {
+      "path": "qa-common.cjs",
+      "sha256": "2eaef451914977f6a52827409e69ea3c4d1ae3cc741bfeffea7fd0233aa449f1"
+    },
+    {
+      "path": "ix-protected.cjs",
+      "sha256": "24e013228becaa73f362f084116006e0381b97aac1c47a9ffdb0bb781ca27084"
+    },
+    {
+      "path": "critical-combined.cjs",
+      "sha256": "56ca267f2ac84d019c49fa2a276c67996be311fd30f9e69a94404d83bd3273c2"
+    },
+    {
+      "path": "whiston-layout.cjs",
+      "sha256": "45e6d18fea7de45b17c852484ca4b1aee0cb370178ebe17bfa7290765e5cc5da"
+    },
+    {
+      "path": "book-transition-qa.cjs",
+      "sha256": "b40deb9df5eb5ba2325942b25679bbc747e603b16f87dfcf342e08c39f290629"
+    },
+    {
+      "path": "baseline-exceptions.cjs",
+      "sha256": "e82c6fed3c1edde4f565ccd39dcf68c29e95ce062a958f72965c6fe7e21d88d9"
+    },
+    {
+      "path": "display-advance-critical.cjs",
+      "sha256": "75c8720f4b654e4dc85aa8c8f31e24ae585f772961884e10638ca2a313bf403c"
+    }
+  ]
+}

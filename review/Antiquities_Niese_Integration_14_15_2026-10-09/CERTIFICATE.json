@@ -1,0 +1,205 @@
+{
+  "status": "READY_FOR_AUTHORIZED_CANONICAL_FAST_FORWARD_AND_NORMAL_PUSH",
+  "utc": "2026-10-09T20:44:36.999220+00:00",
+  "canonical_start": "81126ce116045433cb5cf22945cc3711701ac3ca",
+  "effective_canonical_baseline": "c28efbdb615eaaf8dc9a939bc02e067886a83f37",
+  "canonical_advance_merge": "f483aabae6265478a98ad0e455d7d844fd733a71",
+  "remote_start_directly_verified": "81126ce116045433cb5cf22945cc3711701ac3ca",
+  "source_frozen_base": "ad3158b7a86dea6997510b3de17f2e510c23367c",
+  "certified_source_tip": "48a5b5ce711eb63a9071c0f06c22d9b5414e6607",
+  "provenance_checkpoint": "15ecf7dd96a4f7c5d3ad8805bc9e8c211362a442",
+  "complete_source_history_merge": "34435139bfabb4ef3d53187baa251f0165a92765",
+  "source_history_commits": 32,
+  "tested_production_commit": "f483aabae6265478a98ad0e455d7d844fd733a71",
+  "tested_code_data_sha256": "325f0e471c4f1e7081ce3e0d14e6cb3484f5a8f8db222bea3d2272e3881d529b",
+  "incoming_scope": {
+    "production": 7,
+    "review": 531,
+    "total": 538
+  },
+  "production_resolution": "PRODUCTION_RESOLUTION.json",
+  "books": [
+    {
+      "book": 14,
+      "selectable": 491,
+      "nonempty_Latin_intervals": 489,
+      "containing_views": 127,
+      "critical_selections": [
+        161,
+        162,
+        163,
+        357,
+        358,
+        359,
+        387,
+        388,
+        389,
+        237,
+        238,
+        239,
+        240
+      ],
+      "exact_reciprocal_notices_in_containing_views": {
+        "161": [
+          "LOEB-14-Chapter-9-0",
+          "LOEB-14-Subchapter-9-2"
+        ],
+        "162": [
+          "LOEB-14-Chapter-9-0",
+          "LOEB-14-Subchapter-9-2"
+        ],
+        "357": [
+          "LOEB-14-Chapter-13-0",
+          "LOEB-14-Subchapter-13-8"
+        ],
+        "358": [
+          "LOEB-14-Chapter-13-0",
+          "LOEB-14-Subchapter-13-8"
+        ],
+        "387": [
+          "LOEB-14-Chapter-14-0",
+          "LOEB-14-Subchapter-14-5"
+        ],
+        "388": [
+          "LOEB-14-Chapter-14-0",
+          "LOEB-14-Subchapter-14-5"
+        ]
+      },
+      "unavailable": [
+        238,
+        239
+      ],
+      "all_expected_selection_intervals_and_complete_views_verified": true
+    },
+    {
+      "book": 15,
+      "selectable": 425,
+      "nonempty_Latin_intervals": 423,
+      "containing_views": 78,
+      "critical_selections": [
+        39,
+        40,
+        41,
+        337,
+        338,
+        339,
+        346,
+        347,
+        348
+      ],
+      "exact_reciprocal_notices_in_containing_views": {
+        "39": [
+          "LOEB-15-Chapter-3-0",
+          "LOEB-15-Subchapter-3-1"
+        ],
+        "40": [
+          "LOEB-15-Chapter-3-0",
+          "LOEB-15-Subchapter-3-1"
+        ]
+      },
+      "unavailable": [
+        338,
+        347
+      ],
+      "all_expected_selection_intervals_and_complete_views_verified": true
+    }
+  ],
+  "identities_added": 916,
+  "nonempty_Latin_intervals": 912,
+  "retained_starts": 106,
+  "added_milestones": 806,
+  "unavailable": {
+    "XIV": [
+      238,
+      239
+    ],
+    "XV": [
+      338,
+      347
+    ]
+  },
+  "only_Greek_marker_additions": [
+    "XIV.1",
+    "XV.1"
+  ],
+  "XV_representation": "423 added milestones, zero retained starts; visible labels and certified identity suppression unchanged",
+  "selectable_baseline": 4315,
+  "selectable_combined": 5231,
+  "complete_prior_identity_sets_preserved": true,
+  "final_reader_QA": [
+    {
+      "path": "books/14/FULL_READER_QA.json",
+      "sha256": "4b62e6f66ae5255e8acf12d952d207e064fe02de411cacbb69d40bbc97b8b8b3",
+      "result": "PASS"
+    },
+    {
+      "path": "books/15/FULL_READER_QA.json",
+      "sha256": "c897c74b409aa272499fc6f409386162bcf3a1ace26466e98cd89622500357ed",
+      "result": "PASS"
+    },
+    {
+      "path": "CRITICAL_COMBINED_READER_QA.json",
+      "sha256": "8926f88f25936322d6b9057cdab04d27531e9f248aaf2c7397350d8ef4481396",
+      "result": "PASS"
+    },
+    {
+      "path": "IX_CURRENT_CANONICAL_QA.json",
+      "sha256": "52e783ffd139bb1b3c6d69f20d2a64180083bfcd6515bcfe5f8aa30bce875016",
+      "result": "PASS"
+    },
+    {
+      "path": "PROTECTED_BROWSER_QA.json",
+      "sha256": "d06e6e0df43894182153553f16ac49862523cd247b80f90f3667136b4208c894",
+      "result": "PASS"
+    },
+    {
+      "path": "WHISTON_LAYOUT_QA.json",
+      "sha256": "85bcef064a9dce1deb7c2f184e143ee18af769e817c6d476eb0871527edb5db2",
+      "result": "PASS"
+    },
+    {
+      "path": "BOOK_XIV_XV_TRANSITION_READER_QA.json",
+      "sha256": "fbcb2e06ab0092d5b4508fec9a82b948b8bb7b2a92a8e3d810867243bf4e131f",
+      "result": "PASS"
+    },
+    {
+      "path": "BOUNDED_BASELINE_EXCEPTIONS.json",
+      "sha256": "d5a2c4aee4292398e967e97c748d72f489231377cd28975482271683f7ddca29",
+      "result": "PASS"
+    },
+    {
+      "path": "CANONICAL_ADVANCE_READER_QA.json",
+      "sha256": "08e8a020ac7494dba26700002f3bb93bacec9356d314e75e592f58ecf17b1ec2",
+      "result": "PASS"
+    }
+  ],
+  "all_new_selections": 916,
+  "all_new_containing_views": 205,
+  "protected_prior_selections": 4315,
+  "protected_traditional_rows": 1689,
+  "protected_Bamberg_rows": 198,
+  "protected_Alignment_units": 1441,
+  "protected_cross_work_configurations": 21,
+  "protected_cross_work_citations": 8002,
+  "protected_cross_work_ranges": 1630,
+  "source_byte_recovery": "PASS exact pinned Latin milestone inverse and Greek opening inverse; no normalization/reserialization",
+  "current_English_and_other_witness_preservation": "PASS against actual current-canonical baseline; historical source English separately recorded",
+  "protected_canonical_Git_blobs": 2498,
+  "protected_canonical_actual_working_bytes_preserved": true,
+  "integration_checkout_line_ending_only_variants": 101,
+  "incoming_review_bytes_exact": 531,
+  "source_certificates_unchanged": true,
+  "source_branches_preserved": {
+    "antiquities-niese-08-10": "fb8a65e2a6c7d6e5426f3b4751d30e67528b1a28",
+    "antiquities-niese-08-10-implementation": "2b07ac23143d7fa551753aee1d7051da5a77b99a",
+    "antiquities-niese-09": "b2766fc0a0f9ab8dfb1c4667fbb9c5c4d6eac659",
+    "antiquities-niese-12-13": "76083c2831afdb4853f7d7ebab0db6c64c18d914",
+    "antiquities-niese-14-15": "48a5b5ce711eb63a9071c0f06c22d9b5414e6607",
+    "antiquities-niese-boundary-display": "c28efbdb615eaaf8dc9a939bc02e067886a83f37"
+  },
+  "narrative_changes_after_certified_source": false,
+  "outstanding_editorial_decisions": [],
+  "known_exceptions": "BOUNDED_BASELINE_EXCEPTIONS.json",
+  "public_preview_export_push_deployment": false,
+  "post_promotion_receipt": "C:\\workspace\\Antiquities-Niese-14-15-integration-runtime-20261009\\PROMOTION_RECEIPT.json"
+}
