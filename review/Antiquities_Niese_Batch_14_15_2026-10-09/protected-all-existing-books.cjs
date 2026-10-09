@@ -5,7 +5,7 @@ const packet=path.join(canonical,'review/Antiquities_Niese_Implementation_08_10_
 const expected=JSON.parse(fs.readFileSync(path.join(packet,'EXPECTED_INTERVALS.json'),'utf8'));
 const certificate=JSON.parse(fs.readFileSync(path.join(packet,'CERTIFICATION.json'),'utf8'));
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
-const site='C:/workspace/Antiquities-Niese-14-15-runtime-20261009/build3/site',certified='C:/workspace/Antiquities-Niese-Implementation-08-10-2026-10-09/build/site';
+const build=process.argv[2]||'build3';const site=`C:/workspace/Antiquities-Niese-14-15-runtime-20261009/${build}/site`,certified='C:/workspace/Antiquities-Niese-Implementation-08-10-2026-10-09/build/site';
 const norm=s=>String(s||'').replace(/\s+/g,' ').trim();
 function narrative(node){
  const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());
@@ -29,7 +29,7 @@ async function main(){
  for(const r of certificate.built_production_files){const raw=fs.readFileSync(path.join(site,r.path));if(r.path==='assets/js/renderTei.js'){if(sha(raw)!==sha(fs.readFileSync(path.join(canonical,r.path))))throw Error('Assignment renderer build provenance');result.changed_reader_sha256=sha(raw);}else if(sha(raw)!==r.sha256)throw Error('Canonical build hash '+r.path);}
  result.certified_production_build_hashes='IDENTICAL_EXCEPT_AUTHORIZED_READER_CHANGE_MATCHING_WORKTREE';
  const servers=[serve(site,true),serve(site),serve(certified)];await Promise.all(servers.map(s=>new Promise(r=>s.listen(0,'127.0.0.1',r))));
- const origins=servers.map(s=>`http://127.0.0.1:${s.address().port}`),browser=await chromium.launchPersistentContext('C:/workspace/Antiquities-Niese-14-15-runtime-20261009/browser-protected-checkpoint3',{headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'}),context=browser,page=await context.newPage();
+ const origins=servers.map(s=>`http://127.0.0.1:${s.address().port}`),browser=await chromium.launchPersistentContext(`C:/workspace/Antiquities-Niese-14-15-runtime-20261009/browser-protected-${build}`,{headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'}),context=browser,page=await context.newPage();
  result.local_origins=origins;
  page.on('pageerror',e=>result.browserExceptions.push(String(e)));page.on('console',m=>{if(m.type()==='error')result.consoleErrors.push(m.text());});page.on('requestfailed',r=>result.failedRequests.push({url:r.url(),error:r.failure()?.errorText}));
  async function open(route,which=0){await page.goto(origins[which]+route,{waitUntil:'domcontentloaded'});if(which===0)await page.waitForFunction(()=>window.__qaReady,{},{timeout:60000});else await page.waitForFunction(()=>document.querySelector('#book-selector')?.options.length>1&&document.querySelector('#latin tei-p,#latin .structural-unavailable,#latin .source-contents'),{},{timeout:60000});}
@@ -85,8 +85,8 @@ async function main(){
  await open('/bellum-judaicum/?book=1&niese=1&english=lodge1602');await page.uncheck('#lodge-notes-visible');if(!await page.locator('#english').evaluate(n=>n.classList.contains('lodge-notes-hidden')))throw Error('Lodge notes hide');await page.check('#lodge-notes-visible');if(await page.locator('#english').evaluate(n=>n.classList.contains('lodge-notes-hidden')))throw Error('Lodge notes restore');result.Lodge_marginal_note_toggle='PASS';
  if(result.browserExceptions.length||result.consoleErrors.length||result.failedRequests.length)throw Error('Browser errors '+JSON.stringify({exceptions:result.browserExceptions,console:result.consoleErrors,requests:result.failedRequests}));
  result.total_Antiquities_selections=3157;result.finished=new Date().toISOString();result.result='PASS';
- fs.writeFileSync(path.join(task,'PROTECTED_COMPLETE_EXISTING_BOOKS_BROWSER_QA.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({result:result.result,books:result.books,criticalURLs:result.criticalURLs.length,protectedURLs:result.protectedURLs.length,browserExceptions:0,consoleErrors:0,failedRequests:0},null,2));
- }catch(e){result.result='FAIL';result.failure=String(e);fs.writeFileSync(path.join(task,'PROTECTED_COMPLETE_EXISTING_BOOKS_BROWSER_FAILURE.json'),JSON.stringify(result,null,2)+'\n');throw e;}
+ fs.writeFileSync(path.join(task,`PROTECTED_COMPLETE_EXISTING_BOOKS_BROWSER_QA_${build}.json`),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({result:result.result,books:result.books,criticalURLs:result.criticalURLs.length,protectedURLs:result.protectedURLs.length,browserExceptions:0,consoleErrors:0,failedRequests:0},null,2));
+ }catch(e){result.result='FAIL';result.failure=String(e);fs.writeFileSync(path.join(task,`PROTECTED_COMPLETE_EXISTING_BOOKS_BROWSER_FAILURE_${build}.json`),JSON.stringify(result,null,2)+'\n');throw e;}
  finally{await browser.close();await Promise.all(servers.map(s=>new Promise(r=>s.close(r))));}
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
