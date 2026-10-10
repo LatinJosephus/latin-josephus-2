@@ -14,8 +14,8 @@ def main():
     registry=dict(schema=1,book='preface',range=[1,26],label='Proem (Antiquities I.1–26)',suppressedLatinLabels=[],relatedPassage=dict(book=1,niese=27,label='Begin Book I narrative at I.27'),sections=[])
     for r in rows:
         lat=dict(available=True,correspondence='PRESENT',note=None)
-        if r['number']==25:lat['note']='The present Bamberg transcription compresses the Greek discussion of a future treatise; its complete corresponding text is retained.'
-        if r['number']==26:lat['note']='The present Bamberg transcription ends at “ita conscripta”; no separate Latin equivalent of the final Greek transition formula has been supplied.'
+        if r['number']==25:lat['note']='The future-treatise promise is not independently identifiable in the present Bamberg transcription. The surviving opening “Quod ego nunc quidem” is retained.'
+        if r['number']==26:lat['note']='The present Bamberg transcription has no separately identifiable equivalent of the Greek opening verb or final transition formula; its surviving narrative text is retained.'
         registry['sections'].append(dict(number=r['number'],Latin=lat,contextTarget=r['Latin_start']['xml_id'],English=dict(contextTargets=[r['English_context_target']])))
     save(ROOT/'assets/xml/antiquities/niese/preface.json',registry)
     p=ROOT/'assets/js/renderTei.js';b=p.read_bytes();s=b.decode();changes=[]

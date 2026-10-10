@@ -41,7 +41,7 @@ LATIN=[
 'Historiam conscribere','Nam quidam eorum','Quidem autem ipsa','harum itaque;',
 'praesens autem opus','Dudum siquidem','Sed quoniam ingens','eram autuem qui','huic enim uiro',
 'Comperi siquidem','pontifex uero noster','Ideoque mihi scilicet','cum sint alia','quod totu exipsa','Iam itaque eos','licet ex longitudine','integritate uideli&lt;cet&gt;',
-'quia uero pene','Sciendu itaque','neque enim uel','hoc igitur docere','Alii namque legislatores','Noster uero legislator','secundum hoc igitur','Volentius autem','Quod ego nunc quidem']
+'quia uero pene','Sciendu itaque','neque enim uel','hoc igitur docere','Alii namque legislatores','Noster uero legislator','secundum hoc igitur','Volentius autem','adrerum narrationem']
 REASONS=[
 'Opening contrasts the motives of historians; the inherited folio 1r remains physical markup.',
 'The first two voluntary motives remain together: stylistic display and gratitude to subjects.',
@@ -67,8 +67,8 @@ REASONS=[
 'Other legislators transfer human failings to gods and license wrongdoing.',
 'Moses declares God’s virtue and orders punishment for disbelief.',
 'Readers should examine the work by this premise; harmony with nature, allegory and plain speech.',
-'Philosophical consideration of individual causes. Latin compresses the Greek promise of a future treatise; no supplied text.',
-'Turns to narrative and Moses’ creation account in sacred books; Latin has no independently separate equivalent of the final ἔχει δὲ οὕτως formula.']
+'Philosophical consideration of individual causes. Latin Quod ego nunc quidem corresponds to Greek ἣν ἐγὼ νῦν μὲν and remains in §25; the subsequent future-treatise promise is not independently identifiable in the approved transcription. No supplied text.',
+'The surviving adrerum narrationem corresponds to Greek ἐπὶ τὴν ἀφήγησιν ... τῶν πραγμάτων, followed by reminiscens primitus = μνησθεὶς πρότερον. Neither the opening finite verb τρέψομαι nor final ἔχει δὲ οὕτως has an independently identifiable separate counterpart in the approved transcription.']
 NIESE_PAGES=[4,4,4,5,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,7,8,8,8,8,8,8]
 LOEB_PAGES=[2]*4+[4]*5+[6]*4+[8]*4+[10]*4+[12]*5
 MARGINAL={2:'Numeral on a line ending the preceding sentence; secure start τινὲς μὲν γάρ lies later on that line.',3:'Numeral precedes the end of the previous sentence; secure start εἰσὶ δ᾽ οἵτινες lies later on the line.',4:'Numeral at the line of τούτων δή, after preceding ἐξενεγκεῖν.',7:'Numeral on the line of preceding κατέστησαν; start ἀλλ᾽ ἐπειδή follows.',9:'Numeral on a line opening with the end of §8; τούτῳ δή follows.',11:'Numeral aligns with ὁ δὲ τῶν, after the end of §10.',12:'Numeral aligns with preceding ἀπόρρητον; κἀμαυτῷ δή follows.',13:'Numeral on preceding πεμφθέντες continuation; μυρία δ᾽ follows later on that line.',14:'Numeral precedes ending ἀνδραγαθίαι ... μεταβολαί; τὸ σύνολον δέ follows.',15:'Numeral follows preceding σπουδάσωσιν; ἤδη τοίνυν follows.',16:'Numeral follows preceding μυθολογίας; καίτοι γε follows.',17:'Numeral on preceding sentence ending ἐτόλμησαν; τὰ μὲν οὖν follows.',18:'Numeral on the initial Ἐπειδὴ δέ line.',19:'Numeral on preceding φυσιολογίας conclusion; ἰστέον οὖν follows.',20:'Numeral aligns with οὔτε γάρ at printed p.7, continuing on p.8.',21:'Numeral beside preceding calamity phrase; τοῦτο δή follows on that line.',22:'Numeral beside preceding περὶ πάντων ἔπειθεν; οἱ μὲν γάρ follows.',23:'Numeral beside ending ἔδωκαν; ὁ δ᾽ ἡμέτερος follows.',24:'Numeral beside ending ἐκόλασε; πρὸς ταύτην οὖν follows.',26:'Numeral beside γράψαι τὴν πραγματείαν ending §25; τρέψομαι δέ follows. Do not move the cut to γράψαι.'}
