@@ -1,0 +1,72 @@
+[
+  {
+    "book": 18,
+    "reconciliation_counts": {
+      "loeb_book_headings": 1,
+      "loeb_boundaries": 66,
+      "bamberg_boundaries": 19,
+      "current_xml_structures": 3,
+      "current_unit_catalogue": 171,
+      "chapter_concordance": 23,
+      "exact_pairs": 5,
+      "same_niese_different_position_pairs": 1,
+      "unresolved_candidate_pairs": 0,
+      "qa_assertions": 0
+    },
+    "verification_counts": {
+      "source_metadata": 1,
+      "exact_book_coverage": 1,
+      "audited_boundaries": 66,
+      "physical_boundaries": 57,
+      "canonical_association_recommendations": 66,
+      "exceptions": 1,
+      "significant_and_typographical_variants": 0,
+      "structural_observations": 10,
+      "physical_inspection_register": 57,
+      "frozen_records": 66,
+      "chapter_only_starts": 0,
+      "human_physical_copy_checks": 0,
+      "human_workbook_metadata_rows": 0,
+      "batch_csv_json_consistency_checks": 0,
+      "qa_assertions": 0,
+      "consolidated_csv_qa": 0
+    },
+    "extraction_policy": "Nested source.book, antiquities_book, Roman boundary IDs and source-only book/range observations are inspected; complete matching records retained unchanged. Shared metadata explicitly labelled.",
+    "supersedes": "Initial top-level-only extract omitted nested records and combined book18/19 rows. Frozen originals and hashes were unchanged."
+  },
+  {
+    "book": 19,
+    "reconciliation_counts": {
+      "loeb_book_headings": 1,
+      "loeb_boundaries": 61,
+      "bamberg_boundaries": 8,
+      "current_xml_structures": 3,
+      "current_unit_catalogue": 156,
+      "chapter_concordance": 14,
+      "exact_pairs": 3,
+      "same_niese_different_position_pairs": 1,
+      "unresolved_candidate_pairs": 0,
+      "qa_assertions": 0
+    },
+    "verification_counts": {
+      "source_metadata": 1,
+      "exact_book_coverage": 1,
+      "audited_boundaries": 61,
+      "physical_boundaries": 52,
+      "canonical_association_recommendations": 61,
+      "exceptions": 2,
+      "significant_and_typographical_variants": 2,
+      "structural_observations": 10,
+      "physical_inspection_register": 52,
+      "frozen_records": 61,
+      "chapter_only_starts": 0,
+      "human_physical_copy_checks": 0,
+      "human_workbook_metadata_rows": 0,
+      "batch_csv_json_consistency_checks": 0,
+      "qa_assertions": 0,
+      "consolidated_csv_qa": 0
+    },
+    "extraction_policy": "Nested source.book, antiquities_book, Roman boundary IDs and source-only book/range observations are inspected; complete matching records retained unchanged. Shared metadata explicitly labelled.",
+    "supersedes": "Initial top-level-only extract omitted nested records and combined book18/19 rows. Frozen originals and hashes were unchanged."
+  }
+]
