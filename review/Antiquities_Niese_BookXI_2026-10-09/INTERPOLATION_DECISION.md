@@ -1,6 +1,6 @@
 # Individual Niese display: two Bellum insertions
 
-Decision pending. The approved traditional affiliation is XI.viii.2 and ChapterVIII. That affiliation does not determine the new individual-Niese granularity. Physical ownership, exact cuts and surrounding selections are recorded in INTERPOLATION_DECISION.json against the frozen input hashes.
+Decision CLOSED: direct user approval of the recommended presentation. The approved traditional affiliation is XI.viii.2 and ChapterVIII. That affiliation does not determine the new individual-Niese granularity. Physical ownership, exact cuts and surrounding selections are recorded in INTERPOLATION_DECISION.json against the frozen input hashes.
 
 Recommended association: retain both as separate attached Bellum source passages in the single XI.312 selection, each immediately before the surviving312 portion that follows it physically. Display sequence: BJIV105a,312a,BJIV105b,312b. The two primary portions remain312a then312b. XI.311 ends beforeBJIV105a; XI.342 ends its first portion beforeBJIV105b and separately gathers342b. Neither insertion is AntiquitiesXI105. Combined selections include each declared occurrence once.
 
@@ -12,6 +12,8 @@ Greek312 begins “πολλῶν δὲ ἱερέων καὶ Ἰσραηλιτ�
 
 Proposed reader notice: “Bamberg inserts two parts of Jewish War IV.105 before the two surviving portions of Antiquities XI.312. They remain separately labelled here. Antiquities XI.312 is assembled as312a then312b. Book view preserves Bamberg’s manuscript order.” Include a working link to unchanged Book view.
 
-Concrete alternative: display the assembled312 narrative first, followed by both labelled Bellum source passages in an attachment block. This changes only presentation granularity; physical XML and accepted traditional composition remain unchanged. The recommendation keeps each interpolation beside the continuation it precedes in the witness and fits the existing traditional affiliation.
+Rejected alternative: display the assembled312 narrative first, followed by both labelled Bellum source passages in an attachment block. This changes only presentation granularity; physical XML and accepted traditional composition remain unchanged. The recommendation keeps each interpolation beside the continuation it precedes in the witness and fits the existing traditional affiliation.
 
 Source controls: NieseIII printed63–64/PDF135–136 for312, current frozen Latin extents, Levenson–Martin printed328/PDF7 and330/PDF9, and accepted October6–7 fragment records. The scholarly transmission assessment and witness-order policy are settled and not part of this decision.
+
+User additionally requires separate visual and structural identification as interpolated Latin Bellum Judaicum material. The trailing attachment alternative is rejected because it obscures the distinct transmitted positions.

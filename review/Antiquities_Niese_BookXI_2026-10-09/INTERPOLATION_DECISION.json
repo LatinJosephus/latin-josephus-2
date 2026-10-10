@@ -1,5 +1,5 @@
 {
-  "status": "PENDING",
+  "status": "CLOSED_USER_APPROVED",
   "recommendation": "Attach both source passages to XI312, each immediately before its corresponding312 portion, retaining their separate identity and visible labels.",
   "sources": [
     {
@@ -48,7 +48,7 @@
       "narrative_sha256": "9846e28656e8f56be147d92dca47f676c49da441205deb4cdc0fd8fc2be2205d",
       "occurrence": "Latin-XI-BJ.IV.105a-1",
       "association_proposal": 312,
-      "association_status": "PENDING_USER_GRANULARITY_DECISION",
+      "association_status": "CLOSED_USER_APPROVED",
       "traditional_affiliation": "LOEB-11-Subchapter-8-2 and LOEB-11-Chapter-8-0",
       "Antiquities_identity": false
     },
@@ -98,7 +98,7 @@
       "narrative_sha256": "2a83ab0cdbbcf66d972a76d19553c709729cb2510b0911af724d458fc77bd6e1",
       "occurrence": "Latin-XI-BJ.IV.105b-1",
       "association_proposal": 312,
-      "association_status": "PENDING_USER_GRANULARITY_DECISION",
+      "association_status": "CLOSED_USER_APPROVED",
       "traditional_affiliation": "LOEB-11-Subchapter-8-2 and LOEB-11-Chapter-8-0",
       "Antiquities_identity": false
     }
@@ -487,5 +487,22 @@
   },
   "proposed_notice": "Bamberg inserts two parts of Jewish War IV.105 before the two surviving portions of Antiquities XI.312. They remain separately labelled here. Antiquities XI.312 is assembled as 312a then 312b. Book view preserves Bamberg’s manuscript order.",
   "alternative": "Group both labelled insertions after the assembled XI312 narrative as attached source passages.",
-  "duplication_rule": "Each declared physical occurrence is rendered once per combined selection. A reference carries no additional occurrence."
+  "duplication_rule": "Each declared physical occurrence is rendered once per combined selection. A reference carries no additional occurrence.",
+  "selected": "Beside each312 portion",
+  "rejected": "Both after assembledXI312 narrative",
+  "reason_rejected": "Obscures the distinct positions in the transmitted sequence.",
+  "closed_at": "2026-10-09T23:52:51.280276+00:00",
+  "authority": "Direct user reply in this assignment",
+  "requirements": [
+    "Canonical312a then312b",
+    "105a immediately before312a and105b immediately before312b",
+    "Separate visual and structural identification as interpolated Latin Bellum Judaicum",
+    "Concise transposition explanation",
+    "311 and342 exclude both",
+    "Each physical occurrence once per combined selection",
+    "Interpolations are not new identities or primary Antiquities fragments",
+    "Book/Alignment XML order unchanged",
+    "Accepted traditional fragments unchanged",
+    "No transmitted text or relationships changed"
+  ]
 }
