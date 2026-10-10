@@ -1,0 +1,114 @@
+# Antiquities XX — Editorial adjudication
+
+I have reviewed the full editorial-hold summary.
+
+**Approve A for all four cases.**
+
+These are final editorial decisions. Record the approvals and preserve the rejected alternatives, complete evidence, original coordinates and previous HOLD status in the adjudication history.
+
+## 1. XX.26–37 — A APPROVED
+
+Represent XX.26 and XX.37 by their independently identified surviving Latin portions, with explicit partial-correspondence qualifications.
+
+Represent **XX.27–36 as having no independent Latin intervals in the present transcription**.
+
+Preserve the inherited bracketed annotation separately, in its exact physical position and with its proper source identity. Do not silently distribute its wording among the missing Niese identities, discard it, or treat it as reconstructed narrative.
+
+The unavailable identities must remain independently selectable in Greek and English, with precise Latin notices.
+
+Do not infer a physical lacuna, an omission in the original translation, or a particular transmission mechanism. The cause of the absence remains undetermined.
+
+Verify the exact fragment boundaries, physical source accounting and combined selections across XX.25–38.
+
+## 2. XX.59 — A APPROVED
+
+Begin the Latin interval for XX.59 at:
+
+`habe inquit fiducia`
+
+Retain the complete transmitted expression.
+
+Document the correspondence overlap with the Greek imperative in XX.58. Preserve the preceding material and avoid duplicating the shared wording between the two Latin selections.
+
+Verify XX.57–60 individually and in combined ranges.
+
+## 3. XX.238 — A APPROVED
+
+Represent XX.238 as having **no independent Latin interval in the present transcription** for Jonathan's appointment.
+
+Preserve the surviving opening of XX.239 exactly as transmitted, including its relative construction lacking an explicit preceding antecedent.
+
+Add the approved qualification to XX.239. Do not supply Jonathan's appointment, rewrite the syntax, infer physical loss or borrow neighbouring wording to manufacture an independent XX.238 interval.
+
+Verify XX.237–240, including the Greek/English availability of 238 and the exact Latin start of 239.
+
+## 4. XX.241 — A APPROVED
+
+Begin the Latin interval at:
+
+`Is namque primus`
+
+Retain the earlier wording:
+
+`cum et pontificatum tenuisset et regnum`
+
+within the preceding XX.240 extent, according to the reviewed physical boundaries.
+
+Preserve the inherited compressed Latin syntax, without changing punctuation, word order or phrasing.
+
+Record the correspondence qualification and verify XX.239–242.
+
+## 5. Implementation authorization
+
+**All four editorial holds are now closed.**
+
+Proceed through final implementation and independent certification under the original governing WorkBot instructions.
+
+The expected resulting identity inventory is:
+
+- **268** independently selectable Niese identities.
+- **257** identities with independently represented Latin.
+- **11** identities without independent Latin intervals: XX.27–36 and XX.238.
+
+Recompute actual milestone, fragment, anchor and availability counts from the approved final implementation. Do not infer those counts solely from the identity totals.
+
+Preserve all existing corpus wording, whitespace, punctuation, physical order, IDs, `sameAs`, source annotations, manuscript markers and traditional/Bamberg divisions.
+
+Specifically preserve:
+
+- The Book XX opening notice and correctly positioned Greek §1.
+- All 12 traditional chapters and 50 lower divisions.
+- All 20 audited Bamberg divisions and their existing physical locations.
+- Book XX §§199–201 without unsolicited textual intervention.
+- XX.266's recorded partial-correspondence qualification.
+- The complete narrative ending through §268.
+- The original Latin trailer through AMEN, as separate paratext.
+- Complete exclusion of the *Vita* from Book XX.
+
+Retain the existing generic exclusive-end mechanism where required to protect independently unavailable or source-only material. Do not introduce Book-XX-specific renderer conditionals.
+
+## 6. Final certification
+
+Rerun the actual built reader after applying these decisions.
+
+Required results include:
+
+1. All **268 Book XX Greek, Latin-availability and English-context selections**.
+2. Complete checks for the four adjudicated case groups, including neighbouring selections and combined ranges.
+3. All **135 containing views**, including traditional and Bamberg ranges.
+4. All 20 legacy chapter URLs and physical extents.
+5. All **5,231 previously certified baseline Niese selections**.
+6. Opening, final section, trailer and *Vita* exclusion checks.
+7. Independent byte-exact recovery of the original Greek and Latin after reversing only authorized additions.
+8. No changes to English or unrelated source content.
+9. No duplicate DOM IDs, unexpected missing content, new reader errors or altered protected navigation.
+
+The source branch remains based on the frozen pre-XI canonical commit `65b3256fe202a06e33a59aa2d1dcbd7107358271`. Do not incorporate subsequent XI or XVI–XIX changes into this source-certification task.
+
+After successful certification, commit the completed Book XX implementation and evidence on `antiquities-niese-20`.
+
+Return the final clean certified commit, exact milestone/fragment/availability counts, complete test results, byte-recovery evidence and a handoff for later coordinated integration.
+
+**Do not merge, push or publish.** Canonical reconciliation will occur separately against the then-current `v2-development` history.
+
+No further editorial permission is required for these four decisions.

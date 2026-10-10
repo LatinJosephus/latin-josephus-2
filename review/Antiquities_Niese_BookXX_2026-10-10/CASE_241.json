@@ -1,0 +1,362 @@
+{
+  "case": "241",
+  "status": "EDITORIAL_DECISION_REQUIRED",
+  "baseline": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "Latin_source_sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+  "Greek_records": [
+    {
+      "book": 20,
+      "number": 239,
+      "Greek_label": {
+        "unit": 74,
+        "id": "greek-book20-num235",
+        "book_offset": 55707,
+        "unit_offset": 933,
+        "raw_start": 124093,
+        "text": "[239]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[46]/num[5]"
+      },
+      "Greek_locator": {
+        "stable_id": "greek-book20-num235",
+        "paragraph": 74,
+        "xpath": "/*/*/*/*[2]/*[2]/*[46]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[46]/num[5]/tail()",
+        "node_offset": 1,
+        "unit_offset": 934,
+        "book_offset": 55708,
+        "raw_byte": 124110,
+        "left": " ἔγγονοι τὴν προστασίαν τοῦ ἔθνους πιστευθέντες καὶ πολεμήσαντες Μακεδόσιν Ἰωνάθην ἀρχιερέα καθιστᾶσιν, ὃς ἦρξεν ἐνιαυτοὺς ἑπτά.  ",
+        "right": "τελευτήσαντος δὲ ἐξ ἐπιβουλῆς αὐτοῦ καὶ ἐνέδρας τῆς ὑπὸ Τρύφωνος μηχανηθείσης, ὡς ἀνωτέρω που προειρήκαμεν, λαμβάνει τὴν ἀρχιερωσύνην Σίμων ἀδελφὸς αὐτοῦ.  καὶ τοῦτον δὲ δόλῳ παρὰ συμπόσιον ὑπὸ τοῦ γαμβροῦ διαφθαρέντα διεδέξατο παῖς Ὑρκανὸς",
+        "parsed_unit_sha256": "ad599d225866abd6fc4899db7814c1f6c37d6956d51d3a2c6503d8db8f242c4d",
+        "raw_unit_sha256": "2ee161159eb3848feed830f890cda09c6f44f25ea8e94bbaaa9514cadbd7cb49"
+      },
+      "Greek_start": 55707,
+      "Greek_end": 55863,
+      "Greek_text": " τελευτήσαντος δὲ ἐξ ἐπιβουλῆς αὐτοῦ καὶ ἐνέδρας τῆς ὑπὸ Τρύφωνος μηχανηθείσης, ὡς ἀνωτέρω που προειρήκαμεν, λαμβάνει τὴν ἀρχιερωσύνην Σίμων ἀδελφὸς αὐτοῦ. ",
+      "Greek_paragraph": "greek-book20-num235",
+      "Latin_alignment_paragraph": "latin-book20-num235",
+      "print_review_status": "VISUALLY_REVIEWED",
+      "Latin_review_status": "INDIVIDUALLY_REVIEWED",
+      "candidate": {
+        "number": 239,
+        "Latin_start": 50613,
+        "Latin_locator": {
+          "stable_id": "latin-book20-num235",
+          "paragraph": 65,
+          "xpath": "/*/*[2]/*/*[2]/*[13]/*[6]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[13]/p[6]/cb[1]/tail()",
+          "node_offset": 149,
+          "unit_offset": 721,
+          "book_offset": 50613,
+          "raw_byte": 60015,
+          "left": "im uero cum tribus annis habuisset ponfificatum defunctus est, cui successit neme, sed per annos VII, ciuitas fuit sine pontifice ",
+          "right": "quo per insidias moriente dolo trifonis sicut superius iam quodam loco narrauimus accepit honorem hunc symon germanus eius huic per dolum quoque generi in conuiuio morienti filius successit hyrcanus, qui cum tenuisset pontificatus annis XXX",
+          "parsed_unit_sha256": "c94cf1e9880e088a43563d2474da2cc8361ddaa5a596466f464e7cdc000fbda6",
+          "raw_unit_sha256": "981857dbb1dfc241cb397ff195f9d3bd7f72ace25b5a6b0088b5baa1a3d7ee7c"
+        },
+        "Latin_phrase": "quo per insidias moriente",
+        "assessment": "INTERNAL_BUT_EXACT",
+        "correspondence": "PRESENT",
+        "review_note": "Tryphon murder and Simon succession; relative antecedent unavailable in local wording.",
+        "Greek_print": {
+          "volume": "IV",
+          "year": 1890,
+          "printed_page": 316,
+          "PDF_image_page": 330,
+          "evidence": {
+            "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\evidence\\Niese-IV-PDF330.jpg",
+            "bytes": 89502,
+            "sha256": "fd623077ac0e5b925868dd85319988f8467aff23c333caf6bb7306aec5fc534c",
+            "CRLF": 0,
+            "LF_without_CR": 373,
+            "BOM": false
+          },
+          "marginal_identity": 239,
+          "labelled_line_context": "XML incipit corroborated in printed context: τελευτήσαντος δὲ ἐξ ἐπιβουλῆς αὐτοῦ καὶ ἐνέδρας τῆς ὑπὸ Τρύφωνος μηχανηθείσης, ὡς ἀνωτέρω που προειρήκαμεν, λαμβάνει τὴν ἀρχιερωσύ",
+          "precision": "Marginal numeral labels a printed line; it does not tag an XML word.",
+          "action": "RETAIN_EXISTING_XML_NUM",
+          "XML_start": "τελευτήσαντος δὲ ἐξ ἐπιβουλῆς αὐτοῦ καὶ ἐνέδρας τῆς ὑπὸ Τρύφωνος μηχανηθείσης, ὡς ἀνωτέρω που προειρήκαμεν, λαμβάνει τὴν ἀρχιερωσύνην Σίμων ἀδελφὸς αὐτοῦ.",
+          "XML_end": "τελευτήσαντος δὲ ἐξ ἐπιβουλῆς αὐτοῦ καὶ ἐνέδρας τῆς ὑπὸ Τρύφωνος μηχανηθείσης, ὡς ἀνωτέρω που προειρήκαμεν, λαμβάνει τὴν ἀρχιερωσύνην Σίμων ἀδελφὸς αὐτοῦ."
+        },
+        "source_sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+        "review_method": "Complete Greek section and neighboring context read; complete actual aligned Latin unit read; phrase chosen by individual semantic and syntactic comparison, not numeric suffix."
+      }
+    },
+    {
+      "book": 20,
+      "number": 240,
+      "Greek_label": {
+        "unit": 74,
+        "id": "greek-book20-num235",
+        "book_offset": 55863,
+        "unit_offset": 1089,
+        "raw_start": 124415,
+        "text": "[240]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[46]/num[6]"
+      },
+      "Greek_locator": {
+        "stable_id": "greek-book20-num235",
+        "paragraph": 74,
+        "xpath": "/*/*/*/*[2]/*[2]/*[46]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[46]/num[6]/tail()",
+        "node_offset": 1,
+        "unit_offset": 1090,
+        "book_offset": 55864,
+        "raw_byte": 124432,
+        "left": "λῆς αὐτοῦ καὶ ἐνέδρας τῆς ὑπὸ Τρύφωνος μηχανηθείσης, ὡς ἀνωτέρω που προειρήκαμεν, λαμβάνει τὴν ἀρχιερωσύνην Σίμων ἀδελφὸς αὐτοῦ.  ",
+        "right": "καὶ τοῦτον δὲ δόλῳ παρὰ συμπόσιον ὑπὸ τοῦ γαμβροῦ διαφθαρέντα διεδέξατο παῖς Ὑρκανὸς ὄνομα ὃν κατασχόντα τὴν ἱερωσύνην πλείονα τἀδελφοῦ χρόνον ἐνιαυτῷ, τριακονταὲν ἔτη τῆς τιμῆς Ὑρκανὸς ἀπολαύσας τελευτᾷ γηραιὸς Ἰούδᾳ τῷ καὶ Ἀριστοβούλῳ κλη",
+        "parsed_unit_sha256": "ad599d225866abd6fc4899db7814c1f6c37d6956d51d3a2c6503d8db8f242c4d",
+        "raw_unit_sha256": "2ee161159eb3848feed830f890cda09c6f44f25ea8e94bbaaa9514cadbd7cb49"
+      },
+      "Greek_start": 55863,
+      "Greek_end": 56134,
+      "Greek_text": " καὶ τοῦτον δὲ δόλῳ παρὰ συμπόσιον ὑπὸ τοῦ γαμβροῦ διαφθαρέντα διεδέξατο παῖς Ὑρκανὸς ὄνομα ὃν κατασχόντα τὴν ἱερωσύνην πλείονα τἀδελφοῦ χρόνον ἐνιαυτῷ, τριακονταὲν ἔτη τῆς τιμῆς Ὑρκανὸς ἀπολαύσας τελευτᾷ γηραιὸς Ἰούδᾳ τῷ καὶ Ἀριστοβούλῳ κληθέντι τὴν διαδοχὴν καταλιπών. ",
+      "Greek_paragraph": "greek-book20-num235",
+      "Latin_alignment_paragraph": "latin-book20-num235",
+      "print_review_status": "VISUALLY_REVIEWED",
+      "Latin_review_status": "EDITORIAL_DECISION_REQUIRED",
+      "candidate": {
+        "number": 240,
+        "Latin_start": 50736,
+        "Latin_locator": {
+          "stable_id": "latin-book20-num235",
+          "paragraph": 65,
+          "xpath": "/*/*[2]/*/*[2]/*[13]/*[6]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[13]/p[6]/cb[1]/tail()",
+          "node_offset": 272,
+          "unit_offset": 844,
+          "book_offset": 50736,
+          "raw_byte": 60138,
+          "left": "tifice quo per insidias moriente dolo trifonis sicut superius iam quodam loco narrauimus accepit honorem hunc symon germanus eius ",
+          "right": "huic per dolum quoque generi in conuiuio morienti filius successit hyrcanus, qui cum tenuisset pontificatus annis XXXI, in senectute moriens cum et pontificatum tenuisset et regnum. Is namque primus usus est anno diademate. Heredem fratrem ",
+          "parsed_unit_sha256": "c94cf1e9880e088a43563d2474da2cc8361ddaa5a596466f464e7cdc000fbda6",
+          "raw_unit_sha256": "981857dbb1dfc241cb397ff195f9d3bd7f72ace25b5a6b0088b5baa1a3d7ee7c"
+        },
+        "Latin_phrase": "huic per dolum quoque",
+        "assessment": "INTERNAL_BUT_EXACT",
+        "correspondence": "PRESENT",
+        "review_note": "Simon murder and Hyrcanus; following kingship clause needs241 adjudication.",
+        "Greek_print": {
+          "volume": "IV",
+          "year": 1890,
+          "printed_page": 316,
+          "PDF_image_page": 330,
+          "evidence": {
+            "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\evidence\\Niese-IV-PDF330.jpg",
+            "bytes": 89502,
+            "sha256": "fd623077ac0e5b925868dd85319988f8467aff23c333caf6bb7306aec5fc534c",
+            "CRLF": 0,
+            "LF_without_CR": 373,
+            "BOM": false
+          },
+          "marginal_identity": 240,
+          "labelled_line_context": "XML incipit corroborated in printed context: καὶ τοῦτον δὲ δόλῳ παρὰ συμπόσιον ὑπὸ τοῦ γαμβροῦ διαφθαρέντα διεδέξατο παῖς Ὑρκανὸς ὄνομα ὃν κατασχόντα τὴν ἱερωσύνην πλείονα τἀδ",
+          "precision": "Marginal numeral labels a printed line; it does not tag an XML word.",
+          "action": "RETAIN_EXISTING_XML_NUM",
+          "XML_start": "καὶ τοῦτον δὲ δόλῳ παρὰ συμπόσιον ὑπὸ τοῦ γαμβροῦ διαφθαρέντα διεδέξατο παῖς Ὑρκανὸς ὄνομα ὃν κατασχόντα τὴν ἱερωσύνην πλείονα τἀδελφοῦ χρόνον ἐνιαυτῷ, τριακονταὲν ἔτη τῆς τιμῆς Ὑρ",
+          "XML_end": "α ὃν κατασχόντα τὴν ἱερωσύνην πλείονα τἀδελφοῦ χρόνον ἐνιαυτῷ, τριακονταὲν ἔτη τῆς τιμῆς Ὑρκανὸς ἀπολαύσας τελευτᾷ γηραιὸς Ἰούδᾳ τῷ καὶ Ἀριστοβούλῳ κληθέντι τὴν διαδοχὴν καταλιπών."
+        },
+        "source_sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+        "review_method": "Complete Greek section and neighboring context read; complete actual aligned Latin unit read; phrase chosen by individual semantic and syntactic comparison, not numeric suffix."
+      }
+    },
+    {
+      "book": 20,
+      "number": 241,
+      "Greek_label": {
+        "unit": 74,
+        "id": "greek-book20-num235",
+        "book_offset": 56134,
+        "unit_offset": 1360,
+        "raw_start": 124969,
+        "text": "[241]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[46]/num[7]"
+      },
+      "Greek_locator": {
+        "stable_id": "greek-book20-num235",
+        "paragraph": 74,
+        "xpath": "/*/*/*/*[2]/*[2]/*[46]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[46]/num[7]/tail()",
+        "node_offset": 1,
+        "unit_offset": 1361,
+        "book_offset": 56135,
+        "raw_byte": 124986,
+        "left": "ν ἐνιαυτῷ, τριακονταὲν ἔτη τῆς τιμῆς Ὑρκανὸς ἀπολαύσας τελευτᾷ γηραιὸς Ἰούδᾳ τῷ καὶ Ἀριστοβούλῳ κληθέντι τὴν διαδοχὴν καταλιπών.  ",
+        "right": "κληρονομεῖ δὲ καὶ τοῦτον ἀδελφὸς Ἀλέξανδρος, ὑπὸ νόσου μὲν τελευτήσαντα, τὴν ἱερωσύνην δὲ κατασχόντα μετὰ βασιλείας, καὶ γὰρ διάδημα πρῶτος περιέθετο ὁ Ἰούδας, ἐνιαυτὸν ἕνα. Βασιλεύσας δὲ ὁ Ἀλέξανδρος καὶ ἱερατεύσας ἔτη εἰκοσιεπτὰ καταστρέφ",
+        "parsed_unit_sha256": "ad599d225866abd6fc4899db7814c1f6c37d6956d51d3a2c6503d8db8f242c4d",
+        "raw_unit_sha256": "2ee161159eb3848feed830f890cda09c6f44f25ea8e94bbaaa9514cadbd7cb49"
+      },
+      "Greek_start": 56134,
+      "Greek_end": 56308,
+      "Greek_text": " κληρονομεῖ δὲ καὶ τοῦτον ἀδελφὸς Ἀλέξανδρος, ὑπὸ νόσου μὲν τελευτήσαντα, τὴν ἱερωσύνην δὲ κατασχόντα μετὰ βασιλείας, καὶ γὰρ διάδημα πρῶτος περιέθετο ὁ Ἰούδας, ἐνιαυτὸν ἕνα.",
+      "Greek_paragraph": "greek-book20-num235",
+      "Latin_alignment_paragraph": "latin-book20-num235",
+      "print_review_status": "VISUALLY_REVIEWED",
+      "Latin_review_status": "EDITORIAL_DECISION_REQUIRED",
+      "candidate": {
+        "number": 241,
+        "Latin_start": 50918,
+        "Latin_locator": {
+          "stable_id": "latin-book20-num235",
+          "paragraph": 65,
+          "xpath": "/*/*[2]/*/*[2]/*[13]/*[6]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[13]/p[6]/cb[1]/tail()",
+          "node_offset": 454,
+          "unit_offset": 1026,
+          "book_offset": 50918,
+          "raw_byte": 60320,
+          "left": "lius successit hyrcanus, qui cum tenuisset pontificatus annis XXXI, in senectute moriens cum et pontificatum tenuisset et regnum. ",
+          "right": "Is namque primus usus est anno diademate. Heredem fratrem dereliquit alexandrum.Alexander autem cum et regnasset et sacerdotium tenuisset, annis XXVII, uita priuatus est. Alexandrae coniugi praecipiens ut ipsa pontificem ordinaret, quae pon",
+          "parsed_unit_sha256": "c94cf1e9880e088a43563d2474da2cc8361ddaa5a596466f464e7cdc000fbda6",
+          "raw_unit_sha256": "981857dbb1dfc241cb397ff195f9d3bd7f72ace25b5a6b0088b5baa1a3d7ee7c"
+        },
+        "Latin_phrase": "Is namque primus",
+        "assessment": "INTERNAL_BUT_EXACT",
+        "correspondence": "PRESENT",
+        "review_note": "Candidate starts at diadem statement, with reordered Alexander succession; earlier kingship clause may also correspond.",
+        "Greek_print": {
+          "volume": "IV",
+          "year": 1890,
+          "printed_page": 316,
+          "PDF_image_page": 330,
+          "evidence": {
+            "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\evidence\\Niese-IV-PDF330.jpg",
+            "bytes": 89502,
+            "sha256": "fd623077ac0e5b925868dd85319988f8467aff23c333caf6bb7306aec5fc534c",
+            "CRLF": 0,
+            "LF_without_CR": 373,
+            "BOM": false
+          },
+          "marginal_identity": 241,
+          "labelled_line_context": "XML incipit corroborated in printed context: κληρονομεῖ δὲ καὶ τοῦτον ἀδελφὸς Ἀλέξανδρος, ὑπὸ νόσου μὲν τελευτήσαντα, τὴν ἱερωσύνην δὲ κατασχόντα μετὰ βασιλείας, καὶ γὰρ διάδη",
+          "precision": "Marginal numeral labels a printed line; it does not tag an XML word.",
+          "action": "RETAIN_EXISTING_XML_NUM",
+          "XML_start": "κληρονομεῖ δὲ καὶ τοῦτον ἀδελφὸς Ἀλέξανδρος, ὑπὸ νόσου μὲν τελευτήσαντα, τὴν ἱερωσύνην δὲ κατασχόντα μετὰ βασιλείας, καὶ γὰρ διάδημα πρῶτος περιέθετο ὁ Ἰούδας, ἐνιαυτὸν ἕνα.",
+          "XML_end": "κληρονομεῖ δὲ καὶ τοῦτον ἀδελφὸς Ἀλέξανδρος, ὑπὸ νόσου μὲν τελευτήσαντα, τὴν ἱερωσύνην δὲ κατασχόντα μετὰ βασιλείας, καὶ γὰρ διάδημα πρῶτος περιέθετο ὁ Ἰούδας, ἐνιαυτὸν ἕνα."
+        },
+        "source_sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+        "review_method": "Complete Greek section and neighboring context read; complete actual aligned Latin unit read; phrase chosen by individual semantic and syntactic comparison, not numeric suffix."
+      }
+    },
+    {
+      "book": 20,
+      "number": 242,
+      "Greek_label": {
+        "unit": 75,
+        "id": "greek-book20-num242",
+        "book_offset": 56308,
+        "unit_offset": 0,
+        "raw_start": 125397,
+        "text": "[242]",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[47]/num[1]"
+      },
+      "Greek_locator": {
+        "stable_id": "greek-book20-num242",
+        "paragraph": 75,
+        "xpath": "/*/*/*/*[2]/*[2]/*[47]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[47]/num[1]/tail()",
+        "node_offset": 1,
+        "unit_offset": 1,
+        "book_offset": 56309,
+        "raw_byte": 125414,
+        "left": " ὑπὸ νόσου μὲν τελευτήσαντα, τὴν ἱερωσύνην δὲ κατασχόντα μετὰ βασιλείας, καὶ γὰρ διάδημα πρῶτος περιέθετο ὁ Ἰούδας, ἐνιαυτὸν ἕνα. ",
+        "right": "Βασιλεύσας δὲ ὁ Ἀλέξανδρος καὶ ἱερατεύσας ἔτη εἰκοσιεπτὰ καταστρέφει τὸν βίον Ἀλεξάνδρᾳ τῇ γυναικὶ καταστῆσαι τὸν ἀρχιερατευσόμενον ἐπιτρέψας. ἡ δὲ τὴν μὲν ἀρχιερωσύνην Ὑρκανῷ δίδωσιν, αὐτὴ δὲ τὴν βασιλείαν ἔτη ἐννέα κατασχοῦσα τελευτᾷ τὸν ",
+        "parsed_unit_sha256": "d15882586e014160495e2e61bca75550b6a9d12d30e4ee8e7296f9deafcfba6e",
+        "raw_unit_sha256": "3fe6c7fab5362d6165dd8e20cc7ce33fc0bad5482399bb61b6605d6ca1a64c3f"
+      },
+      "Greek_start": 56308,
+      "Greek_end": 56619,
+      "Greek_text": " Βασιλεύσας δὲ ὁ Ἀλέξανδρος καὶ ἱερατεύσας ἔτη εἰκοσιεπτὰ καταστρέφει τὸν βίον Ἀλεξάνδρᾳ τῇ γυναικὶ καταστῆσαι τὸν ἀρχιερατευσόμενον ἐπιτρέψας. ἡ δὲ τὴν μὲν ἀρχιερωσύνην Ὑρκανῷ δίδωσιν, αὐτὴ δὲ τὴν βασιλείαν ἔτη ἐννέα κατασχοῦσα τελευτᾷ τὸν βίον: τὸν ἴσον δὲ χρόνον τὴν ἀρχιερωσύνην ὁ παῖς αὐτῆς Ὑρκανὸς ἔσχεν: ",
+      "Greek_paragraph": "greek-book20-num242",
+      "Latin_alignment_paragraph": "latin-book20-num242",
+      "print_review_status": "VISUALLY_REVIEWED",
+      "Latin_review_status": "INDIVIDUALLY_REVIEWED",
+      "candidate": {
+        "number": 242,
+        "Latin_start": 50998,
+        "Latin_locator": {
+          "stable_id": "latin-book20-num242",
+          "paragraph": 66,
+          "xpath": "/*/*[2]/*/*[2]/*[13]/*[7]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[13]/p[7]/text()",
+          "node_offset": 0,
+          "unit_offset": 0,
+          "book_offset": 50998,
+          "raw_byte": 60442,
+          "left": " moriens cum et pontificatum tenuisset et regnum. Is namque primus usus est anno diademate. Heredem fratrem dereliquit alexandrum.",
+          "right": "Alexander autem cum et regnasset et sacerdotium tenuisset, annis XXVII, uita priuatus est. Alexandrae coniugi praecipiens ut ipsa pontificem ordinaret, quae pontificatum quidem hyrcano suo filio dedit, regnum uero ipsa retinens anni VIIII, ",
+          "parsed_unit_sha256": "164135f247b92fcb7572079f7f8fef5379cc3f22a438332492d7b05d45086a9d",
+          "raw_unit_sha256": "3c96362f296fa7f3824848980b067e8ce82d6ca96b0139428909621a20ba4f27"
+        },
+        "Latin_phrase": "Alexander autem cum",
+        "assessment": "EXACT_START",
+        "correspondence": "PRESENT",
+        "review_note": "Alexander death, Alexandra and Hyrcanus tenure.",
+        "Greek_print": {
+          "volume": "IV",
+          "year": 1890,
+          "printed_page": 316,
+          "PDF_image_page": 330,
+          "evidence": {
+            "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\evidence\\Niese-IV-PDF330.jpg",
+            "bytes": 89502,
+            "sha256": "fd623077ac0e5b925868dd85319988f8467aff23c333caf6bb7306aec5fc534c",
+            "CRLF": 0,
+            "LF_without_CR": 373,
+            "BOM": false
+          },
+          "marginal_identity": 242,
+          "labelled_line_context": "XML incipit corroborated in printed context: Βασιλεύσας δὲ ὁ Ἀλέξανδρος καὶ ἱερατεύσας ἔτη εἰκοσιεπτὰ καταστρέφει τὸν βίον Ἀλεξάνδρᾳ τῇ γυναικὶ καταστῆσαι τὸν ἀρχιερατευσόμενο",
+          "precision": "Marginal numeral labels a printed line; it does not tag an XML word.",
+          "action": "RETAIN_EXISTING_XML_NUM",
+          "XML_start": "Βασιλεύσας δὲ ὁ Ἀλέξανδρος καὶ ἱερατεύσας ἔτη εἰκοσιεπτὰ καταστρέφει τὸν βίον Ἀλεξάνδρᾳ τῇ γυναικὶ καταστῆσαι τὸν ἀρχιερατευσόμενον ἐπιτρέψας. ἡ δὲ τὴν μὲν ἀρχιερωσύνην Ὑρκανῷ δίδω",
+          "XML_end": "ον ἐπιτρέψας. ἡ δὲ τὴν μὲν ἀρχιερωσύνην Ὑρκανῷ δίδωσιν, αὐτὴ δὲ τὴν βασιλείαν ἔτη ἐννέα κατασχοῦσα τελευτᾷ τὸν βίον: τὸν ἴσον δὲ χρόνον τὴν ἀρχιερωσύνην ὁ παῖς αὐτῆς Ὑρκανὸς ἔσχεν:"
+        },
+        "source_sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+        "review_method": "Complete Greek section and neighboring context read; complete actual aligned Latin unit read; phrase chosen by individual semantic and syntactic comparison, not numeric suffix."
+      }
+    }
+  ],
+  "whole_witness_audit": "WHOLE_LATIN_DISPLACEMENT_AUDIT.json",
+  "alternatives": [
+    {
+      "label": "A",
+      "recommended": true,
+      "start": {
+        "stable_id": "latin-book20-num235",
+        "paragraph": 65,
+        "xpath": "/*/*[2]/*/*[2]/*[13]/*[6]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[13]/p[6]/cb[1]/tail()",
+        "node_offset": 454,
+        "unit_offset": 1026,
+        "book_offset": 50918,
+        "raw_byte": 60320,
+        "left": "lius successit hyrcanus, qui cum tenuisset pontificatus annis XXXI, in senectute moriens cum et pontificatum tenuisset et regnum. ",
+        "right": "Is namque primus usus est anno diademate. Heredem fratrem dereliquit alexandrum.Alexander autem cum et regnasset et sacerdotium tenuisset, annis XXVII, uita priuatus est. Alexandrae coniugi praecipiens ut ipsa pontificem ordinaret, quae pon",
+        "parsed_unit_sha256": "c94cf1e9880e088a43563d2474da2cc8361ddaa5a596466f464e7cdc000fbda6",
+        "raw_unit_sha256": "981857dbb1dfc241cb397ff195f9d3bd7f72ace25b5a6b0088b5baa1a3d7ee7c"
+      },
+      "representation": "241 begins Is namque primus; preceding kingship clause remains attached to Latin240. Qualify compressed/reordered correspondence."
+    },
+    {
+      "label": "B",
+      "recommended": false,
+      "start": {
+        "stable_id": "latin-book20-num235",
+        "paragraph": 65,
+        "xpath": "/*/*[2]/*/*[2]/*[13]/*[6]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[13]/p[6]/cb[1]/tail()",
+        "node_offset": 413,
+        "unit_offset": 985,
+        "book_offset": 50877,
+        "raw_byte": 60279,
+        "left": "lum quoque generi in conuiuio morienti filius successit hyrcanus, qui cum tenuisset pontificatus annis XXXI, in senectute moriens ",
+        "right": "cum et pontificatum tenuisset et regnum. Is namque primus usus est anno diademate. Heredem fratrem dereliquit alexandrum.Alexander autem cum et regnasset et sacerdotium tenuisset, annis XXVII, uita priuatus est. Alexandrae coniugi praecipie",
+        "parsed_unit_sha256": "c94cf1e9880e088a43563d2474da2cc8361ddaa5a596466f464e7cdc000fbda6",
+        "raw_unit_sha256": "981857dbb1dfc241cb397ff195f9d3bd7f72ace25b5a6b0088b5baa1a3d7ee7c"
+      },
+      "representation": "241 begins cum et pontificatum tenuisset et regnum; includes kingship clause matching Greek241 but splits its inherited Latin syntactic attachment to240."
+    }
+  ],
+  "recommendation": "A. Is namque starts the distinct diadem/succession statement. Retain inherited compressed syntax; disclose incomplete/reordered correspondence, with no historical or grammatical repair."
+}

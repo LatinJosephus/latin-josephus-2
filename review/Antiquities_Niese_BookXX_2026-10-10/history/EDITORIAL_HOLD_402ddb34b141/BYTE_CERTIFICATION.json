@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "scope": "SECURE_INSERTIONS.json",
+  "final_editorial_certification": false,
+  "BookXX": {
+    "Latin": {
+      "status": "PASS",
+      "original": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+      "final": "b5dc23cdca4cd7e8686ef5232534fd0a7b3fcdc0bef5d9b6e85d5bfe1d1cdac9",
+      "reversed": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+      "additions": 254,
+      "CRLF_before": 0,
+      "CRLF_after": 0,
+      "projection_sha256": "6bee488b3428fc4464ac90a063863ea0a24316884170ba38382667e2a506a75e",
+      "all_original_markup_restored": true,
+      "all_original_IDs_retained": true,
+      "approved_new_IDs": [
+        "niese-latin-book20-secure-end239",
+        "niese-latin-book20-secure-end25",
+        "niese-latin-book20-secure-end57"
+      ],
+      "all_sameAs_unchanged": true
+    },
+    "Greek": {
+      "status": "PASS",
+      "original": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19",
+      "final": "193f0a654ba827838afa3bbde3f95fa31c318f2a6431efadd453b7977f5617b1",
+      "reversed": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19",
+      "additions": 1,
+      "CRLF_before": 0,
+      "CRLF_after": 0,
+      "projection_sha256": "2f2012cc8113fc258a20bfa8e976e96c19702bc87877673d22e1aefcbf9caa77",
+      "all_original_markup_restored": true,
+      "all_original_IDs_retained": true,
+      "approved_new_IDs": [],
+      "all_sameAs_unchanged": true
+    }
+  },
+  "protected_files": 299,
+  "protected_scope_complete": true,
+  "changed_existing_production": {
+    "assets/js/renderTei.js": {
+      "original": "bff7640c318f49701ddaaa935b1ded99632f389da09391dd84f8f92bff7e8f0a",
+      "final": "d7f30fcd7b76480d9dd21cbb7277d7881c67cc63dc7a9a730951b90b742a9227"
+    },
+    "assets/xml/antiquities/Greek/book-20.xml": {
+      "original": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19",
+      "final": "193f0a654ba827838afa3bbde3f95fa31c318f2a6431efadd453b7977f5617b1"
+    },
+    "assets/xml/antiquities/Latin/book-20.xml": {
+      "original": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+      "final": "b5dc23cdca4cd7e8686ef5232534fd0a7b3fcdc0bef5d9b6e85d5bfe1d1cdac9"
+    }
+  },
+  "unchanged_English_all_books": true,
+  "unchanged_structure": true,
+  "new_registry": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\assets\\xml\\antiquities\\niese\\book-20.json",
+    "bytes": 54448,
+    "sha256": "30633235bc725808ee42ecbc95f7309f3117642723f6ab0ad58d10f8ec075c27",
+    "CRLF": 0,
+    "LF_without_CR": 2430,
+    "BOM": false
+  }
+}

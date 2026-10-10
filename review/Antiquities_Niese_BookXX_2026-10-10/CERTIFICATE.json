@@ -1,0 +1,375 @@
+{
+  "status": "LOCALLY_CERTIFIED",
+  "certified": true,
+  "ready_for_coordinated_integration": true,
+  "issued_at": "2026-10-10T13:29:05.597505+00:00",
+  "base": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "branch": "antiquities-niese-20",
+  "branch_ref": "refs/heads/antiquities-niese-20",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-20",
+  "runtime": "C:\\workspace\\Antiquities-Niese-20-runtime-20261010",
+  "port": 8920,
+  "verified_production_commit": "2c1d9ab8e2e90270527945b83ca90da8827b72b0",
+  "QA_evidence_commit": "42584c258110eff6e308e894cf51a14938102563",
+  "final_certificate_commit": "Resolve refs/heads/antiquities-niese-20 after the final certificate commit; its own hash cannot be embedded in itself.",
+  "Greek_printed_identity_review": "268/268 COMPLETE",
+  "individual_Latin_comparison": "268/268 COMPLETE",
+  "editorial_cases_closed": "4/4; all A explicitly approved by the editor",
+  "pending_cases": [],
+  "editorial_history": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\ADJUDICATION_HISTORY.json",
+    "bytes": 29379,
+    "sha256": "8f804fd51bec4c4dee8aad2cf32ab5b308b09c88b2e41f64e186bf91f0db84ca",
+    "CRLF": 0,
+    "LF_without_CR": 146,
+    "BOM": false
+  },
+  "original_approval": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\EDITORIAL_ADJUDICATION_2026-10-10.txt",
+    "bytes": 5727,
+    "sha256": "6c4eeb67929bf90ceb31dcb98ee9ae0ef36f3b9c86a01168ae03ab52c378957c",
+    "CRLF": 113,
+    "LF_without_CR": 0,
+    "BOM": false
+  },
+  "previous_hold_preserved": "history/EDITORIAL_HOLD_402ddb34b141 plus immutable earlier commits and unchanged CASE packets",
+  "counts": {
+    "status": "PASS",
+    "Greek_identities": 268,
+    "logical_selectable_identities": 268,
+    "nonempty_Latin_identities": 257,
+    "primary_Latin_intervals": 257,
+    "primary_Latin_fragments": 257,
+    "new_Latin_start_milestones": 257,
+    "retained_original_Latin_Niese_starts": 0,
+    "new_exclusive_end_anchors": 1,
+    "new_Greek_opening_labels": 1,
+    "retained_original_Greek_labels": 267,
+    "unavailable_identities": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      238
+    ],
+    "partial_identities": [
+      26,
+      37,
+      218,
+      240,
+      241,
+      266
+    ],
+    "additional_qualified_identities": [
+      59,
+      239
+    ],
+    "old_legacy_chapter_milestones": {
+      "Greek": 20,
+      "Latin": 20,
+      "English": 20
+    },
+    "source_only_unassigned_spans": [
+      {
+        "start": 5689,
+        "end": 5746,
+        "text": "[Niese sections 26–37 largely missing; cf. Blatt, p. 68] ",
+        "status": "SOURCE_ONLY_INHERITED_ANNOTATION",
+        "locator": {
+          "stable_id": "latin-book20-num34",
+          "paragraph": 25,
+          "xpath": "/*/*[2]/*/*[2]/*[4]/*[3]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[4]/p[3]/text()",
+          "node_offset": 0,
+          "unit_offset": 0,
+          "book_offset": 5689,
+          "raw_byte": 11249,
+          "left": "oe quae ex imbrium diluuio liberata fertur, et actenus uidere uolentibus demonstratur. Commorabatur itaque iazatis in hac regione.",
+          "right": "[Niese sections 26–37 largely missing; cf. Blatt, p. 68] Darta banem particum destinauit.Cumque legibus crederet iudaeorum, studebat et ipse conuerti. Et credens se perfectum non esse iudaeum nisi signum circumcisionis acciperet. Eratque ho",
+          "parsed_unit_sha256": "3592722d0b504b79a4cbfc82952cd6bf24f9dfb1c837026430fb2634146b8888",
+          "raw_unit_sha256": "c944a6c6a9d1b90edf2bcd973bd80d0164db4fbded6d61fd17176a76389597ef"
+        }
+      }
+    ],
+    "physical_overlap_or_duplicate_text": false,
+    "Latin_complete_book_projection_hash": "6bee488b3428fc4464ac90a063863ea0a24316884170ba38382667e2a506a75e",
+    "Latin_projection_characters": 57185,
+    "assigned_Latin_characters": 57128,
+    "source_only_characters": 57,
+    "Vita_included": false,
+    "editorial_holds": 0,
+    "actual_XML_marker_census": {
+      "Greek": {
+        "milestones_by_unit": {
+          "chapter": 20
+        },
+        "all_anchors": 1,
+        "retained_original_anchors": 1,
+        "all_num_elements": 268,
+        "bracketed_numeric_labels_in_paragraphs": 268,
+        "label_identity": "Niese citation labels"
+      },
+      "Latin": {
+        "milestones_by_unit": {
+          "UNQUALIFIED": 17,
+          "chapter": 20,
+          "niese": 257
+        },
+        "all_anchors": 1,
+        "retained_original_anchors": 0,
+        "all_num_elements": 0,
+        "bracketed_numeric_labels_in_paragraphs": 0,
+        "label_identity": "No original numeric citation labels"
+      },
+      "English": {
+        "milestones_by_unit": {
+          "chapter": 20
+        },
+        "all_anchors": 0,
+        "retained_original_anchors": 0,
+        "all_num_elements": 50,
+        "bracketed_numeric_labels_in_paragraphs": 50,
+        "label_identity": "Whiston coarse context labels; not exact Niese starts"
+      }
+    }
+  },
+  "test_counts": {
+    "BookXX_individual_selections": 268,
+    "exact_nonempty_Latin_selections": 257,
+    "approved_unavailable_Latin_selections": 11,
+    "adjudicated_combined_groups": 4,
+    "individual_case_group_checks": 26,
+    "BookXX_containing_views": 135,
+    "independently_resolved_structural_ranges": 82,
+    "independent_three_language_structural_comparisons": 246,
+    "legacy_physical_extents": 20,
+    "legacy_chapter_URLs": 20,
+    "prior_Niese_selections": 5231,
+    "other_work_and_source_control_routes": 35,
+    "critical_navigation_cases": 24,
+    "new_reader_errors": 0,
+    "duplicate_DOM_IDs": 0
+  },
+  "byte_recovery": {
+    "Latin": {
+      "status": "PASS",
+      "original": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+      "final": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "reversed": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
+      "additions": 258,
+      "CRLF_before": 0,
+      "CRLF_after": 0,
+      "projection_sha256": "6bee488b3428fc4464ac90a063863ea0a24316884170ba38382667e2a506a75e",
+      "all_original_markup_restored": true,
+      "all_original_IDs_retained": true,
+      "approved_new_IDs": [
+        "niese-latin-book20-end26"
+      ],
+      "all_sameAs_unchanged": true
+    },
+    "Greek": {
+      "status": "PASS",
+      "original": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19",
+      "final": "193f0a654ba827838afa3bbde3f95fa31c318f2a6431efadd453b7977f5617b1",
+      "reversed": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19",
+      "additions": 1,
+      "CRLF_before": 0,
+      "CRLF_after": 0,
+      "projection_sha256": "2f2012cc8113fc258a20bfa8e976e96c19702bc87877673d22e1aefcbf9caa77",
+      "all_original_markup_restored": true,
+      "all_original_IDs_retained": true,
+      "approved_new_IDs": [],
+      "all_sameAs_unchanged": true
+    }
+  },
+  "unchanged_English_BookXX_sha256": "7d0813df000bab366ee8d785cdd154fd509db7428b7774739185cd83194cec34",
+  "protected_production_inputs": 299,
+  "executed_gates": {
+    "COMPLETE_PRINT_AUDIT.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\COMPLETE_PRINT_AUDIT.json",
+      "bytes": 16818,
+      "sha256": "448693f827f9349e79ab4838ad88cbc0b61631dc1deca5e2d1903ecdf2062350",
+      "CRLF": 0,
+      "LF_without_CR": 431,
+      "BOM": false
+    },
+    "BASELINE_STRUCTURAL_BROWSER_COMPARISON.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\BASELINE_STRUCTURAL_BROWSER_COMPARISON.json",
+      "bytes": 27540,
+      "sha256": "8aa60c0ab20fd3efaaacf563a251dd8f94c007d6cffffb53bcbfc8f24d829e54",
+      "CRLF": 0,
+      "LF_without_CR": 663,
+      "BOM": false
+    },
+    "BASELINE_PROTECTED_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\BASELINE_PROTECTED_BROWSER.json",
+      "bytes": 5245662,
+      "sha256": "a8e597c9333c0361134912aa29f15c1289d57f90f67974d6143e6d92d1391484",
+      "CRLF": 0,
+      "LF_without_CR": 222650,
+      "BOM": false
+    },
+    "FINAL_PROTECTED_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\FINAL_PROTECTED_BROWSER.json",
+      "bytes": 5245720,
+      "sha256": "ac48dacb52440ee1ddd52d63e95b9a7822d359f75d71ebfff92b8e00049cc1f9",
+      "CRLF": 0,
+      "LF_without_CR": 222651,
+      "BOM": false
+    },
+    "BASELINE_OTHER_CONTROLS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\BASELINE_OTHER_CONTROLS.json",
+      "bytes": 171020,
+      "sha256": "ce9e55744f688d2894a9f03549fc74a8a95e02b5841fde0990d0a4fa8244b2f7",
+      "CRLF": 0,
+      "LF_without_CR": 7466,
+      "BOM": false
+    },
+    "FINAL_OTHER_CONTROLS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\FINAL_OTHER_CONTROLS.json",
+      "bytes": 171078,
+      "sha256": "7dc8b612b6e1dbaf798420a54edbb841d16f3040bf7aa9e49d66ef6b948b5ced",
+      "CRLF": 0,
+      "LF_without_CR": 7467,
+      "BOM": false
+    },
+    "BOOKXX_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\BOOKXX_BROWSER.json",
+      "bytes": 172777,
+      "sha256": "cf24f0481a48f2ee79b0bcdda329cee65eb332004303c6762deb01d655a21bef",
+      "CRLF": 0,
+      "LF_without_CR": 5725,
+      "BOM": false
+    },
+    "ADJUDICATED_CASES_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\ADJUDICATED_CASES_BROWSER.json",
+      "bytes": 8488,
+      "sha256": "545402247fb365cd6c008d73689a69049f92dd7799c624ee61cc720e546c86df",
+      "CRLF": 0,
+      "LF_without_CR": 315,
+      "BOM": false
+    },
+    "BOOK_CLOSURE_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\BOOK_CLOSURE_BROWSER.json",
+      "bytes": 472,
+      "sha256": "fe53c6314ae65e190cb7fe16bf7eae4426a3a3c143757543a22cc58851c79f97",
+      "CRLF": 0,
+      "LF_without_CR": 12,
+      "BOM": false
+    },
+    "VISIBLE_QUALIFICATIONS_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\VISIBLE_QUALIFICATIONS_BROWSER.json",
+      "bytes": 3335,
+      "sha256": "c07e8425aa515f2deecf7fd1ce79ed0a0c08a2c0f6d3e496b1d2012ef3256189",
+      "CRLF": 0,
+      "LF_without_CR": 93,
+      "BOM": false
+    },
+    "FINAL_VISUAL_INSPECTION.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\FINAL_VISUAL_INSPECTION.json",
+      "bytes": 1322,
+      "sha256": "276cb0813fd850ac6be56db58ac990994ffe65e608b4cd6cfa9d4a6502ed3639",
+      "CRLF": 0,
+      "LF_without_CR": 38,
+      "BOM": false
+    },
+    "HOLD_ARCHIVE_VERIFICATION.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\HOLD_ARCHIVE_VERIFICATION.json",
+      "bytes": 700,
+      "sha256": "d5cc2d93ea143a37beb3f936870a8caa586a13219b1ab243a82dcaf1f3d582d8",
+      "CRLF": 0,
+      "LF_without_CR": 22,
+      "BOM": false
+    },
+    "BYTE_CERTIFICATION.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\BYTE_CERTIFICATION.json",
+      "bytes": 2654,
+      "sha256": "fbeddd52d5c6d51852c269220dcad1c3a4667b34c68694b7f23d4e0beb4fb37a",
+      "CRLF": 0,
+      "LF_without_CR": 64,
+      "BOM": false
+    },
+    "COVERAGE_GATE.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\COVERAGE_GATE.json",
+      "bytes": 66128,
+      "sha256": "3e7b605c0d3d02d6fcbd3c453f3c1429c58960bb873e11348922cc25fb82da14",
+      "CRLF": 0,
+      "LF_without_CR": 2422,
+      "BOM": false
+    },
+    "GENERIC_END_BASELINE_REPRO.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\GENERIC_END_BASELINE_REPRO.json",
+      "bytes": 307,
+      "sha256": "ff7bb56322608ef8ad49e423af21560d4599187e87177cf41024908661d15749",
+      "CRLF": 0,
+      "LF_without_CR": 9,
+      "BOM": false
+    },
+    "GENERIC_END_CANDIDATE_PROOF.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\GENERIC_END_CANDIDATE_PROOF.json",
+      "bytes": 283,
+      "sha256": "206615827699b421cc2718b1a3e25a54bf30af75e13116797ad01e98421376e7",
+      "CRLF": 0,
+      "LF_without_CR": 9,
+      "BOM": false
+    }
+  },
+  "production_manifest": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\PRODUCTION_MANIFEST.json",
+    "bytes": 1751,
+    "sha256": "d6e10e2e94c443f21d141ac742b7251b09cc323c10eabaf816d07835656f8f82",
+    "CRLF": 0,
+    "LF_without_CR": 42,
+    "BOM": false
+  },
+  "previous_selectable_identities": 5231,
+  "local_selectable_identities": 5499,
+  "known_baseline_exceptions": [
+    {
+      "case": "Inherited Book-I apparatus links",
+      "links": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "targets": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "excludedFromNewErrors": true
+    },
+    {
+      "case": "UnsupportedI.1",
+      "error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "inventory": {
+        "selected": "",
+        "firstSupported": "27"
+      },
+      "excludedFromSelectableCount": true
+    }
+  ],
+  "combined_test_method": "Actual built reader selections and exact-view function; native DOM combined ranges over actual loaded source, compared with independently frozen raw-source projections. No multi-Niese URL exists or is claimed.",
+  "canonical_observation": {
+    "observed_at": "2026-10-10T13:29:05.596513+00:00",
+    "canonical_HEAD": "cd6d69e1a3c33a7e8d5a0dabc7c0deda39d0eac9",
+    "canonical_status": "",
+    "our_assignment_modified_canonical": false,
+    "source_baseline_unchanged": "65b3256fe202a06e33a59aa2d1dcbd7107358271"
+  },
+  "source_preservation": "Exact full-file recovery by reversing only authorized empty-tag insertions; original source text, order, whitespace, punctuation, IDs, sameAs, markup, paratext, English and all unrelated production content preserved.",
+  "no_merge_push_or_publication": true,
+  "new_public_release": false,
+  "integration_limit": "Certified against frozen pre-XI65b source only. Coordinator must reconcile minimal shared-reader hunks with then-current canonical and rerun combined suites including any newly integrated books."
+}

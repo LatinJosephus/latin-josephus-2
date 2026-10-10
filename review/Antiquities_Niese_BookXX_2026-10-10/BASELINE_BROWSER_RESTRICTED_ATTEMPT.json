@@ -1,0 +1,18 @@
+{
+  "mode": "baseline",
+  "scope": "ALL_ACTUAL_BASELINE_NIESE_IDENTITIES_AND_BOOKXX_CONTAINING_VIEWS",
+  "started": "2026-10-10T12:25:04.879Z",
+  "status": "FAIL",
+  "books": [],
+  "selections": [],
+  "views": [],
+  "errors": [
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:8920/antiquities/?book=20",
+      "message": "net::ERR_NETWORK_ACCESS_DENIED"
+    }
+  ],
+  "failure": "Error: page.goto: net::ERR_NETWORK_ACCESS_DENIED at http://127.0.0.1:8920/antiquities/?book=20\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8920/antiquities/?book=20\", waiting until \"domcontentloaded\"\u001b[22m\n",
+  "finished": "2026-10-10T12:25:04.943Z"
+}

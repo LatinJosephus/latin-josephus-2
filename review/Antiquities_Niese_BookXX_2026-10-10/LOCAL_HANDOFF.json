@@ -1,0 +1,99 @@
+{
+  "status": "LOCALLY CERTIFIED / READY FOR COORDINATED INTEGRATION",
+  "branch": "antiquities-niese-20",
+  "branch_ref": "refs/heads/antiquities-niese-20",
+  "base": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "verified_production_commit": "2c1d9ab8e2e90270527945b83ca90da8827b72b0",
+  "QA_evidence_commit": "42584c258110eff6e308e894cf51a14938102563",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-20",
+  "runtime": "C:\\workspace\\Antiquities-Niese-20-runtime-20261010",
+  "review": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10",
+  "certificate": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CERTIFICATE.json",
+  "report": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\REPORT.md",
+  "approved_cases": {
+    "059": {
+      "choice": "A",
+      "status": "APPROVED",
+      "packet": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CASE_059.json"
+    },
+    "026_037": {
+      "choice": "A",
+      "status": "APPROVED",
+      "packet": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CASE_026_037.json"
+    },
+    "238": {
+      "choice": "A",
+      "status": "APPROVED",
+      "packet": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CASE_238.json"
+    },
+    "241": {
+      "choice": "A",
+      "status": "APPROVED",
+      "packet": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CASE_241.json"
+    }
+  },
+  "counts": {
+    "logical_selectable_identities": 268,
+    "nonempty_Latin_identities": 257,
+    "primary_Latin_fragments": 257,
+    "new_Latin_start_milestones": 257,
+    "retained_original_Latin_Niese_starts": 0,
+    "new_exclusive_end_anchors": 1,
+    "new_Greek_opening_labels": 1,
+    "retained_original_Greek_labels": 267,
+    "unavailable_identities": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      238
+    ],
+    "partial_identities": [
+      26,
+      37,
+      218,
+      240,
+      241,
+      266
+    ]
+  },
+  "test_counts": {
+    "BookXX_individual_selections": 268,
+    "exact_nonempty_Latin_selections": 257,
+    "approved_unavailable_Latin_selections": 11,
+    "adjudicated_combined_groups": 4,
+    "individual_case_group_checks": 26,
+    "BookXX_containing_views": 135,
+    "independently_resolved_structural_ranges": 82,
+    "independent_three_language_structural_comparisons": 246,
+    "legacy_physical_extents": 20,
+    "legacy_chapter_URLs": 20,
+    "prior_Niese_selections": 5231,
+    "other_work_and_source_control_routes": 35,
+    "critical_navigation_cases": 24,
+    "new_reader_errors": 0,
+    "duplicate_DOM_IDs": 0
+  },
+  "production_files": [
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/Greek/book-20.xml",
+    "assets/xml/antiquities/Latin/book-20.xml",
+    "assets/xml/antiquities/niese/book-20.json"
+  ],
+  "coordinator_reconciliation": [
+    "Retain frozen65b source certification and original approval/history evidence; do not rebase or overwrite another WorkBot’s worktree.",
+    "Integrate the approved Book XX XML insertions and book-specific JSON registry through a separate authorized task.",
+    "Reconcile only the narrow Book XX registry registration and generic endTarget renderer hunks with then-current v2-development; do not replace its renderer with this branch snapshot.",
+    "Preserve later XI and XVI–XIX work and rerun the actual combined identity population, containing navigation, source/byte and Whiston controls after reconciliation.",
+    "No additional editorial approval is needed for these four A decisions. Publication and canonical integration remain outside this assignment."
+  ],
+  "publication_authorized": false,
+  "merge_push_publish_performed": false,
+  "remaining_BookXX_source_certification_work": []
+}
