@@ -1,0 +1,54 @@
+{
+  "status": "EDITORIAL_HOLD; NOT READY FOR INTEGRATION",
+  "branch": "antiquities-niese-20",
+  "branch_ref": "refs/heads/antiquities-niese-20",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-20",
+  "runtime": "C:\\workspace\\Antiquities-Niese-20-runtime-20261010",
+  "review": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10",
+  "base": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "verified_production_commit": "3bc395ad2bb3594364633e76f4daabaa137e6480",
+  "QA_evidence_commit": "be1dda266bcb869e83d039df52e3e1d7c506e05f",
+  "authority_commits": [
+    "46f65f4413d30de31715fac8c6d22969d35f0a3e",
+    "5c32167c04eb51026e989e52eeb2ba983c9ebcb4"
+  ],
+  "certificate": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CERTIFICATE.json",
+  "report": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\REPORT.md",
+  "pending_cases": {
+    "026_037": {
+      "packet": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CASE_026_037.md",
+      "recommended": "A",
+      "status": "PENDING"
+    },
+    "059": {
+      "packet": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CASE_059.md",
+      "recommended": "A",
+      "status": "PENDING"
+    },
+    "238": {
+      "packet": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CASE_238.md",
+      "recommended": "A",
+      "status": "PENDING"
+    },
+    "241": {
+      "packet": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\CASE_241.md",
+      "recommended": "A",
+      "status": "PENDING"
+    }
+  },
+  "resume_steps": [
+    "Record exact human choices and responses in ADJUDICATION_HISTORY.json; do not infer approval from elapsed time.",
+    "For closed accepted choices, execute prepare_accepted_patch.py. It reverses only documented routine insertions against the frozen bytes and applies the accepted map. A B decision withholding unavailability leaves a scholarly hold.",
+    "Verify bytes and complete final physical membership, then make a scoped source commit and build_candidate.py into a unique commit-named runtime. Existing executed routine build/evidence remains available.",
+    "Run bookxx_browser.cjs against FINAL_EXPECTED_INTERVALS.json and all containing/protected browser checks; reverify source opening, end, notices, contents and source bytes. Preserve the routine-stage evidence under distinct names before updating final receipts.",
+    "Only after all final gates and four decisions close, issue LOCALLY CERTIFIED / READY FOR COORDINATED INTEGRATION, make final scoped commits and verify a clean worktree. Stop before merge/push/publication."
+  ],
+  "coordinator_reconciliation": "Canonical advanced to08f46c0 during this audit with XI integration. Keep immutable65b source. Reconcile the two narrow reader hunks with later canonical by normal integration review; never overwrite its renderer with this snapshot. No XI or other concurrent unintegrated work is included.",
+  "production_files": [
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/Greek/book-20.xml",
+    "assets/xml/antiquities/Latin/book-20.xml",
+    "assets/xml/antiquities/niese/book-20.json"
+  ],
+  "publication_authorized": false
+}
