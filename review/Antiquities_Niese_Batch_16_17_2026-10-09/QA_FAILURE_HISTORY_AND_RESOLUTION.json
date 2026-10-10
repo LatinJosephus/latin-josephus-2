@@ -1,0 +1,63 @@
+{
+  "status": "ALL_RECORDED_FAILURES_RESOLVED_AND_SUPERSEDED_BY_FINAL_PASS_REPORTS",
+  "failures": [
+    {
+      "issue": "Hash-only selection syntax was unsupported at baseline; test now uses established query with an anchor fragment.",
+      "kind": "TEST_HARNESS",
+      "pass_report": "NEW_BOOK_BROWSER_QA.json"
+    },
+    {
+      "issue": "Theme color was sampled before its existing transition completed, then compared with an assumed light color. Actual baseline computed colors are now the independent oracle.",
+      "kind": "TEST_HARNESS",
+      "pass_report": "NEW_BOOK_BROWSER_QA.json"
+    },
+    {
+      "issue": "Unitless original image milestones were excluded from frozen structural ordinal endpoints; new registries now retain every original milestone unit.",
+      "kind": "IMPLEMENTATION_METADATA_REGRESSION_FIXED",
+      "pass_reports": [
+        "CONTAINING_VIEWS_BROWSER_QA.json",
+        "PROTECTED_BROWSER_QA.json"
+      ]
+    },
+    {
+      "issue": "Frozen and concurrent language objects had different key order with identical DOM values; legacy test now compares each language value.",
+      "kind": "TEST_HARNESS",
+      "pass_report": "CONTAINING_VIEWS_BROWSER_QA.json"
+    },
+    {
+      "issue": "Book changes restore the whole-book viewing level. The transition test now chooses the Niese radio before its selector. Completed all759 selection evidence was retained only after verifying identical final build hashes.",
+      "kind": "TEST_HARNESS",
+      "pass_report": "NEW_BOOK_BROWSER_QA.json"
+    }
+  ],
+  "retained_failure_artifacts": [
+    {
+      "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/CONTAINING_VIEWS_BROWSER_FAILURE.json",
+      "sha256": "46e454e6de576a190bc64845541217b3746f047024979722a7ea2285351913a5"
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/NEW_BOOK_BROWSER_FAILURE.json",
+      "sha256": "0fea6dcf83b761c0da7127caf8757e7c00f75f75e8a38fe3e40fb302401cea7f"
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/PROTECTED_BROWSER_FAILURE.json",
+      "sha256": "1f6c39269aa3a47d645fb875e1ff7afdc4f7670f90fc60e373aaa3b3b30ce8bf"
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/CONTAINING_MISMATCH_16.json",
+      "sha256": "b1a369b45719d185c18061ca6f76b8351ab2cc0a5dd0b28be1f04b5922084829"
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/LEGACY_ENDPOINT_MISMATCH_16.json",
+      "sha256": "7dc8740ea345b40fdf9020b93526f87dee0ea934dd8c0e19b41911f88745d3de"
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/NEW_BOOK_TEXT_MISMATCH.json",
+      "sha256": "8ecadb8696a72cec28e8bea5f8b6a2efd42920fb6a12d94c7a4e149dc8c07bee"
+    },
+    {
+      "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/PROTECTED_STRUCTURE_MISMATCH_16.json",
+      "sha256": "9f820a15df2123902f3c2006f62bb11f88c8972c631b7e0091a04590d30b0359"
+    }
+  ]
+}

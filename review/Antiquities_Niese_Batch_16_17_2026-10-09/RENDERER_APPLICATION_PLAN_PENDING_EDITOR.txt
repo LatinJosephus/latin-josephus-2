@@ -1,0 +1,59 @@
+HISTORICAL PRE-ADJUDICATION PLAN; implemented and superseded by CERTIFICATION.json.
+
+DELIBERATION PLAN — NO PRODUCTION CHANGES OR APPROVAL IMPLIED
+
+Observed pinned renderer:
+assets/js/renderTei.js currently recognizes Latin Niese starts from certified
+milestones and data availability, with physical-next-entry ends plus a global
+niese-end. It cannot assign two discontiguous Latin fragments to one Niese
+identity or give 355 an explicit end before the late 351 fragment. Its existing
+traditional range machinery already supports source-specific locators/spans.
+
+If the recommended B representations are adjudicated:
+Use one logical registry identity with explicit source-located spans in each
+fragment case. Resolve endpoints through the generic range/locator model;
+preserve physical witness order within each identity. Do not sort fragments
+by reconstructed Greek order, or use two same-number DOM IDs. Explicit 355
+end precedes the displaced 351 prefix, and 356 begins at the existing source
+anchor. 294 and 295 each have two alternating fragments. Reuse certified
+anchors at Latin XVI.356 and XVI.368, where actual physical equality is proved.
+
+Give 188 and 394 explicit ends before the preserved literal [...] placeholder
+regions; no placeholder may stand in for unavailable Greek identities. The
+whole-book/alignment XML and its source markup stay byte-identical apart from
+precisely reversible segmentation elements. Source-specific unavailability
+must preserve independently available Greek and contextual English panes.
+
+Current XVI/XVII have no Latin num labels. Future registry executable-source
+interpretation must be discovered and proved, not inferred from coarse IDs.
+Preserve the XV structuralMilestoneUnits chapter-endpoint fix; configure its
+generic endpoint behavior for these books and compare actual baseline outputs.
+
+Greek first narratives begin after the 34-character extent notice; preserve
+the notice and existing traditional/Bamberg starts. Greek31 in XVII requires
+only the routine approved citation-marker relocation before διόπερ. No Greek
+words, punctuation or apparatus may change. No English narrative edits.
+
+Application/QA sequence after adjudication:
+1. Record exact editor answers separately from historical alternatives.
+2. Build minimal raw-byte insertion/Greek-marker patches and actual registry
+   data. Count actual new/reused start markers and extra endpoints separately.
+3. Reverse just those changes and require exact six-input recovery, with
+   English unchanged. Independently compare XML IDs, sameAs, notes, hierarchy,
+   source capitula and all structural/material markers.
+4. Independently verify actual registry ranges against literal source bytes.
+   Deliberation coverage is preliminary evidence, not this final proof.
+5. Build actual candidate site and test each 404+355 selection, navigation,
+   unavailable handling, 311 containing/whole/contents and 35 legacy outputs,
+   all named exceptional clusters, opening/tail/transitions, URLs/reload/back,
+   theme/panes/Whiston provenance, console and ID integrity, and other works.
+6. Because recommended fragments require generic reader changes, rerun the
+   complete 5,231 protected-selection suite. Samples do not close this gate.
+7. Commit scoped local changes and separate independent certificates only
+   after their required checks pass. No merge, push, preview refresh or deploy.
+
+No final production marker count is claimed before application. Under all-B
+recommendations the proposed logical Latin counts are 380/355; proposed
+physical fragments 383/355; unavailable identities 24/0. The source-audit and
+coverage reports explicitly mark every unapproved choice and zero implemented
+new identities. Existing local selectable coverage remains 5,231.

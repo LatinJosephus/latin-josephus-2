@@ -1,0 +1,38 @@
+{
+  "kind": "STRUCTURAL_ENDPOINT_METADATA_REPAIR",
+  "date": "2026-10-10",
+  "original_milestone_units": {
+    "Latin": [
+      {
+        "unit": null,
+        "count": 22
+      },
+      {
+        "unit": "chapter",
+        "count": 16
+      }
+    ],
+    "Greek": [
+      {
+        "unit": "chapter",
+        "count": 16
+      }
+    ],
+    "English": [
+      {
+        "unit": "chapter",
+        "count": 16
+      }
+    ]
+  },
+  "reason": "Actual built-reader Bamberg comparison found that unitless original image milestones were excluded from a frozen ordinal endpoint. Keep original chapter and unitless milestones; exclude new Niese milestones.",
+  "before_registry_sha256": "a8707a59d5585d23078d07eadaf9554f5fe1b947180c7f4f2d0b0f8db67ccb9e",
+  "after_registry_sha256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+  "source_bytes_changed": false,
+  "scholarly_boundaries_changed": false,
+  "superseded_failure_reports": [
+    "CONTAINING_VIEWS_BROWSER_FAILURE.json",
+    "PROTECTED_BROWSER_FAILURE.json"
+  ],
+  "reader_certified": false
+}

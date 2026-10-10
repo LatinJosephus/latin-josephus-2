@@ -125,6 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
         13: "assets/xml/antiquities/niese/book-13.json",
         14: "assets/xml/antiquities/niese/book-14.json",
         15: "assets/xml/antiquities/niese/book-15.json",
+        16: "assets/xml/antiquities/niese/book-16.json",
+        17: "assets/xml/antiquities/niese/book-17.json",
         18: "assets/xml/antiquities/niese/book-18.json",
         19: "assets/xml/antiquities/niese/book-19.json"
       },
@@ -2095,7 +2097,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const position = a.node.compareDocumentPosition(b.node);
       return position & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
     });
-
     return entries;
   };
 
@@ -2124,10 +2125,24 @@ document.addEventListener("DOMContentLoaded", () => {
       if (span.occurrence) seen.add(span.occurrence);
       spans.push(span);
     }));
-    const wrapper = traditionalRangeView(language, data, {
+    let wrapper = traditionalRangeView(language, data, {
       id: `niese-${state.bookNum}-${identities.map(identity => identity.number).join("-")}`,
       scheme: "niese-section", [language]: {spans}
     });
+    // Unranked source-qualified intervals retain their certified single-identity
+    // wrapper and citation label, including starts at inherited chapter anchors.
+    // Ranked/attached physical occurrences continue through the shared fragment view.
+    if (identities.length === 1 && spans.every(span => !span.occurrence
+      && span.continuationRank == null && span.attachmentBeforeRank == null)) {
+      const range = wrapper;
+      wrapper = document.createElement("tei-div2");
+      wrapper.setAttribute("type", "niese-section");
+      wrapper.append(...range.childNodes);
+      const start = traditionalRangePoint(data, spans[0].start);
+      const paragraph = wrapper.querySelector("tei-p");
+      if (paragraph && start?.node.getAttribute("unit") !== "niese")
+        paragraph.insertBefore(makeGeneratedNieseLabel(identities[0].number), paragraph.firstChild);
+    }
     wrapper.setAttribute("n", identities.map(identity => identity.number).join(" "));
     wrapper.dataset.syntheticSection = "niese-derived";
     const notes = [...new Set(identities.map(identity => identity[language].note).filter(Boolean))];

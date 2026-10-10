@@ -1,0 +1,22 @@
+CURRENT CERTIFIED RECORDS
+Per-book CERTIFICATION.json, BOOK_HANDOFF.txt, BOUNDARIES.json, DECISION_HISTORY.json and APPLIED_RAW_BYTE_PATCH.json describe the implemented and verified state.
+Batch CERTIFICATION.json, BATCH_HANDOFF.txt and the four final *_QA.json reader reports close the full assignment.
+The independent implementation source proofs certify source recovery and actual locator coverage separately from reader testing; their reader_certified:false is a deliberate source-only distinction.
+EDITOR_ADJUDICATION_ALL_B.json records the direct human approval. Four decision JSONs and TXTs now identify approved B as applied and certified; alternatives remain explicit.
+
+HISTORICAL RESEARCH AND SUPERSEDED STATES
+*_HISTORICAL_PRE_IMPLEMENTATION files preserve earlier audit/decision/hold/handoff bytes. The complete earlier checkpoint is also Git302e4d5.
+*UNREVIEWED*, *PARTIAL* and *PENDING_EDITOR* filenames retain preliminary OCR/proposals and physical partition models as research history. They are not executable authority or current holds.
+Original candidate coordinates/intervals in BOUNDARIES.json remain separately named from the reviewed and applied coordinates; only reviewed values feed the implementation.
+The earlier INDEPENDENT_SOURCE_AUDIT_CHECK and INDEPENDENT_RECOMMENDED_PARTITION_CHECK reports are frozen pre-application research checks. Current implementation proof and certificates supersede their unimplemented state.
+*FAILURE.json and *MISMATCH*.json retain test history. QA_FAILURE_HISTORY_AND_RESOLUTION.json attributes each cause and its final PASS report.
+
+REPRODUCTION AND PROVENANCE
+Pinned inputs, source PDF hashes, the132 reviewed Niese body page images, Loeb controls, exact mixed-content locators and original source-qualified structural coordinates are retained in these three review folders.
+Completed source audit scripts: audit_reconnaissance.py, audit_completed_review.py, audit_recommended_partition.py and mapper fixtures. They describe their original pre-application state; do not rerun them to overwrite current records.
+Applied once: record_editor_approval.py, implement_approved_books.py, repair_structural_endpoint_metadata.py. Raw-byte patch ledgers contain every exact edit; do not apply the insertion script twice.
+Independent current source proof: verify_implemented_sources.py. Candidate actual build: build-candidate.sh using the pinned Ruby image recorded in prior build evidence.
+Actual reader checks: new-books-browser.cjs, containing-views-browser.cjs, protected-browser.cjs and protected-source-gates.cjs; immutable baseline is in the owned runtime baseline-build/site.
+Theme diagnostic records actual baseline colors; inspect_theme.cjs is diagnostic only. No production styling changed.
+Finalization: finalize_certification.py (one-time status/history/certificate update); verify_final_handoff.py (read-only committed bytes/manifest/clean status verification, with final Git record written in the owned runtime).
+All exact review paths and SHA256 values are in REVIEW_FILE_MANIFEST.json. All seven production paths and SHA256 values are in the batch certificate.
