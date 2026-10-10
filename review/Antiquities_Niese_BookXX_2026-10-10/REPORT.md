@@ -1,51 +1,52 @@
-# Antiquities XX — local editorial hold
+# Antiquities XX — final local certification
 
-**EDITORIAL HOLD. Full scholarly certification and integration readiness are withheld.** The printed Greek audit and individual Latin comparison are complete for all 268 identities. Four editor questions remain unanswered, affecting 17 Latin identities. All independent technical checks have completed.
+**LOCALLY CERTIFIED / READY FOR COORDINATED INTEGRATION.** All 268 printed Greek identities and all 268 individual Latin comparisons are complete. The editor explicitly approved A in all four cases, closing every editorial hold. The approved source and the real built reader have passed the final independent gates.
 
-The immutable source is `65b3256fe202a06e33a59aa2d1dcbd7107358271`, the clean canonical head observed at entry. It differs from the published 9527578 source only by the inherited Whiston provenance italics. Canonical later advanced to 08f46c0; the successful direct remote observation is in CANONICAL_OBSERVATIONS.json. This branch remains on the frozen pre-XI baseline. BASELINE.json was captured after the later advance; its canonical_HEAD field is that later observation, not the chosen source commit. No concurrent unintegrated changes were copied.
+The immutable baseline is `65b3256fe202a06e33a59aa2d1dcbd7107358271`. The isolated branch is `antiquities-niese-20`, in `C:\workspace\LatinJosephus-antiquities-niese-20`. The actual final build uses production commit `2c1d9ab8e2e90270527945b83ca90da8827b72b0`; the final QA evidence is committed at `42584c258110eff6e308e894cf51a14938102563`. The dedicated runtime is `C:\workspace\Antiquities-Niese-20-runtime-20261010`. The branch tip adds this certificate and handoff; its exact final hash is resolved from the branch ref and reported on completion. No merge, push or publication occurred.
 
-The isolated branch is `antiquities-niese-20`, at `C:\workspace\LatinJosephus-antiquities-niese-20`. Its dedicated runtime is `C:\workspace\Antiquities-Niese-20-runtime-20261010`. The actual Jekyll candidate build and browser tests were run against the production content of `3bc395ad2bb3594364633e76f4daabaa137e6480`. The main QA evidence commit is `be1dda266bcb869e83d039df52e3e1d7c506e05f`. The branch tip additionally stores this handoff and its report; obtain its exact final hash from the branch ref. No merge, push, export, deployment or publication occurred.
-
-| Reviewed or measured item | Actual result |
+| Actual inventory | Count |
 |---|---:|
-| Printed Niese Greek identities |268/268 individually reviewed|
-| Individual complete Greek/Latin comparisons |268/268 completed|
-| Logical Greek/menu identities |268, exactly 1–268|
-| Current nonempty accepted Latin intervals |251|
-| Current new Latin start milestones |251|
+| Independently selectable Greek Niese identities |268|
+| Nonempty Latin identities / primary intervals / physical fragments |257 /257 /257|
+| Unavailable independent Latin identities |11: XX.27–36 and XX.238|
+| Newly inserted Latin start milestones |257|
 | Retained original Latin Niese starts |0|
-| Temporary exclusive end anchors protecting unresolved adjacent material |3|
-| Current pending Latin identities |17|
-| Adjudicated independent-unavailability decisions |0|
-| New explicit Greek opening label |1; original 267 labels retained|
-| Traditional Chapters / Subchapters |12 /50|
+| New exclusive Latin end anchors |1, before the inherited annotation|
+| Total Latin milestones (including preserved source markers) |294: 257 Niese,20 chapter,17 unqualified|
+| Greek opening addition / retained original labels |1 /267|
+| Traditional chapters / lower divisions |12 /50|
 | Bamberg divisions / retained legacy positions |20 /20|
-| Alignment units selectable in actual reader |51|
+| Selectable Alignment units |51|
+| Pending editorial holds |0|
 
-The pending identities are26–37,58–59,238 and240–241. `available:false` at this stage means **EDITORIAL_HOLD**, not an approved absence. All held source material remains byte-for-byte in Book, Alignment and chapter views. Secure §§25, 57 and 239 end before their unresolved neighbors, so those neighbors are not swallowed by another Niese selection.
+These counts come from the actual parsed final XML and independently mapped raw byte positions, checked against the identity registry and individually reviewed extents. Each represented Latin identity has one physical interval. Their 57128 projected characters plus the 57-character annotation interval account for all 57185 original Latin projection characters, without overlap or unassigned narrative. The source-only interval retains `latin-book20-num34`, its exact original location, wording and line break. No annotation wording is allocated to a Niese narrative fragment.
 
-The four focused packets preserve complete Greek extents, Niese image/page evidence, exact Latin nodes and byte/code-point coordinates, neighboring effects, alternatives and recommendations. CASE_026_037 recommends partial §§26/37, unavailable §§27–36 and separate preservation of the inherited bracketed annotation. CASE_059 recommends beginning §59 at `habe inquit fiducia`, retaining the phrase and qualifying the Greek §58 imperative overlap; the alternative begins at `inquit fiducia`. CASE_238 recommends explicit unavailability for Jonathan's appointment, with§239's relative opening qualified. CASE_241 recommends beginning §241 at `Is namque primus`; its alternative begins at `cum et pontificatum tenuisset et regnum`. Both preserve the inherited compressed Latin syntax. ADJUDICATION_HISTORY.json still records four pending decisions. If all four recommended alternatives are accepted, the provisional plan has 257 Latin intervals and 11 unavailable identities; those are not current certified counts.
+XX.26 and XX.37 have explicitly qualified partial correspondence; XX.27–36 are independently unavailable in the present transcription. XX.59 begins at `habe inquit fiducia`, retaining the full expression once and recording its overlap with the Greek XX.58 imperative. XX.238 has no independent Latin appointment interval; XX.239 retains `quo per insidias moriente` and its missing-antecedent qualification. XX.241 starts at `Is namque primus`; `cum et pontificatum tenuisset et regnum` stays in XX.240. The compressed syntax and punctuation remain untouched. The cause of either absence is undetermined.
 
-Niese IV (1890) title and Book XX printed276–320/PDF290–334 were physically inspected. Each identity is tied to the actual page image, its hash, XML marker, complete Greek section and individual Latin analysis. OCR was only a locating aid. The original marginal numeral is a line observation, not a word tag. §1 begins at `Τελευτήσαντος δὲ τοῦ βασιλέως Ἀγρίππα`, after the preserved41-code-point duration notice; its only Greek edit is `<num>[1]</num>`. No existing Greek label was moved, including the267 label at the preceding paragraph's end.
+The exact user response, original attachment hashes, previous pending records and earlier HOLD certificate/QA are preserved in ADJUDICATION_HISTORY.json, EDITORIAL_ADJUDICATION_2026-10-10.txt and history/EDITORIAL_HOLD_402ddb34b141. All CASE packets retain their rejected alternatives and original text-node, code-point and raw-byte coordinates. Partial correspondence remains qualified for XX.26,37,218,240,241,266, with additional qualifications for XX.59 and239.
 
-Loeb IX (1965) title, all 50 traditional lower divisions, all 12 chapter openings and the final §268 wording were independently inspected. Loeb Greek ends at printed 532/PDF548, English at 533/PDF549 before the separate Additional Note on XVIII343. The frozen 20 Bamberg records, literal/supplied labels, images, relationships and complete original-source locators remain unchanged. The current external Word file differs from the frozen audit hash, although all 20 Book XX image/book/numeral cells still match. The frozen v1.1 records retain precedence; this is documented in HUMAN_BAMBERG_AUTHORITY_BOOKXX.json, with no new facsimile claim.
+Niese IV (1890), title image5 and printed276–320/PDF290–334, was physically inspected for every identity. The complete register records each numeral's printed/PDF page, image hash, marginal line observation, original Greek XML marker, complete Greek extent and individual Latin comparison. OCR served only to locate images; it did not certify boundaries. Greek XX.1 begins at `Τελευτήσαντος δὲ τοῦ βασιλέως Ἀγρίππα`, after the unchanged41-character book-duration notice. Its sole Greek edit is `<num>[1]</num>`; no existing label moves.
 
-The dense opening divisions and every required critical window were covered by the exhaustive268-selection comparison. Traditional ix begins at §197, x at §224, xi at §252 and xii at §259. Bamberg VI begins inside §51, XI inside §129, XVIIII at §200 and XX at §215; their physical points were not substituted for Niese or traditional starts. §§199–201 were reviewed normally with no textual/authenticity intervention. §§259–268 preserve all current wording and final punctuation. Latin §266 has a qualified partial correspondence; its missing living-witness clause was not supplemented. The complete original Latin `tei-trailer` through AMEN remains visible after §268 as paratext. Vita starts separately at Niese printed 321/PDF335 and is wholly excluded; no §269 identity exists.
+Loeb IX (1965) title, all50 lower divisions, all12 chapter openings and the book ending were independently inspected. Greek ends at printed532/PDF548 and English at533/PDF549, before the separate additional note. The20 frozen Bamberg records preserve their complete physical locators, literal numerals, images and source relationships. The later external human Word audit has a different whole-file hash but its20 Book XX cells match; frozen v1.1 authority remains in force, with no new manuscript-facsimile claim.
 
-| Executed browser gate | Result |
+All mandatory early and later structural windows are covered. Bamberg VI within51, XI within129, XVIIII at200 and XX at215 retain their actual points; traditional ix197, x224, xi252 and xii259 remain distinct. XX.199–201 received no textual or authenticity intervention. The complete current ending through XX.268 and its punctuation remain intact. XX.266's partial correspondence is recorded without supplying the living-witness wording. The original Latin trailer through AMEN is visible separately after268. Vita begins separately at Niese printed321/PDF335 and is excluded throughout; there is no269 identity.
+
+| Executed final reader check | Result |
 |---|---|
-| All268 XX selections |268 exact full Greek intervals and preserved Whiston context; 251 exact full Latin intervals; 17 explicit holds; no duplicate DOM IDs|
-| XX containing views |135 unchanged views: Book, contents, 51 Alignment units and 82 traditional/Bamberg records|
-| Independent structural spans |82 complete ranges × 3 languages, all source anchor/offset checks and full browser text matches|
-| Legacy positions and URLs |All 20 legacy range extents unchanged; all 20 chapter URL behaviors replayed|
-| Prior Niese population |All 5,231 actual baseline identities replayed individually with identical text, notes, paragraph IDs/sameAs and duplicate-ID state|
-| Other works and source controls |35 route comparisons passed, including XV endpoint, XVI–XX Book controls, Whiston/Cardwell/Lodge, DEH and Contra Apionem|
-| Navigation and presentation |24 critical direct/reload/next/previous/history cases; panes/themes; XIX→XX; visible notices and Whiston italic provenance passed|
-| Generic end capability |Actual baseline synthetic reproduction includes source-only annotation; candidate honors registered exclusive end without changing the source|
+| All268 Book XX selections, three panes |268 exact full Greek intervals;257 exact full Latin intervals;11 explicit approved unavailable notices;268 preserved Whiston contexts; exact citation labels and no duplicate DOM IDs|
+| Four adjudicated groups |25–38,57–60,237–240,239–242 individually and combined;26 member checks; source-only annotation and shared wording accounted exactly|
+| All135 containing views |Book, source contents,51 Alignment units,12 traditional chapters,50 lower divisions and20 Bamberg divisions match immutable baseline|
+| Independent structural spans |82 complete ranges ×3 languages =246 source-coordinate/full-text comparisons; candidate containing texts match these validated baseline extents|
+| All20 legacy controls |Physical extents unchanged and all20 legacy chapter URL meanings replayed|
+| Prior supported Niese population |All5,231 actual baseline selections replayed individually with matching full-text hashes, notes, availability, original paragraph IDs/sameAs and duplicate-ID state|
+| Other works and source controls |35 routes passed, including XV endpoint/contents, XVI–XX Book controls, Bellum/Cardwell/Whiston/Lodge, DEH and Contra Apionem|
+| Navigation and display |24 critical direct/reload/next/previous/history cases, pane/theme toggles, XIX→XX, visible qualifications and Whiston italic provenance passed|
+| Generic exclusive end |Original built-reader reproduction and final generic-fix proof passed; no Book XX range conditional|
+| Source fidelity |Exact Greek/Latin byte recovery; all299 protected production inputs checked; English and unrelated content unchanged|
 
-The two allowed baseline defects were precisely reproduced: three inherited Book-I apparatus links with404 targets, and unsupported I.1's exact null-querySelector error with27 as the first supported identity. No new console, network or asset error was accepted. XI and unintegrated XVI–XIX Niese work are outside the frozen population. The current local menu total is 5,499, including 17 Book XX Latin holds; this is no public-release count. The original reader exposes individual Niese selection and complete containing ranges; its source contents intentionally carry no inferred navigation targets.
+The reader exposes individual Niese selection. Combined case QA uses its actual exact-view function for every member and native DOM ranges over the same loaded source, compared with separately prepared frozen-source projections. It does not claim an unsupported multi-Niese URL or introduce new navigation. English remains labelled aligned Whiston context, without invented exact cuts.
 
-All 299 protected production inputs were hash-compared. Greek/Latin edits independently reverse to the exact frozen full-file bytes. All wording, spelling, punctuation, whitespace, original IDs/sameAs, paragraph/container topology, notes, mixed markup, manuscript breaks/images, chapter markers and source paratext are protected. Every English file, structure.xml, display controls, CSS, unrelated XML and other works remain unchanged.
+No new reader, console, network or asset errors were accepted. The precise inherited exceptions were reproduced against both builds: three Book-I apparatus links with404 targets and unsupported I.1's null-querySelector error (the actual supported population begins at I.27). The frozen prior population excludes later XI and XVI–XIX Niese integrations. The local total is5,499 selectable identities; this is not a public-release count. Actual Jekyll build exit0 includes inherited Sass deprecation warnings in its retained log.
 
 | Witness | Original and independently restored SHA-256 |
 |---|---|
@@ -53,4 +54,10 @@ All 299 protected production inputs were hash-compared. Greek/Latin edits indepe
 | Latin |`683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282`|
 | English, unchanged |`7d0813df000bab366ee8d785cdd154fd509db7428b7774739185cd83194cec34`|
 
-Exactly four production files differ: assets/xml/antiquities/Greek/book-20.xml, assets/xml/antiquities/Latin/book-20.xml, assets/xml/antiquities/niese/book-20.json and assets/js/renderTei.js. The reader change is a narrow Book XX registration and generic per-language endTarget capability, with no XX-specific range conditional. The full evidence and code are under this review directory. BOUNDARIES.csv/IDENTITIES.json contain the exhaustive register; LATIN_PHYSICAL_SOURCE_LEDGER.json separates physical order and source-only material; SECURE_INSERTIONS.json, BYTE_CERTIFICATION.json and PRODUCTION_MANIFEST.json document exact mutations and fidelity. CERTIFICATE.json explicitly withholds certification. LOCAL_HANDOFF.json gives the gated continuation and later coordinator reconciliation instructions.
+Recovery reverses only the approved empty-tag additions, comparing the complete original files byte for byte. Source wording, spelling, punctuation, whitespace, line endings, Greek combining characters, old IDs/sameAs, paragraphs, order, notes, apparatus, manuscript breaks/images, chapter markers and paratext are preserved. Every English file, structure.xml, display controls, CSS and unrelated source remain unchanged. PRODUCTION_MANIFEST.json confirms the built source, built site, Git source commit and working files have the same bytes.
+
+Exactly four production files differ from65b: assets/xml/antiquities/Greek/book-20.xml, assets/xml/antiquities/Latin/book-20.xml, assets/xml/antiquities/niese/book-20.json and assets/js/renderTei.js. The renderer adds only the Book XX registry declaration and generic per-language endTarget handling. The registry protects existing chapter-milestone ordinals through the established generic structural mechanism.
+
+Canonical advanced independently during the audit. The source branch stays on the explicitly required pre-XI65b baseline; BASELINE.json's later canonical_HEAD observation is distinguished in CANONICAL_OBSERVATIONS.json. FINAL_CANONICAL_OBSERVATION.json records the latest read-only observation. The integration coordinator must reconcile the narrow shared-reader hunks with then-current v2-development, preserve subsequent book work and rerun the combined integrated suites. No source-certification work remains for Book XX.
+
+The reproducible audit is in IDENTITIES.json/BOUNDARIES.csv, LATIN_PHYSICAL_SOURCE_LEDGER.json, LATIN_PHYSICAL_ORDER.json, APPROVED_INSERTIONS.json, COVERAGE_GATE.json and BYTE_CERTIFICATION.json. Executed browser scripts and full receipts accompany them. CERTIFICATE.json hashes every gate; LOCAL_HANDOFF.json records paths, commits and integration requirements. The earlier HOLD remains historical evidence only. This assignment stops at local certification and handoff.
