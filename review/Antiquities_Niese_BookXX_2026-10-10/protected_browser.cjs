@@ -1,5 +1,6 @@
 const {fs,path,P,norm,sha,narrative,session}=require('./browser_common.cjs');
 async function main(){const mode=process.argv[2]||'baseline',s=await session(mode),r={mode,scope:'ALL_ACTUAL_BASELINE_NIESE_IDENTITIES_AND_BOOKXX_CONTAINING_VIEWS',started:new Date().toISOString(),status:'RUNNING',books:[],selections:[],views:[],errors:s.errors},base=mode==='baseline'?null:JSON.parse(fs.readFileSync(path.join(P,'BASELINE_PROTECTED_BROWSER.json')));
+ r.sourceBuild=mode==='baseline'?'65b3256fe202a06e33a59aa2d1dcbd7107358271':JSON.parse(fs.readFileSync(path.join(P,'CANDIDATE_BUILD.json'))).source_commit;
 try{
  const controls=JSON.parse(fs.readFileSync(path.join(P,'STRUCTURAL_CONTROLS.json')));
  await s.open('book=20');for(const l of ['greek','english'])await s.page.check('#'+l+'-pane-select');

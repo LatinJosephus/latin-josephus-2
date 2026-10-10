@@ -12,7 +12,7 @@ for i,r in enumerate(rows):
 save(PACK/'IDENTITIES.json',rows)
 with (PACK/'BOUNDARIES.csv').open('w',encoding='utf-8-sig',newline='') as f:
     fields=['number','Niese_printed_page','Niese_PDF_image','Greek_marker_original_byte','Greek_executable_text_byte','Greek_text_node','Greek_codepoint','Latin_start_byte','Latin_codepoint','Latin_text_node','Latin_paragraph','assessment','editorial_status']
-    w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
+    w=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');w.writeheader()
     for r in rows:
         c=r['candidate'];g=r['Greek_locator'];a=r.get('accepted_Latin');l=(a.get('locator') if a else c.get('Latin_locator')) or {}
         w.writerow(dict(number=r['number'],Niese_printed_page=c['Greek_print']['printed_page'],Niese_PDF_image=c['Greek_print']['PDF_image_page'],Greek_marker_original_byte=(r['Greek_label'] or {}).get('raw_start','IMPLICIT'),Greek_executable_text_byte=g['raw_byte'],Greek_text_node=g['text_node_path'],Greek_codepoint=g['book_offset'],Latin_start_byte=l.get('raw_byte'),Latin_codepoint=l.get('book_offset'),Latin_text_node=l.get('text_node_path'),Latin_paragraph=l.get('stable_id'),assessment=a['assessment'] if a else c['assessment'],editorial_status=r['Latin_review_status']))
