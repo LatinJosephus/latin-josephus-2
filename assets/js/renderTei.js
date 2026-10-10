@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       milestoneChapterBooks: [15, 16, 17, 18, 19, 20],
       nieseBooks: [1, 2, 3, 4, 5, 6, 7],
       nieseIdentityBooks: {
+        preface: "assets/xml/antiquities/niese/preface.json",
         8: "assets/xml/antiquities/niese/book-08.json",
         9: "assets/xml/antiquities/niese/book-09.json",
         10: "assets/xml/antiquities/niese/book-10.json",
@@ -673,15 +674,17 @@ document.addEventListener("DOMContentLoaded", () => {
     activeWork.urlUnitScope === "chapter"
   );
 
+  // Standalone source views keep their own registry key and citation extent.
+  const nieseBookKey = book => /^\d+$/.test(String(book)) ? Number(book) : book;
   const supportsNieseBook = book => Boolean(
-    activeWork.nieseBooks?.includes(Number(book))
-    || activeWork.nieseIdentityBooks?.[Number(book)]
+    activeWork.nieseBooks?.includes(nieseBookKey(book))
+    || activeWork.nieseIdentityBooks?.[nieseBookKey(book)]
   );
   const supportsNieseSections = () => supportsNieseBook(state.bookNum);
   const nieseIdentityRegistries = new Map();
-  const nieseIdentityRegistry = () => nieseIdentityRegistries.get(Number(state.bookNum)) || null;
+  const nieseIdentityRegistry = () => nieseIdentityRegistries.get(nieseBookKey(state.bookNum)) || null;
   const loadNieseIdentityRegistry = async () => {
-    const book = Number(state.bookNum), path = activeWork.nieseIdentityBooks?.[book];
+    const book = nieseBookKey(state.bookNum), path = activeWork.nieseIdentityBooks?.[book];
     if (!path || nieseIdentityRegistries.has(book)) return;
     const response = await fetch(`/${path}?v=${teiCacheToken}`);
     if (!response.ok) throw new Error("The Niese identity registry could not be loaded.");
@@ -1110,7 +1113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const currentBookLabel = () => (
-    isPreface() ? activeWork.preface.label : `Book ${state.bookNum}`
+    nieseIdentityRegistry()?.label || (isPreface() ? activeWork.preface.label : `Book ${state.bookNum}`)
   );
 
   const chapterDisplayLabel = (chapterNum = state.chapterNum) => {
@@ -3150,6 +3153,19 @@ document.addEventListener("DOMContentLoaded", () => {
         decorateOmittedGaps(language, data);
       }
     });
+
+    const related = nieseIdentityRegistry()?.relatedPassage;
+    if (related && (!state.nieseNum || Number(state.nieseNum) === nieseIdentityRegistry().range[1])) {
+      const note = document.createElement("p");
+      note.className = "niese-related-passage";
+      const link = document.createElement("a");
+      const url = new URL(window.location.href);
+      ["chapter", "subchapter", "bamberg", "unit", "num", "view", "niese"].forEach(key => url.searchParams.delete(key));
+      url.searchParams.set("book", related.book);
+      if (related.niese) url.searchParams.set("niese", related.niese);
+      link.href = url.href; link.textContent = related.label;
+      note.appendChild(link); latinPane.appendChild(note);
+    }
 
     bookLabel.innerText = currentBookLabel();
     chapterLabel.innerText = (

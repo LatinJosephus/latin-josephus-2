@@ -1,0 +1,26 @@
+[
+  {
+    "old": "      nieseIdentityBooks: {",
+    "new": "      nieseIdentityBooks: {\n        preface: \"assets/xml/antiquities/niese/preface.json\","
+  },
+  {
+    "old": "  const supportsNieseBook = book => Boolean(\n    activeWork.nieseBooks?.includes(Number(book))\n    || activeWork.nieseIdentityBooks?.[Number(book)]\n  );",
+    "new": "  // Standalone source views keep their own registry key and citation extent.\n  const nieseBookKey = book => /^\\d+$/.test(String(book)) ? Number(book) : book;\n  const supportsNieseBook = book => Boolean(\n    activeWork.nieseBooks?.includes(nieseBookKey(book))\n    || activeWork.nieseIdentityBooks?.[nieseBookKey(book)]\n  );"
+  },
+  {
+    "old": "  const nieseIdentityRegistry = () => nieseIdentityRegistries.get(Number(state.bookNum)) || null;",
+    "new": "  const nieseIdentityRegistry = () => nieseIdentityRegistries.get(nieseBookKey(state.bookNum)) || null;"
+  },
+  {
+    "old": "    const book = Number(state.bookNum), path = activeWork.nieseIdentityBooks?.[book];",
+    "new": "    const book = nieseBookKey(state.bookNum), path = activeWork.nieseIdentityBooks?.[book];"
+  },
+  {
+    "old": "    isPreface() ? activeWork.preface.label : `Book ${state.bookNum}`",
+    "new": "    nieseIdentityRegistry()?.label || (isPreface() ? activeWork.preface.label : `Book ${state.bookNum}`)"
+  },
+  {
+    "old": "    bookLabel.innerText = currentBookLabel();",
+    "new": "    const related = nieseIdentityRegistry()?.relatedPassage;\n    if (related && (!state.nieseNum || Number(state.nieseNum) === nieseIdentityRegistry().range[1])) {\n      const note = document.createElement(\"p\");\n      note.className = \"niese-related-passage\";\n      const link = document.createElement(\"a\");\n      const url = new URL(window.location.href);\n      [\"chapter\", \"subchapter\", \"bamberg\", \"unit\", \"num\", \"view\", \"niese\"].forEach(key => url.searchParams.delete(key));\n      url.searchParams.set(\"book\", related.book);\n      if (related.niese) url.searchParams.set(\"niese\", related.niese);\n      link.href = url.href; link.textContent = related.label;\n      note.appendChild(link); latinPane.appendChild(note);\n    }\n\n    bookLabel.innerText = currentBookLabel();"
+  }
+]
