@@ -132,3 +132,17 @@ tei-num.niese-generated {
   min-width: 0;
   margin-block: 0;
 }
+
+/* Explicit source passages remain distinct within an assembled selection. */
+tei-div[data-source-role="interpolation"] {
+  display: block;
+  margin-block: .8em;
+  padding: .6em .8em;
+  border-inline-start: 3px solid var(--lj-brand-rule, #786750);
+  background: var(--lj-brand-surface, #f1eee7);
+}
+.niese-source-passage-label {
+  margin: 0 0 .4em;
+  font: 600 .85em var(--lj-font-ui, sans-serif);
+  color: var(--lj-brand-ink, #4b4033);
+}
