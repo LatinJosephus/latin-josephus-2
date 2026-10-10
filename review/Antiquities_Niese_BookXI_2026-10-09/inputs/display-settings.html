@@ -1,0 +1,170 @@
+<div class="accordion card" id="display-settings">
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="display-settings-header">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#collapse-settings"
+        aria-expanded="false"
+        aria-controls="collapse-settings"
+      >
+        <span class="inline">
+          <h1 id="book-title"></h1>
+          <h4 id="book-label" class="label"></h4>
+          <h4 id="chapter-label" class="label"></h4>
+          <h4 id="section-label" class="label"></h4>
+        </span>
+      </button>
+    </h3>
+
+    <div
+      id="collapse-settings"
+      class="accordion-collapse collapse"
+      aria-labelledby="display-settings-header"
+      data-mdb-parent="#display-settings"
+    >
+      <div class="accordion-body">
+
+        <div class="form-check form-switch">
+          <form class="accordion-row">
+            <label class="form-check-label" for="highlight-annotations">
+              Highlight annotated paragraphs
+            </label>
+            <input class="form-check-input" type="checkbox" id="highlight-annotations" />
+          </form>
+        </div>
+
+        <div id="book-select">
+          <form class="accordion-row">
+            <label for="book-selector">Select a book:</label>
+            <select id="book-selector"></select>
+          </form>
+        </div>
+
+        <div id="chapter-select">
+          <form class="accordion-row hidden">
+            <label for="chapter-selector">Select a chapter:</label>
+            <select id="chapter-selector"></select>
+          </form>
+        </div>
+
+        <div id="subchapter-select">
+          <form class="accordion-row hidden">
+            <label for="subchapter-selector">Select a Subchapter:</label>
+            <select id="subchapter-selector"></select>
+          </form>
+        </div>
+
+        <div id="section-select">
+          <form class="accordion-row hidden">
+            <label for="section-selector">{% if page.permalink == "/antiquities/" %}Select an Alignment unit:{% else %}Select a sub-chapter:{% endif %}</label>
+            <select id="section-selector"></select>
+          </form>
+        </div>
+
+        {% if page.permalink == "/antiquities/" %}
+        <div id="bamberg-select">
+          <form class="accordion-row hidden">
+            <label for="bamberg-selector">Select a Bamberg division:</label>
+            <select id="bamberg-selector"></select>
+            <button type="button" id="bamberg-previous" aria-label="Previous Bamberg division">Previous</button>
+            <button type="button" id="bamberg-next" aria-label="Next Bamberg division">Next</button>
+          </form>
+        </div>
+        {% endif %}
+
+        <div id="niese-select">
+          <form class="accordion-row hidden">
+            <label for="niese-selector">Select a Niese section:</label>
+            <select id="niese-selector"></select>
+            {% if page.permalink == "/antiquities/" %}
+            <button type="button" id="niese-previous" aria-label="Previous Niese section">Previous</button>
+            <button type="button" id="niese-next" aria-label="Next Niese section">Next</button>
+            {% endif %}
+          </form>
+        </div>
+
+        <div id="languages-select" class="accordion-row">
+          <span>Select panes:</span>
+          <div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="latin-pane-select" value="latin" checked disabled />
+              <label class="form-check-label" for="latin-pane-select">Latin</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="english-pane-select" value="english" checked />
+              <label class="form-check-label" for="english-pane-select">English</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="greek-pane-select" value="greek" checked />
+              <label class="form-check-label" for="greek-pane-select">Greek</label>
+            </div>
+          </div>
+        </div>
+
+        <div id="source-selects">
+          <div class="accordion-row source-select-row" data-language="Latin" hidden>
+            <label for="latin-source-selector">Latin source:</label>
+            <select id="latin-source-selector"></select>
+          </div>
+
+          <div class="accordion-row source-select-row" data-language="English" hidden>
+            <label for="english-source-selector">English source:</label>
+            <select id="english-source-selector"></select>
+          </div>
+
+          <div id="lodge-notes-select" class="accordion-row hidden" hidden>
+            <label for="lodge-notes-visible">Show Lodge marginal notes</label>
+            <input class="form-check-input" type="checkbox" id="lodge-notes-visible" checked />
+          </div>
+
+          <div class="accordion-row source-select-row" data-language="Greek" hidden>
+            <label for="greek-source-selector">Greek source:</label>
+            <select id="greek-source-selector"></select>
+          </div>
+        </div>
+
+        <div id="level-select" class="accordion-row">
+          <span>Select viewing level:</span>
+          <div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="level-options" id="book-level" value="book-level" checked />
+              <label class="form-check-label" for="book-level">Book</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="level-options" id="chapter-level" value="chapter-level" />
+              <label class="form-check-label" for="chapter-level">Chapter</label>
+            </div>
+
+            <div class="form-check form-check-inline" hidden>
+              <input class="form-check-input" type="radio" name="level-options" id="subchapter-level" value="subchapter-level" />
+              <label class="form-check-label" for="subchapter-level">Subchapter</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="level-options" id="section-level" value="section-level" />
+              <label class="form-check-label" for="section-level">{% if page.permalink == "/antiquities/" %}Alignment unit{% else %}Sub-chapter{% endif %}</label>
+            </div>
+
+            {% if page.permalink == "/antiquities/" %}
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="level-options" id="bamberg-level" value="bamberg-level" />
+              <label class="form-check-label" for="bamberg-level">Bamberg division</label>
+            </div>
+            {% endif %}
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="level-options" id="niese-level" value="niese-level" />
+              <label class="form-check-label" for="niese-level">Niese section</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
