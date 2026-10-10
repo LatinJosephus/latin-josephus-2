@@ -1,6 +1,6 @@
 {
   "book": 16,
-  "status": "COMPLETE_PRIMARY_REVIEW_EDITOR_ADJUDICATION_IMPLEMENTATION_AND_LOCAL_CERTIFICATION",
+  "status": "COMPLETE_HUMAN_PRIMARY_AND_LATIN_REVIEW_EDITORIAL_HOLDS_REMAIN",
   "identity_count": 404,
   "printed_Niese_pages": {
     "pdf": [
@@ -535,7 +535,12 @@
     403,
     404
   ],
-  "pending_editorial_identities": [],
+  "pending_editorial_identities": [
+    294,
+    295,
+    351,
+    355
+  ],
   "qualified_present_identities": [
     5,
     18,
@@ -580,13 +585,9 @@
     274,
     291,
     292,
-    294,
-    295,
     301,
     303,
     312,
-    351,
-    355,
     358,
     378,
     384,
@@ -599,15 +600,11 @@
   },
   "physical_word_reordering": false,
   "philological_emendation": false,
-  "source_edits": true,
-  "new_start_milestones": 378,
-  "new_end_or_other_anchors": 5,
-  "implemented_selectable_identities": 404,
-  "source_byte_recovery": "PASS_TWO_INDEPENDENT_BYTE_REVERSALS",
-  "new_Niese_reader_selections_tested": 404,
-  "independent_book_certification": true,
-  "historical_source_audit": {
-    "path": "review/Antiquities_Niese_BookXVI_2026-10-09/COMPLETE_PRIMARY_SOURCE_AUDIT_HISTORICAL_PRE_IMPLEMENTATION.json",
-    "sha256": "c68b71a0a08d77e1b7475e973dedb2c63434e8d66f4738562fcf61415b8fe695"
-  }
+  "source_edits": false,
+  "new_start_milestones": 0,
+  "new_end_or_other_anchors": 0,
+  "implemented_selectable_identities": 0,
+  "source_byte_recovery": "NOT_APPLICABLE_NO_PRODUCTION_EDITS",
+  "new_Niese_reader_selections_tested": 0,
+  "independent_book_certification": false
 }
