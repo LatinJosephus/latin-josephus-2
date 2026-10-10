@@ -5,7 +5,7 @@ RUNTIME=Path(r'C:\workspace\Antiquities-Niese-Proem-Integration-runtime-20261010
 GROUPS={
  'corpus':[['proem_browser.cjs'],['plain_browser.cjs'],['plain_final_controls.cjs'],['protected_browser.cjs','final']],
  'xi':[['reader-xi.cjs'],['xi-witness-order.cjs'],['reader-extra.cjs']],
- 'crosswork':[['reader-structure-crosswork.cjs','--final'],['focused_controls.cjs'],['combined-extra.cjs'],['final_source_controls.cjs']],
+ 'crosswork':[['reader-structure-crosswork.cjs','--final'],['focused_controls.cjs'],['combined-extra.cjs'],['final_source_controls.cjs'],['interface_controls.cjs']],
  'special':[['new-books-browser.cjs'],['bookxx_browser.cjs'],['combined_cases_browser.cjs'],['closure_browser.cjs'],['xx_controls.cjs'],['prove_range_end.cjs','final']]
 }
 def save(p,x):p.write_text(json.dumps(x,indent=2)+'\n',encoding='utf-8')
