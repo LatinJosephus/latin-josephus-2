@@ -1,0 +1,7 @@
+{
+  "cause": "The existing live NodeList clearing loop skips a following node when it removes its predecessor. The added terminal transition paragraph exposed this during 25/26 navigation.",
+  "observed": "The first complete 26-menu replay passed; direct/reload/history failed after §26→25→26 because the previous Latin view remained, causing duplicate paragraph IDs and incorrect extent.",
+  "repair": "Snapshot pane children before removal; one generic line. No source or boundary changes.",
+  "initial_evidence": "history/first-browser-attempt",
+  "resolution": "Full Proem and complete protected identity/range suite must be rerun on the corrected committed build."
+}

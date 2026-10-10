@@ -3116,7 +3116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Object.values(languagePanes).forEach(pane => {
       if (!pane) return;
 
-      pane.childNodes.forEach(node => {
+      [...pane.childNodes].forEach(node => {
         if (node.localName !== "h3") {
           pane.removeChild(node);
         }
