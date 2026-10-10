@@ -1,0 +1,38 @@
+{
+  "original": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_Batch_12_13_2026-10-09\\mixed_mapper_batch.py",
+    "bytes": 10054,
+    "sha256": "13872895aeb6364a9e75d4eb2f7520a7489ca5f0191980043ea0d02208ce20b8",
+    "CRLF": 0,
+    "LF_without_CR": 142,
+    "BOM": false
+  },
+  "copy": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\review\\Antiquities_Niese_BookXX_2026-10-10\\mixed_mapper.py",
+    "bytes": 10054,
+    "sha256": "13872895aeb6364a9e75d4eb2f7520a7489ca5f0191980043ea0d02208ce20b8",
+    "CRLF": 0,
+    "LF_without_CR": 142,
+    "BOM": false
+  },
+  "fixtures": {
+    "status": "PASS",
+    "tests": [
+      "mixed .text/.tail",
+      "UTF-8",
+      "numeric and named entities",
+      "CRLF",
+      "comment exclusion and tail coordinates",
+      "empty element tails",
+      "nested add/del retained",
+      "num excluded with tail retained",
+      "two units",
+      "raw Unicode-byte roundtrip",
+      "note excluded with tail retained",
+      "nested-child tail ownership",
+      "chapter-0 paratext exclusion",
+      "omission-placeholder exclusion"
+    ]
+  },
+  "note": "Existing XII/XIII-specific projections do not fire for Book XX. Source-only duration and final subscription must be reviewed separately."
+}
