@@ -8,8 +8,11 @@ def main():
     for p in sorted(list(PACK.glob('*.cjs'))+[PACK/'REVIEW_RENDERER.js']):
         r=subprocess.run([r'C:\Program Files\nodejs\node.exe','--check',str(p)],capture_output=True)
         assert r.returncode==0,r.stderr.decode();checks.append(dict(path=str(p),check='Node syntax',status='PASS'))
-    result=subprocess.run(['git','diff','--check'],cwd=ROOT,capture_output=True);assert result.returncode==0,result.stdout.decode()
-    save(PACK/'SYNTAX_QA.json',dict(status='PASS',files=checks,git_diff_check='PASS'))
+    results=[]
+    for args in [['git','diff','--check','HEAD','--','.',':(exclude)*.patch'],['git','apply','--check','--whitespace=nowarn',str(PACK/'REVIEW_RENDERER.patch')]]:
+        result=subprocess.run(args,cwd=ROOT,capture_output=True);assert result.returncode==0,result.stdout.decode()+result.stderr.decode();results.append(dict(command=args,status='PASS'))
+    save(PACK/'SYNTAX_QA.json',dict(status='PASS',files=checks,checks=results,
+        whitespace_format_exception='Saved unified-diff context lines consist of a required single space; *.patch excluded only from textual whitespace lint, and actual patch applicability checked independently. No production or source text exception.'))
     images=[info(packet(b)/'evidence'/f'review-harness-{theme}.png') for b in [18,19] for theme in ['light','dark']]
     save(PACK/'VISUAL_REVIEW.json',dict(status='PASS_REVIEW_HARNESS_ONLY',images=images,
         inspected_all_four_latest_images=True,settle_ms=800,notes_legible_in_both_themes=True,

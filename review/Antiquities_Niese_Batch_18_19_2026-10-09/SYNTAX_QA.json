@@ -142,5 +142,29 @@
       "status": "PASS"
     }
   ],
-  "git_diff_check": "PASS"
+  "checks": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "HEAD",
+        "--",
+        ".",
+        ":(exclude)*.patch"
+      ],
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "--whitespace=nowarn",
+        "C:\\workspace\\LatinJosephus-antiquities-niese-18-19\\review\\Antiquities_Niese_Batch_18_19_2026-10-09\\REVIEW_RENDERER.patch"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "whitespace_format_exception": "Saved unified-diff context lines consist of a required single space; *.patch excluded only from textual whitespace lint, and actual patch applicability checked independently. No production or source text exception."
 }

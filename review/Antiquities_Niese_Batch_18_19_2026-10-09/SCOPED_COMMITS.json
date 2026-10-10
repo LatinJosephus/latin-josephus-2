@@ -1,0 +1,36 @@
+{
+  "baseline": "9527578f361d48adb3094110254e627292bca2c5",
+  "local_commits_before_final_seal": [
+    {
+      "commit": "2ab289f87bad51f5917aafe5725d2dd0a520422a",
+      "subject": "Freeze XVIII-XIX authorities and baseline; audit XVIII 1-129"
+    },
+    {
+      "commit": "403fa4bb94da1fb3d929d53ab1b53ea108d4f933",
+      "subject": "Complete Antiquities XVIII primary review; retain pending editorial cases"
+    },
+    {
+      "commit": "d2e1c79052510ef081f14d889cc6c9bbad8de881",
+      "subject": "Complete Antiquities XIX primary review; retain pending editorial cases"
+    },
+    {
+      "commit": "7279154ba558049d0b8f838f2054f2fe9e6c5616",
+      "subject": "Prepare reversible Antiquities XVIII secure review implementation"
+    },
+    {
+      "commit": "8528a87a46e933ada68d8d0e2280ee4ec4aed5a1",
+      "subject": "Prepare reversible Antiquities XIX secure review implementation"
+    },
+    {
+      "commit": "f4bce3f613aef4de0efb6b5e7d20ea1410acb631",
+      "subject": "Audit declarative review reader and all protected selections; retain editorial gates"
+    },
+    {
+      "commit": "2fe5832aedc5906acfbceb607c38277a0a85fa53",
+      "subject": "Seal independent XVIII-XIX review certificates with explicit editorial holds"
+    }
+  ],
+  "final_seal_receipt": "Obtain final seal commit and clean status with git log/status after committing this packet; a commit cannot contain its own hash.",
+  "branch": "antiquities-niese-18-19",
+  "merge_push_publication": false
+}
