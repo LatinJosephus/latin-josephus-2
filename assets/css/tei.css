@@ -146,3 +146,15 @@ tei-div[data-source-role="interpolation"] {
   font: 600 .85em var(--lj-font-ui, sans-serif);
   color: var(--lj-brand-ink, #4b4033);
 }
+
+/* Notices use the reader palette in both themes. */
+tei-div[data-structural-identity^="niese-"] > .niese-correspondence-note,
+#traditional-reader-notice {
+  color: var(--lj-brand-ink);
+  background: var(--lj-brand-surface);
+  border-color: var(--lj-brand-rule);
+}
+tei-div[data-structural-identity^="niese-"] > .niese-correspondence-note a,
+#traditional-reader-notice a {
+  color: var(--global-theme-color);
+}

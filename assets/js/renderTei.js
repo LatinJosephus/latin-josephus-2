@@ -528,6 +528,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = new URL(window.location.href);
     ["chapter", "subchapter", "niese", "unit", "num"].forEach(key => url.searchParams.delete(key));
     const link = document.createElement("a"); link.href = url.href; link.textContent = "See Bamberg’s manuscript order in Book view";
+    if (Object.values(traditionalSelection()).some(value => value?.["presentation-note"])) {
+      const title = document.createElement("strong");
+      title.textContent = "Canonical order from separate witness fragments";
+      notice.appendChild(title);
+    }
     notice.append(text, link); panes.before(notice);
   };
   const antiquitiesUnitView = (language, data) => {
