@@ -1,6 +1,6 @@
 {
   "group": "corpus",
-  "status": "RUNNING",
+  "status": "PASS",
   "build": {
     "source_commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
     "source": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-source",
@@ -67,6 +67,18 @@
       "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\corpus-plain_final_controls.cjs.log",
       "log_sha256": "4d8e24757b3eedb2e148c9df25a400bedb1cac61a50e0e0c25047c56e7d8e204",
       "finished": "2026-10-10T20:25:05.918691+00:00"
+    },
+    {
+      "script": [
+        "protected_browser.cjs",
+        "final"
+      ],
+      "exit_code": 0,
+      "script_sha256": "085683af6f77f7bd4599d6bd9bcec5493899e2d20b63bb88442ed1d3332284fb",
+      "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\corpus-protected_browser.cjs.log",
+      "log_sha256": "f64d3f5be5102cff86b47557ce66bc602016a1aa3035bf994748e19fc77e8ede",
+      "finished": "2026-10-10T20:35:36.998177+00:00"
     }
-  ]
+  ],
+  "finished": "2026-10-10T20:35:37.001180+00:00"
 }

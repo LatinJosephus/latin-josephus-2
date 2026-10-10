@@ -1,0 +1,237 @@
+{
+  "status": "PASS",
+  "designation": "COMPLETE MERGED READER CERTIFIED FOR SAFE CANONICAL PROMOTION",
+  "created_utc": "2026-10-10T20:35:53.188905+00:00",
+  "actual_start": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+  "source_tip": "07057a284e3eb4999bd875cd05eb970e30886452",
+  "merge_commit": "a0245745c3fd3b3a04bfb5ed8acc192cd7f01b87",
+  "tested_build": {
+    "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+    "commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
+    "merge_commit": "a0245745c3fd3b3a04bfb5ed8acc192cd7f01b87",
+    "certified_recovery_tip": "07057a284e3eb4999bd875cd05eb970e30886452",
+    "baseline_site": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\baseline-site",
+    "site": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-site",
+    "root": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration",
+    "receipt": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\CANDIDATE_BUILD.json"
+  },
+  "certification_parent_commit": "df850fd77bfe376b04150f1552c683748b04f6ce",
+  "gates": {
+    "actual_identity_menu_and_registry_population": 7376,
+    "complete_corpus": {
+      "status": "PASS",
+      "Proem": 26,
+      "existing_I_XX": 7350,
+      "total": 7376,
+      "cached_rows": 0,
+      "zero_duplicate_selection_IDs": true
+    },
+    "Proem": {
+      "full": 26,
+      "plain": 26,
+      "all_direct_reload_previous_next_history": 26,
+      "Latin_intervals": 26,
+      "inherited_starts": 4,
+      "added_starts": 22,
+      "exclusive_end": 1,
+      "unavailable": 0,
+      "English_unchanged_context_paragraphs": 4,
+      "stale_pane_sequence": [
+        25,
+        26,
+        25,
+        26
+      ],
+      "plain_stale_pane_sequence": [
+        25,
+        26,
+        25,
+        26
+      ],
+      "paratext_isolated": true,
+      "transition_to_I27": "PASS",
+      "I_population": 320
+    },
+    "XI": {
+      "selectors": 347,
+      "ranges": 9,
+      "containing": 120,
+      "navigation": 22,
+      "assembly_312_326_342": "PASS",
+      "rank_declaration_order_challenges": 4,
+      "original_physical_alignment_units": 57,
+      "Book_and_Alignment_witness_order": "PASS",
+      "two_distinct_BJ_IV105_attachments": "PASS"
+    },
+    "XVI_XVII": {
+      "selectors": 759,
+      "unavailable_XVI_Latin": 24,
+      "navigation": 50,
+      "all_four_B_decisions_preserved": true,
+      "critical_fragments": "XVI294-295,351,355,356;XVII24-25,75-76",
+      "themes_and_panes": "PASS"
+    },
+    "XVIII_XIX": {
+      "full_population_in_prior_replay": 745,
+      "extra_plain_cases": 19,
+      "unavailable_XVIII": [
+        216,
+        217
+      ],
+      "distinct_physical_starts": [
+        "XVIII257",
+        "XIX292"
+      ],
+      "qualified_independent_Greek_English": "PASS"
+    },
+    "XX": {
+      "selectors": 268,
+      "Latin_available": 257,
+      "unavailable_Latin": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        238
+      ],
+      "containing": 135,
+      "actual_structural_controls": 133,
+      "plain": 14,
+      "adjudicated_groups": 4,
+      "source_only_annotation_isolation": "PASS",
+      "exclusive_end": "PASS",
+      "full_trailer_through_AMEN": "PASS",
+      "Vita_excluded": true
+    },
+    "containing": {
+      "books": 21,
+      "traditional": 1689,
+      "Bamberg": 198,
+      "Alignment": 1441,
+      "contents": "PASS",
+      "XV_endpoints_and_VII_XIV_qualifications": "PASS"
+    },
+    "cross_work": {
+      "bindings": 21,
+      "Niese_ranges": 8002,
+      "structural_ranges": 1630,
+      "focused": 13,
+      "fresh_focused": 11,
+      "reader_input_equivalence": 256,
+      "DEH_cache_keys_normalized": 2,
+      "Bellum_Cardwell_Whiston_Lodge": "PASS",
+      "Contra_Apionem": "PASS",
+      "DEH": "PASS",
+      "English_source_events": 3
+    },
+    "interface": {
+      "plain_contents": 9,
+      "keyboard_events": 2,
+      "labels_themes_and_panes": "PASS",
+      "no_new_console_network_asset_errors": true,
+      "source_only_standOff_hidden_inert_and_identical_to_fresh_baseline": true
+    }
+  },
+  "partial_correspondence_notes": {
+    "25": {
+      "start": "Volentius autem",
+      "end": "Quod ego nunc quidem",
+      "qualification": "The future-treatise promise is not independently identifiable in the present Bamberg transcription. The surviving opening “Quod ego nunc quidem” is retained."
+    },
+    "26": {
+      "start": "adrerum narrationem",
+      "qualification": "The present Bamberg transcription has no separately identifiable equivalent of the Greek opening verb or final transition formula; its surviving narrative text is retained."
+    }
+  },
+  "known_baseline_defects": [
+    {
+      "build": "frozen baseline",
+      "apparatus_route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+      "unsupported_route": "/antiquities/?book=1&niese=1",
+      "hrefs": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "targets": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "unsupported_error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "inventory": {
+        "value": "",
+        "firstSupported": "27"
+      },
+      "supported_I27": "PASS"
+    },
+    {
+      "build": "final candidate",
+      "apparatus_route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+      "unsupported_route": "/antiquities/?book=1&niese=1",
+      "hrefs": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "targets": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "unsupported_error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "inventory": {
+        "value": "",
+        "firstSupported": "27"
+      },
+      "supported_I27": "PASS"
+    }
+  ],
+  "preserved_source_metadata_observation": "The unchanged Book XX standOff xml:id=\"annotations\" is preserved as inert hidden encoded source; its duplicate with the visible UI div is present identically in the fresh baseline. No visible or executable duplicate ID, selected-view duplicate ID or annotation leakage is permitted.",
+  "production_sha256": {
+    "assets/js/renderTei.js": "665f31b0a5cfe668692490c1c1ffece09097ca4cfa69ff0e516e862e56ce2d72",
+    "assets/xml/antiquities/Latin/preface.xml": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+    "assets/xml/antiquities/niese/preface.json": "0a0e46771df523aad8a3dad9e696ec51bbe5cd9da084ec81eed0a20aeb6b2e18"
+  },
+  "renderer_resolution": "None: exact certified source retained",
+  "source_review_reopened": false,
+  "source_history_preserved": true,
+  "new_blockers": [],
+  "preview_published": false,
+  "final_promotion_receipt": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\PROMOTION_RECEIPT.json",
+  "exact_final_changed_file_manifest": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\FINAL_CHANGED_FILE_MANIFEST.json",
+  "evidence_manifest": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\CERTIFICATION_MANIFEST.json",
+    "sha256": "d30acbcd1b560f699905d038a85f31d9f17e543f560ad9ee5f56b64318391f91",
+    "bytes": 17713,
+    "CRLF": 0,
+    "LF_without_CR": 592,
+    "encoding": "UTF-8",
+    "BOM": false
+  },
+  "full_replay_evidence": {
+    "path": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\reports\\FINAL_PROTECTED_BROWSER.full.json",
+    "sha256": "bb327636d3af0160887cf6ca408dda78d31de05c7563d80ba7d89370e8651b69",
+    "bytes": 7959011,
+    "CRLF": 0,
+    "LF_without_CR": 320068,
+    "encoding": "UTF-8",
+    "BOM": false
+  }
+}
