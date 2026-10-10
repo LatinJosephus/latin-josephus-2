@@ -1,0 +1,188 @@
+{
+  "result": "PASS",
+  "certified_at": "2026-10-10T12:03:57.426246+00:00",
+  "canonical_start": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "direct_remote_start": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "source_tip": "c825afcaccd195ee3574d001b408c3cd71e0984c",
+  "tested_production_commit": "c840ce2aaf4b53b7d4146b2ef8e9e8ade91da476",
+  "source_commits": [
+    "bfa5b0726933556cd6de9342dedd8e87375751f1",
+    "09317f851657ebfb34ff2ae6519d9ad3fa2beacd",
+    "9f3eb137123326d60bca5b9d2ceafc99f6200575",
+    "71b4071e11f8fb6d7dde64ee5262fb63b1699f55",
+    "36a7b34164e1221fed7daac9e27b90d38e98d61a",
+    "eb3c9709eb01f4ca865fd217ec22ef1ae85fec91",
+    "adf0de9a9c6c9168c38d2fffaf0b42a9cda49820",
+    "b96c68ff7d735f53e1839ec0639f285b00734629",
+    "c825afcaccd195ee3574d001b408c3cd71e0984c"
+  ],
+  "manual_conflict_resolutions": [],
+  "editorial_decisions": "ALL CLOSED; source decisions and qualifications unchanged",
+  "counts": {
+    "logical_XI_identities": 347,
+    "primary_Latin_fragments": 352,
+    "interpolation_occurrences": 2,
+    "added_Latin_start_markers": 270,
+    "added_end_markers": 0,
+    "prior_selectable": 5231,
+    "combined_selectable": 5578
+  },
+  "reader_checks": {
+    "XI_selections": 347,
+    "prior_selections": 5231,
+    "XI_ranges": 9,
+    "XI_containing_routes": 120,
+    "independent_XI_traditional_populations": 61,
+    "direct_reload_history_previous_next": 22,
+    "Antiquities_containing": {
+      "traditional": 1689,
+      "bamberg": 198,
+      "alignment": 1441
+    },
+    "cross_work_configurations": 21,
+    "cross_work_citations": 8002,
+    "cross_work_ranges": 1630,
+    "rank_challenges": 4,
+    "uninstrumented": 6,
+    "protected_controls": 13,
+    "themes_and_panes": "PASS",
+    "source_controls": "PASS",
+    "Bellum_Whiston_Lodge_Apion_DEH": "PASS",
+    "new_errors": 0,
+    "allowed_baseline_exceptions": [
+      {
+        "build": "frozen baseline",
+        "apparatus_route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+        "unsupported_route": "/antiquities/?book=1&niese=1",
+        "hrefs": [
+          "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+        ],
+        "targets": [
+          {
+            "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+            "status": 404
+          },
+          {
+            "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+            "status": 404
+          }
+        ],
+        "unsupported_error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+        "inventory": {
+          "value": "",
+          "firstSupported": "27"
+        },
+        "supported_I27": "PASS"
+      },
+      {
+        "build": "final candidate",
+        "apparatus_route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+        "unsupported_route": "/antiquities/?book=1&niese=1",
+        "hrefs": [
+          "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+        ],
+        "targets": [
+          {
+            "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+            "status": 404
+          },
+          {
+            "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+            "status": 404
+          }
+        ],
+        "unsupported_error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+        "inventory": {
+          "value": "",
+          "firstSupported": "27"
+        },
+        "supported_I27": "PASS"
+      }
+    ]
+  },
+  "source_preservation": {
+    "Latin_inverse_byte_recovery": true,
+    "Greek_English_unchanged": true,
+    "physical_occurrences": 354,
+    "independent_locators": true,
+    "unrelated_baseline_files": 3162,
+    "incoming_review_bytes_unchanged": 88,
+    "production_bytes_match_certified_source": true
+  },
+  "build": {
+    "source": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\source",
+    "baseline_source": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\baseline-source",
+    "site": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\build\\site",
+    "baseline_site": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\build\\baseline-site",
+    "build_directory": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\build",
+    "baseline": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+    "image": "ruby@sha256:dba270af6994f64e45ee3dd2b85225a2a0d01f29c04508c7a3c7c8dbf59d2a85",
+    "purpose": "Fresh full integration/baseline Jekyll builds; no post-build replacement"
+  },
+  "evidence": [
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/READER_XI_RESULTS.json",
+      "sha256": "f2d8d4e4ad4fbd7e6de09382863c05b2ab23eb5d85fb666f4a57155ae1840971"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/READER_FINAL_PRIOR_RESULTS.json",
+      "sha256": "fb10b80cbe1414d7ba4c66e65fd6b2083f8a1fd4f3f2b959dff2ddc64b93d8a2"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/READER_CONTAINING_RESULTS.json",
+      "sha256": "faed42a6317b1e4e93704b1fbcfe75c03562152276130ea62eaf55af9d1de13b"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/READER_EXTRA_RESULTS.json",
+      "sha256": "a8a14e2017078abe5ac4acff11f25dc700dddc80105966d8d050e8bddad19ac3"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/SOURCE_PROOF.json",
+      "sha256": "2c68199140904d8e02020b8aec36fddd421ab081614243702822d185ca937b67"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/INTEGRATION_PRESERVATION.json",
+      "sha256": "75715083221a1f3b552a6acd4982540a04295b2d35b2fb455180e1c9cd33a2ef"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/PRODUCTION_MANIFEST.json",
+      "sha256": "a34b5eaf6b436baeffd4a4230086f90207a70d492ec40379d4cee6e9ce08db50"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/BUILD_RECEIPT.json",
+      "sha256": "49d872b9d9bf71f9cfd5359f09da529acb32730f1cc12b154c1cc332ad67e7df"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/IDENTITY_CENSUS.json",
+      "sha256": "a94e22bd1043eaf1348f302d914f196aa9f7cb7402e99dc4f2206342315a3866"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/QA_ADAPTATIONS.json",
+      "sha256": "81c441a2c6f8db9beb5c49d440f004dc446ad2f867a124e70898d8c489594e46"
+    },
+    {
+      "relative": "review/Antiquities_Niese_Integration_11_2026-10-09/ATTEMPT_HISTORY.json",
+      "sha256": "d74dc1dd45c2541467c2ec60ff8694ff0d879a152bce43a1438bc1a149ecfc4e"
+    }
+  ],
+  "public_preview_publication": false,
+  "review_only_build_proof_commit": "ff1bdabab1213aaef0878f019340d1986978eb16",
+  "inspected_theme_images": [
+    {
+      "theme": "light",
+      "path": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\attempt-02\\FINAL-XI-312-light.png",
+      "sha256": "9cb1257653489cb809e6bc2f6a370c21b9319ffb0f7752078d2b971ae4d3fc89",
+      "inspection": "Both interpolations remain separately labelled, beside their portions; notice, narrative and parallel panes are readable."
+    },
+    {
+      "theme": "dark",
+      "path": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\attempt-02\\FINAL-XI-312-dark.png",
+      "sha256": "aa7f7e5c0e3070d11fc5a4d6fdb127b7b95cbcf0104f6bff1658ab0e5b4f0690",
+      "inspection": "Both interpolations remain separately labelled, beside their portions; notice, narrative and parallel panes are readable."
+    }
+  ]
+}

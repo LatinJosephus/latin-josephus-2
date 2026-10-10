@@ -1,0 +1,140 @@
+{
+  "started": "2026-10-10T11:53:01.825Z",
+  "scope": "Continuation-rank challenge, uninstrumented built-reader smoke, exact baseline exceptions",
+  "rank_challenges": [
+    {
+      "n": 72,
+      "reversed_declaration_and_duplicate_identity_requests": "PASS",
+      "digest": "96fb1936288e911cb48dcb1af85b70fae32665ed01f156138e8461c21c6debc4"
+    },
+    {
+      "n": 312,
+      "reversed_declaration_and_duplicate_identity_requests": "PASS",
+      "digest": "98ff6745c341d745f5548a0b5803f8c18ff1b0a0c68d945f87c485c55b83e316"
+    },
+    {
+      "n": 326,
+      "reversed_declaration_and_duplicate_identity_requests": "PASS",
+      "digest": "d790f7aeea145ce8e141181ff980b61b22f1e95b0a1059a3ef02534d8714ac07"
+    },
+    {
+      "n": 342,
+      "reversed_declaration_and_duplicate_identity_requests": "PASS",
+      "digest": "49e712bf743ef5b89e89e43fe5215d2a9161c83b70589db25a62d8d1af6a6c06"
+    }
+  ],
+  "uninstrumented": [
+    {
+      "n": 1,
+      "result": "PASS",
+      "digest": "a9ae3b10dddba0a50da7772e70b990a26085b97bea625cd271af29d27a000de6"
+    },
+    {
+      "n": 72,
+      "result": "PASS",
+      "digest": "c54e26e0cf51519bd39a10deb166b76e8529fe8778a30b6832dbda5b976cb45f"
+    },
+    {
+      "n": 312,
+      "result": "PASS",
+      "digest": "05aabc1e7141175c1fcee6f4b942ac1cfffcf05471cc63b2d570a863c2081534"
+    },
+    {
+      "n": 326,
+      "result": "PASS",
+      "digest": "5310a61207079bcc83dbb51646f0a4bbbac46877745faebf5cb363b16b52df01"
+    },
+    {
+      "n": 342,
+      "result": "PASS",
+      "digest": "e905f7cf1b6a0cb3048c3d3deb697d09f259facc6459392aa1e4976e76b7a9c6"
+    },
+    {
+      "n": 347,
+      "result": "PASS",
+      "digest": "07c93722d05d6aeeb8b992519e5e6f2a621d82d4d16157bdbd84a9230f91e0f0"
+    }
+  ],
+  "baseline_exceptions": [
+    {
+      "build": "frozen baseline",
+      "apparatus_route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+      "unsupported_route": "/antiquities/?book=1&niese=1",
+      "hrefs": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "targets": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "unsupported_error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "inventory": {
+        "value": "",
+        "firstSupported": "27"
+      },
+      "supported_I27": "PASS"
+    },
+    {
+      "build": "final candidate",
+      "apparatus_route": "/antiquities/?book=1&bamberg=B78-table1-row005",
+      "unsupported_route": "/antiquities/?book=1&niese=1",
+      "hrefs": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "targets": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "unsupported_error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "inventory": {
+        "value": "",
+        "firstSupported": "27"
+      },
+      "supported_I27": "PASS"
+    }
+  ],
+  "visuals": [
+    {
+      "theme": "light",
+      "file": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\attempt-02\\FINAL-XI-312-light.png",
+      "styles": {
+        "text": "rgb(47, 43, 38)",
+        "background": "rgb(240, 233, 222)",
+        "link": "rgb(163, 65, 48)"
+      }
+    },
+    {
+      "theme": "dark",
+      "file": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\attempt-02\\FINAL-XI-312-dark.png",
+      "styles": {
+        "text": "rgb(242, 237, 228)",
+        "background": "rgb(58, 53, 47)",
+        "link": "rgb(223, 150, 127)"
+      }
+    }
+  ],
+  "accepted_traditional_notice": "PASS",
+  "result": "PASS",
+  "finished": "2026-10-10T11:53:18.614Z",
+  "origins": [
+    "http://127.0.0.1:59930",
+    "http://127.0.0.1:59931",
+    "http://127.0.0.1:59932"
+  ]
+}
