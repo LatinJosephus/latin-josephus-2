@@ -1,0 +1,19 @@
+{
+  "production_regressions": 0,
+  "unresolved_failures": 0,
+  "harness_repairs": [
+    {
+      "script": "verify_build.py",
+      "initial_failure": "KeyError: 'production_files'",
+      "cause": "The integration scope schema calls its exact five-file list production.",
+      "repair": "Use the recorded production field; rerun the entire build-input/output audit.",
+      "fresh_rerun": "PASS, 640 Git-tree inputs and 488 static checks"
+    }
+  ],
+  "fresh_canonical_containing_replay": "267 views match both final output and certified source authority",
+  "subsequent_QA_changes": [
+    "Separate baseline port 8919 from final port 8918",
+    "Add independent uninstrumented case and witness-order tests"
+  ],
+  "no_new_failure_reclassified_as_inherited": true
+}
