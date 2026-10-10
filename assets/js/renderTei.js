@@ -123,7 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
         12: "assets/xml/antiquities/niese/book-12.json",
         13: "assets/xml/antiquities/niese/book-13.json",
         14: "assets/xml/antiquities/niese/book-14.json",
-        15: "assets/xml/antiquities/niese/book-15.json"
+        15: "assets/xml/antiquities/niese/book-15.json",
+        18: "assets/xml/antiquities/niese/book-18.json",
+        19: "assets/xml/antiquities/niese/book-19.json"
       },
       nieseRanges: {
         1: [27, 346],
@@ -2013,6 +2015,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const [first, last] = range;
     const entries = [];
+    const declared = nieseIdentityRegistry()?.sections.filter(section => section[language]?.start) || [];
 
     data.querySelectorAll("tei-num").forEach(num => {
       // Header folio numbers and apparatus numbers are not narrative citations.
@@ -2021,7 +2024,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (language === "Latin" && nieseIdentityRegistry()?.suppressedLatinLabels.some(rule =>
         rule.paragraph === num.closest("tei-p")?.id && rule.label === num.textContent.trim())) return;
       const number = antiquitiesNieseLabelNumber(num);
-      if (!Number.isInteger(number) || number < first || number > last) return;
+      if (!Number.isInteger(number) || number < first || number > last
+        || declared.some(section => section.number === number)) return;
 
       entries.push({
         number,
@@ -2048,6 +2052,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
+
+    declared.forEach(section => {
+      const point = traditionalPoint(data, section[language].start);
+      if (point) entries.push({number: section.number, kind: "physical", node: point.node, physicalKind: point.kind});
+    });
 
     entries.sort((a, b) => {
       if (a.node === b.node) return 0;
@@ -2108,7 +2117,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const setRangeStart = range => {
-      if (start.kind === "num") {
+      if (start.kind === "physical" && start.physicalKind === "paragraph") {
+        range.setStart(start.node, 0);
+      } else if (start.kind === "num" || start.kind === "physical") {
         range.setStartBefore(start.node);
       } else {
         range.setStartAfter(start.node);
@@ -2119,7 +2130,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const paragraphWrapper = startParagraph.cloneNode(false);
       const range = document.createRange();
       setRangeStart(range);
-      range.setEndBefore(end.node);
+      if (end.kind === "physical" && end.physicalKind === "paragraph") range.setEnd(end.node, 0);
+      else range.setEndBefore(end.node);
       paragraphWrapper.appendChild(range.cloneContents());
       wrapper.appendChild(paragraphWrapper);
     } else {
@@ -2127,7 +2139,8 @@ document.addEventListener("DOMContentLoaded", () => {
       setRangeStart(range);
 
       if (end) {
-        range.setEndBefore(endNode);
+        if (end.kind === "physical" && end.physicalKind === "paragraph") range.setEnd(end.node, 0);
+        else range.setEndBefore(endNode);
       } else {
         range.setEnd(book, book.childNodes.length);
       }
@@ -2148,7 +2161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    if (start.kind === "milestone") {
+    if (start.kind === "milestone" || start.kind === "physical") {
       const firstParagraph = wrapper.querySelector("tei-p");
       if (firstParagraph) {
         firstParagraph.insertBefore(
