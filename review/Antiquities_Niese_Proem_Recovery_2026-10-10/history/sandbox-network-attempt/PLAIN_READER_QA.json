@@ -1,0 +1,15 @@
+{
+  "status": "FAIL",
+  "source_build": "a3ca656151f1170a099f4f143f70feb1118dbfd1",
+  "instrumentation": false,
+  "selectors": [],
+  "errors": [
+    {
+      "kind": "request",
+      "url": "http://127.0.0.1:8928/antiquities/?book=preface&niese=1",
+      "message": "net::ERR_NETWORK_ACCESS_DENIED"
+    }
+  ],
+  "assets": [],
+  "failure": "Error: page.goto: net::ERR_NETWORK_ACCESS_DENIED at http://127.0.0.1:8928/antiquities/?book=preface&niese=1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8928/antiquities/?book=preface&niese=1\", waiting until \"load\"\u001b[22m\n"
+}

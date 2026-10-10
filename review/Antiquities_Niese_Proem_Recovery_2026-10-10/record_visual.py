@@ -1,0 +1,4 @@
+from recover import *
+def main():
+    save('VISUAL_QA.json',{'status':'PASS','build':json.loads((PACK/'BUILD_CONTEXT.json').read_text()),'images':[record(PACK/'evidence'/n) for n in ['Proem-plain-25.png','Proem-plain-26.png']],'observations':{'25':'Latin begins Volentius and ends Quod ego nunc quidem, once only; approved partial-correspondence note visible; Greek 25 distinct.','26':'Latin begins literal adrerum narrationem, no Quod, no duplicate or supplied words; approved qualification and single I.27 link visible.','English':'Unchanged contextual paragraph labelled as context, not exact segmentation.'},'source_review_reopened':False,'inspection':'Successor visually inspected both fresh screenshots after exact three-language full-extent browser comparisons passed.'})
+if __name__=='__main__':main()
