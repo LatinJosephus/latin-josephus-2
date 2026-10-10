@@ -73,5 +73,11 @@
   "recovery_changes": [
     "protected report uses ignored full evidence file, saves progress every 100 selections, all baseline comparisons unchanged",
     "Proem adds explicit 25-26-25-26 sequence with full extent and duplicate-ID checks"
-  ]
+  ],
+  "additional_recovery_controls": [
+    "focused_controls.cjs: read-only DEH/Bellum structural comparison adapted from preserved reader-structure-crosswork.cjs; no selection count substituted for exhaustive replay",
+    "plain_final_controls.cjs: no instrumentation, whole-Proem div paratext and exact 25-26-25-26 sequence"
+  ],
+  "resolved_environment_attempt": "history/sandbox-network-attempt: sandbox denied localhost; successful authorized external retry",
+  "resolved_query_attempt": "history/paratext-query-attempt: scoped narrative paratext query to tei-div1, excluding empty TEI header paragraph; no production changes"
 }

@@ -1,18 +1,12 @@
 {
-  "status": "COMPLETE_CERTIFIED",
-  "supersedes": "Historical in-progress receipts preserved in Git checkpoints",
-  "build": {
-    "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
-    "commit": "a3ca656151f1170a099f4f143f70feb1118dbfd1",
-    "production_commit": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
-    "baseline_site": "C:\\workspace\\Antiquities-Niese-Proem-Recovery-runtime-20261010\\baseline-site",
-    "site": "C:\\workspace\\Antiquities-Niese-Proem-Recovery-runtime-20261010\\candidate-site",
-    "root": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery",
-    "receipt": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\CANDIDATE_BUILD.json"
-  },
-  "saved_selections": 7350,
-  "target": 7350,
-  "XX_containing_views": 135,
+  "status": "PASS",
+  "source_build": "a3ca656151f1170a099f4f143f70feb1118dbfd1",
+  "production_commit": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+  "started": "2026-10-10T20:00:14.110Z",
+  "finished": "2026-10-10T20:08:05.645Z",
+  "fresh_replay": true,
+  "cached_selections_used": 0,
+  "selections": 7350,
   "books": [
     {
       "book": 1,
@@ -195,5 +189,24 @@
       "duplicate_selection_IDs": 0
     }
   ],
-  "certificate": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\CERTIFICATE.json"
+  "XX_containing_views": 135,
+  "XX_containing_sha256": "dc7b0d5be9c07459cb56a8265056acdc88061e2c105913a3facd29e6708f16b4",
+  "XX_exclusive_end_and_trailer": "Preserved exact containing DOM/text endpoints and all 268 selections against immutable baseline",
+  "all_selection_content_notes_sourceIDs_endpoints_paneDOM_match": true,
+  "duplicate_selection_IDs": 0,
+  "containing_baseline_ID_observations": [
+    {
+      "id": "XX-book",
+      "duplicates": [
+        "annotations"
+      ],
+      "matches_baseline": true
+    }
+  ],
+  "errors": [],
+  "full_evidence": {
+    "path": "C:\\workspace\\Antiquities-Niese-Proem-Recovery-runtime-20261010\\reports\\FINAL_PROTECTED_BROWSER.full.json",
+    "bytes": 7959011,
+    "sha256": "5ceebb39318f781a4c57e697baad56702f2d1ce3f4c2e2789a6fea14e7f0d605"
+  }
 }
