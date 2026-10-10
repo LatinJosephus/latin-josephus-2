@@ -87,6 +87,8 @@ def main():
         lk=hits[0];ls.append(lk)
         rows.append(dict(number=n,Greek_print_status='VISUALLY_VERIFIED_NIESE_AND_LOEB',Greek_start_phrase=tail.lstrip()[:100],Niese=dict(edition='B. Niese, Flavii Iosephi opera I, Berlin 1887',printed_page=NIESE_PAGES[n-1],PDF_page=NIESE_PAGES[n-1]+90,image=f'evidence/Niese-PDF{NIESE_PAGES[n-1]+90:03}.jpg',marginal_note=MARGINAL.get(n,'Secure opening; numeral/paragraph identifies the start in context.')),Loeb=dict(edition='H. St. J. Thackeray, Josephus IV, Jewish Antiquities I-IV, 1961 impression',printed_page=LOEB_PAGES[n-1],PDF_page=LOEB_PAGES[n-1]+24,image=f'evidence/Loeb-PDF{LOEB_PAGES[n-1]+24:03}.jpg',status='Independent visual control confirms same semantic cut; Loeb variants are not imported'),Greek_start=g.locate(k),Latin_source_status='APPROVED_CANONICAL_BAMBERG_TRANSCRIPTION_PRESENT',Latin_cut_confidence='SECURE_FULL_EXTENT_CORRESPONDENCE',Latin_start=la.locate(lk),Latin_fragment_count=1,English_status='UNCHANGED_INHERITED_PARAGRAPH_CONTEXT',editorial_status='RESOLVED_ROUTINE',complete_extent_review=REASONS[n-1]))
     for i,row in enumerate(rows):
+        row['Latin_correspondence_status']='PARTIAL_PRESENT_TRANSCRIPTION' if row['number'] in [25,26] else 'PRESENT'
+        if row['number'] in [25,26]:row['Latin_cut_confidence']='SECURE_START_QUALIFIED_PARTIAL_CORRESPONDENCE'
         for l,model,starts in [('Greek',g,gs),('Latin',la,ls)]:
             end=starts[i+1] if i<25 else len(model.text)
             row[l+'_end']=models[l].locate(end) if i<25 else dict(unicode_proem_offset=end,kind='end_of_last_narrative_p',xml_id=model.units[-1]['id'],raw_UTF8_byte_offset=model.units[-1]['raw_end']-4)

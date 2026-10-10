@@ -1,0 +1,76 @@
+{
+  "status": "EMERGENCY_STOP_NOT_FINAL_CERTIFICATION",
+  "user_instruction": "EMERGENCY STOP: PLEASE EXPORT ALL DATA NOW",
+  "stopped_utc": "2026-10-10T19:30:14.386753+00:00",
+  "branch": "antiquities-niese-proem",
+  "production_commit": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+  "baseline": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-proem",
+  "runtime": "C:\\workspace\\Antiquities-Niese-Proem-runtime-20261010",
+  "export_directory": "C:\\workspace\\Antiquities-Proem-EMERGENCY-EXPORT-20261010T193014Z",
+  "pre_export_git_status": "## antiquities-niese-proem\n M review/Antiquities_Niese_Proem_2026-10-10/BUILD_CONTEXT.json\n M review/Antiquities_Niese_Proem_2026-10-10/CANDIDATE_BUILD.json\n M review/Antiquities_Niese_Proem_2026-10-10/DECISION_REGISTER.json\n M review/Antiquities_Niese_Proem_2026-10-10/FINAL_PROTECTED_BROWSER.json\n M review/Antiquities_Niese_Proem_2026-10-10/PLAIN_READER_QA.json\n M review/Antiquities_Niese_Proem_2026-10-10/READER_FINAL_PRIOR_RESULTS.json\n M review/Antiquities_Niese_Proem_2026-10-10/evidence/Proem-plain-25.png\n M review/Antiquities_Niese_Proem_2026-10-10/evidence/Proem-plain-26.png\n M review/Antiquities_Niese_Proem_2026-10-10/evidence/Proem-whole-plain.png\n M review/Antiquities_Niese_Proem_2026-10-10/proem_browser.cjs\n M review/Antiquities_Niese_Proem_2026-10-10/review_sources.py\n?? review/Antiquities_Niese_Proem_2026-10-10/SEALED_BUILD.json\n",
+  "stopped_sessions": {
+    "5123": "Interrupted by Ctrl+C. Full protected replay saved through Books I-IV (1322 selections), plus 135 XX containing views; incomplete replay on latest production commit.",
+    "22497": "Completed PASS before stop: Antiquities containing views and exhaustive cross-work structural comparison on latest production commit.",
+    "87723": "Interrupted by Ctrl+C after progress through 300 XI selectors. Existing result file may belong to preceding production revision.",
+    "30349": "Completed PASS before stop: all 26 plain reader selectors and transition to Book I.27 on latest production commit."
+  },
+  "qa_records_at_stop": {
+    "FINAL_PROTECTED_BROWSER.json": {
+      "status_in_file": "RUNNING",
+      "source_build": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+      "selection_count_saved": 1322,
+      "modified_utc": "2026-10-10T19:26:54.014304+00:00"
+    },
+    "PLAIN_READER_QA.json": {
+      "status_in_file": "PASS",
+      "source_build": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+      "selection_count_saved": 26,
+      "modified_utc": "2026-10-10T19:23:47.596375+00:00"
+    },
+    "READER_FINAL_PRIOR_RESULTS.json": {
+      "status_in_file": "PASS",
+      "source_build": {
+        "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+        "commit": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+        "baseline_site": "C:\\workspace\\Antiquities-Niese-Proem-runtime-20261010\\baseline-site",
+        "site": "C:\\workspace\\Antiquities-Niese-Proem-runtime-20261010\\sealed-site",
+        "root": "C:\\workspace\\LatinJosephus-antiquities-niese-proem"
+      },
+      "selection_count_saved": 0,
+      "modified_utc": "2026-10-10T19:26:33.850738+00:00"
+    },
+    "READER_XI_RESULTS.json": {
+      "status_in_file": "PASS",
+      "source_build": {
+        "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+        "commit": "14f92985c2d0fed70a84fbcbafc5031c09f78409",
+        "baseline_site": "C:\\workspace\\Antiquities-Niese-Proem-runtime-20261010\\baseline-site",
+        "site": "C:\\workspace\\Antiquities-Niese-Proem-runtime-20261010\\final-site",
+        "root": "C:\\workspace\\LatinJosephus-antiquities-niese-proem"
+      },
+      "selection_count_saved": 347,
+      "modified_utc": "2026-10-10T18:40:56.268835+00:00"
+    },
+    "PROEM_BROWSER_QA.json": {
+      "status_in_file": "PASS",
+      "source_build": null,
+      "selection_count_saved": 26,
+      "modified_utc": "2026-10-10T18:38:00.648519+00:00"
+    }
+  },
+  "pending_at_stop": [
+    "Finish full 7350-identity protected replay on production commit 4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb.",
+    "Finish XI controls on the same production commit.",
+    "Run complete Proem browser direct-link/history/previous-next suite after latest 25/26 cut refinement.",
+    "Refresh implemented locators, preservation receipt and BOUNDARIES.csv following final 25/26 refinement; older files retained as historical results.",
+    "Inspect latest 25/26 screenshots and create final certification and handoff only after required checks complete."
+  ],
+  "source_status": "Approved canonical Greek, Bamberg Latin and Whiston English located. All 26 printed Greek starts reviewed; no source-acquisition hold. Latin 25/26 have explicit qualified partial-correspondence notes without supplied words.",
+  "production_files": [
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/Latin/preface.xml",
+    "assets/xml/antiquities/niese/preface.json"
+  ],
+  "publish_status": "No merge, push or publication performed. Canonical preserved."
+}

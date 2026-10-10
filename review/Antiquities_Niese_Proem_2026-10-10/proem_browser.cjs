@@ -1,6 +1,6 @@
 const {fs,path,P,runtime,norm,sha,narrative,session}=require('./browser_common.cjs');
 async function main(){
- const s=await session('final'),r={status:'RUNNING',scope:'26 approved Proem extents, existing route, actual UI events, plain reader checks separately',selections:[],routes:[],errors:s.errors};
+ const s=await session('final'),r={status:'RUNNING',source_build:JSON.parse(fs.readFileSync(path.join(P,'CANDIDATE_BUILD.json'))).source_commit,scope:'26 approved Proem extents, existing route, actual UI events, plain reader checks separately',selections:[],routes:[],errors:s.errors};
  const expected=JSON.parse(fs.readFileSync(path.join(P,'EXPECTED_INTERVALS.json')));
  const check=async n=>{const a=await s.snapshot(),e=expected[n-1];for(const l of ['Latin','Greek','English'])if(norm(a.languages[l])!==norm(e[l])){fs.writeFileSync(path.join(P,'PROEM_DIFFERENCE.json'),JSON.stringify({n,language:l,actual:a,expected:e},null,2));throw Error('Full extent '+n+' '+l)}if(a.duplicates.length||!a.EnglishContext||a.unavailable)throw Error('Availability/context/IDs '+n);if(n===26&&a.languages.Latin.includes('EXPLICIT'))throw Error('Trailer entered §26');const next=await s.page.locator('#niese-next').isDisabled(),prev=await s.page.locator('#niese-previous').isDisabled();if(next!==(n===26)||prev!==(n===1))throw Error('Previous/next terminal '+n);return a;};
  try{
