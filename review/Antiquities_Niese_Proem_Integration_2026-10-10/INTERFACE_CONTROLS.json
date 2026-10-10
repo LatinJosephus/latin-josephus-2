@@ -1,5 +1,5 @@
 {
-  "status": "FAIL",
+  "status": "PASS",
   "build": {
     "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
     "commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
@@ -11,9 +11,126 @@
     "receipt": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\CANDIDATE_BUILD.json"
   },
   "scope": "Plain built reader labels, keyboard operation, contents, hidden encoded standOff isolation and UI identifiers",
-  "contents": [],
-  "keyboard": [],
-  "standOff": [],
+  "contents": [
+    {
+      "book": "preface",
+      "status": "PASS",
+      "digest": "c8044f2d050f144911b5d910ae0f4894dc38eac382d432b86417f43fd1065ada",
+      "approved_Proem_projection": "Remove only approved 22 starts, exclusive end and tested related-passage UI; unchanged original source remains exact"
+    },
+    {
+      "book": 1,
+      "status": "PASS",
+      "digest": "52898081cae8d77f28af9720d8c12dfd0ab8ef61f644af8714b9f963fe22e280",
+      "approved_Proem_projection": null
+    },
+    {
+      "book": 11,
+      "status": "PASS",
+      "digest": "f14102a6ca5c762ef68c49c31d3264462262df45b8a01fce4668d62e06736ea9",
+      "approved_Proem_projection": null
+    },
+    {
+      "book": 15,
+      "status": "PASS",
+      "digest": "8a415b1d250c3d47a7cf5502273bcf59b257664372ebedb22e93a37e696a71ef",
+      "approved_Proem_projection": null
+    },
+    {
+      "book": 16,
+      "status": "PASS",
+      "digest": "f14267f7675204229c2b7353f37e1dc6a3f9435e889be34972b98941677f388d",
+      "approved_Proem_projection": null
+    },
+    {
+      "book": 17,
+      "status": "PASS",
+      "digest": "51c146536b0784ab3225b18a67cbf9e91730e395fd0ace3c3c2da5dc2cb3ad96",
+      "approved_Proem_projection": null
+    },
+    {
+      "book": 18,
+      "status": "PASS",
+      "digest": "70c00ecf82a4eb5342e8b4b2f31c637edcef14f05688cc242ddf37de60fa8f44",
+      "approved_Proem_projection": null
+    },
+    {
+      "book": 19,
+      "status": "PASS",
+      "digest": "c6659dbe128b2a10c85a918c52720327bbb5ad11e0a21073903aec1c68468f2a",
+      "approved_Proem_projection": null
+    },
+    {
+      "book": 20,
+      "status": "PASS",
+      "digest": "ee2cf2dcf29db6b049b7448d7fa1d1c1112b7d5c0331777b0646f71563b3e348",
+      "approved_Proem_projection": null
+    }
+  ],
+  "keyboard": [
+    {
+      "event": "Select next with ArrowDown and Enter",
+      "number": 26,
+      "labels": {
+        "niese-selector": [
+          "Select a Niese section:"
+        ],
+        "english-pane-select": [
+          "English"
+        ],
+        "greek-pane-select": [
+          "Greek"
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "event": "Activate Previous with Enter",
+      "number": 25,
+      "status": "PASS"
+    }
+  ],
+  "standOff": [
+    {
+      "side": 0,
+      "observed": {
+        "duplicates": [
+          "annotations"
+        ],
+        "standOff": [
+          {
+            "id": "annotations",
+            "display": "none",
+            "visible": false,
+            "containsExecutable": 0
+          }
+        ],
+        "activeDuplicateIDs": [],
+        "annotationPanel": "DIV",
+        "visibleStandOff": 0
+      }
+    },
+    {
+      "side": 1,
+      "observed": {
+        "duplicates": [
+          "annotations"
+        ],
+        "standOff": [
+          {
+            "id": "annotations",
+            "display": "none",
+            "visible": false,
+            "containsExecutable": 0
+          }
+        ],
+        "activeDuplicateIDs": [],
+        "annotationPanel": "DIV",
+        "visibleStandOff": 0
+      }
+    }
+  ],
   "errors": [],
-  "failure": "Error: Plain contents changed preface"
+  "source_metadata_ID_observation": "The unchanged Book XX standOff xml:id=\"annotations\" is preserved as inert hidden encoded source; its duplicate with the visible UI div is present identically in the fresh baseline. No visible or executable duplicate ID, selected-view duplicate ID or annotation leakage is permitted.",
+  "pane_labels_and_keyboard": "PASS"
 }

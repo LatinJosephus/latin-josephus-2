@@ -11,10 +11,10 @@ async function main(){
    for(let side=0;side<2;side++){
     await page.goto(origins[side]+`/antiquities/?book=${book}&view=contents`,{waitUntil:'domcontentloaded'});
     await page.waitForFunction(()=>document.querySelector('#latin .source-contents, #latin tei-div1'));
-    captures.push(await page.evaluate(()=>Object.fromEntries(['latin','greek','english'].map(l=>[l,document.querySelector('#'+l)?.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN')]))));
+    captures.push(await page.evaluate(book=>Object.fromEntries(['latin','greek','english'].map(l=>{const c=document.querySelector('#'+l)?.cloneNode(true);if(book==='preface')c?.querySelectorAll('tei-milestone[unit="niese"],tei-milestone[unit="niese-end"],.niese-related-passage').forEach(n=>n.remove());return [l,c?.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN')]})),book));
    }
    if(JSON.stringify(captures[0])!==JSON.stringify(captures[1]))throw Error('Plain contents changed '+book);
-   r.contents.push({book,status:'PASS',digest:hash(captures[1])});
+   r.contents.push({book,status:'PASS',digest:hash(captures[1]),approved_Proem_projection:book==='preface'?'Remove only approved 22 starts, exclusive end and tested related-passage UI; unchanged original source remains exact':null});
   }
   for(let side=0;side<2;side++){
    await page.goto(origins[side]+'/antiquities/?book=20',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.querySelector('#latin tei-div1'));
@@ -22,11 +22,11 @@ async function main(){
     const nodes=[...document.querySelectorAll('[id]')],duplicates=[...new Set(nodes.map(n=>n.id).filter((id,i,a)=>a.indexOf(id)!==i))];
     const standOff=[...document.querySelectorAll('tei-standoff')].map(n=>({id:n.id,display:getComputedStyle(n).display,visible:n.getClientRects().length>0,containsExecutable:n.querySelectorAll('a,button,input,select,script').length}));
     const active=[...document.querySelectorAll('a,button,input,select,[role="button"]')].filter(n=>n.id).map(n=>n.id);
-    return {duplicates,standOff,activeDuplicateIDs:active.filter((id,i)=>active.indexOf(id)!==i),annotationPanel:document.querySelector('#annotations')?.tagName,visibleStandOff:standOff.filter(n=>n.visible).length};
+    return {duplicates,standOff,activeDuplicateIDs:active.filter((id,i)=>active.indexOf(id)!==i),annotationPanel:document.querySelector('div#annotations')?.tagName,visibleStandOff:standOff.filter(n=>n.visible).length};
    });
+   r.standOff.push({side,observed});
    if(observed.activeDuplicateIDs.length||observed.visibleStandOff||observed.standOff.some(x=>x.display!=='none'||x.containsExecutable))throw Error('Source-only standOff exposed/executable');
    if(JSON.stringify(observed.duplicates)!==JSON.stringify(['annotations'])||observed.annotationPanel!=='DIV')throw Error('Unexpected containing-view identifiers');
-   r.standOff.push({side,observed});
   }
   if(JSON.stringify(r.standOff[0].observed)!==JSON.stringify(r.standOff[1].observed))throw Error('Encoded source ID treatment changed');
   r.source_metadata_ID_observation='The unchanged Book XX standOff xml:id="annotations" is preserved as inert hidden encoded source; its duplicate with the visible UI div is present identically in the fresh baseline. No visible or executable duplicate ID, selected-view duplicate ID or annotation leakage is permitted.';

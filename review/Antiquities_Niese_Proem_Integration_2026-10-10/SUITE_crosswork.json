@@ -1,6 +1,6 @@
 {
   "group": "crosswork",
-  "status": "FAIL",
+  "status": "PASS",
   "build": {
     "source_commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
     "source": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-source",
@@ -36,7 +36,7 @@
     "runtime_only": true,
     "published": false
   },
-  "started": "2026-10-10T20:23:20.373395+00:00",
+  "started": "2026-10-10T20:31:42.579602+00:00",
   "scripts": [
     {
       "script": [
@@ -83,11 +83,198 @@
       "script": [
         "interface_controls.cjs"
       ],
-      "exit_code": 1,
-      "script_sha256": "1411ea2ec13ed1f4dcd6a631a48d45cbb8d23d95954f84cbde5239e764a338f8",
+      "exit_code": 0,
+      "script_sha256": "149b6bd6dc933cb8001e4b5bb41875437d7eed0c2473ac1fa49c74d335d10dbc",
       "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-interface_controls.cjs.log",
-      "log_sha256": "3a0ef670ec748b1af518273594260d405c82a16b3e70b6bd164b4b57c5eb3bf5",
-      "finished": "2026-10-10T20:29:48.875201+00:00"
+      "log_sha256": "4ffb829239f26c2eb53235429e4529c3dc12d9788b2e39d6ea3cace9eb84c301",
+      "finished": "2026-10-10T20:32:02.735439+00:00"
     }
-  ]
+  ],
+  "resumed_after_harness_repair": {
+    "group": "crosswork",
+    "status": "FAIL",
+    "build": {
+      "source_commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
+      "source": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-source",
+      "site": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-site",
+      "archive": {
+        "path": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate.tar",
+        "sha256": "7971dba0e524276dd4533e07ffbf727f1f46e6dcc752d26ba4e881d029e229a0",
+        "bytes": 1410293760,
+        "CRLF": 1234000,
+        "LF_without_CR": 13732472,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "builder": {
+        "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Whiston_Niese_Combined_Integration_2026-10-09\\build_disposable.rb",
+        "sha256": "4d8bfc6ca9355637c3e7f1f643680342951387eaaee2cbdce9a018f5e9142b9d",
+        "bytes": 549,
+        "CRLF": 8,
+        "LF_without_CR": 0,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "exit_code": 0,
+      "log": {
+        "path": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-build.log",
+        "sha256": "563fc18d916384e9298ed5756d9df2ce36167f2636a9f83309bcfb0b2a1f8061",
+        "bytes": 6727,
+        "CRLF": 14,
+        "LF_without_CR": 119,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "runtime_only": true,
+      "published": false
+    },
+    "started": "2026-10-10T20:30:39.734985+00:00",
+    "scripts": [
+      {
+        "script": [
+          "reader-structure-crosswork.cjs",
+          "--final"
+        ],
+        "exit_code": 0,
+        "script_sha256": "c9270318708538105dea5930279ea7b32a78705bfa839c517747a12733f214e2",
+        "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-reader-structure-crosswork.cjs.log",
+        "log_sha256": "ea9c3225a47640ee7fdd122b4be85d6075c125ba64ac96a1cee0d3bc079c033a",
+        "finished": "2026-10-10T20:27:45.338285+00:00"
+      },
+      {
+        "script": [
+          "focused_controls.cjs"
+        ],
+        "exit_code": 0,
+        "script_sha256": "3029103fcc1be230c652ee5c896c33510daf74ed9169885dfc11304ed2012a19",
+        "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-focused_controls.cjs.log",
+        "log_sha256": "df890c95fde42f531a35dbdbe253be2fcb7e2d23bfa64e7a5cddbc47fcbc2ee1",
+        "finished": "2026-10-10T20:28:44.058872+00:00"
+      },
+      {
+        "script": [
+          "combined-extra.cjs"
+        ],
+        "exit_code": 0,
+        "script_sha256": "af6f943e15a2b41042c4d0d26aa41289c59592fcda500d51684ab4a2e325c27c",
+        "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-combined-extra.cjs.log",
+        "log_sha256": "9a1ed9016b580e2d3a1e3661fb498378069b5a5ddc1fc550c9d9446dd1bf1500",
+        "finished": "2026-10-10T20:29:37.262866+00:00"
+      },
+      {
+        "script": [
+          "final_source_controls.cjs"
+        ],
+        "exit_code": 0,
+        "script_sha256": "57ed7f006f58e998266cdd15d44df4e00a71eeba7544a4bda73c15835d48cf8a",
+        "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-final_source_controls.cjs.log",
+        "log_sha256": "912b225770292a35e2f470ecba8963c68db7c6031a1c29c619d3a942213f8ed6",
+        "finished": "2026-10-10T20:29:44.322789+00:00"
+      },
+      {
+        "script": [
+          "interface_controls.cjs"
+        ],
+        "exit_code": 1,
+        "script_sha256": "9e770de01368265c731972da1e3cfaf5385d7e74cbb4d3b36719443f2daac00a",
+        "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-interface_controls.cjs.log",
+        "log_sha256": "d31d23373ca9b1a4617c43f3e736c0ecaac7236f85ef89ad70e9eff115be3365",
+        "finished": "2026-10-10T20:30:56.717280+00:00"
+      }
+    ],
+    "resumed_after_harness_repair": {
+      "group": "crosswork",
+      "status": "FAIL",
+      "build": {
+        "source_commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
+        "source": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-source",
+        "site": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-site",
+        "archive": {
+          "path": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate.tar",
+          "sha256": "7971dba0e524276dd4533e07ffbf727f1f46e6dcc752d26ba4e881d029e229a0",
+          "bytes": 1410293760,
+          "CRLF": 1234000,
+          "LF_without_CR": 13732472,
+          "encoding": "UTF-8",
+          "BOM": false
+        },
+        "builder": {
+          "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Whiston_Niese_Combined_Integration_2026-10-09\\build_disposable.rb",
+          "sha256": "4d8bfc6ca9355637c3e7f1f643680342951387eaaee2cbdce9a018f5e9142b9d",
+          "bytes": 549,
+          "CRLF": 8,
+          "LF_without_CR": 0,
+          "encoding": "UTF-8",
+          "BOM": false
+        },
+        "exit_code": 0,
+        "log": {
+          "path": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-build.log",
+          "sha256": "563fc18d916384e9298ed5756d9df2ce36167f2636a9f83309bcfb0b2a1f8061",
+          "bytes": 6727,
+          "CRLF": 14,
+          "LF_without_CR": 119,
+          "encoding": "UTF-8",
+          "BOM": false
+        },
+        "runtime_only": true,
+        "published": false
+      },
+      "started": "2026-10-10T20:23:20.373395+00:00",
+      "scripts": [
+        {
+          "script": [
+            "reader-structure-crosswork.cjs",
+            "--final"
+          ],
+          "exit_code": 0,
+          "script_sha256": "c9270318708538105dea5930279ea7b32a78705bfa839c517747a12733f214e2",
+          "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-reader-structure-crosswork.cjs.log",
+          "log_sha256": "ea9c3225a47640ee7fdd122b4be85d6075c125ba64ac96a1cee0d3bc079c033a",
+          "finished": "2026-10-10T20:27:45.338285+00:00"
+        },
+        {
+          "script": [
+            "focused_controls.cjs"
+          ],
+          "exit_code": 0,
+          "script_sha256": "3029103fcc1be230c652ee5c896c33510daf74ed9169885dfc11304ed2012a19",
+          "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-focused_controls.cjs.log",
+          "log_sha256": "df890c95fde42f531a35dbdbe253be2fcb7e2d23bfa64e7a5cddbc47fcbc2ee1",
+          "finished": "2026-10-10T20:28:44.058872+00:00"
+        },
+        {
+          "script": [
+            "combined-extra.cjs"
+          ],
+          "exit_code": 0,
+          "script_sha256": "af6f943e15a2b41042c4d0d26aa41289c59592fcda500d51684ab4a2e325c27c",
+          "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-combined-extra.cjs.log",
+          "log_sha256": "9a1ed9016b580e2d3a1e3661fb498378069b5a5ddc1fc550c9d9446dd1bf1500",
+          "finished": "2026-10-10T20:29:37.262866+00:00"
+        },
+        {
+          "script": [
+            "final_source_controls.cjs"
+          ],
+          "exit_code": 0,
+          "script_sha256": "57ed7f006f58e998266cdd15d44df4e00a71eeba7544a4bda73c15835d48cf8a",
+          "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-final_source_controls.cjs.log",
+          "log_sha256": "912b225770292a35e2f470ecba8963c68db7c6031a1c29c619d3a942213f8ed6",
+          "finished": "2026-10-10T20:29:44.322789+00:00"
+        },
+        {
+          "script": [
+            "interface_controls.cjs"
+          ],
+          "exit_code": 1,
+          "script_sha256": "1411ea2ec13ed1f4dcd6a631a48d45cbb8d23d95954f84cbde5239e764a338f8",
+          "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\crosswork-interface_controls.cjs.log",
+          "log_sha256": "3a0ef670ec748b1af518273594260d405c82a16b3e70b6bd164b4b57c5eb3bf5",
+          "finished": "2026-10-10T20:29:48.875201+00:00"
+        }
+      ]
+    }
+  },
+  "finished": "2026-10-10T20:32:02.736440+00:00"
 }

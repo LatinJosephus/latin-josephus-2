@@ -1,0 +1,21 @@
+{
+  "scope": "Integration QA harness only; no production change or source-decision review",
+  "repairs": [
+    {
+      "script": "interface_controls.cjs",
+      "initial_observation": "The supplementary plain containing-view comparison differed for Proem",
+      "cause": "The comparison initially included the explicitly approved 22 new milestones, exclusive end and related-passage UI",
+      "correction": "Project away only those approved additions for the baseline source comparison; test their presence, exact full extents and transition separately in the complete Proem suites",
+      "completed_checks_reused": "Only successful fresh cross-work scripts with matching build, script hashes and log hashes; no selection replay rows reused"
+    },
+    {
+      "script": "interface_controls.cjs",
+      "initial_observation": "The source-metadata audit initially selected the first element bearing annotations instead of the UI div",
+      "cause": "Book XX preserves an inert hidden standOff with that encoded source ID before the annotations UI",
+      "correction": "Select div#annotations explicitly and independently test the standOff's invisibility, absence of executable descendants and exact fresh-baseline parity",
+      "production_changed": false
+    }
+  ],
+  "final_interface_status": "PASS",
+  "new_reader_regressions": 0
+}

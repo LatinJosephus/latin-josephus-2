@@ -46,6 +46,11 @@ def main():
     assert len(ui['contents'])==9 and len(ui['keyboard'])==2
     assert load('READER_INPUT_EQUIVALENCE.json')['status']=='PASS' and load('READER_INPUT_EQUIVALENCE.json')['reader_inputs']==256
     assert load('VISUAL_QA.json')['status']=='PASS'
+    decisions=[]
+    for roman,name in [('XVI','DECISION_XVI_294_295.json'),('XVI','DECISION_XVI_351_355_356.json'),('XVII','DECISION_XVII_024_025.json'),('XVII','DECISION_XVII_075_076.json')]:
+        n=f'review/Antiquities_Niese_Book{roman}_2026-10-09/{name}';assert (ROOT/n).read_bytes()==git('show',BASE+':'+n)
+        decisions.append(dict(path=n,sha256=sha((ROOT/n).read_bytes()),status='Exact approved canonical decision retained'))
+    save(PACK/'FOUR_B_DECISIONS_PRESERVATION.json',dict(status='PASS',review_reopened=False,decisions=decisions))
     from verify_recovery import main as verify
     verify()
     allowed=load('MERGE_RECEIPT.json')['production_sha256']

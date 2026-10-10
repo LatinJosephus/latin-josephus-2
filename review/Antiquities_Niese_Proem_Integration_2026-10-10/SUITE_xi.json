@@ -1,6 +1,6 @@
 {
   "group": "xi",
-  "status": "RUNNING",
+  "status": "PASS",
   "build": {
     "source_commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
     "source": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-source",
@@ -57,6 +57,17 @@
       "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\xi-xi-witness-order.cjs.log",
       "log_sha256": "16010346c7c4e6a7e9cbb0f086531d06bcbe85b3c72936191aa5c610bd425e61",
       "finished": "2026-10-10T20:29:53.117822+00:00"
+    },
+    {
+      "script": [
+        "reader-extra.cjs"
+      ],
+      "exit_code": 0,
+      "script_sha256": "85a946ad57c52e29d2437634fcef8678188511f0aaece3f5d7f2b5061cd61e54",
+      "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\xi-reader-extra.cjs.log",
+      "log_sha256": "a54c54c363ad107ab36633451b874174c8a0c29859d96d88ef6795bd4162383f",
+      "finished": "2026-10-10T20:30:12.906169+00:00"
     }
-  ]
+  ],
+  "finished": "2026-10-10T20:30:12.907166+00:00"
 }

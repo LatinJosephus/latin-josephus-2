@@ -12,8 +12,16 @@ def save(p,x):p.write_text(json.dumps(x,indent=2)+'\n',encoding='utf-8')
 def main():
     name=sys.argv[1];report={'group':name,'status':'RUNNING','build':json.loads((P/'CANDIDATE_BUILD.json').read_text()),'started':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scripts':[]}
     env=os.environ.copy();env['NIESE_QA_PORT']='8959' if name=='special' else '8956';env['NIESE_QA_PROFILE']=name
-    receipt=P/('SUITE_'+name+'.json');save(receipt,report)
-    for args in GROUPS[name]:
+    receipt=P/('SUITE_'+name+'.json')
+    remaining=GROUPS[name]
+    if '--resume' in sys.argv:
+        previous=json.loads(receipt.read_text());assert previous['status']=='FAIL' and previous['build']==report['build']
+        completed=[row for row in previous['scripts'] if row['exit_code']==0]
+        for row in completed:assert hashlib.sha256((P/row['script'][0]).read_bytes()).hexdigest()==row['script_sha256'] and hashlib.sha256(Path(row['log']).read_bytes()).hexdigest()==row['log_sha256']
+        report['scripts']=completed;report['resumed_after_harness_repair']=previous
+        remaining=GROUPS[name][len(completed):]
+    save(receipt,report)
+    for args in remaining:
         log=RUNTIME/'logs'/('-'.join([name,args[0]])+'.log')
         print('START',name,*args,flush=True)
         with log.open('wb') as f:r=subprocess.run(['node',str(P/args[0]),*args[1:]],cwd=P,env=env,stdout=f,stderr=subprocess.STDOUT)
