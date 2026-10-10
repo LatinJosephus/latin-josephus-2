@@ -123,7 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
         12: "assets/xml/antiquities/niese/book-12.json",
         13: "assets/xml/antiquities/niese/book-13.json",
         14: "assets/xml/antiquities/niese/book-14.json",
-        15: "assets/xml/antiquities/niese/book-15.json"
+        15: "assets/xml/antiquities/niese/book-15.json",
+        16: "assets/xml/antiquities/niese/book-16.json",
+        17: "assets/xml/antiquities/niese/book-17.json"
       },
       nieseRanges: {
         1: [27, 346],
@@ -2049,13 +2051,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // A registered Niese span can reuse an existing independent source anchor.
+    nieseIdentityRegistry()?.sections.forEach(identity => {
+      const locator = identity[language]?.spans?.[0]?.start;
+      if (!locator || entries.some(entry => entry.number === identity.number)) return;
+      const point = traditionalRangePoint(data, locator);
+      if (point) entries.push({number: identity.number, kind: point.kind, node: point.node});
+    });
     entries.sort((a, b) => {
       if (a.node === b.node) return 0;
 
       const position = a.node.compareDocumentPosition(b.node);
       return position & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
     });
-
     return entries;
   };
 
@@ -2069,6 +2077,29 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper.setAttribute("type", "niese-section"); wrapper.setAttribute("n", String(wanted));
       wrapper.dataset.syntheticSection = "niese-derived";
       wrapper.appendChild(structuralUnavailable(language, identity[language].note || "This section is unavailable in this source."));
+      return wrapper;
+    }
+    // Source-qualified physical spans use the same generic locator machinery
+    // as certified structural ranges, including explicit ends and fragments.
+    if (identity?.[language]?.spans) {
+      const range = traditionalRangeView(language, data, {
+        id: `niese-${state.bookNum}-${wanted}-${language}`, scheme: "niese-section",
+        [language]: identity[language]
+      });
+      const wrapper = document.createElement("tei-div2");
+      wrapper.setAttribute("type", "niese-section"); wrapper.setAttribute("n", String(wanted));
+      wrapper.dataset.syntheticSection = "niese-derived";
+      wrapper.append(...range.childNodes);
+      const start = traditionalRangePoint(data, identity[language].spans[0].start);
+      const paragraph = wrapper.querySelector("tei-p");
+      if (paragraph && start?.node.getAttribute("unit") !== "niese")
+        paragraph.insertBefore(makeGeneratedNieseLabel(wanted), paragraph.firstChild);
+      if (identity[language].note) {
+        const note = document.createElement("p");
+        note.className = "alert alert-secondary niese-correspondence-note";
+        note.setAttribute("role", "note"); note.textContent = identity[language].note;
+        wrapper.prepend(note);
+      }
       return wrapper;
     }
     const entries = antiquitiesNieseStartEntries(language, data);

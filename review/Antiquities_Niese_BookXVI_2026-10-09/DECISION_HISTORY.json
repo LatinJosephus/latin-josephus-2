@@ -2986,5 +2986,77 @@
     ],
     "source_edits": false,
     "reader_certified": false
+  },
+  {
+    "kind": "EDITOR_ADJUDICATION",
+    "packet": "DECISION_XVI_294_295.json",
+    "selected": "B",
+    "rejected_alternatives_retained": true,
+    "authority": "DIRECT_HUMAN_USER_MESSAGE",
+    "date": "2026-10-10",
+    "implemented": false,
+    "reader_certified": false
+  },
+  {
+    "kind": "EDITOR_ADJUDICATION",
+    "packet": "DECISION_XVI_351_355_356.json",
+    "selected": "B",
+    "rejected_alternatives_retained": true,
+    "authority": "DIRECT_HUMAN_USER_MESSAGE",
+    "date": "2026-10-10",
+    "implemented": false,
+    "reader_certified": false
+  },
+  {
+    "kind": "APPROVED_SEGMENTATION_APPLIED",
+    "approval_record": "../Antiquities_Niese_Batch_16_17_2026-10-09/EDITOR_ADJUDICATION_ALL_B.json",
+    "identities": 404,
+    "present": 380,
+    "unavailable": 24,
+    "physical_fragments": 383,
+    "added_marker_counts": {
+      "START_MILESTONE": 378,
+      "EXTRA_FRAGMENT_ANCHOR": 3,
+      "EXPLICIT_RANGE_END_ANCHOR": 2
+    },
+    "reader_certified": false
+  },
+  {
+    "kind": "STRUCTURAL_ENDPOINT_METADATA_REPAIR",
+    "date": "2026-10-10",
+    "original_milestone_units": {
+      "Latin": [
+        {
+          "unit": null,
+          "count": 22
+        },
+        {
+          "unit": "chapter",
+          "count": 16
+        }
+      ],
+      "Greek": [
+        {
+          "unit": "chapter",
+          "count": 16
+        }
+      ],
+      "English": [
+        {
+          "unit": "chapter",
+          "count": 16
+        }
+      ]
+    },
+    "reason": "Actual built-reader Bamberg comparison found that unitless original image milestones were excluded from a frozen ordinal endpoint. Keep original chapter and unitless milestones; exclude new Niese milestones.",
+    "before_registry_sha256": "a8707a59d5585d23078d07eadaf9554f5fe1b947180c7f4f2d0b0f8db67ccb9e",
+    "after_registry_sha256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+    "source_bytes_changed": false,
+    "scholarly_boundaries_changed": false,
+    "superseded_failure_reports": [
+      "CONTAINING_VIEWS_BROWSER_FAILURE.json",
+      "PROTECTED_BROWSER_FAILURE.json"
+    ],
+    "reader_certified": false
   }
 ]
