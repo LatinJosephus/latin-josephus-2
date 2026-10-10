@@ -1,0 +1,2334 @@
+{
+  "current_external_source": {
+    "path": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+    "bytes": 57349,
+    "sha256": "9120310953c74b46337c5d823b16bfcca52afa5ad0ae26b75bdea035d25d2d96",
+    "CRLF": 2,
+    "LF_without_CR": 182,
+    "BOM": false
+  },
+  "current_docx_hash_matches_frozen_records": false,
+  "frozen_hashes": [
+    "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586"
+  ],
+  "records": [
+    {
+      "id": "B78-table1-row203",
+      "row": 203,
+      "book": 20,
+      "image": "494",
+      "numeral": "[I]",
+      "snippet": "Moriente siquidem agrippa rege sicut in libro praecedente",
+      "notes": " Current Greek paragraph and chapter milestone start before a book-extent notice; the corresponding narrative division starts after that notice. The Greek locator is corrected without moving any XML marker.",
+      "candidates": [
+        {
+          "id": "latin-book20-num1",
+          "score": 1.0,
+          "norm_offset": 0,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num1",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "Moriente siquidem agrippa rege sicut in libro praecedente narrauimus, caesar claudius misit successorem marso cassium longinum mem",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 1,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num1",
+        "offset": 41,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "anchor": "Τελευτήσαντος δὲ τοῦ βασιλέως Ἀγρίππα, καθὼς ἐν τῇ πρὸ ταύτης ἀπηγγέλκαμεν βίβλῳ, πέμπει Μάρσῳ διάδοχον Κλαύδιος Καῖσαρ Κάσσιον Λο",
+        "location_role": "PARALLEL_NARRATIVE_BOOK_OPENING_AFTER_CURRENT_EXTENT_NOTICE"
+      },
+      "current_chapter_milestone": {
+        "number": "1",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num1",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "1"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "[I]",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 203,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_INFERRED_INITIAL_OR_BOOK_OPENING",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        1
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num1",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "anchor": "UPON the death of king Agrippa, which we have related in the foregoing book, Claudius Caesar sent Cassius Longinus as successor to"
+      },
+      "greek_feasibility": {
+        "category": "NEW_MILESTONE_INSIDE_PARAGRAPH",
+        "coincides_element_boundary": false,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "A new inline marker would be needed; preserve the existing paragraph and alignment.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [
+        "LOEB-20-Chapter-1-0"
+      ],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "EXACT_MATCH",
+      "prior_current_greek_location": {
+        "paragraph_id": "greek-book20-num1",
+        "offset": 0,
+        "anchor": "περιέχει ἡ βίβλος χρόνον ἐτῶν κ[στιγμα]. Τελευτήσαντος δὲ τοῦ βασιλέως Ἀγρίππα, καθὼς ἐν τῇ πρὸ ταύτης ἀπηγγέλκαμεν βίβλῳ, πέμπει ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "later_Word_row_cells_observation": [
+        "494",
+        "20",
+        "[I]",
+        "Moriente siquidem agrippa rege sicut in libro praecedente",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row204",
+      "row": 204,
+      "book": 20,
+      "image": "494",
+      "numeral": "II",
+      "snippet": "Tholomeus autem princeps latronum et qui multa mala",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num1",
+          "score": 1.0,
+          "norm_offset": 746,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num1",
+        "offset": 871,
+        "at_paragraph_start": false,
+        "anchor": "II Tholomeus autem princeps latronum et qui multa mala in idumeis et arabis frequenter intulerat, non multos post deductus ad eum ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 5,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num1",
+        "offset": 980,
+        "anchor": "ἀναιρεῖται δὲ καὶ Θολομαῖος ὁ ἀρχιλῃστὴς μετ᾽ οὐ πολὺν χρόνον ἀχθεὶς ἐπ᾽ αὐτὸν διατεθεικὼς μέγιστα κακὰ τὴν Ἰδουμαίαν καὶ τοὺς Ἄρα",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "2",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num1",
+        "offset": 871,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/milestone[2]",
+        "parent": "p",
+        "at_paragraph_start": false,
+        "attributes": {
+          "unit": "chapter",
+          "n": "2"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "II",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 204,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        5
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num1",
+        "offset": 1163,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "anchor": "Tholomy also, the arch robber, was, after some time, brought to him bound, and slain, but not till he had done a world of mischief"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "494",
+        "20",
+        "II",
+        "Tholomeus autem princeps latronum et qui multa mala",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row205",
+      "row": 205,
+      "book": 20,
+      "image": "494",
+      "numeral": "III",
+      "snippet": "Is enim fadus qui tunc cunctos uocans sacerdotes et priores",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num1",
+          "score": 1.0,
+          "norm_offset": 949,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num1",
+        "offset": 1112,
+        "at_paragraph_start": false,
+        "anchor": "III Is enim fadus qui tunc cunctos uocans sacerdotes et priores ierosolimaturum ammonuit eos ut talarem tunicam et sacerdotalem st",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 6,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num1",
+        "offset": 1194,
+        "anchor": "ὃς δὴ καὶ τότε μεταπεμψάμενος τοὺς ἀρχιερεῖς καὶ τοὺς πρώτους τῶν Ἱεροσολυμιτῶν παρῄνεσεν αὐτοῖς τὸν ποδήρη χιτῶνα καὶ τὴν ἱερὰν σ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "3",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num1",
+        "offset": 1112,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]/milestone[3]",
+        "parent": "p",
+        "at_paragraph_start": false,
+        "attributes": {
+          "unit": "chapter",
+          "n": "3"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "III",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 205,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        6
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num1",
+        "offset": 1418,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[1]",
+        "anchor": "He also at this time sent for the high priests and the principal citizens of Jerusalem, and this at the command of the emperor, an"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "494",
+        "20",
+        "III",
+        "Is enim fadus qui tunc cunctos uocans sacerdotes et priores",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row206",
+      "row": 206,
+      "book": 20,
+      "image": "495",
+      "numeral": "IIII",
+      "snippet": "Vocans itaque claudius legatos iudaeorum promisit",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num10",
+          "score": 1.0,
+          "norm_offset": 4,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num10",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "IIII Vocans itaque claudius legatos iudaeorum promisit se concedere quae petebant iussitque ut agrippae gratias dignas ex solueren",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 10,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num10",
+        "offset": 0,
+        "anchor": "Καλέσας δὲ Κλαύδιος τοὺς πρέσβεις ἔφη ταῦτα συγχωρεῖν καὶ ἐκέλευεν αὐτοὺς Ἀγρίππᾳ χάριν εἰδέναι, ταῦτα γὰρ ἐκείνου ποιεῖν ἀξιώσαντ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[2]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "4",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num10",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[3]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "4"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "IIII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 206,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        10
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num10",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[2]",
+        "anchor": "Hereupon Claudius called for the ambassadors; and told them that he granted their request; and bade them to return their thanks to"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "495",
+        "20",
+        "IIII",
+        "Vocans itaque claudius legatos iudaeorum promisit",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row207",
+      "row": 207,
+      "book": 20,
+      "image": "495\t",
+      "numeral": "[V]",
+      "snippet": "Eo siquidem tempore helena ad iabenorum regina et filius eius ",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num17",
+          "score": 0.9836,
+          "token_offset": 0,
+          "window": "eo siquidem tempore helena ad iabenorum regina ei filius eius",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num75",
+          "score": 0.5373,
+          "token_offset": 203,
+          "window": "eo uidebatur esse magna amplitudine constituta in abienorum regressus est",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num81",
+          "score": 0.4407,
+          "token_offset": 227,
+          "window": "eo quod circa suum dominum esset ingratus a cuius manibus",
+          "direct": false
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num17",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "Eo siquidem tempore helena ad iabenorum regina ei filius eius iazans ad sollemnitatem iudaeorum hac causa proueniente migrati sunt",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[4]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 17,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num17",
+        "offset": 0,
+        "anchor": "Κατὰ τοῦτον δὲ τὸν καιρὸν τῶν Ἀδιαβηνῶν βασιλὶς Ἑλένη καὶ ὁ παῖς αὐτῆς Ἰζάτης εἰς τὰ Ἰουδαίων ἔθη τὸν βίον μετέβαλον διὰ τοιαύτην ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[4]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "5",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num17",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[4]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "5"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "[V]",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 207,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_INFERRED_INITIAL_OR_BOOK_OPENING",
+      "audit_identifier_uncertain": false,
+      "source_notes": "Number is missing but a littera notabilior indicates the chapter start.",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        17
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num17",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[4]",
+        "anchor": "ABOUT this time it was that Helena, queen of Adiabene, and her son Izates, changed their course of life, and embraced the Jewish c"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [
+        "LOEB-20-Chapter-2-0"
+      ],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "EXACT_MATCH",
+      "later_Word_row_cells_observation": [
+        "495",
+        "20",
+        "[V]",
+        "Eo siquidem tempore helena ad iabenorum regina et filius eius ",
+        "Number is missing but a littera notabilior indicates the chapter start.",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row208",
+      "row": 208,
+      "book": 20,
+      "image": "496",
+      "numeral": "VI",
+      "snippet": "Nam dum eorum ciuitatem illo tempore fames adpraehendisset et multi fuissent",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num49",
+          "score": 1.0,
+          "norm_offset": 471,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num49",
+        "offset": 550,
+        "at_paragraph_start": false,
+        "anchor": "VI Nam dum eorum ciuitatem illo tempore fames ad praehendisset, et multi fuissent aeges tate consumpti, helena regina misit quosda",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[4]/p[5]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 51,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num49",
+        "offset": 637,
+        "anchor": "λιμοῦ γὰρ αὐτῶν τὴν πόλιν κατὰ τὸν καιρὸν ἐκεῖνον πιεζοῦντος καὶ πολλῶν ὑπ᾽ ἐνδείας ἀναλωμάτων φθειρομένων ἡ βασιλὶς Ἑλένη πέμπει ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[8]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "6",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num49",
+        "offset": 550,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[4]/p[5]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": false,
+        "attributes": {
+          "unit": "chapter",
+          "n": "6"
+        }
+      },
+      "boundary_at_niese_start": false,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "VI",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 208,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        51
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "WITHIN_NIESE",
+      "english_location": {
+        "paragraph_id": "english-book20-num49",
+        "offset": 773,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[8]",
+        "anchor": "for whereas a famine did oppress them at that time, and many people died for want of what was necessary to procure food withal, qu"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "496",
+        "20",
+        "VI",
+        "Nam dum eorum ciuitatem illo tempore fames adpraehendisset et multi fuissent",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row209",
+      "row": 209,
+      "book": 20,
+      "image": "499",
+      "numeral": "VII",
+      "snippet": "Venitque fado successor tiberius alexander alexandri filius qui etiam alexandria fuerat",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num100",
+          "score": 1.0,
+          "norm_offset": 3,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num100",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "VII Venitque fado successor tiberius alexander alexandri filius qui etiam alexandria fuerat alabarchis id est princeps salis gener",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[5]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 100,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num100",
+        "offset": 0,
+        "anchor": "Ἦλθε δὲ Φάδῳ διάδοχος Τιβέριος Ἀλέξανδρος Ἀλεξάνδρου παῖς τοῦ καὶ ἀλαβαρχήσαντος ἐν Ἀλεξανδρείᾳ γένει τε καὶ πλούτῳ πρωτεύσαντος τ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[17]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "7",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num100",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[5]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "7"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "VII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 209,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        100
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num100",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[17]",
+        "anchor": "Then came Tiberius Alexander as successor to Fadus; he was the son of Alexander the alabarch of Alexandria, which Alexander was a "
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "499",
+        "20",
+        "VII",
+        "Venitque fado successor tiberius alexander alexandri filius qui etiam alexandria fuerat",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row210",
+      "row": 210,
+      "book": 20,
+      "image": "499",
+      "numeral": "VIII",
+      "snippet": "Herodes autem rex chalcidis remociorem successionem hanc ananiae",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num100",
+          "score": 1.0,
+          "norm_offset": 554,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num100",
+        "offset": 639,
+        "at_paragraph_start": false,
+        "anchor": "VIII Herodes autem rex chalcidis remociorem successionem hanc ananiae nibedei contribuit. Liberio autem alexandro cumanus successo",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[5]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 103,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num100",
+        "offset": 679,
+        "anchor": "ὁ δὲ τῆς Χαλκίδος βασιλεὺς Ἡρώδης μεταστήσας τῆς ἀρχιερωσύνης Ἰώσηπον τὸν τοῦ Καμοιδὶ τὴν διαδοχὴν τῆς τιμῆς Ἀνανίᾳ τῷ τοῦ Νεβεδαί",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[17]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "8",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num100",
+        "offset": 639,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[5]/p[1]/milestone[2]",
+        "parent": "p",
+        "at_paragraph_start": false,
+        "attributes": {
+          "unit": "chapter",
+          "n": "8"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "VIII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 210,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        103
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num100",
+        "offset": 842,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[17]",
+        "anchor": "But now Herod, king of Chalcis, removed Joseph, the son of Camydus, from the high priesthood, and made Ananias, the son of Nebedeu"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "499",
+        "20",
+        "VIII",
+        "Herodes autem rex chalcidis remociorem successionem hanc ananiae",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row211",
+      "row": 211,
+      "book": 20,
+      "image": "499",
+      "numeral": "VIIII",
+      "snippet": "Seditione igitur incidente in ierosolimitarum ciuitatem",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num105",
+          "score": 1.0,
+          "norm_offset": 5,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num105",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "VIIII Seditione igitur incidente in ierosolimitarum ciuitatem dum cumanus in iudaea pro rerum gubernatione consisteret, multi iuda",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[6]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 105,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num105",
+        "offset": 0,
+        "anchor": "Στάσεως δ᾽ ἐμπεσούσης τῇ τῶν Ἱεροσολυμιτῶν πόλει Κουμανοῦ τὰ κατὰ τὴν Ἰουδαίαν πράγματα διοικοῦντος ἐφθάρησαν ὑπὸ ταύτης πολλοὶ τῶ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[18]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "9",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num105",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[6]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "9"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "VIIII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 211,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        105
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num105",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[18]",
+        "anchor": "Now while the Jewish affairs were under the administration of Cureanus, there happened a great tumult at the city of Jerusalem, an"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "499",
+        "20",
+        "VIIII",
+        "Seditione igitur incidente in ierosolimitarum ciuitatem",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row212",
+      "row": 212,
+      "book": 20,
+      "image": "500",
+      "numeral": "X",
+      "snippet": "Post hae igitur inter samaritas atque iudęos inimicitiae huiusmodi",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num118",
+          "score": 0.9618,
+          "token_offset": 1,
+          "window": "post haec igitur inter samaritas atque iude os inimicitiae huius",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num145",
+          "score": 0.4567,
+          "token_offset": 2,
+          "window": "post herodis mortem qui eius fuerat maritus et patruus multo",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num259",
+          "score": 0.4427,
+          "token_offset": 53,
+          "window": "post eos romani sicuti reor sunt cum integritate composita nisus",
+          "direct": false
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num118",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "X Post haec igitur inter samaritas atque iudęos inimicitiae huius modi causa prouenerunt. Mos erat galileis tempori festiuitatum a",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 118,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num118",
+        "offset": 0,
+        "anchor": "Γίνεται δὲ καὶ Σαμαρείταις πρὸς Ἰουδαίους ἔχθρα δι᾽ αἰτίαν τοιαύτην: ἔθος ἦν τοῖς Γαλιλαίοις ἐν ταῖς ἑορταῖς εἰς τὴν ἱερὰν πόλιν π",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[20]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "10",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num118",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "10"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "X",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 212,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        118
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num118",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[20]",
+        "anchor": "NOW there arose a quarrel between the Samaritans and the Jews on the occasion following: It was the custom of the Galileans, when "
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [
+        "LOEB-20-Chapter-6-0"
+      ],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "EXACT_MATCH",
+      "later_Word_row_cells_observation": [
+        "500",
+        "20",
+        "X",
+        "Post hae igitur inter samaritas atque iudęos inimicitiae huiusmodi",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row213",
+      "row": 213,
+      "book": 20,
+      "image": "501",
+      "numeral": "XI",
+      "snippet": "Post paululum uero tempus quadratus in samariam uenit ubi auctores",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num125",
+          "score": 1.0,
+          "norm_offset": 725,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num125",
+        "offset": 859,
+        "at_paragraph_start": false,
+        "anchor": "XI Post paululum uero tempus quadratus in samariam uenit ubi auctores sedicionis audiens, et quosdam samaritanorum ac iudaeorum in",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[2]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 129,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num125",
+        "offset": 824,
+        "anchor": "μετ᾽ οὐ πολὺν δὲ χρόνον ὁ Κουαδρᾶτος ἧκεν εἰς Σαμάρειαν, ἔνθα διακούσας αἰτίους τῆς ταραχῆς ὑπέλαβε γεγονέναι τοὺς Σαμαρεῖς. Σαμαρ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[21]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "11",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num125",
+        "offset": 859,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[2]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": false,
+        "attributes": {
+          "unit": "chapter",
+          "n": "11"
+        }
+      },
+      "boundary_at_niese_start": false,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XI",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 213,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        129
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "WITHIN_NIESE",
+      "english_location": {
+        "paragraph_id": "english-book20-num125",
+        "offset": 1169,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[21]",
+        "anchor": "Yet was it not long ere Quadratus came to Samaria, where, upon hearing the cause, he supposed that the Samaritans were the authors"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "501",
+        "20",
+        "XI",
+        "Post paululum uero tempus quadratus in samariam uenit ubi auctores",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row214",
+      "row": 214,
+      "book": 20,
+      "image": "501",
+      "numeral": "XII",
+      "snippet": "Claudius autem his precibus perstructus causam audiens dum agnouisset",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num134",
+          "score": 0.9077,
+          "token_offset": 71,
+          "window": "autem his praecibus perstructus causam au dien dum agnouisset",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num148",
+          "score": 0.4478,
+          "token_offset": 1,
+          "window": "claudius interae caesar defunctus est cum imperasset annis tribus",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num137",
+          "score": 0.406,
+          "token_offset": 2,
+          "window": "autem et claudius felicem pallantis fratrem in iudaeam praesidem",
+          "direct": false
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num134",
+        "offset": 526,
+        "at_paragraph_start": false,
+        "anchor": "XII Claudius autem his praecibus perstructus causam au dien, dum agnouisset malorum principes fuisse samaritas, eos quidem qui asc",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[3]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 136,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num134",
+        "offset": 556,
+        "anchor": "καὶ Κλαύδιος τῇ δεήσει ταύτῃ προευτρεπισθεὶς καὶ διακούσας, ὡς εὗρε τῶν κακῶν ἀρχηγοὺς τοὺς Σαμαρείτας γενομένους, τοὺς μὲν ἀναβάν",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[22]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "12",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num134",
+        "offset": 526,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[7]/p[3]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": false,
+        "attributes": {
+          "unit": "chapter",
+          "n": "12"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 214,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        136
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num134",
+        "offset": 687,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[22]",
+        "anchor": "whereupon Claudius was so well disposed beforehand, that when he had heard the cause, and found that the Samaritans had been the r"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "501",
+        "20",
+        "XII",
+        "Claudius autem his precibus perstructus causam audiens dum agnouisset",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row215",
+      "row": 215,
+      "book": 20,
+      "image": "501",
+      "numeral": "XIII",
+      "snippet": "Misit autem et claudium felicem pallantis fratrem in iudaeam",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num137",
+          "score": 0.9833,
+          "token_offset": 1,
+          "window": "misit autem et claudius felicem pallantis fratrem in iudaeam",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num134",
+          "score": 0.5,
+          "token_offset": 1,
+          "window": "autem et qui cum eo erant nec non et",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num15",
+          "score": 0.4833,
+          "token_offset": 1,
+          "window": "autem claudio caesare et herodes frater agrippe defuncti cui",
+          "direct": false
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num137",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "XIII Misit autem et claudius felicem pallantis fratrem in iudaeam praesidem, qui rebus in regione iudaeicam praesideret. Cumque de",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[8]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 137,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num137",
+        "offset": 0,
+        "anchor": "Πέμπει δὲ καὶ Κλαύδιον Φήλικα Πάλλαντος ἀδελφὸν τῶν κατὰ τὴν Ἰουδαίαν προστησόμενον πραγμάτων. τῆς δ᾽ ἀρχῆς δωδέκατον ἔτος ἤδη πεπ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[23]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "13",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num137",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[8]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "13"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XIII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 215,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        137
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num137",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[23]",
+        "anchor": "SO Claudius sent Felix, the brother of Pallas, to take care of the affairs of Judea; and when he had already completed the twelfth"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [
+        "LOEB-20-Chapter-7-0"
+      ],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "EXACT_MATCH",
+      "later_Word_row_cells_observation": [
+        "501",
+        "20",
+        "XIII",
+        "Misit autem et claudium felicem pallantis fratrem in iudaeam",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row216",
+      "row": 216,
+      "book": 20,
+      "image": "502",
+      "numeral": "XIIII",
+      "snippet": "Claudius interea caesar defunctus est cum imperasset",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num148",
+          "score": 0.9808,
+          "token_offset": 1,
+          "window": "claudius interae caesar defunctus est cum imperasset",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num1",
+          "score": 0.5273,
+          "token_offset": 10,
+          "window": "claudius misit successorem marso cassium longinum memoriae",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num134",
+          "score": 0.5098,
+          "token_offset": 70,
+          "window": "claudius autem his praecibus perstructus causam au",
+          "direct": false
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num148",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "XIIII Claudius interae caesar defunctus est cum imperasset annis tribus et decem et mensibus octo diebusque XX. Est enim sermo quo",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[9]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 148,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num148",
+        "offset": 0,
+        "anchor": "Τελευτᾷ δὲ Κλαύδιος Καῖσαρ βασιλεύσας ἔτη δεκατρία καὶ μῆνας ὀκτὼ πρὸς ἡμέραις εἴκοσι, καὶ λόγος ἦν παρά τινων, ὡς ὑπὸ τῆς γυναικὸ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[26]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "14",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num148",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[9]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "14"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XIIII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 216,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        148
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num148",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[26]",
+        "anchor": "NOW Claudius Caesar died when he had reigned thirteen years, eight months, and twenty days; and a report went about that he was po"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [
+        "LOEB-20-Chapter-8-0"
+      ],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "EXACT_MATCH",
+      "later_Word_row_cells_observation": [
+        "502",
+        "20",
+        "XIIII",
+        "Claudius interea caesar defunctus est cum imperasset",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row217",
+      "row": 217,
+      "book": 20,
+      "image": "503",
+      "numeral": "XV",
+      "snippet": "Hoc enim in tempore uenit aliquis ex aegypto ad ierosolimam dicens se",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num167",
+          "score": 0.9927,
+          "token_offset": 45,
+          "window": "hoc eni in tempore uenit aliquis ex aegypto ad ierosolimam dicens se",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num38",
+          "score": 0.4173,
+          "token_offset": 233,
+          "window": "hoc geratur impietas uel nunc lege haec audiens rex actum differre non",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num113",
+          "score": 0.4148,
+          "token_offset": 94,
+          "window": "enim cumanus erat ad quem accusauerunt dicentes non se sed deum ad",
+          "direct": false
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num167",
+        "offset": 309,
+        "at_paragraph_start": false,
+        "anchor": "XV Hoc eni in tempore uenit aliquis ex aegypto ad ierosolimam dicens se esse prophetam, et populari multitudini persuasit, uti eum",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[9]/p[6]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 169,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num167",
+        "offset": 328,
+        "anchor": "ἀφικνεῖται δέ τις ἐξ Αἰγύπτου κατὰ τοῦτον τὸν καιρὸν εἰς Ἱεροσόλυμα προφήτης εἶναι λέγων καὶ συμβουλεύων τῷ δημοτικῷ πλήθει σὺν αὐ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[31]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "15",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num167",
+        "offset": 309,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[9]/p[6]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": false,
+        "attributes": {
+          "unit": "chapter",
+          "n": "15"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XV",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 217,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        169
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num167",
+        "offset": 437,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[31]",
+        "anchor": "Moreover, there came out of Egypt about this time to Jerusalem one that said he was a prophet, and advised the multitude of the co"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "503",
+        "20",
+        "XV",
+        "Hoc enim in tempore uenit aliquis ex aegypto ad ierosolimam dicens se",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row218",
+      "row": 218,
+      "book": 20,
+      "image": "503",
+      "numeral": "XVI",
+      "snippet": "Inter haec autem iudaei habitatores caesare contra syros pro aequitate",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num173",
+          "score": 0.9787,
+          "token_offset": 1,
+          "window": "inter haec autem iudaei habitatores caesarie contra syris pro aequitate",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num118",
+          "score": 0.4714,
+          "token_offset": 4,
+          "window": "inter samaritas atque iude os inimicitiae huius modi causa prouenerunt",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num97",
+          "score": 0.458,
+          "token_offset": 75,
+          "window": "haec sunt ergo iudaeis tempore quo fadus contigerunt in eorum",
+          "direct": false
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num173",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "XVI Inter haec autem iudaei habitatores caesarię contra syris pro aequitate ciuilitatis huius modi fecere seditionem. Iudaei namqu",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[10]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 173,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num173",
+        "offset": 0,
+        "anchor": "Γίνεται δὲ καὶ τῶν Καισάρειαν οἰκούντων Ἰουδαίων στάσις πρὸς τοὺς ἐν αὐτῇ Σύρους περὶ ἰσοπολιτείας: οἱ μὲν γὰρ Ἰουδαῖοι πρωτεύειν ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[32]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "16",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num173",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[10]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "16"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XVI",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 218,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        173
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num173",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[32]",
+        "anchor": "And now it was that a great sedition arose between the Jews that inhabited Cesarea, and the Syrians who dwelt there also, concerni"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "503",
+        "20",
+        "XVI",
+        "Inter haec autem iudaei habitatores caesare contra syros pro aequitate",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row219",
+      "row": 219,
+      "book": 20,
+      "image": "504",
+      "numeral": "XVII",
+      "snippet": "Portio siquidem festo directo a nerone per successionem",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num182",
+          "score": 0.9725,
+          "token_offset": 1,
+          "window": "portio siquidem festo directo anerone per suc cessonem",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num259",
+          "score": 0.434,
+          "token_offset": 108,
+          "window": "siquidem cum fiducia opere iam perfecto quia nullus",
+          "direct": false
+        },
+        {
+          "id": "latin-book20-num17",
+          "score": 0.4074,
+          "token_offset": 1,
+          "window": "siquidem tempore helena ad iabenorum regina ei filius",
+          "direct": false
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num182",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "XVII Portio siquidem festo directo anerone per suc cessonem felicis, primi iudaeorum caesaream habitantes ascenderunt romam accusa",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[11]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 182,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num182",
+        "offset": 0,
+        "anchor": "Πορκίου δὲ Φήστου διαδόχου Φήλικι πεμφθέντος ὑπὸ Νέρωνος οἱ πρωτεύοντες τῶν τὴν Καισάρειαν κατοικούντων Ἰουδαίων εἰς τὴν Ῥώμην ἀνα",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[34]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "17",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num182",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[11]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "17"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XVII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 219,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        182
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num182",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[34]",
+        "anchor": "Now when Porcius Festus was sent as successor to Felix by Nero, the principal of the Jewish inhabitants of Cesarea went up to Rome"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "504",
+        "20",
+        "XVII",
+        "Portio siquidem festo directo a nerone per successionem",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row220",
+      "row": 220,
+      "book": 20,
+      "image": "505 ",
+      "numeral": "XVIII",
+      "snippet": "Hoc tempore rex agrippas fabricatus est aedificium ",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num189",
+          "score": 1.0,
+          "norm_offset": 5,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num189",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "XVIII Hoc tempore rex agrippas fabricatus est aedificium magnitudine ualde praecipuum in palatio ierosolimorum iuxta theatrum. Quo",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[12]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 189,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num189",
+        "offset": 0,
+        "anchor": "Κατὰ δὲ τὸν καιρὸν τοῦτον ὁ βασιλεὺς Ἀγρίππας ᾠκοδομήσατο μεγέθει διαφέρον οἴκημα ἐν τῷ βασιλείῳ ἐν Ἱεροσολύμοις πλησίον τοῦ ξυστο",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[36]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "18",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num189",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[12]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "18"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XVIII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 220,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        189
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num189",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[36]",
+        "anchor": "About the same time king Agrippa built himself a very large dining-room in the royal palace at Jerusalem, near to the portico. Now"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "505 ",
+        "20",
+        "XVIII",
+        "Hoc tempore rex agrippas fabricatus est aedificium ",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row221",
+      "row": 221,
+      "book": 20,
+      "image": "505",
+      "numeral": "XVIIII",
+      "snippet": "Cum ergo huius sectae ananus esset credens se inuenisse",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num197",
+          "score": 1.0,
+          "norm_offset": 560,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num197",
+        "offset": 657,
+        "at_paragraph_start": false,
+        "anchor": "XVIIII Cum ergo huius sectae ananus esset credens se inuenisse tempus oportunum festo mortuo et albino in itinere constituto consi",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[12]/p[2]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 200,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num197",
+        "offset": 662,
+        "anchor": "ἅτε δὴ οὖν τοιοῦτος ὢν ὁ Ἄνανος, νομίσας ἔχειν καιρὸν ἐπιτήδειον διὰ τὸ τεθνάναι μὲν Φῆστον, Ἀλβῖνον δ᾽ ἔτι κατὰ τὴν ὁδὸν ὑπάρχειν",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[37]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "19",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num197",
+        "offset": 657,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[12]/p[2]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": false,
+        "attributes": {
+          "unit": "chapter",
+          "n": "19"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XVIIII",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 221,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_CHAPTER_MARKER",
+      "confidence": "CURRENT_ENCODING_CORROBORATED_NOT_FACSIMILE_REINSPECTED",
+      "candidate_niese_sections": [
+        200
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num197",
+        "offset": 798,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[37]",
+        "anchor": "when, therefore, Ananus was of this disposition, he thought he had now a proper opportunity [to exercise his authority]. Festus wa"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": false,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "505",
+        "20",
+        "XVIIII",
+        "Cum ergo huius sectae ananus esset credens se inuenisse",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "B78-table1-row222",
+      "row": 222,
+      "book": 20,
+      "image": "506",
+      "numeral": "XX",
+      "snippet": "Albinus itaque cum audisset sibi successorem gessium",
+      "notes": "",
+      "candidates": [
+        {
+          "id": "latin-book20-num215",
+          "score": 1.0,
+          "norm_offset": 2,
+          "direct": true
+        }
+      ],
+      "latin_location": {
+        "paragraph_id": "latin-book20-num215",
+        "offset": 0,
+        "at_paragraph_start": true,
+        "anchor": "XX Albinus itaque cum audisset sibi successorem gessium florum fuisse directum, uolens aliquid ierosolimitis prestare producens ui",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[13]/p[1]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "niese_section": 215,
+      "greek_location": {
+        "paragraph_id": "greek-book20-num215",
+        "offset": 0,
+        "anchor": "Ὡς δ᾽ ἤκουσεν Ἀλβῖνος διάδοχον αὐτῷ Γέσσιον Φλῶρον ἀφικνεῖσθαι, βουλόμενος δοκεῖν τι τοῖς Ἱεροσολυμίταις παρεσχῆσθαι προαγαγὼν τοὺ",
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[41]",
+        "location_role": "BOUNDARY_CORROBORATED_IN_CURRENT_ENCODING"
+      },
+      "current_chapter_milestone": {
+        "number": "20",
+        "unit": "chapter",
+        "paragraph_id": "latin-book20-num215",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[13]/p[1]/milestone[1]",
+        "parent": "p",
+        "at_paragraph_start": true,
+        "attributes": {
+          "unit": "chapter",
+          "n": "20"
+        }
+      },
+      "boundary_at_niese_start": true,
+      "mapping_method": "EXISTING_CROSS_LANGUAGE_CHAPTER_MILESTONES_WITH_LATIN_INCIPIT",
+      "bamberg_chapter": "XX",
+      "source_audit_file": "C:\\Users\\Pollard_R\\Mon disque\\Latin Josephus Project\\LatinJosephus-Recovery\\Bamberg Msc Class 78 - Chapter Nos for Ant..docx",
+      "source_audit_row": 222,
+      "source_audit_sha256": "13b593dc176c7c57a9234344174129e1401e49db07e6be293f618742c8836586",
+      "human_review_status": "HUMAN_AUDIT_PRESENT_NUMERAL",
+      "audit_identifier_uncertain": false,
+      "source_notes": "",
+      "source_snippet_is_exact_boundary": false,
+      "physical_position_status": "CORROBORATED_BY_CURRENT_LITERAL_NUMERAL",
+      "confidence": "HIGH_CURRENT_TEXT_CORROBORATION",
+      "candidate_niese_sections": [
+        215
+      ],
+      "nearby_niese_section": null,
+      "niese_relationship": "EXACT_NIESE_START",
+      "english_location": {
+        "paragraph_id": "english-book20-num215",
+        "offset": 0,
+        "path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[41]",
+        "anchor": "But when Albinus heard that Gessius Florus was coming to succeed him, he was desirous to appear to do somewhat that might be grate"
+      },
+      "greek_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": true,
+        "niese_encoding": "num",
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "latin_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "english_feasibility": {
+        "category": "EXISTING_ELEMENT_BOUNDARY",
+        "coincides_element_boundary": true,
+        "coincides_paragraph_start": true,
+        "coincides_niese_marker": false,
+        "niese_encoding": null,
+        "reason": "Existing paragraph or child-element edge; no aligned paragraph split needed.",
+        "source_review_pending": false
+      },
+      "loeb_exact_ids": [],
+      "loeb_different_position_ids": [],
+      "loeb_unresolved_ids": [],
+      "chapter_relationship": "BAMBERG_ONLY",
+      "later_Word_row_cells_observation": [
+        "506",
+        "20",
+        "XX",
+        "Albinus itaque cum audisset sibi successorem gessium",
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "precedence": "FROZEN v1.1 records retain authority. The current external Word file differs from the frozen hash and is a later observation only, not a replacement authority. Existing human checks and current-text offsets remain protected; no fresh facsimile inspection is claimed."
+}

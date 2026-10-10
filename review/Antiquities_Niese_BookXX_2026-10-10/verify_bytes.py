@@ -13,13 +13,17 @@ def main():
         before=Book(raw=original);after=Book(raw=raw)
         assert before.stream==after.stream
         assert before.tree.xpath('//@sameAs')==after.tree.xpath('//@sameAs')
+        old_ids=before.tree.xpath('//@xml:id');new_ids=after.tree.xpath('//@xml:id')
+        assert set(old_ids).issubset(new_ids) and len(new_ids)==len(set(new_ids))
+        expected_new_ids={re.search(r'xml:id="([^"]+)"',e['addition']).group(1) for e in edits if 'xml:id=' in e['addition']}
+        assert set(new_ids)-set(old_ids)==expected_new_ids
         assert [u['id'] for u in before.units]==[u['id'] for u in after.units]
         for tag in ['pb','cb','lb','graphic','note','app','rdg','unclear','corr','add','del','argument','floatingText','div1','div2','trailer']:
             a=before.tree.xpath('//t:'+tag,namespaces=NS);b=after.tree.xpath('//t:'+tag,namespaces=NS)
             assert [dict(e.attrib) for e in a]==[dict(e.attrib) for e in b],(lang,tag)
         for u,v in zip(before.units,after.units):
             assert u['text']==v['text'] and dict(u['element'].attrib)==dict(v['element'].attrib)
-        results[lang]=dict(status='PASS',original=sha(original),final=sha(raw),reversed=sha(restored),additions=len(edits),CRLF_before=original.count(b'\r\n'),CRLF_after=raw.count(b'\r\n'),projection_sha256=sha(before.stream.encode()),all_original_markup_restored=True)
+        results[lang]=dict(status='PASS',original=sha(original),final=sha(raw),reversed=sha(restored),additions=len(edits),CRLF_before=original.count(b'\r\n'),CRLF_after=raw.count(b'\r\n'),projection_sha256=sha(before.stream.encode()),all_original_markup_restored=True,all_original_IDs_retained=True,approved_new_IDs=sorted(expected_new_ids),all_sameAs_unchanged=True)
     protected=json.loads((PACK/'PROTECTED_INPUTS.json').read_text());changed={}
     allowed={'assets/xml/antiquities/Latin/book-20.xml','assets/xml/antiquities/Greek/book-20.xml','assets/js/renderTei.js'}
     for rel,details in protected.items():
