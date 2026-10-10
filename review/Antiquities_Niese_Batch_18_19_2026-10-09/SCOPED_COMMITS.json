@@ -28,9 +28,41 @@
     {
       "commit": "2fe5832aedc5906acfbceb607c38277a0a85fa53",
       "subject": "Seal independent XVIII-XIX review certificates with explicit editorial holds"
+    },
+    {
+      "commit": "1938fa015ec9273ed396754a362f25f14ae6c6f8",
+      "subject": "Seal local XVIII-XIX review handoff; require four focused editorial choices"
+    },
+    {
+      "commit": "67beed9805f0700b939d053dbd5ffc173cc09ff5",
+      "subject": "Record XVIII-XIX human adjudications and preserve earlier HOLD history"
+    },
+    {
+      "commit": "f4b84218b9f7ae478154b965ee25645087c82ccb",
+      "subject": "Implement adjudicated XVIII identities and 377 Latin intervals locally"
+    },
+    {
+      "commit": "6141a936843d34cafabcf87ef2ca60fe48008a51",
+      "subject": "Implement adjudicated XIX identities and 366 Latin intervals locally"
+    },
+    {
+      "commit": "83977b91574c4fa4af2b9d9e081fa26b1d5adc30",
+      "subject": "Enable generic declared Niese physical starts and final reader certification harness"
+    },
+    {
+      "commit": "02dcaf3082ddf86adcf898075b43368db4e3b91c",
+      "subject": "Independently certify all 379 XVIII identities after human adjudication"
+    },
+    {
+      "commit": "1c3b66105f7a0c8f52cc11d7f92080cb8b93cf67",
+      "subject": "Independently certify all 366 XIX identities after human adjudication"
+    },
+    {
+      "commit": "bc72834ac33215a5f5aee3dc7f653157a1b4ec69",
+      "subject": "Record fresh exhaustive production and protected-reader certification"
     }
   ],
-  "final_seal_receipt": "Obtain final seal commit and clean status with git log/status after committing this packet; a commit cannot contain its own hash.",
   "branch": "antiquities-niese-18-19",
+  "final_seal_receipt": "The final seal commit is reported by Git after this packet is committed; a commit cannot contain its own hash.",
   "merge_push_publication": false
 }
