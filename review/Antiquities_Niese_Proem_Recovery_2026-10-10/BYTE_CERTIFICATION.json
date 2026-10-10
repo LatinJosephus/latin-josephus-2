@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "sources": {
+    "Greek": {
+      "status": "PASS",
+      "original_sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+      "production": {
+        "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\Greek\\preface.xml",
+        "sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+        "bytes": 14735,
+        "CRLF": 0,
+        "LF_without_CR": 14,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "reversed_sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+      "exact_byte_reversal": true,
+      "unchanged": true
+    },
+    "Latin": {
+      "status": "PASS",
+      "original_sha256": "0c4719d6e120ec414fa75076f471d86aa5af9a11bb810299399118992fa897e8",
+      "production": {
+        "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\Latin\\preface.xml",
+        "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+        "bytes": 9646,
+        "CRLF": 0,
+        "LF_without_CR": 31,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "reversed_sha256": "0c4719d6e120ec414fa75076f471d86aa5af9a11bb810299399118992fa897e8",
+      "exact_byte_reversal": true,
+      "unchanged": false
+    },
+    "English": {
+      "status": "PASS",
+      "original_sha256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+      "production": {
+        "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\English\\preface.xml",
+        "sha256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+        "bytes": 9976,
+        "CRLF": 0,
+        "LF_without_CR": 15,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "reversed_sha256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+      "exact_byte_reversal": true,
+      "unchanged": true
+    }
+  },
+  "protected_production_status": "All unrelated production Git objects unchanged; all Book I/XX/other source XML untouched",
+  "changed_existing_production": [
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/Latin/preface.xml",
+    "assets/xml/antiquities/niese/preface.json"
+  ],
+  "new_production_registry": "assets/xml/antiquities/niese/preface.json",
+  "reconciliation": {
+    "Proem": 26,
+    "represented_Latin": 26,
+    "unavailable_Latin": 0,
+    "primary_fragments": 26,
+    "inherited_Latin_starts": 4,
+    "new_Latin_milestones": 22,
+    "exclusive_Latin_end": 1,
+    "Greek_inherited_labels": 26,
+    "new_Greek_markers": 0,
+    "paratext": "Opening Proemium and final EXPLICIT PRAEFATIO IOSEPPI; remain in containing views",
+    "English_context_paragraphs": 4
+  }
+}
