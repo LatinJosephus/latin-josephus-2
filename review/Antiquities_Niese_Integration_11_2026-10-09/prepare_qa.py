@@ -15,6 +15,7 @@ def main():
   original=(A/name).read_text(encoding='utf8');s=original
   s=s.replace('C:/workspace/Antiquities-Niese-11-runtime-20261009',str(R).replace('\\','/'))
   if name=='qa-common.cjs':
+   s=s.replace(str(R).replace('\\','/')+"',root=",str(R).replace('\\','/')+"/attempt-02',root=")
    s=s.replace("const load=p=>JSON.parse(fs.readFileSync(p,'utf8')),save=", "const authority=path.join(root,'review/Antiquities_Niese_BookXI_2026-10-09');\nconst authorityNames=new Set(['EXPECTED_SELECTIONS.json','AUTHORIZED_ADDITIONS.json','TRADITIONAL_EXPECTATIONS.json']);\nconst load=p=>JSON.parse(fs.readFileSync(!fs.existsSync(p)&&authorityNames.has(path.basename(p))?path.join(authority,path.basename(p)):p,'utf8')),save=")
   if name=='reader-xi.cjs':s=s.replace('listen(s,8911)','listen(s,8912)')
   if name=='build_receipt.py':s=s.replace('from mixed_mapper import digest','import hashlib\ndef digest(raw):return hashlib.sha256(raw).hexdigest()')

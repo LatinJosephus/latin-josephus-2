@@ -1,0 +1,50 @@
+[
+  {
+    "name": "qa-common.cjs",
+    "authority_sha256": "6a673e8672bc6eb7085cb5ef37e95c3dfa2130d45d3b95c178468f375aa4e88c",
+    "integration_sha256": "8bb853d0b813e0f03336e39f627e39f12ce5847df5ff0856edb6bb3973bd6b3f",
+    "changes": "Runtime, preferred port, immutable evidence references; build receipt uses hashlib. No test algorithm or selection code change."
+  },
+  {
+    "name": "reader-xi.cjs",
+    "authority_sha256": "e2b82f390286dfb8dc2f1558c1bb2362c758efd8b7d604614e9856c7d3a8bfed",
+    "integration_sha256": "d706650910786338c60afdc2b71f2d18e74f65435e3a1ce90be5fc3f117c776f",
+    "changes": "Runtime, preferred port, immutable evidence references; build receipt uses hashlib. No test algorithm or selection code change."
+  },
+  {
+    "name": "reader-prior.cjs",
+    "authority_sha256": "dba8e0766a64278aef24e96109720f65acdd8a0abb19501bd8a0ceb0f6421b9c",
+    "integration_sha256": "dba8e0766a64278aef24e96109720f65acdd8a0abb19501bd8a0ceb0f6421b9c",
+    "changes": "Runtime, preferred port, immutable evidence references; build receipt uses hashlib. No test algorithm or selection code change."
+  },
+  {
+    "name": "reader-containing.cjs",
+    "authority_sha256": "f0a36f6ad36dad02e15c4e5343891f9bfa8c7e613ee00d0698b88f061f1a75ab",
+    "integration_sha256": "f0a36f6ad36dad02e15c4e5343891f9bfa8c7e613ee00d0698b88f061f1a75ab",
+    "changes": "Runtime, preferred port, immutable evidence references; build receipt uses hashlib. No test algorithm or selection code change."
+  },
+  {
+    "name": "reader-extra.cjs",
+    "authority_sha256": "5607faaf3f291220ebc4d4f56ef9039297eed92bc21eaeee309c28d6fa6fc7c6",
+    "integration_sha256": "5607faaf3f291220ebc4d4f56ef9039297eed92bc21eaeee309c28d6fa6fc7c6",
+    "changes": "Runtime, preferred port, immutable evidence references; build receipt uses hashlib. No test algorithm or selection code change."
+  },
+  {
+    "name": "build.sh",
+    "authority_sha256": "becee4769b4f9ed52f9048ed4fef527248cf5c914ff91c3a4c8566b65fd7672c",
+    "integration_sha256": "becee4769b4f9ed52f9048ed4fef527248cf5c914ff91c3a4c8566b65fd7672c",
+    "changes": "Runtime, preferred port, immutable evidence references; build receipt uses hashlib. No test algorithm or selection code change."
+  },
+  {
+    "name": "build_receipt.py",
+    "authority_sha256": "0fa85f63f4bde0a6e27b3bc22df90792c85a78b1342b41b69544183431f6e01d",
+    "integration_sha256": "08d993b6486cbbeebf109b08bd3318546642e7b27e3ad2c8fc4ef592b1a4f1c9",
+    "changes": "Runtime, preferred port, immutable evidence references; build receipt uses hashlib. No test algorithm or selection code change."
+  },
+  {
+    "name": "verify_sources.py",
+    "authority_sha256": "b61561a8a7017e581fdf77834d3c5314d1471950f9d85b79afd5143104d07957",
+    "integration_sha256": "85bc3196ed728d8cfe102524dbc955a08d9bd6bf17c3afabb32ea8f64265f42d",
+    "changes": "Read original authority in place; compare recomputed registers instead of rewriting incoming records; write only new integration proof."
+  }
+]

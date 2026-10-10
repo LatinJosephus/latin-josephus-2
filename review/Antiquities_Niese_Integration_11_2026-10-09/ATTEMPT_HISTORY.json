@@ -1,0 +1,95 @@
+[
+  {
+    "attempt": "01",
+    "disposition": "Not certification: local network I/O suspension interrupted browser loads. No production change; entire suites rerun in fresh profiles.",
+    "suites": [
+      {
+        "name": "READER_XI_RESULTS.json",
+        "started": "2026-10-10T02:10:28.487Z",
+        "finished": "2026-10-10T11:51:11.464Z",
+        "result": "FAIL",
+        "failure": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+        "errors": [
+          "http://127.0.0.1:8912/assets/xml/source-contents.xml?v=1791598276410:net::ERR_NETWORK_IO_SUSPENDED",
+          "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
+          "TypeError: Failed to fetch"
+        ],
+        "completed": {
+          "selectors": 347,
+          "ranges": 9,
+          "containing": 17,
+          "navigation": 0,
+          "rows": 0,
+          "rank_challenges": 0,
+          "uninstrumented": 0,
+          "baseline_exceptions": 0
+        },
+        "full_evidence": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\attempt-01-results\\READER_XI_RESULTS.json",
+        "sha256": "b655dbb8d41fba4b998430f745c7d0c146bcbad7774743ae4329c32366f25daa"
+      },
+      {
+        "name": "READER_FINAL_PRIOR_RESULTS.json",
+        "started": "2026-10-10T02:10:28.487Z",
+        "finished": "2026-10-10T02:11:17.157Z",
+        "result": "FAIL",
+        "failure": "Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'debug')\n    at http://127.0.0.1:60533/assets/js/CETEI.js:683:18\n    at async fetchTei (http://127.0.0.1:60533/assets/js/renderTei.js:1171:5)\n    at async fetchData (http://127.0.0.1:60533/assets/js/renderTei.js:2893:28)\n    at async reload (http://127.0.0.1:60533/assets/js/renderTei.js:3447:5)\n    at async setState (http://127.0.0.1:60533/assets/js/renderTei.js:3470:5)",
+        "errors": [
+          "http://127.0.0.1:60533/assets/xml/antiquities/Latin/book-02.xml?v=1791598267002:net::ERR_NETWORK_IO_SUSPENDED",
+          "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED"
+        ],
+        "completed": {
+          "selectors": 320,
+          "ranges": 0,
+          "containing": 0,
+          "navigation": 0,
+          "rows": 0,
+          "rank_challenges": 0,
+          "uninstrumented": 0,
+          "baseline_exceptions": 0
+        },
+        "full_evidence": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\attempt-01-results\\READER_FINAL_PRIOR_RESULTS.json",
+        "sha256": "4223aa9304c0b70a9c3a5a088178377dc5e422a90a9a8ef7fd0d4c6e4440fcab"
+      },
+      {
+        "name": "READER_EXTRA_RESULTS.json",
+        "started": "2026-10-10T02:11:05.379Z",
+        "finished": "2026-10-10T11:51:09.298Z",
+        "result": "FAIL",
+        "failure": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+        "errors": [],
+        "completed": {
+          "selectors": 0,
+          "ranges": 0,
+          "containing": 0,
+          "navigation": 0,
+          "rows": 0,
+          "rank_challenges": 4,
+          "uninstrumented": 6,
+          "baseline_exceptions": 0
+        },
+        "full_evidence": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\attempt-01-results\\READER_EXTRA_RESULTS.json",
+        "sha256": "68c2995fdb63e3dda0b36e193d5d645d417cdcade0a6122afb744a4f50121886"
+      },
+      {
+        "name": "READER_CONTAINING_RESULTS.json",
+        "started": "2026-10-10T02:11:05.237Z",
+        "finished": "2026-10-10T02:11:08.215Z",
+        "result": "PASS",
+        "failure": null,
+        "errors": [],
+        "completed": {
+          "selectors": 0,
+          "ranges": 0,
+          "containing": 0,
+          "navigation": 0,
+          "rows": 61,
+          "rank_challenges": 0,
+          "uninstrumented": 0,
+          "baseline_exceptions": 0
+        },
+        "full_evidence": "C:\\workspace\\Antiquities-Niese-11-integration-runtime-20261009\\attempt-01-results\\READER_CONTAINING_RESULTS.json",
+        "sha256": "7919a003ad8a7af50f4d22dc6a34657d69ba25708a1615407810590f103528ec"
+      }
+    ]
+  }
+]
