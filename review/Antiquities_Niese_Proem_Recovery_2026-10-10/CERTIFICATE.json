@@ -1,0 +1,217 @@
+{
+  "status": "PASS",
+  "designation": "LOCALLY CERTIFIED / READY FOR COORDINATED INTEGRATION",
+  "created_utc": "2026-10-10T20:08:28.412514+00:00",
+  "recovery_route": "A",
+  "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+  "recovered_checkpoint": "16f0f764a501825fef5ecb4ceba26f79f571c777",
+  "production_commit": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+  "build": {
+    "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+    "commit": "a3ca656151f1170a099f4f143f70feb1118dbfd1",
+    "production_commit": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+    "baseline_site": "C:\\workspace\\Antiquities-Niese-Proem-Recovery-runtime-20261010\\baseline-site",
+    "site": "C:\\workspace\\Antiquities-Niese-Proem-Recovery-runtime-20261010\\candidate-site",
+    "root": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery",
+    "receipt": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\CANDIDATE_BUILD.json"
+  },
+  "tested_build_source_commit": "a3ca656151f1170a099f4f143f70feb1118dbfd1",
+  "certification_parent_commit": "d772491675d5b4973b4f08dccf7f016f69c8cedb",
+  "final_branch_ref": "refs/heads/antiquities-niese-proem-recovery",
+  "final_branch_receipt": "C:\\workspace\\Antiquities-Niese-Proem-Recovery-runtime-20261010\\FINAL_BRANCH_RECEIPT.json",
+  "history_reconstructed": false,
+  "production_files": [
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\js\\renderTei.js",
+      "bytes": 136863,
+      "sha256": "665f31b0a5cfe668692490c1c1ffece09097ca4cfa69ff0e516e862e56ce2d72"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\Latin\\preface.xml",
+      "bytes": 9646,
+      "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\niese\\preface.json",
+      "bytes": 8086,
+      "sha256": "0a0e46771df523aad8a3dad9e696ec51bbe5cd9da084ec81eed0a20aeb6b2e18"
+    }
+  ],
+  "gates": {
+    "Proem": {
+      "full_selections": 26,
+      "plain_selections": 26,
+      "direct_reload_previous_next_history": 26,
+      "stale_pane_sequence": [
+        25,
+        26,
+        25,
+        26
+      ],
+      "plain_stale_pane_sequence": [
+        25,
+        26,
+        25,
+        26
+      ],
+      "Greek_Latin_present": 26,
+      "Latin_unavailable": 0,
+      "Latin_inherited_starts": 4,
+      "Latin_added_starts": 22,
+      "exclusive_Latin_end": 1,
+      "Greek_added_markers": 0,
+      "English_context_paragraphs": 4,
+      "whole_paratext_separate": true,
+      "Book_I_transition": 27,
+      "Book_I_population": 320
+    },
+    "prior_identity_replay": {
+      "status": "PASS",
+      "fresh": true,
+      "selections": 7350,
+      "books": 20,
+      "cached_rows": 0,
+      "content_notes_sourceIDs_endpoints_DOM": "exact immutable baseline match",
+      "zero_duplicate_selection_IDs": true,
+      "XX_containing_views": 135
+    },
+    "XI": {
+      "status": "PASS",
+      "selections": 347,
+      "ranges": 9,
+      "containing_views": 120,
+      "navigation_cases": 22,
+      "assembly_312_326_342": "PASS",
+      "two_distinct_BJ_IV_105_attachments": "PASS",
+      "transposition_Book_Alignment_witness_order": "PASS"
+    },
+    "containing_crosswork": {
+      "status": "PASS",
+      "preserved_final_production_PASS": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\PRESERVED_CONTAINING_CROSSWORK_PASS.json",
+      "byte_equivalent_reader_inputs": 256,
+      "DEH_build_cache_timestamp_keys_normalized": 2,
+      "fresh_focused_controls": 11,
+      "Lodge_Whiston_switching": "PASS"
+    },
+    "preservation": {
+      "Greek_English_unchanged": true,
+      "Latin_exact_marker_reversal": true,
+      "Latin_baseline_sha256": "0c4719d6e120ec414fa75076f471d86aa5af9a11bb810299399118992fa897e8",
+      "narrative_reconstruction": 26,
+      "unrelated_production_unchanged": true,
+      "generic_pane_child_snapshot_fix_preserved": true
+    }
+  },
+  "partial_correspondence_notes": {
+    "25": {
+      "start": "Volentius autem",
+      "end": "Quod ego nunc quidem",
+      "qualification": "The future-treatise promise is not independently identifiable in the present Bamberg transcription. The surviving opening “Quod ego nunc quidem” is retained."
+    },
+    "26": {
+      "start": "adrerum narrationem",
+      "qualification": "The present Bamberg transcription has no separately identifiable equivalent of the Greek opening verb or final transition formula; its surviving narrative text is retained."
+    }
+  },
+  "local_identity_population": 7376,
+  "source_review_reopened": false,
+  "reports": [
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\RECOVERY_BASELINE.json",
+      "bytes": 6383,
+      "sha256": "587b0f5b91d873a931708dcbba38c60b647f2c6763e0920d802bf6b38f183ae4"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\METADATA_RECONCILIATION.json",
+      "bytes": 1202,
+      "sha256": "791089dd19f9ab9f954eaeb76a8a71b77c595ab59b11ebdc763616d241123c14"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\BYTE_CERTIFICATION.json",
+      "bytes": 2805,
+      "sha256": "9fb60d25fd18bdc652983cd3c492c9d71c8762f7a063e63af7ad68fbb0ee6cef"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\PRODUCTION_PRESERVATION.json",
+      "bytes": 74220,
+      "sha256": "9db3b2e554d61845989441d9d3065ee7766de4bf64eaba672b61f4b2ab5d352b"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\RECONSTRUCTION_QA.json",
+      "bytes": 564,
+      "sha256": "5eaa53691aeac1c186b16bbb6a445961c02edb0e277b0cb1da2904cb28ca175d"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\FINAL_BYTE_HASHES.json",
+      "bytes": 11681,
+      "sha256": "58182824e27eccaf8a991b9512e3f5de6a79f7fe4d7895ae6015a23ebac692fa"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\PROEM_BROWSER_QA.json",
+      "bytes": 17156,
+      "sha256": "9eed43ab8a52e881ca4c1508228b76dc716fed511db44ae68f75385771fbdea2"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\PLAIN_READER_QA.json",
+      "bytes": 9420,
+      "sha256": "ed39e301a26a0376d7b94c7d2f35a924d35b30ef2b58647bbbdde335d9447150"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\PLAIN_FINAL_CONTROLS.json",
+      "bytes": 2562,
+      "sha256": "ad422ade53a87c94b94045ec27a986e9d7cc7d14524967759ddde00b2dedbde6"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\READER_XI_RESULTS.json",
+      "bytes": 202669,
+      "sha256": "350e0867d1e23e157230f4558449f6ea62098a452b7b385bd703572b66eff388"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\FINAL_PROTECTED_BROWSER.json",
+      "bytes": 6019,
+      "sha256": "d1ff3bc4b8de5ecbad8b56860be873ae76863af020ea1173ef6587bf829e7e13"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\CONTAINING_CROSSWORK_EQUIVALENCE.json",
+      "bytes": 2149,
+      "sha256": "b65293af1a5910d00631cb4be07ebd765dd8d3ac3275349df971bd4ebb3219bd"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\PRESERVED_CONTAINING_CROSSWORK_PASS.json",
+      "bytes": 13384,
+      "sha256": "8e4c80afecee51b099c26f9ac1b0fba5d79c6eddc404e785d254ab028a04b82d"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\FRESH_FOCUSED_CONTROLS.json",
+      "bytes": 3344,
+      "sha256": "a759a669eeb8fa7c8fa1fd937e337b4a3c707bb7feac04e82f779f69ebdc3066"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\VISUAL_QA.json",
+      "bytes": 1829,
+      "sha256": "5dacf5a1ce6b851f2a60bc35b590047b632c86e920f3c4ad755e5bc79c38e386"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\BUILD_CONTEXT.json",
+      "bytes": 615,
+      "sha256": "7b9f12f5b315ecb273e6810d89e4d418939537d45128dad039883c3aa9246de2"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\BUILD_ASSET_MANIFEST.json",
+      "bytes": 42270,
+      "sha256": "1ce1eb0901115f2afd1b64b619811b63a1c05126e9e6777956f1855a56673453"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\CERTIFICATION_MANIFEST.json",
+      "bytes": 9843,
+      "sha256": "ad63b3d74e0babd38815733070f026e7bd8d63f1d4bd21801922d0c411746455"
+    }
+  ],
+  "new_blockers": [],
+  "integration": {
+    "canonical_merge": false,
+    "push": false,
+    "public_preview_publication": false,
+    "domains_changed": false
+  }
+}

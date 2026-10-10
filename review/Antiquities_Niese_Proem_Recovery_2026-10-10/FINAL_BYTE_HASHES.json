@@ -1,0 +1,255 @@
+{
+  "status": "PASS",
+  "production_commit": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+  "production_files": [
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\js\\renderTei.js",
+      "bytes": 136863,
+      "sha256": "665f31b0a5cfe668692490c1c1ffece09097ca4cfa69ff0e516e862e56ce2d72"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\Latin\\preface.xml",
+      "bytes": 9646,
+      "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015"
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\niese\\preface.json",
+      "bytes": 8086,
+      "sha256": "0a0e46771df523aad8a3dad9e696ec51bbe5cd9da084ec81eed0a20aeb6b2e18"
+    }
+  ],
+  "source_originals": {
+    "Greek": {
+      "status": "PASS",
+      "original_sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+      "production": {
+        "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\Greek\\preface.xml",
+        "sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+        "bytes": 14735,
+        "CRLF": 0,
+        "LF_without_CR": 14,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "reversed_sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+      "exact_byte_reversal": true,
+      "unchanged": true
+    },
+    "Latin": {
+      "status": "PASS",
+      "original_sha256": "0c4719d6e120ec414fa75076f471d86aa5af9a11bb810299399118992fa897e8",
+      "production": {
+        "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\Latin\\preface.xml",
+        "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+        "bytes": 9646,
+        "CRLF": 0,
+        "LF_without_CR": 31,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "reversed_sha256": "0c4719d6e120ec414fa75076f471d86aa5af9a11bb810299399118992fa897e8",
+      "exact_byte_reversal": true,
+      "unchanged": false
+    },
+    "English": {
+      "status": "PASS",
+      "original_sha256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+      "production": {
+        "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\assets\\xml\\antiquities\\English\\preface.xml",
+        "sha256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+        "bytes": 9976,
+        "CRLF": 0,
+        "LF_without_CR": 15,
+        "encoding": "UTF-8",
+        "BOM": false
+      },
+      "reversed_sha256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+      "exact_byte_reversal": true,
+      "unchanged": true
+    }
+  },
+  "expected_intervals": [
+    {
+      "number": 1,
+      "Latin": "92ddfd9e503783a8a426c162c73e7000f25ee964e71508deed10e42ec102660b",
+      "Greek": "8095a31106b94d84d210c45fbf1b87cead57fb4ebbd5c16ae158af6bd1068c97",
+      "English_context_target": "english-preface-num1",
+      "English": "7d806e09dffea979607b92cc154c0de5d2293390b4db67be657895854a4a973a"
+    },
+    {
+      "number": 2,
+      "Latin": "5a71b01f72b39d397d68ef76be99431be037b5a4482799d613294a82addf41af",
+      "Greek": "2aafd68ca68d6b9c9c329f6942fcb481ae39a4e6b946922cc8b198059d66317d",
+      "English_context_target": "english-preface-num1",
+      "English": "7d806e09dffea979607b92cc154c0de5d2293390b4db67be657895854a4a973a"
+    },
+    {
+      "number": 3,
+      "Latin": "745efc9c70188349b4f83b1b36ad23012c871d9a75bc9cdf0d37f4587f0470c3",
+      "Greek": "06adf7d0f84c89eb46eef4c02798e24affcce61dbb86446f5ccbbb6dfb1b2380",
+      "English_context_target": "english-preface-num1",
+      "English": "7d806e09dffea979607b92cc154c0de5d2293390b4db67be657895854a4a973a"
+    },
+    {
+      "number": 4,
+      "Latin": "5d6f2d8bccbb3019fa5492cb8186dbd8391fa24198fc5eb0b357276460f7af0c",
+      "Greek": "02ed9d0aea6b6391da8563982086c734918445823338983464b17cd164435273",
+      "English_context_target": "english-preface-num1",
+      "English": "7d806e09dffea979607b92cc154c0de5d2293390b4db67be657895854a4a973a"
+    },
+    {
+      "number": 5,
+      "Latin": "16f9d28c935ed91d72e15cbb7587f703e90c5ee208d156d3291a562e1855f7b9",
+      "Greek": "b48185ed16757da454142a448bd623344e4e281bcba299b63ee314e6caa522c2",
+      "English_context_target": "english-preface-num5",
+      "English": "f94bb0c8503a0b931808f705627fb302034977033cd500b79f4086133aa2ca3a"
+    },
+    {
+      "number": 6,
+      "Latin": "cf04ff3e593a3bd51ace8746b5c72bccb466e82237fa194722b2d4663b028dca",
+      "Greek": "f2463d2ca00bdd97c69db490f8f4adafd9bc1900019b7f005971492330c74691",
+      "English_context_target": "english-preface-num5",
+      "English": "f94bb0c8503a0b931808f705627fb302034977033cd500b79f4086133aa2ca3a"
+    },
+    {
+      "number": 7,
+      "Latin": "628b32f9183ec2add41f6567fa54545ddea2c4a4f168abd2b7f1c6fe08325591",
+      "Greek": "c268e3852416b5234a75a9d87a67070f10bee28bc88f12bdddad818d13d2a3dd",
+      "English_context_target": "english-preface-num5",
+      "English": "f94bb0c8503a0b931808f705627fb302034977033cd500b79f4086133aa2ca3a"
+    },
+    {
+      "number": 8,
+      "Latin": "64ae35e199c2c6456bd0c9dc75d7d33a9c4ada7ce0b961da4fa8fb9c582ae71e",
+      "Greek": "e12e21e5e5108245e1b20780d7ae1902eba25b08bfb24fef8e558536e3f6e277",
+      "English_context_target": "english-preface-num5",
+      "English": "f94bb0c8503a0b931808f705627fb302034977033cd500b79f4086133aa2ca3a"
+    },
+    {
+      "number": 9,
+      "Latin": "31b45b42054159ea16f3dbb46c02ce53d6fe2871d542616d10f65dc9243904ee",
+      "Greek": "ee9f9dee893293eecbf8358c1bb064b29c17996e93334b76f703f87193b8aed5",
+      "English_context_target": "english-preface-num5",
+      "English": "f94bb0c8503a0b931808f705627fb302034977033cd500b79f4086133aa2ca3a"
+    },
+    {
+      "number": 10,
+      "Latin": "68a19b13d2053018a32f42669172aa220c8163a990ee7e95b3b08626bce8cc03",
+      "Greek": "6aab0cf86c3e546aa82c3061478558f40d35840cf9fb3cdd04aa2d08bc8ad6f8",
+      "English_context_target": "english-preface-num10",
+      "English": "506c3ea440930e69479dac94675093062d72bf2bb7ac202e07ea1cb85195b564"
+    },
+    {
+      "number": 11,
+      "Latin": "c7e00b2bdbe4d16097703e26bb0cf4187cf3d8292915db36449cb7485fd059ec",
+      "Greek": "8522f7b13ab1c248f3eb13597f664a01ad68a4b06eadf27ceb85e6ae2261cbc0",
+      "English_context_target": "english-preface-num10",
+      "English": "506c3ea440930e69479dac94675093062d72bf2bb7ac202e07ea1cb85195b564"
+    },
+    {
+      "number": 12,
+      "Latin": "ec6a585a1a91bbe9783db94d1af3c8540e47c5ece6ab0f7f6c05c1e7323811d2",
+      "Greek": "e35067e860ebd3bab8bcaca21a7d5b857302dababb0365fa489b6a0837af2b9a",
+      "English_context_target": "english-preface-num10",
+      "English": "506c3ea440930e69479dac94675093062d72bf2bb7ac202e07ea1cb85195b564"
+    },
+    {
+      "number": 13,
+      "Latin": "8ea0fc73ab5a09a7ef054e936a66b9056548ddd7b6be26e69354bc74a0a5676c",
+      "Greek": "9bf5b68b0e846b08b0908b2f5a74693dc245a4db784b3d3d3978c943698fe236",
+      "English_context_target": "english-preface-num10",
+      "English": "506c3ea440930e69479dac94675093062d72bf2bb7ac202e07ea1cb85195b564"
+    },
+    {
+      "number": 14,
+      "Latin": "6c8654698092aa5910c895cec68d5544bd7b6788f4e882a744e21593555d3500",
+      "Greek": "02b3f8a5c9fbfe3bb1d99769119350baccbe3f819c4cfa59327526da57051dc7",
+      "English_context_target": "english-preface-num10",
+      "English": "506c3ea440930e69479dac94675093062d72bf2bb7ac202e07ea1cb85195b564"
+    },
+    {
+      "number": 15,
+      "Latin": "1cbd0a80fbfc876f2b46769560ed1c4b41af57b3a6ac9657d7d5e8d1483dcd10",
+      "Greek": "913e57b49b5d93d0a432a570708b615c63452ab8377d9ec88d88756f3f036849",
+      "English_context_target": "english-preface-num10",
+      "English": "506c3ea440930e69479dac94675093062d72bf2bb7ac202e07ea1cb85195b564"
+    },
+    {
+      "number": 16,
+      "Latin": "b3001d0b31638c63c8691ed4933db48d53d5fbc5c32fb632496d7fee8635e0dc",
+      "Greek": "417b4151a5bf430591214341d6ee6b1093c0bb3df49c00a43c8454eabb5915d9",
+      "English_context_target": "english-preface-num10",
+      "English": "506c3ea440930e69479dac94675093062d72bf2bb7ac202e07ea1cb85195b564"
+    },
+    {
+      "number": 17,
+      "Latin": "fcfe999070f759c1620025ca649ac715a7dca8a95a55fce7ce1574ba2b4ff179",
+      "Greek": "59826388214851db19d10dd46e107ac8cdb9639113d77fe269fcc81f07498271",
+      "English_context_target": "english-preface-num10",
+      "English": "506c3ea440930e69479dac94675093062d72bf2bb7ac202e07ea1cb85195b564"
+    },
+    {
+      "number": 18,
+      "Latin": "1e410113fffd59663e60a91371897e55ed963fec035790d3ed951403cfffd5ff",
+      "Greek": "acf410be33f320d00bfa1f12fe2a60097b47572bcf93aae7a483d92d0491ad26",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    },
+    {
+      "number": 19,
+      "Latin": "9f05c322e3f30dc237e65994096c29de40db60bc4c7a42e5e3b642c3e4f70464",
+      "Greek": "6e0e9b0f0d81d3e7130d7cec881e89c0c1a59c598165716bb15eac6918679f6e",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    },
+    {
+      "number": 20,
+      "Latin": "a96255733565d0c3c7900c937c4b84ab7c45886fc1011108530d8b8b4684a601",
+      "Greek": "569a337eb4f525599c08b5c9b7fed98336030ed5cca217b1ef100af2c469d805",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    },
+    {
+      "number": 21,
+      "Latin": "4bcf8cdc905943863446d5cec92d54605fe606dbf56c8477f4c5a4d2681f65bd",
+      "Greek": "ab5d7afc02eda7342999ac372c18e48d6b88f318796ebdd8425034bb8063cab6",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    },
+    {
+      "number": 22,
+      "Latin": "624b554355e50e622bf33bae71067617731a8710e19ccb74ca0c8429207abb8a",
+      "Greek": "59bd2ddd067db8863cd913756a4db970a605c0a9d35d8a458882606a2f989387",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    },
+    {
+      "number": 23,
+      "Latin": "f9fa73889d45fc52ce764bea97355a52c0adacefe9b89e8bb7c06cfc05430608",
+      "Greek": "c50533d1acb7141dec37d63cd0b39b6fdd8c4b4228b4469fd9dad4481cc5e7b2",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    },
+    {
+      "number": 24,
+      "Latin": "d5fe7c8acf8ca296431bf98118891d464d610b498a6235bcb4c1f51ac5db18a2",
+      "Greek": "a84398c3712938c2a0af9136ca100505c83377d410fbb2387af5f0978d36684d",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    },
+    {
+      "number": 25,
+      "Latin": "b55a0e64d9e6d5482b04080e9843674d91599013a3fdc9ca71d1030ff41b23d2",
+      "Greek": "447799918aaac6d8e6bdbe59cf382687569637e2ade29992ec11602f35b1c619",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    },
+    {
+      "number": 26,
+      "Latin": "4dac8070b57782e9c7483770d4a3a5c7ef15bcd4eba31568615cebf474f2feea",
+      "Greek": "77c931c5975d3519b77bc9d5db1105995e91c86db1519b48814dba6ec18b9e99",
+      "English_context_target": "english-preface-num18",
+      "English": "dc9b59aae989ea214cb57e9074df2301fbb5751479ae534845b497adffc29aea"
+    }
+  ]
+}

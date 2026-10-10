@@ -1,0 +1,22 @@
+{
+  "status": "RESOLVED",
+  "attempts": [
+    {
+      "file": "BASELINE_BUILD_SANDBOX_ATTEMPT.json",
+      "cause": "Sandbox denied the installed Ruby runtime (0xC0000022); authorized disposable build retried outside sandbox, success."
+    },
+    {
+      "file": "CANDIDATE_BUILD_SANDBOX_ATTEMPT.json",
+      "cause": "Same runtime restriction; successful local retry."
+    },
+    {
+      "file": "history/first-browser-attempt/STRUCTURAL_HARNESS_INITIAL_RESULT.json",
+      "cause": "Contents-fallback comparison did not remove newly authorized Proem markers; added the same explicit marker reversal already used for whole/structural views. No production change."
+    },
+    {
+      "file": "history/first-browser-attempt/PROEM_HARNESS_CONTROL_MODE_RESULT.json",
+      "cause": "After returning to whole Proem, test tried the hidden Niese selector without first choosing Niese mode; corrected to use actual visible control. No production change."
+    }
+  ],
+  "production_repair": "QA_REPAIR_HISTORY.json; one-line pane child snapshot; corrected committed build rerun in full"
+}

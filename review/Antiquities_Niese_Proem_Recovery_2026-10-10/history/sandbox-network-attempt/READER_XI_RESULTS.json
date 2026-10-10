@@ -1,0 +1,24 @@
+{
+  "started": "2026-10-10T19:58:19.393Z",
+  "build": {
+    "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+    "commit": "a3ca656151f1170a099f4f143f70feb1118dbfd1",
+    "production_commit": "4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb",
+    "baseline_site": "C:\\workspace\\Antiquities-Niese-Proem-Recovery-runtime-20261010\\baseline-site",
+    "site": "C:\\workspace\\Antiquities-Niese-Proem-Recovery-runtime-20261010\\candidate-site",
+    "root": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery",
+    "receipt": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_Recovery_2026-10-10\\CANDIDATE_BUILD.json"
+  },
+  "scope": "Actual fresh built Book XI reader; every selector and all containing views",
+  "selectors": [],
+  "ranges": [],
+  "containing": [],
+  "navigation": [],
+  "errors": [
+    "http://127.0.0.1:63887/antiquities/?book=11&niese=1:net::ERR_NETWORK_ACCESS_DENIED"
+  ],
+  "result": "FAIL",
+  "failure": "Error: page.goto: net::ERR_NETWORK_ACCESS_DENIED at http://127.0.0.1:63887/antiquities/?book=11&niese=1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:63887/antiquities/?book=11&niese=1\", waiting until \"load\"\u001b[22m\n",
+  "origin": "http://127.0.0.1:63887",
+  "finished": "2026-10-10T19:58:20.003Z"
+}

@@ -1,0 +1,83 @@
+{
+  "original": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-recovery\\review\\Antiquities_Niese_Proem_2026-10-10\\QA_HARNESS_PROVENANCE.json",
+  "adapters": [
+    {
+      "file": "prepare.py",
+      "original_sha256": "7a1e98103e621bedcf7b1fd350eb305026adda87ae1866323d281312971f61f3",
+      "adapter_sha256": "6a5993455fbbe40e691ef455323b03faf78a508852f81fa39d67bc835d14bde3",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "review_sources.py",
+      "original_sha256": "6637b820708ef6fc17da88b41a1089d476222627828257f0b9eb327c197eedff",
+      "adapter_sha256": "6637b820708ef6fc17da88b41a1089d476222627828257f0b9eb327c197eedff",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "verify_bytes.py",
+      "original_sha256": "febd0b35dfdd7e06577ac57169e49af4fac8ea040ab890261a45d9507934a9e2",
+      "adapter_sha256": "febd0b35dfdd7e06577ac57169e49af4fac8ea040ab890261a45d9507934a9e2",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "build.py",
+      "original_sha256": "42fabeea8e1740d12be1577f28a19d6409b68980bdb45797b79e1d12a0fa7f1c",
+      "adapter_sha256": "42fabeea8e1740d12be1577f28a19d6409b68980bdb45797b79e1d12a0fa7f1c",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "browser_common.cjs",
+      "original_sha256": "58111320b82935677c6a7270bcc94497fda6beb605e7bb25aec96a1fa85a17d5",
+      "adapter_sha256": "8a0fd9b966d5b0da2c9c18e6352d4d14f9d01b1937b03729ecb11cbbfa45037d",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "qa-common18.cjs",
+      "original_sha256": "45681512a718a30765979ecf7b2a610f1d9b10cf0d259b07517d89d6939a859c",
+      "adapter_sha256": "ee1ccad600e22812c01d70cea51e19ea4fd3f5f4978d9fe078f42011a00938f7",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "proem_browser.cjs",
+      "original_sha256": "288ea0d35cdea0a3c3d60da806d64009c2d57514293580ca8ba1bf484989bec5",
+      "adapter_sha256": "bbaa2f58993ac5d65270a3ccaa129ef9e4d8dd9661c5875977b2ae0fed98101a",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "plain_browser.cjs",
+      "original_sha256": "6faee2eaf4a0b59f3b5bdba7d66e346c87953a6f4a3eada7f7b815a44dde4380",
+      "adapter_sha256": "541d643e9778aa73b4da2027f974aa7d87ced177176c846bdc2fea4f17550350",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "protected_browser.cjs",
+      "original_sha256": "ff701c23f168eb098df6f9d7075ea1a4931e2f18893623ae1fe63c267546e046",
+      "adapter_sha256": "085683af6f77f7bd4599d6bd9bcec5493899e2d20b63bb88442ed1d3332284fb",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "reader-xi.cjs",
+      "original_sha256": "9c79d45dee9f057e23226dc549c9ee9d9add8000046458e568d8f90f63a2b0a1",
+      "adapter_sha256": "9c79d45dee9f057e23226dc549c9ee9d9add8000046458e568d8f90f63a2b0a1",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    },
+    {
+      "file": "reader-structure-crosswork.cjs",
+      "original_sha256": "c9270318708538105dea5930279ea7b32a78705bfa839c517747a12733f214e2",
+      "adapter_sha256": "c9270318708538105dea5930279ea7b32a78705bfa839c517747a12733f214e2",
+      "changes": "isolated runtime; Proem ports 8926/8928; baseline port 8927"
+    }
+  ],
+  "production_edits": false,
+  "source_review_rerun": false,
+  "recovery_changes": [
+    "protected report uses ignored full evidence file, saves progress every 100 selections, all baseline comparisons unchanged",
+    "Proem adds explicit 25-26-25-26 sequence with full extent and duplicate-ID checks"
+  ],
+  "additional_recovery_controls": [
+    "focused_controls.cjs: read-only DEH/Bellum structural comparison adapted from preserved reader-structure-crosswork.cjs; no selection count substituted for exhaustive replay",
+    "plain_final_controls.cjs: no instrumentation, whole-Proem div paratext and exact 25-26-25-26 sequence"
+  ],
+  "resolved_environment_attempt": "history/sandbox-network-attempt: sandbox denied localhost; successful authorized external retry",
+  "resolved_query_attempt": "history/paratext-query-attempt: scoped narrative paratext query to tei-div1, excluding empty TEI header paragraph; no production changes"
+}
