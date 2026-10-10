@@ -123,7 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
         12: "assets/xml/antiquities/niese/book-12.json",
         13: "assets/xml/antiquities/niese/book-13.json",
         14: "assets/xml/antiquities/niese/book-14.json",
-        15: "assets/xml/antiquities/niese/book-15.json"
+        15: "assets/xml/antiquities/niese/book-15.json",
+        20: "assets/xml/antiquities/niese/book-20.json"
       },
       nieseRanges: {
         1: [27, 346],
@@ -2079,7 +2080,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // An explicit narrative end can precede a preserved book subscription.
     const terminal = language === "Latin"
       ? data.querySelector('tei-milestone[unit="niese-end"]') : null;
-    const end = entries[index + 1] || (terminal ? {node: terminal, kind: "end"} : null);
+    // A source-qualified exclusive end can leave intervening source-only text
+    // in containing views without assigning it to an adjacent citation.
+    const endTarget = identity?.[language]?.endTarget;
+    const registeredEnd = endTarget ? data.querySelector(`[id="${endTarget}"]`) : null;
+    if (endTarget && !registeredEnd) throw new Error("The registered Niese end has no current target.");
+    const end = registeredEnd ? {node: registeredEnd, kind: "end"}
+      : entries[index + 1] || (terminal ? {node: terminal, kind: "end"} : null);
     const book = start.node.closest("tei-div1") || data.querySelector("tei-div1") || data;
     const wrapper = document.createElement("tei-div2");
     wrapper.setAttribute("type", "niese-section");
