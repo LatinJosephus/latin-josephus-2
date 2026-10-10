@@ -1,0 +1,736 @@
+{
+  "baseline": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "certified_production_commit": "adf0de9a9c6c9168c38d2fffaf0b42a9cda49820",
+  "scope": "4 production files plus this review packet only",
+  "self_hash_excluded": true,
+  "files": [
+    {
+      "relative": "assets/css/tei.css",
+      "role": "production",
+      "bytes": 4714,
+      "sha256": "7df2b7e0267ef23d812590e57feb79390beb5b95daf30949ae0dd5027146d4a7",
+      "baseline_git_blob_oid": "578a791a2429b11f0f0776d90b0f15cc729d879f",
+      "baseline_working_sha256": "07c4d8b124e375ec85b9ada9c16dc02cb2d1679315267b744474a9cf5f6cad4a"
+    },
+    {
+      "relative": "assets/js/renderTei.js",
+      "role": "production",
+      "bytes": 133443,
+      "sha256": "a27952bf9c01084d6dcdaf8d05d3928dce0b25c6ab914af98b78a80eea4e7459",
+      "baseline_git_blob_oid": "4f43300cb8c98264aff0be842ea70e8c2a9c7db6",
+      "baseline_working_sha256": "bff7640c318f49701ddaaa935b1ded99632f389da09391dd84f8f92bff7e8f0a"
+    },
+    {
+      "relative": "assets/xml/antiquities/Latin/book-11.xml",
+      "role": "production",
+      "bytes": 117001,
+      "sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "baseline_git_blob_oid": "c50334d6051e41280b8368d186ad55279059104b",
+      "baseline_working_sha256": "5595739cd16e6d87357b25ae114f1a22b1fc70066eb532b465d401b84414464f"
+    },
+    {
+      "relative": "assets/xml/antiquities/niese/book-11.json",
+      "role": "production",
+      "bytes": 528008,
+      "sha256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/ALL_BASE_FILES.json",
+      "role": "review evidence",
+      "bytes": 1318001,
+      "sha256": "6f90c4dfb1802bf8573e1b3b67cedbbf49659c8f8996ee30f1b87231e97dccc8",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/AUTHORIZED_ADDITIONS.json",
+      "role": "review evidence",
+      "bytes": 58501,
+      "sha256": "7478d2177d4d592767b68ac1f41e65c06022617e28ebd4262fee31b967727386",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/BASELINE.json",
+      "role": "review evidence",
+      "bytes": 166050,
+      "sha256": "0b9cfed7b6d34c005f3d0431a8bd51e6bdef002a325d4bf9b40ca6e522e63319",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/BUILD_CONTEXT.json",
+      "role": "review evidence",
+      "bytes": 594,
+      "sha256": "8d46a4d5cd30359cdcbd13319813143d8fa4b6a8ec9537c7bee675360e0ef27e",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/BUILD_INPUT_MANIFEST.json",
+      "role": "review evidence",
+      "bytes": 53101,
+      "sha256": "8881a44317d8b72c303ff89d5d60b04928d4446cc59e73cbd76f1bac48b0cdb0",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/BUILD_RECEIPT.json",
+      "role": "review evidence",
+      "bytes": 44806,
+      "sha256": "e35c0d752f9205c878e25a4ee055d3f6ef8412f1ed21f37f8070c31caf5c07e0",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/CANDIDATE_REGISTER.json",
+      "role": "review evidence",
+      "bytes": 1497440,
+      "sha256": "c329b6a82d7b6163f75e5e267df6f7bfe959f5209178a25208354b210065afeb",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/CANONICAL_OBSERVATIONS.json",
+      "role": "review evidence",
+      "bytes": 333,
+      "sha256": "e409fe98d6233f81d4fc291c45154b4c1766b4947fe5c277e18229b05cf91790",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/CERTIFICATION.json",
+      "role": "review evidence",
+      "bytes": 6409,
+      "sha256": "b5af21868d81474b4a981e2ecc4562aac98e9c71bdc49237b01be8baf84ab43d",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/DECISION_HISTORY.json",
+      "role": "review evidence",
+      "bytes": 1508,
+      "sha256": "053d1c323aaad7f1e0779189dc3d2460182fc3ed44d3abeaedf764a8587b105d",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/EDIT_PLAN.json",
+      "role": "review evidence",
+      "bytes": 978,
+      "sha256": "19e6b1c079587d4cf3e6d604bad07c58b16e53585544272f1e5b28ff9389b5fe",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/ENGLISH_CENSUS.json",
+      "role": "review evidence",
+      "bytes": 15757,
+      "sha256": "d06f3552b81f2355d910cc8b41c085b57079383ff5ad10ea54edc82fc2474be4",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/ENGLISH_TEXT_NODE_LEDGER.json",
+      "role": "review evidence",
+      "bytes": 2128072,
+      "sha256": "2c661a347f67ef21bddf4bb0207f4df821410249f48b44ca68c16fef5367e1c0",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/EXPECTED_SELECTIONS.json",
+      "role": "review evidence",
+      "bytes": 1325448,
+      "sha256": "6c54031fc0c9809cac1ce3757d3515c45046239a50f5c9281a197723425d1367",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/GREEK_CENSUS.json",
+      "role": "review evidence",
+      "bytes": 83933,
+      "sha256": "8f594bf5d61d4143e8690a214e2867e7d3f2b1bbd2126f46a75d79a653384b01",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/GREEK_OUTPUT_LOCATORS.json",
+      "role": "review evidence",
+      "bytes": 894681,
+      "sha256": "977359ab80a763b9dc15a5e716e7c8d701bfcce5d20f4d2ad6f2a18c3967da4c",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/GREEK_PHYSICAL_COVERAGE.json",
+      "role": "review evidence",
+      "bytes": 1219500,
+      "sha256": "582dd850f2f113a86089386d8035ec070f0afd7529099d3e3a3fb6a6dd50089d",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/GREEK_TEXT_NODE_LEDGER.json",
+      "role": "review evidence",
+      "bytes": 2033560,
+      "sha256": "737e070af26a64d6162e200d25322891cf79f2735ad48072f1edb76b023c9ac2",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/IDENTITY_REGISTER.json",
+      "role": "review evidence",
+      "bytes": 2792323,
+      "sha256": "c44293b18c11abd7ab074d6d8dda637778bc9b84fb20ac2525f5b210859b6f63",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/INTERPOLATION_DECISION.json",
+      "role": "review evidence",
+      "bytes": 30301,
+      "sha256": "a186c2e55060ec3ad7c253128de4480ac19f3560365ebbbfab6b7e98a01ae87a",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/INTERPOLATION_DECISION.md",
+      "role": "review evidence",
+      "bytes": 3300,
+      "sha256": "7e661d23197d31bc5a2422ca278dc23cd80f823a1bbeb27d2b73652a9b986f5d",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/LATIN_CENSUS.json",
+      "role": "review evidence",
+      "bytes": 27498,
+      "sha256": "d1a6ead507fc81431c1d366c6979a0c5a9938ae01aae98ea00786011bdbb38fb",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/LATIN_OUTPUT_LOCATORS.json",
+      "role": "review evidence",
+      "bytes": 706653,
+      "sha256": "c7d411558eca2df89ca681041610ba0a8d33aad206e4fbf6725dcb4928edbd69",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/LATIN_PHYSICAL_COVERAGE.json",
+      "role": "review evidence",
+      "bytes": 1091317,
+      "sha256": "85823ebdc3cc6389191d04a641e6faf4517f3e2900ae2e0ebe8a4f68d06613e3",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/LATIN_TEXT_NODE_LEDGER.json",
+      "role": "review evidence",
+      "bytes": 1636271,
+      "sha256": "26165083a855f5dac7b648a78b6613d4531d3cc61de28476313464b4a52b26bd",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/MODEL_EXPECTED_INTERVALS.json",
+      "role": "review evidence",
+      "bytes": 138020,
+      "sha256": "f91cb0da0160343b79f71659a25ffe4b9385806e7a44f655a4d3e81e65011047",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/MODEL_IDENTITY_REGISTRY.json",
+      "role": "review evidence",
+      "bytes": 340507,
+      "sha256": "9ae01256888239460100a16d877149a2fbee763965cbc198262f33cc98a647ca",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/MODEL_MARKER_ADDITIONS.json",
+      "role": "review evidence",
+      "bytes": 1532,
+      "sha256": "63971ebd1281c947560cf2f5d98cbdc73f855f2bfbea3285b08c62764eaa6a54",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/MODEL_READER_RESULTS.json",
+      "role": "review evidence",
+      "bytes": 13685,
+      "sha256": "de936eaa8600d1f4e0b6558f067bff0310b3318a0a7f98f6a08fbba791831b96",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/MODEL_SOURCE_PROOF.json",
+      "role": "review evidence",
+      "bytes": 377,
+      "sha256": "6d0399fe108992a31369c2e5c623f601ff6dec4fa1e03368f7205e3ec014e975",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/PHYSICAL_ORDER.json",
+      "role": "review evidence",
+      "bytes": 60513,
+      "sha256": "0d46611024ce721eae6ddf14b5bd29d0d9f04ca4bfcdcdf628355f443f24f83f",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/PRINTED_SOURCES.json",
+      "role": "review evidence",
+      "bytes": 3022,
+      "sha256": "ddaa3da5ba2b92dbb82fea7ef9a5ffd7ac9a8c9a2cf39555492ecbed782be361",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/PRINT_IMAGE_MANIFEST.json",
+      "role": "review evidence",
+      "bytes": 25541,
+      "sha256": "6b003f5557e6207c259f0ba9173a67b2d6959b7b9ccf9227936643ae1590f03c",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/PRINT_OBSERVATIONS.json",
+      "role": "review evidence",
+      "bytes": 26023,
+      "sha256": "82f7a269b8c100a25eb0ee0247002bc8dffee41e431d47ea210db2287c618c57",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/READER_CONTAINING_RESULTS.json",
+      "role": "review evidence",
+      "bytes": 41108,
+      "sha256": "7acff663389555917d6e93257098cd197529a5d21420d35432cff6c56c97d422",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/READER_EXTRA_RESULTS.json",
+      "role": "review evidence",
+      "bytes": 4763,
+      "sha256": "ab3495165b91b097478248a421272f8508e40d10588eb9477c43f04cebaee284",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/READER_FINAL_PRIOR_RESULTS.json",
+      "role": "review evidence",
+      "bytes": 824972,
+      "sha256": "b8a3a5d95b637a98d5d1808f5327cbc04be2ae6f6fea1832a343a2de237f1127",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/READER_PRIOR_RESULTS.json",
+      "role": "review evidence",
+      "bytes": 824350,
+      "sha256": "08b6d9ed933485ba653d9dd6d83df76f5744538efec50d6285364f543bdff411",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/READER_XI_RESULTS.json",
+      "role": "review evidence",
+      "bytes": 202623,
+      "sha256": "deb6627a73eaa815e79740baf3a612f490e184995f486ccb1008673b59c23a08",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/REPORT.md",
+      "role": "review evidence",
+      "bytes": 8050,
+      "sha256": "b813f88c563d101bdb1228b95d5042a4218ffa7520a57ed02e29d6f5d4c249a7",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/SOURCE_AUTHORITY.md",
+      "role": "review evidence",
+      "bytes": 4931,
+      "sha256": "4b70cbe167b7f74544abf10e3525b3380416de629fa402d36def219e161006c4",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/SOURCE_PROOF.json",
+      "role": "review evidence",
+      "bytes": 2337,
+      "sha256": "2c68199140904d8e02020b8aec36fddd421ab081614243702822d185ca937b67",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/TRADITIONAL_EXPECTATIONS.json",
+      "role": "review evidence",
+      "bytes": 1067843,
+      "sha256": "1610512e8e56ad216b421ad6414ee41814242198434d1b72e2cf377560f3fa3c",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/TRANSPOSITION_AND_REVIEW.md",
+      "role": "review evidence",
+      "bytes": 5682,
+      "sha256": "d5307a3b08da461bdd97679ebbd93a664be2acb8d5c13c99f63da5d357eeb05e",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/WINDOW_302_347_PHYSICAL_LEDGER.json",
+      "role": "review evidence",
+      "bytes": 166188,
+      "sha256": "38f8306adba239d8e435646f6c9fcf906351eb09e71ee5a216688705f700193e",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/build.sh",
+      "role": "review evidence",
+      "bytes": 995,
+      "sha256": "becee4769b4f9ed52f9048ed4fef527248cf5c914ff91c3a4c8566b65fd7672c",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/build_receipt.py",
+      "role": "review evidence",
+      "bytes": 1410,
+      "sha256": "0fa85f63f4bde0a6e27b3bc22df90792c85a78b1342b41b69544183431f6e01d",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/close_certification.py",
+      "role": "review evidence",
+      "bytes": 15570,
+      "sha256": "e7b68181a404aa02b252eef7526f340ea4f97dc38220d1b3c833545a20b13d3d",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/finalize_review_metadata.py",
+      "role": "review evidence",
+      "bytes": 4165,
+      "sha256": "488f3a39f73aa7135befbb075661e58dfdcf2429499b6e6000755057ce2a012a",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/freeze_inputs.py",
+      "role": "review evidence",
+      "bytes": 5082,
+      "sha256": "cf2cffcfdac40916f40d51271a5a911c97c103167d437d2aed7b3cc8479d4e24",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/implement_xi.py",
+      "role": "review evidence",
+      "bytes": 11873,
+      "sha256": "4bd3beb1fcd95b6cb3e5fef268e702129a8f5f0914011e6c1627153b11de0076",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/English.xml",
+      "role": "review evidence",
+      "bytes": 115917,
+      "sha256": "2273fecb032b0df11ba3f79857ea8ce59f681ee2a3595583d46ccfee3096f9fc",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/Gemfile",
+      "role": "review evidence",
+      "bytes": 448,
+      "sha256": "aee4bc7bb237f6c63bd743bb3897917297aa5dd8c20f9686f192418527da903d",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/Greek.xml",
+      "role": "review evidence",
+      "bytes": 189963,
+      "sha256": "2aee7fab8664607c0139532ee7d49cc9a6e6ace0e6e4c34346adac42bc0c4f89",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/Latin.xml",
+      "role": "review evidence",
+      "bytes": 99619,
+      "sha256": "5595739cd16e6d87357b25ae114f1a22b1fc70066eb532b465d401b84414464f",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/_config.yml",
+      "role": "review evidence",
+      "bytes": 9711,
+      "sha256": "b1696dacf1edb5796fb43e4224fd8d32b133f9c82333d9248b60dcd93ac4782a",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/_reader-ui.scss",
+      "role": "review evidence",
+      "bytes": 7952,
+      "sha256": "6cd42baefdc71b260eadbccc73498a5aa2b2c20cd4ce163096deb41195a4abe7",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/display-settings.html",
+      "role": "review evidence",
+      "bytes": 7311,
+      "sha256": "56dbc944d350c627562fa0d85d843ee8fe3cb94fe47d7cd17fa019991e6e3315",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/renderTei.js",
+      "role": "review evidence",
+      "bytes": 128312,
+      "sha256": "bff7640c318f49701ddaaa935b1ded99632f389da09391dd84f8f92bff7e8f0a",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/structure.xml",
+      "role": "review evidence",
+      "bytes": 19344315,
+      "sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/tei.css",
+      "role": "review evidence",
+      "bytes": 3864,
+      "sha256": "07c4d8b124e375ec85b9ada9c16dc02cb2d1679315267b744474a9cf5f6cad4a",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/mixed_mapper.py",
+      "role": "review evidence",
+      "bytes": 7446,
+      "sha256": "75e2b5c3b05e7c9570756d6b2cbc926348a771bcb93ed1bdd3649b282b49c601",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/model-reader.cjs",
+      "role": "review evidence",
+      "bytes": 4491,
+      "sha256": "c01fa832523a7e0bd4fc4c76d4de39d093739ba5c38415a02652dec734753541",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/prepare_candidates.py",
+      "role": "review evidence",
+      "bytes": 2673,
+      "sha256": "3544647503d248ae07d9353e9f03a80e2107a96f75d15b481af5e7896038c1db",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/prepare_final_build.py",
+      "role": "review evidence",
+      "bytes": 1479,
+      "sha256": "742d4ac8b0523396dec69e5b6b4b0f1a86ec719a7aeb3a81f747008024ba0c2a",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/prepare_model.py",
+      "role": "review evidence",
+      "bytes": 7372,
+      "sha256": "d433456fce74ae22a4f103a5906c8dc5ec84683f1199f2e0b43f01f8f4dd6d56",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/print_095_101.py",
+      "role": "review evidence",
+      "bytes": 1337,
+      "sha256": "59e1edf3d8530a1a781bc544c9f11547db89fef21139f3bf155f0a16322376c2",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/print_123_133.py",
+      "role": "review evidence",
+      "bytes": 2432,
+      "sha256": "9f709c6cba2f5290f489f8db05254d854f832cce752114d73b963066a91f293f",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/qa-common.cjs",
+      "role": "review evidence",
+      "bytes": 3276,
+      "sha256": "6a673e8672bc6eb7085cb5ef37e95c3dfa2130d45d3b95c178468f375aa4e88c",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/reader-containing.cjs",
+      "role": "review evidence",
+      "bytes": 2349,
+      "sha256": "f0a36f6ad36dad02e15c4e5343891f9bfa8c7e613ee00d0698b88f061f1a75ab",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/reader-extra.cjs",
+      "role": "review evidence",
+      "bytes": 6104,
+      "sha256": "5607faaf3f291220ebc4d4f56ef9039297eed92bc21eaeee309c28d6fa6fc7c6",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/reader-prior.cjs",
+      "role": "review evidence",
+      "bytes": 8894,
+      "sha256": "dba8e0766a64278aef24e96109720f65acdd8a0abb19501bd8a0ceb0f6421b9c",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/reader-xi.cjs",
+      "role": "review evidence",
+      "bytes": 13081,
+      "sha256": "e2b82f390286dfb8dc2f1558c1bb2362c758efd8b7d604614e9856c7d3a8bfed",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/record_interpolation_decision.py",
+      "role": "review evidence",
+      "bytes": 2178,
+      "sha256": "34f19defb148fc2ba06027bac09a3e0d5259f329b974cc70e7550cf166cd58a8",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_051_075.py",
+      "role": "review evidence",
+      "bytes": 3510,
+      "sha256": "686ca58f50fea78b53bbe3fb6b1eec87d722c93f2ed7a5e89c1752c83cb86af0",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_076_125.py",
+      "role": "review evidence",
+      "bytes": 4390,
+      "sha256": "74d5b26dd2038c41d0d9d13403742ef8c84a1e5f3f1119892e4478ea01ae0445",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_126_150.py",
+      "role": "review evidence",
+      "bytes": 2073,
+      "sha256": "1a56216301b08e1c2d32c9eeb0f4d48c9191de9fb9c0b303993c9bac4a3e726e",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_151_175.py",
+      "role": "review evidence",
+      "bytes": 3137,
+      "sha256": "baecd2b1820366ef8780d3b557a32ce1bc002c55b055d6a9d3f2f55e6755d8e9",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_176_200.py",
+      "role": "review evidence",
+      "bytes": 2347,
+      "sha256": "c1d8337c00918ab192a5af1932be2743c9109f0fb35f68241a0c6262ba2fcf30",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_201_225.py",
+      "role": "review evidence",
+      "bytes": 3371,
+      "sha256": "44c66a4bd2880d7f2a5510bc461421407d27201314141b5e81efdda61fd7ea5a",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_226_250.py",
+      "role": "review evidence",
+      "bytes": 2887,
+      "sha256": "ec2de9685931384cf23dcad73e8967c431c498d3f0512c17fb66f44216dd778b",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_251_301.py",
+      "role": "review evidence",
+      "bytes": 5247,
+      "sha256": "00aa5c07e544803c8ceaec80e7d7adcc8f3dc5136e620b5cbbff7caa13b91aa3",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_batch.py",
+      "role": "review evidence",
+      "bytes": 3961,
+      "sha256": "635ab9e4ef364a5ecfbeb345fcd2af420c3f7dc3a40b81aaf55b7623f9efad20",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_choices.json",
+      "role": "review evidence",
+      "bytes": 39200,
+      "sha256": "1e0fc84a2a1104e01898aa0812a7ab3bb7e7a8d070c87b8cb78b313636311cf6",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/review_window.py",
+      "role": "review evidence",
+      "bytes": 6531,
+      "sha256": "e0ddf376fc6b5c02b81355d1058d245b2b9a191baefbf0dc36589e8a2f94039f",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/traditional_expectations.py",
+      "role": "review evidence",
+      "bytes": 3238,
+      "sha256": "87d909f4a09838af1c5a623cb0812f1d2fe236b516e3ae0c1cf92f2ba948b86f",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    },
+    {
+      "relative": "review/Antiquities_Niese_BookXI_2026-10-09/verify_sources.py",
+      "role": "review evidence",
+      "bytes": 6841,
+      "sha256": "b61561a8a7017e581fdf77834d3c5314d1471950f9d85b79afd5143104d07957",
+      "baseline_git_blob_oid": null,
+      "baseline_working_sha256": null
+    }
+  ]
+}
