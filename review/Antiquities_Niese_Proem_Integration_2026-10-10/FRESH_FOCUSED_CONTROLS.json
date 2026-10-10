@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "build": {
+    "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+    "commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
+    "merge_commit": "a0245745c3fd3b3a04bfb5ed8acc192cd7f01b87",
+    "certified_recovery_tip": "07057a284e3eb4999bd875cd05eb970e30886452",
+    "baseline_site": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\baseline-site",
+    "site": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-site",
+    "root": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration",
+    "receipt": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\CANDIDATE_BUILD.json"
+  },
+  "started": "2026-10-10T20:27:46.957Z",
+  "scope": "Fresh full DEH structural inputs and Bellum I/IV Whiston/Lodge controls following build-time cache-key normalization",
+  "controls": [
+    {
+      "work": "deh",
+      "book": 1,
+      "source": null,
+      "niese": 0,
+      "ranges": 0,
+      "status": "PASS",
+      "digest": "02f1e3c519eb594e1e71143a02a66040ecbee9b7f1b69abbe9364c4b72e7b142"
+    },
+    {
+      "work": "deh",
+      "book": 2,
+      "source": null,
+      "niese": 0,
+      "ranges": 0,
+      "status": "PASS",
+      "digest": "b066e6dfc96bf4aea026ac57b942c39e1f98d636cf3174c0ba1f8149c78b0bdf"
+    },
+    {
+      "work": "deh",
+      "book": 3,
+      "source": null,
+      "niese": 0,
+      "ranges": 0,
+      "status": "PASS",
+      "digest": "ec59d016434fa90278d3e9958fb9de6ce07c1ab8cb9d6ce05209f662f67cb8fe"
+    },
+    {
+      "work": "deh",
+      "book": 4,
+      "source": null,
+      "niese": 0,
+      "ranges": 0,
+      "status": "PASS",
+      "digest": "4100cdece7c77598da9f3f4382f1ec62a8ebee7038b3c1848c98e32efb2afa00"
+    },
+    {
+      "work": "deh",
+      "book": 5,
+      "source": null,
+      "niese": 0,
+      "ranges": 0,
+      "status": "PASS",
+      "digest": "2e1a308fedf2f1bc5a5461782324aaa38d331d96e402106fc66ad7890fa57fa4"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 1,
+      "source": "whiston",
+      "niese": 673,
+      "ranges": 268,
+      "status": "PASS",
+      "digest": "838db55354345e433438ac844cc5d1777d71c3bcf67922cd4adccaf6fa2b2715"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 1,
+      "source": "lodge1602",
+      "niese": 673,
+      "ranges": 268,
+      "status": "PASS",
+      "digest": "9281809b83552e34396e5a164c029106b85f19a4471f49c268140b4d0cd4271e"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 4,
+      "source": "whiston",
+      "niese": 663,
+      "ranges": 89,
+      "status": "PASS",
+      "digest": "3d63a3413abaa1dca3ddd25ffd17ffcd86ec33d7e7f8636fd3f027e8459396f6"
+    },
+    {
+      "work": "bellum-judaicum",
+      "book": 4,
+      "source": "lodge1602",
+      "niese": 663,
+      "ranges": 89,
+      "status": "PASS",
+      "digest": "acc15d56230d3e38565ace0c5af6831d10db04ed9f4febbd2db3f57e4605917c"
+    },
+    {
+      "route": "BJ IV.105",
+      "source": "whiston",
+      "status": "PASS",
+      "digest": "3292ffe1f9875c6b2165b92bd4f6ea5d6441854aaee0229c991fbe6cd383248f"
+    },
+    {
+      "route": "BJ IV.105",
+      "source": "lodge1602",
+      "status": "PASS",
+      "digest": "ef63343808d0c6450e0bc4d100a36a507c5e99148a10d2dc9ddf559840386f5c"
+    }
+  ],
+  "errors": [],
+  "Lodge_Whiston_switching": "PASS",
+  "finished": "2026-10-10T20:28:43.547Z"
+}
