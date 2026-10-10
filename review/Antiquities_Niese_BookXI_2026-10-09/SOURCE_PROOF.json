@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "baseline": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "fixtures": {
+    "status": "PASS",
+    "tests": [
+      "mixed .text/.tail",
+      "UTF-8",
+      "numeric and named entities",
+      "CRLF",
+      "comment exclusion and tail coordinates",
+      "empty element tails",
+      "nested add/del retained",
+      "num excluded with tail retained",
+      "two units",
+      "raw Unicode-byte roundtrip",
+      "note excluded with tail retained",
+      "nested-child tail ownership",
+      "chapter-0 paratext exclusion",
+      "omission-placeholder exclusion"
+    ]
+  },
+  "Latin_inverse_byte_recovery": true,
+  "Greek_inverse_byte_recovery": true,
+  "English_byte_identical": true,
+  "existing_IDs_sameAs_labels_notes_apparatus_divisions_preserved": true,
+  "all_locators_independently_validated": true,
+  "Latin_physical_occurrences": 354,
+  "Greek_physical_occurrences": 347,
+  "Latin_physical_stream_sha256": "427b2d530d346aa4c7993df846f9ad5176dcc594906baf065dcbf30ebbaac5e7",
+  "Greek_physical_stream_sha256": "891a2f05f4929fa924972562e82023c52d3e5f54a03e40f01b992bdc47b7710b",
+  "full_boundary_whitespace_owned": true,
+  "overlap_or_loss": 0,
+  "canonical_continuation_rank_verified": true,
+  "changed_baseline_files": [
+    "assets/css/tei.css",
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/Latin/book-11.xml"
+  ],
+  "unrelated_baseline_files_unchanged": 3162,
+  "source_output_hashes": {
+    "Latin": {
+      "source": "5595739cd16e6d87357b25ae114f1a22b1fc70066eb532b465d401b84414464f",
+      "output": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5"
+    },
+    "Greek": {
+      "source": "2aee7fab8664607c0139532ee7d49cc9a6e6ace0e6e4c34346adac42bc0c4f89",
+      "output": "2aee7fab8664607c0139532ee7d49cc9a6e6ace0e6e4c34346adac42bc0c4f89"
+    },
+    "English": {
+      "source": "2273fecb032b0df11ba3f79857ea8ce59f681ee2a3595583d46ccfee3096f9fc",
+      "output": "2273fecb032b0df11ba3f79857ea8ce59f681ee2a3595583d46ccfee3096f9fc"
+    }
+  },
+  "counts": {
+    "logical_identities": 347,
+    "identities_with_Latin": 347,
+    "identities_without_independent_Latin": [],
+    "primary_Latin_fragments": 352,
+    "source_only_fragments": 2,
+    "retained_physical_boundaries": 84,
+    "added_start_markers": 270,
+    "added_end_markers": 0,
+    "other_new_anchors": 0
+  }
+}

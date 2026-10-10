@@ -6,6 +6,8 @@ from mixed_mapper import Book,digest
 D=Path(__file__).resolve().parent
 def save(name,x):(D/name).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 def main():
+    if (D/'INTERPOLATION_DECISION.json').exists() and json.loads((D/'INTERPOLATION_DECISION.json').read_text(encoding='utf8')).get('status')=='CLOSED_USER_APPROVED':
+        raise RuntimeError('Historical preparation only: do not overwrite the closed user decision. Use implement_xi.py for the final complete register.')
     l=Book(D/'inputs/Latin.xml');g=Book(D/'inputs/Greek.xml')
     rows=json.loads((D/'CANDIDATE_REGISTER.json').read_text(encoding='utf8'))
     starts={}
