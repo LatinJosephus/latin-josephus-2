@@ -1,0 +1,145 @@
+# LatinJosephus — Antiquities Proem: final canonical integration
+10 October 2026
+
+You are the dedicated **Proem canonical-integration WorkBot**. The twenty-book Antiquities Niese reader has already been integrated and certified. The Proem has subsequently been **locally certified**, including a recovery of the interrupted source worker's complete history. Your mission is to integrate this certified Proem, certify the complete 7,376-identity reader, and normally push `origin/v2-development`.
+
+**Authorization:** Create an isolated integration branch/worktree; merge the complete certified recovery history; resolve narrowly scoped, documented integration conflicts; run comprehensive QA; safely promote to canonical; normally push and verify the remote. **Do not deploy, export or refresh the GitHub Pages preview** and do not change the production domain. No new general approval is required for routine integration steps or the already approved scholarly decisions.
+
+## 1. Frozen canonical and certified source
+
+Canonical checkout:
+`C:\Users\Pollard_R\Git\LatinJosephus-v2-development`
+
+Canonical branch/remote: `v2-development` / `origin/v2-development`.
+
+Last directly verified canonical and remote, following Book XX integration:
+`4f88fc1483ec14d418c678004e13bc2b6741a2b7`
+
+This is the certified **7,350-identity Antiquities I–XX** baseline, before the Proem's 26 identities. Fetch and verify actual HEAD and ancestry before beginning; the hash is not a license to rewind an advanced branch. Review intervening production changes, if any, and pin the actual integration-start baseline.
+
+Certified Proem source:
+- Recovery branch: `antiquities-niese-proem-recovery`
+- Clean certified tip: `07057a284e3eb4999bd875cd05eb970e30886452`
+- Source baseline: `4f88fc1483ec14d418c678004e13bc2b6741a2b7`
+- Preserved checkpoint: `16f0f764a501825fef5ecb4ceba26f79f571c777`
+- Approved production: `4afe79be6d4ba2f8fdcf5ca1a07fda878d7a56fb`
+- Tested fresh build: `a3ca656151f1170a099f4f143f70feb1118dbfd1`
+- Recovery worktree: `C:\workspace\LatinJosephus-antiquities-niese-proem-recovery`
+- Recovery evidence: `C:\workspace\LatinJosephus-antiquities-niese-proem-recovery\review\Antiquities_Niese_Proem_Recovery_2026-10-10`
+- Runtime/handoff: `C:\workspace\Antiquities-Niese-Proem-Recovery-runtime-20261010\LOCAL_HANDOFF.json`
+
+Read `CERTIFICATE.json`, `CERTIFICATION_MANIFEST.json`, `LOCAL_HANDOFF.json`, and `FINAL_BRANCH_RECEIPT.json`, plus the recovered source's boundary registers, decision records, production manifest and verification scripts. Verify actual Git ancestry instead of treating reported hashes as a substitute. Route A recovery, original checkpoint history, five durable recovery commits and six checkpoint ZIPs are all part of the provenance. The original interrupted WorkBot worktree remains clean and untouched. Do not alter or discard it, the source recovery branch, or its ZIPs. The recovery ZIP was verified for SHA-256, 128 payload checks and CRC; retain its provenance without re-importing or replacing certified working files from an archive.
+
+## 2. Isolation and scope
+
+Suggested integration worktree:
+`C:\workspace\LatinJosephus-antiquities-niese-proem-integration`
+
+Suggested integration branch:
+`antiquities-niese-proem-integration`
+
+Suggested review directory:
+`review\Antiquities_Niese_Proem_Integration_2026-10-10`
+
+Suggested separate runtime:
+`C:\workspace\Antiquities-Niese-Proem-Integration-runtime-20261010`
+
+Inspect for existing paths before creation. If one already belongs to this task, resume safely; if it belongs elsewhere, choose unique paths. Use a dedicated free port and browser profile. Leave all other task worktrees, local servers, source branches and canonical working files unchanged during reconciliation.
+
+Create the integration branch from the current verified canonical lineage. Incorporate the **complete certified recovery source history** through `07057a284...` in a history-preserving merge. Do not cherry-pick only the final production files, squash away the provenance, rebase the source, or force-reset unrelated history. Record exact incoming commits and verify that the source tip and underlying preserved checkpoints remain ancestors of the integrated result.
+
+Expected production scope is limited to:
+- `assets/js/renderTei.js`
+- `assets/xml/antiquities/Latin/preface.xml`
+- `assets/xml/antiquities/niese/preface.json`
+
+Plus the approved source evidence and scoped integration QA records. Determine the actual complete Git file manifest. Do not assume the file count alone proves fidelity. **Greek and English Proem files do not change**.
+
+Certified recovery source production SHA-256 values (reference hashes of certified files, before any justified merge-specific renderer resolution):
+- `assets/js/renderTei.js`: `665f31b0a5cfe668692490c1c1ffece09097ca4cfa69ff0e516e862e56ce2d72`
+- `assets/xml/antiquities/Latin/preface.xml`: `e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015`
+- `assets/xml/antiquities/niese/preface.json`: `0a0e46771df523aad8a3dad9e696ec51bbe5cd9da084ec81eed0a20aeb6b2e18`
+
+A necessary shared-renderer conflict resolution may change the combined renderer hash; it may **not** change source decisions or silently remove functionality. Record both original certified hashes and final integrated hashes, and verify on the built reader.
+
+## 3. Non-negotiable certified Proem representation
+
+- **26 selectable Greek Niese identities, 1–26**, with **26 independently identified Latin intervals**.
+- **Four inherited Latin Niese starts**, **22 added Latin start milestones**, **one exclusive end anchor**, **zero unavailable Latin sections**.
+- Two existing, approved partial-correspondence notices retained exactly in meaning and association.
+- §25 begins `Volentius…` and **retains `Quod ego nunc quidem`** in its complete approved extent.
+- §26 begins `adrerum narrationem` at the approved exact Latin coordinate (do not silently normalize its spelling or spacing).
+- Preserve all source paratext and notices **outside** the first or last Proem section when they are not part of its narrative.
+- English is **four pre-existing unchanged contextual paragraphs**, not 26 newly aligned English Niese paragraphs. Do not invent per-identity English equivalence or change the English witness.
+- The Proem's §26 and Antiquities Book I's §27 must remain separate with complete extents and safe previous/next behaviour.
+- Greek and English Proem bytes unchanged. Authorized additions can be independently reversed from Latin to reproduce exact original full-file bytes; IDs, `sameAs`, Unicode, source order and wording are protected.
+- Preserve the accepted scholarly boundary decisions, their evidence, rejected alternatives and recovery history. No source-text editorial work is authorized by this integration task.
+
+The certified selection and navigation checks include direct, reload, history, previous/next, and repeated **25 → 26 → 25 → 26**. This exact sequence must remain stable under actual merged-reader state.
+
+## 4. Shared renderer reconciliation
+
+The existing canonical renderer already includes XI multi-fragment/attached *Bellum* display, XVI–XVII displaced fragments, XVIII–XIX qualification and navigation handling, and Book XX generic exclusive-end support. The recovered Proem also uses an exclusive end.
+
+Inspect code changes and merged semantics line by line if `renderTei.js` conflicts. **Never choose either entire conflict side blindly.** Reconcile registry/availability registration and generic range slicing so all existing books and the Proem are supported concurrently. Avoid Proem-specific conditionals where generic registry data and the existing range mechanism suffice. Preserve the existing Whiston provenance italics, XV inherited chapter endpoint fix, established Book-I exceptions and unrelated work behaviour.
+
+Do not treat a build success, menu count or successful HTTP request alone as QA. Verify the rendered full text and endpoints from real source and reader data.
+
+## 5. Final full-corpus certification
+
+Expected integrated selectable population:
+**7,350 Antiquities I–XX + 26 Proem = 7,376**.
+
+Count the actual identity registry and exercise the actual built reader in an isolated browser environment. Require:
+
+1. All **26 Proem selections**, full and plain modes, exact Greek/Latin content and interval ends; appropriate English contextual paragraphs; zero duplicated DOM IDs.
+2. Fresh full population replay of **all 7,350 previously integrated Book I–XX selections**, with content, availability, notes and endpoints, not merely links or identity counts.
+3. All Proem contextual and containing views, paratext isolation, direct links, reload, back/forward, history, previous/next and repeated **25→26→25→26**.
+4. Complete **Proem 26 → Antiquities I.27** transition, no Proem spill into Book I and no Book-I content captured in Proem's final exclusive end.
+5. Book XX's own exclusive-end semantics; §27–36 and §238 unavailable-Latin notices; 135 Book XX containing views, inherited source trailer through AMEN and *Vita* exclusion.
+6. XI's **347** selections, split 312/326/342, nine assembly ranges, traditional and Book/Alignment witness orders, two distinct BJ IV.105 attachments and 120 XI containing views.
+7. XVI.294–295, XVI.351/355/356, XVII.24–25 and XVII.75–76, including approved fragment ownership and all four B decisions; XVI's 24 unavailable Latin identities and qualification notices.
+8. XVIII.216–217 unavailable Latin identities and independent Greek/English access; separate physical traditional/Bamberg starts at XVIII.257 and XIX.292.
+9. The inherited traditional/Bamberg/Alignment division systems and critical routes, especially XV chapter endpoints and VII, VIII, IX, X, XII–XIV known qualifications and lacunae.
+10. Whiston/English contextual fidelity, Bellum/Cardwell/Lodge, DEH and Contra Apionem protected controls, TOC, direct links, themes, pane switching and accessibility.
+11. The Proem source WorkBot's preserved **256-reader-input cross-work checks** (allowing only the documented normalization of two DEH cache timestamps), plus its focused controls and any appropriate updated combined tests.
+12. No new console/network errors, missing assets, unintended DOM-ID duplicates, false executable labels or source-only annotation leakage.
+
+Only the two precisely documented and independently reproduced Book-I baseline defects may remain: the inherited apparatus-link issue and unsupported I.1 direct selection, as specified in the certified predecessor reports. No new regression can pass by being labelled 'baseline' without proof.
+
+If the merge adds or alters generic range/renderer behaviour, rerun exhaustive checks against the **final** integrated build after that change. Stop promotion on any new failure until resolved within scope.
+
+## 6. Source preservation and verification
+
+Prove independent full-file byte recovery of the Proem Latin source after removing exactly the 22 authorized new Latin starts and one authorized end anchor, and any other explicitly certified additions if the source manifest shows them. Verify four inherited starts are intact, Greek and English byte-identical, and both approved partial correspondence notices unchanged.
+
+Hash all integrated changed production outputs and compare with the certified Proem source file manifest, accounting explicitly for any necessary shared-renderer resolution. Verify all unrelated files against the actual current canonical integration-start baseline; separate Windows checkout line-ending differences from real source edits. Ensure source/paragraph IDs, `sameAs`, punctuation, spelling, whitespace, mixed content, paratext and book transition remain intact.
+
+Maintain an auditable exact-manifest and decision record. Preserve original recovered checkpoints and certified source branch rather than replacing them.
+
+## 7. Promotion
+
+Only after merged-source certification:
+
+1. Commit separately reviewable integration-specific resolution(s) and the combined certification evidence.
+2. Recheck/fetch `origin/v2-development` immediately before promotion. If it advanced, incorporate the new canonical history in isolation and rerun affected or exhaustive QA.
+3. Verify clean source branch, history-preserving ancestry and approved production file scope.
+4. Advance canonical `v2-development` safely, preferably by fast-forward, preserving other work and any dirty-state safeguards.
+5. Normally push `origin/v2-development` (no force push), fetch and **directly verify remote HEAD**, source/recovery ancestry and public-facing production hashes.
+6. If a safe promotion cannot be completed, stop with the fully tested isolated integration branch and report the exact blocker—never reset or overwrite newer canonical work.
+
+**Do not publish the preview**, trigger a domain change, edit CNAME, or deploy to `latinjosephus.org`.
+
+## 8. Deliverables
+
+Return a concise final handoff identifying:
+- Actual starting and final local canonical and directly verified remote commits.
+- Certified recovery tip `07057a284...`, merge and integration QA commits, and preserved source checkpoint ancestry.
+- **7,376/7,376** actual complete-corpus selections and **26/26** Proem selections, plus critical containing, range, cross-work and protected reader test results.
+- Proem's 26 Latin intervals, four inherited starts, 22 added starts, one exclusive end and zero unavailable identities, and both partial-correspondence notices.
+- Explicit §25/26, 25→26→25→26 and Proem→I.27 results.
+- Original-byte restoration, manifest/hashes, renderer reconciliation and any exceptions.
+- Clean-state receipts and paths to the report, manifest and promotion receipt.
+- Confirmation that **the public GitHub preview was not updated** and the original/recovery worktrees and checkpoints remain preserved.
+
+**Stop after successful canonical integration and remote verification.** A distinct Publication WorkBot will be instructed from the newly verified final canonical hash, and that worker alone will deploy and verify the 7,376-identity preview.
