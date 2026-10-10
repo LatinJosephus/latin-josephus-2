@@ -27,3 +27,14 @@ B: before `illa gens continuationibus`, paragraph `latin-book18-num1`, Unicode p
 A keeps the Latin clause together and represents its shared correspondence explicitly with reciprocal notes at6 and7. B leaves `et supra quam dici potest` at the end of6 and begins7 with the nation-and-wars predicate. Both preserve every source character. A is recommended because it provides a coherent Latin opening and describes the overlapping correspondence rather than implying word-for-word equivalence. No omission or cause of loss is inferred.
 
 The independent Loeb structural records put both citations within traditional I.1; they supply no separate physical lower division at7 and cannot resolve this Latin cut. Frozen Greek/Latin hashes, all coordinates and both proposals remain in CASE_007.json.
+
+
+## Human adjudication — 2026-10-10
+
+**A APPROVED; HOLD CLOSED.** The earlier pending statement above is retained as proposal history. The exact pre-approval record is preserved in `history/pre-adjudication-1938fa0/CASE_007.json` and `.md`, at commit `1938fa015ec9273ed396754a362f25f14ae6c6f8`. The selected alternative, source evidence, original coordinates, neighbouring approved extents and qualifications are recorded in the appended adjudication history. Source wording remains literal; no conjecture or physical-loss cause is supplied.
+
+Applied adjacent Latin extents (frozen narrative Unicode coordinates; the exact text and both language contexts are retained in the JSON):
+
+- 18.6: [1408, 1707); source byte 6720; begins `IIII His itaque dictis amplius eorum animus concitatur, ut etiam ab ho`.
+- 18.7: [1707, 1960); source byte 7025; begins `et supra quam dici potest illa gens continuationibus est repleta bello`.
+- 18.8: [1960, 2221); source byte 7291; begins `Multae itaque caedes ciuium sociorumque perpetrantur postremo in inuic`.

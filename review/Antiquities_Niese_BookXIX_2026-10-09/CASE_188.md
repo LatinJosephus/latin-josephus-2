@@ -31,3 +31,14 @@ B: before `qui senatui consentiebant`, paragraph `latin-book19-num185`, Unicode 
 A keeps the Latin relative with the consuls and begins188 at the independently surviving four-cohort account. Reciprocal notes report the allegiance-theme overlap and the missing distinct sign-distribution statement. B begins188 with the allegiance relative to reflect its Greek thematic counterpart, but separates the Latin relative from its consular antecedent. A is recommended because it preserves the transmitted syntax and limits the independent interval claim. Neither alternative licenses reconstruction or unqualified equivalence.
 
 Authority and source hashes remain in the baseline ledger; exact candidate locators and the entire paragraph are in CASE_188.json.
+
+
+## Human adjudication — 2026-10-10
+
+**A APPROVED; HOLD CLOSED.** The earlier pending statement above is retained as proposal history. The exact pre-approval record is preserved in `history/pre-adjudication-1938fa0/CASE_188.json` and `.md`, at commit `1938fa015ec9273ed396754a362f25f14ae6c6f8`. The selected alternative, source evidence, original coordinates, neighbouring approved extents and qualifications are recorded in the appended adjudication history. Source wording remains literal; no conjecture or physical-loss cause is supplied.
+
+Applied adjacent Latin extents (frozen narrative Unicode coordinates; the exact text and both language contexts are retained in the JSON):
+
+- 19.187: [44347, 44520); source byte 49519; begins `qui a reuersa uideretur ad consulens haec potestas. Hi siquiidem anteq`.
+- 19.188: [44520, 44616); source byte 49829; begins `Erant enim cohortes quattuor quibus uincere sine principe magis quam s`.
+- 19.189: [44616, 44847); source byte 49925; begins `Milites itaque cum tribunis abibant et populi discedebant laeti. Hanc `.

@@ -1,7 +1,7 @@
 {
   "book": 19,
   "number": 188,
-  "status": "HUMAN_EDITORIAL_CHOICE_PENDING",
+  "status": "APPROVED_HOLD_CLOSED",
   "recommendation": "A",
   "Greek": [
     {
@@ -137,5 +137,190 @@
     "188": "The Latin interval begins with the surviving four-cohort account. The earlier qui senatui consentiebant relative remains grammatically with the consuls in 187, although its allegiance theme corresponds to Greek 188. No distinct statement of Chaerea taking and distributing the sign is present at this join; no cause of the difference is inferred."
   },
   "Greek_edit": "NONE",
-  "production_applied": false
+  "production_applied": true,
+  "prior_status": "HUMAN_EDITORIAL_CHOICE_PENDING",
+  "adjudication": {
+    "kind": "HUMAN_EDITORIAL_ADJUDICATION",
+    "book": 19,
+    "sections": [
+      188
+    ],
+    "approved_choice": "A",
+    "status": "APPROVED_HOLD_CLOSED",
+    "timestamp": "2026-10-10T11:59:09.920622+00:00",
+    "hold_commit": "1938fa015ec9273ed396754a362f25f14ae6c6f8",
+    "prior_status": "HUMAN_EDITORIAL_CHOICE_PENDING",
+    "prior_candidates": {
+      "188": {
+        "locator": {
+          "stable_id": "latin-book19-num185",
+          "paragraph": 30,
+          "xpath": "/*/*[2]/*/*[2]/*[2]/*[24]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[23]/cb[1]/tail()",
+          "node_offset": 0,
+          "unit_offset": 682,
+          "book_offset": 44520,
+          "raw_byte": 49829,
+          "left": "otestas. Hi siquiidem antequam tyrannis inuaderet ciuitatem rebus ciuitatibus militaribus praesidebant qui senatui consentiebant. ",
+          "right": "Erant enim cohortes quattuor quibus uincere sine principe magis quam sub tyrannide conplacebat. Milites itaque cum tribunis abibant et populi discedebant laeti. Hanc spem habentes atque cogitationem quasi ipsi gubernationem rei publicę rurs",
+          "parsed_unit_sha256": "30c687e2c70bb4ed9352c528936905f38db63155bdb582ae8c1b4c55a29b04f7",
+          "raw_unit_sha256": "d0f07801f41cbf6d5f9124a0e3fb95c20d4ada8aad96da9b98684ca1dc9cbb32"
+        },
+        "incipit": "Erant enim cohortes",
+        "correspondence": "EDITORIAL_DECISION_PENDING",
+        "reason": "Four cohorts prefer no prince; boundary alternative concerns preceding qui senatui consentiebant and lost sign-distribution introduction.",
+        "note": "Recommended start at Erant enim cohortes keeps the relative with Latin consuls and notes the shared allegiance clause; alternative starts at qui senatui consentiebant, preserving the Greek thematic transition but separating its Latin antecedent. No independent sign-distribution clause survives.",
+        "retained_label": null,
+        "approved": false
+      }
+    },
+    "original_case_sha256": "b3ccedaa8346dac4ad4afbd7d86ecf5f470e0b5a5f2f47f31aa896b795604c78",
+    "verbatim_case_archive": "history/pre-adjudication-1938fa0/CASE_188.json",
+    "selected_alternative": {
+      "choice": "A",
+      "phrase": "Erant enim cohortes",
+      "locator": {
+        "stable_id": "latin-book19-num185",
+        "paragraph": 30,
+        "xpath": "/*/*[2]/*/*[2]/*[2]/*[24]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[23]/cb[1]/tail()",
+        "node_offset": 0,
+        "unit_offset": 682,
+        "book_offset": 44520,
+        "raw_byte": 49829,
+        "left": "otestas. Hi siquiidem antequam tyrannis inuaderet ciuitatem rebus ciuitatibus militaribus praesidebant qui senatui consentiebant. ",
+        "right": "Erant enim cohortes quattuor quibus uincere sine principe magis quam sub tyrannide conplacebat. Milites itaque cum tribunis abibant et populi discedebant laeti. Hanc spem habentes atque cogitationem quasi ipsi gubernationem rei publicę rurs",
+        "parsed_unit_sha256": "30c687e2c70bb4ed9352c528936905f38db63155bdb582ae8c1b4c55a29b04f7",
+        "raw_unit_sha256": "d0f07801f41cbf6d5f9124a0e3fb95c20d4ada8aad96da9b98684ca1dc9cbb32"
+      }
+    },
+    "reason": "Greek 187 describes the restored consular command. Greek 188 begins with Chaerea taking and distributing the sign to soldiers aligned with the Senate, then the four cohorts. Latin omits a distinct sign-distribution statement. Its qui senatui consentiebant relative has the consuls of the prior sentence as grammatical antecedent, but the allegiance theme corresponds to Greek 188.",
+    "source_evidence": {
+      "Niese": {
+        "printed_pages": [
+          242,
+          243
+        ],
+        "PDF_pages": [
+          256,
+          257
+        ],
+        "images": [
+          "evidence/Niese-IV-PDF256.jpg",
+          "evidence/Niese-IV-PDF257.jpg"
+        ],
+        "examined": true
+      }
+    },
+    "approved_candidates": {
+      "188": {
+        "locator": {
+          "stable_id": "latin-book19-num185",
+          "paragraph": 30,
+          "xpath": "/*/*[2]/*/*[2]/*[2]/*[24]",
+          "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[23]/cb[1]/tail()",
+          "node_offset": 0,
+          "unit_offset": 682,
+          "book_offset": 44520,
+          "raw_byte": 49829,
+          "left": "otestas. Hi siquiidem antequam tyrannis inuaderet ciuitatem rebus ciuitatibus militaribus praesidebant qui senatui consentiebant. ",
+          "right": "Erant enim cohortes quattuor quibus uincere sine principe magis quam sub tyrannide conplacebat. Milites itaque cum tribunis abibant et populi discedebant laeti. Hanc spem habentes atque cogitationem quasi ipsi gubernationem rei publicę rurs",
+          "parsed_unit_sha256": "30c687e2c70bb4ed9352c528936905f38db63155bdb582ae8c1b4c55a29b04f7",
+          "raw_unit_sha256": "d0f07801f41cbf6d5f9124a0e3fb95c20d4ada8aad96da9b98684ca1dc9cbb32"
+        },
+        "incipit": "Erant enim cohortes",
+        "correspondence": "PARTLY_SURVIVING",
+        "reason": "Greek 187 describes the restored consular command. Greek 188 begins with Chaerea taking and distributing the sign to soldiers aligned with the Senate, then the four cohorts. Latin omits a distinct sign-distribution statement. Its qui senatui consentiebant relative has the consuls of the prior sentence as grammatical antecedent, but the allegiance theme corresponds to Greek 188.",
+        "note": "The Latin interval begins with the surviving four-cohort account. The earlier qui senatui consentiebant relative remains grammatically with the consuls in 187, although its allegiance theme corresponds to Greek 188. No distinct statement of Chaerea taking and distributing the sign is present at this join; no cause of the difference is inferred.",
+        "retained_label": null,
+        "approved": true,
+        "adjudication": {
+          "choice": "A",
+          "case": "CASE_188.json",
+          "timestamp": "2026-10-10T11:59:09.920622+00:00",
+          "authority": "Human approval in current chat, 2026-10-10"
+        }
+      }
+    }
+  },
+  "approved_adjacent_extents": [
+    {
+      "number": 187,
+      "safe_Latin_interval": true,
+      "Latin": "qui a reuersa uideretur ad consulens haec potestas. Hi siquiidem antequam tyrannis inuaderet ciuitatem rebus ciuitatibus militaribus praesidebant qui senatui consentiebant. ",
+      "Greek": " ἔτει γὰρ ἑκατοστῷ, μεθ᾽ ὃ τὴν δημοκρατίαν τὸ πρῶτον ἀφῃρέθησαν, ἐπὶ τοὺς ὑπάτους σημείου ἡ παράδοσις: οὗτοι γὰρ πρότερον ἢ τυραννηθῆναι τὴν πόλιν κύριοι τῶν στρατιωτικῶν ἦσαν. ",
+      "English": " And this was the purport of Sentius's oration, which was received with pleasure by the senators, and by as many of the equestrian order as were present. And now one Trebellius Maximus rose up hastily, and took off Sentius's finger a ring, which had a stone, with the image of Caius engraven upon it, and which, in his zeal in speaking, and his earnestness in doing what he was about, as it was supposed, he had forgotten to take off himself. This sculpture was broken immediately. But as it was now far in the night, Cherea demanded of the consuls the watchword, who gave him this word, Liberty. These facts were the subjects of admiration to themselves, and almost incredible; for it was a hundred years since the democracy had been laid aside, when this giving the watchword returned to the consuls; for before the city was subject to tyrants, they were the commanders of the soldiers. But when Cherea had received that watchword, he delivered it to those who were on the senate's side, which were four regiments, who esteemed the government without emperors to be preferable to tyranny. So these went away with their tribunes. The people also now departed very joyful, full of hope and of courage, as having recovered their former democracy, and were no longer under an emperor; and Cherea was in very great esteem with them.",
+      "Latin_start": {
+        "stable_id": "latin-book19-num185",
+        "paragraph": 30,
+        "xpath": "/*/*[2]/*/*[2]/*[2]/*[24]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[23]/text()",
+        "node_offset": 509,
+        "unit_offset": 509,
+        "book_offset": 44347,
+        "raw_byte": 49519,
+        "left": "uta. Chereas uero cum signum a consulibus petisset, et illi libertatis ei dedissent miraculum fuit cunctis et uelut incredulitas, ",
+        "right": "qui a reuersa uideretur ad consulens haec potestas. Hi siquiidem antequam tyrannis inuaderet ciuitatem rebus ciuitatibus militaribus praesidebant qui senatui consentiebant. Erant enim cohortes quattuor quibus uincere sine principe magis qua",
+        "parsed_unit_sha256": "30c687e2c70bb4ed9352c528936905f38db63155bdb582ae8c1b4c55a29b04f7",
+        "raw_unit_sha256": "d0f07801f41cbf6d5f9124a0e3fb95c20d4ada8aad96da9b98684ca1dc9cbb32"
+      },
+      "Latin_end": 44520,
+      "context_target": "latin-book19-num185",
+      "qualification": "The Latin has no independent hundred-year dating and keeps its qui senatui consentiebant relative with the prior consuls. The allegiance theme overlaps the following Greek section 188.",
+      "pending": false,
+      "unavailable": false
+    },
+    {
+      "number": 188,
+      "safe_Latin_interval": true,
+      "Latin": "Erant enim cohortes quattuor quibus uincere sine principe magis quam sub tyrannide conplacebat. ",
+      "Greek": " Χαιρέας δὲ τὸ σημεῖον λαβὼν παρεδίδου τῶν στρατιωτῶν τοῖς πρὸς τὴν σύγκλητον συνεστηκόσιν. ἦσαν δὲ εἰς σπείρας τέσσαρας, οἷς τὸ ἀβασίλευτον τιμιώτερον τῆς τυραννίδος προύκειτο. ",
+      "English": " And this was the purport of Sentius's oration, which was received with pleasure by the senators, and by as many of the equestrian order as were present. And now one Trebellius Maximus rose up hastily, and took off Sentius's finger a ring, which had a stone, with the image of Caius engraven upon it, and which, in his zeal in speaking, and his earnestness in doing what he was about, as it was supposed, he had forgotten to take off himself. This sculpture was broken immediately. But as it was now far in the night, Cherea demanded of the consuls the watchword, who gave him this word, Liberty. These facts were the subjects of admiration to themselves, and almost incredible; for it was a hundred years since the democracy had been laid aside, when this giving the watchword returned to the consuls; for before the city was subject to tyrants, they were the commanders of the soldiers. But when Cherea had received that watchword, he delivered it to those who were on the senate's side, which were four regiments, who esteemed the government without emperors to be preferable to tyranny. So these went away with their tribunes. The people also now departed very joyful, full of hope and of courage, as having recovered their former democracy, and were no longer under an emperor; and Cherea was in very great esteem with them.",
+      "Latin_start": {
+        "stable_id": "latin-book19-num185",
+        "paragraph": 30,
+        "xpath": "/*/*[2]/*/*[2]/*[2]/*[24]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[23]/cb[1]/tail()",
+        "node_offset": 0,
+        "unit_offset": 682,
+        "book_offset": 44520,
+        "raw_byte": 49829,
+        "left": "otestas. Hi siquiidem antequam tyrannis inuaderet ciuitatem rebus ciuitatibus militaribus praesidebant qui senatui consentiebant. ",
+        "right": "Erant enim cohortes quattuor quibus uincere sine principe magis quam sub tyrannide conplacebat. Milites itaque cum tribunis abibant et populi discedebant laeti. Hanc spem habentes atque cogitationem quasi ipsi gubernationem rei publicę rurs",
+        "parsed_unit_sha256": "30c687e2c70bb4ed9352c528936905f38db63155bdb582ae8c1b4c55a29b04f7",
+        "raw_unit_sha256": "d0f07801f41cbf6d5f9124a0e3fb95c20d4ada8aad96da9b98684ca1dc9cbb32"
+      },
+      "Latin_end": 44616,
+      "context_target": "latin-book19-num185",
+      "qualification": "The Latin interval begins with the surviving four-cohort account. The earlier qui senatui consentiebant relative remains grammatically with the consuls in 187, although its allegiance theme corresponds to Greek 188. No distinct statement of Chaerea taking and distributing the sign is present at this join; no cause of the difference is inferred.",
+      "pending": false,
+      "unavailable": false
+    },
+    {
+      "number": 189,
+      "safe_Latin_interval": true,
+      "Latin": "Milites itaque cum tribunis abibant et populi discedebant laeti. Hanc spem habentes atque cogitationem quasi ipsi gubernationem rei publicę rursus adquirerent, et nequaquam alio subiacerent, inter quos chereas praecipuis existebat.",
+      "Greek": " καὶ οἵδε μὲν ἀπῄεσαν μετὰ τῶν χιλιάρχων, ἀνεχώρει δὲ ἤδη καὶ ὁ δῆμος περιχαρὴς καὶ ἐλπίδος καὶ φρονήματος ἐπὶ τῷ κτησαμένῳ τὴν ἡγεμονίαν αὐτοῖς, οὐκέτι ἐπὶ τῷ ἐφεστηκότι. καὶ τὰ πάντα ἦν ὁ Χαιρέας αὐτοῖς.",
+      "English": " And this was the purport of Sentius's oration, which was received with pleasure by the senators, and by as many of the equestrian order as were present. And now one Trebellius Maximus rose up hastily, and took off Sentius's finger a ring, which had a stone, with the image of Caius engraven upon it, and which, in his zeal in speaking, and his earnestness in doing what he was about, as it was supposed, he had forgotten to take off himself. This sculpture was broken immediately. But as it was now far in the night, Cherea demanded of the consuls the watchword, who gave him this word, Liberty. These facts were the subjects of admiration to themselves, and almost incredible; for it was a hundred years since the democracy had been laid aside, when this giving the watchword returned to the consuls; for before the city was subject to tyrants, they were the commanders of the soldiers. But when Cherea had received that watchword, he delivered it to those who were on the senate's side, which were four regiments, who esteemed the government without emperors to be preferable to tyranny. So these went away with their tribunes. The people also now departed very joyful, full of hope and of courage, as having recovered their former democracy, and were no longer under an emperor; and Cherea was in very great esteem with them.",
+      "Latin_start": {
+        "stable_id": "latin-book19-num185",
+        "paragraph": 30,
+        "xpath": "/*/*[2]/*/*[2]/*[2]/*[24]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[2]/p[23]/cb[1]/tail()",
+        "node_offset": 96,
+        "unit_offset": 778,
+        "book_offset": 44616,
+        "raw_byte": 49925,
+        "left": "debant qui senatui consentiebant. Erant enim cohortes quattuor quibus uincere sine principe magis quam sub tyrannide conplacebat. ",
+        "right": "Milites itaque cum tribunis abibant et populi discedebant laeti. Hanc spem habentes atque cogitationem quasi ipsi gubernationem rei publicę rursus adquirerent, et nequaquam alio subiacerent, inter quos chereas praecipuis existebat.Igitur ch",
+        "parsed_unit_sha256": "30c687e2c70bb4ed9352c528936905f38db63155bdb582ae8c1b4c55a29b04f7",
+        "raw_unit_sha256": "d0f07801f41cbf6d5f9124a0e3fb95c20d4ada8aad96da9b98684ca1dc9cbb32"
+      },
+      "Latin_end": 44847,
+      "context_target": "latin-book19-num185",
+      "qualification": null,
+      "pending": false,
+      "unavailable": false
+    }
+  ]
 }

@@ -376,9 +376,9 @@
         "raw_unit_sha256": "7c72df6c321fb50381383d14b0af2729a84753a9f473248de3fa4129809f2064"
       },
       "incipit": "IIII His itaque dictis",
-      "correspondence": "PRESENT",
+      "correspondence": "OVERLAPPING_CORRESPONDENCE",
       "reason": "Reception and developing sedition; includes Latin amplification about homicide.",
-      "note": null,
+      "note": "The Latin summarizes the developing calamities; the shared nation-and-war clause continues in the Latin interval for 7.",
       "retained_label": null,
       "approved": true
     },
@@ -442,11 +442,17 @@
         "raw_unit_sha256": "7c72df6c321fb50381383d14b0af2729a84753a9f473248de3fa4129809f2064"
       },
       "incipit": "et supra quam dici potest",
-      "correspondence": "EDITORIAL_DECISION_PENDING",
-      "reason": "Shared summary clause introduces wars; alternatives before et supra, before illa gens, or before et clades affect 6/7 ownership.",
-      "note": "Provisional candidate only; exact cut requires focused editorial choice.",
+      "correspondence": "OVERLAPPING_CORRESPONDENCE",
+      "reason": "The Latin fuses the end of Greek 6 (unbounded evils filling the nation) with the war list opening 7. A retains the complete Latin introductory clause with 7; B preserves the adverbial phrase under 6 but separates it from its Latin subject and predicate. Neither yields unqualified exact correspondence.",
+      "note": "This Latin interval begins with a shared introductory summary corresponding partly to the end of Greek 6, then presents the wars and plundering corresponding to 7.",
       "retained_label": null,
-      "approved": false
+      "approved": true,
+      "adjudication": {
+        "choice": "A",
+        "case": "CASE_007.json",
+        "timestamp": "2026-10-10T11:59:09.920622+00:00",
+        "authority": "Human approval in current chat, 2026-10-10"
+      }
     },
     "print_OCR_candidates": [],
     "print_evidence": {
@@ -6146,7 +6152,7 @@
       "incipit": "Similiter etiam fecit",
       "correspondence": "VARIANT_CORRESPONDENCE",
       "reason": "Archelaus, Roman custody, stone building and seal; transmitted candlestick detail differs from Greek daily-lighting statement.",
-      "note": "The Latin expands the stored temple objects and candlestick account; its source wording remains literal.",
+      "note": "The Latin expands the stored temple objects and candlestick account. Its feast-only delivery relative clause remains attached to the candlestick; the Greek distinguishes daily lamp tending at 93 from the priestly garment account at 94.",
       "retained_label": null,
       "approved": true
     },
@@ -6202,21 +6208,27 @@
         "paragraph": 40,
         "xpath": "/*/*[2]/*/*[2]/*[9]/*",
         "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[6]/p[1]/cb[1]/tail()",
-        "node_offset": 524,
-        "unit_offset": 1691,
-        "book_offset": 26700,
-        "raw_byte": 34578,
-        "left": "ricatio, sub sigillo sane pontificum et gazophilagis habebatur, a quo et cetera templi ornamenta et candelabrum quoque seruabatur ",
-        "right": "quod tantum per dies festos ad usum pontificum tradebatur. Transacta uero festiuitate iterum in loco proprio reponenda reddebatur, et per tres itaque festiuitates singulis quibusque annis, et per ieiunia dabatur atque reddebatur. Uitellius ",
+        "node_offset": 583,
+        "unit_offset": 1750,
+        "book_offset": 26759,
+        "raw_byte": 34637,
+        "left": "tur, a quo et cetera templi ornamenta et candelabrum quoque seruabatur quod tantum per dies festos ad usum pontificum tradebatur. ",
+        "right": "Transacta uero festiuitate iterum in loco proprio reponenda reddebatur, et per tres itaque festiuitates singulis quibusque annis, et per ieiunia dabatur atque reddebatur. Uitellius autem tunc secundum morem antiquum stolam illam pontificum ",
         "parsed_unit_sha256": "ecc782dd9d9fa12e149dc5b6e305ec69412a1caf1e2adfc8c40bb90b57b5d348",
         "raw_unit_sha256": "ee7d9ca141b0ee53660324084b602a63fc3246e055bd069452e03107573cdbec"
       },
-      "incipit": "quod tantum per dies festos",
-      "correspondence": "EDITORIAL_DECISION_PENDING",
-      "reason": "Relative clause refers to a candlestick in Latin, unlike the Greek return of priestly garment. Candidate A at quod tantum, B at Transacta uero festiuitate; complete evidence requires focused decision.",
-      "note": "Provisional cut; do not manufacture unqualified garment/candlestick correspondence.",
+      "incipit": "Transacta uero festiuitate",
+      "correspondence": "PARTLY_SURVIVING",
+      "reason": "The Latin relative quod grammatically refers to candelabrum. Greek 93 ends with the keeper lighting a lamp daily; Greek 94 begins with the garment delivered seven days before the feast. The Latin feast-only delivery statement is attached to its candlestick account. Its following return and three-feasts-and-fast statements survive as correspondence to 94, without the Greek timing and purification particulars.",
+      "note": "The Latin interval preserves the return after the feast and the three annual festivals and fast. The preceding feast-only delivery clause is retained with the Latin candlestick account at 93. The Greek seven-day timing and purification particulars have no separate expression here; no cause of this difference is inferred.",
       "retained_label": null,
-      "approved": false
+      "approved": true,
+      "adjudication": {
+        "choice": "B",
+        "case": "CASE_094.json",
+        "timestamp": "2026-10-10T11:59:09.920622+00:00",
+        "authority": "Human approval in current chat, 2026-10-10"
+      }
     },
     "print_OCR_candidates": [],
     "print_evidence": {
@@ -14216,7 +14228,7 @@
       "incipit": "Tyberium autem nepotem",
       "correspondence": "PRESENT",
       "reason": "Grandson's loss of power and endangered life.",
-      "note": null,
+      "note": "The present Latin passes directly from this account to the remorse narrative at 218. Sections 216–217 have no independent Latin intervals here; no cause of the difference is established.",
       "retained_label": null,
       "approved": true
     },
@@ -14268,12 +14280,22 @@
     "Latin_review_status": "FULL_WITNESS_REVIEW_COMPLETED_HUMAN_REPRESENTATION_PENDING",
     "candidate": {
       "available": false,
-      "correspondence": "UNAVAILABLE_IN_THIS_TRANSCRIPTION_PROPOSED",
+      "correspondence": "NO_INDEPENDENT_LATIN_INTERVAL_IN_PRESENT_TRANSCRIPTION",
       "locator": null,
-      "approved": false,
+      "approved": true,
       "case": "CASE_216_217.json",
       "reason": "Latin215 passes directly to the remorse account of218. No account of casting horoscopes, Galba or general reliance on divination is expressed in the full current Latin narrative. The opening of218 refers back to the immediately preceding succession omen and does not independently express217.",
-      "note": "No corresponding passage is expressed in this Latin transcription. The cause of this difference is not established. Greek and contextual English remain independently available."
+      "note": "No independent Latin interval for Antiquities XVIII.216 (Tiberius’s astrology and Galba) survives in the present Bamberg transcription. Latin 215 passes directly to 218. The succession-omen and foreknowledge wording remains at Latin 218 as indirect context; it is not assigned a second interval here. Greek and Whiston English context remain independently available. This representation does not establish absence from the original Latin translation or any scribal, exemplar or physical-loss cause.",
+      "adjudication": {
+        "choice": "A",
+        "case": "CASE_216_217.json",
+        "timestamp": "2026-10-10T11:59:09.920622+00:00",
+        "authority": "Human approval in current chat, 2026-10-10"
+      },
+      "cross_references": [
+        215,
+        218
+      ]
     },
     "print_OCR_candidates": [],
     "print_evidence": {
@@ -14321,12 +14343,22 @@
     "Latin_review_status": "FULL_WITNESS_REVIEW_COMPLETED_HUMAN_REPRESENTATION_PENDING",
     "candidate": {
       "available": false,
-      "correspondence": "UNAVAILABLE_IN_THIS_TRANSCRIPTION_PROPOSED",
+      "correspondence": "NO_INDEPENDENT_LATIN_INTERVAL_IN_PRESENT_TRANSCRIPTION",
       "locator": null,
-      "approved": false,
+      "approved": true,
       "case": "CASE_216_217.json",
       "reason": "Latin215 passes directly to the remorse account of218. No account of casting horoscopes, Galba or general reliance on divination is expressed in the full current Latin narrative. The opening of218 refers back to the immediately preceding succession omen and does not independently express217.",
-      "note": "No corresponding passage is expressed in this Latin transcription. The cause of this difference is not established. Greek and contextual English remain independently available."
+      "note": "No independent Latin interval for Antiquities XVIII.217 (the general account of reliance on divination) survives in the present Bamberg transcription. Latin 215 passes directly to 218. The succession-omen and foreknowledge wording remains at Latin 218 as indirect context; it is not assigned a second interval here. Greek and Whiston English context remain independently available. This representation does not establish absence from the original Latin translation or any scribal, exemplar or physical-loss cause.",
+      "adjudication": {
+        "choice": "A",
+        "case": "CASE_216_217.json",
+        "timestamp": "2026-10-10T11:59:09.920622+00:00",
+        "authority": "Human approval in current chat, 2026-10-10"
+      },
+      "cross_references": [
+        215,
+        218
+      ]
     },
     "print_OCR_candidates": [],
     "print_evidence": {
@@ -14390,9 +14422,13 @@
       "incipit": "Et tunc quidem in his",
       "correspondence": "PRESENT",
       "reason": "Distress at omen and self-reproach for knowing future.",
-      "note": null,
+      "note": "The succession-omen and foreknowledge wording survives in this Latin interval. It provides indirect context for Greek 216–217, which have no independent Latin intervals in the present transcription; this occurrence remains assigned to 218. No original-translation absence or physical-loss mechanism is established.",
       "retained_label": null,
-      "approved": true
+      "approved": true,
+      "cross_references": [
+        216,
+        217
+      ]
     },
     "print_OCR_candidates": [],
     "print_evidence": {

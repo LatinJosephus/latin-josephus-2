@@ -27,3 +27,14 @@ B: before `Transacta uero festiuitate`, paragraph `latin-book18-num90`, Unicode 
 A assigns the feast-only delivery relative clause to94, but that clause refers grammatically to the candlestick in the transmitted Latin and would need an explicit cross-identity qualification. B keeps the relative clause with its antecedent in93 and begins the qualified Latin interval for94 with the surviving return-after-feast statement. B is recommended because it preserves the Latin construction and reports the limited surviving correspondence. Neither choice licenses alteration of the source or an unqualified garment/candlestick equivalence. Reciprocal notes for93 and94 are recorded in CASE_094.json.
 
 Frozen source hashes and exact locations remain in the per-book baseline and case JSON; the independent structural registry puts these sections within traditional IV.3 and provides no separate lower physical boundary at94.
+
+
+## Human adjudication — 2026-10-10
+
+**B APPROVED; HOLD CLOSED.** The earlier pending statement above is retained as proposal history. The exact pre-approval record is preserved in `history/pre-adjudication-1938fa0/CASE_094.json` and `.md`, at commit `1938fa015ec9273ed396754a362f25f14ae6c6f8`. The selected alternative, source evidence, original coordinates, neighbouring approved extents and qualifications are recorded in the appended adjudication history. Source wording remains literal; no conjecture or physical-loss cause is supplied.
+
+Applied adjacent Latin extents (frozen narrative Unicode coordinates; the exact text and both language contexts are retained in the JSON):
+
+- 18.93: [26387, 26759); source byte 34265; begins `Similiter etiam fecit archelaus filius eius postquam herodi successit `.
+- 18.94: [26759, 26930); source byte 34637; begins `Transacta uero festiuitate iterum in loco proprio reponenda reddebatur`.
+- 18.95: [26930, 27330); source byte 34808; begins `Uitellius autem tunc secundum morem antiquum stolam illam pontificum p`.
