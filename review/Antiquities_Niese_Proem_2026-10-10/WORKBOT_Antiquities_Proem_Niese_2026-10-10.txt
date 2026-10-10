@@ -1,0 +1,105 @@
+# LatinJosephus — Antiquities Proem (Niese §§1–26): independent segmentation and local certification
+
+## Mission and boundaries
+
+You are the dedicated WorkBot for the **Proem / Preface of Josephus' Jewish Antiquities**, comprising **Niese §§1–26**, immediately before the Book I narrative beginning at **I.27**. Complete a narrowly scoped, source-controlled reconnaissance; verify all 26 Greek Niese starts and any surviving ancient Latin counterparts; implement the authorized proem citation/reader support locally; run meaningful browser and byte-preservation checks; and leave a clean, locally certified branch with a compact handoff.
+
+This is **not** a request to redo Book I, edit any of its accepted I.27–346 boundaries, change the traditional/Bamberg system, create a twenty-first book, or translate missing source text. Its first gate is to establish whether the actual Proem text for each witness is already present in the repository or in the project's separately frozen and approved source files. Older Book I Niese production snapshots **excluded §§1–26 and contained only I.27–346 (320 identities)**. Do not pretend their absence was merely an omitted set of milestones.
+
+Local worktree creation, reversible segmentation of verified approved sources, targeted generic reader/registry changes, QA, and scoped **local** commits are authorized. No canonical merge, push, preview export, publication, domain change or work on another book is authorized. If new *textual content* would have to be imported from a different witness or edition, request a specific source-and-scope decision before putting it in production XML; continue all independent verification and local design work meanwhile.
+
+## 1. Pinned source and worktree isolation
+
+Canonical checkout (read for provenance; do not modify):
+  C:\Users\Pollard_R\Git\LatinJosephus-v2-development
+Branch / remote: `v2-development` / `origin/v2-development`.
+Last confirmed canonical/remote commit after integration of XI and XVI–XIX:
+  `003ac796021890dde4b3d8ff152100f386280b3c`
+
+Book XX has a separately certified source branch and may be undergoing canonical integration. Check the *actual* local and remote heads, Git status, relevant intervening changes and source hashes before choosing the immutable starting commit. Use the latest verified, consistent canonical baseline; record the exact hash. Do not rebase the WorkBot whenever canonical advances or overwrite XX's integration work. Final integration later will reconcile all intervening commits.
+
+Suggested independent branch: `antiquities-niese-proem`
+Suggested independent worktree:
+  C:\workspace\LatinJosephus-antiquities-niese-proem
+Review directory:
+  C:\workspace\LatinJosephus-antiquities-niese-proem\review\Antiquities_Niese_Proem_2026-10-10
+Disposable QA/runtime directory:
+  C:\workspace\Antiquities-Niese-Proem-runtime-20261010
+Preferred local QA server port: `8920` (use another free one if occupied).
+
+Check existing branch/path ownership before creation and use an isolated browser context. Do not touch the XX source/integration worktree or other WorkBots' branches, runtimes or preview checkout. Never use a destructive reset/clean/stash on another person's files or modify Git global configuration.
+
+## 2. Recover the ACTUAL Proem witnesses before inserting markers
+
+Inspect the current pinned repository's full directory inventory, loaders, config, book menu, reader and Git history. Search **proem**, **prooemium**, **preface**, **praefatio**, **prologue**, and Book I's pre-narrative content. Do not assume a file named `proem.xml` exists.
+
+Known Book I source paths to inspect as context (confirm actual locations and contents):
+  assets\xml\antiquities\Greek\book-01.xml
+  assets\xml\antiquities\Latin\book-01.xml
+  assets\xml\antiquities\English\book-01.xml
+  assets\xml\antiquities\structure.xml
+  assets\js\renderTei.js
+  _includes\display-settings.html
+Also discover current `assets/xml/antiquities/niese/` identity data and any separate preface assets through actual repository references.
+
+**Greek primary print:** B. Niese, *Flavii Iosephi opera*, vol. I, *Antiquitatum Iudaicarum libri I–V* (1887), the printed Proem with §§1–26. Obtain its actual project PDF/scans from frozen source-authority records; independently check the title, edition, page offsets and text. Avoid substituting Niese's editorial Latin preface to the printed volume for Josephus' own Greek Proem.
+
+**Printed independent Greek control:** Loeb Classical Library, *Jewish Antiquities*, first volume, Proem 1–26, from the supplied source directory:
+  C:\workspace\Loeb Josephus Volumes
+Find the actual volume, year, pagination and PDF image indices; do not assume earlier Book VIII/X page offsets apply. Whiston's printed *Preface* is a third, English contextual witness, not a word-exact locator authority for Latin.
+
+**Latin witness:** the project's constituted Latin transcription of **Bamberg, Staatsbibliothek, Msc. Class. 78**, if the Proem survives and has been transcribed in approved project sources. Search project source archives / FairCopy TEI, accepted Book I and traditional-navigation source authorities, and already frozen/provenanced files. If comparing other copies, note that Blatt, *The Latin Josephus* (1958), pp. 122–126 in the cited pagination, and Froben (1524) can serve as controls for the ancient Latin version but **must not be silently substituted** for Bamberg's actual words. Likewise, manuscript catalogue evidence of a Proem in another codex does not prove its presence in Bamberg. If Bamberg lacks the Proem, or the project lacks its approved transcription, document that precise fact or uncertainty and return a specific source selection request. Do not fabricate Bamberg readings by translating from Greek or copying the Froben/Blatt text.
+
+**English witness:** establish whether Whiston's *Preface* is already frozen in a project file and which text/version is licensed and approved. His numbered paragraphs do not automatically equal 26 Niese divisions. Preserve English bytes; use the existing contextual/cross-witness display mechanism where exact English cuts are not independently established.
+
+Produce `SOURCE_AUTHORITY.md` and `BASELINE.json`: for each language give exact absolute path (or NOT FOUND), actual incipit/explicit, textual extent, edition/witness, SHA-256, encoding, source provenance and whether there is approved authority to insert it. Distinguish truly absent witness material from an unlocated file or a failed file-access tool. If critical source files cannot be accessed, do not declare them absent from the manuscript.
+
+## 3. Establish the Proem's separate scholarly identity
+
+Expected logical Proem span: **1–26**, in the numerical system conventionally cited as *Antiquities* I.1–26. Confirm all 26 starts against Niese's actual printed Greek, including section 1 and the end immediately before the separate Book I narrative at I.27. The first Greek Proem words should be independently checked against the source beginning `Τοῖς τὰς ἱστορίας συγγράφειν βουλομένοις`; do not manufacture labels from later digital text alone.
+
+Important: the established Book I navigation already represents I.27–346, **320 selected identities**. Niese's Proem 1–26 are not an extra numbered Book 0 or an additional set of Book-I narrative paragraphs. The Proem must be labelled and addressable distinctly without colliding with existing Book I routes, chapter choices, XML IDs, Niese numeric claims or first/last extents. Inspect existing route conventions before deciding whether the stable public reference is a Proem view under Book I or a distinct `proem` query; do not hardcode new URL syntax without reader evidence.
+
+If all 20 books have been integrated, their current projected selectable total is **7,350 excluding the Proem**. Adding the 26 separately selectable Proem identities would then yield **7,376**. If Book XX is not yet integrated when you freeze your own baseline, the actual prior total will be lower; report the actual identity set and the conditional arithmetic rather than claiming public or canonical coverage prematurely. Do not double-count I.1–26 if the chosen baseline has already added them by a later accepted change.
+
+Preserve any source Proem headings, scribal introductions, incipits/explicits, rubrication markers, apparatus, page/column changes and any preface's distinctive paragraph divisions as independent physical and editorial structures. Source contents/capitula and titles are **paratext**, not automatically inferred navigable Niese identities.
+
+## 4. Complete the small philological segmentation
+
+Visually inspect each of the **26 Niese Greek starts** in the printed edition. Record edition, printed p., PDF p., source image, exact phrase and whether a marginal numeral determines a line rather than a unique word. Check Loeb separately as an independent control. Preserve the Greek source text, punctuation and apparatus; propose a reversible marker move/add only when justified by print.
+
+For each of the 26 Proem identities, review its **complete Greek extent** and the nearest surviving Latin counterpart throughout the approved Bamberg Proem. It might start inside a Latin sentence, bridge an inherited paragraph boundary, be compressed or appear in another physical order. Never infer Latin position from Greek numbering, a Whiston paragraph number or a modern printed Latin edition alone.
+
+For every Latin start and noncontiguous fragment, record enclosing element and `xml:id`, exact XPath/text-or-tail locator, Unicode code-point offset, raw UTF-8 byte offset, surrounding text, its own SHA-256 and corresponding Greek material. Verify coordinates against current worktree bytes and mixed-content markup. Record starts/ends and any physically source-only material separately. Do not silently split paragraphs, normalize spelling, modernize punctuation, change original IDs, or insert supplied translation.
+
+If one or more identities genuinely lack an independently identifiable Latin counterpart in the **approved source**, record cause-neutral unavailability and retain independently available Greek and English. If the entire Bamberg Proem text is not in the approved source set, treat this instead as a **missing corpus source/authority gate**, not a newly proved lacuna of 26 sections. Do not enable a fictitious Latin pane.
+
+Keep Greek-print verification, Latin source availability, Latin cut confidence, English context, and editorial decision status as distinct data fields. Resolve routine secure starts autonomously; bring only material alternative cuts, uncertain source-witness selection or novel representation decisions back to the editor in a compact packet with adjacent texts, exact cuts, print evidence, recommendation and implications for neighbouring extents. Continue all independent work while awaiting that decision.
+
+## 5. Implement the approved Proem with the existing architecture
+
+Once the verified and authorized Proem source text is present, make a minimal source/registry/reader patch **only in this isolated worktree**. Reuse the current source-aware Niese indexing, generic fragment/availability logic and existing display conventions. Preserve current Greek, Bamberg Latin and Whiston textual data without reserialization. A new small TEI/XML file may be justified if the repository architecture already recognizes standalone Proem files; a source-content import from another edition still requires explicit approval.
+
+Expose 26 logical Proem choices and a coherent whole-Proem view, with ordinary deep links, previous/next within the Proem and a clear transition/reference to the beginning of Book I at I.27. Do not let a Proem milestone shift Book I traditional, Bamberg, Alignment or legacy chapter endpoints. Maintain the 20-book menu and existing Book I narrative URLs, including I.27 and I.346. Preserve other-work and published reader behavior, including current Whiston, XI fragment order, XVI–XIX and XX if in the pinned source, and the XX `Vita`/trailer protections.
+
+Avoid a separate renderer architecture or a collection of special-case Proem `if` statements when existing data-driven configuration suffices. If a generic renderer edit is truly necessary, keep it independently scoped, tested and documented, without importing an obsolete entire `renderTei.js` from another branch.
+
+## 6. Local certification and preservation
+
+Require all **26 Proem selections** to pass real local browser checks with correct Greek start/end, honest Latin availability and context, English pane according to verified source, direct link/reload/history, previous/next, whole-Proem range, and transition to Book I. Verify source-level and rendered boundaries at Proem 1, 2, 25, 26 and Book I.27, and inspect representative internal selections.
+
+Demonstrate an exact lossless reconstruction of the entire physical narrative from approved source spans. Prove that reversing only inserted segmentation markers returns the pinned Greek and Latin file bytes *exactly*; if an approved separate source import was needed, treat its full original-byte integrity and documentary provenance as a separate proof, not as a reversible marker addition. English and all unrelated source files must remain unchanged.
+
+Test Book I **all existing 320 selections (I.27–346)** for unchanged text/ID/extent, including the first and final chapter. Test traditional/Bamberg/Alignment views and contents independently, preventing the Proem from becoming a Book-I alignment unit or an inferred TOC entry. Run the established protected prior-Niese suite using actual matching production blobs and targeted cross-work tests. If shared selection/routing/renderer code changed, run the **complete previously certified identity population on that new build**, not merely a few URLs. Preserve all current Whiston, Bellum/Lodge, DEH and Contra Apionem behaviors. Check duplicate DOM IDs, broken assets and console errors; only independently reproduced, unchanged Book-I baseline defects may be documented as inherited.
+
+Keep an explicit reconciliation: Proem identities = 26, represented Latin identities (if authority is present), unavailable Latin identities (if established), primary fragments, inherited start anchors, new milestones/end anchors, title/paratext fragments. Never force the older books' simple `retained + inserted + unavailable` equation on a fragmented case.
+
+## 7. Durable local handoff
+
+Keep the job small: one compact source inventory, a 26-row Greek/Latin decision register, a focused missing-text/alternative packet only when necessary, byte/hash receipts, minimal production manifest, QA results and `REPORT.md`. Make scoped local checkpoint commits at meaningful stages, retaining evidence and old decision states. Do not produce a new corpus-wide print audit or needlessly recollate twenty books.
+
+Success means: **26 independently printed-verified Proem citations, correctly separated from I.27–346; locally certified Proem reader; truthful Latin/Whiston treatment; clean local branch; full preservation evidence.** Deliver branch/worktree/runtime paths, frozen base, local commit hash, exact source/witness provenance, start/fragment counts, full test results, remaining decisions, changed production files and readiness for coordinated integration.
+
+If the authorized Greek or Latin Proem source is genuinely unavailable, save and commit a complete **SOURCE-ACQUISITION HOLD** packet explaining the exact absent or unapproved inputs, what can be done safely with current witnesses, and the narrow decision required. Do not claim local certification, fake a source witness, or push provisional content. After that source decision is supplied, resume from this checkpoint rather than restarting the audit.
+
+**Never merge into canonical, push to GitHub, refresh the preview or deploy.** The final Proem may be integrated after Book XX by the coordinating Publication/Integration WorkBot, preserving its independently certified source branch.
