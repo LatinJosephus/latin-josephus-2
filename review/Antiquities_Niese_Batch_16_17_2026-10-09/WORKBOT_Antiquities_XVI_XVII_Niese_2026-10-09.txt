@@ -1,0 +1,162 @@
+# LatinJosephus — Antiquities XVI–XVII Niese segmentation WorkBot
+
+## Mission and permission
+
+You are the sole segmentation WorkBot for **Antiquities XVI and XVII**. Carry out an exhaustive primary-source audit, individual Latin correspondence review, any needed editorial decision packets, an isolated implementation of Niese navigation for BOTH books, actual built-reader QA, and clean, scoped LOCAL Git commits and certificates. Treat the books as independently certifiable within one batch. Continue routine research, implementation and testing autonomously. Raise only genuinely unresolved scholarly/representation decisions that cannot safely be resolved from the accepted rules; continue all independent work while such a decision is pending.
+
+**Do not merge to canonical, push any branch, refresh GitHub preview, deploy, or modify domains.** A later coordinator will integrate independently certified batches sequentially. The simultaneous XI and XVIII–XIX WorkBots have independent workspaces; do not touch them.
+
+## 1. Current release and isolated worktree
+
+Canonical checkout (read-only except to inspect status/history):
+  C:\Users\Pollard_R\Git\LatinJosephus-v2-development
+Canonical branch and remote: v2-development / origin/v2-development.
+Most recently reported, published and directly verified source HEAD:
+  9527578f361d48adb3094110254e627292bca2c5
+Most recently reported public preview:
+  https://latinjosephus.github.io/
+  preview main 579fb392c626b8cd794db25db1d920b21cd3ac2b
+Published Antiquities Niese coverage before this assignment: **5,231 selectable identities**, books I–X and XII–XV (XI and XVI–XX not yet added to this count).
+
+At the outset inspect both actual local canonical and origin tips, status and intervening history. Choose and RECORD a single immutable canonical commit with the complete current IX/XII–XV/Whiston/traditional/Bamberg reader. Use 9527578... if still the intended common baseline; if canonical has advanced, inspect the delta and explain the chosen immutable base. Do not reset, stash, switch, clean, rebase or update another worker's checkout. For reproducible parallel integration, stay pinned after the baseline is chosen. Later canonical advances do not authorize rewriting this source.
+
+Suggested isolated branch:
+  antiquities-niese-16-17
+Suggested isolated worktree:
+  C:\workspace\LatinJosephus-antiquities-niese-16-17
+Dedicated review directories:
+  review\Antiquities_Niese_BookXVI_2026-10-09
+  review\Antiquities_Niese_BookXVII_2026-10-09
+  review\Antiquities_Niese_Batch_16_17_2026-10-09
+Disposable runtime/QA directory:
+  C:\workspace\Antiquities-Niese-16-17-runtime-20261009
+Preferred local port: 8916 (take an unused port if occupied).
+
+Before creating or using any path/branch/port, establish ownership and inspect pre-existing contents. Never overwrite an unrelated worker's files. Use an isolated browser profile/session.
+
+## 2. Authorities: read actual bytes, not assumed equivalents
+
+Current production files (locate exact files/loader references in the pinned worktree):
+  assets\xml\antiquities\Greek\book-16.xml
+  assets\xml\antiquities\Greek\book-17.xml
+  assets\xml\antiquities\Latin\book-16.xml
+  assets\xml\antiquities\Latin\book-17.xml
+  assets\xml\antiquities\English\book-16.xml
+  assets\xml\antiquities\English\book-17.xml
+  assets\xml\antiquities\structure.xml
+  assets\js\renderTei.js
+  _includes\display-settings.html
+Discover current Niese registry filenames and representation from actual loader, not guessed paths; inspect IX, XII–XV certificates and approved implementation examples.
+
+**Primary Niese authority:** B. Niese, Flavii Iosephi Opera, vol. IV, *Antiquitatum Iudaicarum libri XVI–XX et Vita* (1890), actual PRINTED pages covering XVI and XVII. Locate the actual PDF/images and verify cover, edition, PDF page numbers, printed page numbers and book ranges before relying on it. Copies may be in the project's Segmentation resources or other Niese PDF folders; trace existing workbot source manifests. Do not substitute a web transcription or a modern edition for the specified print as the final authority for citation boundaries.
+
+**Independent control, not Niese authority:** the relevant supplied Loeb Classical Library *Antiquities* volumes, in:
+  C:\workspace\Loeb Josephus Volumes
+Inspect the actual volume and page numbering; the frozen traditional chapter/subchapter extraction and reconciliation are source-qualified structural authorities for Loeb/traditional starts, NOT automatic Niese start locators.
+
+**Canonical Latin witness:** unchanged Bamberg Msc. Class. 78 TEI transcription. **Greek corpus:** current site edition, subject to verification against Niese print. **Whiston English:** preserve current bytes and aligned contextual display; it may corroborate correspondence but must not become the authority for Latin cuts or receive invented exact segmentation.
+
+Read frozen/committed traditional-Bamberg evidence before editing. Relevant authorities include:
+- `assets/xml/antiquities/structure.xml` (real schema to inspect);
+- traditional-navigation certification/refinement around commit `b8d4db2`;
+- Bamberg-navigation certification around `087c0bf`;
+- `review/Antiquities_Bamberg_Navigation_2026-10-07` and traditional navigation records;
+- `review/Antiquities_Loeb_Bamberg_Reconciliation_2026-10-06` and earlier Niese/Loeb verification;
+- XI, IX and XII–XV current reviewed reports as examples, not substitute editorial evidence.
+Locate actual committed copies/paths and verify provenance; old files and offsets are context, not replacement source bytes.
+
+Capture exact pinned input hashes and Git blob/working-tree distinctions, line endings, encoding, all existing `xml:id`, `sameAs`, chapter divisions, labels, notes, source TOC/capitula, material marking, page/column/image milestones and renderer/registry hashes. Do not use a global XML serializer or line-ending conversion for production edits.
+
+## 3. Mandatory numerical census and special boundaries
+
+Working expected Greek/Niese ranges (verify against printed Niese and current Greek book ends):
+- **XVI: 1–404 = 404 identities**;
+- **XVII: 1–355 = 355 identities**;
+- **batch: 759 identities**.
+These are verification targets, NOT preassigned Latin starts, intervals, marker counts or a reason to invent missing starts. Audit first section, final section, all gaps/duplicates, explicit/implicit opening labels, book tails and transitions. Greek section 1 must be explicitly and correctly accessible without inventing an extra identity. Separate printed marginal-number observation from a judgment about the first exact word of a section.
+
+**Mandatory inherited traditional/Bamberg exceptional positions:**
+
+A. **XVI, Bamberg chapter XX, Niese 368.** Frozen audit places the manuscript's `Et primus quidem saturninus` beginning INSIDE current coarse paragraph `num367`; previous flattened-text offsets were Greek 184 / Latin 177 / English 212. The Bamberg chapter beginning belongs at 368, and must remain an independent source boundary. Confirm the precise existing anchor in the current three witnesses. NEVER pull the manuscript boundary to a neighbouring Niese marker or treat the old paragraph start as proof of a section start. If the Niese start coincides with a verified source point, record actual physical equality; do not assume it from the number.
+
+B. **XVI.viii.2, Niese 235.** The independently verified traditional subchapter starts at Greek `Τούτων τῶν` and is associated with 235. The older RAW association `236` survives separately as historical evidence; don't restore that error or change the traditional source record to force the new Niese placement. Verify the exact physical start against print and current XML.
+
+C. **XVI.xi.1, Niese 356.** Existing Latin paragraph `num356` has a traditionally located beginning AFTER preceding material, not simply at offset zero. The previous source audit noted an internal Latin start; inspect its present locator and distinguish traditional and Niese identities. Protect the content before the traditional chapter start against accidental loss, expansion or double-counting.
+
+D. **XVII.v.5, Niese 106.** Frozen Loeb audit places the Greek traditional lower division at `ἐπὶ τούτοις` INSIDE Greek `num106`, following preceding narrative; Latin and English traditional counterparts begin at their own paragraph starts. The same Niese number is not proof of a shared exact three-language cut. Preserve the accepted per-language locations.
+
+E. **XVII.vi, Bamberg `[X]` at Niese 146.** This is a certified *same Niese number, different physical position* from the Loeb/traditional chapter beginning. Frozen Bamberg internal offsets: Greek 127 / Latin 98 / English 184 within their paragraphs. Preserve both independent boundaries and the literal/supplied manuscript label; do not deduplicate by citation number. Inspect the present anchors and original decision evidence.
+
+F. **XVII.xi, Bamberg `XVIIII` at Niese 299.** Also a certified different-position pair. Bamberg internal offsets: Greek 117 / Latin 147 / English 118. Traditional chapter start and Bamberg start must not merge, and neither may be moved by a new Niese milestone.
+
+G. For XVI and XVII, existing editorial `unit="chapter"` markers / legacy Chapter controls are NOT interchangeable with traditional Chapter, Bamberg chapter, Alignment unit or Niese citation. Earlier diagnostics showed 16 legacy positive options vs. 11 traditional chapters in XVI, and 19 vs. 13 in XVII. Discover actual current runtime behaviour and preserve it. The separate recent XV fix prevents new Niese milestones from shifting inherited chapter endpoints; explicitly test for the same failure in XVI/XVII rather than copying a premature fix blindly.
+
+H. Greek book-openings for XV–XX carry a book-extent/paratextual notice before the actual narrative in the first aligned paragraph. Preserve this material and the already audited internal traditional/Bamberg openings; do not simply mark byte 0 or paragraph start as the narrative section-1 start without evidence. Distinguish per-language start from prefatory label.
+
+This list is not an exhaustive exception catalogue. Inventory ALL anomalies in the frozen source data and present XML. A `num` label, `sameAs`, chapter numeral, unqualified milestone, image filename or coarse alignment ID is not a certified executable Niese boundary.
+
+## 4. Scholarly boundary method
+
+**First perform a complete READ-ONLY reconnaissance for both books.** Verify exact current XML/renderer/registry, printed authority, alignment topology, all visible numbered claims, inherited starts, heading/capitula content, nested markup and known gap/unclear/corr/notes. Keep book-specific audit evidence separately; one book's success is not the other's certification. Build a complete candidate identity register with 404 and 355 individual records.
+
+For EVERY Greek identity:
+- inspect the correct Niese printed page image and numeral; record volume, printed p., PDF image p., exact Greek start candidate and sufficient page evidence for later verification;
+- distinguish a marginal number alongside a LINE from an unambiguous word-level boundary; use syntax, nearby Greek, and Loeb as independently attributed corroboration where necessary;
+- check if the Greek current marker is displaced, missing at book opening or already correct; move/add only with print support, an adjudicated exact change and byte-reversible record;
+- preserve Greek original text and apparatus entirely.
+
+For EVERY Latin identity:
+- align the complete Greek interval with Latin narrative, not merely the inherited heading or the first aligned paragraph;
+- review left/right neighbours and whole contexts, including crossing existing `div2`, `floatingText` and `argument` boundaries;
+- find the earliest defensible physical Latin counterpart, even when compressed, damaged, syntactically reattached, repeated, displaced or embedded mid-word-group; do not infer absence solely from lack of matching words at an expected offset;
+- record literal Latin before/after candidate, stable paragraph XML ID, text/tail path, mixed-content code-point offset, raw UTF-8 position and complete-source hash; preserve punctuation, spacing, IDs and markup;
+- qualify partial, absent-in-transcription, uncertain, or displaced correspondence separately, with causes explicitly undetermined unless evidence establishes them;
+- retain traditional and Bamberg starts exactly: Niese internal milestone is a separate coordinate, not a replacement;
+- preserve `num`/citation labels as visible manuscript or older edition data even when they do not define the executable Niese start.
+
+Use sources and tools for locating, but do not certify from automatic alignment alone. Do not correct the transmitted text on philological grounds; SEGMENTATION ONLY. No supplementation, normalization, substitution, paragraph reordering or unrequested source-TOC reconstruction.
+
+## 5. Decisions and gated local application
+
+Routine secure positions may be resolved and documented by the WorkBot according to already accepted editorial policies; do not ask for approval for every normal internal start. For genuine disputed word cuts, missing counterpart versus displaced survival, or a difficult view/identity-representation choice, assemble a small decision packet containing the precise alternatives, Greek/Latin adjoining text, source print images/refs, effected previous/next extents, and a reasoned recommendation. Ask the editor only for those alternatives, then document the answer and continue. No implementation of a disputed cut until adjudicated.
+
+Keep an explicit per-book history: preliminary candidate, printed confirmation, individual Latin review, alternative analysis, editor approval where required, applied offset and QA state. Historical guesses cannot silently become certified.
+
+After necessary choices are closed, build minimal patches to each source file and its corresponding existing Niese registry/availability data. Insert `milestone unit="niese"` or other **established** certified locator representations only where permitted by actual TEI structure. Reuse existing exact physical anchors rather than proliferating duplicate DOM IDs. Where a false inherited label would create a duplicate Niese identity, suppress EXECUTABLE interpretation through the current data override while preserving the visible label; do not edit it away.
+
+Any shared `renderTei.js` edit must be generic and narrowly justified by actual behaviour. Preserve the current IX, XII, XIII, XIV and XV registrations, Whiston, existing Greek range handling, and XV chapter-endpoint fix. Do not take an older whole-file renderer. No book-specific conditional logic for XVI/XVII if the general range/registry model can express the case. Do not modify English narrative XML. A source-specific unavailable Latin selection retains independent Greek/English views, with source-specific provenance and no fake Latin fallback.
+
+## 6. Separate irreversible-source and rendered-reader proofs
+
+For each book, prove exact source-byte restoration of the pinned LATIN input after removing precisely the approved new segmentation elements/records, including text/tail position and line endings; prove exact Greek-source recovery by reversing just approved Greek citation marker edits. No global XML reserialization. English narrative bytes and protected unrelated XML stay bitwise identical. Compare existing IDs, `sameAs`, paragraph topology, wrappers, all book/chapter/traditional/Bamberg markers and notes before and after. Record protected content hashes.
+
+Independently verify that each new logical section's selected Latin fragments cover appropriate physical text exactly once, including preserved physical order and per-section end (next actual logical Niese boundary or explicit qualified exception). Avoid hidden swallowing, duplication or truncated tails. Retained traditional/Bamberg internal anchors must not become part of the new section's ID count. Count and report separately: Niese identities, present Latin intervals, retained starts, new Niese start milestones, extra end/other anchors, unavailable identities and qualification counts. Close these counts by checking actual registry data; do not force numbers from earlier books.
+
+Build the actual site in a disposable isolated runtime and browser. Verify individually EVERY **404 XVI** and **355 XVII** Niese selection (all 759), next/previous and available/unavailable status. Enumerate and test the actual containing Chapter/Subchapter/legacy and Bamberg views and their endpoints, including starts and tails where a milestone lies inside a container. Require meaningful rendered content checks, not merely HTTP 200.
+
+Explicit regression clusters:
+- XVI.234–236, 355–357, 367–369 and affected traditional `viii.2`, `xi.1`, Bamberg `XX` containing views.
+- XVII.105–107 (including Greek `ἐπὶ τούτοις`), 145–147 and 298–300, with both versions of the same-Niese/different-position Bamberg/traditional boundaries.
+- Both book openings, final sections, and boundaries between XVI→XVII and XVII→XVIII (but do not edit XVIII).
+- XVI/XVII whole-book, Alignment-unit and inherited traditional/Bamberg chapter endpoints must remain unchanged after adding Niese markers.
+- Direct URLs, reload, back/forward, fragmented-parameter selection, nav menu names, previous/next, language and witness panes, source TOCs, theme switching, contextual Whiston labels and console/ID integrity.
+- Protected IX, VIII, X, XII–XV Niese controls (including XVI-neighbour XV's certified endpoints); the currently certified 5,231 prior selections are never reduced or changed. If shared reader/range code changes, rerun their exhaustive 5,231-selection suite, not merely samples. Also protect Bellum/Cardwell/Whiston/Lodge, Contra Apionem and DEH behaviour.
+
+Known baseline Book-I apparatus links and unsupported I.1 may be recorded only if independently reproduced at unchanged baseline and not worsened. Any other new regression is a BLOCKER.
+
+## 7. Commits, evidence and handoff
+
+Use scoped durable LOCAL checkpoints—prefer source print/audit, candidate decisions, independent Book XVI source/registry, its QA, Book XVII source/registry, its QA, narrow shared-code updates (if needed), and final per-book/batch certification. Review files must distinguish conjectural candidate proposals from implemented editorial decisions; successful syntax checks alone are not certification.
+
+Expected new local selectable count against the **5,231 frozen published/canonical baseline** (and no other integration): **5,990 = 5,231 + 759**. This is NOT the public preview state and will change if XI or XVIII–XIX later integrates. Do not prematurely integrate or publish and do not add parallel workers' provisional counts into the local registry.
+
+Final report, one book at a time and one batch summary:
+- Exact frozen source commit/remote context, isolated branch/worktree/runtime and clean Git status.
+- Verified 404/355 identities, per-book retained/new milestone/Latin interval/unavailability numbers and qualified cases.
+- All Greek printed pages checked, individual Latin starts reviewed, decision records closed or specific hold explained.
+- Byte-recovery hashes, per-book/all-759 browser results, containing views and named structural regressions.
+- Exact changed production/review paths, file manifests, executed verification scripts, and local commit hashes.
+- Preservation of current IX/XII–XV, traditional/Bamberg, English/Whiston, other works, all non-scope files, and the untouched other WorkBots.
+- Explicit readiness for **coordinated canonical integration**, not a claim of remote publication.
+
+Finish with BOTH books independently locally certified on a CLEAN branch. If one book is blocked by a real scholarly decision, certify the other independently and leave a precise, small hold packet rather than pretending the whole batch passed. Stop without any push/deployment.

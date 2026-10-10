@@ -1,0 +1,32 @@
+XVI.351, 355 and 356: editorial representation decision
+
+Pinned source: 65b3256fe202a06e33a59aa2d1dcbd7107358271.
+Status: PENDING; no disputed cut or production edit applied.
+
+Niese IV (1890), printed p. 58 / PDF p. 72, places XVI.351 at
+Ταῦτα μᾶλλον ἐκίνει τὸν Καίσαρα ... ὁπόσοι τεθνήκασιν Ἀράβων.
+
+The current Latin has its initial clause physically after the counterpart of
+XVI.355, at the beginning of latin-book16-num356:
+hac oratione caesar per motus et ad sylleum conuersus furore plenus interrogauit quanti arabum 
+
+The syntactic completion and remainder occur earlier at latin-book16-num351:
+perissent qui conturbatus erras sese dixit. Deinde pacta debita leguntur littereque imperatorum et ciuitatem quae latrocinia criminabantur, 
+
+Niese XVI.352 follows at καὶ πέρας εἰς τοῦτο μετέστη Καῖσαρ, corresponding to
+mutatus ergo caesar. XVI.356 begins at Ἡρώδῃ δὲ γράφει, corresponding to
+Herodi uero scripsit. The certified traditional/Bamberg anchor before
+XVIIII Herodi remains unchanged at source offset 95.
+
+Recommendation B: register both 351 fragments in their current physical
+witness order and explicitly end 355 before the displaced prefix. Explain the
+displacement in the reader. Preserve every source byte, the chapter anchor,
+Book order and Alignment-unit contents. Do not infer a cause.
+
+Alternative A: use contiguous intervals and retain the 351 prefix as the tail
+of 355, with reciprocal correspondence notes. This is simpler but means that
+351 does not show all its surviving correspondence, and 355 includes it.
+
+The JSON packet records complete adjoining Latin paragraphs, exact mixed-text
+and raw-byte locators with hashes, full relevant Greek intervals, image
+references and the representation/testing consequences.
