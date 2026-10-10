@@ -1,0 +1,220 @@
+{
+  "origin": "http://127.0.0.1:61703",
+  "started": "2026-10-10T23:53:09.256Z",
+  "instrumentation": false,
+  "checks": [
+    {
+      "label": "fresh direct",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "next",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=2",
+      "n": 2,
+      "languages": {
+        "Latin": "d43716ba73728a00f38be23ab5929a4d6831f286e54901246a04b8579df54614",
+        "Greek": "b39bdad62e8ed3767fd16aafefc23f1420eb78314fa152f04c8cd26c2d04a002",
+        "English": "14a9720aaf7cb5981541f9c1bc92d9e0cd9744ccd37ff114a3c679e1152e3ce2"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "previous",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "next for history",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=2",
+      "n": 2,
+      "languages": {
+        "Latin": "d43716ba73728a00f38be23ab5929a4d6831f286e54901246a04b8579df54614",
+        "Greek": "b39bdad62e8ed3767fd16aafefc23f1420eb78314fa152f04c8cd26c2d04a002",
+        "English": "14a9720aaf7cb5981541f9c1bc92d9e0cd9744ccd37ff114a3c679e1152e3ce2"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "back",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "forward",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=2",
+      "n": 2,
+      "languages": {
+        "Latin": "d43716ba73728a00f38be23ab5929a4d6831f286e54901246a04b8579df54614",
+        "Greek": "b39bdad62e8ed3767fd16aafefc23f1420eb78314fa152f04c8cd26c2d04a002",
+        "English": "14a9720aaf7cb5981541f9c1bc92d9e0cd9744ccd37ff114a3c679e1152e3ce2"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "return",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "reload",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "pane english",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "pane greek",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "theme and width 1440",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS",
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "label": "theme and width 1440",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS",
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "label": "theme and width 390",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "label": "theme and width 390",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "label": "VI last direct",
+      "url": "http://127.0.0.1:61703/antiquities/?book=6&niese=378",
+      "n": 378,
+      "languages": {
+        "Latin": "ae7a8675333b9bb7a9e09d506b437bd64fdd91369125e99a052ed69dbc2e892e",
+        "Greek": "002dea742b69051c9be5dc7dbed00a627256723daba7a6bfbae9664e44f51eef",
+        "English": "68fa6bec208bb3a3d33b8b626c3b56d050503be894bac1335bd1a43420ba8d26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "book switch preserves established reset to Book view",
+      "result": "PASS"
+    },
+    {
+      "label": "VI to VII through book and Niese menus",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "VII last",
+      "url": "http://127.0.0.1:61703/antiquities/?book=7&niese=394",
+      "n": 394,
+      "languages": {
+        "Latin": "cedc9a18c2d2a7b6f8aad981339d67e845052654339abb7e5e65d081787dee5b",
+        "Greek": "6a9b2b7f1f3d5cf6f8ed2db6a28ce1ad173c9ea6e31e85a1f06b0611dd5e9812",
+        "English": "bb61ca4d2171d5a0b2c9a2a3fed32efa77fdcc8192e88bee7bc6e316680f06e2"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "VII to VIII through book and Niese menus",
+      "url": "http://127.0.0.1:61703/antiquities/?book=8&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "6ea82568c61ace95a1fa0fcf0cbbaee94f9deb200e2c93fa808e3d4f6f8d2123",
+        "Greek": "97c5f00b2c4ab0693f53baf0d7140ad0d0d2a4b4c6ccb3cddc6ef32446c3f374",
+        "English": "bd39aee9962517d358304652afb59ae3a55edb4d99bb831cf9626b90978b3cc7"
+      },
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS",
+  "finished": "2026-10-10T23:53:18.991Z"
+}

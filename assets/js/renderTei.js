@@ -2307,11 +2307,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const canonicalParagraph = start?.node?.closest("tei-p") || null;
     const canonicalId = canonicalParagraph?.id || identity?.contextTarget || null;
-    const paragraphs = identity?.[language]?.contextTargets
+    let paragraphs = identity?.[language]?.contextTargets
       ? [...new Set(identity[language].contextTargets)].map(id => data.querySelector(`[id="${id}"]`)).filter(Boolean)
       : canonicalId
       ? alignedParagraphsForCanonicalId(language, data, canonicalId)
       : [];
+
+    // Legacy opening IDs can omit "1" while a witness explicitly targets it.
+    // Recover only the opening selection's unique context; never alias exact
+    // Niese starts, interior milestones, or an existing canonical paragraph.
+    if (!identity?.[language]?.contextTargets && !paragraphs.length &&
+        Number(nieseNum) === 1 && canonicalId === `latin-${currentIdBase()}-num` &&
+        canonicalParagraph === canonicalFullData.querySelector(`tei-p[id^="${canonicalId}"]`) &&
+        !canonicalFullData.querySelector(`[id="${canonicalId}1"]`)) {
+      const openingContext = [...data.querySelectorAll("tei-p")].filter(paragraph => {
+        const targets = normalizedSameAsTargets(paragraph);
+        return targets.length === 1 && targets[0] === `${canonicalId}1`;
+      });
+      if (openingContext.length === 1) paragraphs = openingContext;
+    }
 
     const wrapper = paragraphs.length
       ? wrapAlignedParagraphs(paragraphs, "niese-context", nieseNum)
