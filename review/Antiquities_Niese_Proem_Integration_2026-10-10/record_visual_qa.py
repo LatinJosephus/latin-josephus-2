@@ -1,0 +1,6 @@
+from prepare import *
+def main():
+    paths=[PACK/'evidence/Proem-reader-25.png',PACK/'evidence/Proem-reader-26.png',RUNTIME/'XI-312-dark.png',PACK/'evidence/candidate-Book16-Niese351.png',PACK/'evidence/candidate-Book16-Niese351-dark.png',PACK/'evidence/XX-reader-light.png']
+    save(PACK/'VISUAL_QA.json',dict(status='PASS',build=json.loads((PACK/'BUILD_CONTEXT.json').read_text()),method='Direct visual inspection of these actual fresh browser screenshots, accompanied by full text and DOM assertions in the suites',reviewed=[info(p) for p in paths],checks=['Proem25 retained Latin ending and approved partial-correspondence notice readable','Proem26 distinct Latin start, approved notice, single I27 link and disabled terminal Next visible','English explicitly identified as contextual in all three-pane displays','XI312 interpolation headings and two occurrence blocks remain distinct in dark theme','XVI351 two original fragments and qualification readable in light/dark themes','XX1 separate three-language panes and ordinary navigation controls retained'],scope='Rendered reader display; source/editorial decisions not reopened',production_changes=0))
+    print('PASS recorded six directly inspected fresh reader screenshots')
+if __name__=='__main__':main()

@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "build": {
+    "baseline_commit": "4f88fc1483ec14d418c678004e13bc2b6741a2b7",
+    "commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
+    "merge_commit": "a0245745c3fd3b3a04bfb5ed8acc192cd7f01b87",
+    "certified_recovery_tip": "07057a284e3eb4999bd875cd05eb970e30886452",
+    "baseline_site": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\baseline-site",
+    "site": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-site",
+    "root": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration",
+    "receipt": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\CANDIDATE_BUILD.json"
+  },
+  "method": "Direct visual inspection of these actual fresh browser screenshots, accompanied by full text and DOM assertions in the suites",
+  "reviewed": [
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\evidence\\Proem-reader-25.png",
+      "sha256": "78092064b58efab3eef0ea4125c4323ea2ace8e232ff41d0efb5e89fd43e1b6b",
+      "bytes": 454384,
+      "CRLF": 6,
+      "LF_without_CR": 1411,
+      "encoding": "UTF-8",
+      "BOM": false
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\evidence\\Proem-reader-26.png",
+      "sha256": "a0481b628010d0b5d48f9c9cf23818c7a6189b17ab830641d001a2b75b794e38",
+      "bytes": 457068,
+      "CRLF": 5,
+      "LF_without_CR": 1380,
+      "encoding": "UTF-8",
+      "BOM": false
+    },
+    {
+      "path": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\XI-312-dark.png",
+      "sha256": "30b046724ee4fea6ebbd0df05a9d81a5e76d4c975383c6099702ba689724076b",
+      "bytes": 243039,
+      "CRLF": 3,
+      "LF_without_CR": 752,
+      "encoding": "UTF-8",
+      "BOM": false
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\evidence\\candidate-Book16-Niese351.png",
+      "sha256": "a0cf2ba6187140d8750828ea41352cdf1b9a5329561b9c03ee83b2c4fa964798",
+      "bytes": 304228,
+      "CRLF": 6,
+      "LF_without_CR": 952,
+      "encoding": "UTF-8",
+      "BOM": false
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\evidence\\candidate-Book16-Niese351-dark.png",
+      "sha256": "58c244ed1e7d23bb8073686a9245926e3cd0f42f2705eb5fd48aa26964c8aa36",
+      "bytes": 329829,
+      "CRLF": 3,
+      "LF_without_CR": 1038,
+      "encoding": "UTF-8",
+      "BOM": false
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-proem-integration\\review\\Antiquities_Niese_Proem_Integration_2026-10-10\\evidence\\XX-reader-light.png",
+      "sha256": "fdde9f56d558144f3c4e9a833d06a79da62327ff27345dafd442d18353f4b301",
+      "bytes": 439011,
+      "CRLF": 5,
+      "LF_without_CR": 1263,
+      "encoding": "UTF-8",
+      "BOM": false
+    }
+  ],
+  "checks": [
+    "Proem25 retained Latin ending and approved partial-correspondence notice readable",
+    "Proem26 distinct Latin start, approved notice, single I27 link and disabled terminal Next visible",
+    "English explicitly identified as contextual in all three-pane displays",
+    "XI312 interpolation headings and two occurrence blocks remain distinct in dark theme",
+    "XVI351 two original fragments and qualification readable in light/dark themes",
+    "XX1 separate three-language panes and ordinary navigation controls retained"
+  ],
+  "scope": "Rendered reader display; source/editorial decisions not reopened",
+  "production_changes": 0
+}

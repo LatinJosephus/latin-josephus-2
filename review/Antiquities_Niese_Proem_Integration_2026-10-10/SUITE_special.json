@@ -1,6 +1,6 @@
 {
   "group": "special",
-  "status": "RUNNING",
+  "status": "PASS",
   "build": {
     "source_commit": "01676290bb08a8f1c92ddfad4c26a4269c5ede89",
     "source": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\candidate-source",
@@ -77,6 +77,28 @@
       "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\special-closure_browser.cjs.log",
       "log_sha256": "69ce6676b7a9823caeb5cd53170461f1ccd256ff452ef921971df81601952d4b",
       "finished": "2026-10-10T20:31:42.244195+00:00"
+    },
+    {
+      "script": [
+        "xx_controls.cjs"
+      ],
+      "exit_code": 0,
+      "script_sha256": "1705d53f2291804c426aa9599453d8703a5946d6f73c827572c581bd4b42caec",
+      "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\special-xx_controls.cjs.log",
+      "log_sha256": "18e41ce34f5ffbeb82beeb7b26b00b48046c64dc1cc61a578ba7f134fbc2bc9e",
+      "finished": "2026-10-10T20:33:24.794908+00:00"
+    },
+    {
+      "script": [
+        "prove_range_end.cjs",
+        "final"
+      ],
+      "exit_code": 0,
+      "script_sha256": "e21c9ef1839648a06cadb6ae109cfb2ca9c543a489d0163e362980185b40eaa5",
+      "log": "C:\\workspace\\Antiquities-Niese-Proem-Integration-runtime-20261010\\logs\\special-prove_range_end.cjs.log",
+      "log_sha256": "b8d39f4e443a5aca84ea95ba95d19bca8eca2bf12b18198e0fdb54d20128a1fa",
+      "finished": "2026-10-10T20:33:27.302001+00:00"
     }
-  ]
+  ],
+  "finished": "2026-10-10T20:33:27.304005+00:00"
 }
