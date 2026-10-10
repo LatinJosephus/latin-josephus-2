@@ -485,10 +485,10 @@ document.addEventListener("DOMContentLoaded", () => {
         fragment.dataset.sourceStart = span.start.target;
         fragment.dataset.sourceEnd = span.end.target || "book-end";
         fragment.dataset.sourceDescription = span.label || "";
-        if (span.occurrence) fragment.dataset.sourceOccurrence = span.occurrence;
-        if (span.role) fragment.dataset.sourceRole = span.role;
-        if (span.continuationRank) fragment.dataset.continuationRank = String(span.continuationRank);
       }
+      if (span.occurrence) fragment.dataset.sourceOccurrence = span.occurrence;
+      if (span.role) fragment.dataset.sourceRole = span.role;
+      if (span.continuationRank) fragment.dataset.continuationRank = String(span.continuationRank);
       if (start.paragraph && (!end || start.paragraph === end.paragraph) && range.commonAncestorContainer === start.paragraph) {
         const shell = start.paragraph.cloneNode(false);
         shell.appendChild(range.cloneContents()); fragment.appendChild(shell);
@@ -2089,9 +2089,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const registry = nieseIdentityRegistry();
     const identities = [...new Set(numbers.map(Number))].sort((a, b) => a - b)
       .map(number => registry?.sections.find(section => section.number === number));
-    if (!identities.length || identities.some(identity => !identity?.[language]?.spans)) return null;
+    if (!identities.length) return null;
+    if (identities.every(identity => identity?.[language]?.contextTargets)) {
+      const targets = [...new Set(identities.flatMap(identity => identity[language].contextTargets))];
+      const paragraphs = targets.map(id => data.querySelector(`[id="${id}"]`)).filter(Boolean);
+      const wrapper = wrapAlignedParagraphs(paragraphs, "niese-context", identities.map(identity => identity.number).join(" "));
+      const note = document.createElement("p");
+      note.className = "niese-context-note";
+      note.textContent = `${language} context: exact Niese-level segmentation is unavailable for this source.`;
+      wrapper.prepend(note);
+      return wrapper;
+    }
+    if (identities.some(identity => !identity?.[language]?.spans)) return null;
     const seen = new Set(), spans = [];
-    identities.forEach(identity => identity[language].spans.forEach(span => {
+    identities.forEach(identity => [...identity[language].spans].sort((a, b) =>
+      (a.attachmentBeforeRank ?? a.continuationRank ?? 0) - (b.attachmentBeforeRank ?? b.continuationRank ?? 0)
+      || Number(b.attachmentBeforeRank != null) - Number(a.attachmentBeforeRank != null)
+    ).forEach(span => {
       if (span.occurrence && seen.has(span.occurrence)) return;
       if (span.occurrence) seen.add(span.occurrence);
       spans.push(span);
