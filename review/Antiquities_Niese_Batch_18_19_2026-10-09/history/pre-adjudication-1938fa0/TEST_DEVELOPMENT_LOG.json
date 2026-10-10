@@ -1,0 +1,51 @@
+{
+  "status": "SUPERSEDED_DIAGNOSTICS_FINAL_PASS_RECORDS_GOVERN",
+  "events": [
+    {
+      "case": "Authority extraction",
+      "issue": "Initial top-level-only filter omitted nested book records and combined XVIII/XIX rows.",
+      "correction": "Recursively inspect source.book, Roman boundary IDs, ranges and antiquities_books membership; retain complete matching records. Frozen originals unchanged."
+    },
+    {
+      "case": "Prototype compiler",
+      "issue": "A whole-file replacement expected CRLF although renderer bytes are LF, then found repeated resolver tokens.",
+      "correction": "Use actual LF bytes and narrowly isolate the Antiquities resolver region. No production file changed."
+    },
+    {
+      "case": "Whole Book DOM inventory",
+      "issue": "A zero-duplicate assertion revealed the pre-existing annotations ID collision.",
+      "correction": "Record the exact baseline collision and require identical candidate inventory; all new Niese selections have unique IDs."
+    },
+    {
+      "case": "Structural ordinal filter",
+      "issue": "Chapter-only filter incorrectly excluded original manuscript-image milestones in XVIII.",
+      "correction": "Registry preserves all actual original milestone types, including null unit. All462 current physical locators and267 containing views pass."
+    },
+    {
+      "case": "Exhaustive prior browser readiness",
+      "issue": "An early comparison sampled one English pane before its asynchronous render completed.",
+      "correction": "Actual selector events wait for all three language wrappers; final5231 actual selections pass. Original diagnostic retained as superseded."
+    },
+    {
+      "case": "Known unsupported I.1",
+      "issue": "All5231 selectable identities and13 protected routes passed before the inherited I.1 exception prevented normal ready flag and timed out the diagnostic harness.",
+      "correction": "Reuse the completed replay checkpoint with its hash; independently reproduce exact known null-querySelector exception in both readers and the three inherited apparatus links/two404 targets. No other error is excused."
+    },
+    {
+      "case": "Transition harness",
+      "issue": "Book selector ordinarily resets to Book view; the test initially attempted the hidden Niese menu after a book change.",
+      "correction": "Select the available Niese viewing level before testing its section menu. Actual XVII→XVIII→XIX→XX transitions pass."
+    },
+    {
+      "case": "Theme probe",
+      "issue": "XVIII64 has no qualification note; the probe incorrectly expected one. First screenshots also captured theme transition before settling.",
+      "correction": "Use already qualified XVIII5 and XIX365; allow800ms settling, inspect all four final screenshots. No note or source text was manufactured."
+    },
+    {
+      "case": "Protected route schema",
+      "issue": "An initial extra Cardwell query used an English-source key; an example XV Bamberg row was from another book.",
+      "correction": "Verify actual Latin Cardwell config and dynamically select the actual final XV Bamberg registry row; compare source selections explicitly."
+    }
+  ],
+  "scholarly_boundaries_changed_to_make_tests_pass": false
+}

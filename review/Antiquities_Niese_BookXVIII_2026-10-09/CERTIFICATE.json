@@ -1,0 +1,95 @@
+{
+  "book": 18,
+  "status": "LOCAL_CERTIFIED_READY_FOR_COORDINATED_INTEGRATION",
+  "certified": true,
+  "ready_for_integration": true,
+  "utc": "2026-10-10T12:12:10.983710+00:00",
+  "baseline": "9527578f361d48adb3094110254e627292bca2c5",
+  "worktree": "C:\\workspace\\LatinJosephus-antiquities-niese-18-19",
+  "branch": "antiquities-niese-18-19",
+  "runtime": "C:\\workspace\\Antiquities-Niese-18-19-runtime-20261009",
+  "actual_production_build_commit": "83977b91574c4fa4af2b9d9e081fa26b1d5adc30",
+  "complete_primary_source_review": true,
+  "primary_review_accepted_by_human": true,
+  "Greek_identities": 379,
+  "Greek_explicit_starts": 378,
+  "Greek_implicit_opening_reused_anchor": {
+    "target": "trad-greek-LOEB-18-Chapter-1-0",
+    "edge": "after",
+    "reason": "Existing exact narrative-opening anchor after preserved duration notice; no duplicate physical ID proposed."
+  },
+  "Latin_identities_individually_reviewed": 379,
+  "Latin_counts": {
+    "independent_intervals": 377,
+    "unavailable_identities": [
+      216,
+      217
+    ],
+    "retained_numeric_starts": 0,
+    "retained_existing_physical_starts": 61,
+    "new_niese_milestones": 316,
+    "new_end_anchors": 0,
+    "new_other_anchors": 0,
+    "qualified_available_intervals": 80,
+    "correspondence_counts": {
+      "PRESENT": 294,
+      "COMPRESSED": 15,
+      "OVERLAPPING_CORRESPONDENCE": 2,
+      "PARTLY_SURVIVING": 20,
+      "VARIANT_CORRESPONDENCE": 46,
+      "NO_INDEPENDENT_LATIN_INTERVAL_IN_PRESENT_TRANSCRIPTION": 2
+    }
+  },
+  "all_holds_closed": true,
+  "case_decisions": {
+    "CASE_007": "A",
+    "CASE_094": "B",
+    "CASE_216_217": "A"
+  },
+  "previous_HOLD_commit": "1938fa015ec9273ed396754a362f25f14ae6c6f8",
+  "preserved_history": "history/pre-adjudication-1938fa0",
+  "byte_recovery": {
+    "independent_exact_reversal": true,
+    "coordinate_inverse": true,
+    "baseline_Latin_sha256": "349ccf8751a0279c0a1f9836dd482a39698f7e3970d7018627c0d227c27dc8e3",
+    "production_Latin_sha256": "0afb40d0a03c42520fafe4357ae13c9ac9447c25d4f2d7736121ccd57ad917ec",
+    "recovered_Latin_sha256": "349ccf8751a0279c0a1f9836dd482a39698f7e3970d7018627c0d227c27dc8e3",
+    "Greek_byte_identical": true,
+    "English_byte_identical": true,
+    "IDs_sameAs_Unicode_punctuation_whitespace_inline_markup_chapter_TOC_order_preserved": true
+  },
+  "physical_locator_checks": 255,
+  "browser": {
+    "all_Niese_selections": 379,
+    "exact_Latin_intervals": 377,
+    "approved_unavailable_with_independent_Greek_and_English": 2,
+    "containing_views": 144,
+    "legacy_chapter_ranges": 21,
+    "legacy_URLs": 21,
+    "distinct_point_checks": 3,
+    "deep_navigation_interactions": 22,
+    "all_prior_selections": 5231,
+    "known_baseline_defects_only": true
+  },
+  "protected_baseline_files": 282,
+  "protected_unchanged_files": 279,
+  "production_scope": [
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-18-19\\assets\\xml\\antiquities\\Latin\\book-18.xml",
+      "bytes": 138720,
+      "sha256": "0afb40d0a03c42520fafe4357ae13c9ac9447c25d4f2d7736121ccd57ad917ec",
+      "CRLF": 0,
+      "LF_without_CR": 255,
+      "BOM": false
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-18-19\\assets\\xml\\antiquities\\niese\\book-18.json",
+      "bytes": 90931,
+      "sha256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+      "CRLF": 0,
+      "LF_without_CR": 3756,
+      "BOM": false
+    }
+  ],
+  "no_merge_push_publication_preview_or_canonical_change": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS_REVIEWED_AUTOMATIC_MERGE",
+  "formal_conflicts": [],
+  "manual_production_resolutions": [],
+  "source_tip": "5aa64ebc1d3281287e247f359b5718918ffb9de6",
+  "canonical_start": "08f46c0fdfa4639d49c0b13559fa590b6cce314b",
+  "renderer_review": {
+    "XI_fragment_assembly": "All canonical fragment blocks and paragraph-end handling preserved; spans path returns before declared physical-start processing.",
+    "XVIII_XIX_physical_starts": "Declared-start entries, inherited-label suppression, paragraph edge range handling, and synthetic labels preserved.",
+    "catalogue": "Book XI plus both XVIII and XIX declarations coexist.",
+    "proof_required": [
+      "347 exact XI selections and fragment ordering challenges",
+      "745 exact XVIII-XIX selections",
+      "5231 fresh protected selections"
+    ]
+  },
+  "scholarly_changes": [],
+  "integration_only_cleanup": "Remove mistakenly tracked Python bytecode from the baseline-record commit; retain source evidence unchanged."
+}
