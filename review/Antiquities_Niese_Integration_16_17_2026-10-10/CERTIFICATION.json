@@ -1,0 +1,214 @@
+{
+  "status": "PASS_READY_FOR_SAFE_CANONICAL_PROMOTION",
+  "canonical_start": "cd6d69e1a3c33a7e8d5a0dabc7c0deda39d0eac9",
+  "remote_start": "cd6d69e1a3c33a7e8d5a0dabc7c0deda39d0eac9",
+  "source_tip": "d3b8bf9f8b10aca6748d40c37fd40e582afdcba5",
+  "source_base": "65b3256fe202a06e33a59aa2d1dcbd7107358271",
+  "incoming_complete_history": [
+    "c963c94de7a7833369dd48bc3b24ddc33c0b0eff",
+    "302e4d58a98551c82433c957ee6aa44f89d9a970",
+    "da6ded2ed0e302cbdcc4133f32d8f4d8983695b7",
+    "45a18330aa8ca3caa80e9a1bac9b97f9571f114d",
+    "86dddf08036eec6233fa7451aeea5bd4ccd25807",
+    "d3b8bf9f8b10aca6748d40c37fd40e582afdcba5"
+  ],
+  "merge_commit": "500827b2c39658c1cf0672bee02b2f3d1f6ecf69",
+  "integration_baseline_commit": "7a5500133508d0fb147b655d805c508312c4b71c",
+  "books": {
+    "16": {
+      "identities": 404,
+      "Latin_identities": 380,
+      "physical_Latin_fragments": 383,
+      "unavailable": 24,
+      "new_Latin_starts": 378,
+      "reused_starts": 2,
+      "additional_anchors": 5,
+      "qualification_notices": 54,
+      "byte_recovery": {
+        "Latin": "293902ffb33d2d958235225200ee37d421b30d727bd4483bac0e05c4c2455993",
+        "Greek": "3fcac31fb8cf2b5970fe62b5ab5832b6506949ca5912fc6633665dce4e8cc785",
+        "English": "ab5725b8202b800e9b13b0003f18a71eca2e5d1dfd94bed3d3271b3cbb72f92a"
+      }
+    },
+    "17": {
+      "identities": 355,
+      "Latin_identities": 355,
+      "physical_Latin_fragments": 355,
+      "unavailable": 0,
+      "new_Latin_starts": 355,
+      "reused_starts": 0,
+      "additional_anchors": 0,
+      "qualification_notices": 29,
+      "byte_recovery": {
+        "Latin": "a2c5ac4398551eaab0880d575f8c4272883064ef38013422ad5e2eecdb7e46b6",
+        "Greek": "07a0ab3077b10aa3ba0634ab1ad30b8c106dc715be851e812266f8c2f2b88f29",
+        "English": "a235d02f6d8af17961a124c417e3d9e2393f760442facf7963db47a1c7d9d96c"
+      }
+    }
+  },
+  "combined_selectable_identities": 7082,
+  "exhaustive_population": {
+    "older": 5231,
+    "XI": 347,
+    "XVI_XVII": 759,
+    "XVIII_XIX": 745,
+    "total": 7082
+  },
+  "new_physical_Latin_fragments": 738,
+  "unavailable_new_Latin_identities": 24,
+  "additional_XVI_anchors": 5,
+  "qualification_notices": 83,
+  "all_four_B_decisions_preserved": true,
+  "all_incoming_review_files_byte_exact": true,
+  "incoming_review_files": 351,
+  "production": [
+    {
+      "path": "assets/js/renderTei.js",
+      "sha256": "fb1db1ed21dcea8971a64d5265dd6bd7bcf02be6e7290e028fe781ff36044bb7"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "sha256": "8fb15391bafc87b7fc251269c6cbe78b9b2f3d782156d413b7b2317649420e7c"
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-16.xml",
+      "sha256": "52fbccbf4e2ca17ea43f7756db48360e60c3fac90178dc42b6abf1bf6d72910f"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "sha256": "859a12f93a7f42478a796420c9b22db449b94fcadeb55255be4324f8ef5a186d"
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-17.xml",
+      "sha256": "730d904e88c8dc292d859a1d41796b22fd06bee1b912cbb7e44b941210b26eef"
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-16.json",
+      "sha256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb"
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-17.json",
+      "sha256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f"
+    }
+  ],
+  "regressions": {
+    "BUILD_RECEIPT.json": {
+      "status": "PASS",
+      "sha256": "e1ff1ed1879260b1db201a31b57f47ed08d12890608086e0f6cbf981c1a3a801"
+    },
+    "COMBINED_SOURCE_PROOF.json": {
+      "status": "PASS",
+      "sha256": "48112d81d05e5a7a0e1a8781da00b5e73ee2b39d220e04734ad91aacdd55763a"
+    },
+    "NEW_BOOK_BROWSER_QA.json": {
+      "status": "PASS_ALL_759_NEW_SELECTIONS_AND_NAVIGATION",
+      "sha256": "0bda6d710cbd97afbec97aa56124fb9a29f9d23cdee9d13be641e81eff7c0509"
+    },
+    "CONTAINING_VIEWS_BROWSER_QA.json": {
+      "status": "PASS_ALL_311_CONTAINING_VIEWS_AND_35_LEGACY_ENDPOINTS",
+      "sha256": "056d7802c4987801ad860ed4b6f7efa76cad1e7c79e3bfd95fbd1b5fb390a204"
+    },
+    "EDITORIAL_STRUCTURAL_EXTRA_RESULTS.json": {
+      "status": "PASS",
+      "sha256": "ef7ee32949577656a152ff11e244f7561d0f056be7d4b1bd352691a68ebea884"
+    },
+    "PROTECTED_SOURCE_GATE_QA.json": {
+      "status": "PASS_OTHER_WORKS_ALL_CHAPTERS_UNITS_AND_BELLUM_WITNESSES",
+      "sha256": "328e03cf0d337c4fe86f048067f0b14e89e894b2764985fdbfbb7f4772655ea2"
+    },
+    "PROTECTED_FINAL_BROWSER.json": {
+      "status": "PASS",
+      "sha256": "eccc73386cc42857e9af7d2a3a43201fd507ac8ee84ccb6bb11004e4e6817dab"
+    },
+    "FINAL_BROWSER.json": {
+      "status": "PASS",
+      "sha256": "b512299780a5e7ee4b4e824f3f04d939b30daa9e1f7d61fe7392c74104ca5752"
+    },
+    "LEGACY_DISTINCT_FINAL_BROWSER.json": {
+      "status": "PASS",
+      "sha256": "a8be9be6fb7cf8d0eccf4bf72550789393af8b0d19cd4ef16c29e68788a7ef8c"
+    },
+    "TRANSITION_FINAL_BROWSER.json": {
+      "status": "PASS",
+      "sha256": "d99210252b58eb917ab940fdd4dd10acbab54bb21cd58480faaf27446d94f0f4"
+    },
+    "SOURCE_CONTROLS_FINAL_BROWSER.json": {
+      "status": "PASS",
+      "sha256": "6037af03f29eea8399c96ccab2cc33284d9b36f07274df4687e1af978d6c67c9"
+    },
+    "READER_XI_RESULTS.json": {
+      "status": "PASS",
+      "sha256": "16da4b53002148088ecbbf986190c26296a4195b97afe0f76844ce9801c44c9c"
+    },
+    "READER_CONTAINING_RESULTS.json": {
+      "status": "PASS",
+      "sha256": "6e7568e49fbd7861aeffa0c7bcf8d5eb236223780df591cbfa15151202878f10"
+    },
+    "READER_EXTRA_RESULTS.json": {
+      "status": "PASS",
+      "sha256": "9d38eeb901a92fb54586443e8887af0c76606b74617cd53976bad50d7e6cd702"
+    },
+    "XI_WITNESS_ORDER_RESULTS.json": {
+      "status": "PASS",
+      "sha256": "2a577504d196ee051871545f8e85a6b65e9b2d6d8fed79213ac00914a5f3385b"
+    },
+    "READER_FINAL_PRIOR_RESULTS.json": {
+      "status": "PASS",
+      "sha256": "a00c4ec8fd9d555e02840142948a0c90031249d8fc9999d0a95112e192cf6ff8"
+    },
+    "COMBINED_EXTRA_RESULTS.json": {
+      "status": "PASS",
+      "sha256": "be1e4ee6b192a9b382d5fbb38f0343e5ef316b331ac72da11cfe5bff6c97615e"
+    }
+  },
+  "known_unchanged_baseline_issues": [
+    {
+      "case": "Book-I inherited apparatus links",
+      "identical": true,
+      "links": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "targets": [
+        {
+          "side": 0,
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "side": 0,
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        },
+        {
+          "side": 1,
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "side": 1,
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "case": "Unsupported I.1",
+      "identical": true,
+      "observed": {
+        "error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+        "inventory": {
+          "selected": "",
+          "firstSupported": "27"
+        }
+      },
+      "excludedFromSelectableTotal": true
+    }
+  ],
+  "new_reader_defects": 0,
+  "public_preview_publication": false,
+  "Book_XX_integration": false,
+  "other_WorkBots_modified": false,
+  "receipt": "C:\\workspace\\Antiquities-Niese-16-17-integration-runtime-20261010\\PROMOTION_RECEIPT.json"
+}

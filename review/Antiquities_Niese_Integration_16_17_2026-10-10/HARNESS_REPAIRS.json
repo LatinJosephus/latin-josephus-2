@@ -1,0 +1,20 @@
+{
+  "production_changes_after_tested_merge": false,
+  "repairs": [
+    {
+      "check": "Canonical file preservation",
+      "reason": "98 existing clean Windows checkout line-ending translations are recorded separately; compare unrelated production bytes with canonical Git archive and preserve working bytes at promotion."
+    },
+    {
+      "check": "Baseline containing capture provenance",
+      "reason": "All 311 captures and 35 endpoints completed. The copied source harness compared baseline build with merged working assets; final provenance compares the baseline with its frozen canonical Git archive.",
+      "evidence": "BASELINE_READER_INITIAL_CAPTURE.json",
+      "resumption": "Source-proof-only completion; capture rows retained unchanged."
+    },
+    {
+      "check": "Protected inherited coordinates",
+      "reason": "Frozen coordinate summaries omit element-edge paths; the final independent check resolves complete original registry locators.",
+      "retest": "All 14 combined ranges, 36 physical coordinates and 24 unavailable selections passed."
+    }
+  ]
+}

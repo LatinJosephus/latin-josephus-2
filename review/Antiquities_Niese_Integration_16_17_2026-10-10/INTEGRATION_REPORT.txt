@@ -1,0 +1,89 @@
+Antiquities XVI–XVII canonical integration — combined certification PASS
+
+Starting canonical and directly verified remote: cd6d69e1a3c33a7e8d5a0dabc7c0deda39d0eac9
+Certified source tip: d3b8bf9f8b10aca6748d40c37fd40e582afdcba5
+Frozen source baseline: 65b3256fe202a06e33a59aa2d1dcbd7107358271
+Integration baseline commit: 7a5500133508d0fb147b655d805c508312c4b71c
+History-preserving merge: 500827b2c39658c1cf0672bee02b2f3d1f6ecf69
+Final certification commit, canonical HEAD and directly verified remote HEAD:
+recorded by the post-promotion receipt at C:\workspace\Antiquities-Niese-16-17-integration-runtime-20261010\PROMOTION_RECEIPT.json.
+
+All six incoming source commits remain ancestors:
+  c963c94de7a7833369dd48bc3b24ddc33c0b0eff
+  302e4d58a98551c82433c957ee6aa44f89d9a970
+  da6ded2ed0e302cbdcc4133f32d8f4d8983695b7
+  45a18330aa8ca3caa80e9a1bac9b97f9571f114d
+  86dddf08036eec6233fa7451aeea5bd4ccd25807
+  d3b8bf9f8b10aca6748d40c37fd40e582afdcba5
+
+Counts                    XVI   XVII   Total
+Niese identities           404    355    759
+Identities with Latin      380    355    735
+Physical Latin fragments   383    355    738
+Unavailable Latin           24      0     24
+New Latin starts           378    355    733
+Reused source starts         2      0      2
+Additional anchors           5      0      5
+Qualification notices       54     29     83
+
+The 380 represented XVI identities and 383 fragments remain distinct. No fragments
+were collapsed into continuous intervals. All 24 unavailable identities keep their
+cause-neutral notices and independent Greek and contextual Whiston access.
+
+All four approved B decisions remain closed and unchanged: XVI.294–295 retains
+both fragments per identity in witness order, the incomplete relative construction
+and repeated Obadas statement; XVI.351 keeps both perissent and hac oratione
+fragments, 355 ends before the latter, and 356 starts at the inherited anchor before
+XVIIII Herodi (Latin offset 95). XVII.24 retains the complete grant/name clause and
+caedere compromisit; 25 begins Euocabat ergo eum. XVII.75 retains epistolamque
+antipatri and conbure; 76 begins Ego autem plurimum. Reciprocal notices, transmitted
+punctuation/attribution, rejected alternatives and all source evidence survive.
+
+Only the shared renderer conflicted, in three regions. Registration retains all
+canonical books and adds XVI–XVII. Canonical explicit physical-span and declared
+start support preserves XI ranks/attachments/interpolations and XVIII–XIX starts.
+A generic unranked single-identity path retains XVI–XVII's certified wrapper and
+labels at reused chapter anchors. No whole conflict side was selected.
+
+Fresh full Jekyll builds: canonical cd6d69e1a3c33a7e8d5a0dabc7c0deda39d0eac9 and merged 500827b2c39658c1cf0672bee02b2f3d1f6ecf69.
+644 Git-tree build inputs and 492 static source/output comparisons passed.
+All 7,082 selections passed: 5,231 older, 347 XI, 759 XVI–XVII, 745 XVIII–XIX.
+759 new selections include full Latin/Greek content, boundaries, contextual English,
+and next/previous. All 311 new containing views and 35 legacy endpoints pass.
+Four editorial groups and neighbours pass 14 combined range assemblies; all 36
+protected physical coordinates pass. All 24 empty-Latin selections pass separately.
+XI: 9 combined ranges, 120 containing routes, 61 independent traditional records,
+57 alignment witnesses, 354 physical occurrences and both Bellum interpolations.
+XVIII–XIX: 267 containing routes, 29 legacy routes, unavailable XVIII.216–217 and
+the six distinct physical points at XVIII.257/XIX.292 remain protected.
+All 21 Antiquities contexts, traditional/Bamberg/Alignment/TOC and 8002
+cross-work citations plus 1630 ranges pass. Direct URLs, reload/history,
+themes, panes, source events and accessibility pass. XV–XVI, XVI–XVII and
+XVII–XVIII transitions pass without cross-book contamination.
+Zero new reader defects. The two established Book-I apparatus/unsupported-I.1
+exceptions were independently reproduced at the current canonical baseline.
+
+Both Latin originals recover byte-exactly through two independent inversions;
+Greek recovery and English preservation also pass. IDs, sameAs, punctuation,
+whitespace, original order, chapter divisions, five extra XVI anchors and all 83
+qualification notices are preserved. All 3,799 canonical-start files were checked:
+five existing production files changed, two new registries were added; all unrelated
+canonical Git files and existing review records remain byte-exact. The receipt
+separately verifies preservation of pre-existing Windows checkout translations.
+
+Production scope (seven files):
+  assets/js/renderTei.js
+  assets/xml/antiquities/Latin/book-16.xml
+  assets/xml/antiquities/Greek/book-16.xml
+  assets/xml/antiquities/Latin/book-17.xml
+  assets/xml/antiquities/Greek/book-17.xml
+  assets/xml/antiquities/niese/book-16.json
+  assets/xml/antiquities/niese/book-17.json
+
+Review scope: complete incoming 351-file packet plus this integration review directory.
+The exact manifest records every production and review file, size and SHA-256.
+Canonical promotion is permitted only after a fresh remote/history/clean-state gate.
+No force push, public-preview publication, Book XX integration or modification of
+other WorkBots, their source branches or runtimes is authorized or performed.
+Final clean states, actual pushed/fetched HEAD and changed production hashes are
+recorded in the promotion receipt. Stop after verified canonical promotion.
