@@ -1,0 +1,106 @@
+{
+  "scope": "ACTUAL_FINAL_PRODUCTION_BOOK_TRANSITIONS_SOURCES_PANES_AND_ACCESSIBILITY",
+  "status": "PASS",
+  "transitions": [
+    {
+      "from": 17,
+      "to": 18,
+      "opening": "PASS",
+      "noticeExcludedFromSection1": true
+    },
+    {
+      "from": 18,
+      "tail": 379,
+      "to": 19,
+      "opening": 1,
+      "status": "PASS",
+      "bookSelectorPreservesOrdinaryBookViewFallback": true
+    },
+    {
+      "from": 19,
+      "tail": 366,
+      "to": 20,
+      "status": "PASS",
+      "XXunchanged": true
+    }
+  ],
+  "sources": [
+    {
+      "language": "latin",
+      "value": "bamberg78",
+      "status": "PASS",
+      "singleSourceOnly": true,
+      "sourceSelectorIntentionallyHidden": true
+    },
+    {
+      "language": "greek",
+      "value": "niese",
+      "status": "PASS",
+      "singleSourceOnly": true,
+      "sourceSelectorIntentionallyHidden": true
+    },
+    {
+      "language": "english",
+      "value": "whiston",
+      "status": "PASS",
+      "singleSourceOnly": true,
+      "sourceSelectorIntentionallyHidden": true
+    }
+  ],
+  "themes": [
+    {
+      "book": 18,
+      "theme": "light",
+      "style": {
+        "display": "block",
+        "color": "rgb(107, 36, 152)",
+        "background": "rgb(240, 216, 255)",
+        "role": "note"
+      },
+      "status": "PASS"
+    },
+    {
+      "book": 18,
+      "theme": "dark",
+      "style": {
+        "display": "block",
+        "color": "rgb(107, 36, 152)",
+        "background": "rgb(240, 216, 255)",
+        "role": "note"
+      },
+      "status": "PASS"
+    },
+    {
+      "book": 19,
+      "theme": "light",
+      "style": {
+        "display": "block",
+        "color": "rgb(107, 36, 152)",
+        "background": "rgb(240, 216, 255)",
+        "role": "note"
+      },
+      "status": "PASS"
+    },
+    {
+      "book": 19,
+      "theme": "dark",
+      "style": {
+        "display": "block",
+        "color": "rgb(107, 36, 152)",
+        "background": "rgb(240, 216, 255)",
+        "role": "note"
+      },
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "accessibility": {
+    "duplicateIDs": [],
+    "noteRoles": [],
+    "nieseSelectorLabels": [
+      "Select a Niese section:"
+    ],
+    "previousName": "Previous Niese section",
+    "nextName": "Next Niese section"
+  }
+}
