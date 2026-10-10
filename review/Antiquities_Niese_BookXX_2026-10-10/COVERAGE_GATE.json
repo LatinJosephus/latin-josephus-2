@@ -1,17 +1,17 @@
 {
-  "status": "TECHNICAL_PASS_WITH_EDITORIAL_HOLD",
+  "status": "PASS",
+  "count_method": "Actual parsed XML and Expat marker byte positions, independently mapped to original mixed text; registry and reviewed intervals checked afterward.",
   "Greek_identities": 268,
   "logical_selectable_identities": 268,
-  "current_nonempty_Latin_identities": 251,
-  "current_primary_Latin_intervals": 251,
-  "current_new_start_milestones": 251,
+  "nonempty_Latin_identities": 257,
+  "primary_Latin_intervals": 257,
+  "primary_Latin_fragments": 257,
+  "new_Latin_start_milestones": 257,
   "retained_original_Latin_Niese_starts": 0,
-  "current_exclusive_end_anchors": 3,
-  "Greek_new_explicit_opening": 1,
-  "original_Greek_labels_retained": 267,
-  "unapproved_unavailability_decisions": 0,
-  "editorial_hold_identities": [
-    26,
+  "new_exclusive_end_anchors": 1,
+  "new_Greek_opening_labels": 1,
+  "retained_original_Greek_labels": 267,
+  "unavailable_identities": [
     27,
     28,
     29,
@@ -22,47 +22,2367 @@
     34,
     35,
     36,
-    37,
-    58,
-    59,
-    238,
-    240,
-    241
+    238
   ],
-  "source_only_or_held_unassigned_spans": [
+  "partial_identities": [
+    26,
+    37,
+    218,
+    240,
+    241,
+    266
+  ],
+  "additional_qualified_identities": [
+    59,
+    239
+  ],
+  "old_legacy_chapter_milestones": {
+    "Greek": 20,
+    "Latin": 20,
+    "English": 20
+  },
+  "source_only_unassigned_spans": [
     {
+      "start": 5689,
+      "end": 5746,
+      "text": "[Niese sections 26–37 largely missing; cf. Blatt, p. 68] ",
+      "status": "SOURCE_ONLY_INHERITED_ANNOTATION",
+      "locator": {
+        "stable_id": "latin-book20-num34",
+        "paragraph": 25,
+        "xpath": "/*/*[2]/*/*[2]/*[4]/*[3]",
+        "text_node_path": "/TEI[1]/text[1]/body[1]/div1[1]/div2[4]/p[3]/text()",
+        "node_offset": 0,
+        "unit_offset": 0,
+        "book_offset": 5689,
+        "raw_byte": 11249,
+        "left": "oe quae ex imbrium diluuio liberata fertur, et actenus uidere uolentibus demonstratur. Commorabatur itaque iazatis in hac regione.",
+        "right": "[Niese sections 26–37 largely missing; cf. Blatt, p. 68] Darta banem particum destinauit.Cumque legibus crederet iudaeorum, studebat et ipse conuerti. Et credens se perfectum non esse iudaeum nisi signum circumcisionis acciperet. Eratque ho",
+        "parsed_unit_sha256": "3592722d0b504b79a4cbfc82952cd6bf24f9dfb1c837026430fb2634146b8888",
+        "raw_unit_sha256": "c944a6c6a9d1b90edf2bcd973bd80d0164db4fbded6d61fd17176a76389597ef"
+      }
+    }
+  ],
+  "physical_intervals": [
+    {
+      "number": 1,
+      "start": 0,
+      "end": 226,
+      "characters": 226,
+      "text_sha256": "900cea89aef06e37fa06905102f3eeb13038bf290f4aa686617eb2ac7e51d15d",
+      "start_raw_byte": 4899,
+      "endTarget": null
+    },
+    {
+      "number": 2,
+      "start": 226,
+      "end": 546,
+      "characters": 320,
+      "text_sha256": "4b4c15e6750635b376535ee64a9d5137e19cc692f36fe2006bc49d6be65f6b45",
+      "start_raw_byte": 5156,
+      "endTarget": null
+    },
+    {
+      "number": 3,
+      "start": 546,
+      "end": 700,
+      "characters": 154,
+      "text_sha256": "a91eb1bced6aa2aa89db70b6c86e2cf6b53fddce8e44874f99a86eed5dfe9366",
+      "start_raw_byte": 5546,
+      "endTarget": null
+    },
+    {
+      "number": 4,
+      "start": 700,
+      "end": 871,
+      "characters": 171,
+      "text_sha256": "72230757c58074aca5ef426072fb8be8057fb5d74a1816e6f24b4edab6642393",
+      "start_raw_byte": 5731,
+      "endTarget": null
+    },
+    {
+      "number": 5,
+      "start": 871,
+      "end": 1112,
+      "characters": 241,
+      "text_sha256": "c16a7f19d01d0a5f9d4e3cbbb168561f918100fc40a69d1b506710fe1ad0827f",
+      "start_raw_byte": 5966,
+      "endTarget": null
+    },
+    {
+      "number": 6,
+      "start": 1112,
+      "end": 1355,
+      "characters": 243,
+      "text_sha256": "1505639cace68930f76f890dac6394567d88ea1740ba20436cf42041aa1e4d89",
+      "start_raw_byte": 6271,
+      "endTarget": null
+    },
+    {
+      "number": 7,
+      "start": 1355,
+      "end": 1763,
+      "characters": 408,
+      "text_sha256": "2b80e44fe90369838195a28d8993bf9e96cb1f650422dc407529434ab5e1294d",
+      "start_raw_byte": 6545,
+      "endTarget": null
+    },
+    {
+      "number": 8,
+      "start": 1763,
+      "end": 1900,
+      "characters": 137,
+      "text_sha256": "1a025b430a7b39a17da81447b18d79654d4d59a5b0c09eccc5d00cd9c80d48ee",
+      "start_raw_byte": 7049,
+      "endTarget": null
+    },
+    {
+      "number": 9,
+      "start": 1900,
+      "end": 2157,
+      "characters": 257,
+      "text_sha256": "9cf01eb22c55ddaf685f00e70675fde4c84b8d634dfac159d5b159710b040b2b",
+      "start_raw_byte": 7217,
+      "endTarget": null
+    },
+    {
+      "number": 10,
+      "start": 2157,
+      "end": 2377,
+      "characters": 220,
+      "text_sha256": "27a487c090661cf7c64823628548af38b6d2729e412a58a2e398295ed07a428d",
+      "start_raw_byte": 7623,
+      "endTarget": null
+    },
+    {
+      "number": 11,
+      "start": 2377,
+      "end": 2570,
+      "characters": 193,
+      "text_sha256": "a557229d4cd3a12ab229ba937f57bc2552ae1466ffc0304aa4cf5c2ec9ba62e8",
+      "start_raw_byte": 7875,
+      "endTarget": null
+    },
+    {
+      "number": 12,
+      "start": 2570,
+      "end": 2919,
+      "characters": 349,
+      "text_sha256": "6474af9fa36b38fd43ac0611dcf059642908cbebed304e3eb6afce9bac2d6cb1",
+      "start_raw_byte": 8116,
+      "endTarget": null
+    },
+    {
+      "number": 13,
+      "start": 2919,
+      "end": 3250,
+      "characters": 331,
+      "text_sha256": "836202afa9fce2fc08d52da797737ca86cc50e62508053e8d6e64672b8fc18d9",
+      "start_raw_byte": 8497,
+      "endTarget": null
+    },
+    {
+      "number": 14,
+      "start": 3250,
+      "end": 3482,
+      "characters": 232,
+      "text_sha256": "bfa659066f3de7ca9673c2542642b142f5d179814092891bb77accba620ba903",
+      "start_raw_byte": 8860,
+      "endTarget": null
+    },
+    {
+      "number": 15,
+      "start": 3482,
+      "end": 3679,
+      "characters": 197,
+      "text_sha256": "fdd790f6799c3823f0405e00392e138194f8d0c941e2da8b3f6a7db625afb48d",
+      "start_raw_byte": 9165,
+      "endTarget": null
+    },
+    {
+      "number": 16,
+      "start": 3679,
+      "end": 3849,
+      "characters": 170,
+      "text_sha256": "8aa190659d626c9e72e87e927a47d74242b9e8079649a50fad53bff17367af27",
+      "start_raw_byte": 9394,
+      "endTarget": null
+    },
+    {
+      "number": 17,
+      "start": 3849,
+      "end": 3981,
+      "characters": 132,
+      "text_sha256": "c43aed0a9516107392f8e7c658d7756edfff07d5ea26dd897286171ddfc014b4",
+      "start_raw_byte": 9727,
+      "endTarget": null
+    },
+    {
+      "number": 18,
+      "start": 3981,
+      "end": 4362,
+      "characters": 381,
+      "text_sha256": "3a9dcc59d87387fcf5e7ae837e42f88d3e5f54613c44ee358574c1ba5dea6958",
+      "start_raw_byte": 9891,
+      "endTarget": null
+    },
+    {
+      "number": 19,
+      "start": 4362,
+      "end": 4460,
+      "characters": 98,
+      "text_sha256": "0c65deedf09bbdab30b01f8d3a18683e277a5481deb7c0f276c488cf0e9b1576",
+      "start_raw_byte": 10304,
+      "endTarget": null
+    },
+    {
+      "number": 20,
+      "start": 4460,
+      "end": 4650,
+      "characters": 190,
+      "text_sha256": "92dd411bafe5e03a7a574de2d6b485bcc950079b9365148ade43bb01a9901fd6",
+      "start_raw_byte": 10434,
+      "endTarget": null
+    },
+    {
+      "number": 21,
+      "start": 4650,
+      "end": 4776,
+      "characters": 126,
+      "text_sha256": "43188d4cc412f274029793b31e82aa324578a85a8a9f91a1739cb616f7a0dff3",
+      "start_raw_byte": 10694,
+      "endTarget": null
+    },
+    {
+      "number": 22,
+      "start": 4776,
+      "end": 5105,
+      "characters": 329,
+      "text_sha256": "e788ebf3b49dc2ad80f9915581adb6c8819458eac036618271c8ad496ecfed78",
+      "start_raw_byte": 10852,
+      "endTarget": null
+    },
+    {
+      "number": 23,
+      "start": 5105,
+      "end": 5262,
+      "characters": 157,
+      "text_sha256": "7c4f374f01bb01b76540ae892d167ea22b9b1ab08d896e4777dd64d1acbc0728",
+      "start_raw_byte": 11213,
+      "endTarget": null
+    },
+    {
+      "number": 24,
+      "start": 5262,
+      "end": 5502,
+      "characters": 240,
+      "text_sha256": "83216e275597afaf456fe2cc4fa614fc9fd23ee65e6381fcc6526806e1315386",
+      "start_raw_byte": 11443,
+      "endTarget": null
+    },
+    {
+      "number": 25,
+      "start": 5502,
+      "end": 5646,
+      "characters": 144,
+      "text_sha256": "61a013a6cfda453894bfbdcefe946b9bfeaf484ec6874443f3735c6a52bfef34",
+      "start_raw_byte": 11715,
+      "endTarget": null
+    },
+    {
+      "number": 26,
       "start": 5646,
+      "end": 5689,
+      "characters": 43,
+      "text_sha256": "a32b76894cbf8de121689cdbe2296d8e70dd739a9ea40234613df8ce0834dc3d",
+      "start_raw_byte": 11956,
+      "endTarget": "niese-latin-book20-end26"
+    },
+    {
+      "number": 37,
+      "start": 5746,
       "end": 5778,
-      "text": "Commorabatur itaque iazatis in hac regione.[Niese sections 26–37 largely missing; cf. Blatt, p. 68] Darta banem particum destinauit.",
-      "status": "Preserved only in containing source views pending editorial adjudication."
+      "characters": 32,
+      "text_sha256": "a748a92291f713dab83a4a43b486f73340f2fb4ff1d75ac5a3325a3b460e8c77",
+      "start_raw_byte": 12179,
+      "endTarget": null
     },
     {
+      "number": 38,
+      "start": 5778,
+      "end": 5950,
+      "characters": 172,
+      "text_sha256": "989e9657157be1e7c26e1af3c27a39d738a13740e47dd754ff47f0de2c890b38",
+      "start_raw_byte": 12284,
+      "endTarget": null
+    },
+    {
+      "number": 39,
+      "start": 5950,
+      "end": 6185,
+      "characters": 235,
+      "text_sha256": "4a76bbbf4d9a8fef3079381e76335ed77032c5697ee70715195780fc2e83e8d4",
+      "start_raw_byte": 12488,
+      "endTarget": null
+    },
+    {
+      "number": 40,
+      "start": 6185,
+      "end": 6348,
+      "characters": 163,
+      "text_sha256": "d38b1a7d488b7683754294ae22b659c64f38907417bf613a2a1bff108bed3ede",
+      "start_raw_byte": 12755,
+      "endTarget": null
+    },
+    {
+      "number": 41,
+      "start": 6348,
+      "end": 6696,
+      "characters": 348,
+      "text_sha256": "3ce5817c31d9aebcd1eb8c9bdfcea20fc9b7c353a2f395ad1f206183774ceefd",
+      "start_raw_byte": 12950,
+      "endTarget": null
+    },
+    {
+      "number": 42,
+      "start": 6696,
+      "end": 6842,
+      "characters": 146,
+      "text_sha256": "6ae545a6e3d2a592546155dcad7f89234753adda80ea818dbb4008b4980e4e69",
+      "start_raw_byte": 13332,
+      "endTarget": null
+    },
+    {
+      "number": 43,
+      "start": 6842,
+      "end": 7030,
+      "characters": 188,
+      "text_sha256": "e51b8e51afa318889e56632bfdc1b37b24f57cf470974e30607c9503a19bc7d7",
+      "start_raw_byte": 13510,
+      "endTarget": null
+    },
+    {
+      "number": 44,
+      "start": 7030,
+      "end": 7246,
+      "characters": 216,
+      "text_sha256": "31dce08ea8bade55549f8187303193034a08628761f6e76d0042a245d25dc7b0",
+      "start_raw_byte": 13730,
+      "endTarget": null
+    },
+    {
+      "number": 45,
+      "start": 7246,
+      "end": 7413,
+      "characters": 167,
+      "text_sha256": "3d7d4b88bf84b4a1940aa33215c0daaf0340dc93bebae6d4e23ee9fdce9cd678",
+      "start_raw_byte": 13978,
+      "endTarget": null
+    },
+    {
+      "number": 46,
+      "start": 7413,
+      "end": 7612,
+      "characters": 199,
+      "text_sha256": "bbe2a521b38d12b1a3ccf81aa5ea9e1f1fb474e3b8a43fae8d2ea21818304cd1",
+      "start_raw_byte": 14177,
+      "endTarget": null
+    },
+    {
+      "number": 47,
+      "start": 7612,
+      "end": 7871,
+      "characters": 259,
+      "text_sha256": "8cce9e43eb312f7d55af88d32f0255f4e6347e04f8cb58e15b82de58db91aad2",
+      "start_raw_byte": 14421,
+      "endTarget": null
+    },
+    {
+      "number": 48,
+      "start": 7871,
+      "end": 8206,
+      "characters": 335,
+      "text_sha256": "5953e6bc4926800756c3ec3687be61dd5434a3c3f9ba428e3322d75cdb499cb9",
+      "start_raw_byte": 14712,
+      "endTarget": null
+    },
+    {
+      "number": 49,
+      "start": 8206,
+      "end": 8531,
+      "characters": 325,
+      "text_sha256": "3eaa4d75fd25b0d917e73012c2ccbb950bf0b6a8a550bba1e84f3d92a64ece00",
+      "start_raw_byte": 15120,
+      "endTarget": null
+    },
+    {
+      "number": 50,
+      "start": 8531,
+      "end": 8706,
+      "characters": 175,
+      "text_sha256": "93976fbe7de11c323e7d8b570992a1e8e789749cc5cb5878c3e694b9d9261ed0",
+      "start_raw_byte": 15477,
+      "endTarget": null
+    },
+    {
+      "number": 51,
+      "start": 8706,
+      "end": 9026,
+      "characters": 320,
+      "text_sha256": "a238ddc94b53f069f9836c5d6201da62d6efd666fe9a2e6d250b4afa199b00ba",
+      "start_raw_byte": 15684,
+      "endTarget": null
+    },
+    {
+      "number": 52,
+      "start": 9026,
+      "end": 9178,
+      "characters": 152,
+      "text_sha256": "c77f62058aa0d16c368e3e1a0da216f5469c2405a1e2afb59f772bb46efcd182",
+      "start_raw_byte": 16069,
+      "endTarget": null
+    },
+    {
+      "number": 53,
+      "start": 9178,
+      "end": 9367,
+      "characters": 189,
+      "text_sha256": "76a941452ca632ae7b28665579ed000f82ab4a2e2eb99c9ee1504521c7cec755",
+      "start_raw_byte": 16253,
+      "endTarget": null
+    },
+    {
+      "number": 54,
+      "start": 9367,
+      "end": 9608,
+      "characters": 241,
+      "text_sha256": "3c10ddd542793a7bbcbe1dfbf269b0d38eb1870effe1d0513b68564fcd39433d",
+      "start_raw_byte": 16515,
+      "endTarget": null
+    },
+    {
+      "number": 55,
+      "start": 9608,
+      "end": 9692,
+      "characters": 84,
+      "text_sha256": "9f3d70256ab49ed7e1ce1ff4d9b824da41a2e83feba014a6db9e809c689ee67d",
+      "start_raw_byte": 16853,
+      "endTarget": null
+    },
+    {
+      "number": 56,
+      "start": 9692,
+      "end": 10028,
+      "characters": 336,
+      "text_sha256": "bc944f83976c701478199e3e954d1f711d19e04fc975b3183f428d1b5d4ad71f",
+      "start_raw_byte": 16969,
+      "endTarget": null
+    },
+    {
+      "number": 57,
+      "start": 10028,
+      "end": 10210,
+      "characters": 182,
+      "text_sha256": "b53ecf273a32e868d39f618fe79540c3d37790fcd026fb55151a94993f0ac4f5",
+      "start_raw_byte": 17357,
+      "endTarget": null
+    },
+    {
+      "number": 58,
       "start": 10210,
-      "end": 10610,
-      "text": "Haec ergo artabanus cum lacrimis edicebat capite reclinato deorsum. Iazetis autem ut eius nomen audiuit, et artabanem suppliciter sibi respexit astantem. Mox exequo resiliens habe inquit fiducia o rex nec te praesentia facta confundant. Velociter enim erit tibi mutanda tristitia, amicum namque me et auxiliatorem inuenies plus quam credis aut enim in parthorum regno te rursus aut in meo constituam.",
-      "status": "Preserved only in containing source views pending editorial adjudication."
+      "end": 10385,
+      "characters": 175,
+      "text_sha256": "fba698b0bff64e8d7b5af074368ffdcdf2aeae6fd35947d66e072d1980510488",
+      "start_raw_byte": 17571,
+      "endTarget": null
     },
     {
+      "number": 59,
+      "start": 10385,
+      "end": 10610,
+      "characters": 225,
+      "text_sha256": "28aa044466914b2770123e425460f412446dbb1d73fa9687e0156f9f953623a6",
+      "start_raw_byte": 17778,
+      "endTarget": null
+    },
+    {
+      "number": 60,
+      "start": 10610,
+      "end": 10885,
+      "characters": 275,
+      "text_sha256": "47d4c3417621296a53f594061e5ef629c35091f0a8b828d94a462594445b0ce8",
+      "start_raw_byte": 18076,
+      "endTarget": null
+    },
+    {
+      "number": 61,
+      "start": 10885,
+      "end": 11207,
+      "characters": 322,
+      "text_sha256": "5ac5e9e1bf62d9e554f1fae00386d1ca11b2b8b3eb29cd25509da91c639b03e0",
+      "start_raw_byte": 18383,
+      "endTarget": null
+    },
+    {
+      "number": 62,
+      "start": 11207,
+      "end": 11351,
+      "characters": 144,
+      "text_sha256": "592d06badcb85466bc6176fb5338b6ecf7a3dc2a84a26e8ad06dfad6cda688a8",
+      "start_raw_byte": 18737,
+      "endTarget": null
+    },
+    {
+      "number": 63,
+      "start": 11351,
+      "end": 11534,
+      "characters": 183,
+      "text_sha256": "c798dcae2b31ac81268067bca4c79cff774b7aca39aa148d4f218d03fc4bf372",
+      "start_raw_byte": 18913,
+      "endTarget": null
+    },
+    {
+      "number": 64,
+      "start": 11534,
+      "end": 11628,
+      "characters": 94,
+      "text_sha256": "abb37e5c08b8d9f5d23bd13c2f43404fb4154cc556601d52b851eecd896a3ba0",
+      "start_raw_byte": 19141,
+      "endTarget": null
+    },
+    {
+      "number": 65,
+      "start": 11628,
+      "end": 11782,
+      "characters": 154,
+      "text_sha256": "c53ee7a9cfaec0771897259c1f87ac504a5232b9098d8deff3614e6b71a50b45",
+      "start_raw_byte": 19267,
+      "endTarget": null
+    },
+    {
+      "number": 66,
+      "start": 11782,
+      "end": 11968,
+      "characters": 186,
+      "text_sha256": "538a9da56240e2fd3d5afe8f9e8a04854cf4416458c67ecc14dea3cbd91695d1",
+      "start_raw_byte": 19494,
+      "endTarget": null
+    },
+    {
+      "number": 67,
+      "start": 11968,
+      "end": 12075,
+      "characters": 107,
+      "text_sha256": "bf6660006ab792dfa708076f13f09df96733a31c7d5de54639530b6fb72a87c0",
+      "start_raw_byte": 19712,
+      "endTarget": null
+    },
+    {
+      "number": 68,
+      "start": 12075,
+      "end": 12300,
+      "characters": 225,
+      "text_sha256": "07fd589e8d5899eab762041f5622885439ca8a96c715fdcb0c58d38f3ac3d6d4",
+      "start_raw_byte": 19851,
+      "endTarget": null
+    },
+    {
+      "number": 69,
+      "start": 12300,
+      "end": 12460,
+      "characters": 160,
+      "text_sha256": "706ddee091bc9443f5647256dc6b9adfb5d118817302acbf2ec66e7e44446bee",
+      "start_raw_byte": 20149,
+      "endTarget": null
+    },
+    {
+      "number": 70,
+      "start": 12460,
+      "end": 12586,
+      "characters": 126,
+      "text_sha256": "c9e61cdf20acd9fc0a75dfaca5bfd74ac1fe69830da3619ba91463eef1477993",
+      "start_raw_byte": 20341,
+      "endTarget": null
+    },
+    {
+      "number": 71,
+      "start": 12586,
+      "end": 12951,
+      "characters": 365,
+      "text_sha256": "c8ec4d815a631b33a8b9a86cff7d38bb59cbd671474f1d37715a6539b9246a31",
+      "start_raw_byte": 20499,
+      "endTarget": null
+    },
+    {
+      "number": 72,
+      "start": 12951,
+      "end": 13118,
+      "characters": 167,
+      "text_sha256": "7ae678df9d371ea0a357e222cd2b528fa3d815b655f12a8f062ceb5e6ee3d9a3",
+      "start_raw_byte": 20897,
+      "endTarget": null
+    },
+    {
+      "number": 73,
+      "start": 13118,
+      "end": 13298,
+      "characters": 180,
+      "text_sha256": "37ffcc4e77e7e64dead839da65fbaa2d0386513fc3d32cb11fe59147127cecf9",
+      "start_raw_byte": 21096,
+      "endTarget": null
+    },
+    {
+      "number": 74,
+      "start": 13298,
+      "end": 13516,
+      "characters": 218,
+      "text_sha256": "24703fb1ad99f0614a9524df7689cb79f0459fd9a8e5d3316f2a9077a0dc98c4",
+      "start_raw_byte": 21373,
+      "endTarget": null
+    },
+    {
+      "number": 75,
+      "start": 13516,
+      "end": 13762,
+      "characters": 246,
+      "text_sha256": "f3f3b2886609d5d15b90b586e1868e673c49b19fd99a6b9ee0005709143b7f6a",
+      "start_raw_byte": 21664,
+      "endTarget": null
+    },
+    {
+      "number": 76,
+      "start": 13762,
+      "end": 13913,
+      "characters": 151,
+      "text_sha256": "0fabd9edc921fca3c83a1c1470bbc27395c3e8978c0e40330f53e622e0ff3f08",
+      "start_raw_byte": 21942,
+      "endTarget": null
+    },
+    {
+      "number": 77,
+      "start": 13913,
+      "end": 14253,
+      "characters": 340,
+      "text_sha256": "0ee78b24a4bff11bfe28fd1604744737ae56dcbd3c474eebf3ffa9c9965b594b",
+      "start_raw_byte": 22125,
+      "endTarget": null
+    },
+    {
+      "number": 78,
+      "start": 14253,
+      "end": 14484,
+      "characters": 231,
+      "text_sha256": "a7dc5e3288a935861b978d321deab23b2f58aaeca45a21e4559154c207abd571",
+      "start_raw_byte": 22497,
+      "endTarget": null
+    },
+    {
+      "number": 79,
+      "start": 14484,
+      "end": 14731,
+      "characters": 247,
+      "text_sha256": "9d5fc07b48f215636819008bcb0a772f83b0986e1599649fe070811e13647224",
+      "start_raw_byte": 22760,
+      "endTarget": null
+    },
+    {
+      "number": 80,
+      "start": 14731,
+      "end": 15077,
+      "characters": 346,
+      "text_sha256": "ed6d796102004a4a2a08c421ca810647d08b51f0b29fd34924ab4da6b47bcd08",
+      "start_raw_byte": 23039,
+      "endTarget": null
+    },
+    {
+      "number": 81,
+      "start": 15077,
+      "end": 15443,
+      "characters": 366,
+      "text_sha256": "802cfa71a7eac0b070e20867b1b60e35d2eb46f83b4d95006327f5d773c353a4",
+      "start_raw_byte": 23458,
+      "endTarget": null
+    },
+    {
+      "number": 82,
+      "start": 15443,
+      "end": 15617,
+      "characters": 174,
+      "text_sha256": "6d0267389ecf5cd01375bdf6ecc99d29fd0f5f92e57bb7d95c9c908eb8b41c58",
+      "start_raw_byte": 23869,
+      "endTarget": null
+    },
+    {
+      "number": 83,
+      "start": 15617,
+      "end": 15756,
+      "characters": 139,
+      "text_sha256": "344d05349af59da406379859b241d1f2ecdf6c23d40889a475c25b683838b3c9",
+      "start_raw_byte": 24075,
+      "endTarget": null
+    },
+    {
+      "number": 84,
+      "start": 15756,
+      "end": 15911,
+      "characters": 155,
+      "text_sha256": "9b56a07ab392ef3f9394023351ff3ba28c4a56006d4627400029c4d9d0096a91",
+      "start_raw_byte": 24246,
+      "endTarget": null
+    },
+    {
+      "number": 85,
+      "start": 15911,
+      "end": 16117,
+      "characters": 206,
+      "text_sha256": "14e5dbe0ae868ba5233ebed11f1182aebe2e75cefcf0aa3a1a02989ed3b08059",
+      "start_raw_byte": 24433,
+      "endTarget": null
+    },
+    {
+      "number": 86,
+      "start": 16117,
+      "end": 16413,
+      "characters": 296,
+      "text_sha256": "df9f79055f8ba9ee20185cc2c21587c633b8fe7d61d1166cbc52527d38b01595",
+      "start_raw_byte": 24671,
+      "endTarget": null
+    },
+    {
+      "number": 87,
+      "start": 16413,
+      "end": 16610,
+      "characters": 197,
+      "text_sha256": "da06539612a8d230214685243f86d92f4c8028ca3b81ddfd2c81b834c580accf",
+      "start_raw_byte": 24999,
+      "endTarget": null
+    },
+    {
+      "number": 88,
+      "start": 16610,
+      "end": 16765,
+      "characters": 155,
+      "text_sha256": "92d2d0c1fc7ddcd5251c599b947458913b82945778addf41b159fb7332711f65",
+      "start_raw_byte": 25228,
+      "endTarget": null
+    },
+    {
+      "number": 89,
+      "start": 16765,
+      "end": 17080,
+      "characters": 315,
+      "text_sha256": "a41141d4cb6324e1655aa36b2315f83317f358c4fc8fd51a19d2f72bc6ffb215",
+      "start_raw_byte": 25415,
+      "endTarget": null
+    },
+    {
+      "number": 90,
+      "start": 17080,
+      "end": 17328,
+      "characters": 248,
+      "text_sha256": "0e651d0f74fb7c89ca57e827ffe66f0752ec89f99f3ad56a3c72636c487fa300",
+      "start_raw_byte": 25827,
+      "endTarget": null
+    },
+    {
+      "number": 91,
+      "start": 17328,
+      "end": 17724,
+      "characters": 396,
+      "text_sha256": "07037fe72ab6cef642b1d45762c8db358f1f961bd715bc169493536ad6aa8920",
+      "start_raw_byte": 26107,
+      "endTarget": null
+    },
+    {
+      "number": 92,
+      "start": 17724,
+      "end": 17903,
+      "characters": 179,
+      "text_sha256": "bd8d0ea8a3d8c055da0afc917851dcd71aeb67d154b838f6ce410c0e7adf2221",
+      "start_raw_byte": 26576,
+      "endTarget": null
+    },
+    {
+      "number": 93,
+      "start": 17903,
+      "end": 18048,
+      "characters": 145,
+      "text_sha256": "dfae58b84aaa3943f91a53f9bcc5b8179adf4db48d4700296ac1e257a81b2dee",
+      "start_raw_byte": 26863,
+      "endTarget": null
+    },
+    {
+      "number": 94,
+      "start": 18048,
+      "end": 18384,
+      "characters": 336,
+      "text_sha256": "5f5fb90cf44d435e59fbfcfd64c5df71b11b67c45225cd6d30571dbbe5e99b3d",
+      "start_raw_byte": 27040,
+      "endTarget": null
+    },
+    {
+      "number": 95,
+      "start": 18384,
+      "end": 18564,
+      "characters": 180,
+      "text_sha256": "094e6f7eaf73e3c5b513a2d7866ddf50ccc299736218f54babd9ed6b8408e120",
+      "start_raw_byte": 27408,
+      "endTarget": null
+    },
+    {
+      "number": 96,
+      "start": 18564,
+      "end": 18643,
+      "characters": 79,
+      "text_sha256": "42f46e1fb3028042f3504f1eb63e31496f94ce30473df6f2ff6f4f5bdd1403c2",
+      "start_raw_byte": 27620,
+      "endTarget": null
+    },
+    {
+      "number": 97,
+      "start": 18643,
+      "end": 18907,
+      "characters": 264,
+      "text_sha256": "62d7419363e02b0e77a2dcda27d5cf5b183d6d1ca0df8b24ae8df66e5d1e94bc",
+      "start_raw_byte": 27772,
+      "endTarget": null
+    },
+    {
+      "number": 98,
+      "start": 18907,
+      "end": 19210,
+      "characters": 303,
+      "text_sha256": "9df0e723a8f495ebb063cf309d489876dc5b88af6273bcdb17e0a63d5b6b3eda",
+      "start_raw_byte": 28068,
+      "endTarget": null
+    },
+    {
+      "number": 99,
+      "start": 19210,
+      "end": 19288,
+      "characters": 78,
+      "text_sha256": "5a8151d96953b49cc2f45b6f05875e2443cb029d4c3bc919113afad94721a997",
+      "start_raw_byte": 28478,
+      "endTarget": null
+    },
+    {
+      "number": 100,
+      "start": 19288,
+      "end": 19570,
+      "characters": 282,
+      "text_sha256": "cde1ce3c37e6a69d2cf3c3f11855e67582847322b8c5fbf3395b89a4c27393bd",
+      "start_raw_byte": 28707,
+      "endTarget": null
+    },
+    {
+      "number": 101,
+      "start": 19570,
+      "end": 19736,
+      "characters": 166,
+      "text_sha256": "2c4deb48d64c0b1cf849a63b0a99fede076ce9b62b6fd25c59f702a8c638472a",
+      "start_raw_byte": 29022,
+      "endTarget": null
+    },
+    {
+      "number": 102,
+      "start": 19736,
+      "end": 19927,
+      "characters": 191,
+      "text_sha256": "9fbf6a4f7dcfdd33a0f949b7099194583842aa4c00096b45e40e9657ff1edef9",
+      "start_raw_byte": 29221,
+      "endTarget": null
+    },
+    {
+      "number": 103,
+      "start": 19927,
+      "end": 20068,
+      "characters": 141,
+      "text_sha256": "af0e058aae98ab4cd4802ae88185667cdb0329efa9b3860162e1e24045d47a50",
+      "start_raw_byte": 29478,
+      "endTarget": null
+    },
+    {
+      "number": 104,
+      "start": 20068,
+      "end": 20342,
+      "characters": 274,
+      "text_sha256": "8f128b4cb6258353698e6836e8ed6455ee0094bde1303a1343983c6423475cff",
+      "start_raw_byte": 29652,
+      "endTarget": null
+    },
+    {
+      "number": 105,
+      "start": 20342,
+      "end": 20552,
+      "characters": 210,
+      "text_sha256": "a21028826f428e34b9fd831440bfd042942b5012e583ab66a87ccb7a8e6af7f6",
+      "start_raw_byte": 30078,
+      "endTarget": null
+    },
+    {
+      "number": 106,
+      "start": 20552,
+      "end": 20907,
+      "characters": 355,
+      "text_sha256": "63564b43fde8559c839ddb85f61aaf5e409b93a7645832b058de9424dc22376b",
+      "start_raw_byte": 30321,
+      "endTarget": null
+    },
+    {
+      "number": 107,
+      "start": 20907,
+      "end": 20982,
+      "characters": 75,
+      "text_sha256": "b9a0da4a32ff6b1eb6023405230f96e868f9ac93e4750960f5f3f6bbce89a042",
+      "start_raw_byte": 30709,
+      "endTarget": null
+    },
+    {
+      "number": 108,
+      "start": 20982,
+      "end": 21307,
+      "characters": 325,
+      "text_sha256": "00c065ba2177b49d9a09a965c7534c2944510c84b9a8252f2760b44ce276a3b6",
+      "start_raw_byte": 30882,
+      "endTarget": null
+    },
+    {
+      "number": 109,
+      "start": 21307,
+      "end": 21462,
+      "characters": 155,
+      "text_sha256": "037b0fe5e271ae8bcc1cadb7693c83113115e348ca72c613c50cd80fd394a771",
+      "start_raw_byte": 31240,
+      "endTarget": null
+    },
+    {
+      "number": 110,
+      "start": 21462,
+      "end": 21657,
+      "characters": 195,
+      "text_sha256": "8bb500e79a5b3c2b721ea2cf8a4916c36144773167ddc3eb9a0a379ea54345da",
+      "start_raw_byte": 31428,
+      "endTarget": null
+    },
+    {
+      "number": 111,
+      "start": 21657,
+      "end": 21878,
+      "characters": 221,
+      "text_sha256": "b3b2832bde6975d444f62cb6f2997129c4ea3c5e6c3e8202058d5a1933c0256c",
+      "start_raw_byte": 31656,
+      "endTarget": null
+    },
+    {
+      "number": 112,
+      "start": 21878,
+      "end": 22134,
+      "characters": 256,
+      "text_sha256": "a86de5b71aa88e399b182d0e4aca7c41a000fb66d0820c34ac540941c860107e",
+      "start_raw_byte": 31910,
+      "endTarget": null
+    },
+    {
+      "number": 113,
+      "start": 22134,
+      "end": 22416,
+      "characters": 282,
+      "text_sha256": "956f6e8af255148ec8f9f1f75c1e18834db5f8b0952fa5a5436651f4717f3c72",
+      "start_raw_byte": 32241,
+      "endTarget": null
+    },
+    {
+      "number": 114,
+      "start": 22416,
+      "end": 22535,
+      "characters": 119,
+      "text_sha256": "fa8fcd2feef981344a10171906ff2c5e00a23f32e5269f81a1ae2530297ad29a",
+      "start_raw_byte": 32556,
+      "endTarget": null
+    },
+    {
+      "number": 115,
+      "start": 22535,
+      "end": 22708,
+      "characters": 173,
+      "text_sha256": "210924ccede49bfe2e52816b00bce4e0b0db841583fa8eeccbe79d0a6c4fb1d3",
+      "start_raw_byte": 32708,
+      "endTarget": null
+    },
+    {
+      "number": 116,
+      "start": 22708,
+      "end": 22997,
+      "characters": 289,
+      "text_sha256": "b992d109ac151668648c31a2b68823882f355a7149d5c27dd051c2deaa29b078",
+      "start_raw_byte": 32914,
+      "endTarget": null
+    },
+    {
+      "number": 117,
+      "start": 22997,
+      "end": 23152,
+      "characters": 155,
+      "text_sha256": "a0b481a59979e86b5d3c2e87843fb7ab693ce638b54eb54ea4b445ce75d0bfff",
+      "start_raw_byte": 33249,
+      "endTarget": null
+    },
+    {
+      "number": 118,
+      "start": 23152,
+      "end": 23497,
+      "characters": 345,
+      "text_sha256": "14d5b42fbac3c4a7fd030a05a241f37573b6a5341e990a9f53a44169d3eeafc7",
+      "start_raw_byte": 33558,
+      "endTarget": null
+    },
+    {
+      "number": 119,
+      "start": 23497,
+      "end": 23680,
+      "characters": 183,
+      "text_sha256": "b5941f663a6cd317e4238b4b51a4aba5d0d13301810222a9240d9b56692b3f6d",
+      "start_raw_byte": 33937,
+      "endTarget": null
+    },
+    {
+      "number": 120,
+      "start": 23680,
+      "end": 23875,
+      "characters": 195,
+      "text_sha256": "b2fa4bccfe14bb59c16f2d0c8267f9c78567a0d6a848d1fea8fd94ab473aef2e",
+      "start_raw_byte": 34153,
+      "endTarget": null
+    },
+    {
+      "number": 121,
+      "start": 23875,
+      "end": 24182,
+      "characters": 307,
+      "text_sha256": "5ade54df690fa74ea8bbc2ed931b5e232f88f71370b03b87eadead56a2b49afd",
+      "start_raw_byte": 34381,
+      "endTarget": null
+    },
+    {
+      "number": 122,
+      "start": 24182,
+      "end": 24400,
+      "characters": 218,
+      "text_sha256": "ec6e09357c074e8a3b8c4133491a57c733434480f4c1b8e88d6e160e23c00ddf",
+      "start_raw_byte": 34721,
+      "endTarget": null
+    },
+    {
+      "number": 123,
+      "start": 24400,
+      "end": 24853,
+      "characters": 453,
+      "text_sha256": "7e16aee1763f0a862d7d114f2c0add54f6726c7d81d1ca45a4c617fea981452d",
+      "start_raw_byte": 34972,
+      "endTarget": null
+    },
+    {
+      "number": 124,
+      "start": 24853,
+      "end": 25005,
+      "characters": 152,
+      "text_sha256": "d3915ba0a7531cf161a648e2dc8a694bb0860c88163e07098f7d4a803de45024",
+      "start_raw_byte": 35523,
+      "endTarget": null
+    },
+    {
+      "number": 125,
+      "start": 25005,
+      "end": 25179,
+      "characters": 174,
+      "text_sha256": "f3e2a042157ab62c3f3a324d56fd3df8293c6881f1b58034b900c1fc5b61bfc8",
+      "start_raw_byte": 35750,
+      "endTarget": null
+    },
+    {
+      "number": 126,
+      "start": 25179,
+      "end": 25489,
+      "characters": 310,
+      "text_sha256": "1e19377cf1eeb8dbd7efab23beec8f31d9bd08c693cc4f3e0dd3eaf03c269551",
+      "start_raw_byte": 35958,
+      "endTarget": null
+    },
+    {
+      "number": 127,
+      "start": 25489,
+      "end": 25682,
+      "characters": 193,
+      "text_sha256": "1197549658d62eb93656ac10b0a316abc71eb08392c6012221e8160a2721e8ec",
+      "start_raw_byte": 36301,
+      "endTarget": null
+    },
+    {
+      "number": 128,
+      "start": 25682,
+      "end": 25821,
+      "characters": 139,
+      "text_sha256": "249c9a84fd08f4e5dcf56e0830eca6b85067bae61a60135e50e9490fc8f33c0f",
+      "start_raw_byte": 36527,
+      "endTarget": null
+    },
+    {
+      "number": 129,
+      "start": 25821,
+      "end": 26067,
+      "characters": 246,
+      "text_sha256": "399185bc8f351ea837c4ba67951d988fda6a9c8a29c7320a6dc05d0979775748",
+      "start_raw_byte": 36699,
+      "endTarget": null
+    },
+    {
+      "number": 130,
+      "start": 26067,
+      "end": 26375,
+      "characters": 308,
+      "text_sha256": "e51a21725b0b8f77decd739ab1c46e642be779767fc160d3cb4e07abe1aea8f7",
+      "start_raw_byte": 37012,
+      "endTarget": null
+    },
+    {
+      "number": 131,
+      "start": 26375,
+      "end": 26560,
+      "characters": 185,
+      "text_sha256": "430560b749d06ef1bd286bc9f1e74dcb8235e230ba1094f9027db70c71d5b74a",
+      "start_raw_byte": 37366,
+      "endTarget": null
+    },
+    {
+      "number": 132,
+      "start": 26560,
+      "end": 26752,
+      "characters": 192,
+      "text_sha256": "b6caad8eedb4337dbb885097192b3fa651842dfa66021e9d5121237c275ac612",
+      "start_raw_byte": 37584,
+      "endTarget": null
+    },
+    {
+      "number": 133,
+      "start": 26752,
+      "end": 27022,
+      "characters": 270,
+      "text_sha256": "62f7387fd6bff13cdab76b10596fbe162b3a2c3858f8b570de0c84b9239fb414",
+      "start_raw_byte": 37809,
+      "endTarget": null
+    },
+    {
+      "number": 134,
+      "start": 27022,
+      "end": 27190,
+      "characters": 168,
+      "text_sha256": "6f13b84ef241fc0b710584ce66cb5d94e871234d87bf90eef9e6366f50ff7a7f",
+      "start_raw_byte": 38154,
+      "endTarget": null
+    },
+    {
+      "number": 135,
+      "start": 27190,
+      "end": 27548,
+      "characters": 358,
+      "text_sha256": "2c9b686f508ef9ea7fda89f5667185ea3757426a0d7a98d1a659e1050a0176fa",
+      "start_raw_byte": 38355,
+      "endTarget": null
+    },
+    {
+      "number": 136,
+      "start": 27548,
+      "end": 27855,
+      "characters": 307,
+      "text_sha256": "11c4fde130273c6e4d20dc3f4a2729ff18b60abf599f0dfe1e40952166956ef0",
+      "start_raw_byte": 38780,
+      "endTarget": null
+    },
+    {
+      "number": 137,
+      "start": 27855,
+      "end": 27976,
+      "characters": 121,
+      "text_sha256": "0829c2369333c4b6baf916f5e07c16e8c10930b655910301b1e273491268b8e4",
+      "start_raw_byte": 39241,
+      "endTarget": null
+    },
+    {
+      "number": 138,
+      "start": 27976,
+      "end": 28211,
+      "characters": 235,
+      "text_sha256": "d73345d23812d6bf179768ef764b17f95bc07c79b83069770115876049f97d26",
+      "start_raw_byte": 39395,
+      "endTarget": null
+    },
+    {
+      "number": 139,
+      "start": 28211,
+      "end": 28480,
+      "characters": 269,
+      "text_sha256": "72cb8c1091ba42db1a23aa8575dfd0e083795f6727bdeb4ba65485e7e64750e9",
+      "start_raw_byte": 39663,
+      "endTarget": null
+    },
+    {
+      "number": 140,
+      "start": 28480,
+      "end": 28608,
+      "characters": 128,
+      "text_sha256": "8cf33ad2e4a23fb619a7744a93374912233d7948da29ed0e62b37dfd71fa5f47",
+      "start_raw_byte": 40030,
+      "endTarget": null
+    },
+    {
+      "number": 141,
+      "start": 28608,
+      "end": 28726,
+      "characters": 118,
+      "text_sha256": "bf70ce1a617b5433870d032e189730ab975df1f27a124efccef4b6e4873da318",
+      "start_raw_byte": 40233,
+      "endTarget": null
+    },
+    {
+      "number": 142,
+      "start": 28726,
+      "end": 29036,
+      "characters": 310,
+      "text_sha256": "8bd7a5d1f5863fb5cb0c6f4dfd04f560742bfba6729bdfda61583b617e2e297b",
+      "start_raw_byte": 40385,
+      "endTarget": null
+    },
+    {
+      "number": 143,
+      "start": 29036,
+      "end": 29217,
+      "characters": 181,
+      "text_sha256": "b478572a19c4e70980a737f8fbc648cc9bbf41c4526acc26b4ef3d77952ccbac",
+      "start_raw_byte": 40728,
+      "endTarget": null
+    },
+    {
+      "number": 144,
+      "start": 29217,
+      "end": 29382,
+      "characters": 165,
+      "text_sha256": "1083b3c3b09cbfa04d20f6048603a87c4cdfd1890f80b6a2c43f780f141e99c0",
+      "start_raw_byte": 40942,
+      "endTarget": null
+    },
+    {
+      "number": 145,
+      "start": 29382,
+      "end": 29630,
+      "characters": 248,
+      "text_sha256": "cb675febcfb89e2d1e958f84b5c7fefda4bbec41823599b1da1700ee1c3e5fab",
+      "start_raw_byte": 41182,
+      "endTarget": null
+    },
+    {
+      "number": 146,
+      "start": 29630,
+      "end": 29879,
+      "characters": 249,
+      "text_sha256": "45a3378e3a9c2b89a4b43419fffe6508e545a08c0c16d0b70bcf7546543343df",
+      "start_raw_byte": 41463,
+      "endTarget": null
+    },
+    {
+      "number": 147,
+      "start": 29879,
+      "end": 30141,
+      "characters": 262,
+      "text_sha256": "c19cc78f2818ceec6d3c85cabaf3672cb76663917e27c373316beee57fb582ac",
+      "start_raw_byte": 41745,
+      "endTarget": null
+    },
+    {
+      "number": 148,
+      "start": 30141,
+      "end": 30440,
+      "characters": 299,
+      "text_sha256": "58f4a86298df70b14c5ac63f0ff5822c5694101311cc1197596207d2316b3987",
+      "start_raw_byte": 42161,
+      "endTarget": null
+    },
+    {
+      "number": 149,
+      "start": 30440,
+      "end": 30669,
+      "characters": 229,
+      "text_sha256": "a9ea02a163c493cdc3ed12efb24dcdd87c2fcf6dc035b919689ebb92372d747f",
+      "start_raw_byte": 42506,
+      "endTarget": null
+    },
+    {
+      "number": 150,
+      "start": 30669,
+      "end": 30848,
+      "characters": 179,
+      "text_sha256": "f765172f60839ed328e022d519bc5bd393d949943e5eaf1c02e657810109589a",
+      "start_raw_byte": 42839,
+      "endTarget": null
+    },
+    {
+      "number": 151,
+      "start": 30848,
+      "end": 30980,
+      "characters": 132,
+      "text_sha256": "1e29eb87610838ff13a9475d5b8f024dc7778451c17d776bc2a832e1858fbde2",
+      "start_raw_byte": 43093,
+      "endTarget": null
+    },
+    {
+      "number": 152,
+      "start": 30980,
+      "end": 31172,
+      "characters": 192,
+      "text_sha256": "7c76a6bd08f4774cfd102cf41178e6a231fe2b5c02d10845146a6dc614a6b8b6",
+      "start_raw_byte": 43258,
+      "endTarget": null
+    },
+    {
+      "number": 153,
+      "start": 31172,
+      "end": 31518,
+      "characters": 346,
+      "text_sha256": "efe1f2d9c24e68c137cfc120a40b4ee2ccc3a772e8b98c456ac02ef81d0728fe",
+      "start_raw_byte": 43484,
+      "endTarget": null
+    },
+    {
+      "number": 154,
+      "start": 31518,
+      "end": 31789,
+      "characters": 271,
+      "text_sha256": "b023f3c00d8d74f927f1ab270acde362146989b07b73d5e2100dc6eb3f617308",
+      "start_raw_byte": 43905,
+      "endTarget": null
+    },
+    {
+      "number": 155,
+      "start": 31789,
+      "end": 32022,
+      "characters": 233,
+      "text_sha256": "72325bfe051e9a3e868cfd3f86c56834cac35828b20dd7764f821aaeb2c3b42f",
+      "start_raw_byte": 44209,
+      "endTarget": null
+    },
+    {
+      "number": 156,
+      "start": 32022,
+      "end": 32148,
+      "characters": 126,
+      "text_sha256": "53b5507d236b6a75ae7f3c6dd884f182a630ad4225c1aeccaa0dd4297e40c907",
+      "start_raw_byte": 44476,
+      "endTarget": null
+    },
+    {
+      "number": 157,
+      "start": 32148,
+      "end": 32412,
+      "characters": 264,
+      "text_sha256": "3153fb92598409e2a817a067ee5911658590c625b9861cae09cfa0180e0e6bd8",
+      "start_raw_byte": 44700,
+      "endTarget": null
+    },
+    {
+      "number": 158,
+      "start": 32412,
+      "end": 32607,
+      "characters": 195,
+      "text_sha256": "5db5126191ecac707223f8b70434d97670e7a0492e41cf679cb04a314d14691d",
+      "start_raw_byte": 45039,
+      "endTarget": null
+    },
+    {
+      "number": 159,
+      "start": 32607,
+      "end": 32803,
+      "characters": 196,
+      "text_sha256": "4ac5776cb0ec195f2f462aa16d2d15aaf4d92df67b752e722d3aa75ebfadd964",
+      "start_raw_byte": 45267,
+      "endTarget": null
+    },
+    {
+      "number": 160,
+      "start": 32803,
+      "end": 32963,
+      "characters": 160,
+      "text_sha256": "321de05a77ede2e2bafb80cbae4d4fc6814c85281fb9bb5e616ee3e4f27a7088",
+      "start_raw_byte": 45538,
+      "endTarget": null
+    },
+    {
+      "number": 161,
+      "start": 32963,
+      "end": 33228,
+      "characters": 265,
+      "text_sha256": "8483869676fad5d209c2202331f6ab96f66e5b9f0c92837057e98881d8589c97",
+      "start_raw_byte": 45731,
+      "endTarget": null
+    },
+    {
+      "number": 162,
+      "start": 33228,
+      "end": 33607,
+      "characters": 379,
+      "text_sha256": "3ee987fde11b3839fc190332665d82ee1ff3bedb5b2583177ebead5b85cf5d20",
+      "start_raw_byte": 46029,
+      "endTarget": null
+    },
+    {
+      "number": 163,
+      "start": 33607,
+      "end": 33876,
+      "characters": 269,
+      "text_sha256": "d926aa262ec754856c5be54824f52ed82eadfbfc72e55de052db4c57c7bbf58f",
+      "start_raw_byte": 46441,
+      "endTarget": null
+    },
+    {
+      "number": 164,
+      "start": 33876,
+      "end": 34003,
+      "characters": 127,
+      "text_sha256": "17cadddb7d9a2f283924c72578ce650f6977673b3d570ba8211686d0f9a0acf4",
+      "start_raw_byte": 46743,
+      "endTarget": null
+    },
+    {
+      "number": 165,
+      "start": 34003,
+      "end": 34353,
+      "characters": 350,
+      "text_sha256": "2bda99255a447c67c021daa415acde44d3407f2f03dc3ef849230ebd37963cb0",
+      "start_raw_byte": 46903,
+      "endTarget": null
+    },
+    {
+      "number": 166,
+      "start": 34353,
+      "end": 34615,
+      "characters": 262,
+      "text_sha256": "a81ffa74d405af12d6379073403f1d08878f2af373d277bb6fd4188f113c9c9a",
+      "start_raw_byte": 47299,
+      "endTarget": null
+    },
+    {
+      "number": 167,
+      "start": 34615,
+      "end": 34757,
+      "characters": 142,
+      "text_sha256": "c92bbc421f19a9ecffdacd559f9211a15b3159beafaa208325b0461412754be7",
+      "start_raw_byte": 47636,
+      "endTarget": null
+    },
+    {
+      "number": 168,
+      "start": 34757,
+      "end": 34924,
+      "characters": 167,
+      "text_sha256": "2cd7a987e75e40fbace195cf08facc7fab4103056a03f631cc3875fbf2c6efac",
+      "start_raw_byte": 47850,
+      "endTarget": null
+    },
+    {
+      "number": 169,
+      "start": 34924,
+      "end": 35153,
+      "characters": 229,
+      "text_sha256": "f761aefa1b07b8e8a1d9a990d22db283dc0850153575db10989b1290f677cacc",
+      "start_raw_byte": 48084,
+      "endTarget": null
+    },
+    {
+      "number": 170,
+      "start": 35153,
+      "end": 35284,
+      "characters": 131,
+      "text_sha256": "602f2c13ebb196b8784656429d927c36e44afe2d56da05108fe67ef3b048e957",
+      "start_raw_byte": 48346,
+      "endTarget": null
+    },
+    {
+      "number": 171,
+      "start": 35284,
+      "end": 35506,
+      "characters": 222,
+      "text_sha256": "8bd0427b545f235782993032e1032cece336b8afa21151d3d73e671c76a385a2",
+      "start_raw_byte": 48510,
+      "endTarget": null
+    },
+    {
+      "number": 172,
+      "start": 35506,
+      "end": 35710,
+      "characters": 204,
+      "text_sha256": "178749e09e336a9d144eb91e90a336a3aac71e322bbd36d43a8909bf708509d7",
+      "start_raw_byte": 48765,
+      "endTarget": null
+    },
+    {
+      "number": 173,
+      "start": 35710,
+      "end": 36102,
+      "characters": 392,
+      "text_sha256": "70eb497b77e492cd8536aa4e285b921f9a5d8576ad28fd1dc990b0577e2cf395",
+      "start_raw_byte": 49123,
+      "endTarget": null
+    },
+    {
+      "number": 174,
+      "start": 36102,
+      "end": 36274,
+      "characters": 172,
+      "text_sha256": "e87e5143ac737ad0b53b34816f7aaeadecce6e53b51345268cbc474b72f3ace5",
+      "start_raw_byte": 49614,
+      "endTarget": null
+    },
+    {
+      "number": 175,
+      "start": 36274,
+      "end": 36420,
+      "characters": 146,
+      "text_sha256": "af8c323f4e65eb722b4fbe036da80ce26ab7835102f8bc8053619bd82dedbe30",
+      "start_raw_byte": 49819,
+      "endTarget": null
+    },
+    {
+      "number": 176,
+      "start": 36420,
+      "end": 36720,
+      "characters": 300,
+      "text_sha256": "e7edbfbc0e28bdc180f05ef1bd867c77a03192d953592d8644081906426befca",
+      "start_raw_byte": 49998,
+      "endTarget": null
+    },
+    {
+      "number": 177,
+      "start": 36720,
+      "end": 37014,
+      "characters": 294,
+      "text_sha256": "43a14d9da5d9b929816861eaa8c32aacb4db1d4eaeee9a281f4e04e1a03bc2f9",
+      "start_raw_byte": 50331,
+      "endTarget": null
+    },
+    {
+      "number": 178,
+      "start": 37014,
+      "end": 37215,
+      "characters": 201,
+      "text_sha256": "744e2a98cbad7d6dc25d34f52be6fe029929ad4c658b17af0a9b60af39c8c813",
+      "start_raw_byte": 50658,
+      "endTarget": null
+    },
+    {
+      "number": 179,
+      "start": 37215,
+      "end": 37288,
+      "characters": 73,
+      "text_sha256": "2b63110120895ecc824a863e7724561835f60bdd1280d93ec0459b711e2c86e2",
+      "start_raw_byte": 50934,
+      "endTarget": null
+    },
+    {
+      "number": 180,
+      "start": 37288,
+      "end": 37666,
+      "characters": 378,
+      "text_sha256": "c580c451c0deaf5b78a3b6b69ec154837d4babc307f6e1092d116569867d3170",
+      "start_raw_byte": 51040,
+      "endTarget": null
+    },
+    {
+      "number": 181,
+      "start": 37666,
+      "end": 37959,
+      "characters": 293,
+      "text_sha256": "2bc716fa83f279372e9dfe3538edd2296a30b3cdcb10b2a82c6b9ee81ce3e2a2",
+      "start_raw_byte": 51452,
+      "endTarget": null
+    },
+    {
+      "number": 182,
+      "start": 37959,
+      "end": 38269,
+      "characters": 310,
+      "text_sha256": "52e43b7fccb7ec9ef5aafaff6df99499535d844f1ee32ced72ae4901c6b67d7b",
+      "start_raw_byte": 51912,
+      "endTarget": null
+    },
+    {
+      "number": 183,
+      "start": 38269,
+      "end": 38542,
+      "characters": 273,
+      "text_sha256": "a937d7938db50964b6fef4f89c4338ea1482a35a48e74c7d160cf50ad02ad99b",
+      "start_raw_byte": 52255,
+      "endTarget": null
+    },
+    {
+      "number": 184,
+      "start": 38542,
+      "end": 38818,
+      "characters": 276,
+      "text_sha256": "8120d4d2302b00fc77c2db4f967c74f98826d76cc56aa16f4657cd6227ec55ab",
+      "start_raw_byte": 52561,
+      "endTarget": null
+    },
+    {
+      "number": 185,
+      "start": 38818,
+      "end": 38930,
+      "characters": 112,
+      "text_sha256": "f4af00cacac6e228d51ca393928d0b7596661fac075a3c6592d357c7b0cf0263",
+      "start_raw_byte": 52912,
+      "endTarget": null
+    },
+    {
+      "number": 186,
+      "start": 38930,
+      "end": 39140,
+      "characters": 210,
+      "text_sha256": "3e8c333ce5a0d98c900563160248775efaacd0d7427ae61dfce8c6e03eaa93db",
+      "start_raw_byte": 53057,
+      "endTarget": null
+    },
+    {
+      "number": 187,
+      "start": 39140,
+      "end": 39390,
+      "characters": 250,
+      "text_sha256": "9d60328284765fba7d3edcf896ec12b21d99139c8ad1b961ac4cdca6c625c9bd",
+      "start_raw_byte": 53300,
+      "endTarget": null
+    },
+    {
+      "number": 188,
+      "start": 39390,
+      "end": 39696,
+      "characters": 306,
+      "text_sha256": "f000210c2d58a133e5f65b5f9eaad9ab7d541a2eecd02c195a9efdb512f5b6eb",
+      "start_raw_byte": 53583,
+      "endTarget": null
+    },
+    {
+      "number": 189,
+      "start": 39696,
+      "end": 39823,
+      "characters": 127,
+      "text_sha256": "65b91087b515868a63a4689fca984ffa9f5a64639dd3145f438c27dc6f558cdb",
+      "start_raw_byte": 54108,
+      "endTarget": null
+    },
+    {
+      "number": 190,
+      "start": 39823,
+      "end": 40036,
+      "characters": 213,
+      "text_sha256": "46e9078b4c5084ec5fb8785bf2c3b60a57ba1e0cec7b9546cada56efca923a64",
+      "start_raw_byte": 54268,
+      "endTarget": null
+    },
+    {
+      "number": 191,
+      "start": 40036,
+      "end": 40300,
+      "characters": 264,
+      "text_sha256": "570f5a7ec99b586f89eecbba01378fe28f90a2883d295e92cdabb24188a96485",
+      "start_raw_byte": 54514,
+      "endTarget": null
+    },
+    {
+      "number": 192,
+      "start": 40300,
+      "end": 40497,
+      "characters": 197,
+      "text_sha256": "b091b130be41d27155730df49f143dfc4a1b3d6a5c1630ac6ad0427b281f23be",
+      "start_raw_byte": 54811,
+      "endTarget": null
+    },
+    {
+      "number": 193,
+      "start": 40497,
+      "end": 40783,
+      "characters": 286,
+      "text_sha256": "ee34a60cc572520967113a9e32ca0d637f859a7378029b5b82c4e559a265f550",
+      "start_raw_byte": 55041,
+      "endTarget": null
+    },
+    {
+      "number": 194,
+      "start": 40783,
+      "end": 40898,
+      "characters": 115,
+      "text_sha256": "ffe587d94437b53c72773685dc0c6b58e717324ee9f09fc840540fc67ab31277",
+      "start_raw_byte": 55360,
+      "endTarget": null
+    },
+    {
+      "number": 195,
+      "start": 40898,
+      "end": 41177,
+      "characters": 279,
+      "text_sha256": "c1b61331bd1645d535908139560447a4108a1a0fbd676e561a617f4f9e6dfa33",
+      "start_raw_byte": 55508,
+      "endTarget": null
+    },
+    {
+      "number": 196,
+      "start": 41177,
+      "end": 41282,
+      "characters": 105,
+      "text_sha256": "c72381269b5ae1df00c878def9694ef3593fa2594219def589ec2be1ad1dd355",
+      "start_raw_byte": 55820,
+      "endTarget": null
+    },
+    {
+      "number": 197,
+      "start": 41282,
+      "end": 41472,
+      "characters": 190,
+      "text_sha256": "aeb975d6347322d9ae50ad8103fb58eabd675a64ad600ff3085cc8d32de5e01d",
+      "start_raw_byte": 56000,
+      "endTarget": null
+    },
+    {
+      "number": 198,
+      "start": 41472,
+      "end": 41753,
+      "characters": 281,
+      "text_sha256": "37d40fc624bbac80fbe06f6ec751337a57c06e133491606e1e8427bd410d8c21",
+      "start_raw_byte": 56236,
+      "endTarget": null
+    },
+    {
+      "number": 199,
+      "start": 41753,
+      "end": 41939,
+      "characters": 186,
+      "text_sha256": "59b29e4a67f2bf0b38dd372540d44b766556b9bf7a1e2e5c6fb82eb69d245e44",
+      "start_raw_byte": 56550,
+      "endTarget": null
+    },
+    {
+      "number": 200,
+      "start": 41939,
+      "end": 42244,
+      "characters": 305,
+      "text_sha256": "8c56d7dc7e3fbbf81a91d03901d9ca9391a28046de171cace5e502a15153c8d5",
+      "start_raw_byte": 56803,
+      "endTarget": null
+    },
+    {
+      "number": 201,
+      "start": 42244,
+      "end": 42482,
+      "characters": 238,
+      "text_sha256": "265f5984c1ba607ad5ad9685e43949a6072a253aae2691b9dcfb699f8b2a89f4",
+      "start_raw_byte": 57141,
+      "endTarget": null
+    },
+    {
+      "number": 202,
+      "start": 42482,
+      "end": 42637,
+      "characters": 155,
+      "text_sha256": "adc43dae2a206f26fc4408961dce63cb3df4c7f9d71bb1b0083ef482c1b067e9",
+      "start_raw_byte": 57412,
+      "endTarget": null
+    },
+    {
+      "number": 203,
+      "start": 42637,
+      "end": 42860,
+      "characters": 223,
+      "text_sha256": "cde1780ff9372ca277f038e4d4e422cea7c39d42582bbe17a7144b90a9e578c1",
+      "start_raw_byte": 57600,
+      "endTarget": null
+    },
+    {
+      "number": 204,
+      "start": 42860,
+      "end": 43004,
+      "characters": 144,
+      "text_sha256": "ee88f8dfc008f30bc193eab0f079a90e7e48dd618c3e6c532acdd80f1de49630",
+      "start_raw_byte": 57898,
+      "endTarget": null
+    },
+    {
+      "number": 205,
+      "start": 43004,
+      "end": 43204,
+      "characters": 200,
+      "text_sha256": "f12b45fedb733965fb3fef3d2114ce8e062f6b2ebc9e6250782daaf4f56bf015",
+      "start_raw_byte": 58075,
+      "endTarget": null
+    },
+    {
+      "number": 206,
+      "start": 43204,
+      "end": 43382,
+      "characters": 178,
+      "text_sha256": "64b2f0e55b8870a8bde8893d2dac90fd3e09c7f74f2639543ad4ceb761cca802",
+      "start_raw_byte": 58308,
+      "endTarget": null
+    },
+    {
+      "number": 207,
+      "start": 43382,
+      "end": 43562,
+      "characters": 180,
+      "text_sha256": "f71d4412eca93ee603c24f221827b68dfa26a2876ac107541bd0436e974fa47a",
+      "start_raw_byte": 58584,
+      "endTarget": null
+    },
+    {
+      "number": 208,
+      "start": 43562,
+      "end": 43747,
+      "characters": 185,
+      "text_sha256": "c4f5acfd5a3980226b709f2b57325f74fd73e149d415a056d002d0982adf935c",
+      "start_raw_byte": 58839,
+      "endTarget": null
+    },
+    {
+      "number": 209,
+      "start": 43747,
+      "end": 43975,
+      "characters": 228,
+      "text_sha256": "90fd27c401c632b3ac8eac4fa3b6209abdba141b9c7f70a7d32bf8198f7917cd",
+      "start_raw_byte": 59057,
+      "endTarget": null
+    },
+    {
+      "number": 210,
+      "start": 43975,
+      "end": 44241,
+      "characters": 266,
+      "text_sha256": "7738d1e51ce0c0633b5be9ce92a451c09cc5501048b343aa834b5b7516f3b79f",
+      "start_raw_byte": 59318,
+      "endTarget": null
+    },
+    {
+      "number": 211,
+      "start": 44241,
+      "end": 44470,
+      "characters": 229,
+      "text_sha256": "3b9c1c5410430705512070df6c52c2f8dbde99625dce5e1af464450134bd7e9a",
+      "start_raw_byte": 59659,
+      "endTarget": null
+    },
+    {
+      "number": 212,
+      "start": 44470,
+      "end": 44777,
+      "characters": 307,
+      "text_sha256": "361e3bccd18ca0e21022ff1a5165c3c3669fb04895e6f21e685b3e4e29093a24",
+      "start_raw_byte": 59921,
+      "endTarget": null
+    },
+    {
+      "number": 213,
+      "start": 44777,
+      "end": 45131,
+      "characters": 354,
+      "text_sha256": "d02dab69153be0cc2d22910a597177d8fa8e094662341f0b6c91cc5ae61fc035",
+      "start_raw_byte": 60261,
+      "endTarget": null
+    },
+    {
+      "number": 214,
+      "start": 45131,
+      "end": 45438,
+      "characters": 307,
+      "text_sha256": "5a9f6dd828297b2640d9ce289de36687aa2a92721a1fa97a835205213ac8cb01",
+      "start_raw_byte": 60661,
+      "endTarget": null
+    },
+    {
+      "number": 215,
+      "start": 45438,
+      "end": 45809,
+      "characters": 371,
+      "text_sha256": "236e0d630c11daf318b2b893413008b4eb030d4bf21f4e101356520d426cb31e",
+      "start_raw_byte": 61123,
+      "endTarget": null
+    },
+    {
+      "number": 216,
+      "start": 45809,
+      "end": 46045,
+      "characters": 236,
+      "text_sha256": "bb8fa978419eea8658acd134428747d2d752f18c41fc8e7b847d1947d74ad4fb",
+      "start_raw_byte": 61569,
+      "endTarget": null
+    },
+    {
+      "number": 217,
+      "start": 46045,
+      "end": 46214,
+      "characters": 169,
+      "text_sha256": "acea47a8d9d31e4ec474a4aa4fb8d2042f4b053b95ab644a98ebd292777403b7",
+      "start_raw_byte": 61838,
+      "endTarget": null
+    },
+    {
+      "number": 218,
+      "start": 46214,
+      "end": 46302,
+      "characters": 88,
+      "text_sha256": "5627f969330337868edcc9ba09a2d4ce12f4d8bab73bd3423fcc6c2b955793b2",
+      "start_raw_byte": 62040,
+      "endTarget": null
+    },
+    {
+      "number": 219,
+      "start": 46302,
+      "end": 46541,
+      "characters": 239,
+      "text_sha256": "9ecf2b6c58c4cc19b6a7b1f7dc14e97e2704329b6c5eadc0f8d11a9a2e0c5bb9",
+      "start_raw_byte": 62204,
+      "endTarget": null
+    },
+    {
+      "number": 220,
+      "start": 46541,
+      "end": 46816,
+      "characters": 275,
+      "text_sha256": "7711a66451c1ae73d66ac5801d74e76423d10d867dbfdca88ccd9972fc6c5d18",
+      "start_raw_byte": 62476,
+      "endTarget": null
+    },
+    {
+      "number": 221,
+      "start": 46816,
+      "end": 47098,
+      "characters": 282,
+      "text_sha256": "776bce23cf64b003242b69d750b5ccbcdd8bea095b00eb6ddcfa54d5d2f2cf6d",
+      "start_raw_byte": 62784,
+      "endTarget": null
+    },
+    {
+      "number": 222,
+      "start": 47098,
+      "end": 47407,
+      "characters": 309,
+      "text_sha256": "aa61682a0ba5ceca9e3a3e3202cba504e470502f68cccccee9358f27702a3c5b",
+      "start_raw_byte": 63164,
+      "endTarget": null
+    },
+    {
+      "number": 223,
+      "start": 47407,
+      "end": 47554,
+      "characters": 147,
+      "text_sha256": "323ebc9af5d497ae0336f52c5ea185818ab2f07dfa8b8d655b2135a4e3e46e1b",
+      "start_raw_byte": 63506,
+      "endTarget": null
+    },
+    {
+      "number": 224,
+      "start": 47554,
+      "end": 47747,
+      "characters": 193,
+      "text_sha256": "25631b1acae97c8c59f0b78450279c2419d47a86efe8e0bd0c5555eece13fc48",
+      "start_raw_byte": 63728,
+      "endTarget": null
+    },
+    {
+      "number": 225,
+      "start": 47747,
+      "end": 47926,
+      "characters": 179,
+      "text_sha256": "6675d6f4d4528dbf335c4fe8860167aa599feae18140c3b0a64a8e23a1b0f67b",
+      "start_raw_byte": 63954,
+      "endTarget": null
+    },
+    {
+      "number": 226,
+      "start": 47926,
+      "end": 48097,
+      "characters": 171,
+      "text_sha256": "ff13fdd69e237dd6185d158c6e69a9eed54ab377401bd35aa3fd33635e813145",
+      "start_raw_byte": 64166,
+      "endTarget": null
+    },
+    {
+      "number": 227,
+      "start": 48097,
+      "end": 48240,
+      "characters": 143,
+      "text_sha256": "9c4b18e09e82338f7fb2cefaf254c85bb56198ff40afa84df6e5e4162610a53b",
+      "start_raw_byte": 64370,
+      "endTarget": null
+    },
+    {
+      "number": 228,
+      "start": 48240,
+      "end": 48449,
+      "characters": 209,
+      "text_sha256": "a16f4d3a44b2fad90c916147a201109f3ae5efb6774ff8c9e3028ec6a93cf8ee",
+      "start_raw_byte": 64584,
+      "endTarget": null
+    },
+    {
+      "number": 229,
+      "start": 48449,
+      "end": 48796,
+      "characters": 347,
+      "text_sha256": "a7a90eb888f52f2f1e27201fd6f0beea0002ccb608e0b6eed22daa750cc6c66e",
+      "start_raw_byte": 64826,
+      "endTarget": null
+    },
+    {
+      "number": 230,
+      "start": 48796,
+      "end": 49014,
+      "characters": 218,
+      "text_sha256": "44fa86e84e35cde3ffaf7f1210c597f2c12a48f3da46d9769147a9404dd20dce",
+      "start_raw_byte": 65219,
+      "endTarget": null
+    },
+    {
+      "number": 231,
+      "start": 49014,
+      "end": 49338,
+      "characters": 324,
+      "text_sha256": "cf9a805af49fe83622e341c265a3fdd739e749613d965115a7925cfdad3ecef2",
+      "start_raw_byte": 65512,
+      "endTarget": null
+    },
+    {
+      "number": 232,
+      "start": 49338,
+      "end": 49480,
+      "characters": 142,
+      "text_sha256": "8d6fb4042b2eb9cc0288d9d2407cc06862d2cf140f295f43e3288b9948eeacb4",
+      "start_raw_byte": 65869,
+      "endTarget": null
+    },
+    {
+      "number": 233,
+      "start": 49480,
+      "end": 49667,
+      "characters": 187,
+      "text_sha256": "4e8cf187236b1da660b294dc0686378a2f8ffe6a6d71c03615d616db02cef7b3",
+      "start_raw_byte": 66044,
+      "endTarget": null
+    },
+    {
+      "number": 234,
+      "start": 49667,
+      "end": 49892,
+      "characters": 225,
+      "text_sha256": "536d4dee89f30853d9841f82f55a92c1515cee007c200b45e705974d53a28d03",
+      "start_raw_byte": 66264,
+      "endTarget": null
+    },
+    {
+      "number": 235,
+      "start": 49892,
+      "end": 50137,
+      "characters": 245,
+      "text_sha256": "16b3cf2228e79c0854e4ee99c6b636b0a6182d99e034caa13a61d1b1e53b833b",
+      "start_raw_byte": 66564,
+      "endTarget": null
+    },
+    {
+      "number": 236,
+      "start": 50137,
+      "end": 50410,
+      "characters": 273,
+      "text_sha256": "aa818880d8b7007989235e334d05086a6f8c88f4d6eaa2529a2833a7af1fcb3b",
+      "start_raw_byte": 66843,
+      "endTarget": null
+    },
+    {
+      "number": 237,
+      "start": 50410,
+      "end": 50613,
+      "characters": 203,
+      "text_sha256": "659257553c3a60c03f84756f11910c9a3dcf729f361cda4bacc26a29f9e0768b",
+      "start_raw_byte": 67150,
+      "endTarget": null
+    },
+    {
+      "number": 239,
+      "start": 50613,
+      "end": 50736,
+      "characters": 123,
+      "text_sha256": "c3d5545c6b080d6354e01c916b4d158cd209d19516a3d6b3ccacec1c95349179",
+      "start_raw_byte": 67451,
+      "endTarget": null
+    },
+    {
+      "number": 240,
       "start": 50736,
+      "end": 50918,
+      "characters": 182,
+      "text_sha256": "6fec702ccfbaea077491892180fab465b7d0b4f618636db89753db7318697e47",
+      "start_raw_byte": 67607,
+      "endTarget": null
+    },
+    {
+      "number": 241,
+      "start": 50918,
       "end": 50998,
-      "text": "huic per dolum quoque generi in conuiuio morienti filius successit hyrcanus, qui cum tenuisset pontificatus annis XXXI, in senectute moriens cum et pontificatum tenuisset et regnum. Is namque primus usus est anno diademate. Heredem fratrem dereliquit alexandrum.",
-      "status": "Preserved only in containing source views pending editorial adjudication."
+      "characters": 80,
+      "text_sha256": "346707a92d22777feba0c640e249cb8604faee51a0ac59dda794e2261a28a150",
+      "start_raw_byte": 67822,
+      "endTarget": null
+    },
+    {
+      "number": 242,
+      "start": 50998,
+      "end": 51307,
+      "characters": 309,
+      "text_sha256": "110bec3d69198c449f3bbbe0812987f49398b307df202f0cbcd8a9ad9ae5b4f3",
+      "start_raw_byte": 67977,
+      "endTarget": null
+    },
+    {
+      "number": 243,
+      "start": 51307,
+      "end": 51487,
+      "characters": 180,
+      "text_sha256": "1f6a7355068fc1ce9329912a1344e2c1d538327c7a72ac6499764acac8e5644b",
+      "start_raw_byte": 68319,
+      "endTarget": null
+    },
+    {
+      "number": 244,
+      "start": 51487,
+      "end": 51775,
+      "characters": 288,
+      "text_sha256": "9fd55beb4942076ea366ff27ef32e32edc5cc497da9409efa8d51475727189f5",
+      "start_raw_byte": 68532,
+      "endTarget": null
+    },
+    {
+      "number": 245,
+      "start": 51775,
+      "end": 52035,
+      "characters": 260,
+      "text_sha256": "6543ab82f0429de150594e03109b87f39cece5b75bf280aba38eee32f9d6fe2c",
+      "start_raw_byte": 68853,
+      "endTarget": null
+    },
+    {
+      "number": 246,
+      "start": 52035,
+      "end": 52172,
+      "characters": 137,
+      "text_sha256": "59f065b660c131fe1c29db7fb685b492c3d3a9b295deeaf5f7c3eb6a92988f82",
+      "start_raw_byte": 69146,
+      "endTarget": null
+    },
+    {
+      "number": 247,
+      "start": 52172,
+      "end": 52381,
+      "characters": 209,
+      "text_sha256": "e41b57c01b0ecc29519f954bcdd53f5dbc9aaaffd1eaa5ab77dc6512865482a2",
+      "start_raw_byte": 69358,
+      "endTarget": null
+    },
+    {
+      "number": 248,
+      "start": 52381,
+      "end": 52706,
+      "characters": 325,
+      "text_sha256": "853696712df99ac8f7ebfe12d194873e9135d0772d99ca68af9e382ceb2e9830",
+      "start_raw_byte": 69613,
+      "endTarget": null
+    },
+    {
+      "number": 249,
+      "start": 52706,
+      "end": 52926,
+      "characters": 220,
+      "text_sha256": "bb3a7bc52514dba61e982830006ddc2e06e661fe6ce1191ef51a30d8b3396bcd",
+      "start_raw_byte": 69971,
+      "endTarget": null
+    },
+    {
+      "number": 250,
+      "start": 52926,
+      "end": 53124,
+      "characters": 198,
+      "text_sha256": "10efc18b5bf3e444d936ea7284c9ac87a25cad238f6066c9ef524e5da7564e2b",
+      "start_raw_byte": 70224,
+      "endTarget": null
+    },
+    {
+      "number": 251,
+      "start": 53124,
+      "end": 53353,
+      "characters": 229,
+      "text_sha256": "7ad9ce4871c0ef23b5105734447e1db351149f8045e6ae249e7a17aff6fb3593",
+      "start_raw_byte": 70455,
+      "endTarget": null
+    },
+    {
+      "number": 252,
+      "start": 53353,
+      "end": 53640,
+      "characters": 287,
+      "text_sha256": "075db0f9caf68253caf34919a01c9c4aac48ef1b1728e11cb9c5899b97b38d25",
+      "start_raw_byte": 70759,
+      "endTarget": null
+    },
+    {
+      "number": 253,
+      "start": 53640,
+      "end": 53788,
+      "characters": 148,
+      "text_sha256": "cc1cd99ad1ac272762621bf51b1ae4306fc523131b15dc0114ef3ca438d7906e",
+      "start_raw_byte": 71079,
+      "endTarget": null
+    },
+    {
+      "number": 254,
+      "start": 53788,
+      "end": 54079,
+      "characters": 291,
+      "text_sha256": "3e685baf81ec632b4236bf7a0051e338278b04de53c906f033d170a18554d901",
+      "start_raw_byte": 71260,
+      "endTarget": null
+    },
+    {
+      "number": 255,
+      "start": 54079,
+      "end": 54287,
+      "characters": 208,
+      "text_sha256": "824be42440be25f821155ee1b2027c44b51c643fac1bf9d0ab58fd1532a04bcd",
+      "start_raw_byte": 71649,
+      "endTarget": null
+    },
+    {
+      "number": 256,
+      "start": 54287,
+      "end": 54532,
+      "characters": 245,
+      "text_sha256": "121e56ab8f1ce1c0558f7557cd388b49ca7dfba0c70b30d8c54af009e555f3ea",
+      "start_raw_byte": 71890,
+      "endTarget": null
+    },
+    {
+      "number": 257,
+      "start": 54532,
+      "end": 54773,
+      "characters": 241,
+      "text_sha256": "bac4c2396ba355cb935622857fa6eff296556425b9dbcc95693aba07ab19f696",
+      "start_raw_byte": 72168,
+      "endTarget": null
+    },
+    {
+      "number": 258,
+      "start": 54773,
+      "end": 54922,
+      "characters": 149,
+      "text_sha256": "06ba9e66e3c98fe15faf543cd79e786e21dcd926065a4bb848d3712dd10f3e00",
+      "start_raw_byte": 72442,
+      "endTarget": null
+    },
+    {
+      "number": 259,
+      "start": 54922,
+      "end": 55192,
+      "characters": 270,
+      "text_sha256": "f544ff6366089412a7ef7e4451e91f2ebe76cd2c2eb23f30e0e28dff2861217c",
+      "start_raw_byte": 72666,
+      "endTarget": null
+    },
+    {
+      "number": 260,
+      "start": 55192,
+      "end": 55354,
+      "characters": 162,
+      "text_sha256": "69b47552a6290c5f49b5cde044a0c15f46cacc75f856c34cbdc34bdc811e40bd",
+      "start_raw_byte": 72969,
+      "endTarget": null
+    },
+    {
+      "number": 261,
+      "start": 55354,
+      "end": 55691,
+      "characters": 337,
+      "text_sha256": "7a6505c4a812d775f2790ac25d7d296b9a335e429f0d53abfc43af0e589e87df",
+      "start_raw_byte": 73164,
+      "endTarget": null
+    },
+    {
+      "number": 262,
+      "start": 55691,
+      "end": 55866,
+      "characters": 175,
+      "text_sha256": "c0782a7fe3b7825fa10f68534f7921df08177ba3401ee9767a0e0288195312ba",
+      "start_raw_byte": 73534,
+      "endTarget": null
+    },
+    {
+      "number": 263,
+      "start": 55866,
+      "end": 56118,
+      "characters": 252,
+      "text_sha256": "674bfaa87eac6bae1213384291419d548c6ca333076f0e2fc79af41adaee2752",
+      "start_raw_byte": 73755,
+      "endTarget": null
+    },
+    {
+      "number": 264,
+      "start": 56118,
+      "end": 56443,
+      "characters": 325,
+      "text_sha256": "aecfa4ea008bd3416fbb312aa11b478bf627542cee43562f770395adbcf592d1",
+      "start_raw_byte": 74180,
+      "endTarget": null
+    },
+    {
+      "number": 265,
+      "start": 56443,
+      "end": 56557,
+      "characters": 114,
+      "text_sha256": "159335d3a0615f1481a4e9a937676d35a053d708ebd945e74b70009e605e6fe3",
+      "start_raw_byte": 74539,
+      "endTarget": null
+    },
+    {
+      "number": 266,
+      "start": 56557,
+      "end": 56646,
+      "characters": 89,
+      "text_sha256": "00126d0f6274edf2169a5c90f53d0a1a093b60d8127501ae3ea8269efcee99f9",
+      "start_raw_byte": 74728,
+      "endTarget": null
+    },
+    {
+      "number": 267,
+      "start": 56646,
+      "end": 56995,
+      "characters": 349,
+      "text_sha256": "2b2419db44704dc4e4940ac2719398e108996d0d115a57532e2252457fdfc0e7",
+      "start_raw_byte": 74850,
+      "endTarget": null
+    },
+    {
+      "number": 268,
+      "start": 56995,
+      "end": 57185,
+      "characters": 190,
+      "text_sha256": "df129bd610444f62bd8a93430c6b0ef38682c2f50ea7876e8387cfbcf127e9d1",
+      "start_raw_byte": 75232,
+      "endTarget": null
     }
   ],
   "physical_overlap_or_duplicate_text": false,
   "Latin_complete_book_projection_hash": "6bee488b3428fc4464ac90a063863ea0a24316884170ba38382667e2a506a75e",
+  "Latin_projection_characters": 57185,
+  "assigned_Latin_characters": 57128,
+  "source_only_characters": 57,
   "Vita_included": false,
-  "provisional_all_recommended_choices": {
-    "primary_intervals": 257,
-    "unavailable_identities": 11,
-    "partial_identities": [
-      26,
-      37,
-      218,
-      240,
-      241,
-      266
-    ],
-    "conditional_on_actual_editorial_approval": true
-  }
+  "editorial_holds": 0
 }

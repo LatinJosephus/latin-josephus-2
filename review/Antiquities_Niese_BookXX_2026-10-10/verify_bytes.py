@@ -30,6 +30,7 @@ def main():
         h=sha((ROOT/rel).read_bytes())
         if h!=details['sha256']:assert rel in allowed,rel;changed[rel]=dict(original=details['sha256'],final=h)
     assert sha((ROOT/'assets/xml/antiquities/English/book-20.xml').read_bytes())==sha((PACK/'frozen-inputs/English.xml').read_bytes())
-    save(PACK/'BYTE_CERTIFICATION.json',dict(status='PASS',scope=manifest_path.name,final_editorial_certification=False,BookXX=results,protected_files=len(protected),protected_scope_complete=True,changed_existing_production=changed,unchanged_English_all_books=True,unchanged_structure=True,new_registry=info(ROOT/'assets/xml/antiquities/niese/book-20.json')))
+    closed=all(h['status']=='APPROVED' for h in json.loads((PACK/'ADJUDICATION_HISTORY.json').read_text(encoding='utf-8')))
+    save(PACK/'BYTE_CERTIFICATION.json',dict(status='PASS',scope=manifest_path.name,editorial_decisions_closed=closed,gate_scope='Byte fidelity and protected topology; final scholarly certificate also requires the separate executed browser gates.',BookXX=results,protected_files=len(protected),protected_scope_complete=True,changed_existing_production=changed,unchanged_English_all_books=True,unchanged_structure=True,new_registry=info(ROOT/'assets/xml/antiquities/niese/book-20.json')))
     print('PASS byte recovery and protected full production scope:',len(protected),'files')
 if __name__=='__main__':main()

@@ -1,22 +1,23 @@
 {
   "status": "PASS",
-  "scope": "APPROVED_INSERTIONS.json",
-  "editorial_decisions_closed": true,
-  "gate_scope": "Byte fidelity and protected topology; final scholarly certificate also requires the separate executed browser gates.",
+  "scope": "SECURE_INSERTIONS.json",
+  "final_editorial_certification": false,
   "BookXX": {
     "Latin": {
       "status": "PASS",
       "original": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
-      "final": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "final": "b5dc23cdca4cd7e8686ef5232534fd0a7b3fcdc0bef5d9b6e85d5bfe1d1cdac9",
       "reversed": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
-      "additions": 258,
+      "additions": 254,
       "CRLF_before": 0,
       "CRLF_after": 0,
       "projection_sha256": "6bee488b3428fc4464ac90a063863ea0a24316884170ba38382667e2a506a75e",
       "all_original_markup_restored": true,
       "all_original_IDs_retained": true,
       "approved_new_IDs": [
-        "niese-latin-book20-end26"
+        "niese-latin-book20-secure-end239",
+        "niese-latin-book20-secure-end25",
+        "niese-latin-book20-secure-end57"
       ],
       "all_sameAs_unchanged": true
     },
@@ -48,17 +49,17 @@
     },
     "assets/xml/antiquities/Latin/book-20.xml": {
       "original": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282",
-      "final": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877"
+      "final": "b5dc23cdca4cd7e8686ef5232534fd0a7b3fcdc0bef5d9b6e85d5bfe1d1cdac9"
     }
   },
   "unchanged_English_all_books": true,
   "unchanged_structure": true,
   "new_registry": {
     "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20\\assets\\xml\\antiquities\\niese\\book-20.json",
-    "bytes": 54667,
-    "sha256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+    "bytes": 54448,
+    "sha256": "30633235bc725808ee42ecbc95f7309f3117642723f6ab0ad58d10f8ec075c27",
     "CRLF": 0,
-    "LF_without_CR": 2427,
+    "LF_without_CR": 2430,
     "BOM": false
   }
 }
