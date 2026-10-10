@@ -37,12 +37,16 @@ def main():
             checks.append(dict(language=lang,working_tree_sha256=sha(actual),frozen_sha256=sha(raw),git_blob_sha256=sha(blob),
                 exact_working_tree_preservation=True,working_tree_equals_git_blob=actual==blob,CRLF_to_LF_equals_git_blob=actual.replace(b'\r\n',b'\n')==blob))
         structural=json.loads((packet/'INHERITED_STRUCTURAL_RECORDS.json').read_text());c=Counter(x['values'].get('scheme','alignment-registry') for x in structural)
-        rows=json.loads((packet/'BOUNDARIES.json').read_text());reviewed=[x['number'] for x in rows if x['Latin_review_status']=='INDIVIDUALLY_REVIEWED']
+        rows=json.loads((packet/'BOUNDARIES.json').read_text());reviewed=[x['number'] for x in rows if x['Latin_review_status'].startswith('INDIVIDUALLY_REVIEWED')]
+        routine=[x['number'] for x in rows if x['Latin_review_status']=='INDIVIDUALLY_REVIEWED']
+        pending=[x['number'] for x in rows if x['editorial_status']=='PENDING_EDITOR_ADJUDICATION']
+        unavailable=[x['number'] for x in rows if x['correspondence_status']=='ABSENT_IN_TRANSCRIPTION']
         special=[x for x in structural if x['values'].get('verification-status') not in ['CONFIRMED_NIESE_START',None] or x['values'].get('traditional-relationship')=='SAME_NIESE_DIFFERENT_POSITION']
         save(packet/'INHERITED_ANOMALY_INVENTORY.json',dict(structural_counts=dict(c),entries=special,
             note='All original statuses, raw associations, literal labels and independent locators are frozen unchanged. No Niese identity is certified by this inventory.'))
         books[str(b)]=dict(candidate_identities=len(rows),expected=frozen['machine_census']['expected'],inputs=checks,
             inherited_structural_counts=dict(c),individual_Latin_reviews_completed=reviewed,individual_Latin_reviews_remaining=len(rows)-len(reviewed),
+            routine_present_starts=routine,pending_editorial_identities=pending,unavailable_identities=unavailable,
             production_implementation=False,source_byte_recovery_after_implementation='NOT_APPLICABLE_NO_SOURCE_EDITS',reader_certification=False)
     sources=json.loads((P/'PRINTED_SOURCES.json').read_text())
     for source in ['Niese','Loeb']:
