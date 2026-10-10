@@ -87,6 +87,9 @@ class Book:
  def first_content(self,offset):
   while offset<len(self.stream) and self.stream[offset].isspace():offset+=1
   return offset
+ def terminal_locator(self):
+  n=self.nodes[-1];u=self.units[n['unit']-1]
+  return dict(kind='narrative-end',stable_id=u['id'],paragraph=u['index'],xpath=u['xpath'],text_node_path=n['path'],node_offset=len(n['text']),unit_offset=len(u['text']),book_offset=len(self.stream),raw_byte=u['raw_end']-4,left=self.stream[-130:],right='',parsed_unit_sha256=u['parsed_hash'],raw_unit_sha256=u['raw_hash'])
 def fixtures():
  raw=b'<?xml version="1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body><div2><p xml:id="x">A &amp; B &#x3b1; <add>C</add>D<!--comment-->K<pb/>E<del>F</del>G<num>[1]</num>H\r\nI</p><p>J</p></div2></body></text></TEI>'
  b=Book(raw=raw);assert b.stream=='A & B \u03b1 CDKEFGH\nIJ'

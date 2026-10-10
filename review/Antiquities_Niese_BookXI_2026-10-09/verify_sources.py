@@ -16,7 +16,11 @@ def value_at(tree,path):
   node=children[k-1]
  raise ValueError('Not a text locator')
 def check_loc(b,loc):
- if loc.get('kind')=='narrative-end':assert loc['book_offset']==len(b.stream);return
+ if loc.get('kind')=='narrative-end':
+  assert loc['book_offset']==len(b.stream) and b.raw[loc['raw_byte']:loc['raw_byte']+4]==b'</p>'
+  value=value_at(b.tree,loc['text_node_path']);assert loc['node_offset']==len(value) and value[-1:]==b.stream[-1:]
+  u=b.units[loc['paragraph']-1];assert u['id']==loc['stable_id'] and u['raw_end']==loc['raw_byte']+4
+  assert loc['raw_unit_sha256']==digest(b.raw[u['raw_start']:u['raw_end']]);return
  value=value_at(b.tree,loc['text_node_path']);k=loc['node_offset'];at=loc['book_offset'];assert value[k:]==next(n['text'][k:] for n in b.nodes if n['path']==loc['text_node_path'])
  assert value[k]==b.stream[at];raw=b.raw[loc['raw_byte']:]
  c=value[k]
@@ -48,7 +52,7 @@ def main():
   for f in fragments:
    check_loc(b,f['start']);check_loc(b,f['end']);a=f['start']['book_offset'];z=f['end']['book_offset'];assert a==previous and z>a
    assert f['text']==b.stream[a:z];previous=z
-   out=dict(occurrence=f.get('occurrence') or f'Greek-XI-{f.get("number")}',start=outputs[lang].locate(a),end=outputs[lang].locate(z) if z<len(b.stream) else dict(book_offset=z,kind='narrative-end'))
+   out=dict(occurrence=f.get('occurrence') or f'Greek-XI-{f.get("number")}',start=outputs[lang].locate(a),end=outputs[lang].locate(z) if z<len(b.stream) else outputs[lang].terminal_locator())
    check_loc(outputs[lang],out['start']);check_loc(outputs[lang],out['end']);outputlocs.append(out)
   assert previous==len(b.stream) and ''.join(f['text'] for f in fragments)==b.stream
   save(lang.upper()+'_OUTPUT_LOCATORS.json',outputlocs)

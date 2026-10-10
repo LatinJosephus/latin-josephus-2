@@ -54,10 +54,10 @@ def main():
  latinspans={};sources=[]
  for i,f in enumerate(physical):
   nxt=physical[i+1] if i+1<len(physical) else None;end=nxt['offset'] if nxt else len(l.stream)
-  f.update(start=l.locate(f['offset']),end=l.locate(end) if nxt else dict(book_offset=end,kind='narrative-end',raw_byte=next(u for u in reversed(l.units) if u['text'])['raw_end']-4),text=l.stream[f['offset']:end])
+  f.update(start=l.locate(f['offset']),end=l.locate(end) if nxt else l.terminal_locator(),text=l.stream[f['offset']:end])
   f['narrative_sha256']=digest(f['text'].encode());f['runtime_span']=dict(start=point('Latin',f['offset'],f.get('label'),f.get('new_anchor')),end=point('Latin',end,nxt.get('label'),nxt.get('new_anchor')) if nxt else point('Latin',end),occurrence=f['occurrence'],role='interpolation' if f.get('role') else 'primary',continuationRank=f['rank'],label=f.get('identity') or f'Antiquities XI.{f["number"]} portion{f["rank"]}')
   if f.get('role'):
-   f['runtime_span']['sourceLabel']=f'Interpolated Latin Bellum Judaicum IV.105{f["identity"][-1]}';sources.append(f)
+   f['runtime_span']['sourceLabel']=f'Interpolated Latin Bellum Judaicum IV.105{f["identity"][-1]}';f['runtime_span']['attachmentBeforeRank']=1 if f['identity'].endswith('a') else 2;sources.append(f)
   else:latinspans.setdefault(f['number'],[]).append(f['runtime_span'])
  for spans in latinspans.values():spans.sort(key=lambda s:s['continuationRank'])
  assert sorted(latinspans)==list(range(1,348))
@@ -67,13 +67,14 @@ def main():
  for i,f in enumerate(gp):
   nxt=gp[i+1] if i+1<len(gp) else None;end=nxt['book_offset'] if nxt else len(g.stream)
   span=dict(start=point('Greek',f['book_offset'],f.get('label')),end=point('Greek',end,nxt.get('label')) if nxt else point('Greek',end),occurrence=f'Greek-XI-{f["number"]}',role='primary',continuationRank=1)
-  greekspans[f['number']]=[span];gledger.append(dict(number=f['number'],start=g.locate(f['book_offset']),end=g.locate(end) if nxt else dict(book_offset=end,kind='narrative-end'),text=g.stream[f['book_offset']:end],runtime_span=span))
+  greekspans[f['number']]=[span];gledger.append(dict(number=f['number'],start=g.locate(f['book_offset']),end=g.locate(end) if nxt else g.terminal_locator(),text=g.stream[f['book_offset']:end],runtime_span=span))
  fragmentnotice='Canonical order from separate witness fragments. Book view preserves Bamberg’s manuscript order.'
  interpolation='Bamberg preserves a transposed sequence with two separated portions of Latin Bellum Judaicum IV.105, interpolated before the corresponding portions of Antiquities XI.312. The Antiquities portions appear as 312a then 312b; both Bellum passages remain separately identified.'
  sections=[];expected={}
  for r in rows:
   n=r['number'];p=observed[n];runtime=Path('C:/workspace/Antiquities-Niese-11-runtime-20261009');image=next(q for q in [runtime/f'Niese-body-{p["PDF"]:03}.jpg',runtime/f'tail-{p["PDF"]:03}.jpg',runtime/f'Niese-{p["PDF"]:03}.jpg'] if q.exists())
   r['Greek'].update(print_status='VERIFIED_PAGE_IMAGE',print_observation={k:p[k] for k in ['PDF','print','position']},edition=observations['edition'],image=str(image),word_interpretation='FULL_SECTION_AND_NEIGHBOURS_REVIEWED; inherited Greek word cut retained; marginal numeral observation separately recorded')
+  if n==347:r['Greek']['end']=g.terminal_locator()
   fs=[f for f in physical if f.get('number')==n];fs.sort(key=lambda f:f['rank']);note=choices['choices'][str(n)][2] if n<=301 else r['Latin']['review_notes']
   qualification=choices['qualified'].get(str(n),'reviewed-present')
   if n in [318,319,332,344,345,347]:qualification='reviewed-inherited-label-qualified'
@@ -102,5 +103,6 @@ def main():
  save('IDENTITY_REGISTER.json',rows);save('LATIN_PHYSICAL_COVERAGE.json',physical);save('GREEK_PHYSICAL_COVERAGE.json',gledger);save('EXPECTED_SELECTIONS.json',expected);save('AUTHORIZED_ADDITIONS.json',additions)
  save('EDIT_PLAN.json',dict(status='IMPLEMENTED_REVIEWED_CUTS',Latin='Only zero-width start milestones; no original byte replaced',Greek='No changes; implicit1 explicitly registered and printed evidence confirms it',English='No changes; existing contextual paragraphs reused independently',registry='Explicit primary occurrences with bounded endpoints and continuation ranks; two separately recorded Bellum source occurrences before312 portions',unresolved_decisions=[],counts=dict(logical_identities=347,identities_with_Latin=347,identities_without_independent_Latin=[],primary_Latin_fragments=sum(len([f for f in physical if f.get('number')==n]) for n in latinspans),source_only_fragments=len(sources),retained_physical_boundaries=sum(bool(f.get('label')) or f['offset']==0 for f in physical),added_start_markers=len(additions),added_end_markers=0,other_new_anchors=0),files=['assets/xml/antiquities/Latin/book-11.xml','assets/xml/antiquities/niese/book-11.json','assets/js/renderTei.js','assets/css/tei.css']))
  choices['status']='COMPLETE_INDIVIDUAL_REVIEW_1_301; tail302_347 separately complete';save('review_choices.json',choices)
+ observations['all347_reviewed']=True;observations['inspected_body_pages']=67;observations['word_boundary_interpretation']='Recorded separately per identity, not inferred solely from marginal numeral position';save('PRINT_OBSERVATIONS.json',observations)
  print(json.dumps(json.loads((D/'EDIT_PLAN.json').read_text())['counts']))
 if __name__=='__main__':main()
