@@ -1,0 +1,265 @@
+{
+  "status": "PASS",
+  "starting_canonical": "003ac796021890dde4b3d8ff152100f386280b3c",
+  "starting_direct_remote": "003ac796021890dde4b3d8ff152100f386280b3c",
+  "certified_source_tip": "f6076352058c198a4a01acfdd95e91211788ad8e",
+  "tested_production_commit": "848c98d7c95d22a2ba3332608d5b4e51db5de62a",
+  "combined_identities": 7350,
+  "prior_identities": 7082,
+  "original_baseline": 5231,
+  "XI": 347,
+  "XVI_XVII": 759,
+  "XVIII_XIX": 745,
+  "BookXX": 268,
+  "represented_XX_Latin": 257,
+  "unavailable_XX_Latin": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    238
+  ],
+  "XX_containing_views": 135,
+  "XX_legacy_URLs": 20,
+  "source_byte_recovery": "SOURCE_INTEGRITY.json",
+  "closed_A_decisions_preserved": true,
+  "no_new_regressions": true,
+  "known_baseline_defects": [
+    {
+      "case": "Inherited Book-I apparatus links",
+      "links": [
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+        "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961"
+      ],
+      "targets": [
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+          "status": 404
+        },
+        {
+          "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "status": 404
+        }
+      ],
+      "excludedFromNewErrors": true
+    },
+    {
+      "case": "UnsupportedI.1",
+      "error": "TypeError: Cannot read properties of null (reading 'querySelector')",
+      "inventory": {
+        "selected": "",
+        "firstSupported": "27"
+      },
+      "excludedFromSelectableCount": true
+    }
+  ],
+  "complete_history_preserved": true,
+  "gates": {
+    "SOURCE_INTEGRITY.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\SOURCE_INTEGRITY.json",
+      "bytes": 3314,
+      "sha256": "1ba4047349d9fbde9a2d2065bd0d6384b9c8b7872be07da56dac71594541997a",
+      "CRLF": 0,
+      "LF_without_CR": 92
+    },
+    "CONFLICT_RESOLUTIONS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\CONFLICT_RESOLUTIONS.json",
+      "bytes": 711,
+      "sha256": "ee8769897c361c4320a7cee0c1b60d757f8bfc46d557d8e33920d9912913f864",
+      "CRLF": 0,
+      "LF_without_CR": 13
+    },
+    "BASELINE_BUILD.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\BASELINE_BUILD.json",
+      "bytes": 1172,
+      "sha256": "a2db483f7786124d06678c3b7923c3ffdcefc0ca29af8b5b910c2df816dc0af9",
+      "CRLF": 0,
+      "LF_without_CR": 29
+    },
+    "CANDIDATE_BUILD.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\CANDIDATE_BUILD.json",
+      "bytes": 1160,
+      "sha256": "96ce7a5a9b05aef16469442d353df12ead7bdeed3667147715b96c088a281a0f",
+      "CRLF": 0,
+      "LF_without_CR": 29
+    },
+    "BASELINE_PROTECTED_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\BASELINE_PROTECTED_BROWSER.json",
+      "bytes": 7680782,
+      "sha256": "557423c56a351141bf14336cafbbe9490167bc70b513223b26414076e1075a32",
+      "CRLF": 0,
+      "LF_without_CR": 308502
+    },
+    "FINAL_PROTECTED_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\FINAL_PROTECTED_BROWSER.json",
+      "bytes": 7680779,
+      "sha256": "eaf9bf6abb1d94c72d546472c6309183b73984939498cebfbc96de367a82af70",
+      "CRLF": 0,
+      "LF_without_CR": 308502
+    },
+    "BOOKXX_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\BOOKXX_BROWSER.json",
+      "bytes": 172777,
+      "sha256": "b6b2a70050217681377fab60b2496325e1d8f85bbda1a079e3d8b37abf507666",
+      "CRLF": 0,
+      "LF_without_CR": 5725
+    },
+    "ADJUDICATED_CASES_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\ADJUDICATED_CASES_BROWSER.json",
+      "bytes": 8488,
+      "sha256": "6d59caa086e269d1f1c5789695f78c516f6d2db660e55d051c4798da923a0a8d",
+      "CRLF": 0,
+      "LF_without_CR": 315
+    },
+    "BASELINE_OTHER_CONTROLS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\BASELINE_OTHER_CONTROLS.json",
+      "bytes": 171081,
+      "sha256": "0465840a04355ba3fb6c1e673315f6255a07973aabae40f67c36e3b76c6b7020",
+      "CRLF": 0,
+      "LF_without_CR": 7467
+    },
+    "FINAL_OTHER_CONTROLS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\FINAL_OTHER_CONTROLS.json",
+      "bytes": 171078,
+      "sha256": "4f1dc2ab7100ea839459f41b4bfcd4f0e87bee42260e2e6d0ed6c2319ec9e28d",
+      "CRLF": 0,
+      "LF_without_CR": 7467
+    },
+    "VISIBLE_QUALIFICATIONS_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\VISIBLE_QUALIFICATIONS_BROWSER.json",
+      "bytes": 3335,
+      "sha256": "73a329bcf4e4ea269f6a3ac9553886b25d48997444063203b727b878d090d4fb",
+      "CRLF": 0,
+      "LF_without_CR": 93
+    },
+    "BOOK_CLOSURE_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\BOOK_CLOSURE_BROWSER.json",
+      "bytes": 472,
+      "sha256": "d1d1b9ea083ca17b9c3e88cbab50be6254895f0f011b10336cfb98a531a460e3",
+      "CRLF": 0,
+      "LF_without_CR": 12
+    },
+    "GENERIC_END_BASELINE_REPRO.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\GENERIC_END_BASELINE_REPRO.json",
+      "bytes": 307,
+      "sha256": "ff7bb56322608ef8ad49e423af21560d4599187e87177cf41024908661d15749",
+      "CRLF": 0,
+      "LF_without_CR": 9
+    },
+    "GENERIC_END_CANDIDATE_PROOF.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\GENERIC_END_CANDIDATE_PROOF.json",
+      "bytes": 283,
+      "sha256": "206615827699b421cc2718b1a3e25a54bf30af75e13116797ad01e98421376e7",
+      "CRLF": 0,
+      "LF_without_CR": 9
+    },
+    "READER_XI_RESULTS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\READER_XI_RESULTS.json",
+      "bytes": 202441,
+      "sha256": "7011ffef80037d29ce3b9db55fbe2ade35622def8e5b6d8002957eae8f459995",
+      "CRLF": 0,
+      "LF_without_CR": 5599
+    },
+    "XI_WITNESS_ORDER_RESULTS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\XI_WITNESS_ORDER_RESULTS.json",
+      "bytes": 18009,
+      "sha256": "2a577504d196ee051871545f8e85a6b65e9b2d6d8fed79213ac00914a5f3385b",
+      "CRLF": 0,
+      "LF_without_CR": 652
+    },
+    "NEW_BOOK_BROWSER_QA.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\NEW_BOOK_BROWSER_QA.json",
+      "bytes": 331708,
+      "sha256": "b1a025f8fe611e7372c09154f61d3a5847d794216ad3ad89a09c0708c1add8a1",
+      "CRLF": 0,
+      "LF_without_CR": 10992
+    },
+    "READER_FINAL_PRIOR_RESULTS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\READER_FINAL_PRIOR_RESULTS.json",
+      "bytes": 13410,
+      "sha256": "54cbdf6aa55cf754de3181562b83d60696819f22a3e7f679a4c5555761f4b081",
+      "CRLF": 0,
+      "LF_without_CR": 492
+    },
+    "FINAL_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\FINAL_BROWSER.json",
+      "bytes": 325404,
+      "sha256": "10f4960592bd0580a845698485fc1706fc7fcef40dca841f0ac03a120ee2527a",
+      "CRLF": 0,
+      "LF_without_CR": 12785
+    },
+    "BASELINE_CONTAINING_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\BASELINE_CONTAINING_BROWSER.json",
+      "bytes": 132035,
+      "sha256": "6b9f137c1931d35412147914952ca8fc95af5d36ddf0f0f79e5a911ab799578c",
+      "CRLF": 0,
+      "LF_without_CR": 3614
+    },
+    "LEGACY_DISTINCT_FINAL_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\LEGACY_DISTINCT_FINAL_BROWSER.json",
+      "bytes": 41082,
+      "sha256": "a8be9be6fb7cf8d0eccf4bf72550789393af8b0d19cd4ef16c29e68788a7ef8c",
+      "CRLF": 0,
+      "LF_without_CR": 1079
+    },
+    "COMBINED_EXTRA_RESULTS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\COMBINED_EXTRA_RESULTS.json",
+      "bytes": 291746,
+      "sha256": "77e186db8b1ba719e02c9688d6cc6eb91bd4263b8310eda4cc3ad78c33c844f3",
+      "CRLF": 0,
+      "LF_without_CR": 22399
+    },
+    "SOURCE_CONTROLS_FINAL_BROWSER.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\SOURCE_CONTROLS_FINAL_BROWSER.json",
+      "bytes": 1407,
+      "sha256": "6037af03f29eea8399c96ccab2cc33284d9b36f07274df4687e1af978d6c67c9",
+      "CRLF": 0,
+      "LF_without_CR": 49
+    },
+    "SUITE_xx-final.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\SUITE_xx-final.json",
+      "bytes": 3727,
+      "sha256": "e98a7150ab5ade7f87d46a4aed6deaf167e2e0edf44fcb9d8948b3a026ea2e2d",
+      "CRLF": 0,
+      "LF_without_CR": 127
+    },
+    "SUITE_18-19.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\SUITE_18-19.json",
+      "bytes": 2038,
+      "sha256": "cbd9bb1b1e4462bd438dd35b110d7e8076ba506e28467698fb44bf2292ff536a",
+      "CRLF": 0,
+      "LF_without_CR": 72
+    },
+    "SUITE_xi-witness.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\SUITE_xi-witness.json",
+      "bytes": 430,
+      "sha256": "085e81850cd0603ff3cdb19ca5c207e49172f58df6aceca03834d41d6b6e8f19",
+      "CRLF": 0,
+      "LF_without_CR": 18
+    },
+    "XX_STRUCTURAL_CONTROLS.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\XX_STRUCTURAL_CONTROLS.json",
+      "bytes": 24550,
+      "sha256": "b0815e60ce6d50ceedbd37b7cca2ef3314a496e5bdac9937d2a60337442e8dee",
+      "CRLF": 0,
+      "LF_without_CR": 1001
+    },
+    "VISUAL_REVIEW.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\VISUAL_REVIEW.json",
+      "bytes": 2443,
+      "sha256": "33b3bdbc370c915b42d55e970630b86e869b61ad314252b8d24b1179a3470ead",
+      "CRLF": 0,
+      "LF_without_CR": 50
+    }
+  },
+  "fresh_complete_corpus_tests": true,
+  "publication": false,
+  "promotion": "Requires last-minute fetch, ancestry, clean-state and direct remote verification; see external promotion receipt."
+}

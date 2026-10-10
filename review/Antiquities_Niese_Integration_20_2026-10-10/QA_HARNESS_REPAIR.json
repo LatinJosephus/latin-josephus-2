@@ -1,0 +1,500 @@
+{
+  "status": "DOCUMENTED",
+  "failure": "Copied physical-point test used qa-common18 narrative, which normalizes whitespace before counting original Unicode characters.",
+  "cause": "Integration test adapter changed the imported raw narrative helper, while coordinate oracle retains original source whitespace.",
+  "repair": "Restore the original final_reader.cjs raw-text helper; no production changes. Rerun all 29 legacy URLs, all six physical-point coordinates and subsequent combined/source-control checks.",
+  "initial_result": {
+    "scope": "ACTUAL_FINAL_LEGACY_URLS_AND_DISTINCT_PHYSICAL_POINTS",
+    "status": "FAIL",
+    "legacyRoutes": [
+      {
+        "book": 18,
+        "chapter": 1,
+        "resolvedQuery": "?book=18&chapter=1",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "1",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "9d92eff3ecdbb2985b8e9c590dcda843278318096fdb05c39ffa30832f0c7044"
+      },
+      {
+        "book": 18,
+        "chapter": 2,
+        "resolvedQuery": "?book=18&chapter=2",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "2",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "0354714280db052c79a950ea5ce5ac8f0b7049da68a8517ae7270e7dadb755fb"
+      },
+      {
+        "book": 18,
+        "chapter": 3,
+        "resolvedQuery": "?book=18&chapter=3",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "3",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "ad5eb0bd45962f9bf0c358aff0708ea2ae3966fb41819a86214d6bd012eb46e1"
+      },
+      {
+        "book": 18,
+        "chapter": 4,
+        "resolvedQuery": "?book=18&chapter=4",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "4",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "db6c2e79f4bd951b2d9cf0d2c198fe82700ca46c10a311f1be2f13ccaf284313"
+      },
+      {
+        "book": 18,
+        "chapter": 5,
+        "resolvedQuery": "?book=18&chapter=5",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "5",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "bf74332bc96ec0e679de3bec1d47966ff010de2b65de410df4b6aab6ce24337b"
+      },
+      {
+        "book": 18,
+        "chapter": 6,
+        "resolvedQuery": "?book=18&chapter=6",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "6",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "f196551a6c16bd2cfb504d6c15d0eb4eed6c1f57c87469bdb3d9a4f7e36f9bee"
+      },
+      {
+        "book": 18,
+        "chapter": 7,
+        "resolvedQuery": "?book=18&chapter=7",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "7",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "04ca0d400b0f97782fe4bc943e3652acf894116698bd97681ad60da7d7b414b0"
+      },
+      {
+        "book": 18,
+        "chapter": 8,
+        "resolvedQuery": "?book=18&chapter=8",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "8",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "c1e32d1e4525971e69344659473b5d9c5e531e096be0f28481bfc018cc3672e5"
+      },
+      {
+        "book": 18,
+        "chapter": 9,
+        "resolvedQuery": "?book=18&chapter=9",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "9",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "305845e9debbec1971ec06510bf4250e58ead2913ba896b191395fcc2c5bb99b"
+      },
+      {
+        "book": 18,
+        "chapter": 10,
+        "resolvedQuery": "?book=18&chapter=10",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "10",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "92b754e21d91bf3e23a0fa9537ecd54313935226edcbb0e5b3a408a0ef78a86a"
+      },
+      {
+        "book": 18,
+        "chapter": 11,
+        "resolvedQuery": "?book=18&chapter=11",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "11",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "bb23fba4b818c23660f403b0315c3050c54d5a186cc6ae2190346fe867e6b68c"
+      },
+      {
+        "book": 18,
+        "chapter": 12,
+        "resolvedQuery": "?book=18&chapter=12",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "12",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "6e6f2093db349744badd39808d886abea13a97965773e1b445caf14b072af528"
+      },
+      {
+        "book": 18,
+        "chapter": 13,
+        "resolvedQuery": "?book=18&chapter=13",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "13",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "27a0daf5373ac34b79d14d602f19b3085a920dcc1ac9eef1a9bcee712e9c8e9c"
+      },
+      {
+        "book": 18,
+        "chapter": 14,
+        "resolvedQuery": "?book=18&chapter=14",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "14",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "38f9649e8a4c7ee04bbb07e1b90941263db3e703192d48f82ac34272d0e2942b"
+      },
+      {
+        "book": 18,
+        "chapter": 15,
+        "resolvedQuery": "?book=18&chapter=15",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "15",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "62a371dd5540da0164226976edd5831c1eeb5506c76f51f43577ca418aa461ed"
+      },
+      {
+        "book": 18,
+        "chapter": 16,
+        "resolvedQuery": "?book=18&chapter=16",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "16",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "e82abe0f6d2d408a4b1a15e562c33dfa4e5a1207e1d3a18626e9a638439c093d"
+      },
+      {
+        "book": 18,
+        "chapter": 17,
+        "resolvedQuery": "?book=18&chapter=17",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "17",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "8e019846e717a9d95bfa5d66b41dc47436c6595ecdd7f76bc2dadec4fdb572b4"
+      },
+      {
+        "book": 18,
+        "chapter": 18,
+        "resolvedQuery": "?book=18&chapter=18",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "18",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "01a0653f7d9083de28ea6d07cfd456f2bb45e83c7e8dc79692d15ad49339b67a"
+      },
+      {
+        "book": 18,
+        "chapter": 19,
+        "resolvedQuery": "?book=18&chapter=19",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "19",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "03b7625a780ffe718a1e2822f395d0269cc6f6fe534f1eae490eb3709671440a"
+      },
+      {
+        "book": 18,
+        "chapter": 20,
+        "resolvedQuery": "?book=18&chapter=20",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "20",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "e8e19055ab54edf50ab645a8c922aa81d81c1f872c093c9bf75395e09acf145f"
+      },
+      {
+        "book": 18,
+        "chapter": 21,
+        "resolvedQuery": "?book=18&chapter=21",
+        "state": {
+          "bookNum": "18",
+          "chapterNum": "21",
+          "subchapterNum": null,
+          "bambergId": null,
+          "sectionNum": null,
+          "nieseNum": null,
+          "viewingLevel": "chapter-level",
+          "lodgeNotesVisible": true,
+          "sources": {
+            "Latin": "bamberg78",
+            "English": "whiston",
+            "Greek": "niese"
+          }
+        },
+        "status": "IDENTICAL_BASELINE_FINAL_LIVE_DOM",
+        "sha256": "b8db64bb6cf82cf2ac5eac232f049c6a8bf4d7ad58de9e95ac0700867a84c4c1"
+      }
+    ],
+    "physicalPoints": [],
+    "errors": [],
+    "failure": "Error: Distinct physical point moved 18 Greek B78-table1-row190"
+  },
+  "initial_attempt": {
+    "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\HARNESS_OFFSET_INITIAL_ATTEMPT.json",
+    "bytes": 1261,
+    "sha256": "7e9cd2ffcd3c0a612288e5eb63101e24a93c86ab0e9469afbe9be5565f5eb3f2",
+    "CRLF": 0,
+    "LF_without_CR": 46
+  },
+  "successful_unchanged_core_gates": [
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\BASELINE_CONTAINING_BROWSER.json",
+      "bytes": 132035,
+      "sha256": "6b9f137c1931d35412147914952ca8fc95af5d36ddf0f0f79e5a911ab799578c",
+      "CRLF": 0,
+      "LF_without_CR": 3614
+    },
+    {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\review\\Antiquities_Niese_Integration_20_2026-10-10\\FINAL_BROWSER.json",
+      "bytes": 325404,
+      "sha256": "10f4960592bd0580a845698485fc1706fc7fcef40dca841f0ac03a120ee2527a",
+      "CRLF": 0,
+      "LF_without_CR": 12785
+    }
+  ]
+}

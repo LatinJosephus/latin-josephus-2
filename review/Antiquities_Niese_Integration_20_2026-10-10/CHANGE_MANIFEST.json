@@ -1,0 +1,2002 @@
+{
+  "start": "003ac796021890dde4b3d8ff152100f386280b3c",
+  "tested_production_commit": "848c98d7c95d22a2ba3332608d5b4e51db5de62a",
+  "production": {
+    "assets/js/renderTei.js": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\assets\\js\\renderTei.js",
+      "bytes": 135850,
+      "sha256": "c3f237ba2ce26ee9fb4d0eb8ecf13b5a4e99f5d3f3a3e8691f83576433376455",
+      "CRLF": 0,
+      "LF_without_CR": 3808
+    },
+    "assets/xml/antiquities/Greek/book-20.xml": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\assets\\xml\\antiquities\\Greek\\book-20.xml",
+      "bytes": 138450,
+      "sha256": "193f0a654ba827838afa3bbde3f95fa31c318f2a6431efadd453b7977f5617b1",
+      "CRLF": 0,
+      "LF_without_CR": 92
+    },
+    "assets/xml/antiquities/Latin/book-20.xml": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\assets\\xml\\antiquities\\Latin\\book-20.xml",
+      "bytes": 77551,
+      "sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "CRLF": 0,
+      "LF_without_CR": 171
+    },
+    "assets/xml/antiquities/niese/book-20.json": {
+      "path": "C:\\workspace\\LatinJosephus-antiquities-niese-20-integration\\assets\\xml\\antiquities\\niese\\book-20.json",
+      "bytes": 54667,
+      "sha256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+      "CRLF": 0,
+      "LF_without_CR": 2427
+    }
+  },
+  "source_review_prefix": "review/Antiquities_Niese_BookXX_2026-10-10/",
+  "integration_review_prefix": "review/Antiquities_Niese_Integration_20_2026-10-10",
+  "files": [
+    {
+      "change": "M",
+      "path": "assets/js/renderTei.js",
+      "sha256": "c3f237ba2ce26ee9fb4d0eb8ecf13b5a4e99f5d3f3a3e8691f83576433376455"
+    },
+    {
+      "change": "M",
+      "path": "assets/xml/antiquities/Greek/book-20.xml",
+      "sha256": "193f0a654ba827838afa3bbde3f95fa31c318f2a6431efadd453b7977f5617b1"
+    },
+    {
+      "change": "M",
+      "path": "assets/xml/antiquities/Latin/book-20.xml",
+      "sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877"
+    },
+    {
+      "change": "A",
+      "path": "assets/xml/antiquities/niese/book-20.json",
+      "sha256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/.gitignore",
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/ADJUDICATED_CASES_BROWSER.json",
+      "sha256": "545402247fb365cd6c008d73689a69049f92dd7799c624ee61cc720e546c86df"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/ADJUDICATION_HISTORY.json",
+      "sha256": "8f804fd51bec4c4dee8aad2cf32ab5b308b09c88b2e41f64e186bf91f0db84ca"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/APPROVED_INSERTIONS.json",
+      "sha256": "fd63336c1057e28002284b18ca4e2a0cb8afcbbaa62672447463686187b705a3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BASELINE.json",
+      "sha256": "f36a11f9726d76e33b4b4b4567dcabdf4032656f14fc1805ef414964e779ad2e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BASELINE_BROWSER_RESTRICTED_ATTEMPT.json",
+      "sha256": "28195365e15e49b4ee4f6427399feac17b8f83bc5d7f726c8a52cb3becdfda9b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BASELINE_BUILD.json",
+      "sha256": "5fb072fd74e47050eeefda95eeef98f4f47eedd14456f622f771772695e6fad0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BASELINE_BUILD_SUCCESS.json",
+      "sha256": "013a32d1562f43b85ec7fcc45610fd5b9aba31f09fe65237ca16435f5cf984d7"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BASELINE_OTHER_CONTROLS.json",
+      "sha256": "ce9e55744f688d2894a9f03549fc74a8a95e02b5841fde0990d0a4fa8244b2f7"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BASELINE_PROTECTED_BROWSER.json",
+      "sha256": "a8e597c9333c0361134912aa29f15c1289d57f90f67974d6143e6d92d1391484"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BASELINE_STRUCTURAL_BROWSER_COMPARISON.json",
+      "sha256": "8aa60c0ab20fd3efaaacf563a251dd8f94c007d6cffffb53bcbfc8f24d829e54"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BOOKXX_BROWSER.json",
+      "sha256": "cf24f0481a48f2ee79b0bcdda329cee65eb332004303c6762deb01d655a21bef"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BOOK_CLOSURE_BROWSER.json",
+      "sha256": "fe53c6314ae65e190cb7fe16bf7eae4426a3a3c143757543a22cc58851c79f97"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BOUNDARIES.csv",
+      "sha256": "f4746a4f675300951d8a7aff1338f8c3a9e57355b5d089bcde0d54f8dad593dc"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BUILD_2c1d9ab8e2e9.json",
+      "sha256": "f4f9fece3543a75800f59d715b5895f71d0eb69ca5f1b0e6a403e33b3a44536d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BUILD_3bc395ad2bb3.json",
+      "sha256": "8b25e789d4b866bead848dbc39c8875b48835352f28d31851de6e29fc8facc75"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/BYTE_CERTIFICATION.json",
+      "sha256": "fbeddd52d5c6d51852c269220dcad1c3a4667b34c68694b7f23d4e0beb4fb37a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CANDIDATE_BUILD.json",
+      "sha256": "f4f9fece3543a75800f59d715b5895f71d0eb69ca5f1b0e6a403e33b3a44536d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CANONICAL_OBSERVATIONS.json",
+      "sha256": "0307d0e20afc5ecbe2e727b24d8de394c2d21cd7633bf0f93fd25d5e77ce5e88"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CASE_026_037.json",
+      "sha256": "cf210a6c10551d614b5349744671b5d4c9cbc8ee9a7af0a1d4034450d2aa55a9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CASE_026_037.md",
+      "sha256": "66298e19be7f0c775e425cf6de272d87f5355510ce6ec254ff9bec10558d2e8f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CASE_059.json",
+      "sha256": "ea5a462f88c36685a3e1504198fc536fe6156f58c69163ceb7009ef27fe26a72"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CASE_059.md",
+      "sha256": "25da159844c7ffbf19d2054e28f74b06ab58920f2b4a646ecb6527c5416f2ebe"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CASE_238.json",
+      "sha256": "069eb53ff5ef6f4b926dfa2cb71e4109ddc7e972a801ce63d2cd8e331894d4c8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CASE_238.md",
+      "sha256": "6a1f032d4f95f49d38c8f289dcaec4161db4c48a95d0a1f7cfadc8795eedda39"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CASE_241.json",
+      "sha256": "049805d5c8e632d03df559bb27908a286942471b96cf1e4dd6a40d1c1bf145cf"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CASE_241.md",
+      "sha256": "243b0f003daa4c82ba919271bd65e72d9b6055f2d0fbb0d496191bcbc11b5f79"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/CERTIFICATE.json",
+      "sha256": "7b16a212652478d2119f8be0031f39826798e4b26a36fe9c1301da3acc8a3f7a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/COMBINED_EXPECTED_INTERVALS.json",
+      "sha256": "19a8c21346fa31fac449eae0c2bbe07c89c73b5cd4f4889e850b7a5e52455865"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/COMPLETE_PRINT_AUDIT.json",
+      "sha256": "448693f827f9349e79ab4838ad88cbc0b61631dc1deca5e2d1903ecdf2062350"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/COVERAGE_GATE.json",
+      "sha256": "3e7b605c0d3d02d6fcbd3c453f3c1429c58960bb873e11348922cc25fb82da14"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/EDITORIAL_ADJUDICATION_2026-10-10.txt",
+      "sha256": "6c4eeb67929bf90ceb31dcb98ee9ae0ef36f3b9c86a01168ae03ab52c378957c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/ENGLISH_PROJECTION.json",
+      "sha256": "652848cc8824a53943abcffd1e14f05b1f38af8721c8b6137a831b1be23d00ce"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/ENGLISH_UNITS.json",
+      "sha256": "14b87f55c991b78e3ef4728753bd83d16887d980d8a9290377579680de0c4834"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/FINAL_CANONICAL_OBSERVATION.json",
+      "sha256": "6c0884b514f61ad8c1289c9b7593f108962e011c6ec3dfbbf9975a96119dbee3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/FINAL_EXPECTED_INTERVALS.json",
+      "sha256": "58448c5e3e082252c0cc0eb7ae95a6cb8e7239df27931dad55bd649e0716fab6"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/FINAL_OTHER_CONTROLS.json",
+      "sha256": "7dc8b612b6e1dbaf798420a54edbb841d16f3040bf7aa9e49d66ef6b948b5ced"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/FINAL_PROTECTED_BROWSER.json",
+      "sha256": "ac48dacb52440ee1ddd52d63e95b9a7822d359f75d71ebfff92b8e00049cc1f9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/FINAL_VISUAL_INSPECTION.json",
+      "sha256": "276cb0813fd850ac6be56db58ac990994ffe65e608b4cd6cfa9d4a6502ed3639"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/FROZEN_STRUCTURAL_AUTHORITIES.json",
+      "sha256": "6f661ad256d21726e9567a640acad100d3da30d6a72b80e2961830d797026e15"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/GENERIC_END_BASELINE_REPRO.json",
+      "sha256": "ff7bb56322608ef8ad49e423af21560d4599187e87177cf41024908661d15749"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/GENERIC_END_CANDIDATE_PROOF.json",
+      "sha256": "206615827699b421cc2718b1a3e25a54bf30af75e13116797ad01e98421376e7"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/GREEK_PROJECTION.json",
+      "sha256": "7d3ec08aa4bfed8450f11cbd65cb615ff9f7e72199989a4fe2919ad26f7ef1a6"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/GREEK_UNITS.json",
+      "sha256": "ba6f470cd15da7b0a1f64f77ec31f98d34571618e18f3c0f4f9abca113cbbaf4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/HOLD_ARCHIVE_VERIFICATION.json",
+      "sha256": "d5cc2d93ea143a37beb3f936870a8caa586a13219b1ab243a82dcaf1f3d582d8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/HUMAN_BAMBERG_AUTHORITY_BOOKXX.json",
+      "sha256": "a8f8b747c3722348e6695f56b796c07e2cde916a07875a8edb709d9fff70da87"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/IDENTITIES.json",
+      "sha256": "adcf8ed9ae9d91b283821990f3b790e6a9191497d51fe532c6990b71aa9da19f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/INDEPENDENT_STRUCTURAL_SPANS.json",
+      "sha256": "3cdd52db9a6b6b093613573c8f0bcf9bc274ee316d26b015366c968e7e8c6ebf"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/LATIN_PHYSICAL_ORDER.json",
+      "sha256": "873e8d1f76d229700421a43f6a093c3a24fb45e5ea70d3895a142ab2833df7f5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/LATIN_PHYSICAL_SOURCE_LEDGER.json",
+      "sha256": "0226ab405b6b861185babee17caa005c8775057ba7ad10fbf8be94c812d4697e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/LATIN_PROJECTION.json",
+      "sha256": "dd2a1a28ed9d0f9488fdd921deccde98596293c67ddf3a7edfcfce8ce8ff63b9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/LATIN_UNITS.json",
+      "sha256": "8b64e10e88b4506200bb1205a2ebc3d1fd637a4efd35d1cefa66207255a5f3f6"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/LOCAL_HANDOFF.json",
+      "sha256": "fe0d49cc2d8a4b6fc073276ba8f9ba373ef36416e1705322bb136dd495fa2903"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/LOEB_BOOKXX_CONTROLS.json",
+      "sha256": "4d58c453f1549736a3d2e0f480763fe7305a8be87925a11c056c5fc0ccf32e3a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/LOEB_CONTROL_EVIDENCE.json",
+      "sha256": "bec6f4a5fc6e0343e72fbadf6ad22406339c64fff8ce06473885110526999129"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/LOEB_PAGE_TEXT.json",
+      "sha256": "25092160b936e07cc096ea9154709ed774a12dd1266c0f0fc73db511d7e23366"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/MAPPER_PROVENANCE.json",
+      "sha256": "b9b2114c33928e66fc9a89622ab5b990546219b8a90d9a121c0db4fda30c158f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/NIESE_PAGE_TEXT.json",
+      "sha256": "3c927d39c93d720d2a319b48b0ae4f205276b50b71dc277d827de7e5492d2c2d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/OCR_PROVENANCE.json",
+      "sha256": "9fad0609c0f3a1cf854abac835f0c70e10d065b6a0b316d9ef5d5382ae0da377"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/PRINT_EVIDENCE_MANIFEST.json",
+      "sha256": "259790e1df6aff81b7214b2226884ffc2b8a1e9e6bb1530dc16ba324de33cb63"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/PRODUCTION_MANIFEST.json",
+      "sha256": "d6e10e2e94c443f21d141ac742b7251b09cc323c10eabaf816d07835656f8f82"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/PROTECTED_INPUTS.json",
+      "sha256": "d39fdff7e6f2b31ce05bbc5dae71a75af478909c20f69b2b1f4f349317e7a96a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/REPORT.md",
+      "sha256": "58e22f5ba5d629a5a4600aac37ebfd81a71bd2d2376c161eb0b8238a5b536062"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/REPRODUCTION.md",
+      "sha256": "c0bb37bd082a919cfd2a1f4587b764bdcff29f2ad290905ff40bb09623c1951f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/SECURE_EXPECTED_INTERVALS.json",
+      "sha256": "4255a4b69a973433413df95005f816da5f6a18209dd55082e2ee3fbb95511fa1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/SECURE_INSERTIONS.json",
+      "sha256": "ed29ccef50b7188490342abc1c572a2232adc8dd34ffd55f1ff0478cb53cbc8c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/SOURCE_ONLY_RECONNAISSANCE.json",
+      "sha256": "becd7f7411263b68426ace0d0d04451017bd2516fd0b1b4765847d8821e6feae"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/SOURCE_TOPOLOGY.json",
+      "sha256": "bb206824b45ac658431996f4a20b9ebfbd90de0b70393faa24f2bbf4aeb5dfdf"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/STRUCTURAL_CONTROLS.json",
+      "sha256": "2a9cfe7150867324fbded3be68916db0228ab266192cc4eeef0bff49d5d161d4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/STRUCTURAL_RECORDS.json",
+      "sha256": "bd090ae942c916887b069ed222dc2c607220db2f834b3c5048c28bab0ed26866"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/VISIBLE_QUALIFICATIONS_BROWSER.json",
+      "sha256": "c07e8425aa515f2deecf7fd1ce79ed0a0c08a2c0f6d3e496b1d2012ef3256189"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/WHOLE_LATIN_DISPLACEMENT_AUDIT.json",
+      "sha256": "39236b7cfbc4a6fe91bb7f91e088ccfba6a18bf4adcdbb3e8f27eb298648d209"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/WORKBOT_Antiquities_XX_Niese_2026-10-10.txt",
+      "sha256": "03da2a5bc967e50ee970100411ce6953a8dc11b658812b928c5c2a7f08dd2cc2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/bookxx_browser.cjs",
+      "sha256": "53eb1820d4422ee174f6a540580ebe891a8345af25568acfa50df39924447650"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/browser_common.cjs",
+      "sha256": "5dd6771ab35dd43f1c4154da04d0a4923a0944f8fc4d58838b08560fca75acc4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/build_candidate.py",
+      "sha256": "4d119b89eba9130cd4436d6859ba341c18d53d240645659d282ed59680fcc4f9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/build_runtime.py",
+      "sha256": "3d46d2e97ed1c335f12f6323cfb83b0ea1e7f7b1c67b7bcabec1365773062cd4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/case_059.py",
+      "sha256": "f81c212afbe36de7a69f05d5adb4751e597439be4b4727f02f49b3ff03bafd78"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/closure_browser.cjs",
+      "sha256": "1ccc4941f95bb59aee2d8097d89c9e9e99ed6e9e848ab5eba584ea8d16b7f4e8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/combined_cases_browser.cjs",
+      "sha256": "f140209f576c85ffa8a9370e7a5cc8c7837269ef8f3d4ed809b19c81161b40d0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/complete_cases.py",
+      "sha256": "41deafa8f138b93bd2d99ae988c278f64eb029300e55b1ef47354bf3121319e0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/complete_ledgers.py",
+      "sha256": "837e693f5b03cb82a69edbc380ea02dcc64f9d608e0b34a975841ad7a441adc5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/coverage_gate.py",
+      "sha256": "ddd2e951b1db02683dda68100f7789bbde39606ff41c8fd256231853e2893998"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF007.jpg",
+      "sha256": "de5d40d0bebbf33d3ca31058b02bf981f90134352bb0f86dbc999b3c9932bbad"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF407.jpg",
+      "sha256": "f7b8fc662faed9eaf52b419cc2b7658ddade080338f3e72bbe8a88e99f655bbf"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF411.jpg",
+      "sha256": "9910814e519d7199f448d3e0f584b99faaa8ad4e5f318595e6e7e2691a62eb04"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF413.jpg",
+      "sha256": "15c9a0bc0bbf84fd9409b366e3c67b7e5154db58c80c37933e10100d3d03b946"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF415.jpg",
+      "sha256": "ceaf8403f4a648d11b6e48c34846f5db5d255402823a323f8611002f2dcb85bb"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF419.jpg",
+      "sha256": "60372602eabbf2df15d101baf89c27d34fcb57a07bf91a9c6a889d611f95ba67"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF423.jpg",
+      "sha256": "e025b24c3b24d2002d8c41e69c377453807e2e78572b6b74b3356289255d435b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF425.jpg",
+      "sha256": "f0c1040f302d9bfc18847a375cb9ed3d0b7201e141bc7c525a58332b3d6fea3e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF431.jpg",
+      "sha256": "7036d9143762a44fb82ad42fdb703ed209a57724ddf485fbc33054924071712b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF435.jpg",
+      "sha256": "9759dfdb008b2f2b8a953ba90b9e9539c64b9644baa51360525ad0d3d4f2429f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF437.jpg",
+      "sha256": "2e25a91bb84ea88dbe24d23d2ae480bb55720cc56c19427e34ee77bd037f7a25"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF439.jpg",
+      "sha256": "1f2cd303fc4b71c3e4b80e60d2dff5e618a3b665bd9ed5450adeb7ddee2a4759"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF441.jpg",
+      "sha256": "be9ab251dc64e26c180c1bbea1fef77642e1576ac26a136c0113d4a01895b768"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF445.jpg",
+      "sha256": "a6bc6975ee32096253a8d7d6c84965e7e7bfd8adba5032cd0a85fd105d7f2574"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF447.jpg",
+      "sha256": "e2f766eccc1fceff25f3c2fd6a782f90fe4973f1e68133ff1ee39920aef2e193"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF453.jpg",
+      "sha256": "a53b5ad527d2dfbe6fd20b8ff2dce957b18874a5606813967a045d675f8c6191"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF457.jpg",
+      "sha256": "dc481faf7917ee5e16204827dda9cd9451c2fd7cd2a0a9148f59099df5aaf451"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF459.jpg",
+      "sha256": "f4f48ea0bc4ce6a36887388589f2e624f4d9bce80e710388a9f5266342b19037"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF461.jpg",
+      "sha256": "b3a9c4a06d899da20b7fe7b52c37a2fe24afed2b6b0cabb01b618d98fe2fb5a6"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF465.jpg",
+      "sha256": "acb78154abfd033cfd0b5c75a190b6fd0c7199694d66a651e533a9640a6959e2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF467.jpg",
+      "sha256": "6366a3d88e2f6d2fd7af35eb64697c46e5f22fd338b4152faf6ae8a48df8a16b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF471.jpg",
+      "sha256": "9b193ee6ea4778363ad8d2d0778b547d099fd2ea7438ce63609469b950d96390"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF475.jpg",
+      "sha256": "3a28500a2987e54dae2a9a135ba9ab9086166de0d1242037d6dafcea24f43512"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF477.jpg",
+      "sha256": "b9a5713f60107ac0cacd0ac9fe1ef30844b810e0a5dee4fe05e41732156c5e4e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF481.jpg",
+      "sha256": "80e8730d2566d27f1e1d5955bf7890817f0bbeacb746c4c0c08a35e2627d038a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF483.jpg",
+      "sha256": "1927d14e3161af97dedc7b1008f8ecaf882b41a5c77a776f8e3c7735b2e58651"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF485.jpg",
+      "sha256": "6ae0885603745f2be1e8ea77ef890137036ac8238325e312c6b7091ec36c0889"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF487.jpg",
+      "sha256": "c65397280f65ecd3e603dc25aff54e4c2272466aec28a65ac53d9065d1b3bb7a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF489.jpg",
+      "sha256": "b589aeb2e32b401544e6642a7b6cda7b559ba2962a86806f35d3830ee42c9485"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF491.jpg",
+      "sha256": "b333704053b638f8125c46c133a01fd37abe7bc44dc2ef27f7c29fb0bb426f50"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF493.jpg",
+      "sha256": "5e9d0dafcd9dbb7354fd52be654eaa8bc439bc3264eb771134b15719889a3b2e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF495.jpg",
+      "sha256": "c6829b76e7ba772c1eaf23133af30a0b981e3d233a4a7f6ad9104d7d8c0142d5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF499.jpg",
+      "sha256": "9ae8591e4a68772f869266da01995ed16f4f284efa5a4a32ab9fe0438aee07c9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF501.jpg",
+      "sha256": "b8eeca94711984747b29988a160ee0037504c4af8544de1f657906cf6e9c0977"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF503.jpg",
+      "sha256": "0f5f76f8f873e9a5bc3553eed47d19c89f1b7e2f7ed199cbb7edbac7bc481d97"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF505.jpg",
+      "sha256": "e5f3201d54d813ca472880cb02e75233f5895d44c49fb1aba1d85fdc26c912b9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF507.jpg",
+      "sha256": "a9f3c8dc8fc2b2090550d60601f28f12e93a03a5529755d8da10d202326e7504"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF511.jpg",
+      "sha256": "27017e6db42551770fd21a2de43baf71166ea50603ca5e6d538b64b24af877cf"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF513.jpg",
+      "sha256": "5973f7b19a17a237bc49a9a237da1c1ac824296c7755f0ed79148ab3dc3313e2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF515.jpg",
+      "sha256": "6e637c4cc6b55ce17665f206bc05e049d078d93646fe2528f2c94c27d1ccd0ee"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF517.jpg",
+      "sha256": "82cc5e97f92d91e9dd25874b0cf7944f78cbe125425cf4b72bed0f96b7737700"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF519.jpg",
+      "sha256": "6905a6127a68388ca38f695eeeeb73186dc995f08f38d35f3ee901fb3d6260c2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF521.jpg",
+      "sha256": "75cc6f0e3360b955d60ae443b5301395b971cf3b7085ab8a971d9816b9dcc6d9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF523.jpg",
+      "sha256": "88f2ae401c7d73bb71d32ba943c080301dd36d9605491f95a695060da915994f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF527.jpg",
+      "sha256": "6c4c74dc2f87b28a9c07bf1e9b60aa6e4c71958846287610c1290b76c07b6a80"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF529.jpg",
+      "sha256": "c6cea43f7e5254074d5d91e40cf15670b5883da5e5ac8d5111c1d8f03fb734fd"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF533.jpg",
+      "sha256": "9402e5ef074d93bc4895a5d3e420febae0348bf097014b21724b2a1e15b68e60"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF537.jpg",
+      "sha256": "f0b67958d8e8c28f8848b7be8076402c3e58bb099c0e41ba6a096d20282c203b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF539.jpg",
+      "sha256": "6ff1528ca90cd9dde3b11f3f93fcc632e939058bd8413794e3ad26333c7b8213"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF541.jpg",
+      "sha256": "7436a412ce0d0cea904b05b28d32769ff3c286244a1328b210ba8b745443c5ec"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF544.jpg",
+      "sha256": "db4a5f162b3a7f3844ab2b74c4377998caa8435450a7ef533eab6650c06cc047"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF545.jpg",
+      "sha256": "7b43f43f7e6ca9ac111a4321d5e2af5ba23b14d8d5f46078e31190eaa36c6b98"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF546.jpg",
+      "sha256": "bf63e351641954224f107b82ce2228aed148029ccf9aa20f72491fbe3656e194"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF547.jpg",
+      "sha256": "bb31199b810c60a95f25f036d4b9f66a0afe673ee70db30c69d1c423b045dd9d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF548.jpg",
+      "sha256": "d23b633480a061ff428d1b7168e047490ba25342f1d35e446413a9d3d1c7cca4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-IX-PDF549.jpg",
+      "sha256": "41434ca18f20943b0037db25afcb462d1c030099cf437935aded1751fb94a638"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-01-06.jpg",
+      "sha256": "088d1c79d8f6291f1fc640e979d9181bb9dc6253e868d9bba4e775f2fd7ba688"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-07-12.jpg",
+      "sha256": "a86e69892d2ca42e688515996792ee3a69f220e4667d003f7dc6088f22473703"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-13-18.jpg",
+      "sha256": "0df067b91c5176e6d26106ad22a204122a003cecb42a12af902ea888b144e87f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-19-24.jpg",
+      "sha256": "7e5d9228a2d04f69fe769e08ae2e7405d26465ef03ec9cfdb31c8cfbbd138e43"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-25-30.jpg",
+      "sha256": "5697c5ad0e4a3fc9ef9fd0f3b47b0a6d24d09f355977a697f3c6449fe50563b6"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-31-36.jpg",
+      "sha256": "bb86bafc11c9ec69a50ed44094b5f7f67c74642fc1b97fabadf8dfdc2e1f2a47"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-37-42.jpg",
+      "sha256": "95d068e10aa20beac4e891ee2e2f8fb779180e68b5f00d1228aee4a8460bb7fc"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-43-48.jpg",
+      "sha256": "38679e51641888350d858611f2b5e0fad8835274cf3a2eb6c628bae40ab4de3d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Loeb-controls-49-50.jpg",
+      "sha256": "9ff8dca5cfe287651b1a72a7cb9563054d576f93f13005fee7858be67c626835"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF005.jpg",
+      "sha256": "b5f0206bb871fb00100b26f953a562715744e4650ad5b8400bf82e755f8568ff"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF288.jpg",
+      "sha256": "66ec700b47fb415325be7627f7e9994425240287f845efd763e48380890bcee9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF289.jpg",
+      "sha256": "8112b182ef59e91cea859cf1f1c3d66fd8ec19ff6f29a664f2234402ee3d3cb5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF290.jpg",
+      "sha256": "f71c8302e78ffd6bc9eee467d94bec9d6c13e14d89be78797feb96d1da09ccbd"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF291.jpg",
+      "sha256": "6c98e4aa6c2b1c86a00d2b952ca8882e54503cb7ff9d7809d7dda7d2396a8aa1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF292.jpg",
+      "sha256": "e30720d5863092a6b0e9991d6a1c9065ff61d0e34d4607b4d7c529fd60241cd2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF293.jpg",
+      "sha256": "90e58fb47efe1d1312e13638b3369ad5e518025c56907d7a1cb33e543a9a17c2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF294.jpg",
+      "sha256": "b5e01f31eeb9230355cdce663174a190db8d1b00181be39d7e909e2957102a1d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF295.jpg",
+      "sha256": "3f133d77b7266f9b98fada9e1fe0197dd1e91ea348b440cfb2ac76ee9a744e20"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF296.jpg",
+      "sha256": "80f805f60eaef62d34b6ec8f731e371f4d6a869a397ebc636b8e48efed96439f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF297.jpg",
+      "sha256": "48d059d579da4df4ecd24d7d8bb140f048be5948c4e1d77caee820edea6ffa84"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF298.jpg",
+      "sha256": "307883b7142ece43d69c84bc8a6b3cee47862126319e9f11b0733c24b5ef4618"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF299.jpg",
+      "sha256": "e7a4dba230302689670d33eef2df743a043343682d10c2444b241c1abc8450a2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF300.jpg",
+      "sha256": "273a00a1810b2a3db99b9eefbaeab5cad57e52abd5d128f91ba3cc9a1b94ef3c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF301.jpg",
+      "sha256": "de510c17ae5df178bffcdcdd41b0d28533997123fb4b771b39e9d5b57e143684"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF302.jpg",
+      "sha256": "938c6ff0219f4170e80452384b546230de1600bd2c2e2751462487c1656af84c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF303.jpg",
+      "sha256": "32b0c4a9bba24c4cc8322fef018d4fb9c5e9b418943f9c822638a53aff1eb17b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF304.jpg",
+      "sha256": "aa0110afcc4de1d95d1b3044e9e0d7d8ca6b7cfa1bcde02fb50e6e2b191555ac"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF305.jpg",
+      "sha256": "cffaa9edda7e19c2180bb5596d58fd637ace3f3eb0521ebdb190dffac2c827f8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF306.jpg",
+      "sha256": "efc9ce05cbdd11aa22f62e433c1f9e66f0bde2cbaaf6b6b32bbd1ca5e286cae3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF307.jpg",
+      "sha256": "0960565dbc86e8d1e12a46fc6624b45713369c37ec1059ac5c04d4b102f893c1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF308.jpg",
+      "sha256": "72632423c32d8a386eae684780af59fd4ac4242e3491197e1628b22e5c4623e0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF309.jpg",
+      "sha256": "f30c2e06d9e858c93d5405b0a538f9780d8414ce094848155d72de1c61045a3e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF310.jpg",
+      "sha256": "445463264310a3a80a4708acb50ff16c7082fe0c70bf22b7cc3816baef9877f3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF311.jpg",
+      "sha256": "d5b56650277eca0357845101fa6fffe37ce0a886e58ef993150b2a1e620bdf55"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF312.jpg",
+      "sha256": "b9cc78428d2e05aaf75e2402a226b0de421dfc55a58d08c7f9071a6b07468109"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF313.jpg",
+      "sha256": "6b4347545628db956e381036614cdacbcc2cd5800f76e68b55b07b587fa66c15"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF314.jpg",
+      "sha256": "b285fe445e875b623bc3e14da427dea5c25bf3541731b2d9f63de1e4ae21c0b1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF315.jpg",
+      "sha256": "eead1214ad1eab0396674f330fb7befcc12b28a5ff14d589a4d9eb23ad391f1f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF316.jpg",
+      "sha256": "b27f5cf1bb37e1d961a465f30de59c1a2ab78325bcc17fe9da812c43dee18367"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF317.jpg",
+      "sha256": "790d569a1fc7bde44709a768b94be5f04c45f651db8fa56892cb6be4d09c7330"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF318.jpg",
+      "sha256": "274e3ae7c2ce8856a6ffb5de60ea02f38aad707b6c96d075b273963eb5f42246"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF319.jpg",
+      "sha256": "d4e6ddcb8857befdedd655b6f69d3b100081ac15c762f2d250b433f57d5595f5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF320.jpg",
+      "sha256": "2059ab687d8620e7fa7651123d70847f26a99f98bdd12721452bef83394fe784"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF321.jpg",
+      "sha256": "95b3d654e675b1e6925edda997d46e13cf263b04a5b7e10b8bbf71605336665e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF322.jpg",
+      "sha256": "5eba647291d161ff0a25879e0342aa265cbe1210430f39b98e98b551a8839f10"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF323.jpg",
+      "sha256": "003bef8c60b5e93a04b20c339d3be3a7b670456f831807e46e607cdf3fc0934a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF324.jpg",
+      "sha256": "11c7a44c9fe0934764de0ba0cedc0fd5db5a996640365ee56dcc1b9b591761aa"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF325.jpg",
+      "sha256": "7b9c21237cb3082402df7f722aa5406a84ed33e691ba97f1b8617eea9fdd2287"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF326.jpg",
+      "sha256": "7afff60c2d7d1fd5d4b486efb09d2f4b764fa5a4d5076ffe3444c5cdef67efc8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF327.jpg",
+      "sha256": "f7824ba4c6b894b8cf034898b3c8f1f0ecf3e959b3e93fb23d478dab64889c37"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF328.jpg",
+      "sha256": "52bf10c47d56b9c7e477033fb9295a932cbd50f70352ef2a2f324740bf4f3598"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF329.jpg",
+      "sha256": "8c9db0c5575b95e1eeba9379b1e969da72bae8415bd057c3acac23e44159f567"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF330.jpg",
+      "sha256": "fd623077ac0e5b925868dd85319988f8467aff23c333caf6bb7306aec5fc534c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF331.jpg",
+      "sha256": "3f4793f38b631969b11c37f79e5de218cbbdb611e098cb8a853fbc7220962ab8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF332.jpg",
+      "sha256": "be962f6f8490c58e713b8c799aed4f1c22a33f357b28ab48228de344aeb76cc4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF333.jpg",
+      "sha256": "fb7cb7a25483e0b6799baa23f29e8f0f2a170c240d6388343823e41cc52cc2a2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF334.jpg",
+      "sha256": "30caa84e9620de7601b942dc493bfd712df48fbcf709af9350c65b98270f275b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF335.jpg",
+      "sha256": "8c8a49581e1a13d19b3c4405d4a470de6c45c74d98a6478a88e80c5617a3adf2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF336.jpg",
+      "sha256": "dc662d308e448933cc738f312fc6c49b7ed5b2936a46fb424fc3246b1009877c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF337.jpg",
+      "sha256": "1b5805c1f58019b7353cc71337a8d2002b2855988aa9e6e5989f80a600a714cb"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF338.jpg",
+      "sha256": "b3b33e42f92faf4b881d709a529ccf73db56060933351dd0de8cb9cce86b010c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF339.jpg",
+      "sha256": "59514d8de00a3797bd37f88b53e1277569862f8b99b5f346fe992e48fd148ba9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF340.jpg",
+      "sha256": "da897900bbc8f96a45c9ec10dfba3c6d0bc7c591a07858f4af1e3d22a3b7fcfa"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/Niese-IV-PDF341.jpg",
+      "sha256": "e41e01e4f0baa148bda6fb34405590e8cb6d6e7b35fffa412d8b8b7469d5ce28"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-reader-dark.png",
+      "sha256": "676863f5f9e32120b0c7407f915d0a35d71d5a9a2c9cccad7e087f973eda0358"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-reader-light.png",
+      "sha256": "e25da0ef18f5dbec3897a7c742d15004694a33270afbe90ebf2a95aa1e0352e8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-source-contents.png",
+      "sha256": "0585526551de6455b46ba4d266bac58a19efd47d5d6d3c72218eb289a1750c0e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-218.png",
+      "sha256": "daf17e68fa39d03c3b28ba8bb42b74847c27f3972768eba757eb7e4c3d63129b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-238.png",
+      "sha256": "851866f308dde507b1afc6826998e89a399125b7e80e2432b731f022e8e25f0f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-239.png",
+      "sha256": "65ff5c141dac8d4a2d7bda50732b93b1a7159b4543eacf3972400a2cae553b7f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-240.png",
+      "sha256": "f4ee3ea3f754b44b6496c69f2dc17d77f01820cae53c729e507b0f91b958ebe4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-241.png",
+      "sha256": "5b8ee9d8a843260d0968354f34a336b4fe09e9308b87e3f88ae102415a8bfea0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-26.png",
+      "sha256": "21b868744077ec2ed07d39e82af3afc456b64fa6b5b6607d422975645d554c64"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-266.png",
+      "sha256": "0aa5e216323f6ac13756a29af9869974fdbe3b452ea43cc704c73e23c0bca552"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-268.png",
+      "sha256": "75d2cd25eeb325c318bb265d2bda93aeb5c15c08c6615a3b26297bbf3fe06881"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-27.png",
+      "sha256": "cba52da017c1502efc5395ce2c4d020792beec51a834c1e39d46b4f84a9d9db0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-37.png",
+      "sha256": "d0c1b544541e73b349a86d6c9c0532088c0383235c6902ce967c1d0108433b67"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/XX-visible-59.png",
+      "sha256": "bc9555ec514c656bd1029b77e312a29f75df9450e20bad81a57399bbddb12019"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/evidence/approved-candidate-build-2c1d9ab8e2e9.log",
+      "sha256": "cc70006a42fa271b77e02691706b0600be655da5eac94799e8301c94e676ea50"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/finalize_certification.py",
+      "sha256": "95fd0e728b5b8a72e81e70b1c6486deb94b2b1d86450d28de2ebef19d10831e1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/frozen-inputs/English.xml",
+      "sha256": "7d0813df000bab366ee8d785cdd154fd509db7428b7774739185cd83194cec34"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/frozen-inputs/Greek.xml",
+      "sha256": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/frozen-inputs/Latin.xml",
+      "sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/frozen-inputs/structure.xml",
+      "sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/ADJUDICATION_HISTORY.json",
+      "sha256": "ee14ebdacfb43e3db440ba81867c4fb741779524c2dd5b82b8b37fbca5587a51"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/ARCHIVE_MANIFEST.json",
+      "sha256": "a0ea025657200d214ecb8fabb347285e16c2f9bf40000a464511377d31417071"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/BOOKXX_BROWSER.json",
+      "sha256": "5b79aa0191eaefde3eba1ac5eee34839eb992b18cc05d9900e1e4873a9cf3ad1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/BOOK_CLOSURE_BROWSER.json",
+      "sha256": "257df9a9078046804d4c89fe1f9fbf616833fe4d695e54451e06bed0af1d4700"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/BOUNDARIES.csv",
+      "sha256": "4fa1e3f46af1533506213f31a8ef194d4eb5cbf4dd3872431e9d4a039bdd98b5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/BYTE_CERTIFICATION.json",
+      "sha256": "6c25cda0c8e8e252d71d0f17242c73d395becf8774caaf8f5654e839041b47cb"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/CANDIDATE_BUILD.json",
+      "sha256": "8b25e789d4b866bead848dbc39c8875b48835352f28d31851de6e29fc8facc75"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/CERTIFICATE.json",
+      "sha256": "528bc5548433c36ac9cd1a2442fb9c327c61cf2d219b8800200084e7732db0d3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/COMPLETE_PRINT_AUDIT.json",
+      "sha256": "5279375ec5b486b326109bb3733426b41054d2c93f53d3c1dc0ad0ffeebccded"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/COVERAGE_GATE.json",
+      "sha256": "cbf1ed17cab400174c12a5431eeaa0c61943a70527f54143a347e17cd34752dd"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/FINAL_OTHER_CONTROLS.json",
+      "sha256": "ff316d60fe4891f61413d41d1bebe2a4147881ce0b2f4968206a455b5f336f00"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/FINAL_PROTECTED_BROWSER.json",
+      "sha256": "0f28c910026d20c9cae89ff0471db4461969b0b42349d422094b2399fe6446cc"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/GENERIC_END_CANDIDATE_PROOF.json",
+      "sha256": "206615827699b421cc2718b1a3e25a54bf30af75e13116797ad01e98421376e7"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/LOCAL_HANDOFF.json",
+      "sha256": "1eeea3496343dd53dcdde4b7d37dfcd5919de6e4dd0a1b57bf74fdd2074b0a12"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/PRODUCTION_MANIFEST.json",
+      "sha256": "b9def91cfa3d2e54336205379cf44552abd3792c1bc442703b76573587f490cb"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/REPORT.md",
+      "sha256": "1155dea5f1890482d4a3c948de5a5e2c7b5ec93d728d3739deac91c4fc766312"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/history/EDITORIAL_HOLD_402ddb34b141/VISIBLE_QUALIFICATIONS_BROWSER.json",
+      "sha256": "0dfb5cd118391e5c7a3ff345d7e120053df604ab488c10c4853688e66567e8dd"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/import_human_authority.py",
+      "sha256": "801fd5cdd6607bef9b7139647626fbd1f3e1328340a24ff305f82c0e19068fce"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/independent_structural_spans.py",
+      "sha256": "5247e0f7b9df1b883fa3dcc0b45f5c69640b96f4266dec3b0f377a3e1cd147e3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/mixed_mapper.py",
+      "sha256": "13872895aeb6364a9e75d4eb2f7520a7489ca5f0191980043ea0d02208ce20b8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/notice_visual_browser.cjs",
+      "sha256": "8fc496e07841d00753ca642e71cdd9f4f76d08f0fd0170f61bc7982feadd41fc"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/prepare.py",
+      "sha256": "4984d8cbfffefbc897273c6918313ff689fd199ef89edb621e29b6224b35b775"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/prepare_accepted_patch.py",
+      "sha256": "ffcb8d24ede992950e59057cfec3f93ec9ad752e2065556a81407821f16bd149"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/prepare_combined_expectations.py",
+      "sha256": "fdd8135532fb352acd5ce62699ee735565d7d8714ca3887e50191362665e5e3d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/prepare_print.py",
+      "sha256": "b51fb97ac74fc02d0e777c2e1fd21bb1df9491ae3e6d61f7924c0f11b944256c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/prepare_secure_patch.py",
+      "sha256": "05d59eaba099aece538a1422b6ddc1e5e7a97acee45ff723a0c43a5ddb0eac08"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/protected_browser.cjs",
+      "sha256": "d287c1a1f6c53b2ad6872907a08eb2eec6292e0506b78b25b25c174b6747bc31"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/protected_controls_browser.cjs",
+      "sha256": "017b64402ae4dff7b9736deadbfb5296cd15bb7a77aaf70f1723b0d97abce573"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/prove_range_end.cjs",
+      "sha256": "e21c9ef1839648a06cadb6ae109cfb2ca9c543a489d0163e362980185b40eaa5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/record_approvals.py",
+      "sha256": "63b951694f5cb8a2fac399613df843e2931e25fae73b1dc159febe0b5098c4a3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/record_review.py",
+      "sha256": "e1cc4f7845f58351046d5d98e538cd99abd957d4c5d14365f6b337d3ba49c428"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review-001-022.json",
+      "sha256": "2e6f22b320a514cdef9dd165039ad825839cc4296838bf69145e5f673ba1a75b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review-023-060.json",
+      "sha256": "76d74a0be452b7a7d5d8ff3d1367aba2eb2de34963ab96f221bf2e9c48d40d6d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review-061-104.json",
+      "sha256": "1c31ee407ff7ce63eecedaf639a537105f6ab179cfe2f5a38753ebd832bd807f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review-105-129.json",
+      "sha256": "1cd4ae3476bd38c6a97a3fb3de70a92e4564db0d05fddd0bab473d1a05f6850f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review-130-157.json",
+      "sha256": "96717acc39b38f53c48c2dfdd05f7b47bc157fdc4d1abed98be0f9ec1ae58874"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review-158-205.json",
+      "sha256": "5065473659b4a40e8fdd1731b06d892c1bfefefab0d85789b2d252bae20afc45"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review-206-230.json",
+      "sha256": "7575d48dc04e9b730f0991e8c708754c201f84917b47e68f606bd32401d58cd3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review-231-268.json",
+      "sha256": "18522d7f1dff9e916889eef56e7cd4631ef703f25eb731df249293b365245d0a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review_023_060.py",
+      "sha256": "ea7e9b6859468ae1d49ad175b8f73323c1f1b3aee361c371feab0a832a17d336"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review_061_104.py",
+      "sha256": "5336619d1cf832afdc9a1b55e6e15859d45e92e791964f470458a3ede6a18938"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review_105_129.py",
+      "sha256": "8e89d6593c95393a089bda512a7b89b6f100149987163f578899e5aac5870305"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review_130_157.py",
+      "sha256": "d1cd7b45cb863bd6b4d46aa5d425ec5f78e7c5504601844f0009b73127771e39"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review_158_205.py",
+      "sha256": "4cb95e835934fe6c27378d9457ddd7b4e95a0cad31f27af95766e7e5794abaed"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review_206_230.py",
+      "sha256": "e0893281c14b49f8efe7f8015941c8cc93e9b08c1e02c6bbdbb05c0f31acabf4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review_231_268.py",
+      "sha256": "c0d70f4611e72e256ba7c911544f940dd3202cc297d570e7dc5c0d6a954e30b9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/review_window.py",
+      "sha256": "34137e6d2f57d2e27897fc09e0b3ed95e09c40c0b4b3393253777de31ab6f930"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/structural_controls.py",
+      "sha256": "043245e0d02c697f8b780d09c7c12d6bee222fa6c47aa5211ffbaa0a9ff1bbaa"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/verify_bytes.py",
+      "sha256": "97f02868b32ce568623286594401bdefa16f5f6ada240edf03f22f725da63e2c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_BookXX_2026-10-10/write_handoff.py",
+      "sha256": "abcddb5cb68f546a86bc3b878713a5a0765c62040f55ef528f4fe81d7d505a7c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/BASELINE.json",
+      "sha256": "6493e5787ecf5dcd08a053fcc3e8813db9e032f3d94e97b84fcbae8bcb3cf7ed"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/BASELINE_CONTAINING_BROWSER.json",
+      "sha256": "6b9f137c1931d35412147914952ca8fc95af5d36ddf0f0f79e5a911ab799578c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/CERTIFIED_SOURCE_REVIEW_FILES.json",
+      "sha256": "a41f8d52a0ce322ed7402ffc8d80b6aaaceb10c257f60f012e272fc85a2928b8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/COMBINED_EXPECTED_INTERVALS.json",
+      "sha256": "19a8c21346fa31fac449eae0c2bbe07c89c73b5cd4f4889e850b7a5e52455865"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/CONFLICT_RESOLUTIONS.json",
+      "sha256": "ee8769897c361c4320a7cee0c1b60d757f8bfc46d557d8e33920d9912913f864"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/DISTINCT_PHYSICAL_POINT_PROOF.json",
+      "sha256": "81903d3a5c877df76171c4e2ef8ee68016c9a0b4fb8c8c3f53da820f8945edd0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/FINAL_EXPECTED_INTERVALS.json",
+      "sha256": "58448c5e3e082252c0cc0eb7ae95a6cb8e7239df27931dad55bd649e0716fab6"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/QA_HARNESS_PROVENANCE.json",
+      "sha256": "353c40ba5937f7a3cd675f5137f2e111fc0cceab7f6494ff75a2a2a3583d3911"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/STARTING_FILES.json",
+      "sha256": "96977a15dee735b7869679a1c1107cefac89733336ac8502c53883fd0d7699d3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/STRUCTURAL_CONTROLS.json",
+      "sha256": "2a9cfe7150867324fbded3be68916db0228ab266192cc4eeef0bff49d5d161d4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/XI_WITNESS_EXPECTATION.json",
+      "sha256": "2391fd85895f8bb7e1f8e1a455dd6caab79a4b452e7a612db0e07d2c77adfa45"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/__pycache__/integration_common.cpython-312.pyc",
+      "sha256": "06c300bfccec59249d20fce1c70a7441b9db38b66e3a955dd48db9244fef93ee"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/bookxx_browser.cjs",
+      "sha256": "53eb1820d4422ee174f6a540580ebe891a8345af25568acfa50df39924447650"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/browser_common.cjs",
+      "sha256": "6df5fb59e8874c86c7c6d208c2a44b7a347f3a52f6fd1ec04da5fef6af03a8fa"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/build_integration.py",
+      "sha256": "36daafa1c7fb0285afacd8b2a598a76c6a8f3bdc1c8c087c425725529e4f8282"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/closure_browser.cjs",
+      "sha256": "1ccc4941f95bb59aee2d8097d89c9e9e99ed6e9e848ab5eba584ea8d16b7f4e8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/combined-extra.cjs",
+      "sha256": "a7e059b8eae8656b3046918725583be2440889208ce2f69f4c2745ebff1285d6"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/combined_cases_browser.cjs",
+      "sha256": "f140209f576c85ffa8a9370e7a5cc8c7837269ef8f3d4ed809b19c81161b40d0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/final_legacy_distinct_reader.cjs",
+      "sha256": "25cecee088451b68355a3409adbff47f1e6aecc38b823c5f985ffca2431035d4"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/final_source_controls.cjs",
+      "sha256": "e43f25c7bd312d2f81c69f4aa61ec02d038e9a150da19d0dffe3d19afa9e16ab"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/freeze_integration.py",
+      "sha256": "2d2b678d5d6f1097d562bf2b0ec8350e8bde4c64b8d4b3884bc9bf14cdbcea03"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/frozen-inputs/English.xml",
+      "sha256": "7d0813df000bab366ee8d785cdd154fd509db7428b7774739185cd83194cec34"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/frozen-inputs/Greek.xml",
+      "sha256": "042b24f1d6c50ef029cd8c6c49c24d76348778cd7ebd74cd8fc23906b6f81d19"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/frozen-inputs/Latin.xml",
+      "sha256": "683ee52477cc21c6c9b68ef939696c4fb54b900e80f3774a3481f4e73837e282"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/frozen-inputs/structure.xml",
+      "sha256": "d64c666b8f790a28cef77de88c73c489097e590a691a2bfd0d7d442c1f21ff56"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/integration_common.py",
+      "sha256": "07e2e52a26951919b0ebc090dbd27939c34b92c9ce13ebde2c1d3466fdf9882e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/notice_visual_browser.cjs",
+      "sha256": "8fc496e07841d00753ca642e71cdd9f4f76d08f0fd0170f61bc7982feadd41fc"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/prepare_qa.py",
+      "sha256": "042fd8619aa678a41bec35c3ca3685628a7fe75d536fb1f91fe2de3dd9409512"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/protected_browser.cjs",
+      "sha256": "0e4fe3ecd3aea7891f429b206ce03716759ed0834b0afe75a30b6375900c8a94"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/protected_controls_browser.cjs",
+      "sha256": "ceeb42a32ec4efadc405c8228e47a670e2cb832f2059a0f940fb97594f4b6017"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/prove_range_end.cjs",
+      "sha256": "e21c9ef1839648a06cadb6ae109cfb2ca9c543a489d0163e362980185b40eaa5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/qa-common16.cjs",
+      "sha256": "56b5b6d050c5257fef8eba13bef6dceca62101f50dd52f6af2cb6692a411959e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/qa-common18.cjs",
+      "sha256": "ef1de5a22e0c7687dc6f45bd68c10d3ae8a2228f692aef636974d33bd180f14f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/reader-structure-crosswork.cjs",
+      "sha256": "cfee9f196b393de178d7fa412343b6b82fa46ddaa140efeb95ef9cbddcf45579"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/reader-xi.cjs",
+      "sha256": "9c79d45dee9f057e23226dc549c9ee9d9add8000046458e568d8f90f63a2b0a1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/renderer-comparison/base.js",
+      "sha256": "bff7640c318f49701ddaaa935b1ded99632f389da09391dd84f8f92bff7e8f0a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/renderer-comparison/canonical.js",
+      "sha256": "fb1db1ed21dcea8971a64d5265dd6bd7bcf02be6e7290e028fe781ff36044bb7"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/renderer-comparison/incoming.js",
+      "sha256": "d7f30fcd7b76480d9dd21cbb7277d7881c67cc63dc7a9a730951b90b742a9227"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/renderer-comparison/resolved.patch",
+      "sha256": "f66f74f2d75af2ce9efce09b8649f36b723f72d3fb85df7da184b50da15f1f8b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/xi-witness-order.cjs",
+      "sha256": "3d7481a8ea3eed804d6ca319f4a1145cb76dea3b3511a8fed607e649f068bae0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/.gitignore",
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/ADJUDICATED_CASES_BROWSER.json",
+      "sha256": "6d59caa086e269d1f1c5789695f78c516f6d2db660e55d051c4798da923a0a8d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/BASELINE_BUILD.json",
+      "sha256": "a2db483f7786124d06678c3b7923c3ffdcefc0ca29af8b5b910c2df816dc0af9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/BASELINE_OTHER_CONTROLS.json",
+      "sha256": "0465840a04355ba3fb6c1e673315f6255a07973aabae40f67c36e3b76c6b7020"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/BASELINE_PROTECTED_BROWSER.json",
+      "sha256": "557423c56a351141bf14336cafbbe9490167bc70b513223b26414076e1075a32"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/BOOK_CLOSURE_BROWSER.json",
+      "sha256": "d1d1b9ea083ca17b9c3e88cbab50be6254895f0f011b10336cfb98a531a460e3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/BOOKXX_BROWSER.json",
+      "sha256": "b6b2a70050217681377fab60b2496325e1d8f85bbda1a079e3d8b37abf507666"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/BUILD_CONTEXT.json",
+      "sha256": "00f0b8f4afd1775664e003c15d4885ffb80d3bc7eefbd8a4f28d5ba138f04c17"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/CANDIDATE_BUILD.json",
+      "sha256": "96ce7a5a9b05aef16469442d353df12ead7bdeed3667147715b96c088a281a0f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/COMBINED_EXTRA_RESULTS.json",
+      "sha256": "77e186db8b1ba719e02c9688d6cc6eb91bd4263b8310eda4cc3ad78c33c844f3"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/CORPUS_POPULATION.json",
+      "sha256": "2ea4f303e99b2d196e2444632f112c7c9d0dcbe31b868e3d0d3341bf1f867431"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/18-reader-dark.png",
+      "sha256": "7be5d45f9f04ae19f284fe26699883181ceb65e216bde5a7dd1bff853255b037"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/18-reader-light.png",
+      "sha256": "c0b16c2014856485cabb3b3ffdd199e782db7ce99c39dadec4f76867eb104cae"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/19-reader-dark.png",
+      "sha256": "96f4997794d52c10aabf6824c730793379893a8c8a6b969c1bd6bf483d2d7069"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/19-reader-light.png",
+      "sha256": "b2aeec77513e31353b7e54730a705af7dea4c970c3197f8a3cd4b26429dda412"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book16-Niese294.png",
+      "sha256": "62f64ae8bbfbadf52c20045627fde2135450abfcfdb65163d82566a0344f132a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book16-Niese351-dark.png",
+      "sha256": "20241e6634b0bf58869a1385714f2d8815538c867ff510f11cbdac3d781bd4e5"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book16-Niese351-light.png",
+      "sha256": "7485806f2119b06b6377d80569e354b09fa2f0534f36c06cf49a08face4618ad"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book16-Niese351.png",
+      "sha256": "a0cf2ba6187140d8750828ea41352cdf1b9a5329561b9c03ee83b2c4fa964798"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book16-Niese368.png",
+      "sha256": "6e0096ee003116f4c409f0fe72aba46ab929d64d13b4a37eea4e181eec0f4292"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book16-Niese395.png",
+      "sha256": "606efd47db260cbe7eea22c99b4a176749a64c88b6fb2d8145a993d42f10c6f1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book17-Niese106.png",
+      "sha256": "2e7724b6c0fe37717768310e6cb979dc2a83e2de1f12a84fcc3b3b3a602ee932"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book17-Niese146.png",
+      "sha256": "d13cc433be33f996c466cd6ef77db872f8b778e64fcbca65ee9643f7991aa911"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book17-Niese25.png",
+      "sha256": "40425a6ecac5e8426338eec40a2c404d4e34c2aff4c6a3550030687076e810bc"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book17-Niese299.png",
+      "sha256": "3e3ee912a94f79f687d026a3e160bca9aba1ef66b62a1dc71ed77d82a3d7ee6c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book17-Niese355.png",
+      "sha256": "1209317f638e43733a37c3c39fc46f4debe5eb0ac70f0621d4a36214380e3853"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/candidate-Book17-Niese76.png",
+      "sha256": "fc7b2ed6dad60c6b89fa775e32dc05b4c31165ed9c28f78d6bc757fe4dfaddcb"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-reader-dark.png",
+      "sha256": "7b9e4b8129ffb86f8bd3b0785ab9ad156feac0b621d195535a988f71eb4ecd71"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-reader-light.png",
+      "sha256": "fdde9f56d558144f3c4e9a833d06a79da62327ff27345dafd442d18353f4b301"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-source-contents.png",
+      "sha256": "0585526551de6455b46ba4d266bac58a19efd47d5d6d3c72218eb289a1750c0e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-218.png",
+      "sha256": "daf17e68fa39d03c3b28ba8bb42b74847c27f3972768eba757eb7e4c3d63129b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-238.png",
+      "sha256": "492d2b0e491ab01a1e5f1d53ce406291053b7b91f29527042e3028283b7c43e8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-239.png",
+      "sha256": "91254204ade0e93c110a32d75691467607895f85d9186595f0b27b39f6b96d99"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-240.png",
+      "sha256": "d11950179f850b28b015a877ee2b8b7d21cc723655fb11b69b7f4bb8564164a2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-241.png",
+      "sha256": "5b8ee9d8a843260d0968354f34a336b4fe09e9308b87e3f88ae102415a8bfea0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-26.png",
+      "sha256": "21b868744077ec2ed07d39e82af3afc456b64fa6b5b6607d422975645d554c64"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-266.png",
+      "sha256": "4355d6a83ba3a7082ff6ed344dc34e1d0b57da9127af699953345ccdc7e5960a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-268.png",
+      "sha256": "89de262ce2ea2d278ec28fe1a563787372401e295295d30dff327bd83c2939d1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-27.png",
+      "sha256": "cba52da017c1502efc5395ce2c4d020792beec51a834c1e39d46b4f84a9d9db0"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-37.png",
+      "sha256": "1d43d74677530a322d5dd14086a07837dd1a4e6022cf77a1637fb5173ee4d427"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/evidence/XX-visible-59.png",
+      "sha256": "2df7593f767caa56af62bc32abf5d18fdd8cada65843d2b0a1e6f9fe086d5ff9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/EXPECTED_STRUCTURAL_RANGES.json",
+      "sha256": "2713d20c1881cd3fcb6bdbb173862de202933758e3c2cb8f3cdf51d0b0dd4c45"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/FINAL_BROWSER.json",
+      "sha256": "10f4960592bd0580a845698485fc1706fc7fcef40dca841f0ac03a120ee2527a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/FINAL_OTHER_CONTROLS.json",
+      "sha256": "4f1dc2ab7100ea839459f41b4bfcd4f0e87bee42260e2e6d0ed6c2319ec9e28d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/FINAL_PROTECTED_BROWSER.json",
+      "sha256": "eaf9bf6abb1d94c72d546472c6309183b73984939498cebfbc96de367a82af70"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/final_reader.cjs",
+      "sha256": "d545d5ff754c5e8aaf3bfd07c6a8869d051a6865f437ab2ded108e49659f55a9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/finalize_integration.py",
+      "sha256": "7da49a67fe0e71dba7edfadc2ebbe12df6d32738d3817451a227d4342debe04f"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/GENERIC_END_BASELINE_REPRO.json",
+      "sha256": "ff7bb56322608ef8ad49e423af21560d4599187e87177cf41024908661d15749"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/GENERIC_END_CANDIDATE_PROOF.json",
+      "sha256": "206615827699b421cc2718b1a3e25a54bf30af75e13116797ad01e98421376e7"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/HARNESS_OFFSET_INITIAL_ATTEMPT.json",
+      "sha256": "7e9cd2ffcd3c0a612288e5eb63101e24a93c86ab0e9469afbe9be5565f5eb3f2"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/LEGACY_DISTINCT_FINAL_BROWSER.json",
+      "sha256": "a8be9be6fb7cf8d0eccf4bf72550789393af8b0d19cd4ef16c29e68788a7ef8c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/new-books-browser.cjs",
+      "sha256": "481cdae23ae3ebfb5b6d0fa614f6a7740af4d6a688d7a2eaf62c4f072593ed2e"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/NEW_BOOK_BROWSER_PROGRESS.json",
+      "sha256": "4da72a43a18ad79a6b1fd995e0283e2eea5e43db49fad840a9ad705b89b1bf59"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/NEW_BOOK_BROWSER_QA.json",
+      "sha256": "b1a025f8fe611e7372c09154f61d3a5847d794216ad3ad89a09c0708c1add8a1"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/promote_integration.py",
+      "sha256": "1c6758784d162a4be954040544ef79c9e865d6ddbeecb9a0669e550cab1e9e73"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/QA_HARNESS_REPAIR.json",
+      "sha256": "c67eda96bbd7f387e427b8808c322929a98d71bcffbeff4a4e01c115eb13694c"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/READER_FINAL_PRIOR_RESULTS.json",
+      "sha256": "54cbdf6aa55cf754de3181562b83d60696819f22a3e7f679a4c5555761f4b081"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/READER_XI_RESULTS.json",
+      "sha256": "7011ffef80037d29ce3b9db55fbe2ade35622def8e5b6d8002957eae8f459995"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/run_suite.py",
+      "sha256": "6c841436f8a188a8ed4e04e6fabe2dc5d74d07f1f05cf718f031a574ad377b4b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/SOURCE_CONTROLS_FINAL_BROWSER.json",
+      "sha256": "6037af03f29eea8399c96ccab2cc33284d9b36f07274df4687e1af978d6c67c9"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/SOURCE_INTEGRITY.json",
+      "sha256": "1ba4047349d9fbde9a2d2065bd0d6384b9c8b7872be07da56dac71594541997a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/SUITE_18-19.json",
+      "sha256": "cbd9bb1b1e4462bd438dd35b110d7e8076ba506e28467698fb44bf2292ff536a"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/SUITE_xi-witness.json",
+      "sha256": "085e81850cd0603ff3cdb19ca5c207e49172f58df6aceca03834d41d6b6e8f19"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/SUITE_xx-final.json",
+      "sha256": "e98a7150ab5ade7f87d46a4aed6deaf167e2e0edf44fcb9d8948b3a026ea2e2d"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/THEME_BASELINE_DIAGNOSTIC.json",
+      "sha256": "105ccaedc359a12ca0eead3cffe8e283a0424e28cde477221adbf39ab93476a8"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/verify_integration.py",
+      "sha256": "baf42741130ba116a6bb924664daf62112aa7a9447b6beed066cf80d229d4b00"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/VISIBLE_QUALIFICATIONS_BROWSER.json",
+      "sha256": "73a329bcf4e4ea269f6a3ac9553886b25d48997444063203b727b878d090d4fb"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/VISUAL_REVIEW.json",
+      "sha256": "33b3bdbc370c915b42d55e970630b86e869b61ad314252b8d24b1179a3470ead"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/WINDOWS_CHECKOUT_DIFFERENCES.json",
+      "sha256": "e37b2936c8dd1df4fb476192e8787c4a272615728950f29b538ec0483ad5f1ee"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/XI_WITNESS_ORDER_RESULTS.json",
+      "sha256": "2a577504d196ee051871545f8e85a6b65e9b2d6d8fed79213ac00914a5f3385b"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/xx_controls.cjs",
+      "sha256": "1705d53f2291804c426aa9599453d8703a5946d6f73c827572c581bd4b42caec"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/XX_STRUCTURAL_CONTROLS.json",
+      "sha256": "b0815e60ce6d50ceedbd37b7cca2ef3314a496e5bdac9937d2a60337442e8dee"
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/CERTIFICATE.json",
+      "sha256": null,
+      "hash_attested_in_external_promotion_receipt": true
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/CHANGE_MANIFEST.json",
+      "sha256": null,
+      "hash_attested_in_external_promotion_receipt": true
+    },
+    {
+      "change": "A",
+      "path": "review/Antiquities_Niese_Integration_20_2026-10-10/REPORT.md",
+      "sha256": null,
+      "hash_attested_in_external_promotion_receipt": true
+    }
+  ],
+  "manifest_excludes_self_and_final_certificate_and_report": true
+}

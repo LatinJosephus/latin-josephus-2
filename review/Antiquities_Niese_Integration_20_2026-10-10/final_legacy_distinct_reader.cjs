@@ -1,7 +1,7 @@
 // Direct legacy routes and physical-point resolution in the actual final reader.
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const {chromium}=require('C:/Program Files/WindowsApps/OpenAI.CodexPrimaryRuntime.v26-1007-641-0_26.1007.641.0_x64__3k8sg7r9htsxt/dependencies/node/node_modules/playwright');
-const {serve,narrative}=require('./qa-common18.cjs');
+const {serve,narrative}=require('./final_reader.cjs');
 const P=__dirname,runtime='C:/workspace/Antiquities-Niese-20-integration-runtime-20261010';
 const sha=x=>crypto.createHash('sha256').update(x).digest('hex');
 async function main(){
