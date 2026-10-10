@@ -1,0 +1,28 @@
+from record_review import *
+record('206-230',[
+ (206,'Habuit autem famulos',324,'Violent servants seize tithes and assault refusers; tail p311.'),
+ (207,'sed etiam alii pontifices',325,'Other priests imitate theft and deprivation follows.'),
+ (208,'Rursus igitur sicani',325,'Night abduction of Eleazar scribe.'),
+ (209,'Deinde mittentes ad ananiam',325,'Prisoner exchange demanded and obtained.'),
+ (210,'quod opus maximorum',325,'Escalating extortion and attacks; relative clause crosses sentence boundary.'),
+ (211,'Hoc itaque tempore rex agrippas philippi',325,'Neronias naming and Berytus theater expenses; distinguish179 wording.'),
+ (212,'frumenta namque populo',325,'Supplies, statues, transferred pomp and resentment.'),
+ (213,'Iesus autem gamalihe',325,'Priestly succession, rivalry and Ananias money; p312 continuation.'),
+ (214,'Custobarus enim et saul',326,'Royal kin gangs and deterioration.'),
+ (215,'XX Albinus itaque',326,'Prison purge and release before Florus; Bamberg XX distinct from traditional X at224.'),
+ (216,'Interea ex tribu leui',326,'Levite singers request linen robes.'),
+ (217,'Quod petentes in petrauerunt',326,'Council grants requested clothing.'),
+ (218,'Omnia contraria paternis',326,'Only concluding illegality and penalty statement survives; hymn instruction absent at this slot.'),
+ (219,'Igitur cum iam tunc',327,'Temple complete and unemployed workers.'),
+ (220,'pecuniasque repositas',327,'Treasury, wages and request to rebuild eastern portico.'),
+ (221,'Erat autem haec porticus',327,'Portico location, blocks and Solomon.'),
+ (222,'Rex autem dum ei',327,'King refuses rebuilding but permits paving.'),
+ (223,'hiesu autem gamahelis',327,'Matthias appointment and start of war.'),
+ (224,'Necessarium itaque credo',327,'High-priestly history introduction, independent traditional X.'),
+ (225,'Primum itaque omnium',328,'Aaron and hereditary succession.'),
+ (226,'unde legitimum est',328,'Eligibility restricted to Aaron blood.'),
+ (227,'fuerunt itaque omnes',328,'Eighty-three priests through Phannias.'),
+ (228,'exquibus in deserto',328,'Thirteen priests from wilderness to temple.'),
+ (229,'primi namque donec',328,'Life tenure, successors and government changes.'),
+ (230,'Tempus igitur quo',328,'Six hundred twelve years count.')])
+rows=json.loads((PACK/'IDENTITIES.json').read_text(encoding='utf-8'));r=rows[217];r['candidate']['assessment']='PARTIAL_CORRESPONDENCE';r['candidate']['correspondence']='PARTIAL';save(PACK/'IDENTITIES.json',rows)
