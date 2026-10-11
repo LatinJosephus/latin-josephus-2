@@ -1,0 +1,80 @@
+{
+  "UTC": "2026-10-11T13:31:42.428036+00:00",
+  "XML_files_searched": 143,
+  "target_ids": [
+    "note_1848bd9ae426435f94ce4bf1ed09c961",
+    "note_5e738419cb1e4ad3a8b566ed1ed83808",
+    "note_837e454f963d4cd5b8428a0b985d64a8",
+    "note_e9dd3996b6b4421398bd6417cbf51300"
+  ],
+  "references": [
+    {
+      "file": "assets/xml/antiquities/Latin/book-01.xml",
+      "target": "note_e9dd3996b6b4421398bd6417cbf51300",
+      "label": "",
+      "defined_targets": [
+        {
+          "id": "note_e9dd3996b6b4421398bd6417cbf51300",
+          "definitions": []
+        }
+      ]
+    },
+    {
+      "file": "assets/xml/antiquities/Latin/book-01.xml",
+      "target": "note_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+      "label": ".",
+      "defined_targets": [
+        {
+          "id": "note_837e454f963d4cd5b8428a0b985d64a8",
+          "definitions": []
+        },
+        {
+          "id": "note_1848bd9ae426435f94ce4bf1ed09c961",
+          "definitions": []
+        }
+      ]
+    },
+    {
+      "file": "assets/xml/antiquities/Latin/book-01.xml",
+      "target": "note_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+      "label": ".",
+      "defined_targets": [
+        {
+          "id": "note_837e454f963d4cd5b8428a0b985d64a8",
+          "definitions": []
+        },
+        {
+          "id": "note_1848bd9ae426435f94ce4bf1ed09c961",
+          "definitions": []
+        },
+        {
+          "id": "note_5e738419cb1e4ad3a8b566ed1ed83808",
+          "definitions": []
+        }
+      ]
+    },
+    {
+      "file": "assets/xml/antiquities/Latin/book-01.xml",
+      "target": "note_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+      "label": ".",
+      "defined_targets": [
+        {
+          "id": "note_837e454f963d4cd5b8428a0b985d64a8",
+          "definitions": []
+        },
+        {
+          "id": "note_1848bd9ae426435f94ce4bf1ed09c961",
+          "definitions": []
+        }
+      ]
+    }
+  ],
+  "definitions": {
+    "note_1848bd9ae426435f94ce4bf1ed09c961": [],
+    "note_5e738419cb1e4ad3a8b566ed1ed83808": [],
+    "note_837e454f963d4cd5b8428a0b985d64a8": [],
+    "note_e9dd3996b6b4421398bd6417cbf51300": []
+  },
+  "CETEI_mechanism": "default ref interpolates rw(target); missing CETEI base concatenates undefined with the complete unparsed multi-target string. The three source target UUIDs have no XML ID definitions in the current corpus.",
+  "scope": "Source-only diagnosis; no source edits or invented reference mapping"
+}
