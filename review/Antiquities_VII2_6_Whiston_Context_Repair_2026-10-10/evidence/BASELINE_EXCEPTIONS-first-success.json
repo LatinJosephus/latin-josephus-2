@@ -1,0 +1,226 @@
+{
+  "scope": "Independent reproduction/comparison only; no fixes",
+  "rows": [
+    {
+      "route": "/",
+      "observations": [
+        {
+          "build": "baseline",
+          "status": 200,
+          "errors": [
+            "TypeError: Cannot read properties of undefined (reading 'languages')"
+          ],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [],
+            "links": []
+          },
+          "targets": []
+        },
+        {
+          "build": "candidate",
+          "status": 200,
+          "errors": [
+            "TypeError: Cannot read properties of undefined (reading 'languages')"
+          ],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [],
+            "links": []
+          },
+          "targets": []
+        }
+      ],
+      "result": "unchanged independently reproduced"
+    },
+    {
+      "route": "/about/",
+      "observations": [
+        {
+          "build": "baseline",
+          "status": 200,
+          "errors": [
+            "TypeError: Cannot read properties of undefined (reading 'languages')"
+          ],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [],
+            "links": []
+          },
+          "targets": []
+        },
+        {
+          "build": "candidate",
+          "status": 200,
+          "errors": [
+            "TypeError: Cannot read properties of undefined (reading 'languages')"
+          ],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [],
+            "links": []
+          },
+          "targets": []
+        }
+      ],
+      "result": "unchanged independently reproduced"
+    },
+    {
+      "route": "/background/",
+      "observations": [
+        {
+          "build": "baseline",
+          "status": 200,
+          "errors": [
+            "TypeError: Cannot read properties of undefined (reading 'languages')"
+          ],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [],
+            "links": []
+          },
+          "targets": []
+        },
+        {
+          "build": "candidate",
+          "status": 200,
+          "errors": [
+            "TypeError: Cannot read properties of undefined (reading 'languages')"
+          ],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [],
+            "links": []
+          },
+          "targets": []
+        }
+      ],
+      "result": "unchanged independently reproduced"
+    },
+    {
+      "route": "/antiquities/?book=1&niese=1",
+      "observations": [
+        {
+          "build": "baseline",
+          "status": 200,
+          "errors": [
+            "TypeError: Cannot read properties of null (reading 'querySelector')"
+          ],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [
+              {
+                "id": "highlight-annotations",
+                "label": null,
+                "title": null,
+                "text": ""
+              }
+            ],
+            "links": []
+          },
+          "targets": []
+        },
+        {
+          "build": "candidate",
+          "status": 200,
+          "errors": [
+            "TypeError: Cannot read properties of null (reading 'querySelector')"
+          ],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [
+              {
+                "id": "highlight-annotations",
+                "label": null,
+                "title": null,
+                "text": ""
+              }
+            ],
+            "links": []
+          },
+          "targets": []
+        }
+      ],
+      "result": "unchanged independently reproduced"
+    },
+    {
+      "route": "/antiquities/?book=1&niese=34",
+      "observations": [
+        {
+          "build": "baseline",
+          "status": 200,
+          "errors": [],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [
+              {
+                "id": "highlight-annotations",
+                "label": null,
+                "title": null,
+                "text": ""
+              }
+            ],
+            "links": [
+              "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961",
+              "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808",
+              "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961"
+            ]
+          },
+          "targets": [
+            {
+              "target": "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961",
+              "status": 404
+            },
+            {
+              "target": "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808",
+              "status": 404
+            }
+          ]
+        },
+        {
+          "build": "candidate",
+          "status": 200,
+          "errors": [],
+          "failed": [],
+          "state": {
+            "duplicates": [],
+            "theme": [
+              {
+                "id": "highlight-annotations",
+                "label": null,
+                "title": null,
+                "text": ""
+              }
+            ],
+            "links": [
+              "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961",
+              "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808",
+              "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961"
+            ]
+          },
+          "targets": [
+            {
+              "target": "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961",
+              "status": 404
+            },
+            {
+              "target": "LOCAL_ORIGIN/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808",
+              "status": 404
+            }
+          ]
+        }
+      ],
+      "result": "unchanged independently reproduced"
+    }
+  ],
+  "result": "PASS"
+}

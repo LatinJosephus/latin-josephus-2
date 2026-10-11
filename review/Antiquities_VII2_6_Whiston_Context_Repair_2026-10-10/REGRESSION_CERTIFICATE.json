@@ -1,0 +1,68 @@
+{
+  "result": "PASS_LOCAL_CERTIFICATION_WITH_REPRODUCED_BASELINE_ISSUES",
+  "baseline": "705aebf7a05681012d239707baed5ea2bdd806d2",
+  "source_assessment_commit": "9e69d0681748cad33856486ea5ed2ab7d08518e0",
+  "implementation_commit": "5e75479f0e7150b0e26ab7542fd92b42f5550eaf",
+  "branch": "fix/antiquities-vii2-6-whiston-context",
+  "Niese": {
+    "total": 7376,
+    "Proem": 26,
+    "Books_I_XX": 7350,
+    "unchanged": 7371,
+    "sole_changes": [
+      "VII.2 English",
+      "VII.3 English",
+      "VII.4 English",
+      "VII.5 English",
+      "VII.6 English"
+    ],
+    "Latin_Greek_all_identical": true,
+    "VII1_and_VII7_identical": true,
+    "errors": 0
+  },
+  "traditional": 1689,
+  "Bamberg": 198,
+  "Alignment": 1441,
+  "Book_Contents_contexts": 21,
+  "cross_work_book_source_configurations": 21,
+  "cross_work_Niese_projections": 8002,
+  "cross_work_chapter_unit_projections": 1630,
+  "individual_source_assertions": "All VII.1-7 source Greek extents and complete original Whiston paragraph contexts",
+  "combined_context_ranges": [
+    "VII.1-6",
+    "VII.2-6",
+    "unsorted/repeated identities",
+    "VII.6-7 preserves separate adjacent paragraphs"
+  ],
+  "combined_context_capability": "Internal renderer/harness only; public controls and route syntax unchanged",
+  "navigation_presentation": {
+    "prior_targeted_checks": 19,
+    "additional_VII2_6_checks": 15,
+    "actual_containing_checks": 16,
+    "alias_guard_fixtures": 8
+  },
+  "exceptional_snapshot_controls": 77,
+  "scholarly_XML_unchanged": 143,
+  "Niese_registries_unchanged": 14,
+  "production_files": [
+    "assets/js/renderTei.js"
+  ],
+  "production_SHA256": {
+    "assets/js/renderTei.js": "c4741903c21c4cc0e4629cdca4d951a5c64ffcab6da5e44e40aaaebcc0e3cad3"
+  },
+  "production_built_asset_byte_equality": true,
+  "baseline_exceptions": "Startup on Home/About/Background, unsupported I.1, two sampled I.34 apparatus 404s, Book VII annotations duplicate ID, unnamed light-toggle all independently reproduced unchanged. Immediate reload before async selection persists repeats prior URL in both builds; settled selection/reload passes.",
+  "section_decisions": {
+    "VII.2": "PASS",
+    "VII.3": "PASS",
+    "VII.4": "PASS",
+    "VII.5": "PASS",
+    "VII.6": "PASS"
+  },
+  "editorial_holds": [],
+  "context_release_exceptions": [],
+  "recommendation": "VII.2-6 blockers resolved. Candidate ready for separate canonical integration and subsequent authorized public-preview publication/verification; inherited issues remain documented.",
+  "no_merge_push_or_deployment": true,
+  "final_receipt": "C:\\workspace\\Antiquities-VII2-6-Whiston-Repair-runtime-20261010\\LOCAL_CERTIFICATION_RECEIPT.json",
+  "QA_scope": "All actual Niese UI selections and focused source/navigation tests uninstrumented. Structural/cross-work projections and combined-context calls use getter-only disposable hooks with production functions unchanged."
+}

@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "build": "baseline-site",
+      "urlBeforeReload": "LOCAL_ORIGIN/antiquities/?book=7&niese=7",
+      "selectionRequested": 6,
+      "immediate_reload_started_from": "LOCAL_ORIGIN/antiquities/?book=7&niese=7",
+      "actual": {
+        "url": "?book=7&niese=7",
+        "niese": "7"
+      }
+    },
+    {
+      "build": "candidate-final-site",
+      "urlBeforeReload": "LOCAL_ORIGIN/antiquities/?book=7&niese=7",
+      "selectionRequested": 6,
+      "immediate_reload_started_from": "LOCAL_ORIGIN/antiquities/?book=7&niese=7",
+      "actual": {
+        "url": "?book=7&niese=7",
+        "niese": "7"
+      }
+    }
+  ],
+  "scope": "Diagnostic timing comparison, not a settled-selection certification assertion. No production changes."
+}
