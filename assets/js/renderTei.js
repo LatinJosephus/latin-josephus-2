@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // DOM Elements
   const annotationsList = document.getElementById("annotations-list");
-  const annotationsPanel = document.getElementById("annotations");
+  const annotationsPanel = document.getElementById("reader-annotations");
   const bookLabel = document.getElementById("book-label");
   const bookSelectForm = document.querySelector("#book-select form");
   const bookSelectMenu = document.getElementById("book-selector");
