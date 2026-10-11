@@ -40,7 +40,7 @@ with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
  for name,body in sorted(items.items()):z.writestr(name,body)
 archive_hash=sha(archive.read_bytes());(OUT/(archive.name+'.sha256')).write_bytes((archive_hash+'  '+archive.name+'\n').encode())
 for name in ['IMPLEMENTATION.patch','SOURCE_RENDERER_GUARDS.patch','integration.bundle']:(OUT/(name+'.sha256')).write_bytes((sha((OUT/name).read_bytes())+'  '+name+'\n').encode())
-extraction=OUT/'verified-extraction';assert not extraction.exists(),'Use a fresh verification destination'
+extraction=OUT/('verified-extraction-'+head[:7]);assert not extraction.exists(),'Use a fresh verification destination'
 extraction.mkdir()
 with zipfile.ZipFile(archive) as z:
  assert z.testzip() is None
@@ -52,7 +52,7 @@ with zipfile.ZipFile(archive) as z:
 for book in json.loads((PACK/'SOURCE_INVENTORY.json').read_bytes()):
  for source in book['outputs']:
   for prefix in ['candidate','preview']:assert sha((extraction/prefix/source['path']).read_bytes())==source['sha256']
-clone=OUT/'verified-git-recovery';assert not clone.exists(),'Use a fresh Git recovery destination'
+clone=OUT/('verified-git-recovery-'+head[:7]);assert not clone.exists(),'Use a fresh Git recovery destination'
 git('clone','--shared','--no-checkout','--config','core.autocrlf=false',str(CANON),str(clone))
 git('fetch',str(extraction/'integration.bundle'),'refs/heads/'+branch+':refs/heads/recovered-integration',cwd=clone)
 git('checkout','recovered-integration',cwd=clone)
