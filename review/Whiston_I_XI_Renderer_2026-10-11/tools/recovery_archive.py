@@ -51,9 +51,9 @@ for book in json.loads((PACK/'SOURCE_INVENTORY.json').read_bytes()):
     for source in book['outputs']:
         assert sha((recovery/'prototype'/source['path']).read_bytes())==source['sha256']
         assert sha((recovery/'preview'/source['path']).read_bytes())==source['sha256']
-clone=OUT/'verified-git-recovery'
+clone=OUT/'verified-git-recovery-literal-bytes'
 assert not clone.exists(),'Choose a fresh recovery verification destination; never remove an existing checkout'
-git('clone','--shared','--no-checkout',str(CANON),str(clone))
+git('clone','--shared','--no-checkout','--config','core.autocrlf=false',str(CANON),str(clone))
 git('fetch',str(recovery/'prototype.bundle'),'refs/heads/'+branch+':refs/heads/recovered-prototype',cwd=clone)
 git('checkout','recovered-prototype',cwd=clone)
 assert git('rev-parse','HEAD',cwd=clone).decode().strip()==head

@@ -6,7 +6,7 @@ The archive includes a local static reader preview, exact changed files, complet
 
 Verify the archive SHA-256 against its sidecar before extracting. Verify every `CHECKSUMS.json` entry and archive CRC. The supplied recovery verification receipt records these checks and a real local Git recovery checkout.
 
-To recover the Git work, clone an existing repository containing the pinned canonical commit into a new directory, fetch the local `prototype.bundle`, and check out its prototype branch. The verified recovery test uses local files and never fetches a remote. Alternatively, create an isolated worktree at the pinned commit and apply `IMPLEMENTATION.patch`; compare the result to the archive’s exact changed files.
+To recover the Git work, clone an existing repository containing the pinned canonical commit into a new directory with the local setting `core.autocrlf=false`, fetch the local `prototype.bundle`, and check out its prototype branch. This setting preserves literal Git blob bytes and the certified English checksums on Windows. The reviewed cross-work publication bytes are separately retained in the bundled static preview. The verified recovery test uses local files and never fetches a remote. Alternatively, create an isolated worktree at the pinned commit and apply `IMPLEMENTATION.patch`; compare the result to the archive’s exact changed files.
 
 To review the static preview, set `WHISTON_SITE` to the archive’s extracted `preview` directory, then run `tools/preview.cjs` with Node. It serves only `127.0.0.1`, default port 4173. Open `/antiquities/?book=9&niese=51`. External fonts and interface libraries remain the site’s normal external dependencies.
 
