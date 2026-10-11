@@ -7,6 +7,7 @@ import {createRequire} from 'node:module';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {verifyReaderCorpus} from './reader-corpus-integrity.mjs';
 const root=path.resolve(fileURLToPath(new URL('../',import.meta.url)));
 const args=process.argv.slice(2),option=(n,f)=>args.includes(n)?args[args.indexOf(n)+1]:f;
 const site=path.resolve(option('--site',path.join(root,'_site'))),out=path.resolve(option('--out',path.join(root,'../bellum-greek-range-qa')));
@@ -15,7 +16,8 @@ const git=(...a)=>execFileSync('git',a,{cwd:root,maxBuffer:32*1024*1024});
 const baseline=option('--baseline','b11075ac14272f0cda568f3bd8859cb0ba405aed'),preLodge='57b89a9d107bb76a2b30c146e401a2c76e25e4c3';
 const oldRenderer=git('show',baseline+':assets/js/renderTei.js'),preRenderer=git('show',preLodge+':assets/js/renderTei.js');
 const sha=b=>createHash('sha256').update(b).digest('hex');
-const xml=git('ls-files','*.xml').toString().trim().split(/\r?\n/);assert.equal(xml.length,107);
+const corpus=verifyReaderCorpus(root,{pwsh:option('--pwsh','pwsh')});
+const xml=Object.keys(corpus.checked);
 const xmlHashes=Object.fromEntries(xml.map(p=>[p,sha(fs.readFileSync(path.join(root,p)))]));
 fs.writeFileSync(path.join(out,'xml-before.json'),JSON.stringify(xmlHashes,null,2)+'\n');
 const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.xml':'application/xml','.json':'application/json'};
@@ -100,20 +102,13 @@ const checks=[];
  fs.writeFileSync(path.join(out,'focused-qa.json'),JSON.stringify({status:'PASS',checks,state},null,2)+'\n');
  console.log(JSON.stringify({status:'PASS',checks},null,2));
  } else if(args.includes('--existing-static-only')) {
-  let script=fs.readFileSync(path.join(root,'bin/lodge1602-bellum-qa.ps1'),'utf8');
-  const first=script.indexOf('  foreach ($p in $manifest.original_xml_sha256.PSObject.Properties) {');
-  const last=script.indexOf('  foreach ($book in $results)',first);
-  assert(first>=0 && last>first,'Existing legacy inventory gate block');
-  script=script.slice(0,first)+'  # Bellum-only invocation; later Antiquities VI release supersedes the historical 100-file gate.\n'+script.slice(last);
-  script=script.replace('original_bellum_xml_byte_identical=21; all_original_xml_byte_identical=100',
-    'original_bellum_xml_byte_identical=21; historical_non_bellum_gate="excluded: superseded by later Antiquities VI release"');
-  const file=path.join(out,'lodge-bellum-static-scoped.ps1');fs.writeFileSync(file,script);
+  const file=path.join(root,'bin/lodge1602-bellum-qa.ps1');
   const result=JSON.parse(execFileSync(option('--pwsh','pwsh'),['-NoProfile','-File',file,'-MasterZip',
     option('--master-zip',''),'-RepoRoot',root,'-SelfTest','-NoWrite'],{encoding:'utf8',maxBuffer:8*1024*1024}));
   for(const p of xml)assert.equal(sha(fs.readFileSync(path.join(root,p))),xmlHashes[p],'Static QA XML unchanged '+p);
   assert.equal(result.status,'PASS');
   fs.writeFileSync(path.join(out,'lodge-bellum-static.json'),JSON.stringify(result,null,2)+'\n');
-  console.log('Existing Bellum static/frozen-master/self-test PASS; current 107 XML unchanged.');
+  console.log('Existing Bellum static/frozen-master/self-test PASS; all reviewed production XML unchanged.');
  } else if(args.includes('--existing-lodge-only')) {
   const page=await pageAt(0);
   await page.addScriptTag({url:bases[0]+'/bin/lodge1602-bellum-browser-qa.js'});

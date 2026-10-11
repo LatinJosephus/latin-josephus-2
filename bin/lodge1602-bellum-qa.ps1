@@ -123,6 +123,10 @@ function Verify-Book($candidate, $production, $latin, [int]$book) {
   return [ordered]@{ book=$book; chapters=$chapters.Count; coarse=$ps.Count; niese=$milestones.Count; decoded_text_utf16=$body.InnerText.Length; production_sha256=(Hash ([IO.File]::ReadAllBytes((Join-Path $RepoRoot "assets/xml/bellum/English/Lodge1602/book-$pad.xml")))) }
 }
 $RepoRoot=[IO.Path]::GetFullPath($RepoRoot)
+  $corpusJson = & node (Join-Path $RepoRoot 'bin/reader-corpus-qa.mjs') --inventory-only --root $RepoRoot
+  if ($LASTEXITCODE -ne 0) { throw 'Reviewed reader corpus integrity failed' }
+  $corpusGuard = $corpusJson | ConvertFrom-Json
+  Assert ($corpusGuard.status -ceq 'PASS') 'complete reviewed corpus guard'
 Assert ((Get-FileHash -LiteralPath $MasterZip -Algorithm SHA256).Hash.ToLowerInvariant() -ceq $expectedHash) 'master ZIP SHA-256'
 $zip=[IO.Compression.ZipFile]::OpenRead($MasterZip)
 try {
@@ -142,7 +146,8 @@ try {
     $results+=Verify-Book $candidate $production $latin $b
     foreach ($pair in @(@('Latin','Latin_Cardwell'),@('Greek','Greek_Niese'),@('English','English_Whiston'))) {
       $original=Bytes "work/authorities/Lodge1602_Bellum_WorkBot_Input/Bellum/$($pair[1])/book-$pad.xml"
-      Assert ((Hash $original) -ceq (Hash ([IO.File]::ReadAllBytes((Join-Path $RepoRoot "assets/xml/bellum/$($pair[0])/book-$pad.xml"))))) "unchanged $($pair[0]) book $b"
+      $authorityPath = "assets/xml/bellum/$($pair[0])/book-$pad.xml"
+      Assert ((Hash $original) -ceq $corpusGuard.publication_xml_sha256.$authorityPath) "unchanged reviewed publication bytes: $($pair[0]) book $b"
     }
     if ($b -eq 3) { $testCandidate=$candidate; $testProduction=$production; $testLatin=$latin }
     if ($b -eq 6) {
@@ -180,16 +185,20 @@ try {
   }
   $manifest=Get-Content -LiteralPath (Join-Path $RepoRoot '_docs/lodge1602-bellum-integration.json') -Raw | ConvertFrom-Json
   Assert (@($manifest.original_xml_sha256.PSObject.Properties).Count -eq 100) '100 historical XML recorded'
-  foreach ($p in $manifest.original_xml_sha256.PSObject.Properties) {
-    Assert ((Get-FileHash -LiteralPath (Join-Path $RepoRoot $p.Name) -Algorithm SHA256).Hash.ToLowerInvariant() -ceq $p.Value) "original XML unchanged: $($p.Name)"
+  # The historical inventory is retained; later reviewed corpus releases have a
+  # separate complete, hash-bound acceptance manifest. No paths are exempted.
+  foreach ($book in $results) {
+    # Full source-tree comparisons above remain mandatory. The corpus guard also
+    # verifies the exact reviewed publication bytes, including LF/CRLF recovery.
+    $book['reviewed_publication_sha256'] = $manifest.books[$book.book-1].production_sha256
   }
-  foreach ($book in $results) { Assert ($book.production_sha256 -ceq $manifest.books[$book.book-1].production_sha256) 'production manifest hash' }
   $report=[ordered]@{
     schema='lodge1602-bellum-validation-v1'; date='2026-10-03'; status='PASS'; master_sha256=$expectedHash
     books=$results; chapters=111; coarse_links=704; niese=4001; HIGH=4001; MEDIUM=0; LOW=0
     exact_decoded_text_and_whitespace_preserved=$true; complete_source_tree_and_original_tcp_header_preserved=$true
     niese_ids_metadata_and_offsets_preserved=$true; frozen_human_history_byte_identical=$true
-    original_bellum_xml_byte_identical=21; all_original_xml_byte_identical=100
+    frozen_bellum_publication_authorities=21; reviewed_production_XML=$corpusGuard.production_XML
+    reviewed_corpus_guard=$corpusGuard; historical_original_XML_recorded=100
     safeguards=@('I.24','III.3','III.182','III.183','VI.3','VI.267','VI.356','VI.427','VII.26')
     independent_corruption_tests_rejected=$selfTests
   }

@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {verifyReaderCorpus} from './reader-corpus-integrity.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const frozen = await readFile(resolve(root, 'assets/data/deh-josephus-concordance.json'));
@@ -12,11 +13,7 @@ const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 if (sha(frozen) !== 'c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c') {
   throw new Error('Frozen concordance SHA differs. Stop for editorial review.');
 }
-for (const [path, expected] of Object.entries(JSON.parse(frozen).canonical_xml_sha256)) {
-  if (!path.startsWith('assets/xml/') || sha(await readFile(resolve(root, path))) !== expected) {
-    throw new Error(`Canonical XML differs: ${path}`);
-  }
-}
+const corpus = verifyReaderCorpus(root);
 const html = `<!doctype html><html lang="en"><meta charset="utf-8">
 <title>DEH–Bellum full publication QA</title><h1>DEH–Bellum full publication QA</h1>
 <p>This local test uses the production excerpt module and canonical XML.</p>
@@ -33,7 +30,7 @@ const server = createServer(async (request, response) => {
     } else if (allowed.test(path)) {
       const type = path.endsWith('.js') ? 'text/javascript' : path.endsWith('.json') ? 'application/json' : 'application/xml';
       response.writeHead(200, { 'Content-Type': `${type}; charset=utf-8` });
-      response.end(await readFile(resolve(root, path)));
+      response.end(corpus.publication[path] || await readFile(resolve(root, path)));
     } else {
       response.writeHead(404);
       response.end();
@@ -44,5 +41,5 @@ const server = createServer(async (request, response) => {
   }
 });
 server.listen(Number(process.argv[2] || 4001), '127.0.0.1', () => {
-  console.log(`Read-only QA: http://127.0.0.1:${server.address().port}/ (100 XML hashes verified)`);
+  console.log(`Read-only QA: http://127.0.0.1:${server.address().port}/ (${corpus.report.production_XML} reviewed XML hashes and ${corpus.report.frozen_publication_inputs} frozen publication inputs verified)`);
 });

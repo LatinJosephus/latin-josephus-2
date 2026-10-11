@@ -9,6 +9,7 @@ import { createRequire } from "node:module";
 import { resolve, sep } from "node:path";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
+import {verifyReaderCorpus} from './reader-corpus-integrity.mjs';
 const root = resolve(fileURLToPath(new URL("../", import.meta.url)));
 const args = process.argv.slice(2);
 const option = (name, fallback) => args.includes(name) ? args[args.indexOf(name)+1] : fallback;
@@ -21,35 +22,31 @@ const corpus = (directory, script=native) => JSON.parse(execFileSync(pwsh,
 const frozen = await readFile(resolve(root,"assets/data/deh-josephus-concordance.json"));
 assert.equal(sha(frozen),"c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c");
 const historical = JSON.parse(frozen).canonical_xml_sha256;
+const reviewed = verifyReaderCorpus(root,{pwsh});
 const current = corpus(root).xml_sha256;
-assert.deepEqual(Object.keys(current).sort(),Object.keys(historical).sort());
+const newPaths = Array.from({length:7},(_,i)=>"assets/xml/bellum/English/Lodge1602/book-0"+(i+1)+".xml");
+assert.deepEqual(Object.keys(current).sort(),Object.keys(reviewed.checked).filter(p=>!newPaths.includes(p)).sort());
 const differences = Object.entries(historical).filter(([p,h])=>current[p]!==h)
   .map(([path,expected_sha256])=>({path,expected_sha256,current_sha256:current[path]}));
-assert.deepEqual(differences.map(d=>d.path).sort(),
-  ["assets/xml/antiquities/Greek/book-05.xml","assets/xml/antiquities/Latin/book-05.xml"]);
 const shadow = await mkdtemp(resolve(tmpdir(),"lodge-inventory-"));
 await cp(resolve(root,"assets/xml"),resolve(shadow,"assets/xml"),{recursive:true});
-const oldScript = resolve(shadow,"baseline-deh-concordance-xml.ps1");
-await writeFile(oldScript,execFileSync("git",["show",baseline+":bin/deh-concordance-xml.ps1"],{cwd:root}));
-const old = corpus(shadow,oldScript).xml_sha256;
-const newPaths = Array.from({length:7},(_,i)=>"assets/xml/bellum/English/Lodge1602/book-0"+(i+1)+".xml");
-assert.equal(Object.keys(old).length,107);
-assert.deepEqual(Object.keys(old).filter(p=>!(p in historical)).sort(),newPaths);
+await cp(resolve(root,"_docs/reader-corpus-integrity.json"),resolve(shadow,"_docs/reader-corpus-integrity.json"),{recursive:true});
+assert.equal(newPaths.length,7); assert(newPaths.every(p=>p in reviewed.checked));
 await writeFile(resolve(shadow,"assets/xml/bellum/English/Lodge1602/unexpected.xml"),'<TEI xmlns="http://www.tei-c.org/ns/1.0"/>');
 const unexpected = corpus(shadow).xml_sha256;
 assert.ok("assets/xml/bellum/English/Lodge1602/unexpected.xml" in unexpected);
-assert.throws(()=>assert.deepEqual(Object.keys(unexpected).sort(),Object.keys(historical).sort()));
+assert.throws(()=>verifyReaderCorpus(shadow,{parse:false}), /Unexpected or missing production XML/);
 const exempt = resolve(shadow,newPaths[0]);
 await writeFile(exempt,"<malformed");
 assert.throws(()=>corpus(shadow), "Exempt Lodge paths must still be parsed");
 const inventory = {
-  status:"PASS", compatibility_patch_required:true, historical_paths_checked:100,
-  historical_paths_matching:98, preserved_baseline_mismatches:differences,
-  unpatched_inventory_count:107, exact_exempt_paths:newPaths,
+  status:"PASS", reviewed_corpus:reviewed.report, historical_paths_recorded:Object.keys(historical).length,
+  historical_changes_explicitly_reviewed:differences,
+  exact_Lodge_paths:newPaths,
   unexpected_xml_detected:true, malformed_exempt_xml_rejected:true,
   frozen_concordance_sha256:sha(frozen)
 };
-console.log("Inventory QA PASS: exact seven-path exemption; 100 historical checks; two preserved baseline mismatches.");
+console.log("Inventory QA PASS: every reviewed production XML; exact seven Lodge paths; negative inventory and malformed-XML checks.");
 if (args.includes("--inventory-only")) { console.log(JSON.stringify(inventory,null,2)); process.exit(0); }
 const built = resolve(root, option("--site","_site"));
 const checkpointPath=resolve(root,"../lodge1602-browser-checkpoint.json");

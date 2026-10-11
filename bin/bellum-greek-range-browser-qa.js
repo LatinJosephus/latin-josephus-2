@@ -72,7 +72,9 @@
    const output=[],counts={chapters:0,subchapters:0,niese:0},split=[],safeguards=[];
    const record=key=>output.push({key,latin:document.querySelector("#latin").innerHTML,english:document.querySelector("#english").innerHTML,latinText:norm(paneText("#latin")),englishText:norm(paneText("#english")),...(key.startsWith("niese:")?{greek:document.querySelector("#greek").innerHTML}:{})});
    record("book:"+b);await level("chapter");
-   equal([...document.querySelector("#chapter-selector").options].filter(o=>o.value!=="").map(o=>Number(o.value)),m.chapters.map(c=>c.number),"Chapter menu "+b);
+   const chapterValues=[...document.querySelector("#chapter-selector").options].map(o=>o.value).filter(v=>v!=='');
+   assert(chapterValues.every(v=>v==='contents'||/^(0|[1-9]\d*)$/.test(v)), 'Unknown chapter control '+b);
+   equal(chapterValues.filter(v=>v!=='contents').map(Number),m.chapters.map(c=>c.number),"Complete numeric chapter menu "+b);
    for(const c of m.chapters){
     await change("#chapter-selector",c.number);
     if(checkGreek)equal(greek(),c.expected,"Chapter "+b+"."+c.number);

@@ -65,7 +65,9 @@
       assert([...sourceSelector.options].some(o=>o.value==="lodge1602"&&o.text==="Lodge (1602)"),"Independent Lodge source option");
     }
     if (sourceSelector.value !== source) await change("#english-source-selector",source);
-    const counts={books:0,chapters:0,coarse:0,niese:0}, content=[], fixtures=[];
+    const counts={books:0,chapters:0,coarse:0,niese:0}, content=[], fixtures=[], contentsChecks=[];
+    const contentsResponse=await fetch('/assets/xml/source-contents.xml');assert(contentsResponse.ok,'Source contents registry');
+    const contentsRows=nodes(parse(await contentsResponse.text()),'fs').map(row=>Object.fromEntries([...row.children].map(f=>[f.getAttribute('name'),f.firstElementChild.localName==='vColl'?[...f.firstElementChild.children].map(v=>v.textContent):f.firstElementChild.textContent])));
     for (let b=1;b<=7;b++) {
       const path="/assets/xml/bellum/English/"+(isLodge?"Lodge1602/":"")+"book-"+String(b).padStart(2,"0")+".xml";
       const response=await fetch(path); assert(response.ok,"QA XML load "+path);
@@ -94,7 +96,23 @@
         fixtures.push("preserved source heading, marginal note and damaged reading");
       }
       await level("chapter");
-      const chapterValues=[...document.querySelector("#chapter-selector").options].map(o=>o.value).filter(v=>v!=="");
+      const menuValues=[...document.querySelector("#chapter-selector").options].map(o=>o.value).filter(v=>v!=="");
+      assert(menuValues.every(v=>v==='contents'||/^(0|[1-9]\d*)$/.test(v)), 'Unknown chapter control value '+b);
+      if(menuValues.includes('contents')) {
+        await change('#chapter-selector','contents');
+        const displayed=pane().querySelector('.source-contents');assert(displayed,'Separate source contents view '+b);
+        const row=contentsRows.find(r=>r.work==='bellum'&&Number(r.book)===b&&r.language==='English'&&r.witness===source&&r.status==='VERIFIED');
+        if(row) {
+          const response=await fetch('/'+row.path);assert(response.ok,'Registered source contents XML');
+          const raw=parse(await response.text());
+          const expected=row.selectors.map(selector=>{const matches=[...raw.querySelectorAll(selector.replace(/\btei-/g,''))];assert(matches.length,'Raw source contents selector');return matches.map(n=>n.textContent).join('');}).join('');
+          const clone=displayed.cloneNode(true);clone.querySelectorAll('h4,.source-contents-note').forEach(n=>n.remove());
+          assert(normalize(clone.textContent)===normalize(expected),'Exact source contents text '+b);
+        } else assert(displayed.textContent==='No source table of contents is available for this witness.','Witness-specific contents unavailability '+b);
+        contentsChecks.push({book:b,source,passed:true,available:!!row});
+      }
+      const chapterValues=menuValues.filter(v=>v!=='contents');
+      assert(chapterValues.length===chapters.length,'Complete numeric chapter menu '+b);
       for (const c of chapterValues) {
         await change("#chapter-selector",c);
         assert(pane().querySelector("tei-div2"),"Rendered chapter "+b+"."+c);
@@ -137,7 +155,7 @@
     }
     assert(counts.books===7&&counts.chapters===111&&counts.coarse===704&&counts.niese===4001,"All canonical views exercised");
     return {counts,digest:await digest(content.join("\n")),exact_xml_source_words_verified:isLodge,
-      first_and_final_sections_checked_for_each_book:true,all_canonical_book_transitions_checked:true,fixtures};
+      first_and_final_sections_checked_for_each_book:true,all_canonical_book_transitions_checked:true,fixtures,contentsChecks};
   };
   window.lodgeSourceStateQA = async () => {
     const tests=[];
