@@ -1,0 +1,39 @@
+{
+  "origin": "http://127.0.0.1:56643",
+  "instrumentation": false,
+  "checks": [
+    {
+      "type": "Book",
+      "url": "http://127.0.0.1:56643/antiquities/?book=7",
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:56643/antiquities/?book=7&chapter=1",
+      "type": "chapter",
+      "value": "1",
+      "hashes": {
+        "Latin": "b823f34a23ed19db5c0a320b296c2a062befd4705192328929e418da96476037",
+        "Greek": "a250f2616a4b99e05ccc5110a007cea491310d09ca473151179d62cdcd42bafe",
+        "English": "8d337deee175e7f851449737daecfc7adb47e2a154693f8d5d922c7c6ccefbb1"
+      },
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:56643/antiquities/?book=7&chapter=1&subchapter=1",
+      "type": "subchapter",
+      "value": "1",
+      "hashes": {
+        "Latin": "cd0ebca856ace72c18eb72db274b478ff8936c201ef809a138c129c920dea5a8",
+        "Greek": "a2319802852ad025a2584d6d4f0ac497b7f5e029a780223dbda93768d38ae527",
+        "English": "8faa90cf42768bc77fda609cc39a1d70b256617df1d7a06f49d4cc862288ad2e"
+      },
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "FAIL",
+  "failure": "Error: ENOENT: no such file or directory, open 'C:\\workspace\\Antiquities-VII2-6-Whiston-Repair-runtime-20261010\\READER_FINAL_PRIOR_RESULTS.json'"
+}

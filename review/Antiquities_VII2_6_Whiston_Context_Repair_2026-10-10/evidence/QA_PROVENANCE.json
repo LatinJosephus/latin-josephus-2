@@ -1,0 +1,20 @@
+{
+  "original_register_preserved_SHA256": "6c5a6d68bd9a33d46f67bfa1301891d54e5220d7085cd6d7c6e134aca97693f5",
+  "source_assessment_before_implementation_commit": "9e69d0681748cad33856486ea5ed2ab7d08518e0",
+  "fresh_baseline_and_candidate_all_selection_runs": true,
+  "raw_full_registers": [
+    "C:\\workspace\\Antiquities-VII2-6-Whiston-Repair-runtime-20261010\\baseline-NIESE.json",
+    "C:\\workspace\\Antiquities-VII2-6-Whiston-Repair-runtime-20261010\\candidate-final-NIESE.json"
+  ],
+  "isolated_profiles_ports_downloads": true,
+  "raw_start_file_manifests": "C:\\workspace\\Antiquities-VII2-6-Whiston-Repair-runtime-20261010\\START_RECEIPT.json",
+  "metadata_note": "Structural harness has niese=0 because it checks projections; its separate replay count of 7350 denotes Books I-XX. Authoritative actual replay includes 26 Proem plus 7350 = 7376.",
+  "retained_setup_failures": [
+    "A site path was mistakenly passed as the symbolic candidate-final label to the positive test; the isolated server returned a failure. Correct absolute-site invocation passes.",
+    "Containing UI test started before its dependent structural export was written. The subsequent sequential rerun passes all 16 checks.",
+    "Test server initially rejected root path via its containment guard. Root allowed safely in disposable QA server and all six baseline comparisons pass. No production server changed.",
+    "Additional UI script reloaded before requested VI\u0399.6 selection/URL settled. Fresh comparison reproduces prior VI\u0399.7 URL in both builds; the settled-selection reload test passes."
+  ],
+  "no_failure_silently_relabelled": "All raw attempts are retained and successful retests separately recorded. No product edit followed these harness failures.",
+  "line_endings": "New review/QA text and copied build logs use LF. Raw logs retain originals; source and historical reviews are never normalized."
+}
