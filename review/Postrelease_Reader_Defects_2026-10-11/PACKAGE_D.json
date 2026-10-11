@@ -1,0 +1,58 @@
+{
+  "stage": "D",
+  "origin": "http://127.0.0.1:51271",
+  "instrumentation": false,
+  "checks": [
+    {
+      "route": "/",
+      "test": "general page startup, content, responsive navigation, theme and reload",
+      "bodyTextSHA256": "41ec99f0104e0260c4ff4f826cff2e3858b615740da80bc5b8a7a30fdabd4e1b",
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "test": "general page startup, content, responsive navigation, theme and reload",
+      "bodyTextSHA256": "0a5b5af4b1f48d9e460c00c8ec5ad10e957d1b9d7500643df3c2c5acc1df830c",
+      "result": "PASS"
+    },
+    {
+      "route": "/background/",
+      "test": "general page startup, content, responsive navigation, theme and reload",
+      "bodyTextSHA256": "03fc2d95bf95ce291c48a7f3f41f1fec378457fa9e8588a3edfabadf79d489a9",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=preface&niese=25",
+      "test": "reader initialization preserved",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=1&niese=27",
+      "test": "reader initialization preserved",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=1",
+      "test": "reader initialization preserved",
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "test": "reader initialization preserved",
+      "result": "PASS"
+    },
+    {
+      "route": "/deh/?book=1",
+      "test": "reader initialization preserved",
+      "result": "PASS"
+    },
+    {
+      "route": "/contra-apionem/?book=1",
+      "test": "reader initialization preserved",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "assets": [],
+  "result": "PASS"
+}

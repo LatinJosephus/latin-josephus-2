@@ -18,6 +18,7 @@ def package(p):
     shutil.copy2(a.T/('BUILD_'+p+'.json'),a.Q/('BUILD_'+p+'.json'))
     for f in ['postrelease_package.py','postrelease_edit.py','postrelease_'+('theme' if p=='A' else 'focused')+'_test.cjs']:
         if a.Path(f).exists():shutil.copy2(f,a.Q/f)
+    if p=='E':shutil.copy2('postrelease_invalid_test.cjs',a.Q/'postrelease_invalid_test.cjs')
     subprocess.run(['git','add','--',*files[p]],cwd=a.W,check=True)
     s.commit('package-'+p,messages[p])
 

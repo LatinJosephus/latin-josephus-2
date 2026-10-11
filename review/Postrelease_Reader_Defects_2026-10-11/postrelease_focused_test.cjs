@@ -18,7 +18,17 @@ if(stage==='B'||stage==='final'){
  }finally{await bp.close();await new Promise(r=>bs.close(r))}
 }
 if(stage==='D'||stage==='final'){
- for(const route of ['/','/about/','/background/']){await p.setViewportSize({width:1440,height:900});await open(route);c.assert.equal(await p.locator('#book-selector').count(),0);c.assert(await p.locator('main').innerText());c.assert.equal((await p.locator('html').getAttribute('data-theme'))==='dark',await p.locator('#light-toggle').getAttribute('aria-pressed')==='true');await p.getByRole('button',{name:'Dark mode',exact:true}).press('Space');await p.setViewportSize({width:390,height:844});await p.locator('.navbar-toggler').click();c.assert(await p.locator('.navbar-collapse').isVisible());await p.locator('.navbar-toggler').click();await p.reload();await p.waitForLoadState('networkidle');r.checks.push({route,test:'general page startup, content, responsive navigation, theme and reload',result:'PASS'})}
+ for(const route of ['/','/about/','/background/']){
+ await p.setViewportSize({width:1440,height:900});await open(route);
+ c.assert.equal(await p.locator('#book-selector').count(),0);
+ const content=await p.locator('body').innerText();c.assert(content.trim().length>200);
+ c.assert.equal((await p.locator('html').getAttribute('data-theme'))==='dark',await p.locator('#light-toggle').getAttribute('aria-pressed')==='true');
+ await p.getByRole('button',{name:'Dark mode',exact:true}).press('Space');
+ await p.setViewportSize({width:390,height:844});await p.locator('.navbar-toggler').click();
+ await p.waitForFunction(()=>document.getElementById('navbarNav').classList.contains('show'));c.assert(await p.locator('.navbar-collapse').isVisible());
+ await p.locator('.navbar-toggler').click();await p.locator('.navbar-collapse').waitFor({state:'hidden'});
+ await p.reload();await p.waitForLoadState('networkidle');
+ r.checks.push({route,test:'general page startup, content, responsive navigation, theme and reload',bodyTextSHA256:c.hash(content),result:'PASS'})}
  await p.setViewportSize({width:1440,height:900});for(const route of ['/antiquities/?book=preface&niese=25','/antiquities/?book=1&niese=27','/antiquities/?book=7&niese=1','/bellum-judaicum/?book=1&niese=1','/deh/?book=1','/contra-apionem/?book=1']){await open(route);c.assert((await p.locator('#latin').innerText()).length>100);r.checks.push({route,test:'reader initialization preserved',result:'PASS'})}
 }
 c.assert.equal(r.errors.length,0,JSON.stringify(r.errors));r.result='PASS';

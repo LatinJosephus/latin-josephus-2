@@ -277,6 +277,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const activeWork = WORKS[window.location.pathname];
+  // General site pages have no reader data contract or reader controls.
+  if (!activeWork || !bookTitle || !bookSelectMenu) return;
 
   const languagePanes = {
     Latin: latinPane,
