@@ -1,0 +1,654 @@
+{
+  "UTC": "2026-10-11T14:15:10.627990+00:00",
+  "result": "PASS FOR A/B/D/E; C EXPLICITLY UNRESOLVED",
+  "tested_commit": "951555f41c4fda1e21f7615b4a125f7036b3b55f",
+  "production_renderer_SHA256": "e75244c444771c733ca8ddb0d130b8f32463f59fd9460c26a5048b3669727322",
+  "counts": {
+    "Antiquities_actual_Niese": 7376,
+    "Proem": 26,
+    "Antiquities_I_XX": 7350,
+    "traditional": 1689,
+    "Bamberg": 198,
+    "Alignment": 1441,
+    "cross_work_Niese": 8002,
+    "cross_work_structural": 1630
+  },
+  "exact_comparison": {
+    "result": "PASS",
+    "source_commit": "4ffbc79b84806d180e9d713f9605255e7dfed73e",
+    "actual_selections": 7376,
+    "Proem": 26,
+    "Books_I_XX": 7350,
+    "DOM_text_original_ID_type_qualification_mismatches": [],
+    "duplicate_selected_view_IDs": 0,
+    "menus_unchanged": true,
+    "baseline_SHA256": "e4cfd62d73430cbf5471bb22d6573a5d40ef083b92627d1137bb423ba2757ad2",
+    "actual_SHA256": "41f8645b3956d9437bc37ba5ecb84ab5755d8dfcbe891aac0db1263039b70496"
+  },
+  "structural_crosswork": {
+    "started": "2026-10-11T13:59:33.103Z",
+    "build": {
+      "baseline_commit": "4ffbc79b84806d180e9d713f9605255e7dfed73e",
+      "source": "C:/workspace/LatinJosephus-postrelease-reader-repairs-20261011",
+      "baseline_site": "C:/workspace/LatinJosephus-postrelease-reader-repairs-runtime-20261011/baseline-site",
+      "site": "C:/workspace/LatinJosephus-postrelease-reader-repairs-runtime-20261011/candidate-final-site"
+    },
+    "scope": "Every Antiquities containing view and exhaustive cross-work structural comparison against canonical integration start",
+    "books": [
+      {
+        "book": "preface",
+        "niese": 0,
+        "traditional": 4,
+        "bamberg": 0,
+        "alignment": 4,
+        "contents": "PASS",
+        "digest": "82c5d1db57421e22a2933a6070908734fdb01b5c6168d9d8133be2594897d295",
+        "result": "PASS"
+      },
+      {
+        "book": "1",
+        "niese": 0,
+        "traditional": 96,
+        "bamberg": 18,
+        "alignment": 79,
+        "contents": "PASS",
+        "digest": "a1469886640dada91886d6a50509dfa4751dfd813017870b9e2f3b1c581de015",
+        "result": "PASS"
+      },
+      {
+        "book": "2",
+        "niese": 0,
+        "traditional": 92,
+        "bamberg": 3,
+        "alignment": 76,
+        "contents": "PASS",
+        "digest": "14e2bd91b3ef7c162ce186302c9680cbe6df84a630c129de433e4a7a92e4c27a",
+        "result": "PASS"
+      },
+      {
+        "book": "3",
+        "niese": 0,
+        "traditional": 92,
+        "bamberg": 11,
+        "alignment": 79,
+        "contents": "PASS",
+        "digest": "f38b21631734574a49c6a2c9fb485caccd96262384ddeca7acd69fec07b3da10",
+        "result": "PASS"
+      },
+      {
+        "book": "4",
+        "niese": 0,
+        "traditional": 96,
+        "bamberg": 5,
+        "alignment": 88,
+        "contents": "PASS",
+        "digest": "1e2d80a718fafc954c5824ddf4879c16738ad8696e4a66dc66bc8a5d861b9c79",
+        "result": "PASS"
+      },
+      {
+        "book": "5",
+        "niese": 0,
+        "traditional": 109,
+        "bamberg": 13,
+        "alignment": 98,
+        "contents": "PASS",
+        "digest": "03e96bd2d6daaa06b944ccef7563b82806c1107190f7e4734496bdadaf25f39a",
+        "result": "PASS"
+      },
+      {
+        "book": "6",
+        "niese": 0,
+        "traditional": 97,
+        "bamberg": 0,
+        "alignment": 83,
+        "contents": "PASS",
+        "digest": "3901d6c0ff8e38767d44e4bb6d5889bdce7354504dcc7274e188410d66093272",
+        "result": "PASS"
+      },
+      {
+        "book": "7",
+        "niese": 0,
+        "traditional": 91,
+        "bamberg": 0,
+        "alignment": 75,
+        "contents": "PASS",
+        "digest": "4b30ee5f13ec27de90b545b747515c96d642cf052ef63cd1cb2c67bcbf17434f",
+        "result": "PASS"
+      },
+      {
+        "book": "8",
+        "niese": 0,
+        "traditional": 98,
+        "bamberg": 0,
+        "alignment": 85,
+        "contents": "PASS",
+        "digest": "e37f1b7ace9010e8363b8eb6d5d445ae064a303394090b85dbc6566f0996ae16",
+        "result": "PASS"
+      },
+      {
+        "book": "9",
+        "niese": 0,
+        "traditional": 68,
+        "bamberg": 0,
+        "alignment": 47,
+        "contents": "PASS",
+        "digest": "6626c6345bcf2bce7254f93a0f1d9d9f37ce7180e00c66d255fc316bae58a085",
+        "result": "PASS"
+      },
+      {
+        "book": "10",
+        "niese": 0,
+        "traditional": 63,
+        "bamberg": 0,
+        "alignment": 52,
+        "contents": "PASS",
+        "digest": "5d1f76f908324eb5db1336bfb189583547ab9f79dfe9c57046537e5b0b7c2149",
+        "result": "PASS"
+      },
+      {
+        "book": "11",
+        "niese": 0,
+        "traditional": 61,
+        "bamberg": 0,
+        "alignment": 57,
+        "contents": "PASS",
+        "digest": "cee85d564fbc2a8a85db675de40f49dad538c94598102496c540deda8723a7f2",
+        "result": "PASS"
+      },
+      {
+        "book": "12",
+        "niese": 0,
+        "traditional": 79,
+        "bamberg": 1,
+        "alignment": 71,
+        "contents": "PASS",
+        "digest": "49b96230b79d44cb30d9355909ae6d000f7261f58cb00470e543e4020041ed8e",
+        "result": "PASS"
+      },
+      {
+        "book": "13",
+        "niese": 0,
+        "traditional": 103,
+        "bamberg": 21,
+        "alignment": 87,
+        "contents": "PASS",
+        "digest": "b064bbbd2017ba871d847c656364f88840b2166b2d137cae4cc3e996fb35aa93",
+        "result": "PASS"
+      },
+      {
+        "book": "14",
+        "niese": 0,
+        "traditional": 127,
+        "bamberg": 27,
+        "alignment": 112,
+        "contents": "PASS",
+        "digest": "c5c471bad968b5f5d126cb70f5b2de6538ea05cb80d7f7937dc6beb8e46a9af9",
+        "result": "PASS"
+      },
+      {
+        "book": "15",
+        "niese": 0,
+        "traditional": 78,
+        "bamberg": 13,
+        "alignment": 66,
+        "contents": "PASS",
+        "digest": "9de9eb91595c2ed94254105337b90eaf906bb2f52de988cc4d486eb10ae9a499",
+        "result": "PASS"
+      },
+      {
+        "book": "16",
+        "niese": 0,
+        "traditional": 72,
+        "bamberg": 20,
+        "alignment": 61,
+        "contents": "PASS",
+        "digest": "0b0541548424d6d1999c2c6adbd5e8fa6c7a26b30969e660f0579f2a6051f004",
+        "result": "PASS"
+      },
+      {
+        "book": "17",
+        "niese": 0,
+        "traditional": 74,
+        "bamberg": 19,
+        "alignment": 61,
+        "contents": "PASS",
+        "digest": "f5a9769e435e1acf2202f644f72db44cb4e50e7d4d05a59ea816ad33d927ec64",
+        "result": "PASS"
+      },
+      {
+        "book": "18",
+        "niese": 0,
+        "traditional": 66,
+        "bamberg": 19,
+        "alignment": 57,
+        "contents": "PASS",
+        "digest": "3db4625918560f9a6c695a6efb00ee8b517b1b714f47e3d76b9082e0a8505997",
+        "result": "PASS"
+      },
+      {
+        "book": "19",
+        "niese": 0,
+        "traditional": 61,
+        "bamberg": 8,
+        "alignment": 52,
+        "contents": "PASS",
+        "digest": "6cf37c994805ee35ecdeff16548778a5bc2393fdec0550e39189a3ed09dc94dd",
+        "result": "PASS"
+      },
+      {
+        "book": "20",
+        "niese": 0,
+        "traditional": 62,
+        "bamberg": 20,
+        "alignment": 51,
+        "contents": "PASS",
+        "digest": "5e670647d0cd0222529bfaecb0fa913d1bb1927bf3951b7693f499431161607e",
+        "result": "PASS"
+      }
+    ],
+    "cross_works": [
+      {
+        "work": "bellum-judaicum",
+        "book": 1,
+        "source": "whiston",
+        "niese": 673,
+        "ranges": 268,
+        "result": "PASS",
+        "digest": "838db55354345e433438ac844cc5d1777d71c3bcf67922cd4adccaf6fa2b2715"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 1,
+        "source": "lodge1602",
+        "niese": 673,
+        "ranges": 268,
+        "result": "PASS",
+        "digest": "9281809b83552e34396e5a164c029106b85f19a4471f49c268140b4d0cd4271e"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 2,
+        "source": "whiston",
+        "niese": 654,
+        "ranges": 165,
+        "result": "PASS",
+        "digest": "ded136a199e3007fdc24e47ac80d7d1f20322983d5c2906a901c4215604c904d"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 2,
+        "source": "lodge1602",
+        "niese": 654,
+        "ranges": 165,
+        "result": "PASS",
+        "digest": "7d612e66a7e0684d0c10bda9c729aaef9c7916e2e79c38c08844996203248ab7"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 3,
+        "source": "whiston",
+        "niese": 542,
+        "ranges": 98,
+        "result": "PASS",
+        "digest": "ce2bcec57f0b55b9438da957841a6c5f10e0b0359d273aa593a276fb23dfab53"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 3,
+        "source": "lodge1602",
+        "niese": 542,
+        "ranges": 98,
+        "result": "PASS",
+        "digest": "41176421e01d49a27093a47ebad4d84fabe1859934bedec085387da6ed4a5bd4"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 4,
+        "source": "whiston",
+        "niese": 663,
+        "ranges": 89,
+        "result": "PASS",
+        "digest": "3d63a3413abaa1dca3ddd25ffd17ffcd86ec33d7e7f8636fd3f027e8459396f6"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 4,
+        "source": "lodge1602",
+        "niese": 663,
+        "ranges": 89,
+        "result": "PASS",
+        "digest": "acc15d56230d3e38565ace0c5af6831d10db04ed9f4febbd2db3f57e4605917c"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 5,
+        "source": "whiston",
+        "niese": 572,
+        "ranges": 78,
+        "result": "PASS",
+        "digest": "55a206ef7dd2c7e06f6ad8d68e476e48b7e7363e5f2edd62c38477ca3d044f9c"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 5,
+        "source": "lodge1602",
+        "niese": 572,
+        "ranges": 78,
+        "result": "PASS",
+        "digest": "2d7bf4e22b581a7736154bd859fa39d31bc9ef30e55514cad0e0edf978b7f494"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 6,
+        "source": "whiston",
+        "niese": 442,
+        "ranges": 60,
+        "result": "PASS",
+        "digest": "2b0171a9b2e6a06c157664af2d35211e9e09e8dc6fab2d7fd3f5a49fff2a2731"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 6,
+        "source": "lodge1602",
+        "niese": 442,
+        "ranges": 60,
+        "result": "PASS",
+        "digest": "5da2b730963ef8fcd599bc549ba00d3907fb8c0e65c988bd60f08b99bc47f3d9"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 7,
+        "source": "whiston",
+        "niese": 455,
+        "ranges": 57,
+        "result": "PASS",
+        "digest": "0d1ef468633aecad5a8452ef0c7181feb40e969f1ad1ebd4eb290b6d86b93495"
+      },
+      {
+        "work": "bellum-judaicum",
+        "book": 7,
+        "source": "lodge1602",
+        "niese": 455,
+        "ranges": 57,
+        "result": "PASS",
+        "digest": "701d146907c5b7bf63af3f393a9cc0f93ddb286de7e3e942a23505e3eef3f2fd"
+      },
+      {
+        "work": "contra-apionem",
+        "book": 1,
+        "source": "default",
+        "niese": 0,
+        "ranges": 0,
+        "result": "PASS",
+        "digest": "2543749538028f24c32bb09754cc79ccb6b51459df3b5f0d4c8e920ff748b2bd"
+      },
+      {
+        "work": "contra-apionem",
+        "book": 2,
+        "source": "default",
+        "niese": 0,
+        "ranges": 0,
+        "result": "PASS",
+        "digest": "7c669aeba6a1eb152fc67fabaa0aa854a91d5ae0636127503d6ea7db3f4df237"
+      },
+      {
+        "work": "deh",
+        "book": 1,
+        "source": "default",
+        "niese": 0,
+        "ranges": 0,
+        "result": "PASS",
+        "digest": "02f1e3c519eb594e1e71143a02a66040ecbee9b7f1b69abbe9364c4b72e7b142"
+      },
+      {
+        "work": "deh",
+        "book": 2,
+        "source": "default",
+        "niese": 0,
+        "ranges": 0,
+        "result": "PASS",
+        "digest": "b066e6dfc96bf4aea026ac57b942c39e1f98d636cf3174c0ba1f8149c78b0bdf"
+      },
+      {
+        "work": "deh",
+        "book": 3,
+        "source": "default",
+        "niese": 0,
+        "ranges": 0,
+        "result": "PASS",
+        "digest": "ec59d016434fa90278d3e9958fb9de6ce07c1ab8cb9d6ce05209f662f67cb8fe"
+      },
+      {
+        "work": "deh",
+        "book": 4,
+        "source": "default",
+        "niese": 0,
+        "ranges": 0,
+        "result": "PASS",
+        "digest": "4100cdece7c77598da9f3f4382f1ec62a8ebee7038b3c1848c98e32efb2afa00"
+      },
+      {
+        "work": "deh",
+        "book": 5,
+        "source": "default",
+        "niese": 0,
+        "ranges": 0,
+        "result": "PASS",
+        "digest": "2e1a308fedf2f1bc5a5461782324aaa38d331d96e402106fc66ad7890fa57fa4"
+      }
+    ],
+    "focused": [
+      {
+        "route": "/antiquities/?book=8&niese=367",
+        "result": "PASS",
+        "digest": "a69c9090652ee07c399fc14ec27368a853973c9f159339a6430d036a89c875b1"
+      },
+      {
+        "route": "/antiquities/?book=8&niese=369",
+        "result": "PASS",
+        "digest": "e725c148d72a83f57b8b5269a8b7a8e8be5b6693e2505fb8d67a6f00134e2e79"
+      },
+      {
+        "route": "/antiquities/?book=10&niese=108",
+        "result": "PASS",
+        "digest": "118365c5773d2bac31fca47d4e09e2a75ea4683cff4e2ae0ef51172097bbfe9f"
+      },
+      {
+        "route": "/antiquities/?book=9&niese=291",
+        "result": "PASS",
+        "digest": "e66fdcd90d09576c31520a067e0898d39b90a333775e7b5f764a0c6a5a3692b2"
+      },
+      {
+        "route": "/antiquities/?book=13&niese=212",
+        "result": "PASS",
+        "digest": "5cf6f774951c80aaa73ae1716cefea384dae0cb02cd863099e5082ced12a66ed"
+      },
+      {
+        "route": "/antiquities/?book=13&niese=214",
+        "result": "PASS",
+        "digest": "e765d9dbbae2da77d5bcd095e8e7955142487ff6909f9cc4d4e62b9dfb39062f"
+      },
+      {
+        "route": "/antiquities/?book=14&niese=357",
+        "result": "PASS",
+        "digest": "1cf1181053ff70b6a8aa7e639ed220d043f3a6ebb51633a8d2768b4fe915a824"
+      },
+      {
+        "route": "/antiquities/?book=15&chapter=1",
+        "result": "PASS",
+        "digest": "4a6966da11e63825e3b493d907f31acd517da361f91df10b8b7b6e238c9ba6a8"
+      },
+      {
+        "route": "/antiquities/?book=15&chapter=2",
+        "result": "PASS",
+        "digest": "8d0c0b5c85b5deaed38fe5a1f3014679187806c6d706e43d6b8ae178dc6235db"
+      },
+      {
+        "route": "/antiquities/?book=15&niese=39",
+        "result": "PASS",
+        "digest": "3a0036e3847d96ff99437b4d6bed8d6d666f4d4097ee9025dd778cd978c584fc"
+      },
+      {
+        "route": "/antiquities/?book=15&niese=40",
+        "result": "PASS",
+        "digest": "6bea2546be516c7d455ab2c3ecaf481b1400ad2aed91f9233f9d00acbaf4fe75"
+      },
+      {
+        "route": "/bellum-judaicum/?book=4&niese=105&english=whiston",
+        "result": "PASS",
+        "digest": "3292ffe1f9875c6b2165b92bd4f6ea5d6441854aaee0229c991fbe6cd383248f"
+      },
+      {
+        "route": "/bellum-judaicum/?book=4&niese=105&english=lodge1602",
+        "result": "PASS",
+        "digest": "ef63343808d0c6450e0bc4d100a36a507c5e99148a10d2dc9ddf559840386f5c"
+      }
+    ],
+    "errors": [],
+    "selectors": [],
+    "actual_selections_in_separate_fresh_replay": 7376,
+    "combined_identity_target": 7376,
+    "Lodge_Whiston_switching": "PASS",
+    "totals": {
+      "traditional": 1689,
+      "bamberg": 198,
+      "alignment": 1441
+    },
+    "result": "PASS",
+    "finished": "2026-10-11T14:01:56.055Z",
+    "origins": [
+      "http://127.0.0.1:61413",
+      "http://127.0.0.1:61414"
+    ]
+  },
+  "suites": [
+    {
+      "file": "THEME_FINAL.json",
+      "status": "PASS",
+      "SHA256": "e001ca7d62f9a6525a22cf6d0ed557e0485326ab3dac24b3e653c46401a72d2c",
+      "checks": 18
+    },
+    {
+      "file": "PACKAGE_final_final.json",
+      "status": "PASS",
+      "SHA256": "0139b6e68882fa8372cb18b022fa09df714a59f90e8a29344a48459be8a1f3d0",
+      "checks": 25
+    },
+    {
+      "file": "PACKAGE_E_final.json",
+      "status": "PASS",
+      "SHA256": "35b029f7fa8bdbabf4f30e65f794892c93e7613ac41f7a34cef57f58181808d1",
+      "checks": 21
+    },
+    {
+      "file": "candidate-VII1-7.json",
+      "status": "PASS",
+      "SHA256": "1875a9cb5d82bb542878189cef763cb3a23de71d8448f8087862f733551b600d",
+      "checks": 7
+    },
+    {
+      "file": "candidate-VII1-REGRESSION.json",
+      "status": "PASS",
+      "SHA256": "df69010920b7940869cb90753a9ffc383b465d827550fe9f0251dfb1f1ca61dc",
+      "checks": 5
+    },
+    {
+      "file": "COMBINED_CONTEXT.json",
+      "status": "PASS",
+      "SHA256": "5a834abf95ae0f859f5d37d99c6314fdb0df68976f0ae2378a4b79db5cb5cb50",
+      "checks": 4
+    },
+    {
+      "file": "CONTEXT_GUARDS.json",
+      "status": "PASS",
+      "SHA256": "311b1ef5851a17edc3c1645449a4d967e91fb32f74c5c793e09eb1792bafc1d6",
+      "checks": 8
+    },
+    {
+      "file": "TARGETED_UI.json",
+      "status": "PASS",
+      "SHA256": "2f4cda7e20a8d3a375d99cd44162a9954c43e3ef09667d705e430da823e174e9",
+      "checks": 19
+    },
+    {
+      "file": "VII2_6_NAVIGATION_PRESENTATION.json",
+      "status": "PASS",
+      "SHA256": "0ac5572f092a83afa02c78f98307b8106ee828ff418a9364b74e8cc7575caedc",
+      "checks": 15
+    },
+    {
+      "file": "KEYBOARD_FULL_SOURCE.json",
+      "status": "PASS",
+      "SHA256": "bd2d349bfd53246eaf3c1c6ad76a27b76b984b17c5fc00b3fab18144dbf4c91e",
+      "checks": 22
+    },
+    {
+      "file": "PROTECTED_CONTROLS.json",
+      "status": "PASS",
+      "SHA256": "8cba0bccc67eed55950bf5c144a586610bdd0cab05ada34a73c599da8e290f80",
+      "checks": 0
+    },
+    {
+      "file": "GENERAL_NAVIGATION.json",
+      "status": "PASS",
+      "SHA256": "53eac042b2b192cf606469b410d5d935556795ce6eeefa7c9366477ff46c69d6",
+      "checks": 4
+    },
+    {
+      "file": "CONTAINING_REAL_UI.json",
+      "status": "PASS",
+      "SHA256": "7c92edc13fd8b93d575659216b9184457f1488bd70a475dbd580b1b5b7498bd2",
+      "checks": 16
+    },
+    {
+      "file": "CONTAINING_IDS_REAL_UI.json",
+      "status": "PASS",
+      "SHA256": "faf399296f3433a8acd7acb703b06d9e7b85e1237d4bb5f6a9d55ed30a5449de",
+      "checks": 16
+    },
+    {
+      "file": "COMPACT_EVIDENCE.json",
+      "status": "PASS",
+      "SHA256": "f0f4bfd83036314fee7210d205b9817004a29d734584020c68771a3564f81c1d",
+      "checks": 0
+    }
+  ],
+  "C_remaining_404s": [
+    {
+      "URL": "http://127.0.0.1:63024/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961",
+      "status": 404,
+      "title": "",
+      "native404NavigationError": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:63024/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:63024/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "URL": "http://127.0.0.1:63024/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808",
+      "status": 404,
+      "title": "",
+      "native404NavigationError": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:63024/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:63024/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808\", waiting until \"load\"\u001b[22m\n"
+    }
+  ],
+  "baseline_limitations": [
+    {
+      "case": "Bellum Book I header ID",
+      "cause": "Latin and English TEI headers use the same original header ID",
+      "before_after": "Independently equal before/after; source-source collision outside the five requested defects",
+      "evidence": "PACKAGE_final_final.json, FIVE_DEFECTS_after.json and FIVE_DEFECTS_baseline.json"
+    }
+  ],
+  "harness_corrections": [
+    {
+      "failure": "Broad duplicate-ID check found inherited Bellum header",
+      "disposition": "Explicit independently measured baseline limitation; no source/header renaming"
+    },
+    {
+      "failure": "D test started before build completed, assumed nonexistent main element, then clicked before navbar transition ended",
+      "disposition": "Attempts preserved; completed build, actual body template and completed collapse transitions verified; no production change added"
+    },
+    {
+      "failure": "VII.1 positive test runner passed candidate as a directory path",
+      "disposition": "Original failed result and log preserved; corrected absolute tested-build path, fresh profile, positive source assertion PASS. Original job-level FAIL remains archived; effective suite gates use the corrected result."
+    }
+  ],
+  "no_new_supported_route_console_network_ID_or_text_regression": true,
+  "no_public_Niese_range_control_added": true
+}

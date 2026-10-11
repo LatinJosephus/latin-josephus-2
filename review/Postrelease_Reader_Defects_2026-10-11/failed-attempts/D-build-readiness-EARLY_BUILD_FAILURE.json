@@ -1,0 +1,19 @@
+{
+  "stage": "D",
+  "origin": "http://127.0.0.1:59594",
+  "instrumentation": false,
+  "checks": [],
+  "errors": [
+    {
+      "url": "http://127.0.0.1:59594/",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:59594/",
+      "error": "net::ERR_HTTP_RESPONSE_CODE_FAILURE"
+    }
+  ],
+  "assets": [],
+  "result": "FAIL",
+  "failure": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:59594/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:59594/\", waiting until \"load\"\u001b[22m\n"
+}

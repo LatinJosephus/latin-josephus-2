@@ -1,0 +1,55 @@
+{
+  "UTC": "2026-10-11T14:15:10.751672+00:00",
+  "overall": "PARTIAL CERTIFICATION — A/B/D/E PASS; C EDITORIAL HOLD",
+  "all_five_repaired": "NO-GO",
+  "independent_completed_packages": "PASS",
+  "packages": {
+    "A": {
+      "status": "PASS",
+      "fix": "Native named theme button, keyboard focus and accurate pressed state"
+    },
+    "B": {
+      "status": "PASS",
+      "fix": "UI annotation panel namespaced; every scholarly/source ID preserved"
+    },
+    "C": {
+      "status": "EDITORIAL HOLD / NOT REPAIRED / NOT PASSED",
+      "fix": null,
+      "decision": "Explicit human hold; original targets retained. Does not block A/B/D/E completion."
+    },
+    "D": {
+      "status": "PASS",
+      "fix": "Shared reader requires a work contract and real reader controls"
+    },
+    "E": {
+      "status": "PASS",
+      "fix": "Validate explicit Antiquities Niese requests against actual supported identities; accurate notice and valid links; no false passage"
+    }
+  },
+  "counts": {
+    "Antiquities_actual_Niese": 7376,
+    "Proem": 26,
+    "Antiquities_I_XX": 7350,
+    "traditional": 1689,
+    "Bamberg": 198,
+    "Alignment": 1441,
+    "cross_work_Niese": 8002,
+    "cross_work_structural": 1630
+  },
+  "zero_new_regressions": true,
+  "source_preservation": "143 XML and all 159 protected inputs exact; 5,158 of 5,166 original tracked files unchanged",
+  "baseline": "4ffbc79b84806d180e9d713f9605255e7dfed73e",
+  "public_preview_unchanged": "afea19c25456c4476c37e4ce7164a2b8ed3b61c8",
+  "implementation_tip": "951555f41c4fda1e21f7615b4a125f7036b3b55f",
+  "commits": [
+    "25549ff171cbb6335d3d1de3c533295acaafd82a Record independent reader-defect baselines and protected source inputs",
+    "d6f97a2427e07a87d1e10194507f19d6cceebe3c Name the theme button and preserve keyboard and theme state",
+    "9206f8240820724bf6d0a583a24e3b0bfc8c2a3c Separate the annotation panel ID from preserved TEI standOff IDs",
+    "d5a101da3868700c61bdf5d8c05cf0ef297f4afd Preserve missing Book-I note references on explicit editorial hold",
+    "b40cfdee3a0874f8e5a6d6968a7cbd241f382353 Initialize the shared reader only on reader pages",
+    "951555f41c4fda1e21f7615b4a125f7036b3b55f Reject unsupported Antiquities Niese requests without selecting substitute text"
+  ],
+  "tested_renderer_SHA256": "e75244c444771c733ca8ddb0d130b8f32463f59fd9460c26a5048b3669727322",
+  "readiness": "Clean locally certified A/B/D/E branch for separate integration review; no promotion authorized",
+  "final_commit_and_clean_state": "Runtime HANDOFF_RECEIPT.json is created after the evidence-only certification commit"
+}

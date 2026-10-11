@@ -1,0 +1,10 @@
+{
+  "stage": "D",
+  "origin": "http://127.0.0.1:56043",
+  "instrumentation": false,
+  "checks": [],
+  "errors": [],
+  "assets": [],
+  "result": "FAIL",
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  c.assert(await p.locator('.navbar-collapse').isVisible())\n"
+}

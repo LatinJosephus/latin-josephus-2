@@ -1,0 +1,119 @@
+{
+  "stage": "B",
+  "origin": "http://127.0.0.1:53802",
+  "instrumentation": false,
+  "checks": [
+    {
+      "route": "/antiquities/?book=1",
+      "test": "annotation highlight",
+      "highlighted": 74,
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=1",
+      "test": "unique IDs, original TEI identity, unchanged note content and working disclosure",
+      "sourceAnnotationsIDs": 1,
+      "paneHashes": {
+        "latin": "578c7cf8f60fa0139da41797b3419ed07726929247b7b26c2455a1366289afb7",
+        "greek": "87835e390e32fb28ad99cc9d5f10f73820cd436f41c5f3d29a9b7ff9fa0692fc",
+        "english": "729d12fd301f60c87eabf5f1f09fecfeb545bcaebff50ba5d8edac9e88ed8d41"
+      },
+      "notesSHA256": "ff0f23365e9e73590383725bb763efdf8826b1c8de5a586c98bf95170c7e50d5",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=11",
+      "test": "annotation highlight",
+      "highlighted": 32,
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=11",
+      "test": "unique IDs, original TEI identity, unchanged note content and working disclosure",
+      "sourceAnnotationsIDs": 1,
+      "paneHashes": {
+        "latin": "2349150e445ce789ffd1d545d61329da0e25eadac8facdcfa69a80da9cac36fc",
+        "greek": "eb452170077d2410f58a6cd7649a243abe6a17dcafb08a23293645a4e0d57746",
+        "english": "d4e784746a26b4a97b081b404b3165d919b42935da1ec20f3be9a67dbe429f20"
+      },
+      "notesSHA256": "a43081604a42dabe95d005c1b94fbc6cbbcd101db216e774b00a978d966230f0",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=20",
+      "test": "annotation highlight",
+      "highlighted": 8,
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=20",
+      "test": "unique IDs, original TEI identity, unchanged note content and working disclosure",
+      "sourceAnnotationsIDs": 1,
+      "paneHashes": {
+        "latin": "7304dfbfdda06ca75d2b7b598ab2bc417b91bfcfe2f1618ac1b24c5e8427cd6b",
+        "greek": "078936511e3cf9e1d6cf2831a0287129d099dff0a2c4b067332c2f2c64fe95ac",
+        "english": "857f17431eab1b9ef2d88448c989f8159cd50e682e5622bbe91d8263d09fdb3b"
+      },
+      "notesSHA256": "3698dc2bd7dee330efd59137ab9c194811acb9dd34316d83d9b1f346a81904e1",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=11&chapter=8",
+      "test": "annotation highlight",
+      "highlighted": 4,
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=11&chapter=8",
+      "test": "unique IDs, original TEI identity, unchanged note content and working disclosure",
+      "sourceAnnotationsIDs": 0,
+      "paneHashes": {
+        "latin": "b1fdc50377e510556821d0b7a9b7807eaf53cab44a017d4f81ff3c6cb7517975",
+        "greek": "326ad9c9bff0cacad4930ab7a9b13fcb17a9a6d7efe7f000a49f8cbc883535d1",
+        "english": "00657c87717fb59a89cc3fa3fdab7d036a4a6bb2bf1566858e30606cce234bef"
+      },
+      "notesSHA256": "9d5dd36b69be8f0a14040746ffa096d65af3e1e6f81a74789110bfb84d4e862e",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=11&niese=312",
+      "test": "annotation highlight",
+      "highlighted": 1,
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=11&niese=312",
+      "test": "unique IDs, original TEI identity, unchanged note content and working disclosure",
+      "sourceAnnotationsIDs": 0,
+      "paneHashes": {
+        "latin": "cabce5d058c26cfdd7593606ffe83b6119a09c792c1650937292e2c2ead4cf44",
+        "greek": "3ffd1c9bd765a0963521b00bb7533487a3564415c1c270d9a31e10a65611af3c",
+        "english": "f5c05498f65a907ba61c24b0e3f4e9da1e92614d4ff193eec1756feaaf84f812"
+      },
+      "notesSHA256": "90b6992554024b70adeab27289321c98e6302d871e731bd95c0421af305f948a",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=20&niese=268",
+      "test": "annotation highlight",
+      "highlighted": 0,
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=20&niese=268",
+      "test": "unique IDs, original TEI identity, unchanged note content and working disclosure",
+      "sourceAnnotationsIDs": 0,
+      "paneHashes": {
+        "latin": "b891f3a17bef6d656700e742b158f9d297e400cdc483376bd36a9cb4e9fc77c1",
+        "greek": "b2f4b17d7bc2aa85309e201cda214b4869be4a3fa38f65b2d5a21c41a0be7886",
+        "english": "a778f19dfbec6dcd210dc97ef74fad99fb4210b02e118d653048aef5296e7cdf"
+      },
+      "notesSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "assets": [],
+  "result": "FAIL",
+  "failure": "AssertionError [ERR_ASSERTION]: /bellum-judaicum/?book=1 duplicate IDs\n+ actual - expected\n\n+ [\n+   'header'\n+ ]\n- []\n"
+}

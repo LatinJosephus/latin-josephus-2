@@ -1,0 +1,11 @@
+# Reproducing the local certification
+
+Tested implementation: 951555f41c4fda1e21f7615b4a125f7036b3b55f; canonical baseline: 4ffbc79b84806d180e9d713f9605255e7dfed73e. All native build and browser dependencies were discovered from the existing certified harness. Exact executable paths, builds, configs and command arguments are preserved in postrelease_reader.py, postrelease_runqa.py, BUILD_candidate-final.json and FINAL_JOB_*.json.
+
+The baseline site was built before production edits and remains immutable under `C:\workspace\LatinJosephus-postrelease-reader-repairs-runtime-20261011/baseline-site`. The final site is `C:\workspace\LatinJosephus-postrelease-reader-repairs-runtime-20261011/candidate-final-site`. Reusing these roots with fresh profiles reproduces the exact comparison; a new build can instead be created from a separate checkout of the baseline and this repair branch. The source tree must not be silently reset to create that comparison.
+
+Run postrelease_reader.py build candidate-final to create the final native build. Run postrelease_runqa.py prepare then its niese, structural and focused jobs with Python; they invoke the discovered Node/Playwright/Chrome runtime and allocate independent ports. Run postrelease_extra.py for general navigation and structural IDs, and postrelease_screens.cjs for compact native before/after evidence. The exact original positive-test failure is archived; the corrected invocation passes the absolute candidate-final-site directory, followed by candidate as the mode.
+
+QA harnesses under qa/ export production selectors only when explicitly instrumented for exhaustive structural or internal composite tests. The 7,376 selection replay and focused UI/source checks run unmodified built production JS. No exported getter or public combined-range control is part of the production patch.
+
+Full DOM/text/ID/type/qualification captures are preserved compressed in baseline-NIESE.json.gz and candidate-final-NIESE.json.gz; NIESE_MATRIX.csv lists every actual local URL and matched hashes. Baseline source hashes for all 5,166 original files are in BASELINE.json. Focused VII source evidence includes full surviving English and exact Greek comparisons; no English boundaries are manufactured.
