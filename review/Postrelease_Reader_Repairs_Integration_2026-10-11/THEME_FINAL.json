@@ -1,0 +1,621 @@
+{
+  "origin": "http://127.0.0.1:62366",
+  "checks": [
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "test": "Tab, Enter, Space, accessible name/role/state and focus",
+      "tabs": [
+        "",
+        "",
+        "",
+        "navbarDropdown",
+        "light-toggle"
+      ],
+      "AX": {
+        "nodeId": "39",
+        "ignored": false,
+        "role": {
+          "type": "role",
+          "value": "button"
+        },
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 175
+        },
+        "name": {
+          "type": "computedString",
+          "value": "Dark mode",
+          "sources": [
+            {
+              "type": "relatedElement",
+              "attribute": "aria-labelledby"
+            },
+            {
+              "type": "attribute",
+              "value": {
+                "type": "computedString",
+                "value": "Dark mode"
+              },
+              "attribute": "aria-label",
+              "attributeValue": {
+                "type": "string",
+                "value": "Dark mode"
+              }
+            },
+            {
+              "type": "relatedElement",
+              "superseded": true,
+              "nativeSource": "label"
+            },
+            {
+              "type": "contents",
+              "superseded": true
+            },
+            {
+              "type": "attribute",
+              "attribute": "title",
+              "superseded": true
+            }
+          ]
+        },
+        "properties": [
+          {
+            "name": "invalid",
+            "value": {
+              "type": "token",
+              "value": "false"
+            }
+          },
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "pressed",
+            "value": {
+              "type": "tristate",
+              "value": "false"
+            }
+          }
+        ],
+        "parentId": "36",
+        "childIds": [
+          "90"
+        ],
+        "backendDOMNodeId": 39
+      },
+      "focus": {
+        "active": true,
+        "outline": "solid",
+        "width": "2px"
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "width": 1440,
+      "theme": "light",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-1-1440-light.png",
+      "colors": {
+        "bodyText": "rgb(79, 79, 79)",
+        "bodyBackground": "rgb(255, 255, 255)",
+        "paneColors": [
+          {
+            "pane": "latin",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "pane": "english",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "pane": "greek",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        ],
+        "width": 1440,
+        "scrollWidth": 1440
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "width": 1440,
+      "theme": "dark",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-2-1440-dark.png",
+      "colors": {
+        "bodyText": "rgb(242, 237, 228)",
+        "bodyBackground": "rgb(38, 35, 32)",
+        "paneColors": [
+          {
+            "pane": "latin",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.996)"
+          },
+          {
+            "pane": "english",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.996)"
+          },
+          {
+            "pane": "greek",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.996)"
+          }
+        ],
+        "width": 1440,
+        "scrollWidth": 1440
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "width": 390,
+      "theme": "light",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-3-390-light.png",
+      "colors": {
+        "bodyText": "rgb(79, 79, 79)",
+        "bodyBackground": "rgb(250, 250, 250)",
+        "paneColors": [
+          {
+            "pane": "latin",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.024)"
+          },
+          {
+            "pane": "english",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.024)"
+          },
+          {
+            "pane": "greek",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.024)"
+          }
+        ],
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "width": 390,
+      "theme": "dark",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-4-390-dark.png",
+      "colors": {
+        "bodyText": "rgb(242, 237, 228)",
+        "bodyBackground": "rgb(39, 36, 33)",
+        "paneColors": [
+          {
+            "pane": "latin",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.992)"
+          },
+          {
+            "pane": "english",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.992)"
+          },
+          {
+            "pane": "greek",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.992)"
+          }
+        ],
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "test": "reload and subsequent navigation persistence",
+      "theme": "dark",
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "test": "Tab, Enter, Space, accessible name/role/state and focus",
+      "tabs": [
+        "",
+        "",
+        "",
+        "navbarDropdown",
+        "light-toggle"
+      ],
+      "AX": {
+        "nodeId": "1987",
+        "ignored": false,
+        "role": {
+          "type": "role",
+          "value": "button"
+        },
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 175
+        },
+        "name": {
+          "type": "computedString",
+          "value": "Dark mode",
+          "sources": [
+            {
+              "type": "relatedElement",
+              "attribute": "aria-labelledby"
+            },
+            {
+              "type": "attribute",
+              "value": {
+                "type": "computedString",
+                "value": "Dark mode"
+              },
+              "attribute": "aria-label",
+              "attributeValue": {
+                "type": "string",
+                "value": "Dark mode"
+              }
+            },
+            {
+              "type": "relatedElement",
+              "superseded": true,
+              "nativeSource": "label"
+            },
+            {
+              "type": "contents",
+              "superseded": true
+            },
+            {
+              "type": "attribute",
+              "attribute": "title",
+              "superseded": true
+            }
+          ]
+        },
+        "properties": [
+          {
+            "name": "invalid",
+            "value": {
+              "type": "token",
+              "value": "false"
+            }
+          },
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "pressed",
+            "value": {
+              "type": "tristate",
+              "value": "true"
+            }
+          }
+        ],
+        "parentId": "2038",
+        "childIds": [
+          "2040"
+        ],
+        "backendDOMNodeId": 1987
+      },
+      "focus": {
+        "active": true,
+        "outline": "solid",
+        "width": "2px"
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "width": 1440,
+      "theme": "light",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-7-1440-light.png",
+      "colors": {
+        "bodyText": "rgb(47, 43, 38)",
+        "bodyBackground": "rgb(248, 246, 241)",
+        "paneColors": [],
+        "width": 1440,
+        "scrollWidth": 1440
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "width": 1440,
+      "theme": "dark",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-8-1440-dark.png",
+      "colors": {
+        "bodyText": "rgb(242, 237, 228)",
+        "bodyBackground": "rgb(37, 34, 31)",
+        "paneColors": [],
+        "width": 1440,
+        "scrollWidth": 1440
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "theme": "light",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-9-390-light.png",
+      "colors": {
+        "bodyText": "rgb(47, 43, 38)",
+        "bodyBackground": "rgb(249, 247, 241)",
+        "paneColors": [],
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "theme": "dark",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-10-390-dark.png",
+      "colors": {
+        "bodyText": "rgb(242, 237, 228)",
+        "bodyBackground": "rgb(37, 34, 31)",
+        "paneColors": [],
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "test": "reload and subsequent navigation persistence",
+      "theme": "dark",
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "test": "Tab, Enter, Space, accessible name/role/state and focus",
+      "tabs": [
+        "",
+        "",
+        "",
+        "navbarDropdown",
+        "light-toggle"
+      ],
+      "AX": {
+        "nodeId": "2450",
+        "ignored": false,
+        "role": {
+          "type": "role",
+          "value": "button"
+        },
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 175
+        },
+        "name": {
+          "type": "computedString",
+          "value": "Dark mode",
+          "sources": [
+            {
+              "type": "relatedElement",
+              "attribute": "aria-labelledby"
+            },
+            {
+              "type": "attribute",
+              "value": {
+                "type": "computedString",
+                "value": "Dark mode"
+              },
+              "attribute": "aria-label",
+              "attributeValue": {
+                "type": "string",
+                "value": "Dark mode"
+              }
+            },
+            {
+              "type": "relatedElement",
+              "superseded": true,
+              "nativeSource": "label"
+            },
+            {
+              "type": "contents",
+              "superseded": true
+            },
+            {
+              "type": "attribute",
+              "attribute": "title",
+              "superseded": true
+            }
+          ]
+        },
+        "properties": [
+          {
+            "name": "invalid",
+            "value": {
+              "type": "token",
+              "value": "false"
+            }
+          },
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "pressed",
+            "value": {
+              "type": "tristate",
+              "value": "true"
+            }
+          }
+        ],
+        "parentId": "2502",
+        "childIds": [
+          "2504"
+        ],
+        "backendDOMNodeId": 2450
+      },
+      "focus": {
+        "active": true,
+        "outline": "solid",
+        "width": "2px"
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "width": 1440,
+      "theme": "light",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-13-1440-light.png",
+      "colors": {
+        "bodyText": "rgb(79, 79, 79)",
+        "bodyBackground": "rgb(236, 236, 235)",
+        "paneColors": [
+          {
+            "pane": "latin",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.086)"
+          },
+          {
+            "pane": "english",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.086)"
+          },
+          {
+            "pane": "greek",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.086)"
+          }
+        ],
+        "width": 1440,
+        "scrollWidth": 1440
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "width": 1440,
+      "theme": "dark",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-14-1440-dark.png",
+      "colors": {
+        "bodyText": "rgb(242, 237, 228)",
+        "bodyBackground": "rgb(39, 36, 33)",
+        "paneColors": [
+          {
+            "pane": "latin",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.996)"
+          },
+          {
+            "pane": "english",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.996)"
+          },
+          {
+            "pane": "greek",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.996)"
+          }
+        ],
+        "width": 1440,
+        "scrollWidth": 1440
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "width": 390,
+      "theme": "light",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-15-390-light.png",
+      "colors": {
+        "bodyText": "rgb(79, 79, 79)",
+        "bodyBackground": "rgb(250, 250, 250)",
+        "paneColors": [
+          {
+            "pane": "latin",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.024)"
+          },
+          {
+            "pane": "english",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.024)"
+          },
+          {
+            "pane": "greek",
+            "text": "rgb(47, 43, 38)",
+            "background": "rgba(49, 44, 39, 0.024)"
+          }
+        ],
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "width": 390,
+      "theme": "dark",
+      "screenshot": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\screenshots\\THEME-final-16-390-dark.png",
+      "colors": {
+        "bodyText": "rgb(242, 237, 228)",
+        "bodyBackground": "rgb(44, 41, 38)",
+        "paneColors": [
+          {
+            "pane": "latin",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.973)"
+          },
+          {
+            "pane": "english",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.973)"
+          },
+          {
+            "pane": "greek",
+            "text": "rgb(242, 237, 228)",
+            "background": "rgba(49, 44, 39, 0.973)"
+          }
+        ],
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "test": "reload and subsequent navigation persistence",
+      "theme": "dark",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

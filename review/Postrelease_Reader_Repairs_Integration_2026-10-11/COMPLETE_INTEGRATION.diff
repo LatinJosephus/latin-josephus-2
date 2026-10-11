@@ -1,0 +1,153 @@
+_includes/annotations-bar.html                     |     4 +-
+ _includes/header.html                              |     8 +-
+ _sass/_antiquities.scss                            |     2 +-
+ _sass/_branding.scss                               |    14 +
+ _sass/_reader-ui.scss                              |    10 +-
+ assets/js/dark_mode.js                             |     2 +
+ assets/js/renderTei.js                             |    66 +-
+ assets/js/theme.js                                 |     8 +
+ .../ANNOTATIONS_ID_SOURCE_INVENTORY.json           |    30 +
+ .../APPARATUS_SOURCE_TRACE.json                    |    80 +
+ .../AUDIT_REFERENCE_MANIFEST.json                  |    22 +
+ .../BASELINE.json                                  | 31299 ++++++++++++++++++
+ .../BUILD_A.json                                   |  1266 +
+ .../BUILD_B.json                                   |  1266 +
+ .../BUILD_D.json                                   |  1266 +
+ .../BUILD_E.json                                   |  1266 +
+ .../BUILD_baseline.json                            |  1266 +
+ .../BUILD_candidate-final.json                     |  1266 +
+ .../CERTIFICATE.json                               |    55 +
+ .../CHANGED_FILES.json                             |  2024 ++
+ .../COMBINED_CONTEXT.json                          |    92 +
+ .../COMPACT_EVIDENCE.json                          |   377 +
+ .../CONTAINING_IDS_REAL_UI.json                    |   264 +
+ .../CONTAINING_REAL_UI.json                        |   264 +
+ .../CONTEXT_GUARDS.json                            |    54 +
+ .../DECISIONS.md                                   |    11 +
+ .../DEFECT_REPRODUCTIONS.md                        |    15 +
+ .../EVIDENCE_INDEX.md                              |    38 +
+ .../FINAL_JOB_focused.json                         |   100 +
+ .../FINAL_JOB_niese.json                           |    15 +
+ .../FINAL_JOB_structural.json                      |    22 +
+ .../FIVE_DEFECTS_after.json                        |  3050 ++
+ .../FIVE_DEFECTS_baseline.json                     |  3123 ++
+ .../FIVE_DEFECTS_live.json                         |  3121 ++
+ .../GENERAL_NAVIGATION.json                        |    38 +
+ .../KEYBOARD_FULL_SOURCE.json                      |   316 +
+ .../MID_QA_CHECKPOINT.json                         |    13 +
+ .../NIESE_EXACT_COMPARISON.json                    |    12 +
+ .../NIESE_MATRIX.csv                               |  7377 +++++
+ .../PACKAGE_A.json                                 |   464 +
+ .../PACKAGE_B.json                                 |   172 +
+ .../PACKAGE_D.json                                 |    58 +
+ .../PACKAGE_E.json                                 |   264 +
+ .../PACKAGE_E_final.json                           |   264 +
+ .../PACKAGE_final_final.json                       |   220 +
+ .../PROTECTED_CONTROLS.json                        |   486 +
+ .../PROTECTED_SOURCE_INPUTS.json                   |   959 +
+ .../READER_FINAL_PRIOR_RESULTS.json                |   496 +
+ .../READ_ONLY_RECEIPT.json                         |   320 +
+ .../REPORT.md                                      |    51 +
+ .../REPRODUCE.md                                   |    11 +
+ .../SOURCE_MANIFEST_VERIFICATION.json              |    15 +
+ .../SOURCE_PRESERVATION.json                       |  1455 +
+ .../TARGETED_UI.json                               |   220 +
+ .../TEST_RESULTS.json                              |   654 +
+ .../THEME_FINAL.json                               |   621 +
+ .../UNRESOLVED_REFERENCES.json                     |   174 +
+ .../UNRESOLVED_REFERENCES.md                       |    17 +
+ .../VII2_6_NAVIGATION_PRESENTATION.json            |   181 +
+ .../baseline-NIESE.json.gz                         |   Bin 0 -> 1697092 bytes
+ .../candidate-VII1-7.json                          |   345 +
+ .../candidate-VII1-REGRESSION.json                 |    62 +
+ .../candidate-final-NIESE.json.gz                  |   Bin 0 -> 1728421 bytes
+ .../checkpoint-indexes/checkpoint-baseline.json    |    58 +
+ .../checkpoint-indexes/checkpoint-package-A.json   |    78 +
+ .../checkpoint-indexes/checkpoint-package-B.json   |    90 +
+ .../checkpoint-package-C-hold.json                 |   102 +
+ .../checkpoint-indexes/checkpoint-package-D.json   |   110 +
+ .../checkpoint-indexes/checkpoint-package-E.json   |   122 +
+ .../B-header-baseline-INITIAL_FAILURE.json         |   119 +
+ .../D-build-readiness-EARLY_BUILD_FAILURE.json     |    19 +
+ ...-build-readiness-MISSING_TEST_MAIN_ELEMENT.json |    10 +
+ .../D-build-readiness-NAVBAR_CLOSE_TRANSITION.json |    10 +
+ ...D-build-readiness-NAVBAR_TRANSITION_TIMING.json |    10 +
+ .../baseline-http-error-original-script.cjs        |     2 +
+ .../baseline-http-error-partial-baseline.json      |  1921 ++
+ .../final-positive-build-path-INITIAL_FAILURE.json |    12 +
+ .../logs/BUILD-A.log                               |   134 +
+ .../logs/BUILD-B.log                               |   134 +
+ .../logs/BUILD-D.log                               |   134 +
+ .../logs/BUILD-E.log                               |   134 +
+ .../logs/BUILD-baseline.log                        |   134 +
+ .../logs/BUILD-candidate-final.log                 |   134 +
+ .../logs/FINAL-focused-1.log                       |     1 +
+ .../logs/FINAL-focused-10.log                      |     1 +
+ .../logs/FINAL-focused-11.log                      |     1 +
+ .../logs/FINAL-focused-12.log                      |     1 +
+ .../logs/FINAL-focused-2.log                       |     1 +
+ .../logs/FINAL-focused-3.log                       |     1 +
+ .../logs/FINAL-focused-4.log                       |     1 +
+ .../logs/FINAL-focused-5.log                       |     5 +
+ .../logs/FINAL-focused-6.log                       |     1 +
+ .../logs/FINAL-focused-7.log                       |     1 +
+ .../logs/FINAL-focused-8.log                       |     1 +
+ .../logs/FINAL-focused-9.log                       |     1 +
+ .../logs/FINAL-niese-1.log                         |    94 +
+ .../logs/FINAL-structural-1.log                    |    43 +
+ .../logs/FINAL-structural-2.log                    |     1 +
+ .../postrelease_edit.py                            |    70 +
+ .../postrelease_extra.py                           |    19 +
+ .../postrelease_finalize.py                        |   153 +
+ .../postrelease_focused_test.cjs                   |    35 +
+ .../postrelease_general_navigation.cjs             |     6 +
+ .../postrelease_hold.py                            |    36 +
+ .../postrelease_invalid_test.cjs                   |    10 +
+ .../postrelease_package.py                         |    25 +
+ .../postrelease_reader.py                          |    84 +
+ .../postrelease_reproduce.cjs                      |     2 +
+ .../postrelease_runqa.py                           |    43 +
+ .../postrelease_screens.cjs                        |     8 +
+ .../postrelease_stage.py                           |    40 +
+ .../postrelease_theme_final.cjs                    |    19 +
+ .../postrelease_theme_test.cjs                     |     2 +
+ .../qa/AUTHORIZED_ADDITIONS.json                   |  2162 ++
+ .../qa/BUILD_CONTEXT.json                          |     1 +
+ .../qa/EXPECTED_SELECTIONS.json                    |  5566 ++++
+ .../qa/READER_FINAL_PRIOR_RESULTS.json             |   496 +
+ .../qa/TRADITIONAL_EXPECTATIONS.json               | 14592 +++++++++
+ .../qa/VII1-7-source-display.cjs                   |     2 +
+ .../qa/VII1-context-regression.test.cjs            |     2 +
+ .../qa/VII2-6-navigation.cjs                       |     2 +
+ .../qa/all-niese-final.cjs                         |     2 +
+ .../qa/all-niese.cjs                               |     2 +
+ .../qa/baseline-exceptions.cjs                     |     2 +
+ .../qa/build.rb                                    |     9 +
+ .../qa/combined-context.test.cjs                   |     2 +
+ .../qa/common.cjs                                  |    15 +
+ .../qa/containing-ids-real.cjs                     |     2 +
+ .../qa/containing-real.cjs                         |     2 +
+ .../qa/context-guards.cjs                          |     2 +
+ .../qa/keyboard-full-source.cjs                    |    18 +
+ .../qa/local.yml                                   |     2 +
+ .../qa/protected-controls.cjs                      |    38 +
+ .../qa/qa-common18.cjs                             |    25 +
+ .../qa/reader-structure-crosswork.cjs              |    56 +
+ .../qa/reload-race-comparison.cjs                  |     2 +
+ .../qa/targeted-ui.cjs                             |     2 +
+ .../screenshots/COMPACT-baseline-Book-XI.png       |   Bin 0 -> 305971 bytes
+ .../screenshots/COMPACT-baseline-Book-XX.png       |   Bin 0 -> 301445 bytes
+ .../screenshots/COMPACT-baseline-Home.png          |   Bin 0 -> 84738 bytes
+ .../COMPACT-baseline-Unsupported-I1.png            |   Bin 0 -> 48375 bytes
+ .../COMPACT-candidate-final-Book-XI.png            |   Bin 0 -> 305971 bytes
+ .../COMPACT-candidate-final-Book-XX.png            |   Bin 0 -> 301445 bytes
+ .../screenshots/COMPACT-candidate-final-Home.png   |   Bin 0 -> 84738 bytes
+ .../COMPACT-candidate-final-Unsupported-I1.png     |   Bin 0 -> 51079 bytes
+ .../screenshots/THEME-final-1-1440-light.png       |   Bin 0 -> 330095 bytes
+ .../screenshots/THEME-final-2-1440-dark.png        |   Bin 0 -> 328630 bytes
+ .../screenshots/THEME-final-3-390-light.png        |   Bin 0 -> 323744 bytes
+ .../screenshots/THEME-final-4-390-dark.png         |   Bin 0 -> 322637 bytes
+ .../BASELINE.json                                  | 31572 +++++++++++++++++++
+ .../UNRESOLVED_REFERENCES.json                     |   174 +
+ .../UNRESOLVED_REFERENCES.md                       |    17 +
+ 152 files changed, 125952 insertions(+), 19 deletions(-)

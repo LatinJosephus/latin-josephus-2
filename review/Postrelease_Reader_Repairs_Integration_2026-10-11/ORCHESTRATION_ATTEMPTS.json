@@ -1,0 +1,12 @@
+{
+  "attempts": [
+    {
+      "action": "seal combined evidence",
+      "outcome": "Stopped before evidence commit or promotion",
+      "error": "KeyError: status at BUILD_VERSION_COMPARISON.json lookup",
+      "diagnosis": "Sealing helper expected status; actual existing manifest uses result. No browser assertion or production build failed.",
+      "correction": "Read actual result field; repeat sealing only.",
+      "UTC_recorded": "2026-10-11T16:29:15.331194+00:00"
+    }
+  ]
+}

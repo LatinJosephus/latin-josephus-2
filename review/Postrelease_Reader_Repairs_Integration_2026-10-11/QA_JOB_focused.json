@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\postrelease_theme_final.cjs",
+      "script_SHA256": "e077f4863eebe40bf23ca76870706df8b371b5d8833d83a81c7f4e9635eb88f8",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-1.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\postrelease_focused_test.cjs",
+      "script_SHA256": "22a8899b2f17f8c6a5798fa90c4dd136b8bdce68b4840eba25895aed272d0922",
+      "args": [
+        "final"
+      ],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-2.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\postrelease_invalid_test.cjs",
+      "script_SHA256": "ee461ec26b60960dbde9910fd13d7db44db3e07abf508d32ea487e833c7d8b9c",
+      "args": [
+        "final"
+      ],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-3.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\VII1-7-source-display.cjs",
+      "script_SHA256": "2ac4f86100b0d661b743bac4e99ba482b89973c391d16521ecc49e93fd8e0a09",
+      "args": [
+        "candidate"
+      ],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-4.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\VII1-context-regression.test.cjs",
+      "script_SHA256": "c9dc19296561d4bc7cd7db53ffca469be538156831a67af9935f37b98323cc0c",
+      "args": [
+        "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\candidate-final-site",
+        "candidate"
+      ],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-5.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\combined-context.test.cjs",
+      "script_SHA256": "7082f0815e8cc88ae3c6831cd02106154c5e299ec23c3095ba496a9598b8961e",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-6.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\context-guards.cjs",
+      "script_SHA256": "0f08289ede6e60fa1269c957d9154d0fb39adae70be7e4e03c3c24678a500b1b",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-7.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\targeted-ui.cjs",
+      "script_SHA256": "ef70849805cd237d612a107b701ce0c86dbcd2d1d6a995271c59b26273bab609",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-8.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\VII2-6-navigation.cjs",
+      "script_SHA256": "4930e7a24613c4512130c1ecfcac2a6ab0f97cf63a45c1fee3d08ff91d765d4a",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-9.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\keyboard-full-source.cjs",
+      "script_SHA256": "f841d97c2e95cb1d7c05d97b69ae4ca585828bafc7989c2a1cd20de766b7a194",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-10.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\protected-controls.cjs",
+      "script_SHA256": "ea3140be7cb57fe4d77533c2f9a2bec6f497e59a30dfcc5563a17e9ac9040332",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-11.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\postrelease_reproduce.cjs",
+      "script_SHA256": "19fedf84ecd4ca6d9a34337bde23af9af3f0519a1f3ebd9fbb7675607734a5e2",
+      "args": [
+        "candidate-final"
+      ],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-12.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\postrelease_general_navigation.cjs",
+      "script_SHA256": "653220d38c6748e50a8a47104ac905b9865f00d7543fff7b7ee9c08e83cc5e57",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-13.log",
+      "exit_code": 0
+    },
+    {
+      "script": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\qa\\postrelease_screens.cjs",
+      "script_SHA256": "4536e09e63fc109a7aa1a95181b10af8911897edf0f3d5184078df590302b8c4",
+      "args": [],
+      "log": "C:\\workspace\\Postrelease-Reader-Repairs-Integration-runtime-20261011\\logs\\QA-focused-14.log",
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "origins": [
+    "http://127.0.0.1:56062",
+    "http://127.0.0.1:56063"
+  ],
+  "checks": [
+    {
+      "route": "/",
+      "test": "general page static content exact before/after, targeted baseline error independently reproduced",
+      "textSHA256": "6fcf7cdfb8da692052df51f73f73005ad53c914560f3885cfe19147d1c835883",
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "test": "general page static content exact before/after, targeted baseline error independently reproduced",
+      "textSHA256": "daaf796a09986ccf491f63a7ee441836fe11ad0693d125da6e562b6c3586e590",
+      "result": "PASS"
+    },
+    {
+      "route": "/background/",
+      "test": "general page static content exact before/after, targeted baseline error independently reproduced",
+      "textSHA256": "9d88772664566c5d3bfbab6ab6e2befe686fc5212f1f7286799b793ddbedf937",
+      "result": "PASS"
+    },
+    {
+      "test": "actual navbar links from general pages to reader and back; history/reload",
+      "url": "http://127.0.0.1:56063/about/",
+      "result": "PASS"
+    }
+  ],
+  "beforeErrors": [
+    "TypeError: Cannot read properties of undefined (reading 'languages')",
+    "TypeError: Cannot read properties of undefined (reading 'languages')",
+    "TypeError: Cannot read properties of undefined (reading 'languages')"
+  ],
+  "errors": [],
+  "result": "PASS"
+}

@@ -1,0 +1,264 @@
+{
+  "stage": "final",
+  "origin": "http://127.0.0.1:51286",
+  "instrumentation": false,
+  "checks": [
+    {
+      "route": "/antiquities/?book=1&niese=1",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"1\" is unsupported in Book 01. This selection supports sections 27–346. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=20&niese=269",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"269\" is unsupported in Book 20. This selection supports sections 1–268. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=preface&niese=27",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"27\" is unsupported in Proem (Antiquities I.1–26). This selection supports sections 1–26. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=abc",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"abc\" is unsupported in Book 07. This selection supports sections 1–394. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"\" is unsupported in Book 07. This selection supports sections 1–394. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=0",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"0\" is unsupported in Book 07. This selection supports sections 1–394. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=-1",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"-1\" is unsupported in Book 07. This selection supports sections 1–394. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=999999999999999999999999",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"1e+24\" is unsupported in Book 07. This selection supports sections 1–394. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=99&niese=1",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "The requested Antiquities book \"99\" is unsupported. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=0&niese=1",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "The requested Antiquities book \"0\" is unsupported. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=1&niese=1",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"1\" is unsupported in Book 01. This selection supports sections 27–346. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "test": "I.1 notice to supported Proem 1",
+      "url": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1",
+      "book": "preface",
+      "n": 1,
+      "result": "PASS"
+    },
+    {
+      "test": "forward to real Proem 1",
+      "url": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1",
+      "book": "preface",
+      "n": 1,
+      "result": "PASS"
+    },
+    {
+      "test": "I.1 notice to real I.27",
+      "url": "http://127.0.0.1:51286/antiquities/?book=1&niese=27",
+      "book": "1",
+      "n": 27,
+      "result": "PASS"
+    },
+    {
+      "test": "I.27 next",
+      "url": "http://127.0.0.1:51286/antiquities/?book=1&niese=28",
+      "book": "1",
+      "n": 28,
+      "result": "PASS"
+    },
+    {
+      "test": "I.28 previous",
+      "url": "http://127.0.0.1:51286/antiquities/?book=1&niese=27",
+      "book": "1",
+      "n": 27,
+      "result": "PASS"
+    },
+    {
+      "test": "I.27 reload",
+      "url": "http://127.0.0.1:51286/antiquities/?book=1&niese=27",
+      "book": "1",
+      "n": 27,
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=1&niese=1",
+      "test": "accurate unsupported notice, unchanged URL, no false text, valid navigation links",
+      "notice": "Niese section \"1\" is unsupported in Book 01. This selection supports sections 27–346. No passage is displayed.\n\nRead Proem, Niese section 1 · Read Book I, Niese section 27",
+      "links": [
+        {
+          "text": "Read Proem, Niese section 1",
+          "href": "http://127.0.0.1:51286/antiquities/?book=preface&niese=1"
+        },
+        {
+          "text": "Read Book I, Niese section 27",
+          "href": "http://127.0.0.1:51286/antiquities/?book=1&niese=27"
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "test": "valid menu exits unsupported state",
+      "url": "http://127.0.0.1:51286/antiquities/?book=1&niese=27",
+      "book": "1",
+      "n": 27,
+      "result": "PASS"
+    },
+    {
+      "test": "supported Proem 26",
+      "url": "http://127.0.0.1:51286/antiquities/?book=preface&niese=26",
+      "book": "preface",
+      "n": 26,
+      "result": "PASS"
+    },
+    {
+      "test": "real Proem-to-Book-I transition",
+      "url": "http://127.0.0.1:51286/antiquities/?book=1&niese=27",
+      "book": "1",
+      "n": 27,
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

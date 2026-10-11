@@ -1,0 +1,301 @@
+diff --git a/_includes/annotations-bar.html b/_includes/annotations-bar.html
+index 73d862e..91efa05 100644
+--- a/_includes/annotations-bar.html
++++ b/_includes/annotations-bar.html
+@@ -1,4 +1,4 @@
+-<div class="accordion card fixed-bottom" id="annotations">
++<div class="accordion card fixed-bottom" id="reader-annotations">
+   <div class="accordion-item">
+     <h3 class="accordion-header" id="annotations-header">
+       <button
+@@ -16,7 +16,7 @@
+       id="collapse-annotations"
+       class="accordion-collapse collapse"
+       aria-labelledby="annotations-header"
+-      data-mdb-parent="#annotations"
++      data-mdb-parent="#reader-annotations"
+     >
+       <div id="annotations-list" class="accordion-body">
+ 
+diff --git a/_includes/header.html b/_includes/header.html
+index 7604d35..b7097f0 100644
+--- a/_includes/header.html
++++ b/_includes/header.html
+@@ -49,10 +49,10 @@
+           {% endfor %}
+           {% if site.enable_darkmode %}
+             <div class = "toggle-container">
+-              <a id = "light-toggle">
+-                  <i class="fas fa-moon"></i>
+-                  <i class="fas fa-sun"></i>
+-              </a>
++              <button id="light-toggle" type="button" aria-label="Dark mode" aria-pressed="false">
++                  <i class="fas fa-moon" aria-hidden="true"></i>
++                  <i class="fas fa-sun" aria-hidden="true"></i>
++              </button>
+             </div>
+           {% endif %}
+         </ul>
+diff --git a/_sass/_antiquities.scss b/_sass/_antiquities.scss
+index e2ef645..250c970 100644
+--- a/_sass/_antiquities.scss
++++ b/_sass/_antiquities.scss
+@@ -13,7 +13,7 @@ tei-note {
+   }
+ }
+ 
+-#annotations {
++#reader-annotations {
+   grid-column-start: 1;
+   grid-column-end: 4;
+   grid-row-start: 2;
+diff --git a/_sass/_branding.scss b/_sass/_branding.scss
+index 9eeac87..3ebb020 100644
+--- a/_sass/_branding.scss
++++ b/_sass/_branding.scss
+@@ -98,6 +98,20 @@ html[data-theme='dark'] .lj-navbar .lj-brand__dark {
+   outline: 2px solid var(--lj-brand-accent);
+   outline-offset: 4px;
+ }
++/* Keep the existing icon-only appearance with native button semantics. */
++.lj-navbar #light-toggle {
++  border: 0;
++  background: transparent;
++  padding: 0;
++  color: inherit;
++  cursor: pointer;
++}
++
++.lj-navbar #light-toggle:focus-visible {
++  outline: 2px solid var(--lj-brand-accent);
++  outline-offset: 4px;
++}
++
+ /* Preserve Font Awesome glyphs in the dark-mode toggle.
+    The Latin Josephus UI font must not override this icon font. */
+ #light-toggle .fas,
+diff --git a/_sass/_reader-ui.scss b/_sass/_reader-ui.scss
+index 6199074..ad3fec6 100644
+--- a/_sass/_reader-ui.scss
++++ b/_sass/_reader-ui.scss
+@@ -141,9 +141,9 @@ html[data-theme='dark'] .card,
+ html[data-theme='dark'] #display-settings,
+ html[data-theme='dark'] #display-settings .accordion-item,
+ html[data-theme='dark'] #display-settings .accordion-body,
+-html[data-theme='dark'] #annotations,
+-html[data-theme='dark'] #annotations .accordion-item,
+-html[data-theme='dark'] #annotations .accordion-body,
++html[data-theme='dark'] #reader-annotations,
++html[data-theme='dark'] #reader-annotations .accordion-item,
++html[data-theme='dark'] #reader-annotations .accordion-body,
+ html[data-theme='dark'] .pane {
+   background-color: var(--lj-brand-surface);
+   color: var(--lj-brand-ink);
+@@ -152,8 +152,8 @@ html[data-theme='dark'] .pane {
+ 
+ html[data-theme='dark'] #display-settings .accordion-button,
+ html[data-theme='dark'] #display-settings .accordion-button:not(.collapsed),
+-html[data-theme='dark'] #annotations .accordion-button,
+-html[data-theme='dark'] #annotations .accordion-button:not(.collapsed) {
++html[data-theme='dark'] #reader-annotations .accordion-button,
++html[data-theme='dark'] #reader-annotations .accordion-button:not(.collapsed) {
+   background-color: var(--lj-brand-surface);
+   color: var(--lj-brand-accent);
+   border-color: var(--lj-brand-rule);
+diff --git a/assets/js/dark_mode.js b/assets/js/dark_mode.js
+index 863b273..adaafa9 100644
+--- a/assets/js/dark_mode.js
++++ b/assets/js/dark_mode.js
+@@ -1,5 +1,7 @@
+ document.addEventListener('DOMContentLoaded', function() {
+     const mode_toggle = document.getElementById("light-toggle");
++    if (!mode_toggle) return;
++    updateThemeControl();
+ 
+     mode_toggle.addEventListener("click", function() {
+         toggleTheme(localStorage.getItem("theme"));
+diff --git a/assets/js/renderTei.js b/assets/js/renderTei.js
+index 0358fa5..a181a5e 100644
+--- a/assets/js/renderTei.js
++++ b/assets/js/renderTei.js
+@@ -1,7 +1,7 @@
+ document.addEventListener("DOMContentLoaded", () => {
+   // DOM Elements
+   const annotationsList = document.getElementById("annotations-list");
+-  const annotationsPanel = document.getElementById("annotations");
++  const annotationsPanel = document.getElementById("reader-annotations");
+   const bookLabel = document.getElementById("book-label");
+   const bookSelectForm = document.querySelector("#book-select form");
+   const bookSelectMenu = document.getElementById("book-selector");
+@@ -277,6 +277,8 @@ document.addEventListener("DOMContentLoaded", () => {
+   };
+ 
+   const activeWork = WORKS[window.location.pathname];
++  // General site pages have no reader data contract or reader controls.
++  if (!activeWork || !bookTitle || !bookSelectMenu) return;
+ 
+   const languagePanes = {
+     Latin: latinPane,
+@@ -299,6 +301,8 @@ document.addEventListener("DOMContentLoaded", () => {
+   let viewData = {};
+   let canonicalFullData;
+   let canonicalViewData;
++  let invalidNieseRequest = null;
++  let unsupportedNieseBook = null;
+ 
+   const initialSources = Object.fromEntries(
+     Object.entries(activeWork.languages).map(([language, config]) => [
+@@ -583,18 +587,23 @@ document.addEventListener("DOMContentLoaded", () => {
+     const rawUnit = params.get("unit") || params.get("num");
+     return {bookNum, chapterNum: bookNum === "preface" ? null : positive("chapter"),
+       subchapterNum: positive("subchapter"), unitNum: /^[1-9]\d*[a-z]*$/.test(rawUnit || "") ? rawUnit : null,
+-      nieseNum: supportsNieseBook(bookNum) ? positive("niese") : null,
++      // Retain explicit malformed requests so they receive a notice, not unrelated text.
++      nieseNum: supportsNieseBook(bookNum) && params.has("niese")
++        ? (positive("niese") ?? params.get("niese")) : null,
++      invalidNieseBook: params.has("niese") && rawBook !== null && rawBook !== "preface"
++        && !(/^[1-9]\d*$/.test(rawBook) && Number(rawBook) <= activeWork.bookCount) ? rawBook : null,
+       bambergId: bambergIdentityFromUrl(params.get("bamberg")),
+       sourceSelections, hasLocationParams: params.size > 0};
+   };
+   const applyTraditionalUrl = () => {
+     const location = readTraditionalUrl();
++    unsupportedNieseBook = location.invalidNieseBook;
+     Object.assign(state, {bookNum: location.bookNum, chapterNum: location.chapterNum,
+       subchapterNum: location.subchapterNum, sectionNum: location.unitNum, nieseNum: location.nieseNum, bambergId: location.bambergId,
+       sources: {...initialSources, ...location.sourceSelections}});
+     if (state.bambergId !== null) {
+       state.viewingLevel = "bamberg-level"; state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null; state.nieseNum = null;
+-    } else if (state.nieseNum) {
++    } else if (state.nieseNum !== null) {
+       state.viewingLevel = "niese-level"; state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null;
+     } else if (state.sectionNum) {
+       state.viewingLevel = "section-level"; state.chapterNum = null; state.subchapterNum = null;
+@@ -1077,6 +1086,7 @@ document.addEventListener("DOMContentLoaded", () => {
+     return requested;
+   };
+   const syncUrlFromState = (mode = "replace") => {
++    if (invalidNieseRequest) return; // Keep the typed unsupported URL and history intact.
+     if (state.viewingLevel !== "contents-level") return syncNavigationLocation(mode);
+     const url = new URL(window.location.href);
+     ["chapter", "subchapter", "bamberg", "niese", "unit", "num"].forEach(key => url.searchParams.delete(key));
+@@ -3070,10 +3080,20 @@ document.addEventListener("DOMContentLoaded", () => {
+       );
+     }
+ 
+-    canonicalViewData = selectCanonicalView(canonicalFullData, idBase);
++    invalidNieseRequest = null;
++    if (activeWork.slug === "antiquities" && state.viewingLevel === "niese-level") {
++      const entries = canonicalNieseStartEntries();
++      if (unsupportedNieseBook !== null || !/^[1-9]\d*$/.test(String(state.nieseNum))
++        || !Number.isSafeInteger(Number(state.nieseNum))
++        || !entries.some(entry => entry.number === Number(state.nieseNum))) {
++        invalidNieseRequest = {number: state.nieseNum, book: unsupportedNieseBook,
++          first: entries[0]?.number, last: entries.at(-1)?.number};
++      }
++    }
++    canonicalViewData = invalidNieseRequest ? null : selectCanonicalView(canonicalFullData, idBase);
+ 
+     Object.entries(fullData).forEach(([language, data]) => {
+-      viewData[language] = selectView(language, data, idBase);
++      viewData[language] = invalidNieseRequest ? null : selectView(language, data, idBase);
+     });
+ 
+     if (state.viewingLevel === "contents-level") {
+@@ -3141,6 +3161,32 @@ document.addEventListener("DOMContentLoaded", () => {
+     });
+   };
+ 
++  const renderInvalidNieseNotice = () => {
++    document.getElementById("unsupported-niese-notice")?.remove();
++    if (!invalidNieseRequest) return;
++    const panes = document.getElementById("pane-container");
++    const notice = document.createElement("aside");
++    notice.id = "unsupported-niese-notice";
++    notice.className = "alert alert-secondary";
++    notice.setAttribute("role", "alert");
++    const description = document.createElement("p");
++    description.textContent = invalidNieseRequest.book !== null
++      ? `The requested Antiquities book "${invalidNieseRequest.book}" is unsupported. No passage is displayed.`
++      : `Niese section "${invalidNieseRequest.number}" is unsupported in ${currentBookLabel()}. This selection supports sections ${invalidNieseRequest.first}–${invalidNieseRequest.last}. No passage is displayed.`;
++    notice.appendChild(description);
++    const addLink = (book, number, label) => {
++      const url = new URL(window.location.href);
++      ["chapter", "subchapter", "bamberg", "unit", "num", "view", "niese"].forEach(key => url.searchParams.delete(key));
++      url.searchParams.set("book", book); url.searchParams.set("niese", number);
++      const link = document.createElement("a"); link.href = url.href; link.textContent = label;
++      if (notice.childElementCount > 1) notice.append(" · ");
++      notice.appendChild(link);
++    };
++    addLink("preface", "1", "Read Proem, Niese section 1");
++    addLink("1", "27", "Read Book I, Niese section 27");
++    panes.before(notice);
++  };
++
+   const renderUI = () => {
+     // Clear panes if text already loaded.
+     Object.values(languagePanes).forEach(pane => {
+@@ -3184,7 +3230,8 @@ document.addEventListener("DOMContentLoaded", () => {
+       }
+     });
+ 
+-    const related = nieseIdentityRegistry()?.relatedPassage;
++    renderInvalidNieseNotice();
++    const related = invalidNieseRequest ? null : nieseIdentityRegistry()?.relatedPassage;
+     if (related && (!state.nieseNum || Number(state.nieseNum) === nieseIdentityRegistry().range[1])) {
+       const note = document.createElement("p");
+       note.className = "niese-related-passage";
+@@ -3224,6 +3271,10 @@ document.addEventListener("DOMContentLoaded", () => {
+     if (usesTraditionalStructure() && state.viewingLevel === "bamberg-level")
+       sectionLabel.innerText = bambergSelection() ? `Bamberg division ${bambergSelection().display}` : "Bamberg division";
+     if (state.viewingLevel === "contents-level") { chapterLabel.innerText = "Table of contents"; sectionLabel.innerText = ""; }
++    if (invalidNieseRequest) {
++      if (invalidNieseRequest.book !== null) bookLabel.innerText = "Unsupported Antiquities book";
++      sectionLabel.innerText = "Unsupported Niese request";
++    }
+     updateLanguageUI();
+     updateNavigationForms();
+     addContraApionemTransmissionNotice();
+@@ -3625,7 +3676,7 @@ document.addEventListener("DOMContentLoaded", () => {
+     }
+ 
+     renderUI();
+-    if (state.viewingLevel === "contents-level") {
++    if (invalidNieseRequest || state.viewingLevel === "contents-level") {
+       annotatedParagraphs = [];
+       annotationsList.replaceChildren();
+       if (annotationsPanel) annotationsPanel.hidden = true;
+@@ -3636,6 +3687,7 @@ document.addEventListener("DOMContentLoaded", () => {
+   };
+ 
+   const setState = async (callback) => {
++    unsupportedNieseBook = null; // An explicit reader control selects its real book.
+     await callback();
+     await reload();
+     syncUrlFromState("push");
+diff --git a/assets/js/theme.js b/assets/js/theme.js
+index df40e21..0c07eb3 100644
+--- a/assets/js/theme.js
++++ b/assets/js/theme.js
+@@ -9,6 +9,13 @@ let toggleTheme = (theme) => {
+ }
+ 
+ 
++let updateThemeControl = () => {
++  const control = document.getElementById("light-toggle");
++  if (control) {
++    control.setAttribute("aria-pressed", String(document.documentElement.dataset.theme === "dark"));
++  }
++};
++
+ let setTheme = (theme) =>  {
+   transTheme();
+   if (theme) {
+@@ -18,6 +25,7 @@ let setTheme = (theme) =>  {
+     document.documentElement.removeAttribute("data-theme");
+   }
+   localStorage.setItem("theme", theme);
++  updateThemeControl();
+ 
+   // Updates the background of medium-zoom overlay.
+   if (typeof medium_zoom !== 'undefined') {

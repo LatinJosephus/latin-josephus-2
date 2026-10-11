@@ -1,0 +1,56 @@
+{
+  "started": "2026-10-11T16:23:34.366Z",
+  "baseline_origin": "http://127.0.0.1:49781",
+  "route": "/antiquities/?book=1&bamberg=5",
+  "status": "KNOWN UNRESOLVED — EDITORIAL HOLD",
+  "baseline_errors": [],
+  "requests": [
+    {
+      "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+      "URL": "http://127.0.0.1:49781/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961",
+      "status": 404
+    },
+    {
+      "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+      "URL": "http://127.0.0.1:49781/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808",
+      "status": 404
+    }
+  ],
+  "links": [
+    {
+      "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+      "source_target": "note_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+      "paragraph": "latin-book01-num34",
+      "label": "."
+    },
+    {
+      "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+      "source_target": "note_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961 note_5e738419cb1e4ad3a8b566ed1ed83808",
+      "paragraph": "latin-book01-num34",
+      "label": "."
+    },
+    {
+      "href": "undefinednote_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+      "source_target": "note_837e454f963d4cd5b8428a0b985d64a8 note_1848bd9ae426435f94ce4bf1ed09c961",
+      "paragraph": "latin-book01-num34",
+      "label": "."
+    }
+  ],
+  "original_identifiers_preserved": true,
+  "no_guessed_redirect": true,
+  "final_requests": [
+    {
+      "URL": "http://127.0.0.1:51933/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961",
+      "status": 404,
+      "title": "",
+      "native404NavigationError": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:51933/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:51933/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "URL": "http://127.0.0.1:51933/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808",
+      "status": 404,
+      "title": "",
+      "native404NavigationError": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:51933/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:51933/antiquities/undefinednote_837e454f963d4cd5b8428a0b985d64a8%20note_1848bd9ae426435f94ce4bf1ed09c961%20note_5e738419cb1e4ad3a8b566ed1ed83808\", waiting until \"load\"\u001b[22m\n"
+    }
+  ],
+  "finished": "2026-10-11T16:23:35.743Z"
+}
