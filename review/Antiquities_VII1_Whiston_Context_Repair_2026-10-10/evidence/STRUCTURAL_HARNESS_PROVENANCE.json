@@ -1,0 +1,11 @@
+{
+  "source": "C:\\workspace\\Antiquities-Final-Preview-Publication-runtime-20261010\\local-qa",
+  "changes": [
+    "paths to this isolated runtime and worktree",
+    "assert fresh 1689/198/1441 counts"
+  ],
+  "baseline": "fresh cf4cdb90 build",
+  "candidate": "fresh reader-only repair build",
+  "hooks": "Exports existing view functions and QA state navigation only; no corpus or production selection-function replacement",
+  "borrowed_verdicts": false
+}

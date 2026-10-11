@@ -1,0 +1,36 @@
+{
+  "result": "PASS WITH PRE-EXISTING ISSUES",
+  "scope": "F001 VII.1 only",
+  "baseline_commit": "cf4cdb90e5fbcefbd0f2606d551d6a05100fd545",
+  "implementation_commit": "ac3ae682f6b84c652f0cadb4c072d242b0aea602",
+  "branch": "fix/antiquities-vii1-whiston-context",
+  "reader_sha256": "a29b150a95037a6e59daa8be8d65394ed245d663d51ccb64f204e4bb696ca89d",
+  "fresh_baseline_identities": 7376,
+  "final_candidate_identities": 7376,
+  "Proem": 26,
+  "Antiquities_I_XX": 7350,
+  "sole_rendered_delta": [
+    {
+      "book": "7",
+      "n": 1,
+      "language": "English"
+    }
+  ],
+  "source_XML_files_byte_identical": 143,
+  "all_protected_tracked_files_byte_identical": 4940,
+  "structural": {
+    "traditional": 1689,
+    "bamberg": 198,
+    "alignment": 1441
+  },
+  "cross_work_book_source_configurations": 21,
+  "cross_work_Niese_projections": 8002,
+  "cross_work_chapter_unit_projections": 1630,
+  "supported_browser_errors": 0,
+  "targeted_UI_checks": 19,
+  "real_containing_UI_checks": 16,
+  "guard_fixture_checks": 8,
+  "no_source_changes_or_publication": true,
+  "ready_for_separately_authorized_promotion": true,
+  "certificate_note": "This certificate commits no generated website. Final evidence commit is recorded in runtime FINAL_RECEIPT.json."
+}
