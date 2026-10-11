@@ -1,0 +1,47 @@
+[
+  {
+    "file": "reproduction control discovery",
+    "failures": [
+      "[data-bs-target=\"#collapse-settings\"] not present; 30000ms timeout",
+      "[data-target=\"#collapse-settings\"] not present; 30000ms timeout"
+    ],
+    "successful_control": "[data-mdb-target=\"#collapse-settings\"]",
+    "superseding_evidence": "RESOLVER_TRACE_BASELINE.json / baseline-VII1-REGRESSION.json"
+  },
+  {
+    "file": "baseline-NIESE-attempt1.json",
+    "result": "FAIL",
+    "failure": "TimeoutError: page.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#niese-selector')\u001b[22m\n\u001b[2m    - locator resolved to <select id=\"niese-selector\">\u2026</select>\u001b[22m\n\u001b[2m  - attempting select option action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    59 \u00d7 waiting for element to be visible and enabled\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying select option action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "scope": "Harness setup; separately superseded by passing final UI/content assertions"
+  },
+  {
+    "file": "TARGETED_UI-attempt1.json",
+    "result": "FAIL",
+    "failure": "TimeoutError: page.uncheck: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#latin-pane-select')\u001b[22m\n\u001b[2m    - locator resolved to <input checked disabled value=\"latin\" type=\"checkbox\" id=\"latin-pane-select\" class=\"form-check-input\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "scope": "Harness setup; separately superseded by passing final UI/content assertions"
+  },
+  {
+    "file": "TARGETED_UI-attempt2.json",
+    "result": "FAIL",
+    "failure": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#light-toggle')\u001b[22m\n\u001b[2m    - locator resolved to <a class=\"\" id=\"light-toggle\">\u2026</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "scope": "Harness setup; separately superseded by passing final UI/content assertions"
+  },
+  {
+    "file": "TARGETED_UI-attempt3.json",
+    "result": "FAIL",
+    "failure": "TimeoutError: page.waitForFunction: Timeout 60000ms exceeded.",
+    "scope": "Harness setup; separately superseded by passing final UI/content assertions"
+  },
+  {
+    "file": "CONTAINING_REAL_UI-attempt1.json",
+    "result": "FAIL",
+    "failure": "TimeoutError: page.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#bamberg-level')\u001b[22m\n\u001b[2m    - locator resolved to <input disabled type=\"radio\" id=\"bamberg-level\" name=\"level-options\" value=\"bamberg-level\" class=\"form-check-input\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  2 \u00d7 retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m  57 \u00d7 retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+    "scope": "Harness setup; separately superseded by passing final UI/content assertions"
+  },
+  {
+    "file": "CONTAINING_REAL_UI-attempt2.json",
+    "result": "FAIL",
+    "failure": "TimeoutError: page.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#bamberg-level')\u001b[22m\n\u001b[2m    - locator resolved to <input disabled type=\"radio\" id=\"bamberg-level\" name=\"level-options\" value=\"bamberg-level\" class=\"form-check-input\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "scope": "Harness setup; separately superseded by passing final UI/content assertions"
+  }
+]

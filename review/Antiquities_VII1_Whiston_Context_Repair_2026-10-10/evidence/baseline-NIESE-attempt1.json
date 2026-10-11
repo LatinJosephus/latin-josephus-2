@@ -1,0 +1,84 @@
+{
+  "mode": "baseline",
+  "started": "2026-10-10T23:42:48.590Z",
+  "origin": "http://127.0.0.1:53053",
+  "instrumentation": false,
+  "books": [
+    {
+      "book": "preface",
+      "menu": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "count": 26,
+      "first": 1,
+      "last": 26
+    }
+  ],
+  "rows": [
+    {
+      "book": "preface",
+      "n": 1,
+      "languages": {
+        "Latin": {
+          "DOM": "f41536d8950c8872e68324485c640645f997706edcb87d0501fe1f76c242a895",
+          "text": "62fed373603bb936d80e1d8930da431dd49f8b01141d4c810b51b02615c4db32",
+          "type": "niese-section",
+          "ids": [
+            "latin-preface-num1"
+          ],
+          "notes": []
+        },
+        "Greek": {
+          "DOM": "005a63a1053782cd0ece24125faeba7127172e44d7c0e88a99293cc5c2c5f61d",
+          "text": "9bf411ebefa2b5bd9564aeebff1ae5596bd74a69cadb3776d30ae1d5f26507cb",
+          "type": "niese-section",
+          "ids": [
+            "greek-preface-num1"
+          ],
+          "notes": []
+        },
+        "English": {
+          "DOM": "69e4dac4cfbe1117c7e35ddbd260617a3f3220d1d877bd5959b7ef2c4d39ee40",
+          "text": "603d875301bdd3e2fe4156f7a66d354cf9c47e0a998261f87d6972b1e24779fa",
+          "type": "niese-context",
+          "ids": [
+            "english-preface-num1"
+          ],
+          "notes": [
+            "English context: exact Niese-level segmentation is unavailable for this source."
+          ]
+        }
+      },
+      "duplicates": []
+    }
+  ],
+  "errors": [],
+  "result": "FAIL",
+  "failure": "TimeoutError: page.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#niese-selector')\u001b[22m\n\u001b[2m    - locator resolved to <select id=\"niese-selector\">…</select>\u001b[22m\n\u001b[2m  - attempting select option action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    59 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying select option action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "finished": "2026-10-10T23:43:19.364Z"
+}

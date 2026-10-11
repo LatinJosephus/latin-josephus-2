@@ -1,0 +1,121 @@
+{
+  "origin": "http://127.0.0.1:57747",
+  "started": "2026-10-10T23:47:22.901Z",
+  "instrumentation": false,
+  "checks": [
+    {
+      "label": "fresh direct",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "next",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=2",
+      "n": 2,
+      "languages": {
+        "Latin": "d43716ba73728a00f38be23ab5929a4d6831f286e54901246a04b8579df54614",
+        "Greek": "b39bdad62e8ed3767fd16aafefc23f1420eb78314fa152f04c8cd26c2d04a002",
+        "English": "14a9720aaf7cb5981541f9c1bc92d9e0cd9744ccd37ff114a3c679e1152e3ce2"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "previous",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "next for history",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=2",
+      "n": 2,
+      "languages": {
+        "Latin": "d43716ba73728a00f38be23ab5929a4d6831f286e54901246a04b8579df54614",
+        "Greek": "b39bdad62e8ed3767fd16aafefc23f1420eb78314fa152f04c8cd26c2d04a002",
+        "English": "14a9720aaf7cb5981541f9c1bc92d9e0cd9744ccd37ff114a3c679e1152e3ce2"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "back",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "forward",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=2",
+      "n": 2,
+      "languages": {
+        "Latin": "d43716ba73728a00f38be23ab5929a4d6831f286e54901246a04b8579df54614",
+        "Greek": "b39bdad62e8ed3767fd16aafefc23f1420eb78314fa152f04c8cd26c2d04a002",
+        "English": "14a9720aaf7cb5981541f9c1bc92d9e0cd9744ccd37ff114a3c679e1152e3ce2"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "return",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "reload",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "pane english",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    },
+    {
+      "label": "pane greek",
+      "url": "http://127.0.0.1:57747/antiquities/?book=7&niese=1",
+      "n": 1,
+      "languages": {
+        "Latin": "b08d0900782bbe213402b6d84b42498204e62eb4c39b55d89f3faa8526be463f",
+        "Greek": "44abe897483d6062c0a8dcc4eb0a3295c25420a55d984fb085c1d4cecd3a3a6e",
+        "English": "67a38c7397e22adb252fd2e727f04930a940350d4c444250ff6aaeb5ffb8ad26"
+      },
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "FAIL",
+  "failure": "TimeoutError: page.uncheck: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#latin-pane-select')\u001b[22m\n\u001b[2m    - locator resolved to <input checked disabled value=\"latin\" type=\"checkbox\" id=\"latin-pane-select\" class=\"form-check-input\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "finished": "2026-10-10T23:47:56.395Z"
+}

@@ -13,5 +13,3 @@ async function browser(name){return chromium.launchPersistentContext(path.join(r
 async function ready(page,n){await page.waitForFunction(n=>['latin','greek','english'].every(l=>document.querySelector('#'+l+' [n="'+n+'"][type^="niese-"]')),String(n),{timeout:60000})}
 function capture(){const result={};for(const l of ['Latin','Greek','English']){const p=document.querySelector('#'+l.toLowerCase()),v=p.querySelector('[type^="niese-"]');result[l]={DOM:p.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN'),text:p.innerText.replace(/\s+/g,' ').trim(),type:v?.getAttribute('type'),n:v?.getAttribute('n'),ids:[...p.querySelectorAll('[id]')].map(n=>n.id),notes:[...p.querySelectorAll('.niese-context-note,.niese-correspondence-note,.structural-unavailable')].map(n=>n.textContent)}}return result}
 module.exports={fs,path,assert,hash,save,load,serve,listen,browser,ready,capture,runtime,root};
-
-
