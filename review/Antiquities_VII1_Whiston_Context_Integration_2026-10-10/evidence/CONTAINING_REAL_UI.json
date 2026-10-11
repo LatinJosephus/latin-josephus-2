@@ -1,0 +1,264 @@
+{
+  "origin": "http://127.0.0.1:60426",
+  "instrumentation": false,
+  "checks": [
+    {
+      "type": "Book",
+      "url": "http://127.0.0.1:60426/antiquities/?book=7",
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&chapter=1",
+      "type": "chapter",
+      "value": "1",
+      "hashes": {
+        "Latin": "b823f34a23ed19db5c0a320b296c2a062befd4705192328929e418da96476037",
+        "Greek": "a250f2616a4b99e05ccc5110a007cea491310d09ca473151179d62cdcd42bafe",
+        "English": "8d337deee175e7f851449737daecfc7adb47e2a154693f8d5d922c7c6ccefbb1"
+      },
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&chapter=1&subchapter=1",
+      "type": "subchapter",
+      "value": "1",
+      "hashes": {
+        "Latin": "cd0ebca856ace72c18eb72db274b478ff8936c201ef809a138c129c920dea5a8",
+        "Greek": "a2319802852ad025a2584d6d4f0ac497b7f5e029a780223dbda93768d38ae527",
+        "English": "8faa90cf42768bc77fda609cc39a1d70b256617df1d7a06f49d4cc862288ad2e"
+      },
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "type": "VII Bamberg unsupported",
+      "expected": "No registered Bamberg rows; control disabled in baseline and candidate",
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&unit=7",
+      "type": "unit",
+      "value": "7",
+      "hashes": {
+        "Latin": "436a65d886a28e2c028723e6286f0700e15a08511c8ec9b99672cc1578d9c707",
+        "Greek": "9d21873893f203538eefd2aa9d9ff5aeb9b7a92fd602523d4515d24585ca3922",
+        "English": "8ec5946b2aee0a020f697c184151207cac29733f3d568f8c618f39bea9dc1591"
+      },
+      "sourceOpeningIdUnchanged": false,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&unit=392",
+      "type": "unit",
+      "value": "392",
+      "hashes": {
+        "Latin": "99350adc1c392c3ee389f3246266a6d197565581f2692b13f99a1de0b0ff0d3c",
+        "Greek": "f6d949ebcacb352024be713b5f48de49a113a6de18097f0f56341194cc26d8be",
+        "English": "91ab92deb92ebc745b37b0f696d71941ae1f873b6adf3fd5c3054a2d868ba13f"
+      },
+      "sourceOpeningIdUnchanged": false,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&chapter=1",
+      "type": "chapter",
+      "value": "1",
+      "hashes": {
+        "Latin": "b823f34a23ed19db5c0a320b296c2a062befd4705192328929e418da96476037",
+        "Greek": "a250f2616a4b99e05ccc5110a007cea491310d09ca473151179d62cdcd42bafe",
+        "English": "8d337deee175e7f851449737daecfc7adb47e2a154693f8d5d922c7c6ccefbb1"
+      },
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&chapter=1",
+      "type": "chapter",
+      "value": "1",
+      "hashes": {
+        "Latin": "b823f34a23ed19db5c0a320b296c2a062befd4705192328929e418da96476037",
+        "Greek": "a250f2616a4b99e05ccc5110a007cea491310d09ca473151179d62cdcd42bafe",
+        "English": "8d337deee175e7f851449737daecfc7adb47e2a154693f8d5d922c7c6ccefbb1"
+      },
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&chapter=1&subchapter=1",
+      "type": "subchapter",
+      "value": "1",
+      "hashes": {
+        "Latin": "cd0ebca856ace72c18eb72db274b478ff8936c201ef809a138c129c920dea5a8",
+        "Greek": "a2319802852ad025a2584d6d4f0ac497b7f5e029a780223dbda93768d38ae527",
+        "English": "8faa90cf42768bc77fda609cc39a1d70b256617df1d7a06f49d4cc862288ad2e"
+      },
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&chapter=1&subchapter=1",
+      "type": "subchapter",
+      "value": "1",
+      "hashes": {
+        "Latin": "cd0ebca856ace72c18eb72db274b478ff8936c201ef809a138c129c920dea5a8",
+        "Greek": "a2319802852ad025a2584d6d4f0ac497b7f5e029a780223dbda93768d38ae527",
+        "English": "8faa90cf42768bc77fda609cc39a1d70b256617df1d7a06f49d4cc862288ad2e"
+      },
+      "sourceOpeningIdUnchanged": true,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&unit=7",
+      "type": "unit",
+      "value": "7",
+      "hashes": {
+        "Latin": "436a65d886a28e2c028723e6286f0700e15a08511c8ec9b99672cc1578d9c707",
+        "Greek": "9d21873893f203538eefd2aa9d9ff5aeb9b7a92fd602523d4515d24585ca3922",
+        "English": "8ec5946b2aee0a020f697c184151207cac29733f3d568f8c618f39bea9dc1591"
+      },
+      "sourceOpeningIdUnchanged": false,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&unit=7",
+      "type": "unit",
+      "value": "7",
+      "hashes": {
+        "Latin": "436a65d886a28e2c028723e6286f0700e15a08511c8ec9b99672cc1578d9c707",
+        "Greek": "9d21873893f203538eefd2aa9d9ff5aeb9b7a92fd602523d4515d24585ca3922",
+        "English": "8ec5946b2aee0a020f697c184151207cac29733f3d568f8c618f39bea9dc1591"
+      },
+      "sourceOpeningIdUnchanged": false,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&unit=392",
+      "type": "unit",
+      "value": "392",
+      "hashes": {
+        "Latin": "99350adc1c392c3ee389f3246266a6d197565581f2692b13f99a1de0b0ff0d3c",
+        "Greek": "f6d949ebcacb352024be713b5f48de49a113a6de18097f0f56341194cc26d8be",
+        "English": "91ab92deb92ebc745b37b0f696d71941ae1f873b6adf3fd5c3054a2d868ba13f"
+      },
+      "sourceOpeningIdUnchanged": false,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=7&unit=392",
+      "type": "unit",
+      "value": "392",
+      "hashes": {
+        "Latin": "99350adc1c392c3ee389f3246266a6d197565581f2692b13f99a1de0b0ff0d3c",
+        "Greek": "f6d949ebcacb352024be713b5f48de49a113a6de18097f0f56341194cc26d8be",
+        "English": "91ab92deb92ebc745b37b0f696d71941ae1f873b6adf3fd5c3054a2d868ba13f"
+      },
+      "sourceOpeningIdUnchanged": false,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=20&bamberg=203",
+      "type": "bamberg",
+      "value": "203",
+      "hashes": {
+        "Latin": "b09516e1a65c8eda125346ed10e63f310de2efe40df17c979cd97e38814f4e24",
+        "Greek": "2ef8ab5169a06186bd4a245347497fe918199b14e1da9bfb1ee80307b7e4c994",
+        "English": "c03e9198dd7f1f88a95a6973ce0b1bc869add3c0aa0514226aba0ee6fe7240e0"
+      },
+      "sourceOpeningIdUnchanged": false,
+      "result": "PASS"
+    },
+    {
+      "url": "http://127.0.0.1:60426/antiquities/?book=20&bamberg=203",
+      "type": "bamberg",
+      "value": "203",
+      "hashes": {
+        "Latin": "b09516e1a65c8eda125346ed10e63f310de2efe40df17c979cd97e38814f4e24",
+        "Greek": "2ef8ab5169a06186bd4a245347497fe918199b14e1da9bfb1ee80307b7e4c994",
+        "English": "c03e9198dd7f1f88a95a6973ce0b1bc869add3c0aa0514226aba0ee6fe7240e0"
+      },
+      "sourceOpeningIdUnchanged": false,
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "alignmentMenu": [
+    "7",
+    "9",
+    "21",
+    "31",
+    "39",
+    "46",
+    "53",
+    "61",
+    "65",
+    "69",
+    "71",
+    "78",
+    "87",
+    "90",
+    "96",
+    "100",
+    "104",
+    "107",
+    "111",
+    "117",
+    "122",
+    "127",
+    "130",
+    "141",
+    "147",
+    "154",
+    "159",
+    "162",
+    "173",
+    "176",
+    "181",
+    "188",
+    "194",
+    "197",
+    "205",
+    "207",
+    "211",
+    "215",
+    "222",
+    "228",
+    "232",
+    "236",
+    "243",
+    "245",
+    "250",
+    "258",
+    "263",
+    "267",
+    "272",
+    "276",
+    "278",
+    "283",
+    "289",
+    "294",
+    "301",
+    "305",
+    "307",
+    "318",
+    "321",
+    "324",
+    "329",
+    "335",
+    "337",
+    "343",
+    "345",
+    "351",
+    "359",
+    "363",
+    "368",
+    "370",
+    "375",
+    "380",
+    "383",
+    "389",
+    "392"
+  ],
+  "result": "PASS"
+}

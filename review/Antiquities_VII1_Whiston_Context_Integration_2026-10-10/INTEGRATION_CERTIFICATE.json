@@ -1,0 +1,44 @@
+{
+  "result": "PASS_FOR_CANONICAL_PROMOTION",
+  "baseline": "cf4cdb90e5fbcefbd0f2606d551d6a05100fd545",
+  "certified_source": "b48e8778b6ece616775d59a8e8949199c3ee84ef",
+  "tested_integration_merge": "7dc8a633d76bff08f2d79b54bb04bc6e98d7918a",
+  "merge_parents": [
+    "cf4cdb90e5fbcefbd0f2606d551d6a05100fd545",
+    "b48e8778b6ece616775d59a8e8949199c3ee84ef"
+  ],
+  "source_history_preserved": true,
+  "production_SHA256": {
+    "assets/js/renderTei.js": "a29b150a95037a6e59daa8be8d65394ed245d663d51ccb64f204e4bb696ca89d"
+  },
+  "Niese": {
+    "total": 7376,
+    "Proem": 26,
+    "Books_I_XX": 7350,
+    "unchanged": 7375,
+    "sole_intended_change": "VII.1 complete contextual English once; qualification preserved",
+    "Latin_Greek_unchanged": true,
+    "errors": 0
+  },
+  "containing_views": {
+    "traditional": 1689,
+    "bamberg": 198,
+    "alignment": 1441
+  },
+  "cross_work_book_source_configurations": 21,
+  "cross_work_Niese_projections": 8002,
+  "cross_work_chapter_unit_projections": 1630,
+  "exceptional_controls": 77,
+  "positive_VII1": [
+    "complete source English",
+    "one paragraph",
+    "contextual type and notice",
+    "no duplicate English IDs",
+    "no page error"
+  ],
+  "all143_XML_and14_Niese_registry_Git_blobs_unchanged": true,
+  "VII2_6": "Five unchanged direct-view context defects; separate issue register; no source/content changes",
+  "preview_untouched": "e846e84bc0cd9392b504f5a60f43870084e85403",
+  "final_head_receipt": "C:\\workspace\\Antiquities-VII1-Whiston-Integration-runtime-20261010\\INTEGRATION_RECEIPT.json",
+  "scope": "Native integrated build at merge, with read-only QA getters only in structural projection server; full 7376 and focused UI tests use uninstrumented renderer. Review-only evidence commit does not alter excluded production build inputs."
+}
