@@ -1,0 +1,54 @@
+{
+  "result": "PASS",
+  "rows": [
+    {
+      "id": "normal single explicit source target",
+      "expected": 1,
+      "actual": 1,
+      "result": "PASS"
+    },
+    {
+      "id": "interior milestone recovers same source context",
+      "expected": 1,
+      "actual": 1,
+      "result": "PASS"
+    },
+    {
+      "id": "missing sameAs cannot invent alias",
+      "expected": 0,
+      "actual": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "ambiguous multi-target cannot alias",
+      "expected": 0,
+      "actual": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "duplicate candidate cannot alias",
+      "expected": 0,
+      "actual": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "real suffixed canonical ID wins; no alias",
+      "expected": 0,
+      "actual": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "unsuffixed paragraph must be first narrative ID",
+      "expected": 0,
+      "actual": 0,
+      "result": "PASS"
+    },
+    {
+      "id": "original recovered after fixture cleanup",
+      "expected": 1,
+      "actual": 1,
+      "result": "PASS"
+    }
+  ],
+  "fixtures": "Disposable in-memory clones/local canonical DOM only; no source bytes modified"
+}
