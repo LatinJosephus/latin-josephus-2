@@ -1,0 +1,116 @@
+{
+  "data_checks": "PASS",
+  "DATA_verdict": "DATA-GO",
+  "RENDERER_verdict": "RENDERER-NO-GO",
+  "milestones": 281,
+  "Greek_labels": 281,
+  "Lexundria_labels": 281,
+  "missing": [],
+  "duplicates": [],
+  "out_of_order": [],
+  "extraneous_book_markers": [],
+  "XML_parse": true,
+  "exact_full_XML_byte_reconstruction": true,
+  "exact_full_text_stream": true,
+  "protected_structure_c14n_identical": true,
+  "baseline_SHA256": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d",
+  "reconstructed_SHA256": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d",
+  "output_SHA256": "12aecbaa44f2c0201be52950e849cfbc9c84c722ed8cf8dda8f3cfdb333e3e1d",
+  "text_SHA256": "36d4b4c1dba54dd146b498488004174f205f700a5c31aeae752d77fa7e18da40",
+  "preserved_elements": {
+    "TEI": 1,
+    "text": 1,
+    "body": 1,
+    "note": 1,
+    "div1": 1,
+    "div2": 2,
+    "p": 54,
+    "num": 51,
+    "hi": 4
+  },
+  "independent_SAX_intervals": 281,
+  "nonempty_intervals": 281,
+  "confidence": {
+    "HIGH": 279,
+    "MEDIUM": 2,
+    "LOW": 0
+  },
+  "adjudicated": [
+    79,
+    103
+  ],
+  "unresolved_boundaries": 0,
+  "unexplained_textual_changes": 0,
+  "protected_worktree_files": 157,
+  "canonical_files_verified": 158,
+  "prior_pilots_verified": [
+    {
+      "book": "BookI",
+      "commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "files": 145,
+      "archives": 13
+    },
+    {
+      "book": "BookII",
+      "commit": "3919acbd19d4ad32ef0daa0ec4ff2fbcda9b7e2f",
+      "files": 198,
+      "archives": 15
+    },
+    {
+      "book": "BookIII",
+      "commit": "671cca7911745be51a7c2cc58ee9f96c404e04bd",
+      "files": 229,
+      "archives": 17
+    },
+    {
+      "book": "BookIV",
+      "commit": "02bec3048a5b397b93da0c10043394401ab6c8e8",
+      "files": 231,
+      "archives": 14
+    },
+    {
+      "book": "BookV",
+      "commit": "26d7d3edecd643d92596c03c7ff319df65cd19c2",
+      "files": 281,
+      "archives": 16
+    },
+    {
+      "book": "BookVI",
+      "commit": "97e416fbc0fd195143f73d7b10f42d2f4987cea4",
+      "files": 312,
+      "archives": 15
+    },
+    {
+      "book": "BookVII",
+      "commit": "8071050ce985a0ff69f59437ce618137c9ac192c",
+      "files": 329,
+      "archives": 16
+    },
+    {
+      "book": "BookVIII",
+      "commit": "74b8cf1b3505430ff60984d0779e7275da852e59",
+      "files": 386,
+      "archives": 16
+    }
+  ],
+  "source_sections_with_word_differences": 13,
+  "source_diff_review": "All word and normalized punctuation-only cases explicitly reviewed; every difference preserved",
+  "Greek_translation_displacement": [
+    1,
+    18,
+    61,
+    89,
+    148,
+    156,
+    192,
+    215,
+    247,
+    270
+  ],
+  "schema_status": "No new TEI-All diagnostics; inherited headerless fragment diagnostic unchanged",
+  "integration": "No canonical merge, push, deployment, IX restoration or XII work",
+  "exact_character_difference_intervals": 79,
+  "normalized_difference_intervals": 23,
+  "punctuation_only_normalized_difference_intervals": 10,
+  "certification": "Published English boundary transfer; exact canonical bytes/text/markup preservation; no translation repair or identical bilingual phrase-extent claim"
+}

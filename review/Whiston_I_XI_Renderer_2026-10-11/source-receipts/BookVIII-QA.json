@@ -1,0 +1,138 @@
+{
+  "data_checks": "PASS",
+  "DATA_verdict": "DATA-GO",
+  "RENDERER_verdict": "RENDERER-NO-GO",
+  "milestones": 420,
+  "Greek_labels": 420,
+  "Lexundria_labels": 420,
+  "missing": [],
+  "duplicates": [],
+  "out_of_order": [],
+  "extraneous_book_markers": [],
+  "XML_parse": true,
+  "exact_full_XML_byte_reconstruction": true,
+  "exact_full_text_stream": true,
+  "protected_structure_c14n_identical": true,
+  "baseline_SHA256": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba",
+  "reconstructed_SHA256": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba",
+  "output_SHA256": "5e3dba55ac9e20e45014b9bfaa2ca64741b10b20e29266db94bde7ec0091a786",
+  "text_SHA256": "c28798bdf2ab4b0ab98f2d5e7d76ea7365f1f03cde6af7e77cbfc6399cf00989",
+  "preserved_elements": {
+    "TEI": 1,
+    "text": 1,
+    "body": 1,
+    "note": 1,
+    "div1": 1,
+    "div2": 16,
+    "p": 101,
+    "num": 85,
+    "lb": 2
+  },
+  "independent_SAX_intervals": 420,
+  "nonempty_intervals": 420,
+  "confidence": {
+    "HIGH": 411,
+    "MEDIUM": 9
+  },
+  "adjudicated": [
+    18,
+    47,
+    51,
+    147,
+    208,
+    219,
+    257,
+    408,
+    412
+  ],
+  "unresolved_boundaries": 0,
+  "unexplained_textual_changes": 0,
+  "protected_worktree_files": 143,
+  "canonical_files_verified": 144,
+  "prior_pilots_verified": [
+    {
+      "book": "BookI",
+      "commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "files": 145,
+      "archives": 13
+    },
+    {
+      "book": "BookII",
+      "commit": "3919acbd19d4ad32ef0daa0ec4ff2fbcda9b7e2f",
+      "files": 198,
+      "archives": 15
+    },
+    {
+      "book": "BookIII",
+      "commit": "671cca7911745be51a7c2cc58ee9f96c404e04bd",
+      "files": 229,
+      "archives": 17
+    },
+    {
+      "book": "BookIV",
+      "commit": "02bec3048a5b397b93da0c10043394401ab6c8e8",
+      "files": 231,
+      "archives": 14
+    },
+    {
+      "book": "BookV",
+      "commit": "26d7d3edecd643d92596c03c7ff319df65cd19c2",
+      "files": 281,
+      "archives": 16
+    },
+    {
+      "book": "BookVI",
+      "commit": "97e416fbc0fd195143f73d7b10f42d2f4987cea4",
+      "files": 312,
+      "archives": 15
+    },
+    {
+      "book": "BookVII",
+      "commit": "8071050ce985a0ff69f59437ce618137c9ac192c",
+      "files": 329,
+      "archives": 16
+    }
+  ],
+  "source_sections_with_word_differences": 25,
+  "source_diff_review": "All raw word-token and normalized punctuation-only cases individually reviewed; exact character differences retained separately",
+  "Greek_translation_displacement": [
+    4,
+    8,
+    22,
+    51,
+    53,
+    65,
+    80,
+    82,
+    87,
+    128,
+    147,
+    162,
+    169,
+    172,
+    256,
+    284,
+    323,
+    328,
+    349,
+    403,
+    407,
+    414
+  ],
+  "schema_status": "No new generic TEI-All diagnostics; original and output are inherited headerless fragments",
+  "integration": "No merge, push, deployment, renderer change or Book X work",
+  "exact_character_difference_intervals": 151,
+  "normalized_difference_intervals": 40,
+  "punctuation_only_normalized_difference_intervals": 15,
+  "Greek_exact_semantic_extents": "Published English cuts with explicitly documented translation qualifications; not literal bilingual phrase extents",
+  "extraction_offsets_roundtrip": 420,
+  "direct_context_views": 420,
+  "direct_exact_English_views": 0,
+  "containing_views_match_baseline": 99,
+  "direct_views_containing_expected_parent": 420,
+  "inherited_reader_parent_anomalies": [],
+  "renderer_errors": 0,
+  "external_request_failures": 0,
+  "canonical_unchanged_by_this_task": true,
+  "certification": "Book VIII published Whiston map data checks complete under repository conventions; no repaired-translation, literal-bilingual, generic-schema or exact-reader certification"
+}

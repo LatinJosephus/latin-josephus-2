@@ -1,0 +1,28 @@
+{
+  "historical_launchers": [
+    {
+      "launcher": "deh-parallels-qa.mjs",
+      "exit_code": 1,
+      "reason": "Corpus-wide historical hash guard includes Antiquities files intentionally assembled from certified deliveries; the DEH/Bellum production inputs and full extraction harness are checked separately.",
+      "launcher_unchanged_from_pin": true,
+      "output_sha256": "1b6864c33072c31d1080a2ca2fd74f9d6b6893485925ebe400b4246d93e2249d"
+    },
+    {
+      "launcher": "bellum-greek-range-qa.mjs",
+      "exit_code": 1,
+      "reason": "Launcher hardcodes 107 tracked XML files; pinned canonical already has 286. It exits before browser tests.",
+      "launcher_unchanged_from_pin": true,
+      "output_sha256": "dde5be5738edee81d1b149d7fc344a48258aa3c0b9c146f94a20e0460a1fa1a0"
+    },
+    {
+      "launcher": "lodge1602-bellum-qa.mjs",
+      "exit_code": 1,
+      "reason": "Launcher expects its historical 100-file corpus inventory; pinned canonical now includes later paratext and registry additions. It exits before browser tests.",
+      "launcher_unchanged_from_pin": true,
+      "output_sha256": "392272e640b1c60c1018988392cca6777603608f1859dcc77393265433206556"
+    }
+  ],
+  "pinned_tracked_XML_files": 286,
+  "replacement_checks": "REGRESSION_QA.json, AUXILIARY_QA.json, SOURCE_PRESERVATION_QA.json",
+  "production_guard_functions_and_frozen_concordance_unchanged": true
+}

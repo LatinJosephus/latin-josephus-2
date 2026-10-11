@@ -1,0 +1,101 @@
+{
+  "data_checks": "PASS",
+  "milestones": 346,
+  "preface_milestones": 26,
+  "narrative_milestones": 320,
+  "Greek_labels": 346,
+  "Lexundria_labels": 346,
+  "files": [
+    {
+      "file": "preface.xml",
+      "XML_parse": true,
+      "baseline_bytes": 9976,
+      "output_bytes": 10799,
+      "milestones": 26,
+      "baseline_SHA256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+      "output_SHA256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+      "reconstructed_SHA256": "d89e73764466ea4ca5479257fae649523791a697964ef572cc784b2dcff82d75",
+      "text_SHA256": "595c7733a5bb9eadf5d93c9f97b0a37ba012cfc17c1770e9cbaf15ac5cf3f0d8",
+      "text_identical": true,
+      "nonmilestone_structure_identical": true,
+      "preserved_elements": {
+        "TEI": 1,
+        "text": 1,
+        "body": 1,
+        "note": 1,
+        "div1": 1,
+        "p": 5,
+        "num": 4
+      }
+    },
+    {
+      "file": "book-01.xml",
+      "XML_parse": true,
+      "baseline_bytes": 123174,
+      "output_bytes": 133661,
+      "milestones": 320,
+      "baseline_SHA256": "6b695035845cecbe34fcc8c0bf6ffc000945938e9fd9cfe0e1306d3b11665420",
+      "output_SHA256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+      "reconstructed_SHA256": "6b695035845cecbe34fcc8c0bf6ffc000945938e9fd9cfe0e1306d3b11665420",
+      "text_SHA256": "eaba9dc6e3f7cf4f7c77a94e816a1d859eabea6bf5411e751bcfd27e40d4addf",
+      "text_identical": true,
+      "nonmilestone_structure_identical": true,
+      "preserved_elements": {
+        "TEI": 1,
+        "text": 1,
+        "body": 1,
+        "note": 1,
+        "div1": 1,
+        "div2": 23,
+        "p": 102,
+        "num": 73,
+        "anchor": 3,
+        "lb": 1
+      }
+    }
+  ],
+  "unexplained_textual_changes": 0,
+  "unresolved_boundary_candidates": 0,
+  "confidence": {
+    "HIGH": 329,
+    "MEDIUM": 17
+  },
+  "adjudicated": [
+    81,
+    152,
+    235,
+    261,
+    262,
+    263,
+    264,
+    268,
+    269,
+    271,
+    272,
+    294,
+    307,
+    312,
+    314,
+    315,
+    335
+  ],
+  "protected_files_verified": 156,
+  "production_files_verified": 158,
+  "source_sections_with_word_differences": 35,
+  "source_diff_review": "COMPLETE: all 35 records reviewed; baseline preserved",
+  "Greek_control_disagreement": [
+    272
+  ],
+  "renderer_QA": {
+    "status": "QA COMPLETE WITH INTEGRATION BLOCKER",
+    "direct_selections": 346,
+    "containing_views": 98,
+    "integration_blocker": "The unchanged Antiquities reader always routes English through antiquitiesNieseContextView and only indexes Latin milestones. The new English milestones preserve containing content but do not enable exact direct English selections. A separately authorized reader integration is required.",
+    "errors": []
+  },
+  "certification": "NOT CERTIFIED",
+  "generic_TEI_All_schema": "INHERITED FAIL in baseline and output: project fragments lack teiHeader; no new validation diagnostic",
+  "scope": "Book I only, repository split preserved",
+  "Greek_control_status": "QUALIFIED: sequence PASS; I.272 location differs from project Greek, print and Lexundria evidence logged",
+  "recommendation": "NO-GO for integration/certification; complete English candidate ready for review"
+}
