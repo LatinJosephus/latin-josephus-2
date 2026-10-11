@@ -1,0 +1,70 @@
+{
+  "cause": "Browser network I/O suspension during long host/runtime pause; both builds and structural run affected",
+  "attempts": [
+    {
+      "file": "baseline-NIESE.json",
+      "preserved": "C:/workspace/Antiquities-VII2-6-Whiston-Integration-runtime-20261010/attempts/runtime-suspension/baseline-NIESE.json",
+      "result": "FAIL",
+      "failure": "TimeoutError: page.waitForFunction: Timeout 60000ms exceeded.",
+      "errors": [
+        {
+          "kind": "request",
+          "url": "http://127.0.0.1:54059/assets/xml/antiquities/Latin/book-06.xml?v=1791685471877",
+          "error": "net::ERR_NETWORK_IO_SUSPENDED"
+        },
+        {
+          "kind": "console",
+          "error": "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
+          "url": "http://127.0.0.1:54059/antiquities/?book=6&niese=141"
+        },
+        {
+          "kind": "page",
+          "error": "TypeError: Cannot read properties of undefined (reading 'debug')",
+          "url": "http://127.0.0.1:54059/antiquities/?book=6&niese=141"
+        }
+      ],
+      "completed_Niese_rows": 1851,
+      "completed_structural_books": 7
+    },
+    {
+      "file": "candidate-final-NIESE.json",
+      "preserved": "C:/workspace/Antiquities-VII2-6-Whiston-Integration-runtime-20261010/attempts/runtime-suspension/candidate-final-NIESE.json",
+      "result": "FAIL",
+      "failure": "TimeoutError: page.waitForFunction: Timeout 60000ms exceeded.",
+      "errors": [
+        {
+          "kind": "request",
+          "url": "http://127.0.0.1:54060/assets/xml/antiquities/Latin/book-06.xml?v=1791685470225",
+          "error": "net::ERR_NETWORK_IO_SUSPENDED"
+        },
+        {
+          "kind": "console",
+          "error": "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
+          "url": "http://127.0.0.1:54060/antiquities/?book=6&niese=173"
+        },
+        {
+          "kind": "page",
+          "error": "TypeError: Cannot read properties of undefined (reading 'debug')",
+          "url": "http://127.0.0.1:54060/antiquities/?book=6&niese=173"
+        }
+      ],
+      "completed_Niese_rows": 1883,
+      "completed_structural_books": 7
+    },
+    {
+      "file": "qa/READER_FINAL_PRIOR_RESULTS.json",
+      "preserved": "C:/workspace/Antiquities-VII2-6-Whiston-Integration-runtime-20261010/attempts/runtime-suspension/READER_FINAL_PRIOR_RESULTS.json",
+      "result": "FAIL",
+      "failure": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+      "errors": [
+        "http://127.0.0.1:56806/assets/xml/source-contents.xml?v=1791685481782:net::ERR_NETWORK_IO_SUSPENDED",
+        "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
+        "TypeError: Failed to fetch"
+      ],
+      "completed_Niese_rows": 0,
+      "completed_structural_books": 20
+    }
+  ],
+  "disposition": "Restart whole exhaustive populations with fresh isolated profiles; preserve all failed attempts; zero certification credit for incomplete runs",
+  "production_changes": false
+}

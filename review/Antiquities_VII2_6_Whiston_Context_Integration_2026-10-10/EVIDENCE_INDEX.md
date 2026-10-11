@@ -1,0 +1,3 @@
+# Evidence index
+
+ENGLISH_CONTENT_EVIDENCE.json gives exact served-source versus complete rendered English, individual Greek extents and composite source paragraphs. AUDIT_MATRIX.csv gives all 7,376 actual routes/results. REGRESSION_CERTIFICATE.json gives complete totals and scope. BUILD_ASSET_HASHES.json and evidence/SOURCE_INTEGRITY.json give byte evidence. evidence contains all fresh successful exports and preserved suspended attempts. screenshots contains independently inspected VII.1 and VII.6 desktop/mobile light/dark captures. No facsimile images were copied. Runtime retains raw full-population browser exports and initial protected byte snapshots.

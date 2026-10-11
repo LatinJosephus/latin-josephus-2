@@ -1,0 +1,53 @@
+{
+  "result": "PASS_WITH_INDEPENDENTLY_REPRODUCED_BASELINE_ISSUES",
+  "UTC": "2026-10-11T11:53:38.410407+00:00",
+  "starting_canonical": "705aebf7a05681012d239707baed5ea2bdd806d2",
+  "certified_source_tip": "0f006764c36b36bc0cf856f6c3b11f2e4a03660c",
+  "tested_integration_merge": "609e7e28fcd43c5e259cc1deea5608766231ffe5",
+  "merge_parents": [
+    "705aebf7a05681012d239707baed5ea2bdd806d2",
+    "0f006764c36b36bc0cf856f6c3b11f2e4a03660c"
+  ],
+  "conflicts": [],
+  "production_SHA256": {
+    "assets/js/renderTei.js": "c4741903c21c4cc0e4629cdca4d951a5c64ffcab6da5e44e40aaaebcc0e3cad3"
+  },
+  "production_delta": [
+    "assets/js/renderTei.js"
+  ],
+  "full_Niese": {
+    "passed": 7376,
+    "Proem": 26,
+    "Books_I_XX": 7350,
+    "unchanged": 7371,
+    "sole_changes": "VII.2-6 English contextual paragraph recovery",
+    "Greek_Latin_all_7376_identical_to_starting_canonical": true,
+    "VII1_and_VII7_English_unchanged": true,
+    "unexpected_errors": 0
+  },
+  "traditional": 1689,
+  "Bamberg": 198,
+  "Alignment": 1441,
+  "Book_Contents": 21,
+  "cross_work_configurations": 21,
+  "cross_work_Niese_projections": 8002,
+  "cross_work_chapter_unit_projections": 1630,
+  "full_VII1_7_source_checks": 7,
+  "combined_contexts": 4,
+  "context_guards": 8,
+  "targeted_navigation": 19,
+  "additional_VII2_6_navigation": 15,
+  "keyboard_full_source": 22,
+  "real_containing": 16,
+  "protected_exceptional_rows": 77,
+  "XML_unchanged": 143,
+  "Niese_registries_unchanged": 14,
+  "actual_built_source_byte_equality": true,
+  "all_other_assets_identical": true,
+  "English_precision": "Qualified full Whiston paragraph context; original source wording/IDs/sameAs/order untouched",
+  "combined_UI_scope": "Internal existing renderer/harness only; no public range syntax or control added",
+  "known_baseline_issues": "Individually reproduced Home/About/Background startup, unsupported I.1, I.34 apparatus 404s, duplicate annotations IDs in Book view, unnamed theme control; immediate pre-settlement reload diagnostic remains equal in both builds.",
+  "interruption": "Suspended initial partial runs preserved with ERR_NETWORK_IO_SUSPENDED; restarted populations completed from zero. Incomplete runs receive no certification credit.",
+  "final_promoted_commit_and_direct_remote_receipt": "C:\\workspace\\Antiquities-VII2-6-Whiston-Integration-runtime-20261010\\INTEGRATION_RECEIPT.json",
+  "no_public_preview_deployment": true
+}

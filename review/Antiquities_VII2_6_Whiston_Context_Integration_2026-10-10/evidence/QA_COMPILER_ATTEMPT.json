@@ -1,0 +1,6 @@
+{
+  "result": "FAILED_METADATA_COMPILATION_ATTEMPT",
+  "failure": "KeyError: result on RELOAD_RACE_COMPARISON.json diagnostic export",
+  "correction": "Require PASS for actual tests and separately assert equality of both diagnostic rows; no test verdict or production bytes altered",
+  "retest": "Run evidence compiler after metadata schema correction"
+}
