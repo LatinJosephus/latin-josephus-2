@@ -1,0 +1,47 @@
+ERROR:  Error installing C:/workspace/Whiston-I-XI-Integration-runtime-20261011/gems/cache/rmagick-4.3.0.gem:
+	ERROR: Failed to build gem native extension.
+
+    current directory: C:/workspace/Whiston-I-XI-Integration-runtime-20261011/gems/gems/rmagick-4.3.0/ext/RMagick
+C:/Ruby33-x64/bin/ruby.exe extconf.rb
+checking for Ruby version >= 2.3.0... yes
+checking for magick... yes
+checking for outdated ImageMagick version (<= 6.7.7)... no
+checking for gcc... yes
+searching PATH for the ImageMagick library...
+
+
+ERROR: Can't install RMagick 4.3.0.
+Can't find the ImageMagick library.
+Retry with '--with-opt-dir' option.
+Usage: gem install rmagick -- '--with-opt-dir="[path to ImageMagick]"'
+e.g.
+  gem install rmagick -- '--with-opt-dir="C:\Program Files\ImageMagick-6.9.1-Q16"'
+
+
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include=${opt-dir}/include
+	--without-opt-include
+	--with-opt-lib=${opt-dir}/lib
+	--without-opt-lib
+	--with-make-prog
+Building native extensions. This could take a while...
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=C:/Ruby33-x64/bin/$(RUBY_BASE_NAME)
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  C:/workspace/Whiston-I-XI-Integration-runtime-20261011/gems/extensions/x64-mingw-ucrt/3.3.0/rmagick-4.3.0/mkmf.log
+
+extconf failed, exit code 1
+
+Gem files will remain installed in C:/workspace/Whiston-I-XI-Integration-runtime-20261011/gems/gems/rmagick-4.3.0 for inspection.
+Results logged to C:/workspace/Whiston-I-XI-Integration-runtime-20261011/gems/extensions/x64-mingw-ucrt/3.3.0/rmagick-4.3.0/gem_make.out

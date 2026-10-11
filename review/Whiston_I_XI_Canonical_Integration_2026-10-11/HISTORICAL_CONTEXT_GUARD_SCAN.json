@@ -1,0 +1,1436 @@
+[
+  {
+    "path": "review/Antiquities_Bamberg_Navigation_2026-10-07/navigation.test.cjs",
+    "hits": [
+      {
+        "line": 372,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_08_10_2026-10-08/regression.test.cjs",
+    "hits": [
+      {
+        "line": 376,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_12_13_2026-10-09/browser_qa.cjs",
+    "hits": [
+      {
+        "line": 25,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 79,
+        "excerpt": "     if(l==='English'&&(!v?.querySelector('.niese-context-note')||!record[l]))errors.push(`English ${n} broader context missing`);"
+      },
+      {
+        "line": 186,
+        "excerpt": "   const english=await page.locator('#english').textContent();if(!english.includes('in the first year of Simon')||!english.includes('very happy'))throw Error('Approved214 unchanged English context');"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_14_15_2026-10-09/full-reader-qa.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": " const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());"
+      },
+      {
+        "line": 35,
+        "excerpt": "   const v=await page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id),d=window.__qa.getData(),target=window.__qa.getState().nieseNum;return {Latin:text(document.querySelector('#latin')),Greek:text(document.querySelector('#greek')),English:text(document.querySelector('#english')),note:document.qu"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_14_15_2026-10-09/partial-reader-checkpoint3.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": " const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());"
+      },
+      {
+        "line": 46,
+        "excerpt": "     const v=await page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {Latin:text(document.querySelector('#latin')),Greek:text(document.querySelector('#greek')),English:text(document.querySelector('#english')),note:document.querySelector('#latin .niese-correspondence-note')?.textContent"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_14_15_2026-10-09/partial-reader-qa.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": " const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());"
+      },
+      {
+        "line": 41,
+        "excerpt": "     const v=await page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {Latin:text(document.querySelector('#latin')),Greek:text(document.querySelector('#greek')),English:text(document.querySelector('#english')),note:document.querySelector('#latin .niese-correspondence-note')?.textContent"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_14_15_2026-10-09/protected-all-existing-books.cjs",
+    "hits": [
+      {
+        "line": 11,
+        "excerpt": " const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());"
+      },
+      {
+        "line": 63,
+        "excerpt": "   return {Latin:text(document.querySelector('#latin')),Greek:text(document.querySelector('#greek')),English:text(document.querySelector('#english')),absence:document.querySelector('#latin .structural-unavailable')?.textContent||null,note:document.querySelector('#latin .niese-correspondence-note')?.textContent||null,context:!!document.querySelector"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_14_15_2026-10-09/protected-baseline.cjs",
+    "hits": [
+      {
+        "line": 11,
+        "excerpt": " const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());"
+      },
+      {
+        "line": 63,
+        "excerpt": "   return {Latin:text(document.querySelector('#latin')),Greek:text(document.querySelector('#greek')),English:text(document.querySelector('#english')),absence:document.querySelector('#latin .structural-unavailable')?.textContent||null,note:document.querySelector('#latin .niese-correspondence-note')?.textContent||null,context:!!document.querySelector"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_14_15_2026-10-09/protected-reader-change.cjs",
+    "hits": [
+      {
+        "line": 11,
+        "excerpt": " const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());"
+      },
+      {
+        "line": 63,
+        "excerpt": "   return {Latin:text(document.querySelector('#latin')),Greek:text(document.querySelector('#greek')),English:text(document.querySelector('#english')),absence:document.querySelector('#latin .structural-unavailable')?.textContent||null,note:document.querySelector('#latin .niese-correspondence-note')?.textContent||null,context:!!document.querySelector"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/capture-baseline-reader.cjs",
+    "hits": [
+      {
+        "line": 42,
+        "excerpt": "            const pane=document.querySelector('#'+language);const copy=pane.cloneNode(true);copy.querySelectorAll('h3,.niese-context-note,.niese-correspondence-note').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/containing-views-browser.cjs",
+    "hits": [
+      {
+        "line": 15,
+        "excerpt": "      const c=node.cloneNode(true);c.querySelectorAll('h3,.niese-context-note,.niese-correspondence-note,tei-milestone[unit^=\"niese\"]').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_16_17_2026-10-09/qa-common.cjs",
+    "hits": [
+      {
+        "line": 29,
+        "excerpt": " copy.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 35,
+        "excerpt": " copy.querySelectorAll('tei-milestone[unit^=\"niese\"],.niese-correspondence-note,.niese-context-note').forEach(x=>x.remove());"
+      },
+      {
+        "line": 50,
+        "excerpt": "   context:!!el.querySelector('.niese-context-note'),note:el.querySelector('.niese-correspondence-note')?.textContent||null,"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_18_19_2026-10-09/baseline_reader.cjs",
+    "hits": [
+      {
+        "line": 6,
+        "excerpt": "function narrative(node){const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p.closest('tei-div2[n=\"0\"]')).map(p=>p.textConten"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_18_19_2026-10-09/final_protected_reader.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": " async function snapshots(){return Promise.all(pages.map(p=>p.evaluate(code=>{const text=eval('('+code+')'),norm=s=>s.replace(/\\s+/g,' ').trim();return Object.fromEntries(['latin','greek','english'].map(l=>{const pane=document.querySelector('#'+l);return [l,pane?{text:norm(text(pane)),notes:[...pane.querySelectorAll('.niese-correspondence-note,.str"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_18_19_2026-10-09/final_reader.cjs",
+    "hits": [
+      {
+        "line": 6,
+        "excerpt": "function narrative(node){const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p.closest('tei-div2[n=\"0\"]')).map(p=>p.textConten"
+      },
+      {
+        "line": 15,
+        "excerpt": " async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {languages:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),note:document.querySelector('#"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_18_19_2026-10-09/protected_reader.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": " async function snapshots(){return Promise.all(pages.map(p=>p.evaluate(code=>{const text=eval('('+code+')'),norm=s=>s.replace(/\\s+/g,' ').trim();return Object.fromEntries(['latin','greek','english'].map(l=>{const pane=document.querySelector('#'+l);return [l,pane?{text:norm(text(pane)),notes:[...pane.querySelectorAll('.niese-correspondence-note,.str"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_18_19_2026-10-09/review_reader.cjs",
+    "hits": [
+      {
+        "line": 6,
+        "excerpt": "function narrative(node){const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p.closest('tei-div2[n=\"0\"]')).map(p=>p.textConten"
+      },
+      {
+        "line": 15,
+        "excerpt": " async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {languages:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),note:document.querySelector('#"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Batch_18_19_2026-10-09/REVIEW_RENDERER.js",
+    "hits": [
+      {
+        "line": 2210,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookIX_2026-10-09/new-book-browser.cjs",
+    "hits": [
+      {
+        "line": 16,
+        "excerpt": " async function capture(){return await page.evaluate(code=>{const text=eval('('+code+')');return Object.fromEntries(['Latin','Greek','English'].map(l=>[l,{text:text(document.querySelector('#'+l.toLowerCase())),unavailable:!!document.querySelector('#'+l.toLowerCase()+' .structural-unavailable'),partial:!!document.querySelector('#'+l.toLowerCase()+' "
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookIX_2026-10-09/protected-browser.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookIX_2026-10-09/qa-common.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXI_2026-10-09/qa-common.cjs",
+    "hits": [
+      {
+        "line": 22,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXX_2026-10-10/browser_common.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": "function narrative(node){if(!node)return '';const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p.closest('tei-div2[n=\"0\"]'))."
+      },
+      {
+        "line": 12,
+        "excerpt": "async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {languages:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),note:document.querySelector('#l"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Boundary_Display_2026-10-09/leakage-browser.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": "   const plain=node=>{if(!node)return '';const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());return c.textContent.replace(/\\s+/g,' ').trim();};"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Boundary_Display_2026-10-09/protected-browser.cjs",
+    "hits": [
+      {
+        "line": 25,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 69,
+        "excerpt": "     if(l==='English'&&(!v?.querySelector('.niese-context-note')||!record[l]))errors.push(`English ${n} broader context missing`);"
+      },
+      {
+        "line": 176,
+        "excerpt": "   const english=await page.locator('#english').textContent();if(!english.includes('in the first year of Simon')||!english.includes('very happy'))throw Error('Approved214 unchanged English context');"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/browser-certify.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 81,
+        "excerpt": "      if(l==='English'&&(!v?.querySelector('.niese-context-note')||!row[l]))errors.push(`English ${n} missing broader context`);"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Implementation_08_10_2026-10-09/established-regressions.test.cjs",
+    "hits": [
+      {
+        "line": 378,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_08_10_2026-10-09/canonical-smoke.cjs",
+    "hits": [
+      {
+        "line": 11,
+        "excerpt": " const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());"
+      },
+      {
+        "line": 62,
+        "excerpt": "   return {Latin:text(document.querySelector('#latin')),Greek:text(document.querySelector('#greek')),English:text(document.querySelector('#english')),absence:document.querySelector('#latin .structural-unavailable')?.textContent||null,note:document.querySelector('#latin .niese-correspondence-note')?.textContent||null,context:!!document.querySelector"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_09_2026-10-09/integration-browser.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": " async function capture(){return page.evaluate(code=>{const text=eval('('+code+')');return Object.fromEntries(['Latin','Greek','English'].map(l=>[l,{text:text(document.querySelector('#'+l.toLowerCase())),unavailable:!!document.querySelector('#'+l.toLowerCase()+' .structural-unavailable'),partial:!!document.querySelector('#'+l.toLowerCase()+' .niese"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_09_2026-10-09/qa-common.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_11_2026-10-09/qa-common.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_12_13_2026-10-09/book-browser.cjs",
+    "hits": [
+      {
+        "line": 25,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 79,
+        "excerpt": "     if(l==='English'&&(!v?.querySelector('.niese-context-note')||!record[l]))errors.push(`English ${n} broader context missing`);"
+      },
+      {
+        "line": 186,
+        "excerpt": "   const english=await page.locator('#english').textContent();if(!english.includes('in the first year of Simon')||!english.includes('very happy'))throw Error('Approved214 unchanged English context');"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_12_13_2026-10-09/ix-protected.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": " async function capture(){return page.evaluate(code=>{const text=eval('('+code+')');return Object.fromEntries(['Latin','Greek','English'].map(l=>[l,{text:text(document.querySelector('#'+l.toLowerCase())),unavailable:!!document.querySelector('#'+l.toLowerCase()+' .structural-unavailable'),partial:!!document.querySelector('#'+l.toLowerCase()+' .niese"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_12_13_2026-10-09/qa-common.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_14_15_2026-10-09/book-browser.cjs",
+    "hits": [
+      {
+        "line": 25,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 79,
+        "excerpt": "     if(l==='English'&&(!v?.querySelector('.niese-context-note')||!record[l]))errors.push(`English ${n} broader context missing`);"
+      },
+      {
+        "line": 186,
+        "excerpt": "   const english=await page.locator('#english').textContent();if(!english.includes('in the first year of Simon')||!english.includes('very happy'))throw Error('Approved214 unchanged English context');"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_14_15_2026-10-09/critical-combined.cjs",
+    "hits": [
+      {
+        "line": 15,
+        "excerpt": " async function capture(b){return page.evaluate(({code,exclusions})=>{const text=eval('('+code+')'),out={};for(const l of ['Latin','Greek','English']){const node=document.querySelector('#'+l.toLowerCase());out[l]={text:text(node,exclusions[l]||[]),unavailable:!!node.querySelector('.structural-unavailable'),notice:node.querySelector('.niese-correspo"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_14_15_2026-10-09/full-reader-integration.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": " const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());"
+      },
+      {
+        "line": 35,
+        "excerpt": "   const v=await page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id),d=window.__qa.getData(),target=window.__qa.getState().nieseNum;return {Latin:text(document.querySelector('#latin')),Greek:text(document.querySelector('#greek')),English:text(document.querySelector('#english')),note:document.qu"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_14_15_2026-10-09/ix-protected.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": " async function capture(){return page.evaluate(code=>{const text=eval('('+code+')');return Object.fromEntries(['Latin','Greek','English'].map(l=>[l,{text:text(document.querySelector('#'+l.toLowerCase())),unavailable:!!document.querySelector('#'+l.toLowerCase()+' .structural-unavailable'),partial:!!document.querySelector('#'+l.toLowerCase()+' .niese"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_14_15_2026-10-09/qa-common.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/capture-baseline-reader.cjs",
+    "hits": [
+      {
+        "line": 43,
+        "excerpt": "            const pane=document.querySelector('#'+language);const copy=pane.cloneNode(true);copy.querySelectorAll('h3,.niese-context-note,.niese-correspondence-note').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/containing-views-browser.cjs",
+    "hits": [
+      {
+        "line": 15,
+        "excerpt": "      const c=node.cloneNode(true);c.querySelectorAll('h3,.niese-context-note,.niese-correspondence-note,tei-milestone[unit^=\"niese\"]').forEach(x=>x.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/editorial-structural-extra.cjs",
+    "hits": [
+      {
+        "line": 27,
+        "excerpt": "   const a=await page.evaluate(code=>({Latin:eval('('+code+')')(document.querySelector('#latin')),Greek:eval('('+code+')')(document.querySelector('#greek')),English:eval('('+code+')')(document.querySelector('#english')),LatinParagraphs:document.querySelectorAll('#latin tei-p').length,message:document.querySelector('#latin .structural-unavailable')?"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/final_protected_reader.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": " async function snapshots(){return Promise.all(pages.map(p=>p.evaluate(code=>{const text=eval('('+code+')'),norm=s=>s.replace(/\\s+/g,' ').trim();return Object.fromEntries(['latin','greek','english'].map(l=>{const pane=document.querySelector('#'+l);return [l,pane?{text:norm(text(pane)),notes:[...pane.querySelectorAll('.niese-correspondence-note,.str"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/final_reader.cjs",
+    "hits": [
+      {
+        "line": 6,
+        "excerpt": "function narrative(node){const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p.closest('tei-div2[n=\"0\"]')).map(p=>p.textConten"
+      },
+      {
+        "line": 15,
+        "excerpt": " async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {languages:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),note:document.querySelector('#"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/qa-common16.cjs",
+    "hits": [
+      {
+        "line": 29,
+        "excerpt": " copy.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 35,
+        "excerpt": " copy.querySelectorAll('tei-milestone[unit^=\"niese\"],.niese-correspondence-note,.niese-context-note').forEach(x=>x.remove());"
+      },
+      {
+        "line": 50,
+        "excerpt": "   context:!!el.querySelector('.niese-context-note'),note:el.querySelector('.niese-correspondence-note')?.textContent||null,"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_18_19_2026-10-10/final_protected_reader.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": " async function snapshots(){return Promise.all(pages.map(p=>p.evaluate(code=>{const text=eval('('+code+')'),norm=s=>s.replace(/\\s+/g,' ').trim();return Object.fromEntries(['latin','greek','english'].map(l=>{const pane=document.querySelector('#'+l);return [l,pane?{text:norm(text(pane)),notes:[...pane.querySelectorAll('.niese-correspondence-note,.str"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_18_19_2026-10-10/final_reader.cjs",
+    "hits": [
+      {
+        "line": 6,
+        "excerpt": "function narrative(node){const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p.closest('tei-div2[n=\"0\"]')).map(p=>p.textConten"
+      },
+      {
+        "line": 15,
+        "excerpt": " async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {languages:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),note:document.querySelector('#"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_18_19_2026-10-10/qa-common.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_20_2026-10-10/browser_common.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": "function narrative(node){if(!node)return '';const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p."
+      },
+      {
+        "line": 12,
+        "excerpt": "async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {paneDOM:Object.fromEntries(['latin','greek','english'].map(l=>[l,document.querySelector('#'+l)?.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN')||null])),languages:Object.fromEntries(['Latin','Greek"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_20_2026-10-10/final_reader.cjs",
+    "hits": [
+      {
+        "line": 6,
+        "excerpt": "function narrative(node){const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p.closest('tei-div2[n=\"0\"]')).map(p=>p.textConten"
+      },
+      {
+        "line": 15,
+        "excerpt": " async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {languages:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),note:document.querySelector('#"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_20_2026-10-10/qa-common16.cjs",
+    "hits": [
+      {
+        "line": 29,
+        "excerpt": " copy.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 35,
+        "excerpt": " copy.querySelectorAll('tei-milestone[unit^=\"niese\"],.niese-correspondence-note,.niese-context-note').forEach(x=>x.remove());"
+      },
+      {
+        "line": 50,
+        "excerpt": "   context:!!el.querySelector('.niese-context-note'),note:el.querySelector('.niese-correspondence-note')?.textContent||null,"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_20_2026-10-10/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_20_2026-10-10/xx_controls.cjs",
+    "hits": [
+      {
+        "line": 10,
+        "excerpt": " async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(x=>x.id);return{text:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),state:window.__qa?.getState(),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),unavai"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_2026-10-10/browser_common.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": "function narrative(node){if(!node)return '';const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p."
+      },
+      {
+        "line": 12,
+        "excerpt": "async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {paneDOM:Object.fromEntries(['latin','greek','english'].map(l=>[l,document.querySelector('#'+l)?.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN')||null])),languages:Object.fromEntries(['Latin','Greek"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_2026-10-10/plain_browser.cjs",
+    "hits": [
+      {
+        "line": 8,
+        "excerpt": " const capture=()=>page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(x=>x.id);return {text:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),EnglishContext:!!document.querySelector('#english "
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_2026-10-10/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_Integration_2026-10-10/browser_common.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": "function narrative(node){if(!node)return '';const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p."
+      },
+      {
+        "line": 12,
+        "excerpt": "async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {paneDOM:Object.fromEntries(['latin','greek','english'].map(l=>[l,document.querySelector('#'+l)?.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN')||null])),languages:Object.fromEntries(['Latin','Greek"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_Integration_2026-10-10/plain_browser.cjs",
+    "hits": [
+      {
+        "line": 8,
+        "excerpt": " const capture=()=>page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(x=>x.id);return {text:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),EnglishContext:!!document.querySelector('#english "
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_Integration_2026-10-10/qa-common16.cjs",
+    "hits": [
+      {
+        "line": 29,
+        "excerpt": " copy.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 35,
+        "excerpt": " copy.querySelectorAll('tei-milestone[unit^=\"niese\"],.niese-correspondence-note,.niese-context-note').forEach(x=>x.remove());"
+      },
+      {
+        "line": 50,
+        "excerpt": "   context:!!el.querySelector('.niese-context-note'),note:el.querySelector('.niese-correspondence-note')?.textContent||null,"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_Integration_2026-10-10/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_Integration_2026-10-10/xx_controls.cjs",
+    "hits": [
+      {
+        "line": 10,
+        "excerpt": " async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(x=>x.id);return{text:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),state:window.__qa?.getState(),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),unavai"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_Recovery_2026-10-10/browser_common.cjs",
+    "hits": [
+      {
+        "line": 7,
+        "excerpt": "function narrative(node){if(!node)return '';const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(n=>n.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!p."
+      },
+      {
+        "line": 12,
+        "excerpt": "async function snapshot(){return page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(n=>n.id);return {paneDOM:Object.fromEntries(['latin','greek','english'].map(l=>[l,document.querySelector('#'+l)?.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN')||null])),languages:Object.fromEntries(['Latin','Greek"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_Recovery_2026-10-10/plain_browser.cjs",
+    "hits": [
+      {
+        "line": 8,
+        "excerpt": " const capture=()=>page.evaluate(code=>{const text=eval('('+code+')'),ids=[...document.querySelectorAll('[id]')].map(x=>x.id);return {text:Object.fromEntries(['Latin','Greek','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),duplicates:ids.filter((id,i)=>ids.indexOf(id)!==i),EnglishContext:!!document.querySelector('#english "
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Proem_Recovery_2026-10-10/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Traditional_Navigation_2026-10-06/navigation.test.cjs",
+    "hits": [
+      {
+        "line": 237,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Traditional_Navigation_Followup_2026-10-07/navigation.test.cjs",
+    "hits": [
+      {
+        "line": 370,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Greek_Antiquities_Capitula_TOC_v1.1_2026-10-08/regression.test.cjs",
+    "hits": [
+      {
+        "line": 372,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Source_TOC_Navigation_2026-10-07/regression.test.cjs",
+    "hits": [
+      {
+        "line": 372,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Whiston_Antiquities_Compiled_Index_2026-10-09/regression.test.cjs",
+    "hits": [
+      {
+        "line": 372,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Whiston_Niese_Combined_Integration_2026-10-09/alignment-diagnosis.test.cjs",
+    "hits": [
+      {
+        "line": 378,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Whiston_Niese_Combined_Integration_2026-10-09/combined-interaction.test.cjs",
+    "hits": [
+      {
+        "line": 8,
+        "excerpt": "function narrative(n){const c=n.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(x=>!x.closest('tei-div2[n=\"0\"]')).map(x=>x.textContent).joi"
+      },
+      {
+        "line": 19,
+        "excerpt": "async function niese(book,n){const d=await page.evaluate(code=>{const text=eval('('+code+')');return {q:window.__combined.state(),text:Object.fromEntries(['Greek','Latin','English'].map(l=>[l,text(document.querySelector('#'+l.toLowerCase()))])),englishBroader:!!document.querySelector('#english .niese-context-note'),latinMissing:!!document.querySele"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Whiston_Niese_Combined_Integration_2026-10-09/established-regressions.test.cjs",
+    "hits": [
+      {
+        "line": 378,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Whiston_Niese_Combined_Integration_2026-10-09/niese-browser.test.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": " c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable').forEach(x=>x.remove());"
+      },
+      {
+        "line": 81,
+        "excerpt": "      if(l==='English'&&(!v?.querySelector('.niese-context-note')||!row[l]))errors.push(`English ${n} missing broader context`);"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Whiston_Antiquities_Compiled_Index_2026-10-09/presentation-correction/initial-integration/regression.test.cjs",
+    "hits": [
+      {
+        "line": 372,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Whiston_Antiquities_Compiled_Index_2026-10-09/layout-correction/prior-certification/regression.test.cjs",
+    "hits": [
+      {
+        "line": 372,
+        "excerpt": "    english.querySelectorAll('.niese-context-note').forEach(e=>e.remove());"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Repairs_Integration_2026-10-11/qa/combined-context.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const server=c.serve(c.path.join(c.runtime,'candidate-final-site'),true),origin=await c.listen(server),ctx=await c.browser('combined-context-certification'),p=await ctx.newPage(),r={origin,instrumentation:'Getter-only exports; actual production context renderer called with identity arrays. Public UI unchanged.',ranges:[],errors:[]};p.on("
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Repairs_Integration_2026-10-11/qa/common.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": "function capture(){const result={};for(const l of ['Latin','Greek','English']){const p=document.querySelector('#'+l.toLowerCase()),v=p.querySelector('[type^=\"niese-\"]');result[l]={DOM:p.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN'),text:p.innerText.replace(/\\s+/g,' ').trim(),type:v?.getAttribute('type'),n:v?.getAttribute('n'),ids:[...p.query"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Repairs_Integration_2026-10-11/qa/keyboard-full-source.cjs",
+    "hits": [
+      {
+        "line": 11,
+        "excerpt": "const source=await p.evaluate(async({book})=>{const xml=new DOMParser().parseFromString(await(await fetch('/assets/xml/antiquities/English/book-'+book.padStart(2,'0')+'.xml')).text(),'application/xml'),norm=s=>s.replace(/\\s+/g,' ').trim(),nodes=[...document.querySelectorAll('#english tei-p[id]')],all=[...xml.getElementsByTagNameNS('*','p')];return "
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Repairs_Integration_2026-10-11/qa/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Repairs_Integration_2026-10-11/qa/VII1-7-source-display.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const mode=process.argv[2]||'baseline',server=c.serve(c.path.join(c.runtime,mode==='baseline'?'baseline-site':'candidate-final-site')),origin=await c.listen(server),ctx=await c.browser(mode+'-source-display'),p=await ctx.newPage(),r={mode,origin,instrumentation:false,rows:[],errors:[]};p.on('pageerror',e=>r.errors.push(String(e)));p.on('"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Repairs_Integration_2026-10-11/qa/VII1-context-regression.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const site=process.argv[2]||c.path.join(c.runtime,'candidate-site'),mode=process.argv[3]||'candidate',server=c.serve(site),origin=await c.listen(server),ctx=await c.browser(mode+'-positive-regression'),p=await ctx.newPage(),r={origin,site,mode,instrumentation:false,started:new Date().toISOString(),checks:[],errors:[]};p.on('pageerror',e="
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Repairs_Integration_2026-10-11/qa/VII2-6-navigation.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const server=c.serve(c.path.join(c.runtime,'candidate-final-site')),origin=await c.listen(server),ctx=await c.browser('VII2-6-navigation-presentation'),p=await ctx.newPage(),r={origin,instrumentation:false,checks:[],errors:[]};p.on('pageerror',e=>r.errors.push(String(e)));p.on('requestfailed',x=>r.errors.push(x.url()+':'+x.failure()?.err"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Defects_2026-10-11/qa/combined-context.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const server=c.serve(c.path.join(c.runtime,'candidate-final-site'),true),origin=await c.listen(server),ctx=await c.browser('combined-context-certification'),p=await ctx.newPage(),r={origin,instrumentation:'Getter-only exports; actual production context renderer called with identity arrays. Public UI unchanged.',ranges:[],errors:[]};p.on("
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Defects_2026-10-11/qa/common.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": "function capture(){const result={};for(const l of ['Latin','Greek','English']){const p=document.querySelector('#'+l.toLowerCase()),v=p.querySelector('[type^=\"niese-\"]');result[l]={DOM:p.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN'),text:p.innerText.replace(/\\s+/g,' ').trim(),type:v?.getAttribute('type'),n:v?.getAttribute('n'),ids:[...p.query"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Defects_2026-10-11/qa/keyboard-full-source.cjs",
+    "hits": [
+      {
+        "line": 11,
+        "excerpt": "const source=await p.evaluate(async({book})=>{const xml=new DOMParser().parseFromString(await(await fetch('/assets/xml/antiquities/English/book-'+book.padStart(2,'0')+'.xml')).text(),'application/xml'),norm=s=>s.replace(/\\s+/g,' ').trim(),nodes=[...document.querySelectorAll('#english tei-p[id]')],all=[...xml.getElementsByTagNameNS('*','p')];return "
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Defects_2026-10-11/qa/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Defects_2026-10-11/qa/VII1-7-source-display.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const mode=process.argv[2]||'baseline',server=c.serve(c.path.join(c.runtime,mode==='baseline'?'baseline-site':'candidate-final-site')),origin=await c.listen(server),ctx=await c.browser(mode+'-source-display'),p=await ctx.newPage(),r={mode,origin,instrumentation:false,rows:[],errors:[]};p.on('pageerror',e=>r.errors.push(String(e)));p.on('"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Defects_2026-10-11/qa/VII1-context-regression.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const site=process.argv[2]||c.path.join(c.runtime,'candidate-site'),mode=process.argv[3]||'candidate',server=c.serve(site),origin=await c.listen(server),ctx=await c.browser(mode+'-positive-regression'),p=await ctx.newPage(),r={origin,site,mode,instrumentation:false,started:new Date().toISOString(),checks:[],errors:[]};p.on('pageerror',e="
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Postrelease_Reader_Defects_2026-10-11/qa/VII2-6-navigation.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const server=c.serve(c.path.join(c.runtime,'candidate-final-site')),origin=await c.listen(server),ctx=await c.browser('VII2-6-navigation-presentation'),p=await ctx.newPage(),r={origin,instrumentation:false,checks:[],errors:[]};p.on('pageerror',e=>r.errors.push(String(e)));p.on('requestfailed',x=>r.errors.push(x.url()+':'+x.failure()?.err"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Repair_2026-10-10/qa/combined-context.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const server=c.serve(c.path.join(c.runtime,'candidate-final-site'),true),origin=await c.listen(server),ctx=await c.browser('combined-context-certification'),p=await ctx.newPage(),r={origin,instrumentation:'Getter-only exports; actual production context renderer called with identity arrays. Public UI unchanged.',ranges:[],errors:[]};p.on("
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Repair_2026-10-10/qa/common.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": "function capture(){const result={};for(const l of ['Latin','Greek','English']){const p=document.querySelector('#'+l.toLowerCase()),v=p.querySelector('[type^=\"niese-\"]');result[l]={DOM:p.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN'),text:p.innerText.replace(/\\s+/g,' ').trim(),type:v?.getAttribute('type'),n:v?.getAttribute('n'),ids:[...p.query"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Repair_2026-10-10/qa/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Repair_2026-10-10/qa/VII1-7-source-display.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const mode=process.argv[2]||'baseline',server=c.serve(c.path.join(c.runtime,mode==='baseline'?'baseline-site':'candidate-final-site')),origin=await c.listen(server),ctx=await c.browser(mode+'-source-display'),p=await ctx.newPage(),r={mode,origin,instrumentation:false,rows:[],errors:[]};p.on('pageerror',e=>r.errors.push(String(e)));p.on('"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Repair_2026-10-10/qa/VII1-context-regression.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const site=process.argv[2]||c.path.join(c.runtime,'candidate-site'),mode=process.argv[3]||'candidate',server=c.serve(site),origin=await c.listen(server),ctx=await c.browser(mode+'-positive-regression'),p=await ctx.newPage(),r={origin,site,mode,instrumentation:false,started:new Date().toISOString(),checks:[],errors:[]};p.on('pageerror',e="
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Repair_2026-10-10/qa/VII2-6-navigation.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const server=c.serve(c.path.join(c.runtime,'candidate-final-site')),origin=await c.listen(server),ctx=await c.browser('VII2-6-navigation-presentation'),p=await ctx.newPage(),r={origin,instrumentation:false,checks:[],errors:[]};p.on('pageerror',e=>r.errors.push(String(e)));p.on('requestfailed',x=>r.errors.push(x.url()+':'+x.failure()?.err"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Integration_2026-10-10/qa/combined-context.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const server=c.serve(c.path.join(c.runtime,'candidate-final-site'),true),origin=await c.listen(server),ctx=await c.browser('combined-context-certification'),p=await ctx.newPage(),r={origin,instrumentation:'Getter-only exports; actual production context renderer called with identity arrays. Public UI unchanged.',ranges:[],errors:[]};p.on("
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Integration_2026-10-10/qa/common.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": "function capture(){const result={};for(const l of ['Latin','Greek','English']){const p=document.querySelector('#'+l.toLowerCase()),v=p.querySelector('[type^=\"niese-\"]');result[l]={DOM:p.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN'),text:p.innerText.replace(/\\s+/g,' ').trim(),type:v?.getAttribute('type'),n:v?.getAttribute('n'),ids:[...p.query"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Integration_2026-10-10/qa/keyboard-full-source.cjs",
+    "hits": [
+      {
+        "line": 11,
+        "excerpt": "const source=await p.evaluate(async({book})=>{const xml=new DOMParser().parseFromString(await(await fetch('/assets/xml/antiquities/English/book-'+book.padStart(2,'0')+'.xml')).text(),'application/xml'),norm=s=>s.replace(/\\s+/g,' ').trim(),nodes=[...document.querySelectorAll('#english tei-p[id]')],all=[...xml.getElementsByTagNameNS('*','p')];return "
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Integration_2026-10-10/qa/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Integration_2026-10-10/qa/VII1-7-source-display.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const mode=process.argv[2]||'baseline',server=c.serve(c.path.join(c.runtime,mode==='baseline'?'baseline-site':'candidate-final-site')),origin=await c.listen(server),ctx=await c.browser(mode+'-source-display'),p=await ctx.newPage(),r={mode,origin,instrumentation:false,rows:[],errors:[]};p.on('pageerror',e=>r.errors.push(String(e)));p.on('"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII2_6_Whiston_Context_Integration_2026-10-10/qa/VII1-context-regression.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const site=process.argv[2]||c.path.join(c.runtime,'candidate-site'),mode=process.argv[3]||'candidate',server=c.serve(site),origin=await c.listen(server),ctx=await c.browser(mode+'-positive-regression'),p=await ctx.newPage(),r={origin,site,mode,instrumentation:false,started:new Date().toISOString(),checks:[],errors:[]};p.on('pageerror',e="
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII1_Whiston_Context_Repair_2026-10-10/qa/common.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": "function capture(){const result={};for(const l of ['Latin','Greek','English']){const p=document.querySelector('#'+l.toLowerCase()),v=p.querySelector('[type^=\"niese-\"]');result[l]={DOM:p.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN'),text:p.innerText.replace(/\\s+/g,' ').trim(),type:v?.getAttribute('type'),n:v?.getAttribute('n'),ids:[...p.query"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII1_Whiston_Context_Repair_2026-10-10/qa/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII1_Whiston_Context_Repair_2026-10-10/qa/VII1-context-regression.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const site=process.argv[2]||c.path.join(c.runtime,'candidate-site'),mode=process.argv[3]||'candidate',server=c.serve(site),origin=await c.listen(server),ctx=await c.browser(mode+'-positive-regression'),p=await ctx.newPage(),r={origin,site,mode,instrumentation:false,started:new Date().toISOString(),checks:[],errors:[]};p.on('pageerror',e="
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII1_Whiston_Context_Integration_2026-10-10/qa/common.cjs",
+    "hits": [
+      {
+        "line": 14,
+        "excerpt": "function capture(){const result={};for(const l of ['Latin','Greek','English']){const p=document.querySelector('#'+l.toLowerCase()),v=p.querySelector('[type^=\"niese-\"]');result[l]={DOM:p.innerHTML.replaceAll(location.origin,'LOCAL_ORIGIN'),text:p.innerText.replace(/\\s+/g,' ').trim(),type:v?.getAttribute('type'),n:v?.getAttribute('n'),ids:[...p.query"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII1_Whiston_Context_Integration_2026-10-10/qa/qa-common18.cjs",
+    "hits": [
+      {
+        "line": 24,
+        "excerpt": "function narrative(node){if(!node)return null;const c=node.cloneNode(true);c.querySelectorAll('tei-num,tei-milestone,tei-note,tei-app,tei-rdg,.niese-context-note,.niese-correspondence-note,.structural-unavailable,.niese-source-passage-label').forEach(x=>x.remove());return [...(c.matches?.('tei-p')?[c]:[]),...c.querySelectorAll('tei-p')].filter(p=>!"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII1_Whiston_Context_Integration_2026-10-10/qa/VII1-context-regression.test.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const site=process.argv[2]||c.path.join(c.runtime,'candidate-site'),mode=process.argv[3]||'candidate',server=c.serve(site),origin=await c.listen(server),ctx=await c.browser(mode+'-positive-regression'),p=await ctx.newPage(),r={origin,site,mode,instrumentation:false,started:new Date().toISOString(),checks:[],errors:[]};p.on('pageerror',e="
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_VII1_Whiston_Context_Integration_2026-10-10/qa/VII2-6-disposition.cjs",
+    "hits": [
+      {
+        "line": 2,
+        "excerpt": "(async()=>{const server=c.serve(c.path.join(c.runtime,'candidate-final-site')),origin=await c.listen(server),ctx=await c.browser('VII2-6-disposition'),p=await ctx.newPage(),r={origin,instrumentation:false,started:new Date().toISOString(),rows:[],views:[],errors:[]};p.on('pageerror',e=>r.errors.push(String(e)));p.on('requestfailed',x=>r.errors.push("
+      },
+      {
+        "line": 3,
+        "excerpt": "for(const query of ['book=7','book=7&chapter=1','book=7&chapter=1&subchapter=1']){await p.goto(origin+'/antiquities/?'+query,{waitUntil:'domcontentloaded'});await p.waitForSelector('#english #english-book07-num1',{state:'attached'});const v=await p.evaluate(async()=>{const xml=new DOMParser().parseFromString(await(await fetch('/assets/xml/antiquiti"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_20_2026-10-10/renderer-comparison/base.js",
+    "hits": [
+      {
+        "line": 2197,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_20_2026-10-10/renderer-comparison/canonical.js",
+    "hits": [
+      {
+        "line": 2113,
+        "excerpt": "      note.className = \"niese-context-note\";"
+      },
+      {
+        "line": 2314,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_20_2026-10-10/renderer-comparison/incoming.js",
+    "hits": [
+      {
+        "line": 2204,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_18_19_2026-10-10/renderer-comparison/base.js",
+    "hits": [
+      {
+        "line": 2197,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_18_19_2026-10-10/renderer-comparison/canonical.js",
+    "hits": [
+      {
+        "line": 2103,
+        "excerpt": "      note.className = \"niese-context-note\";"
+      },
+      {
+        "line": 2286,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_18_19_2026-10-10/renderer-comparison/incoming.js",
+    "hits": [
+      {
+        "line": 2210,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/renderer-comparison/base.js",
+    "hits": [
+      {
+        "line": 2197,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/renderer-comparison/canonical.js",
+    "hits": [
+      {
+        "line": 2112,
+        "excerpt": "      note.className = \"niese-context-note\";"
+      },
+      {
+        "line": 2299,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_Integration_16_17_2026-10-10/renderer-comparison/incoming.js",
+    "hits": [
+      {
+        "line": 2228,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXV_2026-10-09/reader-certified-build4/renderTei.js",
+    "hits": [
+      {
+        "line": 2161,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXV_2026-10-09/reader-certified-build5/renderTei.js",
+    "hits": [
+      {
+        "line": 2162,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXV_2026-10-09/reader-tested-checkpoint/renderTei.js",
+    "hits": [
+      {
+        "line": 2160,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXV_2026-10-09/reader-tested-checkpoint3/renderTei.js",
+    "hits": [
+      {
+        "line": 2160,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXI_2026-10-09/inputs/renderTei.js",
+    "hits": [
+      {
+        "line": 2197,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXIV_2026-10-09/reader-certified-build5/renderTei.js",
+    "hits": [
+      {
+        "line": 2162,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXIV_2026-10-09/reader-tested-checkpoint/renderTei.js",
+    "hits": [
+      {
+        "line": 2160,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookXIV_2026-10-09/reader-tested-checkpoint3/renderTei.js",
+    "hits": [
+      {
+        "line": 2160,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  },
+  {
+    "path": "review/Antiquities_Niese_BookIX_2026-10-09/inputs/assets__js__renderTei.js",
+    "hits": [
+      {
+        "line": 2160,
+        "excerpt": "    note.classList.add(\"niese-context-note\");"
+      }
+    ],
+    "disposition": "Frozen release-specific evidence, retained. Current exact I–XI and contextual XII–XX acceptance are separate and stronger; this script is not silently rewritten."
+  }
+]

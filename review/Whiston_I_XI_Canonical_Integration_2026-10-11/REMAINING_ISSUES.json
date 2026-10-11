@@ -1,0 +1,32 @@
+[
+  {
+    "severity": "P2 editorial, nonblocking for this scoped English integration",
+    "issue": "Greek I.272 label remains inside the preceding quotation.",
+    "evidence": "Original Book I adopted English boundary uses So suspecting; printed/Greek control disagreement recorded. Entire canonical Greek Book I equals the pilot Greek bytes; last source edit d79f1930a579e9ecb4412df5959f3d97211ffb0a predates the pilot.",
+    "action": "A separate Greek editorial/control adjudication is needed before claiming complete cross-language boundary agreement. No Greek correction is authorized or performed."
+  },
+  {
+    "severity": "P2 inherited transcription, nonblocking for segmentation/display",
+    "issue": "35 Book I source differences; I.260–263 shorter extents and severely damaged I.271.",
+    "evidence": "Original complete extent review and all surviving English unchanged. Every identity has surviving English; 17 boundaries individually resolved.",
+    "action": "Retain the explicit completeness qualification. Any restoration or edition attribution requires a separate source-review mission."
+  },
+  {
+    "severity": "P2 inherited apparatus HOLD, outside this integration",
+    "issue": "Canonical Package C contains three unresolved Book I references and two malformed 404 targets.",
+    "evidence": "Pinned Postrelease_Reader_Repairs_Integration_2026-10-11/UNRESOLVED_REFERENCES.md/json explicitly retains the editorial hold. No secure correspondence was established.",
+    "action": "Preserve the hold; do not invent, redirect, disable or count these apparatus links as repaired."
+  },
+  {
+    "severity": "P3 provenance/publication qualification",
+    "issue": "Book IX restored 59 intervals and the older 232-section transcription have distinct recorded provenance; older underlying edition/source licensing is qualified.",
+    "evidence": "All original IX provenance and licensing notices retained; restored source is the certified 1856 pp.251–255 delivery.",
+    "action": "Keep notices and source qualifications in any later controlled publication; this receipt grants no publication authorization."
+  },
+  {
+    "severity": "P3 inherited technical diagnostics",
+    "issue": "Headerless generic TEI All failures, inherited duplicate annotations ID and Sass deprecation warnings.",
+    "evidence": "Baseline diagnostics retained; all XML parses, no new reader errors or source changes.",
+    "action": "Do not claim generic-schema validation or unrelated defect repair; handle separately if authorized."
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "receipt": "Superseding scoped Book I English certification",
+  "issued_UTC": "2026-10-11T18:11:11.902982+00:00",
+  "original_delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+  "original_report_preserved": [
+    {
+      "path": "review/BookI_Pilot_2026-10-10/REPORT.md",
+      "delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "sha256": "2c013ccd72922392f4b8f2ff91a52a37dbdc238504dbcbf1d6ebf92ebce01d5d"
+    },
+    {
+      "path": "review/BookI_Pilot_2026-10-10/ADJUDICATION.md",
+      "delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "sha256": "c926edca24dea0de1726e00ad6a4154d8d6db25b14af049b6f58138ff3569cb6"
+    },
+    {
+      "path": "review/BookI_Pilot_2026-10-10/ADJUDICATION_RECORDS.json",
+      "delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "sha256": "cede800a9c846f360dc64857c4174714a050c9543380ac15893426cc95b1ca91"
+    },
+    {
+      "path": "review/BookI_Pilot_2026-10-10/QA.json",
+      "delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "sha256": "f46a4d156f2a9c3932df827c71e777e82a6cc784452b20d047a2c4cb2007fdda"
+    },
+    {
+      "path": "review/BookI_Pilot_2026-10-10/SOURCE_DIFFERENCE_REVIEW.md",
+      "delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "sha256": "760df56445e66371df47051811c15bf93682b12d987ef4d74e006c515ac615d3"
+    },
+    {
+      "path": "review/BookI_Pilot_2026-10-10/SOURCE_DIFFERENCES.json",
+      "delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "sha256": "6ff699c9387f268eb0229739d529158358acea23f4f21b93f16c1a41c9c52aa2"
+    },
+    {
+      "path": "review/BookI_Pilot_2026-10-10/SCHEMA_QA.json",
+      "delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "sha256": "ecd59409d9f01afa0d312d602619f492dc9d735cb9d57fb9a8c63d815d45caf6"
+    },
+    {
+      "path": "review/BookI_Pilot_2026-10-10/RENDERER_QA.json",
+      "delivery_commit": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "sha256": "10d1ef6feff48f19e9d7d7b1eab99adc35d57aa348bd18bfb8a174e3a9ceb102"
+    }
+  ],
+  "supersedes": "The historical blanket NOT CERTIFIED / integration hold insofar as it applied to English segmentation and renderer readiness.",
+  "English_DATA": "DATA-GO for exact segmentation of the preserved project transcription",
+  "English_RENDERER": "RENDERER-GO, 346/346 exact displayed intervals",
+  "scope": "Proem I.1–26 and narrative I.27–346; source wording, surviving text, markup and all adopted boundaries unchanged.",
+  "original_objections": [
+    {
+      "issue": "Contextual English renderer",
+      "disposition": "Resolved by independently verified 346/346 exact English interval rendering and preserved containing views."
+    },
+    {
+      "issue": "17 MEDIUM segmentation decisions",
+      "disposition": "All individually adjudicated in original evidence; zero unresolved candidates. MEDIUM remains MEDIUM; no new scholarly adjudication."
+    },
+    {
+      "issue": "Greek I.272 marker",
+      "disposition": "Inherited Greek editorial/control disagreement remains OPEN. Same Greek bytes in Book I delivery and current canonical; no later correction found in file history or canonical reports. It blocks a complete cross-language agreement claim, not faithful display of the adopted English interval."
+    },
+    {
+      "issue": "35 inherited English source differences, including I.260–263 losses and damaged I.271",
+      "disposition": "Acknowledged and retained. DATA-GO certifies segmentation of surviving project text; it does not certify a complete or corrected Whiston transcription."
+    },
+    {
+      "issue": "Inherited duplicate annotations ID and headerless TEI schema diagnostics",
+      "disposition": "Baseline conditions retained; no new source/schema diagnostic or duplicate ID introduced."
+    }
+  ],
+  "not_certified": [
+    "Complete cross-language boundary agreement at Greek I.272",
+    "Restoration or editorial repair of inherited Book I English losses",
+    "Generic TEI All conformance",
+    "Public deployment"
+  ],
+  "integration_disposition": "English integration eligible with these retained qualifications; no segmentation or Greek change required."
+}
