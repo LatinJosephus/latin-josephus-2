@@ -301,6 +301,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let viewData = {};
   let canonicalFullData;
   let canonicalViewData;
+  let invalidNieseRequest = null;
+  let unsupportedNieseBook = null;
 
   const initialSources = Object.fromEntries(
     Object.entries(activeWork.languages).map(([language, config]) => [
@@ -585,18 +587,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const rawUnit = params.get("unit") || params.get("num");
     return {bookNum, chapterNum: bookNum === "preface" ? null : positive("chapter"),
       subchapterNum: positive("subchapter"), unitNum: /^[1-9]\d*[a-z]*$/.test(rawUnit || "") ? rawUnit : null,
-      nieseNum: supportsNieseBook(bookNum) ? positive("niese") : null,
+      // Retain explicit malformed requests so they receive a notice, not unrelated text.
+      nieseNum: supportsNieseBook(bookNum) && params.has("niese")
+        ? (positive("niese") ?? params.get("niese")) : null,
+      invalidNieseBook: params.has("niese") && rawBook !== null && rawBook !== "preface"
+        && !(/^[1-9]\d*$/.test(rawBook) && Number(rawBook) <= activeWork.bookCount) ? rawBook : null,
       bambergId: bambergIdentityFromUrl(params.get("bamberg")),
       sourceSelections, hasLocationParams: params.size > 0};
   };
   const applyTraditionalUrl = () => {
     const location = readTraditionalUrl();
+    unsupportedNieseBook = location.invalidNieseBook;
     Object.assign(state, {bookNum: location.bookNum, chapterNum: location.chapterNum,
       subchapterNum: location.subchapterNum, sectionNum: location.unitNum, nieseNum: location.nieseNum, bambergId: location.bambergId,
       sources: {...initialSources, ...location.sourceSelections}});
     if (state.bambergId !== null) {
       state.viewingLevel = "bamberg-level"; state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null; state.nieseNum = null;
-    } else if (state.nieseNum) {
+    } else if (state.nieseNum !== null) {
       state.viewingLevel = "niese-level"; state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null;
     } else if (state.sectionNum) {
       state.viewingLevel = "section-level"; state.chapterNum = null; state.subchapterNum = null;
@@ -1079,6 +1086,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return requested;
   };
   const syncUrlFromState = (mode = "replace") => {
+    if (invalidNieseRequest) return; // Keep the typed unsupported URL and history intact.
     if (state.viewingLevel !== "contents-level") return syncNavigationLocation(mode);
     const url = new URL(window.location.href);
     ["chapter", "subchapter", "bamberg", "niese", "unit", "num"].forEach(key => url.searchParams.delete(key));
@@ -3072,10 +3080,20 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
 
-    canonicalViewData = selectCanonicalView(canonicalFullData, idBase);
+    invalidNieseRequest = null;
+    if (activeWork.slug === "antiquities" && state.viewingLevel === "niese-level") {
+      const entries = canonicalNieseStartEntries();
+      if (unsupportedNieseBook !== null || !/^[1-9]\d*$/.test(String(state.nieseNum))
+        || !Number.isSafeInteger(Number(state.nieseNum))
+        || !entries.some(entry => entry.number === Number(state.nieseNum))) {
+        invalidNieseRequest = {number: state.nieseNum, book: unsupportedNieseBook,
+          first: entries[0]?.number, last: entries.at(-1)?.number};
+      }
+    }
+    canonicalViewData = invalidNieseRequest ? null : selectCanonicalView(canonicalFullData, idBase);
 
     Object.entries(fullData).forEach(([language, data]) => {
-      viewData[language] = selectView(language, data, idBase);
+      viewData[language] = invalidNieseRequest ? null : selectView(language, data, idBase);
     });
 
     if (state.viewingLevel === "contents-level") {
@@ -3143,6 +3161,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  const renderInvalidNieseNotice = () => {
+    document.getElementById("unsupported-niese-notice")?.remove();
+    if (!invalidNieseRequest) return;
+    const panes = document.getElementById("pane-container");
+    const notice = document.createElement("aside");
+    notice.id = "unsupported-niese-notice";
+    notice.className = "alert alert-secondary";
+    notice.setAttribute("role", "alert");
+    const description = document.createElement("p");
+    description.textContent = invalidNieseRequest.book !== null
+      ? `The requested Antiquities book "${invalidNieseRequest.book}" is unsupported. No passage is displayed.`
+      : `Niese section "${invalidNieseRequest.number}" is unsupported in ${currentBookLabel()}. This selection supports sections ${invalidNieseRequest.first}–${invalidNieseRequest.last}. No passage is displayed.`;
+    notice.appendChild(description);
+    const addLink = (book, number, label) => {
+      const url = new URL(window.location.href);
+      ["chapter", "subchapter", "bamberg", "unit", "num", "view", "niese"].forEach(key => url.searchParams.delete(key));
+      url.searchParams.set("book", book); url.searchParams.set("niese", number);
+      const link = document.createElement("a"); link.href = url.href; link.textContent = label;
+      if (notice.childElementCount > 1) notice.append(" · ");
+      notice.appendChild(link);
+    };
+    addLink("preface", "1", "Read Proem, Niese section 1");
+    addLink("1", "27", "Read Book I, Niese section 27");
+    panes.before(notice);
+  };
+
   const renderUI = () => {
     // Clear panes if text already loaded.
     Object.values(languagePanes).forEach(pane => {
@@ -3186,7 +3230,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    const related = nieseIdentityRegistry()?.relatedPassage;
+    renderInvalidNieseNotice();
+    const related = invalidNieseRequest ? null : nieseIdentityRegistry()?.relatedPassage;
     if (related && (!state.nieseNum || Number(state.nieseNum) === nieseIdentityRegistry().range[1])) {
       const note = document.createElement("p");
       note.className = "niese-related-passage";
@@ -3226,6 +3271,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (usesTraditionalStructure() && state.viewingLevel === "bamberg-level")
       sectionLabel.innerText = bambergSelection() ? `Bamberg division ${bambergSelection().display}` : "Bamberg division";
     if (state.viewingLevel === "contents-level") { chapterLabel.innerText = "Table of contents"; sectionLabel.innerText = ""; }
+    if (invalidNieseRequest) {
+      if (invalidNieseRequest.book !== null) bookLabel.innerText = "Unsupported Antiquities book";
+      sectionLabel.innerText = "Unsupported Niese request";
+    }
     updateLanguageUI();
     updateNavigationForms();
     addContraApionemTransmissionNotice();
@@ -3627,7 +3676,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     renderUI();
-    if (state.viewingLevel === "contents-level") {
+    if (invalidNieseRequest || state.viewingLevel === "contents-level") {
       annotatedParagraphs = [];
       annotationsList.replaceChildren();
       if (annotationsPanel) annotationsPanel.hidden = true;
@@ -3638,6 +3687,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const setState = async (callback) => {
+    unsupportedNieseBook = null; // An explicit reader control selects its real book.
     await callback();
     await reload();
     syncUrlFromState("push");
