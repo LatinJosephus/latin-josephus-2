@@ -2295,51 +2295,67 @@ document.addEventListener("DOMContentLoaded", () => {
   const antiquitiesNieseContextView = (language, data, nieseNum) => {
     if (!data || !nieseNum || !supportsNieseSections()) return null;
 
-    const identity = nieseIdentityRegistry()?.sections.find(section => section.number === Number(nieseNum));
-    if (identity?.[language]?.available === false) {
+    const combined = Array.isArray(nieseNum);
+    const numbers = combined
+      ? [...new Set(nieseNum.map(Number))].sort((a, b) => a - b)
+      : [Number(nieseNum)];
+    if (combined && (!numbers.length || numbers.some(number =>
+      !Number.isInteger(number) || number < 1))) return null;
+    const identities = numbers.map(number =>
+      nieseIdentityRegistry()?.sections.find(section => section.number === number));
+    if (!combined && identities[0]?.[language]?.available === false) {
       return antiquitiesNieseExactView(language, data, nieseNum);
     }
 
-    const start = antiquitiesNieseStartEntries(
-      activeWork.alignment.language,
-      canonicalFullData
-    ).find(entry => entry.number === parseInt(nieseNum, 10));
+    // Contexts shared by several identities remain separate source paragraphs,
+    // each cloned once; this does not create exact English Niese segmentation.
+    const paragraphs = [...new Set(numbers.flatMap((number, index) => {
+      const identity = identities[index];
+      if (identity?.[language]?.available === false) return [];
+      const start = antiquitiesNieseStartEntries(
+        activeWork.alignment.language,
+        canonicalFullData
+      ).find(entry => entry.number === number);
+      const canonicalParagraph = start?.node?.closest("tei-p") || null;
+      const canonicalId = canonicalParagraph?.id || identity?.contextTarget || null;
+      let context = identity?.[language]?.contextTargets
+        ? [...new Set(identity[language].contextTargets)].map(id => data.querySelector(`[id="${id}"]`)).filter(Boolean)
+        : canonicalId
+        ? alignedParagraphsForCanonicalId(language, data, canonicalId)
+        : [];
 
-    const canonicalParagraph = start?.node?.closest("tei-p") || null;
-    const canonicalId = canonicalParagraph?.id || identity?.contextTarget || null;
-    let paragraphs = identity?.[language]?.contextTargets
-      ? [...new Set(identity[language].contextTargets)].map(id => data.querySelector(`[id="${id}"]`)).filter(Boolean)
-      : canonicalId
-      ? alignedParagraphsForCanonicalId(language, data, canonicalId)
-      : [];
-
-    // Legacy opening IDs can omit "1" while a witness explicitly targets it.
-    // Recover only the opening selection's unique context; never alias exact
-    // Niese starts, interior milestones, or an existing canonical paragraph.
-    if (!identity?.[language]?.contextTargets && !paragraphs.length &&
-        Number(nieseNum) === 1 && canonicalId === `latin-${currentIdBase()}-num` &&
-        canonicalParagraph === canonicalFullData.querySelector(`tei-p[id^="${canonicalId}"]`) &&
-        !canonicalFullData.querySelector(`[id="${canonicalId}1"]`)) {
-      const openingContext = [...data.querySelectorAll("tei-p")].filter(paragraph => {
-        const targets = normalizedSameAsTargets(paragraph);
-        return targets.length === 1 && targets[0] === `${canonicalId}1`;
-      });
-      if (openingContext.length === 1) paragraphs = openingContext;
-    }
-
+      // Legacy opening IDs can omit "1" while a witness explicitly targets it.
+      // Recover this first paragraph's unique context also at its interior
+      // milestones; never alias exact starts or an existing canonical paragraph.
+      if (!identity?.[language]?.contextTargets && !context.length &&
+          canonicalId === `latin-${currentIdBase()}-num` &&
+          canonicalParagraph === canonicalFullData.querySelector(`tei-p[id^="${canonicalId}"]`) &&
+          !canonicalFullData.querySelector(`[id="${canonicalId}1"]`)) {
+        const openingContext = [...data.querySelectorAll("tei-p")].filter(paragraph => {
+          const targets = normalizedSameAsTargets(paragraph);
+          return targets.length === 1 && targets[0] === `${canonicalId}1`;
+        });
+        if (openingContext.length === 1) context = openingContext;
+      }
+      return context;
+    }))];
+    const value = numbers.join(" ");
     const wrapper = paragraphs.length
-      ? wrapAlignedParagraphs(paragraphs, "niese-context", nieseNum)
+      ? wrapAlignedParagraphs(paragraphs, "niese-context", value)
       : document.createElement("tei-div2");
-
     wrapper.setAttribute("type", "niese-context");
-    wrapper.setAttribute("n", String(parseInt(nieseNum, 10)));
+    wrapper.setAttribute("n", value);
 
     const note = document.createElement("p");
     note.classList.add("niese-context-note");
     note.textContent =
       `${language} context: exact Niese-level segmentation is unavailable for this source.`;
     wrapper.insertBefore(note, wrapper.firstChild);
-
+    if (combined) identities.forEach((identity, index) => {
+      if (identity?.[language]?.available === false) {
+        wrapper.appendChild(antiquitiesNieseExactView(language, data, numbers[index]));
+      }
+    });
     return wrapper;
   };
 
