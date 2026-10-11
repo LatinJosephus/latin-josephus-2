@@ -83,7 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
           sources: {
             whiston: {
               label: "Whiston",
-              directory: "English"
+              directory: "English",
+              exactNieseBooks: ["preface", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
             }
           }
         },
@@ -440,6 +441,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!locator || locator.available !== "true") return null;
     let node = data.querySelector(`[id="${locator.target}"]`);
     if (!node) return null;
+    if (locator.kind === "niese-milestone") {
+      node = node.querySelector(`tei-milestone[unit="niese"][n="${locator.n}"]`);
+      if (!node) return null;
+    }
     if (locator.kind === "element-edge") {
       for (const step of locator.edge.split("/")) {
         const match = step.match(/^([\w-]+)\[(\d+)\]$/);
@@ -1982,7 +1987,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const range = document.createRange();
       range.setStartAfter(start.node);
       range.setEndBefore(end.node);
-      paragraphWrapper.appendChild(range.cloneContents());
+      let content = range.cloneContents();
+      if (activeWork.slug === "antiquities") {
+        // Range clones only children of its common ancestor. Retain an inline
+        // ancestor (e.g. italic text) when both boundaries fall inside it.
+        let ancestor = range.commonAncestorContainer;
+        if (ancestor.nodeType !== Node.ELEMENT_NODE) ancestor = ancestor.parentElement;
+        while (ancestor && ancestor !== startParagraph) {
+          const shell = ancestor.cloneNode(false);
+          shell.appendChild(content); content = shell;
+          ancestor = ancestor.parentElement;
+        }
+      }
+      paragraphWrapper.appendChild(content);
       wrapper.appendChild(paragraphWrapper);
     } else {
       const range = document.createRange();
@@ -1990,6 +2007,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (end) range.setEndBefore(end.node);
       else range.setEnd(book, book.childNodes.length);
       wrapper.appendChild(range.cloneContents());
+    }
+
+    if (activeWork.slug === "antiquities") {
+      // Inherited paragraph citations are contextual labels. The selected
+      // milestone supplies the single exact citation without changing XML.
+      wrapper.querySelectorAll("tei-num").forEach(label => label.remove());
+      wrapper.dataset.englishSegmentation = "exact";
     }
 
     wrapper.querySelectorAll("tei-p").forEach(paragraph => {
@@ -2370,6 +2394,26 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const antiquitiesNieseView = (language, data, nieseNum) => {
+    if (language === "English" && sourceConfig(language)?.exactNieseBooks?.includes(nieseBookKey(state.bookNum))) {
+      const identity = nieseIdentityRegistry()?.sections.find(section => section.number === Number(nieseNum));
+      if (identity?.English?.available === false) return antiquitiesNieseExactView(language, data, nieseNum);
+      // English follows its own physical milestones, including Book XI's
+      // transposition; Latin/Greek fragment and context records do not bind it.
+      const view = englishNieseView(data, nieseNum);
+      if (!view) return structuralUnavailable(language, "The certified English interval has no matching milestone.");
+      const note = document.createElement("p");
+      note.className = "niese-exact-note";
+      note.setAttribute("role", "note");
+      note.textContent = "Whiston English: exact Niese interval.";
+      view.prepend(note);
+      if (identity?.English?.note) {
+        const notice = document.createElement("p");
+        notice.className = "alert alert-secondary niese-correspondence-note";
+        notice.setAttribute("role", "note"); notice.textContent = identity.English.note;
+        view.prepend(notice);
+      }
+      return view;
+    }
     if (language === "Latin" || language === "Greek") {
       return antiquitiesNieseExactView(language, data, nieseNum);
     }

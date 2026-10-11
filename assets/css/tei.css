@@ -9,6 +9,17 @@ tei-p {
 tei-note {
   font-style: italic;
 }
+/* The seven notes belong to the certified restored Whiston IX passage.
+   Keep them readable in exact and containing English views. */
+#english tei-note[type="whiston-footnote"] {
+  display: block;
+  font-size: .9em;
+  margin-block: .75em;
+}
+#english tei-note[type="whiston-footnote"]::before {
+  content: "Whiston note " attr(n) ": ";
+  font-weight: bold;
+}
 tei-num {
   font-weight: bold;
 }
