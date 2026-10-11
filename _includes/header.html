@@ -49,10 +49,10 @@
           {% endfor %}
           {% if site.enable_darkmode %}
             <div class = "toggle-container">
-              <a id = "light-toggle">
-                  <i class="fas fa-moon"></i>
-                  <i class="fas fa-sun"></i>
-              </a>
+              <button id="light-toggle" type="button" aria-label="Dark mode" aria-pressed="false">
+                  <i class="fas fa-moon" aria-hidden="true"></i>
+                  <i class="fas fa-sun" aria-hidden="true"></i>
+              </button>
             </div>
           {% endif %}
         </ul>

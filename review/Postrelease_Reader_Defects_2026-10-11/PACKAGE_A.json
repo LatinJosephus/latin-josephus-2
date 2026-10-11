@@ -1,0 +1,464 @@
+{
+  "stage": "A",
+  "origin": "http://127.0.0.1:58423",
+  "checks": [
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "url": "http://127.0.0.1:58423/antiquities/?book=7&niese=6",
+      "tabs": [
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "navbarDropdown",
+          "tag": "A"
+        },
+        {
+          "id": "light-toggle",
+          "tag": "BUTTON"
+        }
+      ],
+      "focus": {
+        "outline": "solid",
+        "width": "2px",
+        "active": true
+      },
+      "AX": {
+        "nodeId": "44",
+        "ignored": false,
+        "role": {
+          "type": "role",
+          "value": "button"
+        },
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 175
+        },
+        "name": {
+          "type": "computedString",
+          "value": "Dark mode",
+          "sources": [
+            {
+              "type": "relatedElement",
+              "attribute": "aria-labelledby"
+            },
+            {
+              "type": "attribute",
+              "value": {
+                "type": "computedString",
+                "value": "Dark mode"
+              },
+              "attribute": "aria-label",
+              "attributeValue": {
+                "type": "string",
+                "value": "Dark mode"
+              }
+            },
+            {
+              "type": "relatedElement",
+              "superseded": true,
+              "nativeSource": "label"
+            },
+            {
+              "type": "contents",
+              "superseded": true
+            },
+            {
+              "type": "attribute",
+              "attribute": "title",
+              "superseded": true
+            }
+          ]
+        },
+        "properties": [
+          {
+            "name": "invalid",
+            "value": {
+              "type": "token",
+              "value": "false"
+            }
+          },
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "pressed",
+            "value": {
+              "type": "tristate",
+              "value": "false"
+            }
+          }
+        ],
+        "parentId": "9",
+        "childIds": [
+          "93"
+        ],
+        "backendDOMNodeId": 44
+      },
+      "Enter": "dark",
+      "Space": "light",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "test": "reload persistence",
+      "theme": "dark",
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "test": "mobile keyboard light",
+      "screenshot": "C:\\workspace\\LatinJosephus-postrelease-reader-repairs-runtime-20261011\\screenshots\\A-A-2-light.png",
+      "colors": {
+        "text": "rgb(79, 79, 79)",
+        "bg": "rgb(252, 252, 252)",
+        "buttonText": "rgb(47, 43, 38)",
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/antiquities/?book=7&niese=6",
+      "test": "mobile keyboard dark",
+      "screenshot": "C:\\workspace\\LatinJosephus-postrelease-reader-repairs-runtime-20261011\\screenshots\\A-A-3-dark.png",
+      "colors": {
+        "text": "rgb(242, 237, 228)",
+        "bg": "rgb(40, 37, 34)",
+        "buttonText": "rgb(242, 237, 228)",
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "url": "http://127.0.0.1:58423/about/",
+      "tabs": [
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "navbarDropdown",
+          "tag": "A"
+        },
+        {
+          "id": "light-toggle",
+          "tag": "BUTTON"
+        }
+      ],
+      "focus": {
+        "outline": "solid",
+        "width": "2px",
+        "active": true
+      },
+      "AX": {
+        "nodeId": "1955",
+        "ignored": false,
+        "role": {
+          "type": "role",
+          "value": "button"
+        },
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 175
+        },
+        "name": {
+          "type": "computedString",
+          "value": "Dark mode",
+          "sources": [
+            {
+              "type": "relatedElement",
+              "attribute": "aria-labelledby"
+            },
+            {
+              "type": "attribute",
+              "value": {
+                "type": "computedString",
+                "value": "Dark mode"
+              },
+              "attribute": "aria-label",
+              "attributeValue": {
+                "type": "string",
+                "value": "Dark mode"
+              }
+            },
+            {
+              "type": "relatedElement",
+              "superseded": true,
+              "nativeSource": "label"
+            },
+            {
+              "type": "contents",
+              "superseded": true
+            },
+            {
+              "type": "attribute",
+              "attribute": "title",
+              "superseded": true
+            }
+          ]
+        },
+        "properties": [
+          {
+            "name": "invalid",
+            "value": {
+              "type": "token",
+              "value": "false"
+            }
+          },
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "pressed",
+            "value": {
+              "type": "tristate",
+              "value": "true"
+            }
+          }
+        ],
+        "parentId": "2007",
+        "childIds": [
+          "2009"
+        ],
+        "backendDOMNodeId": 1955
+      },
+      "Enter": "light",
+      "Space": "dark",
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "test": "reload persistence",
+      "theme": "light",
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "test": "mobile keyboard light",
+      "screenshot": "C:\\workspace\\LatinJosephus-postrelease-reader-repairs-runtime-20261011\\screenshots\\A-A-6-light.png",
+      "colors": {
+        "text": "rgb(47, 43, 38)",
+        "bg": "rgb(250, 248, 242)",
+        "buttonText": "rgb(47, 43, 38)",
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/about/",
+      "test": "mobile keyboard dark",
+      "screenshot": "C:\\workspace\\LatinJosephus-postrelease-reader-repairs-runtime-20261011\\screenshots\\A-A-7-dark.png",
+      "colors": {
+        "text": "rgb(242, 237, 228)",
+        "bg": "rgb(40, 37, 34)",
+        "buttonText": "rgb(242, 237, 228)",
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "url": "http://127.0.0.1:58423/bellum-judaicum/?book=1&niese=1",
+      "tabs": [
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "",
+          "tag": "A"
+        },
+        {
+          "id": "navbarDropdown",
+          "tag": "A"
+        },
+        {
+          "id": "light-toggle",
+          "tag": "BUTTON"
+        }
+      ],
+      "focus": {
+        "outline": "solid",
+        "width": "2px",
+        "active": true
+      },
+      "AX": {
+        "nodeId": "2443",
+        "ignored": false,
+        "role": {
+          "type": "role",
+          "value": "button"
+        },
+        "chromeRole": {
+          "type": "internalRole",
+          "value": 175
+        },
+        "name": {
+          "type": "computedString",
+          "value": "Dark mode",
+          "sources": [
+            {
+              "type": "relatedElement",
+              "attribute": "aria-labelledby"
+            },
+            {
+              "type": "attribute",
+              "value": {
+                "type": "computedString",
+                "value": "Dark mode"
+              },
+              "attribute": "aria-label",
+              "attributeValue": {
+                "type": "string",
+                "value": "Dark mode"
+              }
+            },
+            {
+              "type": "relatedElement",
+              "superseded": true,
+              "nativeSource": "label"
+            },
+            {
+              "type": "contents",
+              "superseded": true
+            },
+            {
+              "type": "attribute",
+              "attribute": "title",
+              "superseded": true
+            }
+          ]
+        },
+        "properties": [
+          {
+            "name": "invalid",
+            "value": {
+              "type": "token",
+              "value": "false"
+            }
+          },
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "pressed",
+            "value": {
+              "type": "tristate",
+              "value": "true"
+            }
+          }
+        ],
+        "parentId": "2495",
+        "childIds": [
+          "2497"
+        ],
+        "backendDOMNodeId": 2443
+      },
+      "Enter": "light",
+      "Space": "dark",
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "test": "reload persistence",
+      "theme": "light",
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "test": "mobile keyboard light",
+      "screenshot": "C:\\workspace\\LatinJosephus-postrelease-reader-repairs-runtime-20261011\\screenshots\\A-A-10-light.png",
+      "colors": {
+        "text": "rgb(79, 79, 79)",
+        "bg": "rgb(255, 255, 255)",
+        "buttonText": "rgb(47, 43, 38)",
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "result": "PASS"
+    },
+    {
+      "route": "/bellum-judaicum/?book=1&niese=1",
+      "test": "mobile keyboard dark",
+      "screenshot": "C:\\workspace\\LatinJosephus-postrelease-reader-repairs-runtime-20261011\\screenshots\\A-A-11-dark.png",
+      "colors": {
+        "text": "rgb(242, 237, 228)",
+        "bg": "rgb(45, 42, 39)",
+        "buttonText": "rgb(242, 237, 228)",
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "result": "PASS"
+    }
+  ],
+  "otherPackageErrors": [
+    {
+      "URL": "http://127.0.0.1:58423/about/",
+      "error": "TypeError: Cannot read properties of undefined (reading 'languages')"
+    },
+    {
+      "URL": "http://127.0.0.1:58423/about/",
+      "error": "TypeError: Cannot read properties of undefined (reading 'languages')"
+    }
+  ],
+  "result": "PASS"
+}

@@ -9,6 +9,13 @@ let toggleTheme = (theme) => {
 }
 
 
+let updateThemeControl = () => {
+  const control = document.getElementById("light-toggle");
+  if (control) {
+    control.setAttribute("aria-pressed", String(document.documentElement.dataset.theme === "dark"));
+  }
+};
+
 let setTheme = (theme) =>  {
   transTheme();
   if (theme) {
@@ -18,6 +25,7 @@ let setTheme = (theme) =>  {
     document.documentElement.removeAttribute("data-theme");
   }
   localStorage.setItem("theme", theme);
+  updateThemeControl();
 
   // Updates the background of medium-zoom overlay.
   if (typeof medium_zoom !== 'undefined') {
