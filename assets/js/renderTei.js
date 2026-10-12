@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "/antiquities/": {
       title: "Antiquities",
       slug: "antiquities",
+      urlPreferences: {lodgeNotes: {stateKey: "lodgeNotesVisible", defaultValue: true, offValue: "0"}},
       bookCount: 20,
       idPrefix: "book",
       paddedBookId: true,
@@ -85,6 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
               label: "Whiston",
               directory: "English",
               exactNieseBooks: ["preface", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+            },
+            lodge1602: {
+              label: "Lodge (1602)",
+              directory: "English/Lodge1602",
+              availableBookKeys: ["2"],
+              exactNieseBooks: [2],
+              nativeTCP: true,
+              metadataDirectory: "assets/data/lodge1602-antiquities"
             }
           }
         },
@@ -344,7 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const bookContents = () => contentsRegistry.filter(row => row.status === "VERIFIED"
     && row.work === activeWork.slug && Number(row.book) === Number(state.bookNum));
-  const hasSourceContents = () => bookContents().some(row =>
+  const hasSourceContents = () => Boolean(lodgeMetadata?.source_contents && usesLodgeAntiquities()) || bookContents().some(row =>
     sourceAvailableForBook(row.language, row.witness));
   const clearContentsLocation = () => {
     state.chapterNum = null; state.subchapterNum = null; state.bambergId = null;
@@ -353,6 +362,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const contentsView = async language => {
     const wrapper = document.createElement("section");
     wrapper.className = "source-contents";
+    if (language === "English" && usesLodgeAntiquities()) {
+      const contents = fullData.English?.querySelector(`[id="${lodgeMetadata.source_contents.production_id}"]`);
+      if (!contents) return structuralUnavailable(language, "The Lodge source contents are unavailable.");
+      wrapper.appendChild(contents.cloneNode(true)); return wrapper;
+    }
     const row = bookContents().find(row => row.language === language && row.witness === state.sources[language]);
     if (!row) {
       const notice = document.createElement("p"); notice.setAttribute("role", "status");
@@ -598,14 +612,14 @@ document.addEventListener("DOMContentLoaded", () => {
       invalidNieseBook: params.has("niese") && rawBook !== null && rawBook !== "preface"
         && !(/^[1-9]\d*$/.test(rawBook) && Number(rawBook) <= activeWork.bookCount) ? rawBook : null,
       bambergId: bambergIdentityFromUrl(params.get("bamberg")),
-      sourceSelections, hasLocationParams: params.size > 0};
+      sourceSelections, lodgeNotesVisible: params.get("lodgeNotes") !== "0", hasLocationParams: params.size > 0};
   };
   const applyTraditionalUrl = () => {
     const location = readTraditionalUrl();
     unsupportedNieseBook = location.invalidNieseBook;
     Object.assign(state, {bookNum: location.bookNum, chapterNum: location.chapterNum,
       subchapterNum: location.subchapterNum, sectionNum: location.unitNum, nieseNum: location.nieseNum, bambergId: location.bambergId,
-      sources: {...initialSources, ...location.sourceSelections}});
+      sources: {...initialSources, ...location.sourceSelections}, lodgeNotesVisible: location.lodgeNotesVisible});
     if (state.bambergId !== null) {
       state.viewingLevel = "bamberg-level"; state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null; state.nieseNum = null;
     } else if (state.nieseNum !== null) {
@@ -632,6 +646,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (source && source !== config.defaultSource) url.searchParams.set(key, source);
       else url.searchParams.delete(key);
     });
+    Object.entries(activeWork.urlPreferences || {}).forEach(([key, preference]) => {
+      if (state[preference.stateKey] === preference.defaultValue) url.searchParams.delete(key);
+      else url.searchParams.set(key, preference.offValue);
+    });
     if (url.href !== window.location.href) window.history[mode === "push" ? "pushState" : "replaceState"]({}, "", url);
   };
 
@@ -642,6 +660,10 @@ document.addEventListener("DOMContentLoaded", () => {
   ) => {
     const source = activeWork.languages[language]?.sources[sourceKey];
     if (!source) return false;
+    if (source.availableBookKeys) {
+      const key = /^\d+$/.test(String(bookNum)) ? String(Number(bookNum)) : String(bookNum);
+      return source.availableBookKeys.includes(key);
+    }
 
     if (
       !source.availableBooks
@@ -1208,11 +1230,126 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchTei = async (language, sourceKey, filename) => {
     let result;
 
-    await tei.getHTML5(sourceUrl(language, sourceKey, filename), (data) => {
+    // Native TCP elements already carry their source text. Bypass default
+    // note/list decoration for this opt-in source only; it duplicates notes.
+    await tei.getHTML5(sourceUrl(language, sourceKey, filename), data => {
       result = data;
-    });
+    }, sourceConfig(language, sourceKey)?.nativeTCP
+      ? node => node.setAttribute("data-processed", "") : undefined);
 
     return result;
+  };
+
+  // Versioned source adapter: identities are shared; witness availability and
+  // printed chapters are source-specific. The sealed 7A sidecar supplies covers.
+  let lodgeMetadata = null;
+  const lodgeMetadataRequests = new Map();
+  const usesLodgeAntiquities = () => activeWork.slug === "antiquities"
+    && sourceConfig("English")?.nativeTCP === true;
+  const loadLodgeMetadata = async () => {
+    lodgeMetadata = null;
+    if (!usesLodgeAntiquities()) return;
+    const key = String(Number(state.bookNum));
+    if (!lodgeMetadataRequests.has(key)) lodgeMetadataRequests.set(key, (async () => {
+      const config = sourceConfig("English");
+      const response = await fetch(`/${config.metadataDirectory}/book-${key.padStart(2, "0")}.json?v=${teiCacheToken}`);
+      if (!response.ok) throw new Error("Lodge source metadata could not be loaded.");
+      const metadata = await response.json();
+      if (metadata.schema_version !== 1 || metadata.source !== "lodge1602"
+        || metadata.book_key !== key
+        || metadata.sections.length !== metadata.availability.identity_range[1] - metadata.availability.identity_range[0] + 1
+        || metadata.sections.some((section, index) => Number(section.niese) !== metadata.availability.identity_range[0] + index))
+        throw new Error("Unsupported Lodge source metadata.");
+      return metadata;
+    })());
+    lodgeMetadata = await lodgeMetadataRequests.get(key);
+  };
+  const lodgeBook = data => data?.querySelector(`[id="${lodgeMetadata.production_xml.book_wrapper_id}"]`);
+  const lodgeNieseRange = (data, first, exclusiveEnd, exact = false) => {
+    const book = lodgeBook(data);
+    const starts = englishNieseStartEntries(data);
+    const start = starts.find(entry => entry.number === first)?.node;
+    const last = lodgeMetadata.availability.identity_range[1];
+    const end = exclusiveEnd <= last ? starts.find(entry => entry.number === exclusiveEnd)?.node : null;
+    if (!book || !start || (exclusiveEnd <= last && !end))
+      return structuralUnavailable("English", "The certified Lodge interval has no matching source boundary.");
+    const range = document.createRange(); range.setStartAfter(start);
+    if (end) range.setEndBefore(end); else range.setEnd(book, book.childNodes.length);
+    let content = range.cloneContents();
+    // Preserve the ancestors omitted by Range when both cuts share an inline
+    // element or paragraph. No source character or source node is rewritten.
+    let ancestor = range.commonAncestorContainer;
+    if (ancestor.nodeType !== Node.ELEMENT_NODE) ancestor = ancestor.parentElement;
+    while (ancestor && ancestor !== book) {
+      const shell = ancestor.cloneNode(false); shell.appendChild(content); content = shell;
+      ancestor = ancestor.parentElement;
+    }
+    const wrapper = document.createElement("tei-div2");
+    wrapper.setAttribute("type", exact ? "niese-section" : "lodge-niese-context");
+    wrapper.setAttribute("n", String(first));
+    wrapper.dataset.nieseStart = String(first); wrapper.dataset.nieseEndExclusive = String(exclusiveEnd);
+    wrapper.dataset.englishSegmentation = exact ? "exact" : "containing-context";
+    wrapper.appendChild(content);
+    const label = makeGeneratedNieseLabel(first);
+    wrapper.prepend(label);
+    if (exact && first === lodgeMetadata.availability.identity_range[0]) {
+      const context = document.createElement("aside"); context.className = "lodge-source-context";
+      const title = document.createElement("p"); title.textContent = "Lodge source note preceding section 1";
+      context.appendChild(title);
+      for (const note of lodgeMetadata.pre_first_identity_context.notes) {
+        const node = data.querySelector(`[id="${note}"]`);
+        if (node) context.appendChild(node.cloneNode(true));
+      }
+      wrapper.prepend(context);
+    }
+    return wrapper;
+  };
+  const lodgeSelectView = data => {
+    if (state.viewingLevel === "niese-level" && state.nieseNum)
+      return antiquitiesNieseView("English", data, state.nieseNum);
+    if (["chapter-level", "subchapter-level", "bamberg-level"].includes(state.viewingLevel)) {
+      const record = state.viewingLevel === "bamberg-level" ? bambergSelection() : traditionalSelection();
+      const cover = lodgeMetadata.project_navigation_covers.find(row => row.project_boundary_id === record?.id);
+      if (!cover) return structuralUnavailable("English", "This project division has no certified Lodge Niese-context cover.");
+      const view = lodgeNieseRange(data, cover.start_niese, cover.end_niese_exclusive);
+      const note = document.createElement("p"); note.className = "niese-context-note";
+      note.textContent = `Lodge Niese context §§${cover.start_niese}–${cover.end_niese_exclusive - 1} for this project division; Lodge’s printed chapters are independent.`;
+      view.prepend(note); return view;
+    }
+    if (state.viewingLevel === "section-level" && state.sectionNum) {
+      const unit = canonicalFullData?.querySelector(`[id="latin-${currentIdBase()}-num${state.sectionNum}"]`);
+      if (!unit) return structuralUnavailable("English", "This Alignment unit has no canonical text target.");
+      const unitRange = document.createRange(); unitRange.selectNodeContents(unit);
+      const entries = canonicalNieseStartEntries().filter(entry => entry.node);
+      const points = entries.map(entry => {
+        const point = document.createRange();
+        if (entry.kind === "paragraph") point.setStartBefore(entry.node); else point.setStartAfter(entry.node);
+        point.collapse(true); return point;
+      });
+      const unitStart = unitRange.cloneRange(); unitStart.collapse(true);
+      const unitEnd = unitRange.cloneRange(); unitEnd.collapse(false);
+      const numbers = entries.filter((entry, index) =>
+        points[index].compareBoundaryPoints(Range.START_TO_START, unitEnd) < 0
+        && (!points[index + 1] || points[index + 1].compareBoundaryPoints(Range.START_TO_START, unitStart) > 0)
+      ).map(entry => entry.number);
+      if (!numbers.length) return structuralUnavailable("English", "This Alignment unit has no containing Niese identities.");
+      const view = lodgeNieseRange(data, Math.min(...numbers), Math.max(...numbers) + 1);
+      const note = document.createElement("p"); note.className = "niese-context-note";
+      note.textContent = "Lodge Niese context for this Alignment unit; no paragraph-level equivalence is asserted.";
+      view.prepend(note); return view;
+    }
+    return lodgeBook(data);
+  };
+  const addLodgeSourceControls = () => {
+    if (!usesLodgeAntiquities() || invalidNieseRequest || state.viewingLevel !== "book-level") return;
+    const controls = document.createElement("nav"); controls.className = "lodge-source-controls";
+    controls.setAttribute("aria-label", "Lodge printed chapters");
+    const label = document.createElement("label"); label.textContent = "Lodge printed chapter: "; label.htmlFor = "lodge-native-chapter";
+    const select = document.createElement("select"); select.id = "lodge-native-chapter";
+    select.add(new Option("Select a source-native chapter", ""));
+    for (const chapter of lodgeMetadata.native_chapters) select.add(new Option(chapter.source_label.replace(/\s+/g, " ").trim(), chapter.anchor_id));
+    select.addEventListener("change", () => { if (select.value) document.getElementById(select.value)?.scrollIntoView({block:"start"}); });
+    controls.append(label, select); englishPane.insertBefore(controls, englishPane.querySelector("tei-div1"));
   };
 
   const usesCitationDerivedChapters = () => (
@@ -2394,6 +2531,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const antiquitiesNieseView = (language, data, nieseNum) => {
+    if (language === "English" && usesLodgeAntiquities()) {
+      return lodgeNieseRange(data, Number(nieseNum), Number(nieseNum) + 1, true);
+    }
     if (language === "English" && sourceConfig(language)?.exactNieseBooks?.includes(nieseBookKey(state.bookNum))) {
       const identity = nieseIdentityRegistry()?.sections.find(section => section.number === Number(nieseNum));
       if (identity?.English?.available === false) return antiquitiesNieseExactView(language, data, nieseNum);
@@ -2467,7 +2607,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         marker.classList.add("niese-marker");
         marker.textContent = `[${parseInt(rawNumber, 10)}]`;
-        const note = nieseIdentityRegistry()?.sections.find(section => section.number === Number(rawNumber))?.[language]?.note;
+        const note = language === "English" && usesLodgeAntiquities() ? null
+          : nieseIdentityRegistry()?.sections.find(section => section.number === Number(rawNumber))?.[language]?.note;
         if (note) marker.title = note;
       });
       return;
@@ -2564,6 +2705,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const selectView = (language, data, idBase) => {
     if (!data) return null;
+    if (language === "English" && usesLodgeAntiquities()) return lodgeSelectView(data);
     if (usesTraditionalStructure()) {
       if (state.viewingLevel === "bamberg-level") {
         const record = bambergSelection();
@@ -2806,8 +2948,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateLodgeNotesUI = () => {
-    const isLodge = activeWork.slug === "bellum"
+    const isLodge = ["bellum", "antiquities"].includes(activeWork.slug)
       && state.sources.English === "lodge1602";
+    if (englishPane) {
+      if (usesLodgeAntiquities()) englishPane.dataset.lodgeWork = "antiquities";
+      else delete englishPane.dataset.lodgeWork;
+    }
 
     if (lodgeNotesRow) {
       lodgeNotesRow.hidden = !isLodge;
@@ -3076,6 +3222,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const fetchData = async () => {
+    normalizeSourcesForBook();
+    await loadLodgeMetadata();
     await loadTraditionalRegistry();
     await loadContentsRegistry();
     await loadNieseIdentityRegistry();
@@ -3315,6 +3463,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sectionLabel.innerText = "Unsupported Niese request";
     }
     updateLanguageUI();
+    addLodgeSourceControls();
     updateNavigationForms();
     addContraApionemTransmissionNotice();
     updateTraditionalNotice();
@@ -3828,7 +3977,29 @@ document.addEventListener("DOMContentLoaded", () => {
     viewingLevelSelectMenu.addEventListener("change", (event) => {
       setState(() => {
         const nextLevel = event.target.value;
+        const lodgeContext = usesLodgeAntiquities()
+          ? Number(state.nieseNum || viewData.English?.dataset.nieseStart) || null : null;
         if (usesTraditionalStructure()) {
+          // Retain this source's citation when changing structural modes. Covers
+          // are explicitly containing contexts, not native chapter equivalence.
+          if (lodgeContext && nextLevel !== "book-level") {
+            const scheme = {"chapter-level":"chapter", "subchapter-level":"subchapter", "bamberg-level":"bamberg"}[nextLevel];
+            const cover = lodgeMetadata.project_navigation_covers.find(row => row.scheme === scheme
+              && row.start_niese <= lodgeContext && lodgeContext < row.end_niese_exclusive);
+            const record = boundaryRegistry.find(row => row.id === cover?.project_boundary_id);
+            state.viewingLevel = nextLevel;
+            state.chapterNum = record?.chapter || null; state.subchapterNum = record?.subchapter || null;
+            state.bambergId = nextLevel === "bamberg-level" ? record?.id || null : null;
+            state.sectionNum = null; state.nieseNum = null;
+            if (nextLevel === "niese-level") state.nieseNum = String(lodgeContext);
+            else if (nextLevel === "section-level") {
+              const entry = canonicalNieseStartEntries().find(row => row.number === lodgeContext);
+              const paragraph = entry?.node?.closest("tei-p");
+              const prefix = `latin-${currentIdBase()}-num`;
+              state.sectionNum = paragraph?.id?.startsWith(prefix) ? paragraph.id.slice(prefix.length) : null;
+            }
+            if (nextLevel === "niese-level" || (nextLevel === "section-level" && state.sectionNum) || record) return;
+          }
           state.viewingLevel = nextLevel;
           if (nextLevel === "bamberg-level") {
             state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null; state.nieseNum = null;
@@ -3892,7 +4063,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     lodgeNotesCheckbox?.addEventListener("change", () => {
-      if (activeWork.slug !== "bellum" || state.sources.English !== "lodge1602") return;
+      if (!["bellum", "antiquities"].includes(activeWork.slug) || state.sources.English !== "lodge1602") return;
       state.lodgeNotesVisible = lodgeNotesCheckbox.checked;
       updateLodgeNotesUI();
       syncUrlFromState("push");
