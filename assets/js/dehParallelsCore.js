@@ -1,5 +1,8 @@
 /* Shared publication and excerpt logic; canonical XML and editorial data are read-only. */
 export const frozenSha = "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c";
+// v1 accepts the literal reviewed bytes or their exact LF checkout equivalent.
+// Both must reproduce the ORIGINAL frozen SHA; no text/XML normalization occurs.
+export const sourceIntegrityPolicy = "reviewed-crlf-or-exact-lf-v1";
 export const romanBooks = ["", "I", "II", "III", "IV", "V", "VI", "VII"];
 export const sources = {
   pollard: { work: "deh", language: "English", lang: "en", identity: "Pollard v1.0 — English translation of the Latin DEH." },
@@ -55,11 +58,25 @@ export function publicationRecords(data) {
   });
 }
 
-async function checkedBytes(response, expectedHash, label) {
+const sha256 = async bytes => [...new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))]
+  .map(byte => byte.toString(16).padStart(2, "0")).join("");
+
+async function checkedBytes(response, expectedHash, label, allowLFCheckout = false) {
   if (!response.ok) throw new Error(`Could not load ${label}.`);
-  const bytes = await response.arrayBuffer();
-  const digest = await crypto.subtle.digest("SHA-256", bytes);
-  const hash = [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, "0")).join("");
+  const bytes = new Uint8Array(await response.arrayBuffer());
+  let hash = await sha256(bytes);
+  if (expectedHash && hash !== expectedHash && allowLFCheckout && !bytes.includes(13)) {
+    // Git's LF serialization removes CR from CRLF. Reconstruct ONLY that exact
+    // representation, byte for byte, and verify against the reviewed authority.
+    // Bare CR, mixed endings, BOM changes and every other byte change fail closed.
+    const restored = new Uint8Array(bytes.length + bytes.filter(byte => byte === 10).length);
+    let offset = 0;
+    for (const byte of bytes) {
+      if (byte === 10) restored[offset++] = 13;
+      restored[offset++] = byte;
+    }
+    hash = await sha256(restored);
+  }
   if (!expectedHash || hash !== expectedHash) throw new Error(`${label} differs from the frozen reviewed authority.`);
   return new TextDecoder().decode(bytes);
 }
@@ -78,7 +95,7 @@ export function createTextLoader(xmlBase, hashes) {
       const path = `${source.work}/${source.language}/book-${String(book).padStart(2, "0")}.xml`;
       const url = new URL(path, xmlBase);
       cache.set(key, fetch(url).then(async response => {
-        const text = await checkedBytes(response, hashes[`assets/xml/${path}`], `${sourceKey} Book ${book}`);
+        const text = await checkedBytes(response, hashes[`assets/xml/${path}`], `${sourceKey} Book ${book}`, true);
         const xml = new DOMParser().parseFromString(text, "text/xml");
         if (xml.querySelector("parsererror")) throw new Error(`Invalid XML for ${sourceKey}.`);
         return tei.domToHTML5(xml);

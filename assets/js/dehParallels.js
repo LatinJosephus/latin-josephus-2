@@ -2,7 +2,7 @@
 import {
   sources, romanBooks, bjTargets, componentCitation, publicationRecords,
   loadConcordance, createTextLoader, dehParagraphs, bellumIndex, bellumSection, namespaceIds
-} from "./dehParallelsCore.js?v=20261002";
+} from "./dehParallelsCore.js?v=20261012-integrity-v1";
 
 const initialize = () => {
   const panel = document.getElementById("deh-parallels");
