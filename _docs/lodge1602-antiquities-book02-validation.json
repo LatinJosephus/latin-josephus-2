@@ -1,0 +1,220 @@
+{
+  "browser_renderer_certification": "PENDING_WORKBOT_7B; NOT_RUN",
+  "canonical_integration_or_publication": "NOT_PERFORMED",
+  "determinism": {
+    "execution_metadata_exclusions": [],
+    "generated_file_sha256": {
+      "_docs/lodge1602-antiquities-book02-integration.json": "78f08caec5a3e985577b2b379dbd6c8d83dd27b6523826ffe37ca4c2fad5410f",
+      "_docs/lodge1602-antiquities-source/book-02-final.tsv": "a5b667891b6c5ae35b44b9c7b3923bcc5f886c7ae217493f4a4b0e5af2418863",
+      "_docs/lodge1602-antiquities-source/book-02-freeze-manifest.json": "403fc33a3ac9afab206869066ffc2e07a4f7ead6c18d3dcf134c19569dbf9b7f",
+      "_docs/lodge1602-antiquities-source/book-02-frozen.xml": "ba43e5c5937a1c8a82a0575886d9747121600b30a6430e50f90fcf1c16772e8b",
+      "assets/data/lodge1602-antiquities/book-02.json": "1c6707c92e74b7885b0434d2f0e5d13abab49617cbfcaaba085a0165f9bd86e8",
+      "assets/xml/antiquities/English/Lodge1602/book-02.xml": "69ed805eb0585ec8b93f4d330a2c69c52f5fb5aae72d583fcd8e180eade5d729"
+    },
+    "identical_XML_sidecar_inverse_ledger_and_authority_copies": true,
+    "independent_process_runs": 2,
+    "status": "PASS"
+  },
+  "independent_source_QA": {
+    "BookIII_excluded": true,
+    "all349_source_coordinates_and_individual_partitions_valid": true,
+    "all_sixteen_MEDIUM_human_approved": true,
+    "assertions_passed": 12805,
+    "certification_scope": "DATA_LAYER_ONLY; browser/renderer NOT_RUN",
+    "deferred_queries": 197,
+    "derivative_sha256": "69ed805eb0585ec8b93f4d330a2c69c52f5fb5aae72d583fcd8e180eade5d729",
+    "exact_production_to_scholarly_master": {
+      "byte_identical": true,
+      "sha256": "ba43e5c5937a1c8a82a0575886d9747121600b30a6430e50f90fcf1c16772e8b"
+    },
+    "exact_scholarly_master_to_extraction": {
+      "byte_identical": true,
+      "sha256": "1d4b522760cd23d58b8bf8ff0475cb6511f57458d5f75fd1d4b0d2294c4afbaa"
+    },
+    "historical_confidence": {
+      "HIGH": 333,
+      "LOW": 0,
+      "MEDIUM": 16
+    },
+    "identity_coverage": 349,
+    "identity_sets": {
+      "English": 349,
+      "Greek": 349,
+      "Latin": 349
+    },
+    "literal_stream_sha256": "ed69d4be091b81492a4c326696f1bf06dc70a7747ac6a036350e0f29b72d20ad",
+    "metadata_sha256": "1c6707c92e74b7885b0434d2f0e5d13abab49617cbfcaaba085a0165f9bd86e8",
+    "native_TCP_milestones": 149,
+    "no_II350": true,
+    "notes_within_Niese_intervals": 150,
+    "opening_note_count": 1,
+    "source_counts": {
+      "TCP_gaps": 132,
+      "TCP_paragraphs": 33,
+      "literal_character_data_units": 132602,
+      "marginal_notes": 151,
+      "native_TCP_milestones": 149,
+      "page_breaks": 25,
+      "printed_chapters": 7
+    },
+    "source_tree_markup_notes_and_order_independently_equal": true,
+    "status": "PASS"
+  },
+  "inventory_acceptance": "Recorded externally after strict inventory resealing; no self-referential commit/manifest hash cycle",
+  "mutation_QA": {
+    "all_corruptions_rejected": true,
+    "cases": [
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\moved_Niese_boundary",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "moved_Niese_boundary",
+        "reason": "All approved physical literal starts reproduced",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\duplicated_Niese_identity",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "duplicated_Niese_identity",
+        "reason": "Exactly 349 unique ordered active identities; no 350",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\missing_Niese_identity",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "missing_Niese_identity",
+        "reason": "Exactly 349 unique ordered active identities; no 350",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\modified_Lodge_word",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "modified_Lodge_word",
+        "reason": "Exact 132602 literal character-data units and source wording",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\deleted_marginal_note",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "deleted_marginal_note",
+        "reason": "All certified source feature counts",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\deleted_TCP_gap",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "deleted_TCP_gap",
+        "reason": "All certified source feature counts",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\deleted_page_break",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "deleted_page_break",
+        "reason": "All certified source feature counts",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\deleted_native_TCP_milestone",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "deleted_native_TCP_milestone",
+        "reason": "All certified source feature counts",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\changed_source_node_ID",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "changed_source_node_ID",
+        "reason": "Every approved physical marker placement including zero-width note/gap associations",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\extra_BookIII_material",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "extra_BookIII_material",
+        "reason": "No Book III source tree",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\displaced_marginal_note_anchor",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "displaced_marginal_note_anchor",
+        "reason": "Every approved physical marker placement including zero-width note/gap associations",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\incorrect_derivative_SHA256",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "incorrect_derivative_SHA256",
+        "reason": "Production derivative SHA-256 binding",
+        "top_level_derivative_and_metadata_hashes_rebound": false
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\incorrect_source_provenance_hash",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "incorrect_source_provenance_hash",
+        "reason": "Independent mandatory provenance hashes",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\incorrect_metadata_schema",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "incorrect_metadata_schema",
+        "reason": "Versioned adapter schema",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\incorrect_approved_coordinate",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "incorrect_approved_coordinate",
+        "reason": "Protected frozen coordinate 209 extraction_raw_byte_offset",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      },
+      {
+        "actual": "REJECT",
+        "disposable_fixture": "mutations\\incorrect_inverse_ledger_patch",
+        "exit_code": 1,
+        "expected": "REJECT",
+        "mutation": "incorrect_inverse_ledger_patch",
+        "reason": "Independent master partition coordinates 0",
+        "top_level_derivative_and_metadata_hashes_rebound": true
+      }
+    ],
+    "executed_negative_cases": 16,
+    "required_negative_cases": 13,
+    "status": "PASS",
+    "substantive_corruptions_checked_with_rebound_runtime_hashes": true,
+    "tracked_source_mutation": false
+  },
+  "schema": "lodge1602-antiquities-book02-validation-v1",
+  "status": "DATA_LAYER_SOURCE_CERTIFIED"
+}

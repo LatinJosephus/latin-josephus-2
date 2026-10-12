@@ -13,3 +13,14 @@
 /assets/xml/antiquities/English/book-18.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 /assets/xml/antiquities/English/book-19.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 /assets/xml/antiquities/English/book-20.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+
+# Lodge Antiquities II: exact scholarly authority and deterministic data/tooling bytes.
+/assets/xml/antiquities/English/Lodge1602/book-02.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/assets/data/lodge1602-antiquities/book-02.json -text whitespace=cr-at-eol
+/_docs/lodge1602-antiquities-source/book-02-frozen.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/_docs/lodge1602-antiquities-source/book-02-final.tsv -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/_docs/lodge1602-antiquities-source/book-02-freeze-manifest.json -text whitespace=cr-at-eol
+/_docs/lodge1602-antiquities-book02-integration.json -text whitespace=cr-at-eol
+/_docs/lodge1602-antiquities-book02-validation.json -text whitespace=cr-at-eol
+/bin/lodge1602-antiquities-import.py -text whitespace=cr-at-eol
+/bin/lodge1602-antiquities-qa.py -text whitespace=cr-at-eol
