@@ -1,0 +1,745 @@
+{
+  "schema": "lodge1602-bellum-browser-qa-v1",
+  "date": "2026-10-03",
+  "status": "PASS",
+  "browser": "154.0.8037.98",
+  "engine": "Chromium",
+  "engines_tested": 1,
+  "actual_built_reader": true,
+  "site_build_override": "None: standard full-plugin Jekyll build; all production configuration retained.",
+  "offline_qa_environment": "HTMLCollection.forEach uses Array.forEach; external CDN shell failures are reported separately.",
+  "lodge": {
+    "counts": {
+      "books": 7,
+      "chapters": 111,
+      "coarse": 704,
+      "niese": 4001
+    },
+    "digest": "f715dd6ce744551c34a25f8fc8f2f99e596e411ea5dddaf9b0c6eacab8e6c71a",
+    "exact_xml_source_words_verified": true,
+    "first_and_final_sections_checked_for_each_book": true,
+    "all_canonical_book_transitions_checked": true,
+    "fixtures": [
+      "preserved source heading, marginal note and damaged reading",
+      "1.24",
+      "3.3",
+      "3.182",
+      "3.183",
+      "6.3",
+      "6.267",
+      "6.356",
+      "6.427",
+      "7.26"
+    ],
+    "contentsChecks": [
+      {
+        "book": 1,
+        "source": "lodge1602",
+        "passed": true,
+        "available": true
+      },
+      {
+        "book": 2,
+        "source": "lodge1602",
+        "passed": true,
+        "available": true
+      },
+      {
+        "book": 3,
+        "source": "lodge1602",
+        "passed": true,
+        "available": true
+      },
+      {
+        "book": 4,
+        "source": "lodge1602",
+        "passed": true,
+        "available": true
+      },
+      {
+        "book": 5,
+        "source": "lodge1602",
+        "passed": true,
+        "available": true
+      },
+      {
+        "book": 6,
+        "source": "lodge1602",
+        "passed": true,
+        "available": true
+      },
+      {
+        "book": 7,
+        "source": "lodge1602",
+        "passed": true,
+        "available": true
+      }
+    ]
+  },
+  "whiston": {
+    "counts": {
+      "books": 7,
+      "chapters": 111,
+      "coarse": 704,
+      "niese": 4001
+    },
+    "digest": "0e84a85f10f49530d6e1badd3d4beba5ed5006b27ced6fa567e8f249bf5b20f5",
+    "exact_xml_source_words_verified": false,
+    "first_and_final_sections_checked_for_each_book": true,
+    "all_canonical_book_transitions_checked": true,
+    "fixtures": [],
+    "contentsChecks": [
+      {
+        "book": 1,
+        "source": "whiston",
+        "passed": true,
+        "available": false
+      },
+      {
+        "book": 2,
+        "source": "whiston",
+        "passed": true,
+        "available": false
+      },
+      {
+        "book": 3,
+        "source": "whiston",
+        "passed": true,
+        "available": false
+      },
+      {
+        "book": 4,
+        "source": "whiston",
+        "passed": true,
+        "available": false
+      },
+      {
+        "book": 5,
+        "source": "whiston",
+        "passed": true,
+        "available": false
+      },
+      {
+        "book": 6,
+        "source": "whiston",
+        "passed": true,
+        "available": false
+      },
+      {
+        "book": 7,
+        "source": "whiston",
+        "passed": true,
+        "available": false
+      }
+    ],
+    "baseline_exact_render_digest_match": true
+  },
+  "source_state_qa": {
+    "status": "PASS",
+    "all_book_level_switches": [
+      "1 book",
+      "1 chapter",
+      "1 section",
+      "1 niese",
+      "2 book",
+      "2 chapter",
+      "2 section",
+      "2 niese",
+      "3 book",
+      "3 chapter",
+      "3 section",
+      "3 niese",
+      "4 book",
+      "4 chapter",
+      "4 section",
+      "4 niese",
+      "5 book",
+      "5 chapter",
+      "5 section",
+      "5 niese",
+      "6 book",
+      "6 chapter",
+      "6 section",
+      "6 niese",
+      "7 book",
+      "7 chapter",
+      "7 section",
+      "7 niese"
+    ],
+    "history_back_forward": true
+  },
+  "narrow_native_keyboard_selection": "PASS",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "relevant_console_or_local_http_errors": [],
+  "unrelated_offline_shell_errors": [],
+  "external_cdn_request_failures": [],
+  "inventory": {
+    "status": "PASS",
+    "reviewed_corpus": {
+      "status": "PASS",
+      "production_XML": 143,
+      "all_production_XML_parsed": true,
+      "frozen_publication_inputs": 38,
+      "publication_xml_sha256": {
+        "assets/xml/bellum/English/book-01.xml": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+        "assets/xml/bellum/English/book-02.xml": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+        "assets/xml/bellum/English/book-03.xml": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+        "assets/xml/bellum/English/book-04.xml": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+        "assets/xml/bellum/English/book-05.xml": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+        "assets/xml/bellum/English/book-06.xml": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+        "assets/xml/bellum/English/book-07.xml": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+        "assets/xml/bellum/Greek/book-01.xml": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+        "assets/xml/bellum/Greek/book-02.xml": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+        "assets/xml/bellum/Greek/book-03.xml": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+        "assets/xml/bellum/Greek/book-04.xml": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+        "assets/xml/bellum/Greek/book-05.xml": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+        "assets/xml/bellum/Greek/book-06.xml": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+        "assets/xml/bellum/Greek/book-07.xml": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+        "assets/xml/bellum/Latin/book-01.xml": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+        "assets/xml/bellum/Latin/book-02.xml": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+        "assets/xml/bellum/Latin/book-03.xml": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+        "assets/xml/bellum/Latin/book-04.xml": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+        "assets/xml/bellum/Latin/book-05.xml": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+        "assets/xml/bellum/Latin/book-06.xml": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+        "assets/xml/bellum/Latin/book-07.xml": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+        "assets/xml/deh/English/book-01.xml": "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
+        "assets/xml/deh/English/book-02.xml": "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
+        "assets/xml/deh/English/book-03.xml": "e5dc0d008801809385c8bcaf43c5ee2d42d861b572968e3ba6f6659543175d6b",
+        "assets/xml/deh/English/book-04.xml": "79068f7cbc2591b38fab9b36ee300d7e173ced0fab7e0dfac1668f56726445bc",
+        "assets/xml/deh/English/book-05.xml": "7658e545360849e75627a3ff771742d5fc06127da7613740c595c21e2aff5298",
+        "assets/xml/deh/Latin/book-01.xml": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+        "assets/xml/deh/Latin/book-02.xml": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+        "assets/xml/deh/Latin/book-03.xml": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+        "assets/xml/deh/Latin/book-04.xml": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+        "assets/xml/deh/Latin/book-05.xml": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+        "assets/xml/bellum/English/Lodge1602/book-01.xml": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119",
+        "assets/xml/bellum/English/Lodge1602/book-02.xml": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592",
+        "assets/xml/bellum/English/Lodge1602/book-03.xml": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e",
+        "assets/xml/bellum/English/Lodge1602/book-04.xml": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e",
+        "assets/xml/bellum/English/Lodge1602/book-05.xml": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b",
+        "assets/xml/bellum/English/Lodge1602/book-06.xml": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8",
+        "assets/xml/bellum/English/Lodge1602/book-07.xml": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5"
+      },
+      "frozen_concordance_sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c",
+      "manifest_sha256": "cd367593d0591c8b73b3d736d69082bfc38eb4baec1d98523447321eb5a9ae20"
+    },
+    "historical_paths_recorded": 100,
+    "historical_changes_explicitly_reviewed": [
+      {
+        "path": "assets/xml/antiquities/English/book-01.xml",
+        "expected_sha256": "b9ad70663c776d0a755a89c197409a9028b8218a678bcfb269a33c924bf10054",
+        "current_sha256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-02.xml",
+        "expected_sha256": "b4dd6644fe4936ad3f36b8dc72a92dca27d5de4c06a82f3e75e41cc612243101",
+        "current_sha256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-03.xml",
+        "expected_sha256": "6cb8f314afd36950b1d945e9f39ed3cfbd74e82bf8bd8c3d1c8fafd7d4e9b424",
+        "current_sha256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-04.xml",
+        "expected_sha256": "a9e80f7ea0836ef2e5e79c86e947e9adb588f93f33925bbb9f21724a33b8f103",
+        "current_sha256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-05.xml",
+        "expected_sha256": "16477425a4efd12e5ae584d24581ef4531c3fd4b9be8a49226defe10870b8df4",
+        "current_sha256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-06.xml",
+        "expected_sha256": "3f80eeedbd414ee1f9b0d72276fcbab01737c93709e899ae6920ed2630172a05",
+        "current_sha256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-07.xml",
+        "expected_sha256": "7dffada6163a5aba1c2a2c7dcd4fa6c6ecd1d7aa89e2343c64d88eeea94c38da",
+        "current_sha256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-08.xml",
+        "expected_sha256": "075636e90785be4cf33c4c93e161f166edfcba16d39b1fd9ae399368b748f1ba",
+        "current_sha256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-09.xml",
+        "expected_sha256": "1cb809169442f5cea410773d322ffec315cd6a4bb0880285b1ea691245c84940",
+        "current_sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-10.xml",
+        "expected_sha256": "bdeb69c28d516cea6c44499b1dbb9d4b5ea0e4e9208e3a02c505e14a4bce925d",
+        "current_sha256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-11.xml",
+        "expected_sha256": "f8f26004ac52b6080a56ca94ad490e8671d8144f3624c40b9b2e7a516c0e1467",
+        "current_sha256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-12.xml",
+        "expected_sha256": "9cc8da830c8a630c024bf5729004fb224c17f7fabe5b7205cbeab37a34d10a1e",
+        "current_sha256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-13.xml",
+        "expected_sha256": "c2b7b5b4834c608e4dfadfa2956c436b5926fae088d02fc70c98ce5aaf421f3c",
+        "current_sha256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-14.xml",
+        "expected_sha256": "882fede4dfb37fc629cd1b21aaec8553b1fc74888a345891e9d70d8634972e28",
+        "current_sha256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-15.xml",
+        "expected_sha256": "3ebc0c9f4449450a12c3a90b3d71d5120eae03eb8b41d926fd3d4654f565cc81",
+        "current_sha256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-16.xml",
+        "expected_sha256": "b7039309098c70045d7aa26dc8bf47bb5b274f4be79036f1af314879d79adfce",
+        "current_sha256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-17.xml",
+        "expected_sha256": "d790d8c8138235db359479b6d92a230151852e55506fe36a8e502757df0dc678",
+        "current_sha256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-18.xml",
+        "expected_sha256": "edc2d82807c5e3e2c878bebbe81d1a1f1b0a50531e33141989dfadaf34c5b5c1",
+        "current_sha256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-19.xml",
+        "expected_sha256": "33e2d857bacd6648309c4ebc71db6141a92f4f995bca8f3807e89cdc459446d7",
+        "current_sha256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-20.xml",
+        "expected_sha256": "cefd1230d6c1205583c30b6db4825fb948deb8e165775f06e004d643285fb35b",
+        "current_sha256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e"
+      },
+      {
+        "path": "assets/xml/antiquities/English/preface.xml",
+        "expected_sha256": "e35e7b31e16cf96d3d3d59279daacef22e10b69b05110d0cdc430bcf933343d9",
+        "current_sha256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-01.xml",
+        "expected_sha256": "4a6692da73f420f9c97fa2461e6f01443b6d87f991ecada428fce7180c328bc3",
+        "current_sha256": "7c82be2ce7299a389995a93ef905f905db14b79c6a49288569e52cf4fd65d4c9"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-02.xml",
+        "expected_sha256": "39f9b8d8154d43d34564ec292c0df2759e8532e3ed48e113e6d13064a8eaf800",
+        "current_sha256": "f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-03.xml",
+        "expected_sha256": "19cb34b520b700098ad4cc570651b368809302cd0e48c87fda23b8f0d7454d13",
+        "current_sha256": "967280266aec51e390b057f309157989070185cd3d3ae08102f723eea14a50d7"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-04.xml",
+        "expected_sha256": "02b972540d2634a6b47d01bc9d3786feb15c48bf117a534205436d4e5b5f1a2a",
+        "current_sha256": "6a829c561e267d857d3609b01c8afd9cdb533edbb7dd828f5dd72438fbbce4b3"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-05.xml",
+        "expected_sha256": "7ce20266db43df7c37c7c242180173f555dd5a0071189b5d6446eac3bd5e3dde",
+        "current_sha256": "6da4f29227376a81789955f5d1230018a5f1fee4aabbffa398f18aef64f5214c"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-06.xml",
+        "expected_sha256": "dfc60dbee242baf83b5437f5ae3c83412061094a027ba9779a48302693d7f371",
+        "current_sha256": "0415434537ab6f1802daeca943f01ad1cf35b7eebca69dbfcf0417e696b25a64"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-07.xml",
+        "expected_sha256": "3efc7b52ad189cc98f7dccb7a525d5a1811674bf83cc1f2baa874818db0b2ed5",
+        "current_sha256": "1ecd613ea829466177ea90f6699e7f44e40fdcf7e0b219504796a7cc1862a18f"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-08.xml",
+        "expected_sha256": "8b684917c163de459ada56ef1293da6a8b87515344ccc961419b7e602ebea433",
+        "current_sha256": "3ae0e04f7ccb24c05bdcb166f40a143098c4f5c73be74e1edc2985b1a09cbb9e"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-09.xml",
+        "expected_sha256": "7e0de6f04a5a85953444655e849a6d999eb625f802536aad70c2a407bcbc9811",
+        "current_sha256": "3bc7dcdef2e994181b9faa62564c544e4ce2d620ef0509bbc3435861b4f560aa"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-10.xml",
+        "expected_sha256": "e49314528e626f47c64e507cbd6a96978419ae1765b059ed6100818e31279089",
+        "current_sha256": "764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-11.xml",
+        "expected_sha256": "e74888e1361ab23351ef47717bc204f5cc24dad361472eb0b5f00adfc7098452",
+        "current_sha256": "2aee7fab8664607c0139532ee7d49cc9a6e6ace0e6e4c34346adac42bc0c4f89"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-12.xml",
+        "expected_sha256": "cc5ed014ddcc06b1cad376476994ca9833df688f4d68dd17e1f1dea1899b3cf0",
+        "current_sha256": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-13.xml",
+        "expected_sha256": "ff1177b785ad268e9415e25769bac3fd026d216858c66534ebf8a3f7154ffd57",
+        "current_sha256": "5d8895efde76b679083a7c08b5f236d5f3e9d8e9dadb75e6fc3661da1200007c"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-14.xml",
+        "expected_sha256": "1bb5f4e4c9aa3a633d2933b015fac4b39d6ba1937a232c4952c102e4740fe555",
+        "current_sha256": "afd794b3f7370f740bab151fe5fdf1c73f699d8af72229fc5dc0f0502eab995e"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-15.xml",
+        "expected_sha256": "42015324e54795ad6935e895e4ffcec79f35dd1bb75ab85b0b073e2ba3271341",
+        "current_sha256": "d7b93caaf77bc2bfa7ef46aed5edd8af80408e93796c23fdb5cfc8e969b2eaf0"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-16.xml",
+        "expected_sha256": "6f422f698319a11079217767b41b43488be1b090a28413e14bd1962629fe7966",
+        "current_sha256": "52fbccbf4e2ca17ea43f7756db48360e60c3fac90178dc42b6abf1bf6d72910f"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-17.xml",
+        "expected_sha256": "d3630e20ebde5047a3b11683afda597d3852e662a7892d5f8f798c21f7c0be24",
+        "current_sha256": "730d904e88c8dc292d859a1d41796b22fd06bee1b912cbb7e44b941210b26eef"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-18.xml",
+        "expected_sha256": "392cf74dce10d1a5bccf96e74bc0670a540444796e908a57ad19e4baca27386d",
+        "current_sha256": "c00a428cb042469f0f71e4d6b87c46ccf3b44d6e3fbfe55180f878dc97af647e"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-19.xml",
+        "expected_sha256": "6fdf3e3c490091b82aac1cb8faab179d49d9c45a572bc9cd4c286d674ba1e46e",
+        "current_sha256": "9e3750336c4a0380d8daa4c1f3f0899dabf8260cab6a3128e1e1aa77970805be"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/book-20.xml",
+        "expected_sha256": "30590cc6e8ca04a3626d51d4baffb010538648fb9da014e01becf2d3de9fde1a",
+        "current_sha256": "193f0a654ba827838afa3bbde3f95fa31c318f2a6431efadd453b7977f5617b1"
+      },
+      {
+        "path": "assets/xml/antiquities/Greek/preface.xml",
+        "expected_sha256": "94be08e73b1bd84cfd71f6c5958bebf903b0aeee480ca80cae7219596b1f7c69",
+        "current_sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-01.xml",
+        "expected_sha256": "468e71ada974c9eec06f3aff35cc14c9cfcb0422a382e0155433f60877eaf2a1",
+        "current_sha256": "236397efea41558911881fbc807eec7f9b01d6058bbc51610f3550c2df77b973"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-02.xml",
+        "expected_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+        "current_sha256": "f7b2476b4b029918da1bef9b1abe9040e4e22c04b1dcce3d621a813b173bea72"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-03.xml",
+        "expected_sha256": "061184136a62d3d2782a2029ce20edd9ed74b525229ba630715606e59d337b2c",
+        "current_sha256": "8750c56152f750fbc1bd7c5d28e07cc73972bf1a86ed3221f79824e1c0573c97"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-04.xml",
+        "expected_sha256": "2a1bb286f244abe4bd2aebd7f4e8a2bf0e26e8ea7d812d5e0b1ee787328e4c24",
+        "current_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-05.xml",
+        "expected_sha256": "4e1de36de17c861dac0a47f65054a3ef020103ab1ec63fccb40717b79c7276e7",
+        "current_sha256": "846ff2e8edbc58bd2283e923353beccc8427f49cecf89415c6bc5272b994f86a"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-06.xml",
+        "expected_sha256": "2b0846d4a4ff03a99bf7a6334f3a4595e184fddade4536f8d4db8f726e0e9e76",
+        "current_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-07.xml",
+        "expected_sha256": "b5a509b7033c41f676f620ad34f716149c8d01afe3662f99985d95e8da11d664",
+        "current_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-08.xml",
+        "expected_sha256": "a300124a948ff44b7216b48c18cb929033500f09b71ae944535313f2df88db80",
+        "current_sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-09.xml",
+        "expected_sha256": "d65b9e3565bb418a819c3b9551a2252bfe006995aa504654239e2d202c96d735",
+        "current_sha256": "206ca5bed674f7ebaa750dd8357c82d90510cb71162477a8214c5b8ccbd284c0"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-10.xml",
+        "expected_sha256": "8b2104191d4dba2e7e74ca684146519ed5b5113a5e983a5ceb9a6e970f741d3a",
+        "current_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-11.xml",
+        "expected_sha256": "02fcf44d1315f30011d4e88417b7292dda0c1b335d9cfadfec0b5d2f632e9f51",
+        "current_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-12.xml",
+        "expected_sha256": "9a20f3b8dfa227b267371cc6400e0f40455d51241225c1ac872092f486ef84bf",
+        "current_sha256": "11fd83d1d8f61573db08ec32a600423242fca6c0e29ef32898c1dde876238a42"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-13.xml",
+        "expected_sha256": "2c9642d43273038ce19bdc75f0fe1b478daba2897fb2072094959183b3f42308",
+        "current_sha256": "027129ef38b5b59621bd6b080d49f232ee4750f6672100ca0bd36c5bead696ec"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-14.xml",
+        "expected_sha256": "ea864c5885cf6dbe00c0914064d59418b54324aa4825e39ce7a925037e170c96",
+        "current_sha256": "beeaa404131ffeb8a29aec12b9ac9a67270223e72638c9169d85a9e2d7f1f9a3"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-15.xml",
+        "expected_sha256": "d9bbd47f0878231d31ab8efe1e9c895c10d1ae20a592a5936e8f6afa2ed49232",
+        "current_sha256": "39115de0689b35ad0185f5e21a81127637cd2dfb94cac49cb6bda49eee5d7149"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-16.xml",
+        "expected_sha256": "d3abdec42c496a8375203c606a7aab1867918ef899773352af2c71567513f696",
+        "current_sha256": "8fb15391bafc87b7fc251269c6cbe78b9b2f3d782156d413b7b2317649420e7c"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-17.xml",
+        "expected_sha256": "ebb345435b006089e058604369180fdd94509806081fe89bc27348a517c4af91",
+        "current_sha256": "859a12f93a7f42478a796420c9b22db449b94fcadeb55255be4324f8ef5a186d"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-18.xml",
+        "expected_sha256": "5c4d1e6486e2229db3e47a4ab7841573427a2da6c9be2457fba1198d8b71bbc4",
+        "current_sha256": "0afb40d0a03c42520fafe4357ae13c9ac9447c25d4f2d7736121ccd57ad917ec"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-19.xml",
+        "expected_sha256": "5fa3b1f9b39d614d99b8d73fbf5675166c1ee0cca47cd4a242b27c5ea70d6a73",
+        "current_sha256": "3826267394a578f1630fc383b6af5a8435b314d1e4aeb73b33510c3dd65d1549"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-20.xml",
+        "expected_sha256": "f59f763998b9d0e8ffd047603bdb629d58c9b099eeabee386d58bf3347a93509",
+        "current_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/preface.xml",
+        "expected_sha256": "8cc821957a03e694e795bcc29fb40bff9c9952eff06567e2da76b4e4732843d2",
+        "current_sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-01.xml",
+        "expected_sha256": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+        "current_sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-02.xml",
+        "expected_sha256": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+        "current_sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-03.xml",
+        "expected_sha256": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+        "current_sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-04.xml",
+        "expected_sha256": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+        "current_sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-05.xml",
+        "expected_sha256": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+        "current_sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-06.xml",
+        "expected_sha256": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+        "current_sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-07.xml",
+        "expected_sha256": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+        "current_sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b"
+      },
+      {
+        "path": "assets/xml/bellum/Greek/book-01.xml",
+        "expected_sha256": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+        "current_sha256": "d58bd11884c2e8742e2ee8d585d6a5e8740d1624ccf6fad41c37811427c45969"
+      },
+      {
+        "path": "assets/xml/bellum/Greek/book-02.xml",
+        "expected_sha256": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+        "current_sha256": "bbd99e5aa819f485df14680242948da6bffe8dd5ff3fd127d9467d399d7d7f64"
+      },
+      {
+        "path": "assets/xml/bellum/Greek/book-03.xml",
+        "expected_sha256": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+        "current_sha256": "55a7b2d4d1be28b40e52097b2f8a92025a643a7cea3a84a77853a45e8a2d443c"
+      },
+      {
+        "path": "assets/xml/bellum/Greek/book-04.xml",
+        "expected_sha256": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+        "current_sha256": "a3ae25b99ca75509401f95fc3405341e6c1c882f2d2e3dbec366a1f6dbdebaf9"
+      },
+      {
+        "path": "assets/xml/bellum/Greek/book-05.xml",
+        "expected_sha256": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+        "current_sha256": "520db5852f3e0299413b2db9a9071c61d4912495c3a06a99198a3c174ca97d9b"
+      },
+      {
+        "path": "assets/xml/bellum/Greek/book-06.xml",
+        "expected_sha256": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+        "current_sha256": "9380e9d4f6744467a4cd935cb1f6f4501c14283a13a02879564564aa45399b25"
+      },
+      {
+        "path": "assets/xml/bellum/Greek/book-07.xml",
+        "expected_sha256": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+        "current_sha256": "9b18443363cdef6d252d7d5382f868e7f66318702e0e80554311832cc25a5cc5"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-01.xml",
+        "expected_sha256": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+        "current_sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-02.xml",
+        "expected_sha256": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+        "current_sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-03.xml",
+        "expected_sha256": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+        "current_sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-04.xml",
+        "expected_sha256": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+        "current_sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-05.xml",
+        "expected_sha256": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+        "current_sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-06.xml",
+        "expected_sha256": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+        "current_sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-07.xml",
+        "expected_sha256": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+        "current_sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042"
+      },
+      {
+        "path": "assets/xml/contra-apionem/English/book-01.xml",
+        "expected_sha256": "9b88f23d94420125135e64ec850b4c19e46fa357feb73c91d9136c1ba63a569a",
+        "current_sha256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a"
+      },
+      {
+        "path": "assets/xml/contra-apionem/English/book-02.xml",
+        "expected_sha256": "5685e7fe801b0157a09e70f68b667637b7b601230edd16a7c609ac59553ee422",
+        "current_sha256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467"
+      },
+      {
+        "path": "assets/xml/contra-apionem/Greek/book-01.xml",
+        "expected_sha256": "f2f38401bb9bd7ef456b36400605bd908ba25d394bec8ad8c79b2b9f6df12169",
+        "current_sha256": "183e885e7ddd61894f2e5cef1a423689be6cbe3160bf42746b33c1bd47fa2b2e"
+      },
+      {
+        "path": "assets/xml/contra-apionem/Greek/book-02.xml",
+        "expected_sha256": "134521f8cb973c0272f97fdd9cb97313a33b69b89069b196af1ba722cedb9485",
+        "current_sha256": "b6d836463f85f717f0b73acbf09a847545ddc3893cb744de21b38575968b4381"
+      },
+      {
+        "path": "assets/xml/contra-apionem/Latin/book-01.xml",
+        "expected_sha256": "7a1f760bc7a67139c5e94e7d280123052eb770ff0d9215ffe39fb2c9ae7a4baf",
+        "current_sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62"
+      },
+      {
+        "path": "assets/xml/contra-apionem/Latin/book-02.xml",
+        "expected_sha256": "4410962053fa0dab256a6f40380822e34803beefcc3ba2e272faf36049aff58f",
+        "current_sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b"
+      },
+      {
+        "path": "assets/xml/deh/English/book-01.xml",
+        "expected_sha256": "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
+        "current_sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12"
+      },
+      {
+        "path": "assets/xml/deh/English/book-02.xml",
+        "expected_sha256": "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
+        "current_sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81"
+      },
+      {
+        "path": "assets/xml/deh/English/book-03.xml",
+        "expected_sha256": "e5dc0d008801809385c8bcaf43c5ee2d42d861b572968e3ba6f6659543175d6b",
+        "current_sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262"
+      },
+      {
+        "path": "assets/xml/deh/English/book-04.xml",
+        "expected_sha256": "79068f7cbc2591b38fab9b36ee300d7e173ced0fab7e0dfac1668f56726445bc",
+        "current_sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26"
+      },
+      {
+        "path": "assets/xml/deh/English/book-05.xml",
+        "expected_sha256": "7658e545360849e75627a3ff771742d5fc06127da7613740c595c21e2aff5298",
+        "current_sha256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-01.xml",
+        "expected_sha256": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+        "current_sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-02.xml",
+        "expected_sha256": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+        "current_sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-03.xml",
+        "expected_sha256": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+        "current_sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-04.xml",
+        "expected_sha256": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+        "current_sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-05.xml",
+        "expected_sha256": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+        "current_sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97"
+      }
+    ],
+    "exact_Lodge_paths": [
+      "assets/xml/bellum/English/Lodge1602/book-01.xml",
+      "assets/xml/bellum/English/Lodge1602/book-02.xml",
+      "assets/xml/bellum/English/Lodge1602/book-03.xml",
+      "assets/xml/bellum/English/Lodge1602/book-04.xml",
+      "assets/xml/bellum/English/Lodge1602/book-05.xml",
+      "assets/xml/bellum/English/Lodge1602/book-06.xml",
+      "assets/xml/bellum/English/Lodge1602/book-07.xml"
+    ],
+    "unexpected_xml_detected": true,
+    "malformed_exempt_xml_rejected": true,
+    "frozen_concordance_sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c"
+  }
+}

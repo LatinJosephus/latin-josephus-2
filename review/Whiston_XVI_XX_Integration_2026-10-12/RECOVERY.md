@@ -1,6 +1,6 @@
 # Isolated Whiston XVI–XX recovery
 
-Stage C is certified through Book 20, adding 1772 English intervals to the pinned I–XV baseline. Overall status is COMPLETE CANDIDATE; FINAL RECONCILIATION PENDING.
+Final candidate certification is complete: all 7376 exact English intervals, the new 1772 XVI–XX intervals, containing views, mandatory regressions, source preservation and canonical compatibility pass. See RECOVERY_FINAL.md for complete final delivery recovery. Stage A/B/C archive copies of this file retain their original checkpoint scope.
 
 Canonical baseline: f6fa17f7616bf9ce046c28086b1a1448a9f8d049. No merge, push, preview modification or deployment is authorized. Do not use a shared checkout for recovery.
 

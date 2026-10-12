@@ -53,6 +53,7 @@ def verify():
  assert len(keys)==len(set(keys)) and set(keys)==required,(len(keys),len(required))
  for r in actual:
   e=expected[r['book'],r['number']];assert r['passed'] and r['allNarrativeVisible'] and r['GreekLatinPresentationUnchanged']
+  if receipt['complete_cumulative']:assert r['settledStateAndURLVerified'] and r['navigationLimitsVerified']
   assert r['expectedSHA256']==r['renderedSHA256']==e['sha256'] and r['notes']==len(e['notes'])
   assert r['opening']==e['opening'] and r['closing']==e['closing']
  for file in receipt['required_reports']:assert load(PACK/file)['status']=='PASS',file

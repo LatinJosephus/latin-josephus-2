@@ -1,14 +1,26 @@
 {
   "last_book": 20,
-  "complete_cumulative": false,
+  "complete_cumulative": true,
   "section_reports": [
-    "STAGE_C_SECTION_QA.json"
+    "CUMULATIVE_A_ENGLISH_QA.json",
+    "CUMULATIVE_B_ENGLISH_QA.json",
+    "CUMULATIVE_C_ENGLISH_QA.json",
+    "NEW_XVI_XX_ENGLISH_QA.json"
   ],
-  "structural_report": "STAGE_C_STRUCTURAL_QA.json",
+  "structural_report": "STRUCTURAL_QA.json",
   "required_reports": [
-    "STAGE_C_UI_QA.json",
-    "STAGE_C_SPECIAL_QA.json",
+    "STRUCTURAL_QA.json",
+    "REGRESSION_QA.json",
+    "BAMBERG_QA.json",
+    "SPECIAL_QA.json",
+    "UI_QA.json",
+    "BOOK_NAVIGATION_QA.json",
+    "AUXILIARY_QA.json",
+    "NATIVE_LODGE_BROWSER_QA.json",
+    "IMPLEMENTATION_REVIEW.json",
     "SOURCE_ARCHIVE_VERIFICATION.json",
-    "IMPLEMENTATION_REVIEW.json"
+    "STANDARD_BUILD_RUNTIME_BINDING.json",
+    "BUILD_AND_GUARDS.json",
+    "CANONICAL_COMPATIBILITY.json"
   ]
 }

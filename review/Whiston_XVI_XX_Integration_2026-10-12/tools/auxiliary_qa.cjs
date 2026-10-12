@@ -27,6 +27,16 @@ async function main(){
   await open(page,origin,'bellum-judaicum','book=6&niese=3&english=lodge1602&lodgeNotes=0');
   const omission=await page.locator('#english tei-gap[reason="omitted"]').evaluate(e=>({display:getComputedStyle(e).display,notice:getComputedStyle(e,'::before').content}));
   assert(omission.display!=='none'&&omission.notice.includes('Omitted in Lodge'),'Lodge omission notice disappeared');report.LodgeOmission={passed:true,...omission};
+  const markupElements=async()=>page.locator('#english').evaluate(pane=>{
+   const clone=pane.cloneNode(true);clone.querySelectorAll('[data-original]').forEach(e=>e.remove());
+   return [...clone.querySelectorAll('tei-anchor,tei-lb,tei-hi')].map(e=>({tag:e.localName.slice(4),attrs:Object.fromEntries([...e.attributes].filter(a=>!a.name.startsWith('data-')&&a.name!=='hidden'&&a.name!=='id').map(a=>[a.name.replace('xml:',''),a.value])),text:e.textContent.replace(/\s+/g,' ').trim()}));
+  });
+  report.wholeMarkup=[];
+  for(const expected of JSON.parse(fs.readFileSync(path.join(pack,'WHOLE_MARKUP_ORACLE.json')))){
+   await open(page,origin,'antiquities',`book=${expected.book}`);const elements=await markupElements();
+   assert(JSON.stringify(elements)===JSON.stringify(expected.elements),'Complete book source markup differs',{expected,actual:elements});
+   report.wholeMarkup.push({book:expected.book,elements:elements.length,allSourceAnchorsAndInlineMarkupPreserved:true,passed:true});
+  }
   report.markup=[];
   for(const expected of JSON.parse(fs.readFileSync(path.join(pack,'MARKUP_ORACLE.json')))){
    await open(page,origin,'antiquities',`book=${expected.book}&niese=${expected.number}`);

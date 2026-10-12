@@ -1,0 +1,29 @@
+WHISTON XVI–XX CANONICAL-INTEGRATION-READY
+Isolated final integration candidate — 2026-10-12, America/Toronto
+
+All 7,376 / 7,376 Whiston English Niese selections pass exact normalized displayed-text comparison with expectations independently extracted from the frozen certified XML. The new XVI–XX population is 1,772; previously integrated Proem/I–XV is 5,604. All selections have settled state, URL and navigation-limit checks. Complete identity sets and actual English physical order are verified, including the 26-section Proem, Book IX restoration and Book XI transposition.
+
+Canonical baseline: f6fa17f7616bf9ce046c28086b1a1448a9f8d049. Canonical still matches this identity and is clean; no fresh reconciliation or rebase was required. Candidate and stage commit identities are in the external DELIVERY.json and STAGE_RECOVERY_REGISTER.json. No canonical merge, push, public-preview change or deployment was performed.
+
+Sources and implementation
+SOURCE_INVENTORY.json records the five full delivery identities, certified physical SHA-256, immutable Git-object hashes, recovery ZIP hashes and qualifications. SOURCE_ARCHIVE_VERIFICATION.json verifies every checksum member and CRC of the five original ZIPs. All five production XML files equal their corpus-certified frozen bytes; all I–XV files remain byte-identical. Greek/Latin XML, Niese/structural registries, all existing tests and unrelated tracked files remain unchanged. Removing only introduced milestones reconstructs all five approved original byte streams exactly. Recorded Git LF versus physical CRLF differences are preserved as proven representation qualifications, never as text-normalization authority.
+
+The renderer change is one existing exactNieseBooks activation list. Complete production manifest source entries and its literal guard digest are updated; no guard assertion, plugin or renderer mechanism is removed. IMPLEMENTATION_REVIEW.json records the narrow review. The full and production-only binary diffs are supplied beside the final bundle.
+
+Containing views and navigation
+Independent XML/registry expectations verify 21 whole-book, 257 traditional chapter, 1432 subchapter, 198 Bamberg and 1441 alignment views: 3349 actual settled views. Counts come from the current registries and actual canonical paragraph menus. The established containing, native book-change, history, direct-link, Previous/Next and light/dark/mobile regressions also pass. All source narrative is visible. English notes and all six inline emphasis runs are preserved; inherited quotations and callouts remain verbatim.
+
+Special protections
+The first auxiliary markup fixture failed at XVI.355 because it assigned an empty exclusive-end paragraph anchor to the visible interval. METHOD_CORRECTIONS.json and the preserved initial failure explain the XML ownership correction. A stronger independent event-based markup oracle now requires all 21 whole-book anchor/linebreak/emphasis populations and 41 selected cases, including the deliberately empty XVI.355 shell. All pass; source bytes and renderer behavior were unchanged, and no guard was removed or disabled.
+
+All 24 XVI identities without Latin counterparts display exact English and preserve genuine witness notices. XVII.299 retains distinct traditional/Bamberg/Niese starts and corrected terminal numbering. XVIII.215–218 retain witness-specific Latin availability; XVIII.257 retains its distinct divisions. XIX.363 and XIX.364 display separate exact intervals; XIX.292's traditional/Bamberg divisions remain intact. XX.267 retains its additional wording and A.D. 03; XX.268 retains three books and the complete last sentence. XX.269 is rejected without substitute narrative. Separate Latin trailer, paratext and Vita/work boundaries are unchanged. SPECIAL_QA.json preserves actual notice/availability and boundary results. The redundant exact-English notice is absent throughout.
+
+Cross-work and guards
+The complete native Bellum Greek, Whiston and Lodge range populations pass: {"chapters": 111, "subchapters": 704, "niese": 4001} per recorded witness population. Native Lodge's complete rendered baseline digest, source/history/keyboard behavior, immutable master comparison and all nine corruption guards pass. Contra Apionem, DEH, full DEH concordance and all Antiquities Greek/Latin display comparisons pass. AUXILIARY_QA.json, REGRESSION_QA.json and native reports retain detailed results.
+
+Standard full-plugin build passes in 101.746 seconds; bundle check and exact production corpus guard pass. All 143 production XML files parse; all 38 frozen publication authorities match literally; all eight approved negative tests pass. Existing native offline HTMLCollection iteration support and external CDN shell failures are separately recorded. Certification covers the tested Chromium reader and the isolated candidate, with all inherited scholarly qualifications; it does not certify hosted publication or additional browser engines.
+
+Recovery
+Stages A, B and C each have a full Git bundle, verified archive/member checksums, binary diff, QA, source inventory and successful fresh independent checkout/reconciliation. They remain unchanged. The final ZIP includes all three stage archives and receipts, all five original source recovery ZIPs, the Lodge master, complete candidate history, literal built preview, source/corpus evidence and portable verification/reproduction tools. Final ZIP SHA-256, manifest and fresh offline-recovery receipt are outside the committed dossier to avoid self-reference. Follow RECOVERY.md and RECOVERY_FINAL.md in an empty owned directory. Rollback is to abandon the isolated candidate or restore the pinned baseline into a new private checkout; never alter a shared checkout.
+
+STOP. Separate authorization is required for canonical integration or publication.

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "initial_failure_preserved": [
+    "INITIAL_AUXILIARY_QA.json",
+    "INITIAL_AUXILIARY_MARKUP_FAILURE.json",
+    "INITIAL_MARKUP_ORACLE.json"
+  ],
+  "finding": "The first markup fixture assigned the empty Bamberg anchor before XVI.356 to the preceding interval solely by physical milestone order. The existing renderer prunes its empty exclusive-end paragraph after removing inherited citation labels.",
+  "resolution": "Independent XML start/end/text-event expectations qualify that one empty endpoint shell. All 21 whole-book source anchor/linebreak/emphasis populations and 41 meaningful or explicitly empty selected markup cases are now mandatory and pass.",
+  "qualification": "EMPTY_ENDPOINT_MARKUP_QUALIFICATION.json",
+  "source_and_renderer_unchanged": true,
+  "guards_removed_or_disabled": false,
+  "retest": "AUXILIARY_QA.json: PASS"
+}
