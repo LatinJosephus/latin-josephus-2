@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "source_changes": [
+    ".gitattributes",
+    "_docs/reader-corpus-integrity.json",
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/English/book-12.xml",
+    "assets/xml/antiquities/English/book-13.xml",
+    "assets/xml/antiquities/English/book-14.xml",
+    "assets/xml/antiquities/English/book-15.xml",
+    "bin/reader-corpus-integrity.mjs"
+  ],
+  "unchanged_tracked_files": 5557,
+  "fresh_independent_XML_intervals": 5604,
+  "executed_display_records_reconciled": 5604,
+  "new_intervals": 1783,
+  "reconstruction": [
+    {
+      "book": 12,
+      "certified_SHA256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+      "approved_reconstructed_SHA256": "9cc8da830c8a630c024bf5729004fb224c17f7fabe5b7205cbeab37a34d10a1e",
+      "byte_exact": true
+    },
+    {
+      "book": 13,
+      "certified_SHA256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+      "approved_reconstructed_SHA256": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d",
+      "byte_exact": true
+    },
+    {
+      "book": 14,
+      "certified_SHA256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+      "approved_reconstructed_SHA256": "f342c46cfdcf4b22d1c9f4fa423295077538c51917b570a321e5df1f8d9e24e9",
+      "byte_exact": true
+    },
+    {
+      "book": 15,
+      "certified_SHA256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+      "approved_reconstructed_SHA256": "9f307e78e2c2f9a03335342fb1176620f6328793c379fb81d58b12164a383324",
+      "byte_exact": true
+    }
+  ],
+  "qualification": "Browser evidence inspected and reconciled; use browser tools to reproduce live display checks."
+}

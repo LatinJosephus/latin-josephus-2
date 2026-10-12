@@ -5,7 +5,7 @@ async function main(){
  const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
  const ctx=await browser.newContext(),page=await ctx.newPage(),base=await ctx.newPage();for(const p of [page,base])p.on('pageerror',e=>report.errors.push(String(e)));
  try{
-  const books=process.argv.includes('--stage-a')?[12,13]:['preface',...Array.from({length:15},(_,i)=>i+1)];
+  const books=process.argv.includes('--stage-a')?[12,13]:['preface',...Array.from({length:20},(_,i)=>i+1)];
   for(const book of books){
    await Promise.all([open(page,a,'antiquities',`book=${book}`),open(base,b,'antiquities',`book=${book}`)]);
    const units=await page.locator('#bamberg-selector').evaluate(e=>[...e.options].filter(e=>e.value).map(e=>e.value));

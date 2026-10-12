@@ -1,8 +1,8 @@
 /* Exercises real reader controls and live DOM. Hooks expose getters/completion only. */
 const fs=require('fs'),path=require('path'),http=require('http'),crypto=require('crypto');
-const {chromium}=require('C:/Program Files/WindowsApps/OpenAI.CodexPrimaryRuntime.v26-1007-641-0_26.1007.641.0_x64__3k8sg7r9htsxt/dependencies/node/node_modules/playwright');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'C:/Program Files/WindowsApps/OpenAI.CodexPrimaryRuntime.v26-1007-641-0_26.1007.641.0_x64__3k8sg7r9htsxt/dependencies/node/node_modules/playwright');
 const root=path.resolve(__dirname,'../../..'),pack=path.resolve(__dirname,'..');
-const runtime='C:/workspace/Whiston-I-XI-Renderer-runtime-20261011',site=path.join(runtime,'site');
+const runtime=path.resolve(root,'../runtime'),site=process.env.WHISTON_SITE||path.join(runtime,'standard-site');
 const canonical=path.resolve(root,'../baseline');
 const oracle=JSON.parse(fs.readFileSync(path.join(pack,'INTERVAL_ORACLE.json')));
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex'),norm=s=>s.replace(/\s+/g,' ').trim();
