@@ -221,7 +221,13 @@ def verify(a):
  for cover in metadata['project_navigation_covers']:check(1<=cover['start_niese']<cover['end_niese_exclusive']<=350 and cover['precision']=='CONTAINING_NIESE_CONTEXT_NOT_NATIVE_CHAPTER_EQUIVALENCE','Qualified context range '+cover['project_boundary_id'])
  qualified=metadata['II284_independent_Lodge_qualification'];check(qualified['source_coordinate']==sections[283]['source_coordinate'] and qualified['whole_section_absent'] is False,'II.284 Lodge cut independent of qualified traditional boundary')
  # Confirm protected comparison versions from the actual isolated reference files.
- for relative,h in metadata['reference_snapshot']['files'].items():check(sha((root/relative).read_bytes())==h,'Coherent current reference snapshot '+relative)
+ for relative,h in metadata['reference_snapshot']['files'].items():
+  # XML witnesses/identity registry are immutable data authorities. The renderer
+  # is baseline provenance for the separately authorized WorkBot 7B changes;
+  # it must not become an accidental source-QA lock on that implementation.
+  if relative.endswith('.xml'):check(sha((root/relative).read_bytes())==h,'Coherent current reference snapshot '+relative)
+ renderer_baseline=metadata['reference_snapshot']['files']['assets/js/renderTei.js']
+ renderer_current=sha((root/'assets/js/renderTei.js').read_bytes())
  identity_sets={}
  for lang in ['Greek','Latin','English']:
   ref=parse((root/('assets/xml/antiquities/'+lang+'/book-02.xml')).read_bytes());ids=[]
@@ -251,7 +257,7 @@ def verify(a):
   for filename,kind in [('CERTIFIED_SOURCE_BOOK_II.xml','certified_extraction'),('Lodge1602_Antiquities_BookII_FINAL_FROZEN_SCHOLARLY_PACKET.zip','scholarly_zip')]:check(sha((a.authority_dir/filename).read_bytes())==HASH[kind],'External mandatory authority '+kind)
  if a.restore_dir:
   a.restore_dir.mkdir(parents=True,exist_ok=True);(a.restore_dir/'restored-frozen-master.xml').write_bytes(restored);(a.restore_dir/'restored-certified-extraction.xml').write_bytes(extraction)
- return {'status':'PASS','certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN','assertions_passed':len(assertions),'identity_coverage':349,'identity_sets':identity_sets,'source_counts':counts,'opening_note_count':1,'notes_within_Niese_intervals':150,'literal_stream_sha256':sha(stream.encode()),'historical_confidence':metadata['historical_confidence_counts'],'all_sixteen_MEDIUM_human_approved':True,'deferred_queries':197,'exact_production_to_scholarly_master':{'sha256':sha(restored),'byte_identical':True},'exact_scholarly_master_to_extraction':{'sha256':sha(extraction),'byte_identical':True},'source_tree_markup_notes_and_order_independently_equal':True,'all349_source_coordinates_and_individual_partitions_valid':True,'derivative_sha256':sha(data),'metadata_sha256':sha(metadata_bytes),'native_TCP_milestones':149,'BookIII_excluded':True,'no_II350':True}
+ return {'status':'PASS','certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN','renderer_baseline_sha256':renderer_baseline,'current_renderer_sha256':renderer_current,'renderer_baseline_matches_current':renderer_current==renderer_baseline,'assertions_passed':len(assertions),'identity_coverage':349,'identity_sets':identity_sets,'source_counts':counts,'opening_note_count':1,'notes_within_Niese_intervals':150,'literal_stream_sha256':sha(stream.encode()),'historical_confidence':metadata['historical_confidence_counts'],'all_sixteen_MEDIUM_human_approved':True,'deferred_queries':197,'exact_production_to_scholarly_master':{'sha256':sha(restored),'byte_identical':True},'exact_scholarly_master_to_extraction':{'sha256':sha(extraction),'byte_identical':True},'source_tree_markup_notes_and_order_independently_equal':True,'all349_source_coordinates_and_individual_partitions_valid':True,'derivative_sha256':sha(data),'metadata_sha256':sha(metadata_bytes),'native_TCP_milestones':149,'BookIII_excluded':True,'no_II350':True}
 
 def main():
  ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--repo-root',type=Path,required=True);ap.add_argument('--xml',type=Path);ap.add_argument('--metadata',type=Path);ap.add_argument('--ledger',type=Path);ap.add_argument('--original-source',type=Path);ap.add_argument('--authority-dir',type=Path);ap.add_argument('--restore-dir',type=Path);ap.add_argument('--report',type=Path);a=ap.parse_args()
