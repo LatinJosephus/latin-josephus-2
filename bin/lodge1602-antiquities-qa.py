@@ -6,7 +6,7 @@ independent forward inverse-patch reconstruction are separate mandatory gates.
 Report/browser status is explicitly data-only. Use --xml/--metadata/--ledger for
 negative tests on disposable copies, never on tracked files.
 """
-import argparse,base64,collections,copy,csv,hashlib,io,json,re,sys
+import argparse,base64,collections,copy,csv,hashlib,io,json,re,subprocess,sys
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -17,6 +17,63 @@ XMLPATH='assets/xml/antiquities/English/Lodge1602/book-02.xml'; METAPATH='assets
 SOURCEPATH='_docs/lodge1602-antiquities-source/'
 EXCLUDED={'note','head','argument','trailer','byline','opener','closer','signed','label'}
 def sha(b):return hashlib.sha256(b).hexdigest()
+
+# Only these Git-tracked comparison witnesses may use the reviewed Windows EOL
+# representation. Lodge authorities, derivatives, metadata and inverses stay raw.
+GIT_COMPARISON_HASHES={
+ 'assets/xml/antiquities/Greek/book-02.xml':'f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da',
+ 'assets/xml/antiquities/Latin/book-02.xml':'f7b2476b4b029918da1bef9b1abe9040e4e22c04b1dcce3d621a813b173bea72'}
+INVENTORY_SHA='36c6475919da7a91ed0e5bf30ea745fc062d4430db00fadf70d7a897702f3ad8'
+
+def git_bytes(root,*args):
+ return subprocess.check_output(['git','-C',str(root),*args],stderr=subprocess.PIPE,timeout=30)
+
+def comparison_attributes(root,relative,revision=None):
+ args=['check-attr']+(['--source='+revision] if revision else [])
+ fields=git_bytes(root,*args,'-z','text','eol','filter','working-tree-encoding','--',relative).decode('utf-8').split('\0')
+ if fields[-1]=='':fields.pop()
+ if len(fields)!=12 or any(fields[i]!=relative for i in range(0,12,3)):
+  raise ValueError('Unexpected Git comparison attribute response '+relative)
+ return {fields[i+1]:fields[i+2] for i in range(0,12,3)}
+
+def verify_git_comparison(root,revision,relative,expected,inventory,check):
+ check(relative in GIT_COMPARISON_HASHES and expected==GIT_COMPARISON_HASHES[relative],
+       'Certified Git comparison hash '+relative)
+ # Read the exact HEAD blob, never a normalized XML serialization or older tree.
+ blob=git_bytes(root,'show',revision+':'+relative)
+ check(sha(blob)==expected,'Committed Git comparison authority '+relative)
+ record=inventory['files'].get(relative,{})
+ check(record.get('git_sha256')==record.get('pinned_canonical_sha256')==expected,
+       'Sealed inventory comparison authority '+relative)
+ raw=(root/relative).read_bytes();actual=sha(raw)
+ check(actual in record.get('allowed_worktree_sha256',[]),
+       'Reviewed Git comparison checkout bytes '+relative)
+ attrs=comparison_attributes(root,relative,revision)
+ effective=comparison_attributes(root,relative)
+ check(attrs==effective,'Committed/effective comparison attributes '+relative)
+ representation='EXACT_COMMITTED_BYTES'
+ if raw!=blob:
+  # The sealed inventory explicitly reviews these historical Windows CRLF
+  # forms. Current core.autocrlf need not recreate a historical checkout; do
+  # not change it. Reject explicit binary/LF-only policies or other filters.
+  check(attrs['text'] in {'unspecified','set','auto'} and attrs['eol'] in {'unspecified','crlf'}
+        and attrs['filter'] in {'unspecified','unset'}
+        and attrs['working-tree-encoding'] in {'unspecified','unset'},
+        'Permitted Git comparison CRLF policy '+relative)
+  check(b'\r' not in blob and b'\n' in blob,
+        'Certified comparison blob has LF-only endings '+relative)
+  # Requiring the COMPLETE conversion rejects mixed EOLs and lone CRs.
+  check(raw==blob.replace(b'\n',b'\r\n') and raw.replace(b'\r\n',b'\n')==blob,
+        'Exact permitted LF-to-CRLF comparison conversion '+relative)
+  representation='REVIEWED_COMPLETE_LF_TO_CRLF_CHECKOUT'
+ config=subprocess.run(['git','-C',str(root),'config','--show-origin','--get-regexp',
+                        r'^core\.(autocrlf|eol|safecrlf)$'],capture_output=True,timeout=30)
+ check(config.returncode in {0,1},'Read-only Git checkout convention query '+relative)
+ return {'path':relative,'revision':revision,'committed_sha256':sha(blob),
+         'certified_sha256':expected,'working_tree_sha256':actual,'representation':representation,
+         'committed_attributes':attrs,'effective_attributes':effective,
+         'checkout_config':config.stdout.decode('utf-8').splitlines(),
+         'permission_authority':'Exact sealed inventory allowlist plus committed/effective Git attributes; no config edits'}
 def name(e):return e.tag.rsplit('}',1)[-1]
 def readrows(b):return list(csv.DictReader(io.StringIO(b.decode('utf-8')),delimiter='\t'))
 def parse(b):
@@ -220,12 +277,22 @@ def verify(a):
  check(len(metadata['project_navigation_covers'])==95 and collections.Counter(c['scheme'] for c in metadata['project_navigation_covers'])=={'chapter':16,'subchapter':76,'bamberg':3},'Actual project context inventory distinct from seven Lodge chapters')
  for cover in metadata['project_navigation_covers']:check(1<=cover['start_niese']<cover['end_niese_exclusive']<=350 and cover['precision']=='CONTAINING_NIESE_CONTEXT_NOT_NATIVE_CHAPTER_EQUIVALENCE','Qualified context range '+cover['project_boundary_id'])
  qualified=metadata['II284_independent_Lodge_qualification'];check(qualified['source_coordinate']==sections[283]['source_coordinate'] and qualified['whole_section_absent'] is False,'II.284 Lodge cut independent of qualified traditional boundary')
- # Confirm protected comparison versions from the actual isolated reference files.
+ # Resolve a single current committed revision; only Greek/Latin get EOL handling.
+ comparison_sources=[];revision=git_bytes(root,'rev-parse','--verify','HEAD').decode().strip()
+ check(Path(git_bytes(root,'rev-parse','--show-toplevel').decode().strip()).resolve()==root.resolve(),
+       'Comparison sources belong to the validated Git checkout')
+ inventory_bytes=(root/'_docs/reader-corpus-integrity.json').read_bytes()
+ check(sha(inventory_bytes)==INVENTORY_SHA,'Exact reviewed inventory seal for comparison checkouts')
+ check(sha(git_bytes(root,'show',revision+':_docs/reader-corpus-integrity.json'))==INVENTORY_SHA,
+       'Committed reviewed inventory seal for comparison checkouts')
+ inventory=json.loads(inventory_bytes)
  for relative,h in metadata['reference_snapshot']['files'].items():
-  # XML witnesses/identity registry are immutable data authorities. The renderer
-  # is baseline provenance for the separately authorized WorkBot 7B changes;
-  # it must not become an accidental source-QA lock on that implementation.
-  if relative.endswith('.xml'):check(sha((root/relative).read_bytes())==h,'Coherent current reference snapshot '+relative)
+  if relative in GIT_COMPARISON_HASHES:
+   comparison_sources.append(verify_git_comparison(root,revision,relative,h,inventory,check))
+  elif relative.endswith('.xml'):
+   check(sha((root/relative).read_bytes())==h,'Coherent current reference snapshot '+relative)
+ check({s['path'] for s in comparison_sources}==set(GIT_COMPARISON_HASHES),
+       'Exactly the two certified Git comparison sources')
  renderer_baseline=metadata['reference_snapshot']['files']['assets/js/renderTei.js']
  renderer_current=sha((root/'assets/js/renderTei.js').read_bytes())
  identity_sets={}
@@ -257,7 +324,8 @@ def verify(a):
   for filename,kind in [('CERTIFIED_SOURCE_BOOK_II.xml','certified_extraction'),('Lodge1602_Antiquities_BookII_FINAL_FROZEN_SCHOLARLY_PACKET.zip','scholarly_zip')]:check(sha((a.authority_dir/filename).read_bytes())==HASH[kind],'External mandatory authority '+kind)
  if a.restore_dir:
   a.restore_dir.mkdir(parents=True,exist_ok=True);(a.restore_dir/'restored-frozen-master.xml').write_bytes(restored);(a.restore_dir/'restored-certified-extraction.xml').write_bytes(extraction)
- return {'status':'PASS','certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN','renderer_baseline_sha256':renderer_baseline,'current_renderer_sha256':renderer_current,'renderer_baseline_matches_current':renderer_current==renderer_baseline,'assertions_passed':len(assertions),'identity_coverage':349,'identity_sets':identity_sets,'source_counts':counts,'opening_note_count':1,'notes_within_Niese_intervals':150,'literal_stream_sha256':sha(stream.encode()),'historical_confidence':metadata['historical_confidence_counts'],'all_sixteen_MEDIUM_human_approved':True,'deferred_queries':197,'exact_production_to_scholarly_master':{'sha256':sha(restored),'byte_identical':True},'exact_scholarly_master_to_extraction':{'sha256':sha(extraction),'byte_identical':True},'source_tree_markup_notes_and_order_independently_equal':True,'all349_source_coordinates_and_individual_partitions_valid':True,'derivative_sha256':sha(data),'metadata_sha256':sha(metadata_bytes),'native_TCP_milestones':149,'BookIII_excluded':True,'no_II350':True}
+ check(git_bytes(root,'rev-parse','--verify','HEAD').decode().strip()==revision,'Git comparison revision unchanged during verification')
+ return {'status':'PASS','certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN','renderer_baseline_sha256':renderer_baseline,'current_renderer_sha256':renderer_current,'renderer_baseline_matches_current':renderer_current==renderer_baseline,'assertions_passed':len(assertions),'git_revision_validated':revision,'git_comparison_sources':comparison_sources,'identity_coverage':349,'identity_sets':identity_sets,'source_counts':counts,'opening_note_count':1,'notes_within_Niese_intervals':150,'literal_stream_sha256':sha(stream.encode()),'historical_confidence':metadata['historical_confidence_counts'],'all_sixteen_MEDIUM_human_approved':True,'deferred_queries':197,'exact_production_to_scholarly_master':{'sha256':sha(restored),'byte_identical':True},'exact_scholarly_master_to_extraction':{'sha256':sha(extraction),'byte_identical':True},'source_tree_markup_notes_and_order_independently_equal':True,'all349_source_coordinates_and_individual_partitions_valid':True,'derivative_sha256':sha(data),'metadata_sha256':sha(metadata_bytes),'native_TCP_milestones':149,'BookIII_excluded':True,'no_II350':True}
 
 def main():
  ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--repo-root',type=Path,required=True);ap.add_argument('--xml',type=Path);ap.add_argument('--metadata',type=Path);ap.add_argument('--ledger',type=Path);ap.add_argument('--original-source',type=Path);ap.add_argument('--authority-dir',type=Path);ap.add_argument('--restore-dir',type=Path);ap.add_argument('--report',type=Path);a=ap.parse_args()
