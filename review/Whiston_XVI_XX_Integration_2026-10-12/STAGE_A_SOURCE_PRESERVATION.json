@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "last_book": 17,
+  "independent_XML_intervals": 6363,
+  "actual_display_intervals_reconciled": 759,
+  "complete_cumulative": false,
+  "sources": [
+    {
+      "book": 16,
+      "sha256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+      "byte_exact": true,
+      "approved_original_reconstructed": true,
+      "enabled": true
+    },
+    {
+      "book": 17,
+      "sha256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+      "byte_exact": true,
+      "approved_original_reconstructed": true,
+      "enabled": true
+    },
+    {
+      "book": 18,
+      "sha256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+      "byte_exact": true,
+      "approved_original_reconstructed": true,
+      "enabled": false
+    },
+    {
+      "book": 19,
+      "sha256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+      "byte_exact": true,
+      "approved_original_reconstructed": true,
+      "enabled": false
+    },
+    {
+      "book": 20,
+      "sha256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+      "byte_exact": true,
+      "approved_original_reconstructed": true,
+      "enabled": false
+    }
+  ],
+  "unchanged_tracked_files": 5697,
+  "approved_changes": [
+    ".gitattributes",
+    "_docs/reader-corpus-integrity.json",
+    "assets/js/renderTei.js",
+    "assets/xml/antiquities/English/book-16.xml",
+    "assets/xml/antiquities/English/book-17.xml",
+    "bin/reader-corpus-integrity.mjs"
+  ],
+  "containing_counts": {
+    "book": 2,
+    "chapter": 24,
+    "subchapter": 122,
+    "bamberg": 39,
+    "alignment": 122
+  },
+  "physical_XI_order_verified": true
+}

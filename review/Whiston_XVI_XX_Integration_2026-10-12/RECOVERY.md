@@ -1,0 +1,11 @@
+# Isolated Whiston XVI–XX recovery
+
+Stage A is certified through Book 17, adding 759 English intervals to the pinned I–XV baseline. Overall status is PARTIAL — NOT CERTIFIED FOR ALL XVI–XX.
+
+Canonical baseline: f6fa17f7616bf9ce046c28086b1a1448a9f8d049. No merge, push, preview modification or deployment is authorized. Do not use a shared checkout for recovery.
+
+Verify the ZIP SHA-256, ZIP CRC and every CHECKSUMS.json member, then extract into a fresh owned directory. Initialize a private candidate with core.autocrlf=false, fetch the complete candidate-full.bundle, and check out the full identity in DELIVERY.json. All source-delivery identities are named recovery refs. No canonical repository, network or publication is needed. Run review/Whiston_XVI_XX_Integration_2026-10-12/tools/verify_candidate.py in the restored candidate. It independently walks all enabled frozen XML, checks exact source bytes and reconstruction, preserves all prior tracked sources, and reconciles the actual rendered records.
+
+Preview reader HTML and assets are supplied for local inspection. Browser reproduction needs Node, Playwright and Chrome; create a private baseline by restoring the pinned commit from the bundle into another new checkout, and set WHISTON_SITE to the extracted preview. Browser hooks expose settled state only; source text and selection functions are unaltered. Use tools/browser_qa.cjs with QA_BOOKS and QA_REPORT_FILE, tools/structural_qa.cjs and the saved independent oracles. Stage QA reports and oracle populations are specified in QA_RECEIPT.json. A fresh standard build uses all configured plugins and the ordinary bundle check and bundle exec jekyll build --destination commands; retain all approved corpus/native guards.
+
+Rollback is to discard this isolated candidate or create a fresh private checkout at the pinned baseline. Never reset, clean, stash, switch branches or overwrite canonical development. Stage A and B archives stay immutable after sealing. Stop at isolated inspection or certification.

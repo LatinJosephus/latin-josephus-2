@@ -1,0 +1,774 @@
+{
+  "scope": "Locator and expected-count handoff only; no corpus-wide certification performed",
+  "BookXX": {
+    "file": "C:\\workspace\\LatinJosephus-BookXX-Pilot-20261011\\review\\BookXX_Pilot_2026-10-11\\output\\book-20.xml",
+    "sha256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+    "range": [
+      1,
+      268
+    ],
+    "count": 268,
+    "DATA_verdict": "DATA-GO",
+    "RENDERER_verdict": "RENDERER-NO-GO",
+    "canonical_base": "0a184e2a99f1fd44e58d83596d68009c42a84790"
+  },
+  "Proem": {
+    "range": [
+      1,
+      26
+    ],
+    "count": 26,
+    "Niese_book": "I",
+    "file": "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10\\output\\preface.xml",
+    "sha256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb"
+  },
+  "expected_counts": [
+    {
+      "book": 1,
+      "label": "I",
+      "range": [
+        27,
+        346
+      ],
+      "narrative_count": 320
+    },
+    {
+      "book": 2,
+      "label": "II",
+      "range": [
+        1,
+        349
+      ],
+      "narrative_count": 349
+    },
+    {
+      "book": 3,
+      "label": "III",
+      "range": [
+        1,
+        322
+      ],
+      "narrative_count": 322
+    },
+    {
+      "book": 4,
+      "label": "IV",
+      "range": [
+        1,
+        331
+      ],
+      "narrative_count": 331
+    },
+    {
+      "book": 5,
+      "label": "V",
+      "range": [
+        1,
+        362
+      ],
+      "narrative_count": 362
+    },
+    {
+      "book": 6,
+      "label": "VI",
+      "range": [
+        1,
+        378
+      ],
+      "narrative_count": 378
+    },
+    {
+      "book": 7,
+      "label": "VII",
+      "range": [
+        1,
+        394
+      ],
+      "narrative_count": 394
+    },
+    {
+      "book": 8,
+      "label": "VIII",
+      "range": [
+        1,
+        420
+      ],
+      "narrative_count": 420
+    },
+    {
+      "book": 9,
+      "label": "IX",
+      "range": [
+        1,
+        291
+      ],
+      "narrative_count": 291
+    },
+    {
+      "book": 10,
+      "label": "X",
+      "range": [
+        1,
+        281
+      ],
+      "narrative_count": 281
+    },
+    {
+      "book": 11,
+      "label": "XI",
+      "range": [
+        1,
+        347
+      ],
+      "narrative_count": 347
+    },
+    {
+      "book": 12,
+      "label": "XII",
+      "range": [
+        1,
+        434
+      ],
+      "narrative_count": 434
+    },
+    {
+      "book": 13,
+      "label": "XIII",
+      "range": [
+        1,
+        433
+      ],
+      "narrative_count": 433
+    },
+    {
+      "book": 14,
+      "label": "XIV",
+      "range": [
+        1,
+        491
+      ],
+      "narrative_count": 491
+    },
+    {
+      "book": 15,
+      "label": "XV",
+      "range": [
+        1,
+        425
+      ],
+      "narrative_count": 425
+    },
+    {
+      "book": 16,
+      "label": "XVI",
+      "range": [
+        1,
+        404
+      ],
+      "narrative_count": 404
+    },
+    {
+      "book": 17,
+      "label": "XVII",
+      "range": [
+        1,
+        355
+      ],
+      "narrative_count": 355
+    },
+    {
+      "book": 18,
+      "label": "XVIII",
+      "range": [
+        1,
+        379
+      ],
+      "narrative_count": 379
+    },
+    {
+      "book": 19,
+      "label": "XIX",
+      "range": [
+        1,
+        366
+      ],
+      "narrative_count": 366
+    },
+    {
+      "book": 20,
+      "label": "XX",
+      "range": [
+        1,
+        268
+      ],
+      "narrative_count": 268
+    }
+  ],
+  "prior_reported_total_including_Proem": 7108,
+  "all_twenty_narrative_total": 7350,
+  "Proem_total": 26,
+  "complete_expected_total": 7376,
+  "earlier_book_locators": [
+    {
+      "book": 1,
+      "label": "I",
+      "expected_range": [
+        27,
+        346
+      ],
+      "expected_narrative_count": 320,
+      "worktree": "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010",
+      "branch": "pilot/whiston-antiquities-book01-20261010",
+      "observed_delivery_HEAD": "b8cf6c9d36db610ea1dc4c65d070b016048262e1",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10\\output\\book-01.xml",
+      "certified_output_sha256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10",
+      "report": "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10\\DELIVERY_RECEIPT.json",
+        "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10\\EXPORTS.json",
+        "C:\\workspace\\LatinJosephus-BookI-Pilot-20261010\\review\\BookI_Pilot_2026-10-10\\GIT_RECEIPT.json"
+      ],
+      "recorded_final_archive_candidates": [],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 2,
+      "label": "II",
+      "expected_range": [
+        1,
+        349
+      ],
+      "expected_narrative_count": 349,
+      "worktree": "C:\\workspace\\LatinJosephus-BookII-Pilot-20261010",
+      "branch": "pilot/whiston-antiquities-book02-20261010",
+      "observed_delivery_HEAD": "3919acbd19d4ad32ef0daa0ec4ff2fbcda9b7e2f",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookII-Pilot-20261010\\review\\BookII_Pilot_2026-10-10\\output\\book-02.xml",
+      "certified_output_sha256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookII-Pilot-20261010\\review\\BookII_Pilot_2026-10-10",
+      "report": "C:\\workspace\\LatinJosephus-BookII-Pilot-20261010\\review\\BookII_Pilot_2026-10-10\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookII-Pilot-20261010\\review\\BookII_Pilot_2026-10-10\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookII-Pilot-20261010\\review\\BookII_Pilot_2026-10-10\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookII-Pilot-20261010\\review\\BookII_Pilot_2026-10-10\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookII-Pilot-20261010\\review\\BookII_Pilot_2026-10-10\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookII-Pilot-Exports-20261010\\BookII-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "a5eaf4b1ad6bc9c0f6d14d91f300fa1f1f83fd39094113ef9a0a144067790514"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 3,
+      "label": "III",
+      "expected_range": [
+        1,
+        322
+      ],
+      "expected_narrative_count": 322,
+      "worktree": "C:\\workspace\\LatinJosephus-BookIII-Pilot-20261010",
+      "branch": "pilot/whiston-antiquities-book03-20261010",
+      "observed_delivery_HEAD": "671cca7911745be51a7c2cc58ee9f96c404e04bd",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookIII-Pilot-20261010\\review\\BookIII_Pilot_2026-10-10\\output\\book-03.xml",
+      "certified_output_sha256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookIII-Pilot-20261010\\review\\BookIII_Pilot_2026-10-10",
+      "report": "C:\\workspace\\LatinJosephus-BookIII-Pilot-20261010\\review\\BookIII_Pilot_2026-10-10\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookIII-Pilot-20261010\\review\\BookIII_Pilot_2026-10-10\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookIII-Pilot-20261010\\review\\BookIII_Pilot_2026-10-10\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookIII-Pilot-20261010\\review\\BookIII_Pilot_2026-10-10\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookIII-Pilot-20261010\\review\\BookIII_Pilot_2026-10-10\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookIII-Pilot-Exports-20261010\\BookIII-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "48f53d06588146cef04265fcc695f71b2a7d86ab1213064b9311507b428c15c1"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 4,
+      "label": "IV",
+      "expected_range": [
+        1,
+        331
+      ],
+      "expected_narrative_count": 331,
+      "worktree": "C:\\workspace\\LatinJosephus-BookIV-Pilot-20261010",
+      "branch": "pilot/whiston-antiquities-book04-20261010",
+      "observed_delivery_HEAD": "02bec3048a5b397b93da0c10043394401ab6c8e8",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookIV-Pilot-20261010\\review\\BookIV_Pilot_2026-10-10\\output\\book-04.xml",
+      "certified_output_sha256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookIV-Pilot-20261010\\review\\BookIV_Pilot_2026-10-10",
+      "report": "C:\\workspace\\LatinJosephus-BookIV-Pilot-20261010\\review\\BookIV_Pilot_2026-10-10\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookIV-Pilot-20261010\\review\\BookIV_Pilot_2026-10-10\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookIV-Pilot-20261010\\review\\BookIV_Pilot_2026-10-10\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookIV-Pilot-20261010\\review\\BookIV_Pilot_2026-10-10\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookIV-Pilot-20261010\\review\\BookIV_Pilot_2026-10-10\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookIV-Pilot-Exports-20261010\\BookIV-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "c85e827d8ae891c814dfccbf88fb1c0d1b84298d9bdb9fecbb13301dfd850583"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 5,
+      "label": "V",
+      "expected_range": [
+        1,
+        362
+      ],
+      "expected_narrative_count": 362,
+      "worktree": "C:\\workspace\\LatinJosephus-BookV-Pilot-20261010",
+      "branch": "pilot/whiston-antiquities-book05-20261010",
+      "observed_delivery_HEAD": "26d7d3edecd643d92596c03c7ff319df65cd19c2",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookV-Pilot-20261010\\review\\BookV_Pilot_2026-10-10\\output\\book-05.xml",
+      "certified_output_sha256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookV-Pilot-20261010\\review\\BookV_Pilot_2026-10-10",
+      "report": "C:\\workspace\\LatinJosephus-BookV-Pilot-20261010\\review\\BookV_Pilot_2026-10-10\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookV-Pilot-20261010\\review\\BookV_Pilot_2026-10-10\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookV-Pilot-20261010\\review\\BookV_Pilot_2026-10-10\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookV-Pilot-20261010\\review\\BookV_Pilot_2026-10-10\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookV-Pilot-20261010\\review\\BookV_Pilot_2026-10-10\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookV-Pilot-Exports-20261010\\BookV-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "66265727d242435f5bb8bbc3984914534e7d87c3fc1f0c9f83c1d5ceb6b9bf5a"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 6,
+      "label": "VI",
+      "expected_range": [
+        1,
+        378
+      ],
+      "expected_narrative_count": 378,
+      "worktree": "C:\\workspace\\LatinJosephus-BookVI-Pilot-20261010",
+      "branch": "pilot/whiston-antiquities-book06-20261010",
+      "observed_delivery_HEAD": "97e416fbc0fd195143f73d7b10f42d2f4987cea4",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookVI-Pilot-20261010\\review\\BookVI_Pilot_2026-10-10\\output\\book-06.xml",
+      "certified_output_sha256": "d07fc57b299d1e2bbece237661e2525766f84cd047669a4b214691a5257095bc",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookVI-Pilot-20261010\\review\\BookVI_Pilot_2026-10-10",
+      "report": "C:\\workspace\\LatinJosephus-BookVI-Pilot-20261010\\review\\BookVI_Pilot_2026-10-10\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookVI-Pilot-20261010\\review\\BookVI_Pilot_2026-10-10\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookVI-Pilot-20261010\\review\\BookVI_Pilot_2026-10-10\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookVI-Pilot-20261010\\review\\BookVI_Pilot_2026-10-10\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookVI-Pilot-20261010\\review\\BookVI_Pilot_2026-10-10\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookVI-Pilot-Exports-20261010\\BookVI-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "dd67e4b5096f28a9ccc221e9d7336faa6aec48f1083b695c5874bad951b87b5d"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 7,
+      "label": "VII",
+      "expected_range": [
+        1,
+        394
+      ],
+      "expected_narrative_count": 394,
+      "worktree": "C:\\workspace\\LatinJosephus-BookVII-Pilot-20261010",
+      "branch": "pilot/whiston-antiquities-book07-20261010",
+      "observed_delivery_HEAD": "8071050ce985a0ff69f59437ce618137c9ac192c",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookVII-Pilot-20261010\\review\\BookVII_Pilot_2026-10-10\\output\\book-07.xml",
+      "certified_output_sha256": "7b21b4ea164e15fae72c7d1739a5544e7ea68513d9a8f25571c993722b77def2",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookVII-Pilot-20261010\\review\\BookVII_Pilot_2026-10-10",
+      "report": "C:\\workspace\\LatinJosephus-BookVII-Pilot-20261010\\review\\BookVII_Pilot_2026-10-10\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookVII-Pilot-20261010\\review\\BookVII_Pilot_2026-10-10\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookVII-Pilot-20261010\\review\\BookVII_Pilot_2026-10-10\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookVII-Pilot-20261010\\review\\BookVII_Pilot_2026-10-10\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookVII-Pilot-20261010\\review\\BookVII_Pilot_2026-10-10\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookVII-Pilot-Exports-20261010\\BookVII-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "72f35789f3516379aec3fdea314acc947c6529aa22d9351088bf26023ba6d6ea"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 8,
+      "label": "VIII",
+      "expected_range": [
+        1,
+        420
+      ],
+      "expected_narrative_count": 420,
+      "worktree": "C:\\workspace\\LatinJosephus-BookVIII-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book08-20261011",
+      "observed_delivery_HEAD": "74b8cf1b3505430ff60984d0779e7275da852e59",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookVIII-Pilot-20261011\\review\\BookVIII_Pilot_2026-10-11\\output\\book-08.xml",
+      "certified_output_sha256": "5e3dba55ac9e20e45014b9bfaa2ca64741b10b20e29266db94bde7ec0091a786",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookVIII-Pilot-20261011\\review\\BookVIII_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookVIII-Pilot-20261011\\review\\BookVIII_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookVIII-Pilot-20261011\\review\\BookVIII_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookVIII-Pilot-20261011\\review\\BookVIII_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookVIII-Pilot-20261011\\review\\BookVIII_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookVIII-Pilot-20261011\\review\\BookVIII_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookVIII-Pilot-Exports-20261011\\BookVIII-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "21e405b37c3695b367b16c6057969a8b3017b577e68da0589211b111b87612b8"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 9,
+      "label": "IX",
+      "expected_range": [
+        1,
+        291
+      ],
+      "expected_narrative_count": 291,
+      "worktree": "C:\\workspace\\LatinJosephus-BookIX-Segmentation-20261011",
+      "branch": "pilot/whiston-antiquities-book09-restored-20261011",
+      "observed_delivery_HEAD": "2ce18b40ea8652e5e0d5046f10b1c39935fcdc54",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookIX-Segmentation-20261011\\review\\BookIX_Restored_Segmentation_2026-10-11\\output\\book-09.xml",
+      "certified_output_sha256": "3c704ca240e46119d69434e38bb64ccc37363ef774b015848df10517ba663be5",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookIX-Segmentation-20261011\\review\\BookIX_Restored_Segmentation_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookIX-Segmentation-20261011\\review\\BookIX_Restored_Segmentation_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookIX-Segmentation-20261011\\review\\BookIX_Restored_Segmentation_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookIX-Segmentation-20261011\\review\\BookIX_Restored_Segmentation_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookIX-Segmentation-20261011\\review\\BookIX_Restored_Segmentation_2026-10-11\\GIT_IDENTITIES.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookIX-Segmentation-Exports-20261011\\BookIX-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "dc471347ea89faf2e254a231a371c6a59835a1f7aa17d2053afb547ddeaeb039"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 10,
+      "label": "X",
+      "expected_range": [
+        1,
+        281
+      ],
+      "expected_narrative_count": 281,
+      "worktree": "C:\\workspace\\LatinJosephus-BookX-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book10-20261011",
+      "observed_delivery_HEAD": "8cb48664e3ec3994416d9dd9d769e0e3f41132ac",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookX-Pilot-20261011\\review\\BookX_Pilot_2026-10-11\\output\\book-10.xml",
+      "certified_output_sha256": "12aecbaa44f2c0201be52950e849cfbc9c84c722ed8cf8dda8f3cfdb333e3e1d",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookX-Pilot-20261011\\review\\BookX_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookX-Pilot-20261011\\review\\BookX_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookX-Pilot-20261011\\review\\BookX_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookX-Pilot-20261011\\review\\BookX_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookX-Pilot-20261011\\review\\BookX_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookX-Pilot-20261011\\review\\BookX_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookX-Pilot-Exports-20261011\\BookX-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "3972ca15bed2add698b033e3635b06e676e6f14fdc8bb3f5fc1d6a06c56849ea"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 11,
+      "label": "XI",
+      "expected_range": [
+        1,
+        347
+      ],
+      "expected_narrative_count": 347,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXI-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book11-20261011",
+      "observed_delivery_HEAD": "5c5557fc6970012251fdca083795d966c7015cfe",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXI-Pilot-20261011\\review\\BookXI_Pilot_2026-10-11\\output\\book-11.xml",
+      "certified_output_sha256": "ba6756ee38cec2a21b03c04976c9830957138dba2a69126f3f4579e11d8f478e",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXI-Pilot-20261011\\review\\BookXI_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXI-Pilot-20261011\\review\\BookXI_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXI-Pilot-20261011\\review\\BookXI_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXI-Pilot-20261011\\review\\BookXI_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXI-Pilot-20261011\\review\\BookXI_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXI-Pilot-20261011\\review\\BookXI_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXI-Pilot-Exports-20261011\\BookXI-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "15da20fb05c5e06215401c4d1a1effaf65407abd7ac2c5821f26dd5421884d91"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 12,
+      "label": "XII",
+      "expected_range": [
+        1,
+        434
+      ],
+      "expected_narrative_count": 434,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXII-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book12-20261011",
+      "observed_delivery_HEAD": "a4b602fadc7ca920213dca93e1b2adc18d4e4343",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXII-Pilot-20261011\\review\\BookXII_Pilot_2026-10-11\\output\\book-12.xml",
+      "certified_output_sha256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXII-Pilot-20261011\\review\\BookXII_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXII-Pilot-20261011\\review\\BookXII_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXII-Pilot-20261011\\review\\BookXII_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXII-Pilot-20261011\\review\\BookXII_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXII-Pilot-20261011\\review\\BookXII_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXII-Pilot-20261011\\review\\BookXII_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXII-Pilot-Exports-20261011\\BookXII-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "1e07a7373675f9eb02ed3089b03ef205474244ef51530f9f876e61248bc9e66c"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 13,
+      "label": "XIII",
+      "expected_range": [
+        1,
+        433
+      ],
+      "expected_narrative_count": 433,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXIII-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book13-20261011",
+      "observed_delivery_HEAD": "5cebf646aff8b0106a6c431167785209c0f092b0",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXIII-Pilot-20261011\\review\\BookXIII_Pilot_2026-10-11\\output\\book-13.xml",
+      "certified_output_sha256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXIII-Pilot-20261011\\review\\BookXIII_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXIII-Pilot-20261011\\review\\BookXIII_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXIII-Pilot-20261011\\review\\BookXIII_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXIII-Pilot-20261011\\review\\BookXIII_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXIII-Pilot-20261011\\review\\BookXIII_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXIII-Pilot-20261011\\review\\BookXIII_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXIII-Pilot-Exports-20261011\\BookXIII-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "5d6a1f88fa00bb5713cb1021c19d76b3c22c182a5177f7cd5ae6c244ebbc2c04"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 14,
+      "label": "XIV",
+      "expected_range": [
+        1,
+        491
+      ],
+      "expected_narrative_count": 491,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXIV-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book14-20261011",
+      "observed_delivery_HEAD": "011dddea78233f6a196d9fcdcdd271b5621cbdc1",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXIV-Pilot-20261011\\review\\BookXIV_Pilot_2026-10-11\\output\\book-14.xml",
+      "certified_output_sha256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXIV-Pilot-20261011\\review\\BookXIV_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXIV-Pilot-20261011\\review\\BookXIV_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXIV-Pilot-20261011\\review\\BookXIV_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXIV-Pilot-20261011\\review\\BookXIV_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXIV-Pilot-20261011\\review\\BookXIV_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXIV-Pilot-20261011\\review\\BookXIV_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXIV-Pilot-Exports-20261011\\BookXIV-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "65a082991dd90e68eada7f1856638629468aedb685d0edcdf72ec8ce30486f69"
+        },
+        {
+          "path": "C:\\workspace\\BookXIV-Pilot-Exports-20261011\\BookXIV-E-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "21720483be5141ca1102a4cdf449d41e48bf78aecddfdc6ef7a53da1ae2d9dbe"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 15,
+      "label": "XV",
+      "expected_range": [
+        1,
+        425
+      ],
+      "expected_narrative_count": 425,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXV-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book15-20261011",
+      "observed_delivery_HEAD": "ee85745a49e9f4a44a0c8e03891f80817c3e12a5",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXV-Pilot-20261011\\review\\BookXV_Pilot_2026-10-11\\output\\book-15.xml",
+      "certified_output_sha256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXV-Pilot-20261011\\review\\BookXV_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXV-Pilot-20261011\\review\\BookXV_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXV-Pilot-20261011\\review\\BookXV_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXV-Pilot-20261011\\review\\BookXV_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXV-Pilot-20261011\\review\\BookXV_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXV-Pilot-20261011\\review\\BookXV_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXV-Pilot-Exports-20261011\\BookXV-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "e2c1e8129138b290b91e87797940fc1e997abc45479dddd5faa43f1cc070b03b"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 16,
+      "label": "XVI",
+      "expected_range": [
+        1,
+        404
+      ],
+      "expected_narrative_count": 404,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXVI-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book16-20261011",
+      "observed_delivery_HEAD": "54339acb535aa929d358c6a57c6c456d0f4b9b68",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXVI-Pilot-20261011\\review\\BookXVI_Pilot_2026-10-11\\output\\book-16.xml",
+      "certified_output_sha256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXVI-Pilot-20261011\\review\\BookXVI_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXVI-Pilot-20261011\\review\\BookXVI_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXVI-Pilot-20261011\\review\\BookXVI_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXVI-Pilot-20261011\\review\\BookXVI_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXVI-Pilot-20261011\\review\\BookXVI_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXVI-Pilot-20261011\\review\\BookXVI_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXVI-Pilot-Exports-20261011\\BookXVI-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "10e7e7e98123e2c301be5b6dad7fc0a3804ac17002cb152d340741927e2d057d"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 17,
+      "label": "XVII",
+      "expected_range": [
+        1,
+        355
+      ],
+      "expected_narrative_count": 355,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXVII-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book17-20261011",
+      "observed_delivery_HEAD": "22906b0dc0acb68d4ec73d50fe89dde6e9930695",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXVII-Pilot-20261011\\review\\BookXVII_Pilot_2026-10-11\\output\\book-17.xml",
+      "certified_output_sha256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXVII-Pilot-20261011\\review\\BookXVII_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXVII-Pilot-20261011\\review\\BookXVII_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXVII-Pilot-20261011\\review\\BookXVII_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXVII-Pilot-20261011\\review\\BookXVII_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXVII-Pilot-20261011\\review\\BookXVII_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXVII-Pilot-20261011\\review\\BookXVII_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXVII-Pilot-Exports-20261011\\BookXVII-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "752e9968deb46ca4218bbcfa787f9b90e2ff6aade7dc64e3ea7f6524d760297c"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 18,
+      "label": "XVIII",
+      "expected_range": [
+        1,
+        379
+      ],
+      "expected_narrative_count": 379,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXVIII-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book18-20261011",
+      "observed_delivery_HEAD": "9809c1ad7cd1ce2330bec514108b8da3206d5e69",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXVIII-Pilot-20261011\\review\\BookXVIII_Pilot_2026-10-11\\output\\book-18.xml",
+      "certified_output_sha256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXVIII-Pilot-20261011\\review\\BookXVIII_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXVIII-Pilot-20261011\\review\\BookXVIII_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXVIII-Pilot-20261011\\review\\BookXVIII_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXVIII-Pilot-20261011\\review\\BookXVIII_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXVIII-Pilot-20261011\\review\\BookXVIII_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXVIII-Pilot-20261011\\review\\BookXVIII_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXVIII-Pilot-Exports-20261011\\BookXVIII-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "6da416142b39a65e1c19fbd19afc7e4d85abe69fe2d4aea1b4c61b499b799137"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    },
+    {
+      "book": 19,
+      "label": "XIX",
+      "expected_range": [
+        1,
+        366
+      ],
+      "expected_narrative_count": 366,
+      "worktree": "C:\\workspace\\LatinJosephus-BookXIX-Pilot-20261011",
+      "branch": "pilot/whiston-antiquities-book19-20261011",
+      "observed_delivery_HEAD": "e20b50f7ecacaa7ce5ac212d8b0381f089004209",
+      "certified_output": "C:\\workspace\\LatinJosephus-BookXIX-Pilot-20261011\\review\\BookXIX_Pilot_2026-10-11\\output\\book-19.xml",
+      "certified_output_sha256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+      "review_pack": "C:\\workspace\\LatinJosephus-BookXIX-Pilot-20261011\\review\\BookXIX_Pilot_2026-10-11",
+      "report": "C:\\workspace\\LatinJosephus-BookXIX-Pilot-20261011\\review\\BookXIX_Pilot_2026-10-11\\REPORT.md",
+      "QA": "C:\\workspace\\LatinJosephus-BookXIX-Pilot-20261011\\review\\BookXIX_Pilot_2026-10-11\\QA.json",
+      "recovery_instructions": "C:\\workspace\\LatinJosephus-BookXIX-Pilot-20261011\\review\\BookXIX_Pilot_2026-10-11\\RECOVERY.md",
+      "delivery_metadata": [
+        "C:\\workspace\\LatinJosephus-BookXIX-Pilot-20261011\\review\\BookXIX_Pilot_2026-10-11\\GIT_IDENTITIES.json",
+        "C:\\workspace\\LatinJosephus-BookXIX-Pilot-20261011\\review\\BookXIX_Pilot_2026-10-11\\FINAL_GIT_QA.json"
+      ],
+      "recorded_final_archive_candidates": [
+        {
+          "path": "C:\\workspace\\BookXIX-Pilot-Exports-20261011\\BookXIX-D-DATA-GO-RENDERER-NO-GO.zip",
+          "sha256": "19013522c5e8af2d8f41c31b873b2547ec62948d754b8d16eef0e65c4d3cd3f3"
+        }
+      ],
+      "archive_locator_note": "Use recorded per-book receipts for any Library-hosted final delivery. A historical archive name containing PARTIAL is not relabeled certified by this handoff. No earlier archive is reconstructed or recertified here."
+    }
+  ],
+  "special_cases": [
+    "Proem identities are I.1-26 in preface.xml; Book I narrative is I.27-346,320 intervals. Do not add26 again to the346 aggregate in Book I QA.",
+    "Use certified restored Book IX segmentation, not the old diagnostic pilot or damaged canonical baseline. Its approved restored source, notes/headings and restoration receipts define its immutable authority. Frozen Greek narrative lacks51-109; the certified IX record explicitly relies on registry identities plus print-supported/English controls for those59 sections, without claiming surviving Greek-text verification.",
+    "Book XI physical sequence is1-311,326-342,312-325,343-347. Verify identity set and actual physical English order rather than imposing an ascending sequence.",
+    "External Lexundria label anomalies include XIII terminal numbering, XVII terminal label354 spanning354-355, and XIX raw365 labels with label363 combining363-364 and final labels364/365 corresponding to365/366. Consult each certified reconciliation; do not confuse external labels with canonical identity sets.",
+    "Some frozen Greek opening identities are implicit (XVIII and XIX1); preliminary Greek durations/traditional anchors are not interchangeable with sectional starts. Book XX has268 explicit Greek nums including1.",
+    "Traditional, Bamberg and Niese systems remain distinct. Latin absence does not imply English absence; particularly XX27-36 and238, partially represented26/37, and the separately adjudicated Latin59/241.",
+    "Book XX actual English order is1-268. Its267 retains the36-word plain-narrative note-like addition, also outside notes in the preserved Perseus control, including A.D. 03. Its268 retains three books versus frozen Greek four and the complete final sentence. Separate Latin TEI trailer is unaffected; no269 or Vita import.",
+    "Every recorded inherited reading, omission, note, translation displacement and structural qualification remains. Generic TEI-All missing-header fragment diagnostics are inherited; do not report them as new milestone defects.",
+    "Canonical I-XI renderer integration is a separate baseline history. Book XX is not canonically merged. DATA-GO does not establish RENDERER-GO or corpus-wide consistency. Independent corpus-wide certification remains a separate authorized task."
+  ]
+}

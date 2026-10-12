@@ -1,0 +1,31 @@
+{
+  "schema": "sources/tei_all.rng",
+  "original_project_schema": "review/Antiquities_Traditional_Navigation_2026-10-06/tei_all.rng",
+  "schema_SHA256": "b0f115095ead2ccc6933aa3365c6f4a82cba3b2ec7eee7f76bb616d7a63b7e48",
+  "results": [
+    {
+      "file": "book-17.xml",
+      "role": "baseline",
+      "valid": false,
+      "errors": [
+        {
+          "message": "Did not expect element text there",
+          "type": "RELAXNG_ERR_ELEMWRONG"
+        }
+      ]
+    },
+    {
+      "file": "book-17.xml",
+      "role": "output",
+      "valid": false,
+      "errors": [
+        {
+          "message": "Did not expect element text there",
+          "type": "RELAXNG_ERR_ELEMWRONG"
+        }
+      ]
+    }
+  ],
+  "no_new_diagnostics": true,
+  "assessment": "Inherited headerless-fragment failure; no schema certification claimed"
+}

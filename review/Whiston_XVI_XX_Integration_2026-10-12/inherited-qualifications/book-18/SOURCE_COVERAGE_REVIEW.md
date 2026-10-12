@@ -1,0 +1,5 @@
+# Book XVIII pre-insertion source coverage
+
+All 379 Greek identities have complete canonical English passage candidates with unique independent internal anchors and at least 90% whole-passage word correspondence. All whole-book difference operations were inspected: inherited spelling, spacing and short omissions (as, it was because, perhaps, more, a), with no missing substantial passage. Literal inventory contains no GREEK, star-gap, ellipsis, missing-text placeholder or gap element. Canonical structural units preserve 59 paragraphs, comprising two headings and 57 narrative paragraphs with flattened chapters. Independently observed physical English sequence is 1-379, with no nonmonotonic transition. Latin omissions do not determine this audit; all English including 215-218 survives. Greek section one is independently verified at its registry anchor after the prefatory time-span statement. No replacement text imported.
+
+No replacement text imported. No new milestone had been inserted at this gate. Full diagnostic records and original byte hashes are retained. Independent English anchors establish actual physical order; numerical monotonicity is not imposed.

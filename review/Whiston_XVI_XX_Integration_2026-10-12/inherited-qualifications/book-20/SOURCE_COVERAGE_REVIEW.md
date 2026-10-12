@@ -1,0 +1,5 @@
+# Book XX pre-insertion source coverage
+
+Every one of 268 canonical passage candidates independently located; all whole-book word discrepancy operations and 52 paragraphs, one separate interval head, 50 num labels, 20 inherited chapter milestones and author note inspected. No gap, placeholder, missing episode or structural lacuna. Eleven registry identities lack independent Latin intervals (27-36 and238), with26 and37 partial Latin; English coverage is independent and complete. Physical English order1-268 follows unique canonical anchors, with no nonmonotonic transition. Preserve minor inherited readings/omitted particles and the36-word note-like addition within267, without importing or rearranging text. XX268 and final paragraph material are present; detailed final endpoint audit follows.
+
+No replacement text imported. No new milestone had been inserted at this gate. Full diagnostic records and original byte hashes are retained. Independent English anchors establish actual physical order; numerical monotonicity is not imposed.

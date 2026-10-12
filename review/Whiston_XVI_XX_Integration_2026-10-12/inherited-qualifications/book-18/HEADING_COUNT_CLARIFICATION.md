@@ -1,0 +1,1 @@
+The immutable B checkpoint preliminary prose counted the chapter1 time-span heading with its58 paragraphs. Final independent editorial QA distinguishes both heading paragraphs (book title and time-span statement) from57 narrative paragraphs, total59. Original counts and text were preserved throughout; this corrects only the descriptive heading/narrative subtotal.
