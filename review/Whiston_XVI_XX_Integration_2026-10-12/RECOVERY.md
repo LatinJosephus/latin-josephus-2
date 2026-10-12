@@ -1,6 +1,6 @@
 # Isolated Whiston XVI–XX recovery
 
-Stage A is certified through Book 17, adding 759 English intervals to the pinned I–XV baseline. Overall status is PARTIAL — NOT CERTIFIED FOR ALL XVI–XX.
+Stage B is certified through Book 19, adding 1504 English intervals to the pinned I–XV baseline. Overall status is PARTIAL — NOT CERTIFIED FOR ALL XVI–XX.
 
 Canonical baseline: f6fa17f7616bf9ce046c28086b1a1448a9f8d049. No merge, push, preview modification or deployment is authorized. Do not use a shared checkout for recovery.
 
