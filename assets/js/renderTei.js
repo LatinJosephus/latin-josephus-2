@@ -2401,11 +2401,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // transposition; Latin/Greek fragment and context records do not bind it.
       const view = englishNieseView(data, nieseNum);
       if (!view) return structuralUnavailable(language, "The certified English interval has no matching milestone.");
-      const note = document.createElement("p");
-      note.className = "niese-exact-note";
-      note.setAttribute("role", "note");
-      note.textContent = "Whiston English: exact Niese interval.";
-      view.prepend(note);
       if (identity?.English?.note) {
         const notice = document.createElement("p");
         notice.className = "alert alert-secondary niese-correspondence-note";
