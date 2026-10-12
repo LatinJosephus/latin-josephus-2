@@ -50,7 +50,7 @@ async function select(pg,number){
 }
 async function snapshot(pg){return pg.evaluate(()=>{
  const norm=s=>s.replace(/\s+/g,' ').trim();
- const result={state:window.__qa.state(),languages:{}};
+ const result={state:window.__qa.state(),url:location.search,controls:{previous:document.querySelector("#niese-previous")?.disabled,next:document.querySelector("#niese-next")?.disabled},languages:{}};
  for(const language of ['english','latin','greek']){
   const pane=document.getElementById(language);if(!pane)continue;
   const clone=pane.cloneNode(true);clone.querySelectorAll('[data-original]').forEach(e=>e.remove());
@@ -80,6 +80,11 @@ function compareWitnesses(a,b,label){
 }
 function checkInterval(actual,expected){
  const s=actual.languages.english;
+ assert(actual.state.viewingLevel==='niese-level'&&Number(actual.state.nieseNum)===expected.number,'Settled selected state differs',actual);
+ assert((expected.book==='preface'?actual.state.bookNum==='preface':Number(actual.state.bookNum)===Number(expected.book)),'Settled book state differs',actual);
+ const params=new URLSearchParams(actual.url);assert(Number(params.get('niese'))===expected.number,'Selected Niese URL differs',actual);
+ const all=oracle.filter(e=>e.book===expected.book);const first=Math.min(...all.map(e=>e.number)),last=Math.max(...all.map(e=>e.number));
+ assert(actual.controls.previous===(expected.number===first)&&actual.controls.next===(expected.number===last),'Navigation limit state differs',actual);
  assert(!s.allVisible.includes('Whiston English: exact Niese interval.')&&!s.html.includes('niese-exact-note'),'Redundant exact-English notice returned');
  assert(s.exact&&!s.context&&!s.unavailable,`${expected.book}.${expected.number} exact mode missing`,actual);
  assert(s.text===expected.text,`${expected.book}.${expected.number} certified interval differs`,{expected,actual:s});
@@ -119,7 +124,7 @@ async function main(){
     await Promise.all([select(page,expected.number),select(base,expected.number)]);
     const [actual,prior]=await Promise.all([snapshot(page),snapshot(base)]);
     compareWitnesses(actual,prior,`${book}.${expected.number}`);
-    report.sections.push({...checkInterval(actual,expected),GreekLatinPresentationUnchanged:true,URL:new URL(page.url()).search});
+    report.sections.push({...checkInterval(actual,expected),GreekLatinPresentationUnchanged:true,settledStateAndURLVerified:true,navigationLimitsVerified:true,URL:new URL(page.url()).search});
     if(report.sections.length%100===0){save();console.log('Displayed sections verified',report.sections.length);}
     if(process.argv.includes('--probe')&&report.sections.length>=35)break;
    }
