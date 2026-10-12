@@ -3,3 +3,6 @@
 /_docs/lodge1602-bellum-source/* -text whitespace=cr-at-eol
 /_docs/lodge1602-bellum-*.json -text whitespace=cr-at-eol
 /bin/lodge1602-bellum-* -text whitespace=cr-at-eol
+
+# Preserve certified Whiston XII–XV XML bytes during Git checkout.
+/assets/xml/antiquities/English/book-1[23].xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof

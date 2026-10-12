@@ -1,0 +1,19 @@
+{
+  "status": "FAIL",
+  "sections": [],
+  "structural": [],
+  "crossWork": [],
+  "navigation": [],
+  "unsegmented": [],
+  "errors": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:56907/antiquities/?book=12&niese=1",
+      "error": "net::ERR_NETWORK_ACCESS_DENIED"
+    }
+  ],
+  "rendererSHA256": "179de236affffb83435619cba9e144c5679762035ebd75b2ce8dc9f27c6ec5dc",
+  "registrySHA256": "5dbc75c63fc0afc59fa4d59768e54ad197d716f2ed55f36a0669b3f375412b64",
+  "structureSHA256": "82dcc4bdc0215c83a8b0505160cae32224e2bfd081473e6041dc68a3067748bd",
+  "failure": "Error: page.goto: net::ERR_NETWORK_ACCESS_DENIED at http://127.0.0.1:56907/antiquities/?book=12&niese=1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:56907/antiquities/?book=12&niese=1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+}

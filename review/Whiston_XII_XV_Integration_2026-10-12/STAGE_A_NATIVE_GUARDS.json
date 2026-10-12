@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "production_XML": 143,
+  "all_production_XML_parsed": true,
+  "frozen_publication_inputs": 38,
+  "negative_checks": [
+    "unexpected XML",
+    "segmented English corruption",
+    "Lodge corruption",
+    "manifest alteration",
+    "concordance alteration",
+    "Lodge authority alteration",
+    "missing XML",
+    "generated publication authority hashes"
+  ],
+  "command": "node bin/reader-corpus-qa.mjs --site runtime/standard-site",
+  "standard_build": "full plugins, bundle check PASS; 80.808 seconds; inherited Sass warnings only"
+}

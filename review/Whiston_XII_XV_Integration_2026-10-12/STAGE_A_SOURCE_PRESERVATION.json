@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "stage": "A",
+  "protected_tracked_files": 5559,
+  "allowed_changes": [
+    {
+      "path": ".gitattributes",
+      "baseline_SHA256": "c4d630019d490597abf4b0e2f7bc81cb197cccb068875664a222dceb0724aebb",
+      "candidate_SHA256": "60678ba1f820cc17d7e1480cb0c4a35225c989c2eac7d05fdd229e9f88f0e874"
+    },
+    {
+      "path": "_docs/reader-corpus-integrity.json",
+      "baseline_SHA256": "c73ec21d918c40f5ab2da13b335f150ee9501d19124a114c6a84dc703f89072b",
+      "candidate_SHA256": "35cd196c29872284ea926107d8138f1a3d14e989456038913f2ec1928c46cd08"
+    },
+    {
+      "path": "assets/js/renderTei.js",
+      "baseline_SHA256": "71d15c49dd71bc29e844ce0346aefb820da80b8d3ecf679176647a946d969fa1",
+      "candidate_SHA256": "179de236affffb83435619cba9e144c5679762035ebd75b2ce8dc9f27c6ec5dc"
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-12.xml",
+      "baseline_SHA256": "d5cee95948e272e04c624808c299588c7fb67c31988b686afd547c73597bbcea",
+      "candidate_SHA256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c"
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-13.xml",
+      "baseline_SHA256": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d",
+      "candidate_SHA256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9"
+    },
+    {
+      "path": "bin/reader-corpus-integrity.mjs",
+      "baseline_SHA256": "9541dd52f84ee5855d9274be916f3373e033253a114b8718d04dfb675661d052",
+      "candidate_SHA256": "a00c59229fc97b963140fc1374c207f0658e9dd9219e6ceb3cd01384b1c7cf3d"
+    }
+  ],
+  "new_English_byte_exact": true,
+  "all_existing_I_XI_English_unchanged": true,
+  "all_Greek_Latin_XML_unchanged": true,
+  "XVI_XX_English_unchanged": true,
+  "registries_structure_CSS_unchanged": true,
+  "generic_renderer_unchanged": true,
+  "notice_correction_preserved": true,
+  "reconstruction": [
+    {
+      "book": 12,
+      "certified_SHA256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+      "reconstructed_SHA256": "9cc8da830c8a630c024bf5729004fb224c17f7fabe5b7205cbeab37a34d10a1e",
+      "approved_baseline_SHA256": "9cc8da830c8a630c024bf5729004fb224c17f7fabe5b7205cbeab37a34d10a1e",
+      "byte_exact": true
+    },
+    {
+      "book": 13,
+      "certified_SHA256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+      "reconstructed_SHA256": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d",
+      "approved_baseline_SHA256": "dde487853b9343930725df87e957a36b09bcf4a9e94468f2a3d1bc80d3401b6d",
+      "byte_exact": true
+    }
+  ]
+}
