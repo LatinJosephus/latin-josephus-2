@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
             lodge1602: {
               label: "Lodge (1602)",
               directory: "English/Lodge1602",
-              availableBookKeys: ["2"],
-              exactNieseBooks: [2],
+              availableBookKeys: ["preface", "1", "2", "3", "4", "5"],
+              exactNieseBooks: ["preface", 1, 2, 3, 4, 5],
               nativeTCP: true,
               metadataDirectory: "assets/data/lodge1602-antiquities"
             }
@@ -1249,10 +1249,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadLodgeMetadata = async () => {
     lodgeMetadata = null;
     if (!usesLodgeAntiquities()) return;
-    const key = String(Number(state.bookNum));
+    const key = isPreface() ? "preface" : String(Number(state.bookNum));
     if (!lodgeMetadataRequests.has(key)) lodgeMetadataRequests.set(key, (async () => {
       const config = sourceConfig("English");
-      const response = await fetch(`/${config.metadataDirectory}/book-${key.padStart(2, "0")}.json?v=${teiCacheToken}`);
+      const filename = key === "preface" ? "preface" : `book-${key.padStart(2, "0")}`;
+      const response = await fetch(`/${config.metadataDirectory}/${filename}.json?v=${teiCacheToken}`);
       if (!response.ok) throw new Error("Lodge source metadata could not be loaded.");
       const metadata = await response.json();
       if (metadata.schema_version !== 1 || metadata.source !== "lodge1602"
@@ -1291,10 +1292,13 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper.dataset.englishSegmentation = exact ? "exact" : "containing-context";
     wrapper.appendChild(content);
     const label = makeGeneratedNieseLabel(first);
-    wrapper.prepend(label);
-    if (exact && first === lodgeMetadata.availability.identity_range[0]) {
+    // Keep the display citation in the opening source paragraph, as in Latin.
+    const firstParagraph = wrapper.querySelector("tei-p");
+    (firstParagraph || wrapper).prepend(label);
+    if (exact && first === lodgeMetadata.availability.identity_range[0]
+      && lodgeMetadata.pre_first_identity_context.notes.length) {
       const context = document.createElement("aside"); context.className = "lodge-source-context";
-      const title = document.createElement("p"); title.textContent = "Lodge source note preceding section 1";
+      const title = document.createElement("p"); title.textContent = `Lodge source note preceding section ${first}`;
       context.appendChild(title);
       for (const note of lodgeMetadata.pre_first_identity_context.notes) {
         const node = data.querySelector(`[id="${note}"]`);

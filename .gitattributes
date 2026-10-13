@@ -24,3 +24,12 @@
 /_docs/lodge1602-antiquities-book02-validation.json -text whitespace=cr-at-eol
 /bin/lodge1602-antiquities-import.py -text whitespace=cr-at-eol
 /bin/lodge1602-antiquities-qa.py -text whitespace=cr-at-eol
+
+# Frozen Lodge batch derivatives and their reversible evidence; no EOL conversion.
+/_docs/reader-corpus-integrity.json -text whitespace=cr-at-eol
+/assets/xml/antiquities/English/Lodge1602/preface.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/assets/xml/antiquities/English/Lodge1602/book-0[1345].xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/assets/data/lodge1602-antiquities/*.json -text whitespace=cr-at-eol
+/_docs/lodge1602-antiquities-source/* -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/_docs/lodge1602-antiquities-*-integration.json -text whitespace=cr-at-eol
+/_docs/lodge1602-antiquities-*-validation.json -text whitespace=cr-at-eol

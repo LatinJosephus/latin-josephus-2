@@ -1,0 +1,411 @@
+{
+  "authorities": {
+    "certified_extraction": "d6e56cecf0790900b1990d4aefdc947bab9acecab5273253101a216fa6cd45f4",
+    "final_register": "4ab3c303b90a47f975345f3a5c79eeb90ca37a7ecf2b56859d547060404cc754",
+    "freeze_manifest": "b8f69e85d1a3895ec4f2fac45b4361b323fa7dfeeb5e10a944d8784bb735fc88",
+    "original_TCP": "3ca2646644d8c91cf35e8575a6ffbdeb5ecbd378c502f53fd9445d7da7431de6",
+    "scholarly_master": "0e7ee1b3abb66081d9cfbf5347dc7d1ba7d116f2f26cdf344437184cd5644b57",
+    "scholarly_zip": "21ee32b9f6d5e375ced2839e9cacc9b2e77619a93ddd105fb83280c22282c783"
+  },
+  "converter_version": "lodge1602-antiquities-adapter-v1",
+  "derivative_sha256": "ea3af6e844ba0158bc41c9897b1983e4fbf718ad1097e3c1b32b8b2ceb75a509",
+  "edits": [
+    {
+      "derivative_end_exclusive": 2501,
+      "derivative_start": 80,
+      "master_end_exclusive": 80,
+      "master_start": 80,
+      "original_b64": "",
+      "reason": "INSERT_PROJECT_HEADER_OUTSIDE_SOURCE_BODY",
+      "replacement_b64": "PHRlaUhlYWRlcj48ZmlsZURlc2M+PHRpdGxlU3RtdD48dGl0bGU+VGhlIGZhbW91cyBhbmQgbWVtb3JhYmxlIHZ2b3JrZXMgb2YgSW9zZXBodXMsIGEgbWFuIG9mIG11Y2ggaG9ub3VyIGFuZCBsZWFybmluZyBhbW9uZyB0aGUgSWV3ZXMuIEZhaXRoZnVsbHkgdHJhbnNsYXRlZCBvdXQgb2YgdGhlIExhdGluLCBhbmQgRnJlbmNoLCBieSBUaG8uIExvZGdlIERvY3RvciBpbiBQaHlzaWNrZSDigJQgQW50aXF1aXRpZXMgUHJvZW08L3RpdGxlPjxhdXRob3I+Rmxhdml1cyBKb3NlcGh1czwvYXV0aG9yPjxyZXNwU3RtdD48cmVzcD5FbmdsaXNoIHRyYW5zbGF0b3I8L3Jlc3A+PG5hbWU+VGhvbWFzIExvZGdlPC9uYW1lPjwvcmVzcFN0bXQ+PHJlc3BTdG10PjxyZXNwPlRyYW5zY3JpcHRpb248L3Jlc3A+PG5hbWU+RUVCTyBUZXh0IENyZWF0aW9uIFBhcnRuZXJzaGlwPC9uYW1lPjwvcmVzcFN0bXQ+PHJlc3BTdG10PjxyZXNwPkZyb3plbiBOaWVzZSBzZWdtZW50YXRpb24gYW5kIHJldmVyc2libGUgcHJvZHVjdGlvbiBhZGFwdGVyPC9yZXNwPjxuYW1lPkxhdGluSm9zZXBodXMgcHJvamVjdDwvbmFtZT48L3Jlc3BTdG10PjwvdGl0bGVTdG10PjxwdWJsaWNhdGlvblN0bXQ+PHA+RGF0YS1sYXllciBkZXJpdmF0aXZlOyByZWFkZXIvYnJvd3NlciBjZXJ0aWZpY2F0aW9uIHBlbmRpbmcuPC9wPjxhdmFpbGFiaWxpdHk+PGxpY2VuY2UgdGFyZ2V0PSJodHRwczovL2NyZWF0aXZlY29tbW9ucy5vcmcvcHVibGljZG9tYWluL3plcm8vMS4wLyI+Q0MwIDEuMCBVbml2ZXJzYWwgYXBwbGllcyB0byB0aGUgVENQIHRyYW5zY3JpcHRpb24uIE5vIGFkZGl0aW9uYWwgbGljZW5jZSBmb3IgaW5kZXBlbmRlbnQgcHJvamVjdCBhbm5vdGF0aW9ucyBpcyBhc3NlcnRlZCBoZXJlLjwvbGljZW5jZT48L2F2YWlsYWJpbGl0eT48L3B1YmxpY2F0aW9uU3RtdD48c291cmNlRGVzYz48YmlibD48dGl0bGU+VGhlIGZhbW91cyBhbmQgbWVtb3JhYmxlIHZ2b3JrZXMgb2YgSW9zZXBodXMsIGEgbWFuIG9mIG11Y2ggaG9ub3VyIGFuZCBsZWFybmluZyBhbW9uZyB0aGUgSWV3ZXMuIEZhaXRoZnVsbHkgdHJhbnNsYXRlZCBvdXQgb2YgdGhlIExhdGluLCBhbmQgRnJlbmNoLCBieSBUaG8uIExvZGdlIERvY3RvciBpbiBQaHlzaWNrZTwvdGl0bGU+PHB1YlBsYWNlPkxvbmRvbjwvcHViUGxhY2U+PHB1Ymxpc2hlcj5QcmludGVkIGJ5IFBldGVyIFNob3J0IGF0IHRoZSBjaGFyZ2VzIG9mIEcuIEJpc2hvcCwgUy4gV2F0ZXJzb24sIFAuIFNob3J0LCBhbmQgVGhvLiBBZGFtczwvcHVibGlzaGVyPjxkYXRlPjE2MDI8L2RhdGU+PGlkbm8gdHlwZT0iRUVCTy1UQ1AiPkEwNDY4MDwvaWRubz48L2JpYmw+PHA+RUVCTy1UQ1AgQTA0NjgwOyBUaG9tYXMgTG9kZ2UgMTYwMiBkaXBsb21hdGljIHRyYW5zY3JpcHRpb24uIEZyb3plbiBQcm9lbSBhbmQgQm9va3MgSSwgSUlJ4oCTViB0b3RhbCAxMzYxIE5pZXNlIGlkZW50aXRpZXM7IGVpZ2h0IGhpc3RvcmljYWwgTUVESVVNIGJvdW5kYXJpZXMgZXhwbGljaXRseSBodW1hbi1hcHByb3ZlZC4gTmF0aXZlIHNvdXJjZSBvcmRlciBhbmQgY2hhcmFjdGVyIGRhdGEgdW5jaGFuZ2VkLjwvcD48aWRubyB0eXBlPSJzaGEyNTYtY2VydGlmaWVkX2V4dHJhY3Rpb24iPmQ2ZTU2Y2VjZjA3OTA5MDBiMTk5MGQ0YWVmZGM5NDdiYWI5YWNlY2FiNTI3MzI1MzEwMWEyMTZmYTZjZDQ1ZjQ8L2lkbm8+PGlkbm8gdHlwZT0ic2hhMjU2LWZpbmFsX3JlZ2lzdGVyIj40YWIzYzMwM2I5MGE0N2Y5NzUzNDVmM2E1Yzc5ZWViOTBjYTM3YTdlY2YyYjU2ODU5ZDU0NzA2MDQwNGNjNzU0PC9pZG5vPjxpZG5vIHR5cGU9InNoYTI1Ni1mcmVlemVfbWFuaWZlc3QiPmI4ZjY5ZTg1ZDFhMzg5NWVjNGYyZmFjNDViNDM2MWIzMjNmYTdkZmVlYjVlMTBhOTQ0ZDg3ODRiYjczNWZjODg8L2lkbm8+PGlkbm8gdHlwZT0ic2hhMjU2LW9yaWdpbmFsX1RDUCI+M2NhMjY0NjY0NGQ4YzkxY2YzNWU4NTc1YTZmZmJkZWI1ZWNiZDM3OGM1MDJmNTNmZDk0NDVkN2RhNzQzMWRlNjwvaWRubz48aWRubyB0eXBlPSJzaGEyNTYtc2Nob2xhcmx5X21hc3RlciI+MGU3ZWUxYjNhYmI2NjA4MWQ5Y2ZiZjUzNDdkYzdkMWJhN2QxMTZmMmYyNmNkZjM0NDQzNzE4NGNkNTY0NGI1NzwvaWRubz48L3NvdXJjZURlc2M+PC9maWxlRGVzYz48ZW5jb2RpbmdEZXNjPjxwPkRldGVybWluaXN0aWMgbG9kZ2UxNjAyLWFudGlxdWl0aWVzLWFkYXB0ZXItdjEuIFNvdXJjZS1uYXRpdmUgY2hhcHRlcnMsIHBhcmFncmFwaHMsIG1hcmdpbmFsIG5vdGVzLCBnYXBzLCBwYWdlIGJyZWFrcyBhbmQgdHlwb2dyYXBoeSByZXRhaW5lZC4gQWRkZWQgc291cmNlIElEcyBhbmQgcmVhZGVyIHdyYXBwZXIgYXJlIGZ1bGx5IHJldmVyc2libGUuIE5vIHBhcmFncmFwaCBzYW1lQXMgYXNzZXJ0aW9ucy48L3A+PC9lbmNvZGluZ0Rlc2M+PC90ZWlIZWFkZXI+"
+    },
+    {
+      "derivative_end_exclusive": 2609,
+      "derivative_start": 2529,
+      "master_end_exclusive": 108,
+      "master_start": 108,
+      "original_b64": "",
+      "reason": "INSERT_READER_BOOK_WRAPPER",
+      "replacement_b64": "PGRpdjEgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlIiB0eXBlPSJwcmVmYWNlIiBuPSJwcmVmYWNlIj4="
+    },
+    {
+      "derivative_end_exclusive": 3037,
+      "derivative_start": 2976,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]",
+      "master_end_exclusive": 475,
+      "master_start": 475,
+      "original_b64": "",
+      "reason": "ADD_REVERSIBLE_SOURCE_NODE_ID",
+      "replacement_b64": "IHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS10Y3AtY2hhcHRlcjAxIg=="
+    },
+    {
+      "derivative_end_exclusive": 3161,
+      "derivative_start": 3105,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]",
+      "master_end_exclusive": 543,
+      "master_start": 543,
+      "original_b64": "",
+      "reason": "ADD_REVERSIBLE_SOURCE_NODE_ID",
+      "replacement_b64": "IHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS10Y3AtcDAwMSI="
+    },
+    {
+      "derivative_end_exclusive": 3347,
+      "derivative_start": 3209,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/seg[1]/milestone[1]",
+      "master_end_exclusive": 699,
+      "master_start": 591,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMSIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTEiIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMSIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlMSIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 3692,
+      "derivative_start": 3554,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[1]",
+      "master_end_exclusive": 1014,
+      "master_start": 906,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMiIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTIiIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMiIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlMiIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 4219,
+      "derivative_start": 4081,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[3]",
+      "master_end_exclusive": 1511,
+      "master_start": 1403,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMyIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTMiIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMyIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlMyIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 4824,
+      "derivative_start": 4686,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[4]",
+      "master_end_exclusive": 2086,
+      "master_start": 1978,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iNCIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTQiIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iNCIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlNCIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 5443,
+      "derivative_start": 5305,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[6]",
+      "master_end_exclusive": 2675,
+      "master_start": 2567,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iNSIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTUiIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iNSIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlNSIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 5895,
+      "derivative_start": 5757,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[7]",
+      "master_end_exclusive": 3097,
+      "master_start": 2989,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iNiIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTYiIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iNiIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlNiIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 6796,
+      "derivative_start": 6658,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[9]",
+      "master_end_exclusive": 3968,
+      "master_start": 3860,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iNyIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTciIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iNyIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlNyIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 7407,
+      "derivative_start": 7269,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[10]",
+      "master_end_exclusive": 4549,
+      "master_start": 4441,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iOCIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTgiIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iOCIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlOCIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 7574,
+      "derivative_start": 7517,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/pb[1]",
+      "master_end_exclusive": 4659,
+      "master_start": 4659,
+      "original_b64": "",
+      "reason": "ADD_REVERSIBLE_SOURCE_NODE_ID",
+      "replacement_b64": "IHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS10Y3AtcGIwMDEi"
+    },
+    {
+      "derivative_end_exclusive": 8294,
+      "derivative_start": 8156,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[12]",
+      "master_end_exclusive": 5349,
+      "master_start": 5241,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iOSIgeG1sOmlkPSJsb2RnZS1iYXRjaC1wcm9lbS1uaWVzZTkiIGNlcnQ9ImhpZ2giIHR5cGU9ImxvZGdlLWJhdGNoLXByb3Zpc2lvbmFsIi8+",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iOSIgeG1sOmlkPSJlbmdsaXNoLWxvZGdlMTYwMi1hbnRpcXVpdGllcy1wcmVmYWNlLW5pZXNlOSIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYW50aXF1aXRpZXMtY2VydGlmaWVkLW5pZXNlIi8+"
+    },
+    {
+      "derivative_end_exclusive": 9243,
+      "derivative_start": 9103,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[13]",
+      "master_end_exclusive": 6268,
+      "master_start": 6158,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTAiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxMCIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTAiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTEwIiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 9905,
+      "derivative_start": 9765,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[15]",
+      "master_end_exclusive": 6900,
+      "master_start": 6790,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTEiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxMSIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTEiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTExIiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 10409,
+      "derivative_start": 10269,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[16]",
+      "master_end_exclusive": 7374,
+      "master_start": 7264,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTIiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxMiIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTIiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTEyIiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 11094,
+      "derivative_start": 10954,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[18]",
+      "master_end_exclusive": 8029,
+      "master_start": 7919,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTMiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxMyIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTMiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTEzIiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 11512,
+      "derivative_start": 11372,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[19]",
+      "master_end_exclusive": 8417,
+      "master_start": 8307,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTQiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxNCIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTQiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTE0IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 12300,
+      "derivative_start": 12160,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[21]",
+      "master_end_exclusive": 9175,
+      "master_start": 9065,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTUiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxNSIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTUiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTE1IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 12848,
+      "derivative_start": 12708,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[22]",
+      "master_end_exclusive": 9693,
+      "master_start": 9583,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTYiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxNiIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTYiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTE2IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 13368,
+      "derivative_start": 13228,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[23]",
+      "master_end_exclusive": 10183,
+      "master_start": 10073,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTciIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxNyIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTciIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTE3IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 13806,
+      "derivative_start": 13666,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[25]",
+      "master_end_exclusive": 10591,
+      "master_start": 10481,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTgiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxOCIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTgiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTE4IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 14396,
+      "derivative_start": 14256,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[26]",
+      "master_end_exclusive": 11151,
+      "master_start": 11041,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTkiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UxOSIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMTkiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTE5IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 14948,
+      "derivative_start": 14808,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[27]",
+      "master_end_exclusive": 11673,
+      "master_start": 11563,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjAiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UyMCIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjAiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTIwIiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 15640,
+      "derivative_start": 15500,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/hi[6]/milestone[1]",
+      "master_end_exclusive": 12335,
+      "master_start": 12225,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjEiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UyMSIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjEiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTIxIiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 15936,
+      "derivative_start": 15879,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/pb[2]",
+      "master_end_exclusive": 12574,
+      "master_start": 12574,
+      "original_b64": "",
+      "reason": "ADD_REVERSIBLE_SOURCE_NODE_ID",
+      "replacement_b64": "IHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS10Y3AtcGIwMDIi"
+    },
+    {
+      "derivative_end_exclusive": 16551,
+      "derivative_start": 16411,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[30]",
+      "master_end_exclusive": 13159,
+      "master_start": 13049,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjIiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UyMiIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjIiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTIyIiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 17024,
+      "derivative_start": 16884,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[31]",
+      "master_end_exclusive": 13602,
+      "master_start": 13492,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjMiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UyMyIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjMiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTIzIiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 17662,
+      "derivative_start": 17522,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[32]",
+      "master_end_exclusive": 14210,
+      "master_start": 14100,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjQiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UyNCIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjQiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTI0IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 18384,
+      "derivative_start": 18244,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[34]",
+      "master_end_exclusive": 14902,
+      "master_start": 14792,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjUiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UyNSIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjUiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTI1IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 18826,
+      "derivative_start": 18686,
+      "master_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/milestone[35]",
+      "master_end_exclusive": 15314,
+      "master_start": 15204,
+      "original_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjYiIHhtbDppZD0ibG9kZ2UtYmF0Y2gtcHJvZW0tbmllc2UyNiIgY2VydD0iaGlnaCIgdHlwZT0ibG9kZ2UtYmF0Y2gtcHJvdmlzaW9uYWwiLz4=",
+      "reason": "REPLACE_ONLY_PROJECT_MARKER_METADATA",
+      "replacement_b64": "PG1pbGVzdG9uZSB1bml0PSJuaWVzZSIgbj0iMjYiIHhtbDppZD0iZW5nbGlzaC1sb2RnZTE2MDItYW50aXF1aXRpZXMtcHJlZmFjZS1uaWVzZTI2IiBjZXJ0PSJoaWdoIiB0eXBlPSJsb2RnZS1hbnRpcXVpdGllcy1jZXJ0aWZpZWQtbmllc2UiLz4="
+    },
+    {
+      "derivative_end_exclusive": 19364,
+      "derivative_start": 19357,
+      "master_end_exclusive": 15845,
+      "master_start": 15845,
+      "original_b64": "",
+      "reason": "CLOSE_READER_BOOK_WRAPPER",
+      "replacement_b64": "PC9kaXYxPg=="
+    }
+  ],
+  "frozen_packet_checksum_members_verified": 102,
+  "input_byte_length": 15867,
+  "inverse_rule": "Assert each replacement byte interval, replace it by original_b64 in ascending derivative order, retaining every interstitial byte. Empty removals restored in ledger order. No XML serialization.",
+  "metadata_sha256": "b22ff93b4f38217fbf09826ce70cdfc73b1463ba2e9b435fb903a34e60890347",
+  "output_byte_length": 19386,
+  "reader_browser_status": "PENDING_NOT_RUN",
+  "schema": "lodge1602-antiquities-inverse-ledger-v1",
+  "source_counts": {
+    "TCP_gaps": 6,
+    "TCP_paragraphs": 1,
+    "literal_character_data_units": 10434,
+    "marginal_notes": 0,
+    "native_TCP_milestones": 13,
+    "page_breaks": 2,
+    "printed_chapters": 1
+  },
+  "source_node_aliases": [
+    {
+      "extraction_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]",
+      "extraction_start_byte": 541,
+      "original_TCP_start_byte": 59472,
+      "production_element_path": "/TEI[1]/text[1]/body[1]/div1[1]/div[1]/div[1]/p[1]",
+      "production_end_exclusive": 19326,
+      "production_id": "english-lodge1602-antiquities-preface-tcp-p001",
+      "production_start_byte": 3103,
+      "source_element_end_exclusive": 12972,
+      "source_element_path": "/TEI[1]/text[1]/group[1]/text[1]/body[1]/div[1]/div[1]/p[1]",
+      "source_element_sha256": "cb3f7e0788bb2caaadfd9390c688e594914dcfc13899c34f4c8380e339d66291",
+      "source_tag": "p"
+    },
+    {
+      "extraction_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/pb[1]",
+      "extraction_start_byte": 3767,
+      "original_TCP_start_byte": 62698,
+      "production_element_path": "/TEI[1]/text[1]/body[1]/div1[1]/div[1]/div[1]/p[1]/pb[1]",
+      "production_end_exclusive": 7576,
+      "production_id": "english-lodge1602-antiquities-preface-tcp-pb001",
+      "production_start_byte": 7489,
+      "source_element_end_exclusive": 3797,
+      "source_element_path": "/TEI[1]/text[1]/group[1]/text[1]/body[1]/div[1]/div[1]/p[1]/pb[1]",
+      "source_element_sha256": "bb86c3efd03917cb45feafcb21575a17b2baee67c49c463a0b9aba8c99beb8d5",
+      "source_tag": "pb"
+    },
+    {
+      "extraction_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]/p[1]/pb[2]",
+      "extraction_start_byte": 10254,
+      "original_TCP_start_byte": 69185,
+      "production_element_path": "/TEI[1]/text[1]/body[1]/div1[1]/div[1]/div[1]/p[1]/pb[2]",
+      "production_end_exclusive": 15938,
+      "production_id": "english-lodge1602-antiquities-preface-tcp-pb002",
+      "production_start_byte": 15851,
+      "source_element_end_exclusive": 10284,
+      "source_element_path": "/TEI[1]/text[1]/group[1]/text[1]/body[1]/div[1]/div[1]/p[1]/pb[2]",
+      "source_element_sha256": "25e01594ab7b21612fabe43aa0805630cb8e07e0910d2ba668f228e3b3fa2588",
+      "source_tag": "pb"
+    },
+    {
+      "extraction_element_path": "/TEI[1]/text[1]/body[1]/div[1]/div[1]",
+      "extraction_start_byte": 450,
+      "original_TCP_start_byte": 59381,
+      "production_element_path": "/TEI[1]/text[1]/body[1]/div1[1]/div[1]/div[1]",
+      "production_end_exclusive": 19351,
+      "production_id": "english-lodge1602-antiquities-preface-tcp-chapter01",
+      "production_start_byte": 2951,
+      "source_element_end_exclusive": 12997,
+      "source_element_path": "/TEI[1]/text[1]/group[1]/text[1]/body[1]/div[1]/div[1]",
+      "source_element_sha256": "fde577f2ad2b7ddfe9780cc9e95178e4d919ce5a86b73836c537c21c12598f26",
+      "source_tag": "div"
+    }
+  ]
+}
