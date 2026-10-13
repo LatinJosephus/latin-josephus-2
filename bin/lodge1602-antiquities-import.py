@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""Deterministic Lodge Antiquities II production adapter. No source serialization.
+
+Requires the complete verified scholarly packet and original TCP input. Writes only
+five generated data/evidence paths under --output-root. The verifier is independent.
+"""
+import argparse,base64,csv,hashlib,json,re
+from pathlib import Path
+from xml.parsers import expat
+from xml.sax.saxutils import escape,quoteattr
+import xml.etree.ElementTree as ET
+
+VERSION='lodge1602-antiquities-adapter-v1'
+PREFIX='english-lodge1602-antiquities-book02'
+NS='http://www.tei-c.org/ns/1.0'
+XMLID='{http://www.w3.org/XML/1998/namespace}id'
+AUTH={
+ 'original_TCP':'3ca2646644d8c91cf35e8575a6ffbdeb5ecbd378c502f53fd9445d7da7431de6',
+ 'scholarly_master':'ba43e5c5937a1c8a82a0575886d9747121600b30a6430e50f90fcf1c16772e8b',
+ 'final_register':'a5b667891b6c5ae35b44b9c7b3923bcc5f886c7ae217493f4a4b0e5af2418863',
+ 'freeze_manifest':'403fc33a3ac9afab206869066ffc2e07a4f7ead6c18d3dcf134c19569dbf9b7f',
+ 'certified_extraction':'1d4b522760cd23d58b8bf8ff0475cb6511f57458d5f75fd1d4b0d2294c4afbaa',
+ 'scholarly_zip':'65a80755ef3095ef9cbfba5482b9869fed5c29b86d6ae785cf6b2fddd6eeb1e7'}
+FILES={'scholarly_master':'Lodge1602_Antiquities_BookII_FINAL_FROZEN.xml','final_register':'Lodge1602_Antiquities_BookII_NIESE_349_FINAL.tsv','freeze_manifest':'Lodge1602_Antiquities_BookII_FINAL_FREEZE_MANIFEST.json','certified_extraction':'CERTIFIED_SOURCE_BOOK_II.xml','scholarly_zip':'Lodge1602_Antiquities_BookII_FINAL_FROZEN_SCHOLARLY_PACKET.zip'}
+TARGETS={'xml':'assets/xml/antiquities/English/Lodge1602/book-02.xml','metadata':'assets/data/lodge1602-antiquities/book-02.json','master':'_docs/lodge1602-antiquities-source/book-02-frozen.xml','register':'_docs/lodge1602-antiquities-source/book-02-final.tsv','freeze':'_docs/lodge1602-antiquities-source/book-02-freeze-manifest.json','ledger':'_docs/lodge1602-antiquities-book02-integration.json'}
+COUNTS={'literal_character_data_units':132602,'printed_chapters':7,'TCP_paragraphs':33,'marginal_notes':151,'TCP_gaps':132,'page_breaks':25,'native_TCP_milestones':149}
+EXCLUDED={'note','head','argument','trailer','byline','opener','closer','signed','label'}
+def sha(b):return hashlib.sha256(b).hexdigest()
+def jsonbytes(d):return (json.dumps(d,indent=2,ensure_ascii=False,sort_keys=True)+'\n').encode('utf-8')
+def require(ok,msg):
+ if not ok:raise ValueError(msg)
+def rows(p):
+ with p.open(encoding='utf-8',newline='') as f:return list(csv.DictReader(f,delimiter='\t'))
+def verified_inputs(authority,original):
+ paths={k:authority/n for k,n in FILES.items()};paths['original_TCP']=original
+ for k,p in paths.items():require(sha(p.read_bytes())==AUTH[k],'Mandatory scholarly authority mismatch: '+k)
+ checked=[]
+ for line in (authority/'SHA256SUMS.txt').read_text(encoding='utf-8-sig').splitlines():
+  if not line.strip():continue
+  h,n=line.split(maxsplit=1);n=n.lstrip('*');p=authority/n
+  require(p.resolve().is_relative_to(authority.resolve()),'Unsafe packet member')
+  require(sha(p.read_bytes())==h,'Frozen packet checksum mismatch: '+n);checked.append(n)
+ return paths,checked
+
+def tag_end(data,start):
+ quote=None
+ for i in range(start,len(data)):
+  c=data[i]
+  if quote is not None:
+   if c==quote:quote=None
+  elif c in (34,39):quote=c
+  elif c==62:return i+1
+ raise ValueError('Unclosed tag')
+
+def index_xml(data):
+ """Parser supplies byte coordinates; quote-aware scanner bounds individual tags."""
+ parser=expat.ParserCreate();nodes=[];stack=[];pis=[]
+ def start(name,attrs):
+  pos=parser.CurrentByteIndex;end=tag_end(data,pos)
+  parent=stack[-1] if stack else None
+  counters=parent['counters'] if parent else {}
+  number=counters.get(name,0)+1;counters[name]=number
+  path=(parent['path'] if parent else '')+'/'+name+'['+str(number)+']'
+  node={'tag':name,'attrs':attrs,'start':pos,'start_end':end,'path':path,'parent':parent,'counters':{},'children':[],'empty':data[pos:end].rstrip().endswith(b'/>')}
+  if parent:parent['children'].append(node)
+  nodes.append(node);stack.append(node)
+ def end(name):
+  node=stack.pop();node['end']=node['start_end'] if node['empty'] else tag_end(data,parser.CurrentByteIndex)
+ def pi(target,value):
+  pos=parser.CurrentByteIndex;end=data.index(b'?>',pos)+2;pis.append({'target':target,'start':pos,'end':end})
+ parser.StartElementHandler=start;parser.EndElementHandler=end;parser.ProcessingInstructionHandler=pi
+ parser.ExternalEntityRefHandler=lambda *a:0
+ parser.StartDoctypeDeclHandler=lambda *a:(_ for _ in ()).throw(ValueError('DTD forbidden'))
+ parser.Parse(data,True);return nodes,pis
+
+def reference_snapshot(root,base):
+ paths=['assets/xml/antiquities/Greek/book-02.xml','assets/xml/antiquities/Latin/book-02.xml','assets/xml/antiquities/English/book-02.xml','assets/xml/antiquities/structure.xml','assets/js/renderTei.js']
+ return {'base_commit':base,'files':{p:sha((root/p).read_bytes()) for p in paths}}
+def registry_records(root):
+ tree=ET.fromstring((root/'assets/xml/antiquities/structure.xml').read_bytes())
+ q=lambda s:'{'+NS+'}'+s
+ def fields(el):
+  d={}
+  for f in el.findall(q('f')):
+   child=next(iter(f),None)
+   if child is not None:d[f.get('name')]=fields(child) if child.tag==q('fs') else ''.join(child.itertext()).strip()
+  return d
+ allrows={el.get(XMLID):fields(el.find(q('fs'))) for el in tree.iter(q('item')) if el.get(XMLID) and el.find(q('fs')) is not None}
+ selected=[]
+ for key,d in allrows.items():
+  if d.get('book')!='2' or d.get('scheme') not in ['chapter','subchapter','bamberg']:continue
+  if 'canonical-niese' not in d:continue
+  start=int(d['canonical-niese']);ending=allrows.get(d.get('end'),{})
+  require(d.get('end')=='BOOK_END' or d.get('end') in allrows,'Unresolved structural endpoint: '+str(key))
+  end=int(ending['canonical-niese']) if ending.get('book')=='2' and ending.get('canonical-niese') else 350
+  require(1<=start<end<=350,'Unsupported traditional boundary pair: '+str(key))
+  # Mid-identity or qualified endpoints give containing context, never a word-level equality.
+  end_exact=ending.get('verification-status')=='CONFIRMED_NIESE_START' or end==350
+  selected.append({'project_boundary_id':key,'scheme':d['scheme'],'start_niese':start,'end_niese_exclusive':end if end_exact else min(350,end+1),'precision':'CONTAINING_NIESE_CONTEXT_NOT_NATIVE_CHAPTER_EQUIVALENCE','start_verification':d.get('verification-status'),'end_boundary_id':d.get('end'),'end_verification':ending.get('verification-status'),'source_qualified_locators':{lang:d.get(lang,{}) for lang in ['Greek','Latin','English']},'qualified':d.get('verification-status')!='CONFIRMED_NIESE_START' or not end_exact})
+ require(len(selected)==95,'Traditional Book II context inventory changed: expected 95 records')
+ return selected
+
+def main():
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--authority-dir',type=Path,required=True);ap.add_argument('--original-source',type=Path,required=True);ap.add_argument('--reference-root',type=Path,required=True);ap.add_argument('--base-commit',required=True);ap.add_argument('--output-root',type=Path,required=True);ap.add_argument('--ledger-copy',type=Path)
+ a=ap.parse_args();require(not a.output_root.resolve().is_relative_to(a.authority_dir.resolve()),'Never write into the frozen authority directory');paths,checked=verified_inputs(a.authority_dir,a.original_source)
+ master=paths['scholarly_master'].read_bytes();source=paths['certified_extraction'].read_bytes();register=rows(paths['final_register']);partition=rows(a.authority_dir/'Lodge1602_Antiquities_BookII_SECTION_PARTITION.tsv')
+ require([int(r['number']) for r in register]==list(range(1,350)),'Register identity set')
+ freeze=json.loads(paths['freeze_manifest'].read_bytes());require(freeze['current_boundary_decisions_outstanding']==0,'Freeze not closed')
+ nodes,pis=index_xml(master);source_nodes,_=index_xml(source)
+ niese=[n for n in nodes if n['tag']=='milestone' and n['attrs'].get('unit')=='niese']
+ require([int(n['attrs']['n']) for n in niese]==list(range(1,350)),'Master milestone scope/order')
+ native=[n for n in nodes if n not in niese];require(len(native)==len(source_nodes),'Source/master structural count mismatch')
+ for n,s in zip(native,source_nodes):require(n['tag']==s['tag'] and n['attrs']==s['attrs'],'Source/master node mapping mismatch')
+ source_of={id(n):s for n,s in zip(native,source_nodes)};edits=[];aliases=[]
+ def edit(start,end,new,reason,node=None):
+  require(0<=start<=end<=len(master),'Invalid edit interval')
+  d={'master_start':start,'master_end_exclusive':end,'original_b64':base64.b64encode(master[start:end]).decode(),'replacement_b64':base64.b64encode(new).decode(),'reason':reason}
+  if node is not None:d['master_element_path']=node['path']
+  edits.append(d)
+ def add_id(n,identifier):
+  require('xml:id' not in n['attrs'],'Refusing to overwrite original source ID')
+  pos=n['start_end']-2 if n['empty'] else n['start_end']-1
+  edit(pos,pos,(' xml:id='+quoteattr(identifier)).encode(),'ADD_REVERSIBLE_SOURCE_NODE_ID',n)
+  s=source_of[id(n)];aliases.append({'production_id':identifier,'source_element_path':s['path'].replace('/text[1]/body[1]/div[1]','/text[1]/group[1]/text[1]/body[1]/div[2]',1),'extraction_element_path':s['path'],'extraction_start_byte':s['start'],'original_TCP_start_byte':s['start']+267938,'source_element_end_exclusive':s['end'],'source_element_sha256':sha(source[s['start']:s['end']]),'source_tag':s['tag']})
+ for n in niese:
+  num=int(n['attrs']['n']);attrs=dict(n['attrs']);attrs['xml:id']=PREFIX+'-niese'+str(num);attrs['type']='lodge-antiquities-certified-niese'
+  token=('<milestone'+''.join(' '+k+'='+quoteattr(v) for k,v in attrs.items())+'/>').encode()
+  edit(n['start'],n['start_end'],token,'REPLACE_ONLY_PROJECT_MARKER_METADATA',n)
+ for pi in pis:
+  require(pi['target'] in ['lodge-pilot','lodge-continuation'],'Unsupported processing instruction')
+  edit(pi['start'],pi['end'],b'','REMOVE_REVERSIBLE_HISTORICAL_PROJECT_PI')
+ for tag,kind in [('p','p'),('note','note'),('pb','pb'),('list','list')]:
+  for i,n in enumerate([n for n in native if n['tag']==tag],1):add_id(n,PREFIX+'-tcp-'+kind+str(i).zfill(3))
+ chapters=[n for n in native if n['tag']=='div' and n['attrs'].get('type')=='chapter']
+ for i,n in enumerate(chapters,1):add_id(n,PREFIX+'-tcp-chapter'+str(i).zfill(2))
+ book=next(n for n in native if n['tag']=='div' and n['attrs'].get('type')=='book');add_id(book,PREFIX+'-tcp-book')
+ edit(book['start'],book['start'],('<div1 xml:id="'+PREFIX+'" type="book" n="2">').encode(),'INSERT_READER_BOOK_WRAPPER')
+ edit(book['end'],book['end'],b'</div1>','CLOSE_READER_BOOK_WRAPPER')
+ bib=json.loads((a.authority_dir/'Lodge1602_Antiquities_BookII_SOURCE_MANIFEST.json').read_bytes())['source_bibliographical_metadata']
+ require(any('Creative Commons 0 1.0 Universal' in x['text'] for x in bib['licensing']),'TCP licence not supported by frozen provenance')
+ original_tree=ET.fromstring(a.original_source.read_bytes());q=lambda s:'{'+NS+'}'+s
+ source_bibl=original_tree.find('.//'+q('sourceDesc'));require(source_bibl is not None,'TCP source bibliography missing')
+ require('1602' in ''.join(source_bibl.itertext()),'Original edition identity mismatch')
+ title=bib['titles'][0]['text'];credit='EEBO-TCP A04680; diplomatic transcription of the 1602 edition, translated by Thomas Lodge from Latin and French. Scholarly segmentation is the LatinJosephus frozen Book II edition; routine HIGH positions were accepted under the project workflow, sixteen MEDIUM positions explicitly human-approved.'
+ header=('<teiHeader><fileDesc><titleStmt><title>'+escape(title)+' — Antiquities Book II</title><author>Flavius Josephus</author><respStmt><resp>English translator</resp><name>Thomas Lodge</name></respStmt><respStmt><resp>Transcription</resp><name>EEBO Text Creation Partnership</name></respStmt><respStmt><resp>Frozen Niese segmentation and reversible production adapter</resp><name>LatinJosephus project</name></respStmt></titleStmt><publicationStmt><p>Data-layer derivative; reader/browser certification pending.</p><availability><licence target="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal applies to the TCP transcription. No additional licence for independent project annotations is asserted here.</licence></availability></publicationStmt><sourceDesc><bibl><title>'+escape(title)+'</title><pubPlace>London</pubPlace><publisher>Printed by Peter Short at the charges of G. Bishop, S. Waterson, P. Short, and Tho. Adams</publisher><date>1602</date><idno type="EEBO-TCP">A04680</idno></bibl><p>'+escape(credit)+'</p>'+''.join('<idno type="sha256-'+k+'">'+v+'</idno>' for k,v in sorted(AUTH.items()) if k!='scholarly_zip')+'</sourceDesc></fileDesc><encodingDesc><p>Deterministic '+VERSION+'. Source-native chapters, paragraphs, marginal notes, gaps, page breaks and typography retained. Added source IDs and reader wrapper are fully reversible. No paragraph sameAs assertions.</p></encodingDesc></teiHeader>')
+ text=next(n for n in native if n['tag']=='text');edit(text['start'],text['start'],header.encode(),'INSERT_PROJECT_HEADER_OUTSIDE_SOURCE_BODY')
+ edits.sort(key=lambda d:(d['master_start'],d['master_end_exclusive']))
+ previous=0;out=[];cursor=0;outputpos=0
+ for d in edits:
+  start,end=d['master_start'],d['master_end_exclusive'];require(start>=cursor,'Overlapping transformations')
+  unchanged=master[cursor:start];out.append(unchanged);outputpos+=len(unchanged)
+  replacement=base64.b64decode(d['replacement_b64']);d['derivative_start']=outputpos;d['derivative_end_exclusive']=outputpos+len(replacement);out.append(replacement);outputpos+=len(replacement);cursor=end
+ out.append(master[cursor:]);derivative=b''.join(out);ET.fromstring(derivative)
+ require(b'\r' not in derivative and not derivative.startswith(b'\xef\xbb\xbf'),'Unexpected BOM/line endings')
+ def transform_offset(pos):
+  delta=0
+  for d in edits:
+   if d['master_start']<pos:delta+=len(base64.b64decode(d['replacement_b64']))-(d['master_end_exclusive']-d['master_start'])
+  return pos+delta
+ prodnodes,_=index_xml(derivative);byid={n['attrs'].get('xml:id'):n for n in prodnodes if n['attrs'].get('xml:id')}
+ for alias in aliases:
+  pn=byid[alias['production_id']];alias.update({'production_element_path':pn['path'],'production_start_byte':pn['start'],'production_end_exclusive':pn['end']})
+ evidence=[]
+ prodbook=byid[PREFIX+'-tcp-book']
+ oldinside=[n for n in native if book['start']<=n['start']<book['end']]
+ newinside=[n for n in prodnodes if prodbook['start']<=n['start']<prodbook['end'] and not(n['tag']=='milestone' and n['attrs'].get('unit')=='niese')]
+ require(len(oldinside)==len(newinside),'Native production-node correspondence')
+ serials={'gap':0,'milestone':0}
+ for old,new in zip(oldinside,newinside):
+  require(old['tag']==new['tag'],'Native production-node ordering')
+  if old['tag'] not in serials:continue
+  serials[old['tag']]+=1;src=source_of[id(old)]
+  evidence.append({'evidence_key':PREFIX+'-source-'+old['tag']+str(serials[old['tag']]).zfill(3),'source_tag':old['tag'],'source_attributes':src['attrs'],'extraction_element_path':src['path'],'source_element_path':src['path'].replace('/text[1]/body[1]/div[1]','/text[1]/group[1]/text[1]/body[1]/div[2]',1),'extraction_start_byte':src['start'],'original_TCP_start_byte':src['start']+267938,'extraction_end_exclusive':src['end'],'source_raw_element_sha256':sha(source[src['start']:src['end']]),'production_element_path':new['path'],'production_start_byte':new['start'],'production_end_exclusive':new['end'],'semantic_role':'TCP_TRANSCRIPTION_GAP_NOT_IDENTITY_OMISSION' if old['tag']=='gap' else 'ORIGINAL_TCP_MARKER_NOT_PROJECT_NIESE'})
+ sections=[]
+ for i,(r,p,n) in enumerate(zip(register,partition,niese)):
+  num=int(r['number']);start=int(r['whole_book_literal_narrative_offset']);end=int(partition[i]['literal_exclusive_end'])
+  sections.append({'identity':r['identity'],'niese':num,'marker_id':PREFIX+'-niese'+str(num),'frozen_marker_alias':n['attrs']['xml:id'],'production_marker_byte':byid[PREFIX+'-niese'+str(num)]['start'],'source_coordinate':{k:r[k] for k in ['source_element_path','extraction_element_path','text_node_xpath','text_slot','unicode_offset_in_text_node','unicode_offset_in_paragraph','extraction_raw_byte_offset','original_TCP_raw_byte_offset','whole_book_literal_narrative_offset']},'source_node_sha256':p['source_parsed_text_node_sha256'],'raw_source_text_node_sha256':p['source_raw_text_node_sha256'],'source_text_node_extraction_start':int(p['source_text_node_extraction_start']),'source_text_node_extraction_end_exclusive':int(p['source_text_node_extraction_end_exclusive']),'literal_exclusive_end':end,'literal_character_extent':end-start,'narrative_fragment_sha256':p['narrative_fragment_sha256'],'extraction_exclusive_end_byte':int(p['extraction_exclusive_end_byte']),'raw_source_fragment_sha256':p['raw_source_XML_fragment_sha256'],'incipit':p['exact_Lodge_incipit'],'tail':p['exact_Lodge_tail'],'historical_confidence':r['historical_confidence'] or r['confidence'],'historical_classification':r['classification'],'active_editorial_status':p['active_editorial_status'],'current_boundary_review_required':False,'correspondence_qualification':p['correspondence_qualification'],'rationale':r['rationale']})
+ chapterdata=[]
+ parsed=ET.fromstring(source)
+ chapterEls=parsed.findall('.//'+q('div')+'[@type="chapter"]')
+ for i,ch in enumerate(chapterEls,1):
+  head=ch.find(q('head'));chapterdata.append({'printed_chapter':i,'source_label':''.join(head.itertext()),'anchor_id':PREFIX+'-tcp-chapter'+str(i).zfill(2),'precision':'SOURCE_NATIVE_ONLY; independent of Bamberg/Whiston divisions'})
+ notes=[x for x in aliases if x['source_tag']=='note'];firstcut=int(register[0]['extraction_raw_byte_offset'])
+ for note in notes:
+  byte=note['extraction_start_byte'];preceding=[s['niese'] for s in sections if int(s['source_coordinate']['extraction_raw_byte_offset'])<=byte]
+  note['physical_niese_interval']=preceding[-1] if preceding else None
+  note['context']='PRE_FIRST_IDENTITY_SOURCE_CONTEXT' if not preceding else 'ORIGINAL_PHYSICAL_SOURCE_LOCUS'
+ require(sum(n['physical_niese_interval'] is None for n in notes)==1,'Opening note distribution')
+ qualified=sections[283]
+ metadata={'schema':VERSION,'schema_version':1,'required_fields':['availability','production_xml','authorities','reference_snapshot','source_counts','native_chapters','source_node_aliases','marginal_notes','sections','project_navigation_covers'],'work':'antiquities','source':'lodge1602','book_key':'2','availability':{'availableBookKeys':['2'],'exactNieseBooks':['2'],'proem_integrated':False,'other_books_integrated':False,'identity_range':[1,349],'whole_section_absences':[],'inherits_other_witness_availability':False},'production_xml':{'path':TARGETS['xml'],'sha256':sha(derivative),'book_wrapper_id':PREFIX,'native_book_id':PREFIX+'-tcp-book'},'authorities':AUTH,'reference_snapshot':reference_snapshot(a.reference_root,a.base_commit),'source_counts':COUNTS,'historical_confidence_counts':freeze['historical_confidence_counts'],'historical_classification_counts':freeze['historical_classification_counts'],'all_MEDIUM_explicitly_human_approved':True,'scholarly_status':'FINAL_SCHOLARLY_FREEZE_CERTIFIED','reader_browser_status':'PENDING_WORKBOT_7B; NOT_TESTED','deferred_observations':{'count':197,'sha256':sha((a.authority_dir/'Lodge1602_Antiquities_BookII_DEFERRED_QUERIES.tsv').read_bytes()),'disposition':'NONBLOCKING_SOURCE_PROOFREADING; no emendation'},'literal_count_convention':'Outermost narrative p; exclude note/head/argument/trailer/byline/opener/closer/signed/label subtrees but retain their following tails; retain other character data including gap descriptions and layout whitespace. Unicode code points, no normalization.','coordinate_convention':freeze['source_coordinate_convention'],'native_chapters':chapterdata,'source_contents':next(x for x in aliases if x['source_tag']=='list'),'source_node_aliases':aliases,'source_evidence_nodes':evidence,'marginal_notes':notes,'pre_first_identity_context':{'literal_units':25,'notes':[n['production_id'] for n in notes if n['physical_niese_interval'] is None],'not_a_Niese_identity':True,'note_anchor_relocated':False},'sections':sections,'project_navigation_covers':registry_records(a.reference_root),'II284_independent_Lodge_qualification':{'lodge_identity':'2.284','incipit':qualified['incipit'],'source_coordinate':qualified['source_coordinate'],'Lodge_boundary_status':'CERTIFIED_HIGH_ACCEPTED_UNDER_PROJECT_WORKFLOW','whole_section_absent':False,'project_context_boundary':'LOEB-02-Subchapter-13-3','project_context_qualification':'NIESE_SOURCE_AMBIGUOUS; use containing context or unavailable structural view; does not qualify the frozen Lodge exact cut'},'provenance':{'bibliographical_metadata':bib,'TCP_licence':'CC0 1.0 Universal','TCP_licence_uri':'https://creativecommons.org/publicdomain/zero/1.0/','project_annotations_licence':'Not independently specified by frozen authority; do not infer TCP CC0 applies to independent annotations','sameAs_claims':[],'scholarly_master_is_not_production_derivative':True},'book_end':freeze['end_boundaries']}
+ ledger={'schema':'lodge1602-antiquities-inverse-ledger-v1','converter_version':VERSION,'authorities':AUTH,'derivative_sha256':sha(derivative),'metadata_sha256':sha(jsonbytes(metadata)),'input_byte_length':len(master),'output_byte_length':len(derivative),'edits':edits,'source_node_aliases':aliases,'inverse_rule':'Assert each replacement byte interval, replace it by original_b64 in ascending derivative order, retaining every interstitial byte. Empty removals restored in ledger order. No XML serialization.','source_counts':COUNTS,'frozen_packet_checksum_members_verified':len(checked),'reader_browser_status':'PENDING_NOT_RUN'}
+ outputs={TARGETS['xml']:derivative,TARGETS['metadata']:jsonbytes(metadata),TARGETS['master']:master,TARGETS['register']:paths['final_register'].read_bytes(),TARGETS['freeze']:paths['freeze_manifest'].read_bytes(),TARGETS['ledger']:jsonbytes(ledger)}
+ for relative,b in outputs.items():
+  target=a.output_root/relative;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(b)
+ if a.ledger_copy:a.ledger_copy.write_bytes(jsonbytes(ledger))
+ print(json.dumps({'status':'PASS','derivative_sha256':sha(derivative),'metadata_sha256':sha(jsonbytes(metadata)),'ledger_sha256':sha(jsonbytes(ledger)),'edits':len(edits),'sections':len(sections),'native_aliases':len(aliases),'navigation_covers':len(metadata['project_navigation_covers'])}))
+if __name__=='__main__':main()

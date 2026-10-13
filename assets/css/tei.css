@@ -169,3 +169,35 @@ tei-div[data-structural-identity^="niese-"] > .niese-correspondence-note a,
 #traditional-reader-notice a {
   color: var(--global-theme-color);
 }
+
+/* Antiquities Lodge source presentation. TCP illegibility is source evidence,
+   independent of Niese availability and of other witnesses' lacunae. */
+#english[data-lodge-work="antiquities"] tei-head,
+#english[data-lodge-work="antiquities"] tei-byline,
+#english[data-lodge-work="antiquities"] tei-argument,
+#english[data-lodge-work="antiquities"] tei-list,
+#english[data-lodge-work="antiquities"] tei-item { display: block; margin-block: .5em; }
+#english[data-lodge-work="antiquities"] tei-head { font-weight: 600; }
+#english[data-lodge-work="antiquities"] tei-item { margin-inline-start: 1em; }
+#english[data-lodge-work="antiquities"] tei-hi { font-style: italic; }
+#english[data-lodge-work="antiquities"] tei-seg[type="decorInit"] { font-size: 1.25em; }
+#english[data-lodge-work="antiquities"] tei-note[place="margin"] {
+  display: inline; font-style: italic; font-size: .9em; opacity: .85;
+}
+#english[data-lodge-work="antiquities"] tei-note[place="margin"]::before { content: " [Margin: "; }
+#english[data-lodge-work="antiquities"] tei-note[place="margin"]::after { content: "] "; }
+#english[data-lodge-work="antiquities"].lodge-notes-hidden tei-note { display: none !important; }
+#english[data-lodge-work="antiquities"] tei-gap[reason="illegible"]::before {
+  content: "[Illegible: " attr(extent) "]"; font-style: italic; opacity: .75;
+}
+#english[data-lodge-work="antiquities"] tei-pb::before {
+  content: " [Page " attr(n) "] "; font-size: .8em; opacity: .7;
+}
+#english[data-lodge-work="antiquities"] tei-g[ref="char:EOLhyphen"]::after { content: "\00AD"; }
+#english[data-lodge-work="antiquities"] .lodge-source-context,
+#english[data-lodge-work="antiquities"] .lodge-source-controls {
+  margin-block: 1em; padding: .5em; border: 1px solid currentColor; border-radius: .25em;
+}
+#english[data-lodge-work="antiquities"].lodge-notes-hidden .lodge-source-context { display: none; }
+#english[data-lodge-work="antiquities"] .lodge-source-controls select { max-width: 100%; }
+#english[data-lodge-work="antiquities"] tei-div[type="chapter"] { scroll-margin-top: 6em; }
