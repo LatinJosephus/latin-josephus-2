@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
             lodge1602: {
               label: "Lodge (1602)",
               directory: "English/Lodge1602",
-              availableBookKeys: ["preface", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
-              exactNieseBooks: ["preface", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+              availableBookKeys: ["preface", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
+              exactNieseBooks: ["preface", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
               nativeTCP: true,
               metadataDirectory: "assets/data/lodge1602-antiquities"
             }

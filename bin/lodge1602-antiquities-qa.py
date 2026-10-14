@@ -23,7 +23,7 @@ def sha(b):return hashlib.sha256(b).hexdigest()
 GIT_COMPARISON_HASHES={
  'assets/xml/antiquities/Greek/book-02.xml':'f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da',
  'assets/xml/antiquities/Latin/book-02.xml':'f7b2476b4b029918da1bef9b1abe9040e4e22c04b1dcce3d621a813b173bea72'}
-INVENTORY_SHA='9cfd9dcfde74c340927beb8a39d6c0eecb4323f7f89a76c457ca2ffb43cdfcd1'
+INVENTORY_SHA='b95c4ec059ee0e7a152a2ff79103235e34963ff549a2f794477e1c599e282b62'
 
 def git_bytes(root,*args):
  return subprocess.check_output(['git','-C',str(root),*args],stderr=subprocess.PIPE,timeout=30)
@@ -352,14 +352,15 @@ def verify_batch(a):
  def check(ok,label):
   if not ok:raise ValueError(label)
   assertions.append(label)
- scope={'proem':(1,26,'preface'),'book-01':(27,346,'1'),'book-03':(1,322,'3'),'book-04':(1,331,'4'),'book-05':(1,362,'5'),'book-06':(1,378,'6'),'book-07':(1,394,'7'),'book-08':(1,420,'8'),'book-09':(1,291,'9'),'book-10':(1,281,'10'),'book-11':(1,347,'11'),'book-12':(1,434,'12'),'book-13':(1,433,'13'),'book-14':(1,491,'14'),'book-15':(1,425,'15')}
+ scope={'proem':(1,26,'preface'),'book-01':(27,346,'1'),'book-03':(1,322,'3'),'book-04':(1,331,'4'),'book-05':(1,362,'5'),'book-06':(1,378,'6'),'book-07':(1,394,'7'),'book-08':(1,420,'8'),'book-09':(1,291,'9'),'book-10':(1,281,'10'),'book-11':(1,347,'11'),'book-12':(1,434,'12'),'book-13':(1,433,'13'),'book-14':(1,491,'14'),'book-15':(1,425,'15'),'book-16':(1,404,'16'),'book-17':(1,355,'17'),'book-18':(1,379,'18'),'book-19':(1,366,'19'),'book-20':(1,268,'20')}
  lo,hi,key=scope[a.unit];basename='preface' if key=='preface' else 'book-'+key.zfill(2)
  prefix='english-lodge1602-antiquities-'+('preface' if key=='preface' else 'book'+key.zfill(2));root=a.repo_root;authority=a.authority_dir
  check(authority is not None and a.original_source is not None,'Frozen authority and original TCP required for batch verification')
  new_batch=key!='preface' and int(key)>=6
  archive=authority/('Lodge1602_Antiquities_BATCH_VI_X_FINAL_FROZEN_SCHOLARLY_PACKET.zip' if new_batch else 'Lodge1602_Antiquities_BATCH_I_III_V_FINAL_FROZEN_SCHOLARLY_PACKET.zip')
  if key!='preface' and int(key)>=11:archive=authority/'Lodge1602_Antiquities_BATCH_XI_XV_FINAL_FROZEN_SCHOLARLY_PACKET.zip'
- check(sha(archive.read_bytes())==('8d48df45df82a91e1667fa72c60ac44174b53c0cb0b9182c92e65fadaa6315e1' if key!='preface' and int(key)>=11 else '804662293e12910f00e955835217ffd9d504eaef700dbf37a1795310dc91b146' if new_batch else '21ee32b9f6d5e375ced2839e9cacc9b2e77619a93ddd105fb83280c22282c783'),'Pinned immutable scholarly ZIP')
+ if key!='preface' and int(key)>=16:archive=authority/'Lodge1602_Antiquities_BATCH_XVI_XX_FINAL_FROZEN_SCHOLARLY_PACKET.zip'
+ check(sha(archive.read_bytes())==('27c84528e17c8eebf8e8a320ee147a9e2b1e9f438cbf65bfce061e299c596b29' if key!='preface' and int(key)>=16 else '8d48df45df82a91e1667fa72c60ac44174b53c0cb0b9182c92e65fadaa6315e1' if key!='preface' and int(key)>=11 else '804662293e12910f00e955835217ffd9d504eaef700dbf37a1795310dc91b146' if new_batch else '21ee32b9f6d5e375ced2839e9cacc9b2e77619a93ddd105fb83280c22282c783'),'Pinned immutable scholarly ZIP')
  with zipfile.ZipFile(archive) as z:
   def frozen(relative):
    b=z.read(relative);check((authority/relative).read_bytes()==b,'Exact sealed authority '+relative);return b
@@ -418,7 +419,7 @@ def verify_batch(a):
   if el.tag==Q('milestone') and el.get('unit')=='niese':
    number=int(el.get('n'));el.attrib.clear();el.attrib.update(frozenmarkers[number].attrib)
  check(fingerprint(projection)==fingerprint(frozenbook),'All mixed-content attachments, source-native structure and certified physical cuts equal master')
- stream,starts=literal_stream(book,('p','item'),key in {'12','13','14'});sourcestream,_=literal_stream(source,('p','item'),key in {'12','13','14'})
+ stream,starts=literal_stream(book,('p','item'),key in {'12','13','14','19','20'});sourcestream,_=literal_stream(source,('p','item'),key in {'12','13','14','19','20'})
  # The certified text snapshot uses Windows file line endings; XML parsers
  # apply XML 1.0 EOL processing. Raw XML gates above remain byte-exact.
  check(stream==sourcestream and stream==literal_bytes.decode('utf-8').replace('\r\n','\n') and len(stream)==cert['literal_characters'],'Exact independent full narrative projection')
@@ -469,7 +470,7 @@ def verify_batch(a):
  return {'status':'PASS','certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN','unit':a.unit,'identity_coverage':len(numbers),'assertions_passed':len(assertions),'source_counts':counts,'historical_confidence':metadata['historical_confidence_counts'],'human_approved':approvals,'pending_adjudications':[],'exact_production_to_scholarly_master':{'sha256':sha(restored),'byte_identical':True},'exact_scholarly_master_to_extraction':{'sha256':sha(stripped),'byte_identical':True},'complete_original_TCP_extraction':'EXACT BYTE-FOR-BYTE PASS','all_section_partitions_and_source_coordinates':'PASS','all_native_structure_and_physical_marker_positions':'PASS','derivative_sha256':sha(data),'metadata_sha256':sha(metabytes)}
 
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--repo-root',type=Path,required=True);ap.add_argument('--xml',type=Path);ap.add_argument('--metadata',type=Path);ap.add_argument('--ledger',type=Path);ap.add_argument('--original-source',type=Path);ap.add_argument('--authority-dir',type=Path);ap.add_argument('--restore-dir',type=Path);ap.add_argument('--report',type=Path);ap.add_argument('--unit',choices=['proem','book-01','book-03','book-04','book-05','book-06','book-07','book-08','book-09','book-10','book-11','book-12','book-13','book-14','book-15']);a=ap.parse_args()
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--repo-root',type=Path,required=True);ap.add_argument('--xml',type=Path);ap.add_argument('--metadata',type=Path);ap.add_argument('--ledger',type=Path);ap.add_argument('--original-source',type=Path);ap.add_argument('--authority-dir',type=Path);ap.add_argument('--restore-dir',type=Path);ap.add_argument('--report',type=Path);ap.add_argument('--unit',choices=['proem','book-01','book-03','book-04','book-05','book-06','book-07','book-08','book-09','book-10','book-11','book-12','book-13','book-14','book-15','book-16','book-17','book-18','book-19','book-20']);a=ap.parse_args()
  try:report=verify_batch(a) if a.unit else verify(a)
  except Exception as e:
   report={'status':'FAIL','reason':str(e),'certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN'}

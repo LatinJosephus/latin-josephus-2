@@ -52,3 +52,5 @@ text once. Every other interval must be nonempty. Historical confidence remains
 1,759 HIGH, four MEDIUM and one LOW, with all five difficult treatments approved.
 
 Books XI–XV add five frozen Lodge XML derivatives (2,130 identities), with complete independent inverse and section-coordinate receipts. All 154 earlier inventory records remain unchanged; the inventory now contains 159 XML files.
+
+Books XVI–XX add five frozen Lodge XML derivatives (1,772 identities), with complete independent inverse and section-coordinate receipts. All 159 earlier inventory records remain unchanged; the inventory now contains 164 XML files.
