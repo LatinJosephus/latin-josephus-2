@@ -55,17 +55,17 @@ chapters and 704 coarse units, together with the independently accepted
 4,001-section Niese alignment. Lodge's original wording and TCP source markup
 are preserved.
 
-### Lodge Antiquities Proem and Books I–X
+### Lodge Antiquities Proem and Books I–XV
 
-The *Antiquities* reader also offers Thomas Lodge’s Proem and Books I–X from *The famous
+The *Antiquities* reader also offers Thomas Lodge’s Proem and Books I–XV from *The famous
 and memorable workes of Iosephus* (London, 1602), transcribed by EEBO-TCP as
 A04680. The underlying TCP transcription is released under
 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 LatinJosephus independently supplies the certified Niese segmentation of its
-3,474 sections, preserving Lodge’s wording, printed chapters and source evidence.
+5,604 sections, preserving Lodge’s wording, printed chapters and source evidence.
 This source licence concerns the TCP transcription; it does not assign a licence
 to the project’s independent scholarly apparatus. The Proem is independently
-accessible as I.1–26; Book I narrative begins at I.27. Lodge Books XI–XX are not
+accessible as I.1–26; Book I narrative begins at I.27. Lodge Books XVI–XX are not
 yet integrated in this reader.
 
 ### Corrections

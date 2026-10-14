@@ -50,3 +50,5 @@ register and human log authorize `NO_SEPARATE_COUNTERPART`; the reader adds a
 Lodge-specific notice outside source character data. X.239 retains its proper
 text once. Every other interval must be nonempty. Historical confidence remains
 1,759 HIGH, four MEDIUM and one LOW, with all five difficult treatments approved.
+
+Books XI–XV add five frozen Lodge XML derivatives (2,130 identities), with complete independent inverse and section-coordinate receipts. All 154 earlier inventory records remain unchanged; the inventory now contains 159 XML files.

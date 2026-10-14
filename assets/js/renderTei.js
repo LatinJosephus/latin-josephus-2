@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
             lodge1602: {
               label: "Lodge (1602)",
               directory: "English/Lodge1602",
-              availableBookKeys: ["preface", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-              exactNieseBooks: ["preface", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              availableBookKeys: ["preface", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
+              exactNieseBooks: ["preface", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
               nativeTCP: true,
               metadataDirectory: "assets/data/lodge1602-antiquities"
             }
@@ -1266,6 +1266,19 @@ document.addEventListener("DOMContentLoaded", () => {
     lodgeMetadata = await lodgeMetadataRequests.get(key);
   };
   const lodgeBook = data => data?.querySelector(`[id="${lodgeMetadata.production_xml.book_wrapper_id}"]`);
+  const approvedLodgeAbsence = (first, absence, section) => {
+    if (!absence || !section) return false;
+    const approvedTCP = lodgeMetadata.book_key === "10" && first === 238 ? 1970937
+        : lodgeMetadata.book_key === "14" && first >= 218 && first <= 223 ? 2738736
+        : lodgeMetadata.book_key === "14" && first >= 229 && first <= 264 ? 2741178 : null;
+    const documentary = lodgeMetadata.book_key === "14";
+    return !(approvedTCP === null
+        || (documentary && (absence.absence_treatment !== "DOCUMENTARY_COLLECTION_ABRIDGED"
+          || absence.group_adjudication_id !== (first <= 223 ? "COLLECTIVE-XIV-218-223" : "COLLECTIVE-XIV-229-264")))
+        || absence.classification !== "NO_SEPARATE_COUNTERPART" || absence.editorial_status !== "HUMAN_APPROVED"
+        || absence.original_TCP_start_byte !== approvedTCP || absence.original_TCP_end_exclusive !== approvedTCP
+        || section.literal_character_extent !== 0 || section.active_editorial_status !== "HUMAN_APPROVED");
+  };
   const lodgeNieseRange = (data, first, exclusiveEnd, exact = false) => {
     const book = lodgeBook(data);
     const starts = englishNieseStartEntries(data);
@@ -1277,19 +1290,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const absence = lodgeMetadata.availability.whole_section_absences.find(row => row.niese === first);
     if (exact && exclusiveEnd === first + 1 && absence) {
       const section = lodgeMetadata.sections.find(row => row.niese === first);
-      if (lodgeMetadata.book_key !== "10" || first !== 238
-        || absence.classification !== "NO_SEPARATE_COUNTERPART" || absence.editorial_status !== "HUMAN_APPROVED"
-        || absence.original_TCP_start_byte !== 1970937 || absence.original_TCP_end_exclusive !== 1970937
-        || section.literal_character_extent !== 0 || section.active_editorial_status !== "HUMAN_APPROVED")
-        throw new Error("Unauthorized empty Lodge interval.");
+      const documentary = lodgeMetadata.book_key === "14";
+      if (!approvedLodgeAbsence(first, absence, section)) throw new Error("Unauthorized empty Lodge interval.");
       const wrapper = document.createElement("tei-div2");
       wrapper.setAttribute("type", "niese-section"); wrapper.setAttribute("n", String(first));
       wrapper.dataset.nieseStart = String(first); wrapper.dataset.nieseEndExclusive = String(exclusiveEnd);
       wrapper.dataset.englishSegmentation = "exact";
       const notice = document.createElement("p"); notice.className = "niese-correspondence-note";
       notice.style.color = "var(--lj-brand-ink)";
-      notice.textContent = "No separate corresponding passage in Lodge (1602)";
+      notice.textContent = documentary
+        ? "No separate corresponding passage in Lodge (1602); documentary collection abbreviated."
+        : "No separate corresponding passage in Lodge (1602)";
       wrapper.append(makeGeneratedNieseLabel(first), notice); return wrapper;
+    }
+    const selected = lodgeMetadata.sections.filter(row => row.niese >= first && row.niese < exclusiveEnd);
+    if (!exact && selected.length === exclusiveEnd - first && selected.every(row => row.literal_character_extent === 0)) {
+      const groups = new Map();
+      for (const section of selected) {
+        const absence = lodgeMetadata.availability.whole_section_absences.find(row => row.niese === section.niese);
+        if (!approvedLodgeAbsence(section.niese, absence, section)) throw new Error("Unauthorized empty Lodge context.");
+        groups.set(absence.group_adjudication_id || absence.identity, absence);
+      }
+      const wrapper = document.createElement("tei-div2"); wrapper.setAttribute("type", "lodge-niese-context");
+      wrapper.dataset.nieseStart = String(first); wrapper.dataset.nieseEndExclusive = String(exclusiveEnd);
+      wrapper.dataset.englishSegmentation = "containing-context";
+      for (const absence of groups.values()) {
+        const notice = document.createElement("p"); notice.className = "niese-correspondence-note";
+        notice.style.color = "var(--lj-brand-ink)"; notice.textContent = absence.notice; wrapper.appendChild(notice);
+      }
+      return wrapper;
     }
     const range = document.createRange(); range.setStartAfter(start);
     if (end) range.setEndBefore(end); else range.setEnd(book, book.childNodes.length);

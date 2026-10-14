@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "certification_scope": "DATA_LAYER_ONLY; browser/renderer NOT_RUN",
+  "unit": "book-13",
+  "identity_coverage": 433,
+  "assertions_passed": 7393,
+  "source_counts": {
+    "literal_character_data_units": 158832,
+    "printed_chapters": 24,
+    "TCP_paragraphs": 90,
+    "marginal_notes": 146,
+    "TCP_gaps": 89,
+    "page_breaks": 33,
+    "native_TCP_milestones": 194
+  },
+  "historical_confidence": {
+    "HIGH": 431,
+    "LOW": 0,
+    "MEDIUM": 2
+  },
+  "human_approved": [
+    "XIII.290",
+    "XIII.333"
+  ],
+  "pending_adjudications": [],
+  "exact_production_to_scholarly_master": {
+    "sha256": "51885a8399dea421068143f0f99a7ea54b2876f6d377b51f68ad23a1d2b6d60a",
+    "byte_identical": true
+  },
+  "exact_scholarly_master_to_extraction": {
+    "sha256": "81a264ec5316ed714c844b2b6d4c1213e0218d29266fc117a37b69d1a7f2c239",
+    "byte_identical": true
+  },
+  "complete_original_TCP_extraction": "EXACT BYTE-FOR-BYTE PASS",
+  "all_section_partitions_and_source_coordinates": "PASS",
+  "all_native_structure_and_physical_marker_positions": "PASS",
+  "derivative_sha256": "1dfa7085a30a782ea734ea603f1c2a1ee492e16461dcbfee7bb5b81560f8934d",
+  "metadata_sha256": "841091715727a2f3375c2e60ad3fef05e6fa350322074064dba17f508321c1f6"
+}
