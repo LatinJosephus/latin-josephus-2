@@ -33,3 +33,7 @@
 /_docs/lodge1602-antiquities-source/* -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 /_docs/lodge1602-antiquities-*-integration.json -text whitespace=cr-at-eol
 /_docs/lodge1602-antiquities-*-validation.json -text whitespace=cr-at-eol
+
+# Frozen Lodge Antiquities VI–X: retain literal source bytes.
+/assets/xml/antiquities/English/Lodge1602/book-0[6789].xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/assets/xml/antiquities/English/Lodge1602/book-10.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof

@@ -23,7 +23,7 @@ def sha(b):return hashlib.sha256(b).hexdigest()
 GIT_COMPARISON_HASHES={
  'assets/xml/antiquities/Greek/book-02.xml':'f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da',
  'assets/xml/antiquities/Latin/book-02.xml':'f7b2476b4b029918da1bef9b1abe9040e4e22c04b1dcce3d621a813b173bea72'}
-INVENTORY_SHA='cb0c8aa0477e30e8876a9794cb0524fae59b4691b9907bef4cba515cf465f3a0'
+INVENTORY_SHA='2e311df57b18a2779900a836fe2c3bbbf4ab740ed5260b678a8abe7a45ce3914'
 
 def git_bytes(root,*args):
  return subprocess.check_output(['git','-C',str(root),*args],stderr=subprocess.PIPE,timeout=30)
@@ -345,12 +345,13 @@ def verify_batch(a):
  def check(ok,label):
   if not ok:raise ValueError(label)
   assertions.append(label)
- scope={'proem':(1,26,'preface'),'book-01':(27,346,'1'),'book-03':(1,322,'3'),'book-04':(1,331,'4'),'book-05':(1,362,'5')}
+ scope={'proem':(1,26,'preface'),'book-01':(27,346,'1'),'book-03':(1,322,'3'),'book-04':(1,331,'4'),'book-05':(1,362,'5'),'book-06':(1,378,'6'),'book-07':(1,394,'7'),'book-08':(1,420,'8'),'book-09':(1,291,'9'),'book-10':(1,281,'10')}
  lo,hi,key=scope[a.unit];basename='preface' if key=='preface' else 'book-'+key.zfill(2)
  prefix='english-lodge1602-antiquities-'+('preface' if key=='preface' else 'book'+key.zfill(2));root=a.repo_root;authority=a.authority_dir
  check(authority is not None and a.original_source is not None,'Frozen authority and original TCP required for batch verification')
- archive=authority/'Lodge1602_Antiquities_BATCH_I_III_V_FINAL_FROZEN_SCHOLARLY_PACKET.zip'
- check(sha(archive.read_bytes())=='21ee32b9f6d5e375ced2839e9cacc9b2e77619a93ddd105fb83280c22282c783','Pinned immutable scholarly ZIP')
+ new_batch=key!='preface' and int(key)>=6
+ archive=authority/('Lodge1602_Antiquities_BATCH_VI_X_FINAL_FROZEN_SCHOLARLY_PACKET.zip' if new_batch else 'Lodge1602_Antiquities_BATCH_I_III_V_FINAL_FROZEN_SCHOLARLY_PACKET.zip')
+ check(sha(archive.read_bytes())==('804662293e12910f00e955835217ffd9d504eaef700dbf37a1795310dc91b146' if new_batch else '21ee32b9f6d5e375ced2839e9cacc9b2e77619a93ddd105fb83280c22282c783'),'Pinned immutable scholarly ZIP')
  with zipfile.ZipFile(archive) as z:
   def frozen(relative):
    b=z.read(relative);check((authority/relative).read_bytes()==b,'Exact sealed authority '+relative);return b
@@ -361,7 +362,13 @@ def verify_batch(a):
  authorities={'original_TCP':HASH['original_TCP'],'scholarly_master':sha(master),'final_register':sha(regbytes),'certified_extraction':sha(extraction),'freeze_manifest':sha(freeze_bytes),'scholarly_zip':sha(archive.read_bytes())}
  check(metadata['authorities']==ledger['authorities']==authorities,'Strict batch provenance binding')
  check(metadata['book_key']==key and metadata['authority_unit']==a.unit,'Unit identity and separate Proem')
- check(metadata['availability']['identity_range']==[lo,hi] and metadata['availability']['whole_section_absences']==[],'Exact unit availability')
+ check(metadata['availability']['identity_range']==[lo,hi],'Exact unit availability')
+ absences=metadata['availability']['whole_section_absences']
+ check([x['identity'] for x in absences]==(['X.238'] if key=='10' else []),'Only approved Lodge X.238 absence')
+ if absences:
+  approval=next(x for x in human['records'] if x['identity']=='X.238')
+  check(approval['status']=='HUMAN_APPROVED' and approval['approved_TCP_byte']==approval['approved_TCP_exclusive_endpoint']==1970937 and sha((authority/'HUMAN_ADJUDICATION_LOG.json').read_bytes())==freeze['human_log_sha256'],'Pinned frozen empty-interval approval')
+  check(absences[0]['classification']=='NO_SEPARATE_COUNTERPART' and absences[0]['editorial_status']=='HUMAN_APPROVED' and absences[0]['original_TCP_start_byte']==absences[0]['original_TCP_end_exclusive']==1970937 and absences[0]['frozen_human_log_sha256']==freeze['human_log_sha256'],'Explicit source-qualified X.238 metadata')
  originalbytes=a.original_source.read_bytes();check(sha(originalbytes)==HASH['original_TCP'],'Immutable original TCP hash')
  reconstructed=bytes.fromhex(recipe['prefix_hex'])+b''.join(originalbytes[left:right] for left,right in recipe['source_spans'])+bytes.fromhex(recipe['suffix_hex'])
  check(reconstructed==extraction,'Independent piecewise original TCP extraction, byte for byte')
@@ -398,7 +405,7 @@ def verify_batch(a):
  pending=[];approvals=[]
  for i,(r,s) in enumerate(zip(register,sections)):
   n=int(r['number']);start=starts[n];end=starts[numbers[i+1]] if i+1<len(numbers) else len(stream);part=stream[start:end];c=s['source_coordinate']
-  check(start==int(r['whole_book_literal_narrative_offset']) and end==s['literal_exclusive_end']==int(r['literal_exclusive_end']) and end>start,'Exact approved literal exclusive interval '+str(n))
+  check(start==int(r['whole_book_literal_narrative_offset']) and end==s['literal_exclusive_end']==int(r['literal_exclusive_end']) and (end>start or (key=='10' and n==238 and end==start and r['classification']=='NO_SEPARATE_COUNTERPART' and r['editorial_status']=='HUMAN_APPROVED' and int(r['original_TCP_raw_byte_offset'])==int(r['original_TCP_exclusive_end_byte'])==1970937)),'Exact approved literal exclusive interval '+str(n))
   check(sha(part.encode())==s['narrative_fragment_sha256']==r['narrative_fragment_sha256'] and part.startswith(s['incipit']) and part.endswith(s['tail']),'Independent section wording/incipit/exclusive tail '+str(n))
   check(all(value==r[field] for field,value in c.items()),'All original coordinate fields '+str(n))
   sourceel=sourcepaths[r['extraction_element_path']];text=getattr(sourceel,r['text_slot']) or '';offset=int(r['unicode_offset_in_text_node']);raw0=s['source_text_node_extraction_start'];raw1=s['source_text_node_extraction_end_exclusive'];rawcut=int(r['extraction_raw_byte_offset']);rawend=int(r['extraction_exclusive_end_byte'])
@@ -434,13 +441,13 @@ def verify_batch(a):
  check(metadata['marginal_notes']==[x for x in metadata['source_node_aliases'] if x['source_tag']=='note'],'Every marginal note retained once')
  check(metadata['pre_first_identity_context']['notes']==[x['production_id'] for x in metadata['marginal_notes'] if x['physical_niese_interval'] is None] and not metadata['pre_first_identity_context']['note_anchor_relocated'],'Unmoved pre-first source context')
  for c in metadata['project_navigation_covers']:check(lo<=c['start_niese']<c['end_niese_exclusive']<=hi+1 and c['precision']=='CONTAINING_NIESE_CONTEXT_NOT_NATIVE_CHAPTER_EQUIVALENCE','Independent traditional navigation cover '+c['project_boundary_id'])
- expected_approvals=[x for x in freeze['all_eight_HUMAN_APPROVED'] if x in [r['identity'] for r in register]];check(approvals==expected_approvals,'Frozen human approvals reflected without confidence upgrade')
+ expected_approvals=[x for x in (freeze['all_five_HUMAN_APPROVED'] if new_batch else freeze['all_eight_HUMAN_APPROVED']) if x in [r['identity'] for r in register]];check(approvals==expected_approvals,'Frozen human approvals reflected without confidence upgrade')
  if a.restore_dir:
   a.restore_dir.mkdir(parents=True,exist_ok=True);(a.restore_dir/'restored-frozen-master.xml').write_bytes(restored);(a.restore_dir/'restored-certified-extraction.xml').write_bytes(stripped)
  return {'status':'PASS','certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN','unit':a.unit,'identity_coverage':len(numbers),'assertions_passed':len(assertions),'source_counts':counts,'historical_confidence':metadata['historical_confidence_counts'],'human_approved':approvals,'pending_adjudications':[],'exact_production_to_scholarly_master':{'sha256':sha(restored),'byte_identical':True},'exact_scholarly_master_to_extraction':{'sha256':sha(stripped),'byte_identical':True},'complete_original_TCP_extraction':'EXACT BYTE-FOR-BYTE PASS','all_section_partitions_and_source_coordinates':'PASS','all_native_structure_and_physical_marker_positions':'PASS','derivative_sha256':sha(data),'metadata_sha256':sha(metabytes)}
 
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--repo-root',type=Path,required=True);ap.add_argument('--xml',type=Path);ap.add_argument('--metadata',type=Path);ap.add_argument('--ledger',type=Path);ap.add_argument('--original-source',type=Path);ap.add_argument('--authority-dir',type=Path);ap.add_argument('--restore-dir',type=Path);ap.add_argument('--report',type=Path);ap.add_argument('--unit',choices=['proem','book-01','book-03','book-04','book-05']);a=ap.parse_args()
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--repo-root',type=Path,required=True);ap.add_argument('--xml',type=Path);ap.add_argument('--metadata',type=Path);ap.add_argument('--ledger',type=Path);ap.add_argument('--original-source',type=Path);ap.add_argument('--authority-dir',type=Path);ap.add_argument('--restore-dir',type=Path);ap.add_argument('--report',type=Path);ap.add_argument('--unit',choices=['proem','book-01','book-03','book-04','book-05','book-06','book-07','book-08','book-09','book-10']);a=ap.parse_args()
  try:report=verify_batch(a) if a.unit else verify(a)
  except Exception as e:
   report={'status':'FAIL','reason':str(e),'certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN'}

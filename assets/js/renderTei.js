@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
             lodge1602: {
               label: "Lodge (1602)",
               directory: "English/Lodge1602",
-              availableBookKeys: ["preface", "1", "2", "3", "4", "5"],
-              exactNieseBooks: ["preface", 1, 2, 3, 4, 5],
+              availableBookKeys: ["preface", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+              exactNieseBooks: ["preface", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
               nativeTCP: true,
               metadataDirectory: "assets/data/lodge1602-antiquities"
             }
@@ -1274,6 +1274,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const end = exclusiveEnd <= last ? starts.find(entry => entry.number === exclusiveEnd)?.node : null;
     if (!book || !start || (exclusiveEnd <= last && !end))
       return structuralUnavailable("English", "The certified Lodge interval has no matching source boundary.");
+    const absence = lodgeMetadata.availability.whole_section_absences.find(row => row.niese === first);
+    if (exact && exclusiveEnd === first + 1 && absence) {
+      const section = lodgeMetadata.sections.find(row => row.niese === first);
+      if (lodgeMetadata.book_key !== "10" || first !== 238
+        || absence.classification !== "NO_SEPARATE_COUNTERPART" || absence.editorial_status !== "HUMAN_APPROVED"
+        || absence.original_TCP_start_byte !== 1970937 || absence.original_TCP_end_exclusive !== 1970937
+        || section.literal_character_extent !== 0 || section.active_editorial_status !== "HUMAN_APPROVED")
+        throw new Error("Unauthorized empty Lodge interval.");
+      const wrapper = document.createElement("tei-div2");
+      wrapper.setAttribute("type", "niese-section"); wrapper.setAttribute("n", String(first));
+      wrapper.dataset.nieseStart = String(first); wrapper.dataset.nieseEndExclusive = String(exclusiveEnd);
+      wrapper.dataset.englishSegmentation = "exact";
+      const notice = document.createElement("p"); notice.className = "niese-correspondence-note";
+      notice.textContent = "No separate corresponding passage in Lodge (1602)";
+      wrapper.append(makeGeneratedNieseLabel(first), notice); return wrapper;
+    }
     const range = document.createRange(); range.setStartAfter(start);
     if (end) range.setEndBefore(end); else range.setEnd(book, book.childNodes.length);
     let content = range.cloneContents();

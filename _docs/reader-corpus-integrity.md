@@ -36,3 +36,17 @@ exclusive interval, and compares every native mixed-content attachment.
 The reader offers Lodge only for the Proem and Books I–V. Original printed
 chapters remain independent of project chapter and Bamberg context navigation.
 Browser certification is recorded separately from these data-only receipts.
+
+## Lodge Antiquities Books VI–X
+
+Five further records bind 1,764 identities to frozen scholarly ZIP
+`804662293e12910f00e955835217ffd9d504eaef700dbf37a1795310dc91b146`.
+All 149 earlier records and protected source bytes remain unchanged. The existing
+importer and independent verifier now also accept `book-06` through `book-10`.
+Lodge is available for the Proem and Books I–X; XI–XX remain unavailable.
+
+Only X.238 has an approved empty interval, at TCP byte 1970937. Its frozen
+register and human log authorize `NO_SEPARATE_COUNTERPART`; the reader adds a
+Lodge-specific notice outside source character data. X.239 retains its proper
+text once. Every other interval must be nonempty. Historical confidence remains
+1,759 HIGH, four MEDIUM and one LOW, with all five difficult treatments approved.

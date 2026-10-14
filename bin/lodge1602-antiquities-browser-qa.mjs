@@ -24,7 +24,7 @@ async function init(){await page.evaluate(()=>{
  qa.pane=()=>[...document.querySelector('#english').children].filter(n=>n.tagName!=='H3').map(qa.source).join('');
  qa.snapshot=()=>Object.fromEntries(['english','greek','latin'].map(k=>[k,{text:[...document.querySelector('#'+k).children].filter(n=>n.tagName!=='H3').map(qa.source).join(''),ids:[...document.querySelector('#'+k).querySelectorAll('[id]')].map(n=>n.id)}]));
  });}
-async function go(url){await page.goto(base+url,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.querySelector('#english tei-p')||document.querySelector('#english .structural-unavailable')||document.querySelector('#unsupported-niese-notice'),{timeout:60000});await init();}
+async function go(url){await page.goto(base+url,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.querySelector('#english tei-p')||document.querySelector('#english .niese-correspondence-note')||document.querySelector('#english .structural-unavailable')||document.querySelector('#unsupported-niese-notice'),{timeout:60000});await init();}
 async function installOracle(name,hi){
  return await page.evaluate(async ({raw,name,hi})=>{
   const d=new DOMParser().parseFromString(raw,'application/xml');if(d.querySelector('parsererror'))throw Error('Frozen XML invalid');
@@ -49,13 +49,15 @@ const baselineFile=opt('--baseline',path.join(out,'BASELINE_BROWSER.json'));
 async function verifyBatchUnits(){
  const focusOnly=args.includes('--focused-only');
  const units=[['preface','preface',1,26,'0e7ee1b3abb66081d9cfbf5347dc7d1ba7d116f2f26cdf344437184cd5644b57'],['book-01','1',27,346,'b2270f7e701530aa5b738ff86eb8f894189123dee8b3dab72dd2241c9a3eeae2'],['book-03','3',1,322,'bf8a13a752ea057f337ea92638db4878c4421d4d7a4393ef607a1d606d5270f6'],['book-04','4',1,331,'afffc6760f3b5a317026f394c5a274800cd9e506152e689b4891e6ab0176e290'],['book-05','5',1,362,'79ef658653d650151af89ba6e5da6b5ae62e087ecd80caced91412be18a047bc']];
+ const newUnits=[["book-06", "6", 1, 378, "1255d9352136dbad2c78858f34ce1e7cc39de12d6c2511bf0015230bf700c680"], ["book-07", "7", 1, 394, "b6cba578e64982baf686ef6ef652694dbf76a910eeda14ff61b89d102fcf20cf"], ["book-08", "8", 1, 420, "2c5dc5d7f2a6e23d00ddd0309457b7db3535203b6dbf0b1eebba5aae26f49296"], ["book-09", "9", 1, 291, "441e70e48159a9cd678a62ff3992d8ca919995c5091c210106b7ea73bee292c9"], ["book-10", "10", 1, 281, "d3909b05d3406f557a3f16d1b8230317bee07a3e80478c4fc03793a6c541fdc0"]];
+ const selectedUnits=args.includes('--vi-x')?newUnits:units;
  const previous=args.includes('--resume-batch')?JSON.parse(fs.readFileSync(path.join(out,'LODGE_BATCH_BROWSER_QA.json'))):null;
  const results=previous?.units??[],focused=previous?.focused??[];let total=results.reduce((sum,r)=>sum+r.identities,0);
- for(const [name,key,lo,hi,hash] of units){
+ for(const [name,key,lo,hi,hash] of selectedUnits){
   if(results.some(r=>r.unit===name&&r.master_sha256===hash&&r.status==='PASS'))continue;
   assert.equal(sha(fs.readFileSync(path.join(root,'_docs/lodge1602-antiquities-source/'+name+'-frozen.xml'))),hash,'Independent pinned frozen master '+name);
   await go(`/antiquities/?book=${key}&niese=${lo}&english=lodge1602`);const oracle=await installOracle(name,hi);
-  const important=key==='1'?[27,65,79,159,166,206,346]:key==='3'?[1,82,322]:key==='4'?[1,61,312,331]:[lo,hi];
+  const important=args.includes('--vi-x')?({'6':[1,61,378],'7':[1,69,70,80,99,394],'8':[1,170,420],'9':[1,51,75,80,109,291],'10':[1,61,237,238,239,281]}[key]):key==='1'?[27,65,79,159,166,206,346]:key==='3'?[1,82,322]:key==='4'?[1,61,312,331]:[lo,hi];
   const rows=await page.evaluate(async({lo,hi,selected})=>{const rows=[];for(const n of selected){
    if(n>lo)await qa.change('#niese-selector',n);const actual=qa.actual(),expected=qa.expected[n];
    if(actual.text!==expected.text)throw Error('Independent frozen text/exclusive endpoint '+n+' '+JSON.stringify({actual:actual.text.slice(0,120),expected:expected.text.slice(0,120)}));
@@ -64,6 +66,9 @@ async function verifyBatchUnits(){
    if(new Set(ids).size!==ids.length)throw Error('Duplicate source ID '+n);
    if(Number(view.dataset.nieseStart)!==n||Number(view.dataset.nieseEndExclusive)!==n+1||Number(document.querySelector('#niese-selector').value)!==n||Number(new URL(location.href).searchParams.get('niese'))!==n)throw Error('Selected exact interval and URL '+n);
    if(document.querySelector('#english-source-selector').value!=='lodge1602'||document.querySelector('#niese-previous').disabled!==(n===lo)||document.querySelector('#niese-next').disabled!==(n===hi))throw Error('Source and endpoint controls '+n);
+   const notice=document.querySelector('#english .niese-correspondence-note');
+   if(qa.metadata.book_key==='10'&&n===238){if(!notice||notice.textContent!=='No separate corresponding passage in Lodge (1602)'||actual.text!==''||document.querySelector('#english tei-p'))throw Error('Approved X.238 empty view');}
+   else if(notice||document.querySelector('#english .tei-omission-notice'))throw Error('Other witness omission leaked into Lodge '+n);
    rows.push({n,text:actual.text,notes:actual.notes.length,gaps:actual.gaps.length,pbs:actual.pbs.length,native:actual.native.length});
   }return rows;},{lo,hi,selected:focusOnly?important:Array.from({length:hi-lo+1},(_,i)=>lo+i)});
   const checks=rows.map(r=>({identity:(key==='preface'?'I':key)+'.'+r.n,status:'PASS',characters:r.text.length,expected_sha256:sha(oracle.sections[r.n].text),actual_sha256:sha(r.text),incipit:r.text.slice(0,130),tail:r.text.slice(-130),notes:r.notes,gaps:r.gaps,page_breaks:r.pbs,native_milestones:r.native}));
@@ -72,7 +77,7 @@ async function verifyBatchUnits(){
   for(const chapter of book.chapters){await page.selectOption('#lodge-native-chapter',chapter.id);assert.equal(await page.locator('#lodge-native-chapter').inputValue(),chapter.id);}
   if(book.contents!==null){await page.evaluate(()=>qa.change('#chapter-selector','contents'));assert.equal(await page.locator('#english .source-contents tei-list').textContent(),book.contents,'Original source contents '+name);}
   for(const n of important){await go(`/antiquities/?book=${key}&niese=${n}&english=lodge1602&keep=batch-proof`);await installOracle(name,hi);assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n].text);const before=await page.evaluate(()=>qa.snapshot());
-   for(const lang of ['greek','latin'])assert(before[lang].text.length>0,'Available comparison pane '+lang);
+   for(const lang of ['greek','latin'])assert(before[lang].text.length>0,'Comparison pane text or source-qualified notice '+lang);
    await page.evaluate(()=>qa.change('#english-source-selector','whiston'));assert.equal(Number(await page.locator('#niese-selector').inputValue()),n);const after=await page.evaluate(()=>qa.snapshot());for(const lang of ['greek','latin'])assert.deepEqual(after[lang],before[lang],'Comparison pane citation and source retained');
    await page.evaluate(()=>qa.change('#english-source-selector','lodge1602'));assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n].text);assert.equal(new URL(page.url()).searchParams.get('keep'),'batch-proof');
    if(n<hi){await page.evaluate(()=>qa.click('#niese-next'));assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n+1].text);await page.goBack();await page.waitForFunction(n=>Number(document.querySelector('#niese-selector').value)===n,n);await page.goForward();await page.waitForFunction(n=>Number(document.querySelector('#niese-selector').value)===n+1,n);}
@@ -86,10 +91,37 @@ async function verifyBatchUnits(){
  // Niese view must then open at the new unit's first certified identity.
  await page.evaluate(()=>qa.change('#niese-level'));assert.equal(Number(await page.locator('#niese-selector').inputValue()),27);await installOracle('book-01',346);assert.equal(await page.evaluate(()=>qa.actual().text),await page.evaluate(()=>qa.expected[27].text));
  await page.evaluate(()=>qa.change('#book-selector','preface'));assert.equal(await page.locator('#english-source-selector').inputValue(),'lodge1602');await page.evaluate(()=>qa.change('#niese-level'));assert.equal(Number(await page.locator('#niese-selector').inputValue()),1);await installOracle('preface',26);assert.equal(await page.evaluate(()=>qa.actual().text),await page.evaluate(()=>qa.expected[1].text));focused.push({transition:'Proem I.26 → Book I view → I.27 → Proem view → I.1',status:'PASS',existing_book_navigation_preserved:true});
- assert.equal(total,focusOnly?18:1361);assert.equal(errors.length,0,'No reader JavaScript exceptions');assert.equal(network.length,0,'No failed reader requests');save('LODGE_BATCH_BROWSER_QA.json',{status:'PASS',scope:focusOnly?'FOCUSED_PUBLICATION_SMOKE':'ALL_1361_EXACT_INTERVALS',completed:total,oracle:'Independent physical traversal of all five pinned frozen masters; actual built-reader selector events and exact text, endpoints and native source features',units:results});save('LODGE_BATCH_FOCUSED_INTERACTION_QA.json',{status:'PASS',cases:focused});
+ if(args.includes('--vi-x')) {
+  await go('/antiquities/?book=10&niese=238&english=lodge1602&lodgeNotes=0');await installOracle('book-10',281);
+  assert.equal(await page.locator('#english .niese-correspondence-note').textContent(),'No separate corresponding passage in Lodge (1602)');
+  assert.equal(await page.locator('#english tei-p').count(),0);assert.equal(await page.locator('#english tei-gap').count(),0);
+  await page.evaluate(()=>qa.click('#niese-previous'));assert.equal(await page.evaluate(()=>qa.actual().text),await page.evaluate(()=>qa.expected[237].text));
+  await page.evaluate(()=>qa.click('#niese-next'));assert.equal(await page.evaluate(()=>qa.actual().text),'');
+  await page.evaluate(()=>qa.click('#niese-next'));assert.equal(await page.evaluate(()=>qa.actual().text),await page.evaluate(()=>qa.expected[239].text));
+  assert.match(await page.evaluate(()=>qa.actual().text),/^Whereupon the\s+king called him vnto his presence,/);
+  assert.equal(await page.locator('#english tei-note:visible').count(),0);assert.equal(new URL(page.url()).searchParams.get('lodgeNotes'),'0');
+  await page.evaluate(()=>qa.change('#book-level'));const whole=await page.evaluate(()=>{const b=document.querySelector('#english tei-div1');return {text:qa.literal(b),empty:[...b.querySelectorAll('tei-p')].filter(p=>!p.textContent.trim()).length};});
+  assert.equal(whole.empty,0);assert.equal(whole.text.split('Whereupon the  king called him vnto his presence,').length,2);
+  await go('/antiquities/?book=10&niese=239&english=lodge1602');await installOracle('book-10',281);await page.evaluate(()=>qa.change('#chapter-level'));
+  assert.equal((await page.evaluate(()=>qa.literal(document.querySelector('#english')))).split('Whereupon the  king called him vnto his presence,').length,2);
+  await go('/antiquities/?book=10&niese=238&english=lodge1602');if(await page.evaluate(()=>document.documentElement.dataset.theme)!=='dark')await page.locator('#light-toggle').click();await page.waitForFunction(()=>document.documentElement.dataset.theme==='dark');
+  assert(await page.locator('#english .niese-correspondence-note').isVisible());await page.screenshot({path:path.join(out,'Lodge-X-238-dark.png')});
+  await page.locator('#light-toggle').click();await page.waitForFunction(()=>document.documentElement.dataset.theme==='light');assert(await page.locator('#english .niese-correspondence-note').isVisible());await page.screenshot({path:path.join(out,'Lodge-X-238-light.png')});
+  focused.push({book:'10',n:238,status:'PASS',checks:['explicit_Lodge_notice','no_TCP_gap','no_borrowed_words','previous_237_empty_238_next_239','hidden_notes_URL','book_chapter_no_empty_paragraph_or_duplicate_239','light_dark_visibility']});
+ }
+ assert.equal(total,args.includes('--vi-x')?(focusOnly?24:1764):(focusOnly?18:1361));assert.equal(errors.length,0,'No reader JavaScript exceptions');assert.equal(network.length,0,'No failed reader requests');save('LODGE_BATCH_BROWSER_QA.json',{status:'PASS',scope:focusOnly?'FOCUSED_PUBLICATION_SMOKE':(args.includes('--vi-x')?'ALL_1764_EXACT_INTERVALS':'ALL_1361_EXACT_INTERVALS'),completed:total,oracle:'Independent physical traversal of all five pinned frozen masters; actual built-reader selector events and exact text, endpoints and native source features',units:results});save('LODGE_BATCH_FOCUSED_INTERACTION_QA.json',{status:'PASS',cases:focused});
 }
 try{
- if(args.includes('--batch-only'))await verifyBatchUnits();
+ if(args.includes('--theme-only')) {
+  await go('/antiquities/?book=10&niese=238&english=lodge1602');
+  const before=await page.evaluate(()=>document.documentElement.dataset.theme);
+  await page.locator('#light-toggle').click();await page.waitForFunction(t=>document.documentElement.dataset.theme!==t,before);
+  assert(await page.locator('#english .niese-correspondence-note').isVisible());
+  await page.locator('#light-toggle').click();await page.waitForFunction(t=>document.documentElement.dataset.theme===t,before);
+  assert(await page.locator('#english .niese-correspondence-note').isVisible());
+  assert.equal(errors.length,0);assert.equal(network.length,0);save('THEME_CONTROL_QA.json',{status:'PASS',actual_theme_button:true,source_specific_notice_visible_in_both_themes:true});
+ }
+ else if(args.includes('--batch-only'))await verifyBatchUnits();
  else {
  const existing=mode==='baseline'?null:JSON.parse(fs.readFileSync(baselineFile));const regression=[];
  for(const url of cases){await go(url);const d=await page.evaluate(()=>qa.snapshot());const row={url,digest:sha(JSON.stringify(d)),texts:Object.fromEntries(Object.entries(d).map(([k,v])=>[k,{sha256:sha(v.text),characters:v.text.length}]))};if(existing)assert.equal(row.digest,existing.regression.find(r=>r.url===url).digest,'Protected reader '+url);regression.push(row);console.log('Regression '+url);}
@@ -138,7 +170,7 @@ try{
  await page.evaluate(()=>qa.change('#subchapter-level'));assert.equal(await page.locator('#english [data-english-segmentation="containing-context"]').count(),1);await page.evaluate(()=>qa.change('#section-level'));assert.equal(await page.locator('#english [data-english-segmentation="containing-context"]').count(),1);await page.evaluate(()=>qa.change('#bamberg-level'));assert.equal(await page.locator('#english [data-english-segmentation="containing-context"]').count(),1);stateChecks.push('Chapter/Subchapter/Alignment/Bamberg use explicitly labelled Lodge containing Niese context');
  for(const url of ['/antiquities/?book=2&niese=1&english=lodge1602&keep=proof','/antiquities/?book=2&niese=349&english=lodge1602&lodgeNotes=0']){await go(url);const n=Number(new URL(page.url()).searchParams.get('niese'));assert.equal(Number(await page.locator('#english tei-div2[type="niese-section"]').getAttribute('n')),n);if(n===1){assert.equal(await page.locator('#english .lodge-source-context tei-note').count(),1);assert.equal(await page.locator('#english tei-div2[type="niese-section"] > .lodge-source-context').count(),1);await page.evaluate(()=>qa.change('#english-source-selector','whiston'));await page.evaluate(()=>qa.change('#english-source-selector','lodge1602'));assert.equal(new URL(page.url()).searchParams.get('keep'),'proof');}else assert.equal(await page.locator('#english tei-note:visible').count(),0);}
  stateChecks.push('direct endpoints, independent pre-II.1 note context, unrelated query parameter retained');
- for(const b of ['6','20']){await go('/antiquities/?book='+b+'&english=lodge1602');assert.equal(await page.locator('#english-source-selector option[value="lodge1602"]').count(),0);assert.equal(await page.locator('#english-source-selector').inputValue(),'whiston');}stateChecks.push('Unavailable Lodge Books VI–XX fall back gracefully to Whiston');
+ for(const b of ['11','20']){await go('/antiquities/?book='+b+'&english=lodge1602');assert.equal(await page.locator('#english-source-selector option[value="lodge1602"]').count(),0);assert.equal(await page.locator('#english-source-selector').inputValue(),'whiston');}stateChecks.push('Unavailable Lodge Books XI–XX fall back gracefully to Whiston');
  for(const n of ['0','350','not-a-number']){await go('/antiquities/?book=2&english=lodge1602&niese='+n);assert.equal(await page.locator('#unsupported-niese-notice').count(),1);assert.equal(await page.locator('#english tei-p').count(),0);}stateChecks.push('invalid Lodge Niese requests show no substituted text, no II.350');
  save('SOURCE_SWITCH_AND_URL_QA.json',{status:'PASS',all349_source_switch_checks:'PASS',checks:stateChecks});
  save('BROWSER_SUMMARY.json',{status:'PASS',identities:349,section_assertions:['literal_text','exclusive_end','notes','gaps','page_breaks','source_milestones','previous','next','source_switch'],representative_cases:representatives.length,protected_views:regression.length,protected_whiston_intervals:349});
