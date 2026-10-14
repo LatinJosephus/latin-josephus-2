@@ -54,3 +54,5 @@ text once. Every other interval must be nonempty. Historical confidence remains
 Books XI–XV add five frozen Lodge XML derivatives (2,130 identities), with complete independent inverse and section-coordinate receipts. All 154 earlier inventory records remain unchanged; the inventory now contains 159 XML files.
 
 Books XVI–XX add five frozen Lodge XML derivatives (1,772 identities), with complete independent inverse and section-coordinate receipts. All 159 earlier inventory records remain unchanged; the inventory now contains 164 XML files.
+
+Lodge Contra Apionem Books I-II add two frozen derivatives (616 identities), using `--work contra-apionem --unit book-01` or `book-02` with the existing Lodge importer and independent verifier. All 164 earlier records remain unchanged; strict inventory is now 166 XML files. All six MEDIUM boundaries remain HUMAN_APPROVED. No empty intervals. Original TCP paragraphs and lettered milestones are not project chapters; the existing Apion chapter selector displays explicitly qualified containing Niese context.

@@ -29,6 +29,10 @@ for(const name of ['preface','book-01','book-03','book-04','book-05','book-06','
   const relative=`assets/xml/antiquities/English/Lodge1602/${name}.xml`;
   rejection(relative,Buffer.concat([fs.readFileSync(path.join(fixture,relative)),Buffer.from('corruption')]),/Source XML differs/,'Frozen Lodge batch corruption rejected: '+name);
 }
+for(const name of ['book-01','book-02']) {
+ const relative=`assets/xml/contra-apionem/English/Lodge1602/${name}.xml`;
+ rejection(relative,Buffer.concat([fs.readFileSync(path.join(fixture,relative)),Buffer.from('corruption')]),/Source XML differs/,'Frozen Lodge Apion corruption rejected: '+name);
+}
 rejection('_docs/reader-corpus-integrity.json','{}',/manifest changed/,'manifest alteration rejected');
 rejection('assets/data/deh-josephus-concordance.json','{}',/Frozen concordance changed/,'frozen concordance alteration rejected');
 rejection('_docs/lodge1602-bellum-integration.json','{}',/Frozen Lodge source manifest changed/,'frozen Lodge authority alteration rejected');

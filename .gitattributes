@@ -44,3 +44,9 @@
 # Frozen Lodge Antiquities XVI–XX: retain literal source bytes.
 /assets/xml/antiquities/English/Lodge1602/book-1[6789].xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 /assets/xml/antiquities/English/Lodge1602/book-20.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+
+# Frozen Lodge Contra Apionem: retain literal source bytes and inverse evidence.
+/assets/xml/contra-apionem/English/Lodge1602/*.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/assets/data/lodge1602-contra-apionem/*.json -text whitespace=cr-at-eol
+/_docs/lodge1602-contra-apionem-source/* -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+/_docs/lodge1602-contra-apionem-*.json -text whitespace=cr-at-eol

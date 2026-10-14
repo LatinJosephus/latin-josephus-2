@@ -67,6 +67,19 @@ This source licence concerns the TCP transcription; it does not assign a licence
 to the project’s independent scholarly apparatus. The Proem is independently
 accessible as I.1–26; Book I narrative begins at I.27. The complete Antiquities is available in this reader.
 
+### Lodge Contra Apionem Books I–II
+
+The *Contra Apionem* reader offers Thomas Lodge’s two books from *The famous
+and memorable workes of Iosephus* (London, 1602), using EEBO-TCP A04680.
+The original heading describes the work as “WRITTEN AGAINST APION, AS TOVCHING
+THE ANTIQVITIE OF THE IEWES.” The underlying TCP transcription is released
+under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
+LatinJosephus independently aligns all 616 Niese sections, retaining the original
+headings, paragraphs, marginal notes, gaps and source order. Six historically
+MEDIUM boundaries were explicitly human approved; their interwoven or paraphrastic
+correspondences remain source specific. The TCP licence does not assign a licence
+to this independent segmentation apparatus.
+
 ### Corrections
 
 The Latin transcription has been double-checked up to book 8 of the *Antiquities*.  For the rest, the process is ongoing. As such, if you spot an inevitable error or two (or more!), please contact [pollard.richard_matthew@uqam.ca](mailto:pollard.richard_matthew@uqam.ca).

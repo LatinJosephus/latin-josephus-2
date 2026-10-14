@@ -23,7 +23,7 @@ def sha(b):return hashlib.sha256(b).hexdigest()
 GIT_COMPARISON_HASHES={
  'assets/xml/antiquities/Greek/book-02.xml':'f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da',
  'assets/xml/antiquities/Latin/book-02.xml':'f7b2476b4b029918da1bef9b1abe9040e4e22c04b1dcce3d621a813b173bea72'}
-INVENTORY_SHA='b95c4ec059ee0e7a152a2ff79103235e34963ff549a2f794477e1c599e282b62'
+INVENTORY_SHA='35131e8af06554f98c4fa31c5c58bc27c2f42bb47bf4fd7d97af74147c11c62b'
 
 def git_bytes(root,*args):
  return subprocess.check_output(['git','-C',str(root),*args],stderr=subprocess.PIPE,timeout=30)
@@ -353,21 +353,25 @@ def verify_batch(a):
   if not ok:raise ValueError(label)
   assertions.append(label)
  scope={'proem':(1,26,'preface'),'book-01':(27,346,'1'),'book-03':(1,322,'3'),'book-04':(1,331,'4'),'book-05':(1,362,'5'),'book-06':(1,378,'6'),'book-07':(1,394,'7'),'book-08':(1,420,'8'),'book-09':(1,291,'9'),'book-10':(1,281,'10'),'book-11':(1,347,'11'),'book-12':(1,434,'12'),'book-13':(1,433,'13'),'book-14':(1,491,'14'),'book-15':(1,425,'15'),'book-16':(1,404,'16'),'book-17':(1,355,'17'),'book-18':(1,379,'18'),'book-19':(1,366,'19'),'book-20':(1,268,'20')}
+ apion=a.work=='contra-apionem'
+ if apion:scope={'book-01':(1,320,'1'),'book-02':(1,296,'2')}
  lo,hi,key=scope[a.unit];basename='preface' if key=='preface' else 'book-'+key.zfill(2)
- prefix='english-lodge1602-antiquities-'+('preface' if key=='preface' else 'book'+key.zfill(2));root=a.repo_root;authority=a.authority_dir
+ prefix=('english-lodge1602-apion'+key if apion else 'english-lodge1602-antiquities-'+('preface' if key=='preface' else 'book'+key.zfill(2)));root=a.repo_root;authority=a.authority_dir
  check(authority is not None and a.original_source is not None,'Frozen authority and original TCP required for batch verification')
  new_batch=key!='preface' and int(key)>=6
  archive=authority/('Lodge1602_Antiquities_BATCH_VI_X_FINAL_FROZEN_SCHOLARLY_PACKET.zip' if new_batch else 'Lodge1602_Antiquities_BATCH_I_III_V_FINAL_FROZEN_SCHOLARLY_PACKET.zip')
  if key!='preface' and int(key)>=11:archive=authority/'Lodge1602_Antiquities_BATCH_XI_XV_FINAL_FROZEN_SCHOLARLY_PACKET.zip'
  if key!='preface' and int(key)>=16:archive=authority/'Lodge1602_Antiquities_BATCH_XVI_XX_FINAL_FROZEN_SCHOLARLY_PACKET.zip'
- check(sha(archive.read_bytes())==('27c84528e17c8eebf8e8a320ee147a9e2b1e9f438cbf65bfce061e299c596b29' if key!='preface' and int(key)>=16 else '8d48df45df82a91e1667fa72c60ac44174b53c0cb0b9182c92e65fadaa6315e1' if key!='preface' and int(key)>=11 else '804662293e12910f00e955835217ffd9d504eaef700dbf37a1795310dc91b146' if new_batch else '21ee32b9f6d5e375ced2839e9cacc9b2e77619a93ddd105fb83280c22282c783'),'Pinned immutable scholarly ZIP')
+ if apion:archive=authority/'Lodge1602_ContraApionem_FINAL_FROZEN_SCHOLARLY_PACKET.zip'
+ check(sha(archive.read_bytes())==('90aeaaa6b0cc9f6f3c1a5c3c92f167e729df91f04b33184b2d0fa21b7ec4247f' if apion else '27c84528e17c8eebf8e8a320ee147a9e2b1e9f438cbf65bfce061e299c596b29' if key!='preface' and int(key)>=16 else '8d48df45df82a91e1667fa72c60ac44174b53c0cb0b9182c92e65fadaa6315e1' if key!='preface' and int(key)>=11 else '804662293e12910f00e955835217ffd9d504eaef700dbf37a1795310dc91b146' if new_batch else '21ee32b9f6d5e375ced2839e9cacc9b2e77619a93ddd105fb83280c22282c783'),'Pinned immutable scholarly ZIP')
  with zipfile.ZipFile(archive) as z:
   def frozen(relative):
    b=z.read(relative);check((authority/relative).read_bytes()==b,'Exact sealed authority '+relative);return b
   master=frozen(a.unit+'/SEGMENTED_FINAL.xml');regbytes=frozen(a.unit+'/NIESE_BOUNDARY_REGISTER.tsv');extraction=frozen(a.unit+'/CERTIFIED_SOURCE.xml');freeze_bytes=frozen('FINAL_FREEZE_MANIFEST.json');literal_bytes=frozen(a.unit+'/LODGE_LITERAL.txt');recipe=json.loads(frozen(a.unit+'/EXTRACTION_RECIPE.json'));human=json.loads(frozen('HUMAN_ADJUDICATION_LOG.json'));cert=json.loads(frozen(a.unit+'/INDEPENDENT_QA.json'))
  freeze=json.loads(freeze_bytes);check(freeze['status']=='FINAL_SCHOLARLY_FREEZE_CERTIFIED' and freeze['outstanding_adjudications']==0,'Closed human authority')
  for suffix,b in [('frozen.xml',master),('final.tsv',regbytes),('freeze-manifest.json',freeze_bytes)]:check((root/(SOURCEPATH+basename+'-'+suffix)).read_bytes()==b,'Repository authority copy '+suffix)
- data=(a.xml or root/('assets/xml/antiquities/English/Lodge1602/'+basename+'.xml')).read_bytes();metabytes=(a.metadata or root/('assets/data/lodge1602-antiquities/'+basename+'.json')).read_bytes();metadata=json.loads(metabytes);ledger=json.loads((a.ledger or root/('_docs/lodge1602-antiquities-'+basename.replace('-','')+'-integration.json')).read_bytes());register=readrows(regbytes)
+ work='contra-apionem' if apion else 'antiquities'
+ data=(a.xml or root/('assets/xml/'+work+'/English/Lodge1602/'+basename+'.xml')).read_bytes();metabytes=(a.metadata or root/('assets/data/lodge1602-'+work+'/'+basename+'.json')).read_bytes();metadata=json.loads(metabytes);ledger=json.loads((a.ledger or root/('_docs/lodge1602-'+work+'-'+basename.replace('-','')+'-integration.json')).read_bytes());register=readrows(regbytes)
  authorities={'original_TCP':HASH['original_TCP'],'scholarly_master':sha(master),'final_register':sha(regbytes),'certified_extraction':sha(extraction),'freeze_manifest':sha(freeze_bytes),'scholarly_zip':sha(archive.read_bytes())}
  check(metadata['authorities']==ledger['authorities']==authorities,'Strict batch provenance binding')
  check(metadata['book_key']==key and metadata['authority_unit']==a.unit,'Unit identity and separate Proem')
@@ -464,13 +468,36 @@ def verify_batch(a):
  check(metadata['marginal_notes']==[x for x in metadata['source_node_aliases'] if x['source_tag']=='note'],'Every marginal note retained once')
  check(metadata['pre_first_identity_context']['notes']==[x['production_id'] for x in metadata['marginal_notes'] if x['physical_niese_interval'] is None] and not metadata['pre_first_identity_context']['note_anchor_relocated'],'Unmoved pre-first source context')
  for c in metadata['project_navigation_covers']:check(lo<=c['start_niese']<c['end_niese_exclusive']<=hi+1 and c['precision']=='CONTAINING_NIESE_CONTEXT_NOT_NATIVE_CHAPTER_EQUIVALENCE','Independent traditional navigation cover '+c['project_boundary_id'])
- expected_approvals=[r['identity'] for r in register if r['identity'] in ({x['identity'] for x in human['records'] if x.get('identity')}|{i for x in human['records'] for i in x.get('affected_identities',[])})] if key!='preface' and int(key)>=11 else [x for x in (freeze['all_five_HUMAN_APPROVED'] if new_batch else freeze['all_eight_HUMAN_APPROVED']) if x in [r['identity'] for r in register]];check(approvals==expected_approvals,'Frozen human approvals reflected without confidence upgrade')
+ expected_approvals=[r['identity'] for r in register if r['confidence']=='MEDIUM'] if apion else [r['identity'] for r in register if r['identity'] in ({x['identity'] for x in human['records'] if x.get('identity')}|{i for x in human['records'] for i in x.get('affected_identities',[])})] if key!='preface' and int(key)>=11 else [x for x in (freeze['all_five_HUMAN_APPROVED'] if new_batch else freeze['all_eight_HUMAN_APPROVED']) if x in [r['identity'] for r in register]];check(approvals==expected_approvals,'Frozen human approvals reflected without confidence upgrade')
+ if apion:
+  # Independently traverse the current Latin tree, counting character data
+  # before chapter milestones. A mid-identity endpoint needs containing overlap.
+  latin=parse((root/('assets/xml/contra-apionem/Latin/'+basename+'.xml')).read_bytes())
+  chapter_starts=[];current_identity=1
+  def chapter_walk(el,paragraph_text=None):
+   nonlocal current_identity
+   match=re.search(r'-num(\d+)$',el.get(ID,''))
+   if match:current_identity=int(match[1])
+   if name(el)=='p':paragraph_text=[]
+   if name(el)=='milestone' and el.get('unit')=='chapter':chapter_starts.append((int(el.get('n')),current_identity,bool(''.join(paragraph_text or []).strip())))
+   if name(el) in {'num','note'}:return
+   if paragraph_text is not None and el.text:paragraph_text.append(el.text)
+   for child in el:
+    chapter_walk(child,paragraph_text)
+    if paragraph_text is not None and child.tail:paragraph_text.append(child.tail)
+  chapter_walk(latin)
+  expected_covers=[(ch,start,chapter_starts[i+1][1]+int(chapter_starts[i+1][2]) if i+1<len(chapter_starts) else hi+1) for i,(ch,start,mid) in enumerate(chapter_starts)]
+  check([(x['chapter'],x['start_niese'],x['end_niese_exclusive']) for x in metadata['project_navigation_covers']]==expected_covers,'Independent project chapter containing intervals, including mid-Niese overlap')
+  check(metadata['human_adjudications']==[r for r in human['records'] if r['identity'] in approvals],'Permanent human evidence and alternatives retained')
+  check(all(r['status']=='HUMAN_APPROVED' and r['approved_TCP_byte']==int(next(s for s in sections if s['identity']==r['identity'])['source_coordinate']['original_TCP_raw_byte_offset']) and r['approved_TCP_exclusive_endpoint']==int(next(x for x in register if x['identity']==r['identity'])['original_TCP_exclusive_end_byte']) for r in metadata['human_adjudications']),'All six immutable approved cuts and exclusive endpoints')
  if a.restore_dir:
   a.restore_dir.mkdir(parents=True,exist_ok=True);(a.restore_dir/'restored-frozen-master.xml').write_bytes(restored);(a.restore_dir/'restored-certified-extraction.xml').write_bytes(stripped)
  return {'status':'PASS','certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN','unit':a.unit,'identity_coverage':len(numbers),'assertions_passed':len(assertions),'source_counts':counts,'historical_confidence':metadata['historical_confidence_counts'],'human_approved':approvals,'pending_adjudications':[],'exact_production_to_scholarly_master':{'sha256':sha(restored),'byte_identical':True},'exact_scholarly_master_to_extraction':{'sha256':sha(stripped),'byte_identical':True},'complete_original_TCP_extraction':'EXACT BYTE-FOR-BYTE PASS','all_section_partitions_and_source_coordinates':'PASS','all_native_structure_and_physical_marker_positions':'PASS','derivative_sha256':sha(data),'metadata_sha256':sha(metabytes)}
 
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--repo-root',type=Path,required=True);ap.add_argument('--xml',type=Path);ap.add_argument('--metadata',type=Path);ap.add_argument('--ledger',type=Path);ap.add_argument('--original-source',type=Path);ap.add_argument('--authority-dir',type=Path);ap.add_argument('--restore-dir',type=Path);ap.add_argument('--report',type=Path);ap.add_argument('--unit',choices=['proem','book-01','book-03','book-04','book-05','book-06','book-07','book-08','book-09','book-10','book-11','book-12','book-13','book-14','book-15','book-16','book-17','book-18','book-19','book-20']);a=ap.parse_args()
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--repo-root',type=Path,required=True);ap.add_argument('--xml',type=Path);ap.add_argument('--metadata',type=Path);ap.add_argument('--ledger',type=Path);ap.add_argument('--original-source',type=Path);ap.add_argument('--authority-dir',type=Path);ap.add_argument('--restore-dir',type=Path);ap.add_argument('--report',type=Path);ap.add_argument('--unit',choices=['proem','book-01','book-03','book-04','book-05','book-06','book-07','book-08','book-09','book-10','book-11','book-12','book-13','book-14','book-15','book-16','book-17','book-18','book-19','book-20','book-02']);ap.add_argument('--work',choices=['antiquities','contra-apionem'],default='antiquities');a=ap.parse_args()
+ global SOURCEPATH
+ if a.work=='contra-apionem':SOURCEPATH='_docs/lodge1602-contra-apionem-source/'
  try:report=verify_batch(a) if a.unit else verify(a)
  except Exception as e:
   report={'status':'FAIL','reason':str(e),'certification_scope':'DATA_LAYER_ONLY; browser/renderer NOT_RUN'}

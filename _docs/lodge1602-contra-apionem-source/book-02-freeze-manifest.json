@@ -1,0 +1,115 @@
+{
+  "status": "FINAL_SCHOLARLY_FREEZE_CERTIFIED",
+  "recorded_local": "2026-10-14T16:18:52.081512-04:00",
+  "timezone": "America/Toronto",
+  "scope": {
+    "I": 320,
+    "II": 296,
+    "total": 616
+  },
+  "historical_confidence_counts": {
+    "HIGH": 610,
+    "MEDIUM": 6,
+    "LOW": 0
+  },
+  "active_status_counts": {
+    "HIGH_ACCEPTED_UNDER_ESTABLISHED_WORKFLOW": 610,
+    "HUMAN_APPROVED": 6
+  },
+  "human_log_sha256": "ca54a389549595d651f50834101d9ba746544718b047ba4665bc6cb9da687e8a",
+  "outstanding_adjudications": 0,
+  "original_TCP_sha256": "3ca2646644d8c91cf35e8575a6ffbdeb5ecbd378c502f53fd9445d7da7431de6",
+  "relocated_boundaries": [],
+  "changed_exclusive_endpoints": [],
+  "all_final_XML_byte_identical_to_candidates": true,
+  "zero_length_intervals": [],
+  "segmentation_repeated": false,
+  "production_integration_performed": false,
+  "private_XML_marker_labels_and_cert_values_retained": true,
+  "read_only_seal_required": true,
+  "subsequent_changes_require_new_versioned_packet": true,
+  "frozen_directory": "C:\\Users\\Pollard_R\\Git\\Segmentation resources\\Lodge1602_ContraApionem_FINAL_FROZEN_20261014-161714",
+  "archive": "C:\\Users\\Pollard_R\\Git\\Segmentation resources\\Lodge1602_ContraApionem_FINAL_FROZEN_20261014-161714\\Lodge1602_ContraApionem_FINAL_FROZEN_SCHOLARLY_PACKET.zip",
+  "units": [
+    {
+      "unit": "book-01",
+      "book": "I",
+      "count": 320,
+      "historical_confidence": {
+        "HIGH": 316,
+        "MEDIUM": 4,
+        "LOW": 0
+      },
+      "human_approved_identities": [
+        "I.25",
+        "I.207",
+        "I.233",
+        "I.259"
+      ],
+      "pending": [],
+      "status": "FINAL_SCHOLARLY_FREEZE_CERTIFIED",
+      "QA": "PASS",
+      "QA_checks": 4004,
+      "source_reconstruction": "EXACT BYTE-FOR-BYTE PASS",
+      "section_level_reconstruction": "PASS for every completed identity",
+      "parsed_tree_preservation": "PASS all original elements, attributes, whitespace, note attachments, gaps, milestones and page breaks",
+      "source_counts": {
+        "div": 1,
+        "pb": 18,
+        "head": 1,
+        "milestone": 106,
+        "g": 328,
+        "p": 29,
+        "seg": 1,
+        "hi": 369,
+        "note": 82,
+        "gap": 52,
+        "desc": 52,
+        "q": 2,
+        "l": 6
+      },
+      "deterministic_milestone_bytes": "PASS",
+      "final_XML_sha256": "4c8e1eb4696a6ea302ce807f2298d226a88594ec56cb7b7cb4f2e6c8cb178d1a",
+      "final_register_sha256": "7b1e208973953a85ef8e2be5ac9cb198d2b08060026f6415b7019d9fbd6edf89"
+    },
+    {
+      "unit": "book-02",
+      "book": "II",
+      "count": 296,
+      "historical_confidence": {
+        "HIGH": 294,
+        "MEDIUM": 2,
+        "LOW": 0
+      },
+      "human_approved_identities": [
+        "II.258",
+        "II.278"
+      ],
+      "pending": [],
+      "status": "FINAL_SCHOLARLY_FREEZE_CERTIFIED",
+      "QA": "PASS",
+      "QA_checks": 3512,
+      "source_reconstruction": "EXACT BYTE-FOR-BYTE PASS",
+      "section_level_reconstruction": "PASS for every completed identity",
+      "parsed_tree_preservation": "PASS all original elements, attributes, whitespace, note attachments, gaps, milestones and page breaks",
+      "source_counts": {
+        "div": 1,
+        "pb": 17,
+        "head": 1,
+        "milestone": 101,
+        "byline": 1,
+        "g": 312,
+        "p": 29,
+        "seg": 1,
+        "hi": 214,
+        "note": 97,
+        "q": 3,
+        "gap": 8,
+        "desc": 8
+      },
+      "deterministic_milestone_bytes": "PASS",
+      "final_XML_sha256": "db5a4b82e554596b459948b660e806d2edfb46ab00c18115ff204e8b9e50e38c",
+      "final_register_sha256": "77aad6fd80a79fac2c0d69f26a9fe8bd8681aca3bff5229d238f98af3c1a1bf5"
+    }
+  ]
+}

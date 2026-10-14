@@ -6,12 +6,13 @@
 // Optional --base-url, --port, --browser-executable and --playwright-module.
 import fs from 'node:fs'; import path from 'node:path'; import http from 'node:http'; import crypto from 'node:crypto'; import assert from 'node:assert/strict'; import {createRequire} from 'node:module';
 const args=process.argv.slice(2), opt=(k,d)=>args.includes(k)?args[args.indexOf(k)+1]:d;
+const apion=args.includes('--apion');
 const root=path.resolve(opt('--root','.')),site=path.resolve(opt('--site','_site')),out=path.resolve(opt('--output','qa-output')),mode=opt('--mode','integrated');assert(args.includes('--output'),'Pass an explicit external --output directory');assert(out!==root&&!out.startsWith(root+path.sep),'QA results must remain outside the source checkout');fs.mkdirSync(out,{recursive:true});
 const require=createRequire(import.meta.url),pw=require(opt('--playwright-module','playwright'));
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 assert.equal(sha(fs.readFileSync(path.join(root,'_docs/lodge1602-antiquities-source/book-02-frozen.xml'))),'ba43e5c5937a1c8a82a0575886d9747121600b30a6430e50f90fcf1c16772e8b');assert.equal(sha(fs.readFileSync(path.join(root,'_docs/lodge1602-antiquities-source/book-02-final.tsv'))),'a5b667891b6c5ae35b44b9c7b3923bcc5f886c7ae217493f4a4b0e5af2418863'); const save=(n,d)=>fs.writeFileSync(path.join(out,n),JSON.stringify(d,null,2)+'\n');
 const errors=[],network=[];let server; const supplied=opt('--base-url',null);
-if(!supplied){server=http.createServer((req,res)=>{const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);let file=path.resolve(site,'.'+pathname);if(!file.startsWith(site+path.sep)&&file!==site){res.writeHead(403).end();return;}if(pathname.startsWith('/__qa/'))file=path.join(root,'_docs/lodge1602-antiquities-source',pathname.slice(6));if(pathname==='/assets/js/renderTei.js'&&opt('--renderer-override',null))file=path.resolve(opt('--renderer-override'));if(pathname==='/assets/css/tei.css'&&opt('--stylesheet-override',null))file=path.resolve(opt('--stylesheet-override'));if(fs.existsSync(file)&&fs.statSync(file).isDirectory())file=path.join(file,'index.html');if(!fs.existsSync(file)){res.writeHead(404).end();return;}res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.css':'text/css','.xml':'application/xml','.json':'application/json','.tsv':'text/plain'})[path.extname(file)]||'application/octet-stream');res.end(fs.readFileSync(file));});await new Promise(r=>server.listen(Number(opt('--port',0)),'127.0.0.1',r));}
+if(!supplied){server=http.createServer((req,res)=>{const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);let file=path.resolve(site,'.'+pathname);if(!file.startsWith(site+path.sep)&&file!==site){res.writeHead(403).end();return;}if(pathname.startsWith('/__qa/'))file=path.join(root,apion?'_docs/lodge1602-contra-apionem-source':'_docs/lodge1602-antiquities-source',pathname.slice(6));if(pathname==='/assets/js/renderTei.js'&&opt('--renderer-override',null))file=path.resolve(opt('--renderer-override'));if(pathname==='/assets/css/tei.css'&&opt('--stylesheet-override',null))file=path.resolve(opt('--stylesheet-override'));if(fs.existsSync(file)&&fs.statSync(file).isDirectory())file=path.join(file,'index.html');if(!fs.existsSync(file)){res.writeHead(404).end();return;}res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.css':'text/css','.xml':'application/xml','.json':'application/json','.tsv':'text/plain'})[path.extname(file)]||'application/octet-stream');res.end(fs.readFileSync(file));});await new Promise(r=>server.listen(Number(opt('--port',0)),'127.0.0.1',r));}
 const base=supplied||`http://127.0.0.1:${server.address().port}`;
 const browser=await pw.chromium.launch({headless:true,...(opt('--browser-executable',null)?{executablePath:opt('--browser-executable')}:{} )});const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();
 page.setDefaultTimeout(60000);page.setDefaultNavigationTimeout(60000);
@@ -27,9 +28,9 @@ async function init(){await page.evaluate(()=>{
  });}
 async function go(url){await page.goto(base+url,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.querySelector('#english tei-p')||document.querySelector('#english .niese-correspondence-note')||document.querySelector('#english .structural-unavailable')||document.querySelector('#unsupported-niese-notice'),{timeout:60000});await init();}
 async function installOracle(name,hi){
- return await page.evaluate(async ({raw,name,hi})=>{
+ return await page.evaluate(async ({raw,name,hi,work})=>{
   const d=new DOMParser().parseFromString(raw,'application/xml');if(d.querySelector('parsererror'))throw Error('Frozen XML invalid');
-  const metadata=await (await fetch('/assets/data/lodge1602-antiquities/'+name+'.json')).json();
+  const metadata=await (await fetch('/assets/data/lodge1602-'+work+'/'+name+'.json')).json();
   const letters=['12','13','14','19','20'].includes(metadata.book_key);
   const excluded=new Set(['note','head','argument','trailer','byline','opener','closer','signed','label']);
   qa.literal=n=>{const walk=(node,inP=false,excludedHere=false,inChapter=false,inLetter=false)=>{if(node.nodeType===3)return inP&&!excludedHere?node.data:'';if(node.nodeType!==1&&node.nodeType!==11)return '';const name=(node.localName||'').replace(/^tei-/,'');if(node.nodeType===1&&(!node.localName.startsWith('tei-')||node.matches('tei-num.niese-generated,tei-milestone'))){if(node.matches('.lodge-source-context,.lodge-source-controls,.niese-context-note,.niese-correspondence-note'))return '';if(node.matches('tei-num.niese-generated,tei-milestone'))return '';}
@@ -44,7 +45,7 @@ async function installOracle(name,hi){
   qa.actual=()=>{const view=document.querySelector('#english tei-div2[type="niese-section"]');if(!view)throw Error('No exact Lodge section');
    const rows=tag=>[...view.querySelectorAll('tei-'+tag)].filter(n=>!n.closest('.lodge-source-context')&&(tag!=='milestone'||n.getAttribute('unit')!=='niese')).map(n=>({attrs:attrs(n),text:n.textContent}));return {text:qa.literal(view),notes:rows('note'),gaps:rows('gap'),pbs:rows('pb'),native:rows('milestone')};};
   return {sections,fullText:sections.map(s=>s.text).join(''),counts:{notes:sections.flatMap(s=>s.notes).length,gaps:sections.flatMap(s=>s.gaps).length,pbs:sections.flatMap(s=>s.pbs).length,native:sections.flatMap(s=>s.native).length},sourceHash:metadata.authorities.frozen_XML};
- },{raw:fs.readFileSync(path.join(root,'_docs/lodge1602-antiquities-source/'+name+'-frozen.xml'),'utf8'),name,hi});
+ },{raw:fs.readFileSync(path.join(root,'_docs/lodge1602-'+(apion?'contra-apionem':'antiquities')+'-source/'+name+'-frozen.xml'),'utf8'),name,hi,work:apion?'contra-apionem':'antiquities'});
 }
 const cases=[];for(let b=1;b<=20;b++){const start=b===1?27:1;cases.push(`/antiquities/?book=${b}&niese=${start}`);}cases.push('/antiquities/?book=preface&niese=1','/antiquities/?book=preface&niese=26','/antiquities/?book=1&niese=346','/antiquities/?book=7&niese=69','/antiquities/?book=7&niese=99','/antiquities/?book=9&niese=51','/antiquities/?book=11&niese=200','/antiquities/?book=16&niese=200','/antiquities/?book=2&chapter=1','/antiquities/?book=2&chapter=13&subchapter=3','/bellum-judaicum/?book=1&niese=24','/bellum-judaicum/?book=1&niese=24&english=lodge1602','/bellum-judaicum/?book=1&niese=24&english=lodge1602&lodgeNotes=0','/bellum-judaicum/?book=3&chapter=1','/deh/?book=1','/contra-apionem/?book=2&num=51');
 const baselineFile=opt('--baseline',path.join(out,'BASELINE_BROWSER.json'));
@@ -152,8 +153,56 @@ async function verifyBatchUnits(){
  }
  assert.equal(total,finalBatch?(focusOnly?17:1772):latest?(focusOnly?67:2130):args.includes('--vi-x')?(focusOnly?24:1764):(focusOnly?18:1361));assert.equal(errors.length,0,'No reader JavaScript exceptions');assert.equal(network.length,0,'No failed reader requests');save('LODGE_BATCH_BROWSER_QA.json',{status:'PASS',scope:focusOnly?'FOCUSED_PUBLICATION_SMOKE':(finalBatch?'ALL_1772_EXACT_INTERVALS':latest?'ALL_2130_EXACT_INTERVALS':args.includes('--vi-x')?'ALL_1764_EXACT_INTERVALS':'ALL_1361_EXACT_INTERVALS'),completed:total,oracle:'Independent physical traversal of all five pinned frozen masters; actual built-reader selector events and exact text, endpoints and native source features',units:results});save('LODGE_BATCH_FOCUSED_INTERACTION_QA.json',{status:'PASS',cases:focused});
 }
+
+async function verifyApion(){
+ const focusOnly=args.includes('--focused-only'),units=[['book-01','1',320,'4c8e1eb4696a6ea302ce807f2298d226a88594ec56cb7b7cb4f2e6c8cb178d1a'],['book-02','2',296,'db5a4b82e554596b459948b660e806d2edfb46ab00c18115ff204e8b9e50e38c']],results=[],focused=[];
+ for(const [name,key,hi,hash] of units){
+  assert.equal(sha(fs.readFileSync(path.join(root,'_docs/lodge1602-contra-apionem-source/'+name+'-frozen.xml'))),hash);
+  await go('/contra-apionem/?book='+key+'&niese=1&english=lodge1602');const oracle=await installOracle(name,hi);
+  const important=key==='1'?[1,25,207,233,259,320]:[1,52,258,277,278,296];
+  await page.exposeFunction('apionCheckpoint'+key,rows=>{save(name+'-INTERVAL_CHECKPOINT.json',{status:'CHECKPOINT',frozen_sha256:hash,rows});console.log('Apion '+key+' checkpoint '+rows.length);});
+  const rows=await page.evaluate(async({hi,selected,key})=>{const rows=[];for(const n of selected){
+   if(n!==1)await qa.change('#section-selector',n);const actual=qa.actual(),expected=qa.expected[n];
+   if(actual.text!==expected.text)throw Error('Frozen source text/exclusive endpoint '+key+'.'+n+' '+JSON.stringify({actual:actual.text.slice(0,150),expected:expected.text.slice(0,150)}));
+   for(const k of ['notes','gaps','pbs','native'])if(JSON.stringify(actual[k])!==JSON.stringify(expected[k]))throw Error('Frozen source features '+key+'.'+n+' '+k);
+   const view=document.querySelector('#english tei-div2[type="niese-section"]'),ids=[...document.querySelectorAll('#english [id]')].map(e=>e.id);
+   if(new Set(ids).size!==ids.length)throw Error('Duplicate source DOM ID '+key+'.'+n);
+   if(Number(view.dataset.nieseStart)!==n||Number(view.dataset.nieseEndExclusive)!==n+1||Number(document.querySelector('#section-selector').value)!==n||Number(new URL(location.href).searchParams.get('niese'))!==n)throw Error('Selected identity/endpoint/URL '+key+'.'+n);
+   if(document.querySelector('#niese-previous').disabled!==(n===1)||document.querySelector('#niese-next').disabled!==(n===hi))throw Error('Previous/next endpoint controls '+key+'.'+n);
+   if(document.querySelectorAll('#english [data-original],#english .niese-correspondence-note,#english .tei-omission-notice').length)throw Error('Duplicate CETEI or false absence '+key+'.'+n);
+   rows.push({n,text:actual.text,notes:actual.notes.length,gaps:actual.gaps.length,page_breaks:actual.pbs.length,native_milestones:actual.native.length,exclusive_end:n+1,status:'PASS'});
+   if(rows.length%75===0)await window['apionCheckpoint'+key](rows);
+  }await window['apionCheckpoint'+key](rows);return rows;},{hi,selected:focusOnly?important:Array.from({length:hi},(_,i)=>i+1),key});
+  for(const n of important){
+   await go('/contra-apionem/?book='+key+'&niese='+n+'&english=lodge1602&keep=proof');await installOracle(name,hi);assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n].text);
+   await page.evaluate(()=>qa.change('#english-source-selector','whiston'));assert.equal(Number(await page.locator('#section-selector').inputValue()),n);
+   await page.evaluate(()=>qa.change('#english-source-selector','lodge1602'));assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n].text);assert.equal(new URL(page.url()).searchParams.get('keep'),'proof');
+   for(const lang of ['greek','latin']){await page.locator('#'+lang+'-pane-select').check();assert.equal(Number(await page.locator('#section-selector').inputValue()),n);assert((await page.locator('#'+lang+' tei-p').count())>0);}
+   if(n<hi){await page.evaluate(()=>qa.click('#niese-next'));assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n+1].text);await page.goBack();await page.waitForFunction(n=>Number(document.querySelector('#section-selector').value)===n,n);assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n].text);await page.goForward();await page.waitForFunction(n=>Number(document.querySelector('#section-selector').value)===n+1,n);await page.evaluate(n=>qa.change('#section-selector',n),n);}
+   if(n>1){await page.evaluate(()=>qa.click('#niese-previous'));assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n-1].text);await page.evaluate(n=>qa.change('#section-selector',n),n);}
+   await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(n=>document.querySelector('#english tei-div2[type="niese-section"]')?.getAttribute('n')===String(n),n);await init();await installOracle(name,hi);assert.equal(await page.evaluate(()=>qa.actual().text),oracle.sections[n].text);
+   focused.push({book:key,n,status:'PASS',direct_URL:true,source_switch:true,Greek_Latin_visibility:true,previous_next:true,back_forward:true,refresh:true});
+  }
+  await go('/contra-apionem/?book='+key+'&english=lodge1602');await installOracle(name,hi);
+  const full=await page.evaluate(()=>{const book=document.querySelector('#english tei-div1');return {text:qa.literal(book),notes:book.querySelectorAll('tei-note').length,gaps:book.querySelectorAll('tei-gap').length,pbs:book.querySelectorAll('tei-pb').length,native:book.querySelectorAll('tei-milestone:not([unit="niese"])').length,paragraphs:book.querySelectorAll('tei-p').length,heads:book.querySelectorAll('tei-head').length,bylines:book.querySelectorAll('tei-byline').length,sourceChapters:book.querySelectorAll('tei-div[type="chapter"]').length,duplicates:book.querySelectorAll('[data-original]').length};});
+  assert.equal(full.text,oracle.fullText);for(const k of ['notes','gaps','pbs','native'])assert.equal(full[k],oracle.counts[k]);assert.equal(full.paragraphs,29);assert.equal(full.heads,1);assert.equal(full.bylines,key==='2'?1:0);assert.equal(full.sourceChapters,0);assert.equal(full.duplicates,0);assert.equal(await page.locator('#lodge-native-chapter').count(),0);
+  const covers=await page.evaluate(()=>qa.metadata.project_navigation_covers);for(const cover of covers){await page.evaluate(()=>qa.change('#chapter-level'));await page.evaluate(ch=>qa.change('#chapter-selector',ch),cover.chapter);const actual=await page.evaluate(()=>qa.literal(document.querySelector('#english')));assert.equal(actual,oracle.sections.slice(cover.start_niese,cover.end_niese_exclusive).map(x=>x.text).join(''),'Project chapter containing Niese context '+key+'.'+cover.chapter);}
+  await go('/contra-apionem/?book='+key+'&niese='+(key==='1'?233:278)+'&english=lodge1602&lodgeNotes=0');await installOracle(name,hi);assert.equal(await page.locator('#english tei-note:visible').count(),0);assert.equal(await page.locator('#lodge-notes-visible').isChecked(),false);
+  await page.evaluate(()=>qa.click('#niese-previous'));assert.equal(new URL(page.url()).searchParams.get('lodgeNotes'),'0');await page.evaluate(()=>qa.change('#english-source-selector','whiston'));await page.evaluate(()=>qa.change('#english-source-selector','lodge1602'));assert.equal(await page.locator('#english tei-note:visible').count(),0);await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.querySelector('#english tei-div2[type="niese-section"]'));await init();assert.equal(await page.locator('#english tei-note:visible').count(),0);await page.locator('#lodge-notes-visible').check();assert.equal(new URL(page.url()).searchParams.has('lodgeNotes'),false);
+  if(key==='2'){assert.equal(await page.locator('#english tei-note').filter({hasText:'The Iewes strict obserua'}).count(),1);assert.equal(await page.locator('#english tei-note:visible').filter({hasText:'The Iewes strict obserua'}).count(),1);await page.evaluate(()=>qa.click('#niese-next'));assert.equal(await page.locator('#english tei-note').filter({hasText:'The Iewes strict obserua'}).count(),0);}
+  for(const theme of ['dark','light']){if(await page.evaluate(()=>document.documentElement.dataset.theme)!==theme)await page.locator('#light-toggle').click();await page.waitForFunction(t=>document.documentElement.dataset.theme===t,theme);await page.waitForTimeout(650);await page.screenshot({path:path.join(out,'Apion-'+key+'-'+theme+'.png')});assert(await page.locator('#english tei-div2[type="niese-section"]').isVisible());}
+  results.push({book:key,identities:rows.length,status:'PASS',frozen_sha256:hash,source_counts:full,sections:rows,chapter_contexts:covers.length});save('APION_BROWSER_QA.json',{status:'RUNNING',completed:results.reduce((s,r)=>s+r.identities,0),books:results});
+ }
+ await go('/contra-apionem/?book=1&niese=320&english=lodge1602');await page.evaluate(()=>qa.change('#book-selector','2'));assert.equal(await page.locator('#english-source-selector').inputValue(),'lodge1602');await page.evaluate(()=>qa.change('#section-level'));await page.evaluate(()=>qa.change('#section-selector',1));await installOracle('book-02',296);assert.equal(await page.evaluate(()=>qa.actual().text),await page.evaluate(()=>qa.expected[1].text));
+ await go('/contra-apionem/?book=2&niese=296&english=lodge1602');await installOracle('book-02',296);assert.equal(await page.evaluate(()=>qa.actual().text),await page.evaluate(()=>qa.expected[296].text));assert(await page.locator('#niese-next').isDisabled());
+ await page.goto(base+'/about/',{waitUntil:'domcontentloaded'});assert.match(await page.locator('#lodge-contra-apionem-books-iii + p').textContent(),/616/);
+ assert.equal(errors.length,0);assert.equal(network.length,0);
+ save('APION_BROWSER_QA.json',{status:'PASS',scope:focusOnly?'FOCUSED_PUBLICATION_SMOKE':'ALL_616_EXACT_FROZEN_INTERVALS',completed:results.reduce((s,r)=>s+r.identities,0),oracle:'Independent physical traversal of pinned frozen scholarly XML; all literal words, whitespace, exclusive endpoints, notes, gaps, page breaks and native milestones compared to actual reader',books:results,focused,book_transition:'PASS',end_of_work:'PASS',notes_preference:'PASS',native_structure:'PASS',attribution:'PASS'});
+}
+
 try{
- if(args.includes('--theme-only')) {
+ if(apion) await verifyApion();
+ else if(args.includes('--theme-only')) {
   await go('/antiquities/?book=10&niese=238&english=lodge1602');
   const before=await page.evaluate(()=>document.documentElement.dataset.theme);
   await page.locator('#light-toggle').click();await page.waitForFunction(t=>document.documentElement.dataset.theme!==t,before);
@@ -167,7 +216,13 @@ try{
  const existing=mode==='baseline'?null:JSON.parse(fs.readFileSync(baselineFile));const regression=[];
  for(const url of cases){await go(url);const d=await page.evaluate(()=>qa.snapshot());const row={url,digest:sha(JSON.stringify(d)),texts:Object.fromEntries(Object.entries(d).map(([k,v])=>[k,{sha256:sha(v.text),characters:v.text.length}]))};if(existing)assert.equal(row.digest,existing.regression.find(r=>r.url===url).digest,'Protected reader '+url);regression.push(row);console.log('Regression '+url);}
  await go('/antiquities/?book=2&niese=1');const whiston=await page.evaluate(async()=>{const rows=[];for(let n=1;n<=349;n++){if(n>1)await qa.change('#niese-selector',n);rows.push({n,text:qa.pane(),protected:qa.snapshot()});}return rows;});const whistonDigests=whiston.map(r=>({n:r.n,sha256:sha(r.text),characters:r.text.length}));const comparisonDigests=whiston.map(r=>({n:r.n,Greek:sha(JSON.stringify(r.protected.greek)),Latin:sha(JSON.stringify(r.protected.latin))}));if(existing?.comparisonDigests)assert.deepEqual(comparisonDigests,existing.comparisonDigests,'All349 Greek/Latin source payloads unchanged');if(existing)assert.deepEqual(whistonDigests,existing.whiston,'All349 Whiston intervals unchanged');
- if(mode==='baseline'){save('BASELINE_BROWSER.json',{status:'PASS',base,regression,whiston:whistonDigests,comparisonDigests,console:errors,network});}
+ const apionDigests=[];
+ for(const [book,hi] of [[1,320],[2,296]]){await go('/contra-apionem/?book='+book+'&niese=1');
+  const rows=await page.evaluate(async({book,hi})=>{const rows=[];for(let n=1;n<=hi;n++){if(n>1)await qa.change('#section-selector',n);rows.push({book,n,payload:qa.snapshot()});}return rows;},{book,hi});
+  apionDigests.push(...rows.map(r=>({book:r.book,n:r.n,digest:sha(JSON.stringify(r.payload))})));}
+ if(existing?.apionDigests)assert.deepEqual(apionDigests,existing.apionDigests,'All 616 existing Apion Greek/Latin/Whiston views unchanged');
+ save('PROTECTED_APION_616_QA.json',{status:'PASS',mode,identities:apionDigests.length,panes:['Greek','Latin','Whiston'],sections:apionDigests});
+ if(mode==='baseline'){save('BASELINE_BROWSER.json',{status:'PASS',base,regression,whiston:whistonDigests,comparisonDigests,apionDigests,console:errors,network});}
  else {save('CROSS_WORK_REGRESSION_QA.json',{status:'PASS',regression,whiston:whistonDigests,comparisonDigests});
  await go('/antiquities/?book=2&niese=1&english=lodge1602');
  const oracle=await installOracle('book-02',349);

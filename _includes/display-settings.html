@@ -60,6 +60,10 @@
           <form class="accordion-row hidden">
             <label for="section-selector">{% if page.permalink == "/antiquities/" %}Select an Alignment unit:{% else %}Select a sub-chapter:{% endif %}</label>
             <select id="section-selector"></select>
+            {% if page.permalink == "/contra-apionem/" %}
+            <button type="button" id="niese-previous" aria-label="Previous Niese section">Previous</button>
+            <button type="button" id="niese-next" aria-label="Next Niese section">Next</button>
+            {% endif %}
           </form>
         </div>
 

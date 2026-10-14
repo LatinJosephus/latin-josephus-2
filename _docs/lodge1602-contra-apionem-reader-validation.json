@@ -1,0 +1,74 @@
+{
+  "status": "BATCH_READER_ACCEPTANCE_PASS",
+  "base_commit": "46346c4c891ea9cca4b2084e72615368ad92ce25",
+  "work": "Contra Apionem",
+  "identities": 616,
+  "new_identities": 616,
+  "units": [
+    {
+      "unit": "book-01",
+      "identities": 320,
+      "historical_confidence": {
+        "HIGH": 316,
+        "MEDIUM": 4,
+        "LOW": 0
+      },
+      "source_reconstruction": "EXACT BYTE-FOR-BYTE PASS",
+      "source_coordinates_and_structure": "PASS",
+      "determinism": "PASS",
+      "derivative_sha256": "3dea35680c9e7bad46d7e8ecca6876be0e957c0de0c29dcc39625f044127b5fc"
+    },
+    {
+      "unit": "book-02",
+      "identities": 296,
+      "historical_confidence": {
+        "HIGH": 294,
+        "MEDIUM": 2,
+        "LOW": 0
+      },
+      "source_reconstruction": "EXACT BYTE-FOR-BYTE PASS",
+      "source_coordinates_and_structure": "PASS",
+      "determinism": "PASS",
+      "derivative_sha256": "0af3a2ca46f22de52a8c481a70512a116d57463561fa739fd0754af6097b55ba"
+    }
+  ],
+  "historical_confidence": {
+    "HIGH": 610,
+    "MEDIUM": 6,
+    "LOW": 0
+  },
+  "human_approved": [
+    "I.25",
+    "I.207",
+    "I.233",
+    "I.259",
+    "II.258",
+    "II.278"
+  ],
+  "approved_boundaries_and_endpoints_unchanged": true,
+  "zero_length_intervals": 0,
+  "protected_source_files_unchanged": 185,
+  "Book_II_default_six_outputs_unchanged": true,
+  "browser_exact_intervals": {
+    "new_Lodge_Apion": 616,
+    "protected_Lodge_Antiquities": 7376,
+    "Whiston_Antiquities": 7376,
+    "Lodge_Bellum": 4001,
+    "protected_Apion_Greek_Latin_Whiston": 616
+  },
+  "DEH": {
+    "witness_combinations": 3234,
+    "ordinary_units": 555,
+    "LF_repair_probes": 60,
+    "integrity_accepted": 62,
+    "mutations_rejected": 279
+  },
+  "strict_XML_inventory": 166,
+  "inventory_sha256": "35131e8af06554f98c4fa31c5c58bc27c2f42bb47bf4fd7d97af74147c11c62b",
+  "reader_sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+  "frozen_scholarly_ZIP_sha256": "90aeaaa6b0cc9f6f3c1a5c3c92f167e729df91f04b33184b2d0fa21b7ec4247f",
+  "browser_exceptions": 0,
+  "failed_requests": 0,
+  "publication_status": "NOT_YET_PUBLISHED",
+  "UTC": "2026-10-14T21:03:29.075156+00:00"
+}
