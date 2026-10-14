@@ -1,18 +1,23 @@
 <section id="deh-parallels" hidden aria-labelledby="parallel-title"
   data-alignment-url="{{ site.baseurl }}/assets/data/deh-josephus-concordance.json"
   data-xml-base="{{ site.baseurl }}/assets/xml/"
+  data-aj-alignment-url="{{ site.baseurl }}/assets/data/deh-aj-display.v1.json"
+  data-aj-alignment-sha="bbb7dba7249555a6ce1fd5f5a48b2f77a5513c95f0ed7f1b08b449cb34e043c0"
+  data-antiquities-url="{{ site.baseurl }}/antiquities/"
   data-bellum-url="{{ site.baseurl }}/bellum-judaicum/">
   <div class="parallel-toolbar">
-    <h2 id="parallel-title">DEH ↔ Bellum parallels</h2>
+    <h2 id="parallel-title">DEH ↔ Josephus parallels</h2>
     <a id="parallel-close">Return to DEH reading</a>
   </div>
-  <nav class="parallel-navigation" aria-label="DEH passages with Bellum parallels">
+  <nav class="parallel-navigation" aria-label="DEH passages with Josephus parallels">
     <label for="parallel-book">Book <select id="parallel-book"></select></label>
     <label for="parallel-chapter">Chapter <select id="parallel-chapter"></select></label>
     <label for="parallel-unit">Unit <select id="parallel-unit"></select></label>
   </nav>
+  <label for="parallel-work">Corresponding work:</label>
+  <select id="parallel-work"><option value="BJ">Bellum Judaicum</option><option value="AJ">Antiquitates Judaicae</option></select>
   <p class="parallel-identity">The Greek Bellum underlies the DEH adaptation.
-    Cardwell is an independent Latin translation of the Bellum.</p>
+    Cardwell is an independent Latin translation of the Bellum. Antiquities references identify related or corresponding accounts, sometimes alternative narrative material; they do not establish exact verbal equivalence or DEH’s textual dependence on Antiquities.</p>
   <p class="parallel-evidence">Parallels transcribed from the references in Ussani/Mras.
     Printed references have not yet been independently verified. Reference order follows the edition.
     A parallel indicates corresponding material, not exact verbal equivalence, full-unit correspondence, or dependence between the Latin versions.</p>
@@ -30,7 +35,7 @@
     </article>
     <article class="pane" aria-labelledby="parallel-bj-title">
       <h3 id="parallel-bj-title">Bellum Judaicum</h3>
-      <label for="parallel-bj-source">Bellum language / source:</label>
+      <label id="parallel-josephus-source-label" for="parallel-bj-source">Bellum language / source:</label>
       <select id="parallel-bj-source">
         <option value="niese">Greek — Niese</option>
         <option value="cardwell">Latin — Cardwell (1837)</option>
