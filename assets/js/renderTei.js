@@ -1287,6 +1287,7 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper.dataset.nieseStart = String(first); wrapper.dataset.nieseEndExclusive = String(exclusiveEnd);
       wrapper.dataset.englishSegmentation = "exact";
       const notice = document.createElement("p"); notice.className = "niese-correspondence-note";
+      notice.style.color = "var(--lj-brand-ink)";
       notice.textContent = "No separate corresponding passage in Lodge (1602)";
       wrapper.append(makeGeneratedNieseLabel(first), notice); return wrapper;
     }
