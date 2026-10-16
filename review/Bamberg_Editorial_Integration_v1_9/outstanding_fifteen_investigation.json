@@ -1,0 +1,3132 @@
+{
+  "count": 15,
+  "dispositions": {
+    "VERIFIED": 15
+  },
+  "applied": 0,
+  "human_checks": 0,
+  "records": [
+    {
+      "candidate_id": "M14-B13-48004f243c",
+      "book": 13,
+      "niese": 120,
+      "folio": "153r",
+      "image_id": "bsb00140762_00308;bsb00140762_00309",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-48004f243c",
+        "book": 13,
+        "niese": 120,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 37086,
+        "byte_end": 37100,
+        "old": "<pb n=\"153r\"/>",
+        "new": " <pb n=\"153r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353372222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353372222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-48004f243c",
+        "index": 16,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:41:21.260544+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "ptolomei / militiam",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "ptolomei",
+      "right_fragment": "militiam",
+      "left_context": "um est.\n\n Suscipiens uero principatum demetrius qui nicanor appellabatur, fraudibus corrumpere coepit ptolomei",
+      "right_context": "militiam oblitus et quod socer eius et auxiliator fuisset, et assinis per conu \" bium cleopatre. Qua propter m",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 1453,
+            "image": "sbb00000114_00308.jpg",
+            "text": "Regnauit uero asiae alexander qui dictus "
+          },
+          {
+            "export_line": 1455,
+            "image": "sbb00000114_00308.jpg",
+            "text": "est balas annis quinque sicut in aliis demon "
+          },
+          {
+            "export_line": 1457,
+            "image": "sbb00000114_00308.jpg",
+            "text": "stratum est. Suscipiens uero principatum "
+          },
+          {
+            "export_line": 1459,
+            "image": "sbb00000114_00308.jpg",
+            "text": "demetrius qui nicanor appellabatur, "
+          },
+          {
+            "export_line": 1461,
+            "image": "sbb00000114_00308.jpg",
+            "text": "fraudibus corrumpere coepit ptolomei "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 1465,
+            "image": "sbb00000114_00309.jpg",
+            "text": "militiam oblitus et quod socer eius et "
+          },
+          {
+            "export_line": 1467,
+            "image": "sbb00000114_00309.jpg",
+            "text": "auxiliator fuisset, et assinis per conu "
+          },
+          {
+            "export_line": 1469,
+            "image": "sbb00000114_00309.jpg",
+            "text": "\" bium cleopatre. Qua propter milites "
+          },
+          {
+            "export_line": 1471,
+            "image": "sbb00000114_00309.jpg",
+            "text": "ptolomei ad alexandriam confugerunt, "
+          },
+          {
+            "export_line": 1473,
+            "image": "sbb00000114_00309.jpg",
+            "text": "elefantos autem demetrius conprehen "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "2d692dc3ad5038f952854e29bf14fc9a784b7ba162ea15e68e4d7f11a76c13c3",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "0459eabd0b371cd99b18f597d1d0cd690d32345124138097a9dddb096ea5fa6e",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-48004f243c_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00308.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00308",
+          "folio": "152v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "8591703a60898da107e5dffaa7659bed89fc1916b421eefdda42f16b70193851",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "4c385269cf1ca00d7f4a812c47ca1b95f619d26f4ec0d56faf422e194e5ed3db",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-48004f243c_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00309.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00309",
+          "folio": "153r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "ptolomei",
+        "right_fragment": "militiam",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 1461,
+              "image": "sbb00000114_00308.jpg",
+              "text": "fraudibus corrumpere coepit ptolomei "
+            },
+            "right": {
+              "export_line": 1465,
+              "image": "sbb00000114_00309.jpg",
+              "text": "militiam oblitus et quod socer eius et "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "ptolomei / militiam",
+        "conclusion": "Fresh image review: column/page terminal 'ptolomei' and following 'militiam' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.649366+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-477cdb858d",
+      "book": 13,
+      "niese": 154,
+      "folio": "154r",
+      "image_id": "bsb00140762_00311",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-477cdb858d",
+        "book": 13,
+        "niese": 154,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 46966,
+        "byte_end": 46979,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-477cdb858d",
+        "index": 21,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:41:21.260544+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "in / iudaea",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "in",
+      "right_fragment": "iudaea",
+      "left_context": "utantes minime eum pati galileos sibi subiectos affligere. Cumque ionathas eis occurrisset, symonem fratrem in",
+      "right_context": "iudaea ducem reliquit. Qui multum exercitum de prouincia congregans, bethsuram obsidebat locum iudae munitissi",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 1903,
+            "image": "sbb00000114_00311.jpg",
+            "text": "putantes minime eum pati galileos sibi "
+          },
+          {
+            "export_line": 1905,
+            "image": "sbb00000114_00311.jpg",
+            "text": "subiectos affligere. Cumque ionathas "
+          },
+          {
+            "export_line": 1907,
+            "image": "sbb00000114_00311.jpg",
+            "text": "eis occurrisset, symonem fratrem in "
+          },
+          {
+            "export_line": 1909,
+            "image": "sbb00000114_00311.jpg",
+            "text": "iudaea ducem reliquit. Qui multum "
+          },
+          {
+            "export_line": 1911,
+            "image": "sbb00000114_00311.jpg",
+            "text": "exercitum de prouincia congregans, "
+          },
+          {
+            "export_line": 1913,
+            "image": "sbb00000114_00311.jpg",
+            "text": "bethsuram ob sidebat locum iudae muni "
+          },
+          {
+            "export_line": 1915,
+            "image": "sbb00000114_00311.jpg",
+            "text": "tissimum. Nam tenebat eam demetrii "
+          },
+          {
+            "export_line": 1917,
+            "image": "sbb00000114_00311.jpg",
+            "text": "custodia sicut et prius a nobis demonstra "
+          },
+          {
+            "export_line": 1919,
+            "image": "sbb00000114_00311.jpg",
+            "text": "tum est. Vt uero aggerem composuisse "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 1905,
+            "image": "sbb00000114_00311.jpg",
+            "text": "subiectos affligere. Cumque ionathas "
+          },
+          {
+            "export_line": 1907,
+            "image": "sbb00000114_00311.jpg",
+            "text": "eis occurrisset, symonem fratrem in "
+          },
+          {
+            "export_line": 1909,
+            "image": "sbb00000114_00311.jpg",
+            "text": "iudaea ducem reliquit. Qui multum "
+          },
+          {
+            "export_line": 1911,
+            "image": "sbb00000114_00311.jpg",
+            "text": "exercitum de prouincia congregans, "
+          },
+          {
+            "export_line": 1913,
+            "image": "sbb00000114_00311.jpg",
+            "text": "bethsuram ob sidebat locum iudae muni "
+          },
+          {
+            "export_line": 1915,
+            "image": "sbb00000114_00311.jpg",
+            "text": "tissimum. Nam tenebat eam demetrii "
+          },
+          {
+            "export_line": 1917,
+            "image": "sbb00000114_00311.jpg",
+            "text": "custodia sicut et prius a nobis demonstra "
+          },
+          {
+            "export_line": 1919,
+            "image": "sbb00000114_00311.jpg",
+            "text": "tum est. Vt uero aggerem composuisse "
+          },
+          {
+            "export_line": 1921,
+            "image": "sbb00000114_00311.jpg",
+            "text": "symonem uiderunt et machinamenta "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "98e4f4e6b1f597b73b4138b3f3e7082e295deae23f8bd8d0b26ce72948d634a5",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "17615eaf0ce664a8f64bf30dc884d02aa9c0c3b60f0f5c801a14c09d245a05e7",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-477cdb858d_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00311.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00311",
+          "folio": "154r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "58698afdd58befbffd4c41f5d071e279d4eff8e3d237a84fc19e9a564813bbb6",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "17615eaf0ce664a8f64bf30dc884d02aa9c0c3b60f0f5c801a14c09d245a05e7",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-477cdb858d_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00311.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00311",
+          "folio": "154r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "in",
+        "right_fragment": "iudaea",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 1907,
+              "image": "sbb00000114_00311.jpg",
+              "text": "eis occurrisset, symonem fratrem in "
+            },
+            "right": {
+              "export_line": 1909,
+              "image": "sbb00000114_00311.jpg",
+              "text": "iudaea ducem reliquit. Qui multum "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "in / iudaea",
+        "conclusion": "Fresh image review: column/page terminal 'in' and following 'iudaea' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.649366+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-c028dee2a1",
+      "book": 13,
+      "niese": 225,
+      "folio": "156v",
+      "image_id": "bsb00140762_00316",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-c028dee2a1",
+        "book": 13,
+        "niese": 225,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 67461,
+        "byte_end": 67474,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-c028dee2a1",
+        "index": 31,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:41:21.260544+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "tradens / ad",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "tradens",
+      "right_fragment": "ad",
+      "left_context": "liuionem una cum ministratis pecuniis et alimentis concepit, uir esque militares cuidam cendibeo amico tradens",
+      "right_context": "ad depredationem iudeae captiuitatemque simonis misit. Sed cum simon audisset antiochi preuaricationem licet s",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 2809,
+            "image": "sbb00000114_00316.jpg",
+            "text": "tus est, tertio fui regni anno. XL. "
+          },
+          {
+            "export_line": 2811,
+            "image": "sbb00000114_00316.jpg",
+            "text": "Sed antiochus auaritia uel prauitate sua "
+          },
+          {
+            "export_line": 2813,
+            "image": "sbb00000114_00316.jpg",
+            "text": "simonis obliuionem una cum ministra "
+          },
+          {
+            "export_line": 2815,
+            "image": "sbb00000114_00316.jpg",
+            "text": "tis pecuniis et alimentis concepit, uir esque "
+          },
+          {
+            "export_line": 2817,
+            "image": "sbb00000114_00316.jpg",
+            "text": "militares cuidam cendibeo amico tradens "
+          },
+          {
+            "export_line": 2819,
+            "image": "sbb00000114_00316.jpg",
+            "text": "ad depredationem iudeae captiuitatemque "
+          },
+          {
+            "export_line": 2821,
+            "image": "sbb00000114_00316.jpg",
+            "text": "simonis misit. Sed cum simon audisset "
+          },
+          {
+            "export_line": 2823,
+            "image": "sbb00000114_00316.jpg",
+            "text": "antiochi preuaricationem licet senex esset, "
+          },
+          {
+            "export_line": 2825,
+            "image": "sbb00000114_00316.jpg",
+            "text": "tamen quod nihil ab antiocho iustum fieri "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 2811,
+            "image": "sbb00000114_00316.jpg",
+            "text": "Sed antiochus auaritia uel prauitate sua "
+          },
+          {
+            "export_line": 2813,
+            "image": "sbb00000114_00316.jpg",
+            "text": "simonis obliuionem una cum ministra "
+          },
+          {
+            "export_line": 2815,
+            "image": "sbb00000114_00316.jpg",
+            "text": "tis pecuniis et alimentis concepit, uir esque "
+          },
+          {
+            "export_line": 2817,
+            "image": "sbb00000114_00316.jpg",
+            "text": "militares cuidam cendibeo amico tradens "
+          },
+          {
+            "export_line": 2819,
+            "image": "sbb00000114_00316.jpg",
+            "text": "ad depredationem iudeae captiuitatemque "
+          },
+          {
+            "export_line": 2821,
+            "image": "sbb00000114_00316.jpg",
+            "text": "simonis misit. Sed cum simon audisset "
+          },
+          {
+            "export_line": 2823,
+            "image": "sbb00000114_00316.jpg",
+            "text": "antiochi preuaricationem licet senex esset, "
+          },
+          {
+            "export_line": 2825,
+            "image": "sbb00000114_00316.jpg",
+            "text": "tamen quod nihil ab antiocho iustum fieri "
+          },
+          {
+            "export_line": 2827,
+            "image": "sbb00000114_00316.jpg",
+            "text": "uidebat, concitatus ad audaciam super "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "c71e9aa9ffbb6c4dbf292c8e1593b2f4d07c0cf7a9ec4f1149661e23f405e25e",
+          "xyxy": [
+            429,
+            2579,
+            1537,
+            3139
+          ],
+          "source_sha256": "a312c9d3fdfe9565f584c60bf5fcb6bc96cd265e04c8120bd4503ecc29b876fb",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-c028dee2a1_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00316.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00316",
+          "folio": "156v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "efe86b14b53e2012e6ce9043d22177c1c84cb6bed6e8cddddb1e3baa2fa0bcfa",
+          "xyxy": [
+            1494,
+            180,
+            2637,
+            740
+          ],
+          "source_sha256": "a312c9d3fdfe9565f584c60bf5fcb6bc96cd265e04c8120bd4503ecc29b876fb",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-c028dee2a1_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00316.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00316",
+          "folio": "156v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "tradens",
+        "right_fragment": "ad",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 2817,
+              "image": "sbb00000114_00316.jpg",
+              "text": "militares cuidam cendibeo amico tradens "
+            },
+            "right": {
+              "export_line": 2819,
+              "image": "sbb00000114_00316.jpg",
+              "text": "ad depredationem iudeae captiuitatemque "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "tradens / ad",
+        "conclusion": "Fresh image review: column/page terminal 'tradens' and following 'ad' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.666401+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-7899741b9f",
+      "book": 13,
+      "niese": 232,
+      "folio": "157r",
+      "image_id": "bsb00140762_00316;bsb00140762_00317",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-7899741b9f",
+        "book": 13,
+        "niese": 232,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 69705,
+        "byte_end": 69719,
+        "old": "<pb n=\"157r\"/>",
+        "new": " <pb n=\"157r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353772222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353772222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-7899741b9f",
+        "index": 32,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:05.569779+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "magis / impetu",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "magis",
+      "right_fragment": "impetu",
+      "left_context": " eius crudelitati reputaretur. Mater autem protendens manus petebat, ne propter eos disserret, sed multo magis",
+      "right_context": "impetu castellum inuaderet inimicoque suae potestati subacto pro carrisimorum tormentis redderet retributionem",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 2899,
+            "image": "sbb00000114_00316.jpg",
+            "text": "industria, tantum carissimis putabat "
+          },
+          {
+            "export_line": 2901,
+            "image": "sbb00000114_00316.jpg",
+            "text": "offerre subsidia, nedum male peteren "
+          },
+          {
+            "export_line": 2903,
+            "image": "sbb00000114_00316.jpg",
+            "text": "tur eius crudelitati reputaretur. "
+          },
+          {
+            "export_line": 2905,
+            "image": "sbb00000114_00316.jpg",
+            "text": "Mater autem protendens manus petebat, "
+          },
+          {
+            "export_line": 2907,
+            "image": "sbb00000114_00316.jpg",
+            "text": "ne propter eos disserret, sed multo magis "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 2911,
+            "image": "sbb00000114_00317.jpg",
+            "text": "impetu castellum inuaderet inimicoque "
+          },
+          {
+            "export_line": 2913,
+            "image": "sbb00000114_00317.jpg",
+            "text": "suae potestati subacto pro carrisimorum "
+          },
+          {
+            "export_line": 2915,
+            "image": "sbb00000114_00317.jpg",
+            "text": "tormentis redderet retributionem "
+          },
+          {
+            "export_line": 2917,
+            "image": "sbb00000114_00317.jpg",
+            "text": "sibi quoque aestimans hoc esse utillimum, "
+          },
+          {
+            "export_line": 2919,
+            "image": "sbb00000114_00317.jpg",
+            "text": "si per suam mortem hostes atrocius depe "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "6a5f2f7e2c3b63b0cc3884a9bc1038e68cadc5ea178bbe16ee1ffe1c9e9dd64c",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "a312c9d3fdfe9565f584c60bf5fcb6bc96cd265e04c8120bd4503ecc29b876fb",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-7899741b9f_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00316.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00316",
+          "folio": "156v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "6d05ac5ed490a9bed447f230c6d64fc5bdff46719c51a889654e418ea352c772",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "c1f8706804b9e4c83e135ea93c773dd22d532623d4ab6418ab2406dad8227332",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-7899741b9f_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00317.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00317",
+          "folio": "157r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "magis",
+        "right_fragment": "impetu",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 2907,
+              "image": "sbb00000114_00316.jpg",
+              "text": "ne propter eos disserret, sed multo magis "
+            },
+            "right": {
+              "export_line": 2911,
+              "image": "sbb00000114_00317.jpg",
+              "text": "impetu castellum inuaderet inimicoque "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "magis / impetu",
+        "conclusion": "Fresh image review: column/page terminal 'magis' and following 'impetu' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.666401+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-d5f6ea1941",
+      "book": 13,
+      "niese": 247,
+      "folio": "157v",
+      "image_id": "bsb00140762_00317;bsb00140762_00318",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-d5f6ea1941",
+        "book": 13,
+        "niese": 247,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 73617,
+        "byte_end": 73631,
+        "old": "<pb n=\"157v\"/>",
+        "new": " <pb n=\"157v\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353776222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353776222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-d5f6ea1941",
+        "index": 34,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:05.569779+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "Iudaei / uero",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "Iudaei",
+      "right_fragment": "uero",
+      "left_context": " iudaeam existentium soluerent, et custodias in ciuitate susciperent, confirmans pactum finiret bellum. Iudaei",
+      "right_context": "uero omnia perferre preter custodiam consentiebant, quam non propter aliud nisi pro dissimili conuersatione re",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 3073,
+            "image": "sbb00000114_00317.jpg",
+            "text": "tis respondit. Si traderent arma par "
+          },
+          {
+            "export_line": 3075,
+            "image": "sbb00000114_00317.jpg",
+            "text": "temque tributorum ioppe aliorumque ciui "
+          },
+          {
+            "export_line": 3077,
+            "image": "sbb00000114_00317.jpg",
+            "text": "tatum circa iudaeam existentium solue "
+          },
+          {
+            "export_line": 3079,
+            "image": "sbb00000114_00317.jpg",
+            "text": "rent, et custodias in ciuitate susciperent, "
+          },
+          {
+            "export_line": 3081,
+            "image": "sbb00000114_00317.jpg",
+            "text": "confirmans pactum finiret bellum. Iudaei "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 3085,
+            "image": "sbb00000114_00318.jpg",
+            "text": "uero omnia perferre preter custodiam "
+          },
+          {
+            "export_line": 3087,
+            "image": "sbb00000114_00318.jpg",
+            "text": "consentiebant, quam non propter aliud "
+          },
+          {
+            "export_line": 3089,
+            "image": "sbb00000114_00318.jpg",
+            "text": "nisi pro dissimili conuersatione recusa "
+          },
+          {
+            "export_line": 3091,
+            "image": "sbb00000114_00318.jpg",
+            "text": "\" bant. Pro custodia tamen obsides dare "
+          },
+          {
+            "export_line": 3093,
+            "image": "sbb00000114_00318.jpg",
+            "text": "profitebantur, et talenta argenta quin "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "1a1186a153dae41e04e34b0cccb8b49e6fd2e22a2e145dc5d1a3319188dc755c",
+          "xyxy": [
+            1277,
+            2579,
+            2439,
+            3139
+          ],
+          "source_sha256": "c1f8706804b9e4c83e135ea93c773dd22d532623d4ab6418ab2406dad8227332",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-d5f6ea1941_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00317.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00317",
+          "folio": "157r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "1aca8430b79a1e4d444f6fbb6a8b503d33378a603573749aee7d6d1ff5772b61",
+          "xyxy": [
+            429,
+            180,
+            1537,
+            740
+          ],
+          "source_sha256": "bc5d7ea5196728249410fa7342709685f0c7150769bbecafe13069813975c4d3",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-d5f6ea1941_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00318.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00318",
+          "folio": "157v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "Iudaei",
+        "right_fragment": "uero",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 2983,
+              "image": "sbb00000114_00317.jpg",
+              "text": "ens muro ciuitatis deposuit. Iudaei "
+            },
+            "right": {
+              "export_line": 2985,
+              "image": "sbb00000114_00317.jpg",
+              "text": "uero multas incursiones contra molie "
+            }
+          },
+          {
+            "left": {
+              "export_line": 3081,
+              "image": "sbb00000114_00317.jpg",
+              "text": "confirmans pactum finiret bellum. Iudaei "
+            },
+            "right": {
+              "export_line": 3085,
+              "image": "sbb00000114_00318.jpg",
+              "text": "uero omnia perferre preter custodiam "
+            }
+          }
+        ],
+        "exact_pair_count": 2,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "Iudaei / uero",
+        "conclusion": "Fresh image review: column/page terminal 'Iudaei' and following 'uero' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.666401+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-e406f2ca6b",
+      "book": 13,
+      "niese": 263,
+      "folio": "158r",
+      "image_id": "bsb00140762_00318;bsb00140762_00319",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-e406f2ca6b",
+        "book": 13,
+        "niese": 263,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 77810,
+        "byte_end": 77824,
+        "old": "<pb n=\"158r\"/>",
+        "new": " <pb n=\"158r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353872222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353872222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-e406f2ca6b",
+        "index": 37,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:05.569779+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "prouinciam / aestiment",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "prouinciam",
+      "right_fragment": "aestiment",
+      "left_context": "atus consultum cessentur ut et legatos mittant quatinus recipiantur quae ab antiocho ablata sunt et prouinciam",
+      "right_context": "aestiment uastatam, ut quae eis ad reges et populos liberos litterae darentur, quatinus ad propriam domum in l",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 3247,
+            "image": "sbb00000114_00318.jpg",
+            "text": "terram eorum cum subiecti sint transeant, "
+          },
+          {
+            "export_line": 3249,
+            "image": "sbb00000114_00318.jpg",
+            "text": "ut etiam illa quae per antiochum gesta sunt "
+          },
+          {
+            "export_line": 3251,
+            "image": "sbb00000114_00318.jpg",
+            "text": "contra sanatus consultum cessentur ut et "
+          },
+          {
+            "export_line": 3253,
+            "image": "sbb00000114_00318.jpg",
+            "text": "legatos mittant quatinus recipiantur "
+          },
+          {
+            "export_line": 3255,
+            "image": "sbb00000114_00318.jpg",
+            "text": "quae ab antiocho ablata sunt et prouinciam "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 3259,
+            "image": "sbb00000114_00319.jpg",
+            "text": "aestiment uastatam, ut quae eis ad reges "
+          },
+          {
+            "export_line": 3261,
+            "image": "sbb00000114_00319.jpg",
+            "text": "et populos liberos litterae darentur, "
+          },
+          {
+            "export_line": 3263,
+            "image": "sbb00000114_00319.jpg",
+            "text": "quatinus ad propriam domum in lęsi reuerte "
+          },
+          {
+            "export_line": 3265,
+            "image": "sbb00000114_00319.jpg",
+            "text": "rentur. Placuit igitur amicitias et auxi "
+          },
+          {
+            "export_line": 3267,
+            "image": "sbb00000114_00319.jpg",
+            "text": "lia cum hominibus bonis et bono populo "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "e35c1f9010afd96257832fcbd36d2a620676956c413bead02dd8904b725e743e",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "bc5d7ea5196728249410fa7342709685f0c7150769bbecafe13069813975c4d3",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-e406f2ca6b_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00318.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00318",
+          "folio": "157v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "84cec7140864b93ec6140606fcdcc45fd668cd3a434b4dce1cec1cf764fab06e",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "bc3b7c2a0d8a6d137ec317161efc5ad7325a50a7fab9a6a4c7e537a411cbe594",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-e406f2ca6b_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00319.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00319",
+          "folio": "158r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "prouinciam",
+        "right_fragment": "aestiment",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 3255,
+              "image": "sbb00000114_00318.jpg",
+              "text": "quae ab antiocho ablata sunt et prouinciam "
+            },
+            "right": {
+              "export_line": 3259,
+              "image": "sbb00000114_00319.jpg",
+              "text": "aestiment uastatam, ut quae eis ad reges "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "prouinciam / aestiment",
+        "conclusion": "Fresh image review: column/page terminal 'prouinciam' and following 'aestiment' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.676356+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-c0abf9e4f3",
+      "book": 13,
+      "niese": 271,
+      "folio": "158r",
+      "image_id": "bsb00140762_00319",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-c0abf9e4f3",
+        "book": 13,
+        "niese": 271,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 79888,
+        "byte_end": 79901,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-c0abf9e4f3",
+        "index": 38,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:05.569779+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "incursionibus / fratris",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "incursionibus",
+      "right_fragment": "fratris",
+      "left_context": "s uires contra se a cizi co congregasse, eum intra prouinciam statuit expectare, quatinus obuius incursionibus",
+      "right_context": "fratris antiochi resisteret. Qui cyzicenus dicebatur quod in illa ciuitate nutritus esset, filius autem fuerat",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 3335,
+            "image": "sbb00000114_00319.jpg",
+            "text": "timuit. Audiens uero germanum suum et "
+          },
+          {
+            "export_line": 3337,
+            "image": "sbb00000114_00319.jpg",
+            "text": "ipsum nomine antiochum ex eadem matre "
+          },
+          {
+            "export_line": 3339,
+            "image": "sbb00000114_00319.jpg",
+            "text": "progenitum multas uires contra se a cizi "
+          },
+          {
+            "export_line": 3341,
+            "image": "sbb00000114_00319.jpg",
+            "text": "co congregasse, eum intra prouinciam statuit "
+          },
+          {
+            "export_line": 3343,
+            "image": "sbb00000114_00319.jpg",
+            "text": "expectare, quatinus obuius incursionibus "
+          },
+          {
+            "export_line": 3345,
+            "image": "sbb00000114_00319.jpg",
+            "text": "fratris antiochi resisteret. Qui cyzicenus "
+          },
+          {
+            "export_line": 3347,
+            "image": "sbb00000114_00319.jpg",
+            "text": "dicebatur quod in illa ciuitate nutritus "
+          },
+          {
+            "export_line": 3349,
+            "image": "sbb00000114_00319.jpg",
+            "text": "esset, filius autem fuerat antiochi qui soter "
+          },
+          {
+            "export_line": 3351,
+            "image": "sbb00000114_00319.jpg",
+            "text": "nuncupatur et uitam bello partico ter "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 3337,
+            "image": "sbb00000114_00319.jpg",
+            "text": "ipsum nomine antiochum ex eadem matre "
+          },
+          {
+            "export_line": 3339,
+            "image": "sbb00000114_00319.jpg",
+            "text": "progenitum multas uires contra se a cizi "
+          },
+          {
+            "export_line": 3341,
+            "image": "sbb00000114_00319.jpg",
+            "text": "co congregasse, eum intra prouinciam statuit "
+          },
+          {
+            "export_line": 3343,
+            "image": "sbb00000114_00319.jpg",
+            "text": "expectare, quatinus obuius incursionibus "
+          },
+          {
+            "export_line": 3345,
+            "image": "sbb00000114_00319.jpg",
+            "text": "fratris antiochi resisteret. Qui cyzicenus "
+          },
+          {
+            "export_line": 3347,
+            "image": "sbb00000114_00319.jpg",
+            "text": "dicebatur quod in illa ciuitate nutritus "
+          },
+          {
+            "export_line": 3349,
+            "image": "sbb00000114_00319.jpg",
+            "text": "esset, filius autem fuerat antiochi qui soter "
+          },
+          {
+            "export_line": 3351,
+            "image": "sbb00000114_00319.jpg",
+            "text": "nuncupatur et uitam bello partico ter "
+          },
+          {
+            "export_line": 3353,
+            "image": "sbb00000114_00319.jpg",
+            "text": "minarat. Hic etiam frater erat demetrii "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "6f827ae9adc8a3a6de98df70f107b8444397787ffe3ed3e9439b21488fd968bd",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "bc3b7c2a0d8a6d137ec317161efc5ad7325a50a7fab9a6a4c7e537a411cbe594",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-c0abf9e4f3_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00319.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00319",
+          "folio": "158r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "2b90bb84866602844f8aff024ec6dd93ebef798c033ed6cf54d5ac79ae2ef819",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "bc3b7c2a0d8a6d137ec317161efc5ad7325a50a7fab9a6a4c7e537a411cbe594",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-c0abf9e4f3_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00319.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00319",
+          "folio": "158r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "incursionibus",
+        "right_fragment": "fratris",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 3343,
+              "image": "sbb00000114_00319.jpg",
+              "text": "expectare, quatinus obuius incursionibus "
+            },
+            "right": {
+              "export_line": 3345,
+              "image": "sbb00000114_00319.jpg",
+              "text": "fratris antiochi resisteret. Qui cyzicenus "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "incursionibus / fratris",
+        "conclusion": "Fresh image review: column/page terminal 'incursionibus' and following 'fratris' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.681013+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-30b81dc20e",
+      "book": 13,
+      "niese": 293,
+      "folio": "159r",
+      "image_id": "bsb00140762_00320;bsb00140762_00321",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-30b81dc20e",
+        "book": 13,
+        "niese": 293,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 85993,
+        "byte_end": 86007,
+        "old": "<pb n=\"159r\"/>",
+        "new": " <pb n=\"159r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353972222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353972222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-30b81dc20e",
+        "index": 41,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:05.569779+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "illi / posse",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "illi",
+      "right_fragment": "posse",
+      "left_context": "tit, hyrcano amico dicebat, scientibus omnibus pharisaeis eleazarum blasphemiam fecisse et hoc manifestum illi",
+      "right_context": "posse fieri, si requireret illos qua dignus esset poena prouerborum qualitate multari. Cumque hyrcanus pharisa",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 3595,
+            "image": "sbb00000114_00320.jpg",
+            "text": "tur. Tunc ionathas quidam de saddu "
+          },
+          {
+            "export_line": 3597,
+            "image": "sbb00000114_00320.jpg",
+            "text": "ceorum heresi quae contraria farisaeis "
+          },
+          {
+            "export_line": 3599,
+            "image": "sbb00000114_00320.jpg",
+            "text": "existit, hyrcano amico dicebat, scien "
+          },
+          {
+            "export_line": 3601,
+            "image": "sbb00000114_00320.jpg",
+            "text": "tibus omnibus pharisaeis eleazarum blas "
+          },
+          {
+            "export_line": 3603,
+            "image": "sbb00000114_00320.jpg",
+            "text": "phemiam fecisse et hoc manifestum illi "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 3607,
+            "image": "sbb00000114_00321.jpg",
+            "text": "posse fieri, si requireret illos qua dignus "
+          },
+          {
+            "export_line": 3609,
+            "image": "sbb00000114_00321.jpg",
+            "text": "esset poena prouerborum qualitate "
+          },
+          {
+            "export_line": 3611,
+            "image": "sbb00000114_00321.jpg",
+            "text": "multari. Cumque hyrcanus pharisaeos "
+          },
+          {
+            "export_line": 3613,
+            "image": "sbb00000114_00321.jpg",
+            "text": "interrogasset qua iudicarent eum poena "
+          },
+          {
+            "export_line": 3615,
+            "image": "sbb00000114_00321.jpg",
+            "text": "meritum, non enim credo inquit cum uestra "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "d999d2109aaec2a269caa38790c6ea9507340d07c658ed6171d32fc698afb6d7",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "3d5c109f8764094515d59cbc06aab499870aee78a21d3d81c881d0ad8f9d1a3c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-30b81dc20e_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00320.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00320",
+          "folio": "158v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "d6a9b849d818966cb1670b87c69546c6e55648f1ecab6e09286a4161f91a99a4",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "a0b83dc026a18528828aaaa16f3462805f38fbc80a9282fdc9df915b7b65a2e3",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-30b81dc20e_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00321.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00321",
+          "folio": "159r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "illi",
+        "right_fragment": "posse",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 3603,
+              "image": "sbb00000114_00320.jpg",
+              "text": "phemiam fecisse et hoc manifestum illi "
+            },
+            "right": {
+              "export_line": 3607,
+              "image": "sbb00000114_00321.jpg",
+              "text": "posse fieri, si requireret illos qua dignus "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "illi / posse",
+        "conclusion": "Fresh image review: column/page terminal 'illi' and following 'posse' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.685027+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-204148f34e",
+      "book": 13,
+      "niese": 327,
+      "folio": "160r",
+      "image_id": "bsb00140762_00323",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-204148f34e",
+        "book": 13,
+        "niese": 327,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 95965,
+        "byte_end": 95978,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-204148f34e",
+        "index": 46,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:05.569779+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "cedere / ocio",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "cedere",
+      "right_fragment": "ocio",
+      "left_context": "i solacia uterque enim tolerabat quod saepius athletis contingit qui cum uiribus dissidunt erubescentes cedere",
+      "right_context": "ocio uel reliquiae certamina disserunt. Reliqua ptolomaitis spes erat in rege aegyptiorum ptolomeo latyro, qui",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 4031,
+            "image": "sbb00000114_00323.jpg",
+            "text": "nec reges talem familiaritatem circa "
+          },
+          {
+            "export_line": 4033,
+            "image": "sbb00000114_00323.jpg",
+            "text": "eos habebant, ut confiderent ab eis me "
+          },
+          {
+            "export_line": 4035,
+            "image": "sbb00000114_00323.jpg",
+            "text": "reri solacia uterque enim tolerabat "
+          },
+          {
+            "export_line": 4037,
+            "image": "sbb00000114_00323.jpg",
+            "text": "quod saepius athletis contingit qui cum "
+          },
+          {
+            "export_line": 4039,
+            "image": "sbb00000114_00323.jpg",
+            "text": "uiribus dissidunt erubescentes cedere "
+          },
+          {
+            "export_line": 4041,
+            "image": "sbb00000114_00323.jpg",
+            "text": "ocio uel reliquiae certamina disserunt. "
+          },
+          {
+            "export_line": 4043,
+            "image": "sbb00000114_00323.jpg",
+            "text": "Reliqua ptolomaitis spes erat in rege ae "
+          },
+          {
+            "export_line": 4045,
+            "image": "sbb00000114_00323.jpg",
+            "text": "gyptiorum ptolomeo latyro, qui cum "
+          },
+          {
+            "export_line": 4047,
+            "image": "sbb00000114_00323.jpg",
+            "text": "a matre depulsus a regno fuisset cyprum "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 4033,
+            "image": "sbb00000114_00323.jpg",
+            "text": "eos habebant, ut confiderent ab eis me "
+          },
+          {
+            "export_line": 4035,
+            "image": "sbb00000114_00323.jpg",
+            "text": "reri solacia uterque enim tolerabat "
+          },
+          {
+            "export_line": 4037,
+            "image": "sbb00000114_00323.jpg",
+            "text": "quod saepius athletis contingit qui cum "
+          },
+          {
+            "export_line": 4039,
+            "image": "sbb00000114_00323.jpg",
+            "text": "uiribus dissidunt erubescentes cedere "
+          },
+          {
+            "export_line": 4041,
+            "image": "sbb00000114_00323.jpg",
+            "text": "ocio uel reliquiae certamina disserunt. "
+          },
+          {
+            "export_line": 4043,
+            "image": "sbb00000114_00323.jpg",
+            "text": "Reliqua ptolomaitis spes erat in rege ae "
+          },
+          {
+            "export_line": 4045,
+            "image": "sbb00000114_00323.jpg",
+            "text": "gyptiorum ptolomeo latyro, qui cum "
+          },
+          {
+            "export_line": 4047,
+            "image": "sbb00000114_00323.jpg",
+            "text": "a matre depulsus a regno fuisset cyprum "
+          },
+          {
+            "export_line": 4049,
+            "image": "sbb00000114_00323.jpg",
+            "text": "habitabat. Igitur mittentes ad eum "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "49e9a587068fc1470a5292dbf86f0edcd9ff83f729530b039a5a8a3b4f8d0a93",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "bf029147a8dd319b73010d11460aa5df0523d0e6d3bb2d0c1c47f4ffab15ee1c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-204148f34e_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00323.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00323",
+          "folio": "160r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "138d35a25ffc07e807f758ca0ac55ca3225282a9ea5417fd29351feb9c5cc11b",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "bf029147a8dd319b73010d11460aa5df0523d0e6d3bb2d0c1c47f4ffab15ee1c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-204148f34e_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00323.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00323",
+          "folio": "160r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "cedere",
+        "right_fragment": "ocio",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 4039,
+              "image": "sbb00000114_00323.jpg",
+              "text": "uiribus dissidunt erubescentes cedere "
+            },
+            "right": {
+              "export_line": 4041,
+              "image": "sbb00000114_00323.jpg",
+              "text": "ocio uel reliquiae certamina disserunt. "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "cedere / ocio",
+        "conclusion": "Fresh image review: column/page terminal 'cedere' and following 'ocio' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.688186+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-a7f1a6a8f5",
+      "book": 13,
+      "niese": 341,
+      "folio": "160v",
+      "image_id": "bsb00140762_00324",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-a7f1a6a8f5",
+        "book": 13,
+        "niese": 341,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 100067,
+        "byte_end": 100080,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-a7f1a6a8f5",
+        "index": 48,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:28.931789+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "exercitu / multi",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "exercitu",
+      "right_fragment": "multi",
+      "left_context": "at in principio proelii exutraque parte fortiter pugnatum est pari animositate uel studio utabutroque exercitu",
+      "right_context": "multi prosternerentur. Sed cum alexandri exercitum superiorem filos stefanus uidisset milites diuidit et defec",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 4205,
+            "image": "sbb00000114_00324.jpg",
+            "text": "putaret quia si post dorsum filium habe "
+          },
+          {
+            "export_line": 4207,
+            "image": "sbb00000114_00324.jpg",
+            "text": "rent nequaquam possent a pugna disce "
+          },
+          {
+            "export_line": 4209,
+            "image": "sbb00000114_00324.jpg",
+            "text": "dere, at in principio proelii exutraque "
+          },
+          {
+            "export_line": 4211,
+            "image": "sbb00000114_00324.jpg",
+            "text": "parte fortiter pugnatum est pari animo "
+          },
+          {
+            "export_line": 4213,
+            "image": "sbb00000114_00324.jpg",
+            "text": "sitate uel studio utabutroque exercitu "
+          },
+          {
+            "export_line": 4215,
+            "image": "sbb00000114_00324.jpg",
+            "text": "multi prosternerentur. Sed cum alexan "
+          },
+          {
+            "export_line": 4217,
+            "image": "sbb00000114_00324.jpg",
+            "text": "dri exercitum superiorem filos stefanus uidis "
+          },
+          {
+            "export_line": 4219,
+            "image": "sbb00000114_00324.jpg",
+            "text": "set milites diuidit et defectos suos fortiter "
+          },
+          {
+            "export_line": 4221,
+            "image": "sbb00000114_00324.jpg",
+            "text": "adiuuans, nulloque subueniente iudaeis "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 4207,
+            "image": "sbb00000114_00324.jpg",
+            "text": "rent nequaquam possent a pugna disce "
+          },
+          {
+            "export_line": 4209,
+            "image": "sbb00000114_00324.jpg",
+            "text": "dere, at in principio proelii exutraque "
+          },
+          {
+            "export_line": 4211,
+            "image": "sbb00000114_00324.jpg",
+            "text": "parte fortiter pugnatum est pari animo "
+          },
+          {
+            "export_line": 4213,
+            "image": "sbb00000114_00324.jpg",
+            "text": "sitate uel studio utabutroque exercitu "
+          },
+          {
+            "export_line": 4215,
+            "image": "sbb00000114_00324.jpg",
+            "text": "multi prosternerentur. Sed cum alexan "
+          },
+          {
+            "export_line": 4217,
+            "image": "sbb00000114_00324.jpg",
+            "text": "dri exercitum superiorem filos stefanus uidis "
+          },
+          {
+            "export_line": 4219,
+            "image": "sbb00000114_00324.jpg",
+            "text": "set milites diuidit et defectos suos fortiter "
+          },
+          {
+            "export_line": 4221,
+            "image": "sbb00000114_00324.jpg",
+            "text": "adiuuans, nulloque subueniente iudaeis "
+          },
+          {
+            "export_line": 4223,
+            "image": "sbb00000114_00324.jpg",
+            "text": "partem illam cum eis qui prope stabant ad fugam "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "fd9a52a450f2872ac0a9eb2791725a96ee204d06369e02d54fe51f34d7701809",
+          "xyxy": [
+            429,
+            2579,
+            1537,
+            3139
+          ],
+          "source_sha256": "0e938316e051832cdbd1e56e0348f01e8fd9426396899b4cca616784b4a10e62",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-a7f1a6a8f5_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00324.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00324",
+          "folio": "160v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "bf43e244b8537f419b107337fbf118b0440940323d099b70c40e6bb627ae8886",
+          "xyxy": [
+            1494,
+            180,
+            2637,
+            740
+          ],
+          "source_sha256": "0e938316e051832cdbd1e56e0348f01e8fd9426396899b4cca616784b4a10e62",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-a7f1a6a8f5_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00324.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00324",
+          "folio": "160v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "exercitu",
+        "right_fragment": "multi",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 4213,
+              "image": "sbb00000114_00324.jpg",
+              "text": "sitate uel studio utabutroque exercitu "
+            },
+            "right": {
+              "export_line": 4215,
+              "image": "sbb00000114_00324.jpg",
+              "text": "multi prosternerentur. Sed cum alexan "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "exercitu / multi",
+        "conclusion": "Fresh image review: column/page terminal 'exercitu' and following 'multi' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.691098+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-f5fa29f54e",
+      "book": 13,
+      "niese": 358,
+      "folio": "161r",
+      "image_id": "bsb00140762_00325",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-f5fa29f54e",
+        "book": 13,
+        "niese": 358,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 104335,
+        "byte_end": 104348,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-f5fa29f54e",
+        "index": 50,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:28.931789+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "redisse / matremque",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "redisse",
+      "right_fragment": "matremque",
+      "left_context": "donam expugnauit, quam postea herodis agrippiadam nominauit. Cumque uideret ptolomeum a gaza ad cyprum redisse",
+      "right_context": "matremque eius cleopatram ad aegyptum, gazeis iratus quoniam ptolomeum auxiliatorem cum uocassent ciuitatem ob",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 4379,
+            "image": "sbb00000114_00325.jpg",
+            "text": "quam perturbatur alexander sed mox iuxta "
+          },
+          {
+            "export_line": 4381,
+            "image": "sbb00000114_00325.jpg",
+            "text": "maritima loca ducit exercitum et rafiam et  "
+          },
+          {
+            "export_line": 4383,
+            "image": "sbb00000114_00325.jpg",
+            "text": "anchidonam expugnauit, quam postea hero "
+          },
+          {
+            "export_line": 4385,
+            "image": "sbb00000114_00325.jpg",
+            "text": "dis agrippiadam nominauit. Cumque ui "
+          },
+          {
+            "export_line": 4387,
+            "image": "sbb00000114_00325.jpg",
+            "text": "deret ptolomeum a gaza ad cyprum redisse "
+          },
+          {
+            "export_line": 4389,
+            "image": "sbb00000114_00325.jpg",
+            "text": "matremque eius cleopatram ad aegyptum, "
+          },
+          {
+            "export_line": 4391,
+            "image": "sbb00000114_00325.jpg",
+            "text": "gazeis iratus quoniam ptolomeum auxiliato "
+          },
+          {
+            "export_line": 4393,
+            "image": "sbb00000114_00325.jpg",
+            "text": "rem cum uocassent ciuitatem obsedit pro "
+          },
+          {
+            "export_line": 4395,
+            "image": "sbb00000114_00325.jpg",
+            "text": "uinciamque ipsorum depredauit. Sed aploi "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 4381,
+            "image": "sbb00000114_00325.jpg",
+            "text": "maritima loca ducit exercitum et rafiam et  "
+          },
+          {
+            "export_line": 4383,
+            "image": "sbb00000114_00325.jpg",
+            "text": "anchidonam expugnauit, quam postea hero "
+          },
+          {
+            "export_line": 4385,
+            "image": "sbb00000114_00325.jpg",
+            "text": "dis agrippiadam nominauit. Cumque ui "
+          },
+          {
+            "export_line": 4387,
+            "image": "sbb00000114_00325.jpg",
+            "text": "deret ptolomeum a gaza ad cyprum redisse "
+          },
+          {
+            "export_line": 4389,
+            "image": "sbb00000114_00325.jpg",
+            "text": "matremque eius cleopatram ad aegyptum, "
+          },
+          {
+            "export_line": 4391,
+            "image": "sbb00000114_00325.jpg",
+            "text": "gazeis iratus quoniam ptolomeum auxiliato "
+          },
+          {
+            "export_line": 4393,
+            "image": "sbb00000114_00325.jpg",
+            "text": "rem cum uocassent ciuitatem obsedit pro "
+          },
+          {
+            "export_line": 4395,
+            "image": "sbb00000114_00325.jpg",
+            "text": "uinciamque ipsorum depredauit. Sed aploi "
+          },
+          {
+            "export_line": 4397,
+            "image": "sbb00000114_00325.jpg",
+            "text": "dotus dux gazenorum cum duo milibus "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "d04a475c6724ee65f4b20ca43c5c1d02f244af4182a29aa60da763d3de380272",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "8e38eb81a08edbeb518f563181c41b276d7e05ce031ea8320e93a1ecdf713c7d",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-f5fa29f54e_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00325.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00325",
+          "folio": "161r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "decfdf7b0a70c72cc83ee989da8d3d39140f128f1c7c3a9f4f57d6689185f039",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "8e38eb81a08edbeb518f563181c41b276d7e05ce031ea8320e93a1ecdf713c7d",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-f5fa29f54e_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00325.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00325",
+          "folio": "161r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "redisse",
+        "right_fragment": "matremque",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 4387,
+              "image": "sbb00000114_00325.jpg",
+              "text": "deret ptolomeum a gaza ad cyprum redisse "
+            },
+            "right": {
+              "export_line": 4389,
+              "image": "sbb00000114_00325.jpg",
+              "text": "matremque eius cleopatram ad aegyptum, "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "redisse / matremque",
+        "conclusion": "Fresh image review: column/page terminal 'redisse' and following 'matremque' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.694411+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-db4aa6b6c3",
+      "book": 13,
+      "niese": 394,
+      "folio": "162v",
+      "image_id": "bsb00140762_00327;bsb00140762_00328",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-db4aa6b6c3",
+        "book": 13,
+        "niese": 394,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 115289,
+        "byte_end": 115303,
+        "old": "<pb n=\"162v\"/>",
+        "new": " <pb n=\"162v\"/>",
+        "old_bytes_hex": "3c7062206e3d2231363276222f3e",
+        "new_bytes_hex": "203c7062206e3d2231363276222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-db4aa6b6c3",
+        "index": 55,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:28.931789+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "antiochi / dicitur",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "antiochi",
+      "right_fragment": "dicitur,",
+      "left_context": "do inuasit. Exinde contra gaulam et seleuciam pergit, et has cum coepisset, subegit etiam uallem quae antiochi",
+      "right_context": "dicitur, castellum quoque gamala. Sed cum multi demetrium ducem illorum locorum accusarent, nimis eum indignat",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 4813,
+            "image": "sbb00000114_00327.jpg",
+            "text": "essamon produxit exercitum, ubi plurime uel "
+          },
+          {
+            "export_line": 4815,
+            "image": "sbb00000114_00327.jpg",
+            "text": "mirandae res....oniss fuerant, quam tribus "
+          },
+          {
+            "export_line": 4817,
+            "image": "sbb00000114_00327.jpg",
+            "text": "aggeribus circumdans pugnando inuasit. "
+          },
+          {
+            "export_line": 4819,
+            "image": "sbb00000114_00327.jpg",
+            "text": "Exinde contra gaulam et seleuciam pergit, et has cum "
+          },
+          {
+            "export_line": 4821,
+            "image": "sbb00000114_00327.jpg",
+            "text": "coepisset, subegit etiam uallem quae antiochi "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 4825,
+            "image": "sbb00000114_00328.jpg",
+            "text": "dicitur, castellum quoque gamala. Sed cum "
+          },
+          {
+            "export_line": 4827,
+            "image": "sbb00000114_00328.jpg",
+            "text": "multi demetrium ducem illorum locorum "
+          },
+          {
+            "export_line": 4829,
+            "image": "sbb00000114_00328.jpg",
+            "text": "accusarent, nimis eum indignatus dam "
+          },
+          {
+            "export_line": 4831,
+            "image": "sbb00000114_00328.jpg",
+            "text": "nis affecit, et tertium annum complens "
+          },
+          {
+            "export_line": 4833,
+            "image": "sbb00000114_00328.jpg",
+            "text": "soluta expeditione ad sua reuersus est, "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "626cf6840c2cab23e5006a4e30e37f4b737e0e07dadc7d937bede82eb6ccd71a",
+          "xyxy": [
+            1277,
+            2579,
+            2439,
+            3139
+          ],
+          "source_sha256": "b3a4ca365faabe5e5ac1b783fdfa0c6ce344f7ffa5877a7cf230a2a80d3c4c52",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-db4aa6b6c3_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00327.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00327",
+          "folio": "162r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "f61e925fd9d0bf0b6b25b0ab353ed669508bca78c5b3b3b388fd8ef45b9d6eeb",
+          "xyxy": [
+            429,
+            180,
+            1537,
+            740
+          ],
+          "source_sha256": "9c0384d9620c33fc289e1a4d94f73e29302ef4c35c691556a868236b4691f401",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-db4aa6b6c3_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00328.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00328",
+          "folio": "162v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "antiochi",
+        "right_fragment": "dicitur,",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 4821,
+              "image": "sbb00000114_00327.jpg",
+              "text": "coepisset, subegit etiam uallem quae antiochi "
+            },
+            "right": {
+              "export_line": 4825,
+              "image": "sbb00000114_00328.jpg",
+              "text": "dicitur, castellum quoque gamala. Sed cum "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "antiochi / dicitur,",
+        "conclusion": "Fresh image review: column/page terminal 'antiochi' and following 'dicitur,' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.700634+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-5487ad9420",
+      "book": 13,
+      "niese": 408,
+      "folio": "163r",
+      "image_id": "bsb00140762_00328;bsb00140762_00329",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-5487ad9420",
+        "book": 13,
+        "niese": 408,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 119638,
+        "byte_end": 119652,
+        "old": "<pb n=\"163r\"/>",
+        "new": " <pb n=\"163r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231363372222f3e",
+        "new_bytes_hex": "203c7062206e3d2231363372222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-5487ad9420",
+        "index": 57,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:28.931789+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "hyrcanus / socer",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "hyrcanus",
+      "right_fragment": "socer",
+      "left_context": "nauit, fariseis tamen omnia facere permittens quibus oboedire multitudinem praecepit, et siquid legum hyrcanus",
+      "right_context": "socer eius soluisset, quod pharisaei secundum patriam traditionem introduxerant. hoc iterum restituit. Nomen e",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 4987,
+            "image": "sbb00000114_00328.jpg",
+            "text": "peccasset, quae principem quidem sacerdotum "
+          },
+          {
+            "export_line": 4989,
+            "image": "sbb00000114_00328.jpg",
+            "text": "hyrcanum propter aetatem, magis autem propter "
+          },
+          {
+            "export_line": 4991,
+            "image": "sbb00000114_00328.jpg",
+            "text": "innocentiam ordinauit, fariseis tamen omnia "
+          },
+          {
+            "export_line": 4993,
+            "image": "sbb00000114_00328.jpg",
+            "text": "facere permittens quibus oboedire multitu "
+          },
+          {
+            "export_line": 4995,
+            "image": "sbb00000114_00328.jpg",
+            "text": "dinem praecepit, et siquid legum hyrcanus "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 5077,
+            "image": "sbb00000114_00329.jpg",
+            "text": "esse si neglecti socii mariti eius aduersa "
+          },
+          {
+            "export_line": 5079,
+            "image": "sbb00000114_00329.jpg",
+            "text": "riis traderentur, nam gaudium aretae "
+          },
+          {
+            "export_line": 5081,
+            "image": "sbb00000114_00329.jpg",
+            "text": "arabo erit tot et tales uiros ate alienari "
+          },
+          {
+            "export_line": 5083,
+            "image": "sbb00000114_00329.jpg",
+            "text": "quorum prius terribile fuerat nomen "
+          },
+          {
+            "export_line": 5085,
+            "image": "sbb00000114_00329.jpg",
+            "text": "auditum. Si uero pharisaeos praeponere "
+          },
+          {
+            "export_line": 5087,
+            "image": "sbb00000114_00329.jpg",
+            "text": "iudicas, unum quemque in castellis dispone, "
+          },
+          {
+            "export_line": 5089,
+            "image": "sbb00000114_00329.jpg",
+            "text": "et si ita aduersarios uis erigere. Multa "
+          },
+          {
+            "export_line": 5091,
+            "image": "sbb00000114_00329.jpg",
+            "text": "talia cum ei dicerent et ad misericordiam "
+          },
+          {
+            "export_line": 5093,
+            "image": "sbb00000114_00329.jpg",
+            "text": "mortuorum et periclitantium umbras ale "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "c3400f7bf12fe1c5423beefc54439c7a9aa41827b1555b26e66f50aae74c9d7a",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "9c0384d9620c33fc289e1a4d94f73e29302ef4c35c691556a868236b4691f401",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-5487ad9420_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00328.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00328",
+          "folio": "162v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "b292f253e09477a9120725d1dddcdb0e9e7562e882e36d3bba3dc575a6c649f0",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "ebb41511ee82ab3a099159d57fead1019d543df8a9c00046d87b1fa3b07afc26",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-5487ad9420_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00329.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00329",
+          "folio": "163r",
+          "column": "1/1",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "hyrcanus",
+        "right_fragment": "socer",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 4995,
+              "image": "sbb00000114_00328.jpg",
+              "text": "dinem praecepit, et siquid legum hyrcanus "
+            },
+            "right": {
+              "export_line": 4999,
+              "image": "sbb00000114_00329.jpg",
+              "text": "socer eius soluisset, quod pharisaei secun "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "hyrcanus / socer",
+        "conclusion": "Fresh image review: column/page terminal 'hyrcanus' and following 'socer' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.704679+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-b4dbbb3471",
+      "book": 13,
+      "niese": 414,
+      "folio": "163r",
+      "image_id": "bsb00140762_00329",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-b4dbbb3471",
+        "book": 13,
+        "niese": 414,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 121609,
+        "byte_end": 121622,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-b4dbbb3471",
+        "index": 58,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:28.931789+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "nomen / auditum",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "nomen",
+      "right_fragment": "auditum.",
+      "left_context": "traderentur, nam gaudium aretae arabo erit tot et tales uiros ate alienari quorum prius terribile fuerat nomen",
+      "right_context": "auditum. Si uero pharisaeos praeponere iudicas, unum quemque in castellis dispone, et si ita aduersarios uis e",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 5161,
+            "image": "sbb00000114_00329.jpg",
+            "text": "domi reuertitur. Interiecto uero tempore "
+          },
+          {
+            "export_line": 5163,
+            "image": "sbb00000114_00329.jpg",
+            "text": "alexandra regina cum inualitudinem saeuis "
+          },
+          {
+            "export_line": 5165,
+            "image": "sbb00000114_00329.jpg",
+            "text": "siman incidisset placuit aristobolo rem "
+          },
+          {
+            "export_line": 5167,
+            "image": "sbb00000114_00329.jpg",
+            "text": "puclicam inuadere et per noctem cum uno famu "
+          },
+          {
+            "export_line": 5169,
+            "image": "sbb00000114_00329.jpg",
+            "text": "lo egressus ad castella perrexit ubi "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 5077,
+            "image": "sbb00000114_00329.jpg",
+            "text": "esse si neglecti socii mariti eius aduersa "
+          },
+          {
+            "export_line": 5079,
+            "image": "sbb00000114_00329.jpg",
+            "text": "riis traderentur, nam gaudium aretae "
+          },
+          {
+            "export_line": 5081,
+            "image": "sbb00000114_00329.jpg",
+            "text": "arabo erit tot et tales uiros ate alienari "
+          },
+          {
+            "export_line": 5083,
+            "image": "sbb00000114_00329.jpg",
+            "text": "quorum prius terribile fuerat nomen "
+          },
+          {
+            "export_line": 5085,
+            "image": "sbb00000114_00329.jpg",
+            "text": "auditum. Si uero pharisaeos praeponere "
+          },
+          {
+            "export_line": 5087,
+            "image": "sbb00000114_00329.jpg",
+            "text": "iudicas, unum quemque in castellis dispone, "
+          },
+          {
+            "export_line": 5089,
+            "image": "sbb00000114_00329.jpg",
+            "text": "et si ita aduersarios uis erigere. Multa "
+          },
+          {
+            "export_line": 5091,
+            "image": "sbb00000114_00329.jpg",
+            "text": "talia cum ei dicerent et ad misericordiam "
+          },
+          {
+            "export_line": 5093,
+            "image": "sbb00000114_00329.jpg",
+            "text": "mortuorum et periclitantium umbras ale "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "40d372bfbed49c3dd266164bd471cbb9737889ca580b7359f6d0f72b35863f02",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "ebb41511ee82ab3a099159d57fead1019d543df8a9c00046d87b1fa3b07afc26",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-b4dbbb3471_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00329.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00329",
+          "folio": "163r",
+          "column": "1/1",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "124193c64617694bcfc6a91c9fcaffdf3df463bfe73b9787d9a598a4bf20dd66",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "ebb41511ee82ab3a099159d57fead1019d543df8a9c00046d87b1fa3b07afc26",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-b4dbbb3471_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00329.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00329",
+          "folio": "163r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "nomen",
+        "right_fragment": "auditum.",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 5083,
+              "image": "sbb00000114_00329.jpg",
+              "text": "quorum prius terribile fuerat nomen "
+            },
+            "right": {
+              "export_line": 5085,
+              "image": "sbb00000114_00329.jpg",
+              "text": "auditum. Si uero pharisaeos praeponere "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "nomen / auditum.",
+        "conclusion": "Fresh image review: column/page terminal 'nomen' and following 'auditum.' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.706560+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    },
+    {
+      "candidate_id": "M14-B13-429234a8fe",
+      "book": 13,
+      "niese": 430,
+      "folio": "163v",
+      "image_id": "bsb00140762_00330",
+      "source_status": "REQUIRES_FURTHER_EXAMINATION",
+      "patch": {
+        "candidate_id": "M14-B13-429234a8fe",
+        "book": 13,
+        "niese": 430,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 125944,
+        "byte_end": 125957,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      },
+      "source_register_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/correction_register.jsonl",
+      "source_register_sha256": "f282d7b92a45ef6413db9e10203a19bed33989a49b9df5257b47135559976ad5",
+      "historical_reason": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+      "historical_adjudication": {
+        "boundary_id": "M14-B13-429234a8fe",
+        "index": 60,
+        "book": 13,
+        "inspected_utc": "2026-10-15T17:42:28.931789+00:00",
+        "method": "Context-exposed direct visual examination of original-source boundary strips; XML and original T-PEN context compared",
+        "classification": "AUTO-MECHANICAL",
+        "boundary_type": "missing separator between complete words",
+        "visible_reading": "regni / nono",
+        "note": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "image_context_verified": true
+      },
+      "left_fragment": "regni",
+      "right_fragment": "nono,",
+      "left_context": " corpore uanum esse pro talibus laborem inpendere.\"\n\n Haec cum dixisset non multo post decessit anno sui regni",
+      "right_context": "nono, aetatis uero septuagesimo tertio. Mulier quae debilitate sui sexus numquam succubuit, callida circa regn",
+      "TPEN_evidence": {
+        "left": [
+          {
+            "export_line": 5227,
+            "image": "sbb00000114_00330.jpg",
+            "text": "etiam militiam congregaret alibano uel draco "
+          },
+          {
+            "export_line": 5229,
+            "image": "sbb00000114_00330.jpg",
+            "text": "nitide uel monarcis, tunc seniores iudae "
+          },
+          {
+            "export_line": 5231,
+            "image": "sbb00000114_00330.jpg",
+            "text": "orum et hyrcanus ad reginam intrantes pe "
+          },
+          {
+            "export_line": 5233,
+            "image": "sbb00000114_00330.jpg",
+            "text": "tebant ut sententiam de rebus ferret instantibus "
+          },
+          {
+            "export_line": 5235,
+            "image": "sbb00000114_00330.jpg",
+            "text": "\" nam aristobolus iam peane cuncta posside "
+          },
+          {
+            "export_line": 5237,
+            "image": "sbb00000114_00330.jpg",
+            "text": "rat tantis locis occupatis, in honestum enim "
+          },
+          {
+            "export_line": 5239,
+            "image": "sbb00000114_00330.jpg",
+            "text": "putabant quamuis in aegritudine labora "
+          },
+          {
+            "export_line": 5241,
+            "image": "sbb00000114_00330.jpg",
+            "text": "ret sine ea aliquod consilium capere, in minere "
+          },
+          {
+            "export_line": 5243,
+            "image": "sbb00000114_00330.jpg",
+            "text": "uero sibi ne longe periculum clamitabant. "
+          }
+        ],
+        "right": [
+          {
+            "export_line": 5229,
+            "image": "sbb00000114_00330.jpg",
+            "text": "nitide uel monarcis, tunc seniores iudae "
+          },
+          {
+            "export_line": 5231,
+            "image": "sbb00000114_00330.jpg",
+            "text": "orum et hyrcanus ad reginam intrantes pe "
+          },
+          {
+            "export_line": 5233,
+            "image": "sbb00000114_00330.jpg",
+            "text": "tebant ut sententiam de rebus ferret instantibus "
+          },
+          {
+            "export_line": 5235,
+            "image": "sbb00000114_00330.jpg",
+            "text": "\" nam aristobolus iam peane cuncta posside "
+          },
+          {
+            "export_line": 5237,
+            "image": "sbb00000114_00330.jpg",
+            "text": "rat tantis locis occupatis, in honestum enim "
+          },
+          {
+            "export_line": 5239,
+            "image": "sbb00000114_00330.jpg",
+            "text": "putabant quamuis in aegritudine labora "
+          },
+          {
+            "export_line": 5241,
+            "image": "sbb00000114_00330.jpg",
+            "text": "ret sine ea aliquod consilium capere, in minere "
+          },
+          {
+            "export_line": 5243,
+            "image": "sbb00000114_00330.jpg",
+            "text": "uero sibi ne longe periculum clamitabant. "
+          },
+          {
+            "export_line": 5245,
+            "image": "sbb00000114_00330.jpg",
+            "text": "Cumque illa praecepisset eis agere quae existima "
+          }
+        ]
+      },
+      "crops": [
+        {
+          "sha256": "96530354310f8c8e9c327fbe8b1c25bdd6d42090191f12ca9557f754974aa07a",
+          "xyxy": [
+            429,
+            2579,
+            1537,
+            3139
+          ],
+          "source_sha256": "214d6e63ba8b35c985bb698df6aa9b58589fc826e3279bfd90cc22c1970df84c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-429234a8fe_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00330.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00330",
+          "folio": "163v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        },
+        {
+          "sha256": "56872c9ec67791d1f6fa338824e739e5b1a0dd6d973ecf2328a9475937cdd5b3",
+          "xyxy": [
+            1494,
+            180,
+            2637,
+            740
+          ],
+          "source_sha256": "214d6e63ba8b35c985bb698df6aa9b58589fc826e3279bfd90cc22c1970df84c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-429234a8fe_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00330.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00330",
+          "folio": "163v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true
+        }
+      ],
+      "source_compatible": true,
+      "crop_hashes_verified": true,
+      "native_sources_verified": true,
+      "fresh_TPEN_search": {
+        "line_index_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/XIII_TPEN_line_index.json",
+        "line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+        "raw_RTF_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/inputs/original_XIII_TPEN.rtf",
+        "raw_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+        "left_fragment": "regni",
+        "right_fragment": "nono,",
+        "exact_pairs": [
+          {
+            "left": {
+              "export_line": 5257,
+              "image": "sbb00000114_00330.jpg",
+              "text": "set non multo post decessit anno sui regni "
+            },
+            "right": {
+              "export_line": 5259,
+              "image": "sbb00000114_00330.jpg",
+              "text": "nono, aetatis uero septuagesimo tertio. "
+            }
+          }
+        ],
+        "exact_pair_count": 1,
+        "export_positions_are_not_polygon_or_physical_line_coordinates": true
+      },
+      "TPEN_exact_pair_verified": true,
+      "v1_9_visual_revalidation": {
+        "reviewed": true,
+        "method": "Context-exposed direct multimodal reading of hash-verified manuscript boundary crops",
+        "independent_blind_corroboration_claimed": false,
+        "operation": "SEPARATE_COMPLETE_WORDS",
+        "visible_boundary": "regni / nono,",
+        "conclusion": "Fresh image review: column/page terminal 'regni' and following 'nono,' are two complete words. The full raw layout run contains no separator; add only the registered separator.",
+        "reviewed_utc": "2026-10-16T13:31:03.710274+00:00",
+        "human_editor_check": false
+      },
+      "v1_9_disposition": "VERIFIED",
+      "v1_9_integration_authorized": false,
+      "applied": false,
+      "historical_note_reconciliation": {
+        "old_note_retained_verbatim": "Visible terminal and initial text match the boundary context; no separator edit justified.",
+        "new_finding": "Two complete words and zero XML separator independently re-established from image and original export; the negative note is not retained as a present evidence conclusion.",
+        "generator": "Bamberg_Audit_v1_4_XIII_XIV/scripts/log_boundary_batch.py",
+        "generator_sha256": "df82b2cb503a730977865dd1c9f7614d32f675383b42fb71caa34c12eb855bae",
+        "generator_line": 9,
+        "mechanism": "The note field has a negative default independent of an explicitly supplied AUTO-MECHANICAL classification and missing-separator type. This explains how the records could contradict themselves; the original run arguments were not reconstructed.",
+        "future_authorization_required": true,
+        "applied_in_v1_9": false
+      }
+    }
+  ]
+}
