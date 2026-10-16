@@ -1,0 +1,2477 @@
+{
+  "version": "2.0",
+  "immediate_source_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+  "original_development_baseline": "f13613e2e5cfc857a15b61201711211be6506279",
+  "exclusive_authorization_ids": [
+    "M14-B13-48004f243c",
+    "M14-B13-477cdb858d",
+    "M14-B13-c028dee2a1",
+    "M14-B13-7899741b9f",
+    "M14-B13-d5f6ea1941",
+    "M14-B13-e406f2ca6b",
+    "M14-B13-c0abf9e4f3",
+    "M14-B13-30b81dc20e",
+    "M14-B13-204148f34e",
+    "M14-B13-a7f1a6a8f5",
+    "M14-B13-f5fa29f54e",
+    "M14-B13-db4aa6b6c3",
+    "M14-B13-5487ad9420",
+    "M14-B13-b4dbbb3471",
+    "M14-B13-429234a8fe"
+  ],
+  "patch_count": 15,
+  "prior_effect_count": 76,
+  "patches": [
+    {
+      "candidate_id": "M14-B13-48004f243c",
+      "book": 13,
+      "niese": 120,
+      "folio": "153r",
+      "image_id": "bsb00140762_00308;bsb00140762_00309",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 37086,
+      "byte_end": 37086,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<pb n=\"153r\"/>",
+      "left_word": "ptolomei",
+      "right_word": "militiam",
+      "raw_context_before_insertion": "> Suscipiens uero principatum demetrius qui nicanor appellabatur, fraudibus corrumpere coepit ptolomei<milestone n=\"sbb00000114_00309.jpg\"/><pb n=\"153r\"/><cb n=\"1/2\"/>militiam oblitus et quod socer eius et auxiliator fuisset, et assinis per conu \" bium cleopatre. Qua propter milites ptolomei a",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 1461,
+          "image": "sbb00000114_00308.jpg",
+          "text": "fraudibus corrumpere coepit ptolomei "
+        },
+        "right": {
+          "export_line": 1465,
+          "image": "sbb00000114_00309.jpg",
+          "text": "militiam oblitus et quod socer eius et "
+        }
+      },
+      "TPEN_context_match_score": 11,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "2a014078c00d8ddd6fc2256a88e8b0f5cfb36f3cfed3303fbce66a550347f101",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-48004f243c",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "2d692dc3ad5038f952854e29bf14fc9a784b7ba162ea15e68e4d7f11a76c13c3",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "0459eabd0b371cd99b18f597d1d0cd690d32345124138097a9dddb096ea5fa6e",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-48004f243c_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00308.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00308",
+          "folio": "152v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "8591703a60898da107e5dffaa7659bed89fc1916b421eefdda42f16b70193851",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "4c385269cf1ca00d7f4a812c47ca1b95f619d26f4ec0d56faf422e194e5ed3db",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-48004f243c_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00309.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00309",
+          "folio": "153r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          37040,
+          37121
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-48004f243c",
+        "book": 13,
+        "niese": 120,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 37086,
+        "byte_end": 37100,
+        "old": "<pb n=\"153r\"/>",
+        "new": " <pb n=\"153r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353372222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353372222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-477cdb858d",
+      "book": 13,
+      "niese": 154,
+      "folio": "154r",
+      "image_id": "bsb00140762_00311",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 46966,
+      "byte_end": 46966,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<cb n=\"2/2\"/>",
+      "left_word": "in",
+      "right_word": "iudaea",
+      "raw_context_before_insertion": "a eum ad galileam traherent, putantes minime eum pati galileos sibi subiectos affligere. Cumque ionathas eis occurrisset, symonem fratrem in<cb n=\"2/2\"/>iudaea ducem reliquit. <milestone unit=\"niese\" n=\"155\"/>Qui multum exercitum de prouincia congregans, bethsuram obsidebat locum iudae muniti",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 1907,
+          "image": "sbb00000114_00311.jpg",
+          "text": "eis occurrisset, symonem fratrem in "
+        },
+        "right": {
+          "export_line": 1909,
+          "image": "sbb00000114_00311.jpg",
+          "text": "iudaea ducem reliquit. Qui multum "
+        }
+      },
+      "TPEN_context_match_score": 10,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "f32420a4b021428680146ffe65ef5287e46aea0c6d30c260141d4efcd29ce174",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-477cdb858d",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "98e4f4e6b1f597b73b4138b3f3e7082e295deae23f8bd8d0b26ce72948d634a5",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "17615eaf0ce664a8f64bf30dc884d02aa9c0c3b60f0f5c801a14c09d245a05e7",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-477cdb858d_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00311.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00311",
+          "folio": "154r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "58698afdd58befbffd4c41f5d071e279d4eff8e3d237a84fc19e9a564813bbb6",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "17615eaf0ce664a8f64bf30dc884d02aa9c0c3b60f0f5c801a14c09d245a05e7",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-477cdb858d_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00311.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00311",
+          "folio": "154r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          46964,
+          46985
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-477cdb858d",
+        "book": 13,
+        "niese": 154,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 46966,
+        "byte_end": 46979,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-c028dee2a1",
+      "book": 13,
+      "niese": 225,
+      "folio": "156v",
+      "image_id": "bsb00140762_00316",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 67460,
+      "byte_end": 67460,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<cb n=\"2/2\"/>",
+      "left_word": "tradens",
+      "right_word": "ad",
+      "raw_context_before_insertion": "a uel prauitate sua simonis obliuionem una cum ministratis pecuniis et alimentis concepit, uir esque militares cuidam cendibeo amico tradens<cb n=\"2/2\"/>ad depredationem iudeae captiuitatemque simonis misit. <milestone unit=\"niese\" n=\"226\"/>Sed cum simon audisset antiochi preuaricationem lice",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 2817,
+          "image": "sbb00000114_00316.jpg",
+          "text": "militares cuidam cendibeo amico tradens "
+        },
+        "right": {
+          "export_line": 2819,
+          "image": "sbb00000114_00316.jpg",
+          "text": "ad depredationem iudeae captiuitatemque "
+        }
+      },
+      "TPEN_context_match_score": 9,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "39fd3a92bb966b93bb643dcf55d475c0dec728a76e48a6cd0ec0560441e24df6",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-c028dee2a1",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "c71e9aa9ffbb6c4dbf292c8e1593b2f4d07c0cf7a9ec4f1149661e23f405e25e",
+          "xyxy": [
+            429,
+            2579,
+            1537,
+            3139
+          ],
+          "source_sha256": "a312c9d3fdfe9565f584c60bf5fcb6bc96cd265e04c8120bd4503ecc29b876fb",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-c028dee2a1_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00316.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00316",
+          "folio": "156v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "efe86b14b53e2012e6ce9043d22177c1c84cb6bed6e8cddddb1e3baa2fa0bcfa",
+          "xyxy": [
+            1494,
+            180,
+            2637,
+            740
+          ],
+          "source_sha256": "a312c9d3fdfe9565f584c60bf5fcb6bc96cd265e04c8120bd4503ecc29b876fb",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-c028dee2a1_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00316.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00316",
+          "folio": "156v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          67453,
+          67475
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-c028dee2a1",
+        "book": 13,
+        "niese": 225,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 67461,
+        "byte_end": 67474,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-7899741b9f",
+      "book": 13,
+      "niese": 232,
+      "folio": "157r",
+      "image_id": "bsb00140762_00316;bsb00140762_00317",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 69704,
+      "byte_end": 69704,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<pb n=\"157r\"/>",
+      "left_word": "magis",
+      "right_word": "impetu",
+      "raw_context_before_insertion": " unit=\"niese\" n=\"232\"/>Mater autem protendens manus petebat, ne propter eos disserret, sed multo magis<milestone n=\"sbb00000114_00317.jpg\"/><pb n=\"157r\"/><cb n=\"1/2\"/>impetu castellum inuaderet inimicoque suae potestati subacto pro carrisimorum tormentis redderet retributionem sibi quoque aest",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 2907,
+          "image": "sbb00000114_00316.jpg",
+          "text": "ne propter eos disserret, sed multo magis "
+        },
+        "right": {
+          "export_line": 2911,
+          "image": "sbb00000114_00317.jpg",
+          "text": "impetu castellum inuaderet inimicoque "
+        }
+      },
+      "TPEN_context_match_score": 11,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "0de8570e27b9cf7647e3d0993912cf515764fed69c8cd4ff0e78d2f808cc5dd7",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-7899741b9f",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "6a5f2f7e2c3b63b0cc3884a9bc1038e68cadc5ea178bbe16ee1ffe1c9e9dd64c",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "a312c9d3fdfe9565f584c60bf5fcb6bc96cd265e04c8120bd4503ecc29b876fb",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-7899741b9f_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00316.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00316",
+          "folio": "156v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "6d05ac5ed490a9bed447f230c6d64fc5bdff46719c51a889654e418ea352c772",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "c1f8706804b9e4c83e135ea93c773dd22d532623d4ab6418ab2406dad8227332",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-7899741b9f_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00317.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00317",
+          "folio": "157r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          69661,
+          69737
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-7899741b9f",
+        "book": 13,
+        "niese": 232,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 69705,
+        "byte_end": 69719,
+        "old": "<pb n=\"157r\"/>",
+        "new": " <pb n=\"157r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353772222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353772222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-d5f6ea1941",
+      "book": 13,
+      "niese": 247,
+      "folio": "157v",
+      "image_id": "bsb00140762_00317;bsb00140762_00318",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 73616,
+      "byte_end": 73616,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<pb n=\"157v\"/>",
+      "left_word": "Iudaei",
+      "right_word": "uero",
+      "raw_context_before_insertion": "ias in ciuitate susciperent, confirmans pactum finiret bellum. <milestone unit=\"niese\" n=\"247\"/>Iudaei<milestone n=\"sbb00000114_00318.jpg\"/><pb n=\"157v\"/><cb n=\"1/2\"/>uero omnia perferre preter custodiam consentiebant, quam non propter aliud nisi pro dissimili conuersatione recusa \" bant. Pro ",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 3081,
+          "image": "sbb00000114_00317.jpg",
+          "text": "confirmans pactum finiret bellum. Iudaei "
+        },
+        "right": {
+          "export_line": 3085,
+          "image": "sbb00000114_00318.jpg",
+          "text": "uero omnia perferre preter custodiam "
+        }
+      },
+      "TPEN_context_match_score": 10,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "c3e4923b87e0b56495c4fdfa0f8ef6a3d94fcc644b3ebe313605eb06180a67c4",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-d5f6ea1941",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "1a1186a153dae41e04e34b0cccb8b49e6fd2e22a2e145dc5d1a3319188dc755c",
+          "xyxy": [
+            1277,
+            2579,
+            2439,
+            3139
+          ],
+          "source_sha256": "c1f8706804b9e4c83e135ea93c773dd22d532623d4ab6418ab2406dad8227332",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-d5f6ea1941_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00317.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00317",
+          "folio": "157r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "1aca8430b79a1e4d444f6fbb6a8b503d33378a603573749aee7d6d1ff5772b61",
+          "xyxy": [
+            429,
+            180,
+            1537,
+            740
+          ],
+          "source_sha256": "bc5d7ea5196728249410fa7342709685f0c7150769bbecafe13069813975c4d3",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-d5f6ea1941_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00318.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00318",
+          "folio": "157v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          73572,
+          73647
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-d5f6ea1941",
+        "book": 13,
+        "niese": 247,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 73617,
+        "byte_end": 73631,
+        "old": "<pb n=\"157v\"/>",
+        "new": " <pb n=\"157v\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353776222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353776222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-e406f2ca6b",
+      "book": 13,
+      "niese": 263,
+      "folio": "158r",
+      "image_id": "bsb00140762_00318;bsb00140762_00319",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 77809,
+      "byte_end": 77809,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<pb n=\"158r\"/>",
+      "left_word": "prouinciam",
+      "right_word": "aestiment",
+      "raw_context_before_insertion": "\"niese\" n=\"263\"/>ut et legatos mittant quatinus recipiantur quae ab antiocho ablata sunt et prouinciam<milestone n=\"sbb00000114_00319.jpg\"/><pb n=\"158r\"/><cb n=\"1/2\"/>aestiment uastatam, ut quae eis ad reges et populos liberos litterae darentur, quatinus ad propriam domum in lęsi reuerterentu",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 3255,
+          "image": "sbb00000114_00318.jpg",
+          "text": "quae ab antiocho ablata sunt et prouinciam "
+        },
+        "right": {
+          "export_line": 3259,
+          "image": "sbb00000114_00319.jpg",
+          "text": "aestiment uastatam, ut quae eis ad reges "
+        }
+      },
+      "TPEN_context_match_score": 14,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "989bb8613c074335fbc5898279ea142f7466f68214f37a29499423d367463030",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-e406f2ca6b",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "e35c1f9010afd96257832fcbd36d2a620676956c413bead02dd8904b725e743e",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "bc5d7ea5196728249410fa7342709685f0c7150769bbecafe13069813975c4d3",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-e406f2ca6b_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00318.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00318",
+          "folio": "157v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "84cec7140864b93ec6140606fcdcc45fd668cd3a434b4dce1cec1cf764fab06e",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "bc3b7c2a0d8a6d137ec317161efc5ad7325a50a7fab9a6a4c7e537a411cbe594",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-e406f2ca6b_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00319.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00319",
+          "folio": "158r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          77761,
+          77845
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-e406f2ca6b",
+        "book": 13,
+        "niese": 263,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 77810,
+        "byte_end": 77824,
+        "old": "<pb n=\"158r\"/>",
+        "new": " <pb n=\"158r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353872222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353872222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-c0abf9e4f3",
+      "book": 13,
+      "niese": 271,
+      "folio": "158r",
+      "image_id": "bsb00140762_00319",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 79887,
+      "byte_end": 79887,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<cb n=\"2/2\"/>",
+      "left_word": "incursionibus",
+      "right_word": "fratris",
+      "raw_context_before_insertion": "ires contra se a cizi co congregasse, <milestone unit=\"niese\" n=\"271\"/>eum intra prouinciam statuit expectare, quatinus obuius incursionibus<cb n=\"2/2\"/>fratris antiochi resisteret. Qui cyzicenus dicebatur quod in illa ciuitate nutritus esset, filius autem fuerat antiochi qui soter nuncupatur",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 3343,
+          "image": "sbb00000114_00319.jpg",
+          "text": "expectare, quatinus obuius incursionibus "
+        },
+        "right": {
+          "export_line": 3345,
+          "image": "sbb00000114_00319.jpg",
+          "text": "fratris antiochi resisteret. Qui cyzicenus "
+        }
+      },
+      "TPEN_context_match_score": 9,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "5570cd715d92ba8da427f031e43a63d8f3f5bdefaa9efae9033ed7d559966f86",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-c0abf9e4f3",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "6f827ae9adc8a3a6de98df70f107b8444397787ffe3ed3e9439b21488fd968bd",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "bc3b7c2a0d8a6d137ec317161efc5ad7325a50a7fab9a6a4c7e537a411cbe594",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-c0abf9e4f3_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00319.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00319",
+          "folio": "158r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "2b90bb84866602844f8aff024ec6dd93ebef798c033ed6cf54d5ac79ae2ef819",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "bc3b7c2a0d8a6d137ec317161efc5ad7325a50a7fab9a6a4c7e537a411cbe594",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-c0abf9e4f3_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00319.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00319",
+          "folio": "158r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          79874,
+          79907
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-c0abf9e4f3",
+        "book": 13,
+        "niese": 271,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 79888,
+        "byte_end": 79901,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-30b81dc20e",
+      "book": 13,
+      "niese": 293,
+      "folio": "159r",
+      "image_id": "bsb00140762_00320;bsb00140762_00321",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 85992,
+      "byte_end": 85992,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<pb n=\"159r\"/>",
+      "left_word": "illi",
+      "right_word": "posse",
+      "raw_context_before_insertion": "cano amico dicebat, scientibus omnibus pharisaeis eleazarum blasphemiam fecisse et hoc manifestum illi<milestone n=\"sbb00000114_00321.jpg\"/><pb n=\"159r\"/><cb n=\"1/2\"/>posse fieri, si requireret illos qua dignus esset poena prouerborum qualitate multari. <milestone unit=\"niese\" n=\"294\"/>Cumque ",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 3603,
+          "image": "sbb00000114_00320.jpg",
+          "text": "phemiam fecisse et hoc manifestum illi "
+        },
+        "right": {
+          "export_line": 3607,
+          "image": "sbb00000114_00321.jpg",
+          "text": "posse fieri, si requireret illos qua dignus "
+        }
+      },
+      "TPEN_context_match_score": 12,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "b700a3d09d7017eeba20bb1e42a46cbd828f8ccb9e9308660948399d1030af70",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-30b81dc20e",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "d999d2109aaec2a269caa38790c6ea9507340d07c658ed6171d32fc698afb6d7",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "3d5c109f8764094515d59cbc06aab499870aee78a21d3d81c881d0ad8f9d1a3c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-30b81dc20e_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00320.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00320",
+          "folio": "158v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "d6a9b849d818966cb1670b87c69546c6e55648f1ecab6e09286a4161f91a99a4",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "a0b83dc026a18528828aaaa16f3462805f38fbc80a9282fdc9df915b7b65a2e3",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-30b81dc20e_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00321.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00321",
+          "folio": "159r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          85950,
+          86024
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-30b81dc20e",
+        "book": 13,
+        "niese": 293,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 85993,
+        "byte_end": 86007,
+        "old": "<pb n=\"159r\"/>",
+        "new": " <pb n=\"159r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231353972222f3e",
+        "new_bytes_hex": "203c7062206e3d2231353972222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-204148f34e",
+      "book": 13,
+      "niese": 327,
+      "folio": "160r",
+      "image_id": "bsb00140762_00323",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 95964,
+      "byte_end": 95964,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<cb n=\"2/2\"/>",
+      "left_word": "cedere",
+      "right_word": "ocio",
+      "raw_context_before_insertion": "t, ut confiderent ab eis mereri solacia uterque enim tolerabat quod saepius athletis contingit qui cum uiribus dissidunt erubescentes cedere<cb n=\"2/2\"/>ocio uel reliquiae certamina disserunt. <milestone unit=\"niese\" n=\"328\"/>Reliqua ptolomaitis spes erat in rege aegyptiorum ptolomeo latyro, ",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 4039,
+          "image": "sbb00000114_00323.jpg",
+          "text": "uiribus dissidunt erubescentes cedere "
+        },
+        "right": {
+          "export_line": 4041,
+          "image": "sbb00000114_00323.jpg",
+          "text": "ocio uel reliquiae certamina disserunt. "
+        }
+      },
+      "TPEN_context_match_score": 9,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "5f5647a929cbd6f03e95407259e7568bb97d7dac094690991676c362e6d3623f",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-204148f34e",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "49e9a587068fc1470a5292dbf86f0edcd9ff83f729530b039a5a8a3b4f8d0a93",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "bf029147a8dd319b73010d11460aa5df0523d0e6d3bb2d0c1c47f4ffab15ee1c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-204148f34e_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00323.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00323",
+          "folio": "160r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "138d35a25ffc07e807f758ca0ac55ca3225282a9ea5417fd29351feb9c5cc11b",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "bf029147a8dd319b73010d11460aa5df0523d0e6d3bb2d0c1c47f4ffab15ee1c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-204148f34e_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00323.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00323",
+          "folio": "160r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          95958,
+          95981
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-204148f34e",
+        "book": 13,
+        "niese": 327,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 95965,
+        "byte_end": 95978,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-a7f1a6a8f5",
+      "book": 13,
+      "niese": 341,
+      "folio": "160v",
+      "image_id": "bsb00140762_00324",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 100066,
+      "byte_end": 100066,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<cb n=\"2/2\"/>",
+      "left_word": "exercitu",
+      "right_word": "multi",
+      "raw_context_before_insertion": "lestone unit=\"niese\" n=\"341\"/>at in principio proelii exutraque parte fortiter pugnatum est pari animositate uel studio utabutroque exercitu<cb n=\"2/2\"/>multi prosternerentur. Sed cum alexandri exercitum superiorem filos stefanus uidisset milites diuidit et defectos suos fortiter adiuuans, <m",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 4213,
+          "image": "sbb00000114_00324.jpg",
+          "text": "sitate uel studio utabutroque exercitu "
+        },
+        "right": {
+          "export_line": 4215,
+          "image": "sbb00000114_00324.jpg",
+          "text": "multi prosternerentur. Sed cum alexan "
+        }
+      },
+      "TPEN_context_match_score": 8,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "18f1f5886e7c6e6a64fed5eecba48c8ea490b98e4a8754bfd8cea47d7562f4fd",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-a7f1a6a8f5",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "fd9a52a450f2872ac0a9eb2791725a96ee204d06369e02d54fe51f34d7701809",
+          "xyxy": [
+            429,
+            2579,
+            1537,
+            3139
+          ],
+          "source_sha256": "0e938316e051832cdbd1e56e0348f01e8fd9426396899b4cca616784b4a10e62",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-a7f1a6a8f5_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00324.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00324",
+          "folio": "160v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "bf43e244b8537f419b107337fbf118b0440940323d099b70c40e6bb627ae8886",
+          "xyxy": [
+            1494,
+            180,
+            2637,
+            740
+          ],
+          "source_sha256": "0e938316e051832cdbd1e56e0348f01e8fd9426396899b4cca616784b4a10e62",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-a7f1a6a8f5_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00324.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00324",
+          "folio": "160v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          100058,
+          100084
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-a7f1a6a8f5",
+        "book": 13,
+        "niese": 341,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 100067,
+        "byte_end": 100080,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-f5fa29f54e",
+      "book": 13,
+      "niese": 358,
+      "folio": "161r",
+      "image_id": "bsb00140762_00325",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 104334,
+      "byte_end": 104334,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<cb n=\"2/2\"/>",
+      "left_word": "redisse",
+      "right_word": "matremque",
+      "raw_context_before_insertion": "am expugnauit, quam postea herodis agrippiadam nominauit. <milestone unit=\"niese\" n=\"358\"/>Cumque uideret ptolomeum a gaza ad cyprum redisse<cb n=\"2/2\"/>matremque eius cleopatram ad aegyptum, gazeis iratus quoniam ptolomeum auxiliatorem cum uocassent ciuitatem obsedit prouinciamque ipsorum de",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 4387,
+          "image": "sbb00000114_00325.jpg",
+          "text": "deret ptolomeum a gaza ad cyprum redisse "
+        },
+        "right": {
+          "export_line": 4389,
+          "image": "sbb00000114_00325.jpg",
+          "text": "matremque eius cleopatram ad aegyptum, "
+        }
+      },
+      "TPEN_context_match_score": 11,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "a33aac719cfc0afaad7ea4f37d6b70170d52aceecd75d0e5cbebbdc191a124c7",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-f5fa29f54e",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "d04a475c6724ee65f4b20ca43c5c1d02f244af4182a29aa60da763d3de380272",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "8e38eb81a08edbeb518f563181c41b276d7e05ce031ea8320e93a1ecdf713c7d",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-f5fa29f54e_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00325.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00325",
+          "folio": "161r",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "decfdf7b0a70c72cc83ee989da8d3d39140f128f1c7c3a9f4f57d6689185f039",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "8e38eb81a08edbeb518f563181c41b276d7e05ce031ea8320e93a1ecdf713c7d",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-f5fa29f54e_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00325.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00325",
+          "folio": "161r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          104327,
+          104356
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-f5fa29f54e",
+        "book": 13,
+        "niese": 358,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 104335,
+        "byte_end": 104348,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-db4aa6b6c3",
+      "book": 13,
+      "niese": 394,
+      "folio": "162v",
+      "image_id": "bsb00140762_00327;bsb00140762_00328",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 115289,
+      "byte_end": 115289,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<pb n=\"162v\"/>",
+      "left_word": "antiochi",
+      "right_word": "dicitur,",
+      "raw_context_before_insertion": "ciam pergit, <milestone unit=\"niese\" n=\"394\"/>et has cum coepisset, subegit etiam uallem quae antiochi<milestone n=\"sbb00000114_00328.jpg\"/><pb n=\"162v\"/><cb n=\"1/2\"/>dicitur, castellum quoque gamala. Sed cum multi demetrium ducem illorum locorum accusarent, nimis eum indignatus damnis affecit",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 4821,
+          "image": "sbb00000114_00327.jpg",
+          "text": "coepisset, subegit etiam uallem quae antiochi "
+        },
+        "right": {
+          "export_line": 4825,
+          "image": "sbb00000114_00328.jpg",
+          "text": "dicitur, castellum quoque gamala. Sed cum "
+        }
+      },
+      "TPEN_context_match_score": 12,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "15fd49737cc9a39329c5302f89f6c3225b4f455e609ba298c1c89d300ae036d6",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-db4aa6b6c3",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "626cf6840c2cab23e5006a4e30e37f4b737e0e07dadc7d937bede82eb6ccd71a",
+          "xyxy": [
+            1277,
+            2579,
+            2439,
+            3139
+          ],
+          "source_sha256": "b3a4ca365faabe5e5ac1b783fdfa0c6ce344f7ffa5877a7cf230a2a80d3c4c52",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-db4aa6b6c3_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00327.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00327",
+          "folio": "162r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "f61e925fd9d0bf0b6b25b0ab353ed669508bca78c5b3b3b388fd8ef45b9d6eeb",
+          "xyxy": [
+            429,
+            180,
+            1537,
+            740
+          ],
+          "source_sha256": "9c0384d9620c33fc289e1a4d94f73e29302ef4c35c691556a868236b4691f401",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-db4aa6b6c3_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00328.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00328",
+          "folio": "162v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          115243,
+          115323
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-db4aa6b6c3",
+        "book": 13,
+        "niese": 394,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 115289,
+        "byte_end": 115303,
+        "old": "<pb n=\"162v\"/>",
+        "new": " <pb n=\"162v\"/>",
+        "old_bytes_hex": "3c7062206e3d2231363276222f3e",
+        "new_bytes_hex": "203c7062206e3d2231363276222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-5487ad9420",
+      "book": 13,
+      "niese": 408,
+      "folio": "163r",
+      "image_id": "bsb00140762_00328;bsb00140762_00329",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 119638,
+      "byte_end": 119638,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<pb n=\"163r\"/>",
+      "left_word": "hyrcanus",
+      "right_word": "socer",
+      "raw_context_before_insertion": "ariseis tamen omnia facere permittens quibus oboedire multitudinem praecepit, et siquid legum hyrcanus<milestone n=\"sbb00000114_00329.jpg\"/><pb n=\"163r\"/><cb n=\"1/1\"/>socer eius soluisset, quod pharisaei secundum patriam traditionem introduxerant. hoc iterum restituit. <milestone unit=\"niese\" ",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 4995,
+          "image": "sbb00000114_00328.jpg",
+          "text": "dinem praecepit, et siquid legum hyrcanus "
+        },
+        "right": {
+          "export_line": 4999,
+          "image": "sbb00000114_00329.jpg",
+          "text": "socer eius soluisset, quod pharisaei secun "
+        }
+      },
+      "TPEN_context_match_score": 10,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "56fdcff6e8f3c42774b70325ac7e77d9d86d73d52fbbde11c028af153f10e739",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-5487ad9420",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "c3400f7bf12fe1c5423beefc54439c7a9aa41827b1555b26e66f50aae74c9d7a",
+          "xyxy": [
+            1494,
+            2579,
+            2637,
+            3139
+          ],
+          "source_sha256": "9c0384d9620c33fc289e1a4d94f73e29302ef4c35c691556a868236b4691f401",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-5487ad9420_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00328.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00328",
+          "folio": "162v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "b292f253e09477a9120725d1dddcdb0e9e7562e882e36d3bba3dc575a6c649f0",
+          "xyxy": [
+            213,
+            180,
+            1348,
+            740
+          ],
+          "source_sha256": "ebb41511ee82ab3a099159d57fead1019d543df8a9c00046d87b1fa3b07afc26",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-5487ad9420_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00329.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00329",
+          "folio": "163r",
+          "column": "1/1",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          119592,
+          119670
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-5487ad9420",
+        "book": 13,
+        "niese": 408,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 119638,
+        "byte_end": 119652,
+        "old": "<pb n=\"163r\"/>",
+        "new": " <pb n=\"163r\"/>",
+        "old_bytes_hex": "3c7062206e3d2231363372222f3e",
+        "new_bytes_hex": "203c7062206e3d2231363372222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-b4dbbb3471",
+      "book": 13,
+      "niese": 414,
+      "folio": "163r",
+      "image_id": "bsb00140762_00329",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 121609,
+      "byte_end": 121609,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<cb n=\"2/2\"/>",
+      "left_word": "nomen",
+      "right_word": "auditum.",
+      "raw_context_before_insertion": "socii mariti eius aduersariis traderentur, nam gaudium aretae arabo erit tot et tales uiros ate alienari quorum prius terribile fuerat nomen<cb n=\"2/2\"/>auditum. <milestone unit=\"niese\" n=\"415\"/>Si uero pharisaeos praeponere iudicas, unum quemque in castellis dispone, et si ita aduersarios ui",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 5083,
+          "image": "sbb00000114_00329.jpg",
+          "text": "quorum prius terribile fuerat nomen "
+        },
+        "right": {
+          "export_line": 5085,
+          "image": "sbb00000114_00329.jpg",
+          "text": "auditum. Si uero pharisaeos praeponere "
+        }
+      },
+      "TPEN_context_match_score": 10,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "4437db5745dcd427d44cf968aeb122b7a8b2aff607fb7b28e2eb1b0ba085d735",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-b4dbbb3471",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "40d372bfbed49c3dd266164bd471cbb9737889ca580b7359f6d0f72b35863f02",
+          "xyxy": [
+            213,
+            2579,
+            1348,
+            3139
+          ],
+          "source_sha256": "ebb41511ee82ab3a099159d57fead1019d543df8a9c00046d87b1fa3b07afc26",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-b4dbbb3471_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00329.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00329",
+          "folio": "163r",
+          "column": "1/1",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "124193c64617694bcfc6a91c9fcaffdf3df463bfe73b9787d9a598a4bf20dd66",
+          "xyxy": [
+            1277,
+            180,
+            2439,
+            740
+          ],
+          "source_sha256": "ebb41511ee82ab3a099159d57fead1019d543df8a9c00046d87b1fa3b07afc26",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-b4dbbb3471_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00329.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00329",
+          "folio": "163r",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          121604,
+          121629
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-b4dbbb3471",
+        "book": 13,
+        "niese": 414,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 121609,
+        "byte_end": 121622,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      }
+    },
+    {
+      "candidate_id": "M14-B13-429234a8fe",
+      "book": 13,
+      "niese": 430,
+      "folio": "163v",
+      "image_id": "bsb00140762_00330",
+      "baseline_commit": "865bc6e228c27ba9859d030e50d50f79eb6f222a",
+      "baseline_sha256": "f3165eb455a5a9fe738e596a48e3c11bcf17823f2fe8054ab9680f166d275911",
+      "byte_start": 125944,
+      "byte_end": 125944,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "marker": "<cb n=\"2/2\"/>",
+      "left_word": "regni",
+      "right_word": "nono,",
+      "raw_context_before_insertion": "aborem inpendere.\"</p>\n\t\t\t\t\t<p xml:id=\"latin-book13-num430\"><num>[XVI.vi.430]</num> Haec cum dixisset non multo post decessit anno sui regni<cb n=\"2/2\"/>nono, aetatis uero septuagesimo tertio. Mulier quae debilitate sui sexus numquam succubuit, callida circa regni detentionem quod ex ipsis op",
+      "selected_TPEN_pair": {
+        "left": {
+          "export_line": 5257,
+          "image": "sbb00000114_00330.jpg",
+          "text": "set non multo post decessit anno sui regni "
+        },
+        "right": {
+          "export_line": 5259,
+          "image": "sbb00000114_00330.jpg",
+          "text": "nono, aetatis uero septuagesimo tertio. "
+        }
+      },
+      "TPEN_context_match_score": 12,
+      "TPEN_line_index_sha256": "370a654eab63b74727a545406ed16e5bb8827fe12010bfc6c580ce5845efa19f",
+      "original_TPEN_RTF_sha256": "69e223d56f4c63536aa96194e8549cf2b7f596754980f6d116d863eda2fc5304",
+      "source_candidate_record_sha256": "a342a0349802a1413aef3a4377c5f12a871ded6d4950ed255d0f05a4c9f7bff6",
+      "source_candidate_git_reference": "865bc6e228c27ba9859d030e50d50f79eb6f222a:review/Bamberg_Editorial_Integration_v1_9/outstanding_fifteen_investigation.json#M14-B13-429234a8fe",
+      "source_image_and_TPEN_checks": "PASS",
+      "crops": [
+        {
+          "sha256": "96530354310f8c8e9c327fbe8b1c25bdd6d42090191f12ca9557f754974aa07a",
+          "xyxy": [
+            429,
+            2579,
+            1537,
+            3139
+          ],
+          "source_sha256": "214d6e63ba8b35c985bb698df6aa9b58589fc826e3279bfd90cc22c1970df84c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-429234a8fe_left.png",
+          "side": "left",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00330.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00330",
+          "folio": "163v",
+          "column": "1/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        },
+        {
+          "sha256": "56872c9ec67791d1f6fa338824e739e5b1a0dd6d973ecf2328a9475937cdd5b3",
+          "xyxy": [
+            1494,
+            180,
+            2637,
+            740
+          ],
+          "source_sha256": "214d6e63ba8b35c985bb698df6aa9b58589fc826e3279bfd90cc22c1970df84c",
+          "workspace_relative_source": "Bamberg_Audit_v1_4_XIII_XIV/crops/M14-B13-429234a8fe_right.png",
+          "side": "right",
+          "native_source_workspace_relative": "Bamberg_Audit_v1_4_XIII_XIV/images/B13_sbb00000114_00330.jpg",
+          "native_source_verified": true,
+          "image_id": "bsb00140762_00330",
+          "folio": "163v",
+          "column": "2/2",
+          "native_crop_pixel_MAE": 0.0,
+          "source_coordinate_pixel_correspondence_verified": true,
+          "v2_native_coordinate_MAE": 0.0,
+          "v2_crop_and_native_checks": "PASS"
+        }
+      ],
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          125939,
+          125961
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "v2_visual_confirmation": true,
+      "reading_method": "Context-exposed visual confirmation of verified source boundary crops; no unrelated-model or blind-reading claim",
+      "historical_classification": "AUTO-MECHANICAL",
+      "final_disposition": "VERIFIED_MECHANICAL_APPLIED_LOCAL_V2_0",
+      "human_confirmed": false,
+      "authorization": "Exclusive fifteen-case user instruction v2.0",
+      "prior_source_patch": {
+        "candidate_id": "M14-B13-429234a8fe",
+        "book": 13,
+        "niese": 430,
+        "baseline_sha256": "87d2021176528c5a33e4372480655402a73a63e0a88b44c0508f2609a07756b8",
+        "byte_start": 125944,
+        "byte_end": 125957,
+        "old": "<cb n=\"2/2\"/>",
+        "new": " <cb n=\"2/2\"/>",
+        "old_bytes_hex": "3c6362206e3d22322f32222f3e",
+        "new_bytes_hex": "203c6362206e3d22322f32222f3e"
+      }
+    }
+  ],
+  "source_investigation_sha256": "b48306a620a9a9cf6cdf931b2a7468095eb85b202f8aabf02132c58c809b90d4",
+  "prior_76_preservation_spans": [
+    {
+      "book": 3,
+      "path": "assets/xml/antiquities/Latin/book-03.xml",
+      "start": 22954,
+      "end": 22966,
+      "reading": "contigissent",
+      "candidate_ids": [
+        "CMP03-28521b471e"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 8806,
+      "end": 8818,
+      "reading": "quinquaginta",
+      "candidate_ids": [
+        "B09-104a9d4186"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 22704,
+      "end": 22710,
+      "reading": "inquid",
+      "candidate_ids": [
+        "H13-B09-INQUID-122"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 29714,
+      "end": 29739,
+      "reading": "suasit ut ei consisterent",
+      "candidate_ids": [
+        "CAL12-B09-fb9248137f"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 30928,
+      "end": 30938,
+      "reading": "sacerdotes",
+      "candidate_ids": [
+        "B09-c56f97468e"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 50579,
+      "end": 50608,
+      "reading": "amissura <cb n=\"2/2\"/>ciuitas",
+      "candidate_ids": [
+        "B09-d9ba4cb19a"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 54691,
+      "end": 54703,
+      "reading": "obpressiones",
+      "candidate_ids": [
+        "HIST09-f61eaf03ab"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 12,
+      "path": "assets/xml/antiquities/Latin/book-12.xml",
+      "start": 24021,
+      "end": 24052,
+      "reading": "quattuor <cb n=\"2/2\"/>digitorum",
+      "candidate_ids": [
+        "B12-2783483506",
+        "RMP16-B12-DIGITORUM-80"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 12,
+      "path": "assets/xml/antiquities/Latin/book-12.xml",
+      "start": 114834,
+      "end": 114840,
+      "reading": "euasit",
+      "candidate_ids": [
+        "H13-AL13-7c5821d358"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 13,
+      "path": "assets/xml/antiquities/Latin/book-13.xml",
+      "start": 21820,
+      "end": 21834,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M14-B13-361ff95c00"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 13,
+      "path": "assets/xml/antiquities/Latin/book-13.xml",
+      "start": 40479,
+      "end": 40482,
+      "reading": "se ",
+      "candidate_ids": [
+        "H14-AL13-bfd89b7deb"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 13,
+      "path": "assets/xml/antiquities/Latin/book-13.xml",
+      "start": 126656,
+      "end": 126672,
+      "reading": "mortem compleuit",
+      "candidate_ids": [
+        "B13-7d8a1e38c3"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 14,
+      "path": "assets/xml/antiquities/Latin/book-14.xml",
+      "start": 122363,
+      "end": 122428,
+      "reading": "<milestone n=\"sbb00000114_00357.jpg\"/><pb n=\"177r\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M14-B14-28cd1881dd"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 15,
+      "path": "assets/xml/antiquities/Latin/book-15.xml",
+      "start": 46390,
+      "end": 46455,
+      "reading": "<milestone n=\"sbb00000114_00373.jpg\"/><pb n=\"185r\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M15-B15-9d74a5e9eb"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 16,
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "start": 4567,
+      "end": 4581,
+      "reading": "ad confusionem",
+      "candidate_ids": [
+        "H15-AL13-17f52fc50d"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 16,
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "start": 67920,
+      "end": 67934,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M15-B16-a2866dee89"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 96063,
+      "end": 96069,
+      "reading": "satis ",
+      "candidate_ids": [
+        "H16-AL13-90071ad68d"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 18,
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "start": 55741,
+      "end": 55746,
+      "reading": "uirum",
+      "candidate_ids": [
+        "B18-65cb7f2821"
+      ],
+      "class": "HUMAN_APPROVED"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 32868,
+      "end": 32897,
+      "reading": "illic <cb n=\"2/2\"/>interfecit",
+      "candidate_ids": [
+        "B09-d8a68c8332"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 41724,
+      "end": 41751,
+      "reading": "Numquam <cb n=\"2/2\"/>contra",
+      "candidate_ids": [
+        "B09-d51ad907a9"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 46006,
+      "end": 46029,
+      "reading": "tria <cb n=\"2/2\"/>milia",
+      "candidate_ids": [
+        "B09-0c596b2223"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 9,
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "start": 59422,
+      "end": 59447,
+      "reading": "autem <cb n=\"2/2\"/>iustus",
+      "candidate_ids": [
+        "B09-28e2954017"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 12,
+      "path": "assets/xml/antiquities/Latin/book-12.xml",
+      "start": 9449,
+      "end": 9473,
+      "reading": "ad <cb n=\"2/2\"/>aegyptum",
+      "candidate_ids": [
+        "B12-e11c4e8e2a"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 12,
+      "path": "assets/xml/antiquities/Latin/book-12.xml",
+      "start": 14087,
+      "end": 14119,
+      "reading": "principi <cb n=\"2/2\"/>sacerdotum",
+      "candidate_ids": [
+        "B12-2735a6ae50"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 12,
+      "path": "assets/xml/antiquities/Latin/book-12.xml",
+      "start": 28680,
+      "end": 28703,
+      "reading": "stans <cb n=\"2/2\"/>regi",
+      "candidate_ids": [
+        "B12-f7e5587260"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 13,
+      "path": "assets/xml/antiquities/Latin/book-13.xml",
+      "start": 48970,
+      "end": 49035,
+      "reading": "<milestone n=\"sbb00000114_00312.jpg\"/><pb n=\"154v\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M14-B13-98b6bedef8"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 13,
+      "path": "assets/xml/antiquities/Latin/book-13.xml",
+      "start": 50853,
+      "end": 50867,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M14-B13-6af394fb64"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 13,
+      "path": "assets/xml/antiquities/Latin/book-13.xml",
+      "start": 108665,
+      "end": 108679,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M14-B13-96ee817d55"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 16,
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "start": 11308,
+      "end": 11322,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M15-B16-2bb873dc80"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 16,
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "start": 28154,
+      "end": 28168,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M15-B16-572a1c4626"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 16,
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "start": 40717,
+      "end": 40782,
+      "reading": "<milestone n=\"sbb00000114_00396.jpg\"/><pb n=\"196v\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M15-B16-8cc9924685"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 16,
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "start": 78085,
+      "end": 78099,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M15-B16-f9ba562d24"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 16,
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "start": 91179,
+      "end": 91244,
+      "reading": "<milestone n=\"sbb00000114_00406.jpg\"/><pb n=\"201v\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M15-B16-95f93596e1"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 5892,
+      "end": 5906,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-73e79e0ef7"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 10505,
+      "end": 10519,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-86bd0b035d"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 17889,
+      "end": 17928,
+      "reading": " <milestone n=\"sbb00000114_00413.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-84944acb90"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 20265,
+      "end": 20279,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-132b249499"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 27519,
+      "end": 27558,
+      "reading": " <milestone n=\"sbb00000114_00415.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-5de3a771c7"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 32087,
+      "end": 32126,
+      "reading": " <milestone n=\"sbb00000114_00416.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-5677b0012c"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 34333,
+      "end": 34347,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-71228c8dd4"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 36721,
+      "end": 36760,
+      "reading": " <milestone n=\"sbb00000114_00417.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-369f9150e7"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 43933,
+      "end": 43947,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-8651966a78"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 46240,
+      "end": 46305,
+      "reading": "<milestone n=\"sbb00000114_00419.jpg\"/><pb n=\"208r\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M16-B17-ce3eea4c1a"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 55504,
+      "end": 55543,
+      "reading": " <milestone n=\"sbb00000114_00421.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-55f3a67e92"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 60537,
+      "end": 60576,
+      "reading": " <milestone n=\"sbb00000114_00422.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-9c59ca599c"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 62986,
+      "end": 63000,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-4d105b3a80"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 67588,
+      "end": 67602,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-b78b84ecd8"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 69827,
+      "end": 69866,
+      "reading": " <milestone n=\"sbb00000114_00424.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-34b9c08d4f"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 72171,
+      "end": 72185,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-72af80446c"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 74412,
+      "end": 74451,
+      "reading": " <milestone n=\"sbb00000114_00425.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-b35a7b84d3"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 76781,
+      "end": 76795,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-590397a4c4"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 79330,
+      "end": 79369,
+      "reading": " <milestone n=\"sbb00000114_00426.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-25f7a8fb24"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 81640,
+      "end": 81654,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-4a76771e1c"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 88544,
+      "end": 88583,
+      "reading": " <milestone n=\"sbb00000114_00428.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-40211a0354"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 91044,
+      "end": 91058,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-63bdebaeb4"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 95686,
+      "end": 95700,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-e0e2db209c"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 97812,
+      "end": 97851,
+      "reading": " <milestone n=\"sbb00000114_00430.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-37ced69e3e"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 100138,
+      "end": 100152,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-4ab6cc7da4"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 102384,
+      "end": 102423,
+      "reading": " <milestone n=\"sbb00000114_00431.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-edc4abc6a7"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 104936,
+      "end": 104950,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-74fa9c2f89"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 111789,
+      "end": 111828,
+      "reading": " <milestone n=\"sbb00000114_00433.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-2dd83f9cd2"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 118519,
+      "end": 118533,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-133d11d1c5"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 120854,
+      "end": 120893,
+      "reading": " <milestone n=\"sbb00000114_00435.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-730ee3f01f"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 123210,
+      "end": 123224,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-de2533b465"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 125513,
+      "end": 125552,
+      "reading": " <milestone n=\"sbb00000114_00436.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-f8810e5bf9"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 130156,
+      "end": 130195,
+      "reading": " <milestone n=\"sbb00000114_00437.jpg\"/>",
+      "candidate_ids": [
+        "M16-B17-0efb9b7b61"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 132263,
+      "end": 132277,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-81ffa4abbc"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 136492,
+      "end": 136506,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-78c74e1482"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 17,
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "start": 144551,
+      "end": 144565,
+      "reading": " <cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B17-865319d1cb"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 18,
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "start": 16141,
+      "end": 16154,
+      "reading": "<cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B18-206331369f"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 18,
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "start": 18271,
+      "end": 18336,
+      "reading": "<milestone n=\"sbb00000114_00445.jpg\"/><pb n=\"221r\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M16-B18-3da9cc0513"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 18,
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "start": 52089,
+      "end": 52102,
+      "reading": "<cb n=\"2/2\"/>",
+      "candidate_ids": [
+        "M16-B18-0d0852113c"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 18,
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "start": 79404,
+      "end": 79469,
+      "reading": "<milestone n=\"sbb00000114_00459.jpg\"/><pb n=\"228r\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M16-B18-60d006c7c3"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 18,
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "start": 96915,
+      "end": 96980,
+      "reading": "<milestone n=\"sbb00000114_00463.jpg\"/><pb n=\"230r\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M16-B18-237b892944"
+      ],
+      "class": "MECHANICAL_V1_9"
+    },
+    {
+      "book": 18,
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "start": 106571,
+      "end": 106636,
+      "reading": "<milestone n=\"sbb00000114_00465.jpg\"/><pb n=\"231r\"/><cb n=\"1/2\"/>",
+      "candidate_ids": [
+        "M16-B18-6ef8dab467"
+      ],
+      "class": "MECHANICAL_V1_9"
+    }
+  ],
+  "new_human_checks": 0,
+  "merge_push_publish_authorized": false
+}
