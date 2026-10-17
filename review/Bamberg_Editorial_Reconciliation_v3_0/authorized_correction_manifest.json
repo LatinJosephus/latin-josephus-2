@@ -1,0 +1,685 @@
+{
+  "version": "3.0",
+  "immediate_canonical_baseline": "bf91e314e9f9999df42b793de40bbe28c549e3c1",
+  "approved_actions": 13,
+  "application_units": 13,
+  "previously_integrated_actions": 91,
+  "expected_total_staged_actions": 104,
+  "expected_total_application_units": 103,
+  "affected_books": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    11,
+    19,
+    20
+  ],
+  "effects": [
+    {
+      "candidate_id": "M22-B19-ac2d86245c",
+      "book": 19,
+      "niese": 126,
+      "folio": "238r",
+      "baseline_sha256": "3826267394a578f1630fc383b6af5a8435b314d1e4aeb73b33510c3dd65d1549",
+      "byte_start": 39440,
+      "byte_end": 39441,
+      "old": " ",
+      "new": "",
+      "old_bytes_hex": "20",
+      "new_bytes_hex": "",
+      "registered_original": " <cb n=\"2/2\"/>",
+      "registered_replacement": "<cb n=\"2/2\"/>",
+      "registered_byte_start": 39440,
+      "registered_byte_end": 39454,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          39436,
+          39457
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R22-03",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "AUTO-MECHANICAL",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00479",
+          "folio": "238r",
+          "column": "A",
+          "source_sha256": "07170566eef9f8f1b395f0d21a4fbd20027f355f04fc4f7ff92aa1dd648ab630",
+          "focus_xyxy": [
+            2280,
+            5680,
+            2660,
+            5880
+          ]
+        },
+        {
+          "image_id": "bsb00140762_00479",
+          "folio": "238r",
+          "column": "B",
+          "source_sha256": "07170566eef9f8f1b395f0d21a4fbd20027f355f04fc4f7ff92aa1dd648ab630",
+          "focus_xyxy": [
+            2670,
+            560,
+            3370,
+            760
+          ]
+        }
+      ],
+      "source_context_before": "t incredulitas facta est. Alii namque ualde delectabantur in eius morte, et licet dudum scirent sibi <cb n=\"2/2\"/>met utilem fore hoc non sinebantur credere per timorem. <milestone unit=\"niese\" n=\"128\"/>Quibusdam uero hoc",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "M23-B11-536796ca3b",
+      "book": 11,
+      "niese": 256,
+      "folio": "133r",
+      "baseline_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "byte_start": 82188,
+      "byte_end": 82188,
+      "old": "",
+      "new": " ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "20",
+      "registered_original": "<cb n=\"2/2\"/>",
+      "registered_replacement": " <cb n=\"2/2\"/>",
+      "registered_byte_start": 82188,
+      "registered_byte_end": 82201,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          82184,
+          82208
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R23-03",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "AUTO-MECHANICAL",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00269",
+          "folio": "133r",
+          "column": "A",
+          "source_sha256": "9b1cb16f5a1c6747594228e4054c73cd3cac6290be95faf33a374309914b2f66",
+          "focus_xyxy": [
+            2000,
+            5700,
+            2620,
+            5890
+          ]
+        },
+        {
+          "image_id": "bsb00140762_00269",
+          "folio": "133r",
+          "column": "B",
+          "source_sha256": "9b1cb16f5a1c6747594228e4054c73cd3cac6290be95faf33a374309914b2f66",
+          "focus_xyxy": [
+            2670,
+            590,
+            3430,
+            770
+          ]
+        }
+      ],
+      "source_context_before": ". <milestone unit=\"niese\" n=\"256\" xml:id=\"latin-book11-niese-256\"/>Post quam haec preater omnen spem<cb n=\"2/2\"/>audiuit mente confusus et mestitia percussus exiit equum ducens cum purpura et auto et mardocheum repperien",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "H22-AL13-d4973645d8",
+      "book": 19,
+      "niese": 169,
+      "folio": "239r",
+      "baseline_sha256": "3826267394a578f1630fc383b6af5a8435b314d1e4aeb73b33510c3dd65d1549",
+      "byte_start": 49796,
+      "byte_end": 49796,
+      "old": "",
+      "new": "iam ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "69616d20",
+      "registered_original": "Ego siquidem prioris",
+      "registered_replacement": "Ego siquidem iam prioris",
+      "registered_byte_start": 49783,
+      "registered_byte_end": 49803,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          49787,
+          49803
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R22-01",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00481",
+          "folio": "239r",
+          "column": "B",
+          "source_sha256": "40eb94a083d7308d85324e2eb4615c87d09d01d093803f33ad3e4f6c44b25c40",
+          "focus_xyxy": [
+            2660,
+            3610,
+            3920,
+            3790
+          ]
+        }
+      ],
+      "source_context_before": " degere et legibus florentibus aliquando communicare. <milestone unit=\"niese\" n=\"169\"/>Ego siquidem prioris libertatis oblitus quam olim quidem amisimus. Nunc autem magna beatitudine retinemus, reuerentiam exhibendam his",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "H22-AL13-115e194a75",
+      "book": 20,
+      "niese": 126,
+      "folio": "249r",
+      "baseline_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "byte_start": 36154,
+      "byte_end": 36155,
+      "old": "e",
+      "new": "a",
+      "old_bytes_hex": "65",
+      "new_bytes_hex": "61",
+      "registered_original": "sique",
+      "registered_replacement": "siqua",
+      "registered_byte_start": 36150,
+      "registered_byte_end": 36155,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          36150,
+          36155
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R22-02",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00501",
+          "folio": "249r",
+          "column": "A",
+          "source_sha256": "01b8ee8d6831e5a44240088ad455fdcb79d8cadba88415a1a7eceb349665c43b",
+          "focus_xyxy": [
+            570,
+            2875,
+            1320,
+            3065
+          ]
+        }
+      ],
+      "source_context_before": "dicebant, nisi quiaro manorum contempserint potestatem. Ad quorum iudicium debuerant prosua uel sique fuisset laesione concurrere. Nunc autem quasi romanos iudices non haberent, haec ab eis acta dicebant, et propterea uin",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "B11-34015de380",
+      "book": 11,
+      "niese": "16",
+      "folio": "125v",
+      "baseline_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "byte_start": 6667,
+      "byte_end": 6675,
+      "old": " dragmas",
+      "new": "",
+      "old_bytes_hex": "20647261676d6173",
+      "new_bytes_hex": "",
+      "registered_original": "dragmas dragmas",
+      "registered_replacement": "dragmas",
+      "registered_byte_start": 6660,
+      "registered_byte_end": 6675,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          6660,
+          6675
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R23-01",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00254",
+          "folio": "125v",
+          "column": "A",
+          "source_sha256": "dbf37dc73a56daaaf8bb03b88a5f9cb5846f4fa76e62b49f905112ad3dec70e4",
+          "focus_xyxy": [
+            1770,
+            2820,
+            2780,
+            3000
+          ]
+        }
+      ],
+      "source_context_before": "de etiam eis honorem quo potiebantur parentes eorum proprerea piu mentis et uenditioni oleum dragmas dragmas cc quinque milia qungentis <corr>quingentis</corr> et ad similiam tritici <unclear reason=\"fading\">xxv</unclear> milia ",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "XI-INC-ffe45eb797",
+      "book": 11,
+      "niese": "BJ.IV.105b",
+      "folio": "135r",
+      "baseline_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "byte_start": 104025,
+      "byte_end": 104026,
+      "old": "m",
+      "new": "n",
+      "old_bytes_hex": "6d",
+      "new_bytes_hex": "6e",
+      "registered_original": "amimatus",
+      "registered_replacement": "animatus",
+      "registered_byte_start": 104024,
+      "registered_byte_end": 104032,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          104024,
+          104032
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R23-02",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00273",
+          "folio": "135r",
+          "column": "B",
+          "source_sha256": "32b55643db0c4fab9bc880f9caf3cfaca72a62faaf053e3ee856f13f2d6d717b",
+          "focus_xyxy": [
+            3820,
+            3080,
+            4530,
+            3250
+          ]
+        }
+      ],
+      "source_context_before": "alexander</p>\n\t\t\t\t\t\t\t\t\t<p xml:id=\"latin-book11-num312\"><num>[BJ 4.105b]</num> et hostiliter in eos amimatus tamque habitatorum multitudine quam sui munitione agens inimicitias satis <num>[VIII.ii.312b]</num> israhelitis h",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "B01-c9cbbafd02",
+      "book": 1,
+      "niese": 91,
+      "folio": "4r",
+      "baseline_sha256": "236397efea41558911881fbc807eec7f9b01d6058bbc51610f3550c2df77b973",
+      "byte_start": 23865,
+      "byte_end": 23868,
+      "old": " ad",
+      "new": "",
+      "old_bytes_hex": "206164",
+      "new_bytes_hex": "",
+      "registered_original": "ad ad",
+      "registered_replacement": "ad",
+      "registered_byte_start": 23863,
+      "registered_byte_end": 23868,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          23863,
+          23868
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R24-01",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00011",
+          "folio": "4r",
+          "column": "A",
+          "source_sha256": "a059e7326ab4b2c7163f6ff9a60d96cb6db8001827aabf014e8727f0e784a72d",
+          "focus_xyxy": [
+            1410,
+            4680,
+            2580,
+            4850
+          ]
+        }
+      ],
+      "source_context_before": "recedente misit coruum, uolens agnoscere siquid etiam aliud terrae fuisset ab aqua derelictum, et ad ad egrediendum iam tutum esse uideretur. Qui cuncta repperiens inundantia regressus est ad noe. Post septem uero dies colu",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "B02-def38aaafd",
+      "book": 2,
+      "niese": 179,
+      "folio": "19v",
+      "baseline_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "byte_start": 57177,
+      "byte_end": 57182,
+      "old": " ergo",
+      "new": "",
+      "old_bytes_hex": "206572676f",
+      "new_bytes_hex": "",
+      "registered_original": "ergo ergo",
+      "registered_replacement": "ergo",
+      "registered_byte_start": 57173,
+      "registered_byte_end": 57182,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          57173,
+          57182
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R24-03",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00042",
+          "folio": "19v",
+          "column": "A",
+          "source_sha256": "d8f626d832602a049122993288d3886ae653133fdc6715278df59d6c9d27e533",
+          "focus_xyxy": [
+            2050,
+            4740,
+            2560,
+            4920
+          ]
+        }
+      ],
+      "source_context_before": "rom. <milestone unit=\"niese\" n=\"179\"/>Tres autem zabulon duxit filios, sarrath, ilon, iael, hoc ergo ergo genus de lia descendit. Cum qua etiam ascederat et filia eius dina. <milestone unit=\"niese\" n=\"180\"/>Sunt ergo isti omn",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "H24-AL13-fdef46eb9c",
+      "book": 2,
+      "niese": 38,
+      "folio": "14v",
+      "baseline_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "byte_start": 13211,
+      "byte_end": 13211,
+      "old": "",
+      "new": "que",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "717565",
+      "registered_original": "aliorum",
+      "registered_replacement": "aliorumque",
+      "registered_byte_start": 13204,
+      "registered_byte_end": 13211,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          13204,
+          13224
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R24-02",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00032",
+          "folio": "14v",
+          "column": "B",
+          "source_sha256": "783ade66bab97ea26d5d97812020d04380e2403fd62c0fc54072079533620c05",
+          "focus_xyxy": [
+            3790,
+            690,
+            4430,
+            880
+          ]
+        }
+      ],
+      "source_context_before": ", adulescentem lugens: <milestone unit=\"niese\" n=\"38\"/>et tamquam si unius filii pater esset aliorum consolatione priuaretur, sic erat apud semetipsum, male prius fratribus eum estimans comparatum, quia bestiis credebatu",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "B05-922bdc0d1e",
+      "book": 5,
+      "niese": 146,
+      "folio": "56r",
+      "baseline_sha256": "846ff2e8edbc58bd2283e923353beccc8427f49cecf89415c6bc5272b994f86a",
+      "byte_start": 47202,
+      "byte_end": 47206,
+      "old": " pro",
+      "new": "",
+      "old_bytes_hex": "2070726f",
+      "new_bytes_hex": "",
+      "registered_original": "pro pro",
+      "registered_replacement": "pro",
+      "registered_byte_start": 47199,
+      "registered_byte_end": 47206,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          47199,
+          47206
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R25-01",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "NB \"peregrina\" is one word; i.e.:\npro pe- || regrina ",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00115",
+          "folio": "56r",
+          "column": "B",
+          "source_sha256": "0edd90543dbec05177ff9856d295f46453a68c4c4cc8426e8105f39b3b2cbeb3",
+          "focus_xyxy": [
+            3850,
+            5710,
+            4480,
+            5910
+          ]
+        }
+      ],
+      "source_context_before": "ceperat hoc modo putabat. <milestone unit=\"niese\" n=\"146\"/>Cum uero illi nequaquam a suo feruore pro pro peregrina recederent sed inminerent ut eam <pb n=\"56v\"/> acciperent ille quidem supplicabat ut nihil inique praesumeren",
+      "human_confirmed": true,
+      "staging_authorized": true,
+      "qualified_running_reading": "pro peregrina"
+    },
+    {
+      "candidate_id": "M25-B06-71r-incipit",
+      "book": 6,
+      "niese": 219,
+      "folio": "71r",
+      "baseline_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "byte_start": 75582,
+      "byte_end": 75582,
+      "old": "",
+      "new": " non uoluntatis causa",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "206e6f6e20756f6c756e7461746973206361757361",
+      "registered_original": "necessitatis causa,",
+      "registered_replacement": "necessitatis causa, non uoluntatis causa",
+      "registered_byte_start": 75563,
+      "registered_byte_end": 75582,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          75576,
+          75585
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R25-02",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00144",
+          "folio": "70v",
+          "column": "B",
+          "source_sha256": "80027395248e1fb23802bd9dc72fff00ae5fffe5a6edfde1cedb3de7327227ec",
+          "focus_xyxy": [
+            3830,
+            5630,
+            4950,
+            5820
+          ]
+        },
+        {
+          "image_id": "bsb00140762_00145",
+          "folio": "71r",
+          "column": "A",
+          "source_sha256": "62a14bddf0af886b90cbdb3af26aa0102e0bf1931fb2af39a7fa677e11ea3aa9",
+          "focus_xyxy": [
+            550,
+            690,
+            2380,
+            900
+          ]
+        }
+      ],
+      "source_context_before": "et, et hoc pro salute sua timore fecisset. Proqua ei deberet ignoscere, quae hoc necessitatis causa, et non uoluntatis efficerit, adiciens atque dicens. Arbitro ergo pater quia ita illum uoluisti perimere: sicut potius m",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "B07-ab4a2f1ff5",
+      "book": 7,
+      "niese": 169,
+      "folio": "82r",
+      "baseline_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "byte_start": 51078,
+      "byte_end": 51082,
+      "old": " non",
+      "new": "",
+      "old_bytes_hex": "206e6f6e",
+      "new_bytes_hex": "",
+      "registered_original": "non non",
+      "registered_replacement": "non",
+      "registered_byte_start": 51075,
+      "registered_byte_end": 51082,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          51075,
+          51082
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R26-01",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00167",
+          "folio": "82r",
+          "column": "A",
+          "source_sha256": "4a39398ca4e1aff17d094cd8bf4e5924ad21a14376b01d6966adbdd7386529c9",
+          "focus_xyxy": [
+            610,
+            1600,
+            1450,
+            1790
+          ]
+        }
+      ],
+      "source_context_before": "enegaret ei. Et haec quidem dicebat uolens adpraesens impetum eius petulantiam declinare at ille non non adquieuit, sed nimietate amoris illius inflammatus et robore eius passionis ualde perplexus uim intulit eius. <mileston",
+      "human_confirmed": true,
+      "staging_authorized": true
+    },
+    {
+      "candidate_id": "B08-65882d7e3b",
+      "book": 8,
+      "niese": 362,
+      "folio": "104r",
+      "baseline_sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "byte_start": 123675,
+      "byte_end": 123686,
+      "old": " temporibus",
+      "new": "",
+      "old_bytes_hex": "2074656d706f7269627573",
+      "new_bytes_hex": "",
+      "registered_original": "temporibus temporibus",
+      "registered_replacement": "temporibus",
+      "registered_byte_start": 123665,
+      "registered_byte_end": 123686,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          123665,
+          123686
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      },
+      "question_id": "R26-02",
+      "editorial_decision": "ACCEPT CORRECTION",
+      "decision_CSV_sha256": "dac0cedf66937b9022df8bb7265d4d3e572969f6d3fec4bf8668970b4061b11b",
+      "editorial_comment_verbatim": "",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "manuscript_evidence": [
+        {
+          "image_id": "bsb00140762_00211",
+          "folio": "104r",
+          "column": "B",
+          "source_sha256": "dfed138b9b359bab85e85ea18d5baddd00754a5894af7eb8be8511ed21044d98",
+          "focus_xyxy": [
+            3430,
+            1320,
+            4290,
+            1510
+          ]
+        }
+      ],
+      "source_context_before": "phete dixit achab quidem uiuente eius generis differendum esse supplicium sed eius filiis temporibus temporibus inferendum. Et haec quidem helias regi dixit.</p>\n\t\t\t\t</div2>\n\t\t\t\t<div2 n=\"14\" type=\"chapter\" xml:id=\"latin-book08-chap",
+      "human_confirmed": true,
+      "staging_authorized": true
+    }
+  ],
+  "source": "Exact v2.9 exported CSV plus original frozen source-bound proposals; no inferred class-wide approval",
+  "canonical_promotion_authorized": false
+}

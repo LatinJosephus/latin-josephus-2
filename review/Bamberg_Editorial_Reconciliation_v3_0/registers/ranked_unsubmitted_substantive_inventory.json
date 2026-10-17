@@ -1,0 +1,4486 @@
+[
+  {
+    "candidate_id": "S27-B09-216-HOC-ERGO-TIBI",
+    "book": 9,
+    "niese": 216,
+    "folio": "111r–111v",
+    "existing_reading": " Hoc ergo tibi",
+    "proposed_reading": "",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 100,
+    "priority_basis": "INTRUSIVE_THREE_WORD_SEQUENCE; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "S27-B09-216-HOC-ERGO-TIBI",
+      "book": 9,
+      "niese": 216,
+      "folio": "111r–111v",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 52809,
+      "byte_end": 52823,
+      "old": " Hoc ergo tibi",
+      "new": "",
+      "old_bytes_hex": "20486f63206572676f2074696269",
+      "new_bytes_hex": "",
+      "registered_original": " Hoc ergo tibi",
+      "registered_replacement": "",
+      "registered_byte_start": 52809,
+      "registered_byte_end": 52823,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          52809,
+          52853
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "S27-B09-216-HOC-ERGO-TIBI",
+      "book": 9,
+      "niese": 216,
+      "folio": "111r–111v",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 52809,
+      "byte_end": 52823,
+      "old": " Hoc ergo tibi",
+      "new": "",
+      "old_bytes_hex": "20486f63206572676f2074696269",
+      "new_bytes_hex": "",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "human_decision": "",
+      "canonical_integration_authorized": false,
+      "accepted_for_proposed_working_copy": false,
+      "integration_eligibility": "WITHHELD; individual editorial approval required",
+      "evidence": [
+        {
+          "side": "left",
+          "file": "crops/M27-B09-6bbb371488_left.jpg",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00225_ec6254708b835c80.jpg",
+          "source_sha256": "ec6254708b835c80c27988db995afe226ee0ebda1175bbbb4a18f2582649ad37",
+          "image_id": "bsb00140762_00225",
+          "folio": "111r",
+          "column": 2,
+          "xyxy": [
+            2345,
+            5050,
+            4979,
+            6313
+          ],
+          "sha256": "6a6333c05e45f8197dfa5e0c2bada501964c6fb739612535ec82fe20ab51f504",
+          "localization": "Estimated physical column end/start; direct verification required"
+        },
+        {
+          "side": "right",
+          "file": "crops/M27-B09-6bbb371488_right.jpg",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00226_0224c5e73dee6c00.jpg",
+          "source_sha256": "0224c5e73dee6c00d71dc5db38a739a00c71d4475c87842db0b17d7dad732d00",
+          "image_id": "bsb00140762_00226",
+          "folio": "111v",
+          "column": 1,
+          "xyxy": [
+            649,
+            307,
+            3175,
+            1533
+          ],
+          "sha256": "9a0c06e3a3f8a416c194f83de27180a67b25c8a980fb60b5c85e12ee34d9264c",
+          "localization": "Estimated physical column end/start; direct verification required"
+        }
+      ],
+      "reason": "The complete directly examined page-edge interval is quarto / iam et decimo. Hoc ergo tibi is absent from those manuscript lines but inherited in original export row2019 and current XML. Substantive removal remains unapplied; no marker relocation and no human-review reservation.",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 2015,
+          "image": "sbb00000114_00225.jpg",
+          "text": "uero modo et ozias amasiae filius, quarto ",
+          "folio": "111r"
+        },
+        {
+          "export_line": 2017,
+          "image": "sbb00000114_00226.jpg",
+          "text": "[sbb00000114_00226.jpg]",
+          "folio": "111v"
+        },
+        {
+          "export_line": 2019,
+          "image": "sbb00000114_00226.jpg",
+          "text": "Hoc ergo tibiiam et decimo anno regni hieroboam duabus ",
+          "folio": "111v"
+        }
+      ],
+      "new_discovery": true,
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          43333,
+          43349
+        ],
+        "raw_span": [
+          52746,
+          53020
+        ],
+        "protected_hits": []
+      },
+      "origin_layer": "Inherited original modern T-PEN export: intrusive three-word prefix is already present in retained row2019. Exact introduction mechanism unknown."
+    },
+    "exact_source_compatible": true,
+    "rank": 1
+  },
+  {
+    "candidate_id": "B04-dde404b8fa",
+    "book": 4,
+    "niese": 171,
+    "folio": "44v",
+    "existing_reading": "et ad ultimum et ad ultimum",
+    "proposed_reading": "et ad ultimum",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 88,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B04-dde404b8fa",
+      "book": 4,
+      "niese": 171,
+      "folio": "44v",
+      "baseline_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "byte_start": 55901,
+      "byte_end": 55915,
+      "old": " et ad ultimum",
+      "new": "",
+      "old_bytes_hex": "20657420616420756c74696d756d",
+      "new_bytes_hex": "",
+      "registered_original": "et ad ultimum et ad ultimum",
+      "registered_replacement": "et ad ultimum",
+      "registered_byte_start": 55888,
+      "registered_byte_end": 55915,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          55894,
+          55915
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B04-dde404b8fa",
+      "book": 4,
+      "niese": 171,
+      "folio": "44v",
+      "old": "et ad ultimum et ad ultimum",
+      "new": "et ad ultimum",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "current_canonical_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 55888,
+      "recorded_byte_end": 55915,
+      "evidence_reference": [
+        {
+          "file": "crops/B04-dde404b8fa.jpg",
+          "sha256": "62bb7cc49b9afa5d866b70f01d2e31a67f6b3cf72cebdaa42240fa2ad947fde7",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00092_c46868de83e1797a.jpg",
+          "source_sha256": "c46868de83e1797a4aaa15744296376941614124c01ef8c01d0d43c54ae2c079",
+          "image_id": "bsb00140762_00092",
+          "xyxy": [
+            852,
+            3255,
+            3096,
+            4155
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 2
+  },
+  {
+    "candidate_id": "B04-086aff3baa",
+    "book": 4,
+    "niese": 84,
+    "folio": "41r",
+    "existing_reading": "tribus et tribus et",
+    "proposed_reading": "tribus et",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 87,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B04-086aff3baa",
+      "book": 4,
+      "niese": 84,
+      "folio": "41r",
+      "baseline_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "byte_start": 27800,
+      "byte_end": 27810,
+      "old": " tribus et",
+      "new": "",
+      "old_bytes_hex": "20747269627573206574",
+      "new_bytes_hex": "",
+      "registered_original": "tribus et tribus et",
+      "registered_replacement": "tribus et",
+      "registered_byte_start": 27791,
+      "registered_byte_end": 27810,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          27798,
+          27810
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B04-086aff3baa",
+      "book": 4,
+      "niese": 84,
+      "folio": "41r",
+      "old": "tribus et tribus et",
+      "new": "tribus et",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "current_canonical_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 27791,
+      "recorded_byte_end": 27810,
+      "evidence_reference": [
+        {
+          "file": "crops/B04-086aff3baa.jpg",
+          "sha256": "cd6b92503f91f45d78f6d097c2f97912712ba56918b388f9fd7a24fb0e1d63b8",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00085_193ed39e07c1fe12.jpg",
+          "source_sha256": "193ed39e07c1fe12d00b18e10deec403845115d7977ca7ab91401afff0f13ec8",
+          "image_id": "bsb00140762_00085",
+          "xyxy": [
+            2548,
+            3831,
+            4900,
+            4731
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 3
+  },
+  {
+    "candidate_id": "B02-f6a9e762d4",
+    "book": 2,
+    "niese": 312,
+    "folio": "24v",
+    "existing_reading": "ad ad",
+    "proposed_reading": "ad",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B02-f6a9e762d4",
+      "book": 2,
+      "niese": 312,
+      "folio": "24v",
+      "baseline_sha256": "fd37ec35ddf9b4920c2e60449eb41798a0775d3d88ee66b0cf6c72268054281f",
+      "byte_start": 100873,
+      "byte_end": 100876,
+      "old": " ad",
+      "new": "",
+      "old_bytes_hex": "206164",
+      "new_bytes_hex": "",
+      "registered_original": "ad ad",
+      "registered_replacement": "ad",
+      "registered_byte_start": 100996,
+      "registered_byte_end": 101001,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          100996,
+          101001
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B02-f6a9e762d4",
+      "book": 2,
+      "niese": 312,
+      "folio": "24v",
+      "old": "ad ad",
+      "new": "ad",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "current_canonical_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 100996,
+      "recorded_byte_end": 101001,
+      "evidence_reference": [
+        {
+          "file": "crops/B02-f6a9e762d4.jpg",
+          "sha256": "4d9cdf4e5d9fa4fa596e53d54acec6799078bd427b0679b30ec5e8a3bc062a30",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00052_0bc12a402e2cf511.jpg",
+          "source_sha256": "0bc12a402e2cf511c83caa6414f798b4e03a9c04da0f566ad6d9f2985b1e0501",
+          "image_id": "bsb00140762_00052",
+          "xyxy": [
+            2981,
+            4177,
+            5297,
+            5077
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 4
+  },
+  {
+    "candidate_id": "B03-0fa1c8e0ee",
+    "book": 3,
+    "niese": 76,
+    "folio": "29r",
+    "existing_reading": "eum eum",
+    "proposed_reading": "eum",
+    "historical_classification": "AUTO-IMAGE",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B03-0fa1c8e0ee",
+      "book": 3,
+      "niese": 76,
+      "folio": "29r",
+      "baseline_sha256": "dce65e146b247617241b0f66feb2f5f165934fd66aaf7126ba0e3ad74733da6a",
+      "byte_start": 26587,
+      "byte_end": 26591,
+      "old": " eum",
+      "new": "",
+      "old_bytes_hex": "2065756d",
+      "new_bytes_hex": "",
+      "registered_original": "eum eum",
+      "registered_replacement": "eum",
+      "registered_byte_start": 26584,
+      "registered_byte_end": 26591,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          26584,
+          26591
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B03-0fa1c8e0ee",
+      "book": 3,
+      "niese": 76,
+      "folio": "29r",
+      "old": "eum eum",
+      "new": "eum",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "AUTO-IMAGE",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "dce65e146b247617241b0f66feb2f5f165934fd66aaf7126ba0e3ad74733da6a",
+      "current_canonical_sha256": "dce65e146b247617241b0f66feb2f5f165934fd66aaf7126ba0e3ad74733da6a",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 26584,
+      "recorded_byte_end": 26591,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 5
+  },
+  {
+    "candidate_id": "B04-9b75977d46",
+    "book": 4,
+    "niese": 28,
+    "folio": "39r",
+    "existing_reading": "ego ego",
+    "proposed_reading": "ego",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B04-9b75977d46",
+      "book": 4,
+      "niese": 28,
+      "folio": "39r",
+      "baseline_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "byte_start": 10246,
+      "byte_end": 10250,
+      "old": " ego",
+      "new": "",
+      "old_bytes_hex": "2065676f",
+      "new_bytes_hex": "",
+      "registered_original": "ego ego",
+      "registered_replacement": "ego",
+      "registered_byte_start": 10243,
+      "registered_byte_end": 10250,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          10243,
+          10250
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B04-9b75977d46",
+      "book": 4,
+      "niese": 28,
+      "folio": "39r",
+      "old": "ego ego",
+      "new": "ego",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "current_canonical_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 10243,
+      "recorded_byte_end": 10250,
+      "evidence_reference": [
+        {
+          "file": "crops/B04-9b75977d46.jpg",
+          "sha256": "7336d13f57119cf44dcef14e2592d762e129fe32ffe5345e8c334cae189fe7ef",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00081_743f1f3fd60171e4.jpg",
+          "source_sha256": "743f1f3fd60171e4de1ebede2d14a85ecfc857ac081e42ae8a765f3536662ed4",
+          "image_id": "bsb00140762_00081",
+          "xyxy": [
+            2548,
+            2434,
+            4900,
+            3334
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 6
+  },
+  {
+    "candidate_id": "B05-7ce010a145",
+    "book": 5,
+    "niese": 149,
+    "folio": "56v",
+    "existing_reading": "eius eius",
+    "proposed_reading": "eius",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B05-7ce010a145",
+      "book": 5,
+      "niese": 149,
+      "folio": "56v",
+      "baseline_sha256": "80ece6535cca5a2912e6154bad0724d0b0c1a17f636d47fa4a6833f430d0aa9b",
+      "byte_start": 48302,
+      "byte_end": 48307,
+      "old": " eius",
+      "new": "",
+      "old_bytes_hex": "2065697573",
+      "new_bytes_hex": "",
+      "registered_original": "eius eius",
+      "registered_replacement": "eius",
+      "registered_byte_start": 48302,
+      "registered_byte_end": 48311,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          48302,
+          48311
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B05-7ce010a145",
+      "book": 5,
+      "niese": 149,
+      "folio": "56v",
+      "old": "eius eius",
+      "new": "eius",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "846ff2e8edbc58bd2283e923353beccc8427f49cecf89415c6bc5272b994f86a",
+      "current_canonical_sha256": "846ff2e8edbc58bd2283e923353beccc8427f49cecf89415c6bc5272b994f86a",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 48302,
+      "recorded_byte_end": 48311,
+      "evidence_reference": [
+        {
+          "file": "crops/B05-7ce010a145.jpg",
+          "sha256": "c8aad6f34c856ff2a6edcaf78c9f2a7976a308d772ba8ab721227a3585d09391",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00116_0b3af7230e734dbc.jpg",
+          "source_sha256": "0b3af7230e734dbc227c873b93e09b0ef616a97c158eb6ada24f97010c516b1e",
+          "image_id": "bsb00140762_00116",
+          "xyxy": [
+            852,
+            2576,
+            3096,
+            3476
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 7
+  },
+  {
+    "candidate_id": "B06-baf02cd8c9",
+    "book": 6,
+    "niese": 136,
+    "folio": "68r",
+    "existing_reading": "sub sub",
+    "proposed_reading": "sub",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B06-baf02cd8c9",
+      "book": 6,
+      "niese": 136,
+      "folio": "68r",
+      "baseline_sha256": "ef693ae8f88e3141caf7abbe7f8369ee0ffb2619fd9ba56c1b8e0b06820dc4ef",
+      "byte_start": 48268,
+      "byte_end": 48272,
+      "old": " sub",
+      "new": "",
+      "old_bytes_hex": "20737562",
+      "new_bytes_hex": "",
+      "registered_original": "sub sub",
+      "registered_replacement": "sub",
+      "registered_byte_start": 48265,
+      "registered_byte_end": 48272,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          48265,
+          48272
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B06-baf02cd8c9",
+      "book": 6,
+      "niese": 136,
+      "folio": "68r",
+      "old": "sub sub",
+      "new": "sub",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "current_canonical_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 48265,
+      "recorded_byte_end": 48272,
+      "evidence_reference": [
+        {
+          "file": "crops/B06-baf02cd8c9.jpg",
+          "sha256": "fff7a726bc9c97a9d475dab9cc77ed8a679e9e071edef15ab698796c9e28d4ef",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00139_db853d567d2d27e2.jpg",
+          "source_sha256": "db853d567d2d27e2ab746c1af059d659d34b5cece9dc484b7ad1e68353dbe62f",
+          "image_id": "bsb00140762_00139",
+          "xyxy": [
+            2548,
+            894,
+            4900,
+            1794
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 8
+  },
+  {
+    "candidate_id": "B07-0a8704d0b9",
+    "book": 7,
+    "niese": 132,
+    "folio": "80v",
+    "existing_reading": "quidem quidem",
+    "proposed_reading": "quidem",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B07-0a8704d0b9",
+      "book": 7,
+      "niese": 132,
+      "folio": "80v",
+      "baseline_sha256": "61e1c0bef8b11fdb8f101673771e4d7ec06021856bddbd5155f24275f4852c84",
+      "byte_start": 39035,
+      "byte_end": 39042,
+      "old": " quidem",
+      "new": "",
+      "old_bytes_hex": "2071756964656d",
+      "new_bytes_hex": "",
+      "registered_original": "quidem quidem",
+      "registered_replacement": "quidem",
+      "registered_byte_start": 39029,
+      "registered_byte_end": 39042,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          39029,
+          39042
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B07-0a8704d0b9",
+      "book": 7,
+      "niese": 132,
+      "folio": "80v",
+      "old": "quidem quidem",
+      "new": "quidem",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "current_canonical_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 39029,
+      "recorded_byte_end": 39042,
+      "evidence_reference": [
+        {
+          "file": "crops/B07-0a8704d0b9.jpg",
+          "sha256": "adfad4fab311831dbdda21f15b7d56de36607ec99d2bae7c190bdf7d95633c10",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00164_351d34443e428f02.jpg",
+          "source_sha256": "351d34443e428f0205cba299d93be451be1d2b48bafeae776d4e1f30c6372c83",
+          "image_id": "bsb00140762_00164",
+          "xyxy": [
+            2981,
+            912,
+            5297,
+            1812
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 9
+  },
+  {
+    "candidate_id": "B07-cfb5a3a85e",
+    "book": 7,
+    "niese": 170,
+    "folio": "82r",
+    "existing_reading": "confusionis confusionis",
+    "proposed_reading": "confusionis",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B07-cfb5a3a85e",
+      "book": 7,
+      "niese": 170,
+      "folio": "82r",
+      "baseline_sha256": "61e1c0bef8b11fdb8f101673771e4d7ec06021856bddbd5155f24275f4852c84",
+      "byte_start": 51479,
+      "byte_end": 51491,
+      "old": " confusionis",
+      "new": "",
+      "old_bytes_hex": "20636f6e667573696f6e6973",
+      "new_bytes_hex": "",
+      "registered_original": "confusionis confusionis",
+      "registered_replacement": "confusionis",
+      "registered_byte_start": 51472,
+      "registered_byte_end": 51495,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          51472,
+          51495
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B07-cfb5a3a85e",
+      "book": 7,
+      "niese": 170,
+      "folio": "82r",
+      "old": "confusionis confusionis",
+      "new": "confusionis",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "current_canonical_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 51472,
+      "recorded_byte_end": 51495,
+      "evidence_reference": [
+        {
+          "file": "crops/B07-cfb5a3a85e.jpg",
+          "sha256": "c0f15d4cedabdf9cb43899842bc851c3e0dc529f887f312bf9ca20e3e908b726",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00167_4a39398ca4e1aff1.jpg",
+          "source_sha256": "4a39398ca4e1aff17d094cd8bf4e5924ad21a14376b01d6966adbdd7386529c9",
+          "image_id": "bsb00140762_00167",
+          "xyxy": [
+            419,
+            2079,
+            2717,
+            2979
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 10
+  },
+  {
+    "candidate_id": "B07-c0e37ebc6a",
+    "book": 7,
+    "niese": 220,
+    "folio": "83v",
+    "existing_reading": "te te",
+    "proposed_reading": "te",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B07-c0e37ebc6a",
+      "book": 7,
+      "niese": 220,
+      "folio": "83v",
+      "baseline_sha256": "61e1c0bef8b11fdb8f101673771e4d7ec06021856bddbd5155f24275f4852c84",
+      "byte_start": 67728,
+      "byte_end": 67731,
+      "old": " te",
+      "new": "",
+      "old_bytes_hex": "207465",
+      "new_bytes_hex": "",
+      "registered_original": "te te",
+      "registered_replacement": "te",
+      "registered_byte_start": 67730,
+      "registered_byte_end": 67735,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          67730,
+          67735
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B07-c0e37ebc6a",
+      "book": 7,
+      "niese": 220,
+      "folio": "83v",
+      "old": "te te",
+      "new": "te",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "current_canonical_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 67730,
+      "recorded_byte_end": 67735,
+      "evidence_reference": [
+        {
+          "file": "crops/B07-c0e37ebc6a.jpg",
+          "sha256": "b183010382cd12d807c246910be26b38f7361d37b0a38aba1691f9598c126f82",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00170_70c14f37517991b1.jpg",
+          "source_sha256": "70c14f37517991b18fd0fdfd4d0bceff39d1306bc2840edbe6a7166942a61006",
+          "image_id": "bsb00140762_00170",
+          "xyxy": [
+            852,
+            4870,
+            3096,
+            5770
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 11
+  },
+  {
+    "candidate_id": "B07-6b67105a4b",
+    "book": 7,
+    "niese": 261,
+    "folio": "85r",
+    "existing_reading": "principem principem",
+    "proposed_reading": "principem",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B07-6b67105a4b",
+      "book": 7,
+      "niese": 261,
+      "folio": "85r",
+      "baseline_sha256": "61e1c0bef8b11fdb8f101673771e4d7ec06021856bddbd5155f24275f4852c84",
+      "byte_start": 81315,
+      "byte_end": 81325,
+      "old": " principem",
+      "new": "",
+      "old_bytes_hex": "207072696e636970656d",
+      "new_bytes_hex": "",
+      "registered_original": "principem principem",
+      "registered_replacement": "principem",
+      "registered_byte_start": 81310,
+      "registered_byte_end": 81329,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          81310,
+          81329
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B07-6b67105a4b",
+      "book": 7,
+      "niese": 261,
+      "folio": "85r",
+      "old": "principem principem",
+      "new": "principem",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "current_canonical_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 81310,
+      "recorded_byte_end": 81329,
+      "evidence_reference": [
+        {
+          "file": "crops/B07-6b67105a4b.jpg",
+          "sha256": "3ac1061c87f9aaa5895ea2b1cf7e0518561604f905e47ca6398a5ff31aadae3f",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00173_2f00107a3c35f730.jpg",
+          "source_sha256": "2f00107a3c35f7304b817823d37c06a3844869f5305e8b20609f6545872e78cc",
+          "image_id": "bsb00140762_00173",
+          "xyxy": [
+            419,
+            726,
+            2717,
+            1626
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 12
+  },
+  {
+    "candidate_id": "B08-f0f1355273",
+    "book": 8,
+    "niese": 116,
+    "folio": "95r",
+    "existing_reading": "de de",
+    "proposed_reading": "de",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B08-f0f1355273",
+      "book": 8,
+      "niese": 116,
+      "folio": "95r",
+      "baseline_sha256": "47fca5d3410ab4c6877bf72df4338ec3f3a3996299ada4e1982cf1996b46b2e4",
+      "byte_start": 40991,
+      "byte_end": 40994,
+      "old": " de",
+      "new": "",
+      "old_bytes_hex": "206465",
+      "new_bytes_hex": "",
+      "registered_original": "de de",
+      "registered_replacement": "de",
+      "registered_byte_start": 40989,
+      "registered_byte_end": 40994,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          40989,
+          40994
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B08-f0f1355273",
+      "book": 8,
+      "niese": 116,
+      "folio": "95r",
+      "old": "de de",
+      "new": "de",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "current_canonical_sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 40989,
+      "recorded_byte_end": 40994,
+      "evidence_reference": [
+        {
+          "file": "crops/B08-f0f1355273.jpg",
+          "sha256": "ae16efa04511633b469bb6f1e9d9d89e15eb678c6a8842f9c55aea078e4be416",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00193_1ebbc31a38bd29d8.jpg",
+          "source_sha256": "1ebbc31a38bd29d849a7160c9aa3eaabb9ebf0f095010aae27d8e803b826e5d4",
+          "image_id": "bsb00140762_00193",
+          "xyxy": [
+            2548,
+            5540,
+            4900,
+            6440
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        },
+        {
+          "file": "crops/B08-f0f1355273_expanded.jpg",
+          "sha256": "a2fbaf48a0b2bd06c446a9bd00196562a0043d6708b5aa06da11e8eb1caad72a",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00193_1ebbc31a38bd29d8.jpg",
+          "source_sha256": "1ebbc31a38bd29d849a7160c9aa3eaabb9ebf0f095010aae27d8e803b826e5d4",
+          "image_id": "bsb00140762_00193",
+          "xyxy": [
+            2350,
+            3400,
+            5412,
+            5800
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Supplementary expanded context; original automatic estimate preserved"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 13
+  },
+  {
+    "candidate_id": "B08-5c65299d51",
+    "book": 8,
+    "niese": 238,
+    "folio": "99v",
+    "existing_reading": "culpauit culpauit",
+    "proposed_reading": "culpauit",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B08-5c65299d51",
+      "book": 8,
+      "niese": 238,
+      "folio": "99v",
+      "baseline_sha256": "47fca5d3410ab4c6877bf72df4338ec3f3a3996299ada4e1982cf1996b46b2e4",
+      "byte_start": 81680,
+      "byte_end": 81689,
+      "old": " culpauit",
+      "new": "",
+      "old_bytes_hex": "2063756c7061756974",
+      "new_bytes_hex": "",
+      "registered_original": "culpauit culpauit",
+      "registered_replacement": "culpauit",
+      "registered_byte_start": 81672,
+      "registered_byte_end": 81689,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          81672,
+          81689
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B08-5c65299d51",
+      "book": 8,
+      "niese": 238,
+      "folio": "99v",
+      "old": "culpauit culpauit",
+      "new": "culpauit",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "current_canonical_sha256": "35fe3a3f9f776fddbaf69932cf509f54e9aaa3da663305716496825e6b61fc77",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 81672,
+      "recorded_byte_end": 81689,
+      "evidence_reference": [
+        {
+          "file": "crops/B08-5c65299d51.jpg",
+          "sha256": "557519f56571fc1b98c6d37f6eb2c728d8f28f1bbd468fc05f7bfe9aba9cac27",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00202_f41ed65dc61cd755.jpg",
+          "source_sha256": "f41ed65dc61cd755dce654e441ffbf81ce19aaaaa92516826dd46e9a4bf1c7bf",
+          "image_id": "bsb00140762_00202",
+          "xyxy": [
+            2981,
+            3150,
+            5297,
+            4050
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 14
+  },
+  {
+    "candidate_id": "CAL12-B09-ef69a27ca8",
+    "book": 9,
+    "niese": 134,
+    "folio": "108v",
+    "existing_reading": "consenti eris",
+    "proposed_reading": "consentiens",
+    "historical_classification": "HUMAN-REVIEW",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "CAL12-B09-ef69a27ca8",
+      "book": 9,
+      "niese": 134,
+      "folio": "108v",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 26498,
+      "byte_end": 26502,
+      "old": " eri",
+      "new": "en",
+      "old_bytes_hex": "20657269",
+      "new_bytes_hex": "656e",
+      "registered_original": "consenti eris",
+      "registered_replacement": "consentiens",
+      "registered_byte_start": 26490,
+      "registered_byte_end": 26503,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          26490,
+          26503
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "CAL12-B09-ef69a27ca8",
+      "book": 9,
+      "niese": 134,
+      "folio": "108v",
+      "old": "consenti eris",
+      "new": "consentiens",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "HUMAN-REVIEW",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "current_canonical_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 26490,
+      "recorded_byte_end": 26503,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 15
+  },
+  {
+    "candidate_id": "HIST09-dad1319216",
+    "book": 9,
+    "niese": 135,
+    "folio": "108v",
+    "existing_reading": "ro grans",
+    "proposed_reading": "rogans",
+    "historical_classification": "HUMAN-REVIEW",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "HIST09-dad1319216",
+      "book": 9,
+      "niese": 135,
+      "folio": "108v",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 26894,
+      "byte_end": 26897,
+      "old": " gr",
+      "new": "g",
+      "old_bytes_hex": "206772",
+      "new_bytes_hex": "67",
+      "registered_original": "ro grans",
+      "registered_replacement": "rogans",
+      "registered_byte_start": 26892,
+      "registered_byte_end": 26900,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          26892,
+          26900
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "HIST09-dad1319216",
+      "book": 9,
+      "niese": 135,
+      "folio": "108v",
+      "old": "ro grans",
+      "new": "rogans",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "HUMAN-REVIEW",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "current_canonical_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 26892,
+      "recorded_byte_end": 26900,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 16
+  },
+  {
+    "candidate_id": "HIST09-f76c0aa99a",
+    "book": 9,
+    "niese": 204,
+    "folio": "111r",
+    "existing_reading": "si niuit",
+    "proposed_reading": "finiuit",
+    "historical_classification": "HUMAN-REVIEW",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "HIST09-f76c0aa99a",
+      "book": 9,
+      "niese": 204,
+      "folio": "111r",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 49288,
+      "byte_end": 49291,
+      "old": "si ",
+      "new": "fi",
+      "old_bytes_hex": "736920",
+      "new_bytes_hex": "6669",
+      "registered_original": "si niuit",
+      "registered_replacement": "finiuit",
+      "registered_byte_start": 49288,
+      "registered_byte_end": 49296,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          49288,
+          49296
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "HIST09-f76c0aa99a",
+      "book": 9,
+      "niese": 204,
+      "folio": "111r",
+      "old": "si niuit",
+      "new": "finiuit",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "HUMAN-REVIEW",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "current_canonical_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 49288,
+      "recorded_byte_end": 49296,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 17
+  },
+  {
+    "candidate_id": "B09-ea22102670",
+    "book": 9,
+    "niese": 289,
+    "folio": "114r",
+    "existing_reading": "super super",
+    "proposed_reading": "super",
+    "historical_classification": "AUTO-IMAGE",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B09-ea22102670",
+      "book": 9,
+      "niese": 289,
+      "folio": "114r",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 75841,
+      "byte_end": 75847,
+      "old": " super",
+      "new": "",
+      "old_bytes_hex": "207375706572",
+      "new_bytes_hex": "",
+      "registered_original": "super super",
+      "registered_replacement": "super",
+      "registered_byte_start": 75836,
+      "registered_byte_end": 75847,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          75836,
+          75847
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B09-ea22102670",
+      "book": 9,
+      "niese": 289,
+      "folio": "114r",
+      "old": "super super",
+      "new": "super",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "AUTO-IMAGE",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "current_canonical_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 75836,
+      "recorded_byte_end": 75847,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 18
+  },
+  {
+    "candidate_id": "B11-06674610ec",
+    "book": 11,
+    "niese": "54",
+    "folio": "126v",
+    "existing_reading": "hu milian",
+    "proposed_reading": "humilians",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B11-06674610ec",
+      "book": 11,
+      "niese": "54",
+      "folio": "126v",
+      "baseline_sha256": "00b76630b5c132cbc026fdaeaf71c1147c1103089f7e548ef69ba32074b5d916",
+      "byte_start": 18360,
+      "byte_end": 18367,
+      "old": " milian",
+      "new": "milians",
+      "old_bytes_hex": "206d696c69616e",
+      "new_bytes_hex": "6d696c69616e73",
+      "registered_original": "hu milian",
+      "registered_replacement": "humilians",
+      "registered_byte_start": 18366,
+      "registered_byte_end": 18375,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          18366,
+          18375
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B11-06674610ec",
+      "book": 11,
+      "niese": "54",
+      "folio": "126v",
+      "old": "hu milian",
+      "new": "humilians",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "current_canonical_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 18366,
+      "recorded_byte_end": 18375,
+      "evidence_reference": [
+        {
+          "file": "crops/B11-06674610ec.jpg",
+          "sha256": "3fd0e1dffcfa7c2919fdd36056f58914aaf569e21ec56b4384b78be33989884f",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00256_c07d35925b25f778.jpg",
+          "source_sha256": "c07d35925b25f7786919b3c5a6e1613fe773bb1c20d7b85d61abd05ed33b3895",
+          "xyxy": [
+            2977,
+            356,
+            5286,
+            1546
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 19
+  },
+  {
+    "candidate_id": "H23-AL13-2d4b289c90",
+    "book": 11,
+    "niese": 97,
+    "folio": "128r",
+    "existing_reading": "construc rent",
+    "proposed_reading": "construerent",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H23-AL13-2d4b289c90",
+      "book": 11,
+      "niese": 97,
+      "folio": "128r",
+      "baseline_sha256": "00b76630b5c132cbc026fdaeaf71c1147c1103089f7e548ef69ba32074b5d916",
+      "byte_start": 32547,
+      "byte_end": 32549,
+      "old": "c ",
+      "new": "e",
+      "old_bytes_hex": "6320",
+      "new_bytes_hex": "65",
+      "registered_original": "construc rent",
+      "registered_replacement": "construerent",
+      "registered_byte_start": 32548,
+      "registered_byte_end": 32561,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          32548,
+          32561
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H23-AL13-2d4b289c90",
+      "book": 11,
+      "niese": 97,
+      "folio": "128r",
+      "old": "construc rent",
+      "new": "construerent",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "current_canonical_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 32548,
+      "recorded_byte_end": 32561,
+      "evidence_reference": [
+        {
+          "file": "crops/H23-AL13-2d4b289c90.jpg",
+          "sha256": "4a778ee5af96167494c887db46f53b4d3143a854c8c09560c078b85870aa56ee",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00259_23f3afb05a033eb8.jpg",
+          "source_sha256": "23f3afb05a033eb8f1e04129fb4656059ca111715865732357c7d051872ab2b8",
+          "xyxy": [
+            2544,
+            486,
+            4889,
+            1677
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 20
+  },
+  {
+    "candidate_id": "H15-AL13-c85e4e557f",
+    "book": 16,
+    "niese": 331,
+    "folio": "201v",
+    "existing_reading": "alex xander",
+    "proposed_reading": "alexander",
+    "historical_classification": "DEFERRED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H15-AL13-c85e4e557f",
+      "book": 16,
+      "niese": 331,
+      "folio": "201v",
+      "baseline_sha256": "bc198e4e44aab227599445cbb44dbd0202647354e53216dd74087abd6143b531",
+      "byte_start": 91696,
+      "byte_end": 91698,
+      "old": " x",
+      "new": "",
+      "old_bytes_hex": "2078",
+      "new_bytes_hex": "",
+      "registered_original": "alex xander",
+      "registered_replacement": "alexander",
+      "registered_byte_start": 91692,
+      "registered_byte_end": 91703,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          91692,
+          91703
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H15-AL13-c85e4e557f",
+      "book": 16,
+      "niese": 331,
+      "folio": "201v",
+      "old": "alex xander",
+      "new": "alexander",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "DEFERRED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "bc198e4e44aab227599445cbb44dbd0202647354e53216dd74087abd6143b531",
+      "current_canonical_sha256": "bc198e4e44aab227599445cbb44dbd0202647354e53216dd74087abd6143b531",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 91692,
+      "recorded_byte_end": 91703,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 21
+  },
+  {
+    "candidate_id": "H22-AL13-cd714b2312",
+    "book": 19,
+    "niese": 340,
+    "folio": "244v",
+    "existing_reading": "de gentibus",
+    "proposed_reading": "degentibus",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 86,
+    "priority_basis": "POSSIBLE_INTRUSION_OR_DUPLICATION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H22-AL13-cd714b2312",
+      "book": 19,
+      "niese": 340,
+      "folio": "244v",
+      "baseline_sha256": "cbb97c72aa8d129ebe6ee7dd070d6b8111964923a1048164aff711633249466f",
+      "byte_start": 96154,
+      "byte_end": 96155,
+      "old": " ",
+      "new": "",
+      "old_bytes_hex": "20",
+      "new_bytes_hex": "",
+      "registered_original": "de gentibus",
+      "registered_replacement": "degentibus",
+      "registered_byte_start": 96149,
+      "registered_byte_end": 96160,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          96149,
+          96160
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H22-AL13-cd714b2312",
+      "book": 19,
+      "niese": 340,
+      "folio": "244v",
+      "old": "de gentibus",
+      "new": "degentibus",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "3826267394a578f1630fc383b6af5a8435b314d1e4aeb73b33510c3dd65d1549",
+      "current_canonical_sha256": "3826267394a578f1630fc383b6af5a8435b314d1e4aeb73b33510c3dd65d1549",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 96149,
+      "recorded_byte_end": 96160,
+      "evidence_reference": [
+        {
+          "file": "crops/H22-AL13-cd714b2312.jpg",
+          "sha256": "d7ed6ba7ea2d3338c5ab2a12c5406dda126a733d2100955494e3ce133088f034",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00492_c97a7bdbe098e729.jpg",
+          "source_sha256": "c97a7bdbe098e7290afb5db00f7f51589a3874a6ed4b0e10757692a0e554a407",
+          "xyxy": [
+            424,
+            1222,
+            1542,
+            1817
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 22
+  },
+  {
+    "candidate_id": "H26-AL13-9e75a0949c",
+    "book": 7,
+    "niese": 340,
+    "folio": "87v",
+    "existing_reading": "Ferris uero aeris",
+    "proposed_reading": "Ferris uero et aeris",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 81,
+    "priority_basis": "POSSIBLE_OMISSION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H26-AL13-9e75a0949c",
+      "book": 7,
+      "niese": 340,
+      "folio": "87v",
+      "baseline_sha256": "61e1c0bef8b11fdb8f101673771e4d7ec06021856bddbd5155f24275f4852c84",
+      "byte_start": 108962,
+      "byte_end": 108962,
+      "old": "",
+      "new": "et ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "657420",
+      "registered_original": "Ferris uero aeris",
+      "registered_replacement": "Ferris uero et aeris",
+      "registered_byte_start": 108954,
+      "registered_byte_end": 108971,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          108961,
+          108971
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H26-AL13-9e75a0949c",
+      "book": 7,
+      "niese": 340,
+      "folio": "87v",
+      "old": "Ferris uero aeris",
+      "new": "Ferris uero et aeris",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "current_canonical_sha256": "007c55e567380452339dd579748bd40543897bf9d8dec7bb20c7cbafe19b6a3e",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 108954,
+      "recorded_byte_end": 108971,
+      "evidence_reference": [
+        {
+          "file": "crops/H26-AL13-9e75a0949c.jpg",
+          "sha256": "fe03adf379af9213099e9824a264f3616f96cc8150471be3d82f2c387ffaed1a",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00178_876a8eba0c5e7801.jpg",
+          "source_sha256": "876a8eba0c5e78013c79c21839a221957a7bc404ef323e32544cfe7f1dcba268",
+          "image_id": "bsb00140762_00178",
+          "xyxy": [
+            2981,
+            5264,
+            5297,
+            6164
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 23
+  },
+  {
+    "candidate_id": "H28-AL13-1bdce35daf",
+    "book": 12,
+    "niese": 384,
+    "folio": "147r",
+    "existing_reading": "",
+    "proposed_reading": "esse ",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 81,
+    "priority_basis": "POSSIBLE_OMISSION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H28-AL13-1bdce35daf",
+      "book": 12,
+      "niese": 384,
+      "folio": "147r",
+      "baseline_sha256": "2c30dd6941f2bbc644a9df4c2e6b6e19f7c922e0f2bd1644135330dca762a7e4",
+      "byte_start": 107688,
+      "byte_end": 107688,
+      "old": "",
+      "new": "esse ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "6573736520",
+      "registered_original": "",
+      "registered_replacement": "esse ",
+      "registered_byte_start": 107688,
+      "registered_byte_end": 107688,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          107680,
+          107695
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H28-AL13-1bdce35daf",
+      "book": 12,
+      "niese": 384,
+      "folio": "147r",
+      "baseline_sha256": "2c30dd6941f2bbc644a9df4c2e6b6e19f7c922e0f2bd1644135330dca762a7e4",
+      "byte_start": 107688,
+      "byte_end": 107688,
+      "old": "",
+      "new": "esse ",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "6573736520",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          88508,
+          88515
+        ],
+        "raw_span": [
+          107589,
+          107765
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "ur. <milestone unit=\"niese\" n=\"384\"/>Nam lysias persuasit regi menelaum occidere, si uellet iudaeos pacatos dicens, hunc fuisse initium malorum qui flexit patrem suum cogere iudaeos religionem patriam",
+      "evidence": [
+        {
+          "file": "crops/H28-AL13-1bdce35daf.jpg",
+          "sha256": "334bac2bce2d7b8e597d2cf2f1f0fbd7bb6c017d653e14994192a32da1aeaca3",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00297_9ab71f971fcc64a7.jpg",
+          "source_sha256": "9ab71f971fcc64a718422f685e146b4fdb9fc5e6e8bc37dec30ad488aa331b7b",
+          "image_id": "bsb00140762_00297",
+          "xyxy": [
+            2418,
+            2287,
+            4900,
+            3187
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": "AL13-1bdce35daf",
+      "raw_HTR": "esse",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 4011,
+          "image": "sbb00000114_00297.jpg",
+          "text": "dicebatur. Nam lysias persuasit regi menelaum ",
+          "folio": "147r"
+        },
+        {
+          "export_line": 4013,
+          "image": "sbb00000114_00297.jpg",
+          "text": "occidere, si uellet iudaeos pacatos dicens, ",
+          "folio": "147r"
+        },
+        {
+          "export_line": 4015,
+          "image": "sbb00000114_00297.jpg",
+          "text": "hunc fuisse initium malorum qui flexit pa ",
+          "folio": "147r"
+        }
+      ],
+      "original_TPEN_reading": "pacatos",
+      "original_TPEN_context_score": 0.842,
+      "original_RTF_sha256": "55441442288918a7df808b5028341cfb705f3f5ad4e7cc19a6576120d7916692",
+      "reason": "The manuscript visibly reads iudaeos esse pacatos; XML omits esse. Full and column HTR flag it independently of reference text, but are correlated views. Entire raw flanking XML interval checked: no protected/excluded esse is present. New one-word omission proposal, unapproved.",
+      "historical_overlap_ids": [],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited modern T-PEN export omission; complete visible word absent between matching export anchors"
+    },
+    "exact_source_compatible": true,
+    "rank": 24
+  },
+  {
+    "candidate_id": "M14-B13-5d140d1c1b",
+    "book": 13,
+    "niese": 314,
+    "folio": "159v",
+    "existing_reading": "nec<cb n=\"2/2\"/>et",
+    "proposed_reading": "nec <cb n=\"2/2\"/>non",
+    "historical_classification": "DEFERRED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 81,
+    "priority_basis": "POSSIBLE_OMISSION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "M14-B13-5d140d1c1b",
+      "book": 13,
+      "niese": 314,
+      "folio": "159v",
+      "baseline_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "byte_start": 92071,
+      "byte_end": 92086,
+      "old": "<cb n=\"2/2\"/>et",
+      "new": " <cb n=\"2/2\"/>non",
+      "old_bytes_hex": "3c6362206e3d22322f32222f3e6574",
+      "new_bytes_hex": "203c6362206e3d22322f32222f3e6e6f6e",
+      "registered_original": "nec<cb n=\"2/2\"/>et",
+      "registered_replacement": "nec <cb n=\"2/2\"/>non",
+      "registered_byte_start": 92068,
+      "registered_byte_end": 92086,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          92068,
+          92086
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "M14-B13-5d140d1c1b",
+      "book": 13,
+      "niese": 314,
+      "folio": "159v",
+      "old": "nec<cb n=\"2/2\"/>et",
+      "new": "nec <cb n=\"2/2\"/>non",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "DEFERRED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "current_canonical_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 92068,
+      "recorded_byte_end": 92086,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 25
+  },
+  {
+    "candidate_id": "B02-5e1a379e12",
+    "book": 2,
+    "niese": 313,
+    "folio": "24v",
+    "existing_reading": "sencundum",
+    "proposed_reading": "secundum",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B02-5e1a379e12",
+      "book": 2,
+      "niese": 313,
+      "folio": "24v",
+      "baseline_sha256": "fd37ec35ddf9b4920c2e60449eb41798a0775d3d88ee66b0cf6c72268054281f",
+      "byte_start": 101199,
+      "byte_end": 101200,
+      "old": "n",
+      "new": "",
+      "old_bytes_hex": "6e",
+      "new_bytes_hex": "",
+      "registered_original": "sencundum",
+      "registered_replacement": "secundum",
+      "registered_byte_start": 101322,
+      "registered_byte_end": 101331,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          101322,
+          101331
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B02-5e1a379e12",
+      "book": 2,
+      "niese": 313,
+      "folio": "24v",
+      "old": "sencundum",
+      "new": "secundum",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "current_canonical_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 101322,
+      "recorded_byte_end": 101331,
+      "evidence_reference": [
+        {
+          "file": "crops/B02-5e1a379e12.jpg",
+          "sha256": "7240329912015932d6b09dcf38cdd630191674c0295ee4319288f4d53ea056d3",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00052_0bc12a402e2cf511.jpg",
+          "source_sha256": "0bc12a402e2cf511c83caa6414f798b4e03a9c04da0f566ad6d9f2985b1e0501",
+          "image_id": "bsb00140762_00052",
+          "xyxy": [
+            2981,
+            4878,
+            5297,
+            5778
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 26
+  },
+  {
+    "candidate_id": "H24-AL13-58f85f6ba2",
+    "book": 2,
+    "niese": 335,
+    "folio": "25v",
+    "existing_reading": "efffugere",
+    "proposed_reading": "effugere",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H24-AL13-58f85f6ba2",
+      "book": 2,
+      "niese": 335,
+      "folio": "25v",
+      "baseline_sha256": "fd37ec35ddf9b4920c2e60449eb41798a0775d3d88ee66b0cf6c72268054281f",
+      "byte_start": 108299,
+      "byte_end": 108300,
+      "old": "f",
+      "new": "",
+      "old_bytes_hex": "66",
+      "new_bytes_hex": "",
+      "registered_original": "efffugere",
+      "registered_replacement": "effugere",
+      "registered_byte_start": 108431,
+      "registered_byte_end": 108440,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          108431,
+          108440
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H24-AL13-58f85f6ba2",
+      "book": 2,
+      "niese": 335,
+      "folio": "25v",
+      "old": "efffugere",
+      "new": "effugere",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "current_canonical_sha256": "b776633b96c1d7fcf63a18ce657fc596690aa49bcdc03ebae7204b95c345878e",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 108431,
+      "recorded_byte_end": 108440,
+      "evidence_reference": [
+        {
+          "file": "crops/H24-AL13-58f85f6ba2.jpg",
+          "sha256": "654bd94adb22cf2b1c9b36d27a7d9246d6e5aeeb7cbfbe15edc9b3c30657521d",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00054_f289e6910a36a547.jpg",
+          "source_sha256": "f289e6910a36a547d61d95a35bb9f543dc1a3a5846190b0905649bb7fbc52ed0",
+          "image_id": "bsb00140762_00054",
+          "xyxy": [
+            2981,
+            1381,
+            5297,
+            2030
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 27
+  },
+  {
+    "candidate_id": "B04-bffbe9cba6",
+    "book": 4,
+    "niese": 85,
+    "folio": "41r",
+    "existing_reading": "terrra",
+    "proposed_reading": "terra",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B04-bffbe9cba6",
+      "book": 4,
+      "niese": 85,
+      "folio": "41r",
+      "baseline_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "byte_start": 28565,
+      "byte_end": 28566,
+      "old": "r",
+      "new": "",
+      "old_bytes_hex": "72",
+      "new_bytes_hex": "",
+      "registered_original": "terrra",
+      "registered_replacement": "terra",
+      "registered_byte_start": 28561,
+      "registered_byte_end": 28567,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          28561,
+          28567
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B04-bffbe9cba6",
+      "book": 4,
+      "niese": 85,
+      "folio": "41r",
+      "old": "terrra",
+      "new": "terra",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "current_canonical_sha256": "f0d3ae42e5f322b6a7d4c82da13f41bb796bd5ca5184254fa7ac646aa43cf4da",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 28561,
+      "recorded_byte_end": 28567,
+      "evidence_reference": [
+        {
+          "file": "crops/B04-bffbe9cba6.jpg",
+          "sha256": "947a6bab4dfed832fefe27102c9e430651455ce2b9880e74c1178f93aeb20227",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00085_193ed39e07c1fe12.jpg",
+          "source_sha256": "193ed39e07c1fe12d00b18e10deec403845115d7977ca7ab91401afff0f13ec8",
+          "image_id": "bsb00140762_00085",
+          "xyxy": [
+            2548,
+            5246,
+            4900,
+            6146
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 28
+  },
+  {
+    "candidate_id": "H25-AL13-82d8797a69",
+    "book": 6,
+    "niese": 161,
+    "folio": "69r",
+    "existing_reading": "samaiel",
+    "proposed_reading": "simaiel",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H25-AL13-82d8797a69",
+      "book": 6,
+      "niese": 161,
+      "folio": "69r",
+      "baseline_sha256": "ef693ae8f88e3141caf7abbe7f8369ee0ffb2619fd9ba56c1b8e0b06820dc4ef",
+      "byte_start": 56593,
+      "byte_end": 56594,
+      "old": "a",
+      "new": "i",
+      "old_bytes_hex": "61",
+      "new_bytes_hex": "69",
+      "registered_original": "samaiel",
+      "registered_replacement": "simaiel",
+      "registered_byte_start": 56592,
+      "registered_byte_end": 56599,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          56592,
+          56599
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H25-AL13-82d8797a69",
+      "book": 6,
+      "niese": 161,
+      "folio": "69r",
+      "old": "samaiel",
+      "new": "simaiel",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "current_canonical_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 56592,
+      "recorded_byte_end": 56599,
+      "evidence_reference": [
+        {
+          "file": "crops/H25-AL13-82d8797a69.jpg",
+          "sha256": "baa81cd2089acc26000f4ce7c45104eff39e789631d748412952064f16d21d48",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00141_b2e6bb0a8cc2d345.jpg",
+          "source_sha256": "b2e6bb0a8cc2d3450e5ddf5db0ab8668b2385478cf0d68dea10e58ec9a9b2916",
+          "image_id": "bsb00140762_00141",
+          "xyxy": [
+            419,
+            2351,
+            2717,
+            3251
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        },
+        {
+          "file": "crops/H25-AL13-82d8797a69_supplement.jpg",
+          "sha256": "8215d943a25d3d56988c98182a931537559a683ccfa7ec0f6064a98f322a4ff8",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00141_b2e6bb0a8cc2d345.jpg",
+          "source_sha256": "b2e6bb0a8cc2d3450e5ddf5db0ab8668b2385478cf0d68dea10e58ec9a9b2916",
+          "image_id": "bsb00140762_00141",
+          "xyxy": [
+            450,
+            2350,
+            2800,
+            3250
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Supplementary native region, correcting initial localization or enlarging disputed letter shapes"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 29
+  },
+  {
+    "candidate_id": "B06-6430430bd2",
+    "book": 6,
+    "niese": 336,
+    "folio": "75r",
+    "existing_reading": "populumn",
+    "proposed_reading": "populum",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B06-6430430bd2",
+      "book": 6,
+      "niese": 336,
+      "folio": "75r",
+      "baseline_sha256": "ef693ae8f88e3141caf7abbe7f8369ee0ffb2619fd9ba56c1b8e0b06820dc4ef",
+      "byte_start": 115728,
+      "byte_end": 115729,
+      "old": "n",
+      "new": "",
+      "old_bytes_hex": "6e",
+      "new_bytes_hex": "",
+      "registered_original": "populumn",
+      "registered_replacement": "populum",
+      "registered_byte_start": 115700,
+      "registered_byte_end": 115708,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          115700,
+          115708
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B06-6430430bd2",
+      "book": 6,
+      "niese": 336,
+      "folio": "75r",
+      "old": "populumn",
+      "new": "populum",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "current_canonical_sha256": "0530b09e424f03664ca77f115a678da582137ee8745bf244086954b814ea1532",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 115700,
+      "recorded_byte_end": 115708,
+      "evidence_reference": [
+        {
+          "file": "crops/B06-6430430bd2.jpg",
+          "sha256": "bd658ff45ecc6c7be5e9d72acdf78892d01566d2905c860baaf41802f04c7d6e",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00153_1a00502e852145b6.jpg",
+          "source_sha256": "1a00502e852145b6c1508b12b1aaaa3e8ad948109a6a509b395f934075cb74b6",
+          "image_id": "bsb00140762_00153",
+          "xyxy": [
+            2548,
+            375,
+            4900,
+            1275
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 30
+  },
+  {
+    "candidate_id": "B09-b4ed9e7fd3",
+    "book": 9,
+    "niese": 129,
+    "folio": "108r",
+    "existing_reading": "secumdum",
+    "proposed_reading": "secundum",
+    "historical_classification": "AUTO-IMAGE",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B09-b4ed9e7fd3",
+      "book": 9,
+      "niese": 129,
+      "folio": "108r",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 25144,
+      "byte_end": 25145,
+      "old": "m",
+      "new": "n",
+      "old_bytes_hex": "6d",
+      "new_bytes_hex": "6e",
+      "registered_original": "secumdum",
+      "registered_replacement": "secundum",
+      "registered_byte_start": 25140,
+      "registered_byte_end": 25148,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          25140,
+          25148
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B09-b4ed9e7fd3",
+      "book": 9,
+      "niese": 129,
+      "folio": "108r",
+      "old": "secumdum",
+      "new": "secundum",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "AUTO-IMAGE",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "current_canonical_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 25140,
+      "recorded_byte_end": 25148,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 31
+  },
+  {
+    "candidate_id": "B09-8ef0d57b5d",
+    "book": 9,
+    "niese": 228,
+    "folio": "111v",
+    "existing_reading": "trigninta",
+    "proposed_reading": "triginta",
+    "historical_classification": "AUTO-IMAGE",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B09-8ef0d57b5d",
+      "book": 9,
+      "niese": 228,
+      "folio": "111v",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 57143,
+      "byte_end": 57144,
+      "old": "n",
+      "new": "",
+      "old_bytes_hex": "6e",
+      "new_bytes_hex": "",
+      "registered_original": "trigninta",
+      "registered_replacement": "triginta",
+      "registered_byte_start": 57139,
+      "registered_byte_end": 57148,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          57139,
+          57148
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B09-8ef0d57b5d",
+      "book": 9,
+      "niese": 228,
+      "folio": "111v",
+      "old": "trigninta",
+      "new": "triginta",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "AUTO-IMAGE",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "current_canonical_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 57139,
+      "recorded_byte_end": 57148,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 32
+  },
+  {
+    "candidate_id": "CAL12-B09-41d0ff16c3",
+    "book": 9,
+    "niese": 257,
+    "folio": "113r",
+    "existing_reading": "iniuruam",
+    "proposed_reading": "iniuriam",
+    "historical_classification": "HUMAN-REVIEW",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "CAL12-B09-41d0ff16c3",
+      "book": 9,
+      "niese": 257,
+      "folio": "113r",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 66238,
+      "byte_end": 66239,
+      "old": "u",
+      "new": "i",
+      "old_bytes_hex": "75",
+      "new_bytes_hex": "69",
+      "registered_original": "iniuruam",
+      "registered_replacement": "iniuriam",
+      "registered_byte_start": 66233,
+      "registered_byte_end": 66241,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          66233,
+          66241
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "CAL12-B09-41d0ff16c3",
+      "book": 9,
+      "niese": 257,
+      "folio": "113r",
+      "old": "iniuruam",
+      "new": "iniuriam",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "HUMAN-REVIEW",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "current_canonical_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 66233,
+      "recorded_byte_end": 66241,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 33
+  },
+  {
+    "candidate_id": "B09-50a5b5481e",
+    "book": 9,
+    "niese": 287,
+    "folio": "114r",
+    "existing_reading": "suisset",
+    "proposed_reading": "fuisset",
+    "historical_classification": "HUMAN-REVIEW",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B09-50a5b5481e",
+      "book": 9,
+      "niese": 287,
+      "folio": "114r",
+      "baseline_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "byte_start": 75334,
+      "byte_end": 75335,
+      "old": "s",
+      "new": "f",
+      "old_bytes_hex": "73",
+      "new_bytes_hex": "66",
+      "registered_original": "suisset",
+      "registered_replacement": "fuisset",
+      "registered_byte_start": 75334,
+      "registered_byte_end": 75341,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          75334,
+          75341
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B09-50a5b5481e",
+      "book": 9,
+      "niese": 287,
+      "folio": "114r",
+      "old": "suisset",
+      "new": "fuisset",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "HUMAN-REVIEW",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "current_canonical_sha256": "641bb689416ee40a3a8caddb4da8ec6f1d575afec482d948c285f4464fba5970",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 75334,
+      "recorded_byte_end": 75341,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 34
+  },
+  {
+    "candidate_id": "B10-ffa8f828f4",
+    "book": 10,
+    "niese": 101,
+    "folio": "117v",
+    "existing_reading": "triginti",
+    "proposed_reading": "triginta",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B10-ffa8f828f4",
+      "book": 10,
+      "niese": 101,
+      "folio": "117v",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 34451,
+      "byte_end": 34452,
+      "old": "i",
+      "new": "a",
+      "old_bytes_hex": "69",
+      "new_bytes_hex": "61",
+      "registered_original": "triginti",
+      "registered_replacement": "triginta",
+      "registered_byte_start": 34444,
+      "registered_byte_end": 34452,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          34444,
+          34452
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B10-ffa8f828f4",
+      "book": 10,
+      "niese": 101,
+      "folio": "117v",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 34444,
+      "byte_end": 34452,
+      "old": "triginti",
+      "new": "triginta",
+      "old_bytes_hex": "74726967696e7469",
+      "new_bytes_hex": "74726967696e7461",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          26577,
+          26585
+        ],
+        "raw_span": [
+          34154,
+          34447
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "t pariter et artifices eosque ad se ligatos adducerent, qui omnis fuerunt decem milia et octingenti triginti et duo simulet ioachim <milestone unit=\"niese\" n=\"102\"/>nomine sedechiam constituit regem, accipien",
+      "evidence": [
+        {
+          "file": "crops/B10-ffa8f828f4.jpg",
+          "sha256": "cd820f8939bef357d208b69e58267e30f5928a6f7c0e73e48ac6c44aa6999c03",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00238_d0a96960e68333af.jpg",
+          "source_sha256": "d0a96960e68333af05ec3826310c52892b47a2b2593814a8316c59a1d1496229",
+          "image_id": "bsb00140762_00238",
+          "xyxy": [
+            450,
+            4741,
+            3096,
+            5641
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": null,
+      "raw_HTR": null,
+      "original_TPEN_evidence": [
+        {
+          "export_line": 1295,
+          "image": "sbb00000114_00238.jpg",
+          "text": "ducerent, qui omnis fuerunt decem milia et oc ",
+          "folio": "117v"
+        },
+        {
+          "export_line": 1297,
+          "image": "sbb00000114_00238.jpg",
+          "text": "tingenti triginti et duo simulet ioachim ",
+          "folio": "117v"
+        },
+        {
+          "export_line": 1299,
+          "image": "sbb00000114_00238.jpg",
+          "text": "nomine sedechiam constituit regem, accipiens ",
+          "folio": "117v"
+        }
+      ],
+      "original_TPEN_reading": "triginti",
+      "original_TPEN_context_score": 0.815,
+      "original_RTF_sha256": "29de10660df2598ded2aca4df79a15a79e99f21ad709c0415d853e5025a30d0f",
+      "reason": "Visible final a in triginta et duo; XML triginti differs. Historical lexical observation now supported by image; no approval inferred.",
+      "historical_overlap_ids": [
+        "B10-ffa8f828f4"
+      ],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 35
+  },
+  {
+    "candidate_id": "H28-AL13-60bdbd757b",
+    "book": 10,
+    "niese": 112,
+    "folio": "118r",
+    "existing_reading": "contratia",
+    "proposed_reading": "contraria",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H28-AL13-60bdbd757b",
+      "book": 10,
+      "niese": 112,
+      "folio": "118r",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 37449,
+      "byte_end": 37450,
+      "old": "t",
+      "new": "r",
+      "old_bytes_hex": "74",
+      "new_bytes_hex": "72",
+      "registered_original": "contratia",
+      "registered_replacement": "contraria",
+      "registered_byte_start": 37443,
+      "registered_byte_end": 37452,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          37443,
+          37452
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H28-AL13-60bdbd757b",
+      "book": 10,
+      "niese": 112,
+      "folio": "118r",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 37443,
+      "byte_end": 37452,
+      "old": "contratia",
+      "new": "contraria",
+      "old_bytes_hex": "636f6e747261746961",
+      "new_bytes_hex": "636f6e747261726961",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          29002,
+          29011
+        ],
+        "raw_span": [
+          37395,
+          37914
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "us quæ rex tulerat ad hoc templum reuerterentur. <milestone unit=\"niese\" n=\"112\"/>Sed hieremias his contratia atque uera transiens in medium prophetauit dicens quod male quidem facerent illi qui regi talia sua",
+      "evidence": [
+        {
+          "file": "crops/H28-AL13-60bdbd757b.jpg",
+          "sha256": "944f7d8ca77e8a40a0f632df406c1453e0eed41a206a945ea21f7226360a83d1",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00239_603109c04aac13de.jpg",
+          "source_sha256": "603109c04aac13dea2c8ff7cd3deaf022befb52bea724f48ab3104dc6491f355",
+          "image_id": "bsb00140762_00239",
+          "xyxy": [
+            289,
+            779,
+            2717,
+            1679
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": "AL13-60bdbd757b",
+      "raw_HTR": "contraria",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 1407,
+          "image": "sbb00000114_00239.jpg",
+          "text": "templum reuerterentur. Sed hieremias ",
+          "folio": "118r"
+        },
+        {
+          "export_line": 1409,
+          "image": "sbb00000114_00239.jpg",
+          "text": "his contratia atque uera transiens in medium ",
+          "folio": "118r"
+        },
+        {
+          "export_line": 1411,
+          "image": "sbb00000114_00239.jpg",
+          "text": "prophetauit dicens quod male quidem face ",
+          "folio": "118r"
+        }
+      ],
+      "original_TPEN_reading": "contratia",
+      "original_TPEN_context_score": 0.787,
+      "original_RTF_sha256": "29de10660df2598ded2aca4df79a15a79e99f21ad709c0415d853e5025a30d0f",
+      "reason": "The manuscript has r in contraria, whereas XML contratia has t; localized letter discrepancy.",
+      "historical_overlap_ids": [],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 36
+  },
+  {
+    "candidate_id": "B10-8bd3430687",
+    "book": 10,
+    "niese": 140,
+    "folio": "119r",
+    "existing_reading": "aduersur",
+    "proposed_reading": "aduersus",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B10-8bd3430687",
+      "book": 10,
+      "niese": 140,
+      "folio": "119r",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 46677,
+      "byte_end": 46678,
+      "old": "r",
+      "new": "s",
+      "old_bytes_hex": "72",
+      "new_bytes_hex": "73",
+      "registered_original": "aduersur",
+      "registered_replacement": "aduersus",
+      "registered_byte_start": 46670,
+      "registered_byte_end": 46678,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          46670,
+          46678
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B10-8bd3430687",
+      "book": 10,
+      "niese": 140,
+      "folio": "119r",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 46670,
+      "byte_end": 46678,
+      "old": "aduersur",
+      "new": "aduersus",
+      "old_bytes_hex": "6164756572737572",
+      "new_bytes_hex": "6164756572737573",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          36611,
+          36619
+        ],
+        "raw_span": [
+          46617,
+          46841
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "m</corr> odio nostro te subuigauit imperio. <milestone unit=\"niese\" n=\"140\"/>His igitur uerbis usus aduersur sedechiam filios eius iussit pariter et amicos continuo perimi. Ipso scilicet sedechiam et aliis ca",
+      "evidence": [
+        {
+          "file": "crops/B10-8bd3430687.jpg",
+          "sha256": "c7a2633259bcf68d326a068d07b458f80569855abebb381bbbe11aa6b1d21099",
+          "source_file": "../../../Bamberg_Audit_v1_3_III_IX_Closeout_X_XII/images/native_bsb00140762_00241.jpg",
+          "source_sha256": "0bd933d791e03e6a4b85b04de5839acaab7bf7bea1f0bb635b5e84ae2c79244f",
+          "image_id": "bsb00140762_00241",
+          "xyxy": [
+            289,
+            665,
+            2717,
+            1565
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": null,
+      "raw_HTR": null,
+      "original_TPEN_evidence": [
+        {
+          "export_line": 1775,
+          "image": "sbb00000114_00241.jpg",
+          "text": "subuigauit imperio. His igitur uerbis ",
+          "folio": "119r"
+        },
+        {
+          "export_line": 1777,
+          "image": "sbb00000114_00241.jpg",
+          "text": "usus aduersur sedechiam filios eius iussit ",
+          "folio": "119r"
+        },
+        {
+          "export_line": 1779,
+          "image": "sbb00000114_00241.jpg",
+          "text": "pariter et amicos continuo perimi. Ipso ",
+          "folio": "119r"
+        }
+      ],
+      "original_TPEN_reading": "aduersur",
+      "original_TPEN_context_score": 0.782,
+      "original_RTF_sha256": "29de10660df2598ded2aca4df79a15a79e99f21ad709c0415d853e5025a30d0f",
+      "reason": "Visible long s closes aduersus before sedechiam; XML ends r. Historical low-priority observation now image-supported.",
+      "historical_overlap_ids": [
+        "B10-8bd3430687"
+      ],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 37
+  },
+  {
+    "candidate_id": "H28-AL13-f3e7d32988",
+    "book": 10,
+    "niese": 157,
+    "folio": "119v",
+    "existing_reading": "noluit",
+    "proposed_reading": "uoluit",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H28-AL13-f3e7d32988",
+      "book": 10,
+      "niese": 157,
+      "folio": "119v",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 52512,
+      "byte_end": 52513,
+      "old": "n",
+      "new": "u",
+      "old_bytes_hex": "6e",
+      "new_bytes_hex": "75",
+      "registered_original": "noluit",
+      "registered_replacement": "uoluit",
+      "registered_byte_start": 52512,
+      "registered_byte_end": 52518,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          52512,
+          52518
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H28-AL13-f3e7d32988",
+      "book": 10,
+      "niese": 157,
+      "folio": "119v",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 52512,
+      "byte_end": 52518,
+      "old": "noluit",
+      "new": "uoluit",
+      "old_bytes_hex": "6e6f6c756974",
+      "new_bytes_hex": "756f6c756974",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          41261,
+          41267
+        ],
+        "raw_span": [
+          52458,
+          52843
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "ere uellet quatenus hoc regi significaret. <milestone unit=\"niese\" n=\"157\"/>Propheta uero nec sequi noluit nec alibi commorari, sed libenter habere dixit et deserta patriae et miserrimis habitare reliquiis.",
+      "evidence": [
+        {
+          "file": "crops/H28-AL13-f3e7d32988.jpg",
+          "sha256": "eaedc2dc5fe7c0c7b2d31ebbaed572309a3337850fbfcc37f79d101f240da8d5",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00242_ba6ccbc1fe8070d4.jpg",
+          "source_sha256": "ba6ccbc1fe8070d4e1454eb6bcf895bea220c4793e92f9d7d439d17293522255",
+          "image_id": "bsb00140762_00242",
+          "xyxy": [
+            450,
+            2723,
+            3096,
+            3623
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": "AL13-f3e7d32988",
+      "raw_HTR": "uoluit",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 1993,
+          "image": "sbb00000114_00242.jpg",
+          "text": "ubi manere uellet quatenus hoc regi significa ",
+          "folio": "119v"
+        },
+        {
+          "export_line": 1995,
+          "image": "sbb00000114_00242.jpg",
+          "text": "ret. Propheta uero nec sequi noluit nec alibi ",
+          "folio": "119v"
+        },
+        {
+          "export_line": 1997,
+          "image": "sbb00000114_00242.jpg",
+          "text": "commorari, sed libenter habere dixit et deserta ",
+          "folio": "119v"
+        }
+      ],
+      "original_TPEN_reading": "noluit",
+      "original_TPEN_context_score": 0.852,
+      "original_RTF_sha256": "29de10660df2598ded2aca4df79a15a79e99f21ad709c0415d853e5025a30d0f",
+      "reason": "Visible initial u in uoluit after nec sequi differs from XML noluit. Image basis, not grammatical preference.",
+      "historical_overlap_ids": [],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 38
+  },
+  {
+    "candidate_id": "H28-AL13-b3e7a15884",
+    "book": 10,
+    "niese": 174,
+    "folio": "120r",
+    "existing_reading": "captuii",
+    "proposed_reading": "captiui",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H28-AL13-b3e7a15884",
+      "book": 10,
+      "niese": 174,
+      "folio": "120r",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 58279,
+      "byte_end": 58281,
+      "old": "ui",
+      "new": "iu",
+      "old_bytes_hex": "7569",
+      "new_bytes_hex": "6975",
+      "registered_original": "captuii",
+      "registered_replacement": "captiui",
+      "registered_byte_start": 58275,
+      "registered_byte_end": 58282,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          58275,
+          58282
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H28-AL13-b3e7a15884",
+      "book": 10,
+      "niese": 174,
+      "folio": "120r",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 58275,
+      "byte_end": 58282,
+      "old": "captuii",
+      "new": "captiui",
+      "old_bytes_hex": "63617074756969",
+      "new_bytes_hex": "63617074697569",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          45972,
+          45979
+        ],
+        "raw_span": [
+          58225,
+          58321
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": ", quem dum pre hendissent circa fontem cebron, <milestone unit=\"niese\" n=\"174\"/>illi qui ab ismahel captuii ducebantur uidentes iohannem et principes solacium sibi uenisse iudi<cb n=\"2/2\"/>cantes et relinque",
+      "evidence": [
+        {
+          "file": "crops/H28-AL13-b3e7a15884.jpg",
+          "sha256": "e3211ee90f2da2f9da96b50663c150e7c780ba07bdac491e94b4b035cc66a6d8",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00243_247d3eb95eb3b139.jpg",
+          "source_sha256": "247d3eb95eb3b13923981cb9df77f90acb3d4df4e91a72f58b4d2280866b6c55",
+          "image_id": "bsb00140762_00243",
+          "xyxy": [
+            289,
+            5323,
+            2717,
+            6223
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": "AL13-b3e7a15884",
+      "raw_HTR": "captiui",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 2221,
+          "image": "sbb00000114_00243.jpg",
+          "text": "hendissent circa fontem cebron, illi qui ab ",
+          "folio": "120r"
+        },
+        {
+          "export_line": 2223,
+          "image": "sbb00000114_00243.jpg",
+          "text": "ismahel captuii ducebantur uidentes iohan ",
+          "folio": "120r"
+        },
+        {
+          "export_line": 2225,
+          "image": "sbb00000114_00243.jpg",
+          "text": "nem et principes solacium sibi uenisse iudi ",
+          "folio": "120r"
+        }
+      ],
+      "original_TPEN_reading": "captuii",
+      "original_TPEN_context_score": 0.81,
+      "original_RTF_sha256": "29de10660df2598ded2aca4df79a15a79e99f21ad709c0415d853e5025a30d0f",
+      "reason": "The visible minim sequence reads captiui; XML captuii transposes i/u. Exact patch remains unapplied.",
+      "historical_overlap_ids": [],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 39
+  },
+  {
+    "candidate_id": "H28-AL13-060953eb57",
+    "book": 10,
+    "niese": 175,
+    "folio": "120r",
+    "existing_reading": "oes",
+    "proposed_reading": "eos",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H28-AL13-060953eb57",
+      "book": 10,
+      "niese": 175,
+      "folio": "120r",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 58748,
+      "byte_end": 58750,
+      "old": "oe",
+      "new": "eo",
+      "old_bytes_hex": "6f65",
+      "new_bytes_hex": "656f",
+      "registered_original": "oes",
+      "registered_replacement": "eos",
+      "registered_byte_start": 58748,
+      "registered_byte_end": 58751,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          58748,
+          58751
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H28-AL13-060953eb57",
+      "book": 10,
+      "niese": 175,
+      "folio": "120r",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 58748,
+      "byte_end": 58751,
+      "old": "oes",
+      "new": "eos",
+      "old_bytes_hex": "6f6573",
+      "new_bytes_hex": "656f73",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          46399,
+          46402
+        ],
+        "raw_span": [
+          58485,
+          58800
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "ant et illo die ibi mansit. Deliberauerant autem ut inde surgentes abirent in aegyptum metuentes ne oes babylonii perimerent propter godoliae mortem qui ab eis dux fuerat institutus,</p>\n\t\t\t\t\t<p xml:id=\"",
+      "evidence": [
+        {
+          "file": "crops/H28-AL13-060953eb57.jpg",
+          "sha256": "217fbbbf21fd598f8ffb47ec99e9d17f08d1ea3e96580c934074b514a7a25d67",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00243_247d3eb95eb3b139.jpg",
+          "source_sha256": "247d3eb95eb3b13923981cb9df77f90acb3d4df4e91a72f58b4d2280866b6c55",
+          "image_id": "bsb00140762_00243",
+          "xyxy": [
+            2418,
+            1181,
+            4900,
+            2081
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": "AL13-060953eb57",
+      "raw_HTR": "eos",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 2241,
+          "image": "sbb00000114_00243.jpg",
+          "text": "rauerant autem ut inde surgentes abirent ",
+          "folio": "120r"
+        },
+        {
+          "export_line": 2243,
+          "image": "sbb00000114_00243.jpg",
+          "text": "in aegyptum metuentes ne oes babylonii ",
+          "folio": "120r"
+        },
+        {
+          "export_line": 2245,
+          "image": "sbb00000114_00243.jpg",
+          "text": "perimerent propter godoliae mortem qui ",
+          "folio": "120r"
+        }
+      ],
+      "original_TPEN_reading": "oes",
+      "original_TPEN_context_score": 0.789,
+      "original_RTF_sha256": "29de10660df2598ded2aca4df79a15a79e99f21ad709c0415d853e5025a30d0f",
+      "reason": "Manuscript reads ne eos babylonii; XML oes reverses e/o. No further spelling harmonization.",
+      "historical_overlap_ids": [],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 40
+  },
+  {
+    "candidate_id": "H28-AL13-f796bbdb4f",
+    "book": 10,
+    "niese": 8,
+    "folio": "114v",
+    "existing_reading": "rapfacis",
+    "proposed_reading": "rapsacis",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H28-AL13-f796bbdb4f",
+      "book": 10,
+      "niese": 8,
+      "folio": "114v",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 4266,
+      "byte_end": 4267,
+      "old": "f",
+      "new": "s",
+      "old_bytes_hex": "66",
+      "new_bytes_hex": "73",
+      "registered_original": "rapfacis",
+      "registered_replacement": "rapsacis",
+      "registered_byte_start": 4263,
+      "registered_byte_end": 4271,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          4263,
+          4271
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H28-AL13-f796bbdb4f",
+      "book": 10,
+      "niese": 8,
+      "folio": "114v",
+      "baseline_sha256": "5fda72762771755b5f6d6324e74f7d63d055ff9c911b180e15cccf61efdaec26",
+      "byte_start": 4263,
+      "byte_end": 4271,
+      "old": "rapfacis",
+      "new": "rapsacis",
+      "old_bytes_hex": "7261706661636973",
+      "new_bytes_hex": "7261707361636973",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          2054,
+          2062
+        ],
+        "raw_span": [
+          4221,
+          4586
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "num ut eodem modo subiectos eius disperderet regum. <milestone unit=\"niese\" n=\"8\"/>Dum haec audiens rapfacis hebraeica lingua diceret. Habebat enim linguae huius experimentum. Eliachim metuens ne populus audi",
+      "evidence": [
+        {
+          "file": "crops/H28-AL13-f796bbdb4f.jpg",
+          "sha256": "886ebe4ed69820e512dad7973e6d03d70b52eaff4814a0739a7544f291104736",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00232_882fd6425f03232e.jpg",
+          "source_sha256": "882fd6425f03232eaab1b4bb289a9256f3f832f713951250f2d49ae5a1ff7be6",
+          "image_id": "bsb00140762_00232",
+          "xyxy": [
+            450,
+            2494,
+            3096,
+            3394
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": "AL13-f796bbdb4f",
+      "raw_HTR": "rapsacis",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 149,
+          "image": "sbb00000114_00232.jpg",
+          "text": "iectos eius disperderet regum. Dum haec audiens ",
+          "folio": "114v"
+        },
+        {
+          "export_line": 151,
+          "image": "sbb00000114_00232.jpg",
+          "text": "rapfacis hebraeica lingua diceret. Habebat enim ",
+          "folio": "114v"
+        },
+        {
+          "export_line": 153,
+          "image": "sbb00000114_00232.jpg",
+          "text": "linguae huius experimentum. Eliachim metu ",
+          "folio": "114v"
+        }
+      ],
+      "original_TPEN_reading": "rapfacis",
+      "original_TPEN_context_score": 0.843,
+      "original_RTF_sha256": "29de10660df2598ded2aca4df79a15a79e99f21ad709c0415d853e5025a30d0f",
+      "reason": "The manuscript has long s in rapsacis, without the crossbar of f; XML rapfacis differs. Localized letter hypothesis remains unapproved.",
+      "historical_overlap_ids": [],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 41
+  },
+  {
+    "candidate_id": "B11-fe59845b92",
+    "book": 11,
+    "niese": "267",
+    "folio": "133v",
+    "existing_reading": "audien",
+    "proposed_reading": "audiens",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B11-fe59845b92",
+      "book": 11,
+      "niese": "267",
+      "folio": "133v",
+      "baseline_sha256": "00b76630b5c132cbc026fdaeaf71c1147c1103089f7e548ef69ba32074b5d916",
+      "byte_start": 85432,
+      "byte_end": 85432,
+      "old": "",
+      "new": "s",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "73",
+      "registered_original": "audien",
+      "registered_replacement": "audiens",
+      "registered_byte_start": 85433,
+      "registered_byte_end": 85439,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          85433,
+          85440
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B11-fe59845b92",
+      "book": 11,
+      "niese": "267",
+      "folio": "133v",
+      "old": "audien",
+      "new": "audiens",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "current_canonical_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 85433,
+      "recorded_byte_end": 85439,
+      "evidence_reference": [
+        {
+          "file": "crops/B11-fe59845b92.jpg",
+          "sha256": "34d603f47bed33201acb21cca7373a1be39c999900c0daedc1ec52fd962af4e8",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00270_1b610ed7c68982cc.jpg",
+          "source_sha256": "1b610ed7c68982ccc0f23bfab87b59ba413fac9f9b2e40c6af1dd7b13366399b",
+          "xyxy": [
+            848,
+            1269,
+            3085,
+            2460
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 42
+  },
+  {
+    "candidate_id": "H23-AL13-6f89b8d9b6",
+    "book": 11,
+    "niese": 39,
+    "folio": "126r",
+    "existing_reading": "silmiles",
+    "proposed_reading": "similes",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H23-AL13-6f89b8d9b6",
+      "book": 11,
+      "niese": 39,
+      "folio": "126r",
+      "baseline_sha256": "00b76630b5c132cbc026fdaeaf71c1147c1103089f7e548ef69ba32074b5d916",
+      "byte_start": 13750,
+      "byte_end": 13751,
+      "old": "l",
+      "new": "",
+      "old_bytes_hex": "6c",
+      "new_bytes_hex": "",
+      "registered_original": "silmiles",
+      "registered_replacement": "similes",
+      "registered_byte_start": 13756,
+      "registered_byte_end": 13764,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          13756,
+          13764
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H23-AL13-6f89b8d9b6",
+      "book": 11,
+      "niese": 39,
+      "folio": "126r",
+      "old": "silmiles",
+      "new": "similes",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "current_canonical_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 13756,
+      "recorded_byte_end": 13764,
+      "evidence_reference": [
+        {
+          "file": "crops/H23-AL13-6f89b8d9b6.jpg",
+          "sha256": "336ea89028a4d586f37dfb43c7a60265a98880c3e21454ebc746a29d2374bc22",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00255_2f0e9b23cbad108f.jpg",
+          "source_sha256": "2f0e9b23cbad108fa083a5de8815f42617552abbfe7b51512ac4478689059019",
+          "xyxy": [
+            2544,
+            486,
+            4889,
+            1677
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 43
+  },
+  {
+    "candidate_id": "H23-AL13-3bfdf3271b",
+    "book": 11,
+    "niese": 50,
+    "folio": "126v",
+    "existing_reading": "uestes nobis ad his texuntur",
+    "proposed_reading": "uestes nobis ab his texuntur",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H23-AL13-3bfdf3271b",
+      "book": 11,
+      "niese": 50,
+      "folio": "126v",
+      "baseline_sha256": "00b76630b5c132cbc026fdaeaf71c1147c1103089f7e548ef69ba32074b5d916",
+      "byte_start": 17092,
+      "byte_end": 17093,
+      "old": "d",
+      "new": "b",
+      "old_bytes_hex": "64",
+      "new_bytes_hex": "62",
+      "registered_original": "uestes nobis ad his texuntur",
+      "registered_replacement": "uestes nobis ab his texuntur",
+      "registered_byte_start": 17086,
+      "registered_byte_end": 17114,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          17099,
+          17101
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H23-AL13-3bfdf3271b",
+      "book": 11,
+      "niese": 50,
+      "folio": "126v",
+      "old": "uestes nobis ad his texuntur",
+      "new": "uestes nobis ab his texuntur",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "current_canonical_sha256": "d72b65781c770b45a7798c5fb33b9f5954b0ecdd1170a50ff4ca81a6d6cafbb5",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 17086,
+      "recorded_byte_end": 17114,
+      "evidence_reference": [
+        {
+          "file": "crops/H23-AL13-3bfdf3271b.jpg",
+          "sha256": "5187acbb22b49b1dd20d84846f3e75caf77de1989c3c607007f6d1c73811ea75",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00256_c07d35925b25f778.jpg",
+          "source_sha256": "c07d35925b25f7786919b3c5a6e1613fe773bb1c20d7b85d61abd05ed33b3895",
+          "xyxy": [
+            848,
+            2706,
+            3085,
+            3896
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 44
+  },
+  {
+    "candidate_id": "H28-AL13-46dc620998",
+    "book": 12,
+    "niese": 32,
+    "folio": "136v",
+    "existing_reading": "uita",
+    "proposed_reading": "uisa",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H28-AL13-46dc620998",
+      "book": 12,
+      "niese": 32,
+      "folio": "136v",
+      "baseline_sha256": "2c30dd6941f2bbc644a9df4c2e6b6e19f7c922e0f2bd1644135330dca762a7e4",
+      "byte_start": 10142,
+      "byte_end": 10143,
+      "old": "t",
+      "new": "s",
+      "old_bytes_hex": "74",
+      "new_bytes_hex": "73",
+      "registered_original": "uita",
+      "registered_replacement": "uisa",
+      "registered_byte_start": 10140,
+      "registered_byte_end": 10144,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          10140,
+          10144
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H28-AL13-46dc620998",
+      "book": 12,
+      "niese": 32,
+      "folio": "136v",
+      "baseline_sha256": "2c30dd6941f2bbc644a9df4c2e6b6e19f7c922e0f2bd1644135330dca762a7e4",
+      "byte_start": 10140,
+      "byte_end": 10144,
+      "old": "uita",
+      "new": "uisa",
+      "old_bytes_hex": "75697461",
+      "new_bytes_hex": "75697361",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          7236,
+          7240
+        ],
+        "raw_span": [
+          10078,
+          10406
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "egi possessionibus socientur. <milestone unit=\"niese\" n=\"32\"/>Cum haec sanctio lecta regi fuisse et uita essent omnia iuste decreuisse. tantum uero decem de absolutione priorum et horum qui postea ducti i",
+      "evidence": [
+        {
+          "file": "crops/H28-AL13-46dc620998.jpg",
+          "sha256": "562f65522b5e5de9fc0a82990610d539924776e38a711752456374ef208580f9",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00276_eca156bd92fda652.jpg",
+          "source_sha256": "eca156bd92fda6523cae94818faae91e780534158928b271b9f89758c8cdf9a9",
+          "image_id": "bsb00140762_00276",
+          "xyxy": [
+            2851,
+            1691,
+            5297,
+            2591
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": "AL13-46dc620998",
+      "raw_HTR": "uisa",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 333,
+          "image": "sbb00000114_00276.jpg",
+          "text": "tiae regi possessionibus socientur. Cum haec sanc ",
+          "folio": "136v"
+        },
+        {
+          "export_line": 335,
+          "image": "sbb00000114_00276.jpg",
+          "text": "tio lecta regi fuisse et uita essent omnia iuste ",
+          "folio": "136v"
+        },
+        {
+          "export_line": 337,
+          "image": "sbb00000114_00276.jpg",
+          "text": "decreuisse. tantum uero decem de absolutione ",
+          "folio": "136v"
+        }
+      ],
+      "original_TPEN_reading": "uita",
+      "original_TPEN_context_score": 0.869,
+      "original_RTF_sha256": "55441442288918a7df808b5028341cfb705f3f5ad4e7cc19a6576120d7916692",
+      "reason": "Visible manuscript reads uisa essent; XML uita differs by s/t. Localized letter evidence, not grammatical correction.",
+      "historical_overlap_ids": [],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 45
+  },
+  {
+    "candidate_id": "H28-AL13-eb38e40e46",
+    "book": 12,
+    "niese": 394,
+    "folio": "147v",
+    "existing_reading": "iudeam",
+    "proposed_reading": "iudam",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H28-AL13-eb38e40e46",
+      "book": 12,
+      "niese": 394,
+      "folio": "147v",
+      "baseline_sha256": "2c30dd6941f2bbc644a9df4c2e6b6e19f7c922e0f2bd1644135330dca762a7e4",
+      "byte_start": 110264,
+      "byte_end": 110265,
+      "old": "e",
+      "new": "",
+      "old_bytes_hex": "65",
+      "new_bytes_hex": "",
+      "registered_original": "iudeam",
+      "registered_replacement": "iudam",
+      "registered_byte_start": 110261,
+      "registered_byte_end": 110267,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          110261,
+          110267
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H28-AL13-eb38e40e46",
+      "book": 12,
+      "niese": 394,
+      "folio": "147v",
+      "baseline_sha256": "2c30dd6941f2bbc644a9df4c2e6b6e19f7c922e0f2bd1644135330dca762a7e4",
+      "byte_start": 110261,
+      "byte_end": 110267,
+      "old": "iudeam",
+      "new": "iudam",
+      "old_bytes_hex": "69756465616d",
+      "new_bytes_hex": "697564616d",
+      "classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "canonical_integration_authorized": false,
+      "integration_eligibility": "WITHHELD; exact individual editorial approval required",
+      "whole_token_guard": {
+        "blocked": false,
+        "reason": "No protected overlap in complete token span",
+        "text_span": [
+          90631,
+          90637
+        ],
+        "raw_span": [
+          110164,
+          110303
+        ],
+        "protected_hits": []
+      },
+      "original_XML_context": "rant. <milestone unit=\"niese\" n=\"394\"/>Egressus uero ab antiochia bachides peruenit, direxit que ad iudeam et fratres eius de amicitia uel pace loquens dolo uolens illum capere. <milestone unit=\"niese\" n=\"3",
+      "evidence": [
+        {
+          "file": "crops/H28-AL13-eb38e40e46.jpg",
+          "sha256": "704b5e493785bb03fc692e96deeb0f38bab7ee1a02b3afa2a72a72c3ce423d53",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00298_ebe49ed0bf2e8931.jpg",
+          "source_sha256": "ebe49ed0bf2e8931da91e292171d6af0e79380a5e424a12910708cb9292a4ee3",
+          "image_id": "bsb00140762_00298",
+          "xyxy": [
+            450,
+            3048,
+            3096,
+            3948
+          ],
+          "coordinates": "native source pixels; derivative may be scaled",
+          "localization": "Independent HTR TSV alignment estimate; requires direct image verification, not original T-PEN coordinates"
+        }
+      ],
+      "raw_recognition_observation": "AL13-eb38e40e46",
+      "raw_HTR": "iudam",
+      "original_TPEN_evidence": [
+        {
+          "export_line": 4111,
+          "image": "sbb00000114_00298.jpg",
+          "text": "Egressus uero ab antiochia bachides peruenit, ",
+          "folio": "147v"
+        },
+        {
+          "export_line": 4113,
+          "image": "sbb00000114_00298.jpg",
+          "text": "direxit que ad iudeam et fratres eius de amicitia ",
+          "folio": "147v"
+        },
+        {
+          "export_line": 4115,
+          "image": "sbb00000114_00298.jpg",
+          "text": "uel pace loquens dolo uolens illum capere. Ille ",
+          "folio": "147v"
+        }
+      ],
+      "original_TPEN_reading": "iudeam",
+      "original_TPEN_context_score": 0.869,
+      "original_RTF_sha256": "55441442288918a7df808b5028341cfb705f3f5ad4e7cc19a6576120d7916692",
+      "reason": "Image reads ad iudam et fratres eius; no e after d. XML iudeam includes an extra e. Held-out short-disagreement discovery, without analogous name correction elsewhere.",
+      "historical_overlap_ids": [],
+      "new_demonstrated_error": true,
+      "source_layer": "Inherited in original modern export"
+    },
+    "exact_source_compatible": true,
+    "rank": 46
+  },
+  {
+    "candidate_id": "H14-AL13-103f099c78",
+    "book": 13,
+    "niese": 151,
+    "folio": "154r",
+    "existing_reading": "incenbebat",
+    "proposed_reading": "incendebat",
+    "historical_classification": "DEFERRED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H14-AL13-103f099c78",
+      "book": 13,
+      "niese": 151,
+      "folio": "154r",
+      "baseline_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "byte_start": 46056,
+      "byte_end": 46057,
+      "old": "b",
+      "new": "d",
+      "old_bytes_hex": "62",
+      "new_bytes_hex": "64",
+      "registered_original": "incenbebat",
+      "registered_replacement": "incendebat",
+      "registered_byte_start": 46051,
+      "registered_byte_end": 46061,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          46051,
+          46061
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H14-AL13-103f099c78",
+      "book": 13,
+      "niese": 151,
+      "folio": "154r",
+      "old": "incenbebat",
+      "new": "incendebat",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "DEFERRED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "current_canonical_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 46051,
+      "recorded_byte_end": 46061,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 47
+  },
+  {
+    "candidate_id": "B13-4d27de6b40",
+    "book": 13,
+    "niese": 256,
+    "folio": "157v",
+    "existing_reading": "sacerdorum",
+    "proposed_reading": "sacerdotum",
+    "historical_classification": "DEFERRED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B13-4d27de6b40",
+      "book": 13,
+      "niese": 256,
+      "folio": "157v",
+      "baseline_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "byte_start": 76158,
+      "byte_end": 76159,
+      "old": "r",
+      "new": "t",
+      "old_bytes_hex": "72",
+      "new_bytes_hex": "74",
+      "registered_original": "sacerdorum",
+      "registered_replacement": "sacerdotum",
+      "registered_byte_start": 76151,
+      "registered_byte_end": 76161,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          76151,
+          76161
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B13-4d27de6b40",
+      "book": 13,
+      "niese": 256,
+      "folio": "157v",
+      "old": "sacerdorum",
+      "new": "sacerdotum",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "DEFERRED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "current_canonical_sha256": "81df193a8190c1a45654d3dc45d340aabf98283d3fc959cfef4fa63fa39fbf3c",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 76151,
+      "recorded_byte_end": 76161,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 48
+  },
+  {
+    "candidate_id": "H16-AL13-7da0011751",
+    "book": 17,
+    "niese": 151,
+    "folio": "209v",
+    "existing_reading": "propositones",
+    "proposed_reading": "propositiones",
+    "historical_classification": "DEFERRED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H16-AL13-7da0011751",
+      "book": 17,
+      "niese": 151,
+      "folio": "209v",
+      "baseline_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "byte_start": 65015,
+      "byte_end": 65015,
+      "old": "",
+      "new": "i",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "69",
+      "registered_original": "propositones",
+      "registered_replacement": "propositiones",
+      "registered_byte_start": 65007,
+      "registered_byte_end": 65019,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          65007,
+          65019
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H16-AL13-7da0011751",
+      "book": 17,
+      "niese": 151,
+      "folio": "209v",
+      "old": "propositones",
+      "new": "propositiones",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "DEFERRED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "current_canonical_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 65007,
+      "recorded_byte_end": 65019,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 49
+  },
+  {
+    "candidate_id": "B17-b7144b55c8",
+    "book": 17,
+    "niese": 188,
+    "folio": "211r",
+    "existing_reading": "archalao",
+    "proposed_reading": "archelao",
+    "historical_classification": "DEFERRED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B17-b7144b55c8",
+      "book": 17,
+      "niese": 188,
+      "folio": "211r",
+      "baseline_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "byte_start": 78904,
+      "byte_end": 78905,
+      "old": "a",
+      "new": "e",
+      "old_bytes_hex": "61",
+      "new_bytes_hex": "65",
+      "registered_original": "archalao",
+      "registered_replacement": "archelao",
+      "registered_byte_start": 78900,
+      "registered_byte_end": 78908,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          78900,
+          78908
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B17-b7144b55c8",
+      "book": 17,
+      "niese": 188,
+      "folio": "211r",
+      "old": "archalao",
+      "new": "archelao",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "DEFERRED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "current_canonical_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 78900,
+      "recorded_byte_end": 78908,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 50
+  },
+  {
+    "candidate_id": "H16-AL13-318fd2666b",
+    "book": 17,
+    "niese": 94,
+    "folio": "207v",
+    "existing_reading": "filiss",
+    "proposed_reading": "filiis",
+    "historical_classification": "DEFERRED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H16-AL13-318fd2666b",
+      "book": 17,
+      "niese": 94,
+      "folio": "207v",
+      "baseline_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "byte_start": 42263,
+      "byte_end": 42264,
+      "old": "s",
+      "new": "i",
+      "old_bytes_hex": "73",
+      "new_bytes_hex": "69",
+      "registered_original": "filiss",
+      "registered_replacement": "filiis",
+      "registered_byte_start": 42259,
+      "registered_byte_end": 42265,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          42259,
+          42265
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H16-AL13-318fd2666b",
+      "book": 17,
+      "niese": 94,
+      "folio": "207v",
+      "old": "filiss",
+      "new": "filiis",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "DEFERRED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "current_canonical_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 42259,
+      "recorded_byte_end": 42265,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 51
+  },
+  {
+    "candidate_id": "B18-c84a516bf3",
+    "book": 18,
+    "niese": 339,
+    "folio": "232r",
+    "existing_reading": "pathorum",
+    "proposed_reading": "parthorum",
+    "historical_classification": "DEFERRED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B18-c84a516bf3",
+      "book": 18,
+      "niese": 339,
+      "folio": "232r",
+      "baseline_sha256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+      "byte_start": 120091,
+      "byte_end": 120091,
+      "old": "",
+      "new": "r",
+      "old_bytes_hex": "",
+      "new_bytes_hex": "72",
+      "registered_original": "pathorum",
+      "registered_replacement": "parthorum",
+      "registered_byte_start": 120089,
+      "registered_byte_end": 120097,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          120089,
+          120097
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B18-c84a516bf3",
+      "book": 18,
+      "niese": 339,
+      "folio": "232r",
+      "old": "pathorum",
+      "new": "parthorum",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "DEFERRED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+      "current_canonical_sha256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 120089,
+      "recorded_byte_end": 120097,
+      "evidence_reference": "review/Bamberg_Editorial_Integration_v1_7/withheld_substantive_register.json",
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 52
+  },
+  {
+    "candidate_id": "H22-AL13-d7727f3515",
+    "book": 20,
+    "niese": 139,
+    "folio": "249r",
+    "existing_reading": "Aggripas",
+    "proposed_reading": "Agrippas",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "H22-AL13-d7727f3515",
+      "book": 20,
+      "niese": 139,
+      "folio": "249r",
+      "baseline_sha256": "8cf4193db17660ea686e2df038bba3836910f80fdf6f43c6e978963a283c9405",
+      "byte_start": 39698,
+      "byte_end": 39701,
+      "old": "gri",
+      "new": "rip",
+      "old_bytes_hex": "677269",
+      "new_bytes_hex": "726970",
+      "registered_original": "Aggripas",
+      "registered_replacement": "Agrippas",
+      "registered_byte_start": 39696,
+      "registered_byte_end": 39704,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          39696,
+          39704
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "H22-AL13-d7727f3515",
+      "book": 20,
+      "niese": 139,
+      "folio": "249r",
+      "old": "Aggripas",
+      "new": "Agrippas",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "current_canonical_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 39696,
+      "recorded_byte_end": 39704,
+      "evidence_reference": [
+        {
+          "file": "crops/H22-AL13-d7727f3515.jpg",
+          "sha256": "e099aff163ee2310c633c58e3b855f17d379c90f1324ac33224cda4517bafec6",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00501_1a122464a5ab7634.jpg",
+          "source_sha256": "1a122464a5ab7634f992765b992754a4dc375db03b0f27d134508608ae4e10c3",
+          "xyxy": [
+            1272,
+            2724,
+            2444,
+            3157
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 53
+  },
+  {
+    "candidate_id": "B20-984b3c38a2",
+    "book": 20,
+    "niese": 205,
+    "folio": "251r",
+    "existing_reading": "igutur",
+    "proposed_reading": "igitur",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B20-984b3c38a2",
+      "book": 20,
+      "niese": 205,
+      "folio": "251r",
+      "baseline_sha256": "8cf4193db17660ea686e2df038bba3836910f80fdf6f43c6e978963a283c9405",
+      "byte_start": 58119,
+      "byte_end": 58120,
+      "old": "u",
+      "new": "i",
+      "old_bytes_hex": "75",
+      "new_bytes_hex": "69",
+      "registered_original": "igutur",
+      "registered_replacement": "igitur",
+      "registered_byte_start": 58117,
+      "registered_byte_end": 58123,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          58117,
+          58123
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B20-984b3c38a2",
+      "book": 20,
+      "niese": 205,
+      "folio": "251r",
+      "old": "igutur",
+      "new": "igitur",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "current_canonical_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 58117,
+      "recorded_byte_end": 58123,
+      "evidence_reference": [
+        {
+          "file": "crops/B20-984b3c38a2.jpg",
+          "sha256": "c9c060aff550d6edc326e90edf8a7485e166eaf4b742691e3e8ef432f48b9194",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00505_0209f2da5c29d827.jpg",
+          "source_sha256": "0209f2da5c29d827d75e635b9e938db37296675af89fe3d18a3ed15f92244bd3",
+          "xyxy": [
+            1272,
+            2337,
+            2444,
+            2932
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 54
+  },
+  {
+    "candidate_id": "B20-b8275b9edf",
+    "book": 20,
+    "niese": 237,
+    "folio": "252v",
+    "existing_reading": "ponfificatum",
+    "proposed_reading": "pontificatum",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B20-b8275b9edf",
+      "book": 20,
+      "niese": 237,
+      "folio": "252v",
+      "baseline_sha256": "8cf4193db17660ea686e2df038bba3836910f80fdf6f43c6e978963a283c9405",
+      "byte_start": 67359,
+      "byte_end": 67360,
+      "old": "f",
+      "new": "t",
+      "old_bytes_hex": "66",
+      "new_bytes_hex": "74",
+      "registered_original": "ponfificatum",
+      "registered_replacement": "pontificatum",
+      "registered_byte_start": 67356,
+      "registered_byte_end": 67368,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          67356,
+          67368
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B20-b8275b9edf",
+      "book": 20,
+      "niese": 237,
+      "folio": "252v",
+      "old": "ponfificatum",
+      "new": "pontificatum",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "current_canonical_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 67356,
+      "recorded_byte_end": 67368,
+      "evidence_reference": [
+        {
+          "file": "crops/B20-b8275b9edf.jpg",
+          "sha256": "3d44b68d5bea109af9c5071543ae492f1af12f6b6136cc7ff773ccd46d1b4104",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00508_5c05323b799f8012.jpg",
+          "source_sha256": "5c05323b799f80121267542fa709df8074091319af8022fe6ee40f1d10bff97d",
+          "xyxy": [
+            424,
+            162,
+            1542,
+            642
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 55
+  },
+  {
+    "candidate_id": "B20-5429c46af2",
+    "book": 20,
+    "niese": 249,
+    "folio": "252v",
+    "existing_reading": "naquaquam",
+    "proposed_reading": "nequaquam",
+    "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+    "current_editorial_status": "IMAGE_SUPPORTED_UNAPPROVED",
+    "integration_authorized": false,
+    "priority_score": 40,
+    "priority_basis": "SUBSTITUTION; deterministic editorial triage only, not new adjudication",
+    "source_bound_staging_patch": {
+      "candidate_id": "B20-5429c46af2",
+      "book": 20,
+      "niese": 249,
+      "folio": "252v",
+      "baseline_sha256": "8cf4193db17660ea686e2df038bba3836910f80fdf6f43c6e978963a283c9405",
+      "byte_start": 70021,
+      "byte_end": 70022,
+      "old": "a",
+      "new": "e",
+      "old_bytes_hex": "61",
+      "new_bytes_hex": "65",
+      "registered_original": "naquaquam",
+      "registered_replacement": "nequaquam",
+      "registered_byte_start": 70020,
+      "registered_byte_end": 70029,
+      "whole_token_protected_guard": {
+        "blocked": false,
+        "whole_token_source_byte_span": [
+          70020,
+          70029
+        ],
+        "protected_hits": [],
+        "Unicode_normalization_applied": false
+      }
+    },
+    "evidence_provenance": {
+      "candidate_id": "B20-5429c46af2",
+      "book": 20,
+      "niese": 249,
+      "folio": "252v",
+      "old": "naquaquam",
+      "new": "nequaquam",
+      "current_inventory_category": "SUBSTANTIVE_UNAPPROVED",
+      "historical_classification": "IMAGE-SUPPORTED, UNAPPROVED",
+      "human_confirmed": false,
+      "integration_authorized_in_this_task": false,
+      "recorded_source_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "current_canonical_sha256": "60040f2fecc074f37ca03dddc5f66d438246d60ec9e85319623b3a6124f5f877",
+      "compatibility_status": "EXACT_SOURCE_COMPATIBLE",
+      "recorded_byte_start": 70020,
+      "recorded_byte_end": 70029,
+      "evidence_reference": [
+        {
+          "file": "crops/B20-5429c46af2.jpg",
+          "sha256": "e1bef73f83e305bdff19727794392ee7f519fe39624ca0f101ae007665ca407e",
+          "source_file": "../../../Bamberg_Image_Cache_MscClass78/native/bsb00140762_00508_5c05323b799f8012.jpg",
+          "source_sha256": "5c05323b799f80121267542fa709df8074091319af8022fe6ee40f1d10bff97d",
+          "xyxy": [
+            1488,
+            765,
+            2643,
+            1361
+          ],
+          "coordinates": "source pixels",
+          "localization": "XML/T-PEN line alignment estimate; direct visual check required"
+        }
+      ],
+      "original_record_preserved": true
+    },
+    "exact_source_compatible": true,
+    "rank": 56
+  }
+]
