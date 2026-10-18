@@ -50,3 +50,12 @@
 /assets/data/lodge1602-contra-apionem/*.json -text whitespace=cr-at-eol
 /_docs/lodge1602-contra-apionem-source/* -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 /_docs/lodge1602-contra-apionem-*.json -text whitespace=cr-at-eol
+
+# Preserve hash-bound search code, data, and publication hooks on every checkout.
+# Indexed XML retains its existing rules; the search gate accepts LF/CRLF only.
+/bin/search/** -text
+/assets/search/** -text
+/_pages/search.html -text
+/_includes/search-interface.html -text
+/bin/cibuild -text
+/bin/prepare-reader-publication.mjs -text

@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {verifyReaderCorpus, sha} from './reader-corpus-integrity.mjs';
+import {verifySearchAssets} from './search/publication.mjs';
 const root = path.resolve(fileURLToPath(new URL('../',import.meta.url)));
 const at = process.argv.indexOf('--site');
 assert(at >= 0 && process.argv[at+1], 'Specify the generated --site directory');
@@ -23,4 +24,5 @@ for (const [relative, record] of Object.entries(corpus.manifest.files)) {
   rows.push({path:relative, source_sha256:sha(current), publication_sha256:sha(result),
     EOL_representation_restored:!current.equals(result)});
 }
-console.log(JSON.stringify({...corpus.report, generated_site:site, repository_sources_modified:false, files:rows},null,2));
+const search = verifySearchAssets(root, {site});
+console.log(JSON.stringify({...corpus.report, generated_site:site, repository_sources_modified:false, files:rows, search},null,2));

@@ -1,1 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+node bin/search/check-assets.mjs
 bundle exec jekyll build
+node bin/search/check-assets.mjs --site _site

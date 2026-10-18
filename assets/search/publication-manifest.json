@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "generatedBy": "bin/search/build-search.mjs",
+  "sourceDirectory": "bin/search",
+  "assetDirectory": "assets/search",
+  "catalog": "catalog.json",
+  "inputs": [
+    {
+      "path": "_includes/search-interface.html",
+      "sha256": "bc845f7bda51f1634793ae1eec03319baefc9aaf44d31bd9542a6188196a71fb",
+      "bytes": 6651
+    },
+    {
+      "path": "_pages/search.html",
+      "sha256": "33b2c3dbc83c117f15a954da44c223c64b6eec599c0b8718fa855b3c27c4e423",
+      "bytes": 439
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-01.xml",
+      "sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+      "bytes": 298013,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-02.xml",
+      "sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+      "bytes": 227296,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-03.xml",
+      "sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+      "bytes": 139997,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-04.xml",
+      "sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+      "bytes": 168675,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-05.xml",
+      "sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+      "bytes": 154170,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-06.xml",
+      "sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+      "bytes": 111856,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-07.xml",
+      "sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+      "bytes": 108578,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "bin/cibuild",
+      "sha256": "d5becb4a94cb2cc960b8982214e63f07a7a47fb28371c9713f41f45905fc56d0",
+      "bytes": 166
+    },
+    {
+      "path": "bin/prepare-reader-publication.mjs",
+      "sha256": "89673e3f80e473d01ef943cb055038630ee8e23926966957d1a119441faeee7d",
+      "bytes": 1649
+    },
+    {
+      "path": "bin/search/app.mjs",
+      "sha256": "61826e8d78c1cb349f2a04c7904d39c9131d5c3577a5092aaac6f3efd3b5a258",
+      "bytes": 12953
+    },
+    {
+      "path": "bin/search/build-index.mjs",
+      "sha256": "c36f4431f53da556e7b311268e719c51704c2839daa1f9d64907b946e627ed4b",
+      "bytes": 12212
+    },
+    {
+      "path": "bin/search/build-preview.mjs",
+      "sha256": "df413b48ecf632b82ed02236ad6681b4f1a2620e4c27778f8bee5ffdab8b2011",
+      "bytes": 1956
+    },
+    {
+      "path": "bin/search/build-search.mjs",
+      "sha256": "399d7e9cfaf0d8c53416c80150ef510b414bb7bf1f1cade3438e2edef42021ce",
+      "bytes": 4810
+    },
+    {
+      "path": "bin/search/check-assets.mjs",
+      "sha256": "9ff58f82e6d1fa4ce6c213bcbe9c9b9914b909a0ad84df44dc65369da305b48f",
+      "bytes": 955
+    },
+    {
+      "path": "bin/search/collection.mjs",
+      "sha256": "d5bbb151a2dfed2567369d52babc682a910f7269df46d49587a7b49b4b156c76",
+      "bytes": 17279
+    },
+    {
+      "path": "bin/search/config/bellum-latin-cardwell.json",
+      "sha256": "c5655ef8a06048714d8a1a2b9e945d17a5232eee469045a6d7944d8681a61844",
+      "bytes": 1188
+    },
+    {
+      "path": "bin/search/config/collections.json",
+      "sha256": "a8428710181c538251384171708ba928f349d0b94be840e8ba1ebe13c266dcdb",
+      "bytes": 74
+    },
+    {
+      "path": "bin/search/config/publication.json",
+      "sha256": "4673cbccfefe339adf478d42db9c288680dacf21c161ce78fcfa4a41519a933e",
+      "bytes": 1043
+    },
+    {
+      "path": "bin/search/engine.mjs",
+      "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c",
+      "bytes": 21595
+    },
+    {
+      "path": "bin/search/extract.py",
+      "sha256": "c48787272756dc4538eff2bc3c79ee6fd107784475a7ddcc4db8199676b449e8",
+      "bytes": 28606
+    },
+    {
+      "path": "bin/search/index.html",
+      "sha256": "b39296b385f97d8a617244af356aa691b0c46a3143aef0fa8da39c9cb386ef4c",
+      "bytes": 7874
+    },
+    {
+      "path": "bin/search/publication.mjs",
+      "sha256": "e864e007d5d9b3ac505406240713a047d8c3a8c8b55e2bd64f775824e74e5b12",
+      "bytes": 26388
+    },
+    {
+      "path": "bin/search/styles.css",
+      "sha256": "efb4b00679021ad594d4b71d583a7ddf0990eee39b65065ebfd4851a9b869343",
+      "bytes": 9038
+    },
+    {
+      "path": "bin/search/tests/build-index.test.mjs",
+      "sha256": "0ccf3eaf96bf98fb2f9556c319961e2c6b03a222aea6e5cd0818c84712584ed6",
+      "bytes": 6963
+    },
+    {
+      "path": "bin/search/tests/collection.test.mjs",
+      "sha256": "8b2b780471762b6c910693ee9ddddf44de5a1de3acc6f6d53e0edc2fb8a9e776",
+      "bytes": 18774
+    },
+    {
+      "path": "bin/search/tests/corpus-qa.mjs",
+      "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4",
+      "bytes": 40167
+    },
+    {
+      "path": "bin/search/tests/engine.test.mjs",
+      "sha256": "2d5d144434f1fc157dd95a55ecc70ff90d355097b489a0718fbc64c393f47cee",
+      "bytes": 10648
+    },
+    {
+      "path": "bin/search/tests/integration.test.mjs",
+      "sha256": "1f3bdbf8df07ff7127e960343ba56624d66893f5357d20da9b7a83aaa8febda2",
+      "bytes": 3656
+    },
+    {
+      "path": "bin/search/tests/publication.test.mjs",
+      "sha256": "ea71160bc43966604f95d9bf28e6647c9b4691b5baa050f3048b2ea86840a5ef",
+      "bytes": 7566
+    },
+    {
+      "path": "bin/search/tests/test_extract.py",
+      "sha256": "0ad33eabbd358f3e28843d5fdf9b4dc4c00c13ec4e433b7d64fa7ee9c53a6e20",
+      "bytes": 13307
+    },
+    {
+      "path": "bin/search/tests/ui-utils.test.mjs",
+      "sha256": "6c941e6b907017ee69ec0e0cd42306cbb18c0760d2e12148b02a5c62f274d640",
+      "bytes": 6418
+    },
+    {
+      "path": "bin/search/ui-utils.mjs",
+      "sha256": "7e42aff95377f5e795bacdc208581babb066931342a71948d9f0e9fe81663365",
+      "bytes": 5004
+    },
+    {
+      "path": "bin/search/vendor/LUNR-LICENSE.txt",
+      "sha256": "ae33f5a0d538cd93de1136a052ffa734b59d6b28e7cfc19e03de1d8b5d9f40ea",
+      "bytes": 1065
+    },
+    {
+      "path": "bin/search/vendor/lunr.cjs",
+      "sha256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
+      "bytes": 99804
+    },
+    {
+      "path": "bin/search/vendor/lunr.min.js",
+      "sha256": "0c50d9002b85780a842afffb567bb54ede402dae7c6dc5997a018614d8044fc8",
+      "bytes": 29510
+    },
+    {
+      "path": "bin/search/vendor/provenance.json",
+      "sha256": "bad0f93456f74c989cb93a7262d1ed459149740f27226c193e8642bc9de5c20d",
+      "bytes": 533
+    }
+  ],
+  "collections": [
+    {
+      "id": "bellum-latin-cardwell",
+      "totals": {
+        "books": 7,
+        "sections": 4001,
+        "tokens": 114794,
+        "bytes": 19438553
+      },
+      "extractionReport": {
+        "path": "extraction-report.json",
+        "sha256": "444d7c348a35134889d4366be19fc78d38b0089718e942cb1fa0952f2a121bfa"
+      },
+      "sourceFiles": [
+        "assets/xml/bellum/Latin/book-01.xml",
+        "assets/xml/bellum/Latin/book-02.xml",
+        "assets/xml/bellum/Latin/book-03.xml",
+        "assets/xml/bellum/Latin/book-04.xml",
+        "assets/xml/bellum/Latin/book-05.xml",
+        "assets/xml/bellum/Latin/book-06.xml",
+        "assets/xml/bellum/Latin/book-07.xml"
+      ],
+      "qa": {
+        "path": "qa-report.json",
+        "sha256": "57dc60ff2aa0841ac0cc3e77003786491790db1575dd9d3e01f2955cbb96dbfa",
+        "status": "PASS",
+        "assertions": 1663053,
+        "queries": 98856,
+        "failedAssertions": 0,
+        "readerEvidenceIsHistorical": true
+      }
+    }
+  ],
+  "totals": {
+    "books": 7,
+    "sections": 4001,
+    "tokens": 114794,
+    "bytes": 19438553
+  },
+  "validation": {
+    "sourceAndArtifactHashes": "PASS",
+    "extractionCoverage": "PASS",
+    "independentCorpusQA": "PASS",
+    "xmlCheckoutComparison": "CRLF-to-LF only; extraction and QA reports retain exact indexed-source hashes",
+    "unitTests": {
+      "status": "PASS",
+      "commands": [
+        {
+          "runtime": "python3",
+          "arguments": [
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "bin/search/tests",
+            "-p",
+            "test_*.py"
+          ]
+        },
+        {
+          "runtime": "node",
+          "arguments": [
+            "--test",
+            "bin/search/tests/build-index.test.mjs",
+            "bin/search/tests/collection.test.mjs",
+            "bin/search/tests/engine.test.mjs",
+            "bin/search/tests/integration.test.mjs",
+            "bin/search/tests/publication.test.mjs",
+            "bin/search/tests/ui-utils.test.mjs"
+          ]
+        }
+      ]
+    },
+    "readerHashIsPublicationInput": false
+  },
+  "artifacts": [
+    {
+      "path": "app.mjs",
+      "source": "bin/search/app.mjs",
+      "sha256": "61826e8d78c1cb349f2a04c7904d39c9131d5c3577a5092aaac6f3efd3b5a258",
+      "bytes": 12953,
+      "role": "runtime"
+    },
+    {
+      "path": "catalog.json",
+      "source": "bin/search/catalog.json",
+      "sha256": "fa07c041de986b2839f96b2207c909e7386e718ebb87b8b803cd4c572e82c0d3",
+      "bytes": 5364,
+      "role": "catalog"
+    },
+    {
+      "path": "collection.mjs",
+      "source": "bin/search/collection.mjs",
+      "sha256": "d5bbb151a2dfed2567369d52babc682a910f7269df46d49587a7b49b4b156c76",
+      "bytes": 17279,
+      "role": "runtime"
+    },
+    {
+      "path": "config/bellum-latin-cardwell.json",
+      "source": "bin/search/config/bellum-latin-cardwell.json",
+      "sha256": "c5655ef8a06048714d8a1a2b9e945d17a5232eee469045a6d7944d8681a61844",
+      "bytes": 1188,
+      "role": "evidence"
+    },
+    {
+      "path": "config/collections.json",
+      "source": "bin/search/config/collections.json",
+      "sha256": "a8428710181c538251384171708ba928f349d0b94be840e8ba1ebe13c266dcdb",
+      "bytes": 74,
+      "role": "evidence"
+    },
+    {
+      "path": "config/publication.json",
+      "source": "bin/search/config/publication.json",
+      "sha256": "4673cbccfefe339adf478d42db9c288680dacf21c161ce78fcfa4a41519a933e",
+      "bytes": 1043,
+      "role": "evidence"
+    },
+    {
+      "path": "corpus.json",
+      "source": "bin/search/corpus.json",
+      "sha256": "8bc3cda02112ff7522b78f1945fe56bad622b77e1c6b84676ad1075ce7bd9c45",
+      "bytes": 2073135,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-latin-cardwell/book-01.bundle.json",
+      "source": "bin/search/data/bellum-latin-cardwell/book-01.bundle.json",
+      "sha256": "272e2f8a60dbf544d5cecb056d6743f373d46d15b22f7fd83369bf86e5b1e29a",
+      "bytes": 4466710,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-latin-cardwell/book-02.bundle.json",
+      "source": "bin/search/data/bellum-latin-cardwell/book-02.bundle.json",
+      "sha256": "0e364c6405f448906d166ffac650f1a6d29bfea3d9a19d498e7356fe55ae7790",
+      "bytes": 3612037,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-latin-cardwell/book-03.bundle.json",
+      "source": "bin/search/data/bellum-latin-cardwell/book-03.bundle.json",
+      "sha256": "91bd25733d67381d3b6f5d9a775fd8899df4da9bf3c3cfe627b6defde399a691",
+      "bytes": 2265731,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-latin-cardwell/book-04.bundle.json",
+      "source": "bin/search/data/bellum-latin-cardwell/book-04.bundle.json",
+      "sha256": "013cf4f41f8a9863cd0337d4e468f16279643057815c5b40fec18b5e69c8a923",
+      "bytes": 2750859,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-latin-cardwell/book-05.bundle.json",
+      "source": "bin/search/data/bellum-latin-cardwell/book-05.bundle.json",
+      "sha256": "b5eef3a33dc1c42e95961aa47915f08ed52c661d5e9e60c77008f39312671b1d",
+      "bytes": 2549092,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-latin-cardwell/book-06.bundle.json",
+      "source": "bin/search/data/bellum-latin-cardwell/book-06.bundle.json",
+      "sha256": "8ee6a14bb67219fe65b6d09ef0f65d00afa0925bbba3789ff699e110bd20cb65",
+      "bytes": 1905283,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-latin-cardwell/book-07.bundle.json",
+      "source": "bin/search/data/bellum-latin-cardwell/book-07.bundle.json",
+      "sha256": "c832012cdf142ce3c3638c7086ffdc8bca9a26b45c87918ad749fab1320142db",
+      "bytes": 1888841,
+      "role": "bundle"
+    },
+    {
+      "path": "data/book-01.corpus.json",
+      "source": "bin/search/data/book-01.corpus.json",
+      "sha256": "9a3619160ec2fdd70b910065f190a30553e436a3069045e0cb51e7aae56d1e4c",
+      "bytes": 410092,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-01.extraction-report.json",
+      "source": "bin/search/data/book-01.extraction-report.json",
+      "sha256": "80464505ded5a7b4130148f4f5a604c5cb76a24ba94d380b7806583e579fe449",
+      "bytes": 575292,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-02.corpus.json",
+      "source": "bin/search/data/book-02.corpus.json",
+      "sha256": "2a5c44a35597ab8e114d5a6732aab05d950884189493dba5f703e0ceff84fa7b",
+      "bytes": 362599,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-02.extraction-report.json",
+      "source": "bin/search/data/book-02.extraction-report.json",
+      "sha256": "67056acce7c42dd775c8938ad80612dcbac20848dc84616749083ae9a0ed6b30",
+      "bytes": 498476,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-03.corpus.json",
+      "source": "bin/search/data/book-03.corpus.json",
+      "sha256": "673413a3c65c73ccde6fdce80be4c395a287007b1eae6c85373d758e08a5cec8",
+      "bytes": 261589,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-03.extraction-report.json",
+      "source": "bin/search/data/book-03.extraction-report.json",
+      "sha256": "46fbac56fa1736a541c82a137e71659693fbfe59bcaed63b79f3163e615cd438",
+      "bytes": 391942,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-04.corpus.json",
+      "source": "bin/search/data/book-04.corpus.json",
+      "sha256": "8ecdbf3f77b805e1423e32bf46957b378b1256d50a493a018918c1300de801be",
+      "bytes": 320799,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-04.extraction-report.json",
+      "source": "bin/search/data/book-04.extraction-report.json",
+      "sha256": "62c8f255d5f30151ecac66044f6bdf0c5850b1d97e69073ed34e02d0d45795f2",
+      "bytes": 457030,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-05.corpus.json",
+      "source": "bin/search/data/book-05.corpus.json",
+      "sha256": "916ef7d7dfde1fb15a2917652e8d8a43d5f3fd0d5589bedd38b20d0c8c77e728",
+      "bytes": 284773,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-05.extraction-report.json",
+      "source": "bin/search/data/book-05.extraction-report.json",
+      "sha256": "19c57d4bfed9eec03bc44851d02ecc36b82f0491ee7b0706e20201d7b719d1c4",
+      "bytes": 393305,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-06.corpus.json",
+      "source": "bin/search/data/book-06.corpus.json",
+      "sha256": "e0f57160e3e15f16ed85dd066a860ca2b40a590b1391a2bd1d09ae319db356b0",
+      "bytes": 215353,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-06.extraction-report.json",
+      "source": "bin/search/data/book-06.extraction-report.json",
+      "sha256": "b471e59f094703d58312d9adfe9fe564e956b7545a57eb2ff945ae0020c07366",
+      "bytes": 305204,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-07.corpus.json",
+      "source": "bin/search/data/book-07.corpus.json",
+      "sha256": "37451cd05998e5b7e970c9e83f110ba8574d84a2c26b4cab0be147879c79b8ef",
+      "bytes": 217948,
+      "role": "evidence"
+    },
+    {
+      "path": "data/book-07.extraction-report.json",
+      "source": "bin/search/data/book-07.extraction-report.json",
+      "sha256": "7689e89308c5e4fe0593ec7efd3a04988de5b7dafb434067481151dd18b997f0",
+      "bytes": 309573,
+      "role": "evidence"
+    },
+    {
+      "path": "engine.mjs",
+      "source": "bin/search/engine.mjs",
+      "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c",
+      "bytes": 21595,
+      "role": "runtime"
+    },
+    {
+      "path": "extraction-report.json",
+      "source": "bin/search/extraction-report.json",
+      "sha256": "444d7c348a35134889d4366be19fc78d38b0089718e942cb1fa0952f2a121bfa",
+      "bytes": 10446,
+      "role": "evidence"
+    },
+    {
+      "path": "qa-report.json",
+      "source": "bin/search/qa-report.json",
+      "sha256": "57dc60ff2aa0841ac0cc3e77003786491790db1575dd9d3e01f2955cbb96dbfa",
+      "bytes": 111789,
+      "role": "evidence"
+    },
+    {
+      "path": "styles.css",
+      "source": "bin/search/styles.css",
+      "sha256": "efb4b00679021ad594d4b71d583a7ddf0990eee39b65065ebfd4851a9b869343",
+      "bytes": 9038,
+      "role": "runtime"
+    },
+    {
+      "path": "ui-utils.mjs",
+      "source": "bin/search/ui-utils.mjs",
+      "sha256": "7e42aff95377f5e795bacdc208581babb066931342a71948d9f0e9fe81663365",
+      "bytes": 5004,
+      "role": "runtime"
+    },
+    {
+      "path": "vendor/LUNR-LICENSE.txt",
+      "source": "bin/search/vendor/LUNR-LICENSE.txt",
+      "sha256": "ae33f5a0d538cd93de1136a052ffa734b59d6b28e7cfc19e03de1d8b5d9f40ea",
+      "bytes": 1065,
+      "role": "runtime"
+    },
+    {
+      "path": "vendor/lunr.cjs",
+      "source": "bin/search/vendor/lunr.cjs",
+      "sha256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
+      "bytes": 99804,
+      "role": "runtime"
+    },
+    {
+      "path": "vendor/lunr.min.js",
+      "source": "bin/search/vendor/lunr.min.js",
+      "sha256": "0c50d9002b85780a842afffb567bb54ede402dae7c6dc5997a018614d8044fc8",
+      "bytes": 29510,
+      "role": "runtime"
+    },
+    {
+      "path": "vendor/provenance.json",
+      "source": "bin/search/vendor/provenance.json",
+      "sha256": "bad0f93456f74c989cb93a7262d1ed459149740f27226c193e8642bc9de5c20d",
+      "bytes": 533,
+      "role": "runtime"
+    }
+  ]
+}

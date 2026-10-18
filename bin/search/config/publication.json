@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "registry": "config/collections.json",
+  "catalog": "catalog.json",
+  "runtime": [
+    "app.mjs",
+    "engine.mjs",
+    "collection.mjs",
+    "ui-utils.mjs",
+    "styles.css",
+    "vendor/lunr.min.js",
+    "vendor/lunr.cjs",
+    "vendor/LUNR-LICENSE.txt",
+    "vendor/provenance.json"
+  ],
+  "siteInputs": [
+    "_pages/search.html",
+    "_includes/search-interface.html"
+  ],
+  "hookInputs": [
+    "bin/cibuild",
+    "bin/prepare-reader-publication.mjs"
+  ],
+  "collections": {
+    "bellum-latin-cardwell": {
+      "extractor": "extract.py",
+      "outputDirectory": ".",
+      "sources": [
+        "assets/xml/bellum/Latin/book-01.xml",
+        "assets/xml/bellum/Latin/book-02.xml",
+        "assets/xml/bellum/Latin/book-03.xml",
+        "assets/xml/bellum/Latin/book-04.xml",
+        "assets/xml/bellum/Latin/book-05.xml",
+        "assets/xml/bellum/Latin/book-06.xml",
+        "assets/xml/bellum/Latin/book-07.xml"
+      ],
+      "verifier": "tests/corpus-qa.mjs",
+      "qaReport": "qa-report.json"
+    }
+  }
+}

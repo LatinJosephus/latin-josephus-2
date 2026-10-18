@@ -1,0 +1,3611 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-10-18T12:56:39.804Z",
+  "independentVerifier": "bin/search/tests/corpus-qa.mjs",
+  "readerBaseline": {
+    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "provenance": "canonical-2026-10-14",
+    "preservationDuringRunRequired": true,
+    "publicationInput": false,
+    "acceptedBaselineComparison": {
+      "classification": "Substantive difference; both reviewed files use LF line endings.",
+      "difference": "The public-preview reader adds antiquitiesBookNumberingDisplayCopy (117 lines) and calls it during view rendering. The canonical-2026-10-14 reader lacks that helper and call. No other differences were found.",
+      "consequence": "The difference concerns Antiquities book-level numbering display. Both accepted baselines retain the same Bellum Niese extraction and URL navigation code."
+    }
+  },
+  "source": {
+    "books": 7,
+    "sections": 4001,
+    "numberedParagraphs": 704,
+    "citationParagraphs": 702,
+    "continuationParagraphs": 2,
+    "internalMilestones": 3299,
+    "tokens": 114794,
+    "uniqueLiteralVocabulary": 23859
+  },
+  "sources": [
+    {
+      "book": 1,
+      "path": "assets/xml/bellum/Latin/book-01.xml",
+      "sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+      "sections": 673,
+      "numberedParagraphs": 234,
+      "citationParagraphs": 234,
+      "continuationParagraphs": 0,
+      "internalMilestones": 439,
+      "tokens": 27572,
+      "literalVocabulary": 8993,
+      "foldedVocabulary": 8993
+    },
+    {
+      "book": 2,
+      "path": "assets/xml/bellum/Latin/book-02.xml",
+      "sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+      "sections": 654,
+      "numberedParagraphs": 143,
+      "citationParagraphs": 143,
+      "continuationParagraphs": 0,
+      "internalMilestones": 511,
+      "tokens": 21733,
+      "literalVocabulary": 7800,
+      "foldedVocabulary": 7800
+    },
+    {
+      "book": 3,
+      "path": "assets/xml/bellum/Latin/book-03.xml",
+      "sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+      "sections": 542,
+      "numberedParagraphs": 88,
+      "citationParagraphs": 87,
+      "continuationParagraphs": 1,
+      "internalMilestones": 455,
+      "tokens": 13044,
+      "literalVocabulary": 5286,
+      "foldedVocabulary": 5285
+    },
+    {
+      "book": 4,
+      "path": "assets/xml/bellum/Latin/book-04.xml",
+      "sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+      "sections": 663,
+      "numberedParagraphs": 78,
+      "citationParagraphs": 78,
+      "continuationParagraphs": 0,
+      "internalMilestones": 585,
+      "tokens": 15878,
+      "literalVocabulary": 6181,
+      "foldedVocabulary": 6181
+    },
+    {
+      "book": 5,
+      "path": "assets/xml/bellum/Latin/book-05.xml",
+      "sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+      "sections": 572,
+      "numberedParagraphs": 65,
+      "citationParagraphs": 65,
+      "continuationParagraphs": 0,
+      "internalMilestones": 507,
+      "tokens": 14860,
+      "literalVocabulary": 5811,
+      "foldedVocabulary": 5809
+    },
+    {
+      "book": 6,
+      "path": "assets/xml/bellum/Latin/book-06.xml",
+      "sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+      "sections": 442,
+      "numberedParagraphs": 50,
+      "citationParagraphs": 49,
+      "continuationParagraphs": 1,
+      "internalMilestones": 393,
+      "tokens": 10970,
+      "literalVocabulary": 4575,
+      "foldedVocabulary": 4574
+    },
+    {
+      "book": 7,
+      "path": "assets/xml/bellum/Latin/book-07.xml",
+      "sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+      "sections": 455,
+      "numberedParagraphs": 46,
+      "citationParagraphs": 46,
+      "continuationParagraphs": 0,
+      "internalMilestones": 409,
+      "tokens": 10737,
+      "literalVocabulary": 4596,
+      "foldedVocabulary": 4596
+    }
+  ],
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/corpus.json",
+      "sha256": "8bc3cda02112ff7522b78f1945fe56bad622b77e1c6b84676ad1075ce7bd9c45"
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "sha256": "fa07c041de986b2839f96b2207c909e7386e718ebb87b8b803cd4c572e82c0d3"
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "sha256": "d5bbb151a2dfed2567369d52babc682a910f7269df46d49587a7b49b4b156c76"
+    },
+    "verifier": {
+      "path": "bin/search/tests/corpus-qa.mjs",
+      "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4"
+    },
+    "originalReader": {
+      "path": "assets/js/renderTei.js",
+      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-01.bundle.json",
+          "sha256": "272e2f8a60dbf544d5cecb056d6743f373d46d15b22f7fd83369bf86e5b1e29a"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-01.corpus.json",
+          "sha256": "9a3619160ec2fdd70b910065f190a30553e436a3069045e0cb51e7aae56d1e4c"
+        },
+        "source": {
+          "path": "assets/xml/bellum/Latin/book-01.xml",
+          "sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240"
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-02.bundle.json",
+          "sha256": "0e364c6405f448906d166ffac650f1a6d29bfea3d9a19d498e7356fe55ae7790"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-02.corpus.json",
+          "sha256": "2a5c44a35597ab8e114d5a6732aab05d950884189493dba5f703e0ceff84fa7b"
+        },
+        "source": {
+          "path": "assets/xml/bellum/Latin/book-02.xml",
+          "sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09"
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-03.bundle.json",
+          "sha256": "91bd25733d67381d3b6f5d9a775fd8899df4da9bf3c3cfe627b6defde399a691"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-03.corpus.json",
+          "sha256": "673413a3c65c73ccde6fdce80be4c395a287007b1eae6c85373d758e08a5cec8"
+        },
+        "source": {
+          "path": "assets/xml/bellum/Latin/book-03.xml",
+          "sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49"
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-04.bundle.json",
+          "sha256": "013cf4f41f8a9863cd0337d4e468f16279643057815c5b40fec18b5e69c8a923"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-04.corpus.json",
+          "sha256": "8ecdbf3f77b805e1423e32bf46957b378b1256d50a493a018918c1300de801be"
+        },
+        "source": {
+          "path": "assets/xml/bellum/Latin/book-04.xml",
+          "sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98"
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-05.bundle.json",
+          "sha256": "b5eef3a33dc1c42e95961aa47915f08ed52c661d5e9e60c77008f39312671b1d"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-05.corpus.json",
+          "sha256": "916ef7d7dfde1fb15a2917652e8d8a43d5f3fd0d5589bedd38b20d0c8c77e728"
+        },
+        "source": {
+          "path": "assets/xml/bellum/Latin/book-05.xml",
+          "sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31"
+        }
+      },
+      {
+        "book": 6,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-06.bundle.json",
+          "sha256": "8ee6a14bb67219fe65b6d09ef0f65d00afa0925bbba3789ff699e110bd20cb65"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-06.corpus.json",
+          "sha256": "e0f57160e3e15f16ed85dd066a860ca2b40a590b1391a2bd1d09ae319db356b0"
+        },
+        "source": {
+          "path": "assets/xml/bellum/Latin/book-06.xml",
+          "sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b"
+        }
+      },
+      {
+        "book": 7,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-07.bundle.json",
+          "sha256": "c832012cdf142ce3c3638c7086ffdc8bca9a26b45c87918ad749fab1320142db"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-07.corpus.json",
+          "sha256": "37451cd05998e5b7e970c9e83f110ba8574d84a2c26b4cab0be147879c79b8ef"
+        },
+        "source": {
+          "path": "assets/xml/bellum/Latin/book-07.xml",
+          "sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042"
+        }
+      }
+    ]
+  },
+  "books": [
+    {
+      "book": 1,
+      "status": "PASS",
+      "generatedAt": "2026-10-18T12:55:41.542Z",
+      "independentVerifier": "bin/search/tests/corpus-qa.mjs",
+      "source": {
+        "book": 1,
+        "path": "assets/xml/bellum/Latin/book-01.xml",
+        "sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+        "sections": 673,
+        "numberedParagraphs": 234,
+        "citationParagraphs": 234,
+        "continuationParagraphs": 0,
+        "internalMilestones": 439,
+        "tokens": 27572,
+        "literalVocabulary": 8993,
+        "foldedVocabulary": 8993
+      },
+      "verifiedFiles": {
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-01.bundle.json",
+          "sha256": "272e2f8a60dbf544d5cecb056d6743f373d46d15b22f7fd83369bf86e5b1e29a"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-01.corpus.json",
+          "sha256": "9a3619160ec2fdd70b910065f190a30553e436a3069045e0cb51e7aae56d1e4c"
+        },
+        "engine": {
+          "path": "bin/search/engine.mjs",
+          "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+        },
+        "verifier": {
+          "path": "bin/search/tests/corpus-qa.mjs",
+          "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4"
+        },
+        "originalReader": {
+          "path": "assets/js/renderTei.js",
+          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+        }
+      },
+      "method": {
+        "text": "Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.",
+        "tokens": "Character-by-character Unicode letter/mark/number tokenization, independent postings.",
+        "wildcards": "Independent greedy glob matcher; asterisk consumes zero or more token characters.",
+        "boolean": "Generated abstract syntax trees evaluated with independent sets and De Morgan negation.",
+        "phrases": "Independent adjacency scan; punctuation ignored; every Niese boundary checked in both scopes.",
+        "seed": "0x15441837"
+      },
+      "counts": {
+        "protectedSourceHash": 2,
+        "protectedReaderHash": 2,
+        "bundleRecords": 1,
+        "sectionCoverage": 1,
+        "uniqueRecordIds": 1,
+        "independentXmlSections": 1,
+        "independentXmlTexts": 673,
+        "workAndBook": 673,
+        "deepLinkParameters": 673,
+        "literalQueries": 17986,
+        "literalMatchedUnits": 17986,
+        "literalOccurrences": 17986,
+        "literalMatchedSections": 17986,
+        "literalResultUnits": 17986,
+        "literalEvidenceSpans": 52450,
+        "literalGroupSections": 52450,
+        "literalGroupRecordIds": 52450,
+        "fixtureQueries": 72,
+        "fixtureMatchedUnits": 72,
+        "fixtureOccurrences": 72,
+        "fixtureMatchedSections": 72,
+        "fixtureResultUnits": 72,
+        "fixtureEvidenceSpans": 1681,
+        "fixtureGroupSections": 1681,
+        "fixtureGroupRecordIds": 1681,
+        "boundaryPhraseQueries": 1344,
+        "boundaryPhraseMatchedUnits": 1344,
+        "boundaryPhraseOccurrences": 1344,
+        "boundaryPhraseMatchedSections": 1344,
+        "boundaryPhraseResultUnits": 1344,
+        "boundaryPhraseEvidenceSpans": 672,
+        "boundaryPhraseGroupSections": 672,
+        "boundaryPhraseGroupRecordIds": 672,
+        "randomBooleanPhraseQueries": 320,
+        "randomBooleanPhraseMatchedUnits": 320,
+        "randomBooleanPhraseOccurrences": 320,
+        "randomBooleanPhraseMatchedSections": 320,
+        "randomBooleanPhraseResultUnits": 320,
+        "randomBooleanPhraseEvidenceSpans": 23992,
+        "randomBooleanPhraseGroupSections": 23992,
+        "randomBooleanPhraseGroupRecordIds": 23992,
+        "randomWildcardQueries": 192,
+        "randomWildcardMatchedUnits": 192,
+        "randomWildcardOccurrences": 192,
+        "randomWildcardMatchedSections": 192,
+        "randomWildcardResultUnits": 192,
+        "randomWildcardEvidenceSpans": 8968,
+        "randomWildcardGroupSections": 8968,
+        "randomWildcardGroupRecordIds": 8968,
+        "testedFileUnchangedDuringQa": 3
+      },
+      "examples": [
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            3
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            3
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            3
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            3
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            86,
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 2,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            86,
+            87
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 2,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            633
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            633
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            633
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            633
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            43,
+            57,
+            215,
+            307,
+            377
+          ],
+          "actualMatchingUnits": 5,
+          "actualMatchingSections": 5,
+          "actualOccurrences": 5
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            43,
+            57,
+            215,
+            307,
+            377
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 5,
+          "actualOccurrences": 5
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            43,
+            57,
+            215,
+            307,
+            377
+          ],
+          "actualMatchingUnits": 5,
+          "actualMatchingSections": 5,
+          "actualOccurrences": 5
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            43,
+            57,
+            215,
+            307,
+            377
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 5,
+          "actualOccurrences": 5
+        }
+      ],
+      "withinBookSeams": 672,
+      "assertions": 344975,
+      "failedAssertions": 0,
+      "durationSeconds": 15.76,
+      "limitations": [
+        "Automated Node/corpus QA, not browser or visual interaction testing.",
+        "Deep links verified for all 673 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
+        "Confirms search/extraction against the supplied XML; does not correct or re-certify Cardwell transcription against printed pages.",
+        "This per-book report covers Cardwell Latin Bellum Book 1."
+      ],
+      "failures": []
+    },
+    {
+      "book": 2,
+      "status": "PASS",
+      "generatedAt": "2026-10-18T12:55:57.733Z",
+      "independentVerifier": "bin/search/tests/corpus-qa.mjs",
+      "source": {
+        "book": 2,
+        "path": "assets/xml/bellum/Latin/book-02.xml",
+        "sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+        "sections": 654,
+        "numberedParagraphs": 143,
+        "citationParagraphs": 143,
+        "continuationParagraphs": 0,
+        "internalMilestones": 511,
+        "tokens": 21733,
+        "literalVocabulary": 7800,
+        "foldedVocabulary": 7800
+      },
+      "verifiedFiles": {
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-02.bundle.json",
+          "sha256": "0e364c6405f448906d166ffac650f1a6d29bfea3d9a19d498e7356fe55ae7790"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-02.corpus.json",
+          "sha256": "2a5c44a35597ab8e114d5a6732aab05d950884189493dba5f703e0ceff84fa7b"
+        },
+        "engine": {
+          "path": "bin/search/engine.mjs",
+          "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+        },
+        "verifier": {
+          "path": "bin/search/tests/corpus-qa.mjs",
+          "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4"
+        },
+        "originalReader": {
+          "path": "assets/js/renderTei.js",
+          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+        }
+      },
+      "method": {
+        "text": "Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.",
+        "tokens": "Character-by-character Unicode letter/mark/number tokenization, independent postings.",
+        "wildcards": "Independent greedy glob matcher; asterisk consumes zero or more token characters.",
+        "boolean": "Generated abstract syntax trees evaluated with independent sets and De Morgan negation.",
+        "phrases": "Independent adjacency scan; punctuation ignored; every Niese boundary checked in both scopes.",
+        "seed": "0x15441837"
+      },
+      "counts": {
+        "protectedSourceHash": 2,
+        "protectedReaderHash": 2,
+        "bundleRecords": 1,
+        "sectionCoverage": 1,
+        "uniqueRecordIds": 1,
+        "independentXmlSections": 1,
+        "independentXmlTexts": 654,
+        "workAndBook": 654,
+        "deepLinkParameters": 654,
+        "literalQueries": 15600,
+        "literalMatchedUnits": 15600,
+        "literalOccurrences": 15600,
+        "literalMatchedSections": 15600,
+        "literalResultUnits": 15600,
+        "literalEvidenceSpans": 41338,
+        "literalGroupSections": 41338,
+        "literalGroupRecordIds": 41338,
+        "fixtureQueries": 80,
+        "fixtureMatchedUnits": 80,
+        "fixtureOccurrences": 80,
+        "fixtureMatchedSections": 80,
+        "fixtureResultUnits": 80,
+        "fixtureEvidenceSpans": 1524,
+        "fixtureGroupSections": 1524,
+        "fixtureGroupRecordIds": 1524,
+        "boundaryPhraseQueries": 1306,
+        "boundaryPhraseMatchedUnits": 1306,
+        "boundaryPhraseOccurrences": 1306,
+        "boundaryPhraseMatchedSections": 1306,
+        "boundaryPhraseResultUnits": 1306,
+        "boundaryPhraseEvidenceSpans": 653,
+        "boundaryPhraseGroupSections": 653,
+        "boundaryPhraseGroupRecordIds": 653,
+        "randomBooleanPhraseQueries": 320,
+        "randomBooleanPhraseMatchedUnits": 320,
+        "randomBooleanPhraseOccurrences": 320,
+        "randomBooleanPhraseMatchedSections": 320,
+        "randomBooleanPhraseResultUnits": 320,
+        "randomBooleanPhraseEvidenceSpans": 22480,
+        "randomBooleanPhraseGroupSections": 22480,
+        "randomBooleanPhraseGroupRecordIds": 22480,
+        "randomWildcardQueries": 192,
+        "randomWildcardMatchedUnits": 192,
+        "randomWildcardOccurrences": 192,
+        "randomWildcardMatchedSections": 192,
+        "randomWildcardResultUnits": 192,
+        "randomWildcardEvidenceSpans": 6495,
+        "randomWildcardGroupSections": 6495,
+        "randomWildcardGroupRecordIds": 6495,
+        "testedFileUnchangedDuringQa": 3
+      },
+      "examples": [
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            51
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            51
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            51
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            51
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"animas autem immortales\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            154
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"animas autem immortales\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            154
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"animas autem immortales\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            154
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"animas autem immortales\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            154
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"tria sunt apud Judaeos genera philosophiae\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            119
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"tria sunt apud Judaeos genera philosophiae\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            119
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"tria sunt apud Judaeos genera philosophiae\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            119
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"tria sunt apud Judaeos genera philosophiae\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            119
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        }
+      ],
+      "withinBookSeams": 653,
+      "assertions": 289435,
+      "failedAssertions": 0,
+      "durationSeconds": 16.19,
+      "limitations": [
+        "Automated Node/corpus QA, not browser or visual interaction testing.",
+        "Deep links verified for all 654 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
+        "Confirms search/extraction against the supplied XML; does not correct or re-certify Cardwell transcription against printed pages.",
+        "This per-book report covers Cardwell Latin Bellum Book 2."
+      ],
+      "failures": []
+    },
+    {
+      "book": 3,
+      "status": "PASS",
+      "generatedAt": "2026-10-18T12:56:03.933Z",
+      "independentVerifier": "bin/search/tests/corpus-qa.mjs",
+      "source": {
+        "book": 3,
+        "path": "assets/xml/bellum/Latin/book-03.xml",
+        "sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+        "sections": 542,
+        "numberedParagraphs": 88,
+        "citationParagraphs": 87,
+        "continuationParagraphs": 1,
+        "internalMilestones": 455,
+        "tokens": 13044,
+        "literalVocabulary": 5286,
+        "foldedVocabulary": 5285
+      },
+      "verifiedFiles": {
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-03.bundle.json",
+          "sha256": "91bd25733d67381d3b6f5d9a775fd8899df4da9bf3c3cfe627b6defde399a691"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-03.corpus.json",
+          "sha256": "673413a3c65c73ccde6fdce80be4c395a287007b1eae6c85373d758e08a5cec8"
+        },
+        "engine": {
+          "path": "bin/search/engine.mjs",
+          "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+        },
+        "verifier": {
+          "path": "bin/search/tests/corpus-qa.mjs",
+          "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4"
+        },
+        "originalReader": {
+          "path": "assets/js/renderTei.js",
+          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+        }
+      },
+      "method": {
+        "text": "Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.",
+        "tokens": "Character-by-character Unicode letter/mark/number tokenization, independent postings.",
+        "wildcards": "Independent greedy glob matcher; asterisk consumes zero or more token characters.",
+        "boolean": "Generated abstract syntax trees evaluated with independent sets and De Morgan negation.",
+        "phrases": "Independent adjacency scan; punctuation ignored; every Niese boundary checked in both scopes.",
+        "seed": "0x15441837"
+      },
+      "counts": {
+        "protectedSourceHash": 2,
+        "protectedReaderHash": 2,
+        "bundleRecords": 1,
+        "sectionCoverage": 1,
+        "uniqueRecordIds": 1,
+        "independentXmlSections": 1,
+        "independentXmlTexts": 542,
+        "workAndBook": 542,
+        "deepLinkParameters": 542,
+        "literalQueries": 10572,
+        "literalMatchedUnits": 10572,
+        "literalOccurrences": 10572,
+        "literalMatchedSections": 10572,
+        "literalResultUnits": 10572,
+        "literalEvidenceSpans": 25215,
+        "literalGroupSections": 25215,
+        "literalGroupRecordIds": 25215,
+        "fixtureQueries": 76,
+        "fixtureMatchedUnits": 76,
+        "fixtureOccurrences": 76,
+        "fixtureMatchedSections": 76,
+        "fixtureResultUnits": 76,
+        "fixtureEvidenceSpans": 1168,
+        "fixtureGroupSections": 1168,
+        "fixtureGroupRecordIds": 1168,
+        "boundaryPhraseQueries": 1082,
+        "boundaryPhraseMatchedUnits": 1082,
+        "boundaryPhraseOccurrences": 1082,
+        "boundaryPhraseMatchedSections": 1082,
+        "boundaryPhraseResultUnits": 1082,
+        "boundaryPhraseEvidenceSpans": 541,
+        "boundaryPhraseGroupSections": 541,
+        "boundaryPhraseGroupRecordIds": 541,
+        "randomBooleanPhraseQueries": 320,
+        "randomBooleanPhraseMatchedUnits": 320,
+        "randomBooleanPhraseOccurrences": 320,
+        "randomBooleanPhraseMatchedSections": 320,
+        "randomBooleanPhraseResultUnits": 320,
+        "randomBooleanPhraseEvidenceSpans": 20034,
+        "randomBooleanPhraseGroupSections": 20034,
+        "randomBooleanPhraseGroupRecordIds": 20034,
+        "randomWildcardQueries": 192,
+        "randomWildcardMatchedUnits": 192,
+        "randomWildcardOccurrences": 192,
+        "randomWildcardMatchedSections": 192,
+        "randomWildcardResultUnits": 192,
+        "randomWildcardEvidenceSpans": 6187,
+        "randomWildcardGroupSections": 6187,
+        "randomWildcardGroupRecordIds": 6187,
+        "testedFileUnchangedDuringQa": 3
+      },
+      "examples": [
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            200
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            200
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            200
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            200
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"incognitam Britanniam\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            4
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"incognitam Britanniam\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            4
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"incognitam Britanniam\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            4
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"incognitam Britanniam\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            4
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        }
+      ],
+      "withinBookSeams": 541,
+      "assertions": 210040,
+      "failedAssertions": 0,
+      "durationSeconds": 6.2,
+      "limitations": [
+        "Automated Node/corpus QA, not browser or visual interaction testing.",
+        "Deep links verified for all 542 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
+        "Confirms search/extraction against the supplied XML; does not correct or re-certify Cardwell transcription against printed pages.",
+        "This per-book report covers Cardwell Latin Bellum Book 3."
+      ],
+      "failures": []
+    },
+    {
+      "book": 4,
+      "status": "PASS",
+      "generatedAt": "2026-10-18T12:56:12.708Z",
+      "independentVerifier": "bin/search/tests/corpus-qa.mjs",
+      "source": {
+        "book": 4,
+        "path": "assets/xml/bellum/Latin/book-04.xml",
+        "sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+        "sections": 663,
+        "numberedParagraphs": 78,
+        "citationParagraphs": 78,
+        "continuationParagraphs": 0,
+        "internalMilestones": 585,
+        "tokens": 15878,
+        "literalVocabulary": 6181,
+        "foldedVocabulary": 6181
+      },
+      "verifiedFiles": {
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-04.bundle.json",
+          "sha256": "013cf4f41f8a9863cd0337d4e468f16279643057815c5b40fec18b5e69c8a923"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-04.corpus.json",
+          "sha256": "8ecdbf3f77b805e1423e32bf46957b378b1256d50a493a018918c1300de801be"
+        },
+        "engine": {
+          "path": "bin/search/engine.mjs",
+          "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+        },
+        "verifier": {
+          "path": "bin/search/tests/corpus-qa.mjs",
+          "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4"
+        },
+        "originalReader": {
+          "path": "assets/js/renderTei.js",
+          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+        }
+      },
+      "method": {
+        "text": "Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.",
+        "tokens": "Character-by-character Unicode letter/mark/number tokenization, independent postings.",
+        "wildcards": "Independent greedy glob matcher; asterisk consumes zero or more token characters.",
+        "boolean": "Generated abstract syntax trees evaluated with independent sets and De Morgan negation.",
+        "phrases": "Independent adjacency scan; punctuation ignored; every Niese boundary checked in both scopes.",
+        "seed": "0x15441837"
+      },
+      "counts": {
+        "protectedSourceHash": 2,
+        "protectedReaderHash": 2,
+        "bundleRecords": 1,
+        "sectionCoverage": 1,
+        "uniqueRecordIds": 1,
+        "independentXmlSections": 1,
+        "independentXmlTexts": 663,
+        "workAndBook": 663,
+        "deepLinkParameters": 663,
+        "literalQueries": 12362,
+        "literalMatchedUnits": 12362,
+        "literalOccurrences": 12362,
+        "literalMatchedSections": 12362,
+        "literalResultUnits": 12362,
+        "literalEvidenceSpans": 30736,
+        "literalGroupSections": 30736,
+        "literalGroupRecordIds": 30736,
+        "fixtureQueries": 76,
+        "fixtureMatchedUnits": 76,
+        "fixtureOccurrences": 76,
+        "fixtureMatchedSections": 76,
+        "fixtureResultUnits": 76,
+        "fixtureEvidenceSpans": 1379,
+        "fixtureGroupSections": 1379,
+        "fixtureGroupRecordIds": 1379,
+        "boundaryPhraseQueries": 1324,
+        "boundaryPhraseMatchedUnits": 1324,
+        "boundaryPhraseOccurrences": 1324,
+        "boundaryPhraseMatchedSections": 1324,
+        "boundaryPhraseResultUnits": 1324,
+        "boundaryPhraseEvidenceSpans": 662,
+        "boundaryPhraseGroupSections": 662,
+        "boundaryPhraseGroupRecordIds": 662,
+        "randomBooleanPhraseQueries": 320,
+        "randomBooleanPhraseMatchedUnits": 320,
+        "randomBooleanPhraseOccurrences": 320,
+        "randomBooleanPhraseMatchedSections": 320,
+        "randomBooleanPhraseResultUnits": 320,
+        "randomBooleanPhraseEvidenceSpans": 22666,
+        "randomBooleanPhraseGroupSections": 22666,
+        "randomBooleanPhraseGroupRecordIds": 22666,
+        "randomWildcardQueries": 192,
+        "randomWildcardMatchedUnits": 192,
+        "randomWildcardOccurrences": 192,
+        "randomWildcardMatchedSections": 192,
+        "randomWildcardResultUnits": 192,
+        "randomWildcardEvidenceSpans": 7334,
+        "randomWildcardGroupSections": 7334,
+        "randomWildcardGroupRecordIds": 7334,
+        "testedFileUnchangedDuringQa": 3
+      },
+      "examples": [
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            5,
+            415
+          ],
+          "actualMatchingUnits": 2,
+          "actualMatchingSections": 2,
+          "actualOccurrences": 2
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            5,
+            415
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 2,
+          "actualOccurrences": 2
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            5,
+            415
+          ],
+          "actualMatchingUnits": 2,
+          "actualMatchingSections": 2,
+          "actualOccurrences": 2
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            5,
+            415
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 2,
+          "actualOccurrences": 2
+        },
+        {
+          "query": "\"sine ullo discrimine cum nocentibus\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            92
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"sine ullo discrimine cum nocentibus\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            92
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"sine ullo discrimine cum nocentibus\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            92
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"sine ullo discrimine cum nocentibus\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            92
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        }
+      ],
+      "withinBookSeams": 662,
+      "assertions": 247427,
+      "failedAssertions": 0,
+      "durationSeconds": 8.78,
+      "limitations": [
+        "Automated Node/corpus QA, not browser or visual interaction testing.",
+        "Deep links verified for all 663 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
+        "Confirms search/extraction against the supplied XML; does not correct or re-certify Cardwell transcription against printed pages.",
+        "This per-book report covers Cardwell Latin Bellum Book 4."
+      ],
+      "failures": []
+    },
+    {
+      "book": 5,
+      "status": "PASS",
+      "generatedAt": "2026-10-18T12:56:19.900Z",
+      "independentVerifier": "bin/search/tests/corpus-qa.mjs",
+      "source": {
+        "book": 5,
+        "path": "assets/xml/bellum/Latin/book-05.xml",
+        "sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+        "sections": 572,
+        "numberedParagraphs": 65,
+        "citationParagraphs": 65,
+        "continuationParagraphs": 0,
+        "internalMilestones": 507,
+        "tokens": 14860,
+        "literalVocabulary": 5811,
+        "foldedVocabulary": 5809
+      },
+      "verifiedFiles": {
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-05.bundle.json",
+          "sha256": "b5eef3a33dc1c42e95961aa47915f08ed52c661d5e9e60c77008f39312671b1d"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-05.corpus.json",
+          "sha256": "916ef7d7dfde1fb15a2917652e8d8a43d5f3fd0d5589bedd38b20d0c8c77e728"
+        },
+        "engine": {
+          "path": "bin/search/engine.mjs",
+          "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+        },
+        "verifier": {
+          "path": "bin/search/tests/corpus-qa.mjs",
+          "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4"
+        },
+        "originalReader": {
+          "path": "assets/js/renderTei.js",
+          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+        }
+      },
+      "method": {
+        "text": "Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.",
+        "tokens": "Character-by-character Unicode letter/mark/number tokenization, independent postings.",
+        "wildcards": "Independent greedy glob matcher; asterisk consumes zero or more token characters.",
+        "boolean": "Generated abstract syntax trees evaluated with independent sets and De Morgan negation.",
+        "phrases": "Independent adjacency scan; punctuation ignored; every Niese boundary checked in both scopes.",
+        "seed": "0x15441837"
+      },
+      "counts": {
+        "protectedSourceHash": 2,
+        "protectedReaderHash": 2,
+        "bundleRecords": 1,
+        "sectionCoverage": 1,
+        "uniqueRecordIds": 1,
+        "independentXmlSections": 1,
+        "independentXmlTexts": 572,
+        "workAndBook": 572,
+        "deepLinkParameters": 572,
+        "literalQueries": 11622,
+        "literalMatchedUnits": 11622,
+        "literalOccurrences": 11622,
+        "literalMatchedSections": 11622,
+        "literalResultUnits": 11622,
+        "literalEvidenceSpans": 28598,
+        "literalGroupSections": 28598,
+        "literalGroupRecordIds": 28598,
+        "fixtureQueries": 76,
+        "fixtureMatchedUnits": 76,
+        "fixtureOccurrences": 76,
+        "fixtureMatchedSections": 76,
+        "fixtureResultUnits": 76,
+        "fixtureEvidenceSpans": 1265,
+        "fixtureGroupSections": 1265,
+        "fixtureGroupRecordIds": 1265,
+        "boundaryPhraseQueries": 1142,
+        "boundaryPhraseMatchedUnits": 1142,
+        "boundaryPhraseOccurrences": 1142,
+        "boundaryPhraseMatchedSections": 1142,
+        "boundaryPhraseResultUnits": 1142,
+        "boundaryPhraseEvidenceSpans": 571,
+        "boundaryPhraseGroupSections": 571,
+        "boundaryPhraseGroupRecordIds": 571,
+        "randomBooleanPhraseQueries": 320,
+        "randomBooleanPhraseMatchedUnits": 320,
+        "randomBooleanPhraseOccurrences": 320,
+        "randomBooleanPhraseMatchedSections": 320,
+        "randomBooleanPhraseResultUnits": 320,
+        "randomBooleanPhraseEvidenceSpans": 19490,
+        "randomBooleanPhraseGroupSections": 19490,
+        "randomBooleanPhraseGroupRecordIds": 19490,
+        "randomWildcardQueries": 192,
+        "randomWildcardMatchedUnits": 192,
+        "randomWildcardOccurrences": 192,
+        "randomWildcardMatchedSections": 192,
+        "randomWildcardResultUnits": 192,
+        "randomWildcardEvidenceSpans": 5629,
+        "randomWildcardGroupSections": 5629,
+        "randomWildcardGroupRecordIds": 5629,
+        "testedFileUnchangedDuringQa": 3
+      },
+      "examples": [
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            136,
+            282,
+            366,
+            549
+          ],
+          "actualMatchingUnits": 4,
+          "actualMatchingSections": 4,
+          "actualOccurrences": 4
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            136,
+            282,
+            366,
+            549
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 4,
+          "actualOccurrences": 4
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            136,
+            282,
+            366,
+            549
+          ],
+          "actualMatchingUnits": 4,
+          "actualMatchingSections": 4,
+          "actualOccurrences": 4
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            136,
+            282,
+            366,
+            549
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 4,
+          "actualOccurrences": 4
+        },
+        {
+          "query": "\"Graecis aliae Latinis literis\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            194
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Graecis aliae Latinis literis\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            194
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Graecis aliae Latinis literis\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            194
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Graecis aliae Latinis literis\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            194
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        }
+      ],
+      "withinBookSeams": 571,
+      "assertions": 221794,
+      "failedAssertions": 0,
+      "durationSeconds": 7.19,
+      "limitations": [
+        "Automated Node/corpus QA, not browser or visual interaction testing.",
+        "Deep links verified for all 572 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
+        "Confirms search/extraction against the supplied XML; does not correct or re-certify Cardwell transcription against printed pages.",
+        "This per-book report covers Cardwell Latin Bellum Book 5."
+      ],
+      "failures": []
+    },
+    {
+      "book": 6,
+      "status": "PASS",
+      "generatedAt": "2026-10-18T12:56:25.114Z",
+      "independentVerifier": "bin/search/tests/corpus-qa.mjs",
+      "source": {
+        "book": 6,
+        "path": "assets/xml/bellum/Latin/book-06.xml",
+        "sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+        "sections": 442,
+        "numberedParagraphs": 50,
+        "citationParagraphs": 49,
+        "continuationParagraphs": 1,
+        "internalMilestones": 393,
+        "tokens": 10970,
+        "literalVocabulary": 4575,
+        "foldedVocabulary": 4574
+      },
+      "verifiedFiles": {
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-06.bundle.json",
+          "sha256": "8ee6a14bb67219fe65b6d09ef0f65d00afa0925bbba3789ff699e110bd20cb65"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-06.corpus.json",
+          "sha256": "e0f57160e3e15f16ed85dd066a860ca2b40a590b1391a2bd1d09ae319db356b0"
+        },
+        "engine": {
+          "path": "bin/search/engine.mjs",
+          "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+        },
+        "verifier": {
+          "path": "bin/search/tests/corpus-qa.mjs",
+          "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4"
+        },
+        "originalReader": {
+          "path": "assets/js/renderTei.js",
+          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+        }
+      },
+      "method": {
+        "text": "Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.",
+        "tokens": "Character-by-character Unicode letter/mark/number tokenization, independent postings.",
+        "wildcards": "Independent greedy glob matcher; asterisk consumes zero or more token characters.",
+        "boolean": "Generated abstract syntax trees evaluated with independent sets and De Morgan negation.",
+        "phrases": "Independent adjacency scan; punctuation ignored; every Niese boundary checked in both scopes.",
+        "seed": "0x15441837"
+      },
+      "counts": {
+        "protectedSourceHash": 2,
+        "protectedReaderHash": 2,
+        "bundleRecords": 1,
+        "sectionCoverage": 1,
+        "uniqueRecordIds": 1,
+        "independentXmlSections": 1,
+        "independentXmlTexts": 442,
+        "workAndBook": 442,
+        "deepLinkParameters": 442,
+        "literalQueries": 9150,
+        "literalMatchedUnits": 9150,
+        "literalOccurrences": 9150,
+        "literalMatchedSections": 9150,
+        "literalResultUnits": 9150,
+        "literalEvidenceSpans": 21156,
+        "literalGroupSections": 21156,
+        "literalGroupRecordIds": 21156,
+        "fixtureQueries": 84,
+        "fixtureMatchedUnits": 84,
+        "fixtureOccurrences": 84,
+        "fixtureMatchedSections": 84,
+        "fixtureResultUnits": 84,
+        "fixtureEvidenceSpans": 1006,
+        "fixtureGroupSections": 1006,
+        "fixtureGroupRecordIds": 1006,
+        "boundaryPhraseQueries": 882,
+        "boundaryPhraseMatchedUnits": 882,
+        "boundaryPhraseOccurrences": 882,
+        "boundaryPhraseMatchedSections": 882,
+        "boundaryPhraseResultUnits": 882,
+        "boundaryPhraseEvidenceSpans": 441,
+        "boundaryPhraseGroupSections": 441,
+        "boundaryPhraseGroupRecordIds": 441,
+        "randomBooleanPhraseQueries": 320,
+        "randomBooleanPhraseMatchedUnits": 320,
+        "randomBooleanPhraseOccurrences": 320,
+        "randomBooleanPhraseMatchedSections": 320,
+        "randomBooleanPhraseResultUnits": 320,
+        "randomBooleanPhraseEvidenceSpans": 16906,
+        "randomBooleanPhraseGroupSections": 16906,
+        "randomBooleanPhraseGroupRecordIds": 16906,
+        "randomWildcardQueries": 192,
+        "randomWildcardMatchedUnits": 192,
+        "randomWildcardOccurrences": 192,
+        "randomWildcardMatchedSections": 192,
+        "randomWildcardResultUnits": 192,
+        "randomWildcardEvidenceSpans": 4562,
+        "randomWildcardGroupSections": 4562,
+        "randomWildcardGroupRecordIds": 4562,
+        "testedFileUnchangedDuringQa": 3
+      },
+      "examples": [
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            16,
+            53,
+            209,
+            297,
+            408,
+            427
+          ],
+          "actualMatchingUnits": 6,
+          "actualMatchingSections": 6,
+          "actualOccurrences": 6
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            16,
+            53,
+            209,
+            297,
+            408,
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 6,
+          "actualOccurrences": 6
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            16,
+            53,
+            209,
+            297,
+            408,
+            427
+          ],
+          "actualMatchingUnits": 6,
+          "actualMatchingSections": 6,
+          "actualOccurrences": 6
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            16,
+            53,
+            209,
+            297,
+            408,
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 6,
+          "actualOccurrences": 6
+        },
+        {
+          "query": "\"Maria nomine Eleazari filia\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            201
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Maria nomine Eleazari filia\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            201
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Maria nomine Eleazari filia\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            201
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Maria nomine Eleazari filia\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            201
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"venissent Magna vero\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"venissent Magna vero\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"venissent Magna vero\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"venissent Magna vero\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Magna vero haec multitudo\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Magna vero haec multitudo\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Magna vero haec multitudo\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"Magna vero haec multitudo\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            427
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        }
+      ],
+      "withinBookSeams": 441,
+      "assertions": 176062,
+      "failedAssertions": 0,
+      "durationSeconds": 5.22,
+      "limitations": [
+        "Automated Node/corpus QA, not browser or visual interaction testing.",
+        "Deep links verified for all 442 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
+        "Confirms search/extraction against the supplied XML; does not correct or re-certify Cardwell transcription against printed pages.",
+        "This per-book report covers Cardwell Latin Bellum Book 6."
+      ],
+      "failures": []
+    },
+    {
+      "book": 7,
+      "status": "PASS",
+      "generatedAt": "2026-10-18T12:56:33.734Z",
+      "independentVerifier": "bin/search/tests/corpus-qa.mjs",
+      "source": {
+        "book": 7,
+        "path": "assets/xml/bellum/Latin/book-07.xml",
+        "sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+        "sections": 455,
+        "numberedParagraphs": 46,
+        "citationParagraphs": 46,
+        "continuationParagraphs": 0,
+        "internalMilestones": 409,
+        "tokens": 10737,
+        "literalVocabulary": 4596,
+        "foldedVocabulary": 4596
+      },
+      "verifiedFiles": {
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-cardwell/book-07.bundle.json",
+          "sha256": "c832012cdf142ce3c3638c7086ffdc8bca9a26b45c87918ad749fab1320142db"
+        },
+        "corpus": {
+          "path": "bin/search/data/book-07.corpus.json",
+          "sha256": "37451cd05998e5b7e970c9e83f110ba8574d84a2c26b4cab0be147879c79b8ef"
+        },
+        "engine": {
+          "path": "bin/search/engine.mjs",
+          "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+        },
+        "verifier": {
+          "path": "bin/search/tests/corpus-qa.mjs",
+          "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4"
+        },
+        "originalReader": {
+          "path": "assets/js/renderTei.js",
+          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+        }
+      },
+      "method": {
+        "text": "Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.",
+        "tokens": "Character-by-character Unicode letter/mark/number tokenization, independent postings.",
+        "wildcards": "Independent greedy glob matcher; asterisk consumes zero or more token characters.",
+        "boolean": "Generated abstract syntax trees evaluated with independent sets and De Morgan negation.",
+        "phrases": "Independent adjacency scan; punctuation ignored; every Niese boundary checked in both scopes.",
+        "seed": "0x15441837"
+      },
+      "counts": {
+        "protectedSourceHash": 2,
+        "protectedReaderHash": 2,
+        "bundleRecords": 1,
+        "sectionCoverage": 1,
+        "uniqueRecordIds": 1,
+        "independentXmlSections": 1,
+        "independentXmlTexts": 455,
+        "workAndBook": 455,
+        "deepLinkParameters": 455,
+        "literalQueries": 9192,
+        "literalMatchedUnits": 9192,
+        "literalOccurrences": 9192,
+        "literalMatchedSections": 9192,
+        "literalResultUnits": 9192,
+        "literalEvidenceSpans": 20848,
+        "literalGroupSections": 20848,
+        "literalGroupRecordIds": 20848,
+        "fixtureQueries": 80,
+        "fixtureMatchedUnits": 80,
+        "fixtureOccurrences": 80,
+        "fixtureMatchedSections": 80,
+        "fixtureResultUnits": 80,
+        "fixtureEvidenceSpans": 1016,
+        "fixtureGroupSections": 1016,
+        "fixtureGroupRecordIds": 1016,
+        "boundaryPhraseQueries": 908,
+        "boundaryPhraseMatchedUnits": 908,
+        "boundaryPhraseOccurrences": 908,
+        "boundaryPhraseMatchedSections": 908,
+        "boundaryPhraseResultUnits": 908,
+        "boundaryPhraseEvidenceSpans": 454,
+        "boundaryPhraseGroupSections": 454,
+        "boundaryPhraseGroupRecordIds": 454,
+        "randomBooleanPhraseQueries": 320,
+        "randomBooleanPhraseMatchedUnits": 320,
+        "randomBooleanPhraseOccurrences": 320,
+        "randomBooleanPhraseMatchedSections": 320,
+        "randomBooleanPhraseResultUnits": 320,
+        "randomBooleanPhraseEvidenceSpans": 16250,
+        "randomBooleanPhraseGroupSections": 16250,
+        "randomBooleanPhraseGroupRecordIds": 16250,
+        "randomWildcardQueries": 192,
+        "randomWildcardMatchedUnits": 192,
+        "randomWildcardOccurrences": 192,
+        "randomWildcardMatchedSections": 192,
+        "randomWildcardResultUnits": 192,
+        "randomWildcardEvidenceSpans": 3608,
+        "randomWildcardGroupSections": 3608,
+        "randomWildcardGroupRecordIds": 3608,
+        "testedFileUnchangedDuringQa": 3
+      },
+      "examples": [
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"At Theodorus repente\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"sacerdos ex Hierosolymis\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"regis aufert Judaeorumque\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"habebantur At Theodorus\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"6 me miserum\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            280
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            280
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            280
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"nisi qu*\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            280
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"neque cuiquam alii servire nisi Deo\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [
+            323
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"neque cuiquam alii servire nisi Deo\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            323
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"neque cuiquam alii servire nisi Deo\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [
+            323
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"neque cuiquam alii servire nisi Deo\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            323
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 1,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"facinus invitabat Cum olim\"",
+          "scope": "section",
+          "fold": false,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"facinus invitabat Cum olim\"",
+          "scope": "book",
+          "fold": false,
+          "expectedSections": [
+            322,
+            323
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 2,
+          "actualOccurrences": 1
+        },
+        {
+          "query": "\"facinus invitabat Cum olim\"",
+          "scope": "section",
+          "fold": true,
+          "expectedSections": [],
+          "actualMatchingUnits": 0,
+          "actualMatchingSections": 0,
+          "actualOccurrences": 0
+        },
+        {
+          "query": "\"facinus invitabat Cum olim\"",
+          "scope": "book",
+          "fold": true,
+          "expectedSections": [
+            322,
+            323
+          ],
+          "actualMatchingUnits": 1,
+          "actualMatchingSections": 2,
+          "actualOccurrences": 1
+        }
+      ],
+      "withinBookSeams": 454,
+      "assertions": 170672,
+      "failedAssertions": 0,
+      "durationSeconds": 8.62,
+      "limitations": [
+        "Automated Node/corpus QA, not browser or visual interaction testing.",
+        "Deep links verified for all 455 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
+        "Confirms search/extraction against the supplied XML; does not correct or re-certify Cardwell transcription against printed pages.",
+        "This per-book report covers Cardwell Latin Bellum Book 7."
+      ],
+      "failures": []
+    }
+  ],
+  "method": {
+    "text": "Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.",
+    "tokens": "Character-by-character Unicode letter/mark/number tokenization, independent postings.",
+    "wildcards": "Independent greedy glob matcher; asterisk consumes zero or more token characters.",
+    "boolean": "Generated abstract syntax trees evaluated with independent sets and De Morgan negation.",
+    "phrases": "Independent adjacency scan; punctuation ignored; every Niese boundary checked in both scopes.",
+    "seed": "0x15441837",
+    "collection": "Selected-book aggregation compared with independent per-book oracle; local injected fetch exercises actual checksum validation and caching.",
+    "isolation": "All six book junctions tested for no phrase join; exclusive word pairs test no Boolean AND join between adjacent books."
+  },
+  "sourceIrregularities": [
+    {
+      "book": 3,
+      "section": 3,
+      "sourceId": "latin-bellum3-num3",
+      "handling": "Printed subchapter label only before milestone 4; creates no duplicate section 3."
+    },
+    {
+      "book": 6,
+      "section": 427,
+      "sourceId": "latin-bellum6-num427",
+      "handling": "Running-text continuation joins existing section 427 from paragraph 420 with a paragraph separator; creates no duplicate section 427."
+    }
+  ],
+  "counts": {
+    "protectedSourceHash": 14,
+    "protectedReaderHash": 14,
+    "bundleRecords": 7,
+    "sectionCoverage": 7,
+    "uniqueRecordIds": 7,
+    "independentXmlSections": 7,
+    "independentXmlTexts": 4001,
+    "workAndBook": 4001,
+    "deepLinkParameters": 4001,
+    "literalQueries": 86484,
+    "literalMatchedUnits": 86484,
+    "literalOccurrences": 86484,
+    "literalMatchedSections": 86484,
+    "literalResultUnits": 86484,
+    "literalEvidenceSpans": 220341,
+    "literalGroupSections": 220341,
+    "literalGroupRecordIds": 220341,
+    "fixtureQueries": 544,
+    "fixtureMatchedUnits": 544,
+    "fixtureOccurrences": 544,
+    "fixtureMatchedSections": 544,
+    "fixtureResultUnits": 544,
+    "fixtureEvidenceSpans": 9039,
+    "fixtureGroupSections": 9039,
+    "fixtureGroupRecordIds": 9039,
+    "boundaryPhraseQueries": 7988,
+    "boundaryPhraseMatchedUnits": 7988,
+    "boundaryPhraseOccurrences": 7988,
+    "boundaryPhraseMatchedSections": 7988,
+    "boundaryPhraseResultUnits": 7988,
+    "boundaryPhraseEvidenceSpans": 3994,
+    "boundaryPhraseGroupSections": 3994,
+    "boundaryPhraseGroupRecordIds": 3994,
+    "randomBooleanPhraseQueries": 2240,
+    "randomBooleanPhraseMatchedUnits": 2240,
+    "randomBooleanPhraseOccurrences": 2240,
+    "randomBooleanPhraseMatchedSections": 2240,
+    "randomBooleanPhraseResultUnits": 2240,
+    "randomBooleanPhraseEvidenceSpans": 141818,
+    "randomBooleanPhraseGroupSections": 141818,
+    "randomBooleanPhraseGroupRecordIds": 141818,
+    "randomWildcardQueries": 1344,
+    "randomWildcardMatchedUnits": 1344,
+    "randomWildcardOccurrences": 1344,
+    "randomWildcardMatchedSections": 1344,
+    "randomWildcardResultUnits": 1344,
+    "randomWildcardEvidenceSpans": 42783,
+    "randomWildcardGroupSections": 42783,
+    "randomWildcardGroupRecordIds": 42783,
+    "testedFileUnchangedDuringQa": 21,
+    "combinedCorpusTexts": 1,
+    "combinedGlobalOrder": 1,
+    "combinedUniqueIds": 1,
+    "catalogSchemaVersion": 1,
+    "catalogOnlyAuthorizedCollection": 1,
+    "catalogCollectionIdentity": 1,
+    "catalogCombinedCorpusHash": 1,
+    "catalogBooks": 1,
+    "catalogQualifiedBookIdentity": 7,
+    "catalogSectionCounts": 7,
+    "catalogTokenCounts": 7,
+    "catalogBundleHash": 7,
+    "catalogCorpusHash": 7,
+    "selectedCollectionQueries": 220,
+    "selectedCollectionUnits": 220,
+    "selectedCollectionSections": 220,
+    "selectedCollectionOccurrences": 220,
+    "selectedCollectionBooks": 220,
+    "selectedCollectionCollections": 220,
+    "selectedCollectionMatchingCollections": 220,
+    "selectedCollectionMatchingBooks": 220,
+    "selectedCollectionGroups": 220,
+    "selectedCollectionSelectedRecordIds": 220,
+    "selectedCollectionQualifiedGroupIdentities": 220,
+    "crossBookPhraseFixtureIsAbsent": 24,
+    "crossBookPhraseQueries": 24,
+    "crossBookPhraseUnits": 24,
+    "crossBookPhraseSections": 24,
+    "crossBookPhraseOccurrences": 24,
+    "crossBookPhraseBooks": 24,
+    "crossBookPhraseCollections": 24,
+    "crossBookPhraseMatchingCollections": 24,
+    "crossBookPhraseMatchingBooks": 24,
+    "crossBookPhraseGroups": 24,
+    "crossBookPhraseSelectedRecordIds": 24,
+    "crossBookPhraseQualifiedGroupIdentities": 24,
+    "crossBookBooleanFixtureIsAbsent": 12,
+    "crossBookBooleanQueries": 12,
+    "crossBookBooleanUnits": 12,
+    "crossBookBooleanSections": 12,
+    "crossBookBooleanOccurrences": 12,
+    "crossBookBooleanBooks": 12,
+    "crossBookBooleanCollections": 12,
+    "crossBookBooleanMatchingCollections": 12,
+    "crossBookBooleanMatchingBooks": 12,
+    "crossBookBooleanGroups": 12,
+    "crossBookBooleanSelectedRecordIds": 12,
+    "crossBookBooleanQualifiedGroupIdentities": 12,
+    "eachSelectedBundleFetchedOnce": 1,
+    "missingSelectedBookRejectsWholeSearch": 1,
+    "unqualifiedOrUnavailableSelectionRejected": 2,
+    "suiteFileUnchangedDuringQa": 5
+  },
+  "totalQueries": 98856,
+  "withinBookSeams": 3994,
+  "crossBookSeams": 6,
+  "collectionExamples": [
+    {
+      "query": "\"animas autem immortales\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "section",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "2.154"
+      ]
+    },
+    {
+      "query": "\"animas autem immortales\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "2.154"
+      ]
+    },
+    {
+      "query": "\"incognitam Britanniam\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "section",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "3.4"
+      ]
+    },
+    {
+      "query": "\"incognitam Britanniam\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "3.4"
+      ]
+    },
+    {
+      "query": "\"Graecis aliae Latinis literis\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "section",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "5.194"
+      ]
+    },
+    {
+      "query": "\"Graecis aliae Latinis literis\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "5.194"
+      ]
+    },
+    {
+      "query": "\"Maria nomine Eleazari filia\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "section",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "6.201"
+      ]
+    },
+    {
+      "query": "\"Maria nomine Eleazari filia\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "6.201"
+      ]
+    },
+    {
+      "query": "\"neque cuiquam alii servire nisi Deo\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "section",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "7.323"
+      ]
+    },
+    {
+      "query": "\"neque cuiquam alii servire nisi Deo\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "7.323"
+      ]
+    },
+    {
+      "query": "\"venissent Magna vero\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "section",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "6.427"
+      ]
+    },
+    {
+      "query": "\"venissent Magna vero\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "6.427"
+      ]
+    },
+    {
+      "query": "\"Magna vero haec multitudo\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "section",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "6.427"
+      ]
+    },
+    {
+      "query": "\"Magna vero haec multitudo\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1,
+      "citations": [
+        "6.427"
+      ]
+    },
+    {
+      "query": "\"facinus invitabat Cum olim\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "section",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0,
+      "citations": []
+    },
+    {
+      "query": "\"facinus invitabat Cum olim\"",
+      "books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 2,
+      "occurrences": 1,
+      "citations": [
+        "7.322",
+        "7.323"
+      ]
+    }
+  ],
+  "assertions": 1663053,
+  "failedAssertions": 0,
+  "durationSeconds": 74.04,
+  "limitations": [
+    "Automated Node/corpus QA, not browser or visual interaction testing.",
+    "All 4,001 reader link parameter sets verified; destination pages not opened by this verifier.",
+    "Checks source fidelity to the seven supplied XML files; does not re-certify their transcription against printed pages.",
+    "Coverage is Cardwell Latin Bellum I-VII only."
+  ],
+  "failures": []
+}

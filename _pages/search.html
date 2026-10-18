@@ -1,0 +1,11 @@
+---
+layout: default
+title: search
+permalink: /search/
+nav: true
+---
+<link rel="stylesheet" href="{{ '/assets/search/styles.css' | relative_url }}">
+{% assign search_reader_base = '/' | relative_url %}
+{% include search-interface.html reader_base=search_reader_base %}
+<script src="{{ '/assets/search/vendor/lunr.min.js' | relative_url }}" defer></script>
+<script type="module" src="{{ '/assets/search/app.mjs' | relative_url }}"></script>

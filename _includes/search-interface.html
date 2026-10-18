@@ -1,0 +1,82 @@
+<main id="lj-search" lang="en" data-reader-base="{{ include.reader_base }}">
+  <section class="intro" aria-labelledby="search-title">
+    <p class="eyebrow">A concordance of the Latin text</p>
+    <h1 id="search-title">Search the Latin Josephus</h1>
+    <p class="subtitle" id="collection-description"><i>Bellum Judaicum</i> · Books I–VII · Cardwell Latin (1837)</p>
+    <p class="coverage" id="coverage">Loading the text catalogue…</p>
+  </section>
+  <section class="search-panel" aria-label="Search controls">
+    <form id="search-form" role="search">
+      <label class="query-label" for="query">Words, exact phrases, or a Boolean expression</label>
+      <div class="search-row">
+        <input type="search" id="query" name="q" autocomplete="off" spellcheck="false" maxlength="2000" placeholder='"sacerdos ex Hierosolymis"' aria-describedby="query-hint" required>
+        <button class="primary" id="search-button" type="submit" disabled>Search</button>
+      </div>
+      <p class="hint" id="query-hint">Put exact phrases in quotation marks. Use <code>AND</code>, <code>OR</code>, <code>NOT</code>, parentheses, and <code>*</code>.</p>
+      <div class="options-row">
+        <div class="work-option">
+          <label for="work">Work and edition</label>
+          <select id="work" name="work" disabled><option value="bellum-latin-cardwell">Bellum · Cardwell Latin</option></select>
+        </div>
+        <div class="book-option">
+          <label for="book">Books to search</label>
+          <select id="book" name="book" disabled><option value="all">All books in this work</option></select>
+        </div>
+        <div class="scope-option">
+          <label for="scope">Search scope</label>
+          <select id="scope" name="scope" aria-describedby="scope-hint">
+            <option value="section">Within each Niese section</option>
+            <option value="book">Within each whole book</option>
+          </select>
+        </div>
+        <label class="checkbox-option" for="fold"><input type="checkbox" id="fold" name="fold"><span>Treat <b>u/v</b> and <b>i/j</b> as equivalent</span></label>
+      </div>
+      <p class="scope-hint" id="scope-hint">All parts of the expression must match within the same Niese section. Choose whole-book scope to include phrases that cross section boundaries.</p>
+    </form>
+    <div class="examples" aria-label="Example searches">
+      <span>Try:</span>
+      <button type="button" class="example" data-query='"sacerdos ex Hierosolymis"' data-work="bellum-latin-cardwell" data-scope="section">An exact phrase</button>
+      <button type="button" class="example" data-query="(Theodor* OR Zenon*) AND (Alexander OR Herod*)" data-work="bellum-latin-cardwell" data-scope="section">Boolean + wildcards</button>
+      <button type="button" class="example" data-query='"habebantur At Theodorus"' data-work="bellum-latin-cardwell" data-book="bellum-latin-cardwell:1" data-scope="book">A phrase across I.86–87</button>
+      <button type="button" class="example" data-query='"neque cuiquam alii servire nisi Deo"' data-work="bellum-latin-cardwell" data-scope="section">A phrase in Book VII</button>
+    </div>
+    <details class="syntax-guide">
+      <summary>Search syntax and what is included</summary>
+      <div class="guide-grid">
+        <div>
+          <h2>Search syntax</h2>
+          <dl>
+            <dt><code>bellum</code></dt><dd>A complete word, ignoring capitalization.</dd>
+            <dt><code>bell*</code>, <code>*que</code>, <code>*bell*</code></dt><dd>Zero or more characters within a word, at any position.</dd>
+            <dt><code>"sacerdos ex Hierosolymis"</code></dt><dd>Consecutive words in that order. Punctuation, capitalization and ordinary whitespace are ignored.</dd>
+            <dt><code>"sacerd* ex Hierosolym*"</code></dt><dd>Wildcards can also appear within a quoted phrase.</dd>
+            <dt><code>A AND B</code> · <code>A OR B</code> · <code>A AND NOT B</code></dt><dd>Combine or exclude matches. Spaces between unquoted terms mean <code>AND</code>.</dd>
+            <dt><code>(A OR B) AND C</code></dt><dd>Parentheses control grouping. Otherwise the order is <code>NOT</code>, then <code>AND</code>, then <code>OR</code>. Use uppercase operators.</dd>
+          </dl>
+        </div>
+        <div>
+          <h2>Text and scope</h2>
+          <p id="included-text">Currently indexed: Cardwell’s Latin main text of all seven books of <i>Bellum Judaicum</i>, including the proem of Book I. Antiquities will be added after its text repairs and verification are complete. Editorial titles, printed division labels and manuscript annotations are excluded.</p>
+          <p>Every word remains searchable. Spelling is preserved in the excerpts; the optional equivalence setting affects matching only. No grammatical stemming or automatic spelling correction is applied.</p>
+          <p><b>Within each section:</b> every Boolean condition and exact phrase is evaluated in that section.</p>
+          <p><b>Whole book:</b> Boolean conditions may be satisfied anywhere in the same book; exact phrases must still be consecutive and may cross Niese or chapter boundaries. Each book, work and edition is evaluated separately. A phrase never continues into another book. Result excerpts identify the sections where positive terms occur.</p>
+          <p>Results follow the order of the text. A section with several matches appears once in section scope. In whole-book scope, a phrase spanning sections can have its own excerpt. Click a citation to open the corresponding section in the reader.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+  <div id="error" class="error" role="alert" hidden></div>
+  <section id="results-region" aria-labelledby="results-heading" aria-busy="true">
+    <div class="results-heading-row">
+      <div><h2 id="results-heading">Search results</h2><p id="status" role="status" aria-live="polite">Preparing the search…</p></div>
+      <button type="button" class="secondary" id="copy-link" disabled>Copy search link</button>
+    </div>
+    <p class="result-context" id="result-context" hidden></p>
+    <div id="results"></div>
+    <button type="button" id="load-more" class="secondary load-more" hidden>Show more results</button>
+    <noscript><p class="error">JavaScript is needed to search. You can still <a href="{{ include.reader_base }}bellum-judaicum/?book=1">read the seven books on Latin Josephus</a>.</p></noscript>
+  </section>
+  <footer class="search-footer">
+    <p>Searches run in your browser. Quotations and highlights use the project’s Latin main text, with links back to the reader.</p>
+  </footer>
+</main>

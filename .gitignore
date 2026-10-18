@@ -8,3 +8,13 @@ _site
 .tweet-cache
 Gemfile.lock
 vendor
+
+# The search library is a pinned, audited static dependency.
+!bin/search/vendor/
+!bin/search/vendor/**
+!assets/search/vendor/
+!assets/search/vendor/**
+
+# Local Python caches from search extraction and verification.
+/bin/search/**/__pycache__/
+/bin/search/**/*.pyc

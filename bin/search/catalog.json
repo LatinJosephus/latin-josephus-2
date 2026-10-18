@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "engineSchemaVersion": 1,
+  "collections": [
+    {
+      "id": "bellum-latin-cardwell",
+      "work": "bellum",
+      "label": "Bellum Judaicum",
+      "citationPrefix": "Bellum",
+      "language": "Latin",
+      "edition": "Cardwell (1837)",
+      "readerPath": "bellum-judaicum/",
+      "books": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7"
+      ],
+      "manifestPath": "config/bellum-latin-cardwell.json",
+      "manifestSHA256": "c5655ef8a06048714d8a1a2b9e945d17a5232eee469045a6d7944d8681a61844",
+      "corpusPath": "corpus.json",
+      "corpusSHA256": "8bc3cda02112ff7522b78f1945fe56bad622b77e1c6b84676ad1075ce7bd9c45",
+      "extractionReportPath": "extraction-report.json",
+      "extractionReportSHA256": "444d7c348a35134889d4366be19fc78d38b0089718e942cb1fa0952f2a121bfa",
+      "totals": {
+        "books": 7,
+        "sections": 4001,
+        "tokens": 114794,
+        "bytes": 19438553
+      }
+    }
+  ],
+  "books": [
+    {
+      "id": "bellum-latin-cardwell:1",
+      "collectionId": "bellum-latin-cardwell",
+      "number": 1,
+      "label": "Book I",
+      "sections": 673,
+      "tokens": 27572,
+      "vocabulary": 8993,
+      "bytes": 4466710,
+      "path": "data/bellum-latin-cardwell/book-01.bundle.json",
+      "sha256": "272e2f8a60dbf544d5cecb056d6743f373d46d15b22f7fd83369bf86e5b1e29a",
+      "corpusPath": "data/book-01.corpus.json",
+      "corpusSHA256": "9a3619160ec2fdd70b910065f190a30553e436a3069045e0cb51e7aae56d1e4c"
+    },
+    {
+      "id": "bellum-latin-cardwell:2",
+      "collectionId": "bellum-latin-cardwell",
+      "number": 2,
+      "label": "Book II",
+      "sections": 654,
+      "tokens": 21733,
+      "vocabulary": 7800,
+      "bytes": 3612037,
+      "path": "data/bellum-latin-cardwell/book-02.bundle.json",
+      "sha256": "0e364c6405f448906d166ffac650f1a6d29bfea3d9a19d498e7356fe55ae7790",
+      "corpusPath": "data/book-02.corpus.json",
+      "corpusSHA256": "2a5c44a35597ab8e114d5a6732aab05d950884189493dba5f703e0ceff84fa7b"
+    },
+    {
+      "id": "bellum-latin-cardwell:3",
+      "collectionId": "bellum-latin-cardwell",
+      "number": 3,
+      "label": "Book III",
+      "sections": 542,
+      "tokens": 13044,
+      "vocabulary": 5286,
+      "bytes": 2265731,
+      "path": "data/bellum-latin-cardwell/book-03.bundle.json",
+      "sha256": "91bd25733d67381d3b6f5d9a775fd8899df4da9bf3c3cfe627b6defde399a691",
+      "corpusPath": "data/book-03.corpus.json",
+      "corpusSHA256": "673413a3c65c73ccde6fdce80be4c395a287007b1eae6c85373d758e08a5cec8"
+    },
+    {
+      "id": "bellum-latin-cardwell:4",
+      "collectionId": "bellum-latin-cardwell",
+      "number": 4,
+      "label": "Book IV",
+      "sections": 663,
+      "tokens": 15878,
+      "vocabulary": 6181,
+      "bytes": 2750859,
+      "path": "data/bellum-latin-cardwell/book-04.bundle.json",
+      "sha256": "013cf4f41f8a9863cd0337d4e468f16279643057815c5b40fec18b5e69c8a923",
+      "corpusPath": "data/book-04.corpus.json",
+      "corpusSHA256": "8ecdbf3f77b805e1423e32bf46957b378b1256d50a493a018918c1300de801be"
+    },
+    {
+      "id": "bellum-latin-cardwell:5",
+      "collectionId": "bellum-latin-cardwell",
+      "number": 5,
+      "label": "Book V",
+      "sections": 572,
+      "tokens": 14860,
+      "vocabulary": 5811,
+      "bytes": 2549092,
+      "path": "data/bellum-latin-cardwell/book-05.bundle.json",
+      "sha256": "b5eef3a33dc1c42e95961aa47915f08ed52c661d5e9e60c77008f39312671b1d",
+      "corpusPath": "data/book-05.corpus.json",
+      "corpusSHA256": "916ef7d7dfde1fb15a2917652e8d8a43d5f3fd0d5589bedd38b20d0c8c77e728"
+    },
+    {
+      "id": "bellum-latin-cardwell:6",
+      "collectionId": "bellum-latin-cardwell",
+      "number": 6,
+      "label": "Book VI",
+      "sections": 442,
+      "tokens": 10970,
+      "vocabulary": 4575,
+      "bytes": 1905283,
+      "path": "data/bellum-latin-cardwell/book-06.bundle.json",
+      "sha256": "8ee6a14bb67219fe65b6d09ef0f65d00afa0925bbba3789ff699e110bd20cb65",
+      "corpusPath": "data/book-06.corpus.json",
+      "corpusSHA256": "e0f57160e3e15f16ed85dd066a860ca2b40a590b1391a2bd1d09ae319db356b0"
+    },
+    {
+      "id": "bellum-latin-cardwell:7",
+      "collectionId": "bellum-latin-cardwell",
+      "number": 7,
+      "label": "Book VII",
+      "sections": 455,
+      "tokens": 10737,
+      "vocabulary": 4596,
+      "bytes": 1888841,
+      "path": "data/bellum-latin-cardwell/book-07.bundle.json",
+      "sha256": "c832012cdf142ce3c3638c7086ffdc8bca9a26b45c87918ad749fab1320142db",
+      "corpusPath": "data/book-07.corpus.json",
+      "corpusSHA256": "37451cd05998e5b7e970c9e83f110ba8574d84a2c26b4cab0be147879c79b8ef"
+    }
+  ],
+  "totals": {
+    "books": 7,
+    "sections": 4001,
+    "tokens": 114794,
+    "bytes": 19438553
+  },
+  "source": {
+    "manifestPath": "config/collections.json",
+    "manifestSHA256": "a8428710181c538251384171708ba928f349d0b94be840e8ba1ebe13c266dcdb",
+    "enginePath": "engine.mjs",
+    "engineSHA256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c",
+    "lunrPath": "vendor/lunr.cjs",
+    "lunrSHA256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
+    "lunrVersion": "2.3.9"
+  }
+}

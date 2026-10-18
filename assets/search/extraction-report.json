@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 2,
+  "status": "PASS",
+  "scope": {
+    "work": "Bellum Judaicum",
+    "books": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "language": "Latin",
+    "edition": "Cardwell (1837)",
+    "unit": "Niese section"
+  },
+  "counts": {
+    "books": 7,
+    "bodyParagraphs": 705,
+    "numberedParagraphs": 704,
+    "citationParagraphs": 702,
+    "continuationParagraphs": 2,
+    "internalMilestones": 3299,
+    "sections": 4001,
+    "chapterDivisionsIncludingPrologue": 111,
+    "excludedBookTitles": 1,
+    "runningWordTokens": 114794,
+    "removedPrefixCharacters": 6957,
+    "paragraphSeparatorsInserted": 1,
+    "prefixRemovals": {
+      "chapter-label": 110,
+      "niese-label": 702,
+      "subchapter-label": 593
+    }
+  },
+  "coverage": {
+    "paragraphsExactlyRestored": 704,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true,
+    "globalOrderRange": [
+      0,
+      4000
+    ],
+    "bookOnePilotCorpusUnchanged": true,
+    "completeSectionCoverageByBook": {
+      "1": [
+        1,
+        673
+      ],
+      "2": [
+        1,
+        654
+      ],
+      "3": [
+        1,
+        542
+      ],
+      "4": [
+        1,
+        663
+      ],
+      "5": [
+        1,
+        572
+      ],
+      "6": [
+        1,
+        442
+      ],
+      "7": [
+        1,
+        455
+      ]
+    },
+    "allSectionTextsNonempty": true
+  },
+  "corpus": {
+    "path": "corpus.json",
+    "sha256": "8bc3cda02112ff7522b78f1945fe56bad622b77e1c6b84676ad1075ce7bd9c45",
+    "bytes": 2073135,
+    "records": 4001
+  },
+  "books": [
+    {
+      "book": 1,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/Latin/book-01.xml",
+        "sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+        "bytes": 298013
+      },
+      "counts": {
+        "bodyParagraphs": 235,
+        "numberedParagraphs": 234,
+        "citationParagraphs": 234,
+        "continuationParagraphs": 0,
+        "internalMilestones": 439,
+        "sections": 673,
+        "chapterDivisionsIncludingPrologue": 34,
+        "excludedBookTitles": 1,
+        "runningWordTokens": 27572,
+        "removedPrefixCharacters": 2309,
+        "paragraphSeparatorsInserted": 0,
+        "prefixRemovals": {
+          "chapter-label": 33,
+          "niese-label": 234,
+          "subchapter-label": 200
+        }
+      },
+      "orderStart": 0,
+      "orderEnd": 672,
+      "corpus": {
+        "path": "data/book-01.corpus.json",
+        "sha256": "9a3619160ec2fdd70b910065f190a30553e436a3069045e0cb51e7aae56d1e4c",
+        "bytes": 410092,
+        "records": 673
+      },
+      "extractionReport": {
+        "path": "data/book-01.extraction-report.json",
+        "sha256": "80464505ded5a7b4130148f4f5a604c5cb76a24ba94d380b7806583e579fe449",
+        "bytes": 575292
+      }
+    },
+    {
+      "book": 2,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/Latin/book-02.xml",
+        "sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+        "bytes": 227296
+      },
+      "counts": {
+        "bodyParagraphs": 143,
+        "numberedParagraphs": 143,
+        "citationParagraphs": 143,
+        "continuationParagraphs": 0,
+        "internalMilestones": 511,
+        "sections": 654,
+        "chapterDivisionsIncludingPrologue": 22,
+        "excludedBookTitles": 0,
+        "runningWordTokens": 21733,
+        "removedPrefixCharacters": 1417,
+        "paragraphSeparatorsInserted": 0,
+        "prefixRemovals": {
+          "chapter-label": 22,
+          "niese-label": 143,
+          "subchapter-label": 121
+        }
+      },
+      "orderStart": 673,
+      "orderEnd": 1326,
+      "corpus": {
+        "path": "data/book-02.corpus.json",
+        "sha256": "2a5c44a35597ab8e114d5a6732aab05d950884189493dba5f703e0ceff84fa7b",
+        "bytes": 362599,
+        "records": 654
+      },
+      "extractionReport": {
+        "path": "data/book-02.extraction-report.json",
+        "sha256": "67056acce7c42dd775c8938ad80612dcbac20848dc84616749083ae9a0ed6b30",
+        "bytes": 498476
+      }
+    },
+    {
+      "book": 3,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/Latin/book-03.xml",
+        "sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+        "bytes": 139997
+      },
+      "counts": {
+        "bodyParagraphs": 88,
+        "numberedParagraphs": 88,
+        "citationParagraphs": 87,
+        "continuationParagraphs": 1,
+        "internalMilestones": 455,
+        "sections": 542,
+        "chapterDivisionsIncludingPrologue": 10,
+        "excludedBookTitles": 0,
+        "runningWordTokens": 13044,
+        "removedPrefixCharacters": 853,
+        "paragraphSeparatorsInserted": 0,
+        "prefixRemovals": {
+          "chapter-label": 10,
+          "niese-label": 87,
+          "subchapter-label": 78
+        }
+      },
+      "orderStart": 1327,
+      "orderEnd": 1868,
+      "corpus": {
+        "path": "data/book-03.corpus.json",
+        "sha256": "673413a3c65c73ccde6fdce80be4c395a287007b1eae6c85373d758e08a5cec8",
+        "bytes": 261589,
+        "records": 542
+      },
+      "extractionReport": {
+        "path": "data/book-03.extraction-report.json",
+        "sha256": "46fbac56fa1736a541c82a137e71659693fbfe59bcaed63b79f3163e615cd438",
+        "bytes": 391942
+      }
+    },
+    {
+      "book": 4,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/Latin/book-04.xml",
+        "sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+        "bytes": 168675
+      },
+      "counts": {
+        "bodyParagraphs": 78,
+        "numberedParagraphs": 78,
+        "citationParagraphs": 78,
+        "continuationParagraphs": 0,
+        "internalMilestones": 585,
+        "sections": 663,
+        "chapterDivisionsIncludingPrologue": 11,
+        "excludedBookTitles": 0,
+        "runningWordTokens": 15878,
+        "removedPrefixCharacters": 763,
+        "paragraphSeparatorsInserted": 0,
+        "prefixRemovals": {
+          "chapter-label": 11,
+          "niese-label": 78,
+          "subchapter-label": 67
+        }
+      },
+      "orderStart": 1869,
+      "orderEnd": 2531,
+      "corpus": {
+        "path": "data/book-04.corpus.json",
+        "sha256": "8ecdbf3f77b805e1423e32bf46957b378b1256d50a493a018918c1300de801be",
+        "bytes": 320799,
+        "records": 663
+      },
+      "extractionReport": {
+        "path": "data/book-04.extraction-report.json",
+        "sha256": "62c8f255d5f30151ecac66044f6bdf0c5850b1d97e69073ed34e02d0d45795f2",
+        "bytes": 457030
+      }
+    },
+    {
+      "book": 5,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/Latin/book-05.xml",
+        "sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+        "bytes": 154170
+      },
+      "counts": {
+        "bodyParagraphs": 65,
+        "numberedParagraphs": 65,
+        "citationParagraphs": 65,
+        "continuationParagraphs": 0,
+        "internalMilestones": 507,
+        "sections": 572,
+        "chapterDivisionsIncludingPrologue": 13,
+        "excludedBookTitles": 0,
+        "runningWordTokens": 14860,
+        "removedPrefixCharacters": 653,
+        "paragraphSeparatorsInserted": 0,
+        "prefixRemovals": {
+          "chapter-label": 13,
+          "niese-label": 65,
+          "subchapter-label": 52
+        }
+      },
+      "orderStart": 2532,
+      "orderEnd": 3103,
+      "corpus": {
+        "path": "data/book-05.corpus.json",
+        "sha256": "916ef7d7dfde1fb15a2917652e8d8a43d5f3fd0d5589bedd38b20d0c8c77e728",
+        "bytes": 284773,
+        "records": 572
+      },
+      "extractionReport": {
+        "path": "data/book-05.extraction-report.json",
+        "sha256": "19c57d4bfed9eec03bc44851d02ecc36b82f0491ee7b0706e20201d7b719d1c4",
+        "bytes": 393305
+      }
+    },
+    {
+      "book": 6,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/Latin/book-06.xml",
+        "sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+        "bytes": 111856
+      },
+      "counts": {
+        "bodyParagraphs": 50,
+        "numberedParagraphs": 50,
+        "citationParagraphs": 49,
+        "continuationParagraphs": 1,
+        "internalMilestones": 393,
+        "sections": 442,
+        "chapterDivisionsIncludingPrologue": 10,
+        "excludedBookTitles": 0,
+        "runningWordTokens": 10970,
+        "removedPrefixCharacters": 495,
+        "paragraphSeparatorsInserted": 1,
+        "prefixRemovals": {
+          "chapter-label": 10,
+          "niese-label": 49,
+          "subchapter-label": 40
+        }
+      },
+      "orderStart": 3104,
+      "orderEnd": 3545,
+      "corpus": {
+        "path": "data/book-06.corpus.json",
+        "sha256": "e0f57160e3e15f16ed85dd066a860ca2b40a590b1391a2bd1d09ae319db356b0",
+        "bytes": 215353,
+        "records": 442
+      },
+      "extractionReport": {
+        "path": "data/book-06.extraction-report.json",
+        "sha256": "b471e59f094703d58312d9adfe9fe564e956b7545a57eb2ff945ae0020c07366",
+        "bytes": 305204
+      }
+    },
+    {
+      "book": 7,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/Latin/book-07.xml",
+        "sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+        "bytes": 108578
+      },
+      "counts": {
+        "bodyParagraphs": 46,
+        "numberedParagraphs": 46,
+        "citationParagraphs": 46,
+        "continuationParagraphs": 0,
+        "internalMilestones": 409,
+        "sections": 455,
+        "chapterDivisionsIncludingPrologue": 11,
+        "excludedBookTitles": 0,
+        "runningWordTokens": 10737,
+        "removedPrefixCharacters": 467,
+        "paragraphSeparatorsInserted": 0,
+        "prefixRemovals": {
+          "chapter-label": 11,
+          "niese-label": 46,
+          "subchapter-label": 35
+        }
+      },
+      "orderStart": 3546,
+      "orderEnd": 4000,
+      "corpus": {
+        "path": "data/book-07.corpus.json",
+        "sha256": "37451cd05998e5b7e970c9e83f110ba8574d84a2c26b4cab0be147879c79b8ef",
+        "bytes": 217948,
+        "records": 455
+      },
+      "extractionReport": {
+        "path": "data/book-07.extraction-report.json",
+        "sha256": "7689e89308c5e4fe0593ec7efd3a04988de5b7dafb434067481151dd18b997f0",
+        "bytes": 309573
+      }
+    }
+  ]
+}
