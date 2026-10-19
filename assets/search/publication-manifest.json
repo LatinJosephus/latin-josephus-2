@@ -242,8 +242,8 @@
     },
     {
       "path": "bin/search/tests/corpus-qa.mjs",
-      "sha256": "6c884e25894cc71c3964299cbe177879a0a8734bd8d06e18254fb21e62fde188",
-      "bytes": 40287
+      "sha256": "3f728baa9416e8997e9e30d1187d1f887059b0c7a1f5fd96fcc0957c327d8d03",
+      "bytes": 40304
     },
     {
       "path": "bin/search/tests/deh-corpus-qa.mjs",
@@ -274,6 +274,16 @@
       "path": "bin/search/tests/publication.test.mjs",
       "sha256": "11196f728838263693c587bc2ace8c8be355c3885f4692daf6a5f79010ae7b82",
       "bytes": 8862
+    },
+    {
+      "path": "bin/search/tests/report-path.mjs",
+      "sha256": "1e82937b2f74938ba140ba1c9c7f51eb09f95c1889db6c87abc3e7e5ca2dad28",
+      "bytes": 290
+    },
+    {
+      "path": "bin/search/tests/report-path.test.mjs",
+      "sha256": "5fe4f288c7615f4411f7a669602122d6c466beaed6c1b5be36dc6a722822c264",
+      "bytes": 2363
     },
     {
       "path": "bin/search/tests/test_extract.py",
@@ -345,7 +355,7 @@
       ],
       "qa": {
         "path": "qa-report.json",
-        "sha256": "faa133ecb2b6fdc95d78731ff92305dc7853ad62099e681804e5015615e3890c",
+        "sha256": "e2c843e4b1d26df88ce583ca386e29319c8b1b611bfe40c55b4cade6832e1482",
         "status": "PASS",
         "assertions": 1663053,
         "queries": 98856,
@@ -374,7 +384,7 @@
       ],
       "qa": {
         "path": "data/deh-latin-ussani/qa-report.json",
-        "sha256": "a161380c413aba6a67a2a1bab940276840cbe3bf6e110ab4a6c655380abe63c5",
+        "sha256": "aab7ca4dd6364a72a6de73d3b662326f9728289d4d4506f7a53a325c1b11a47e",
         "status": "PASS",
         "assertions": 907741,
         "queries": 76170,
@@ -400,7 +410,7 @@
       ],
       "qa": {
         "path": "data/contra-apionem-latin-boysen/qa-report.json",
-        "sha256": "586500f24a1a9859674deeedfd854781f4bbc7b3b7be267471daa66bd1c2b56a",
+        "sha256": "f1934761279b9e1e182bc82afbf24cb20821995a40f6926ebc7b081e3e086c5a",
         "status": "PASS",
         "assertions": 346953,
         "queries": 24167,
@@ -449,6 +459,7 @@
             "bin/search/tests/integration.test.mjs",
             "bin/search/tests/phrase-breaks.test.mjs",
             "bin/search/tests/publication.test.mjs",
+            "bin/search/tests/report-path.test.mjs",
             "bin/search/tests/ui-utils.test.mjs"
           ]
         }
@@ -733,8 +744,8 @@
     {
       "path": "data/contra-apionem-latin-boysen/qa-report.json",
       "source": "bin/search/data/contra-apionem-latin-boysen/qa-report.json",
-      "sha256": "586500f24a1a9859674deeedfd854781f4bbc7b3b7be267471daa66bd1c2b56a",
-      "bytes": 36587,
+      "sha256": "f1934761279b9e1e182bc82afbf24cb20821995a40f6926ebc7b081e3e086c5a",
+      "bytes": 36586,
       "role": "evidence"
     },
     {
@@ -859,8 +870,8 @@
     {
       "path": "data/deh-latin-ussani/qa-report.json",
       "source": "bin/search/data/deh-latin-ussani/qa-report.json",
-      "sha256": "a161380c413aba6a67a2a1bab940276840cbe3bf6e110ab4a6c655380abe63c5",
-      "bytes": 29550,
+      "sha256": "aab7ca4dd6364a72a6de73d3b662326f9728289d4d4506f7a53a325c1b11a47e",
+      "bytes": 29549,
       "role": "evidence"
     },
     {
@@ -880,8 +891,8 @@
     {
       "path": "qa-report.json",
       "source": "bin/search/qa-report.json",
-      "sha256": "faa133ecb2b6fdc95d78731ff92305dc7853ad62099e681804e5015615e3890c",
-      "bytes": 111795,
+      "sha256": "e2c843e4b1d26df88ce583ca386e29319c8b1b611bfe40c55b4cade6832e1482",
+      "bytes": 111792,
       "role": "evidence"
     },
     {

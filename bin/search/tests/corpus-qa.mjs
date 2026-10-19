@@ -13,16 +13,18 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
-import { dirname, resolve, relative } from 'node:path';
+import { dirname, resolve } from 'node:path';
 import { performance } from 'node:perf_hooks';
 import { createEngine } from '../engine.mjs';
 import { createCollection } from '../collection.mjs';
+import {repositoryRelativeReportPath} from './report-path.mjs';
 
 const suiteStarted = performance.now();
 const require = createRequire(import.meta.url);
 const lunr = require('../vendor/lunr.cjs');
 const pilotDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const repositoryDir = resolve(pilotDir, '../..');
+const reportPath = file => repositoryRelativeReportPath(repositoryDir, file);
 const collectionId = 'bellum-latin-cardwell';
 const bookId = number => `${collectionId}:${number}`;
 const sourceSpecs = [
@@ -455,22 +457,22 @@ for (let i = 0; i < 48; i++) {
 check('protectedSourceHash', digest(sourcePath), sourceSHA);
 check('protectedReaderHash', digest(readerPath), readerSHA);
 for (const [path, hash] of testedHashes)
-  check('testedFileUnchangedDuringQa', digest(path), hash, {path: relative(repositoryDir, path)});
+  check('testedFileUnchangedDuringQa', digest(path), hash, {path: reportPath(path)});
 const report = {
   book: bookNumber,
   status: failedAssertionCount ? 'FAIL' : 'PASS',
   generatedAt: new Date().toISOString(),
   independentVerifier: 'bin/search/tests/corpus-qa.mjs',
-  source: {book: bookNumber, path: relative(repositoryDir, sourcePath), sha256: digest(sourcePath),
+  source: {book: bookNumber, path: reportPath(sourcePath), sha256: digest(sourcePath),
     sections: records.length, numberedParagraphs: citationParagraphs + continuationParagraphs,
     citationParagraphs, continuationParagraphs, internalMilestones,
     tokens: allTokens.length, literalVocabulary: vocabulary.length,
     foldedVocabulary: postings.get(true).size},
-  verifiedFiles: {bundle: {path: relative(repositoryDir, bundlePath), sha256: digest(bundlePath)},
-    corpus: {path: relative(repositoryDir, corpusPath), sha256: digest(corpusPath)},
-    engine: {path: relative(repositoryDir, enginePath), sha256: digest(enginePath)},
-    verifier: {path: relative(repositoryDir, fileURLToPath(import.meta.url)), sha256: digest(fileURLToPath(import.meta.url))},
-    originalReader: {path: relative(repositoryDir, readerPath), sha256: digest(readerPath)}},
+  verifiedFiles: {bundle: {path: reportPath(bundlePath), sha256: digest(bundlePath)},
+    corpus: {path: reportPath(corpusPath), sha256: digest(corpusPath)},
+    engine: {path: reportPath(enginePath), sha256: digest(enginePath)},
+    verifier: {path: reportPath(fileURLToPath(import.meta.url)), sha256: digest(fileURLToPath(import.meta.url))},
+    originalReader: {path: reportPath(readerPath), sha256: digest(readerPath)}},
   method: {
     text: 'Independent strict raw-XML event scanner with entity decoding; exact per-section text comparison.',
     tokens: 'Character-by-character Unicode letter/mark/number tokenization, independent postings.',
@@ -665,12 +667,12 @@ for(const selection of [{books:[1]},{collections:['antiquities-latin'],books:'al
 }
 
 for (const [path,hash] of suiteFileHashes)
-  collectionCheck('suiteFileUnchangedDuringQa',digest(path),hash,{path:relative(repositoryDir,path)});
+  collectionCheck('suiteFileUnchangedDuringQa',digest(path),hash,{path:reportPath(path)});
 const allCounts={};
 for (const part of [...states.map(s=>s.report.counts),collectionCounts])
   for (const [key,value] of Object.entries(part)) allCounts[key]=(allCounts[key]||0)+value;
 const failedAssertions=states.reduce((n,s)=>n+s.report.failedAssertions,collectionFailedAssertions);
-const fileEvidence=path=>({path:relative(repositoryDir,path),sha256:digest(path)});
+const fileEvidence=path=>({path:reportPath(path),sha256:digest(path)});
 const sourceSum=key=>states.reduce((n,s)=>n+s.report.source[key],0);
 const report={
   status:failedAssertions?'FAIL':'PASS',generatedAt:new Date().toISOString(),
