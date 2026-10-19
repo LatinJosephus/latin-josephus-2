@@ -29,27 +29,48 @@ export function romanBook(number) {
   return result;
 }
 export function workLabel(record) {
-  return record.citationPrefix || ({bellum:'Bellum',antiquities:'Antiquities'}[record.work]) || record.work || 'Bellum';
+  return record.citationPrefix || ({bellum:'Bellum',antiquities:'Antiquities',deh:'De excidio'}[record.work]) || record.work || 'Bellum';
 }
 export function bookCitation(record) {return `${workLabel(record)} ${romanBook(record.book??record.number)}`;}
+export function citationScheme(record) {return record.citationScheme || 'niese';}
+export function citationUnitLabels(entries=[]) {
+  const labels=entries.map(entry=>({singular:entry.citationUnitLabel||entry.unitLabel||(citationScheme(entry)==='niese'?'Niese section':'citation unit'),plural:entry.citationUnitLabelPlural||entry.unitLabelPlural||(citationScheme(entry)==='niese'?'Niese sections':'citation units')}));
+  if(!labels.length)return {singular:'Niese section',plural:'Niese sections'};
+  return labels.every(label=>label.singular===labels[0].singular&&label.plural===labels[0].plural)?labels[0]:{singular:'citation unit',plural:'citation units'};
+}
+export function sectionCitation(record) {
+  return citationScheme(record)==='chapter-paragraph'
+    ?record.citationLabel||(Number(record.chapter)===0?`Prol.${record.paragraph}`:`${romanBook(record.book)}.${record.chapter}.${record.paragraph}`)
+    :String(record.section);
+}
+export function excerptCitation(record) {return citationScheme(record)==='chapter-paragraph'?sectionCitation(record):`§${record.section}`;}
 export function citationFor(records) {
   const first=records[0],last=records.at(-1);
   if(!first)return '';
-  const start=`${bookCitation(first)}.${first.section}`;
-  if(first.book!==last.book||first.work!==last.work||first.collectionId!==last.collectionId)return `${start}–${bookCitation(last)}.${last.section}`;
+  const single=record=>citationScheme(record)==='chapter-paragraph'?`${workLabel(record)} ${sectionCitation(record)}`:`${bookCitation(record)}.${record.section}`;
+  const start=single(first);
+  if(first.book!==last.book||first.work!==last.work||first.collectionId!==last.collectionId||citationScheme(first)!==citationScheme(last))return `${start}–${single(last)}`;
+  if(citationScheme(first)==='chapter-paragraph')return sectionCitation(first)===sectionCitation(last)?start:`${start}–${sectionCitation(last)}`;
   return first.section===last.section?start:`${start}–${last.section}`;
 }
 export function readerURL(record,baseURL,{section=true}={}) {
-  const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/'}[record.work])||'bellum-judaicum/';
+  const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/'}[record.work])||'bellum-judaicum/';
   const url=new URL(readerPath,baseURL);
   url.searchParams.set('book',record.book??record.number);
-  if(section&&record.section!==undefined)url.searchParams.set('niese',record.section);
+  if(section&&citationScheme(record)==='chapter-paragraph'){
+    url.searchParams.set('chapter',record.chapter);
+    url.searchParams.set('unit',record.paragraph);
+  }else if(section&&record.section!==undefined)url.searchParams.set('niese',record.section);
   return url.href;
+}
+export function defaultCollection(catalog) {
+  if(catalog.collections.some(collection=>collection.id==='bellum-latin-cardwell'))return 'bellum-latin-cardwell';
+  return catalog.collections.length===1?catalog.collections[0].id:'all';
 }
 export function locationState(search,catalog,defaultQuery) {
   const p=new URLSearchParams(search);
   const legacy=!p.has('work')&&p.has('q');
-  const fallback=catalog.collections.length===1?catalog.collections[0].id:'all';
+  const fallback=defaultCollection(catalog);
   const work=p.get('work')||(legacy?'bellum-latin-cardwell':fallback);
   if(work!=='all'&&!catalog.collections.some(c=>c.id===work))throw new Error('The work in this search link is not available. Choose an available work and search again.');
   let book=p.get('book')||(legacy?'1':'all');
@@ -67,4 +88,49 @@ export function searchURL(state,currentURL) {
   if(state.fold)url.searchParams.set('fold','1');
   if(state.view==='concordance')url.searchParams.set('view','concordance');
   return url;
+}
+
+/** Editorial offsets always address the original UTF-16 text, including intra-word letters. */
+export function editorialMarksFor(record,start=0,end=record.text.length) {
+  if(record.editorialMarks===undefined)return [];
+  if(!Array.isArray(record.editorialMarks))throw new TypeError('Editorial marks must be an array.');
+  const splitSurrogate=offset=>offset>0&&offset<record.text.length&&/[\uD800-\uDBFF]/u.test(record.text[offset-1])&&/[\uDC00-\uDFFF]/u.test(record.text[offset]);
+  const marks=record.editorialMarks.map(mark=>{
+    if(!mark||!['del','supplied','unclear'].includes(mark.kind)||!Number.isInteger(mark.start)||!Number.isInteger(mark.end)
+      ||mark.start<0||mark.end<=mark.start||mark.end>record.text.length||splitSurrogate(mark.start)||splitSurrogate(mark.end)
+      ||mark.text!==record.text.slice(mark.start,mark.end))throw new TypeError('An editorial mark does not match its original-text span.');
+    return mark;
+  }).sort((a,b)=>a.start-b.start||b.end-a.end||a.kind.localeCompare(b.kind));
+  for(let i=0;i<marks.length;i++)for(let j=i+1;j<marks.length&&marks[j].start<marks[i].end;j++){
+    if(marks[j].end>marks[i].end)throw new TypeError('Editorial spans must be disjoint or nested, not crossing.');
+  }
+  return marks.filter(mark=>mark.start<end&&mark.end>start);
+}
+
+/** Small text segments allow safe DOM rendering without ever interpreting source text as HTML. */
+export function annotatedTextSegments(record,start=0,end=record.text.length,highlights=[]) {
+  const marks=editorialMarksFor(record,start,end),ranges=mergedRanges(highlights,record.text.length);
+  const boundaries=new Set([start,end]);
+  for(const range of [...marks,...ranges])if(range.start<end&&range.end>start){boundaries.add(Math.max(start,range.start));boundaries.add(Math.min(end,range.end));}
+  const points=[...boundaries].sort((a,b)=>a-b),segments=[];
+  for(let i=0;i<points.length-1;i++){
+    const a=points[i],b=points[i+1];
+    if(a===b)continue;
+    segments.push({start:a,end:b,text:record.text.slice(a,b),highlighted:ranges.some(range=>range.start<=a&&range.end>=b),marks:marks.filter(mark=>mark.start<=a&&mark.end>=b)});
+  }
+  return segments;
+}
+
+/** Readable CSV notation supplements, and never replaces, the literal text columns. */
+export function editorialText(record,start=0,end=record.text.length) {
+  const delimiters={del:['⟦','⟧'],supplied:['[',']'],unclear:['','']};
+  let out='',active=[];
+  for(const segment of annotatedTextSegments(record,start,end)){
+    let common=0;while(common<active.length&&common<segment.marks.length&&active[common]===segment.marks[common])common++;
+    for(let i=active.length-1;i>=common;i--)out+=delimiters[active[i].kind][1];
+    for(let i=common;i<segment.marks.length;i++)out+=delimiters[segment.marks[i].kind][0];
+    out+=segment.text;active=segment.marks;
+  }
+  for(let i=active.length-1;i>=0;i--)out+=delimiters[active[i].kind][1];
+  return out;
 }

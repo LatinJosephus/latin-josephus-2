@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Search Cardwell’s Latin Bellum Judaicum with exact phrases, Boolean logic, and wildcards.">
+  <meta name="description" content="Search the Latin Bellum Judaicum and De excidio with exact phrases, Boolean logic, wildcards, and a concordance.">
   <title>Search preview · Latin Josephus</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
@@ -18,12 +18,12 @@
   <script type="module" src="./app.mjs"></script>
 </head>
 <body>
-  <header class="preview-header"><a href="https://latinjosephus.github.io/">Latin Josephus</a><span>Search preview · Books I–VII</span></header>
+  <header class="preview-header"><a href="https://latinjosephus.github.io/">Latin Josephus</a><span>Search preview · Bellum and De excidio</span></header>
 <main id="lj-search" lang="en" data-reader-base="https://latinjosephus.github.io/">
   <section class="intro" aria-labelledby="search-title">
     <p class="eyebrow">A concordance of the Latin text</p>
     <h1 id="search-title">Search the Latin Josephus</h1>
-    <p class="subtitle" id="collection-description"><i>Bellum Judaicum</i> · Books I–VII · Cardwell Latin (1837)</p>
+    <p class="subtitle" id="collection-description"><i>Bellum Judaicum</i> · Cardwell Latin (1837) / <i>De excidio</i> · Ussani Latin (1932)</p>
     <p class="coverage" id="coverage">Loading the text catalogue…</p>
   </section>
   <section class="search-panel" aria-label="Search controls">
@@ -60,6 +60,7 @@
       <button type="button" class="example" data-query="(Theodor* OR Zenon*) AND (Alexander OR Herod*)" data-work="bellum-latin-cardwell" data-scope="section">Boolean + wildcards</button>
       <button type="button" class="example" data-query='"habebantur At Theodorus"' data-work="bellum-latin-cardwell" data-book="bellum-latin-cardwell:1" data-scope="book">A phrase across I.86–87</button>
       <button type="button" class="example" data-query='"neque cuiquam alii servire nisi Deo"' data-work="bellum-latin-cardwell" data-scope="section">A phrase in Book VII</button>
+      <button type="button" class="example" data-query="Cenedaei" data-work="deh-latin-ussani" data-scope="section">Cenedaei in De excidio</button>
     </div>
     <details class="syntax-guide">
       <summary>Search syntax and what is included</summary>
@@ -77,13 +78,14 @@
         </div>
         <div>
           <h2>Text and scope</h2>
-          <p id="included-text">Currently indexed: Cardwell’s Latin main text of all seven books of <i>Bellum Judaicum</i>, including the proem of Book I. Antiquities will be added after its text repairs and verification are complete. Editorial titles, printed division labels and manuscript annotations are excluded.</p>
+          <p id="included-text">Currently indexed: Cardwell’s Latin main text of all seven books of <i>Bellum Judaicum</i>, including the proem of Book I, and Ussani’s Latin <i>De excidio</i>, all five books and the Prologue. Antiquities will be added after its text repairs and verification are complete. Editorial titles, printed division labels and manuscript annotations are excluded.</p>
           <p>Every word remains searchable. Spelling is preserved in the excerpts; the optional equivalence setting affects matching only. No grammatical stemming or automatic spelling correction is applied.</p>
-          <p><b>Within each section:</b> every Boolean condition and exact phrase is evaluated in that section.</p>
-          <p><b>Whole book:</b> Boolean conditions may be satisfied anywhere in the same book; exact phrases must still be consecutive and may cross Niese or chapter boundaries. Each book, work and edition is evaluated separately. A phrase never continues into another book. Result excerpts identify the sections where positive terms occur.</p>
-          <p><b>Passages:</b> results follow the order of the text. A section with several matches appears once in section scope. In whole-book scope, a phrase spanning sections can have its own excerpt. Click a citation to open the corresponding section in the reader.</p>
-          <p><b>Concordance:</b> each positive word or phrase match has its own row, with up to ten words of context on each side. Original spelling is retained. A phrase spanning sections appears in one row.</p>
-          <p><b>Counts:</b> a single word, wildcard or quoted phrase has an occurrence count as well as a count of matching sections or books. Boolean queries count matching sections or books; concordance rows show their positive matches and are not word frequencies. A section or book can satisfy a negative condition without a word to highlight.</p>
+          <p><b>Within each citation unit:</b> every Boolean condition and exact phrase is evaluated in that unit. <i>Bellum</i> uses Niese sections; <i>De excidio</i> uses the reader’s book, chapter and paragraph citations, with <b>Prol.</b> for the Prologue.</p>
+          <p><b>Whole book:</b> Boolean conditions may be satisfied anywhere in the same book; exact phrases must still be consecutive and may cross citation or chapter boundaries. Each book, work and edition is evaluated separately. A phrase never continues into another book or from the <i>De excidio</i> Prologue into the Book I narrative.</p>
+          <p><b>Passages:</b> results follow the order of the text. A citation unit with several matches appears once in citation-unit scope. In whole-book scope, a phrase spanning units can have its own excerpt. Click a citation to open the corresponding passage in the reader.</p>
+          <p><b>Concordance:</b> each positive word or phrase match has its own row, with up to ten words of context on each side. Original spelling is retained. A phrase spanning citation units appears in one row.</p>
+          <p><b>Editorial text:</b> in <i>De excidio</i>, [brackets] mark supplied letters, <del>struck text</del> marks deletion, and † indicates textual uncertainty. Supplied and deleted letters remain searchable, including letters inside a word. A dagger is treated as punctuation, so phrase searches may match across it. The CSV retains exact text and offsets and adds editorial columns using [supplied] and ⟦deleted⟧.</p>
+          <p><b>Counts:</b> a single word, wildcard or quoted phrase has an occurrence count as well as a count of matching citation units or books. Boolean queries count matching units or books; concordance rows show their positive matches and are not word frequencies. A citation unit or book can satisfy a negative condition without a word to highlight.</p>
           <p><b>Download all results:</b> the CSV includes every concordance row and the citations of any matching sections or books without positive matches, regardless of which view or page is displayed. It records the completed query, its settings, the edition and links to the reader. Changes typed into the search box take effect after you press Search.</p>
         </div>
       </div>

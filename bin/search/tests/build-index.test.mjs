@@ -92,6 +92,27 @@ test("all source records are checked before an invalid later collection can repl
   assert.deepEqual(await readFile(bundlePath), originalBundle);
 });
 
+test("collection citation terminology reaches the catalog without altering corpus records", async (t) => {
+  const f = await fixture(t);
+  const definition = f.definitions[1];
+  Object.assign(definition.manifest, {
+    citationScheme: "chapter-paragraph", unitLabel: "citation unit", unitLabelPlural: "citation units",
+  });
+  await f.rewrite(definition);
+  await f.build();
+  const catalog = JSON.parse(await readFile(f.catalogPath));
+  const metadata = catalog.collections.find(collection => collection.id === definition.id);
+  assert.equal(metadata.citationScheme, "chapter-paragraph");
+  assert.equal(metadata.unitLabel, "citation unit");
+  assert.equal(metadata.unitLabelPlural, "citation units");
+  const book = catalog.books.find(book => book.collectionId === definition.id);
+  const bundle = JSON.parse(await readFile(join(f.base, book.path)));
+  for (const [field, value] of Object.entries(definition.records[0])) assert.deepEqual(bundle.records[0][field], value);
+  definition.manifest.unitLabel = "";
+  await f.rewrite(definition);
+  await assert.rejects(f.build(), /Invalid unitLabel/);
+});
+
 test("duplicate passage IDs and mismatched version metadata cannot publish a catalog", async (t) => {
   const f = await fixture(t);
   const third = f.definitions[2];

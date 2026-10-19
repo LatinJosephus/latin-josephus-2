@@ -83,6 +83,9 @@ html[data-theme="dark"] #lj-search {
 #lj-search .excerpt+.excerpt {margin-top:12px}
 #lj-search .section-label {font:600 11px/1.5 system-ui,sans-serif;vertical-align:baseline;margin-right:9px;color:var(--accent);text-decoration:none}
 #lj-search .excerpt mark {color:inherit;background:var(--mark);border-radius:2px;padding:1px 0}
+#lj-search .editorial-del {text-decoration:line-through;text-decoration-thickness:1px;color:inherit}
+#lj-search .editorial-supplied {color:inherit}
+#lj-search .editorial-unclear {text-decoration:underline dotted;text-underline-offset:3px}
 #lj-search .concordance-row {padding:16px 20px;border:1px solid var(--line);border-radius:5px;background:var(--surface);margin:0 0 10px}
 #lj-search .concordance-row .result-header {margin-bottom:11px}
 #lj-search .concordance-row .result-title {font-size:13px}

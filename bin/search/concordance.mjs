@@ -5,7 +5,7 @@
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
 import { parseQuery, tokenizeText } from "./engine.mjs";
-import { bookCitation, citationFor, readerURL } from "./ui-utils.mjs";
+import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText } from "./ui-utils.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;
 const IDENTITY_FIELDS = ["collectionId", "work", "book", "language", "edition"];
@@ -21,6 +21,7 @@ function sourceIndex(records) {
     if (!record || typeof record.id !== "string" || !record.id || typeof record.text !== "string" || byId.has(record.id)) {
       throw new TypeError("Concordance records require unique IDs and original text strings.");
     }
+    editorialMarksFor(record);
     const key = versionKey(record);
     if (!partitions.has(key)) partitions.set(key, { records: [], positions: new Map(), first: record.resultOrder ?? position });
     partitions.get(key).records.push({ record, position });
@@ -80,8 +81,10 @@ function identity(record, group, scope, readerBase) {
   }
   return {
     unitId: group.unitId || record.id,
-    unitLabel: group.unitLabel || (scope === "book" ? bookCitation(record) : citationFor([record])),
+    unitLabel: citationScheme(record) === "chapter-paragraph" ? (scope === "book" ? bookCitation(record) : citationFor([record])) : group.unitLabel || (scope === "book" ? bookCitation(record) : citationFor([record])),
     scope,
+    citationScheme: citationScheme(record),
+    citationUnitLabel: record.citationUnitLabel || (citationScheme(record) === "chapter-paragraph" ? "citation unit" : "Niese section"),
     collectionId: record.collectionId ?? group.collectionId ?? "",
     work: record.work ?? group.work ?? "",
     book: record.book ?? group.book ?? "",
@@ -141,7 +144,7 @@ export function buildConcordance(result, records = result?.records, { readerBase
         key, kind: "matching-unit", citation: result.scope === "book" ? bookCitation(first) : citationFor(unitRecords),
         sourceOrder: index.rank.get(first.id),
         left: "", match: "", right: "", leftTruncated: false, rightTruncated: false,
-        records: unitRecords, spans: [], queryTexts: [], contextSpans: [],
+        records: unitRecords, spans: [], queryTexts: [], contextSpans: [], editorialMarks: [],
       });
       continue;
     }
@@ -191,6 +194,13 @@ export function buildConcordance(result, records = result?.records, { readerBase
       }
       const matchStart = placements.get(first.id) + firstSpan.start;
       const matchEnd = placements.get(last.id) + lastSpan.end;
+      const displayedEnd = placements.get(last.id) + contextEnd;
+      const editorialMarks = citedRecords.flatMap((record) => editorialMarksFor(record).flatMap((mark) => {
+        const start = Math.max(contextStart, placements.get(record.id) + mark.start);
+        const end = Math.min(displayedEnd, placements.get(record.id) + mark.end);
+        return start < end ? [{ ...mark, start: start - contextStart, end: end - contextStart, text: joined.slice(start, end),
+          sourceRecordId: record.id, sourceStart: mark.start, sourceEnd: mark.end, sourceText: mark.text }] : [];
+      }));
       unique.set(key, {
         ...identity(first, group, result.scope, base),
         key, kind: hit.kind, citation: citationFor(citedRecords),
@@ -199,7 +209,7 @@ export function buildConcordance(result, records = result?.records, { readerBase
         right: joined.slice(matchEnd, placements.get(last.id) + contextEnd),
         leftTruncated: contextStart > 0, rightTruncated: contextEnd < last.text.length,
         readerURL: readerURL(first, base),
-        records: citedRecords, spans, queryTexts: queryTexts(hit), contextSpans,
+        records: citedRecords, spans, queryTexts: queryTexts(hit), contextSpans, editorialMarks,
       });
     }
   }
@@ -225,6 +235,8 @@ const CSV_COLUMNS = [
   "collection_manifest_sha256", "catalog_manifest_sha256", "engine_sha256", "engine_schema_version",
   "catalog_schema_version", "lunr_version", "concordance_schema_version", "selected_sources_json", "csv_cell_encoding", "escaped_columns_json",
 ];
+const EDITORIAL_CSV_COLUMNS = ["citation_scheme", "left_context_editorial", "matched_text_editorial", "right_context_editorial", "editorial_notes"];
+const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; † unresolved text. Literal context columns retain all indexed letters.";
 
 // Quoting alone does not prevent spreadsheet formula evaluation. Scalar cells
 // beginning with a formula marker (including after whitespace/control chars),
@@ -234,9 +246,9 @@ const CSV_COLUMNS = [
 // JSON strings escape embedded controls and begin with a quote, bracket, or
 // brace, so those recovery columns never need a formula-neutralizing prefix.
 const needsFormulaEscape = (value) => /^[\t\r\n]/u.test(value) || /^[\s\u0000-\u001f\u007f-\u009f]*[=+\-@]/u.test(value);
-function csvRow(values) {
+function csvRow(values, columns = CSV_COLUMNS) {
   const escaped = [];
-  const cells = CSV_COLUMNS.map((column) => {
+  const cells = columns.map((column) => {
     let value = String(values[column] ?? "");
     if (column !== "escaped_columns_json" && needsFormulaEscape(value)) {
       value = `'${value}`;
@@ -244,7 +256,7 @@ function csvRow(values) {
     }
     return value;
   });
-  cells[CSV_COLUMNS.indexOf("escaped_columns_json")] = JSON.stringify(escaped);
+  cells[columns.indexOf("escaped_columns_json")] = JSON.stringify(escaped);
   return cells.map((value) => `"${value.replace(/"/g, '""')}"`).join(",");
 }
 
@@ -258,7 +270,11 @@ function exportedSegments(row) {
     const record = byId.get(span.recordId);
     return { recordId: record.id, sourceId: record.sourceId ?? "", section: record.section,
       sourceURL: record.url ?? "", start: span.start, end: span.end, joinBefore: span.joinBefore,
-      text: record.text.slice(span.start, span.end) };
+      text: record.text.slice(span.start, span.end),
+      ...(citationScheme(record) === "chapter-paragraph" || record.editorialMarks !== undefined ? { citationScheme: citationScheme(record), citationLabel: record.citationLabel,
+        chapter: record.chapter, paragraph: record.paragraph,
+        editorialMarks: editorialMarksFor(record, span.start, span.end).map((mark) => ({ ...mark })) } : {}),
+    };
   });
 }
 
@@ -285,10 +301,17 @@ export function exportConcordance(model, result, metadata = {}) {
   const allRows = [...model.rows, ...model.unhighlightedUnits];
   const selectedCollections = result.selectedCollections ?? distinct(allRows.map((row) => row.collectionId).filter(Boolean));
   const selectedBooks = result.selectedBooks ?? distinct(allRows.map((row) => row.bookId).filter(Boolean));
+  const includeEditorialColumns = selectedCollections.some((id) => collections.get(id)?.citationScheme === "chapter-paragraph")
+    || allRows.some((row) => row.citationScheme === "chapter-paragraph" || row.editorialMarks?.length)
+    || (result.records || []).some((record) => citationScheme(record) === "chapter-paragraph" || record.editorialMarks?.length);
+  // Keep the accepted 51-column contract for Bellum-only exports. Extended
+  // exports explicitly identify both citation systems and editorial rendering.
+  const columns = includeEditorialColumns ? [...CSV_COLUMNS.slice(0, 7), ...EDITORIAL_CSV_COLUMNS, ...CSV_COLUMNS.slice(7)] : CSV_COLUMNS;
   const selectedSources = JSON.stringify({
     collections: (catalog.collections || []).filter((entry) => selectedCollections.includes(entry.id)).map((entry) => ({
       id: entry.id, work: entry.work, language: entry.language, edition: entry.edition,
       corpusPath: entry.corpusPath, corpusSHA256: entry.corpusSHA256, manifestSHA256: entry.manifestSHA256,
+      ...(includeEditorialColumns ? { citationScheme: citationScheme(entry), unitLabel: entry.unitLabel || "Niese section", unitLabelPlural: entry.unitLabelPlural || "Niese sections" } : {}),
     })),
     books: (catalog.books || []).filter((entry) => selectedBooks.includes(entry.id)).map((entry) => ({
       id: entry.id, collectionId: entry.collectionId, number: entry.number,
@@ -316,25 +339,35 @@ export function exportConcordance(model, result, metadata = {}) {
   const body = allRows.map((row, rowIndex) => {
     const collection = collections.get(row.collectionId);
     const book = books.get(row.bookId || `${row.collectionId}:${row.book}`);
+    const segments = exportedSegments(row);
+    const markedText = { text: row.left + row.match + row.right, editorialMarks: row.editorialMarks || [] };
+    const marks = row.kind === "matching-unit" ? segments.flatMap((segment) => segment.editorialMarks || []) : markedText.editorialMarks;
+    const editorialKinds = distinct(marks.map((mark) => ({ del: "deleted", supplied: "supplied", unclear: "unresolved" })[mark.kind]));
     return csvRow({
       ...common,
       citation: row.citation, left_context: row.left, matched_text: row.match, right_context: row.right,
       edition: row.edition, language: row.language, reader_url: row.readerURL,
+      citation_scheme: row.citationScheme || "niese",
+      left_context_editorial: editorialText(markedText, 0, row.left.length),
+      matched_text_editorial: editorialText(markedText, row.left.length, row.left.length + row.match.length),
+      right_context_editorial: editorialText(markedText, row.left.length + row.match.length, markedText.text.length),
+      editorial_notes: editorialKinds.length ? `This excerpt includes ${editorialKinds.join(", ")} text. ${EDITORIAL_LEGEND}` : (includeEditorialColumns && rowIndex === 0 ? EDITORIAL_LEGEND : ""),
       row_type: row.kind === "matching-unit" ? "matching-unit" : model.countKind === "evidence" ? "positive-evidence" : "occurrence",
       match_kind: row.kind === "matching-unit" ? "" : row.kind,
       work: row.work, book: row.book, collection_id: row.collectionId, book_id: row.bookId,
       unit_id: row.unitId, unit_label: row.unitLabel, matched_query_operands_json: JSON.stringify(row.queryTexts),
       left_truncated: row.leftTruncated, right_truncated: row.rightTruncated,
-      record_ids_json: JSON.stringify(row.records.map((record) => record.id)), source_segments_json: JSON.stringify(exportedSegments(row)),
+      record_ids_json: JSON.stringify(row.records.map((record) => record.id)), source_segments_json: JSON.stringify(segments),
       hit_spans_json: JSON.stringify(row.spans), original_context_json: JSON.stringify({ left: row.left, match: row.match, right: row.right }),
       book_bundle_sha256: book?.sha256, book_corpus_sha256: book?.corpusSHA256,
       collection_corpus_sha256: collection?.corpusSHA256, collection_manifest_sha256: collection?.manifestSHA256,
       selected_sources_json: rowIndex === 0 ? selectedSources : "",
-    });
+    }, columns);
   });
-  if (!body.length) body.push(csvRow({ ...common, row_type: "search-summary", selected_sources_json: selectedSources }));
+  if (!body.length) body.push(csvRow({ ...common, row_type: "search-summary", selected_sources_json: selectedSources,
+    ...(includeEditorialColumns ? { editorial_notes: EDITORIAL_LEGEND } : {}) }, columns));
   return {
-    text: `\uFEFF${CSV_COLUMNS.map((value) => `"${value}"`).join(",")}\r\n${body.join("\r\n")}\r\n`,
+    text: `\uFEFF${columns.map((value) => `"${value}"`).join(",")}\r\n${body.join("\r\n")}\r\n`,
     mimeType: "text/csv;charset=utf-8", filename: `LatinJosephus-search-${exportedAt.slice(0, 10)}.csv`, rowCount: allRows.length,
   };
 }

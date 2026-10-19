@@ -1,5 +1,5 @@
 import {createCollection} from './collection.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows} from './ui-utils.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments} from './ui-utils.mjs';
 import {buildConcordance,exportConcordance} from './concordance.mjs';
 
 const root=document.getElementById('lj-search');
@@ -13,10 +13,20 @@ let collection=null,catalog=null,catalogPromise=null,cards=[],items=[],shown=0,s
 function node(tag,text,className){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
 function link(text,url,className){const e=node('a',text,className);e.href=url;e.target='_blank';e.rel='noopener noreferrer';return e;}
 function option(text,value){const e=node('option',text);e.value=value;return e;}
+function selectedCollections(state=null){
+  if(!catalog)return [];
+  const work=state?.work??els.work.value,book=state?.book??els.book.value;
+  const bookCollection=book&&book!=='all'?catalog.books.find(entry=>entry.id===book)?.collectionId:null;
+  return catalog.collections.filter(collection=>(work==='all'||collection.id===work)&&(!bookCollection||collection.id===bookCollection));
+}
 function updateScopeHint(){
+  const collections=selectedCollections(),labels=citationUnitLabels(collections);
+  const withinOption=els.scope.querySelector('option[value="section"]');
+  if(withinOption)withinOption.textContent=`Within each ${labels.singular}`;
+  const deh=collections.some(collection=>citationScheme(collection)==='chapter-paragraph');
   els.scopeHint.textContent=els.scope.value==='book'
-    ?'Each selected book, work and edition is evaluated separately. Boolean conditions may match anywhere in that book. Exact phrases remain consecutive and can cross Niese and chapter boundaries within it.'
-    :'All parts of the expression must match within the same Niese section. Choose whole-book scope to include phrases that cross section boundaries.';
+    ?`Each selected book, work and edition is evaluated separately. Boolean conditions may match anywhere in that book. Exact phrases remain consecutive and can cross citation and chapter boundaries within it.${deh?' The De excidio Prologue is separated from the Book I narrative; phrases do not cross that boundary.':''}`
+    :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
@@ -28,19 +38,21 @@ function populateBooks(selected='all'){
   }
   els.book.value=selected;
   els.book.disabled=false;
+  updateScopeHint();
 }
 function populateControls(){
   els.work.replaceChildren();
   els.work.append(option('All available works and editions','all'));
   for(const c of catalog.collections)els.work.append(option(`${c.label} · ${c.language} · ${c.edition}`,c.id));
-  if(catalog.collections.length===1)els.work.value=catalog.collections[0].id;
+  els.work.value=defaultCollection(catalog);
   els.work.disabled=false;
   populateBooks();
   $('collection-description').textContent=catalog.collections.map(c=>`${c.label} · ${c.language} · ${c.edition}`).join(' / ');
-  $('coverage').textContent=`${catalog.books.length} books · ${catalog.totals.sections.toLocaleString()} Niese sections · ${catalog.totals.tokens.toLocaleString()} words · Latin main text`;
+  const coverage=catalog.collections.map(collection=>`${collection.citationPrefix}: ${collection.totals.sections.toLocaleString()} ${citationUnitLabels([collection]).plural}`).join(' · ');
+  $('coverage').textContent=`${catalog.books.length} books · ${coverage} · ${catalog.totals.tokens.toLocaleString()} words · Latin main text`;
   const included=catalog.collections.map(c=>`${c.label}, ${c.language}, ${c.edition} (${c.books.length} books)`).join('; ');
   const future=catalog.collections.some(c=>c.work==='antiquities')?'':' Antiquities will be added after its text repairs and verification are complete.';
-  $('included-text').textContent=`Currently indexed: ${included}. Editorial titles, printed division labels and manuscript annotations are excluded.${future}`;
+  $('included-text').textContent=`Currently indexed: ${included}. Editorial titles, printed division labels and manuscript annotations are excluded.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units. Supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':''}${future}`;
 }
 function applyState(state){
   els.query.value=state.query;els.work.value=state.work;populateBooks(state.book);
@@ -53,19 +65,31 @@ function updateViewButtons(){
   els.passages.disabled=els.concordance.disabled=!successful;
 }
 function successfulURL(){return searchURL({...successful.state,view},location.href);}
-function appendTextRange(parent,text,start,end,ranges){
-  let cursor=start;
-  for(const r of ranges){const a=Math.max(start,r.start),b=Math.min(end,r.end);if(a>=b)continue;if(a>cursor)parent.append(document.createTextNode(text.slice(cursor,a)));parent.append(node('mark',text.slice(a,b)));cursor=b;}
-  if(cursor<end)parent.append(document.createTextNode(text.slice(cursor,end)));
+function appendTextRange(parent,record,start,end,ranges=[]){
+  const stack=[];
+  const closeTo=length=>{while(stack.length>length){const item=stack.pop();if(item.mark.kind==='supplied')item.element.append(document.createTextNode(']'));}};
+  for(const segment of annotatedTextSegments(record,start,end,ranges)){
+    let common=0;while(common<stack.length&&common<segment.marks.length&&stack[common].mark===segment.marks[common])common++;
+    closeTo(common);
+    for(let i=common;i<segment.marks.length;i++){
+      const mark=segment.marks[i],element=node(mark.kind==='del'?'del':'span',undefined,`editorial-${mark.kind}`);
+      element.title={del:'Deleted text in the edition; retained in the searchable source',supplied:'Text supplied by the editor',unclear:'Unresolved or unclear text'}[mark.kind];
+      if(mark.kind==='supplied')element.append(document.createTextNode('['));
+      (stack.at(-1)?.element||parent).append(element);stack.push({mark,element});
+    }
+    const destination=stack.at(-1)?.element||parent;
+    destination.append(segment.highlighted?node('mark',segment.text):document.createTextNode(segment.text));
+  }
+  closeTo(0);
 }
 function makeExcerpt(record,rawRanges,full=false,label=false){
   const p=node('p',undefined,'excerpt');p.lang='la';
-  if(label)p.append(link(`§${record.section}`,readerURL(record,readerBase),'section-label'));
+  if(label)p.append(link(excerptCitation(record),readerURL(record,readerBase),'section-label'));
   const ranges=mergedRanges(rawRanges||[],record.text.length);
   const windows=full?[{start:0,end:record.text.length}]:excerptWindows(record.text,ranges);
   for(let i=0;i<windows.length;i++){
     const w=windows[i];if(w.start>0)p.append(node('span','… ','ellipsis'));
-    appendTextRange(p,record.text,w.start,w.end,ranges);
+    appendTextRange(p,record,w.start,w.end,ranges);
     if(w.end<record.text.length)p.append(node('span',' …','ellipsis'));
     if(i<windows.length-1)p.append(document.createTextNode(' '));
   }
@@ -77,11 +101,12 @@ function makeCard(card){
   const first=card.records[0];
   const h=node('h3',undefined,'result-title');h.append(link(citationFor(card.records),readerURL(first,readerBase)));header.append(h);
   const chapters=[...new Set(card.records.map(r=>r.chapter))];
-  const chapterLabel=chapters.length===1?(chapters[0]===0?'Proem':`Chapter ${chapters[0]}`):'Across chapters';
+  const chapterLabel=chapters.length===1?(chapters[0]===0?(citationScheme(first)==='chapter-paragraph'?'Prologue':'Proem'):`Chapter ${chapters[0]}`):'Across chapters';
   header.append(node('span',`${first.language} · ${first.edition} · ${chapterLabel}`,'result-meta'));article.append(header);
   for(const r of card.records)article.append(makeExcerpt(r,card.ranges[r.id],false,card.records.length>1));
   if(card.records.some(r=>excerptWindows(r.text,card.ranges[r.id]||[]).some(w=>w.start>0||w.end<r.text.length))){
-    const details=node('details');details.append(node('summary',card.records.length>1?'Read the complete sections':'Read the complete section'));
+    const unit=citationScheme(first)==='chapter-paragraph'?'citation unit':'section';
+    const details=node('details');details.append(node('summary',`Read the complete ${unit}${card.records.length>1?'s':''}`));
     for(const r of card.records)details.append(makeExcerpt(r,card.ranges[r.id],true,card.records.length>1));article.append(details);
   }
   return article;
@@ -95,18 +120,20 @@ function concordanceHeader(row){
 function makeConcordanceRow(row){
   const article=node('article',undefined,'concordance-row');article.append(concordanceHeader(row));
   const p=node('p',undefined,'concordance-line');p.lang='la';
+  const source={text:row.left+row.match+row.right,editorialMarks:row.editorialMarks||[]};
+  const matchStart=row.left.length,matchEnd=matchStart+row.match.length;
   const left=node('span',undefined,'concordance-left');
   if(row.leftTruncated)left.append(node('span','… ','ellipsis'));
-  left.append(document.createTextNode(row.left));
-  const match=node('span',undefined,'concordance-match');match.append(node('mark',row.match));
-  const right=node('span',row.right,'concordance-right');
+  appendTextRange(left,source,0,matchStart);
+  const match=node('span',undefined,'concordance-match');appendTextRange(match,source,matchStart,matchEnd,[{start:matchStart,end:matchEnd}]);
+  const right=node('span',undefined,'concordance-right');appendTextRange(right,source,matchEnd,source.text.length);
   if(row.rightTruncated)right.append(node('span',' …','ellipsis'));
   p.append(left,match,right);
   article.append(p);return article;
 }
 function makeMatchingUnit(unit){
   const article=node('article',undefined,'concordance-row matching-unit');article.append(concordanceHeader(unit));
-  article.append(node('p',`This ${unit.scope==='book'?'book':'section'} satisfies the full query without a positive word or phrase to highlight.`));
+  article.append(node('p',`This ${unit.scope==='book'?'book':unit.citationUnitLabel||'section'} satisfies the full query without a positive word or phrase to highlight.`));
   return article;
 }
 function orderItems(entries,records){
@@ -132,6 +159,7 @@ function renderEmpty(result){
 }
 function summarize(result,model){
   const spelling=result.fold?'u/v and i/j equivalent':'source spelling';
+  const labels=citationUnitLabels(catalog.collections.filter(collection=>result.selectedCollections.includes(collection.id)));
   const parts=[];
   if(model.occurrenceCount!==null){
     const count=model.occurrenceCount;
@@ -139,7 +167,7 @@ function summarize(result,model){
   }
   if(result.scope==='section'){
     const count=result.matchingUnits,books=result.matchingBooks.length;
-    parts.push(`${count.toLocaleString()} matching Niese ${count===1?'section':'sections'}${books?` in ${books} ${books===1?'book':'books'}`:''}`);
+    parts.push(`${count.toLocaleString()} matching ${count===1?labels.singular:labels.plural}${books?` in ${books} ${books===1?'book':'books'}`:''}`);
   }else{
     const count=result.matchingUnits;
     parts.push(`${count} of ${result.selectedBooks.length} ${result.selectedBooks.length===1?'book matches':'books match'}`);
@@ -150,23 +178,25 @@ function summarize(result,model){
 }
 function resultContext(result,model){
   const parts=[];
+  const collections=catalog.collections.filter(collection=>result.selectedCollections.includes(collection.id)),labels=citationUnitLabels(collections);
   if(view==='concordance'){
     if(model.countKind==='evidence'){
       parts.push(result.scope==='book'
-        ?'Concordance rows show positive words and phrases in books that satisfy the full query. Separate Boolean terms may occur in different sections; a row need not satisfy the full query by itself.'
-        :'Concordance rows show positive words and phrases in sections that satisfy the full query. Different rows may show different parts of that query.');
+        ?`Concordance rows show positive words and phrases in books that satisfy the full query. Separate Boolean terms may occur in different ${labels.plural}; a row need not satisfy the full query by itself.`
+        :`Concordance rows show positive words and phrases in ${labels.plural} that satisfy the full query. Different rows may show different parts of that query.`);
       parts.push('The number of positive matches is not a word frequency.');
     }else{
       parts.push(`Each row shows one ${model.countKind==='phrase'?'phrase':'word'} occurrence, with up to ten words of context on each side.`);
-      if(result.scope==='book')parts.push('A phrase spanning adjacent sections appears once.');
+      if(result.scope==='book')parts.push(`A phrase spanning adjacent ${labels.plural} appears once.`);
     }
   }else if(result.scope==='book'){
     parts.push('Whole-book search: each selected book, work and edition is evaluated separately. These excerpts locate positive matches; separate Boolean terms need not occur together in each excerpt. Exact phrases always stay within one book.');
   }
   if(model.unhighlightedUnits.length){
-    const count=model.unhighlightedUnits.length,unit=result.scope==='book'?'book':'section';
-    parts.push(`${count.toLocaleString()} matching ${unit}${count===1?'':'s'} ${count===1?'has':'have'} no positive word or phrase to highlight. ${count===1?'Its citation is':'Their citations are'} included in the results and CSV.`);
+    const count=model.unhighlightedUnits.length,unit=result.scope==='book'?(count===1?'book':'books'):(count===1?labels.singular:labels.plural);
+    parts.push(`${count.toLocaleString()} matching ${unit} ${count===1?'has':'have'} no positive word or phrase to highlight. ${count===1?'Its citation is':'Their citations are'} included in the results and CSV.`);
   }
+  if(collections.some(collection=>citationScheme(collection)==='chapter-paragraph'))parts.push('De excidio citations give book, chapter and paragraph (or Prol.). [Brackets] mark supplied text; struck text marks editorial deletion; † marks unresolved text. These markings are retained in the CSV’s editorial columns.');
   return parts.join(' ');
 }
 function renderSuccessful(){
@@ -217,6 +247,7 @@ async function search({writeUrl=true,fromLocation=false,example=null}={}){
       applyState(locationState(searchURL({query:example.query,work:example.work,book:example.book||'all',scope:example.scope||'section',fold:els.fold.checked,view},location.href).search,catalog,defaultQuery));
     }
     const state={query:els.query.value.trim(),work:els.work.value,book:els.book.value,scope:els.scope.value,fold:els.fold.checked,view};
+    updateScopeHint();
     if(!state.query){els.query.focus();els.status.textContent='Enter a search expression.';return;}
     const result=await ready.search(state.query,{
       collections:state.work==='all'?'all':[state.work],books:state.book==='all'?'all':[state.book],scope:state.scope,fold:state.fold,signal,

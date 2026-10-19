@@ -31,11 +31,20 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [7, 4001, 114794]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [12, 4559, 202266]);
+    const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
+    const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
+    assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
+    assert.deepEqual([deh.totals.books, deh.totals.sections, deh.totals.tokens], [5, 558, 87472]);
   });
 
   await t.test('an XML change is rejected before old text can be published', () => {
     changed('assets/xml/bellum/Latin/book-01.xml', bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
+      () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*XML/u));
+  });
+
+  await t.test('a De excidio source change is rejected before its old index can be published', () => {
+    changed('assets/xml/deh/Latin/book-01.xml', bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
       () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*XML/u));
   });
 

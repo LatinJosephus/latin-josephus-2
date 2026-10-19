@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "deh-latin-ussani",
+  "work": "deh",
+  "label": "De excidio Hierosolymitano",
+  "citationPrefix": "De excidio",
+  "citationScheme": "chapter-paragraph",
+  "unitLabel": "citation unit",
+  "unitLabelPlural": "citation units",
+  "language": "Latin",
+  "edition": "Ussani (1932)",
+  "readerPath": "deh/",
+  "corpus": "../data/deh-latin-ussani/corpus.json",
+  "extractionReport": "../data/deh-latin-ussani/extraction-report.json",
+  "books": [
+    {"number": 1, "label": "Book I (including Prologue)", "corpus": "../data/deh-latin-ussani/book-01.corpus.json", "sections": 215, "sectionRange": [1, 215]},
+    {"number": 2, "label": "Book II", "corpus": "../data/deh-latin-ussani/book-02.corpus.json", "sections": 73, "sectionRange": [1, 73]},
+    {"number": 3, "label": "Book III", "corpus": "../data/deh-latin-ussani/book-03.corpus.json", "sections": 70, "sectionRange": [1, 70]},
+    {"number": 4, "label": "Book IV", "corpus": "../data/deh-latin-ussani/book-04.corpus.json", "sections": 79, "sectionRange": [1, 79]},
+    {"number": 5, "label": "Book V", "corpus": "../data/deh-latin-ussani/book-05.corpus.json", "sections": 121, "sectionRange": [1, 121]}
+  ]
+}

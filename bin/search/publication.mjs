@@ -137,6 +137,74 @@ export function unitTestCommands(root) {
   ];
 }
 
+/** Keep DEH's reader display and reversible XML text projection explicitly distinct. */
+function validateDehSourceProjection(corpus, report, manifest, spec) {
+  const roman = ['', 'I', 'II', 'III', 'IV', 'V'][spec.number];
+  const originals = [], displays = [];
+  let generated = 0;
+  const marksByKind = {del: 0, supplied: 0, unclear: 0};
+  equal(report.paragraphs.length, corpus.length, 'DEH source audit omits a citation unit');
+  for (let index = 0; index < corpus.length; index++) {
+    const record = corpus[index], audit = report.paragraphs[index];
+    assert(Number.isInteger(record.chapter) && record.chapter >= 0 &&
+      Number.isInteger(record.paragraph) && record.paragraph > 0, `Invalid DEH citation: ${record.id}`);
+    const prologue = record.chapter === 0;
+    assert(!prologue || (spec.number === 1 && record.section <= 3), 'Unexpected DEH Prologue unit');
+    const label = prologue ? `Prol.${record.paragraph}` : `${roman}.${record.chapter}.${record.paragraph}`;
+    equal(record.citationScheme, manifest.citationScheme, `DEH citation scheme differs: ${record.id}`);
+    equal(record.citationLabel, label, `DEH scholarly citation differs: ${record.id}`);
+    equal(record.sourceId, `latin-deh${spec.number}-num${record.section}`, `DEH stable identity differs: ${record.id}`);
+    equal(record.citation, {book: roman, chapter: record.chapter, paragraph: record.paragraph, prologue},
+      `DEH structured citation differs: ${record.id}`);
+    equal(record.url, `/deh/?book=${spec.number}&chapter=${record.chapter}&unit=${record.paragraph}`,
+      `DEH chapter-local reader URL differs: ${record.id}`);
+    equal(record.readerLink, {path: 'deh/', params: {book: spec.number, chapter: record.chapter, unit: record.paragraph}},
+      `DEH structured reader link differs: ${record.id}`);
+    equal(Boolean(record.breakBefore), spec.number === 1 && record.section === 4,
+      `DEH Prologue/narrative boundary differs: ${record.id}`);
+    equal(audit.sourceId, record.sourceId, 'DEH source projection audit has the wrong unit');
+    equal(audit.citationLabel, label, 'DEH source projection audit has the wrong citation');
+    assert(Array.isArray(record.editorialMarks), `DEH editorial metadata is missing: ${record.id}`);
+    let cursor = 0, previousEnd = 0, sourceText = '';
+    for (const mark of record.editorialMarks) {
+      assert(Object.hasOwn(marksByKind, mark.kind) && Number.isInteger(mark.start) && Number.isInteger(mark.end) &&
+        mark.start >= previousEnd && mark.end > mark.start && mark.end <= record.text.length,
+      `Invalid or overlapping DEH editorial span: ${record.id}`);
+      equal(record.text.slice(mark.start, mark.end), mark.text, `DEH editorial text differs: ${record.id}`);
+      marksByKind[mark.kind]++;
+      if (mark.kind === 'unclear') {
+        equal([mark.text, mark.representation, mark.sourceTag], ['†', 'generated-dagger', 'unclear'],
+          `Unrecognized DEH generated display glyph: ${record.id}`);
+        sourceText += record.text.slice(cursor, mark.start);
+        cursor = mark.end;
+        generated++;
+      }
+      previousEnd = mark.end;
+    }
+    sourceText += record.text.slice(cursor);
+    equal(sha256(Buffer.from(record.text)), audit.displayTextSha256, `DEH display-text audit differs: ${record.id}`);
+    equal(sha256(Buffer.from(sourceText)), audit.sourceProjectionSha256, `DEH source projection differs: ${record.id}`);
+    originals.push(sourceText);
+    displays.push(record.text);
+  }
+  const nonWhitespaceHash = texts => sha256(Buffer.from(texts.join('').replace(/\s/gu, '')));
+  equal(nonWhitespaceHash(originals), report.coverage.sourceProjectionNonWhitespaceContentSha256,
+    'DEH reversible source-text fingerprint differs');
+  equal(report.coverage.sourceProjectionNonWhitespaceContentSha256,
+    report.coverage.sourceNonWhitespaceContentSha256,
+    'DEH source projection and original-source fingerprints differ');
+  equal(nonWhitespaceHash(displays), report.coverage.displayNonWhitespaceContentSha256,
+    'DEH actual display-text fingerprint differs');
+  equal(sha256(Buffer.from(displays.join('\n'))), report.coverage.displayTextSequenceSha256,
+    'DEH display-text order differs');
+  equal(report.coverage.sourceProjectionExactlyRestoresSource, true, 'DEH original-source projection is unverified');
+  equal(generated, report.coverage.generatedDisplayGlyphs, 'DEH generated-glyph count differs');
+  equal(generated, report.counts.generatedCruxGlyphs, 'DEH crux count differs');
+  equal([marksByKind.del, marksByKind.supplied, marksByKind.unclear],
+    [report.counts.deletedSpans, report.counts.suppliedSpans, report.counts.cruxMarkers],
+    'DEH editorial annotation coverage differs');
+}
+
 /** Validate the generated index against current configs, XML, corpora, and extraction evidence. */
 export function validateSearchSources(root, {qa = true} = {}) {
   const context = loadPublicationConfig(root), {base, config, collections} = context;
@@ -185,6 +253,8 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(report.coverage[key], true, `Extraction coverage failed: ${key}`);
     for (const key of ['id', 'work', 'label', 'citationPrefix', 'language', 'edition', 'readerPath'])
       equal(collection[key], manifest[key], `Catalog metadata differs: ${manifest.id}.${key}`);
+    for (const key of ['citationScheme', 'unitLabel', 'unitLabelPlural'])
+      equal(collection[key], manifest[key], `Catalog citation metadata differs: ${manifest.id}.${key}`);
     equal(collection.books, manifest.books.map(book => `${manifest.id}:${book.number}`), 'Collection book identities differ');
     equal(report.books.map(book => book.book), manifest.books.map(book => book.number), 'Extraction book order differs');
     equal(sorted(report.books.map(book => book.source.path)), sorted(adapter.sources),
@@ -220,6 +290,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
       for (const key of ['missingSections', 'unexpectedSections', 'duplicateSections']) equal(bookReport.coverage[key], [], `${id}: ${key}`);
       equal(bookReport.coverage.completeRange, spec.sectionRange, `Section range differs: ${id}`);
       equal(corpus.length, spec.sections, `Corpus section count differs: ${id}`);
+      if (manifest.id === 'deh-latin-ussani') validateDehSourceProjection(corpus, bookReport, manifest, spec);
       const bundleArtifact = artifact(book.path, book.sha256, 'bundle');
       equal(bundleArtifact.item.bytes, book.bytes, `Bundle byte count differs: ${id}`);
       const bundle = bundleArtifact.value();

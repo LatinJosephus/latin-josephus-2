@@ -31,6 +31,37 @@
         "tokens": 114794,
         "bytes": 19438553
       }
+    },
+    {
+      "id": "deh-latin-ussani",
+      "work": "deh",
+      "label": "De excidio Hierosolymitano",
+      "citationPrefix": "De excidio",
+      "language": "Latin",
+      "edition": "Ussani (1932)",
+      "readerPath": "deh/",
+      "books": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "citationScheme": "chapter-paragraph",
+      "unitLabel": "citation unit",
+      "unitLabelPlural": "citation units",
+      "manifestPath": "config/deh-latin-ussani.json",
+      "manifestSHA256": "301df5897b614667c8a9022c3f9ec7388c89854d84e9de429e8e85f729867f01",
+      "corpusPath": "data/deh-latin-ussani/corpus.json",
+      "corpusSHA256": "1b0ee61a5e1f6405f921c5ddda012628e091fc7cae1ee485393196a7ea12b0c8",
+      "extractionReportPath": "data/deh-latin-ussani/extraction-report.json",
+      "extractionReportSHA256": "16288a935a3ff925e293c00096119bd6642fc3d2ea46eefcd9a90fe571031f54",
+      "totals": {
+        "books": 5,
+        "sections": 558,
+        "tokens": 87472,
+        "bytes": 12413040
+      }
     }
   ],
   "books": [
@@ -131,17 +162,87 @@
       "sha256": "c832012cdf142ce3c3638c7086ffdc8bca9a26b45c87918ad749fab1320142db",
       "corpusPath": "data/book-07.corpus.json",
       "corpusSHA256": "37451cd05998e5b7e970c9e83f110ba8574d84a2c26b4cab0be147879c79b8ef"
+    },
+    {
+      "id": "deh-latin-ussani:1",
+      "collectionId": "deh-latin-ussani",
+      "number": 1,
+      "label": "Book I (including Prologue)",
+      "sections": 215,
+      "tokens": 26310,
+      "vocabulary": 9193,
+      "bytes": 3794456,
+      "path": "data/deh-latin-ussani/book-01.bundle.json",
+      "sha256": "0261c9ea3be9e0eb3bedb3ec4593ac389c7cfbd276f21ad71f307b6b075f0f4e",
+      "corpusPath": "data/deh-latin-ussani/book-01.corpus.json",
+      "corpusSHA256": "753ea3aa5bf3c18f653bd060cfc8418fa5b530773150147ae68e1fafe27164fe"
+    },
+    {
+      "id": "deh-latin-ussani:2",
+      "collectionId": "deh-latin-ussani",
+      "number": 2,
+      "label": "Book II",
+      "sections": 73,
+      "tokens": 11011,
+      "vocabulary": 5024,
+      "bytes": 1598391,
+      "path": "data/deh-latin-ussani/book-02.bundle.json",
+      "sha256": "cec3419663e7035ebeaea8f377e915859cd7fc9f63a452d53322df354b672758",
+      "corpusPath": "data/deh-latin-ussani/book-02.corpus.json",
+      "corpusSHA256": "01762583a122f9be6f5bbe5bafd690f6f22ecc23231581c53545a9ed0bf7283d"
+    },
+    {
+      "id": "deh-latin-ussani:3",
+      "collectionId": "deh-latin-ussani",
+      "number": 3,
+      "label": "Book III",
+      "sections": 70,
+      "tokens": 12091,
+      "vocabulary": 5289,
+      "bytes": 1712043,
+      "path": "data/deh-latin-ussani/book-03.bundle.json",
+      "sha256": "b17d9f3c88b73f65a0ccf00078870b03608eda82bbd2fcc62db1809bba0d4368",
+      "corpusPath": "data/deh-latin-ussani/book-03.corpus.json",
+      "corpusSHA256": "d068ec53c99388854a155997cb0875d1fe6f8730039334414417b818464f4b8b"
+    },
+    {
+      "id": "deh-latin-ussani:4",
+      "collectionId": "deh-latin-ussani",
+      "number": 4,
+      "label": "Book IV",
+      "sections": 79,
+      "tokens": 11027,
+      "vocabulary": 5077,
+      "bytes": 1648831,
+      "path": "data/deh-latin-ussani/book-04.bundle.json",
+      "sha256": "c274214b88a2c54ad32ff56713dbdaea99b21e37cfb3f11aa6b640a204ca71a9",
+      "corpusPath": "data/deh-latin-ussani/book-04.corpus.json",
+      "corpusSHA256": "f957747d958b9576ac4d3ba2e7f02aab091d7a98e0dfad49155a96f4f0b8e4cd"
+    },
+    {
+      "id": "deh-latin-ussani:5",
+      "collectionId": "deh-latin-ussani",
+      "number": 5,
+      "label": "Book V",
+      "sections": 121,
+      "tokens": 27033,
+      "vocabulary": 9630,
+      "bytes": 3659319,
+      "path": "data/deh-latin-ussani/book-05.bundle.json",
+      "sha256": "52527f6e4fa4dfdb6c97c864d031c5ce177e3e931bcca01f76d94d8940aa71ea",
+      "corpusPath": "data/deh-latin-ussani/book-05.corpus.json",
+      "corpusSHA256": "5175756ed40a2d003edbd3496dccacfee2a3190cd82be45387c7b03147ba922a"
     }
   ],
   "totals": {
-    "books": 7,
-    "sections": 4001,
-    "tokens": 114794,
-    "bytes": 19438553
+    "books": 12,
+    "sections": 4559,
+    "tokens": 202266,
+    "bytes": 31851593
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "a8428710181c538251384171708ba928f349d0b94be840e8ba1ebe13c266dcdb",
+    "manifestSHA256": "cf5d2798c4ca6e88928710cb79e27013c15ae435a3018b8938cfafdd192f41b0",
     "enginePath": "engine.mjs",
     "engineSHA256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c",
     "lunrPath": "vendor/lunr.cjs",

@@ -1,0 +1,994 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-10-19T11:03:33.182Z",
+  "independentVerifier": "bin/search/tests/deh-corpus-qa.mjs",
+  "readerBaseline": {
+    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "provenance": "explicit-argument",
+    "preservationDuringRunRequired": true,
+    "publicationInput": false
+  },
+  "runtime": {
+    "node": "24.19.0",
+    "python": "3.12.14",
+    "unicode": "15.0.0",
+    "xmlParser": "xml.dom.minidom"
+  },
+  "source": {
+    "books": 5,
+    "sections": 558,
+    "tokens": 87472,
+    "ordinaryCitationUnits": 555,
+    "prologueCitationUnits": 3,
+    "stableIds": 740,
+    "uniqueLiteralVocabulary": 21237
+  },
+  "sources": [
+    {
+      "book": 1,
+      "path": "assets/xml/deh/Latin/book-01.xml",
+      "sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+      "acceptedLF_sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+      "sections": 215,
+      "tokens": 26310,
+      "stableIds": 263,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 47,
+        "pb": 126,
+        "head": 2,
+        "supplied": 1,
+        "p": 215,
+        "num": 215,
+        "lb": 47,
+        "del": 2,
+        "unclear": 2
+      }
+    },
+    {
+      "book": 2,
+      "path": "assets/xml/deh/Latin/book-02.xml",
+      "sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+      "acceptedLF_sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+      "sections": 73,
+      "tokens": 11011,
+      "stableIds": 92,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 18,
+        "head": 1,
+        "p": 73,
+        "num": 73,
+        "pb": 53,
+        "lb": 18,
+        "unclear": 1,
+        "supplied": 2,
+        "del": 2
+      }
+    },
+    {
+      "book": 3,
+      "path": "assets/xml/deh/Latin/book-03.xml",
+      "sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+      "acceptedLF_sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+      "sections": 70,
+      "tokens": 12091,
+      "stableIds": 97,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 26,
+        "head": 1,
+        "p": 70,
+        "num": 70,
+        "pb": 57,
+        "lb": 26,
+        "del": 2,
+        "supplied": 1
+      }
+    },
+    {
+      "book": 4,
+      "path": "assets/xml/deh/Latin/book-04.xml",
+      "sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+      "acceptedLF_sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+      "sections": 79,
+      "tokens": 11027,
+      "stableIds": 113,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 33,
+        "head": 1,
+        "p": 79,
+        "num": 79,
+        "pb": 54,
+        "lb": 33,
+        "del": 2
+      }
+    },
+    {
+      "book": 5,
+      "path": "assets/xml/deh/Latin/book-05.xml",
+      "sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+      "acceptedLF_sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+      "sections": 121,
+      "tokens": 27033,
+      "stableIds": 175,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 53,
+        "pb": 125,
+        "head": 1,
+        "p": 121,
+        "num": 121,
+        "lb": 52,
+        "supplied": 6,
+        "del": 1
+      }
+    }
+  ],
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/deh-latin-ussani/corpus.json",
+      "sha256": "1b0ee61a5e1f6405f921c5ddda012628e091fc7cae1ee485393196a7ea12b0c8"
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "sha256": "844cb030124b213411963fc2c0d66113bd9aec217e18284ec7ec33d4e58ecb2e"
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "sha256": "fed1931abc23a58b66ebce9d9ec0f575aaeadd9b6b8124c8658b9dc81539315e"
+    },
+    "verifier": {
+      "path": "bin/search/tests/deh-corpus-qa.mjs",
+      "sha256": "dcbd7c71693f9880c571a1f3e87a6b9081302a47ec50c4c11e6de1f5c89b2153"
+    },
+    "originalReader": {
+      "path": "assets/js/renderTei.js",
+      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/deh-latin-ussani/book-01.bundle.json",
+          "sha256": "0261c9ea3be9e0eb3bedb3ec4593ac389c7cfbd276f21ad71f307b6b075f0f4e"
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-latin-ussani/book-01.corpus.json",
+          "sha256": "753ea3aa5bf3c18f653bd060cfc8418fa5b530773150147ae68e1fafe27164fe"
+        },
+        "source": {
+          "path": "assets/xml/deh/Latin/book-01.xml",
+          "sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7"
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/deh-latin-ussani/book-02.bundle.json",
+          "sha256": "cec3419663e7035ebeaea8f377e915859cd7fc9f63a452d53322df354b672758"
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-latin-ussani/book-02.corpus.json",
+          "sha256": "01762583a122f9be6f5bbe5bafd690f6f22ecc23231581c53545a9ed0bf7283d"
+        },
+        "source": {
+          "path": "assets/xml/deh/Latin/book-02.xml",
+          "sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a"
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/deh-latin-ussani/book-03.bundle.json",
+          "sha256": "b17d9f3c88b73f65a0ccf00078870b03608eda82bbd2fcc62db1809bba0d4368"
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-latin-ussani/book-03.corpus.json",
+          "sha256": "d068ec53c99388854a155997cb0875d1fe6f8730039334414417b818464f4b8b"
+        },
+        "source": {
+          "path": "assets/xml/deh/Latin/book-03.xml",
+          "sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5"
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/deh-latin-ussani/book-04.bundle.json",
+          "sha256": "c274214b88a2c54ad32ff56713dbdaea99b21e37cfb3f11aa6b640a204ca71a9"
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-latin-ussani/book-04.corpus.json",
+          "sha256": "f957747d958b9576ac4d3ba2e7f02aab091d7a98e0dfad49155a96f4f0b8e4cd"
+        },
+        "source": {
+          "path": "assets/xml/deh/Latin/book-04.xml",
+          "sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa"
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/deh-latin-ussani/book-05.bundle.json",
+          "sha256": "52527f6e4fa4dfdb6c97c864d031c5ce177e3e931bcca01f76d94d8940aa71ea"
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-latin-ussani/book-05.corpus.json",
+          "sha256": "5175756ed40a2d003edbd3496dccacfee2a3190cd82be45387c7b03147ba922a"
+        },
+        "source": {
+          "path": "assets/xml/deh/Latin/book-05.xml",
+          "sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97"
+        }
+      }
+    ]
+  },
+  "method": {
+    "source": "Independent Python minidom parse of five SHA-pinned canonical XML sources; no extractor imports or extraction-report expectations.",
+    "tokens": "Python Unicode-category tokenizer checked against every indexed token and UTF-16 offset; independent JavaScript character scan agrees for all DEH units.",
+    "queries": "AST/set semantics, independent regex globs, full sequential phrase scan; no production parser/matching/tokenizer used as oracle.",
+    "vocabulary": "Every distinct source token in each book queried in both literal and u/v-i/j-folded modes.",
+    "boundaries": "Every adjacent unit boundary checked in section/book scopes and both spelling modes; Prologue→I.1.1 is a deliberate blocked composition boundary.",
+    "collection": "Actual checksum-verified bundle loading, all five DEH and mixed Bellum/DEH selections, cache, unavailable-book rejection, and ambiguous/conflicting selector rejection."
+  },
+  "boundaryCoverage": {
+    "withinBookPairs": 553,
+    "legalWholeBookPairs": 552,
+    "blockedPrologueNarrativePairs": 1,
+    "bookJunctions": 4,
+    "mixedWorkJunctions": 1
+  },
+  "editorialCoverage": {
+    "del": 9,
+    "suppliedInRunningText": 9,
+    "crux": 3,
+    "headingSuppliedExcluded": 1,
+    "pageMarkers": 415,
+    "lineMarkers": 176
+  },
+  "counts": {
+    "ReviewedReaderBaseline": 1,
+    "CatalogBookOrder": 1,
+    "CatalogCitationScheme": 1,
+    "CanonicalStableIds": 1,
+    "CombinedRecordCount": 1,
+    "CombinedRecordOrder": 558,
+    "SourceRecordField": 10044,
+    "IndependentTokenizersAgree": 558,
+    "ShardMatchesCombinedCorpus": 5,
+    "BundleMatchesShard": 5,
+    "CatalogBundleHash": 5,
+    "CatalogCorpusHash": 5,
+    "SourceFingerprint": 5,
+    "AllIndexedTokenOffsets": 5,
+    "ExpectedTokenCount": 5,
+    "ExhaustiveVocabularyQueries": 68426,
+    "ExhaustiveVocabularyMatchingUnits": 68426,
+    "ExhaustiveVocabularyOccurrences": 68426,
+    "ExhaustiveVocabularyUnitIdentity": 68426,
+    "ExhaustiveVocabularyEvidence": 141782,
+    "ExhaustiveVocabularyRecordIds": 141782,
+    "ExhaustiveVocabularySections": 141782,
+    "ExhaustiveVocabularyMatchingSections": 68426,
+    "FixtureQueries": 380,
+    "FixtureMatchingUnits": 380,
+    "FixtureOccurrences": 380,
+    "FixtureUnitIdentity": 380,
+    "FixtureEvidence": 2468,
+    "FixtureRecordIds": 2468,
+    "FixtureSections": 2468,
+    "FixtureMatchingSections": 380,
+    "WildcardQueries": 2740,
+    "WildcardMatchingUnits": 2740,
+    "WildcardOccurrences": 2740,
+    "WildcardUnitIdentity": 2740,
+    "WildcardEvidence": 32468,
+    "WildcardRecordIds": 32468,
+    "WildcardSections": 32468,
+    "WildcardMatchingSections": 2740,
+    "WithinEveryUnitQueries": 2232,
+    "WithinEveryUnitMatchingUnits": 2232,
+    "WithinEveryUnitOccurrences": 2232,
+    "WithinEveryUnitUnitIdentity": 2232,
+    "WithinEveryUnitEvidence": 2232,
+    "WithinEveryUnitRecordIds": 2232,
+    "WithinEveryUnitSections": 2232,
+    "WithinEveryUnitMatchingSections": 2232,
+    "BoundaryOracleExpectation": 553,
+    "EveryAdjacentUnitBoundaryQueries": 2208,
+    "EveryAdjacentUnitBoundaryMatchingUnits": 2208,
+    "EveryAdjacentUnitBoundaryOccurrences": 2208,
+    "EveryAdjacentUnitBoundaryUnitIdentity": 2208,
+    "EveryAdjacentUnitBoundaryMatchingSections": 2208,
+    "EveryAdjacentUnitBoundaryEvidence": 1104,
+    "EveryAdjacentUnitBoundaryRecordIds": 1104,
+    "EveryAdjacentUnitBoundarySections": 1104,
+    "PrologueBoundaryBlockedQueries": 4,
+    "PrologueBoundaryBlockedMatchingUnits": 4,
+    "PrologueBoundaryBlockedOccurrences": 4,
+    "PrologueBoundaryBlockedUnitIdentity": 4,
+    "PrologueBoundaryBlockedMatchingSections": 4,
+    "SelectedDEHCollectionQueries": 120,
+    "SelectedDEHCollectionMatchingUnits": 120,
+    "SelectedDEHCollectionOccurrences": 120,
+    "SelectedDEHCollectionUnitIdentity": 120,
+    "SelectedDEHCollectionEvidence": 4140,
+    "SelectedDEHCollectionRecordIds": 4140,
+    "SelectedDEHCollectionSections": 4140,
+    "SelectedDEHCollectionMatchingSections": 120,
+    "SelectedDEHCollectionSelectionOrder": 120,
+    "SelectedDEHCollectionMatchingBookIdentity": 120,
+    "SelectedDEHCollectionUniqueRecordIdentity": 120,
+    "SelectedDEHCollectionGlobalResultOrder": 120,
+    "CrossBookPhraseBlockedQueries": 16,
+    "CrossBookPhraseBlockedMatchingUnits": 16,
+    "CrossBookPhraseBlockedOccurrences": 16,
+    "CrossBookPhraseBlockedUnitIdentity": 16,
+    "CrossBookPhraseBlockedMatchingSections": 16,
+    "CrossBookPhraseBlockedSelectionOrder": 16,
+    "CrossBookPhraseBlockedMatchingBookIdentity": 16,
+    "CrossBookPhraseBlockedUniqueRecordIdentity": 16,
+    "CrossBookPhraseBlockedGlobalResultOrder": 16,
+    "CrossBookPhraseAbsent": 16,
+    "CrossBookBooleanIsolationQueries": 8,
+    "CrossBookBooleanIsolationMatchingUnits": 8,
+    "CrossBookBooleanIsolationOccurrences": 8,
+    "CrossBookBooleanIsolationUnitIdentity": 8,
+    "CrossBookBooleanIsolationMatchingSections": 8,
+    "CrossBookBooleanIsolationSelectionOrder": 8,
+    "CrossBookBooleanIsolationMatchingBookIdentity": 8,
+    "CrossBookBooleanIsolationUniqueRecordIdentity": 8,
+    "CrossBookBooleanIsolationGlobalResultOrder": 8,
+    "CrossBookBooleanAbsent": 8,
+    "MixedWorkCollectionQueries": 32,
+    "MixedWorkCollectionMatchingUnits": 32,
+    "MixedWorkCollectionOccurrences": 32,
+    "MixedWorkCollectionUnitIdentity": 32,
+    "MixedWorkCollectionEvidence": 11348,
+    "MixedWorkCollectionRecordIds": 11348,
+    "MixedWorkCollectionSections": 11348,
+    "MixedWorkCollectionMatchingSections": 32,
+    "MixedWorkCollectionSelectionOrder": 32,
+    "MixedWorkCollectionMatchingBookIdentity": 32,
+    "MixedWorkCollectionUniqueRecordIdentity": 32,
+    "MixedWorkCollectionGlobalResultOrder": 32,
+    "CrossWorkBooleanIsolationQueries": 2,
+    "CrossWorkBooleanIsolationMatchingUnits": 2,
+    "CrossWorkBooleanIsolationOccurrences": 2,
+    "CrossWorkBooleanIsolationUnitIdentity": 2,
+    "CrossWorkBooleanIsolationMatchingSections": 2,
+    "CrossWorkBooleanIsolationSelectionOrder": 2,
+    "CrossWorkBooleanIsolationMatchingBookIdentity": 2,
+    "CrossWorkBooleanIsolationUniqueRecordIdentity": 2,
+    "CrossWorkBooleanIsolationGlobalResultOrder": 2,
+    "CrossWorkBooleanAbsent": 2,
+    "CrossWorkPhraseBlockedQueries": 2,
+    "CrossWorkPhraseBlockedMatchingUnits": 2,
+    "CrossWorkPhraseBlockedOccurrences": 2,
+    "CrossWorkPhraseBlockedUnitIdentity": 2,
+    "CrossWorkPhraseBlockedMatchingSections": 2,
+    "CrossWorkPhraseBlockedSelectionOrder": 2,
+    "CrossWorkPhraseBlockedMatchingBookIdentity": 2,
+    "CrossWorkPhraseBlockedUniqueRecordIdentity": 2,
+    "CrossWorkPhraseBlockedGlobalResultOrder": 2,
+    "CrossWorkPhraseAbsent": 2,
+    "BundleFetchCaching": 1,
+    "InvalidSelectionRejected": 2,
+    "MissingSelectedBookRejectsCompleteSearch": 1,
+    "InputUnchangedDuringQA": 28
+  },
+  "totalQueries": 76170,
+  "assertions": 903839,
+  "failedAssertions": 0,
+  "examples": [
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 7,
+      "occurrences": 9
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 15,
+      "occurrences": 23
+    },
+    {
+      "query": "Cenedaei",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"tamquam in spinis rosam quaerentes\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"historia uetus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"hautquaquam dissimulandum arbitrabantur\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"non intellexit Vnde nobis curae\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 2,
+      "occurrences": 1
+    },
+    {
+      "query": "\"sumam exordium Bello Parthico quod\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"statuere ausus Quod factum Matthathias\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 2,
+      "occurrences": 1
+    },
+    {
+      "query": "\"nisi qu*\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 3,
+      "occurrences": 3
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 85,
+      "occurrences": 169
+    },
+    {
+      "query": "Ioseph* sacerdot* OR templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 40,
+      "occurrences": 67
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT NOT Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 7,
+      "occurrences": 9
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 28,
+      "occurrences": 29
+    },
+    {
+      "query": "\"tamquam in spinis rosam quaerentes\" AND Parthico",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 3,
+      "occurrences": 3
+    },
+    {
+      "query": "Iosephus",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 33,
+      "matchingSections": 33,
+      "occurrences": 41
+    },
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 33,
+      "occurrences": 41
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 54,
+      "matchingSections": 54,
+      "occurrences": 125
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 54,
+      "occurrences": 125
+    },
+    {
+      "query": "\"tamquam in spinis rosam quaerentes\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"tamquam in spinis rosam quaerentes\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"non intellexit Vnde nobis curae\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"non intellexit Vnde nobis curae\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 2,
+      "occurrences": 1
+    },
+    {
+      "query": "\"sumam exordium Bello Parthico quod\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"sumam exordium Bello Parthico quod\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 220,
+      "matchingSections": 220,
+      "occurrences": 541
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 336,
+      "occurrences": 1015
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 69,
+      "matchingSections": 69,
+      "occurrences": 121
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 24,
+      "occurrences": 43
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 49,
+      "matchingSections": 49,
+      "occurrences": 113
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 558,
+      "matchingSections": 558,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 33,
+      "occurrences": 41
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 12,
+      "matchingSections": 88,
+      "occurrences": 160
+    },
+    {
+      "query": "\"tamquam in spinis rosam quaerentes\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "NOT (zzzznonoccurrit)",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5"
+      ],
+      "matchingUnits": 12,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "bellum-latin-cardwell:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 7,
+      "occurrences": 9
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "bellum-latin-cardwell:1"
+      ],
+      "matchingUnits": 2,
+      "matchingSections": 18,
+      "occurrences": 26
+    },
+    {
+      "query": "\"tamquam in spinis rosam quaerentes\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "bellum-latin-cardwell:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "NOT (zzzznonoccurrit)",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "deh-latin-ussani:1",
+        "bellum-latin-cardwell:1"
+      ],
+      "matchingUnits": 2,
+      "matchingSections": 0,
+      "occurrences": 0
+    }
+  ],
+  "durationSeconds": 97.76,
+  "limitations": [
+    "Automated Node/Python verification, not browser or visual acceptance.",
+    "Reader URLs checked against canonical citation/ID structure; reader pages are not opened by this verifier.",
+    "DEH text is checked against frozen canonical XML, not retranscribed or recertified from page images.",
+    "Mixed-work Bellum expectations are independently tokenized from the unchanged Bellum corpus records; separate Bellum source-fidelity QA remains required.",
+    "Marked deleted/supplied source content remains searchable, with editorial metadata preserved."
+  ],
+  "failures": []
+}

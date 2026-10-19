@@ -8,13 +8,13 @@
   "inputs": [
     {
       "path": "_includes/search-interface.html",
-      "sha256": "7a02baaee7f7c69456e67b2ebb23007f5aada20624c8e275119c3adefd9d3197",
-      "bytes": 8283
+      "sha256": "ad7b7229f86778e9bc6ba914eb329968b4473ab6a8a40a0a22b0da82ef1eb6bb",
+      "bytes": 9140
     },
     {
       "path": "_pages/search.html",
-      "sha256": "33b2c3dbc83c117f15a954da44c223c64b6eec599c0b8718fa855b3c27c4e423",
-      "bytes": 439
+      "sha256": "7e71867977a40a86fc4049ec3718b2b0671af788aa0de4640d04c5b561c94717",
+      "bytes": 571
     },
     {
       "path": "assets/xml/bellum/Latin/book-01.xml",
@@ -59,6 +59,36 @@
       "hashMode": "crlf-to-lf"
     },
     {
+      "path": "assets/xml/deh/Latin/book-01.xml",
+      "sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+      "bytes": 221726,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-02.xml",
+      "sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+      "bytes": 93223,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-03.xml",
+      "sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+      "bytes": 99985,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-04.xml",
+      "sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+      "bytes": 95571,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-05.xml",
+      "sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+      "bytes": 218209,
+      "hashMode": "crlf-to-lf"
+    },
+    {
       "path": "bin/cibuild",
       "sha256": "d5becb4a94cb2cc960b8982214e63f07a7a47fb28371c9713f41f45905fc56d0",
       "bytes": 166
@@ -70,13 +100,13 @@
     },
     {
       "path": "bin/search/app.mjs",
-      "sha256": "b824184a2345a8b1c843955a1cf344247ba9c6748b15d09f958c80a2e8726bd5",
-      "bytes": 18848
+      "sha256": "b0138598e54de41112b994d3db4f1ee5bcd8d51111d354b423ba46dbaafa2739",
+      "bytes": 22143
     },
     {
       "path": "bin/search/build-index.mjs",
-      "sha256": "c36f4431f53da556e7b311268e719c51704c2839daa1f9d64907b946e627ed4b",
-      "bytes": 12212
+      "sha256": "f1f177f11a2e0fe0facfa5a47fcc3e7b21cc08ea517b7a5f7174e9bbc0db5339",
+      "bytes": 12670
     },
     {
       "path": "bin/search/build-preview.mjs",
@@ -95,13 +125,13 @@
     },
     {
       "path": "bin/search/collection.mjs",
-      "sha256": "d5bbb151a2dfed2567369d52babc682a910f7269df46d49587a7b49b4b156c76",
-      "bytes": 17279
+      "sha256": "fed1931abc23a58b66ebce9d9ec0f575aaeadd9b6b8124c8658b9dc81539315e",
+      "bytes": 19552
     },
     {
       "path": "bin/search/concordance.mjs",
-      "sha256": "d57cb9c5995cc81bab2f6c5fbf71c6b7c703a482dc07bbe6d525a2fe5c56dd8e",
-      "bytes": 20497
+      "sha256": "ccdc17d8bded2802ea02ced48266c0d97c211a29d6e0c4c58f75e035aa6e8608",
+      "bytes": 24091
     },
     {
       "path": "bin/search/config/bellum-latin-cardwell.json",
@@ -110,18 +140,28 @@
     },
     {
       "path": "bin/search/config/collections.json",
-      "sha256": "a8428710181c538251384171708ba928f349d0b94be840e8ba1ebe13c266dcdb",
-      "bytes": 74
+      "sha256": "cf5d2798c4ca6e88928710cb79e27013c15ae435a3018b8938cfafdd192f41b0",
+      "bytes": 99
+    },
+    {
+      "path": "bin/search/config/deh-latin-ussani.json",
+      "sha256": "301df5897b614667c8a9022c3f9ec7388c89854d84e9de429e8e85f729867f01",
+      "bytes": 1190
     },
     {
       "path": "bin/search/config/publication.json",
-      "sha256": "67a28d7eab50e34d7287d878be3ddceea99e0a60ce767b8512ce5b3bd44c3108",
-      "bytes": 1066
+      "sha256": "4460c9ffdf910d6e96ef960058a993cf046db6e1e40b60e33dbe8f90a1de7929",
+      "bytes": 1535
     },
     {
       "path": "bin/search/engine.mjs",
       "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c",
       "bytes": 21595
+    },
+    {
+      "path": "bin/search/extract-deh.py",
+      "sha256": "5eb606aa87e43053096e24777abaf99200912421c6868718fbee35284602ed12",
+      "bytes": 29130
     },
     {
       "path": "bin/search/extract.py",
@@ -130,28 +170,28 @@
     },
     {
       "path": "bin/search/index.html",
-      "sha256": "4928d3817eb85a8c3f9d039fecb3d2a0efe7f6aaaae61e9de6c07dfc4d16602b",
-      "bytes": 9506
+      "sha256": "c16c6a3c82aad0886db6b1fba96a57d6b211ce2be603a08729c3c05e1c3ad0d3",
+      "bytes": 10392
     },
     {
       "path": "bin/search/publication.mjs",
-      "sha256": "e864e007d5d9b3ac505406240713a047d8c3a8c8b55e2bd64f775824e74e5b12",
-      "bytes": 26388
+      "sha256": "5c29d70a961b85b37e78b18cb6a4233e14bd9ec6fa69ceeda6faddbf9bfab3f3",
+      "bytes": 31370
     },
     {
       "path": "bin/search/styles.css",
-      "sha256": "795b3bd8740e92d0749a192a1d801b005528f5942c61d9c89c51bebb5b53e3c8",
-      "bytes": 11304
+      "sha256": "81599d7200f7bad877b98611bca8f58452629a03a3aa7f5170702404c9b5ba90",
+      "bytes": 11543
     },
     {
       "path": "bin/search/tests/build-index.test.mjs",
-      "sha256": "0ccf3eaf96bf98fb2f9556c319961e2c6b03a222aea6e5cd0818c84712584ed6",
-      "bytes": 6963
+      "sha256": "86b5b74b477e067dd34d7dd351a6df941151515ace4f370d174f8be01373923f",
+      "bytes": 8067
     },
     {
       "path": "bin/search/tests/collection.test.mjs",
-      "sha256": "8b2b780471762b6c910693ee9ddddf44de5a1de3acc6f6d53e0edc2fb8a9e776",
-      "bytes": 18774
+      "sha256": "ba38811a1fcc523465b08977e7606f43e025e2fd5f886179f1fdcb9f94fb517e",
+      "bytes": 21229
     },
     {
       "path": "bin/search/tests/concordance-integration.test.mjs",
@@ -165,8 +205,18 @@
     },
     {
       "path": "bin/search/tests/corpus-qa.mjs",
-      "sha256": "f99a80fa95927b2621cc758c3fc7328272cee88c8a3ac974dc5a4b26031470f4",
-      "bytes": 40167
+      "sha256": "6c884e25894cc71c3964299cbe177879a0a8734bd8d06e18254fb21e62fde188",
+      "bytes": 40287
+    },
+    {
+      "path": "bin/search/tests/deh-corpus-qa.mjs",
+      "sha256": "dcbd7c71693f9880c571a1f3e87a6b9081302a47ec50c4c11e6de1f5c89b2153",
+      "bytes": 35420
+    },
+    {
+      "path": "bin/search/tests/deh-presentation.test.mjs",
+      "sha256": "9cc4c91c0d0f5f865038d57c9bfb128b5f10278f33e107cca73e4cb349bccac9",
+      "bytes": 12087
     },
     {
       "path": "bin/search/tests/engine.test.mjs",
@@ -180,13 +230,18 @@
     },
     {
       "path": "bin/search/tests/publication.test.mjs",
-      "sha256": "ea71160bc43966604f95d9bf28e6647c9b4691b5baa050f3048b2ea86840a5ef",
-      "bytes": 7566
+      "sha256": "ba642488283fc283f05c0b7175d43e72e3d557a121fc5f8c562dad8d6398d16e",
+      "bytes": 8314
     },
     {
       "path": "bin/search/tests/test_extract.py",
       "sha256": "0ad33eabbd358f3e28843d5fdf9b4dc4c00c13ec4e433b7d64fa7ee9c53a6e20",
       "bytes": 13307
+    },
+    {
+      "path": "bin/search/tests/test_extract_deh.py",
+      "sha256": "a8b0873c11aea1e7a87affe3d89ab11c9eff7c2abd769a19fdfbb6993ba6d2cf",
+      "bytes": 19031
     },
     {
       "path": "bin/search/tests/ui-utils.test.mjs",
@@ -195,8 +250,8 @@
     },
     {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "41dece5e7b4042ada18726b68c4d5e7b97c7ba8f67066e6406b28f945624478c",
-      "bytes": 5140
+      "sha256": "30ff2ad4cf46437ac9dab3cadc5e9848acac7dd165df319c1cae88e61612997a",
+      "bytes": 9835
     },
     {
       "path": "bin/search/vendor/LUNR-LICENSE.txt",
@@ -243,20 +298,49 @@
       ],
       "qa": {
         "path": "qa-report.json",
-        "sha256": "57dc60ff2aa0841ac0cc3e77003786491790db1575dd9d3e01f2955cbb96dbfa",
+        "sha256": "d6a729530d847a11ae98e374174c51bfb7878285cf66f8e151e3f64794f4c926",
         "status": "PASS",
         "assertions": 1663053,
         "queries": 98856,
         "failedAssertions": 0,
         "readerEvidenceIsHistorical": true
       }
+    },
+    {
+      "id": "deh-latin-ussani",
+      "totals": {
+        "books": 5,
+        "sections": 558,
+        "tokens": 87472,
+        "bytes": 12413040
+      },
+      "extractionReport": {
+        "path": "data/deh-latin-ussani/extraction-report.json",
+        "sha256": "16288a935a3ff925e293c00096119bd6642fc3d2ea46eefcd9a90fe571031f54"
+      },
+      "sourceFiles": [
+        "assets/xml/deh/Latin/book-01.xml",
+        "assets/xml/deh/Latin/book-02.xml",
+        "assets/xml/deh/Latin/book-03.xml",
+        "assets/xml/deh/Latin/book-04.xml",
+        "assets/xml/deh/Latin/book-05.xml"
+      ],
+      "qa": {
+        "path": "data/deh-latin-ussani/qa-report.json",
+        "sha256": "cfd2d879a63e992e081f450d38c37b3c69fcffbbac4e6fffa0ca28439e192245",
+        "status": "PASS",
+        "assertions": 903839,
+        "queries": 76170,
+        "failedAssertions": 0,
+        "readerEvidenceIsHistorical": true
+      }
     }
   ],
   "totals": {
-    "books": 7,
-    "sections": 4001,
-    "tokens": 114794,
-    "bytes": 19438553
+    "books": 12,
+    "sections": 4559,
+    "tokens": 202266,
+    "bytes": 31851593
   },
   "validation": {
     "sourceAndArtifactHashes": "PASS",
@@ -286,6 +370,7 @@
             "bin/search/tests/collection.test.mjs",
             "bin/search/tests/concordance-integration.test.mjs",
             "bin/search/tests/concordance.test.mjs",
+            "bin/search/tests/deh-presentation.test.mjs",
             "bin/search/tests/engine.test.mjs",
             "bin/search/tests/integration.test.mjs",
             "bin/search/tests/publication.test.mjs",
@@ -300,29 +385,29 @@
     {
       "path": "app.mjs",
       "source": "bin/search/app.mjs",
-      "sha256": "b824184a2345a8b1c843955a1cf344247ba9c6748b15d09f958c80a2e8726bd5",
-      "bytes": 18848,
+      "sha256": "b0138598e54de41112b994d3db4f1ee5bcd8d51111d354b423ba46dbaafa2739",
+      "bytes": 22143,
       "role": "runtime"
     },
     {
       "path": "catalog.json",
       "source": "bin/search/catalog.json",
-      "sha256": "fa07c041de986b2839f96b2207c909e7386e718ebb87b8b803cd4c572e82c0d3",
-      "bytes": 5364,
+      "sha256": "844cb030124b213411963fc2c0d66113bd9aec217e18284ec7ec33d4e58ecb2e",
+      "bytes": 9147,
       "role": "catalog"
     },
     {
       "path": "collection.mjs",
       "source": "bin/search/collection.mjs",
-      "sha256": "d5bbb151a2dfed2567369d52babc682a910f7269df46d49587a7b49b4b156c76",
-      "bytes": 17279,
+      "sha256": "fed1931abc23a58b66ebce9d9ec0f575aaeadd9b6b8124c8658b9dc81539315e",
+      "bytes": 19552,
       "role": "runtime"
     },
     {
       "path": "concordance.mjs",
       "source": "bin/search/concordance.mjs",
-      "sha256": "d57cb9c5995cc81bab2f6c5fbf71c6b7c703a482dc07bbe6d525a2fe5c56dd8e",
-      "bytes": 20497,
+      "sha256": "ccdc17d8bded2802ea02ced48266c0d97c211a29d6e0c4c58f75e035aa6e8608",
+      "bytes": 24091,
       "role": "runtime"
     },
     {
@@ -335,15 +420,22 @@
     {
       "path": "config/collections.json",
       "source": "bin/search/config/collections.json",
-      "sha256": "a8428710181c538251384171708ba928f349d0b94be840e8ba1ebe13c266dcdb",
-      "bytes": 74,
+      "sha256": "cf5d2798c4ca6e88928710cb79e27013c15ae435a3018b8938cfafdd192f41b0",
+      "bytes": 99,
+      "role": "evidence"
+    },
+    {
+      "path": "config/deh-latin-ussani.json",
+      "source": "bin/search/config/deh-latin-ussani.json",
+      "sha256": "301df5897b614667c8a9022c3f9ec7388c89854d84e9de429e8e85f729867f01",
+      "bytes": 1190,
       "role": "evidence"
     },
     {
       "path": "config/publication.json",
       "source": "bin/search/config/publication.json",
-      "sha256": "67a28d7eab50e34d7287d878be3ddceea99e0a60ce767b8512ce5b3bd44c3108",
-      "bytes": 1066,
+      "sha256": "4460c9ffdf910d6e96ef960058a993cf046db6e1e40b60e33dbe8f90a1de7929",
+      "bytes": 1535,
       "role": "evidence"
     },
     {
@@ -501,6 +593,132 @@
       "role": "evidence"
     },
     {
+      "path": "data/deh-latin-ussani/book-01.bundle.json",
+      "source": "bin/search/data/deh-latin-ussani/book-01.bundle.json",
+      "sha256": "0261c9ea3be9e0eb3bedb3ec4593ac389c7cfbd276f21ad71f307b6b075f0f4e",
+      "bytes": 3794456,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-01.corpus.json",
+      "source": "bin/search/data/deh-latin-ussani/book-01.corpus.json",
+      "sha256": "753ea3aa5bf3c18f653bd060cfc8418fa5b530773150147ae68e1fafe27164fe",
+      "bytes": 338102,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-01.extraction-report.json",
+      "source": "bin/search/data/deh-latin-ussani/book-01.extraction-report.json",
+      "sha256": "2829b7cc14e181f2df5a2d6bb4e5c303577cfb5588ec16b5623fa5b0e5c25ded",
+      "bytes": 280690,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-02.bundle.json",
+      "source": "bin/search/data/deh-latin-ussani/book-02.bundle.json",
+      "sha256": "cec3419663e7035ebeaea8f377e915859cd7fc9f63a452d53322df354b672758",
+      "bytes": 1598391,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-02.corpus.json",
+      "source": "bin/search/data/deh-latin-ussani/book-02.corpus.json",
+      "sha256": "01762583a122f9be6f5bbe5bafd690f6f22ecc23231581c53545a9ed0bf7283d",
+      "bytes": 130037,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-02.extraction-report.json",
+      "source": "bin/search/data/deh-latin-ussani/book-02.extraction-report.json",
+      "sha256": "3d863913d8cb3d478de535f9d62212e02137ed3427e8675e45e340034f6bda36",
+      "bytes": 106362,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-03.bundle.json",
+      "source": "bin/search/data/deh-latin-ussani/book-03.bundle.json",
+      "sha256": "b17d9f3c88b73f65a0ccf00078870b03608eda82bbd2fcc62db1809bba0d4368",
+      "bytes": 1712043,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-03.corpus.json",
+      "source": "bin/search/data/deh-latin-ussani/book-03.corpus.json",
+      "sha256": "d068ec53c99388854a155997cb0875d1fe6f8730039334414417b818464f4b8b",
+      "bytes": 133859,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-03.extraction-report.json",
+      "source": "bin/search/data/deh-latin-ussani/book-03.extraction-report.json",
+      "sha256": "6177f5365ecbedd06e317a6d5399137e2035b65ac185957c0f9d536c831863dd",
+      "bytes": 102578,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-04.bundle.json",
+      "source": "bin/search/data/deh-latin-ussani/book-04.bundle.json",
+      "sha256": "c274214b88a2c54ad32ff56713dbdaea99b21e37cfb3f11aa6b640a204ca71a9",
+      "bytes": 1648831,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-04.corpus.json",
+      "source": "bin/search/data/deh-latin-ussani/book-04.corpus.json",
+      "sha256": "f957747d958b9576ac4d3ba2e7f02aab091d7a98e0dfad49155a96f4f0b8e4cd",
+      "bytes": 134024,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-04.extraction-report.json",
+      "source": "bin/search/data/deh-latin-ussani/book-04.extraction-report.json",
+      "sha256": "6a2ea67e98139cb9a3333d31b0a9fc4617669052d2a97db4e072102350b12480",
+      "bytes": 110231,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-05.bundle.json",
+      "source": "bin/search/data/deh-latin-ussani/book-05.bundle.json",
+      "sha256": "52527f6e4fa4dfdb6c97c864d031c5ce177e3e931bcca01f76d94d8940aa71ea",
+      "bytes": 3659319,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-05.corpus.json",
+      "source": "bin/search/data/deh-latin-ussani/book-05.corpus.json",
+      "sha256": "5175756ed40a2d003edbd3496dccacfee2a3190cd82be45387c7b03147ba922a",
+      "bytes": 278960,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/book-05.extraction-report.json",
+      "source": "bin/search/data/deh-latin-ussani/book-05.extraction-report.json",
+      "sha256": "89af7356e45fea723996a78927afa66e3ac31ccdf87c1b5ab7e4c0d815f9091a",
+      "bytes": 188498,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/corpus.json",
+      "source": "bin/search/data/deh-latin-ussani/corpus.json",
+      "sha256": "1b0ee61a5e1f6405f921c5ddda012628e091fc7cae1ee485393196a7ea12b0c8",
+      "bytes": 1014970,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/extraction-report.json",
+      "source": "bin/search/data/deh-latin-ussani/extraction-report.json",
+      "sha256": "16288a935a3ff925e293c00096119bd6642fc3d2ea46eefcd9a90fe571031f54",
+      "bytes": 8261,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-latin-ussani/qa-report.json",
+      "source": "bin/search/data/deh-latin-ussani/qa-report.json",
+      "sha256": "cfd2d879a63e992e081f450d38c37b3c69fcffbbac4e6fffa0ca28439e192245",
+      "bytes": 29217,
+      "role": "evidence"
+    },
+    {
       "path": "engine.mjs",
       "source": "bin/search/engine.mjs",
       "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c",
@@ -517,22 +735,22 @@
     {
       "path": "qa-report.json",
       "source": "bin/search/qa-report.json",
-      "sha256": "57dc60ff2aa0841ac0cc3e77003786491790db1575dd9d3e01f2955cbb96dbfa",
-      "bytes": 111789,
+      "sha256": "d6a729530d847a11ae98e374174c51bfb7878285cf66f8e151e3f64794f4c926",
+      "bytes": 111794,
       "role": "evidence"
     },
     {
       "path": "styles.css",
       "source": "bin/search/styles.css",
-      "sha256": "795b3bd8740e92d0749a192a1d801b005528f5942c61d9c89c51bebb5b53e3c8",
-      "bytes": 11304,
+      "sha256": "81599d7200f7bad877b98611bca8f58452629a03a3aa7f5170702404c9b5ba90",
+      "bytes": 11543,
       "role": "runtime"
     },
     {
       "path": "ui-utils.mjs",
       "source": "bin/search/ui-utils.mjs",
-      "sha256": "41dece5e7b4042ada18726b68c4d5e7b97c7ba8f67066e6406b28f945624478c",
-      "bytes": 5140,
+      "sha256": "30ff2ad4cf46437ac9dab3cadc5e9848acac7dd165df319c1cae88e61612997a",
+      "bytes": 9835,
       "role": "runtime"
     },
     {

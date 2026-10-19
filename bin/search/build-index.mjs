@@ -66,6 +66,11 @@ async function readCollection(manifestPath) {
     || !Array.isArray(manifest.books) || !manifest.books.length) {
     throw new Error(`Invalid collection manifest: ${manifestPath}`);
   }
+  for (const field of ["citationScheme", "unitLabel", "unitLabelPlural"]) {
+    if (manifest[field] !== undefined && (typeof manifest[field] !== "string" || !manifest[field].trim())) {
+      throw new Error(`Invalid ${field} in collection manifest: ${manifestPath}`);
+    }
+  }
   const base = dirname(manifestPath);
   const corpusPath = sourcePath(base, manifest.corpus, `${manifest.id} combined corpus`);
   const extractionReportPath = sourcePath(base, manifest.extractionReport, `${manifest.id} extraction report`);
@@ -165,6 +170,8 @@ export async function buildCatalog(options = {}) {
     const { id, work, label, citationPrefix, language, edition, readerPath } = manifest;
     catalog.collections.push({
       id, work, label, citationPrefix, language, edition, readerPath, books: entries.map((entry) => entry.id),
+      ...Object.fromEntries(["citationScheme", "unitLabel", "unitLabelPlural"]
+        .filter((field) => manifest[field] !== undefined).map((field) => [field, manifest[field]])),
       manifestPath: portableRelative(outputBase, source.manifestPath), manifestSHA256: digest(source.manifestBytes),
       corpusPath: portableRelative(outputBase, source.corpusPath), corpusSHA256: digest(source.corpusBytes),
       extractionReportPath: portableRelative(outputBase, source.extractionReportPath), extractionReportSHA256: digest(source.extractionReportBytes),

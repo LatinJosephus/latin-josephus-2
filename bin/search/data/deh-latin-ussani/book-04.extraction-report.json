@@ -1,0 +1,3295 @@
+{
+  "schemaVersion": 3,
+  "status": "PASS",
+  "scope": {
+    "work": "De excidio Hierosolymitano",
+    "book": 4,
+    "language": "Latin",
+    "edition": "Ussani (1932)",
+    "unit": "existing chapter/paragraph citation unit",
+    "citationScheme": "chapter-paragraph"
+  },
+  "source": {
+    "path": "assets/xml/deh/Latin/book-04.xml",
+    "sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+    "bytes": 95571
+  },
+  "rules": {
+    "bodyTagsAccepted": [
+      "body",
+      "div1",
+      "div2",
+      "head",
+      "p",
+      "num",
+      "del",
+      "lb",
+      "pb",
+      "supplied",
+      "unclear"
+    ],
+    "sourceOrderPreserved": true,
+    "sectionReferenceMeaning": "Stable XML paragraph ordinal within its book; never a Niese section.",
+    "textTransformations": "Remove only verified num labels and trim citation-unit edge whitespace. Preserve all literal running characters, spelling, punctuation, and internal whitespace. Empty unclear gains the reader's dagger glyph.",
+    "editorialMarkup": "Retain del and supplied letters as searchable visible text; preserve their distinct editorial status in UTF-16 editorialMarks. No brackets or separating spaces are inserted into words.",
+    "cruxRepresentation": "Each empty unclear contributes one explicitly mapped generated †. It represents a crux, not an inferred lacuna. Remove only these mapped glyphs to recover source text.",
+    "pageAndLineMarkers": "pb and lb contribute no characters and no spaces; word-internal page breaks remain joined. The source lb elements mark division ends.",
+    "gapsAndUnknownContent": "No main-text gap, note, apparatus, choice, or foreign elements occur in the accepted source. Unknown body markup stops extraction for review.",
+    "phraseBoundaries": "Ordinary consecutive citation units and chapters are joinable in whole-book scope. Book I's Prologue-to-narrative transition has breakBefore=true. Distinct books are never joined.",
+    "offsetDefinition": "Audit source/recordText/display offsets are zero-based Python Unicode-character offsets, end exclusive, into concatenated parsed XML paragraph text or displayed record text as named. Record editorialMarks use JavaScript UTF-16 offsets.",
+    "sourceProjectionDefinition": "Concatenate only source-text segments from the final indexed record; omit only generated-crux segments. Compatibility indexedNonWhitespaceContentSha256 describes this reversible source projection, not the extra publication glyphs.",
+    "tokenCountDefinition": "Unicode L/N start, L/M/N continuation; original word strings without normalization or stemming.",
+    "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}",
+    "readerRouteEvidence": "assets/js/renderTei.js: DEH uses chapter-local URL units, num labels and Ussani by default; prologue chapter is 0."
+  },
+  "counts": {
+    "bodyParagraphs": 79,
+    "numberedParagraphs": 79,
+    "sections": 79,
+    "chapterDivisionsIncludingPrologue": 33,
+    "prologueUnits": 0,
+    "excludedHeadings": 1,
+    "pageBreaks": 54,
+    "divisionEndMarkers": 33,
+    "deletedSpans": 2,
+    "suppliedSpans": 0,
+    "cruxMarkers": 0,
+    "generatedCruxGlyphs": 0,
+    "runningWordTokens": 11027,
+    "removedCitationLabelCharacters": 679,
+    "trimmedEdgeWhitespaceCharacters": 157
+  },
+  "coverage": {
+    "missingSections": [],
+    "unexpectedSections": [],
+    "duplicateSections": [],
+    "completeRange": [
+      1,
+      79
+    ],
+    "rangeMeaning": "stable XML paragraph ordinal, not Niese",
+    "globalOrderRange": [
+      358,
+      436
+    ],
+    "sourceOrderIsConsecutive": true,
+    "paragraphsExactlyRestored": 79,
+    "rawParagraphSequenceSha256": "df523d869b9e82f7c61e82ff67dd884553b45d95ae6d72a522b5a9dda1917342",
+    "restoredParagraphSequenceSha256": "df523d869b9e82f7c61e82ff67dd884553b45d95ae6d72a522b5a9dda1917342",
+    "sourceWordSequenceSha256": "bfe56cafe6caa0db045134ecfb45b282bf91de866993546be9adc6dc355a5762",
+    "indexedWordSequenceSha256": "bfe56cafe6caa0db045134ecfb45b282bf91de866993546be9adc6dc355a5762",
+    "sourceNonWhitespaceContentSha256": "dcf6192684bdd366fb8ea8c865d84ab2c85b682b9e06427a2f78fd9acd2f5b2b",
+    "indexedNonWhitespaceContentSha256": "dcf6192684bdd366fb8ea8c865d84ab2c85b682b9e06427a2f78fd9acd2f5b2b",
+    "sourceProjectionNonWhitespaceContentSha256": "dcf6192684bdd366fb8ea8c865d84ab2c85b682b9e06427a2f78fd9acd2f5b2b",
+    "displayNonWhitespaceContentSha256": "dcf6192684bdd366fb8ea8c865d84ab2c85b682b9e06427a2f78fd9acd2f5b2b",
+    "displayTextSequenceSha256": "1a1c00d4132e5743164a0117c9bfd001ada0ca452c6a8801edc1e971c50e532c",
+    "generatedDisplayGlyphs": 0,
+    "sourceProjectionExactlyRestoresSource": true,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "allSectionTextsNonempty": true
+  },
+  "excluded": [
+    {
+      "kind": "teiHeader",
+      "reason": "outside running text",
+      "textCharacters": 3928,
+      "textSha256": "d097324a0deaa0f1b3c598e47303fe463067d8840e0f8db85cd001b8ef4b6499",
+      "elementCounts": {
+        "bibl": 2,
+        "editorialDecl": 1,
+        "encodingDesc": 1,
+        "fileDesc": 1,
+        "p": 9,
+        "publicationStmt": 1,
+        "ref": 1,
+        "sourceDesc": 1,
+        "teiHeader": 1,
+        "title": 1,
+        "titleStmt": 1
+      }
+    },
+    {
+      "kind": "heading",
+      "chapter": 1,
+      "text": " LIBER QVARTVS ",
+      "textSha256": "b97a4b2a67c7065340866882195588e2b87eacec084bff41b179e6725bc04c0a",
+      "reason": "verified structural heading, outside running text"
+    }
+  ],
+  "paragraphs": [
+    {
+      "sourceId": "latin-deh4-num1",
+      "section": 1,
+      "citationLabel": "IV.1.1",
+      "chapter": 1,
+      "paragraph": 1,
+      "rawTextCharacters": 1042,
+      "rawTextSha256": "c019c0b9182abea8182da1d14f895d71c25f8e16fcf57969ffbe8a1b0440947c",
+      "removedPrefix": "[IV.1.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "110eb8e4952b50e54b1da39ed5c34e223f4b91aa739f1edbe7d623de6be06b2b",
+      "sourceProjectionSha256": "110eb8e4952b50e54b1da39ed5c34e223f4b91aa739f1edbe7d623de6be06b2b",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 567,
+          "recordTextStart": 0,
+          "recordTextEnd": 558,
+          "textSha256": "f5893d64bc94b730c4288eb4d158b2c40ebe5a28830e17d7b9d538dc5a0a972b"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 567,
+          "sourceTextEnd": 1041,
+          "recordTextStart": 558,
+          "recordTextEnd": 1032,
+          "textSha256": "dacae7c2767236b74919315a45e1625871447789e2e8012ad86a5516e2395658"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 567,
+          "displayOffset": 559,
+          "page": "239"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num2",
+      "section": 2,
+      "citationLabel": "IV.1.2",
+      "chapter": 1,
+      "paragraph": 2,
+      "rawTextCharacters": 592,
+      "rawTextSha256": "aa60c1115cb3a9f87a250a5e97acc1b6a1b80ad5bea99c09ff306fce9ac03e32",
+      "removedPrefix": "[IV.1.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "bda11a72f7b3359ccc6e52a8e3e220aaf4acbf7587016af25fdebd3eb34df442",
+      "sourceProjectionSha256": "bda11a72f7b3359ccc6e52a8e3e220aaf4acbf7587016af25fdebd3eb34df442",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 591,
+          "recordTextStart": 0,
+          "recordTextEnd": 582,
+          "textSha256": "bda11a72f7b3359ccc6e52a8e3e220aaf4acbf7587016af25fdebd3eb34df442"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num3",
+      "section": 3,
+      "citationLabel": "IV.1.3",
+      "chapter": 1,
+      "paragraph": 3,
+      "rawTextCharacters": 380,
+      "rawTextSha256": "90726e7abbd3185ca222496b82b53503ff272b1afb31c53b6ff9451fa40dd613",
+      "removedPrefix": "[IV.1.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "169b63fa7199296f9931abff3a54fc811e2f9ed5a32cab21fcdce9f0df8109de",
+      "sourceProjectionSha256": "169b63fa7199296f9931abff3a54fc811e2f9ed5a32cab21fcdce9f0df8109de",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 379,
+          "recordTextStart": 0,
+          "recordTextEnd": 370,
+          "textSha256": "169b63fa7199296f9931abff3a54fc811e2f9ed5a32cab21fcdce9f0df8109de"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num4",
+      "section": 4,
+      "citationLabel": "IV.1.4",
+      "chapter": 1,
+      "paragraph": 4,
+      "rawTextCharacters": 1063,
+      "rawTextSha256": "5ba42c8d322c7b11e9fb2a66865ea984f8238970b4ff64dce11a3fc33bc78631",
+      "removedPrefix": "[IV.1.4]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "7153d97c50f2e4a7837a1004c4cc988c237adfa263289540ba00e5125c1c32fe",
+      "sourceProjectionSha256": "7153d97c50f2e4a7837a1004c4cc988c237adfa263289540ba00e5125c1c32fe",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 20,
+          "recordTextStart": 0,
+          "recordTextEnd": 11,
+          "textSha256": "0e7045192fb02e826c60c9f021ad89dd96d15977d0251c0050896e1d563689bf"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 20,
+          "sourceTextEnd": 1062,
+          "recordTextStart": 11,
+          "recordTextEnd": 1053,
+          "textSha256": "f11f43f58844dce551d30f1ce658350b6ca665c11c2a8e1d767e41376c389481"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 20,
+          "displayOffset": 12,
+          "page": "240"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num5",
+      "section": 5,
+      "citationLabel": "IV.1.5",
+      "chapter": 1,
+      "paragraph": 5,
+      "rawTextCharacters": 1153,
+      "rawTextSha256": "9e3aa7ce9bc719f8f3af91f99701eff01f67233b1a218146f69f657ef64175be",
+      "removedPrefix": "[IV.1.5]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": "",
+      "displayTextSha256": "9b4541de3fbc580a022159dfad1b7ef7a33b5e770f9fb55ff3efc84e4bcf19b6",
+      "sourceProjectionSha256": "9b4541de3fbc580a022159dfad1b7ef7a33b5e770f9fb55ff3efc84e4bcf19b6",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 516,
+          "recordTextStart": 0,
+          "recordTextEnd": 507,
+          "textSha256": "96e3395047fd12a2850b354847e9c4c0c79c1babd37f7c6e8ec4806e4476133b"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 516,
+          "sourceTextEnd": 1153,
+          "recordTextStart": 507,
+          "recordTextEnd": 1144,
+          "textSha256": "3d9327a5913460dc20d12679e126524052d2b5486b7ddcb855a8ae533f836977"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 516,
+          "displayOffset": 508,
+          "page": "241"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 1153,
+          "displayOffset": 1145
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num6",
+      "section": 6,
+      "citationLabel": "IV.2.1",
+      "chapter": 2,
+      "paragraph": 1,
+      "rawTextCharacters": 2475,
+      "rawTextSha256": "6a208e42722d6530d4aba32cd73df06b99f77f9929a2e4b0e2c67f67b0cd986c",
+      "removedPrefix": "[IV.2.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "b961b9cc3042c8f12bcd04079181a6719702484afff83ec22242d879cfd21539",
+      "sourceProjectionSha256": "b961b9cc3042c8f12bcd04079181a6719702484afff83ec22242d879cfd21539",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 934,
+          "recordTextStart": 0,
+          "recordTextEnd": 925,
+          "textSha256": "a64e3a96795cfe2bb3665f3ea3f74971bc602027f3570dd71cbdaf41d0389a17"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 934,
+          "sourceTextEnd": 2474,
+          "recordTextStart": 925,
+          "recordTextEnd": 2465,
+          "textSha256": "162f1132cfe406ba1cb01c1dc29a43fb89a9e54a742917e52547638df0fdf5a8"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 934,
+          "displayOffset": 926,
+          "page": "242"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 2475,
+          "displayOffset": 2467
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num7",
+      "section": 7,
+      "citationLabel": "IV.3.1",
+      "chapter": 3,
+      "paragraph": 1,
+      "rawTextCharacters": 398,
+      "rawTextSha256": "13b9201d82ca1b1d1489ec4d6653a51f9c61307929cdf5578e99651fc633b76d",
+      "removedPrefix": "[IV.3.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "d178c3c9eec95dc5daf589da609537245445f7a3a61e83a40940fa4510562ccb",
+      "sourceProjectionSha256": "d178c3c9eec95dc5daf589da609537245445f7a3a61e83a40940fa4510562ccb",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 115,
+          "recordTextStart": 0,
+          "recordTextEnd": 106,
+          "textSha256": "def5f24ba2679f00b6c83ada0e1bdc76e87279d3eb7b31b0ba771f29223243a5"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 115,
+          "sourceTextEnd": 397,
+          "recordTextStart": 106,
+          "recordTextEnd": 388,
+          "textSha256": "83831d001550bf49c18da4c111413c3a464883b76e36892fd95696fa8423c394"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 115,
+          "displayOffset": 107,
+          "page": "243"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num8",
+      "section": 8,
+      "citationLabel": "IV.3.2",
+      "chapter": 3,
+      "paragraph": 2,
+      "rawTextCharacters": 231,
+      "rawTextSha256": "0cc70d9fb98f2a43a29eed81b5ca3435a3ac5a2a02551c641c50eb218a21a992",
+      "removedPrefix": "[IV.3.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "d2474da07fec409af16d0056371381dccf85135c6511ab0701658c37d93c7808",
+      "sourceProjectionSha256": "d2474da07fec409af16d0056371381dccf85135c6511ab0701658c37d93c7808",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 230,
+          "recordTextStart": 0,
+          "recordTextEnd": 221,
+          "textSha256": "d2474da07fec409af16d0056371381dccf85135c6511ab0701658c37d93c7808"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num9",
+      "section": 9,
+      "citationLabel": "IV.3.3",
+      "chapter": 3,
+      "paragraph": 3,
+      "rawTextCharacters": 920,
+      "rawTextSha256": "965832a1d65ca074bb41a9c8add8a64df3b9a20ae59ed079fdc9d01f40c4534a",
+      "removedPrefix": "[IV.3.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "a9e0dc8412563b988149849dece1b6f6ddfc466c142fe93872622b2dc4ee88e6",
+      "sourceProjectionSha256": "a9e0dc8412563b988149849dece1b6f6ddfc466c142fe93872622b2dc4ee88e6",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 919,
+          "recordTextStart": 0,
+          "recordTextEnd": 910,
+          "textSha256": "a9e0dc8412563b988149849dece1b6f6ddfc466c142fe93872622b2dc4ee88e6"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 920,
+          "displayOffset": 912
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num10",
+      "section": 10,
+      "citationLabel": "IV.4.1",
+      "chapter": 4,
+      "paragraph": 1,
+      "rawTextCharacters": 1134,
+      "rawTextSha256": "76aa4ceea56d6f5eeae50fced0b49c7a607dac6849720c4e4e5a4050394d1f8c",
+      "removedPrefix": "[IV.4.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "00f49aa9c9b82f37c4bccb0fc08f8a3d833a40b153baab93c86df6ba104f5c2c",
+      "sourceProjectionSha256": "00f49aa9c9b82f37c4bccb0fc08f8a3d833a40b153baab93c86df6ba104f5c2c",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 114,
+          "recordTextStart": 0,
+          "recordTextEnd": 105,
+          "textSha256": "d60fbdaa7dd2a6ca933772bc44467e949c394eab2f245c506fd16adb0d765355"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 114,
+          "sourceTextEnd": 1133,
+          "recordTextStart": 105,
+          "recordTextEnd": 1124,
+          "textSha256": "10134d91d7b81e2e164df7300d525ef63e81f118b3b8ef6379e1dc9b739abb73"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 114,
+          "displayOffset": 106,
+          "page": "244"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num11",
+      "section": 11,
+      "citationLabel": "IV.4.2",
+      "chapter": 4,
+      "paragraph": 2,
+      "rawTextCharacters": 868,
+      "rawTextSha256": "32e4a77c1feb9870ac149a95dd1fc9b2182f848645431cab29203b26a4fd7eac",
+      "removedPrefix": "[IV.4.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "18d5780b08dc2f9752927b66f662384a4a547116afd4322a590b9c06c0a54ca6",
+      "sourceProjectionSha256": "18d5780b08dc2f9752927b66f662384a4a547116afd4322a590b9c06c0a54ca6",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 488,
+          "recordTextStart": 0,
+          "recordTextEnd": 479,
+          "textSha256": "a20522a736e3ca3725c8e60a617a83dd5671cdfa63b63c8dfe2ffbeac4f5db6d"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 488,
+          "sourceTextEnd": 867,
+          "recordTextStart": 479,
+          "recordTextEnd": 858,
+          "textSha256": "e88d9d2427e79942775cc652fa1a1fbdec060de6b63aa1e8333ce87e4eae1da8"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 488,
+          "displayOffset": 480,
+          "page": "245"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num12",
+      "section": 12,
+      "citationLabel": "IV.4.3",
+      "chapter": 4,
+      "paragraph": 3,
+      "rawTextCharacters": 1222,
+      "rawTextSha256": "8b3e0f17635e63d965d7a2f335987209436cdd98e30958e974a7f59bc35f31b9",
+      "removedPrefix": "[IV.4.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "910120784e36f0caa5cfa98f53b2f306a20e4b20e9cba647588d483710ebadec",
+      "sourceProjectionSha256": "910120784e36f0caa5cfa98f53b2f306a20e4b20e9cba647588d483710ebadec",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 1221,
+          "recordTextStart": 0,
+          "recordTextEnd": 1212,
+          "textSha256": "910120784e36f0caa5cfa98f53b2f306a20e4b20e9cba647588d483710ebadec"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num13",
+      "section": 13,
+      "citationLabel": "IV.4.4",
+      "chapter": 4,
+      "paragraph": 4,
+      "rawTextCharacters": 502,
+      "rawTextSha256": "fa4f027796b3978378d45bf6c7b01031c779729d74240a3c0272fb6aaf5fdef3",
+      "removedPrefix": "[IV.4.4]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "77a979d7f8fae97bd7d18e75dc4240429eef230a0ae1317286bee47cb2e7a970",
+      "sourceProjectionSha256": "77a979d7f8fae97bd7d18e75dc4240429eef230a0ae1317286bee47cb2e7a970",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 108,
+          "recordTextStart": 0,
+          "recordTextEnd": 99,
+          "textSha256": "f2df0abdd43d3a128169584cf51ccba2e71c023362f19d3401aaafb4edea2003"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 108,
+          "sourceTextEnd": 501,
+          "recordTextStart": 99,
+          "recordTextEnd": 492,
+          "textSha256": "5fdf12682a00dee18e1c51a2028107e0ec6af0553f3fd2a80cf9bc4d1c5f6c4b"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 108,
+          "displayOffset": 100,
+          "page": "246"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num14",
+      "section": 14,
+      "citationLabel": "IV.4.5",
+      "chapter": 4,
+      "paragraph": 5,
+      "rawTextCharacters": 1301,
+      "rawTextSha256": "aedaeffa77e4e55cc7301f60bc9ec28fb5544201e9d48941feb9b06300754b65",
+      "removedPrefix": "[IV.4.5]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "f176e928f82a8e2aa3d4f4eb796ec60a62332f788e0b76230b3c5c4237840ac5",
+      "sourceProjectionSha256": "f176e928f82a8e2aa3d4f4eb796ec60a62332f788e0b76230b3c5c4237840ac5",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 1243,
+          "recordTextStart": 0,
+          "recordTextEnd": 1234,
+          "textSha256": "1f4c1a5be6a2d7f610caab5bf7d9a3a84b88e45063ba364f968cd413024092d7"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1243,
+          "sourceTextEnd": 1300,
+          "recordTextStart": 1234,
+          "recordTextEnd": 1291,
+          "textSha256": "bd93173d0e70f4a492373526d5ceedde938b022bc707c7edf6f4353bc76b3df6"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1243,
+          "displayOffset": 1235,
+          "page": "247"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num15",
+      "section": 15,
+      "citationLabel": "IV.4.6",
+      "chapter": 4,
+      "paragraph": 6,
+      "rawTextCharacters": 416,
+      "rawTextSha256": "94317fc6f31b191cf3c6d559fd37a8b28ebf09e2d0667e71a56304d9d87a52dd",
+      "removedPrefix": "[IV.4.6]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "282ff931102487b022bd67604b4e5f7ddf4f0b97cbcc73996bec2837fb19f9c6",
+      "sourceProjectionSha256": "282ff931102487b022bd67604b4e5f7ddf4f0b97cbcc73996bec2837fb19f9c6",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 415,
+          "recordTextStart": 0,
+          "recordTextEnd": 406,
+          "textSha256": "282ff931102487b022bd67604b4e5f7ddf4f0b97cbcc73996bec2837fb19f9c6"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 416,
+          "displayOffset": 408
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num16",
+      "section": 16,
+      "citationLabel": "IV.5.1",
+      "chapter": 5,
+      "paragraph": 1,
+      "rawTextCharacters": 727,
+      "rawTextSha256": "dea1d8b963851bd1ec363f65ef6e58818f5c3d6a8826e10270ea3626cccecdd5",
+      "removedPrefix": "[IV.5.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "e6636ecac4d81b19f8e5a7aef26ce58f5892273b36c8d53f5f1f03f049e460bb",
+      "sourceProjectionSha256": "e6636ecac4d81b19f8e5a7aef26ce58f5892273b36c8d53f5f1f03f049e460bb",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 726,
+          "recordTextStart": 0,
+          "recordTextEnd": 717,
+          "textSha256": "e6636ecac4d81b19f8e5a7aef26ce58f5892273b36c8d53f5f1f03f049e460bb"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 727,
+          "displayOffset": 719
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num17",
+      "section": 17,
+      "citationLabel": "IV.6.1",
+      "chapter": 6,
+      "paragraph": 1,
+      "rawTextCharacters": 563,
+      "rawTextSha256": "ba454d928428c7883af869422905d9a0a6003789685db52b7aa84e238b47ad9b",
+      "removedPrefix": "[IV.6.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "85da71821d12b89ceef498b396117def9bc4cfda664d2556492a3ae78956b646",
+      "sourceProjectionSha256": "85da71821d12b89ceef498b396117def9bc4cfda664d2556492a3ae78956b646",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 171,
+          "recordTextStart": 0,
+          "recordTextEnd": 162,
+          "textSha256": "f9e2e5af0c73f5f68dc8b57027a08ef26e55947b032d85a56a0d2ae64e612b4a"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 171,
+          "sourceTextEnd": 562,
+          "recordTextStart": 162,
+          "recordTextEnd": 553,
+          "textSha256": "c3816b0b696e12f5063cd8c90f9d2e06b00bbcde2e43c5eb70c0ae4ab05f5a75"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 171,
+          "displayOffset": 163,
+          "page": "248"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num18",
+      "section": 18,
+      "citationLabel": "IV.6.2",
+      "chapter": 6,
+      "paragraph": 2,
+      "rawTextCharacters": 722,
+      "rawTextSha256": "14837d2c396c6ee9393c5d1dac80375208ba9cadef5ab3908692cc2bbc2e4683",
+      "removedPrefix": "[IV.6.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "6739f1a22c7748e11679768190c148a4ef91c2a6d7ed8bd273f0ef6d9557a555",
+      "sourceProjectionSha256": "6739f1a22c7748e11679768190c148a4ef91c2a6d7ed8bd273f0ef6d9557a555",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 721,
+          "recordTextStart": 0,
+          "recordTextEnd": 712,
+          "textSha256": "6739f1a22c7748e11679768190c148a4ef91c2a6d7ed8bd273f0ef6d9557a555"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num19",
+      "section": 19,
+      "citationLabel": "IV.6.3",
+      "chapter": 6,
+      "paragraph": 3,
+      "rawTextCharacters": 235,
+      "rawTextSha256": "7776622a3234e5fc16c95208f1b4ae4059cd0211b65b5f90968cc109ad54e8a5",
+      "removedPrefix": "[IV.6.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "ab06c900a418a0984d3baf96bc19a08730a9895cf44bddc401983375217fb996",
+      "sourceProjectionSha256": "ab06c900a418a0984d3baf96bc19a08730a9895cf44bddc401983375217fb996",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 234,
+          "recordTextStart": 0,
+          "recordTextEnd": 225,
+          "textSha256": "ab06c900a418a0984d3baf96bc19a08730a9895cf44bddc401983375217fb996"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num20",
+      "section": 20,
+      "citationLabel": "IV.6.4",
+      "chapter": 6,
+      "paragraph": 4,
+      "rawTextCharacters": 419,
+      "rawTextSha256": "cd43daad50ac9858d553e765e54a3f65f8fe3670034c6c92cc05b9d74f122dc6",
+      "removedPrefix": "[IV.6.4]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "fe7551d88d203f8f48244aed50292090dfabf7ac41882b5531c0e2a4e6d850d2",
+      "sourceProjectionSha256": "fe7551d88d203f8f48244aed50292090dfabf7ac41882b5531c0e2a4e6d850d2",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 184,
+          "recordTextStart": 0,
+          "recordTextEnd": 175,
+          "textSha256": "e9db015e8e4a5188507b8690659c9b3b5285be5941f509a5a2c992cc8088d368"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 184,
+          "sourceTextEnd": 418,
+          "recordTextStart": 175,
+          "recordTextEnd": 409,
+          "textSha256": "701b2aa17fc00db69268b07852585d5e19bee1071991612429fdac7b92effc10"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 184,
+          "displayOffset": 176,
+          "page": "249"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num21",
+      "section": 21,
+      "citationLabel": "IV.6.5",
+      "chapter": 6,
+      "paragraph": 5,
+      "rawTextCharacters": 884,
+      "rawTextSha256": "bb5c5e73b20b42e5fdf5998b41ed8962bdc99934bafec2ab6c376abd10d1ddc0",
+      "removedPrefix": "[IV.6.5]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "6797891badd8f0d845a494c5462806bd10519ce58c069fc263fc00bae3e31e88",
+      "sourceProjectionSha256": "6797891badd8f0d845a494c5462806bd10519ce58c069fc263fc00bae3e31e88",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 883,
+          "recordTextStart": 0,
+          "recordTextEnd": 874,
+          "textSha256": "6797891badd8f0d845a494c5462806bd10519ce58c069fc263fc00bae3e31e88"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num22",
+      "section": 22,
+      "citationLabel": "IV.6.6",
+      "chapter": 6,
+      "paragraph": 6,
+      "rawTextCharacters": 119,
+      "rawTextSha256": "9a18990197fa410b4ec37fc74483ce9a09c8881bee11c071442a42f6cdc04357",
+      "removedPrefix": "[IV.6.6]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "f0fffd4622f009aeb4c81ee1a3f41b80562e74d0fabb2708824871c5b4704905",
+      "sourceProjectionSha256": "f0fffd4622f009aeb4c81ee1a3f41b80562e74d0fabb2708824871c5b4704905",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 118,
+          "recordTextStart": 0,
+          "recordTextEnd": 109,
+          "textSha256": "f0fffd4622f009aeb4c81ee1a3f41b80562e74d0fabb2708824871c5b4704905"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num23",
+      "section": 23,
+      "citationLabel": "IV.6.7",
+      "chapter": 6,
+      "paragraph": 7,
+      "rawTextCharacters": 1163,
+      "rawTextSha256": "0739896242cba35195e3afe805eb10fd992fab0bce318a62fb991e3f87181422",
+      "removedPrefix": "[IV.6.7]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "668e177a16029071566fb128b649c9a7ad2ab9d850037ba53a2a2c52fa5aab23",
+      "sourceProjectionSha256": "668e177a16029071566fb128b649c9a7ad2ab9d850037ba53a2a2c52fa5aab23",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 369,
+          "recordTextStart": 0,
+          "recordTextEnd": 360,
+          "textSha256": "68faaff9931fb5b0807158c9460bc766fb7b2f0cd05ad4ca4fff73a0202e6f32"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 369,
+          "sourceTextEnd": 1162,
+          "recordTextStart": 360,
+          "recordTextEnd": 1153,
+          "textSha256": "4142dc30b22a0b3e69cd6755b8f2c5769a0e877d71b2b8a019a148d9bac83155"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 369,
+          "displayOffset": 361,
+          "page": "250"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num24",
+      "section": 24,
+      "citationLabel": "IV.6.8",
+      "chapter": 6,
+      "paragraph": 8,
+      "rawTextCharacters": 245,
+      "rawTextSha256": "29ed03a266fafa624dea5de56bed03ef88c399f9a033f3305bac2f64d778e8ff",
+      "removedPrefix": "[IV.6.8]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "579ce76f5997790f89f4e6312d474a767670865c5af9ffe0620a503fc2f82d25",
+      "sourceProjectionSha256": "579ce76f5997790f89f4e6312d474a767670865c5af9ffe0620a503fc2f82d25",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 244,
+          "recordTextStart": 0,
+          "recordTextEnd": 235,
+          "textSha256": "579ce76f5997790f89f4e6312d474a767670865c5af9ffe0620a503fc2f82d25"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num25",
+      "section": 25,
+      "citationLabel": "IV.6.9",
+      "chapter": 6,
+      "paragraph": 9,
+      "rawTextCharacters": 646,
+      "rawTextSha256": "5b7face000923656813a2dece51c4a036d2b2e6e26a961942ff02337ffe1b37a",
+      "removedPrefix": "[IV.6.9]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "15f556c43281ae349cbd489cf0ca844fd31b7801ff7dca342c1ee22e8147c3f4",
+      "sourceProjectionSha256": "15f556c43281ae349cbd489cf0ca844fd31b7801ff7dca342c1ee22e8147c3f4",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 614,
+          "recordTextStart": 0,
+          "recordTextEnd": 605,
+          "textSha256": "78a78b745b065c83a84eb3420380d4c476d0246ce1d7e479c32576bd134ce0a4"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 614,
+          "sourceTextEnd": 645,
+          "recordTextStart": 605,
+          "recordTextEnd": 636,
+          "textSha256": "aaf7d4f220669fb2a9e897f589935917b774709bca2ac6082f87b5b92d5895cb"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 614,
+          "displayOffset": 606,
+          "page": "251"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num26",
+      "section": 26,
+      "citationLabel": "IV.6.10",
+      "chapter": 6,
+      "paragraph": 10,
+      "rawTextCharacters": 223,
+      "rawTextSha256": "335d8e868abe1e194437f9a776c290bde5d49317f36925a2522c1a51951dcdc6",
+      "removedPrefix": "[IV.6.10]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "90dca5359394e4bcf2678a7d706713f990bebc505a9d50aa579614e19e283b36",
+      "sourceProjectionSha256": "90dca5359394e4bcf2678a7d706713f990bebc505a9d50aa579614e19e283b36",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 222,
+          "recordTextStart": 0,
+          "recordTextEnd": 212,
+          "textSha256": "90dca5359394e4bcf2678a7d706713f990bebc505a9d50aa579614e19e283b36"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num27",
+      "section": 27,
+      "citationLabel": "IV.6.11",
+      "chapter": 6,
+      "paragraph": 11,
+      "rawTextCharacters": 137,
+      "rawTextSha256": "07f7028bd0dbe22a60bcbe06dda625a28fefd57ed3d488ec5d577776a6c7c36a",
+      "removedPrefix": "[IV.6.11]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "34edf866c9cfd786a7c12a191f3a289fda701f7aaa0483ecd0f3aec57215be9a",
+      "sourceProjectionSha256": "34edf866c9cfd786a7c12a191f3a289fda701f7aaa0483ecd0f3aec57215be9a",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 136,
+          "recordTextStart": 0,
+          "recordTextEnd": 126,
+          "textSha256": "34edf866c9cfd786a7c12a191f3a289fda701f7aaa0483ecd0f3aec57215be9a"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num28",
+      "section": 28,
+      "citationLabel": "IV.6.12",
+      "chapter": 6,
+      "paragraph": 12,
+      "rawTextCharacters": 179,
+      "rawTextSha256": "22be93b3759f10a2d428daaa0874673f47a2e8a26ec04dfea549acf090ff3197",
+      "removedPrefix": "[IV.6.12]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "b7ace9abfdbb94b0d77af5b049e01f325c78fc87dcee60afad1f20d84f859d84",
+      "sourceProjectionSha256": "b7ace9abfdbb94b0d77af5b049e01f325c78fc87dcee60afad1f20d84f859d84",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 178,
+          "recordTextStart": 0,
+          "recordTextEnd": 168,
+          "textSha256": "b7ace9abfdbb94b0d77af5b049e01f325c78fc87dcee60afad1f20d84f859d84"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 179,
+          "displayOffset": 170
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num29",
+      "section": 29,
+      "citationLabel": "IV.7.1",
+      "chapter": 7,
+      "paragraph": 1,
+      "rawTextCharacters": 6111,
+      "rawTextSha256": "01dd34898d8a65fa11d03f7625ac35f90e143de4ff47d76c91affc139c82ffdc",
+      "removedPrefix": "[IV.7.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "28138c9fd7de59d76f56d381547c19f3d74cb3b4f84ef808423a84cbe7f856e2",
+      "sourceProjectionSha256": "28138c9fd7de59d76f56d381547c19f3d74cb3b4f84ef808423a84cbe7f856e2",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 973,
+          "recordTextStart": 0,
+          "recordTextEnd": 964,
+          "textSha256": "e9ea1182c6a69d942c864d0e4e2f4e4edc3393ffae691bc1d0f17cf4cefba9c1"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 973,
+          "sourceTextEnd": 2444,
+          "recordTextStart": 964,
+          "recordTextEnd": 2435,
+          "textSha256": "86da1a7bc29f3d5bec4bbfecb3080adf9a8d581f4284f92d28f9ea5bb85a37ef"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 2444,
+          "sourceTextEnd": 4118,
+          "recordTextStart": 2435,
+          "recordTextEnd": 4109,
+          "textSha256": "3e125f1994e5b8eb43266130951372f00a77841d01b03f3ce92a5508f30e59fc"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 4118,
+          "sourceTextEnd": 5921,
+          "recordTextStart": 4109,
+          "recordTextEnd": 5912,
+          "textSha256": "8c785e9f73676994877ae40aa6126d44f6e2a9645826b51878391ae450d5ab9a"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 5921,
+          "sourceTextEnd": 6110,
+          "recordTextStart": 5912,
+          "recordTextEnd": 6101,
+          "textSha256": "be600b4d57d3d3135920c300e887b8998f450c998cd00d4ae214d01fed6c7c90"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 973,
+          "displayOffset": 965,
+          "page": "252"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 2444,
+          "displayOffset": 2436,
+          "page": "253"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 4118,
+          "displayOffset": 4110,
+          "page": "254"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 5921,
+          "displayOffset": 5913,
+          "page": "255"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 6111,
+          "displayOffset": 6103
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num30",
+      "section": 30,
+      "citationLabel": "IV.8.1",
+      "chapter": 8,
+      "paragraph": 1,
+      "rawTextCharacters": 1434,
+      "rawTextSha256": "7575b2065e531d248a9eb743595a4eed3545cafd45d1801f653314c5bfc39673",
+      "removedPrefix": "[IV.8.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "c4ad1b11ec8c6c1902a3824513adc632dea181bd755bcab16c4c73a07748969e",
+      "sourceProjectionSha256": "c4ad1b11ec8c6c1902a3824513adc632dea181bd755bcab16c4c73a07748969e",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 1433,
+          "recordTextStart": 0,
+          "recordTextEnd": 1424,
+          "textSha256": "c4ad1b11ec8c6c1902a3824513adc632dea181bd755bcab16c4c73a07748969e"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 1434,
+          "displayOffset": 1426
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num31",
+      "section": 31,
+      "citationLabel": "IV.9.1",
+      "chapter": 9,
+      "paragraph": 1,
+      "rawTextCharacters": 1045,
+      "rawTextSha256": "4f94b768aa478d165c945757b1e520c1e1de9958f801a11730f3ce5c06f1cc52",
+      "removedPrefix": "[IV.9.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "055acb8872a9e486408dbfaf383abc1c9f304ce024f76a731a50c0f56a638fb6",
+      "sourceProjectionSha256": "055acb8872a9e486408dbfaf383abc1c9f304ce024f76a731a50c0f56a638fb6",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 1044,
+          "recordTextStart": 0,
+          "recordTextEnd": 1035,
+          "textSha256": "055acb8872a9e486408dbfaf383abc1c9f304ce024f76a731a50c0f56a638fb6"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 9,
+          "displayOffset": 1,
+          "page": "256"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num32",
+      "section": 32,
+      "citationLabel": "IV.9.2",
+      "chapter": 9,
+      "paragraph": 2,
+      "rawTextCharacters": 760,
+      "rawTextSha256": "99b658353de9967848456370c2717c43cbfc1f72e185f9fe262316972297d340",
+      "removedPrefix": "[IV.9.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "b89005a550695939d3b3157fa7e71db4d41abc7060ef5a982b471c1d7b416af8",
+      "sourceProjectionSha256": "b89005a550695939d3b3157fa7e71db4d41abc7060ef5a982b471c1d7b416af8",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 705,
+          "recordTextStart": 0,
+          "recordTextEnd": 696,
+          "textSha256": "724a81ec2cf222e02e5bf33fc8bc391a3a9ffb25df2ae63d02a4ec3d92e1b6ee"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 705,
+          "sourceTextEnd": 759,
+          "recordTextStart": 696,
+          "recordTextEnd": 750,
+          "textSha256": "053e24f09f744bd2553edea6f2c554aafa299074049b36b5d8da0aa231fb9251"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 705,
+          "displayOffset": 697,
+          "page": "257"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num33",
+      "section": 33,
+      "citationLabel": "IV.9.3",
+      "chapter": 9,
+      "paragraph": 3,
+      "rawTextCharacters": 646,
+      "rawTextSha256": "a0c8488e0f34ef0d4b7d0acbfbc4e2da614a28d0f3f0a166cbbe546c9ff7320d",
+      "removedPrefix": "[IV.9.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "a86187dd30684f6d976022d3fe65fcbc6f857995c18c99bea377b16d5bd2aaac",
+      "sourceProjectionSha256": "a86187dd30684f6d976022d3fe65fcbc6f857995c18c99bea377b16d5bd2aaac",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 645,
+          "recordTextStart": 0,
+          "recordTextEnd": 636,
+          "textSha256": "a86187dd30684f6d976022d3fe65fcbc6f857995c18c99bea377b16d5bd2aaac"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num34",
+      "section": 34,
+      "citationLabel": "IV.9.4",
+      "chapter": 9,
+      "paragraph": 4,
+      "rawTextCharacters": 871,
+      "rawTextSha256": "da58655657034fdb55c13c6123254695c8a0c2e87457a19ec355ce22446ad8a4",
+      "removedPrefix": "[IV.9.4]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "91efc470a86780f19626d23d13f5e0c96078bbbf0be67e3fdf6299bfb386086d",
+      "sourceProjectionSha256": "91efc470a86780f19626d23d13f5e0c96078bbbf0be67e3fdf6299bfb386086d",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 870,
+          "recordTextStart": 0,
+          "recordTextEnd": 861,
+          "textSha256": "91efc470a86780f19626d23d13f5e0c96078bbbf0be67e3fdf6299bfb386086d"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num35",
+      "section": 35,
+      "citationLabel": "IV.9.5",
+      "chapter": 9,
+      "paragraph": 5,
+      "rawTextCharacters": 662,
+      "rawTextSha256": "e176e07e4276c9cea007515c889aa1f14702b4c733e6bbbd0e8e222c3467abce",
+      "removedPrefix": "[IV.9.5]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "16d4546d031da4ff3b3ff57ae1585476aae71856591a36838fceb312853b9bc3",
+      "sourceProjectionSha256": "16d4546d031da4ff3b3ff57ae1585476aae71856591a36838fceb312853b9bc3",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 9,
+          "sourceTextEnd": 84,
+          "recordTextStart": 0,
+          "recordTextEnd": 75,
+          "textSha256": "4a407d6844691f9f2e2f70efbfae2d1ec82816393c4ee716bcd507aec3f638b4"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 84,
+          "sourceTextEnd": 661,
+          "recordTextStart": 75,
+          "recordTextEnd": 652,
+          "textSha256": "1c19e3dc0e6a1150bacb64340d3d4a0a563a4573f7b2abe1e131c289e40564be"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 84,
+          "displayOffset": 76,
+          "page": "258"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 662,
+          "displayOffset": 654
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num36",
+      "section": 36,
+      "citationLabel": "IV.10.1",
+      "chapter": 10,
+      "paragraph": 1,
+      "rawTextCharacters": 750,
+      "rawTextSha256": "0ca4e1e701ebcf3e9b3c730c4173cb06178e6de5c7a45fc48263afa68c599d8c",
+      "removedPrefix": "[IV.10.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "1c2b1b5d68d8c605273ff0c7c0219072067bb1d26cd0ad632e4bf7658151b7d2",
+      "sourceProjectionSha256": "1c2b1b5d68d8c605273ff0c7c0219072067bb1d26cd0ad632e4bf7658151b7d2",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 749,
+          "recordTextStart": 0,
+          "recordTextEnd": 739,
+          "textSha256": "1c2b1b5d68d8c605273ff0c7c0219072067bb1d26cd0ad632e4bf7658151b7d2"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num37",
+      "section": 37,
+      "citationLabel": "IV.10.2",
+      "chapter": 10,
+      "paragraph": 2,
+      "rawTextCharacters": 627,
+      "rawTextSha256": "46dc236325debc2aa4d806d15f6c5c026a70b336c53d00df84f40ae7f83a25c4",
+      "removedPrefix": "[IV.10.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "2858e259817e5428227473f584e6dc5222aa6880d71416c205b38fc8afdeec2b",
+      "sourceProjectionSha256": "2858e259817e5428227473f584e6dc5222aa6880d71416c205b38fc8afdeec2b",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 301,
+          "recordTextStart": 0,
+          "recordTextEnd": 291,
+          "textSha256": "1f744ac6c47516f4a6790bfb844f357b4f5354e4e461a260a575c0abd2f64d2e"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 301,
+          "sourceTextEnd": 626,
+          "recordTextStart": 291,
+          "recordTextEnd": 616,
+          "textSha256": "87d4c9b8a4a9fc08ed8fcd0f50324eb3418e96e2a991192160c31f9d9747b912"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 301,
+          "displayOffset": 292,
+          "page": "259"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 627,
+          "displayOffset": 618
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num38",
+      "section": 38,
+      "citationLabel": "IV.11.1",
+      "chapter": 11,
+      "paragraph": 1,
+      "rawTextCharacters": 2280,
+      "rawTextSha256": "9caaa13b75bf67137263cc138814b56a88b6dac69fe582ee0e58c8dfd1eb6b2c",
+      "removedPrefix": "[IV.11.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "9eae46b2ffd4aeda400ccbe0b8eadfd7ff8b9503a6a4501999b3d11cc438eb69",
+      "sourceProjectionSha256": "9eae46b2ffd4aeda400ccbe0b8eadfd7ff8b9503a6a4501999b3d11cc438eb69",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1312,
+          "recordTextStart": 0,
+          "recordTextEnd": 1302,
+          "textSha256": "66c7273406442659d8af692c2d7b4cfd29de99e6870acef88c1d560f2f962ef4"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1312,
+          "sourceTextEnd": 2279,
+          "recordTextStart": 1302,
+          "recordTextEnd": 2269,
+          "textSha256": "45301bfdd328c2451a77c45ef988080783d6a32dfe655b486bc3690df2b4f521"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1312,
+          "displayOffset": 1303,
+          "page": "260"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 2280,
+          "displayOffset": 2271
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num39",
+      "section": 39,
+      "citationLabel": "IV.12.1",
+      "chapter": 12,
+      "paragraph": 1,
+      "rawTextCharacters": 524,
+      "rawTextSha256": "14c223dc579e30d45482183f2100a8361e5173ed55ae680e4007c322a0999461",
+      "removedPrefix": "[IV.12.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "cd04a224c56a3ee5ad1e4ac744ec0b4b3f2b83fec17fb6df00216c1d23e3d97d",
+      "sourceProjectionSha256": "cd04a224c56a3ee5ad1e4ac744ec0b4b3f2b83fec17fb6df00216c1d23e3d97d",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 523,
+          "recordTextStart": 0,
+          "recordTextEnd": 513,
+          "textSha256": "cd04a224c56a3ee5ad1e4ac744ec0b4b3f2b83fec17fb6df00216c1d23e3d97d"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 524,
+          "displayOffset": 515
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num40",
+      "section": 40,
+      "citationLabel": "IV.13.1",
+      "chapter": 13,
+      "paragraph": 1,
+      "rawTextCharacters": 858,
+      "rawTextSha256": "3260e45b45e931b0fa7742f0dc13b456dac918a2528433ab4698cad4d5fd1e39",
+      "removedPrefix": "[IV.13.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "fc464fe1ea005a804804fdb6d5fb929ec13163f8ebf2c6c75395b917002d7670",
+      "sourceProjectionSha256": "fc464fe1ea005a804804fdb6d5fb929ec13163f8ebf2c6c75395b917002d7670",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 857,
+          "recordTextStart": 0,
+          "recordTextEnd": 847,
+          "textSha256": "fc464fe1ea005a804804fdb6d5fb929ec13163f8ebf2c6c75395b917002d7670"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 10,
+          "displayOffset": 1,
+          "page": "261"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num41",
+      "section": 41,
+      "citationLabel": "IV.13.2",
+      "chapter": 13,
+      "paragraph": 2,
+      "rawTextCharacters": 599,
+      "rawTextSha256": "f20368a2ef7df1170e591e08d4d50b74930db73e920cf37c0ec532c1fd791f33",
+      "removedPrefix": "[IV.13.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "6d233283fdfbf084925558066f9892bc4408a39499fdbc2e4ee6a927f51ad750",
+      "sourceProjectionSha256": "6d233283fdfbf084925558066f9892bc4408a39499fdbc2e4ee6a927f51ad750",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 598,
+          "recordTextStart": 0,
+          "recordTextEnd": 588,
+          "textSha256": "6d233283fdfbf084925558066f9892bc4408a39499fdbc2e4ee6a927f51ad750"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 599,
+          "displayOffset": 590
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num42",
+      "section": 42,
+      "citationLabel": "IV.14.1",
+      "chapter": 14,
+      "paragraph": 1,
+      "rawTextCharacters": 908,
+      "rawTextSha256": "b0f98065047831a72443da38be0f3944a5a08081f0d4004a9bac61646f0e1fc3",
+      "removedPrefix": "[IV.14.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "4bbb8ad5fa4f9292242ae6d26e373129ed47f28a3f39c21c707b97d22e009fa2",
+      "sourceProjectionSha256": "4bbb8ad5fa4f9292242ae6d26e373129ed47f28a3f39c21c707b97d22e009fa2",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 907,
+          "recordTextStart": 0,
+          "recordTextEnd": 897,
+          "textSha256": "4bbb8ad5fa4f9292242ae6d26e373129ed47f28a3f39c21c707b97d22e009fa2"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 10,
+          "displayOffset": 1,
+          "page": "262"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 908,
+          "displayOffset": 899
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num43",
+      "section": 43,
+      "citationLabel": "IV.15.1",
+      "chapter": 15,
+      "paragraph": 1,
+      "rawTextCharacters": 435,
+      "rawTextSha256": "7ef39fd2cbdb5fbbb37169e602d2d83494437e5ee6882d1d7f170e50603ef92e",
+      "removedPrefix": "[IV.15.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "2ad6a9ed270014e3127cee0146ea8cd2fbad64e8469ca65d1d1b61cc75651be0",
+      "sourceProjectionSha256": "2ad6a9ed270014e3127cee0146ea8cd2fbad64e8469ca65d1d1b61cc75651be0",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 434,
+          "recordTextStart": 0,
+          "recordTextEnd": 424,
+          "textSha256": "2ad6a9ed270014e3127cee0146ea8cd2fbad64e8469ca65d1d1b61cc75651be0"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num44",
+      "section": 44,
+      "citationLabel": "IV.15.2",
+      "chapter": 15,
+      "paragraph": 2,
+      "rawTextCharacters": 2466,
+      "rawTextSha256": "c88d12ec14d0e8d6251574d936eeb6c4f149fa6e182d607dd75970b592e17f8c",
+      "removedPrefix": "[IV.15.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "90b75d0883d1b223ebb511da30f4b88b2e44dc9ccad2a6eb6ebdbd4bf1d86081",
+      "sourceProjectionSha256": "90b75d0883d1b223ebb511da30f4b88b2e44dc9ccad2a6eb6ebdbd4bf1d86081",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 93,
+          "recordTextStart": 0,
+          "recordTextEnd": 83,
+          "textSha256": "a699071981c1e37750f8a362398efe9bd2de56a40deb157f1d5c7103b697ab9a"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 93,
+          "sourceTextEnd": 1554,
+          "recordTextStart": 83,
+          "recordTextEnd": 1544,
+          "textSha256": "0a75a71557ac055f25590e5116c09631ef5efd60b06bcfaa27b233a336abc333"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1554,
+          "sourceTextEnd": 2465,
+          "recordTextStart": 1544,
+          "recordTextEnd": 2455,
+          "textSha256": "6c58e640ecf76e9c4a4a90684b164bb7ccda7dac12cc3a6af36725fe4be53db4"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 93,
+          "displayOffset": 84,
+          "page": "263"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1554,
+          "displayOffset": 1545,
+          "page": "264"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num45",
+      "section": 45,
+      "citationLabel": "IV.15.3",
+      "chapter": 15,
+      "paragraph": 3,
+      "rawTextCharacters": 849,
+      "rawTextSha256": "c569687d4bc6dd6d6fcb8bb64b6fcefa4cb0047cb34a75590b81426c94fbac90",
+      "removedPrefix": "[IV.15.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "9e99fad6dbcc2a941884a7692d1e7deb35a46e8a39733f38b3aaa1d8ceee64f4",
+      "sourceProjectionSha256": "9e99fad6dbcc2a941884a7692d1e7deb35a46e8a39733f38b3aaa1d8ceee64f4",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 677,
+          "recordTextStart": 0,
+          "recordTextEnd": 667,
+          "textSha256": "b23640652ac422df77bb88cc1bfcec48209ee777cda9b429ace74c82331bc590"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 677,
+          "sourceTextEnd": 848,
+          "recordTextStart": 667,
+          "recordTextEnd": 838,
+          "textSha256": "f3a69d40be5e8c55365d306820391c87fcff109b64acab2ac1c0131e5b464962"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 677,
+          "displayOffset": 668,
+          "page": "265"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 849,
+          "displayOffset": 840
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num46",
+      "section": 46,
+      "citationLabel": "IV.16.1",
+      "chapter": 16,
+      "paragraph": 1,
+      "rawTextCharacters": 1587,
+      "rawTextSha256": "44a85d6ab85c9b2ebd17992e5939e3e266f2c45451357d177c918fd77f5f2e0d",
+      "removedPrefix": "[IV.16.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "30899dfec78fed709db21e63c324ec57ef381ab966de86a4059130ea79fe11e0",
+      "sourceProjectionSha256": "30899dfec78fed709db21e63c324ec57ef381ab966de86a4059130ea79fe11e0",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1248,
+          "recordTextStart": 0,
+          "recordTextEnd": 1238,
+          "textSha256": "6760f9f4643647219d9123ffdf5e88072f551c0846139b3c55f45ead7d0af34a"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1248,
+          "sourceTextEnd": 1586,
+          "recordTextStart": 1238,
+          "recordTextEnd": 1576,
+          "textSha256": "8deca5f561064d724f61c3b1fcfbb8c47b07fef716a87876be0442673f7cdf95"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1248,
+          "displayOffset": 1239,
+          "page": "266"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num47",
+      "section": 47,
+      "citationLabel": "IV.16.2",
+      "chapter": 16,
+      "paragraph": 2,
+      "rawTextCharacters": 1885,
+      "rawTextSha256": "c6cb724f175b81aa38661c700ccc173c69f5515cc0905d0aeacccdbb97a6d151",
+      "removedPrefix": "[IV.16.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "1839c67594ce7670e9c1a3feed0e90a769e6d34ecb99202f9116d5fe7b062e10",
+      "sourceProjectionSha256": "1839c67594ce7670e9c1a3feed0e90a769e6d34ecb99202f9116d5fe7b062e10",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1087,
+          "recordTextStart": 0,
+          "recordTextEnd": 1077,
+          "textSha256": "923cbd34d39b3719f1c34f017d1b27984a0eade27ec2f5a9af42b8ec76237ad1"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1087,
+          "sourceTextEnd": 1884,
+          "recordTextStart": 1077,
+          "recordTextEnd": 1874,
+          "textSha256": "f90841b0559a6c0d3c6b80018eb450c2fd6795feb61e16ad7369a05d5a266a0b"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1087,
+          "displayOffset": 1078,
+          "page": "267"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 1885,
+          "displayOffset": 1876
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num48",
+      "section": 48,
+      "citationLabel": "IV.17.1",
+      "chapter": 17,
+      "paragraph": 1,
+      "rawTextCharacters": 2732,
+      "rawTextSha256": "dca214e39c0bb9caf6a4a267d3244052104d53aa9a8962397aec66943f7404fc",
+      "removedPrefix": "[IV.17.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "aba4a5dec844a1527672a4b9e870f8020692df10e1657478c3a4c07fada14613",
+      "sourceProjectionSha256": "aba4a5dec844a1527672a4b9e870f8020692df10e1657478c3a4c07fada14613",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 579,
+          "recordTextStart": 0,
+          "recordTextEnd": 569,
+          "textSha256": "4b4a948d2d939d224129c3a35da81c4c50354f1834070fa5cb3c68865d0eaa29"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 579,
+          "sourceTextEnd": 1934,
+          "recordTextStart": 569,
+          "recordTextEnd": 1924,
+          "textSha256": "58cbb3dc3d7cda46c6ef3918dfb1f858c40c8b6d11c74f25c510ea0e9c803495"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1934,
+          "sourceTextEnd": 2731,
+          "recordTextStart": 1924,
+          "recordTextEnd": 2721,
+          "textSha256": "997c189d00eaad2d5946aba8dc29a7f57d2c3587d61a3c7841d748997186578a"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 579,
+          "displayOffset": 570,
+          "page": "268"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1934,
+          "displayOffset": 1925,
+          "page": "269"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 2732,
+          "displayOffset": 2723
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num49",
+      "section": 49,
+      "citationLabel": "IV.18.1",
+      "chapter": 18,
+      "paragraph": 1,
+      "rawTextCharacters": 3570,
+      "rawTextSha256": "d8093758015a56b2b15b0e6f0fd659acf2d48a8dc658da25ad04eab42ab8b9d3",
+      "removedPrefix": "[IV.18.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "a1bba30405237229aa9ff9550347e93bc49e31a550c1b70951c5e3fc18cc6e6a",
+      "sourceProjectionSha256": "a1bba30405237229aa9ff9550347e93bc49e31a550c1b70951c5e3fc18cc6e6a",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 448,
+          "recordTextStart": 0,
+          "recordTextEnd": 438,
+          "textSha256": "e46125f175c22776915f9b45080132afd60559a6108fb36a8cf7a8dd28c76155"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 448,
+          "sourceTextEnd": 1833,
+          "recordTextStart": 438,
+          "recordTextEnd": 1823,
+          "textSha256": "0bbd53f551862f5cc7d380ac36d5109fd1505096d2c94dacadfd82ec2f2e0949"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1833,
+          "sourceTextEnd": 3119,
+          "recordTextStart": 1823,
+          "recordTextEnd": 3109,
+          "textSha256": "994fbe0ecb4be9c6908704e14744cf8785d3e205c7fff700d43bee6633ebd2de"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 3119,
+          "sourceTextEnd": 3211,
+          "recordTextStart": 3109,
+          "recordTextEnd": 3201,
+          "textSha256": "09ee1dc54bd146ac7d1b9a288af75f9d6d7cf1b7d3ac979b3bfd1ce3b1a927b5"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 3211,
+          "sourceTextEnd": 3218,
+          "recordTextStart": 3201,
+          "recordTextEnd": 3208,
+          "textSha256": "1559d6aa3c36f76671d909f699884ebd51dcf67f7e49b9a37d21d227722cbde6"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 3218,
+          "sourceTextEnd": 3569,
+          "recordTextStart": 3208,
+          "recordTextEnd": 3559,
+          "textSha256": "caaa4420d40d428e488c4a7ba3f1d3836efe565f816c586188fdb3cd722382f9"
+        }
+      ],
+      "inlineMarks": [
+        {
+          "kind": "del",
+          "displayStart": 3202,
+          "displayEnd": 3209,
+          "sourceTextStart": 3211,
+          "sourceTextEnd": 3218
+        }
+      ],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 448,
+          "displayOffset": 439,
+          "page": "270"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1833,
+          "displayOffset": 1824,
+          "page": "271"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 3119,
+          "displayOffset": 3110,
+          "page": "272"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 3570,
+          "displayOffset": 3561
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num50",
+      "section": 50,
+      "citationLabel": "IV.19.1",
+      "chapter": 19,
+      "paragraph": 1,
+      "rawTextCharacters": 984,
+      "rawTextSha256": "354b8df2559def26549e7d09b81d9514905639bc859f9e74e9e1438abb0862c4",
+      "removedPrefix": "[IV.19.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "4dcb08f712c3736aaf558ec78f23cd951c94ca815590b715554e1535db6afcf1",
+      "sourceProjectionSha256": "4dcb08f712c3736aaf558ec78f23cd951c94ca815590b715554e1535db6afcf1",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 983,
+          "recordTextStart": 0,
+          "recordTextEnd": 973,
+          "textSha256": "4dcb08f712c3736aaf558ec78f23cd951c94ca815590b715554e1535db6afcf1"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 984,
+          "displayOffset": 975
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num51",
+      "section": 51,
+      "citationLabel": "IV.20.1",
+      "chapter": 20,
+      "paragraph": 1,
+      "rawTextCharacters": 1613,
+      "rawTextSha256": "c8f231d015ddb46ad2b8a450d1cfed714d106014dbcdc2fbc83bbca997a9cd34",
+      "removedPrefix": "[IV.20.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "28714acb8ccf42cfc2a1be4bcdea5b8eeb1bfaa71910d917e22fde18ef738e7b",
+      "sourceProjectionSha256": "28714acb8ccf42cfc2a1be4bcdea5b8eeb1bfaa71910d917e22fde18ef738e7b",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1612,
+          "recordTextStart": 0,
+          "recordTextEnd": 1602,
+          "textSha256": "28714acb8ccf42cfc2a1be4bcdea5b8eeb1bfaa71910d917e22fde18ef738e7b"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 10,
+          "displayOffset": 1,
+          "page": "273"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 1613,
+          "displayOffset": 1604
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num52",
+      "section": 52,
+      "citationLabel": "IV.21.1",
+      "chapter": 21,
+      "paragraph": 1,
+      "rawTextCharacters": 1149,
+      "rawTextSha256": "5a8e32b69c9c31bb0e2bde089186e4601ffc6c1cf0ad0e48ffe5a683a82151f8",
+      "removedPrefix": "[IV.21.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "a7fd20d2a3bfc205c841e9efd0f16031c09e053f33526953366ad2365f037270",
+      "sourceProjectionSha256": "a7fd20d2a3bfc205c841e9efd0f16031c09e053f33526953366ad2365f037270",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1148,
+          "recordTextStart": 0,
+          "recordTextEnd": 1138,
+          "textSha256": "a7fd20d2a3bfc205c841e9efd0f16031c09e053f33526953366ad2365f037270"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 10,
+          "displayOffset": 1,
+          "page": "274"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 1149,
+          "displayOffset": 1140
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num53",
+      "section": 53,
+      "citationLabel": "IV.22.1",
+      "chapter": 22,
+      "paragraph": 1,
+      "rawTextCharacters": 1081,
+      "rawTextSha256": "a6bf80dedf08cb1aac744c0e05ba0e7c1a331454e18b44d9eabe12cf4c605b3d",
+      "removedPrefix": "[IV.22.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "e48c7d02f59f0355b91618f57c9adbf96dc35a72306ef90e85f6c7fe1b89fc3d",
+      "sourceProjectionSha256": "e48c7d02f59f0355b91618f57c9adbf96dc35a72306ef90e85f6c7fe1b89fc3d",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 336,
+          "recordTextStart": 0,
+          "recordTextEnd": 326,
+          "textSha256": "075c3e5e59ef6e9aba1dbf3355471daa81210aa39e89aaea8cc8aed982ffc6a8"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 336,
+          "sourceTextEnd": 1080,
+          "recordTextStart": 326,
+          "recordTextEnd": 1070,
+          "textSha256": "c56d28c999e217ca28a1e48712a9cbb1f04c8814f8eef85c6abb7d2d00c20815"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 336,
+          "displayOffset": 327,
+          "page": "275"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num54",
+      "section": 54,
+      "citationLabel": "IV.22.2",
+      "chapter": 22,
+      "paragraph": 2,
+      "rawTextCharacters": 197,
+      "rawTextSha256": "db428b47f9495922aa550e894aa87e882481c15631b25d3ba8f6f162be99cc92",
+      "removedPrefix": "[IV.22.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "9bd133c26519c913b206ae17096b1b396197667a16d3f752ad2a7a987f02c309",
+      "sourceProjectionSha256": "9bd133c26519c913b206ae17096b1b396197667a16d3f752ad2a7a987f02c309",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 196,
+          "recordTextStart": 0,
+          "recordTextEnd": 186,
+          "textSha256": "9bd133c26519c913b206ae17096b1b396197667a16d3f752ad2a7a987f02c309"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num55",
+      "section": 55,
+      "citationLabel": "IV.22.3",
+      "chapter": 22,
+      "paragraph": 3,
+      "rawTextCharacters": 389,
+      "rawTextSha256": "aa7ddd73bcdd74a5ffe50895bcdd547b1346dbf3f074bda41286048782cb2752",
+      "removedPrefix": "[IV.22.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "e40b5f734409d7985f5c772ae6c262cc64917cecdf95803882ce4d8da5a38f5a",
+      "sourceProjectionSha256": "e40b5f734409d7985f5c772ae6c262cc64917cecdf95803882ce4d8da5a38f5a",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 388,
+          "recordTextStart": 0,
+          "recordTextEnd": 378,
+          "textSha256": "e40b5f734409d7985f5c772ae6c262cc64917cecdf95803882ce4d8da5a38f5a"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 389,
+          "displayOffset": 380
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num56",
+      "section": 56,
+      "citationLabel": "IV.23.1",
+      "chapter": 23,
+      "paragraph": 1,
+      "rawTextCharacters": 1702,
+      "rawTextSha256": "1eca896264a2200e563ad9ce7b3e4d80bf9eda92058523b2822cdaa2e02b7ead",
+      "removedPrefix": "[IV.23.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "d90d4d11a9ab519ea21a980ea456cf52736e99f61480b53642de43532229e88f",
+      "sourceProjectionSha256": "d90d4d11a9ab519ea21a980ea456cf52736e99f61480b53642de43532229e88f",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 232,
+          "recordTextStart": 0,
+          "recordTextEnd": 222,
+          "textSha256": "edd6b31e1d03b35340bf48a164682b38276ccae7cef735cc275b75bb980d527d"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 232,
+          "sourceTextEnd": 1701,
+          "recordTextStart": 222,
+          "recordTextEnd": 1691,
+          "textSha256": "548a3c7b2c58ab0c27350dcc975fc8f3c1fbd06225269e7ccb55c2b562f62016"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 232,
+          "displayOffset": 223,
+          "page": "276"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num57",
+      "section": 57,
+      "citationLabel": "IV.23.2",
+      "chapter": 23,
+      "paragraph": 2,
+      "rawTextCharacters": 1240,
+      "rawTextSha256": "17672019902bb1ef77ee5cd10da23473817e70bd42ee878e0214c90294cb64b5",
+      "removedPrefix": "[IV.23.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "58e59a2491b9d0744fe89a2599c32c204c5b5bdbed2a82c52c24987ceb36d2fd",
+      "sourceProjectionSha256": "58e59a2491b9d0744fe89a2599c32c204c5b5bdbed2a82c52c24987ceb36d2fd",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 64,
+          "recordTextStart": 0,
+          "recordTextEnd": 54,
+          "textSha256": "f2d751939e5209c6798159c4c882a4b4d22edee25271e716d9cc21c42aa12f56"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 64,
+          "sourceTextEnd": 1239,
+          "recordTextStart": 54,
+          "recordTextEnd": 1229,
+          "textSha256": "d39c2416d84a0d5d490384a0922f3b1b40ca23b9feac1f2149639e0ddd8aaa79"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 64,
+          "displayOffset": 55,
+          "page": "277"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num58",
+      "section": 58,
+      "citationLabel": "IV.23.3",
+      "chapter": 23,
+      "paragraph": 3,
+      "rawTextCharacters": 1075,
+      "rawTextSha256": "4c68d03f2ac6bb7bf8d78d68e59fae89c7177265e5d7524dd7f3c7f88695540a",
+      "removedPrefix": "[IV.23.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "26e49c043d353ea79566b334cd371027f56c4ef98ac1d802f7260578bb09fa46",
+      "sourceProjectionSha256": "26e49c043d353ea79566b334cd371027f56c4ef98ac1d802f7260578bb09fa46",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 255,
+          "recordTextStart": 0,
+          "recordTextEnd": 245,
+          "textSha256": "9a4a82cb8c6cf492e114c758192e1a7a6f0e7fa93251e9cdfffc382c0a58a80d"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 255,
+          "sourceTextEnd": 1074,
+          "recordTextStart": 245,
+          "recordTextEnd": 1064,
+          "textSha256": "e29c6caab07a4d1645dee96ac1e7e838183635b65c4532b62df40afed3d950b1"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 255,
+          "displayOffset": 246,
+          "page": "278"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 1075,
+          "displayOffset": 1066
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num59",
+      "section": 59,
+      "citationLabel": "IV.24.1",
+      "chapter": 24,
+      "paragraph": 1,
+      "rawTextCharacters": 534,
+      "rawTextSha256": "b5f7b8217b09a3e270917eb8d35eb977f6453b54a2d28bb4570ce26a453fb76a",
+      "removedPrefix": "[IV.24.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "9eae745f977769e6d58a7f3d51040a2c899de982ef0d862e5119fbf24af951d1",
+      "sourceProjectionSha256": "9eae745f977769e6d58a7f3d51040a2c899de982ef0d862e5119fbf24af951d1",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 533,
+          "recordTextStart": 0,
+          "recordTextEnd": 523,
+          "textSha256": "9eae745f977769e6d58a7f3d51040a2c899de982ef0d862e5119fbf24af951d1"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 534,
+          "displayOffset": 525
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num60",
+      "section": 60,
+      "citationLabel": "IV.25.1",
+      "chapter": 25,
+      "paragraph": 1,
+      "rawTextCharacters": 505,
+      "rawTextSha256": "718d564a460c748c8e818d12f13426701c7e98e61f0ffb92c7699b385d7eee2b",
+      "removedPrefix": "[IV.25.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "52ddcf4d197757d1dc560cca2c49ec852ca4bc84c6b7f92ead1b7835480bdadc",
+      "sourceProjectionSha256": "52ddcf4d197757d1dc560cca2c49ec852ca4bc84c6b7f92ead1b7835480bdadc",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 504,
+          "recordTextStart": 0,
+          "recordTextEnd": 494,
+          "textSha256": "52ddcf4d197757d1dc560cca2c49ec852ca4bc84c6b7f92ead1b7835480bdadc"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 10,
+          "displayOffset": 1,
+          "page": "279"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num61",
+      "section": 61,
+      "citationLabel": "IV.25.2",
+      "chapter": 25,
+      "paragraph": 2,
+      "rawTextCharacters": 1193,
+      "rawTextSha256": "fe66ed3309377a88a2a70412084852f47445748bc913495aa84d435b88d6aadb",
+      "removedPrefix": "[IV.25.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "45a6c6bb0a73a578efb2ef20c2c37bb5d3147d25c19e0715d5b68edd18602c2f",
+      "sourceProjectionSha256": "45a6c6bb0a73a578efb2ef20c2c37bb5d3147d25c19e0715d5b68edd18602c2f",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 998,
+          "recordTextStart": 0,
+          "recordTextEnd": 988,
+          "textSha256": "271a0b0269d0dd21e49b6bc00a5bb8f5cd5bbac61a83a3bf349730adbf32f9ce"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 998,
+          "sourceTextEnd": 1192,
+          "recordTextStart": 988,
+          "recordTextEnd": 1182,
+          "textSha256": "c0eef6c658a1e287b0cff47f9f2f72f0c55c6c5257b1c1357aaeb863cbe756d8"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 998,
+          "displayOffset": 989,
+          "page": "280"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num62",
+      "section": 62,
+      "citationLabel": "IV.25.3",
+      "chapter": 25,
+      "paragraph": 3,
+      "rawTextCharacters": 1376,
+      "rawTextSha256": "87273e1020e441e8a184576ce0adbd82c67ebf5ff3ce3d6410788f725c51845a",
+      "removedPrefix": "[IV.25.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "5a51dbd260ba9e7dca26f515f9f61709f9247fe25608d01b63277a6f01f4d684",
+      "sourceProjectionSha256": "5a51dbd260ba9e7dca26f515f9f61709f9247fe25608d01b63277a6f01f4d684",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1375,
+          "recordTextStart": 0,
+          "recordTextEnd": 1365,
+          "textSha256": "5a51dbd260ba9e7dca26f515f9f61709f9247fe25608d01b63277a6f01f4d684"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 1376,
+          "displayOffset": 1367
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num63",
+      "section": 63,
+      "citationLabel": "IV.26.1",
+      "chapter": 26,
+      "paragraph": 1,
+      "rawTextCharacters": 2558,
+      "rawTextSha256": "91113c8ad31d73b3b392f0cee94e7d846935cccad23449284925dfdf568b19a9",
+      "removedPrefix": "[IV.26.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "7db8776bd9267623373fdb8ec6c856444aafc591f4294e0e1d8d2a0dfae625a6",
+      "sourceProjectionSha256": "7db8776bd9267623373fdb8ec6c856444aafc591f4294e0e1d8d2a0dfae625a6",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1586,
+          "recordTextStart": 0,
+          "recordTextEnd": 1576,
+          "textSha256": "58451bdfb551e1144bb8135cdaafd4782995750aef0c8545dfd707571867433c"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1586,
+          "sourceTextEnd": 2557,
+          "recordTextStart": 1576,
+          "recordTextEnd": 2547,
+          "textSha256": "045f2a6714113962a31a5c468168c2cd0eee031236e18a973b3c68af48113ede"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 10,
+          "displayOffset": 1,
+          "page": "281"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1586,
+          "displayOffset": 1577,
+          "page": "282"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num64",
+      "section": 64,
+      "citationLabel": "IV.26.2",
+      "chapter": 26,
+      "paragraph": 2,
+      "rawTextCharacters": 551,
+      "rawTextSha256": "19d10614c2799f37a758dfaf1fe35a2a67f99f8d8bcde9e69dc206427f4f8414",
+      "removedPrefix": "[IV.26.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "c35cd8a71f2c1f5601289221f7a345e9962a32b9644cbf7231c818c5e42de610",
+      "sourceProjectionSha256": "c35cd8a71f2c1f5601289221f7a345e9962a32b9644cbf7231c818c5e42de610",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 550,
+          "recordTextStart": 0,
+          "recordTextEnd": 540,
+          "textSha256": "c35cd8a71f2c1f5601289221f7a345e9962a32b9644cbf7231c818c5e42de610"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num65",
+      "section": 65,
+      "citationLabel": "IV.26.3",
+      "chapter": 26,
+      "paragraph": 3,
+      "rawTextCharacters": 536,
+      "rawTextSha256": "3e0fcbda820ebabf6ae9cf154a012fab7787c1e1b9485c020e9ea7177dc4523a",
+      "removedPrefix": "[IV.26.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "b6f378893661bb74e951171d831c46c74f7bb23941b9caf4989dacbf067cae9f",
+      "sourceProjectionSha256": "b6f378893661bb74e951171d831c46c74f7bb23941b9caf4989dacbf067cae9f",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 199,
+          "recordTextStart": 0,
+          "recordTextEnd": 189,
+          "textSha256": "f249d43b439a1e4451088f5c97c42d156c9964ebaf68b4c67c35af48cc136699"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 199,
+          "sourceTextEnd": 535,
+          "recordTextStart": 189,
+          "recordTextEnd": 525,
+          "textSha256": "3411751e99cb7639e1ead06094ab4b3cf33d20f0d71676310e5b427ea5dfc2cb"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 199,
+          "displayOffset": 190,
+          "page": "283"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 536,
+          "displayOffset": 527
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num66",
+      "section": 66,
+      "citationLabel": "IV.27.1",
+      "chapter": 27,
+      "paragraph": 1,
+      "rawTextCharacters": 4401,
+      "rawTextSha256": "1e11e2d7e365d0a4bdb2d71c97373c8bb776295f8446494c1cf3ceeae1ab8469",
+      "removedPrefix": "[IV.27.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "58a7547332989245a5608f9cfb0536693d224457f18c63ec4ac7cf658d6dd1c5",
+      "sourceProjectionSha256": "58a7547332989245a5608f9cfb0536693d224457f18c63ec4ac7cf658d6dd1c5",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1080,
+          "recordTextStart": 0,
+          "recordTextEnd": 1070,
+          "textSha256": "a209633b4131099022899d994d16e0a8b400ddd68a2f606232ee0c18204b454a"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1080,
+          "sourceTextEnd": 2357,
+          "recordTextStart": 1070,
+          "recordTextEnd": 2347,
+          "textSha256": "9259a24148b7be4eae94c809a885fc79fbf0624722cad98a2bdeaaa54cf39409"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 2357,
+          "sourceTextEnd": 3793,
+          "recordTextStart": 2347,
+          "recordTextEnd": 3783,
+          "textSha256": "018fe8d87761a3362610a34341c19baeb2ba8f2b140fb8e963bc9d6721329825"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 3793,
+          "sourceTextEnd": 4400,
+          "recordTextStart": 3783,
+          "recordTextEnd": 4390,
+          "textSha256": "2a3ef3ac38aef3ce11f0874ea4d2246bdb721f507ed65860b247bf0ca5e17abe"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1080,
+          "displayOffset": 1071,
+          "page": "284"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 2357,
+          "displayOffset": 2348,
+          "page": "285"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 3793,
+          "displayOffset": 3784,
+          "page": "286"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 4401,
+          "displayOffset": 4392
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num67",
+      "section": 67,
+      "citationLabel": "IV.28.1",
+      "chapter": 28,
+      "paragraph": 1,
+      "rawTextCharacters": 657,
+      "rawTextSha256": "0e9eb4e087c3d5c65cf299b581fd48f212bce6e0ab743423579a7312609abb15",
+      "removedPrefix": "[IV.28.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "a44a59f0a2047aa0c16fec06319144e5dbab03ccebf3edb2263e245c8d3dc07e",
+      "sourceProjectionSha256": "a44a59f0a2047aa0c16fec06319144e5dbab03ccebf3edb2263e245c8d3dc07e",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 656,
+          "recordTextStart": 0,
+          "recordTextEnd": 646,
+          "textSha256": "a44a59f0a2047aa0c16fec06319144e5dbab03ccebf3edb2263e245c8d3dc07e"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num68",
+      "section": 68,
+      "citationLabel": "IV.28.2",
+      "chapter": 28,
+      "paragraph": 2,
+      "rawTextCharacters": 441,
+      "rawTextSha256": "5dbb0018c598fda920384761181a4a8b26dae8832601a031f238dc1a983aa7ea",
+      "removedPrefix": "[IV.28.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "3dc67b8a125d3e6285272d0177d40a9c9925b8178b4b10432766f18c4968210b",
+      "sourceProjectionSha256": "3dc67b8a125d3e6285272d0177d40a9c9925b8178b4b10432766f18c4968210b",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 57,
+          "recordTextStart": 0,
+          "recordTextEnd": 47,
+          "textSha256": "2fb3376bf594f404806200c35401cc6455dcaff4dffbe9711d8fdc52fc8026c3"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 57,
+          "sourceTextEnd": 62,
+          "recordTextStart": 47,
+          "recordTextEnd": 52,
+          "textSha256": "1f98a1b341e2a1ab70484228c79ce3bb367b7b155b0bca9b4bc6a36aeb683d51"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 62,
+          "sourceTextEnd": 251,
+          "recordTextStart": 52,
+          "recordTextEnd": 241,
+          "textSha256": "3d3773bd7b34bca9aa5381c7fe9bfb3873b672a04368b3312b6eaec5dbfa7830"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 251,
+          "sourceTextEnd": 440,
+          "recordTextStart": 241,
+          "recordTextEnd": 430,
+          "textSha256": "4e685bcdca5a49d53c1fc5c71e1c3ce77a2f286e8035f33d63934616e9cf4b9a"
+        }
+      ],
+      "inlineMarks": [
+        {
+          "kind": "del",
+          "displayStart": 48,
+          "displayEnd": 53,
+          "sourceTextStart": 57,
+          "sourceTextEnd": 62
+        }
+      ],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 251,
+          "displayOffset": 242,
+          "page": "287"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 441,
+          "displayOffset": 432
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num69",
+      "section": 69,
+      "citationLabel": "IV.29.1",
+      "chapter": 29,
+      "paragraph": 1,
+      "rawTextCharacters": 380,
+      "rawTextSha256": "9e74a2a675eb5cb5e458ebc3a7e23a3ac7c1869cfd34dce981d251689d408e59",
+      "removedPrefix": "[IV.29.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "5197b72a238b484aa749c37258b38bf54f2bed385ddff63d3c485072c60f388c",
+      "sourceProjectionSha256": "5197b72a238b484aa749c37258b38bf54f2bed385ddff63d3c485072c60f388c",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 379,
+          "recordTextStart": 0,
+          "recordTextEnd": 369,
+          "textSha256": "5197b72a238b484aa749c37258b38bf54f2bed385ddff63d3c485072c60f388c"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num70",
+      "section": 70,
+      "citationLabel": "IV.29.2",
+      "chapter": 29,
+      "paragraph": 2,
+      "rawTextCharacters": 2967,
+      "rawTextSha256": "bd8e25989cb2781b7fa5816b917bd7be381d119fedd60a98737db982f2e36e59",
+      "removedPrefix": "[IV.29.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "63316c6214e0c7c7878fbcc8438c2891194cf441d262876ba8fec5b6ad5762e2",
+      "sourceProjectionSha256": "63316c6214e0c7c7878fbcc8438c2891194cf441d262876ba8fec5b6ad5762e2",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1000,
+          "recordTextStart": 0,
+          "recordTextEnd": 990,
+          "textSha256": "dd1a2b2a1aa7fa519201cce58b4062de436cc82d82e9e515e8628806d08164a1"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 1000,
+          "sourceTextEnd": 2780,
+          "recordTextStart": 990,
+          "recordTextEnd": 2770,
+          "textSha256": "871dfc259d355a13a08a33ce48bb3134c6afe310b109bd7b1142315952fb77ea"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 2780,
+          "sourceTextEnd": 2966,
+          "recordTextStart": 2770,
+          "recordTextEnd": 2956,
+          "textSha256": "d5c145959e62c0db2cbbf38a7d7a5ee3ab4c4205e24a8388ef9d852657843bbc"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 1000,
+          "displayOffset": 991,
+          "page": "288"
+        },
+        {
+          "kind": "pb",
+          "sourceTextOffset": 2780,
+          "displayOffset": 2771,
+          "page": "289"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 2967,
+          "displayOffset": 2958
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num71",
+      "section": 71,
+      "citationLabel": "IV.30.1",
+      "chapter": 30,
+      "paragraph": 1,
+      "rawTextCharacters": 1055,
+      "rawTextSha256": "61cd114938bc198478919ea9f887e01f71e6abda97578159594b237bbe50ec4f",
+      "removedPrefix": "[IV.30.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "0f10c101b5b288e88cbdc54a00f06a21ed531f61a92941740835afd55e240e2c",
+      "sourceProjectionSha256": "0f10c101b5b288e88cbdc54a00f06a21ed531f61a92941740835afd55e240e2c",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1054,
+          "recordTextStart": 0,
+          "recordTextEnd": 1044,
+          "textSha256": "0f10c101b5b288e88cbdc54a00f06a21ed531f61a92941740835afd55e240e2c"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num72",
+      "section": 72,
+      "citationLabel": "IV.30.2",
+      "chapter": 30,
+      "paragraph": 2,
+      "rawTextCharacters": 677,
+      "rawTextSha256": "e2666c82c6743a211d39b21dca402b210c64b2561888a5161866111925a84bcb",
+      "removedPrefix": "[IV.30.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "ce0276d4b2f0f97fa6f6e253db452794d9177c3ffef8fbf1d961f56297732a8f",
+      "sourceProjectionSha256": "ce0276d4b2f0f97fa6f6e253db452794d9177c3ffef8fbf1d961f56297732a8f",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 381,
+          "recordTextStart": 0,
+          "recordTextEnd": 371,
+          "textSha256": "7876d7120f18bcf49292353677c9e82defffab2bde61b6895f366ae6e454a5bd"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 381,
+          "sourceTextEnd": 676,
+          "recordTextStart": 371,
+          "recordTextEnd": 666,
+          "textSha256": "92b404c95b368f0b89232d059a4fc1c40a501f036914bca8a4298f02d1d8c9e2"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 381,
+          "displayOffset": 372,
+          "page": "290"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 677,
+          "displayOffset": 668
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num73",
+      "section": 73,
+      "citationLabel": "IV.31.1",
+      "chapter": 31,
+      "paragraph": 1,
+      "rawTextCharacters": 360,
+      "rawTextSha256": "d5c920597fe980caf763b006328ed035c1c59a993d7e2cfb3607068f11e39355",
+      "removedPrefix": "[IV.31.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "c3f10bbf7dc3782d719fb0ff37d925482a20e955dafd99d45f6a6cbe8c9e78d1",
+      "sourceProjectionSha256": "c3f10bbf7dc3782d719fb0ff37d925482a20e955dafd99d45f6a6cbe8c9e78d1",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 359,
+          "recordTextStart": 0,
+          "recordTextEnd": 349,
+          "textSha256": "c3f10bbf7dc3782d719fb0ff37d925482a20e955dafd99d45f6a6cbe8c9e78d1"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num74",
+      "section": 74,
+      "citationLabel": "IV.31.2",
+      "chapter": 31,
+      "paragraph": 2,
+      "rawTextCharacters": 487,
+      "rawTextSha256": "6d8285a913148a383a2bb501f37f628836f6fd57391e5feabb407fe474ec4dfa",
+      "removedPrefix": "[IV.31.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "99df0d132daaabeaf7ada1c3993fc700d625dbc816a2edcb7262fcb641d9cdfc",
+      "sourceProjectionSha256": "99df0d132daaabeaf7ada1c3993fc700d625dbc816a2edcb7262fcb641d9cdfc",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 486,
+          "recordTextStart": 0,
+          "recordTextEnd": 476,
+          "textSha256": "99df0d132daaabeaf7ada1c3993fc700d625dbc816a2edcb7262fcb641d9cdfc"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num75",
+      "section": 75,
+      "citationLabel": "IV.31.3",
+      "chapter": 31,
+      "paragraph": 3,
+      "rawTextCharacters": 366,
+      "rawTextSha256": "8195cbe4c1fbf5369a7b4331f22ca263b26755ea5380b59e8205e5ddb7832bf3",
+      "removedPrefix": "[IV.31.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "c3c3a27ed2e229827d6a2b907c292cb36da56db7864156ccada41aa7bb998ec7",
+      "sourceProjectionSha256": "c3c3a27ed2e229827d6a2b907c292cb36da56db7864156ccada41aa7bb998ec7",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 365,
+          "recordTextStart": 0,
+          "recordTextEnd": 355,
+          "textSha256": "c3c3a27ed2e229827d6a2b907c292cb36da56db7864156ccada41aa7bb998ec7"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 366,
+          "displayOffset": 357
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num76",
+      "section": 76,
+      "citationLabel": "IV.32.1",
+      "chapter": 32,
+      "paragraph": 1,
+      "rawTextCharacters": 798,
+      "rawTextSha256": "aaad461fbd72866a02b53c02e75cd9cc47ab0b019369caa6d6e5d1b7fb638b8a",
+      "removedPrefix": "[IV.32.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "3fe8b98c019afeb29d0cb846888750f21a3ac73c9cca5bc962a07c6fc711051a",
+      "sourceProjectionSha256": "3fe8b98c019afeb29d0cb846888750f21a3ac73c9cca5bc962a07c6fc711051a",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 797,
+          "recordTextStart": 0,
+          "recordTextEnd": 787,
+          "textSha256": "3fe8b98c019afeb29d0cb846888750f21a3ac73c9cca5bc962a07c6fc711051a"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 10,
+          "displayOffset": 1,
+          "page": "291"
+        },
+        {
+          "kind": "lb",
+          "sourceTextOffset": 798,
+          "displayOffset": 789
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num77",
+      "section": 77,
+      "citationLabel": "IV.33.1",
+      "chapter": 33,
+      "paragraph": 1,
+      "rawTextCharacters": 713,
+      "rawTextSha256": "15ea1eee47967b19120b6ee1cec294999c19cc0c12f3ef25fc3670f1989b962d",
+      "removedPrefix": "[IV.33.1]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "75d397c557463d8febc73ec3fd00a029ebbfa820800cc3d4b0912aef24e0e38f",
+      "sourceProjectionSha256": "75d397c557463d8febc73ec3fd00a029ebbfa820800cc3d4b0912aef24e0e38f",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 712,
+          "recordTextStart": 0,
+          "recordTextEnd": 702,
+          "textSha256": "75d397c557463d8febc73ec3fd00a029ebbfa820800cc3d4b0912aef24e0e38f"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num78",
+      "section": 78,
+      "citationLabel": "IV.33.2",
+      "chapter": 33,
+      "paragraph": 2,
+      "rawTextCharacters": 429,
+      "rawTextSha256": "126ede124cca9f5aa61f162458db4fedb97d8b40980551a71286577b5457ea06",
+      "removedPrefix": "[IV.33.2]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "49f35369b14123e35d7876e1d4ed29ceceb0a02165bbae970a7bd22edd355776",
+      "sourceProjectionSha256": "49f35369b14123e35d7876e1d4ed29ceceb0a02165bbae970a7bd22edd355776",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 161,
+          "recordTextStart": 0,
+          "recordTextEnd": 151,
+          "textSha256": "22f7bafd6290ebfe994d64bd24a7ed808e56f34966952cec94f47c6cb918492b"
+        },
+        {
+          "kind": "source-text",
+          "sourceTextStart": 161,
+          "sourceTextEnd": 428,
+          "recordTextStart": 151,
+          "recordTextEnd": 418,
+          "textSha256": "2925c8fa1da0219db51db803e0620cd0b55b19542f3f0ff55043ded5c9f7b4a7"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "pb",
+          "sourceTextOffset": 161,
+          "displayOffset": 152,
+          "page": "292"
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    },
+    {
+      "sourceId": "latin-deh4-num79",
+      "section": 79,
+      "citationLabel": "IV.33.3",
+      "chapter": 33,
+      "paragraph": 3,
+      "rawTextCharacters": 1059,
+      "rawTextSha256": "df81da90cf804f0ee8fdb9803772c407cd94f515f7f8bf8fbbf40b9659a51890",
+      "removedPrefix": "[IV.33.3]",
+      "leadingWhitespace": " ",
+      "trailingWhitespace": " ",
+      "displayTextSha256": "0071f246639defe7cb3f50c0582ddd2a8ff272889a587d45233df216ae431276",
+      "sourceProjectionSha256": "0071f246639defe7cb3f50c0582ddd2a8ff272889a587d45233df216ae431276",
+      "segments": [
+        {
+          "kind": "source-text",
+          "sourceTextStart": 10,
+          "sourceTextEnd": 1058,
+          "recordTextStart": 0,
+          "recordTextEnd": 1048,
+          "textSha256": "0071f246639defe7cb3f50c0582ddd2a8ff272889a587d45233df216ae431276"
+        }
+      ],
+      "inlineMarks": [],
+      "structuralMarkers": [
+        {
+          "kind": "lb",
+          "sourceTextOffset": 1059,
+          "displayOffset": 1050
+        }
+      ],
+      "exactRestorationVerified": true,
+      "wordSequenceVerified": true
+    }
+  ]
+}

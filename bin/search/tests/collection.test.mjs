@@ -51,6 +51,15 @@ function definitions(multiple = false) {
   ];
 }
 
+function dehDefinition() {
+  const source = definition({ id: "deh-latin-ussani", work: "deh", label: "De excidio", citationPrefix: "De excidio", language: "Latin", edition: "Ussani (1932)", readerPath: "deh/", citationScheme: "chapter-paragraph", unitLabel: "citation unit", unitLabelPlural: "citation units" }, [
+    [1, "Book I and Prologue", ["prologus finis", "initium Cenedaei."]],
+  ]);
+  Object.assign(source.books[0].records[0], { chapter: 0, paragraph: 1, citationLabel: "Prol.1", citationScheme: "chapter-paragraph", sourceId: "latin-deh1-num1", editorialMarks: [] });
+  Object.assign(source.books[0].records[1], { chapter: 1, paragraph: 1, citationLabel: "I.1.1", citationScheme: "chapter-paragraph", sourceId: "latin-deh1-num2", breakBefore: true, editorialMarks: [{kind:"supplied",start:10,end:12,text:"ne"}] });
+  return source;
+}
+
 function fixture(sources = definitions()) {
   const files = new Map();
   const entries = [];
@@ -91,6 +100,33 @@ function changeBundle(f, id, change) {
   entry.bytes = bytes.length;
   entry.sha256 = hash(bytes);
 }
+
+test("DEH metadata uses chapter citations while Bellum keeps Niese labels and independent book evidence", async () => {
+  const { collection } = fixture([...definitions(), dehDefinition()]);
+  const deh = await collection.search("Cenedaei", {collections:["deh-latin-ussani"]});
+  assert.equal(deh.hitGroups[0].unitLabel, "De excidio I.1.1");
+  assert.equal(deh.hitGroups[0].citationUnitLabel, "citation unit");
+  assert.equal(deh.records[1].editorialMarks[0].text, "ne");
+  assert.equal((await collection.search('"finis initium"', {scope:"book",collections:["deh-latin-ussani"]})).matchingUnits, 0);
+  assert.equal((await collection.search("alpha AND Cenedaei", {scope:"book"})).matchingUnits, 0);
+  const all = await collection.search("Roma OR Cenedaei");
+  assert.ok(all.hitGroups.some(group => group.citationScheme === "niese"));
+  assert.ok(all.hitGroups.some(group => group.citationScheme === "chapter-paragraph"));
+});
+
+test("validly hashed DEH bundles reject corrupt citation and editorial-span metadata", async () => {
+  for (const mutate of [
+    record => {record.citationLabel = "I.99.1";},
+    record => {record.citationScheme = "niese";},
+    record => {record.editorialMarks[0].text = "zz";},
+    record => {record.editorialMarks[0].end += 1;},
+    record => {record.editorialMarks[0].kind = "unknown";},
+  ]) {
+    const f = fixture([dehDefinition()]);
+    changeBundle(f,"deh-latin-ussani:1",bundle => mutate(bundle.records[1]));
+    await assert.rejects(f.collection.search("Cenedaei"),error => error.code === "BUNDLE_INVALID" && /citations|citation|editorial/.test(error.message));
+  }
+});
 
 test("selected books load only their files and merge in canonical source order", async () => {
   const { collection, requests } = fixture();

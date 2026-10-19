@@ -4,6 +4,7 @@
  * cache key includes its collection ID. Queries return no partial results.
  */
 import { createEngine, parseQuery, SCHEMA_VERSION } from "./engine.mjs";
+import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.mjs";
 
 export const CATALOG_SCHEMA_VERSION = 2;
 export const qualifiedBookId = (collectionId, number) => `${collectionId}:${number}`;
@@ -45,6 +46,10 @@ export function validateCatalog(catalog) {
       || ["work", "label", "citationPrefix", "language", "edition"].some((field) => !isText(collection[field]))
       || !isRelativePath(collection.readerPath) || !Array.isArray(collection.books) || !collection.books.length) {
       invalid("The search catalog contains an invalid or duplicate text collection.");
+    }
+    if ((collection.citationScheme !== undefined && !["niese", "chapter-paragraph"].includes(collection.citationScheme))
+      || ["unitLabel", "unitLabelPlural"].some((field) => collection[field] !== undefined && !isText(collection[field]))) {
+      invalid("The search catalog contains an unsupported citation scheme or citation-unit label.");
     }
     const version = JSON.stringify([collection.work, collection.language, collection.edition]);
     if (versions.has(version)) invalid("The catalog repeats the same work, language, and edition under different collection IDs.");
@@ -139,6 +144,9 @@ export function createCollection(catalog, lunr, options = {}) {
       bookId: entry.id, collectionId: collection.id, book: entry.number, bookLabel: entry.label,
       work: collection.work, collectionLabel: collection.label, citationPrefix: collection.citationPrefix,
       language: collection.language, edition: collection.edition, readerPath: collection.readerPath,
+      citationScheme: collection.citationScheme || "niese",
+      citationUnitLabel: collection.unitLabel || (collection.citationScheme === "chapter-paragraph" ? "citation unit" : "Niese section"),
+      citationUnitLabelPlural: collection.unitLabelPlural || (collection.citationScheme === "chapter-paragraph" ? "citation units" : "Niese sections"),
     };
   }
 
@@ -196,12 +204,25 @@ export function createCollection(catalog, lunr, options = {}) {
     if (catalog.source?.lunrVersion && bundle.source?.lunrVersion !== catalog.source.lunrVersion) fail("the search-library version does not match the catalog.");
     const collection = collectionById.get(entry.collectionId);
     const ids = new Set();
+    const citations = new Set();
     for (const record of bundle.records) {
       if (Number(record.book) !== entry.number || typeof record.id !== "string" || !record.id || ids.has(record.id)
         || typeof record.text !== "string" || !Number.isFinite(record.order)) fail("the passage identifiers or book references are inconsistent.");
       for (const field of ["work", "language", "edition"]) {
         if (record[field] !== collection[field]) fail("the work, language, or edition does not match the catalog.");
       }
+      if (collection.citationScheme === "chapter-paragraph") {
+        const expectedLabel = record.chapter === 0 ? `Prol.${record.paragraph}` : `${romanBook(record.book)}.${record.chapter}.${record.paragraph}`;
+        if (record.citationScheme !== "chapter-paragraph" || !Number.isInteger(record.section) || record.section < 1
+          || !Number.isInteger(record.chapter) || record.chapter < 0 || !Number.isInteger(record.paragraph) || record.paragraph < 1
+          || !isText(record.sourceId) || record.citationLabel !== expectedLabel || citations.has(record.citationLabel)) {
+          fail("the chapter/paragraph citations do not agree with their source records.");
+        }
+        citations.add(record.citationLabel);
+      } else if (record.citationScheme !== undefined && record.citationScheme !== "niese") {
+        fail("the passage citation scheme does not match the catalog.");
+      }
+      try { editorialMarksFor(record); } catch { fail("the editorial marks do not agree with their original-text offsets."); }
       ids.add(record.id);
     }
   }
@@ -305,7 +326,14 @@ export function createCollection(catalog, lunr, options = {}) {
       merged.matchingUnits += result.matchingUnits;
       merged.matchingSections += result.matchingSections;
       merged.occurrences += result.occurrences;
-      merged.hitGroups.push(...result.hitGroups.map((group) => ({ ...group, unitId: `${entry.id}:${group.unitId}`, ...metadata(entry) })));
+      const recordById = new Map(merged.records.filter((record) => record.bookId === entry.id).map((record) => [record.id, record]));
+      merged.hitGroups.push(...result.hitGroups.map((group) => {
+        const mergedGroup = { ...group, unitId: `${entry.id}:${group.unitId}`, ...metadata(entry) };
+        if (mergedGroup.citationScheme === "chapter-paragraph") {
+          mergedGroup.unitLabel = scope === "book" ? bookCitation(mergedGroup) : citationFor(group.recordIds.map((id) => recordById.get(id)));
+        }
+        return mergedGroup;
+      }));
       await yieldTurn();
     }
     checkAborted(searchOptions.signal);

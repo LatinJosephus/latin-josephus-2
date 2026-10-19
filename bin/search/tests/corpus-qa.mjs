@@ -518,14 +518,16 @@ collectionCheck('combinedGlobalOrder', combinedCorpus.map(r => r.order),
   Array.from({length:4001}, (_, i) => i));
 collectionCheck('combinedUniqueIds', new Set(combinedCorpus.map(r => r.id)).size, 4001);
 collectionCheck('catalogSchemaVersion',catalog.schemaVersion,2);
-collectionCheck('catalogOnlyAuthorizedCollection',catalog.collections.map(c=>c.id),[collectionId]);
-collectionCheck('catalogCollectionIdentity',catalog.collections.map(c=>({id:c.id,work:c.work,
+const ownCollections = catalog.collections.filter(c => c.id === collectionId);
+const ownBooks = catalog.books.filter(b => b.collectionId === collectionId);
+collectionCheck('catalogContainsSingleBellumCollection', ownCollections.length, 1);
+collectionCheck('catalogCollectionIdentity',ownCollections.map(c=>({id:c.id,work:c.work,
   language:c.language,edition:c.edition,readerPath:c.readerPath,books:c.books})),
   [{id:collectionId,work:'bellum',language:'Latin',edition:'Cardwell (1837)',
     readerPath:'bellum-judaicum/',books:sourceSpecs.map(s=>bookId(s.book))}]);
-collectionCheck('catalogCombinedCorpusHash',catalog.collections[0].corpusSHA256,digest(combinedCorpusPath));
-collectionCheck('catalogBooks', catalog.books.map(b => b.number), [1,2,3,4,5,6,7]);
-for (const book of catalog.books) {
+collectionCheck('catalogCombinedCorpusHash',ownCollections[0].corpusSHA256,digest(combinedCorpusPath));
+collectionCheck('catalogBooks', ownBooks.map(b => b.number), [1,2,3,4,5,6,7]);
+for (const book of ownBooks) {
   const state = states[book.number - 1];
   collectionCheck('catalogQualifiedBookIdentity',{id:book.id,collectionId:book.collectionId},
     {id:bookId(book.number),collectionId},{book:book.number});

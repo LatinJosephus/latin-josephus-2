@@ -37,6 +37,19 @@
       ],
       "verifier": "tests/corpus-qa.mjs",
       "qaReport": "qa-report.json"
+    },
+    "deh-latin-ussani": {
+      "extractor": "extract-deh.py",
+      "outputDirectory": "data/deh-latin-ussani",
+      "sources": [
+        "assets/xml/deh/Latin/book-01.xml",
+        "assets/xml/deh/Latin/book-02.xml",
+        "assets/xml/deh/Latin/book-03.xml",
+        "assets/xml/deh/Latin/book-04.xml",
+        "assets/xml/deh/Latin/book-05.xml"
+      ],
+      "verifier": "tests/deh-corpus-qa.mjs",
+      "qaReport": "data/deh-latin-ussani/qa-report.json"
     }
   }
 }

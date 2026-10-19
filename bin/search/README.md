@@ -1,10 +1,16 @@
 # Latin Josephus search
 
 This directory contains the source and verification tools for the main site's
-`/search/` page. Current coverage is **Cardwell's Latin *Bellum Judaicum*,
-Books I–VII: 4,001 Niese sections and 114,794 word tokens**. The work and book
-controls are ready for additional collections, but **Antiquities is not indexed**.
-It can be added after the relevant text repairs and extraction checks are accepted.
+`/search/` page. Current coverage comprises two Latin collections:
+
+- **Cardwell's *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
+  114,794 word tokens.
+- **Ussani's *De excidio Hierosolymitano*, Books I–V, including the Prologue:**
+  558 chapter/paragraph citation units and 87,472 word tokens.
+
+Together these comprise **12 books, 4,559 citation units, and 202,266 word
+tokens**. **Antiquities is not indexed**; it can be added after the relevant
+text repairs and extraction checks are accepted. Translations are not indexed.
 
 The Jekyll page is [`_pages/search.html`](../../_pages/search.html), with
 `permalink: /search/`, the shared `default` layout, and `nav: true` for the
@@ -43,14 +49,20 @@ Accents are retained.
 
 ### Section and whole-book scope
 
-**Section scope** evaluates the complete Boolean expression within each Niese
-section. A phrase must fit entirely within that section.
+**Section / citation-unit scope** evaluates the complete Boolean expression
+within one Niese section of Bellum or one cited paragraph of De excidio. A
+phrase must fit entirely within that unit.
 
 **Whole-book scope** evaluates the complete expression within each selected book
 of one work, language, and edition. Distinct Boolean terms can occur in different
 sections of that book. A phrase must remain consecutive, but may cross Niese or
-chapter boundaries within the book. A declared textual gap, represented by
-`breakBefore`, prevents a phrase from joining the text on either side.
+chapter boundaries within the book. An explicit structural boundary or textual
+gap, represented by `breakBefore`, prevents a phrase from joining the text on
+either side. In De excidio, the three Prologue units are searchable and can be
+joined to each other in whole-book phrases, but a phrase cannot cross from the
+end of the Prologue into the Book I narrative. This is a composition boundary,
+not an inferred lacuna. Whole-book Boolean conditions can still relate
+Prologue and narrative hits within Book I.
 
 Neither Boolean conditions nor phrases combine evidence from different books,
 works, languages, or editions. For example, `A AND NOT B` in whole-book scope
@@ -74,6 +86,10 @@ shows each positive match separately, with the original word or phrase between
 up to ten words of left and right context and a linked citation. Context stays
 within the cited section or sections. A phrase crossing a Niese boundary is
 one occurrence with a citation range; punctuation at the boundary is retained.
+De excidio uses references such as `De excidio Prol.2`, `De excidio II.14.5`,
+and the cross-chapter range `De excidio I.1.10–I.2.1`. Its internal sequential
+record number is never presented as a Niese reference. Reader links use the
+existing chapter and chapter-local paragraph parameters.
 Both views paginate their display without truncating the underlying results.
 
 For a single word, wildcard, or quoted phrase, the result summary distinguishes
@@ -95,6 +111,15 @@ The download reflects the last successful query; editing the form without
 submitting it does not relabel those results. A new search or an error disables
 the previous download until another query succeeds.
 
+Bellum-only exports retain the established 51 columns. De excidio and mixed
+exports have 56 columns: five additional fields after `reader_url` identify the
+citation scheme, give editorially marked versions of the left context, matched
+text, and right context, and explain the notation. The original literal text
+columns remain exact. In the readable editorial columns, `[text]` marks
+supplied text and `⟦text⟧` marks editorial deletion; the latter signs are export
+notation, not characters inserted into the indexed Latin. `source_segments_json`
+also records each source editorial span with exact UTF-16 offsets.
+
 CSV is UTF-8 with a byte-order mark for spreadsheet compatibility. Fields are
 quoted and embedded quotation marks and line endings are preserved. A scalar
 cell that could be interpreted as a spreadsheet formula receives a leading
@@ -102,7 +127,7 @@ apostrophe; the affected columns are identified, with exact underlying values
 also recorded as JSON. This affects the spreadsheet representation, not the
 indexed or displayed text.
 
-The new `concordance.mjs` module consumes the engine's hit spans directly. It
+The `concordance.mjs` module consumes the engine's hit spans directly. It
 does not derive occurrences from merged highlights, excerpt cards, or the DOM,
 and it does not change the query grammar, tokenizer, indexes, or scholarly XML.
 
@@ -124,9 +149,10 @@ for example `bellum-latin-cardwell:1`, or `all`.
 Legacy query parameters without `work` continue to select Bellum. If both
 `work` and `book` are absent from a link with a query, the original Book I
 behavior is retained. Legacy explicit numeric books and `book=all` are also
-resolved within Bellum. New links include collection identity so a future
-Antiquities I cannot be confused with Bellum I. The bare page selects all
-currently available books.
+resolved within Bellum. New links include collection identity so De excidio I
+cannot be confused with Bellum I. The bare page retains **Bellum, all seven
+books** as its default. Choose **De excidio Hierosolymitano** for its five books,
+or **All works** to search both collections.
 
 The page uses ES modules, `fetch`, and browser WebCrypto. Serve it over HTTPS or
 localhost; opening a local HTML file with a `file:` URL is unsupported. The
@@ -141,31 +167,25 @@ prefixed-reader support.
 
 The authoritative site repository is
 [LatinJosephus/latin-josephus-2](https://github.com/LatinJosephus/latin-josephus-2.git),
-using its **`v2-development` source branch**. This integration was prepared in
-an isolated `integrate-bellum-search` checkout based on
-`f13613e2e5cfc857a15b61201711211be6506279`. The public preview repository,
+using its **`v2-development` source branch**. The public preview repository,
 [LatinJosephus/LatinJosephus.github.io](https://github.com/LatinJosephus/LatinJosephus.github.io),
 uses **`main` for generated output only**. It is separate from the authoritative
 source checkout for the site's reader and ongoing Antiquities repairs.
 
-Before applying or rebasing the integration in a working checkout, review its
-current changes and merge with the latest source. Preserve newer local edits
-to the reader, templates, configuration, and Antiquities work; do not replace
-those files with versions copied from the earlier preview.
-
-For the initial transfer into a `core.autocrlf=true` checkout, transfer the
-reviewed integration commit in a **Git bundle**, apply it with `git cherry-pick`,
-and run the asset checks. Keep a supplied patch as a review aid. A transfer
-fixture verified that this preserves unrelated tracked edits and untracked
-files while writing the search files and hooks with their required LF bytes.
-`git apply --check` alone is insufficient: applying the patch or a mail patch
-can leave CRLF worktree copies after introducing the new `-text` attributes,
-even when Git reports successful application. The asset checks detect those
-byte differences.
+Prepare updates in an isolated LF checkout and review source and generated
+changes together. The De excidio release package builds on the reviewed
+concordance commits and includes their history, so it can publish from either
+the earlier live search or the concordance stage. Its helper verifies the Git
+objects and uses ordinary fast-forward pushes without applying a patch to the
+user's working files. See the release package for its pinned commits, supported
+starting states, checksums, and publication command. A patch is a review aid.
 
 The search build **reads canonical XML without modifying it**:
-`assets/xml/bellum/Latin/book-01.xml` through `book-07.xml`. The configured source
-list, extraction reports, and independent QA record the actual source hashes.
+`assets/xml/bellum/Latin/book-01.xml` through `book-07.xml`, and
+`assets/xml/deh/Latin/book-01.xml` through `book-05.xml`. The configured source
+lists, extraction reports, and independent QA record the actual source hashes.
+
+### Bellum
 
 | Book | Niese sections |
 | --- | ---: |
@@ -196,22 +216,64 @@ explicit update to extraction expectations and independent QA fixtures before
 regeneration will pass. These checks establish fidelity to the accepted XML;
 they do not replace an editorial comparison with printed source pages.
 
+### De excidio
+
+| Book | Citation units | Word tokens |
+| --- | ---: | ---: |
+| I, including Prologue | 215 | 26,310 |
+| II | 73 | 11,011 |
+| III | 70 | 12,091 |
+| IV | 79 | 11,027 |
+| V | 121 | 27,033 |
+| **Total** | **558** | **87,472** |
+
+`extract-deh.py` reads the project's accepted Ussani (1932) Latin TEI. It
+includes every numbered paragraph, with the three Prologue units included in
+Book I. TEI metadata, headings, and printed citation prefixes are excluded;
+the cited division and stable source ID remain record metadata. Empty page and
+line-break markup adds no whitespace, preserving words interrupted by printing
+milestones, such as `Ro<pb/>manos` → `Romanos`.
+
+The nine main-text `<supplied>` spans and nine `<del>` spans retain their literal
+letters and distinct editorial annotations. Results display supplied letters
+in brackets and deleted text with strike-through, including intra-word cases
+such as `Ce[ne]daei` (II.14.5) and `Alexander` with `der` deleted (I.34.2). These
+letters remain searchable, matching the displayed reader's literal text; no
+alternative reading is silently substituted. A supplied passage in a heading
+is excluded with that heading.
+
+The three empty `<unclear/>` elements produce a visible critical dagger (`†`),
+as in the reader. Each generated glyph is explicitly annotated and can be
+removed to reconstruct the original source projection. These daggers mark
+textual uncertainty, not omitted words. Search treats them as punctuation, so
+a phrase may span a dagger; the dagger stays visible in results and exports.
+
+Per-paragraph reports preserve exact source projections, display text hashes,
+editorial offsets, numbering, source IDs, and edge whitespace. Publication
+validation checks the reversible source/display distinction and every citation
+and reader URL. An independent verifier parses the canonical XML separately,
+checks every character and token offset, and compares query answers with its
+own full-scan oracle. Neither extractor nor search changes the accepted XML.
+
 ## Source, generated files, and configuration
 
 | Location | Role |
 | --- | --- |
 | `extract.py`, `tests/test_extract.py` | Bellum extraction and reconstruction checks. |
+| `extract-deh.py`, `tests/test_extract_deh.py` | De excidio extraction, editorial annotations, and reconstruction checks. |
 | `corpus.json`, `data/book-0N.corpus.json` | Generated combined and per-book original-text records. |
 | `extraction-report.json`, `data/book-0N.extraction-report.json` | Generated coverage and reconstruction evidence. |
 | `engine.mjs`, `vendor/` | Boolean/phrase/wildcard engine and pinned Lunr 2.3.9 with licence and provenance. |
 | `collection.mjs` | Qualified selection, verified loading, caching, and independent per-book evaluation. |
 | `app.mjs`, `ui-utils.mjs`, `styles.css` | Source for the browser interface, citations, links, and excerpts. |
 | `config/collections.json` | Ordered registry of enabled collection manifests. |
-| `config/bellum-latin-cardwell.json` | Current collection metadata, corpus inputs, and expected coverage. |
+| `config/bellum-latin-cardwell.json`, `config/deh-latin-ussani.json` | Collection metadata, corpus inputs, citation terminology, and expected coverage. |
 | `config/publication.json` | Runtime export inventory, site/build inputs, and approved extraction/QA adapters. |
 | `build-index.mjs`, `catalog.json` | Manifest-driven index builder and generated catalog. |
 | `data/bellum-latin-cardwell/book-0N.bundle.json` | Generated independent indexes, one per book. |
 | `tests/corpus-qa.mjs`, `qa-report.json` | Independent source/query verification and its current evidence. |
+| `data/deh-latin-ussani/` | De excidio corpus shards, extraction reports, book indexes, and independent QA report. |
+| `tests/deh-corpus-qa.mjs` | Independent De excidio XML witness, token, query, boundary, and mixed-collection checks. |
 | `build-search.mjs`, `publication.mjs`, `check-assets.mjs` | Rebuild orchestration, export validation, and read-only freshness checks. |
 | `assets/search/` at repository root | Generated runtime and evidence export, including `publication-manifest.json`. |
 
@@ -221,12 +283,12 @@ The **registry, collection manifests, and publication configuration use schema
 1**. The **generated catalog uses schema 2**; the engine's per-book bundle
 format remains schema 1. A schema-1 catalog from the preview must be rebuilt.
 
-The registry currently contains only:
+The registry currently contains:
 
 ```json
 {
   "schemaVersion": 1,
-  "collections": ["bellum-latin-cardwell.json"]
+  "collections": ["bellum-latin-cardwell.json", "deh-latin-ussani.json"]
 }
 ```
 
@@ -237,6 +299,14 @@ Each book declares `number`, `label`, its corpus shard, expected `sections`,
 and, where applicable, `sectionRange`. Corpus/report paths are relative to
 that collection manifest. `readerPath` is a site-relative route without a
 leading slash, such as `bellum-judaicum/`.
+
+Optional `citationScheme`, `unitLabel`, and `unitLabelPlural` metadata allow
+different citation systems. De excidio uses `chapter-paragraph` and retains
+`chapter`, `paragraph`, `citationLabel`, structured `citation`, and `readerLink`
+in each record. Its `section` field is an internal ordinal used for indexing,
+while its visible citation and URL use the chapter-local paragraph. Editorial
+`start`/`end` offsets are end-exclusive UTF-16 positions in `record.text`, the
+same coordinate system used by search highlights.
 
 Collection IDs are distinct lowercase identifiers for a particular work,
 language, and edition. The builder rejects duplicate IDs and duplicate
@@ -374,6 +444,7 @@ node bin/search/build-index.mjs
 python3 -m unittest discover -s bin/search/tests -p 'test_*.py'
 node --test bin/search/tests/*.test.mjs
 node bin/search/tests/corpus-qa.mjs
+node bin/search/tests/deh-corpus-qa.mjs
 ```
 
 These commands alone do not refresh the published asset export; finish with
