@@ -5,7 +5,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 export const sha = bytes => createHash('sha256').update(bytes).digest('hex');
-const manifestSHA = '4fcb7b42dd34d379d3933ccded36d4c4405a750ea035fdff9ce9f4cda33b02db';
+const manifestSHA = 'e6885ddec4a08a487a1bf02a37b6c5ee272510e8d287c09b721e4080e839de3f';
 const frozenSHA = 'c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c';
 function files(directory, prefix = 'assets/xml') {
   return fs.readdirSync(directory, {withFileTypes:true}).flatMap(entry => {
