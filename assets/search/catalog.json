@@ -62,6 +62,34 @@
         "tokens": 87472,
         "bytes": 12413040
       }
+    },
+    {
+      "id": "contra-apionem-latin-boysen",
+      "work": "contra-apionem",
+      "label": "Contra Apionem",
+      "citationPrefix": "Contra Apionem",
+      "language": "Latin",
+      "edition": "Boysen (1898)",
+      "readerPath": "contra-apionem/",
+      "books": [
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
+      ],
+      "citationScheme": "niese",
+      "unitLabel": "Niese section",
+      "unitLabelPlural": "Niese sections",
+      "manifestPath": "config/contra-apionem-latin-boysen.json",
+      "manifestSHA256": "f241532b7f4f630a6df449c74cba067f5c5457157e88b5919ef46f45071af63a",
+      "corpusPath": "data/contra-apionem-latin-boysen/corpus.json",
+      "corpusSHA256": "14dfc2f8bacf2ee7ebfbc3cf90789552d1be69a87f80d07088e4e78754147b6d",
+      "extractionReportPath": "data/contra-apionem-latin-boysen/extraction-report.json",
+      "extractionReportSHA256": "1a57f8759bc41a7a55a905a59d44e2474af62519fe9525ec45ae29badd2a3916",
+      "totals": {
+        "books": 2,
+        "sections": 616,
+        "tokens": 21018,
+        "bytes": 3808567
+      }
     }
   ],
   "books": [
@@ -232,19 +260,47 @@
       "sha256": "52527f6e4fa4dfdb6c97c864d031c5ce177e3e931bcca01f76d94d8940aa71ea",
       "corpusPath": "data/deh-latin-ussani/book-05.corpus.json",
       "corpusSHA256": "5175756ed40a2d003edbd3496dccacfee2a3190cd82be45387c7b03147ba922a"
+    },
+    {
+      "id": "contra-apionem-latin-boysen:1",
+      "collectionId": "contra-apionem-latin-boysen",
+      "number": 1,
+      "label": "Book I",
+      "sections": 320,
+      "tokens": 10657,
+      "vocabulary": 3741,
+      "bytes": 1925386,
+      "path": "data/contra-apionem-latin-boysen/book-01.bundle.json",
+      "sha256": "0c85593dbef7c9644c84cfadb01894ce9a581ae44f6a6a107960b4724b25ba4c",
+      "corpusPath": "data/contra-apionem-latin-boysen/book-01.corpus.json",
+      "corpusSHA256": "f22db7ea8c54fc404a787daf6eb2113558a76ca83cb85b69a49c9e8a60fe966d"
+    },
+    {
+      "id": "contra-apionem-latin-boysen:2",
+      "collectionId": "contra-apionem-latin-boysen",
+      "number": 2,
+      "label": "Book II",
+      "sections": 296,
+      "tokens": 10361,
+      "vocabulary": 3849,
+      "bytes": 1883181,
+      "path": "data/contra-apionem-latin-boysen/book-02.bundle.json",
+      "sha256": "38477a1e885087b2d40a2ea2a44ab716bc0920db685f73aac0d7cac4b14c8e2c",
+      "corpusPath": "data/contra-apionem-latin-boysen/book-02.corpus.json",
+      "corpusSHA256": "f336fb8c6368064953eb671a22facdbb1f472d6bcead5e23da17a0f92c476deb"
     }
   ],
   "totals": {
-    "books": 12,
-    "sections": 4559,
-    "tokens": 202266,
-    "bytes": 31851593
+    "books": 14,
+    "sections": 5175,
+    "tokens": 223284,
+    "bytes": 35660160
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "cf5d2798c4ca6e88928710cb79e27013c15ae435a3018b8938cfafdd192f41b0",
+    "manifestSHA256": "d9c663f295d8cf5bee93630e4f93a2a4cd11e11e9360acedf946440454fe07eb",
     "enginePath": "engine.mjs",
-    "engineSHA256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c",
+    "engineSHA256": "98093386a2e48fa1b56789cec18a465d37cc2924f0e26a6cf0d1d0e0d0e431bd",
     "lunrPath": "vendor/lunr.cjs",
     "lunrSHA256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
     "lunrVersion": "2.3.9"

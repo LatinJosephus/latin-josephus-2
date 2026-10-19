@@ -1,14 +1,16 @@
 # Latin Josephus search
 
 This directory contains the source and verification tools for the main site's
-`/search/` page. Current coverage comprises two Latin collections:
+`/search/` page. Current coverage comprises three Latin collections:
 
 - **Cardwell's *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
   114,794 word tokens.
 - **Ussani's *De excidio Hierosolymitano*, Books I–V, including the Prologue:**
   558 chapter/paragraph citation units and 87,472 word tokens.
+- **Boysen's *Contra Apionem*, Books I–II:** 616 Niese sections and
+  21,018 word tokens, including the Greek words quoted in this Latin text.
 
-Together these comprise **12 books, 4,559 citation units, and 202,266 word
+Together these comprise **14 books, 5,175 citation units, and 223,284 word
 tokens**. **Antiquities is not indexed**; it can be added after the relevant
 text repairs and extraction checks are accepted. Translations are not indexed.
 
@@ -50,15 +52,20 @@ Accents are retained.
 ### Section and whole-book scope
 
 **Section / citation-unit scope** evaluates the complete Boolean expression
-within one Niese section of Bellum or one cited paragraph of De excidio. A
+within one Niese section of Bellum or Contra Apionem, or one cited paragraph
+of De excidio. A
 phrase must fit entirely within that unit.
 
 **Whole-book scope** evaluates the complete expression within each selected book
 of one work, language, and edition. Distinct Boolean terms can occur in different
 sections of that book. A phrase must remain consecutive, but may cross Niese or
 chapter boundaries within the book. An explicit structural boundary or textual
-gap, represented by `breakBefore`, prevents a phrase from joining the text on
-either side. In De excidio, the three Prologue units are searchable and can be
+gap, represented by `breakBefore` or an internal `phraseBreaks` offset,
+prevents a phrase from joining the text on either side. In Contra Apionem,
+all 25 literal asterisk clusters are conservative phrase-adjacency barriers,
+including clusters inside a section or at its edge. This rule does not infer
+the missing-text extent or a precise editorial meaning for every mark.
+In De excidio, the three Prologue units are searchable and can be
 joined to each other in whole-book phrases, but a phrase cannot cross from the
 end of the Prologue into the Book I narrative. This is a composition boundary,
 not an inferred lacuna. Whole-book Boolean conditions can still relate
@@ -90,6 +97,10 @@ De excidio uses references such as `De excidio Prol.2`, `De excidio II.14.5`,
 and the cross-chapter range `De excidio I.1.10–I.2.1`. Its internal sequential
 record number is never presented as a Niese reference. Reader links use the
 existing chapter and chapter-local paragraph parameters.
+Contra Apionem uses Niese references such as `Contra Apionem I.38` and
+`Contra Apionem II.186`, with `book` and `niese` reader parameters. Boysen's
+chapter divisions are independent of those references and are not substituted
+for Niese sections.
 Both views paginate their display without truncating the underlying results.
 
 For a single word, wildcard, or quoted phrase, the result summary distinguishes
@@ -111,14 +122,18 @@ The download reflects the last successful query; editing the form without
 submitting it does not relabel those results. A new search or an error disables
 the previous download until another query succeeds.
 
-Bellum-only exports retain the established 51 columns. De excidio and mixed
+Bellum-only exports retain the established 51 columns. De excidio, Contra Apionem, and mixed
 exports have 56 columns: five additional fields after `reader_url` identify the
 citation scheme, give editorially marked versions of the left context, matched
 text, and right context, and explain the notation. The original literal text
 columns remain exact. In the readable editorial columns, `[text]` marks
-supplied text and `⟦text⟧` marks editorial deletion; the latter signs are export
-notation, not characters inserted into the indexed Latin. `source_segments_json`
-also records each source editorial span with exact UTF-16 offsets.
+supplied text, `⟦text⟧` marks editorial deletion, and `⟨text⟩` marks a source
+addition. These delimiters are export notation, not characters inserted into
+the indexed Latin. `source_segments_json` also records each source editorial
+span with exact UTF-16 offsets. For Contra Apionem it retains overlapping
+quotation and foreign-language markup, literal asterisk spans, phrase-break
+offsets, and source boundary annotations. Source brackets and asterisks remain
+literal in all text columns; the legend explains the added export notation.
 
 CSV is UTF-8 with a byte-order mark for spreadsheet compatibility. Fields are
 quoted and embedded quotation marks and line endings are preserved. A scalar
@@ -150,9 +165,10 @@ Legacy query parameters without `work` continue to select Bellum. If both
 `work` and `book` are absent from a link with a query, the original Book I
 behavior is retained. Legacy explicit numeric books and `book=all` are also
 resolved within Bellum. New links include collection identity so De excidio I
-cannot be confused with Bellum I. The bare page retains **Bellum, all seven
+and Contra Apionem I cannot be confused with Bellum I. The bare page retains **Bellum, all seven
 books** as its default. Choose **De excidio Hierosolymitano** for its five books,
-or **All works** to search both collections.
+**Contra Apionem** for its two books, or **All works** to search all three
+collections.
 
 The page uses ES modules, `fetch`, and browser WebCrypto. Serve it over HTTPS or
 localhost; opening a local HTML file with a `file:` URL is unsupported. The
@@ -173,16 +189,18 @@ uses **`main` for generated output only**. It is separate from the authoritative
 source checkout for the site's reader and ongoing Antiquities repairs.
 
 Prepare updates in an isolated LF checkout and review source and generated
-changes together. The De excidio release package builds on the reviewed
-concordance commits and includes their history, so it can publish from either
-the earlier live search or the concordance stage. Its helper verifies the Git
+changes together. The combined release package includes the reviewed Bellum
+concordance (v2), De excidio, and Contra Apionem history. It can publish from
+the earlier live search, concordance, or De excidio stages; the two repository
+branches may independently be at any reviewed stage. Its helper verifies the Git
 objects and uses ordinary fast-forward pushes without applying a patch to the
 user's working files. See the release package for its pinned commits, supported
 starting states, checksums, and publication command. A patch is a review aid.
 
 The search build **reads canonical XML without modifying it**:
-`assets/xml/bellum/Latin/book-01.xml` through `book-07.xml`, and
-`assets/xml/deh/Latin/book-01.xml` through `book-05.xml`. The configured source
+`assets/xml/bellum/Latin/book-01.xml` through `book-07.xml`,
+`assets/xml/deh/Latin/book-01.xml` through `book-05.xml`, and
+`assets/xml/contra-apionem/Latin/book-01.xml` through `book-02.xml`. The configured source
 lists, extraction reports, and independent QA record the actual source hashes.
 
 ### Bellum
@@ -255,25 +273,67 @@ and reader URL. An independent verifier parses the canonical XML separately,
 checks every character and token offset, and compares query answers with its
 own full-scan oracle. Neither extractor nor search changes the accepted XML.
 
+### Contra Apionem
+
+| Book | Niese sections | Word tokens |
+| --- | ---: | ---: |
+| I | 320 | 10,657 |
+| II | 296 | 10,361 |
+| **Total** | **616** | **21,018** |
+
+`extract-ca.py` reads the project's accepted Boysen (1898) Latin TEI. Every
+numbered main-text paragraph supplies one Niese section. The TEI header,
+headings, and bibliographical source note are excluded. The running text is
+the exact paragraph text projection with only section-edge whitespace trimmed;
+the extraction report records that whitespace so it can be restored. No
+printed Latin reading, spelling, punctuation, or internal whitespace is repaired.
+
+The source's quotation, three Greek foreign-language spans, literal brackets
+and angle brackets, and the addition `<add>milia</add>` at I.290 are retained.
+The added word is searchable and appears in bold green in search results, as
+in the reader; editorial CSV columns identify it as `⟨milia⟩`. Empty page-break
+markup adds no whitespace, so `praecel<pb/>lentes` at II.186 remains the single
+word `praecellentes`. The accepted Latin II.278 seam stays in source order;
+alignment to Greek does not relocate or duplicate its Latin text.
+
+All 25 maximal literal asterisk clusters remain visible and prevent exact
+phrases from joining words across them, in either scope. Boolean conditions
+can still relate words on both sides. The source annotations before I.119 and
+I.147 also retain `breakBefore`; a leading asterisk at II.12 supplies the third
+blocked within-book seam. The other 611 within-book seams permit consecutive
+whole-book phrases. No chapter boundary is inferred to be a gap.
+
+`phraseBreaks` records strictly increasing UTF-16 offsets at the original
+asterisk starts. `textGaps` preserves their literal spans without inventing a
+gap size. These optional fields extend record metadata; unchanged Bellum and
+De excidio bundle bytes remain valid. The independent CA verifier embeds a
+separate minidom-based source witness and checks that its inspectable Python
+copy is identical. It verifies every section, character, token offset, inline
+annotation, reader reference, asterisk barrier, and adjacent section seam.
+
 ## Source, generated files, and configuration
 
 | Location | Role |
 | --- | --- |
 | `extract.py`, `tests/test_extract.py` | Bellum extraction and reconstruction checks. |
 | `extract-deh.py`, `tests/test_extract_deh.py` | De excidio extraction, editorial annotations, and reconstruction checks. |
+| `extract-ca.py`, `tests/test_extract_ca.py` | Contra Apionem extraction, markup, phrase barriers, and reconstruction checks. |
 | `corpus.json`, `data/book-0N.corpus.json` | Generated combined and per-book original-text records. |
 | `extraction-report.json`, `data/book-0N.extraction-report.json` | Generated coverage and reconstruction evidence. |
 | `engine.mjs`, `vendor/` | Boolean/phrase/wildcard engine and pinned Lunr 2.3.9 with licence and provenance. |
 | `collection.mjs` | Qualified selection, verified loading, caching, and independent per-book evaluation. |
 | `app.mjs`, `ui-utils.mjs`, `styles.css` | Source for the browser interface, citations, links, and excerpts. |
 | `config/collections.json` | Ordered registry of enabled collection manifests. |
-| `config/bellum-latin-cardwell.json`, `config/deh-latin-ussani.json` | Collection metadata, corpus inputs, citation terminology, and expected coverage. |
+| `config/bellum-latin-cardwell.json`, `config/deh-latin-ussani.json`, `config/contra-apionem-latin-boysen.json` | Collection metadata, corpus inputs, citation terminology, and expected coverage. |
 | `config/publication.json` | Runtime export inventory, site/build inputs, and approved extraction/QA adapters. |
 | `build-index.mjs`, `catalog.json` | Manifest-driven index builder and generated catalog. |
 | `data/bellum-latin-cardwell/book-0N.bundle.json` | Generated independent indexes, one per book. |
 | `tests/corpus-qa.mjs`, `qa-report.json` | Independent source/query verification and its current evidence. |
 | `data/deh-latin-ussani/` | De excidio corpus shards, extraction reports, book indexes, and independent QA report. |
 | `tests/deh-corpus-qa.mjs` | Independent De excidio XML witness, token, query, boundary, and mixed-collection checks. |
+| `data/contra-apionem-latin-boysen/` | Contra Apionem corpus shards, extraction reports, book indexes, and independent QA report. |
+| `tests/ca-corpus-qa.mjs`, `tests/ca-source-witness.py` | Independent Contra Apionem XML witness, token, query, markup, and seam checks. |
+| `tests/phrase-breaks.test.mjs`, `tests/ca-presentation.test.mjs` | Phrase barrier, citation, full export, and three-work compatibility tests. |
 | `build-search.mjs`, `publication.mjs`, `check-assets.mjs` | Rebuild orchestration, export validation, and read-only freshness checks. |
 | `assets/search/` at repository root | Generated runtime and evidence export, including `publication-manifest.json`. |
 
@@ -288,7 +348,11 @@ The registry currently contains:
 ```json
 {
   "schemaVersion": 1,
-  "collections": ["bellum-latin-cardwell.json", "deh-latin-ussani.json"]
+  "collections": [
+    "bellum-latin-cardwell.json",
+    "deh-latin-ussani.json",
+    "contra-apionem-latin-boysen.json"
+  ]
 }
 ```
 
@@ -307,6 +371,12 @@ in each record. Its `section` field is an internal ordinal used for indexing,
 while its visible citation and URL use the chapter-local paragraph. Editorial
 `start`/`end` offsets are end-exclusive UTF-16 positions in `record.text`, the
 same coordinate system used by search highlights.
+Contra Apionem uses `niese` and a structured Niese citation and reader link;
+its source chapter milestones are recorded as extraction evidence, not as
+a potentially misleading single chapter number on a Niese record. Optional
+`phraseBreaks` offsets must be within the record, strictly increasing, and
+outside word interiors. They divide phrase adjacency without changing word
+tokens, Boolean postings, or original hit offsets.
 
 Collection IDs are distinct lowercase identifiers for a particular work,
 language, and edition. The builder rejects duplicate IDs and duplicate
@@ -440,11 +510,14 @@ For focused development, extraction and index construction can be run directly:
 
 ```sh
 python3 bin/search/extract.py
+python3 bin/search/extract-deh.py
+python3 bin/search/extract-ca.py
 node bin/search/build-index.mjs
 python3 -m unittest discover -s bin/search/tests -p 'test_*.py'
 node --test bin/search/tests/*.test.mjs
 node bin/search/tests/corpus-qa.mjs
 node bin/search/tests/deh-corpus-qa.mjs
+node bin/search/tests/ca-corpus-qa.mjs
 ```
 
 These commands alone do not refresh the published asset export; finish with
@@ -466,7 +539,7 @@ own extraction evidence, not to a directory-wide discovery of XML files.
    tag structure, leading labels, continuation rules, or contiguous section
    ranges apply. Preserve physical text order and original text offsets, give
    every passage a globally unique ID, and mark omitted textual gaps with
-   `breakBefore` so phrases cannot bridge them. Document source exclusions,
+   `breakBefore` and, for intra-unit gaps, `phraseBreaks` so phrases cannot bridge them. Document source exclusions,
    continuations, labels, and any lacunae in reconstruction evidence.
 3. **Add independent QA and fixtures.** Verify the accepted source hashes,
    coverage, extracted text, original highlight spans, citations, Boolean and

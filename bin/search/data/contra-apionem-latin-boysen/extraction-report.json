@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 3,
+  "status": "PASS",
+  "scope": {
+    "work": "Contra Apionem",
+    "books": [
+      1,
+      2
+    ],
+    "language": "Latin",
+    "edition": "Boysen (1898)",
+    "unit": "existing Latin Niese section",
+    "citationScheme": "niese"
+  },
+  "counts": {
+    "books": 2,
+    "bodyParagraphs": 616,
+    "numberedParagraphs": 616,
+    "sections": 616,
+    "chapterMilestones": 76,
+    "nieseMilestones": 0,
+    "pageBreaks": 140,
+    "addedSpans": 1,
+    "quotationSpans": 1,
+    "foreignSpans": 3,
+    "asteriskMarkerClusters": 25,
+    "asteriskMarkedUnits": 25,
+    "breakBeforeUnits": 2,
+    "sourceAnnotations": 3,
+    "runningWordTokens": 21018,
+    "generatedCruxGlyphs": 0,
+    "trimmedEdgeWhitespaceCharacters": 473
+  },
+  "coverage": {
+    "paragraphsExactlyRestored": 616,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "sourceProjectionExactlyRestoresSource": true,
+    "generatedDisplayGlyphs": 0,
+    "sourceProjectionDefinition": "Every indexed character comes from source text; the original paragraph is restored exactly by reinstating its recorded edge whitespace.",
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true,
+    "globalOrderRange": [
+      0,
+      615
+    ],
+    "completeSectionCoverageByBook": {
+      "1": [
+        1,
+        320
+      ],
+      "2": [
+        1,
+        296
+      ]
+    },
+    "rangeMeaning": "existing accepted Latin Niese section",
+    "allSectionTextsNonempty": true
+  },
+  "corpus": {
+    "path": "data/contra-apionem-latin-boysen/corpus.json",
+    "sha256": "14dfc2f8bacf2ee7ebfbc3cf90789552d1be69a87f80d07088e4e78754147b6d",
+    "bytes": 552615,
+    "records": 616
+  },
+  "books": [
+    {
+      "book": 1,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/contra-apionem/Latin/book-01.xml",
+        "sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+        "bytes": 96065
+      },
+      "counts": {
+        "bodyParagraphs": 320,
+        "numberedParagraphs": 320,
+        "sections": 320,
+        "chapterMilestones": 35,
+        "nieseMilestones": 0,
+        "pageBreaks": 70,
+        "addedSpans": 1,
+        "quotationSpans": 1,
+        "foreignSpans": 2,
+        "asteriskMarkerClusters": 12,
+        "asteriskMarkedUnits": 12,
+        "breakBeforeUnits": 2,
+        "sourceAnnotations": 2,
+        "runningWordTokens": 10657,
+        "generatedCruxGlyphs": 0,
+        "trimmedEdgeWhitespaceCharacters": 223
+      },
+      "orderStart": 0,
+      "orderEnd": 319,
+      "corpus": {
+        "path": "data/contra-apionem-latin-boysen/book-01.corpus.json",
+        "sha256": "f22db7ea8c54fc404a787daf6eb2113558a76ca83cb85b69a49c9e8a60fe966d",
+        "bytes": 285292,
+        "records": 320
+      },
+      "extractionReport": {
+        "path": "data/contra-apionem-latin-boysen/book-01.extraction-report.json",
+        "sha256": "df96d6a9a710b7a5c01a910cd4f7d0cef2a641e9ba90815a6d136e20bf7e037a",
+        "bytes": 409282
+      }
+    },
+    {
+      "book": 2,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/contra-apionem/Latin/book-02.xml",
+        "sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+        "bytes": 93029
+      },
+      "counts": {
+        "bodyParagraphs": 296,
+        "numberedParagraphs": 296,
+        "sections": 296,
+        "chapterMilestones": 41,
+        "nieseMilestones": 0,
+        "pageBreaks": 70,
+        "addedSpans": 0,
+        "quotationSpans": 0,
+        "foreignSpans": 1,
+        "asteriskMarkerClusters": 13,
+        "asteriskMarkedUnits": 13,
+        "breakBeforeUnits": 0,
+        "sourceAnnotations": 1,
+        "runningWordTokens": 10361,
+        "generatedCruxGlyphs": 0,
+        "trimmedEdgeWhitespaceCharacters": 250
+      },
+      "orderStart": 320,
+      "orderEnd": 615,
+      "corpus": {
+        "path": "data/contra-apionem-latin-boysen/book-02.corpus.json",
+        "sha256": "f336fb8c6368064953eb671a22facdbb1f472d6bcead5e23da17a0f92c476deb",
+        "bytes": 267326,
+        "records": 296
+      },
+      "extractionReport": {
+        "path": "data/contra-apionem-latin-boysen/book-02.extraction-report.json",
+        "sha256": "d0828cdaa349d5496b2cf61dbab6dbd310d22c24eba839ec0524309eacf8f85f",
+        "bytes": 382585
+      }
+    }
+  ]
+}

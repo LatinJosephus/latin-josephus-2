@@ -1,5 +1,5 @@
 import {createCollection} from './collection.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments} from './ui-utils.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel} from './ui-utils.mjs';
 import {buildConcordance,exportConcordance} from './concordance.mjs';
 
 const root=document.getElementById('lj-search');
@@ -24,9 +24,11 @@ function updateScopeHint(){
   const withinOption=els.scope.querySelector('option[value="section"]');
   if(withinOption)withinOption.textContent=`Within each ${labels.singular}`;
   const deh=collections.some(collection=>citationScheme(collection)==='chapter-paragraph');
+  const apion=collections.some(collection=>collection.work==='contra-apionem');
   els.scopeHint.textContent=els.scope.value==='book'
     ?`Each selected book, work and edition is evaluated separately. Boolean conditions may match anywhere in that book. Exact phrases remain consecutive and can cross citation and chapter boundaries within it.${deh?' The De excidio Prologue is separated from the Book I narrative; phrases do not cross that boundary.':''}`
     :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
+  if(apion)els.scopeHint.textContent+=' In Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
@@ -73,7 +75,7 @@ function appendTextRange(parent,record,start,end,ranges=[]){
     closeTo(common);
     for(let i=common;i<segment.marks.length;i++){
       const mark=segment.marks[i],element=node(mark.kind==='del'?'del':'span',undefined,`editorial-${mark.kind}`);
-      element.title={del:'Deleted text in the edition; retained in the searchable source',supplied:'Text supplied by the editor',unclear:'Unresolved or unclear text'}[mark.kind];
+      element.title={del:'Deleted text in the edition; retained in the searchable source',supplied:'Text supplied by the editor',unclear:'Unresolved or unclear text',add:'Text encoded as an addition in the source; retained in search'}[mark.kind];
       if(mark.kind==='supplied')element.append(document.createTextNode('['));
       (stack.at(-1)?.element||parent).append(element);stack.push({mark,element});
     }
@@ -100,9 +102,7 @@ function makeCard(card){
   const header=node('div',undefined,'result-header');
   const first=card.records[0];
   const h=node('h3',undefined,'result-title');h.append(link(citationFor(card.records),readerURL(first,readerBase)));header.append(h);
-  const chapters=[...new Set(card.records.map(r=>r.chapter))];
-  const chapterLabel=chapters.length===1?(chapters[0]===0?(citationScheme(first)==='chapter-paragraph'?'Prologue':'Proem'):`Chapter ${chapters[0]}`):'Across chapters';
-  header.append(node('span',`${first.language} · ${first.edition} · ${chapterLabel}`,'result-meta'));article.append(header);
+  header.append(node('span',`${first.language} · ${first.edition} · ${passageDivisionLabel(card.records)}`,'result-meta'));article.append(header);
   for(const r of card.records)article.append(makeExcerpt(r,card.ranges[r.id],false,card.records.length>1));
   if(card.records.some(r=>excerptWindows(r.text,card.ranges[r.id]||[]).some(w=>w.start>0||w.end<r.text.length))){
     const unit=citationScheme(first)==='chapter-paragraph'?'citation unit':'section';
@@ -197,6 +197,7 @@ function resultContext(result,model){
     parts.push(`${count.toLocaleString()} matching ${unit} ${count===1?'has':'have'} no positive word or phrase to highlight. ${count===1?'Its citation is':'Their citations are'} included in the results and CSV.`);
   }
   if(collections.some(collection=>citationScheme(collection)==='chapter-paragraph'))parts.push('De excidio citations give book, chapter and paragraph (or Prol.). [Brackets] mark supplied text; struck text marks editorial deletion; † marks unresolved text. These markings are retained in the CSV’s editorial columns.');
+  if(collections.some(collection=>collection.work==='contra-apionem'))parts.push('Contra Apionem uses Niese sections. Asterisks retain the source’s marked interruptions, which exact phrases cannot cross. Bold green text marks an addition in the source; the CSV’s editorial columns show it as ⟨added text⟩.');
   return parts.join(' ');
 }
 function renderSuccessful(){

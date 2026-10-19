@@ -47,6 +47,21 @@ export function tokenizeText(text) {
   }));
 }
 
+/** Explicit source boundaries block phrase adjacency without removing any text. */
+export function phraseBreakOffsets(record, tokens = tokenizeText(record.text)) {
+  if (record.phraseBreaks === undefined) return [];
+  if (!Array.isArray(record.phraseBreaks)) throw new TypeError(`Invalid phrase boundaries for ${record.id}.`);
+  let previous = -1;
+  for (const offset of record.phraseBreaks) {
+    if (!Number.isInteger(offset) || offset <= previous || offset < 0 || offset > record.text.length
+      || tokens.some(token => token.start < offset && offset < token.end)) {
+      throw new TypeError(`A phrase boundary must be an ordered original-text offset between words: ${record.id}.`);
+    }
+    previous = offset;
+  }
+  return record.phraseBreaks;
+}
+
 function bookKey(record) {
   // A book unit is one text version. Identical section numbers in different
   // languages or editions must never satisfy a shared AND or joined phrase.
@@ -105,6 +120,7 @@ export function buildBundle(inputRecords, lunr) {
     return { ...source, order, breakBefore: Boolean(source.breakBefore) };
   });
   const tokens = records.map((record) => tokenizeText(record.text));
+  records.forEach((record, index) => phraseBreakOffsets(record, tokens[index]));
   const tokenCount = tokens.reduce((sum, group) => sum + group.length, 0);
   const vocabulary = new Set(tokens.flatMap((group) => group.map((token) => token.term)));
   return {
@@ -335,6 +351,7 @@ export function createEngine(bundle, lunr) {
   const records = bundle.records;
   const recordById = new Map();
   const tokenById = new Map();
+  const phraseTokenById = new Map();
   const foldedTokens = new Map();
   const books = new Map();
   const recordRank = new Map();
@@ -361,10 +378,22 @@ export function createEngine(bundle, lunr) {
       if (record.breakBefore) segment += 1;
       const locations = [];
       const tokens = tokenById.get(record.id);
+      const breaks = phraseBreakOffsets(record, tokens);
+      const phraseTokens = [];
+      let boundary = 0;
       for (let tokenIndex = 0; tokenIndex < tokens.length; tokenIndex += 1) {
+        while (boundary < breaks.length && breaks[boundary] <= tokens[tokenIndex].start) {
+          segment += 1;
+          boundary += 1;
+        }
         locations.push(book.tokens.length);
-        book.tokens.push({ ...tokens[tokenIndex], recordId: record.id, tokenIndex, segment });
+        const token = { ...tokens[tokenIndex], recordId: record.id, tokenIndex, segment };
+        book.tokens.push(token);
+        phraseTokens.push(token);
       }
+      // A marker after the final word also separates the next citation unit.
+      segment += breaks.length - boundary;
+      phraseTokenById.set(record.id, phraseTokens);
       globalTokenIndex.set(record.id, locations);
     }
   }
@@ -438,7 +467,7 @@ export function createEngine(bundle, lunr) {
     for (const [recordId, occurrences] of postings[anchor]) {
       const unitId = scope === "section" ? recordId : bookKey(recordById.get(recordId));
       if (!candidates.has(unitId)) continue;
-      const sequence = scope === "section" ? tokenById.get(recordId) : books.get(unitId).tokens;
+      const sequence = scope === "section" ? phraseTokenById.get(recordId) : books.get(unitId).tokens;
       for (const occurrence of occurrences) {
         const anchorPosition = scope === "section" ? occurrence.tokenIndex : globalTokenIndex.get(recordId)[occurrence.tokenIndex];
         const start = anchorPosition - anchor;
@@ -446,7 +475,7 @@ export function createEngine(bundle, lunr) {
         let accepted = true;
         for (let i = 0; i < patterns.length; i += 1) {
           const token = sequence[start + i];
-          if (scope === "book" && token.segment !== sequence[start].segment) {
+          if (token.segment !== sequence[start].segment) {
             accepted = false;
             break;
           }

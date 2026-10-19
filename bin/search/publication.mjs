@@ -205,6 +205,78 @@ function validateDehSourceProjection(corpus, report, manifest, spec) {
     'DEH editorial annotation coverage differs');
 }
 
+/** Bind Boysen's exact text, Niese identities and marked phrase interruptions. */
+export function validateCaSourceProjection(corpus, report, manifest, spec) {
+  const roman = spec.number === 1 ? 'I' : 'II';
+  const displays = [], originals = [], counts = {add: 0, q: 0, foreign: 0, markers: 0, breakBefore: 0};
+  const digest = value => sha256(Buffer.from(value));
+  equal(report.paragraphs.length, corpus.length, 'CA source audit omits a Niese section');
+  for (let index = 0; index < corpus.length; index++) {
+    const record = corpus[index], audit = report.paragraphs[index], label = `${roman}.${index + 1}`;
+    equal(record.citationScheme, manifest.citationScheme, `CA citation scheme differs: ${record.id}`);
+    equal(record.citationLabel, label, `CA citation differs: ${record.id}`);
+    equal(record.sourceId, `latin-apion${spec.number}-num${index + 1}`, `CA stable identity differs: ${record.id}`);
+    equal(record.citation, {book: roman, section: index + 1}, `CA structured citation differs: ${record.id}`);
+    equal(record.url, `/contra-apionem/?book=${spec.number}&niese=${index + 1}`, `CA reader URL differs: ${record.id}`);
+    equal(record.readerLink, {path: 'contra-apionem/', params: {book: spec.number, niese: index + 1}},
+      `CA structured reader link differs: ${record.id}`);
+    equal(record.chapter, undefined, 'CA Niese units must not be assigned one misleading Boysen chapter');
+    equal(audit.sourceId, record.sourceId, 'CA source audit identifies a different section');
+    equal(audit.citationLabel, label, 'CA source audit has a different citation');
+    equal(audit.displayTextSha256, digest(record.text), `CA display fingerprint differs: ${record.id}`);
+    equal(audit.sourceProjectionSha256, digest(record.text), `CA source projection differs: ${record.id}`);
+    equal(audit.removedPrefix, '', 'CA text must not lose a fabricated leading citation label');
+    assert(/^\s*$/u.test(audit.leadingWhitespace) && /^\s*$/u.test(audit.trailingWhitespace), 'CA restoration may only reinstate edge whitespace');
+    const original = audit.leadingWhitespace + record.text + audit.trailingWhitespace;
+    const characters = Array.from(original), left = Array.from(audit.leadingWhitespace).length;
+    equal(audit.rawTextCharacters, characters.length, 'CA raw character count differs');
+    equal(audit.rawTextSha256, digest(original), `CA raw paragraph restoration differs: ${record.id}`);
+    equal(audit.exactRestorationVerified, true, 'CA raw paragraph restoration was not verified');
+    const sourceMarks = [], additions = [];
+    for (const mark of audit.inlineMarks) {
+      assert(['add', 'q', 'foreign'].includes(mark.kind), 'Unrecognized CA source markup');
+      const first = mark.sourceTextStart, last = mark.sourceTextEnd;
+      assert(Number.isInteger(first) && Number.isInteger(last) && first >= left && last > first
+        && last <= characters.length - Array.from(audit.trailingWhitespace).length, 'CA source markup is outside the running text');
+      const start = characters.slice(left, first).join('').length, end = characters.slice(left, last).join('').length;
+      const converted = {kind: mark.kind, start, end, text: record.text.slice(start, end)};
+      if (mark.kind === 'add') additions.push({...converted, sourceTag: 'add'});
+      else sourceMarks.push({...converted, ...(mark.kind === 'foreign' ? {language: mark.language} : {})});
+      if (mark.kind === 'foreign') equal(mark.language, 'grc', 'Unexpected language in CA foreign text');
+      counts[mark.kind]++;
+    }
+    equal(record.editorialMarks, additions, `CA source addition differs: ${record.id}`);
+    equal(record.sourceMarkup, sourceMarks, `CA quotation or foreign text differs: ${record.id}`);
+    const gaps = Array.from(record.text.matchAll(/\*(?:\s*\*)*/gu), match => ({
+      start: match.index, end: match.index + match[0].length, text: match[0], kind: 'literal-asterisks',
+    }));
+    equal(record.textGaps, gaps, `CA literal marker coverage differs: ${record.id}`);
+    equal(record.phraseBreaks, gaps.map(gap => gap.start), `CA phrase boundaries differ: ${record.id}`);
+    equal(audit.textGaps, gaps, 'CA source audit marker ranges differ');
+    equal(audit.phraseBreaks, record.phraseBreaks, 'CA source audit phrase boundaries differ');
+    const annotations = (audit.sourceAttributes.ana || '').split(/\s+/u).filter(Boolean);
+    equal(record.sourceAnnotations || [], annotations, 'CA accepted source annotations differ');
+    const breakBefore = spec.number === 1 && [119, 147].includes(index + 1);
+    equal(annotations.includes('#niese-boundary-within-preceding-lacuna'), breakBefore, 'CA preceding-lacuna annotation differs');
+    equal(Boolean(record.breakBefore), breakBefore, 'CA declared section boundary differs');
+    counts.markers += gaps.length;
+    counts.breakBefore += Number(breakBefore);
+    displays.push(record.text); originals.push(original);
+  }
+  const text = displays.join(''), content = digest(text.replace(/\s/gu, ''));
+  for (const key of ['sourceNonWhitespaceContentSha256', 'indexedNonWhitespaceContentSha256',
+    'sourceProjectionNonWhitespaceContentSha256', 'displayNonWhitespaceContentSha256']) {
+    equal(report.coverage[key], content, `CA original text coverage differs: ${key}`);
+  }
+  equal(report.coverage.rawParagraphSequenceSha256, digest(originals.join('\n')), 'CA raw source order differs');
+  equal(report.coverage.displayTextSequenceSha256, digest(displays.join('\n')), 'CA display text order differs');
+  equal(report.coverage.generatedDisplayGlyphs, 0, 'CA must not generate display characters');
+  equal(report.coverage.sourceProjectionExactlyRestoresSource, true, 'CA source restoration is unverified');
+  equal([counts.add, counts.q, counts.foreign, counts.markers, counts.breakBefore],
+    [report.counts.addedSpans, report.counts.quotationSpans, report.counts.foreignSpans,
+      report.counts.asteriskMarkerClusters, report.counts.breakBeforeUnits], 'CA markup and phrase-boundary totals differ');
+}
+
 /** Validate the generated index against current configs, XML, corpora, and extraction evidence. */
 export function validateSearchSources(root, {qa = true} = {}) {
   const context = loadPublicationConfig(root), {base, config, collections} = context;
@@ -291,6 +363,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(bookReport.coverage.completeRange, spec.sectionRange, `Section range differs: ${id}`);
       equal(corpus.length, spec.sections, `Corpus section count differs: ${id}`);
       if (manifest.id === 'deh-latin-ussani') validateDehSourceProjection(corpus, bookReport, manifest, spec);
+      if (manifest.id === 'contra-apionem-latin-boysen') validateCaSourceProjection(corpus, bookReport, manifest, spec);
       const bundleArtifact = artifact(book.path, book.sha256, 'bundle');
       equal(bundleArtifact.item.bytes, book.bytes, `Bundle byte count differs: ${id}`);
       const bundle = bundleArtifact.value();
@@ -347,6 +420,7 @@ export function validateQaReport(root, {catalog, collection, configured, report}
   equal(qa.source.tokens, collection.totals.tokens, 'Independent QA token total differs');
   const expected = {corpus: collection.corpusPath, catalog: 'catalog.json', engine: catalog.source.enginePath,
     collection: 'collection.mjs', verifier: adapter.verifier};
+  if (manifest.id === 'contra-apionem-latin-boysen') expected.witness = 'tests/ca-source-witness.py';
   for (const [key, relative] of Object.entries(expected)) {
     equal(qa.verifiedFiles?.[key]?.path, `${SOURCE_DIRECTORY}/${relative}`, `Independent QA omits current ${key}`);
     checkEvidence(root, qa.verifiedFiles[key], `independent QA ${key}`);

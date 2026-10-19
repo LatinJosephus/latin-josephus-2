@@ -4,7 +4,7 @@
  * cannot distinguish repeated or overlapping occurrences. All offsets below
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
-import { parseQuery, tokenizeText } from "./engine.mjs";
+import { parseQuery, tokenizeText, phraseBreakOffsets } from "./engine.mjs";
 import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText } from "./ui-utils.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;
@@ -22,6 +22,7 @@ function sourceIndex(records) {
       throw new TypeError("Concordance records require unique IDs and original text strings.");
     }
     editorialMarksFor(record);
+    phraseBreakOffsets(record);
     const key = versionKey(record);
     if (!partitions.has(key)) partitions.set(key, { records: [], positions: new Map(), first: record.resultOrder ?? position });
     partitions.get(key).records.push({ record, position });
@@ -169,6 +170,16 @@ export function buildConcordance(result, records = result?.records, { readerBase
       }
       const citedRecords = partition.records.slice(partition.positions.get(first.id), partition.positions.get(last.id) + 1);
       if (citedRecords.slice(1).some((record) => record.breakBefore)) throw new TypeError("A concordance phrase cannot cross a declared text gap.");
+      for (let position = 0; position < citedRecords.length; position++) {
+        const record = citedRecords[position];
+        const start = position === 0 ? firstSpan.start : 0;
+        const end = position === citedRecords.length - 1 ? lastSpan.end : record.text.length;
+        if (phraseBreakOffsets(record).some(offset =>
+          (offset > start || (position > 0 && offset === start))
+          && (offset < end || (position < citedRecords.length - 1 && offset === end)))) {
+          throw new TypeError("A concordance phrase cannot cross an explicit source phrase boundary.");
+        }
+      }
       const key = JSON.stringify(spans.map((span) => [span.recordId, span.start, span.end]));
       if (unique.has(key)) {
         unique.get(key).queryTexts = distinct([...unique.get(key).queryTexts, ...queryTexts(hit)]);
@@ -236,7 +247,7 @@ const CSV_COLUMNS = [
   "catalog_schema_version", "lunr_version", "concordance_schema_version", "selected_sources_json", "csv_cell_encoding", "escaped_columns_json",
 ];
 const EDITORIAL_CSV_COLUMNS = ["citation_scheme", "left_context_editorial", "matched_text_editorial", "right_context_editorial", "editorial_notes"];
-const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; † unresolved text. Literal context columns retain all indexed letters.";
+const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters. In Contra Apionem, source asterisks are phrase boundaries; their literal spans and the source markup are retained in source_segments_json.";
 
 // Quoting alone does not prevent spreadsheet formula evaluation. Scalar cells
 // beginning with a formula marker (including after whitespace/control chars),
@@ -274,6 +285,12 @@ function exportedSegments(row) {
       ...(citationScheme(record) === "chapter-paragraph" || record.editorialMarks !== undefined ? { citationScheme: citationScheme(record), citationLabel: record.citationLabel,
         chapter: record.chapter, paragraph: record.paragraph,
         editorialMarks: editorialMarksFor(record, span.start, span.end).map((mark) => ({ ...mark })) } : {}),
+      ...(record.phraseBreaks !== undefined ? {
+        phraseBreaks: phraseBreakOffsets(record).filter(offset => offset >= span.start && offset <= span.end),
+        textGaps: (record.textGaps || []).filter(mark => mark.start < span.end && mark.end > span.start),
+        sourceMarkup: (record.sourceMarkup || []).filter(mark => mark.start < span.end && mark.end > span.start),
+        sourceAnnotations: record.sourceAnnotations || [], breakBefore: Boolean(record.breakBefore),
+      } : {}),
     };
   });
 }
@@ -301,9 +318,9 @@ export function exportConcordance(model, result, metadata = {}) {
   const allRows = [...model.rows, ...model.unhighlightedUnits];
   const selectedCollections = result.selectedCollections ?? distinct(allRows.map((row) => row.collectionId).filter(Boolean));
   const selectedBooks = result.selectedBooks ?? distinct(allRows.map((row) => row.bookId).filter(Boolean));
-  const includeEditorialColumns = selectedCollections.some((id) => collections.get(id)?.citationScheme === "chapter-paragraph")
+  const includeEditorialColumns = selectedCollections.some((id) => collections.get(id)?.citationScheme === "chapter-paragraph" || collections.get(id)?.work === "contra-apionem")
     || allRows.some((row) => row.citationScheme === "chapter-paragraph" || row.editorialMarks?.length)
-    || (result.records || []).some((record) => citationScheme(record) === "chapter-paragraph" || record.editorialMarks?.length);
+    || (result.records || []).some((record) => citationScheme(record) === "chapter-paragraph" || record.editorialMarks !== undefined);
   // Keep the accepted 51-column contract for Bellum-only exports. Extended
   // exports explicitly identify both citation systems and editorial rendering.
   const columns = includeEditorialColumns ? [...CSV_COLUMNS.slice(0, 7), ...EDITORIAL_CSV_COLUMNS, ...CSV_COLUMNS.slice(7)] : CSV_COLUMNS;
@@ -342,7 +359,7 @@ export function exportConcordance(model, result, metadata = {}) {
     const segments = exportedSegments(row);
     const markedText = { text: row.left + row.match + row.right, editorialMarks: row.editorialMarks || [] };
     const marks = row.kind === "matching-unit" ? segments.flatMap((segment) => segment.editorialMarks || []) : markedText.editorialMarks;
-    const editorialKinds = distinct(marks.map((mark) => ({ del: "deleted", supplied: "supplied", unclear: "unresolved" })[mark.kind]));
+    const editorialKinds = distinct(marks.map((mark) => ({ del: "deleted", supplied: "supplied", unclear: "unresolved", add: "added" })[mark.kind]));
     return csvRow({
       ...common,
       citation: row.citation, left_context: row.left, matched_text: row.match, right_context: row.right,

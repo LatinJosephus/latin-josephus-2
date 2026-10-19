@@ -1,0 +1,1268 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-10-19T12:05:47.685Z",
+  "independentVerifier": "bin/search/tests/ca-corpus-qa.mjs",
+  "readerBaseline": {
+    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "provenance": "canonical-2026-10-14",
+    "preservationDuringRunRequired": true,
+    "publicationInput": false
+  },
+  "runtime": {
+    "node": "24.19.0",
+    "python": "3.12.14",
+    "unicode": "15.0.0",
+    "xmlParser": "xml.dom.minidom"
+  },
+  "source": {
+    "books": 2,
+    "sections": 616,
+    "tokens": 21018,
+    "stableIds": 620,
+    "embeddedGreekTokens": 7,
+    "uniqueLiteralVocabulary": 6282
+  },
+  "sources": [
+    {
+      "book": 1,
+      "path": "assets/xml/contra-apionem/Latin/book-01.xml",
+      "sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+      "acceptedLF_sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+      "sections": 320,
+      "tokens": 10657,
+      "stableIds": 322,
+      "bodyTags": {
+        "body": 1,
+        "note": 1,
+        "pb": 70,
+        "div1": 1,
+        "p": 320,
+        "milestone": 35,
+        "q": 1,
+        "add": 1,
+        "foreign": 2
+      }
+    },
+    {
+      "book": 2,
+      "path": "assets/xml/contra-apionem/Latin/book-02.xml",
+      "sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+      "acceptedLF_sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+      "sections": 296,
+      "tokens": 10361,
+      "stableIds": 298,
+      "bodyTags": {
+        "body": 1,
+        "note": 1,
+        "pb": 70,
+        "div1": 1,
+        "p": 296,
+        "milestone": 41,
+        "foreign": 1
+      }
+    }
+  ],
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/contra-apionem-latin-boysen/corpus.json",
+      "sha256": "14dfc2f8bacf2ee7ebfbc3cf90789552d1be69a87f80d07088e4e78754147b6d"
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "sha256": "58a7fcec5e3dc1f046334b76439cda7d9459b8437de2e232ee5bb9a04354db64"
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "sha256": "98093386a2e48fa1b56789cec18a465d37cc2924f0e26a6cf0d1d0e0d0e431bd"
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "sha256": "fed1931abc23a58b66ebce9d9ec0f575aaeadd9b6b8124c8658b9dc81539315e"
+    },
+    "lunr": {
+      "path": "bin/search/vendor/lunr.cjs",
+      "sha256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717"
+    },
+    "verifier": {
+      "path": "bin/search/tests/ca-corpus-qa.mjs",
+      "sha256": "f68d054fc6225c2922fe64a78f45bcc1135bdd423504cf290ea39046037952dd"
+    },
+    "witness": {
+      "path": "bin/search/tests/ca-source-witness.py",
+      "sha256": "2a62d59cee0bc3e1edf3e6d9263f4438ca501b266577f07f3a9209f1a8fecdb4"
+    },
+    "extractionReport": {
+      "path": "bin/search/data/contra-apionem-latin-boysen/extraction-report.json",
+      "sha256": "1a57f8759bc41a7a55a905a59d44e2474af62519fe9525ec45ae29badd2a3916"
+    },
+    "originalReader": {
+      "path": "assets/js/renderTei.js",
+      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/contra-apionem-latin-boysen/book-01.bundle.json",
+          "sha256": "0c85593dbef7c9644c84cfadb01894ce9a581ae44f6a6a107960b4724b25ba4c"
+        },
+        "corpus": {
+          "path": "bin/search/data/contra-apionem-latin-boysen/book-01.corpus.json",
+          "sha256": "f22db7ea8c54fc404a787daf6eb2113558a76ca83cb85b69a49c9e8a60fe966d"
+        },
+        "source": {
+          "path": "assets/xml/contra-apionem/Latin/book-01.xml",
+          "sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/contra-apionem-latin-boysen/book-01.extraction-report.json",
+          "sha256": "df96d6a9a710b7a5c01a910cd4f7d0cef2a641e9ba90815a6d136e20bf7e037a"
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/contra-apionem-latin-boysen/book-02.bundle.json",
+          "sha256": "38477a1e885087b2d40a2ea2a44ab716bc0920db685f73aac0d7cac4b14c8e2c"
+        },
+        "corpus": {
+          "path": "bin/search/data/contra-apionem-latin-boysen/book-02.corpus.json",
+          "sha256": "f336fb8c6368064953eb671a22facdbb1f472d6bcead5e23da17a0f92c476deb"
+        },
+        "source": {
+          "path": "assets/xml/contra-apionem/Latin/book-02.xml",
+          "sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/contra-apionem-latin-boysen/book-02.extraction-report.json",
+          "sha256": "d0828cdaa349d5496b2cf61dbab6dbd310d22c24eba839ec0524309eacf8f85f"
+        }
+      }
+    ]
+  },
+  "method": {
+    "source": "Independent minidom parse of two SHA-pinned accepted XML sources. The exact Python witness is embedded in the fingerprinted verifier and compared with its standalone copy; no production extractor imports.",
+    "tokens": "Every Unicode-category token and UTF-16 offset is checked against the indexes; an independent JavaScript character scan agrees for all 616 units.",
+    "queries": "AST/set semantics, independent regex globs, full sequential phrase scan; the source asterisk positions are derived from the independently verified text, not generated barrier metadata.",
+    "vocabulary": "Every distinct source token in each book queried in both source-spelling and u/v–i/j-folded modes.",
+    "boundaries": "All 614 within-book section pairs and all 25 source-asterisk markers checked; the three marked section-edge seams and the book junction cannot be crossed by a phrase.",
+    "collection": "Actual checksum-verified loading, both CA books and all 14 books in three works, independent book/work identity, caching, unavailable-book and invalid-selection rejection."
+  },
+  "boundaryCoverage": {
+    "withinBookPairs": 614,
+    "legalWholeBookPairs": 611,
+    "blockedSourceMarkedPairs": 3,
+    "asteriskMarkers": 25,
+    "interiorAsteriskMarkers": 22,
+    "asteriskMarkersAtSectionEdges": 3,
+    "bookJunctions": 1,
+    "mixedWorkJunctions": 2
+  },
+  "editorialCoverage": {
+    "add": 1,
+    "quotedSpans": 1,
+    "foreignSpans": 3,
+    "sourceAsteriskClusters": 25,
+    "sourceAnnotations": 3,
+    "chapterMilestones": 76,
+    "pageMarkers": 140,
+    "wordInternalPageMarkers": 1,
+    "preservedNieseUnits": 616,
+    "sourceProjectionExactlyRestored": 616
+  },
+  "counts": {
+    "ReviewedReaderBaseline": 1,
+    "StandaloneWitnessMatchesEmbeddedFingerprint": 1,
+    "CatalogBookOrder": 1,
+    "CatalogCitationScheme": 1,
+    "AllThreeWorkBookCount": 1,
+    "CanonicalStableIds": 1,
+    "CombinedRecordCount": 1,
+    "CompleteSourceRecord": 616,
+    "IndependentTokenizersAgree": 616,
+    "CombinedExtractionSourceTotals": 1,
+    "CombinedExtractionAsteriskClusters": 1,
+    "ExtractionReportUnitCount": 2,
+    "ProjectionStableId": 616,
+    "ProjectionRawSourceHash": 616,
+    "ProjectionLeadingWhitespace": 616,
+    "ProjectionTrailingWhitespace": 616,
+    "ProjectionRawCharacterCount": 616,
+    "ProjectionRemovedPrefix": 616,
+    "ProjectionDisplayHash": 616,
+    "ProjectionSourceHash": 616,
+    "ProjectionSourceAttributes": 616,
+    "ProjectionSegmentKind": 756,
+    "ProjectionSegmentContiguity": 756,
+    "ProjectionSegmentSourceStart": 756,
+    "ProjectionSegmentSourceEnd": 756,
+    "ProjectionSegmentHash": 756,
+    "ProjectionSegmentFullCoverage": 616,
+    "ProjectionExactSourceRestoration": 616,
+    "ProjectionStructuralMarkers": 616,
+    "ProjectionInlineMarkup": 616,
+    "ProjectionAsteriskSpans": 616,
+    "ProjectionPhraseBreaks": 616,
+    "ShardMatchesCombinedCorpus": 2,
+    "BundleMatchesShard": 2,
+    "CatalogBundleHash": 2,
+    "CatalogCorpusHash": 2,
+    "SourceFingerprint": 2,
+    "AllIndexedTokenOffsets": 2,
+    "ExpectedTokenCount": 2,
+    "ExhaustiveVocabularyQueries": 15180,
+    "ExhaustiveVocabularyMatchingUnits": 15180,
+    "ExhaustiveVocabularyOccurrences": 15180,
+    "ExhaustiveVocabularyUnitIdentity": 15180,
+    "ExhaustiveVocabularyEvidence": 39032,
+    "ExhaustiveVocabularyRecordIds": 39032,
+    "ExhaustiveVocabularySections": 39032,
+    "ExhaustiveVocabularyMatchingSections": 15180,
+    "FixtureQueries": 208,
+    "FixtureMatchingUnits": 208,
+    "FixtureOccurrences": 208,
+    "FixtureUnitIdentity": 208,
+    "FixtureMatchingSections": 208,
+    "FixtureEvidence": 1768,
+    "FixtureRecordIds": 1768,
+    "FixtureSections": 1768,
+    "WildcardQueries": 1064,
+    "WildcardMatchingUnits": 1064,
+    "WildcardOccurrences": 1064,
+    "WildcardUnitIdentity": 1064,
+    "WildcardEvidence": 15918,
+    "WildcardRecordIds": 15918,
+    "WildcardSections": 15918,
+    "WildcardMatchingSections": 1064,
+    "WithinEveryUnitQueries": 2464,
+    "WithinEveryUnitMatchingUnits": 2464,
+    "WithinEveryUnitOccurrences": 2464,
+    "WithinEveryUnitUnitIdentity": 2464,
+    "WithinEveryUnitEvidence": 2468,
+    "WithinEveryUnitRecordIds": 2468,
+    "WithinEveryUnitSections": 2468,
+    "WithinEveryUnitMatchingSections": 2464,
+    "BoundaryOracleExpectation": 614,
+    "EveryAdjacentUnitBoundaryQueries": 2444,
+    "EveryAdjacentUnitBoundaryMatchingUnits": 2444,
+    "EveryAdjacentUnitBoundaryOccurrences": 2444,
+    "EveryAdjacentUnitBoundaryUnitIdentity": 2444,
+    "EveryAdjacentUnitBoundaryMatchingSections": 2444,
+    "EveryAdjacentUnitBoundaryEvidence": 1338,
+    "EveryAdjacentUnitBoundaryRecordIds": 1338,
+    "EveryAdjacentUnitBoundarySections": 1338,
+    "ExtendedBoundaryContextPhraseQueries": 2456,
+    "ExtendedBoundaryContextPhraseMatchingUnits": 2456,
+    "ExtendedBoundaryContextPhraseOccurrences": 2456,
+    "ExtendedBoundaryContextPhraseUnitIdentity": 2456,
+    "ExtendedBoundaryContextPhraseMatchingSections": 2456,
+    "ExtendedBoundaryContextPhraseEvidence": 1220,
+    "ExtendedBoundaryContextPhraseRecordIds": 1220,
+    "ExtendedBoundaryContextPhraseSections": 1220,
+    "MarkedLacunaSeamBlockedQueries": 12,
+    "MarkedLacunaSeamBlockedMatchingUnits": 12,
+    "MarkedLacunaSeamBlockedOccurrences": 12,
+    "MarkedLacunaSeamBlockedUnitIdentity": 12,
+    "MarkedLacunaSeamBlockedMatchingSections": 12,
+    "EveryAsteriskBarrierBlockedQueries": 100,
+    "EveryAsteriskBarrierBlockedMatchingUnits": 100,
+    "EveryAsteriskBarrierBlockedOccurrences": 100,
+    "EveryAsteriskBarrierBlockedUnitIdentity": 100,
+    "EveryAsteriskBarrierBlockedMatchingSections": 100,
+    "BooleanAcrossAsteriskAllowed": 25,
+    "BooleanAcrossAsteriskAllowedQueries": 25,
+    "BooleanAcrossAsteriskAllowedMatchingUnits": 25,
+    "BooleanAcrossAsteriskAllowedOccurrences": 25,
+    "BooleanAcrossAsteriskAllowedUnitIdentity": 25,
+    "BooleanAcrossAsteriskAllowedEvidence": 36,
+    "BooleanAcrossAsteriskAllowedRecordIds": 36,
+    "BooleanAcrossAsteriskAllowedSections": 36,
+    "BooleanAcrossAsteriskAllowedMatchingSections": 25,
+    "AllSourceAsteriskMarkersExercised": 1,
+    "ThreeWithinBookGapSeamsExercised": 1,
+    "SelectedCACollectionQueries": 168,
+    "SelectedCACollectionMatchingUnits": 168,
+    "SelectedCACollectionOccurrences": 168,
+    "SelectedCACollectionUnitIdentity": 168,
+    "SelectedCACollectionMatchingSections": 168,
+    "SelectedCACollectionSelectionOrder": 168,
+    "SelectedCACollectionMatchingBookIdentity": 168,
+    "SelectedCACollectionUniqueRecordIdentity": 168,
+    "SelectedCACollectionGlobalResultOrder": 168,
+    "SelectedCACollectionEvidence": 3048,
+    "SelectedCACollectionRecordIds": 3048,
+    "SelectedCACollectionSections": 3048,
+    "CrossBookPhraseBlockedQueries": 4,
+    "CrossBookPhraseBlockedMatchingUnits": 4,
+    "CrossBookPhraseBlockedOccurrences": 4,
+    "CrossBookPhraseBlockedUnitIdentity": 4,
+    "CrossBookPhraseBlockedMatchingSections": 4,
+    "CrossBookPhraseBlockedSelectionOrder": 4,
+    "CrossBookPhraseBlockedMatchingBookIdentity": 4,
+    "CrossBookPhraseBlockedUniqueRecordIdentity": 4,
+    "CrossBookPhraseBlockedGlobalResultOrder": 4,
+    "CrossBookPhraseAbsent": 4,
+    "CrossBookBooleanIsolationQueries": 2,
+    "CrossBookBooleanIsolationMatchingUnits": 2,
+    "CrossBookBooleanIsolationOccurrences": 2,
+    "CrossBookBooleanIsolationUnitIdentity": 2,
+    "CrossBookBooleanIsolationMatchingSections": 2,
+    "CrossBookBooleanIsolationSelectionOrder": 2,
+    "CrossBookBooleanIsolationMatchingBookIdentity": 2,
+    "CrossBookBooleanIsolationUniqueRecordIdentity": 2,
+    "CrossBookBooleanIsolationGlobalResultOrder": 2,
+    "CrossBookBooleanAbsent": 2,
+    "ExistingCollectionsBookCounts": 1,
+    "MixedThreeWorkCollectionQueries": 32,
+    "MixedThreeWorkCollectionMatchingUnits": 32,
+    "MixedThreeWorkCollectionOccurrences": 32,
+    "MixedThreeWorkCollectionUnitIdentity": 32,
+    "MixedThreeWorkCollectionEvidence": 13326,
+    "MixedThreeWorkCollectionRecordIds": 13326,
+    "MixedThreeWorkCollectionSections": 13326,
+    "MixedThreeWorkCollectionMatchingSections": 32,
+    "MixedThreeWorkCollectionSelectionOrder": 32,
+    "MixedThreeWorkCollectionMatchingBookIdentity": 32,
+    "MixedThreeWorkCollectionUniqueRecordIdentity": 32,
+    "MixedThreeWorkCollectionGlobalResultOrder": 32,
+    "CrossWorkBooleanIsolationQueries": 4,
+    "CrossWorkBooleanIsolationMatchingUnits": 4,
+    "CrossWorkBooleanIsolationOccurrences": 4,
+    "CrossWorkBooleanIsolationUnitIdentity": 4,
+    "CrossWorkBooleanIsolationMatchingSections": 4,
+    "CrossWorkBooleanIsolationSelectionOrder": 4,
+    "CrossWorkBooleanIsolationMatchingBookIdentity": 4,
+    "CrossWorkBooleanIsolationUniqueRecordIdentity": 4,
+    "CrossWorkBooleanIsolationGlobalResultOrder": 4,
+    "CrossWorkBooleanAbsent": 4,
+    "CrossWorkPhraseBlockedQueries": 4,
+    "CrossWorkPhraseBlockedMatchingUnits": 4,
+    "CrossWorkPhraseBlockedOccurrences": 4,
+    "CrossWorkPhraseBlockedUnitIdentity": 4,
+    "CrossWorkPhraseBlockedMatchingSections": 4,
+    "CrossWorkPhraseBlockedSelectionOrder": 4,
+    "CrossWorkPhraseBlockedMatchingBookIdentity": 4,
+    "CrossWorkPhraseBlockedUniqueRecordIdentity": 4,
+    "CrossWorkPhraseBlockedGlobalResultOrder": 4,
+    "CrossWorkPhraseAbsent": 4,
+    "BundleFetchCaching": 1,
+    "InvalidSelectionRejected": 3,
+    "MissingSelectedBookRejectsCompleteSearch": 1,
+    "InputUnchangedDuringQA": 29
+  },
+  "totalQueries": 24167,
+  "assertions": 346953,
+  "failedAssertions": 0,
+  "examples": [
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 17,
+      "occurrences": 18
+    },
+    {
+      "query": "praecellentes",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Sufficienter ut arbitror\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"ex nostris sacris libris\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"languentium milia trecenta\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"ἀπὸ τῆς ἱεροσυλίας\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 2,
+      "occurrences": 2
+    },
+    {
+      "query": "ἑϰατώμβω̩α",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Amenofis annis\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"sacerdotes atque\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"circumposuisse sibi\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"deos quam\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"igitur si propter uirtutem legum\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"is autem etiam seditionis\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"nisi qu*\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 53,
+      "occurrences": 60
+    },
+    {
+      "query": "Ioseph* sacerdot* OR templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 47,
+      "occurrences": 56
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT NOT Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 14,
+      "occurrences": 14
+    },
+    {
+      "query": "Amenofis AND annis",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 36,
+      "occurrences": 51
+    },
+    {
+      "query": "circumposuisse sibi",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"duo et uiginti libri\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 13,
+      "occurrences": 16
+    },
+    {
+      "query": "praecellentes",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"Sufficienter ut arbitror\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"ex nostris sacris libris\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"languentium milia trecenta\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"ἀπὸ τῆς ἱεροσυλίας\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "ἑϰατώμβω̩α",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"Amenofis annis\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"sacerdotes atque\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"circumposuisse sibi\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"deos quam\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"igitur si propter uirtutem legum\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"is autem etiam seditionis\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"nisi qu*\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 58,
+      "occurrences": 73
+    },
+    {
+      "query": "Ioseph* sacerdot* OR templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 30,
+      "occurrences": 36
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 13,
+      "occurrences": 16
+    },
+    {
+      "query": "NOT NOT Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 3,
+      "occurrences": 3
+    },
+    {
+      "query": "Amenofis AND annis",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "circumposuisse sibi",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 12,
+      "occurrences": 13
+    },
+    {
+      "query": "\"duo et uiginti libri\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Iosephus",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 30,
+      "matchingSections": 30,
+      "occurrences": 34
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 2,
+      "matchingSections": 30,
+      "occurrences": 34
+    },
+    {
+      "query": "praecellentes",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "praecellentes",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"languentium milia trecenta\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"languentium milia trecenta\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"ἀπὸ τῆς ἱεροσυλίας\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 2,
+      "matchingSections": 2,
+      "occurrences": 2
+    },
+    {
+      "query": "\"ἀπὸ τῆς ἱεροσυλίας\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 2,
+      "occurrences": 2
+    },
+    {
+      "query": "ἑϰατώμβω̩α",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "ἑϰατώμβω̩α",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"circumposuisse sibi\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"circumposuisse sibi\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"igitur si propter uirtutem legum\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"igitur si propter uirtutem legum\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 70,
+      "matchingSections": 70,
+      "occurrences": 83
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 2,
+      "matchingSections": 111,
+      "occurrences": 133
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 25,
+      "matchingSections": 25,
+      "occurrences": 29
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 616,
+      "matchingSections": 616,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 2,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Amenofis AND annis",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 2
+    },
+    {
+      "query": "Amenofis AND annis",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 36,
+      "occurrences": 51
+    },
+    {
+      "query": "\"duo et uiginti libri\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"duo et uiginti libri\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:2",
+        "contra-apionem-latin-boysen:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 33,
+      "occurrences": 41
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
+      ],
+      "matchingUnits": 14,
+      "matchingSections": 118,
+      "occurrences": 194
+    },
+    {
+      "query": "\"ex nostris sacris libris\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "NOT (zzzznonoccurrit)",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
+      ],
+      "matchingUnits": 14,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Iosephus",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:1",
+        "bellum-latin-cardwell:1",
+        "deh-latin-ussani:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 7,
+      "occurrences": 9
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:1",
+        "bellum-latin-cardwell:1",
+        "deh-latin-ussani:1"
+      ],
+      "matchingUnits": 3,
+      "matchingSections": 35,
+      "occurrences": 44
+    },
+    {
+      "query": "\"ex nostris sacris libris\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:1",
+        "bellum-latin-cardwell:1",
+        "deh-latin-ussani:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "NOT (zzzznonoccurrit)",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "contra-apionem-latin-boysen:1",
+        "bellum-latin-cardwell:1",
+        "deh-latin-ussani:1"
+      ],
+      "matchingUnits": 3,
+      "matchingSections": 0,
+      "occurrences": 0
+    }
+  ],
+  "durationSeconds": 56.27,
+  "limitations": [
+    "Automated Node/Python verification, not browser or visual acceptance.",
+    "Reader URLs are checked against canonical citation/ID structure; reader pages are not opened by this verifier.",
+    "The accepted project XML is checked faithfully; no new collation with Boysen page images or new scholarly boundary decisions are undertaken.",
+    "Bellum and DEH records in mixed-work checks are independently tokenized; their separate source-fidelity QA remains required.",
+    "Asterisk barriers conservatively suppress phrase adjacency; they do not assign a precise scholarly meaning or a missing-text extent to every source mark."
+  ],
+  "failures": []
+}

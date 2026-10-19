@@ -38,6 +38,16 @@
       "verifier": "tests/corpus-qa.mjs",
       "qaReport": "qa-report.json"
     },
+    "contra-apionem-latin-boysen": {
+      "extractor": "extract-ca.py",
+      "outputDirectory": "data/contra-apionem-latin-boysen",
+      "sources": [
+        "assets/xml/contra-apionem/Latin/book-01.xml",
+        "assets/xml/contra-apionem/Latin/book-02.xml"
+      ],
+      "verifier": "tests/ca-corpus-qa.mjs",
+      "qaReport": "data/contra-apionem-latin-boysen/qa-report.json"
+    },
     "deh-latin-ussani": {
       "extractor": "extract-deh.py",
       "outputDirectory": "data/deh-latin-ussani",

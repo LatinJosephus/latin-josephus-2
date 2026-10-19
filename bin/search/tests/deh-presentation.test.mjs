@@ -115,7 +115,7 @@ test('Cenedaei remains a complete searchable word and its supplied letters survi
 });
 
 test('an occurrence with deleted letters stays visibly marked in CSV and mixed-work results',async()=>{
-  const {result,model}=await run('Alexander',{collections:'all'});
+  const {result,model}=await run('Alexander',{collections:[BELLUM,DEH]});
   assert.deepEqual(result.selectedCollections,[BELLUM,DEH]);
   assert.ok(model.rows.some(row=>row.collectionId===BELLUM));assert.ok(model.rows.some(row=>row.collectionId===DEH));
   const row=model.rows.find(row=>row.citation==='De excidio I.34.2');

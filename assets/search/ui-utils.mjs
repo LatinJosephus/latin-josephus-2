@@ -29,7 +29,7 @@ export function romanBook(number) {
   return result;
 }
 export function workLabel(record) {
-  return record.citationPrefix || ({bellum:'Bellum',antiquities:'Antiquities',deh:'De excidio'}[record.work]) || record.work || 'Bellum';
+  return record.citationPrefix || ({bellum:'Bellum',antiquities:'Antiquities',deh:'De excidio','contra-apionem':'Contra Apionem'}[record.work]) || record.work || 'Bellum';
 }
 export function bookCitation(record) {return `${workLabel(record)} ${romanBook(record.book??record.number)}`;}
 export function citationScheme(record) {return record.citationScheme || 'niese';}
@@ -44,6 +44,17 @@ export function sectionCitation(record) {
     :String(record.section);
 }
 export function excerptCitation(record) {return citationScheme(record)==='chapter-paragraph'?sectionCitation(record):`§${record.section}`;}
+export function passageDivisionLabel(records) {
+  const first=records[0],last=records.at(-1);
+  if(!first)return '';
+  const chapters=[...new Set(records.map(record=>record.chapter))];
+  if(chapters.every(Number.isInteger))return chapters.length===1
+    ?chapters[0]===0?(citationScheme(first)==='chapter-paragraph'?'Prologue':'Proem'):`Chapter ${chapters[0]}`
+    :'Across chapters';
+  const labels=citationUnitLabels([first]);
+  return first.section===last.section?`${labels.singular} ${sectionCitation(first)}`
+    :`${labels.plural} ${sectionCitation(first)}–${sectionCitation(last)}`;
+}
 export function citationFor(records) {
   const first=records[0],last=records.at(-1);
   if(!first)return '';
@@ -54,7 +65,7 @@ export function citationFor(records) {
   return first.section===last.section?start:`${start}–${last.section}`;
 }
 export function readerURL(record,baseURL,{section=true}={}) {
-  const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/'}[record.work])||'bellum-judaicum/';
+  const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/','contra-apionem':'contra-apionem/'}[record.work])||'bellum-judaicum/';
   const url=new URL(readerPath,baseURL);
   url.searchParams.set('book',record.book??record.number);
   if(section&&citationScheme(record)==='chapter-paragraph'){
@@ -96,7 +107,7 @@ export function editorialMarksFor(record,start=0,end=record.text.length) {
   if(!Array.isArray(record.editorialMarks))throw new TypeError('Editorial marks must be an array.');
   const splitSurrogate=offset=>offset>0&&offset<record.text.length&&/[\uD800-\uDBFF]/u.test(record.text[offset-1])&&/[\uDC00-\uDFFF]/u.test(record.text[offset]);
   const marks=record.editorialMarks.map(mark=>{
-    if(!mark||!['del','supplied','unclear'].includes(mark.kind)||!Number.isInteger(mark.start)||!Number.isInteger(mark.end)
+    if(!mark||!['del','supplied','unclear','add'].includes(mark.kind)||!Number.isInteger(mark.start)||!Number.isInteger(mark.end)
       ||mark.start<0||mark.end<=mark.start||mark.end>record.text.length||splitSurrogate(mark.start)||splitSurrogate(mark.end)
       ||mark.text!==record.text.slice(mark.start,mark.end))throw new TypeError('An editorial mark does not match its original-text span.');
     return mark;
@@ -123,7 +134,7 @@ export function annotatedTextSegments(record,start=0,end=record.text.length,high
 
 /** Readable CSV notation supplements, and never replaces, the literal text columns. */
 export function editorialText(record,start=0,end=record.text.length) {
-  const delimiters={del:['⟦','⟧'],supplied:['[',']'],unclear:['','']};
+  const delimiters={del:['⟦','⟧'],supplied:['[',']'],unclear:['',''],add:['⟨','⟩']};
   let out='',active=[];
   for(const segment of annotatedTextSegments(record,start,end)){
     let common=0;while(common<active.length&&common<segment.marks.length&&active[common]===segment.marks[common])common++;

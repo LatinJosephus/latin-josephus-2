@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-19T11:03:33.182Z",
+  "generatedAt": "2026-10-19T12:03:39.313Z",
   "independentVerifier": "bin/search/tests/deh-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
     "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "provenance": "explicit-argument",
+    "provenance": "canonical-2026-10-14",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
@@ -139,11 +139,11 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "844cb030124b213411963fc2c0d66113bd9aec217e18284ec7ec33d4e58ecb2e"
+      "sha256": "58a7fcec5e3dc1f046334b76439cda7d9459b8437de2e232ee5bb9a04354db64"
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "0e48eedbecaeb515370c64789f868ccaea07557263bb82163151da9bb2d7c91c"
+      "sha256": "98093386a2e48fa1b56789cec18a465d37cc2924f0e26a6cf0d1d0e0d0e431bd"
     },
     "collection": {
       "path": "bin/search/collection.mjs",
@@ -356,9 +356,9 @@
     "MixedWorkCollectionMatchingUnits": 32,
     "MixedWorkCollectionOccurrences": 32,
     "MixedWorkCollectionUnitIdentity": 32,
-    "MixedWorkCollectionEvidence": 11348,
-    "MixedWorkCollectionRecordIds": 11348,
-    "MixedWorkCollectionSections": 11348,
+    "MixedWorkCollectionEvidence": 12648,
+    "MixedWorkCollectionRecordIds": 12648,
+    "MixedWorkCollectionSections": 12648,
     "MixedWorkCollectionMatchingSections": 32,
     "MixedWorkCollectionSelectionOrder": 32,
     "MixedWorkCollectionMatchingBookIdentity": 32,
@@ -387,10 +387,10 @@
     "BundleFetchCaching": 1,
     "InvalidSelectionRejected": 2,
     "MissingSelectedBookRejectsCompleteSearch": 1,
-    "InputUnchangedDuringQA": 28
+    "InputUnchangedDuringQA": 30
   },
   "totalQueries": 76170,
-  "assertions": 903839,
+  "assertions": 907741,
   "failedAssertions": 0,
   "examples": [
     {
@@ -861,7 +861,9 @@
         "deh-latin-ussani:2",
         "deh-latin-ussani:3",
         "deh-latin-ussani:4",
-        "deh-latin-ussani:5"
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
       ],
       "matchingUnits": 5,
       "matchingSections": 33,
@@ -883,11 +885,13 @@
         "deh-latin-ussani:2",
         "deh-latin-ussani:3",
         "deh-latin-ussani:4",
-        "deh-latin-ussani:5"
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
       ],
-      "matchingUnits": 12,
-      "matchingSections": 88,
-      "occurrences": 160
+      "matchingUnits": 14,
+      "matchingSections": 118,
+      "occurrences": 194
     },
     {
       "query": "\"tamquam in spinis rosam quaerentes\"",
@@ -905,7 +909,9 @@
         "deh-latin-ussani:2",
         "deh-latin-ussani:3",
         "deh-latin-ussani:4",
-        "deh-latin-ussani:5"
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
       ],
       "matchingUnits": 1,
       "matchingSections": 1,
@@ -927,9 +933,11 @@
         "deh-latin-ussani:2",
         "deh-latin-ussani:3",
         "deh-latin-ussani:4",
-        "deh-latin-ussani:5"
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2"
       ],
-      "matchingUnits": 12,
+      "matchingUnits": 14,
       "matchingSections": 0,
       "occurrences": 0
     },
@@ -982,7 +990,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 97.76,
+  "durationSeconds": 102.52,
   "limitations": [
     "Automated Node/Python verification, not browser or visual acceptance.",
     "Reader URLs checked against canonical citation/ID structure; reader pages are not opened by this verifier.",
