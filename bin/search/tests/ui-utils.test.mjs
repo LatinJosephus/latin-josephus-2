@@ -65,16 +65,25 @@ test('reader links preserve a deployment subpath and select the correct work',()
   assert.equal(readerURL(record,'https://example.org/',{section:false}),'https://example.org/antiquities/?book=20');
 });
 test('old Book I and seven-book pilot links retain their original search coverage',()=>{
-  assert.deepEqual(locationState('?q=bellum',catalog,'default'),{query:'bellum',work:'bellum-latin-cardwell',book:'bellum-latin-cardwell:1',scope:'section',fold:false});
+  assert.deepEqual(locationState('?q=bellum',catalog,'default'),{query:'bellum',work:'bellum-latin-cardwell',book:'bellum-latin-cardwell:1',scope:'section',fold:false,view:'passages'});
   assert.equal(locationState('?q=bellum&book=all',catalog,'default').work,'bellum-latin-cardwell');
   assert.equal(locationState('?q=bellum&book=all',catalog,'default').book,'all');
   assert.equal(locationState('?q=bellum&book=7',catalog,'default').book,'bellum-latin-cardwell:7');
 });
 test('qualified links round-trip work, book, phrase, scope and spelling equivalence',()=>{
-  const state={query:'"uirtus et iustitia"',work:'antiquities-latin-edition',book:'antiquities-latin-edition:20',scope:'book',fold:true};
+  const state={query:'"uirtus et iustitia"',work:'antiquities-latin-edition',book:'antiquities-latin-edition:20',scope:'book',fold:true,view:'passages'};
   const url=searchURL(state,'https://example.org/project/search/?unrelated=old');
   assert.equal(url.pathname,'/project/search/');assert.equal(url.searchParams.has('unrelated'),false);
   assert.deepEqual(locationState(url.search,catalog,'default'),state);
+});
+test('concordance links preserve the query and filters while passage links keep the established URL shape',()=>{
+  const state={query:'"habebantur At Theodorus"',work:'bellum-latin-cardwell',book:'bellum-latin-cardwell:1',scope:'book',fold:false,view:'concordance'};
+  const url=searchURL(state,'https://example.org/search/');
+  assert.equal(url.searchParams.get('view'),'concordance');
+  assert.deepEqual(locationState(url.search,catalog,'default'),state);
+  const passages=searchURL({...state,view:'passages'},url);
+  assert.equal(passages.searchParams.has('view'),false);
+  assert.equal(locationState('?q=bellum&view=unavailable',catalog,'default').view,'passages');
 });
 test('unavailable or ambiguous saved filters fail instead of broadening the search',()=>{
   for(const search of ['?work=missing&q=bellum','?work=all&book=1&q=bellum','?work=bellum-latin-cardwell&book=antiquities-latin-edition:1&q=bellum','?q=bellum&book=8'])

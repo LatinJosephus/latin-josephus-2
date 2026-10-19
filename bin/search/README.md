@@ -66,6 +66,46 @@ and source order. The interface shows 20 excerpt cards at a time; pagination
 does not truncate the query's matching vocabulary or results. Invalid or
 oversized expressions produce an error rather than silently dropping terms.
 
+### Concordance and complete-result downloads
+
+The **Passages / Concordance** controls select two views of the same successful
+query. Passages retain the existing section and excerpt cards. Concordance
+shows each positive match separately, with the original word or phrase between
+up to ten words of left and right context and a linked citation. Context stays
+within the cited section or sections. A phrase crossing a Niese boundary is
+one occurrence with a citation range; punctuation at the boundary is retained.
+Both views paginate their display without truncating the underlying results.
+
+For a single word, wildcard, or quoted phrase, the result summary distinguishes
+**occurrences** from matching sections or books. A section containing five
+instances contributes five occurrences and one matching section. For a
+compound Boolean query, the concordance shows positive evidence in units that
+satisfy the complete query. Its rows are not a word-frequency total: a phrase
+and a contained word can be distinct evidence, and the terms of a whole-book
+query can occur in different sections. Negative-only matches retain their
+unit identity and reader link without an invented occurrence.
+
+**Download all results (CSV)** exports every matching result, including those
+beyond the displayed page and matching units with no positive hits. The file
+starts with readable citation, Latin context, matched text, edition, and reader
+link columns. Later columns record the query, selected works and books, scope,
+spelling mode, search link, export time, and text/index fingerprints. Original
+source offsets and text segments are included for checking an exported match.
+The download reflects the last successful query; editing the form without
+submitting it does not relabel those results. A new search or an error disables
+the previous download until another query succeeds.
+
+CSV is UTF-8 with a byte-order mark for spreadsheet compatibility. Fields are
+quoted and embedded quotation marks and line endings are preserved. A scalar
+cell that could be interpreted as a spreadsheet formula receives a leading
+apostrophe; the affected columns are identified, with exact underlying values
+also recorded as JSON. This affects the spreadsheet representation, not the
+indexed or displayed text.
+
+The new `concordance.mjs` module consumes the engine's hit spans directly. It
+does not derive occurrences from merged highlights, excerpt cards, or the DOM,
+and it does not change the query grammar, tokenizer, indexes, or scholarly XML.
+
 ### Loading and saved links
 
 The browser first loads `catalog.json`, then downloads only the selected books.
@@ -75,8 +115,9 @@ If a selected book is missing or inconsistent, the entire query fails; retrying
 can reuse the books already verified. An older query cannot overwrite the
 results of a newer query.
 
-Saved links preserve `q`, `work`, `book`, `scope=book` when selected, and `fold=1`
-when spelling equivalence is enabled. `work` identifies a collection, for
+Saved links preserve `q`, `work`, `book`, `scope=book` when selected, `fold=1`
+when spelling equivalence is enabled, and `view=concordance` for that view.
+`work` identifies a collection, for
 example `bellum-latin-cardwell`, or `all`. `book` identifies a qualified book,
 for example `bellum-latin-cardwell:1`, or `all`.
 

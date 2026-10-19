@@ -58,12 +58,13 @@ export function locationState(search,catalog,defaultQuery) {
     book=`${work}:${Number(book)}`;
   }
   if(book!=='all'&&!catalog.books.some(b=>b.id===book&&(work==='all'||b.collectionId===work)))throw new Error('The book in this search link is not available. Choose an available book and search again.');
-  return {query:p.get('q')||defaultQuery,work,book,scope:p.get('scope')==='book'?'book':'section',fold:p.get('fold')==='1'};
+  return {query:p.get('q')||defaultQuery,work,book,scope:p.get('scope')==='book'?'book':'section',fold:p.get('fold')==='1',view:p.get('view')==='concordance'?'concordance':'passages'};
 }
 export function searchURL(state,currentURL) {
   const url=new URL(currentURL);url.search='';
   url.searchParams.set('q',state.query);url.searchParams.set('work',state.work);url.searchParams.set('book',state.book);
   if(state.scope==='book')url.searchParams.set('scope','book');
   if(state.fold)url.searchParams.set('fold','1');
+  if(state.view==='concordance')url.searchParams.set('view','concordance');
   return url;
 }

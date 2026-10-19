@@ -1,13 +1,14 @@
 import {createCollection} from './collection.mjs';
 import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows} from './ui-utils.mjs';
+import {buildConcordance,exportConcordance} from './concordance.mjs';
 
 const root=document.getElementById('lj-search');
 const $=id=>root.querySelector(`#${id}`);
-const els={query:$('query'),work:$('work'),book:$('book'),scope:$('scope'),fold:$('fold'),form:$('search-form'),button:$('search-button'),status:$('status'),error:$('error'),results:$('results'),region:$('results-region'),more:$('load-more'),copy:$('copy-link'),scopeHint:$('scope-hint'),context:$('result-context')};
+const els={query:$('query'),work:$('work'),book:$('book'),scope:$('scope'),fold:$('fold'),form:$('search-form'),button:$('search-button'),status:$('status'),error:$('error'),results:$('results'),region:$('results-region'),more:$('load-more'),copy:$('copy-link'),scopeHint:$('scope-hint'),context:$('result-context'),passages:$('view-passages'),concordance:$('view-concordance'),download:$('download-results'),downloadStatus:$('download-status'),resultQuery:$('result-query')};
 const readerBase=new URL(root.dataset.readerBase||'/',location.href);
 const pageSize=20;
 const defaultQuery='"sacerdos ex Hierosolymis"';
-let collection=null,catalog=null,catalogPromise=null,cards=[],shown=0,sequence=0,activeSearch=null;
+let collection=null,catalog=null,catalogPromise=null,cards=[],items=[],shown=0,sequence=0,activeSearch=null,successful=null,view='passages';
 
 function node(tag,text,className){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
 function link(text,url,className){const e=node('a',text,className);e.href=url;e.target='_blank';e.rel='noopener noreferrer';return e;}
@@ -43,9 +44,15 @@ function populateControls(){
 }
 function applyState(state){
   els.query.value=state.query;els.work.value=state.work;populateBooks(state.book);
-  els.scope.value=state.scope;els.fold.checked=state.fold;updateScopeHint();
+  els.scope.value=state.scope;els.fold.checked=state.fold;view=state.view==='concordance'?'concordance':'passages';updateScopeHint();updateViewButtons();
 }
 function saveLocation(state){const url=searchURL(state,location.href);if(url.href!==location.href)history.pushState(null,'',url);}
+function updateViewButtons(){
+  els.passages.setAttribute('aria-pressed',String(view==='passages'));
+  els.concordance.setAttribute('aria-pressed',String(view==='concordance'));
+  els.passages.disabled=els.concordance.disabled=!successful;
+}
+function successfulURL(){return searchURL({...successful.state,view},location.href);}
 function appendTextRange(parent,text,start,end,ranges){
   let cursor=start;
   for(const r of ranges){const a=Math.max(start,r.start),b=Math.min(end,r.end);if(a>=b)continue;if(a>cursor)parent.append(document.createTextNode(text.slice(cursor,a)));parent.append(node('mark',text.slice(a,b)));cursor=b;}
@@ -79,20 +86,41 @@ function makeCard(card){
   }
   return article;
 }
-function renderNext(){
-  const next=Math.min(shown+pageSize,cards.length),fragment=document.createDocumentFragment();
-  for(let i=shown;i<next;i++)fragment.append(makeCard(cards[i]));
-  els.results.append(fragment);shown=next;els.more.hidden=shown>=cards.length;
-  els.more.textContent=`Show ${Math.min(pageSize,cards.length-shown)} more results (${shown} of ${cards.length} shown)`;
+function concordanceHeader(row){
+  const header=node('div',undefined,'result-header');
+  const h=node('h3',undefined,'result-title');h.append(link(row.citation,row.readerURL));header.append(h);
+  header.append(node('span',`${row.language} · ${row.edition}`,'result-meta'));
+  return header;
 }
-function renderUnhighlightedBooks(result){
-  if(result.scope!=='book')return;
-  const groups=[...new Map(result.hitGroups.filter(g=>!g.hits.length).map(g=>[g.bookId,g])).values()];
-  if(!groups.length)return;
-  const box=node('div',undefined,'book-notice');
-  box.append(node('strong',`${groups.length} ${groups.length===1?'book satisfies':'books satisfy'} this query without positive matches`));
-  box.append(node('p','These books meet the Boolean conditions, but there are no positive words or phrases to highlight.'));
-  const links=node('p');for(const g of groups)links.append(link(`${bookCitation(g)} · ${g.edition}`,readerURL(g,readerBase,{section:false})));box.append(links);els.results.append(box);
+function makeConcordanceRow(row){
+  const article=node('article',undefined,'concordance-row');article.append(concordanceHeader(row));
+  const p=node('p',undefined,'concordance-line');p.lang='la';
+  const left=node('span',undefined,'concordance-left');
+  if(row.leftTruncated)left.append(node('span','… ','ellipsis'));
+  left.append(document.createTextNode(row.left));
+  const match=node('span',undefined,'concordance-match');match.append(node('mark',row.match));
+  const right=node('span',row.right,'concordance-right');
+  if(row.rightTruncated)right.append(node('span',' …','ellipsis'));
+  p.append(left,match,right);
+  article.append(p);return article;
+}
+function makeMatchingUnit(unit){
+  const article=node('article',undefined,'concordance-row matching-unit');article.append(concordanceHeader(unit));
+  article.append(node('p',`This ${unit.scope==='book'?'book':'section'} satisfies the full query without a positive word or phrase to highlight.`));
+  return article;
+}
+function orderItems(entries,records){
+  const order=new Map(records.map((r,i)=>[r.id,i]));
+  return entries.sort((a,b)=>(order.get(a.records[0]?.id)??Infinity)-(order.get(b.records[0]?.id)??Infinity));
+}
+function renderNext(){
+  const next=Math.min(shown+pageSize,items.length),fragment=document.createDocumentFragment();
+  for(let i=shown;i<next;i++){
+    const item=items[i];
+    fragment.append(item.kind==='matching-unit'?makeMatchingUnit(item):view==='concordance'?makeConcordanceRow(item):makeCard(item));
+  }
+  els.results.append(fragment);shown=next;els.more.hidden=shown>=items.length;
+  els.more.textContent=`Show ${Math.min(pageSize,items.length-shown)} more results (${shown.toLocaleString()} of ${items.length.toLocaleString()} shown)`;
 }
 function renderEmpty(result){
   if(result.matchingUnits>0)return;
@@ -102,14 +130,60 @@ function renderEmpty(result){
     :'Try a wildcard or enable u/v and i/j equivalence. Exact phrases require consecutive words within the same book.'));
   els.results.append(box);
 }
-function summarize(result){
+function summarize(result,model){
   const spelling=result.fold?'u/v and i/j equivalent':'source spelling';
+  const parts=[];
+  if(model.occurrenceCount!==null){
+    const count=model.occurrenceCount;
+    parts.push(`${count.toLocaleString()} ${model.countKind==='phrase'?'phrase':'word'} ${count===1?'occurrence':'occurrences'}`);
+  }
   if(result.scope==='section'){
     const count=result.matchingUnits,books=result.matchingBooks.length;
-    return `${count.toLocaleString()} matching Niese ${count===1?'section':'sections'}${books?` in ${books} ${books===1?'book':'books'}`:''} · ${spelling} · case-insensitive`;
+    parts.push(`${count.toLocaleString()} matching Niese ${count===1?'section':'sections'}${books?` in ${books} ${books===1?'book':'books'}`:''}`);
+  }else{
+    const count=result.matchingUnits;
+    parts.push(`${count} of ${result.selectedBooks.length} ${result.selectedBooks.length===1?'book matches':'books match'}`);
   }
-  const count=result.matchingUnits;
-  return `${count} of ${result.selectedBooks.length} ${result.selectedBooks.length===1?'book matches':'books match'} · ${cards.length.toLocaleString()} cited ${cards.length===1?'excerpt':'excerpts'} · ${spelling}`;
+  if(view==='concordance'&&model.countKind==='evidence')parts.push(`${model.positiveCount.toLocaleString()} positive ${model.positiveCount===1?'match':'matches'}`);
+  parts.push(spelling,'case-insensitive',view==='concordance'?'concordance view':'passage view');
+  return parts.join(' · ');
+}
+function resultContext(result,model){
+  const parts=[];
+  if(view==='concordance'){
+    if(model.countKind==='evidence'){
+      parts.push(result.scope==='book'
+        ?'Concordance rows show positive words and phrases in books that satisfy the full query. Separate Boolean terms may occur in different sections; a row need not satisfy the full query by itself.'
+        :'Concordance rows show positive words and phrases in sections that satisfy the full query. Different rows may show different parts of that query.');
+      parts.push('The number of positive matches is not a word frequency.');
+    }else{
+      parts.push(`Each row shows one ${model.countKind==='phrase'?'phrase':'word'} occurrence, with up to ten words of context on each side.`);
+      if(result.scope==='book')parts.push('A phrase spanning adjacent sections appears once.');
+    }
+  }else if(result.scope==='book'){
+    parts.push('Whole-book search: each selected book, work and edition is evaluated separately. These excerpts locate positive matches; separate Boolean terms need not occur together in each excerpt. Exact phrases always stay within one book.');
+  }
+  if(model.unhighlightedUnits.length){
+    const count=model.unhighlightedUnits.length,unit=result.scope==='book'?'book':'section';
+    parts.push(`${count.toLocaleString()} matching ${unit}${count===1?'':'s'} ${count===1?'has':'have'} no positive word or phrase to highlight. ${count===1?'Its citation is':'Their citations are'} included in the results and CSV.`);
+  }
+  return parts.join(' ');
+}
+function renderSuccessful(){
+  const {result,model}=successful;
+  items=view==='concordance'
+    ?orderItems([...model.rows,...model.unhighlightedUnits],result.records)
+    :orderItems([...cards,...(result.scope==='book'?model.unhighlightedUnits:[])],result.records);
+  shown=0;els.results.replaceChildren();
+  els.context.textContent=resultContext(result,model);els.context.hidden=!els.context.textContent;
+  els.resultQuery.replaceChildren(node('span','Query: '),node('code',successful.state.query));els.resultQuery.hidden=false;
+  if(items.length)renderNext();else{els.more.hidden=true;renderEmpty(result);}
+  els.status.textContent=summarize(result,model);els.copy.disabled=false;
+  els.download.disabled=result.matchingUnits===0;updateViewButtons();
+}
+function changeView(nextView){
+  if(!successful||view===nextView)return;
+  view=nextView;renderSuccessful();saveLocation({...successful.state,view});
 }
 async function ensureCollection(){
   if(collection)return collection;
@@ -128,9 +202,9 @@ async function search({writeUrl=true,fromLocation=false,example=null}={}){
   const current=++sequence;
   activeSearch?.abort();activeSearch=new AbortController();
   const signal=activeSearch.signal;
-  cards=[];shown=0;
-  els.error.hidden=true;els.button.disabled=true;els.copy.disabled=true;els.more.hidden=true;
-  els.region.setAttribute('aria-busy','true');els.results.replaceChildren();els.context.hidden=true;
+  cards=[];items=[];shown=0;successful=null;updateViewButtons();
+  els.error.hidden=true;els.button.disabled=true;els.copy.disabled=true;els.download.disabled=true;els.more.hidden=true;
+  els.region.setAttribute('aria-busy','true');els.results.replaceChildren();els.context.hidden=true;els.resultQuery.hidden=true;els.downloadStatus.textContent='';
   els.status.textContent=collection?'Searching…':'Loading the text catalogue…';
   try{
     const ready=await ensureCollection();if(current!==sequence)return;
@@ -140,9 +214,9 @@ async function search({writeUrl=true,fromLocation=false,example=null}={}){
     }
     if(example){
       // Validate examples through the same work/book contract as saved links.
-      applyState(locationState(searchURL({query:example.query,work:example.work,book:example.book||'all',scope:example.scope||'section',fold:els.fold.checked},location.href).search,catalog,defaultQuery));
+      applyState(locationState(searchURL({query:example.query,work:example.work,book:example.book||'all',scope:example.scope||'section',fold:els.fold.checked,view},location.href).search,catalog,defaultQuery));
     }
-    const state={query:els.query.value.trim(),work:els.work.value,book:els.book.value,scope:els.scope.value,fold:els.fold.checked};
+    const state={query:els.query.value.trim(),work:els.work.value,book:els.book.value,scope:els.scope.value,fold:els.fold.checked,view};
     if(!state.query){els.query.focus();els.status.textContent='Enter a search expression.';return;}
     const result=await ready.search(state.query,{
       collections:state.work==='all'?'all':[state.work],books:state.book==='all'?'all':[state.book],scope:state.scope,fold:state.fold,signal,
@@ -155,18 +229,16 @@ async function search({writeUrl=true,fromLocation=false,example=null}={}){
       }
     });
     if(current!==sequence)return;
-    cards=buildResultCards(result,result.records);shown=0;els.results.replaceChildren();
-    els.context.hidden=result.scope!=='book';
-    els.context.textContent='Whole-book search: each selected book, work and edition is evaluated separately. These excerpts locate positive matches; separate Boolean terms need not occur together in each excerpt. Exact phrases always stay within one book.';
-    renderUnhighlightedBooks(result);
-    if(cards.length)renderNext();else{els.more.hidden=true;renderEmpty(result);}
-    els.status.textContent=summarize(result);els.copy.disabled=false;
+    cards=buildResultCards(result,result.records);
+    const model=buildConcordance(result,result.records,{readerBase,contextWords:10});
+    successful={state:Object.freeze({...state}),result,model};renderSuccessful();
     if(writeUrl)saveLocation(state);
   }catch(error){
     if(current!==sequence)return;
     els.error.textContent=error?.message||'The search could not be completed. Please try again.';els.error.hidden=false;
     els.status.textContent=error?.name==='QueryError'?'Please check the search expression.':'The search could not be completed for all selected books. Check the selections and try Search again.';
-    els.results.replaceChildren();els.more.hidden=true;els.context.hidden=true;els.copy.disabled=true;
+    successful=null;cards=[];items=[];shown=0;
+    els.results.replaceChildren();els.more.hidden=true;els.context.hidden=true;els.resultQuery.hidden=true;els.copy.disabled=true;els.download.disabled=true;updateViewButtons();
   }finally{
     if(current===sequence){els.button.disabled=false;els.region.setAttribute('aria-busy','false');}
   }
@@ -177,9 +249,36 @@ els.book.addEventListener('change',()=>search());
 els.scope.addEventListener('change',()=>{updateScopeHint();search();});
 els.fold.addEventListener('change',()=>search());
 els.more.addEventListener('click',renderNext);
+els.passages.addEventListener('click',()=>changeView('passages'));
+els.concordance.addEventListener('click',()=>changeView('concordance'));
 root.querySelectorAll('[data-query]').forEach(button=>button.addEventListener('click',()=>search({example:button.dataset})));
-els.copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);els.copy.textContent='Link copied';setTimeout(()=>els.copy.textContent='Copy search link',2000);}catch{els.copy.textContent='Copy the address bar URL';}});
-window.addEventListener('popstate',()=>search({writeUrl:false,fromLocation:true}));
+els.copy.addEventListener('click',async()=>{if(!successful)return;try{await navigator.clipboard.writeText(successfulURL().href);els.copy.textContent='Link copied';setTimeout(()=>els.copy.textContent='Copy search link',2000);}catch{els.copy.textContent='Copy the address bar URL';}});
+els.download.addEventListener('click',()=>{
+  if(!successful||successful.result.matchingUnits===0)return;
+  els.download.disabled=true;els.downloadStatus.textContent='Preparing all results…';
+  try{
+    const exported=exportConcordance(successful.model,successful.result,{catalog,searchURL:successfulURL().href,exportedAt:new Date()});
+    const url=URL.createObjectURL(new Blob([exported.text],{type:exported.mimeType}));
+    const a=node('a');a.href=url;a.download=exported.filename;a.hidden=true;document.body.append(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),60000);
+    els.downloadStatus.textContent=`CSV prepared: ${exported.rowCount.toLocaleString()} ${exported.rowCount===1?'row':'rows'} from all results for the displayed query.`;
+  }catch(error){
+    els.downloadStatus.textContent=error?.message||'The CSV could not be prepared. Please try the download again.';
+  }finally{
+    els.download.disabled=!successful||successful.result.matchingUnits===0;
+  }
+});
+window.addEventListener('popstate',()=>{
+  if(successful&&catalog){
+    try{
+      const state=locationState(location.search,catalog,defaultQuery);
+      if(['query','work','book','scope','fold'].every(key=>state[key]===successful.state[key])){
+        applyState(state);renderSuccessful();return;
+      }
+    }catch{/* The search path below reports invalid saved links consistently. */}
+  }
+  search({writeUrl:false,fromLocation:true});
+});
 els.query.value=new URLSearchParams(location.search).get('q')||defaultQuery;
 updateScopeHint();
 await search({writeUrl:false,fromLocation:true});

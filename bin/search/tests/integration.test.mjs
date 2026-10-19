@@ -65,7 +65,7 @@ test('Negative-only book metadata and saved links preserve qualified identity an
   assert.equal(readerURL(result.hitGroups[0],base,{section:false}),
     'https://qa.example/LatinJosephus/bellum-judaicum/?book=6');
   const shared={query:'"facinus invitabat Cum olim"',work:'bellum-latin-cardwell',
-    book:'bellum-latin-cardwell:7',scope:'book',fold:true};
+    book:'bellum-latin-cardwell:7',scope:'book',fold:true,view:'passages'};
   const shareURL=searchURL(shared,new URL('search/',base));
   assert.equal(shareURL.pathname,'/LatinJosephus/search/');
   assert.deepEqual(locationState(shareURL.search,catalog,'unused'),shared);

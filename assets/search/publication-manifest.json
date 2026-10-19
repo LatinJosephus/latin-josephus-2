@@ -8,8 +8,8 @@
   "inputs": [
     {
       "path": "_includes/search-interface.html",
-      "sha256": "bc845f7bda51f1634793ae1eec03319baefc9aaf44d31bd9542a6188196a71fb",
-      "bytes": 6651
+      "sha256": "7a02baaee7f7c69456e67b2ebb23007f5aada20624c8e275119c3adefd9d3197",
+      "bytes": 8283
     },
     {
       "path": "_pages/search.html",
@@ -70,8 +70,8 @@
     },
     {
       "path": "bin/search/app.mjs",
-      "sha256": "61826e8d78c1cb349f2a04c7904d39c9131d5c3577a5092aaac6f3efd3b5a258",
-      "bytes": 12953
+      "sha256": "b824184a2345a8b1c843955a1cf344247ba9c6748b15d09f958c80a2e8726bd5",
+      "bytes": 18848
     },
     {
       "path": "bin/search/build-index.mjs",
@@ -99,6 +99,11 @@
       "bytes": 17279
     },
     {
+      "path": "bin/search/concordance.mjs",
+      "sha256": "d57cb9c5995cc81bab2f6c5fbf71c6b7c703a482dc07bbe6d525a2fe5c56dd8e",
+      "bytes": 20497
+    },
+    {
       "path": "bin/search/config/bellum-latin-cardwell.json",
       "sha256": "c5655ef8a06048714d8a1a2b9e945d17a5232eee469045a6d7944d8681a61844",
       "bytes": 1188
@@ -110,8 +115,8 @@
     },
     {
       "path": "bin/search/config/publication.json",
-      "sha256": "4673cbccfefe339adf478d42db9c288680dacf21c161ce78fcfa4a41519a933e",
-      "bytes": 1043
+      "sha256": "67a28d7eab50e34d7287d878be3ddceea99e0a60ce767b8512ce5b3bd44c3108",
+      "bytes": 1066
     },
     {
       "path": "bin/search/engine.mjs",
@@ -125,8 +130,8 @@
     },
     {
       "path": "bin/search/index.html",
-      "sha256": "b39296b385f97d8a617244af356aa691b0c46a3143aef0fa8da39c9cb386ef4c",
-      "bytes": 7874
+      "sha256": "4928d3817eb85a8c3f9d039fecb3d2a0efe7f6aaaae61e9de6c07dfc4d16602b",
+      "bytes": 9506
     },
     {
       "path": "bin/search/publication.mjs",
@@ -135,8 +140,8 @@
     },
     {
       "path": "bin/search/styles.css",
-      "sha256": "efb4b00679021ad594d4b71d583a7ddf0990eee39b65065ebfd4851a9b869343",
-      "bytes": 9038
+      "sha256": "795b3bd8740e92d0749a192a1d801b005528f5942c61d9c89c51bebb5b53e3c8",
+      "bytes": 11304
     },
     {
       "path": "bin/search/tests/build-index.test.mjs",
@@ -147,6 +152,16 @@
       "path": "bin/search/tests/collection.test.mjs",
       "sha256": "8b2b780471762b6c910693ee9ddddf44de5a1de3acc6f6d53e0edc2fb8a9e776",
       "bytes": 18774
+    },
+    {
+      "path": "bin/search/tests/concordance-integration.test.mjs",
+      "sha256": "090b943a655109777fcfd79650609438f3a0a5082c6f5f02fe773e730bc6ad43",
+      "bytes": 5652
+    },
+    {
+      "path": "bin/search/tests/concordance.test.mjs",
+      "sha256": "600e13b9bcfde5e4fa50f1074b6e2e4a07b39847b774b9c2b0b1d02cf3f05aa9",
+      "bytes": 20910
     },
     {
       "path": "bin/search/tests/corpus-qa.mjs",
@@ -160,8 +175,8 @@
     },
     {
       "path": "bin/search/tests/integration.test.mjs",
-      "sha256": "1f3bdbf8df07ff7127e960343ba56624d66893f5357d20da9b7a83aaa8febda2",
-      "bytes": 3656
+      "sha256": "a0b5752e5885cbe825a0f4e32789a5ad800078081c103fe08873de139597a0b9",
+      "bytes": 3672
     },
     {
       "path": "bin/search/tests/publication.test.mjs",
@@ -175,13 +190,13 @@
     },
     {
       "path": "bin/search/tests/ui-utils.test.mjs",
-      "sha256": "6c941e6b907017ee69ec0e0cd42306cbb18c0760d2e12148b02a5c62f274d640",
-      "bytes": 6418
+      "sha256": "c1099a56b974b5ba52123d9e53e8ec0215844dc201f4da34447e45edb2521735",
+      "bytes": 7124
     },
     {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "7e42aff95377f5e795bacdc208581babb066931342a71948d9f0e9fe81663365",
-      "bytes": 5004
+      "sha256": "41dece5e7b4042ada18726b68c4d5e7b97c7ba8f67066e6406b28f945624478c",
+      "bytes": 5140
     },
     {
       "path": "bin/search/vendor/LUNR-LICENSE.txt",
@@ -269,6 +284,8 @@
             "--test",
             "bin/search/tests/build-index.test.mjs",
             "bin/search/tests/collection.test.mjs",
+            "bin/search/tests/concordance-integration.test.mjs",
+            "bin/search/tests/concordance.test.mjs",
             "bin/search/tests/engine.test.mjs",
             "bin/search/tests/integration.test.mjs",
             "bin/search/tests/publication.test.mjs",
@@ -283,8 +300,8 @@
     {
       "path": "app.mjs",
       "source": "bin/search/app.mjs",
-      "sha256": "61826e8d78c1cb349f2a04c7904d39c9131d5c3577a5092aaac6f3efd3b5a258",
-      "bytes": 12953,
+      "sha256": "b824184a2345a8b1c843955a1cf344247ba9c6748b15d09f958c80a2e8726bd5",
+      "bytes": 18848,
       "role": "runtime"
     },
     {
@@ -299,6 +316,13 @@
       "source": "bin/search/collection.mjs",
       "sha256": "d5bbb151a2dfed2567369d52babc682a910f7269df46d49587a7b49b4b156c76",
       "bytes": 17279,
+      "role": "runtime"
+    },
+    {
+      "path": "concordance.mjs",
+      "source": "bin/search/concordance.mjs",
+      "sha256": "d57cb9c5995cc81bab2f6c5fbf71c6b7c703a482dc07bbe6d525a2fe5c56dd8e",
+      "bytes": 20497,
       "role": "runtime"
     },
     {
@@ -318,8 +342,8 @@
     {
       "path": "config/publication.json",
       "source": "bin/search/config/publication.json",
-      "sha256": "4673cbccfefe339adf478d42db9c288680dacf21c161ce78fcfa4a41519a933e",
-      "bytes": 1043,
+      "sha256": "67a28d7eab50e34d7287d878be3ddceea99e0a60ce767b8512ce5b3bd44c3108",
+      "bytes": 1066,
       "role": "evidence"
     },
     {
@@ -500,15 +524,15 @@
     {
       "path": "styles.css",
       "source": "bin/search/styles.css",
-      "sha256": "efb4b00679021ad594d4b71d583a7ddf0990eee39b65065ebfd4851a9b869343",
-      "bytes": 9038,
+      "sha256": "795b3bd8740e92d0749a192a1d801b005528f5942c61d9c89c51bebb5b53e3c8",
+      "bytes": 11304,
       "role": "runtime"
     },
     {
       "path": "ui-utils.mjs",
       "source": "bin/search/ui-utils.mjs",
-      "sha256": "7e42aff95377f5e795bacdc208581babb066931342a71948d9f0e9fe81663365",
-      "bytes": 5004,
+      "sha256": "41dece5e7b4042ada18726b68c4d5e7b97c7ba8f67066e6406b28f945624478c",
+      "bytes": 5140,
       "role": "runtime"
     },
     {
