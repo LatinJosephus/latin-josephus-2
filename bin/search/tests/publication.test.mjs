@@ -31,7 +31,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [24, 8590, 361142]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [34, 12458, 488307]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
@@ -39,8 +39,9 @@ test('search publication preserves current inputs and refuses stale or incomplet
     const ca = baseline.catalog.collections.find(collection => collection.id === 'contra-apionem-latin-boysen');
     assert.deepEqual([ca.totals.books, ca.totals.sections, ca.totals.tokens], [2, 616, 21018]);
     const antiquities = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-bamberg78');
-    assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [10, 3415, 137858]);
-    assert.equal(result.sourceXML.length, 25);
+    assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [20, 7283, 265023]);
+    assert.equal(result.sourceXML.length, 45);
+    assert.equal(result.sourceXML.filter(source => /\/niese\/book-(?:1[1-9]|20)\.json$/u.test(source.path)).length, 10);
   });
 
   await t.test('an XML change is rejected before old text can be published', () => {
@@ -59,10 +60,34 @@ test('search publication preserves current inputs and refuses stale or incomplet
   });
 
   await t.test('both Antiquities narrative and separate Proem changes invalidate their indexes', () => {
-    for (const relative of ['assets/xml/antiquities/Latin/book-05.xml', 'assets/xml/antiquities/Latin/book-10.xml', 'assets/xml/antiquities/Latin/preface.xml']) {
+    for (const relative of ['assets/xml/antiquities/Latin/book-05.xml', 'assets/xml/antiquities/Latin/book-10.xml',
+      'assets/xml/antiquities/Latin/book-11.xml', 'assets/xml/antiquities/Latin/book-15.xml',
+      'assets/xml/antiquities/Latin/book-16.xml', 'assets/xml/antiquities/Latin/book-20.xml',
+      'assets/xml/antiquities/Latin/preface.xml']) {
       changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
         () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*XML/u));
     }
+  });
+
+  await t.test('accepted Latin identity registry changes invalidate their indexed source spans', () => {
+    for (const relative of ['assets/xml/antiquities/niese/book-11.json', 'assets/xml/antiquities/niese/book-14.json',
+      'assets/xml/antiquities/niese/book-15.json', 'assets/xml/antiquities/niese/book-16.json',
+      'assets/xml/antiquities/niese/book-18.json', 'assets/xml/antiquities/niese/book-20.json']) {
+      changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n ')]),
+        () => assert.throws(() => verifySearchAssets(fixture), error =>
+          /Stale or changed/u.test(error.message) && error.message.includes(relative)));
+    }
+  });
+
+  await t.test('the accepted CRLF Book XIV registry keeps its fingerprint after LF checkout conversion', () => {
+    const relative = 'assets/xml/antiquities/niese/book-14.json', original = verifySearchAssets(fixture);
+    changed(relative, bytes => bytes.toString('utf8').replace(/\r\n/gu, '\n'), () => {
+      const converted = verifySearchAssets(fixture);
+      assert.equal(converted.publicationManifestSHA256, original.publicationManifestSHA256);
+      const registry = converted.sourceXML.find(source => source.path === relative);
+      assert.equal(registry.normalizedSHA256, '99361742e1e0aa7fe77ee61b879b283a6ec30692fb006d953ee5700050ab06f9');
+      assert.notEqual(registry.worktreeSHA256, registry.indexedSHA256);
+    });
   });
 
   await t.test('the separate Antiquities Proem permits only line-ending equivalence', () => {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent source witness for Antiquities Proem and Books I–X.
+"""Independent source witness for Antiquities Proem and Books I–XX.
 
 This verifier uses minidom and a text-node event stream, independently of the
 production ElementTree extractor. It does not import any search code. Its XML
@@ -19,7 +19,7 @@ from collections import Counter
 from xml.dom import Node, minidom
 
 TEI = "http://www.tei-c.org/ns/1.0"
-SOURCE_COMMIT = "5d48b5285a5fa921ec5e666f60d04216e6e9270d"
+SOURCE_COMMIT = "55bf610245860eab91166fdb7e4fba891f2c335b"
 SPECS = [
     ("preface", 1, 1, 26, "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015"),
     ("book-01", 1, 27, 346, "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b"),
@@ -33,7 +33,7 @@ SPECS = [
     ("book-09", 9, 1, 291, "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640"),
     ("book-10", 10, 1, 281, "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863"),
 ]
-ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X"}
+ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X", 11: "XI", 12: "XII", 13: "XIII", 14: "XIV", 15: "XV", 16: "XVI", 17: "XVII", 18: "XVIII", 19: "XIX", 20: "XX"}
 LABEL = re.compile(r"\[(?:[IVXLCDMivxlcdm]+\.)?(?:[IVXLCDMivxlcdm]+\.)?(\d+)\]\Z")
 LITERAL_DOTS = re.compile(r"(?<=<)\.+(?=>)|\.{3,}")
 
@@ -354,6 +354,508 @@ def extract_file(root, spec, order):
     return rows, file
 
 
+# Independent XI–XX registry witness. This code uses minidom node identities
+# and raw paragraph text offsets; it does not import the production extractor.
+REGISTERED_SPECS = {
+    11: (347, 347, 354, 58, '6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0', 'b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309'),
+    12: (434, 433, 433, 71, '63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f', '6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a'),
+    13: (433, 431, 431, 88, 'bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b', '00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1'),
+    14: (491, 489, 489, 115, '211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76', '99361742e1e0aa7fe77ee61b879b283a6ec30692fb006d953ee5700050ab06f9'),
+    15: (425, 423, 423, 66, '6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485', 'b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35'),
+    16: (404, 380, 383, 61, '25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa', '4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb'),
+    17: (355, 355, 355, 61, 'efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b', '0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f'),
+    18: (379, 377, 377, 57, 'dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50', 'fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501'),
+    19: (366, 366, 366, 52, '01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4', '7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9'),
+    20: (268, 257, 257, 51, '84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7', '3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3'),
+}
+
+
+def node_path(node):
+    if node.parentNode.nodeType == Node.DOCUMENT_NODE:
+        return '/' + node.localName + '[1]'
+    peers = children(node.parentNode, node.localName)
+    return node_path(node.parentNode) + '/' + node.localName + '[' + str(peers.index(node) + 1) + ']'
+
+
+def tokens_with_tei_breaks(text, offsets):
+    """Split only explicitly declared zero-width TEI seams before tokenizing."""
+    wanted = set(offsets)
+    points, position = [0], 0
+    for index, character in enumerate(text):
+        if position in wanted and index:
+            points.append(index)
+        position += u16(character)
+    assert wanted <= {u16(text[:index]) for index in range(len(text) + 1)}
+    points.append(len(text))
+    result = []
+    for first, last in zip(points, points[1:]):
+        shift = u16(text[:first])
+        result.extend({**token, 'start': token['start'] + shift, 'end': token['end'] + shift}
+                      for token in tokens(text[first:last]))
+    return result
+
+
+def extract_registered_file(root, book, order):
+    last, count, record_count, paragraph_count, xml_hash, registry_hash = REGISTERED_SPECS[book]
+    source = f'assets/xml/antiquities/Latin/book-{book:02}.xml'
+    registry_source = f'assets/xml/antiquities/niese/book-{book:02}.json'
+    raw, registry_raw = (root / source).read_bytes(), (root / registry_source).read_bytes()
+    for value, expected, path in [(raw, xml_hash, source), (registry_raw, registry_hash, registry_source)]:
+        normalized = value.replace(b'\r\n', b'\n')
+        assert b'\r' not in normalized and sha(normalized) == expected, ('Unaccepted source', path)
+    assert b'<!DOCTYPE' not in raw.upper() and b'<!ENTITY' not in raw.upper()
+    registry = json.loads(registry_raw)
+    assert registry['book'] == book and registry['range'] == [1, last]
+    dom = minidom.parseString(raw)
+    assert dom.documentElement.namespaceURI == TEI
+    body = dom.getElementsByTagName('body')[0]
+    elements = [body] + list(body.getElementsByTagName('*'))
+    with_ids = [e for e in dom.getElementsByTagName('*') if e.hasAttribute('xml:id')]
+    idmap = {e.getAttribute('xml:id'): e for e in with_ids}
+    assert len(idmap) == len(with_ids)
+    all_paragraphs = list(body.getElementsByTagName('p'))
+    first = next(i for i, p in enumerate(all_paragraphs)
+                 if p.getAttribute('xml:id').startswith(f'latin-book{book:02}-num'))
+    narrative = all_paragraphs[first:]
+    assert len(narrative) == paragraph_count
+    excluded = [{'kind': 'front-matter-paragraph', 'sourceXPath': node_path(p), 'text': all_text(p)}
+                for p in all_paragraphs[:first]]
+    narrative_elements = {node for p in narrative for node in [p] + list(p.getElementsByTagName('*'))}
+    for node in elements:
+        if node.localName in ('head', 'trailer') or node.localName == 'note' and node not in narrative_elements:
+            excluded.append({'kind': node.localName, 'sourceXPath': node_path(node),
+                             'text': all_text(node), 'attributes': attrs(node)})
+
+    stream = ''
+    narrative_ended, end_control = False, None
+    positions, paragraph_of = {}, {}
+    paragraphs, chunks, marks, markers = [], [], [], []
+    structural = {'milestone', 'pb', 'cb', 'lb', 'anchor', 'gap'}
+    inline = {'add', 'del', 'unclear', 'corr', 'expan', 's', 'ref'}
+    for pindex, paragraph in enumerate(narrative):
+        if pindex:
+            stream += '\n\n'
+        paragraph_start = len(stream)
+        raw_offset = 0
+        source_id = paragraph.getAttribute('xml:id') or 'xpath:' + node_path(paragraph)
+
+        def walk(node):
+            nonlocal stream, raw_offset, narrative_ended, end_control
+            if node.nodeType in (Node.TEXT_NODE, Node.CDATA_SECTION_NODE):
+                # The accepted ranges deliberately stop before these exact
+                # source notations. Preserve their raw positions separately;
+                # they are neither Latin tokens nor new canonical sections.
+                gap_notation = (book == 16 and source_id in {
+                    'latin-book16-num188', 'latin-book16-num194', 'latin-book16-num395'
+                } and node.data == '[...]')
+                lacuna_notice = (book == 20 and source_id == 'latin-book20-num34'
+                    and node.data == '[Niese sections 26–37 largely missing; cf. Blatt, p. 68]')
+                if gap_notation or lacuna_notice:
+                    expected_control = {
+                        'latin-book16-num188': 'niese-latin-book16-end188',
+                        'latin-book16-num395': 'niese-latin-book16-end394',
+                        'latin-book20-num34': 'niese-latin-book20-end26',
+                    }.get(source_id)
+                    control = node.previousSibling if expected_control else node.parentNode
+                    assert control.nodeType == Node.ELEMENT_NODE
+                    assert control.getAttribute('xml:id') == (expected_control or source_id)
+                    assert control is (idmap[expected_control] if expected_control else paragraph)
+                    excluded.append({'kind': 'source-gap-notation' if gap_notation else 'lacuna-notice',
+                                     'sourceId': source_id, 'rawStart': raw_offset,
+                                     'rawEnd': raw_offset + len(node.data), 'text': node.data,
+                                     'attributes': attrs(control), 'sourceXPath': node_path(control),
+                                     'sourceTag': control.localName,
+                                     'globalOffset': len(stream)})
+                    raw_offset += len(node.data)
+                    return
+                if narrative_ended:
+                    assert book == 12 and source_id == 'latin-book12-num426'
+                    assert node.data == 'Flauii iosepp FLAUII IOSEPPI IUDAEICAE ANTIQUITATIS LIBER DUODECIMUS EXPLICIT'
+                    excluded.append({'kind': 'book-subscription', 'sourceId': source_id,
+                                     'rawStart': raw_offset, 'rawEnd': raw_offset + len(node.data),
+                                     'text': node.data, 'attributes': attrs(end_control),
+                                     'sourceXPath': node_path(end_control), 'sourceTag': 'milestone'})
+                    raw_offset += len(node.data)
+                    return
+                begin = len(stream)
+                stream += node.data
+                if node.data:
+                    chunks.append({'start': begin, 'end': len(stream), 'sourceId': source_id,
+                                   'rawStart': raw_offset, 'rawEnd': raw_offset + len(node.data),
+                                   'text': node.data})
+                raw_offset += len(node.data)
+                return
+            assert node.nodeType == Node.ELEMENT_NODE and node.namespaceURI == TEI
+            tag = node.localName
+            assert tag in structural | inline | {'p', 'num', 'note'}
+            paragraph_of[node] = pindex
+            positions[node] = {'before': len(stream)}
+            opening_numeral = (book == 15 and pindex == 0 and tag == 'add'
+                               and node is children(paragraph, 'add')[0]
+                               and attrs(node) == {'hand': 'post', 'place': 'marginleft'}
+                               and all_text(node) == 'I')
+            if tag in {'num', 'note'} or opening_numeral:
+                value = all_text(node)
+                excluded.append({'kind': 'chapter-annotation-before-first-registered-interval' if opening_numeral else tag,
+                                 'sourceId': source_id, 'rawStart': raw_offset,
+                                 'rawEnd': raw_offset + len(value), 'text': value,
+                                 'attributes': attrs(node), 'sourceXPath': node_path(node)})
+                raw_offset += len(value)
+            else:
+                begin, raw_begin = len(stream), raw_offset
+                if tag in structural:
+                    assert not children(node) and not all_text(node)
+                    markers.append({'kind': tag, 'sourceId': source_id, 'rawOffset': raw_offset,
+                                    'globalOffset': len(stream), 'attributes': attrs(node), 'sourceXPath': node_path(node)})
+                for child in node.childNodes:
+                    walk(child)
+                if tag == 'milestone' and node.getAttribute('unit') == 'niese-end':
+                    assert book == 12 and not narrative_ended
+                    narrative_ended, end_control = True, node
+                if tag in inline:
+                    marks.append({'kind': tag, 'sourceId': source_id,
+                                  'start': begin, 'end': len(stream),
+                                  'rawStart': raw_begin, 'rawEnd': raw_offset, 'attributes': attrs(node)})
+            positions[node]['after'] = len(stream)
+
+        walk(paragraph)
+        value = all_text(paragraph)
+        assert raw_offset == len(value)
+        parent = paragraph.parentNode
+        chapter = parent.getAttribute('n') if parent.localName == 'div2' else ''
+        paragraphs.append({'sourceId': source_id, 'sourceXPath': node_path(paragraph),
+                           'rawText': value, 'rawTextSha256': sha(value), 'chapter': chapter,
+                           'start': paragraph_start, 'end': len(stream)})
+
+    def locate(point):
+        kind = point['kind']
+        if kind == 'book-end':
+            return len(stream)
+        element = idmap[point['target']]
+        if kind == 'element-edge':
+            for step in point['edge'].split('/'):
+                match = re.fullmatch(r'([\w-]+)\[(\d+)\]', step)
+                assert match, point
+                choices = children(element, match[1])
+                if match[1] == 'milestone' and registry.get('structuralMilestoneUnits'):
+                    choices = [e for e in choices if (e.getAttribute('unit') if e.hasAttribute('unit')
+                               or book <= 15 else None) in registry['structuralMilestoneUnits']]
+                element = choices[int(match[2]) - 1]
+        elif kind == 'niese-milestone':
+            element = next(e for e in element.getElementsByTagName('milestone')
+                           if e.getAttribute('unit') == 'niese' and e.getAttribute('n') == str(point['n']))
+        assert kind in {'paragraph', 'paragraph-end', 'element', 'element-edge', 'niese-milestone', 'anchor'}
+        return positions[element]['before' if kind == 'paragraph' else 'after']
+
+    intervals = []
+    if book in (11, 16, 17):
+        for section in registry['sections']:
+            for rank, span in enumerate(section['Latin'].get('spans', []), 1):
+                intervals.append({'section': section['number'], 'start': locate(span['start']),
+                                  'end': locate(span['end']), 'role': span.get('role', 'primary'),
+                                  'occurrence': span.get('occurrence', span['start']['target']),
+                                  'rank': span.get('continuationRank', rank),
+                                  'startKind': 'registered-span', 'registeredSpan': span})
+        intervals.sort(key=lambda interval: (interval['start'], interval['end']))
+    elif book >= 18:
+        for section in registry['sections']:
+            latin = section['Latin']
+            if not latin['available']:
+                continue
+            number = section['number']
+            if latin.get('start'):
+                start = locate(latin['start'])
+                start_kind = 'registered-start'
+            else:
+                starts = [element for element in elements if element in positions
+                          and element.localName == 'milestone'
+                          and element.getAttribute('unit') == 'niese'
+                          and element.getAttribute('n') == str(number)]
+                assert len(starts) == 1, ('Missing or ambiguous accepted start', book, number)
+                start = positions[starts[0]]['after']
+                start_kind = 'milestone'
+            intervals.append({'section': number, 'start': start, 'role': 'primary',
+                              'occurrence': f'Latin-{book}-{number}-1', 'rank': 1,
+                              'startKind': start_kind, 'endTarget': latin.get('endTarget')})
+        intervals.sort(key=lambda interval: interval['start'])
+        for index, interval in enumerate(intervals):
+            interval['end'] = (locate({'kind': 'anchor', 'target': interval['endTarget']})
+                               if interval['endTarget'] else intervals[index + 1]['start']
+                               if index + 1 < len(intervals) else len(stream))
+    else:
+        suppressed = {(entry['paragraph'], entry['label']) for entry in registry.get('suppressedLatinLabels', [])}
+        for element in elements:
+            if element not in paragraph_of:
+                continue
+            tag = element.localName
+            if tag == 'num':
+                label = all_text(element).strip()
+                source_id = paragraphs[paragraph_of[element]]['sourceId']
+                if (source_id, label) in suppressed:
+                    continue
+                match = LABEL.fullmatch(label)
+                assert match, ('Unreviewed numeric label', source, label)
+                number = int(match[1])
+            elif tag == 'milestone' and element.getAttribute('unit') == 'niese':
+                number = int(element.getAttribute('n'))
+            else:
+                continue
+            intervals.append({'section': number, 'start': positions[element]['after'], 'role': 'primary',
+                              'occurrence': f'Latin-{book}-{number}-1', 'rank': 1, 'startKind': tag})
+        intervals.sort(key=lambda interval: interval['start'])
+        for index, interval in enumerate(intervals):
+            interval['end'] = intervals[index + 1]['start'] if index + 1 < len(intervals) else len(stream)
+    available = {entry['number'] for entry in registry['sections'] if entry['Latin']['available']}
+    primary = [interval for interval in intervals if interval['role'] == 'primary']
+    assert len(available) == count and {interval['section'] for interval in primary} == available
+    assert len(intervals) == record_count
+    assert len({interval['occurrence'] for interval in intervals}) == record_count
+    assert not stream[:intervals[0]['start']].strip() and not stream[intervals[-1]['end']:].strip()
+    for left, right in zip(intervals, intervals[1:]):
+        assert left['end'] <= right['start'] and not stream[left['end']:right['start']].strip()
+    counts = Counter(interval['section'] for interval in primary)
+    passages = {passage['occurrence']: passage for passage in registry.get('sourcePassages', [])}
+    rows = []
+    for interval in intervals:
+        section = interval['section']
+        canonical = f'antiquities-latin-bamberg78-{book}-{section}'
+        identifier = canonical
+        citation = f'{ROMAN[book]}.{section}'
+        extra = {'citationUnitId': canonical, 'citationUnitCitation': citation}
+        if interval['role'] == 'interpolation':
+            passage = passages[interval['occurrence']]
+            assert passage['AntiquitiesIdentity'] is False and passage['primaryAntiquitiesFragment'] is False
+            section = passage['identity']
+            identifier = f'antiquities-latin-bamberg78-{book}-{section}'
+            suffix = section.split('.')[-1]
+            citation = f'XI, interpolated Bellum IV.{suffix}'
+            extra = {'sourcePassage': passage, 'sourceOccurrence': interval['occurrence'],
+                     'citationUnitId': identifier, 'citationUnitCitation': citation}
+        elif counts[section] > 1:
+            identifier += '-' + interval['occurrence']
+            extra.update({'sourceOccurrence': interval['occurrence'], 'continuationRank': interval['rank'],
+                          'fragmentCount': counts[section]})
+            citation += f" (portion {interval['rank']} of {counts[section]})"
+        row = {'id': identifier, 'book': book, 'section': section, 'sourceFile': source,
+               'readerBook': book, 'readerNiese': interval['section'], 'sourceIds': [],
+               'startKind': interval['startKind'], 'order': order + len(rows),
+               'sourceSpans': [], 'inlineMarks': [], 'structuralMarkers': [],
+               'boundaryWhitespace': [], 'text': '', 'breakBefore': (book, section) in {(16, 200), (20, 37)},
+               'citationLabel': citation, 'url': f"/antiquities/?book={book}&niese={interval['section']}",
+               'identityEvidence': {key: interval[key] for key in ('section', 'role', 'occurrence', 'rank')}, **extra}
+        maps = []
+        for paragraph in paragraphs:
+            begin, end = max(interval['start'], paragraph['start']), min(interval['end'], paragraph['end'])
+            if begin >= end:
+                continue
+            raw_piece = stream[begin:end]
+            content = raw_piece.strip()
+            first_content = begin + (len(raw_piece) - len(raw_piece.lstrip()) if content else len(raw_piece))
+            last_content = end - len(raw_piece) + len(raw_piece.rstrip()) if content else first_content
+            if content and row['text']:
+                offset = u16(row['text'])
+                row['text'] += '\n\n'
+                row['sourceSpans'].append({'kind': 'separator', 'start': offset, 'end': offset + 2, 'text': '\n\n'})
+            display_start = len(row['text'])
+            row['text'] += content
+            maps.append({'sourceId': paragraph['sourceId'], 'start': first_content, 'end': last_content,
+                         'displayStart': display_start})
+            for chunk in chunks:
+                if chunk['sourceId'] != paragraph['sourceId']:
+                    continue
+                lo, hi = max(first_content, chunk['start']), min(last_content, chunk['end'])
+                if lo < hi:
+                    first16 = u16(row['text'][:display_start + lo - first_content])
+                    last16 = u16(row['text'][:display_start + hi - first_content])
+                    row['sourceSpans'].append({'kind': 'text', 'start': first16, 'end': last16,
+                        'text': stream[lo:hi], 'sourceId': chunk['sourceId'],
+                        'rawStart': chunk['rawStart'] + lo - chunk['start'],
+                        'rawEnd': chunk['rawStart'] + hi - chunk['start']})
+                for trim_first, trim_last in [(begin, first_content), (last_content, end)]:
+                    lo, hi = max(trim_first, chunk['start']), min(trim_last, chunk['end'])
+                    if lo < hi:
+                        row['boundaryWhitespace'].append({'sourceId': chunk['sourceId'],
+                            'rawStart': chunk['rawStart'] + lo - chunk['start'],
+                            'rawEnd': chunk['rawStart'] + hi - chunk['start'], 'text': stream[lo:hi]})
+        text = row['text']
+        assert text and ''.join(span['text'] for span in row['sourceSpans']) == text
+        row['sourceIds'] = list(dict.fromkeys(span['sourceId'] for span in row['sourceSpans'] if span['kind'] == 'text'))
+        row['sourceId'] = row['sourceIds'][0]
+        row['rawStart'] = next(span['rawStart'] for span in row['sourceSpans'] if span['kind'] == 'text')
+        row['textSha256'] = sha(text)
+        raw_display = stream[interval['start']:interval['end']]
+        row['untrimmedDisplaySha256'] = sha(raw_display)
+        row['rawDisplaySha256'] = sha(raw_display)
+        row['leadingWhitespace'] = raw_display[:len(raw_display) - len(raw_display.lstrip())]
+        row['trailingWhitespace'] = raw_display[len(raw_display.rstrip()):]
+        for mark in marks:
+            for mapping in maps:
+                if mark['sourceId'] != mapping['sourceId']:
+                    continue
+                lo, hi = max(mapping['start'], mark['start']), min(mapping['end'], mark['end'])
+                if lo < hi:
+                    a, z = mapping['displayStart'] + lo - mapping['start'], mapping['displayStart'] + hi - mapping['start']
+                    row['inlineMarks'].append({'kind': mark['kind'], 'start': u16(text[:a]), 'end': u16(text[:z]),
+                                               'text': text[a:z], 'attributes': mark['attributes']})
+        for marker in markers:
+            point = marker['globalOffset']
+            terminal = (interval is intervals[-1] and point == interval['end']
+                        and marker['kind'] == 'milestone' and marker['attributes'].get('unit') == 'niese-end')
+            range_closure = (point == interval['end'] and (
+                book == 16 and marker['kind'] == 'milestone'
+                and marker['attributes'].get('unit') == 'niese-range-end'
+                and marker['attributes'].get('n') == str(section)
+                or book == 20 and section == 26 and marker['kind'] == 'anchor'
+                and marker['attributes'].get('xml:id') == 'niese-latin-book20-end26'))
+            if not interval['start'] <= point < interval['end'] and not terminal and not range_closure:
+                continue
+            mapping = next((value for value in maps if value['sourceId'] == marker['sourceId']), None)
+            if mapping is None:
+                assert marker['kind'] != 'gap'
+                if not range_closure:
+                    continue
+                offset = len(text)
+            else:
+                offset = mapping['displayStart'] + max(0, min(mapping['end'], point) - mapping['start'])
+            row['structuralMarkers'].append({key: marker[key] for key in ('kind', 'sourceId', 'rawOffset', 'attributes')}
+                                           | {'offset': u16(text[:offset])})
+        row['literalGaps'] = [{'kind': 'literal-ellipsis' if match.group() == '…' else 'literal-dots',
+                               'start': u16(text[:match.start()]), 'end': u16(text[:match.end()]), 'text': match.group()}
+                              for match in re.finditer(r'\.{2,}|…|(?<=<)\.(?=>)', text)]
+        for mark in row['inlineMarks']:
+            if (mark['kind'] == 'del' and mark['attributes'].get('rend') in {'scraping', 'fading'}
+                    and re.fullmatch(r'\.+', mark['text'])
+                    and not any(gap['start'] == mark['start'] and gap['end'] == mark['end'] for gap in row['literalGaps'])):
+                row['literalGaps'].append({'kind': 'source-marked-dots', 'start': mark['start'], 'end': mark['end'],
+                                           'text': mark['text'], 'sourceAttributes': mark['attributes']})
+        row['literalGaps'].sort(key=lambda gap: (gap['start'], gap['end'], gap['kind']))
+        row['teiGaps'] = [marker for marker in row['structuralMarkers'] if marker['kind'] == 'gap']
+        row['phraseBreaks'] = sorted({gap['start'] for gap in row['literalGaps']} | {gap['offset'] for gap in row['teiGaps']})
+        row['tokens'] = tokens_with_tei_breaks(text, [gap['offset'] for gap in row['teiGaps']])
+        rows.append(row)
+    if book >= 16:
+        def xml_attributes(values):
+            return {('{http://www.w3.org/XML/1998/namespace}id' if name == 'xml:id' else name): value
+                    for name, value in values.items()}
+
+        def source_marker(node):
+            paragraph = paragraphs[paragraph_of[node]]
+            candidates = [marker for marker in markers if marker['sourceId'] == paragraph['sourceId']
+                          and marker['kind'] == node.localName and marker['attributes'] == attrs(node)
+                          and marker['globalOffset'] == positions[node]['before']]
+            assert len(candidates) == 1
+            return {'sourceId': paragraph['sourceId'], 'sourceXPath': node_path(node),
+                    'sourceTag': node.localName, 'sourceAttributes': xml_attributes(attrs(node)),
+                    'sourceTextOffset': candidates[0]['rawOffset']}
+
+        source_gap_exclusions = [
+            {'kind': 'excluded-' + item['kind'], 'sourceId': item['sourceId'],
+             'sourceXPath': item['sourceXPath'], 'sourceTag': item['sourceTag'],
+             'sourceAttributes': xml_attributes(item['attributes']),
+             'sourceTextStart': item['rawStart'], 'sourceTextEnd': item['rawEnd'],
+             'text': item['text'], 'textSha256': sha(item['text'])}
+            for item in excluded if item['kind'] in {'source-gap-notation', 'lacuna-notice'}]
+        expected_exclusions = {16: [('latin-book16-num188', 59, 64), ('latin-book16-num194', 0, 5),
+                                    ('latin-book16-num395', 0, 5)],
+                               20: [('latin-book20-num34', 0, 56)]}.get(book, [])
+        assert [(item['sourceId'], item['sourceTextStart'], item['sourceTextEnd'])
+                for item in source_gap_exclusions] == expected_exclusions
+        explicit_boundaries = []
+        if book in (16, 20):
+            preceding, following = (188, 200) if book == 16 else (26, 37)
+            end_node = idmap[f'niese-latin-book{book}-end{preceding}']
+            start_nodes = [element for element in elements if element in positions
+                           and element.localName == 'milestone' and element.getAttribute('unit') == 'niese'
+                           and element.getAttribute('n') == str(following)]
+            assert len(start_nodes) == 1
+            start_node = start_nodes[0]
+            relevant_ids = {'latin-book16-num188', 'latin-book16-num194'} if book == 16 else {'latin-book20-num34'}
+            evidence = {'kind': 'registered-source-discontinuity', 'sourcePath': source,
+                        'precedingSection': preceding, 'followingSection': following,
+                        'precedingEnd': source_marker(end_node), 'followingStart': source_marker(start_node),
+                        'excludedSourceSpans': [entry for entry in source_gap_exclusions if entry['sourceId'] in relevant_ids],
+                        'qualification': 'This explicit source boundary blocks phrase adjacency; the cause and extent of absent Latin are not inferred.'}
+            previous, next_row = [next(row for row in rows if row['section'] == number) for number in (preceding, following)]
+            assert rows.index(next_row) == rows.index(previous) + 1
+            assert next_row['breakBefore'] and len(evidence['excludedSourceSpans']) == (2 if book == 16 else 1)
+            next_row['sourceBoundaryEvidence'] = evidence
+            explicit_boundaries.append(evidence)
+        # A Niese marker may divide two letter runs with no intervening space.
+        # Such a canonical boundary separates the indexed tokens but remains
+        # joinable in whole-book phrase scope. Audit every new physical seam.
+        token_boundaries = []
+        for previous, next_row in zip(rows, rows[1:]):
+            last_span = next(span for span in reversed(previous['sourceSpans']) if span['kind'] == 'text')
+            first_span = next(span for span in next_row['sourceSpans'] if span['kind'] == 'text')
+            if (last_span['sourceId'] == first_span['sourceId'] and last_span['rawEnd'] == first_span['rawStart']
+                    and unicodedata.category(previous['text'][-1])[0] in 'LMN'
+                    and unicodedata.category(next_row['text'][0])[0] in 'LN'):
+                token_boundaries.append({'sourceId': first_span['sourceId'], 'sourceTextOffset': first_span['rawStart'],
+                                         'precedingSection': previous['section'], 'followingSection': next_row['section'],
+                                         'leftToken': previous['tokens'][-1]['term'], 'rightToken': next_row['tokens'][0]['term']})
+        assert token_boundaries == ([{'sourceId': 'latin-book17-num32', 'sourceTextOffset': 3308,
+                                     'precedingSection': 41, 'followingSection': 42,
+                                     'leftToken': 'eleuati', 'rightToken': 'cum'}] if book == 17 else [])
+        token_boundary_evidence = []
+        for boundary in token_boundaries:
+            previous, next_row = [next(row for row in rows if row['section'] == boundary[name])
+                                  for name in ('precedingSection', 'followingSection')]
+            node = idmap[f"niese-latin-book{book}-{boundary['followingSection']}"]
+            paragraph = paragraphs[paragraph_of[node]]
+            marker_evidence = source_marker(node)
+            assert marker_evidence['sourceTextOffset'] == boundary['sourceTextOffset']
+            at = boundary['sourceTextOffset']
+            left = previous['text'][previous['tokens'][-1]['start']:]
+            right = next_row['text'][:next_row['tokens'][0]['end']]
+            assert paragraph['rawText'][at - len(left):at + len(right)] == left + right
+            token_boundary_evidence.append({'kind': 'registered-section-token-boundary', 'sourcePath': source,
+                                            **marker_evidence,
+                                            'flatTextOffset': positions[node]['before'] - paragraph['start'],
+                                            'precedingRecordId': previous['id'], 'followingRecordId': next_row['id'],
+                                            'sourceText': left + right, 'precedingText': left, 'followingText': right,
+                                            'qualification': 'The adopted Niese boundary separates two search tokens without inserting or changing a source character. Whole-book phrase adjacency remains available.'})
+        def marker_identity(marker):
+            return (marker['kind'], marker['sourceId'], marker['rawOffset'], json.dumps(marker['attributes'], sort_keys=True))
+
+        owned_markers = Counter(marker_identity(marker) for row in rows for marker in row['structuralMarkers'])
+        unassigned_markers = []
+        for marker in markers:
+            key = marker_identity(marker)
+            if owned_markers[key]:
+                owned_markers[key] -= 1
+            else:
+                unassigned_markers.append({key: marker[key] for key in ('kind', 'sourceId', 'rawOffset', 'attributes', 'sourceXPath')})
+        assert not any(owned_markers.values())
+        assert [(marker['kind'], marker['sourceId'], marker['rawOffset'], marker['attributes']) for marker in unassigned_markers] == (
+            [('lb', 'latin-book16-num194', 5, {})] if book == 16 else
+            [('lb', 'latin-book20-num34', 56, {})] if book == 20 else [])
+    unavailable = [entry for entry in registry['sections'] if not entry['Latin']['available']]
+    missing_ranges = []
+    for entry in unavailable:
+        number = entry['number']
+        if missing_ranges and missing_ranges[-1][1] == number - 1:
+            missing_ranges[-1][1] = number
+        else:
+            missing_ranges.append([number, number])
+    file = {'sourceFile': source, 'book': book, 'readerBook': book, 'sha256': sha(raw),
+            'acceptedLF_sha256': xml_hash, 'nieseRange': [1, last], 'sections': len(rows),
+            'canonicalSections': len(available), 'wordTokens': sum(len(row['tokens']) for row in rows),
+            'stableIds': len(idmap), 'bodyTags': dict(Counter(e.localName for e in elements)),
+            'paragraphs': [{key: value for key, value in paragraph.items() if key not in ('start', 'end')}
+                           for paragraph in paragraphs], 'excluded': excluded,
+            'missingNieseRanges': missing_ranges, 'unavailableLatinIdentities': unavailable,
+            'identityRegistry': {'path': registry_source, 'sha256': sha(registry_raw), 'acceptedLF_sha256': registry_hash},
+            'suppressedLatinLabels': registry.get('suppressedLatinLabels', []),
+            'sourceOrder': [row['section'] for row in rows]}
+    if book >= 16:
+        file.update({'sourceGapExclusions': source_gap_exclusions,
+                     'explicitSourceBoundaries': explicit_boundaries,
+                     'registeredTokenBoundaries': token_boundaries,
+                     'registeredTokenBoundaryEvidence': token_boundary_evidence,
+                     'unassignedStructuralMarkers': unassigned_markers})
+    return rows, file
+
+
 def build(root):
     rows, files = [], []
     for spec in SPECS:
@@ -368,8 +870,14 @@ def build(root):
     assert sum(mark["kind"] == "del" for row in rows for mark in row["inlineMarks"]) == 30
     assert sum(x["kind"] == "omission-notice" for f in files for x in f["excluded"]) == 6
     assert sum(x["kind"] == "lacuna-notice" for f in files for x in f["excluded"]) == 1
+    for book in range(11, 21):
+        new_rows, file = extract_registered_file(root, book, len(rows))
+        rows.extend(new_rows)
+        files.append(file)
+    assert len(rows) == 7283
+    assert sum(len(row["tokens"]) for row in rows) == 265023
     return {"sourceCommit": SOURCE_COMMIT, "files": files, "rows": rows,
-            "totals": {"books": 10, "sourceFiles": 11, "sections": len(rows),
+            "totals": {"books": 20, "sourceFiles": 21, "sections": len(rows),
                        "wordTokens": sum(len(row["tokens"]) for row in rows)},
             "runtime": {"python": sys.version.split()[0], "unicode": unicodedata.unidata_version,
                         "xmlParser": "xml.dom.minidom"}}

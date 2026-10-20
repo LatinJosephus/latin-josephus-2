@@ -29,7 +29,7 @@ function updateScopeHint(){
     ?`Each selected book, work and edition is evaluated separately. Boolean conditions may match anywhere in that book. Exact phrases remain consecutive and can cross citation and chapter boundaries within it.${deh?' The De excidio Prologue is separated from the Book I narrative; phrases do not cross that boundary.':''}`
     :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
   if(apion)els.scopeHint.textContent+=' In Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
-  if(collections.some(collection=>collection.work==='antiquities'))els.scopeHint.textContent+=' Antiquities includes the Proem with Book I. Phrases stop at marked gaps, empty source intervals, missing citation ranges and the Proem’s end; Boolean conditions can relate words on either side.';
+  if(collections.some(collection=>collection.work==='antiquities'))els.scopeHint.textContent+=' Antiquities includes the Proem with Book I. Phrases stop at marked gaps, empty source intervals, the documented Book IX lacuna, the delimited interruptions in XVI and XX, and the Proem’s end. Split portions of the same Niese section share Boolean scope; exact phrases follow physical source order. The two labelled Bellum insertions in Book XI are separate citation units.';
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
@@ -52,11 +52,14 @@ function populateControls(){
   els.work.disabled=false;
   populateBooks();
   $('collection-description').textContent=catalog.collections.map(c=>`${c.label} · ${c.language} · ${c.edition}`).join(' / ');
-  const coverage=catalog.collections.map(collection=>`${collection.citationPrefix}: ${collection.totals.sections.toLocaleString()} ${citationUnitLabels([collection]).plural}`).join(' · ');
+  const coverage=catalog.collections.map(collection=>{
+    const count=catalog.books.filter(book=>book.collectionId===collection.id).reduce((sum,book)=>sum+(book.citationUnits??book.sections),0);
+    return `${collection.citationPrefix}: ${count.toLocaleString()} ${collection.work==='antiquities'?'citation units':citationUnitLabels([collection]).plural}`;
+  }).join(' · ');
   $('coverage').textContent=`${catalog.books.length} books · ${coverage} · ${catalog.totals.tokens.toLocaleString()} words · Latin main text`;
   const included=catalog.collections.map(c=>`${c.label}, ${c.language}, ${c.edition} (${c.books.length} books)`).join('; ');
-  const future=catalog.collections.some(c=>c.work==='antiquities')?' Antiquities currently covers the Proem and Books I–X; later books are not yet indexed.':' Antiquities will be added after its text repairs and verification are complete.';
-  $('included-text').textContent=`Currently indexed: ${included}. Editorial titles, printed division labels and manuscript annotations are excluded.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units. Supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':''}${future}`;
+  const future=catalog.collections.some(c=>c.work==='antiquities')?' Antiquities covers the Proem and all twenty books. Books XI and XVI preserve the source’s split and transposed passages; the two Bellum insertions in XI have separate citations.':' Antiquities will be added after its text repairs and verification are complete.';
+  $('included-text').textContent=`Currently indexed: ${included}. Explicitly marked titles, citation labels and annotation notes are excluded. Source additions and untagged letters within the accepted passages remain searchable, including inline Roman chapter letters.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units. Supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':''}${future}`;
 }
 function applyState(state){
   els.query.value=state.query;els.work.value=state.work;populateBooks(state.book);
@@ -108,12 +111,17 @@ function makeCard(card){
   const h=node('h3',undefined,'result-title');h.append(link(citationFor(card.records),readerURL(first,readerBase)));header.append(h);
   header.append(node('span',`${first.language} · ${first.edition} · ${passageDivisionLabel(card.records)}`,'result-meta'));article.append(header);
   for(const r of card.records)article.append(makeExcerpt(r,card.ranges[r.id],false,card.records.length>1));
+  appendGapNote(article,card.records);
   if(card.records.some(r=>excerptWindows(r.text,card.ranges[r.id]||[]).some(w=>w.start>0||w.end<r.text.length))){
     const unit=citationScheme(first)==='chapter-paragraph'?'citation unit':'section';
     const details=node('details');details.append(node('summary',`Read the complete ${unit}${card.records.length>1?'s':''}`));
     for(const r of card.records)details.append(makeExcerpt(r,card.ranges[r.id],true,card.records.length>1));article.append(details);
   }
   return article;
+}
+function appendGapNote(parent,records){
+  const gaps=records.flatMap(record=>(record.textGaps||[]).filter(gap=>gap.kind==='tei-gap'&&record.text!==''));
+  if(gaps.length)parent.append(node('p',`The source marks an interruption (${[...new Set(gaps.map(gap=>gap.sourceAttributes?.reason||'gap'))].join(', ')}). Search words and exact phrases cannot join across it.`,'source-note'));
 }
 function concordanceHeader(row){
   const header=node('div',undefined,'result-header');
@@ -133,7 +141,7 @@ function makeConcordanceRow(row){
   const right=node('span',undefined,'concordance-right');appendTextRange(right,source,matchEnd,source.text.length);
   if(row.rightTruncated)right.append(node('span',' …','ellipsis'));
   p.append(left,match,right);
-  article.append(p);return article;
+  article.append(p);appendGapNote(article,row.records);return article;
 }
 function makeMatchingUnit(unit){
   const article=node('article',undefined,'concordance-row matching-unit');article.append(concordanceHeader(unit));
@@ -203,7 +211,7 @@ function resultContext(result,model){
   }
   if(collections.some(collection=>citationScheme(collection)==='chapter-paragraph'))parts.push('De excidio citations give book, chapter and paragraph (or Prol.). [Brackets] mark supplied text; struck text marks editorial deletion; † marks unresolved text. These markings are retained in the CSV’s editorial columns.');
   if(collections.some(collection=>collection.work==='contra-apionem'))parts.push('Contra Apionem uses Niese sections. Asterisks retain the source’s marked interruptions, which exact phrases cannot cross. Bold green text marks an addition in the source; the CSV’s editorial columns show it as ⟨added text⟩.');
-  if(collections.some(collection=>collection.work==='antiquities'))parts.push('Antiquities currently includes the Proem and Books I–X of Bamberg Msc. Class. 78. Added, deleted and uncertain letters remain searchable: bold green text marks additions, struck text marks deletions and dotted underlining marks uncertain readings. Exact phrases stop at source gaps, empty intervals, missing citation ranges and the end of the Proem. III.240 and VII.69–99 retain their citations and encoded omissions. X.108 has a citation label but no Latin before the next Niese marker. IX.51–109 are absent from the accepted source; no records have been generated for them.');
+  if(collections.some(collection=>collection.work==='antiquities'))parts.push('Antiquities includes the Proem and Books I–XX of Bamberg Msc. Class. 78. Added, deleted and uncertain letters remain searchable: bold green text marks additions, struck text marks deletions and dotted underlining marks uncertain readings. Exact phrases stop at source gaps, empty intervals, the documented Book IX lacuna and the end of the Proem. III.240 and VII.69–99 retain their citations and encoded omissions. X.108 has a citation label but no Latin before the next Niese marker. IX.51–109 are absent from the accepted source; no records have been generated for them. The accepted maps also mark Latin unavailable at XII.248, XIII.213 and 216, XIV.238–239, XV.338 and 347, XVI.77, 123, 189–199, 359 and 395–404, XVIII.216–217, and XX.27–36 and 238; those identities have no generated records. Actual source interruptions also block phrases between XVI.188 and 200 and between XX.26 and 37. Skipped section numbers alone do not create a physical gap. Books XI and XVI retain physical source order: their split sections share Boolean scope, while exact phrases cannot jump between displaced portions. The two Bellum insertions in XI have separate, explicitly labelled citations.');
   return parts.join(' ');
 }
 function renderSuccessful(){

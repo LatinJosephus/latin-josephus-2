@@ -36,6 +36,8 @@ const sumEntries = (entries) => ({
   tokens: entries.reduce((sum, entry) => sum + entry.tokens, 0),
   bytes: entries.reduce((sum, entry) => sum + entry.bytes, 0),
 });
+const REGISTERED_COVERAGE_FIELDS = ["coverageMode", "canonicalSections", "citationUnits", "primarySourceSpans",
+  "interpolatedSourcePassages", "fragmentedSections", "unavailableSections", "identityRegistry", "additionalSources"];
 
 async function writeBundle(inputBytes, outputPath, lunr) {
   const records = recordsFrom(inputBytes);
@@ -87,8 +89,10 @@ async function readCollection(manifestPath) {
     const bytes = await readFile(path);
     const records = recordsFrom(bytes);
     if (records.length !== book.sections) throw new Error(`${manifest.id}, book ${book.number} requires ${book.sections} sections; found ${records.length}.`);
+    const registered = book.coverageMode === "registered-source-spans";
+    if (book.coverageMode !== undefined && !registered) throw new Error(`Unsupported source coverage mode for ${manifest.id}.`);
     const coverageLists = {};
-    for (const field of ["missingSections", "omittedSections", "emptySections"]) {
+    for (const field of ["missingSections", "omittedSections", "emptySections", ...(registered ? ["unavailableSections", "fragmentedSections"] : [])]) {
       if (book[field] === undefined) continue;
       const values = book[field];
       if (!Array.isArray(values) || values.some((value, index) => !Number.isInteger(value) || value < 1
@@ -99,14 +103,15 @@ async function readCollection(manifestPath) {
     }
     if (book.sectionRange !== undefined) {
       const range = book.sectionRange;
-      const missing = new Set(coverageLists.missingSections || []);
+      const missing = new Set(registered ? coverageLists.unavailableSections || [] : coverageLists.missingSections || []);
       if (!Array.isArray(range) || range.length !== 2 || range.some((value) => !Number.isInteger(value))
-        || range[0] < 1 || range[0] > range[1] || range[1] - range[0] + 1 - missing.size !== book.sections
+        || range[0] < 1 || range[0] > range[1] || range[1] - range[0] + 1 - missing.size !== (registered ? book.canonicalSections : book.sections)
         || Object.values(coverageLists).flat().some(value => value < range[0] || value > range[1])) {
         throw new Error(`Invalid expected section range for ${manifest.id}, book ${book.number}.`);
       }
-      const labels = new Set(records.map((record) => Number(record.section)));
-      if (labels.size !== records.length) throw new Error(`${manifest.id}, book ${book.number} repeats a section label.`);
+      const primaryRecords = registered ? records.filter(record => !record.sourcePassage) : records;
+      const labels = new Set(primaryRecords.map((record) => Number(record.section)));
+      if (!registered && labels.size !== records.length) throw new Error(`${manifest.id}, book ${book.number} repeats a section label.`);
       for (let section = range[0]; section <= range[1]; section += 1) {
         if (missing.has(section)) {
           if (labels.has(section)) throw new Error(`${manifest.id}, book ${book.number} contains declared missing section ${section}.`);
@@ -114,7 +119,36 @@ async function readCollection(manifestPath) {
         }
         if (!labels.has(section)) throw new Error(`${manifest.id}, book ${book.number} is missing expected section ${section}.`);
       }
-      for (let index = 1; index < records.length; index += 1) {
+      if (registered) {
+        const counts = new Map();
+        const occurrences = new Set();
+        for (const record of records) {
+          if (typeof record.citationUnitId !== "string" || !record.citationUnitId
+            || (record.sourceOccurrence !== undefined && (typeof record.sourceOccurrence !== "string" || !record.sourceOccurrence || occurrences.has(record.sourceOccurrence)))
+            || ((record.fragmentCount > 1 || record.sourcePassage) && !record.sourceOccurrence)) {
+            throw new Error(`${manifest.id}, book ${book.number} has an invalid registered source occurrence.`);
+          }
+          if (record.sourceOccurrence !== undefined) occurrences.add(record.sourceOccurrence);
+          if (!record.sourcePassage) {
+            if (!Number.isInteger(record.section) || record.citationUnitId !== `${manifest.id}-${book.number}-${record.section}`) {
+              throw new Error(`${record.id} has an inconsistent canonical citation identity.`);
+            }
+            counts.set(record.section, (counts.get(record.section) || 0) + 1);
+          } else if (record.sourcePassage.identity !== record.section || record.sourcePassage.occurrence !== record.sourceOccurrence
+            || record.sourcePassage.AntiquitiesIdentity !== false || record.sourcePassage.primaryAntiquitiesFragment !== false) {
+            throw new Error(`${record.id} has an inconsistent interpolated source identity.`);
+          }
+        }
+        if (manifest.id !== "antiquities-latin-bamberg78" || book.number < 11 || book.number > 20
+          || typeof book.identityRegistry !== "string" || JSON.stringify(book.additionalSources) !== JSON.stringify([book.identityRegistry])
+          || book.canonicalSections !== labels.size || book.primarySourceSpans !== primaryRecords.length
+          || book.interpolatedSourcePassages !== records.length - primaryRecords.length
+          || book.citationUnits !== new Set(records.map(record => record.citationUnitId)).size
+          || JSON.stringify([...counts].filter(([, count]) => count > 1).map(([section]) => section).sort((a, b) => a - b)) !== JSON.stringify(book.fragmentedSections)) {
+          throw new Error(`${manifest.id}, book ${book.number} has inconsistent registered coverage.`);
+        }
+      }
+      for (let index = 1; !registered && index < records.length; index += 1) {
         const left = Number(records[index - 1].section), right = Number(records[index].section);
         if ([...missing].some(section => section > Math.min(left, right) && section < Math.max(left, right)) && !records[index].breakBefore) {
           throw new Error(`${manifest.id}, book ${book.number} needs a phrase boundary across its declared missing sections.`);
@@ -202,10 +236,11 @@ export async function buildCatalog(options = {}) {
         sections: result.bundle.stats.records, tokens: result.bundle.stats.tokens, vocabulary: result.bundle.stats.vocabulary,
         bytes: result.bytes, path: portableRelative(outputBase, outputPath), sha256: result.sha256,
         corpusPath: portableRelative(outputBase, book.path), corpusSHA256: result.bundle.source.corpusSHA256,
-        ...(["missingSections", "omittedSections", "emptySections"].some(field => book[field] !== undefined) ? {
+        ...(["missingSections", "omittedSections", "emptySections", "coverageMode"].some(field => book[field] !== undefined) ? {
           sectionRange: book.sectionRange,
           ...Object.fromEntries(["missingSections", "omittedSections", "emptySections"].filter(field => book[field] !== undefined).map(field => [field, book[field]])),
         } : {}),
+        ...Object.fromEntries(REGISTERED_COVERAGE_FIELDS.filter(field => book[field] !== undefined).map(field => [field, book[field]])),
       });
     }
     const { id, work, label, citationPrefix, language, edition, readerPath } = manifest;

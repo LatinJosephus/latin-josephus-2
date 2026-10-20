@@ -16,7 +16,19 @@ export function buildResultCards(result, records) {
   const byId=new Map(records.map(r=>[r.id,r]));
   const cards=new Map();
   function add(recordIds,hits,unitLabel){const ids=[...new Set(recordIds)].filter(id=>byId.has(id)).sort((a,b)=>(byId.get(a).resultOrder??byId.get(a).order)-(byId.get(b).resultOrder??byId.get(b).order));if(!ids.length)return;const key=ids.join('|');let card=cards.get(key);if(!card){card={key,records:ids.map(id=>byId.get(id)),ranges:{},hitCount:0,unitLabel};cards.set(key,card);}for(const hit of hits){card.hitCount++;for(const span of hit.spans){if(!byId.has(span.recordId))continue;(card.ranges[span.recordId]??=[]).push({start:span.start,end:span.end});}}}
-  for(const group of result.hitGroups){if(result.scope==='section'){add(group.recordIds,group.hits,group.unitLabel);}else{for(const hit of group.hits)add(hit.spans.map(s=>s.recordId),[hit],group.unitLabel);}}
+  for(const group of result.hitGroups){
+    if(result.scope==='section'){
+      if(group.recordIds.length>1){
+        const supplied=group.recordIds.map(id=>byId.get(id)),first=supplied[0];
+        if(typeof first?.citationUnitId!=='string'||!first.citationUnitId||supplied.some(record=>!record
+          ||record.citationUnitId!==first.citationUnitId||String(record.section)!==String(first.section)
+          ||['collectionId','work','book','language','edition'].some(field=>String(record[field]??'')!==String(first[field]??'')))){
+          throw new TypeError('A matching section can combine source portions only within one explicit citation unit, canonical section and text version.');
+        }
+      }
+      add(group.recordIds,group.hits,group.unitLabel);
+    }else{for(const hit of group.hits)add(hit.spans.map(s=>s.recordId),[hit],group.unitLabel);}
+  }
   return [...cards.values()].sort((a,b)=>(a.records[0].resultOrder??a.records[0].order)-(b.records[0].resultOrder??b.records[0].order) || a.records.length-b.records.length);
 }
 export function romanBook(number) {
@@ -38,33 +50,47 @@ export function citationUnitLabels(entries=[]) {
   if(!labels.length)return {singular:'Niese section',plural:'Niese sections'};
   return labels.every(label=>label.singular===labels[0].singular&&label.plural===labels[0].plural)?labels[0]:{singular:'citation unit',plural:'citation units'};
 }
+const nieseCitation=record=>record.citationLabel||`${romanBook(record.book??record.number)}.${record.section}`;
+const hasExplicitPortion=record=>Boolean(record.sourcePassage)||Number(record.fragmentCount)>1
+  ||Boolean(record.citationLabel&&record.citationLabel!==`${romanBook(record.book??record.number)}.${record.section}`);
+const sameCitationContext=records=>records.every(record=>['book','work','collectionId','language','edition'].every(field=>record[field]===records[0][field])&&citationScheme(record)===citationScheme(records[0]));
+// A first/last range is truthful only when every physical row is an ordinary,
+// consecutive citation. Registered portions and inserted source passages must
+// retain their labels, including when source order differs from Niese order.
+const consecutiveNiese=records=>sameCitationContext(records)&&records.every((record,index)=>
+  !hasExplicitPortion(record)&&/^\d+$/u.test(String(record.section))
+  &&Number.isSafeInteger(Number(record.section))&&Number(record.section)>0
+  &&(!index||Number(record.section)===Number(records[index-1].section)+1));
 export function sectionCitation(record) {
   return citationScheme(record)==='chapter-paragraph'
     ?record.citationLabel||(Number(record.chapter)===0?`Prol.${record.paragraph}`:`${romanBook(record.book)}.${record.chapter}.${record.paragraph}`)
-    :String(record.section);
+    :hasExplicitPortion(record)?nieseCitation(record):String(record.section);
 }
-export function excerptCitation(record) {return citationScheme(record)==='chapter-paragraph'?sectionCitation(record):`§${record.section}`;}
+export function excerptCitation(record) {return citationScheme(record)==='chapter-paragraph'||hasExplicitPortion(record)?sectionCitation(record):`§${record.section}`;}
 export function passageDivisionLabel(records) {
   const first=records[0],last=records.at(-1);
   if(!first)return '';
   const proem=records.every(record=>record.division==='proem'||record.citation?.proem===true);
-  if(proem)return first.section===last.section?`Proem · Niese section ${first.section}`:`Proem · Niese sections ${first.section}–${last.section}`;
   const chapters=[...new Set(records.map(record=>record.chapter))];
-  if(chapters.every(Number.isInteger))return chapters.length===1
+  if(!proem&&chapters.every(Number.isInteger))return chapters.length===1
     ?chapters[0]===0?(citationScheme(first)==='chapter-paragraph'?'Prologue':'Proem'):`Chapter ${chapters[0]}`
     :'Across chapters';
+  if(records.some(record=>record.sourcePassage))return records.map(nieseCitation).join('; ');
   const labels=citationUnitLabels([first]);
-  return first.section===last.section?`${labels.singular} ${sectionCitation(first)}`
-    :`${labels.plural} ${sectionCitation(first)}–${sectionCitation(last)}`;
+  const sameSection=records.every(record=>record.section===first.section)&&sameCitationContext(records);
+  const citations=[...new Set(records.map(sectionCitation))];
+  const description=consecutiveNiese(records)&&records.length>1?`${sectionCitation(first)}–${sectionCitation(last)}`:citations.join('; ');
+  return `${proem?'Proem · ':''}${sameSection?labels.singular:labels.plural} ${description}`;
 }
 export function citationFor(records) {
   const first=records[0],last=records.at(-1);
   if(!first)return '';
-  const single=record=>citationScheme(record)==='chapter-paragraph'?`${workLabel(record)} ${sectionCitation(record)}`:`${bookCitation(record)}.${record.section}`;
+  const single=record=>`${workLabel(record)} ${citationScheme(record)==='chapter-paragraph'?sectionCitation(record):nieseCitation(record)}`;
   const start=single(first);
-  if(first.book!==last.book||first.work!==last.work||first.collectionId!==last.collectionId||citationScheme(first)!==citationScheme(last))return `${start}–${single(last)}`;
+  if(!sameCitationContext(records))return records.map(single).join('; ');
   if(citationScheme(first)==='chapter-paragraph')return sectionCitation(first)===sectionCitation(last)?start:`${start}–${sectionCitation(last)}`;
-  return first.section===last.section?start:`${start}–${last.section}`;
+  if(consecutiveNiese(records)&&records.length>1)return `${start}–${last.section}`;
+  return `${workLabel(first)} ${[...new Set(records.map(nieseCitation))].join('; ')}`;
 }
 export function readerURL(record,baseURL,{section=true}={}) {
   const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/','contra-apionem':'contra-apionem/'}[record.work])||'bellum-judaicum/';
@@ -73,7 +99,25 @@ export function readerURL(record,baseURL,{section=true}={}) {
   if(section&&citationScheme(record)==='chapter-paragraph'){
     url.searchParams.set('chapter',record.chapter);
     url.searchParams.set('unit',record.paragraph);
-  }else if(section&&record.section!==undefined)url.searchParams.set('niese',record.section);
+  }else if(section&&record.section!==undefined){
+    let niese=record.section;
+    if(record.sourcePassage){
+      const passage=record.sourcePassage,params=record.readerLink?.params;
+      if(record.work!=='antiquities'||passage.identity!==String(record.section)
+        ||passage.AntiquitiesIdentity!==false||passage.primaryAntiquitiesFragment!==false
+        ||passage.editorialStatus!=='CLOSED_USER_APPROVED'||!record.sourceOccurrence
+        ||record.sourceOccurrence!==passage.occurrence||passage.span?.occurrence!==passage.occurrence
+        ||passage.span?.role!=='interpolation'||!Number.isSafeInteger(passage.association)||passage.association<1
+        ||String(params?.niese)!==String(passage.association)||String(params?.book)!==String(record.book)){
+        throw new TypeError('An interpolated source passage requires its accepted Antiquities reader association.');
+      }
+      niese=params.niese;
+    }
+    if(!/^\d+$/u.test(String(niese))||!Number.isSafeInteger(Number(niese))||Number(niese)<1){
+      throw new TypeError('A Niese reader link requires a numeric citation or a validated source-passage association.');
+    }
+    url.searchParams.set('niese',niese);
+  }
   return url.href;
 }
 /** A source omission is displayed as a note, never added to searchable Latin. */

@@ -4,7 +4,7 @@
  * cannot distinguish repeated or overlapping occurrences. All offsets below
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
-import { parseQuery, tokenizeText, phraseBreakOffsets } from "./engine.mjs";
+import { parseQuery, tokenizeRecord, phraseBreakOffsets } from "./engine.mjs";
 import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote } from "./ui-utils.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;
@@ -49,8 +49,16 @@ function groupRecords(group, scope, index) {
     return record;
   });
   if (scope === "section") {
-    if (supplied.length !== 1) throw new TypeError("A matching section must identify exactly one source record.");
-    return supplied;
+    if (!supplied.length || distinct(supplied.map(record => record.id)).length !== supplied.length) {
+      throw new TypeError("A matching section must identify distinct source records.");
+    }
+    const first = supplied[0];
+    if (supplied.length > 1 && (typeof first.citationUnitId !== "string" || !first.citationUnitId
+      || supplied.some(record => record.citationUnitId !== first.citationUnitId
+        || versionKey(record) !== versionKey(first) || String(record.section) !== String(first.section)))) {
+      throw new TypeError("A matching section can combine source portions only within one explicit citation unit, canonical section and text version.");
+    }
+    return supplied.slice().sort((a, b) => index.rank.get(a.id) - index.rank.get(b.id));
   }
   if (supplied.length) {
     const partition = index.partitionByRecord.get(supplied[0].id);
@@ -124,7 +132,7 @@ export function buildConcordance(result, records = result?.records, { readerBase
   const index = sourceIndex(records);
   const tokens = new Map();
   const tokensFor = (record) => {
-    if (!tokens.has(record.id)) tokens.set(record.id, tokenizeText(record.text));
+    if (!tokens.has(record.id)) tokens.set(record.id, tokenizeRecord(record));
     return tokens.get(record.id);
   };
   const unique = new Map();
@@ -169,6 +177,9 @@ export function buildConcordance(result, records = result?.records, { readerBase
         throw new TypeError("Concordance spans must be in source order within one text and book.");
       }
       const citedRecords = partition.records.slice(partition.positions.get(first.id), partition.positions.get(last.id) + 1);
+      if (result.scope === "section" && citedRecords.some(record => !unitRecordIds.has(record.id))) {
+        throw new TypeError("A concordance phrase cannot jump between displaced portions of a citation unit.");
+      }
       if (citedRecords.slice(1).some((record) => record.breakBefore)) throw new TypeError("A concordance phrase cannot cross a declared text gap.");
       for (let position = 0; position < citedRecords.length; position++) {
         const record = citedRecords[position];
@@ -247,7 +258,7 @@ const CSV_COLUMNS = [
   "catalog_schema_version", "lunr_version", "concordance_schema_version", "selected_sources_json", "csv_cell_encoding", "escaped_columns_json",
 ];
 const EDITORIAL_CSV_COLUMNS = ["citation_scheme", "left_context_editorial", "matched_text_editorial", "right_context_editorial", "editorial_notes"];
-const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters; unclear source spans retain their original text and attributes. Contra Apionem asterisks and Antiquities marked interruptions are phrase boundaries, with source evidence in source_segments_json. Antiquities includes the Proem and Books I–X. III.240 and VII.69–99 are encoded omissions; X.108 is an empty source interval without an omission tag. IX.51–109 are absent from the accepted source and have no generated records. Coverage metadata is retained in selected_sources_json.";
+const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters; unclear source spans retain their original text and attributes. Contra Apionem asterisks and Antiquities marked interruptions are phrase boundaries, with source evidence in source_segments_json. Antiquities includes the Proem and Books I–XX. III.240 and VII.69–99 are encoded omissions; X.108 is an empty source interval without an omission tag. IX.51–109 are absent from the accepted source and have no generated records. The accepted maps also mark Latin unavailable at XII.248, XIII.213 and 216, XIV.238–239, XV.338 and 347, XVI.77, 123, 189–199, 359 and 395–404, XVIII.216–217, and XX.27–36 and 238; those identities have no generated records. These new unavailable identities do not themselves mark physical gaps, so book-scope phrases can follow continuous surviving Latin across them. Phrases also stop at the recorded source interruptions between XVI.188 and 200 and between XX.26 and 37; the following record retains the controlling source-boundary evidence. Physical source order is retained throughout Antiquities: split sections in XI and XVI share Boolean scope, while phrases cannot jump between displaced portions. The Bellum insertions in XI retain their separate citations and accepted Antiquities reader associations. Source portions and registry provenance are retained in source_segments_json; coverage metadata is retained in selected_sources_json.";
 
 // Quoting alone does not prevent spreadsheet formula evaluation. Scalar cells
 // beginning with a formula marker (including after whitespace/control chars),
@@ -294,6 +305,9 @@ function exportedSegments(row) {
         sourceAnnotations: record.sourceAnnotations || [], breakBefore: Boolean(record.breakBefore),
       } : {}),
       ...(record.sourcePath ? {sourcePath: record.sourcePath, sourceIds: record.sourceIds, division: record.division} : {}),
+      ...Object.fromEntries(["citationLabel", "citationUnitId", "citationUnitCitation", "sourceOccurrence",
+        "continuationRank", "fragmentCount", "sourcePassage", "identityRegistry", "breakReason", "sourceBoundaryEvidence"]
+        .filter(field => record[field] !== undefined).map(field => [field, record[field]])),
       ...(record.emptySource ? {emptySource: record.emptySource} : {}),
     };
   });
@@ -337,7 +351,9 @@ export function exportConcordance(model, result, metadata = {}) {
     books: (catalog.books || []).filter((entry) => selectedBooks.includes(entry.id)).map((entry) => ({
       id: entry.id, collectionId: entry.collectionId, number: entry.number,
       path: entry.path, sha256: entry.sha256, corpusPath: entry.corpusPath, corpusSHA256: entry.corpusSHA256,
-      ...Object.fromEntries(["sectionRange", "missingSections", "omittedSections", "emptySections"]
+      ...Object.fromEntries(["sectionRange", "missingSections", "omittedSections", "emptySections", "coverageMode",
+        "canonicalSections", "citationUnits", "primarySourceSpans", "interpolatedSourcePassages", "fragmentedSections",
+        "unavailableSections", "identityRegistry", "additionalSources"]
         .filter(field => entry[field] !== undefined).map(field => [field, entry[field]])),
     })),
   });

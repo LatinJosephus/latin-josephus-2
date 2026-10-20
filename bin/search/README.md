@@ -9,12 +9,13 @@ This directory contains the source and verification tools for the main site's
   558 chapter/paragraph citation units and 87,472 word tokens.
 - **Boysen's *Contra Apionem*, Books I–II:** 616 Niese sections and
   21,018 word tokens, including the Greek words quoted in this Latin text.
-- **Bamberg Msc. Class. 78 *Antiquities*, Proem and Books I–X:** 3,415 Niese
-  citation units and 137,858 word tokens. Book I includes the separately
+- **Bamberg Msc. Class. 78 *Antiquities*, Proem and Books I–XX:** 7,273 primary
+  Niese identities, two separately labelled Bellum insertions, and 265,023 word tokens. Book I includes the separately
   transmitted Proem's 26 units and 986 words.
 
-Together these comprise **24 books, 8,590 citation units, and 361,142 word
-tokens**. Antiquities XI–XX and translations are not yet indexed. Antiquities
+Together these comprise **34 books, 12,450 citation units, and 488,307 word
+tokens**. The indexes contain 12,458 physical records because four Antiquities
+XI identities and three XVI identities have split portions. Translations are not yet indexed. Antiquities
 III.240 and VII.69–99 retain their citations and the source's explicit omissions.
 X.108 retains an empty interval between its citation label and the next Niese
 marker, without an omission tag. IX.51–109 are absent from the accepted source;
@@ -58,9 +59,11 @@ Accents are retained.
 ### Section and whole-book scope
 
 **Section / citation-unit scope** evaluates the complete Boolean expression
-within one Niese section of Bellum, Contra Apionem or Antiquities, or one cited paragraph
-of De excidio. A
-phrase must fit entirely within that unit.
+within one Niese section of Bellum, Contra Apionem or Antiquities, one explicitly
+labelled Bellum insertion in Antiquities XI, or one cited paragraph of De excidio.
+A phrase must fit entirely within that unit and follow physical source order.
+Split portions of the same Antiquities section share Boolean scope, but a phrase
+cannot jump across intervening text to join displaced portions.
 
 **Whole-book scope** evaluates the complete expression within each selected book
 of one work, language, and edition. Distinct Boolean terms can occur in different
@@ -84,8 +87,8 @@ phrase adjacency. Phrases cannot cross the explicit omissions at III.240 and
 VII.69–99, the empty citation interval X.108, or the missing range IX.51–109.
 Uncertain sentence periods in X.65 and X.75 are ordinary punctuation and do
 not block phrases. Ordinary Niese seams and the eight sections continued
-across coarse source paragraphs remain consecutive, subject to the selected
-search scope.
+across coarse source paragraphs in I–X remain consecutive, subject to the selected
+search scope. The XI–XX rules and accepted registries are described below.
 
 Neither Boolean conditions nor phrases combine evidence from different books,
 works, languages, or editions. For example, `A AND NOT B` in whole-book scope
@@ -183,8 +186,8 @@ behavior is retained. Legacy explicit numeric books and `book=all` are also
 resolved within Bellum. New links include collection identity so De excidio I
 and Contra Apionem I cannot be confused with Bellum I. The bare page retains **Bellum, all seven
 books** as its default. Choose **De excidio Hierosolymitano** for its five books,
-**Contra Apionem** for its two books, **Antiquities I–X, including Proem** for
-the first Antiquities batch, or **All works** to search all four collections.
+**Contra Apionem** for its two books, **Antiquities I–XX, including Proem** for
+all twenty Antiquities books, or **All works** to search all four collections.
 Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
 use `antiquities/?book=1`.
 
@@ -336,7 +339,7 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `extract.py`, `tests/test_extract.py` | Bellum extraction and reconstruction checks. |
 | `extract-deh.py`, `tests/test_extract_deh.py` | De excidio extraction, editorial annotations, and reconstruction checks. |
 | `extract-ca.py`, `tests/test_extract_ca.py` | Contra Apionem extraction, markup, phrase barriers, and reconstruction checks. |
-| `extract-antiquities.py`, `tests/test_extract_antiquities.py` | Antiquities I–X and Proem extraction, source restoration, and gap checks. |
+| `extract-antiquities.py`, `tests/test_extract_antiquities.py` | Antiquities I–XX and Proem extraction, source restoration, and gap checks. |
 | `corpus.json`, `data/book-0N.corpus.json` | Generated combined and per-book original-text records. |
 | `extraction-report.json`, `data/book-0N.extraction-report.json` | Generated coverage and reconstruction evidence. |
 | `engine.mjs`, `vendor/` | Boolean/phrase/wildcard engine and pinned Lunr 2.3.9 with licence and provenance. |
@@ -353,8 +356,8 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `data/contra-apionem-latin-boysen/` | Contra Apionem corpus shards, extraction reports, book indexes, and independent QA report. |
 | `tests/ca-corpus-qa.mjs`, `tests/ca-source-witness.py` | Independent Contra Apionem XML witness, token, query, markup, and seam checks. |
 | `tests/phrase-breaks.test.mjs`, `tests/ca-presentation.test.mjs` | Phrase barrier, citation, full export, and three-work compatibility tests. |
-| `data/antiquities-latin-bamberg78/` | Antiquities I–X corpus, per-book indexes, extraction evidence, and independent QA; the Proem is included in book-01. |
-| `tests/antiquities-corpus-qa.mjs`, `tests/antiquities-source-witness.py`, `tests/antiquities-presentation.test.mjs` | Independent six-document witness, all-token and query checks, Proem links, gap boundaries, editorial exports, and four-work integration. |
+| `data/antiquities-latin-bamberg78/` | Antiquities I–XX corpus, per-book indexes, extraction evidence, and independent QA; the Proem is included in book-01. |
+| `tests/antiquities-corpus-qa.mjs`, `tests/antiquities-source-witness.py`, `tests/antiquities-presentation.test.mjs` | Independent 21-document witness with ten accepted registries, all-token and query checks, Proem links, gap boundaries, editorial exports, and four-work integration. |
 | `build-search.mjs`, `publication.mjs`, `check-assets.mjs` | Rebuild orchestration, export validation, and read-only freshness checks. |
 | `assets/search/` at repository root | Generated runtime and evidence export, including `publication-manifest.json`. |
 
@@ -533,12 +536,14 @@ For focused development, extraction and index construction can be run directly:
 python3 bin/search/extract.py
 python3 bin/search/extract-deh.py
 python3 bin/search/extract-ca.py
+python3 bin/search/extract-antiquities.py
 node bin/search/build-index.mjs
 python3 -m unittest discover -s bin/search/tests -p 'test_*.py'
 node --test bin/search/tests/*.test.mjs
 node bin/search/tests/corpus-qa.mjs
 node bin/search/tests/deh-corpus-qa.mjs
 node bin/search/tests/ca-corpus-qa.mjs
+node bin/search/tests/antiquities-corpus-qa.mjs
 ```
 
 These commands alone do not refresh the published asset export; finish with
@@ -611,10 +616,137 @@ periods in X.65 and X.75 remain normal punctuation. Empty intervals, explicit
 omissions, the absent IX range and the Proem boundary also stop adjacency.
 Whole-book Boolean conditions can still relate words on either side.
 
-### Subsequent five-book batches
+### Third batch: Books XI–XV
 
-For XI–XV and XVI–XX, extend the same collection only after reviewing
-the relevant five-book snapshot. Update the extractor's accepted ranges,
+This batch is bound to the accepted XML and the five matching Latin Niese
+identity registries. The source baseline is commit
+`55bf610245860eab91166fdb7e4fba891f2c335b` on `v2-development`; the public-preview
+baseline is `0b5007af00d003cf474a2e38f63c00a47eabff13`. The source XML, registries,
+and canonical readers are preserved.
+
+| Book | Available primary Niese identities | Physical search records | Word tokens | Unavailable identities |
+| --- | ---: | ---: | ---: | --- |
+| XI | 347 | 354 | 11,589 | None |
+| XII | 433 | 433 | 13,683 | 248 |
+| XIII | 431 | 431 | 13,803 | 213, 216 |
+| XIV | 489 | 489 | 15,148 | 238–239 |
+| XV | 423 | 423 | 12,223 | 338, 347 |
+| Added batch | 2,123 | 2,130 | 66,446 | Seven identities |
+
+XI's physical record count includes two independently labelled source passages,
+**Bellum IV.105a and IV.105b**, and five extra portions of the four split
+Antiquities identities **XI.72, XI.312, XI.326, and XI.342**. These passages are
+indexed where they occur in the Bamberg witness. Neither Bellum insertion is
+assigned a false Antiquities Niese identity. Its link opens the accepted reader
+association, XI.312, which displays the corresponding labelled insertion.
+
+The registered extraction preserves physical order, including the second portion
+of XI.72 appearing before its first. Each physical portion has a unique `id`;
+`citationUnitId` groups primary portions of the same canonical section for Boolean
+scope and counts. `sourceOccurrence`, `continuationRank`, and `fragmentCount`
+identify split portions. Exact phrases use the physical token stream in both
+scopes: adjacent portions may join if the selected scope permits it, but separated
+portions never acquire artificial adjacency. Citations list labelled portions
+and insertions explicitly instead of implying a consecutive numeric range.
+
+Unavailable identities do not create empty records and do not by themselves
+interrupt the surviving physical text. XII.248 includes displaced correspondence
+elsewhere; the other registry notes distinguish unavailable correspondence from
+an established cause or physical loss. Their complete qualifications remain in
+the accepted registry and extraction reports.
+
+Three actual TEI gaps interrupt tokens and phrases: XII.8 and XII.35 are marked
+`reason="hole"`, and XIII.393 is marked `reason="fading"`. The last occurs inside
+`res<gap/>s`: original source characters remain intact, but search does not invent
+the uninterrupted word `ress`. Twelve dotted source additions in XIV are retained
+with their markup and conservatively block phrase adjacency. This does not assign
+a missing-text extent or treat marginal dots as proof of an omission. No new
+`breakBefore` is inferred from a skipped canonical number.
+
+Anonymous narrative paragraphs are preserved with explicit XPath locators rather
+than fabricated XML IDs. All source paragraphs are exactly reconstructed from
+record slices, excluded labels/notes, and reversible edge whitespace. XV's initial
+marginal chapter numeral lies before its first accepted Niese boundary and is
+explicitly excluded as an annotation; its source evidence is retained. XII's
+untagged nine-word closing subscription follows an explicit `niese-end` milestone;
+it is excluded from search and retained in the exact paragraph reconstruction.
+
+The catalog distinguishes `sections` (physical records), `canonicalSections`,
+`citationUnits`, `primarySourceSpans`, and `interpolatedSourcePassages` for this
+batch. It also exports the registry paths, fragmented identities, and unavailable
+identities. CSV source segments preserve physical and logical citation metadata.
+That batch used 35 pinned publication inputs: 30 Latin XML documents and
+five identity-registry JSON files. CRLF/LF equivalence is accepted without changing
+any canonical source file, including XIV's accepted CRLF registry.
+
+### Fourth batch: Books XVI–XX
+
+This batch completes the accepted Latin Antiquities transcription through Book
+XX.268. The combined XI–XX publication is prepared directly from the same published
+I–X source and preview baselines named above; the separate XI–XV package is not
+a prerequisite. All previously prepared I–XV per-book corpora, extraction reports,
+and index bundles remain byte-for-byte unchanged.
+
+| Book | Available primary Niese identities | Physical search records | Word tokens | Unavailable identities |
+| --- | ---: | ---: | ---: | --- |
+| XVI | 380 | 383 | 10,471 | 77, 123, 189–199, 359, 395–404 |
+| XVII | 355 | 355 | 15,287 | None |
+| XVIII | 377 | 377 | 15,306 | 216–217 |
+| XIX | 366 | 366 | 11,791 | None |
+| XX | 257 | 257 | 7,864 | 27–36, 238 |
+| Added batch | 1,735 | 1,738 | 60,719 | 37 identities |
+
+XVI.294, XVI.295, and XVI.351 each have two registered physical portions.
+Their actual accepted start targets identify the occurrences; their array order
+supplies the continuation ranks where the registry does not assign separate
+occurrence/rank fields. Boolean scope groups portions of one canonical identity,
+while exact phrases retain physical text order. No unrelated interval becomes
+consecutive merely because it shares a citation.
+
+Two explicitly delimited source interruptions set `breakBefore`: XVI.188→200
+and XX.26→37. Their `sourceBoundaryEvidence` records the accepted ending and
+starting anchors, source locations, and reversibly excluded notation. Three
+literal `[...]` notations in XVI occur after 188, before 200, and after the
+closing anchor of 394. XX's inherited English notice about sections 26–37 is
+excluded from searchable Latin. The source boundary remains recorded without
+adopting the notice's wording as a new claim about the precise extent or cause
+of loss. Whole-book Boolean queries can still relate surviving words on both
+sides; phrases cannot bridge either interruption. CSV source segments retain
+the boundary evidence and explanation.
+
+The new internal gaps are XVI.170's empty, unqualified `<gap/>` and the two dots
+in XX.263's `<unclear reason="damage">.n..</unclear>`. They preserve every supplied
+source character while blocking phrase adjacency. XVI's terminal closure at
+394 and XX's closure at 26 are associated with the end of the preceding record
+even when the marker occurs in a later paragraph containing no text belonging
+to that record. No unavailable identity receives an invented Latin record.
+The accepted registry qualifications do not establish the physical or historical
+cause of every unavailable correspondence.
+
+One adopted milestone, XVII.41→42, lies between `eleuati` and `cum` without source
+whitespace. The two search tokens follow the accepted section boundary, while
+all source characters and display text remain unchanged. Explicit report-only
+token-boundary evidence retains both the raw-paragraph word hash and the word
+hash after applying that one registered boundary. The whole-book phrase
+`"eleuati cum"` remains joinable; this ordinary section seam is not a gap.
+
+In XVIII and XIX, accepted paragraph starts complement the inline Niese markers;
+coarse numeric paragraph IDs do not define canonical citations. Explicit labels,
+headings, notes, and the five separate book-end `<trailer>` elements are excluded.
+Source additions and untagged letters inside accepted running-text spans remain
+searchable, including inline Roman chapter letters. No heuristic silently removes
+Roman numerals or repairs the transcription.
+
+The complete Antiquities collection has 7,283 physical records, 7,273 primary
+identities and two separately labelled Bellum insertions, with 265,023 word tokens.
+The publication inventory has **45 pinned inputs** across all four works:
+**35 Latin XML documents and ten identity-registry JSON files**. Antiquities
+accounts for 21 of those XML documents (Proem and twenty books) and all ten registries.
+
+### Adding later collections or editions
+
+Review each proposed source snapshot before expanding coverage. Update the
+relevant extractor's accepted ranges,
 markup and gap inventory, manifest, publication source projection checks,
 and independent witness together. Do not automatically discover and index
 every XML file in the directory. The following procedure remains required:

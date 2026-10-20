@@ -1,4 +1,4 @@
-/** Real-source Antiquities I–X citations, reader links, editorial exports and collection integration. */
+/** Real-source Antiquities I–XX citations, reader links, editorial exports and collection integration. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -18,6 +18,10 @@ const ANT = 'antiquities-latin-bamberg78', BELLUM = 'bellum-latin-cardwell';
 const DEH = 'deh-latin-ussani', CA = 'contra-apionem-latin-boysen';
 const catalog = read('catalog.json'), corpus = read(`data/${ANT}/corpus.json`);
 const manifest = read(`config/${ANT}.json`);
+const originalCorpus = corpus.filter(record => record.book <= 10);
+const originalAntiquitiesBooks = Array.from({length: 10}, (_, index) => `${ANT}:${index + 1}`);
+const allAntiquitiesBooks = Array.from({length: 20}, (_, index) => index + 1);
+const originalCollectionBooks = catalog.books.filter(book => book.collectionId !== ANT || book.number <= 10).map(book => book.id);
 const readerBase = 'https://latinjosephus.github.io/';
 const byCitation = new Map(corpus.map(record => [record.citationLabel, record]));
 const reports = new Map(manifest.books.map(book => [book.number, read(`data/${ANT}/book-${String(book.number).padStart(2, '0')}.extraction-report.json`)]));
@@ -25,13 +29,13 @@ const collection = createCollection(catalog, lunr, {
   baseURL: new URL('https://qa.example/assets/search/'),
   fetchImpl: async url => {
     const relative = new URL(url).pathname.replace('/assets/search/', '');
-    assert.match(relative, /^data\/(?:bellum-latin-cardwell|deh-latin-ussani|contra-apionem-latin-boysen|antiquities-latin-bamberg78)\/book-(?:0[1-9]|10)\.bundle\.json$/);
+    assert.match(relative, /^data\/(?:bellum-latin-cardwell|deh-latin-ussani|contra-apionem-latin-boysen|antiquities-latin-bamberg78)\/book-(?:0[1-9]|1[0-9]|20)\.bundle\.json$/);
     return new Response(readFileSync(new URL(relative, directory)));
   },
 });
 
 async function run(query, options = {}, modelOptions = {}) {
-  const result = await collection.search(query, {collections: [ANT], books: 'all', scope: 'section', fold: false, ...options});
+  const result = await collection.search(query, {collections: [ANT], books: originalAntiquitiesBooks, scope: 'section', fold: false, ...options});
   const model = buildConcordance(result, result.records, {readerBase, ...modelOptions});
   return {result, model};
 }
@@ -62,12 +66,13 @@ function csv(model, result) {
   })};
 }
 
-test('all 3415 Antiquities citations use the correct narrative or Proem reader route', () => {
-  assert.equal(corpus.length, 3415);
-  assert.deepEqual(manifest.books.map(book => book.number), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  assert.deepEqual(catalog.books.filter(book => book.collectionId === ANT).map(book => book.number), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+test('all 3415 published Antiquities I–X citations keep their narrative or Proem reader route', () => {
+  assert.equal(originalCorpus.length, 3415);
+  assert.equal(corpus.length, 7283);
+  assert.deepEqual(manifest.books.map(book => book.number), allAntiquitiesBooks);
+  assert.deepEqual(catalog.books.filter(book => book.collectionId === ANT).map(book => book.number), allAntiquitiesBooks);
   assert.equal(manifest.books[0].label, 'Book I (including Proem)');
-  for (const record of corpus) {
+  for (const record of originalCorpus) {
     const proem = record.book === 1 && record.section <= 26;
     assert.equal(citationFor([record]), `Antiquities ${record.citationLabel}`);
     assert.equal(readerURL(record, readerBase), `${readerBase}antiquities/?book=${proem ? 'preface' : record.book}&niese=${record.section}`);
@@ -81,14 +86,18 @@ test('all 3415 Antiquities citations use the correct narrative or Proem reader r
   assert.equal(passageDivisionLabel(corpus.slice(26, 28)), 'Niese sections 27–28');
 });
 
-test('Antiquities saved selections round-trip, preserve legacy defaults and reject unavailable Book XI', () => {
+test('Antiquities saved selections round-trip through Book XX and preserve legacy defaults', () => {
   const state = {query: '"Historiam conscribere disponentibus"', work: ANT, book: `${ANT}:1`, scope: 'book', fold: true, view: 'concordance'};
   assert.deepEqual(locationState(searchURL(state, `${readerBase}search/`).search, catalog, ''), state);
   assert.equal(locationState(`?q=deus&work=${ANT}&book=3`, catalog, '').book, `${ANT}:3`);
   assert.equal(locationState('', catalog, '').work, BELLUM);
   assert.equal(locationState('?q=bellum&book=all', catalog, '').work, BELLUM);
   assert.equal(locationState(`?q=deus&work=${ANT}&book=10`, catalog, '').book, `${ANT}:10`);
-  assert.throws(() => locationState(`?q=deus&work=${ANT}&book=11`, catalog, ''), /not available/);
+  assert.equal(locationState(`?q=deus&work=${ANT}&book=15`, catalog, '').book, `${ANT}:15`);
+  for (const book of [16, 17, 18, 19, 20]) {
+    assert.equal(locationState(`?q=deus&work=${ANT}&book=${book}`, catalog, '').book, `${ANT}:${book}`);
+  }
+  assert.throws(() => locationState(`?q=deus&work=${ANT}&book=21`, catalog, ''), /not available/);
 });
 
 test('an exact Proem phrase retains original whitespace and points directly to I.1', async () => {
@@ -131,9 +140,9 @@ test('added and deleted letters remain literal matches with distinct editorial C
   }
 });
 
-test('all source editorial spans remain visible and exactly reconstruct their original text', () => {
+test('all published I–X editorial spans remain visible and exactly reconstruct their original text', () => {
   let additions = 0, deletions = 0, uncertain = 0;
-  for (const record of corpus) {
+  for (const record of originalCorpus) {
     const segments = annotatedTextSegments(record);
     assert.equal(segments.map(segment => segment.text).join(''), record.text);
     for (const mark of record.editorialMarks) {
@@ -332,8 +341,8 @@ test('empty III.240 remains a negative-only result with explanatory text and a z
   assert.equal((await run('omitted', {books: [`${ANT}:3`]})).result.occurrences, 0, 'the display note is not searchable Latin');
 });
 
-test('zero-result Antiquities CSV retains all 56 columns, selected-source fingerprints and query settings', async () => {
-  const {result, model} = await run('zzzznonoccurrit*');
+test('zero-result Antiquities CSV retains all 20 books, 56 columns, source fingerprints and query settings', async () => {
+  const {result, model} = await run('zzzznonoccurrit*', {books: 'all'});
   const file = csv(model, result);
   assert.equal(result.matchingUnits, 0);
   assert.equal(file.headers.length, 56);
@@ -341,18 +350,113 @@ test('zero-result Antiquities CSV retains all 56 columns, selected-source finger
   assert.equal(file.rows.length, 1);
   assert.equal(file.rows[0].row_type, 'search-summary');
   assert.equal(file.rows[0].query, 'zzzznonoccurrit*');
-  assert.match(file.rows[0].editorial_notes, /Antiquities includes the Proem and Books I–X/);
+  assert.match(file.rows[0].editorial_notes, /Antiquities includes the Proem and Books I–XX\b/);
   const sources = JSON.parse(file.rows[0].selected_sources_json);
   assert.deepEqual(sources.collections.map(source => source.id), [ANT]);
-  assert.deepEqual(sources.books.map(book => book.id), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(book => `${ANT}:${book}`));
+  assert.deepEqual(sources.books.map(book => book.id), allAntiquitiesBooks.map(book => `${ANT}:${book}`));
   assert.ok(sources.books.every(book => /^[a-f0-9]{64}$/.test(book.corpusSHA256)));
   assert.deepEqual(sources.books.find(book => book.id === `${ANT}:7`).omittedSections, Array.from({length: 31}, (_, index) => index + 69));
   assert.deepEqual(sources.books.find(book => book.id === `${ANT}:9`).missingSections, Array.from({length: 59}, (_, index) => index + 51));
   assert.deepEqual(sources.books.find(book => book.id === `${ANT}:9`).sectionRange, [1, 291]);
   assert.deepEqual(sources.books.find(book => book.id === `${ANT}:10`).emptySections, [108]);
+  const expectedUnavailable = new Map([[11, []], [12, [248]], [13, [213, 216]], [14, [238, 239]], [15, [338, 347]],
+    [16, [77, 123, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 359, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404]],
+    [17, []], [18, [216, 217]], [19, []], [20, [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 238]]]);
+  for (const [number, unavailable] of expectedUnavailable) {
+    const book = sources.books.find(book => book.id === `${ANT}:${number}`);
+    assert.equal(book.coverageMode, 'registered-source-spans');
+    assert.deepEqual(book.unavailableSections, unavailable);
+    assert.equal(book.identityRegistry, `assets/xml/antiquities/niese/book-${number}.json`);
+    assert.deepEqual(book.additionalSources, [book.identityRegistry]);
+    assert.equal(book.canonicalSections, manifest.books[number - 1].canonicalSections);
+    assert.equal(book.citationUnits, manifest.books[number - 1].citationUnits);
+  }
+  const xi = sources.books.find(book => book.id === `${ANT}:11`);
+  assert.deepEqual([xi.canonicalSections, xi.citationUnits, xi.primarySourceSpans, xi.interpolatedSourcePassages], [347, 349, 352, 2]);
+  assert.deepEqual(xi.fragmentedSections, [72, 312, 326, 342]);
+  const xvi = sources.books.find(book => book.id === `${ANT}:16`);
+  assert.deepEqual([xvi.canonicalSections, xvi.citationUnits, xvi.primarySourceSpans], [380, 380, 383]);
+  assert.deepEqual(xvi.fragmentedSections, [294, 295, 351]);
+  assert.deepEqual(sources.books.find(book => book.id === `${ANT}:20`).sectionRange, [1, 268]);
 });
 
-test('a frequent Antiquities word exports all 7073 occurrences beyond the first display page', async () => {
+test('all new source spans keep truthful reader links, portion labels and literal editorial offsets', () => {
+  const records = corpus.filter(record => record.book >= 11);
+  assert.equal(records.length, 3868);
+  assert.equal(new Set(records.map(record => record.citationUnitId)).size, 3860);
+  for (const record of records) {
+    assert.equal(citationFor([record]), `Antiquities ${record.citationLabel}`);
+    assert.equal(readerURL(record, readerBase), `${readerBase}antiquities/?book=${record.book}&niese=${record.readerLink.params.niese}`);
+    assert.equal(readerURL(record, readerBase, {section: false}), `${readerBase}antiquities/?book=${record.book}`);
+    assert.equal(record.chapter, undefined);
+    const segments = annotatedTextSegments(record);
+    assert.equal(segments.map(segment => segment.text).join(''), record.text);
+    for (const mark of record.editorialMarks.concat(record.sourceMarkup)) {
+      assert.equal(record.text.slice(mark.start, mark.end), mark.text);
+    }
+  }
+  const portions = records.filter(record => record.book === 11 && record.section === 72);
+  assert.deepEqual(portions.map(record => record.continuationRank), [2, 1, 3]);
+  assert.equal(citationFor(portions), 'Antiquities XI.72 (portion 2 of 3); XI.72 (portion 1 of 3); XI.72 (portion 3 of 3)');
+});
+
+test('real XI72 Boolean evidence shares a Niese unit while CSV retains each physical portion', async () => {
+  const {result, model} = await run('"Septem cantores" AND Mancipiorum', {books: [`${ANT}:11`]});
+  assert.deepEqual([result.matchingUnits, result.matchingSections, result.occurrences], [1, 1, 2]);
+  const rows = csv(model, result).rows;
+  assert.deepEqual(rows.map(row => row.citation), ['Antiquities XI.72 (portion 2 of 3)', 'Antiquities XI.72 (portion 1 of 3)']);
+  const segments = rows.flatMap(row => JSON.parse(row.source_segments_json));
+  assert.deepEqual([...new Set(segments.map(segment => segment.sourceOccurrence))], ['Latin-XI-72-2', 'Latin-XI-72-1']);
+  assert.ok(segments.every(segment => segment.citationUnitId === `${ANT}-11-72` && segment.fragmentCount === 3));
+  assert.ok(rows.every(row => row.reader_url === `${readerBase}antiquities/?book=11&niese=72`));
+});
+
+test('the two real XI Bellum interpolations export their own identity and accepted reader association', async () => {
+  for (const record of corpus.filter(record => record.sourcePassage)) {
+    const words = record.text.match(/[\p{L}\p{N}][\p{L}\p{M}\p{N}]*/gu);
+    const {result, model} = await run(`"${words.join(' ')}"`, {books: [`${ANT}:11`]});
+    const row = csv(model, result).rows.find(row => row.citation === `Antiquities ${record.citationLabel}`);
+    assert.ok(row, record.id);
+    assert.equal(row.reader_url, `${readerBase}antiquities/?book=11&niese=312`);
+    const segment = JSON.parse(row.source_segments_json).find(segment => segment.sourceOccurrence === record.sourceOccurrence);
+    assert.ok(segment);
+    assert.deepEqual(segment.sourcePassage, record.sourcePassage);
+    assert.equal(segment.citationUnitId, record.id);
+    assert.equal(segment.sourcePassage.AntiquitiesIdentity, false);
+    assert.equal(segment.sourcePassage.association, 312);
+  }
+});
+
+test('XII end subscription is source evidence while XIII intra-word gap stays visible in CSV', async () => {
+  assert.equal((await run('"FLAUII IOSEPPI IUDAEICAE ANTIQUITATIS LIBER DUODECIMUS EXPLICIT"', {books: [`${ANT}:12`]})).result.occurrences, 0);
+  assert.ok(byCitation.get('XII.434').text.endsWith('defunctus est.'));
+  const record = byCitation.get('XIII.393');
+  const incorrect = await run('ress', {books: [`${ANT}:13`]});
+  assert.ok(incorrect.result.hitGroups.every(group => !group.recordIds.includes(record.id)));
+  const {result, model} = await run('"s fuerant"', {books: [`${ANT}:13`]});
+  const row = csv(model, result).rows.find(row => row.citation === 'Antiquities XIII.393');
+  assert.ok(row);
+  assert.equal(row.matched_text, 's fuerant');
+  const segment = JSON.parse(row.source_segments_json).find(segment => segment.sourceId === record.sourceId);
+  assert.ok(segment.textGaps.some(gap => gap.kind === 'tei-gap' && gap.start === gap.end && gap.sourceAttributes.reason === 'fading'));
+});
+
+test('the accepted XVII41–42 touching-word boundary supports an exact whole-book phrase', async () => {
+  const left = byCitation.get('XVII.41'), right = byCitation.get('XVII.42');
+  assert.ok(left.text.endsWith('inmaturius eleuati'));
+  assert.ok(right.text.startsWith('cum igitur'));
+  assert.equal(right.breakBefore, undefined);
+  const query = '"eleuati cum igitur"';
+  assert.equal((await run(query, {books: [`${ANT}:17`]})).result.occurrences, 0);
+  const {result, model} = await run(query, {books: [`${ANT}:17`], scope: 'book'});
+  assert.deepEqual([result.occurrences, result.matchingUnits], [1, 1]);
+  const exported = csv(model, result).rows;
+  assert.equal(exported.length, 1);
+  assert.deepEqual(JSON.parse(exported[0].source_segments_json).map(segment => segment.recordId), [left.id, right.id]);
+  assert.equal((await run('eleuaticum', {books: [`${ANT}:17`], scope: 'book'})).result.occurrences, 0);
+});
+
+test('a frequent Antiquities I–X word still exports all 7073 occurrences beyond the first display page', async () => {
   const {result, model} = await run('et', {}, {contextWords: 2});
   assert.equal(result.occurrences, 7073);
   assert.equal(model.rows.length, 7073);
@@ -369,8 +473,8 @@ test('a frequent Antiquities word exports all 7073 occurrences beyond the first 
   assert.deepEqual([...new Set(file.rows.map(row => Number(row.book)))], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 });
 
-test('all four works retain separate identities and export 421 sacerdot* occurrences from 318 units', async () => {
-  const {result, model} = await run('sacerdot*', {collections: 'all'});
+test('the original 24 books retain separate work identities and 421 sacerdot* occurrences from 318 units', async () => {
+  const {result, model} = await run('sacerdot*', {collections: 'all', books: originalCollectionBooks});
   assert.deepEqual(result.selectedCollections, [BELLUM, DEH, CA, ANT]);
   assert.equal(result.selectedBooks.length, 24);
   assert.equal(result.records.length, 8590);
@@ -388,16 +492,16 @@ test('all four works retain separate identities and export 421 sacerdot* occurre
   assert.deepEqual(alone.result.selectedCollections, [ANT]);
 });
 
-test('negative-only whole-book exports retain all 24 book identities and numeric Book I links', async () => {
-  const {result, model} = await run('NOT zzzznonoccurrit', {collections: 'all', scope: 'book'});
-  assert.deepEqual([result.matchingUnits, result.occurrences], [24, 0]);
-  assert.equal(model.unhighlightedUnits.length, 24);
+test('negative-only whole-book exports retain all 34 book identities and numeric Book I links', async () => {
+  const {result, model} = await run('NOT zzzznonoccurrit', {collections: 'all', books: 'all', scope: 'book'});
+  assert.deepEqual([result.matchingUnits, result.occurrences], [34, 0]);
+  assert.equal(model.unhighlightedUnits.length, 34);
   const file = csv(model, result);
-  assert.equal(file.rows.length, 24);
+  assert.equal(file.rows.length, 34);
   assert.ok(file.rows.every(row => row.row_type === 'matching-unit' && row.matched_text === '' && row.source_segments_json === '[]'));
   const antiquities = file.rows.filter(row => row.collection_id === ANT);
-  assert.deepEqual(antiquities.map(row => row.reader_url), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(book => `${readerBase}antiquities/?book=${book}`));
-  assert.deepEqual(antiquities.map(row => row.citation), ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'].map(book => `Antiquities ${book}`));
+  assert.deepEqual(antiquities.map(row => row.reader_url), allAntiquitiesBooks.map(book => `${readerBase}antiquities/?book=${book}`));
+  assert.deepEqual(antiquities.map(row => row.citation), ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX'].map(book => `Antiquities ${book}`));
 });
 
 test('identically numbered books from different works cannot jointly satisfy an AND or phrase', async () => {
@@ -414,8 +518,8 @@ test('identically numbered books from different works cannot jointly satisfy an 
   }
 });
 
-test('publication accepts complete source projections for all ten books and rejects record metadata corruption', () => {
-  for (const spec of manifest.books) {
+test('publication retains complete I–X source projections and rejects the original record metadata corruptions', () => {
+  for (const spec of manifest.books.filter(book => book.number <= 10)) {
     validateAntiquitiesSourceProjection(corpus.filter(record => record.book === spec.number), reports.get(spec.number), manifest, spec);
   }
   const cases = [
@@ -480,4 +584,37 @@ test('publication rejects corrupt source paragraph slices, omissions, source inv
   }
   const changedSpec = {...manifest.books[0], additionalSources: []};
   assert.throws(() => validateAntiquitiesSourceProjection(corpus.filter(record => record.book === 1), reports.get(1), manifest, changedSpec));
+});
+
+test('publication verifies the new source boundaries, closures and token seam and rejects altered evidence', () => {
+  for (const book of [16, 17, 18, 19, 20]) {
+    validateAntiquitiesSourceProjection(corpus.filter(record => record.book === book), reports.get(book), manifest, manifest.books[book - 1]);
+  }
+  const recordCases = [
+    [16, rows => {delete rows.find(row => row.section === 200).sourceBoundaryEvidence;}],
+    [16, rows => {rows.find(row => row.section === 200).breakBefore = false;}],
+    [16, rows => {rows.find(row => row.section === 200).sourceBoundaryEvidence.precedingSection = 199;}],
+    [16, rows => {rows.find(row => row.section === 200).sourceBoundaryEvidence.excludedSourceSpans[0].sourceTextEnd++;}],
+    [16, rows => {rows.find(row => row.section === 394).sourceIds.push('latin-book16-num395');}],
+    [17, rows => {rows.find(row => row.section === 42).breakBefore = true;}],
+    [20, rows => {rows.find(row => row.section === 37).sourceBoundaryEvidence.precedingEnd.sourceTextOffset++;}],
+    [20, rows => {rows.find(row => row.section === 26).text += ' [Niese sections 26–37 largely missing]';}],
+  ];
+  for (const [book, mutate] of recordCases) {
+    const changed = structuredClone(corpus.filter(row => row.book === book)); mutate(changed);
+    assert.throws(() => validateAntiquitiesSourceProjection(changed, reports.get(book), manifest, manifest.books[book - 1]));
+  }
+  const reportCases = [
+    [16, report => {report.excluded.find(item => item.sourceId === 'latin-book16-num395').text = '[??]';}],
+    [16, report => {report.paragraphs.find(paragraph => paragraph.sourceId === 'latin-book16-num395').structuralMarkers[0].recordTextOffset++;}],
+    [17, report => {report.coverage.registeredTokenBoundaryEvidence[0].sourceTextOffset++;}],
+    [17, report => {report.coverage.registeredTokenBoundaryEvidence[0].sourceText = 'eleuati cum';}],
+    [17, report => {report.coverage.rawParagraphWordSequenceSha256 = report.coverage.sourceWordSequenceSha256;}],
+    [20, report => {report.excluded.find(item => item.kind === 'excluded-lacuna-notice').sourceTextEnd--;}],
+    [20, report => {report.coverage.explicitSourceBoundaries = [];}],
+  ];
+  for (const [book, mutate] of reportCases) {
+    const changed = structuredClone(reports.get(book)); mutate(changed);
+    assert.throws(() => validateAntiquitiesSourceProjection(corpus.filter(row => row.book === book), changed, manifest, manifest.books[book - 1]));
+  }
 });

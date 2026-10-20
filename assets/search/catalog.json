@@ -94,7 +94,7 @@
     {
       "id": "antiquities-latin-bamberg78",
       "work": "antiquities",
-      "label": "Antiquities I–X, including Proem",
+      "label": "Antiquities I–XX, including Proem",
       "citationPrefix": "Antiquities",
       "language": "Latin",
       "edition": "Bamberg Msc. Class. 78",
@@ -109,22 +109,32 @@
         "antiquities-latin-bamberg78:7",
         "antiquities-latin-bamberg78:8",
         "antiquities-latin-bamberg78:9",
-        "antiquities-latin-bamberg78:10"
+        "antiquities-latin-bamberg78:10",
+        "antiquities-latin-bamberg78:11",
+        "antiquities-latin-bamberg78:12",
+        "antiquities-latin-bamberg78:13",
+        "antiquities-latin-bamberg78:14",
+        "antiquities-latin-bamberg78:15",
+        "antiquities-latin-bamberg78:16",
+        "antiquities-latin-bamberg78:17",
+        "antiquities-latin-bamberg78:18",
+        "antiquities-latin-bamberg78:19",
+        "antiquities-latin-bamberg78:20"
       ],
       "citationScheme": "niese",
       "unitLabel": "Niese section",
       "unitLabelPlural": "Niese sections",
       "manifestPath": "config/antiquities-latin-bamberg78.json",
-      "manifestSHA256": "6c63102efc687744663aeaa05092e6a1d5d7b2633e60808082973d1624141683",
+      "manifestSHA256": "6e10685671e030e70ae6716cca9247348e9e938d740a8d8d36c5372af1f7e8a6",
       "corpusPath": "data/antiquities-latin-bamberg78/corpus.json",
-      "corpusSHA256": "f9bb2ede5abcd9e111503e937273c65bbc0b0ae74fdc8b2455f5157e0f07b862",
+      "corpusSHA256": "f9161b35b17a8887890bbb4799e03b6917a3ca65c97cd5924da81d2693650692",
       "extractionReportPath": "data/antiquities-latin-bamberg78/extraction-report.json",
-      "extractionReportSHA256": "b5b731d4196071f4a7ad226cdbcb753b11c5b4f8934aa0b58e0ccd225834c86d",
+      "extractionReportSHA256": "114e38703218f17b2dba60d1a4b8f0a0b95552050925e0bb18b291c4f9fcb0f6",
       "totals": {
-        "books": 10,
-        "sections": 3415,
-        "tokens": 137858,
-        "bytes": 24565970
+        "books": 20,
+        "sections": 7283,
+        "tokens": 265023,
+        "bytes": 49051412
       }
     }
   ],
@@ -337,7 +347,10 @@
       "path": "data/antiquities-latin-bamberg78/book-01.bundle.json",
       "sha256": "aee13b21033aaabd531db5c5dede9054eda3839c79c66b2066625c664c0c049f",
       "corpusPath": "data/antiquities-latin-bamberg78/book-01.corpus.json",
-      "corpusSHA256": "1c746d5b9a0adba0d01e1de2fe4e4760210c565002ffccd724da6b33b73f9b95"
+      "corpusSHA256": "1c746d5b9a0adba0d01e1de2fe4e4760210c565002ffccd724da6b33b73f9b95",
+      "additionalSources": [
+        "assets/xml/antiquities/Latin/preface.xml"
+      ]
     },
     {
       "id": "antiquities-latin-bamberg78:2",
@@ -573,19 +586,369 @@
       "emptySections": [
         108
       ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:11",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 11,
+      "label": "Book XI",
+      "sections": 354,
+      "tokens": 11589,
+      "vocabulary": 4469,
+      "bytes": 2227120,
+      "path": "data/antiquities-latin-bamberg78/book-11.bundle.json",
+      "sha256": "3ba10c4b0ec339395f095e454fe35129b0db4e3f5b9577cb3667c5f528a37a68",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-11.corpus.json",
+      "corpusSHA256": "de73cf488e92512306a26b66e3ea06f9d8abe68ceff1c519573011b8f985a5aa",
+      "sectionRange": [
+        1,
+        347
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 347,
+      "citationUnits": 349,
+      "primarySourceSpans": 352,
+      "interpolatedSourcePassages": 2,
+      "fragmentedSections": [
+        72,
+        312,
+        326,
+        342
+      ],
+      "unavailableSections": [],
+      "identityRegistry": "assets/xml/antiquities/niese/book-11.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-11.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:12",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 12,
+      "label": "Book XII",
+      "sections": 433,
+      "tokens": 13683,
+      "vocabulary": 5185,
+      "bytes": 2647391,
+      "path": "data/antiquities-latin-bamberg78/book-12.bundle.json",
+      "sha256": "0b589587dbb6c83458dfff408a3a5a0cb408be341f2b5669f1683583e0106157",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-12.corpus.json",
+      "corpusSHA256": "1f5e592dbf152a4c1c009b5331c6fc7e025b1e667b51a2026a256e3456c38c6f",
+      "sectionRange": [
+        1,
+        434
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 433,
+      "citationUnits": 433,
+      "primarySourceSpans": 433,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [],
+      "unavailableSections": [
+        248
+      ],
+      "identityRegistry": "assets/xml/antiquities/niese/book-12.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-12.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:13",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 13,
+      "label": "Book XIII",
+      "sections": 431,
+      "tokens": 13803,
+      "vocabulary": 5050,
+      "bytes": 2653418,
+      "path": "data/antiquities-latin-bamberg78/book-13.bundle.json",
+      "sha256": "e2271c072e20fe614697d52abff0fe0d7e8eb4220c3e48d6282c51a5d83ac78e",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-13.corpus.json",
+      "corpusSHA256": "f474d9dd0303cff2ad48a9ceceb9549b736034c12d6c863f6db953f1d60f510b",
+      "sectionRange": [
+        1,
+        433
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 431,
+      "citationUnits": 431,
+      "primarySourceSpans": 431,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [],
+      "unavailableSections": [
+        213,
+        216
+      ],
+      "identityRegistry": "assets/xml/antiquities/niese/book-13.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-13.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:14",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 14,
+      "label": "Book XIV",
+      "sections": 489,
+      "tokens": 15148,
+      "vocabulary": 5165,
+      "bytes": 2902761,
+      "path": "data/antiquities-latin-bamberg78/book-14.bundle.json",
+      "sha256": "372dc6743831b8d268f0efb36d55230305a2871c6b0c0054e9ec2b6ea776a08f",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-14.corpus.json",
+      "corpusSHA256": "738eb46fda937801fd3fc8936f3e1b72a51f24a86978ce8be0ebdee1f06f080a",
+      "sectionRange": [
+        1,
+        491
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 489,
+      "citationUnits": 489,
+      "primarySourceSpans": 489,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [],
+      "unavailableSections": [
+        238,
+        239
+      ],
+      "identityRegistry": "assets/xml/antiquities/niese/book-14.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-14.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:15",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 15,
+      "label": "Book XV",
+      "sections": 423,
+      "tokens": 12223,
+      "vocabulary": 4672,
+      "bytes": 2403674,
+      "path": "data/antiquities-latin-bamberg78/book-15.bundle.json",
+      "sha256": "40a30ed68e42713524ee97afb663e1fd1e895d19ac04bc2eab25e4b3fc85a0ae",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-15.corpus.json",
+      "corpusSHA256": "5298af190ebbd59709d02176997d1feba530c014da150b23d9223a1942e018fe",
+      "sectionRange": [
+        1,
+        425
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 423,
+      "citationUnits": 423,
+      "primarySourceSpans": 423,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [],
+      "unavailableSections": [
+        338,
+        347
+      ],
+      "identityRegistry": "assets/xml/antiquities/niese/book-15.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-15.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:16",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 16,
+      "label": "Book XVI",
+      "sections": 383,
+      "tokens": 10471,
+      "vocabulary": 4168,
+      "bytes": 2094479,
+      "path": "data/antiquities-latin-bamberg78/book-16.bundle.json",
+      "sha256": "ca78237d1af5a712b245e73a8b41c9ab33a352eeaf1f9c269e664ad755bb50f3",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-16.corpus.json",
+      "corpusSHA256": "743f7866c690b1bf66ac13e6420fc8a203652f6f0aaa5d298cb743a811857367",
+      "sectionRange": [
+        1,
+        404
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 380,
+      "citationUnits": 380,
+      "primarySourceSpans": 383,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [
+        294,
+        295,
+        351
+      ],
+      "unavailableSections": [
+        77,
+        123,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        359,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404
+      ],
+      "identityRegistry": "assets/xml/antiquities/niese/book-16.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-16.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:17",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 17,
+      "label": "Book XVII",
+      "sections": 355,
+      "tokens": 15287,
+      "vocabulary": 5812,
+      "bytes": 2845922,
+      "path": "data/antiquities-latin-bamberg78/book-17.bundle.json",
+      "sha256": "9b0923d28bc9e1f2ecb083bb72c60cd14cc8cff6e37c3ef1c32b5fb090368257",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-17.corpus.json",
+      "corpusSHA256": "b467e02a1960a1aed21d76cabe1b0da956bf3e5c40c3c8737188ca521db325bb",
+      "sectionRange": [
+        1,
+        355
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 355,
+      "citationUnits": 355,
+      "primarySourceSpans": 355,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [],
+      "unavailableSections": [],
+      "identityRegistry": "assets/xml/antiquities/niese/book-17.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-17.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:18",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 18,
+      "label": "Book XVIII",
+      "sections": 377,
+      "tokens": 15306,
+      "vocabulary": 5588,
+      "bytes": 2859014,
+      "path": "data/antiquities-latin-bamberg78/book-18.bundle.json",
+      "sha256": "a10d11328b31a040f975899bd59c27b4b9de5344453136f5048fc015e081dcd8",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-18.corpus.json",
+      "corpusSHA256": "ebbdf00a2d3ce3d1101c9230f55c8b53199837eca954adcce7aa0a6ec3f93ddb",
+      "sectionRange": [
+        1,
+        379
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 377,
+      "citationUnits": 377,
+      "primarySourceSpans": 377,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [],
+      "unavailableSections": [
+        216,
+        217
+      ],
+      "identityRegistry": "assets/xml/antiquities/niese/book-18.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-18.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:19",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 19,
+      "label": "Book XIX",
+      "sections": 366,
+      "tokens": 11791,
+      "vocabulary": 4682,
+      "bytes": 2293806,
+      "path": "data/antiquities-latin-bamberg78/book-19.bundle.json",
+      "sha256": "012981ccfd020cfd841ed805235a83408b76ae56f8f6ef122f31fd3901b7cb5d",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-19.corpus.json",
+      "corpusSHA256": "6501b851077664c3f8061c4307752b58ad8b2ba9edaa5b27bfdd87d44e6a59a9",
+      "sectionRange": [
+        1,
+        366
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 366,
+      "citationUnits": 366,
+      "primarySourceSpans": 366,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [],
+      "unavailableSections": [],
+      "identityRegistry": "assets/xml/antiquities/niese/book-19.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-19.json"
+      ]
+    },
+    {
+      "id": "antiquities-latin-bamberg78:20",
+      "collectionId": "antiquities-latin-bamberg78",
+      "number": 20,
+      "label": "Book XX",
+      "sections": 257,
+      "tokens": 7864,
+      "vocabulary": 3318,
+      "bytes": 1557857,
+      "path": "data/antiquities-latin-bamberg78/book-20.bundle.json",
+      "sha256": "1c2ae8d106c6a8f3fb4b72430df60ca3d40de374a5eb24c019c78b00873f0243",
+      "corpusPath": "data/antiquities-latin-bamberg78/book-20.corpus.json",
+      "corpusSHA256": "430c4277d7fce507f322b523b1a6b913311513c843e3bb455199dbf8b0d5e210",
+      "sectionRange": [
+        1,
+        268
+      ],
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 257,
+      "citationUnits": 257,
+      "primarySourceSpans": 257,
+      "interpolatedSourcePassages": 0,
+      "fragmentedSections": [],
+      "unavailableSections": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        238
+      ],
+      "identityRegistry": "assets/xml/antiquities/niese/book-20.json",
+      "additionalSources": [
+        "assets/xml/antiquities/niese/book-20.json"
+      ]
     }
   ],
   "totals": {
-    "books": 24,
-    "sections": 8590,
-    "tokens": 361142,
-    "bytes": 60226130
+    "books": 34,
+    "sections": 12458,
+    "tokens": 488307,
+    "bytes": 84711572
   },
   "source": {
     "manifestPath": "config/collections.json",
     "manifestSHA256": "b50f377293fcdd2986fd32d2a4433cc3b5a782922b424ca302c1fb67b2badcfd",
     "enginePath": "engine.mjs",
-    "engineSHA256": "98093386a2e48fa1b56789cec18a465d37cc2924f0e26a6cf0d1d0e0d0e431bd",
+    "engineSHA256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
     "lunrPath": "vendor/lunr.cjs",
     "lunrSHA256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
     "lunrVersion": "2.3.9"

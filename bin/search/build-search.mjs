@@ -45,7 +45,9 @@ async function main() {
   const {base, collections} = loadPublicationConfig(root);
   for (const relative of collections.flatMap(c => c.adapter.sources)) {
     const bytes = fs.readFileSync(inside(root, relative));
-    assert(!bytes.includes(Buffer.from('\r\n')),
+    // Accepted registry JSON can itself contain CRLF; its normalized content
+    // is pinned without rewriting the canonical source file.
+    assert(!relative.endsWith('.xml') || !bytes.includes(Buffer.from('\r\n')),
       `Source rebuilds require a clean LF checkout: ${relative} contains CRLF. Use an isolated clone with core.autocrlf=false; no files have been written.`);
   }
   const extractionRuns = new Set();

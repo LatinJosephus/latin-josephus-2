@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "status": "PASS",
   "scope": {
     "work": "Antiquities",
@@ -13,7 +13,17 @@
       7,
       8,
       9,
-      10
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
     ],
     "language": "Latin",
     "edition": "Bamberg Msc. Class. 78",
@@ -22,44 +32,61 @@
     "includesProem": true
   },
   "counts": {
-    "books": 10,
-    "sourceDocuments": 11,
-    "bodyParagraphs": 779,
-    "numberedParagraphs": 766,
-    "citationParagraphs": 758,
-    "continuationParagraphs": 8,
-    "sections": 3415,
-    "nieseMilestones": 2660,
-    "nieseEndMilestones": 1,
-    "chapterDivisions": 139,
-    "pageBreaks": 247,
-    "addedSpans": 45,
-    "deletedSpans": 30,
+    "books": 20,
+    "sourceDocuments": 21,
+    "identityRegistries": 10,
+    "bodyParagraphs": 1601,
+    "numberedParagraphs": 1441,
+    "citationParagraphs": 1398,
+    "continuationParagraphs": 48,
+    "sections": 7283,
+    "nieseMilestones": 6075,
+    "nieseEndMilestones": 2,
+    "chapterDivisions": 221,
+    "pageBreaks": 510,
+    "addedSpans": 260,
+    "deletedSpans": 77,
     "sentenceSpans": 1,
     "referenceSpans": 3,
-    "bambergAnchors": 4,
-    "excludedAnnotationNotes": 31,
-    "sourceGapMarkers": 32,
-    "literalGapClusters": 14,
+    "bambergAnchors": 15,
+    "excludedAnnotationNotes": 43,
+    "sourceGapMarkers": 36,
+    "literalGapClusters": 27,
     "emptySections": 33,
-    "breakBeforeUnits": 38,
-    "paragraphSeparatorsInserted": 8,
-    "runningWordTokens": 137858,
-    "columnBreaks": 76,
-    "imageMilestones": 39,
-    "correctedSpans": 48,
-    "unclearSpans": 62,
-    "expandedSpans": 6,
-    "milestoneParagraphStarts": 3,
+    "breakBeforeUnits": 40,
+    "paragraphSeparatorsInserted": 48,
+    "runningWordTokens": 265023,
+    "columnBreaks": 596,
+    "imageMilestones": 302,
+    "correctedSpans": 59,
+    "unclearSpans": 114,
+    "expandedSpans": 28,
+    "milestoneParagraphStarts": 226,
     "excludedOmissionNotices": 6,
-    "excludedLacunaNotices": 1,
-    "literalDotClusters": 7,
+    "excludedLacunaNotices": 2,
+    "literalDotClusters": 20,
     "literalEllipses": 5,
     "sourceMarkedDotSpans": 2,
-    "emptySourceIntervals": 1
+    "emptySourceIntervals": 1,
+    "narrativeParagraphs": 1446,
+    "anonymousNarrativeParagraphs": 5,
+    "canonicalSections": 7273,
+    "citationUnits": 7275,
+    "primarySourceSpans": 7281,
+    "interpolatedSourcePassages": 2,
+    "chapterMilestones": 97,
+    "traditionalBoundaryAnchors": 3,
+    "excludedChapterAnnotations": 1,
+    "excludedInlineSubscriptions": 1,
+    "excludedSourceGapNotations": 3,
+    "nieseRangeEndMilestones": 2,
+    "nieseFragmentMilestones": 3,
+    "registeredSupplementalStarts": 107,
+    "explicitSourceBoundaries": 2,
+    "registeredTokenBoundaries": 1
   },
   "coverage": {
-    "paragraphsExactlyRestored": 766,
+    "paragraphsExactlyRestored": 1446,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
     "sourceProjectionExactlyRestoresSource": true,
@@ -68,7 +95,7 @@
     "globalOrderIsConsecutive": true,
     "globalOrderRange": [
       0,
-      3414
+      7282
     ],
     "completeSectionCoverageByBook": {
       "1": [
@@ -110,6 +137,46 @@
       "10": [
         1,
         281
+      ],
+      "11": [
+        1,
+        347
+      ],
+      "12": [
+        1,
+        434
+      ],
+      "13": [
+        1,
+        433
+      ],
+      "14": [
+        1,
+        491
+      ],
+      "15": [
+        1,
+        425
+      ],
+      "16": [
+        1,
+        404
+      ],
+      "17": [
+        1,
+        355
+      ],
+      "18": [
+        1,
+        379
+      ],
+      "19": [
+        1,
+        366
+      ],
+      "20": [
+        1,
+        268
       ]
     },
     "missingSectionsByBook": {
@@ -173,6 +240,64 @@
         107,
         108,
         109
+      ],
+      "12": [
+        248
+      ],
+      "13": [
+        213,
+        216
+      ],
+      "14": [
+        238,
+        239
+      ],
+      "15": [
+        338,
+        347
+      ],
+      "16": [
+        77,
+        123,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        359,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404
+      ],
+      "18": [
+        216,
+        217
+      ],
+      "20": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        238
       ]
     },
     "allSectionTextsNonempty": false,
@@ -310,13 +435,13 @@
         "section": 108
       }
     ],
-    "sourceProjectionDefinition": "Running text from the accepted eleven XML documents is preserved exactly, except reversible edge whitespace and inserted paragraph-boundary newlines. No running source words or punctuation are generated, removed or corrected. The exact English omission notices and IX lacuna notice are excluded as annotated source evidence."
+    "sourceProjectionDefinition": "Running text from the accepted twenty-one XML documents is preserved exactly, except reversible edge whitespace and inserted paragraph-boundary newlines. No running source words or punctuation are generated, removed or corrected. Source labels, annotations, explicitly delimited gap notices and front matter are excluded with reversible evidence. Ten accepted Latin identity registries govern XI–XX; split XI and XVI sections and XI's two separately identified Bellum interpolations preserve actual source order."
   },
   "corpus": {
     "path": "data/antiquities-latin-bamberg78/corpus.json",
-    "sha256": "f9bb2ede5abcd9e111503e937273c65bbc0b0ae74fdc8b2455f5157e0f07b862",
-    "bytes": 3602916,
-    "records": 3415
+    "sha256": "f9161b35b17a8887890bbb4799e03b6917a3ca65c97cd5924da81d2693650692",
+    "bytes": 7957790,
+    "records": 7283
   },
   "books": [
     {
@@ -918,6 +1043,1037 @@
         "path": "data/antiquities-latin-bamberg78/book-10.extraction-report.json",
         "sha256": "48151a3ab180541719524d9784b632ef443cc78957e09a5fd3987990ba23787e",
         "bytes": 628325
+      }
+    },
+    {
+      "book": 11,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-11.xml",
+        "sha256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+        "bytes": 117003
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-11.json",
+        "sha256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+        "bytes": 528008
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-11.json",
+          "sha256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+          "bytes": 528008
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-11.xml",
+          "sha256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+          "bytes": 117003
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-11.json",
+          "sha256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+          "bytes": 528008
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 58,
+        "narrativeParagraphs": 58,
+        "numberedParagraphs": 57,
+        "anonymousNarrativeParagraphs": 1,
+        "citationParagraphs": 55,
+        "continuationParagraphs": 3,
+        "sections": 354,
+        "canonicalSections": 347,
+        "citationUnits": 349,
+        "primarySourceSpans": 352,
+        "interpolatedSourcePassages": 2,
+        "nieseMilestones": 270,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 2,
+        "chapterMilestones": 0,
+        "addedSpans": 5,
+        "deletedSpans": 0,
+        "unclearSpans": 30,
+        "correctedSpans": 7,
+        "expandedSpans": 2,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 0,
+        "traditionalBoundaryAnchors": 0,
+        "excludedAnnotationNotes": 6,
+        "sourceGapMarkers": 0,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 0,
+        "literalGapClusters": 0,
+        "literalDotClusters": 0,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 3,
+        "runningWordTokens": 11589,
+        "pageBreaks": 22,
+        "columnBreaks": 43,
+        "imageMilestones": 22
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 347,
+      "citationUnits": 349,
+      "unavailableSections": [],
+      "orderStart": 3415,
+      "orderEnd": 3768,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-11.corpus.json",
+        "sha256": "de73cf488e92512306a26b66e3ea06f9d8abe68ceff1c519573011b8f985a5aa",
+        "bytes": 399952,
+        "records": 354
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-11.extraction-report.json",
+        "sha256": "082669466ad35ed656cc5ffcc7736dfb1704053306a586f2d2cd9bac7de6b2c5",
+        "bytes": 921966
+      }
+    },
+    {
+      "book": 12,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-12.xml",
+        "sha256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+        "bytes": 129242
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-12.json",
+        "sha256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+        "bytes": 87373
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-12.json",
+          "sha256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+          "bytes": 87373
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-12.xml",
+          "sha256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+          "bytes": 129242
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-12.json",
+          "sha256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+          "bytes": 87373
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 72,
+        "narrativeParagraphs": 71,
+        "numberedParagraphs": 71,
+        "anonymousNarrativeParagraphs": 0,
+        "citationParagraphs": 68,
+        "continuationParagraphs": 3,
+        "sections": 433,
+        "canonicalSections": 433,
+        "citationUnits": 433,
+        "primarySourceSpans": 433,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 365,
+        "nieseEndMilestones": 1,
+        "chapterDivisions": 2,
+        "chapterMilestones": 0,
+        "addedSpans": 20,
+        "deletedSpans": 5,
+        "unclearSpans": 10,
+        "correctedSpans": 4,
+        "expandedSpans": 0,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 0,
+        "traditionalBoundaryAnchors": 0,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 2,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 1,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 0,
+        "literalGapClusters": 0,
+        "literalDotClusters": 0,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 3,
+        "runningWordTokens": 13683,
+        "pageBreaks": 27,
+        "columnBreaks": 53,
+        "imageMilestones": 27
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 433,
+      "citationUnits": 433,
+      "unavailableSections": [
+        248
+      ],
+      "orderStart": 3769,
+      "orderEnd": 4201,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-12.corpus.json",
+        "sha256": "1f5e592dbf152a4c1c009b5331c6fc7e025b1e667b51a2026a256e3456c38c6f",
+        "bytes": 482557,
+        "records": 433
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-12.extraction-report.json",
+        "sha256": "feb6772c6b742d3966b25ccef8bff3207b9c0b5276a7ab901c64529dee20a595",
+        "bytes": 1055589
+      }
+    },
+    {
+      "book": 13,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-13.xml",
+        "sha256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+        "bytes": 127129
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-13.json",
+        "sha256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+        "bytes": 91344
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-13.json",
+          "sha256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+          "bytes": 91344
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-13.xml",
+          "sha256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+          "bytes": 127129
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-13.json",
+          "sha256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+          "bytes": 91344
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 111,
+        "narrativeParagraphs": 88,
+        "numberedParagraphs": 87,
+        "anonymousNarrativeParagraphs": 1,
+        "citationParagraphs": 85,
+        "continuationParagraphs": 3,
+        "sections": 431,
+        "canonicalSections": 431,
+        "citationUnits": 431,
+        "primarySourceSpans": 431,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 348,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 18,
+        "chapterMilestones": 0,
+        "addedSpans": 7,
+        "deletedSpans": 7,
+        "unclearSpans": 4,
+        "correctedSpans": 0,
+        "expandedSpans": 2,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 4,
+        "traditionalBoundaryAnchors": 1,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 1,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 2,
+        "literalGapClusters": 0,
+        "literalDotClusters": 0,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 3,
+        "runningWordTokens": 13803,
+        "pageBreaks": 30,
+        "columnBreaks": 61,
+        "imageMilestones": 30
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 431,
+      "citationUnits": 431,
+      "unavailableSections": [
+        213,
+        216
+      ],
+      "orderStart": 4202,
+      "orderEnd": 4632,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-13.corpus.json",
+        "sha256": "f474d9dd0303cff2ad48a9ceceb9549b736034c12d6c863f6db953f1d60f510b",
+        "bytes": 479579,
+        "records": 431
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-13.extraction-report.json",
+        "sha256": "da2360d717dc1a68eac9c52ee6f0c783ae0f347e55f4768560fd0d99229568c9",
+        "bytes": 1066172
+      }
+    },
+    {
+      "book": 14,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-14.xml",
+        "sha256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+        "bytes": 149023
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-14.json",
+        "sha256": "325d35ef23923d3cc94e706789596fca4d30adec68baa9df5dcd200adb8dcfc8",
+        "bytes": 114820
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-14.json",
+          "sha256": "325d35ef23923d3cc94e706789596fca4d30adec68baa9df5dcd200adb8dcfc8",
+          "bytes": 114820
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-14.xml",
+          "sha256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+          "bytes": 149023
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-14.json",
+          "sha256": "325d35ef23923d3cc94e706789596fca4d30adec68baa9df5dcd200adb8dcfc8",
+          "bytes": 114820
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 134,
+        "narrativeParagraphs": 115,
+        "numberedParagraphs": 112,
+        "anonymousNarrativeParagraphs": 3,
+        "citationParagraphs": 107,
+        "continuationParagraphs": 8,
+        "sections": 489,
+        "canonicalSections": 489,
+        "citationUnits": 489,
+        "primarySourceSpans": 489,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 383,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 2,
+        "chapterMilestones": 0,
+        "addedSpans": 96,
+        "deletedSpans": 8,
+        "unclearSpans": 0,
+        "correctedSpans": 0,
+        "expandedSpans": 8,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 4,
+        "traditionalBoundaryAnchors": 0,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 0,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 1,
+        "literalGapClusters": 12,
+        "literalDotClusters": 12,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 8,
+        "runningWordTokens": 15148,
+        "pageBreaks": 33,
+        "columnBreaks": 65,
+        "imageMilestones": 33
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 489,
+      "citationUnits": 489,
+      "unavailableSections": [
+        238,
+        239
+      ],
+      "orderStart": 4633,
+      "orderEnd": 5121,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-14.corpus.json",
+        "sha256": "738eb46fda937801fd3fc8936f3e1b72a51f24a86978ce8be0ebdee1f06f080a",
+        "bytes": 562137,
+        "records": 489
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-14.extraction-report.json",
+        "sha256": "34f12c9c9380db5eeedc53a88d96bd5f69372e76c34911f1bba8a9cfbb9cca51",
+        "bytes": 1355109
+      }
+    },
+    {
+      "book": 15,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-15.xml",
+        "sha256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+        "bytes": 112865
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-15.json",
+        "sha256": "b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35",
+        "bytes": 87568
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-15.json",
+          "sha256": "b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35",
+          "bytes": 87568
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-15.xml",
+          "sha256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+          "bytes": 112865
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-15.json",
+          "sha256": "b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35",
+          "bytes": 87568
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 79,
+        "narrativeParagraphs": 66,
+        "numberedParagraphs": 66,
+        "anonymousNarrativeParagraphs": 0,
+        "citationParagraphs": 58,
+        "continuationParagraphs": 8,
+        "sections": 423,
+        "canonicalSections": 423,
+        "citationUnits": 423,
+        "primarySourceSpans": 423,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 423,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 8,
+        "chapterMilestones": 13,
+        "addedSpans": 16,
+        "deletedSpans": 3,
+        "unclearSpans": 0,
+        "correctedSpans": 0,
+        "expandedSpans": 1,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 0,
+        "traditionalBoundaryAnchors": 1,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 0,
+        "excludedChapterAnnotations": 1,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 58,
+        "literalGapClusters": 0,
+        "literalDotClusters": 0,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 8,
+        "runningWordTokens": 12223,
+        "pageBreaks": 26,
+        "columnBreaks": 51,
+        "imageMilestones": 27
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 423,
+      "citationUnits": 423,
+      "unavailableSections": [
+        338,
+        347
+      ],
+      "orderStart": 5122,
+      "orderEnd": 5544,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-15.corpus.json",
+        "sha256": "5298af190ebbd59709d02176997d1feba530c014da150b23d9223a1942e018fe",
+        "bytes": 458509,
+        "records": 423
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-15.extraction-report.json",
+        "sha256": "7958ea033c6071877368ccafbd5a544a2621a58a7120e41070d79c3a826b85ea",
+        "bytes": 1027366
+      }
+    },
+    {
+      "book": 16,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-16.xml",
+        "sha256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+        "bytes": 109941
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-16.json",
+        "sha256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+        "bytes": 287679
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-16.json",
+          "sha256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+          "bytes": 287679
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-16.xml",
+          "sha256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+          "bytes": 109941
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-16.json",
+          "sha256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+          "bytes": 287679
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 81,
+        "narrativeParagraphs": 61,
+        "numberedParagraphs": 61,
+        "anonymousNarrativeParagraphs": 0,
+        "citationParagraphs": 57,
+        "continuationParagraphs": 4,
+        "sections": 383,
+        "canonicalSections": 380,
+        "citationUnits": 380,
+        "primarySourceSpans": 383,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 378,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 12,
+        "chapterMilestones": 16,
+        "addedSpans": 0,
+        "deletedSpans": 2,
+        "unclearSpans": 1,
+        "correctedSpans": 0,
+        "expandedSpans": 2,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 3,
+        "traditionalBoundaryAnchors": 1,
+        "excludedAnnotationNotes": 1,
+        "sourceGapMarkers": 1,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 55,
+        "literalGapClusters": 0,
+        "literalDotClusters": 0,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 1,
+        "paragraphSeparatorsInserted": 4,
+        "runningWordTokens": 10471,
+        "pageBreaks": 22,
+        "columnBreaks": 44,
+        "imageMilestones": 21,
+        "excludedSourceGapNotations": 3,
+        "nieseRangeEndMilestones": 2,
+        "nieseFragmentMilestones": 3,
+        "registeredSupplementalStarts": 0,
+        "explicitSourceBoundaries": 1,
+        "registeredTokenBoundaries": 0
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 380,
+      "citationUnits": 380,
+      "unavailableSections": [
+        77,
+        123,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        359,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404
+      ],
+      "orderStart": 5545,
+      "orderEnd": 5927,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-16.corpus.json",
+        "sha256": "743f7866c690b1bf66ac13e6420fc8a203652f6f0aaa5d298cb743a811857367",
+        "bytes": 410747,
+        "records": 383
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-16.extraction-report.json",
+        "sha256": "02a0ac2a5872dfea1cccddf149b9b60b53587b1b4d40689444a19adbd213b6be",
+        "bytes": 985230
+      }
+    },
+    {
+      "book": 17,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-17.xml",
+        "sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+        "bytes": 146733
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-17.json",
+        "sha256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f",
+        "bytes": 255629
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-17.json",
+          "sha256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f",
+          "bytes": 255629
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-17.xml",
+          "sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+          "bytes": 146733
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-17.json",
+          "sha256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f",
+          "bytes": 255629
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 80,
+        "narrativeParagraphs": 61,
+        "numberedParagraphs": 61,
+        "anonymousNarrativeParagraphs": 0,
+        "citationParagraphs": 56,
+        "continuationParagraphs": 5,
+        "sections": 355,
+        "canonicalSections": 355,
+        "citationUnits": 355,
+        "primarySourceSpans": 355,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 355,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 11,
+        "chapterMilestones": 19,
+        "addedSpans": 1,
+        "deletedSpans": 2,
+        "unclearSpans": 1,
+        "correctedSpans": 0,
+        "expandedSpans": 0,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 0,
+        "traditionalBoundaryAnchors": 0,
+        "excludedAnnotationNotes": 4,
+        "sourceGapMarkers": 0,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 56,
+        "literalGapClusters": 0,
+        "literalDotClusters": 0,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 5,
+        "runningWordTokens": 15287,
+        "pageBreaks": 32,
+        "columnBreaks": 63,
+        "imageMilestones": 32,
+        "excludedSourceGapNotations": 0,
+        "nieseRangeEndMilestones": 0,
+        "nieseFragmentMilestones": 0,
+        "registeredSupplementalStarts": 0,
+        "explicitSourceBoundaries": 0,
+        "registeredTokenBoundaries": 1
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 355,
+      "citationUnits": 355,
+      "unavailableSections": [],
+      "orderStart": 5928,
+      "orderEnd": 6282,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-17.corpus.json",
+        "sha256": "b467e02a1960a1aed21d76cabe1b0da956bf3e5c40c3c8737188ca521db325bb",
+        "bytes": 419296,
+        "records": 355
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-17.extraction-report.json",
+        "sha256": "bed2d5584cd5fa18edf29c33c860df329da22bd85d2c57d0b37a54cc2b76452b",
+        "bytes": 922704
+      }
+    },
+    {
+      "book": 18,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-18.xml",
+        "sha256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+        "bytes": 138706
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-18.json",
+        "sha256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+        "bytes": 90931
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-18.json",
+          "sha256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+          "bytes": 90931
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-18.xml",
+          "sha256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+          "bytes": 138706
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-18.json",
+          "sha256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+          "bytes": 90931
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 78,
+        "narrativeParagraphs": 57,
+        "numberedParagraphs": 57,
+        "anonymousNarrativeParagraphs": 0,
+        "citationParagraphs": 57,
+        "continuationParagraphs": 0,
+        "sections": 377,
+        "canonicalSections": 377,
+        "citationUnits": 377,
+        "primarySourceSpans": 377,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 316,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 12,
+        "chapterMilestones": 21,
+        "addedSpans": 44,
+        "deletedSpans": 8,
+        "unclearSpans": 0,
+        "correctedSpans": 0,
+        "expandedSpans": 5,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 0,
+        "traditionalBoundaryAnchors": 0,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 0,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 0,
+        "literalGapClusters": 0,
+        "literalDotClusters": 0,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 0,
+        "runningWordTokens": 15306,
+        "pageBreaks": 30,
+        "columnBreaks": 60,
+        "imageMilestones": 30,
+        "excludedSourceGapNotations": 0,
+        "nieseRangeEndMilestones": 0,
+        "nieseFragmentMilestones": 0,
+        "registeredSupplementalStarts": 61,
+        "explicitSourceBoundaries": 0,
+        "registeredTokenBoundaries": 0
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 377,
+      "citationUnits": 377,
+      "unavailableSections": [
+        216,
+        217
+      ],
+      "orderStart": 6283,
+      "orderEnd": 6659,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-18.corpus.json",
+        "sha256": "ebbdf00a2d3ce3d1101c9230f55c8b53199837eca954adcce7aa0a6ec3f93ddb",
+        "bytes": 450602,
+        "records": 377
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-18.extraction-report.json",
+        "sha256": "1b0778efa16280533fa0beec34a601bcaa24aee853cc64c68c079ab511f3e71f",
+        "bytes": 958572
+      }
+    },
+    {
+      "book": 19,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-19.xml",
+        "sha256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+        "bytes": 104982
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-19.json",
+        "sha256": "7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9",
+        "bytes": 91409
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-19.json",
+          "sha256": "7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9",
+          "bytes": 91409
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-19.xml",
+          "sha256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+          "bytes": 104982
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-19.json",
+          "sha256": "7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9",
+          "bytes": 91409
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 59,
+        "narrativeParagraphs": 52,
+        "numberedParagraphs": 52,
+        "anonymousNarrativeParagraphs": 0,
+        "citationParagraphs": 46,
+        "continuationParagraphs": 6,
+        "sections": 366,
+        "canonicalSections": 366,
+        "citationUnits": 366,
+        "primarySourceSpans": 366,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 320,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 2,
+        "chapterMilestones": 8,
+        "addedSpans": 20,
+        "deletedSpans": 11,
+        "unclearSpans": 0,
+        "correctedSpans": 0,
+        "expandedSpans": 1,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 0,
+        "traditionalBoundaryAnchors": 0,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 0,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 0,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 0,
+        "literalGapClusters": 0,
+        "literalDotClusters": 0,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 6,
+        "runningWordTokens": 11791,
+        "pageBreaks": 24,
+        "columnBreaks": 47,
+        "imageMilestones": 24,
+        "excludedSourceGapNotations": 0,
+        "nieseRangeEndMilestones": 0,
+        "nieseFragmentMilestones": 0,
+        "registeredSupplementalStarts": 46,
+        "explicitSourceBoundaries": 0,
+        "registeredTokenBoundaries": 0
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 366,
+      "citationUnits": 366,
+      "unavailableSections": [],
+      "orderStart": 6660,
+      "orderEnd": 7025,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-19.corpus.json",
+        "sha256": "6501b851077664c3f8061c4307752b58ad8b2ba9edaa5b27bfdd87d44e6a59a9",
+        "bytes": 408355,
+        "records": 366
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-19.extraction-report.json",
+        "sha256": "f4927c58ff73ebda4279cf72ea549824ad99e944085c9c29a8eae23ea9d39ef0",
+        "bytes": 881931
+      }
+    },
+    {
+      "book": 20,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-20.xml",
+        "sha256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+        "bytes": 77543
+      },
+      "identityRegistry": {
+        "path": "assets/xml/antiquities/niese/book-20.json",
+        "sha256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+        "bytes": 54667
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/niese/book-20.json",
+          "sha256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+          "bytes": 54667
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-20.xml",
+          "sha256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+          "bytes": 77543
+        },
+        {
+          "path": "assets/xml/antiquities/niese/book-20.json",
+          "sha256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+          "bytes": 54667
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 70,
+        "narrativeParagraphs": 51,
+        "numberedParagraphs": 51,
+        "anonymousNarrativeParagraphs": 0,
+        "citationParagraphs": 51,
+        "continuationParagraphs": 0,
+        "sections": 257,
+        "canonicalSections": 257,
+        "citationUnits": 257,
+        "primarySourceSpans": 257,
+        "interpolatedSourcePassages": 0,
+        "nieseMilestones": 257,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 13,
+        "chapterMilestones": 20,
+        "addedSpans": 6,
+        "deletedSpans": 1,
+        "unclearSpans": 6,
+        "correctedSpans": 0,
+        "expandedSpans": 1,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 0,
+        "traditionalBoundaryAnchors": 0,
+        "excludedAnnotationNotes": 1,
+        "sourceGapMarkers": 0,
+        "excludedChapterAnnotations": 0,
+        "excludedInlineSubscriptions": 0,
+        "excludedOmissionNotices": 0,
+        "excludedLacunaNotices": 1,
+        "emptySourceIntervals": 0,
+        "milestoneParagraphStarts": 51,
+        "literalGapClusters": 1,
+        "literalDotClusters": 1,
+        "literalEllipses": 0,
+        "sourceMarkedDotSpans": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 1,
+        "paragraphSeparatorsInserted": 0,
+        "runningWordTokens": 7864,
+        "pageBreaks": 17,
+        "columnBreaks": 33,
+        "imageMilestones": 17,
+        "excludedSourceGapNotations": 0,
+        "nieseRangeEndMilestones": 0,
+        "nieseFragmentMilestones": 0,
+        "registeredSupplementalStarts": 0,
+        "explicitSourceBoundaries": 1,
+        "registeredTokenBoundaries": 0
+      },
+      "coverageMode": "registered-source-spans",
+      "canonicalSections": 257,
+      "citationUnits": 257,
+      "unavailableSections": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        238
+      ],
+      "orderStart": 7026,
+      "orderEnd": 7282,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-20.corpus.json",
+        "sha256": "430c4277d7fce507f322b523b1a6b913311513c843e3bb455199dbf8b0d5e210",
+        "bytes": 283170,
+        "records": 257
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-20.extraction-report.json",
+        "sha256": "25bfd5807061302aca0eb69859fe7ff870ceba9f7f80cae644704405a1d84e9a",
+        "bytes": 666238
       }
     }
   ]

@@ -1,4 +1,4 @@
-"""Citation, source preservation and refusal tests for Antiquities I–X."""
+"""Citation, source preservation and refusal tests for Antiquities I–XX."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 import xml.etree.ElementTree as ET
 
 
@@ -183,7 +184,7 @@ class AntiquitiesRealSourceTests(unittest.TestCase):
         self.assertEqual(len(note_segments), 12)
         self.assertTrue(all(s["sourceAttributes"].get("source") in extract.NOTE_SOURCES for s in note_segments))
 
-    def test_combined_build_is_deterministic_with_eleven_source_bindings_and_ten_books(self):
+    def test_combined_build_is_deterministic_and_preserves_the_prepared_i_to_xv_artifacts(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             sentinel = root / "previous-work.json"
@@ -193,11 +194,14 @@ class AntiquitiesRealSourceTests(unittest.TestCase):
             original = {p.name: p.read_bytes() for p in output.iterdir()}
             extract.build_corpus(REPOSITORY, output)
             self.assertEqual(original, {p.name: p.read_bytes() for p in output.iterdir()})
-            self.assertEqual(len(original), 22)
-            self.assertEqual(report["counts"]["sections"], 3415)
-            self.assertEqual(report["counts"]["sourceDocuments"], 11)
-            self.assertEqual(report["counts"]["runningWordTokens"], 137858)
-            self.assertEqual([b["book"] for b in report["books"]], list(range(1, 11)))
+            self.assertEqual(len(original), 42)
+            self.assertEqual(report["counts"]["sections"], 7283)
+            self.assertEqual(report["counts"]["sourceDocuments"], 21)
+            self.assertEqual(report["counts"]["identityRegistries"], 10)
+            self.assertEqual(report["counts"]["canonicalSections"], 7273)
+            self.assertEqual(report["counts"]["citationUnits"], 7275)
+            self.assertEqual(report["counts"]["runningWordTokens"], 265023)
+            self.assertEqual([b["book"] for b in report["books"]], list(range(1, 21)))
             self.assertEqual(report["books"][0]["source"]["path"], "assets/xml/antiquities/Latin/book-01.xml")
             self.assertEqual([s["path"] for s in report["books"][0]["additionalSources"]], ["assets/xml/antiquities/Latin/preface.xml"])
             self.assertEqual(sentinel.read_bytes(), b"preserved earlier collection")
@@ -206,8 +210,16 @@ class AntiquitiesRealSourceTests(unittest.TestCase):
                     data = (root / book[kind]["path"]).read_bytes()
                     self.assertEqual(hashlib.sha256(data).hexdigest(), book[kind]["sha256"])
                     self.assertEqual(len(data), book[kind]["bytes"])
-            self.assertEqual(json.loads(original["corpus.json"]), sum([json.loads(original[f"book-{b:02}.corpus.json"]) for b in range(1, 11)], []))
+            self.assertEqual(json.loads(original["corpus.json"]), sum([json.loads(original[f"book-{b:02}.corpus.json"]) for b in range(1, 21)], []))
             self.assertEqual(json.loads(original["corpus.json"])[:1710], self.records)
+            for b in range(1, 16):
+                for suffix in ("corpus.json", "extraction-report.json"):
+                    name = f"book-{b:02}.{suffix}"
+                    self.assertEqual(original[name], (SEARCH / extract.OUTPUT_PREFIX / name).read_bytes(), name)
+            for b in report["books"][10:]:
+                self.assertEqual(b["additionalSources"], [b["identityRegistry"]])
+                self.assertEqual(b["identityRegistry"]["sha256"],
+                                 hashlib.sha256((REPOSITORY / b["identityRegistry"]["path"]).read_bytes()).hexdigest())
 
     def test_invalid_final_source_cannot_partially_replace_existing_outputs(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -425,6 +437,453 @@ class AntiquitiesSecondBatchTests(unittest.TestCase):
             self.assertEqual({p.name: p.read_bytes() for p in output.iterdir()}, {"corpus.json": b"previous complete search"})
 
 
+class AntiquitiesThirdBatchTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.sources = {b: (REPOSITORY / f"assets/xml/antiquities/Latin/book-{b:02}.xml").read_bytes()
+                       for b in range(11, 16)}
+        cls.registries = {b: (REPOSITORY / f"assets/xml/antiquities/niese/book-{b:02}.json").read_bytes()
+                          for b in range(11, 16)}
+        cls.documents = {b: extract.extract_document(data, book_number=b, identity_registry=cls.registries[b])
+                         for b, data in cls.sources.items()}
+        cls.records = [r for rows, _ in cls.documents.values() for r in rows]
+
+    def test_registered_physical_and_canonical_counts_and_source_bindings(self):
+        expected = {11: (354, 347, 349, 11589), 12: (433, 433, 433, 13683),
+                    13: (431, 431, 431, 13803), 14: (489, 489, 489, 15148), 15: (423, 423, 423, 12223)}
+        self.assertEqual(len(self.records), 2130)
+        self.assertEqual(len({r["id"] for r in self.records}), 2130)
+        self.assertEqual([r["order"] for r in self.records], list(range(3415, 5545)))
+        self.assertEqual(len({r["citationUnitId"] for r in self.records if "sourcePassage" not in r}), 2123)
+        self.assertEqual(len({r["citationUnitId"] for r in self.records}), 2125)
+        for b, (physical, canonical, units, token_count) in expected.items():
+            rows, report = self.documents[b]
+            self.assertEqual((len(rows), report["counts"]["canonicalSections"], report["counts"]["citationUnits"],
+                              report["counts"]["runningWordTokens"]), (physical, canonical, units, token_count))
+            self.assertEqual(report["source"]["sha256"], hashlib.sha256(self.sources[b]).hexdigest())
+            self.assertEqual(report["identityRegistry"]["sha256"], hashlib.sha256(self.registries[b]).hexdigest())
+            self.assertTrue(all(row["text"] for row in rows))
+            self.assertTrue(all(row.get("citationUnitId") for row in rows))
+
+    def test_xi_reordered_and_split_portions_keep_physical_order_and_canonical_identity(self):
+        rows, report = self.documents[11]
+        start = next(i for i, r in enumerate(rows) if r["section"] == 67)
+        self.assertEqual([r["section"] for r in rows[start:start + 9]], [67, 68, 72, 69, 70, 71, 72, 72, 73])
+        portions = [r for r in rows if r["section"] == 72]
+        self.assertEqual([r["continuationRank"] for r in portions], [2, 1, 3])
+        self.assertEqual([r["text"].split()[0] for r in portions], ["Septem", "Mancipiorum", "Subiugalia"])
+        self.assertEqual({r["citationUnitId"] for r in portions}, {extract.COLLECTION + "-11-72"})
+        self.assertEqual({r["citationUnitCitation"] for r in portions}, {"XI.72"})
+        self.assertEqual([r["sourceOccurrence"] for r in portions],
+                         ["Latin-XI-72-2", "Latin-XI-72-1", "Latin-XI-72-3"])
+        for number, count in ((72, 3), (312, 2), (326, 2), (342, 2)):
+            selected = [r for r in rows if r["section"] == number]
+            self.assertEqual(len(selected), count)
+            self.assertEqual({r["fragmentCount"] for r in selected}, {count})
+            self.assertEqual(len({r["id"] for r in selected}), count)
+        self.assertEqual(report["coverage"]["fragmentedSections"], [72, 312, 326, 342])
+        self.assertFalse(any(r.get("breakBefore") for r in rows))
+
+    def test_registered_diagnostics_count_named_and_anonymous_paragraphs_and_all_structural_markers(self):
+        # Independently counted from the accepted minidom source witness.
+        expected = {11: (58, 57, 1, 3, 2, 0, 0, 0), 12: (71, 71, 0, 3, 2, 0, 0, 0),
+                    13: (88, 87, 1, 3, 18, 0, 4, 1), 14: (115, 112, 3, 8, 2, 0, 4, 0),
+                    15: (66, 66, 0, 8, 8, 13, 0, 1)}
+        keys = ("narrativeParagraphs", "numberedParagraphs", "anonymousNarrativeParagraphs", "continuationParagraphs",
+                "chapterDivisions", "chapterMilestones", "bambergAnchors", "traditionalBoundaryAnchors")
+        for b, values in expected.items():
+            report = self.documents[b][1]
+            self.assertEqual(tuple(report["counts"][key] for key in keys), values)
+            self.assertEqual(report["counts"]["citationParagraphs"] + report["counts"]["continuationParagraphs"], values[0])
+            self.assertEqual(report["coverage"]["paragraphsExactlyRestored"], values[0])
+            self.assertFalse(report["coverage"]["sourceOrderIsConsecutive"])
+            self.assertTrue(report["coverage"]["physicalSourceOrderPreserved"])
+
+    def test_bellum_interpolations_remain_distinct_from_antiquities_312(self):
+        rows, report = self.documents[11]
+        inserted = [r for r in rows if "sourcePassage" in r]
+        accepted = {p["identity"]: p for p in json.loads(self.registries[11])["sourcePassages"]}
+        self.assertEqual([r["section"] for r in inserted], ["BJ.IV.105a", "BJ.IV.105b"])
+        for row in inserted:
+            self.assertEqual(row["sourcePassage"], accepted[row["section"]])
+            self.assertFalse(row["sourcePassage"]["AntiquitiesIdentity"])
+            self.assertEqual(row["citationUnitId"], row["id"])
+            self.assertNotEqual(row["citationUnitId"], extract.COLLECTION + "-11-312")
+            self.assertEqual(row["readerLink"]["params"], {"book": 11, "niese": 312})
+            self.assertEqual(row["url"], "/antiquities/?book=11&niese=312")
+            self.assertIn("interpolated Bellum", row["citationLabel"])
+        self.assertEqual(sum(len(extract.words(r["text"])) for r in inserted), 25)
+        self.assertEqual(report["coverage"]["interpolatedSourcePassages"], 2)
+
+    def test_registry_unavailable_identities_do_not_fabricate_text_or_a_lacuna(self):
+        expected = {11: [], 12: [248], 13: [213, 216], 14: [238, 239], 15: [338, 347]}
+        for b, unavailable in expected.items():
+            rows, report = self.documents[b]
+            self.assertEqual(report["coverage"]["unavailableSections"], unavailable)
+            self.assertFalse(set(unavailable) & {r["section"] for r in rows})
+            self.assertFalse(any(r.get("breakBefore") or r.get("emptySource") for r in rows))
+            self.assertEqual([item["number"] for item in report["coverage"]["unavailableIdentities"]], unavailable)
+            if b != 11:
+                self.assertEqual([r["section"] for r in rows],
+                                 [n for n in range(1, extract.BOOK_SPECS[b]["range"][1] + 1) if n not in unavailable])
+
+    def test_every_original_paragraph_restores_from_finished_record_id_slices(self):
+        for b, (rows, report) in self.documents.items():
+            root = ET.fromstring(self.sources[b])
+            by_id = {r["id"]: r for r in rows}
+            for p in report["paragraphs"]:
+                element = root.find("./" + "/".join(NS + step for step in p["sourceXPath"].split("/")[2:]))
+                self.assertIsNotNone(element, p["sourceXPath"])
+                source = "".join(element.itertext())
+                restored, cursor = "", 0
+                for segment in p["segments"]:
+                    self.assertEqual(segment["sourceTextStart"], cursor)
+                    text = (by_id[segment["recordId"]]["text"][segment["recordTextStart"]:segment["recordTextEnd"]]
+                            if segment["kind"] == "source-text" else segment["text"])
+                    self.assertEqual(text, source[segment["sourceTextStart"]:segment["sourceTextEnd"]])
+                    restored += text
+                    cursor = segment["sourceTextEnd"]
+                self.assertEqual(restored, source)
+                self.assertEqual(cursor, len(source))
+                self.assertEqual(p["rawTextSha256"], hashlib.sha256(source.encode()).hexdigest())
+                if element.get(XML_ID):
+                    self.assertEqual(p["sourceId"], element.get(XML_ID))
+                else:
+                    self.assertEqual(p["sourceId"], "xpath:" + p["sourceXPath"])
+            self.assertEqual(report["coverage"]["sourceNonWhitespaceContentSha256"],
+                             report["coverage"]["displayNonWhitespaceContentSha256"])
+            self.assertEqual(report["coverage"]["sourceWordSequenceSha256"],
+                             report["coverage"]["indexedWordSequenceSha256"])
+
+    def test_anonymous_narrative_paragraphs_and_actual_continuations_are_retained(self):
+        self.assertEqual(sum(rep["counts"]["anonymousNarrativeParagraphs"] for _, rep in self.documents.values()), 5)
+        xi345 = next(r for r in self.documents[11][0] if r["section"] == 345)
+        self.assertIn("ad aegyptum", xi345["text"])
+        self.assertTrue(any(s.startswith("xpath:") for s in xi345["sourceIds"]))
+        xiii269 = next(r for r in self.documents[13][0] if r["section"] == 269)
+        self.assertTrue(xiii269["sourceId"].startswith("xpath:"))
+        self.assertTrue(xiii269["text"].startswith("Alexander autem regnum accipiens"))
+        xiv47 = next(r for r in self.documents[14][0] if r["section"] == 47)
+        self.assertIn("VI Aristobolus", xiv47["text"])
+        self.assertTrue(any(s.startswith("xpath:") for s in xiv47["sourceIds"]))
+        for section in (73, 485):
+            row = next(r for r in self.documents[14][0] if r["section"] == section)
+            self.assertTrue(row["sourceId"].startswith("xpath:"))
+
+    def test_source_gaps_and_inline_offsets_preserve_text_and_interrupt_phrases(self):
+        tei = [(r["book"], r["section"], g) for r in self.records for g in r["textGaps"] if g["kind"] == "tei-gap"]
+        self.assertEqual([(b, s, g["sourceAttributes"]["reason"]) for b, s, g in tei],
+                         [(12, 8, "hole"), (12, 35, "hole"), (13, 393, "fading")])
+        for record in self.records:
+            for mark in record["editorialMarks"] + record["sourceMarkup"] + record["textGaps"]:
+                self.assertEqual(utf16_slice(record["text"], mark["start"], mark["end"]), mark["text"])
+            self.assertEqual(record["phraseBreaks"], sorted({g["start"] for g in record["textGaps"]}))
+        row = next(r for r in self.documents[13][0] if r["section"] == 393)
+        gap = row["textGaps"][0]
+        self.assertEqual(utf16_slice(row["text"], gap["start"] - 3, gap["start"] + 1), "ress")
+        self.assertEqual(gap["start"], gap["end"])
+        self.assertEqual(self.documents[13][1]["counts"]["runningWordTokens"],
+                         1 + sum(len(extract.words(r["text"])) for r in self.documents[13][0]))
+        dots = [(r["section"], g["text"]) for r in self.documents[14][0] for g in r["textGaps"]]
+        self.assertEqual(dots, [(19, ".."), (28, ".."), (31, ".."), (35, ".."), (40, ".."), (45, ".."),
+                                (65, ".."), (68, ".."), (76, ".."), (78, ".."), (221, "..."), (439, "..")])
+
+    def test_only_the_unassigned_initial_xv_chapter_mark_is_excluded(self):
+        rows, report = self.documents[15]
+        self.assertTrue(rows[0]["text"].startswith("Sossius quidem et herodes"))
+        excluded = [s for p in report["paragraphs"] for s in p["segments"] if s["kind"] == "excluded-chapter-annotation"]
+        self.assertEqual(len(excluded), 1)
+        self.assertEqual(excluded[0]["text"], "I")
+        self.assertEqual(excluded[0]["sourceAttributes"], {"hand": "post", "place": "marginleft"})
+        row = next(r for r in rows if r["section"] == 83)
+        self.assertTrue(any(mark["kind"] == "add" and mark["text"] == "I"
+                            and mark["sourceAttributes"].get("place") == "interlinear"
+                            for mark in row["editorialMarks"]))
+
+    def test_xii_explicit_niese_end_preserves_but_does_not_index_its_inline_subscription(self):
+        rows, report = self.documents[12]
+        final = rows[-1]
+        subscription = "Flauii iosepp FLAUII IOSEPPI IUDAEICAE ANTIQUITATIS LIBER DUODECIMUS EXPLICIT"
+        self.assertEqual(final["section"], 434)
+        self.assertTrue(final["text"].endswith("defunctus est."))
+        self.assertNotIn("FLAUII IOSEPPI", final["text"])
+        paragraph = next(p for p in report["paragraphs"] if p["sourceId"] == "latin-book12-num426")
+        excluded = [s for s in paragraph["segments"] if s["kind"] == "excluded-book-subscription"]
+        self.assertEqual(len(excluded), 1)
+        self.assertEqual(excluded[0]["text"], subscription)
+        self.assertEqual(excluded[0]["sourceTag"], "milestone")
+        self.assertEqual(excluded[0]["sourceAttributes"], {"unit": "niese-end"})
+        marker = next(m for m in paragraph["structuralMarkers"] if m["sourceAttributes"].get("unit") == "niese-end")
+        self.assertEqual(marker["recordId"], final["id"])
+        self.assertEqual(marker["recordTextOffsetUTF16"], extract.utf16_length(final["text"]))
+        self.assertEqual(len(extract.words(subscription)), 9)
+        self.assertEqual(report["counts"]["nieseEndMilestones"], 1)
+        self.assertEqual(report["counts"]["excludedInlineSubscriptions"], 1)
+        self.assertTrue(paragraph["exactRestorationVerified"])
+
+    def test_changed_registry_or_xml_requires_review_but_crlf_is_accepted(self):
+        for b in (11, 15):
+            with self.subTest(book=b), self.assertRaisesRegex(extract.ExtractionError, "identity registry differs"):
+                extract.extract_document(self.sources[b], book_number=b, identity_registry=self.registries[b] + b" ")
+            with self.subTest(book=b), self.assertRaisesRegex(extract.ExtractionError, "XML differs"):
+                extract.extract_document(self.sources[b].replace(b"<p ", b"<p changed='yes' ", 1),
+                                         book_number=b, identity_registry=self.registries[b])
+            rows, _ = extract.extract_document(self.sources[b].replace(b"\n", b"\r\n"), book_number=b,
+                                               identity_registry=self.registries[b].replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
+            self.assertEqual(rows, self.documents[b][0])
+
+    def test_final_registry_failure_does_not_replace_existing_artifacts(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for name in ["preface"] + [f"book-{b:02}" for b in range(1, 21)]:
+                relative = f"assets/xml/antiquities/Latin/{name}.xml"
+                destination = root / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes((REPOSITORY / relative).read_bytes())
+            for b in range(11, 21):
+                relative = f"assets/xml/antiquities/niese/book-{b:02}.json"
+                destination = root / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes((REPOSITORY / relative).read_bytes() + (b" " if b == 20 else b""))
+            output = root / "out"
+            output.mkdir()
+            (output / "corpus.json").write_bytes(b"previous complete search")
+            with self.assertRaisesRegex(extract.ExtractionError, "identity registry differs"):
+                extract.build_corpus(root, output)
+            self.assertEqual({p.name: p.read_bytes() for p in output.iterdir()}, {"corpus.json": b"previous complete search"})
+
+    def test_registered_fixture_preserves_split_order_astral_markup_and_a_gap_inside_a_word(self):
+        source = (f'<TEI xmlns="{extract.TEI}"><text><body><div1>'
+                  '<p xml:id="latin-book11-num1"><num>[1]</num> 𐐀ve <add hand="post" place="interlinear">Áli</add>us '
+                  '<milestone xml:id="second" unit="niese" n="2"/> res<gap reason="fading"/>s '
+                  '<milestone xml:id="first-again" unit="niese" n="1"/> finis<note type="uncertainty">annotation</note> '
+                  '</p></div1></body></text></TEI>').encode()
+        def endpoint(target, kind="element"):
+            return {"target": target, "kind": kind}
+        registry = {"book": 11, "range": [1, 2], "sections": [
+            {"number": 1, "Latin": {"available": True, "spans": [
+                {"start": endpoint("latin-book11-num1", "paragraph"), "end": endpoint("second"),
+                 "role": "primary", "occurrence": "Latin-XI-1-1", "continuationRank": 1},
+                {"start": endpoint("first-again"), "end": endpoint("latin-book11-num1", "paragraph-end"),
+                 "role": "primary", "occurrence": "Latin-XI-1-2", "continuationRank": 2}]}},
+            {"number": 2, "Latin": {"available": True, "spans": [
+                {"start": endpoint("second"), "end": endpoint("first-again"),
+                 "role": "primary", "occurrence": "Latin-XI-2-1", "continuationRank": 1}]}}]}
+        registry_bytes = json.dumps(registry).encode()
+        # Patch only the test's accepted fixture contract, never production's
+        # public API or its requirement to bind reviewed source bytes.
+        with patch.dict(extract.BOOK_SPECS, {11: {"range": [1, 2], "paragraphs": 1, "records": 3, "canonicalSections": 2}}), \
+                patch.dict(extract.REGISTERED_SOURCES, {11: (extract.sha(source), extract.sha(registry_bytes))}):
+            rows, report = extract.extract_document(source, book_number=11, identity_registry=registry_bytes, order_offset=0)
+        self.assertEqual([r["section"] for r in rows], [1, 2, 1])
+        self.assertEqual([r["text"] for r in rows], ["𐐀ve Álius", "ress", "finis"])
+        self.assertEqual(rows[0]["citationUnitId"], rows[2]["citationUnitId"])
+        self.assertNotEqual(rows[0]["id"], rows[2]["id"])
+        self.assertEqual(rows[0]["editorialMarks"][0]["start"], 5)
+        self.assertEqual(rows[0]["editorialMarks"][0]["end"], 9)
+        self.assertEqual(rows[1]["phraseBreaks"], [3])
+        self.assertEqual(report["counts"]["runningWordTokens"], 5)
+        self.assertTrue(report["coverage"]["sourceProjectionExactlyRestoresSource"])
+
+
+class AntiquitiesFourthBatchTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.sources = {b: (REPOSITORY / f"assets/xml/antiquities/Latin/book-{b:02}.xml").read_bytes()
+                       for b in range(16, 21)}
+        cls.registries = {b: (REPOSITORY / f"assets/xml/antiquities/niese/book-{b:02}.json").read_bytes()
+                          for b in range(16, 21)}
+        cls.documents = {b: extract.extract_document(data, book_number=b, identity_registry=cls.registries[b])
+                         for b, data in cls.sources.items()}
+        cls.records = [r for rows, _ in cls.documents.values() for r in rows]
+        cls.by_citation = {r["citationLabel"]: r for r in cls.records}
+
+    def test_all_five_books_have_the_independently_counted_physical_records_and_search_tokens(self):
+        expected = {16: (383, 380, 10471, 61), 17: (355, 355, 15287, 61),
+                    18: (377, 377, 15306, 57), 19: (366, 366, 11791, 52), 20: (257, 257, 7864, 51)}
+        self.assertEqual(len(self.records), 1738)
+        self.assertEqual(len({r["id"] for r in self.records}), 1738)
+        self.assertEqual(len({r["citationUnitId"] for r in self.records}), 1735)
+        self.assertEqual([r["order"] for r in self.records], list(range(5545, 7283)))
+        self.assertEqual(sum(report["counts"]["runningWordTokens"] for _, report in self.documents.values()), 60719)
+        for b, values in expected.items():
+            rows, report = self.documents[b]
+            self.assertEqual((len(rows), report["counts"]["canonicalSections"],
+                              report["counts"]["runningWordTokens"], report["counts"]["narrativeParagraphs"]), values)
+            self.assertEqual(report["counts"]["anonymousNarrativeParagraphs"], 0)
+            self.assertEqual(report["source"]["sha256"], hashlib.sha256(self.sources[b]).hexdigest())
+            self.assertEqual(report["identityRegistry"]["sha256"], hashlib.sha256(self.registries[b]).hexdigest())
+            self.assertTrue(all(r["text"] and r["sourceIds"] and "sourcePassage" not in r for r in rows))
+
+    def test_xvi_split_sections_retain_the_accepted_fragment_order_and_start_anchor_identities(self):
+        rows, report = self.documents[16]
+        self.assertEqual([r["section"] for r in rows if 293 <= r["section"] <= 296],
+                         [293, 294, 295, 294, 295, 296])
+        self.assertEqual([r["section"] for r in rows if 350 <= r["section"] <= 356],
+                         [350, 351, 352, 353, 354, 355, 351, 356])
+        registry = json.loads(self.registries[16])
+        for section in (294, 295, 351):
+            portions = [r for r in rows if r["section"] == section]
+            accepted = next(entry["Latin"]["spans"] for entry in registry["sections"] if entry["number"] == section)
+            self.assertEqual([r["sourceOccurrence"] for r in portions], [span["start"]["target"] for span in accepted])
+            self.assertEqual([r["continuationRank"] for r in portions], [1, 2])
+            self.assertEqual({r["fragmentCount"] for r in portions}, {2})
+            self.assertEqual({r["citationUnitId"] for r in portions}, {f"{extract.COLLECTION}-16-{section}"})
+            self.assertEqual(len({r["id"] for r in portions}), 2)
+            self.assertTrue(all(r["url"] == f"/antiquities/?book=16&niese={section}" for r in portions))
+        self.assertEqual(report["coverage"]["fragmentedSections"], [294, 295, 351])
+        self.assertTrue(self.by_citation["XVI.351 (portion 1 of 2)"]["text"].startswith("perissent qui"))
+        self.assertTrue(self.by_citation["XVI.351 (portion 2 of 2)"]["text"].startswith("hac oratione"))
+        self.assertEqual(self.by_citation["XVI.351 (portion 2 of 2)"]["sourceIds"], ["latin-book16-num356"])
+        self.assertTrue(self.by_citation["XVI.356"]["text"].startswith("XVIIII Herodi"))
+
+    def test_unavailable_registry_identities_do_not_invent_text_or_add_unattested_barriers(self):
+        expected_breaks = {16: [200], 17: [], 18: [], 19: [], 20: [37]}
+        for b, (rows, report) in self.documents.items():
+            registry = json.loads(self.registries[b])
+            unavailable = [entry for entry in registry["sections"] if not entry["Latin"]["available"]]
+            self.assertEqual(report["coverage"]["unavailableIdentities"], unavailable)
+            self.assertEqual(report["coverage"]["unavailableSections"], [entry["number"] for entry in unavailable])
+            self.assertEqual({r["section"] for r in rows},
+                             {entry["number"] for entry in registry["sections"] if entry["Latin"]["available"]})
+            self.assertEqual([r["section"] for r in rows if r.get("breakBefore")], expected_breaks[b])
+            self.assertFalse(any(r.get("emptySource") for r in rows))
+        self.assertEqual(self.documents[20][1]["coverage"]["completeRange"], [1, 268])
+        self.assertEqual(self.documents[20][0][-1]["section"], 268)
+        self.assertTrue(self.documents[20][0][-1]["text"].endswith("aliud prohibemur."))
+
+    def test_every_new_narrative_paragraph_is_exactly_restored_from_finished_record_slices(self):
+        restored_paragraphs = 0
+        for b, (rows, report) in self.documents.items():
+            root = ET.fromstring(self.sources[b])
+            originals = {p.get(XML_ID): p for p in root.findall(f".//{NS}body//{NS}p") if p.get(XML_ID)}
+            by_id = {r["id"]: r for r in rows}
+            for paragraph in report["paragraphs"]:
+                source = "".join(originals[paragraph["sourceId"]].itertext())
+                restored, cursor = "", 0
+                for segment in paragraph["segments"]:
+                    self.assertEqual(segment["sourceTextStart"], cursor)
+                    text = (by_id[segment["recordId"]]["text"][segment["recordTextStart"]:segment["recordTextEnd"]]
+                            if segment["kind"] == "source-text" else segment["text"])
+                    self.assertEqual(text, source[segment["sourceTextStart"]:segment["sourceTextEnd"]])
+                    restored += text
+                    cursor = segment["sourceTextEnd"]
+                self.assertEqual(restored, source)
+                self.assertEqual(cursor, len(source))
+                self.assertEqual(paragraph["rawTextSha256"], hashlib.sha256(source.encode()).hexdigest())
+                self.assertTrue(paragraph["exactRestorationVerified"])
+                restored_paragraphs += 1
+            self.assertEqual(report["coverage"]["sourceNonWhitespaceContentSha256"],
+                             report["coverage"]["displayNonWhitespaceContentSha256"])
+            self.assertEqual(report["coverage"]["sourceWordSequenceSha256"],
+                             report["coverage"]["indexedWordSequenceSha256"])
+        self.assertEqual(restored_paragraphs, 282)
+
+    def test_xvi_and_xx_boundary_notices_remain_exact_reversible_evidence_outside_search_text(self):
+        for b, citation, kind, text, count in (
+                (16, "XVI.200", "excluded-source-gap-notation", "[...]", 2),
+                (20, "XX.37", "excluded-lacuna-notice", "[Niese sections 26–37 largely missing; cf. Blatt, p. 68]", 1)):
+            rows, report = self.documents[b]
+            row = self.by_citation[citation]
+            evidence = row["sourceBoundaryEvidence"]
+            self.assertEqual(evidence["kind"], "registered-source-discontinuity")
+            self.assertTrue(row["breakBefore"])
+            self.assertEqual(len(evidence["excludedSourceSpans"]), count)
+            self.assertIn(evidence, report["coverage"]["explicitSourceBoundaries"])
+            raw = {p.get(XML_ID): "".join(p.itertext()) for p in ET.fromstring(self.sources[b]).iter(NS + "p")}
+            for excluded in evidence["excludedSourceSpans"]:
+                self.assertEqual(excluded["kind"], kind)
+                self.assertEqual(excluded["text"], text)
+                self.assertEqual(raw[excluded["sourceId"]][excluded["sourceTextStart"]:excluded["sourceTextEnd"]], text)
+                self.assertEqual(excluded["textSha256"], hashlib.sha256(text.encode()).hexdigest())
+                self.assertIn(excluded, report["excluded"])
+            self.assertNotIn(text, "".join(r["text"] for r in rows))
+        notices = [item for item in self.documents[16][1]["excluded"] if item["kind"] == "excluded-source-gap-notation"]
+        self.assertEqual([item["sourceId"] for item in notices],
+                         ["latin-book16-num188", "latin-book16-num194", "latin-book16-num395"])
+        self.assertEqual(self.by_citation["XX.26"]["text"], "Commorabatur itaque iazatis in hac regione.")
+
+    def test_explicit_end_markers_attach_to_actual_preceding_text_without_inventing_source_paragraphs(self):
+        for b, section, marker_id, expected_offset, marker_paragraph in (
+                (16, 188, "niese-latin-book16-end188", 58, "latin-book16-num188"),
+                (16, 394, "niese-latin-book16-end394", 236, "latin-book16-num395"),
+                (20, 26, "niese-latin-book20-end26", 43, "latin-book20-num34")):
+            rows, report = self.documents[b]
+            row = next(r for r in rows if r["section"] == section)
+            paragraph = next(p for p in report["paragraphs"] if p["sourceId"] == marker_paragraph)
+            marker = next(m for m in paragraph["structuralMarkers"] if m["sourceAttributes"].get(XML_ID) == marker_id)
+            self.assertEqual(marker["recordId"], row["id"])
+            self.assertEqual(marker["recordTextOffset"], expected_offset)
+            self.assertEqual(marker["recordTextOffsetUTF16"], extract.utf16_length(row["text"]))
+            if section != 188:
+                self.assertNotIn(marker_paragraph, row["sourceIds"])
+        for _, report in self.documents.values():
+            self.assertEqual(sum(item["kind"] == "trailer" for item in report["excluded"]), 1)
+
+    def test_actual_gaps_and_all_literal_editorial_spans_survive_with_exact_utf16_offsets(self):
+        gaps = [(r["book"], r["section"], g) for r in self.records for g in r["textGaps"]]
+        self.assertEqual(gaps, [
+            (16, 170, {"kind": "tei-gap", "start": 154, "end": 154, "text": "", "sourceAttributes": {}}),
+            (20, 263, {"kind": "literal-dots", "start": 78, "end": 80, "text": ".."}),
+        ])
+        self.assertIn("nostrae pro .n..e, etiam graecas", self.by_citation["XX.263"]["text"])
+        for row in self.records:
+            for mark in row["editorialMarks"] + row["sourceMarkup"] + row["textGaps"]:
+                self.assertEqual(utf16_slice(row["text"], mark["start"], mark["end"]), mark["text"])
+            self.assertEqual(row["phraseBreaks"], sorted({gap["start"] for gap in row["textGaps"]}))
+
+    def test_supplemental_xviii_xix_starts_cover_only_identities_without_actual_niese_markers(self):
+        for b, expected_actual, expected_supplemental in ((18, 316, 61), (19, 320, 46)):
+            registry = json.loads(self.registries[b])
+            self.assertEqual(registry["structuralMilestoneUnits"], [None, "chapter"])
+            actual = {int(node.get("n")) for node in ET.fromstring(self.sources[b]).iter(NS + "milestone")
+                      if node.get("unit") == "niese"}
+            supplemental = {entry["number"] for entry in registry["sections"] if "start" in entry["Latin"]}
+            self.assertEqual(len(actual), expected_actual)
+            self.assertEqual(len(supplemental), expected_supplemental)
+            self.assertFalse(actual & supplemental)
+            self.assertEqual(actual | supplemental, {r["section"] for r in self.documents[b][0]})
+            self.assertEqual(self.documents[b][1]["counts"]["registeredSupplementalStarts"], expected_supplemental)
+        self.assertTrue(self.by_citation["XVIII.2"]["text"].startswith("II Mittitur etiam cum eo copinius"))
+        self.assertTrue(self.by_citation["XIX.1"]["text"].startswith("Gaius autem non in solos iudaeos"))
+
+    def test_xvii_registered_token_seam_preserves_all_characters_and_remains_phrase_joinable(self):
+        rows, report = self.documents[17]
+        left, right = self.by_citation["XVII.41"], self.by_citation["XVII.42"]
+        self.assertTrue(left["text"].endswith("inmaturius eleuati"))
+        self.assertTrue(right["text"].startswith("cum igitur"))
+        self.assertFalse(right.get("breakBefore"))
+        evidence = report["coverage"]["registeredTokenBoundaryEvidence"]
+        self.assertEqual(len(evidence), 1)
+        self.assertEqual(evidence[0]["sourceTextOffset"], 3308)
+        self.assertEqual(evidence[0]["sourceAttributes"][XML_ID], "niese-latin-book17-42")
+        self.assertEqual((evidence[0]["sourceText"], evidence[0]["precedingText"], evidence[0]["followingText"]),
+                         ("eleuaticum", "eleuati", "cum"))
+        self.assertEqual((evidence[0]["precedingRecordId"], evidence[0]["followingRecordId"]), (left["id"], right["id"]))
+        self.assertNotEqual(report["coverage"]["rawParagraphWordSequenceSha256"], report["coverage"]["sourceWordSequenceSha256"])
+        self.assertEqual(report["coverage"]["registeredBoundaryWordSequenceSha256"], report["coverage"]["indexedWordSequenceSha256"])
+        self.assertEqual(sum(len(extract.words(r["text"])) for r in rows), 15287)
+
+    def test_reviewed_word_seam_does_not_authorize_arbitrary_source_word_splitting(self):
+        changed = self.sources[17].replace(b'eleuati<milestone unit="niese" n="42"',
+                                            b'eleuatiX<milestone unit="niese" n="42"', 1)
+        self.assertNotEqual(changed, self.sources[17])
+        with patch.dict(extract.REGISTERED_SOURCES, {17: (hashlib.sha256(changed).hexdigest(), extract.REGISTERED_SOURCES[17][1])}):
+            with self.assertRaisesRegex(extract.ExtractionError, "token boundary moved"):
+                extract.extract_document(changed, book_number=17, identity_registry=self.registries[17])
+
+    def test_changed_new_sources_or_registries_fail_while_windows_line_endings_preserve_records(self):
+        for b in range(16, 21):
+            with self.subTest(book=b), self.assertRaisesRegex(extract.ExtractionError, "identity registry differs"):
+                extract.extract_document(self.sources[b], book_number=b, identity_registry=self.registries[b] + b" ")
+            with self.subTest(book=b), self.assertRaisesRegex(extract.ExtractionError, "XML differs"):
+                extract.extract_document(self.sources[b] + b" ", book_number=b, identity_registry=self.registries[b])
+            crlf_xml = self.sources[b].replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+            crlf_registry = self.registries[b].replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+            rows, _ = extract.extract_document(crlf_xml, book_number=b, identity_registry=crlf_registry)
+            self.assertEqual(rows, self.documents[b][0])
+
+
 class AntiquitiesCorruptionTests(unittest.TestCase):
     def test_utf16_markup_offsets_preserve_astral_letters_and_word_internal_page_markers(self):
         target = "note_" + "a" * 32
@@ -510,8 +969,8 @@ class AntiquitiesCorruptionTests(unittest.TestCase):
         with self.assertRaisesRegex(extract.ExtractionError, "citation or note nested"):
             small(fixture(paragraph('ante <s><num>[I.ii.28]</num>post</s>')))
 
-    def test_eleventh_book_requires_a_future_reviewed_tranche(self):
-        with self.assertRaisesRegex(extract.ExtractionError, "I–X"):
+    def test_eleventh_book_requires_its_accepted_identity_registry(self):
+        with self.assertRaisesRegex(extract.ExtractionError, "identity registry"):
             extract.extract_document(fixture(paragraph("prima")), book_number=11)
 
 

@@ -47,8 +47,29 @@ export function tokenizeText(text) {
   }));
 }
 
+/** A zero-width TEI gap may interrupt a word as well as phrase adjacency. */
+export function tokenizeRecord(record) {
+  const text = String(record.text);
+  const offsets = [...new Set((record.textGaps || [])
+    .filter(gap => gap.kind === "tei-gap" && gap.start === gap.end)
+    .map(gap => gap.start))].sort((a, b) => a - b);
+  if (offsets.some(offset => !Number.isInteger(offset) || offset < 0 || offset > text.length)) {
+    throw new TypeError(`Invalid explicit source gap for ${record.id}.`);
+  }
+  if (!offsets.length) return tokenizeText(text);
+  const tokens = [];
+  let start = 0;
+  for (const end of [...offsets, text.length]) {
+    for (const token of tokenizeText(text.slice(start, end))) {
+      tokens.push({ ...token, start: token.start + start, end: token.end + start });
+    }
+    start = end;
+  }
+  return tokens;
+}
+
 /** Explicit source boundaries block phrase adjacency without removing any text. */
-export function phraseBreakOffsets(record, tokens = tokenizeText(record.text)) {
+export function phraseBreakOffsets(record, tokens = tokenizeRecord(record)) {
   if (record.phraseBreaks === undefined) return [];
   if (!Array.isArray(record.phraseBreaks)) throw new TypeError(`Invalid phrase boundaries for ${record.id}.`);
   let previous = -1;
@@ -73,7 +94,22 @@ function labelWork(work) {
 }
 
 function sectionLabel(record) {
-  return `${labelWork(record.work)} ${record.book}.${record.section}`;
+  return `${labelWork(record.work)} ${record.citationUnitCitation || `${record.book}.${record.section}`}`;
+}
+
+const sectionKey = record => record.citationUnitId ?? record.id;
+
+function validateCitationUnits(records) {
+  const units = new Map();
+  for (const record of records) {
+    const id = sectionKey(record);
+    if (typeof id !== "string" || !id) throw new TypeError(`Invalid citation unit for ${record.id}.`);
+    const signature = JSON.stringify([bookKey(record), String(record.section)]);
+    if (units.has(id) && units.get(id) !== signature) {
+      throw new TypeError(`A citation unit cannot combine works, books, versions, or section identities: ${id}.`);
+    }
+    units.set(id, signature);
+  }
 }
 
 function buildIndex(records, tokens, lunr, fold) {
@@ -119,7 +155,8 @@ export function buildBundle(inputRecords, lunr) {
     if (!Number.isFinite(order)) throw new TypeError(`Invalid order for ${source.id}.`);
     return { ...source, order, breakBefore: Boolean(source.breakBefore) };
   });
-  const tokens = records.map((record) => tokenizeText(record.text));
+  validateCitationUnits(records);
+  const tokens = records.map(tokenizeRecord);
   records.forEach((record, index) => phraseBreakOffsets(record, tokens[index]));
   const tokenCount = tokens.reduce((sum, group) => sum + group.length, 0);
   const vocabulary = new Set(tokens.flatMap((group) => group.map((token) => token.term)));
@@ -349,9 +386,10 @@ export function createEngine(bundle, lunr) {
   if (!lunr?.Index?.load) throw new TypeError("Lunr with Index.load is required.");
   if (bundle.records.length !== bundle.tokens.length) throw new TypeError("Search records and token arrays do not agree.");
   const records = bundle.records;
+  validateCitationUnits(records);
   const recordById = new Map();
   const tokenById = new Map();
-  const phraseTokenById = new Map();
+  const sections = new Map();
   const foldedTokens = new Map();
   const books = new Map();
   const recordRank = new Map();
@@ -367,19 +405,23 @@ export function createEngine(bundle, lunr) {
     const key = bookKey(record);
     if (!books.has(key)) books.set(key, { id: key, work: record.work, book: record.book, records: [], tokens: [] });
     books.get(key).records.push({ record, originalIndex: index });
+    const unitId = sectionKey(record);
+    if (!sections.has(unitId)) sections.set(unitId, { records: [] });
+    sections.get(unitId).records.push(record);
   }
   let rank = 0;
   for (const book of books.values()) {
     book.records.sort((a, b) => a.record.order - b.record.order || a.originalIndex - b.originalIndex);
-    let segment = 0;
+    let segment = 0, unitSegment = 0, previousUnit;
     for (const entry of book.records) {
       const record = entry.record;
+      if (sectionKey(record) !== previousUnit) unitSegment++;
+      previousUnit = sectionKey(record);
       recordRank.set(record.id, rank++);
       if (record.breakBefore) segment += 1;
       const locations = [];
       const tokens = tokenById.get(record.id);
       const breaks = phraseBreakOffsets(record, tokens);
-      const phraseTokens = [];
       let boundary = 0;
       for (let tokenIndex = 0; tokenIndex < tokens.length; tokenIndex += 1) {
         while (boundary < breaks.length && breaks[boundary] <= tokens[tokenIndex].start) {
@@ -387,16 +429,15 @@ export function createEngine(bundle, lunr) {
           boundary += 1;
         }
         locations.push(book.tokens.length);
-        const token = { ...tokens[tokenIndex], recordId: record.id, tokenIndex, segment };
+        const token = { ...tokens[tokenIndex], recordId: record.id, tokenIndex, segment, unitSegment };
         book.tokens.push(token);
-        phraseTokens.push(token);
       }
       // A marker after the final word also separates the next citation unit.
       segment += breaks.length - boundary;
-      phraseTokenById.set(record.id, phraseTokens);
       globalTokenIndex.set(record.id, locations);
     }
   }
+  for (const unit of sections.values()) unit.records.sort((a, b) => recordRank.get(a.id) - recordRank.get(b.id));
 
   function getIndex(fold) {
     const key = fold ? "folded" : "literal";
@@ -436,7 +477,7 @@ export function createEngine(bundle, lunr) {
   }
 
   function unitsFor(postings, scope) {
-    return new Set([...postings.keys()].map((id) => scope === "section" ? id : bookKey(recordById.get(id))));
+    return new Set([...postings.keys()].map((id) => scope === "section" ? sectionKey(recordById.get(id)) : bookKey(recordById.get(id))));
   }
 
   function leafMatches(leaf, scope, fold) {
@@ -449,7 +490,7 @@ export function createEngine(bundle, lunr) {
     };
     if (leaf.kind === "term") {
       for (const [recordId, occurrences] of postings[0]) {
-        const unitId = scope === "section" ? recordId : bookKey(recordById.get(recordId));
+        const unitId = scope === "section" ? sectionKey(recordById.get(recordId)) : bookKey(recordById.get(recordId));
         for (const occurrence of occurrences) {
           push(unitId, { kind: "term", spans: [{ recordId, start: occurrence.start, end: occurrence.end }] });
         }
@@ -465,17 +506,21 @@ export function createEngine(bundle, lunr) {
     const sizes = postings.map((posting) => [...posting.values()].reduce((sum, list) => sum + list.length, 0));
     const anchor = sizes.indexOf(Math.min(...sizes));
     for (const [recordId, occurrences] of postings[anchor]) {
-      const unitId = scope === "section" ? recordId : bookKey(recordById.get(recordId));
+      const unitId = scope === "section" ? sectionKey(recordById.get(recordId)) : bookKey(recordById.get(recordId));
       if (!candidates.has(unitId)) continue;
-      const sequence = scope === "section" ? phraseTokenById.get(recordId) : books.get(unitId).tokens;
+      // Logical sections can have displaced portions. Phrases always follow
+      // the physical source stream, even when Boolean scope is one section.
+      const sequence = books.get(bookKey(recordById.get(recordId))).tokens;
       for (const occurrence of occurrences) {
-        const anchorPosition = scope === "section" ? occurrence.tokenIndex : globalTokenIndex.get(recordId)[occurrence.tokenIndex];
+        const anchorPosition = globalTokenIndex.get(recordId)[occurrence.tokenIndex];
         const start = anchorPosition - anchor;
         if (start < 0 || start + patterns.length > sequence.length) continue;
         let accepted = true;
         for (let i = 0; i < patterns.length; i += 1) {
           const token = sequence[start + i];
-          if (token.segment !== sequence[start].segment) {
+          if (token.segment !== sequence[start].segment
+            || (scope === "section" && (token.unitSegment !== sequence[start].unitSegment
+              || sectionKey(recordById.get(token.recordId)) !== unitId))) {
             accepted = false;
             break;
           }
@@ -488,7 +533,7 @@ export function createEngine(bundle, lunr) {
         const spans = [];
         for (let i = 0; i < patterns.length; i += 1) {
           const token = sequence[start + i];
-          const owner = scope === "section" ? recordId : token.recordId;
+          const owner = token.recordId;
           const previous = spans[spans.length - 1];
           if (previous?.recordId === owner) previous.end = token.end;
           else spans.push({ recordId: owner, start: token.start, end: token.end });
@@ -504,7 +549,7 @@ export function createEngine(bundle, lunr) {
     const fold = Boolean(options.fold);
     if (scope !== "section" && scope !== "book") throw new TypeError("Search scope must be section or book.");
     const tree = parseQuery(query);
-    const universe = scope === "section" ? new Set(recordById.keys()) : new Set(books.keys());
+    const universe = scope === "section" ? new Set(sections.keys()) : new Set(books.keys());
     const leafCache = new Map();
     function evaluate(node, negated = false) {
       if (node.type === "not") return evaluate(node.child, !negated);
@@ -540,20 +585,20 @@ export function createEngine(bundle, lunr) {
           || firstA.start - firstB.start || firstA.end - firstB.end;
       });
       const recordIds = scope === "section"
-        ? [unitId]
+        ? sections.get(unitId).records.map(record => record.id)
         : [...new Set(hits.flatMap((hit) => hit.spans.map((span) => span.recordId)))].sort((a, b) => recordRank.get(a) - recordRank.get(b));
-      for (const id of recordIds) touched.add(id);
-      const source = scope === "section" ? recordById.get(unitId) : books.get(unitId);
+      for (const id of recordIds) touched.add(sectionKey(recordById.get(id)));
+      const source = scope === "section" ? sections.get(unitId).records[0] : books.get(unitId);
       hitGroups.push({
         unitId,
         unitLabel: scope === "section" ? sectionLabel(source) : `${labelWork(source.work)} · Book ${source.book}`,
         recordIds,
-        sections: recordIds.map((id) => recordById.get(id).section),
+        sections: [...new Set(recordIds.map((id) => recordById.get(id).section))],
         hits,
       });
     }
     const unitRank = (group) => scope === "section"
-      ? recordRank.get(group.unitId)
+      ? recordRank.get(sections.get(group.unitId).records[0].id)
       : recordRank.get(books.get(group.unitId).records[0].record.id);
     hitGroups.sort((a, b) => unitRank(a) - unitRank(b));
     return {
