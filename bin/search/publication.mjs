@@ -6,6 +6,8 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {editorialMarksFor} from './ui-utils.mjs';
 import {phraseBreakOffsets, tokenizeRecord} from './engine.mjs';
+import {planBrowserRelease, BROWSER_LAUNCHER_NAME} from './browser-release.mjs';
+import {validateWhistonSourceProjection} from './whiston-publication.mjs';
 
 export const SOURCE_DIRECTORY = 'bin/search';
 export const ASSET_DIRECTORY = 'assets/search';
@@ -110,6 +112,7 @@ export function loadPublicationConfig(root) {
     inside(base, adapter.outputDirectory, {directory: true});
     assert(Array.isArray(adapter.sources) && adapter.sources.length, `No approved sources for ${manifest.id}`);
     for (const relative of adapter.sources) inside(root, relative);
+    for (const relative of adapter.testSources || []) inside(root, relative);
     return {manifestPath, manifest, adapter};
   });
   equal(new Set(collections.map(c => c.manifest.id)).size, collections.length, 'Duplicate collection ID');
@@ -124,8 +127,8 @@ export function sourceInputs(root, sourcePaths = []) {
   const files = listing(base).filter(relative => !relative.startsWith('data/') &&
     (/\.(?:mjs|js|cjs|py|css|html)$/u.test(relative) || relative.startsWith('config/') || relative.startsWith('vendor/')));
   const paths = new Set([...files.map(relative => `${SOURCE_DIRECTORY}/${relative}`),
-    ...config.siteInputs, ...config.hookInputs, ...collections.flatMap(c => c.adapter.sources), ...sourcePaths]);
-  const indexedXML = new Set(collections.flatMap(c => c.adapter.sources));
+    ...config.siteInputs, ...config.hookInputs, ...collections.flatMap(c => [...c.adapter.sources, ...(c.adapter.testSources || [])]), ...sourcePaths]);
+  const indexedXML = new Set(collections.flatMap(c => [...c.adapter.sources, ...(c.adapter.testSources || [])]));
   return sorted(paths).map(relative => indexedXML.has(relative) ? xmlInputEvidence(root, relative) : evidence(root, relative));
 }
 
@@ -845,6 +848,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
       if (manifest.id === 'deh-latin-ussani') validateDehSourceProjection(corpus, bookReport, manifest, spec);
       if (manifest.id === 'contra-apionem-latin-boysen') validateCaSourceProjection(corpus, bookReport, manifest, spec);
       if (manifest.id === 'antiquities-latin-bamberg78') validateAntiquitiesSourceProjection(corpus, bookReport, manifest, spec, root);
+      if (manifest.id === 'antiquities-english-whiston') validateWhistonSourceProjection(corpus, bookReport, manifest, spec, root);
       const bundleArtifact = artifact(book.path, book.sha256, 'bundle');
       equal(bundleArtifact.item.bytes, book.bytes, `Bundle byte count differs: ${id}`);
       const bundle = bundleArtifact.value();
@@ -906,10 +910,17 @@ export function validateQaReport(root, {catalog, collection, configured, report}
     collection: 'collection.mjs', verifier: adapter.verifier};
   if (manifest.id === 'contra-apionem-latin-boysen') expected.witness = 'tests/ca-source-witness.py';
   if (manifest.id === 'antiquities-latin-bamberg78') expected.witness = 'tests/antiquities-source-witness.py';
+  if (manifest.id === 'antiquities-english-whiston') Object.assign(expected, {
+    witness: 'tests/whiston-source-witness.py', concordance: 'concordance.mjs', uiUtils: 'ui-utils.mjs',
+    extractor: adapter.extractor, manifest: configured.manifestPath,
+  });
   for (const [key, relative] of Object.entries(expected)) {
     equal(qa.verifiedFiles?.[key]?.path, `${SOURCE_DIRECTORY}/${relative}`, `Independent QA omits current ${key}`);
     checkEvidence(root, qa.verifiedFiles[key], `independent QA ${key}`);
   }
+  equal((qa.verifiedFiles.testSources || []).map(item => item.path), adapter.testSources || [],
+    'Independent QA omits its configured test-only sources');
+  for (const item of qa.verifiedFiles.testSources || []) checkIndexedXML(root, item, 'test-only QA XML');
   // Reader preservation belongs to the historical QA run, not to future search index freshness.
   equal(qa.readerBaseline?.publicationInput, false, 'QA must distinguish historical reader evidence from search inputs');
   equal(qa.verifiedFiles.books?.map(book => book.book), manifest.books.map(book => book.number), 'Independent QA book set differs');
@@ -934,6 +945,10 @@ export function validateQaReport(root, {catalog, collection, configured, report}
 
 export function publicationPlan(root) {
   const validated = validateSearchSources(root);
+  const browser = planBrowserRelease(root);
+  const artifacts = [...validated.artifacts, ...browser.artifacts].sort((a, b) => a.path.localeCompare(b.path, 'en'));
+  equal(new Set(artifacts.map(item => item.path)).size, artifacts.length, 'Browser and canonical exports collide');
+  assert(validated.config.runtime.includes(BROWSER_LAUNCHER_NAME), 'The versioned browser launcher is not an approved runtime');
   const manifest = {
     schemaVersion: 1, status: 'PASS',
     generatedBy: `${SOURCE_DIRECTORY}/build-search.mjs`,
@@ -945,12 +960,13 @@ export function publicationPlan(root) {
       xmlCheckoutComparison: 'CRLF-to-LF only; extraction and QA reports retain exact indexed-source hashes',
       unitTests: {status: 'PASS', commands: unitTestCommands(root)},
       readerHashIsPublicationInput: false},
-    artifacts: validated.artifacts,
+    browserRelease: browser.descriptor,
+    artifacts,
   };
-  return {manifest, bytes: jsonBytes(manifest), ...validated};
+  return {...validated, manifest, bytes: jsonBytes(manifest), artifacts, generatedContents: browser.contents};
 }
 
-/** Export exact source bytes; delete only obsolete files previously owned by this exporter. */
+/** Export audited sources and deterministic browser projections; delete only previously owned obsolete files. */
 export function exportSearchAssets(root, plan = publicationPlan(root)) {
   const output = inside(root, ASSET_DIRECTORY, {directory: true, exists: false});
   fs.mkdirSync(output, {recursive: true});
@@ -966,10 +982,14 @@ export function exportSearchAssets(root, plan = publicationPlan(root)) {
   }
   for (const item of plan.artifacts) {
     const source = fs.readFileSync(inside(root, item.source));
-    equal(sha256(source), item.sha256, `Source changed during export: ${item.source}`);
+    equal(sha256(source), item.generated ? item.sourceSHA256 : item.sha256, `Source changed during export: ${item.source}`);
+    const bytes = item.generated ? plan.generatedContents.get(item.path) : source;
+    assert(Buffer.isBuffer(bytes), `Missing generated browser output: ${item.path}`);
+    equal(sha256(bytes), item.sha256, `Generated browser output changed: ${item.path}`);
+    equal(bytes.length, item.bytes, `Generated browser output has the wrong length: ${item.path}`);
     const target = inside(output, item.path, {exists: false});
     fs.mkdirSync(path.dirname(target), {recursive: true});
-    fs.writeFileSync(target, source);
+    fs.writeFileSync(target, bytes);
   }
   for (const obsolete of oldOwned) {
     if (newOwned.has(obsolete)) continue;
@@ -1014,10 +1034,11 @@ export function verifySearchAssets(root, {site} = {}) {
     const html = fs.readFileSync(inside(destination, 'search/index.html'), 'utf8');
     assert(!html.includes('{% include') && !html.includes('{{ '), 'Search page contains unrendered Liquid');
     assert(/<main\b[^>]*\bid=["']lj-search["']/u.test(html), 'Generated page has no search interface');
-    assert(/<script\b[^>]*\bsrc=["'][^"']*assets\/search\/app\.mjs["'][^>]*>/u.test(html) &&
-      /<link\b[^>]*\bhref=["'][^"']*assets\/search\/styles\.css["'][^>]*>/u.test(html) &&
-      /<script\b[^>]*\bsrc=["'][^"']*assets\/search\/vendor\/lunr\.min\.js["'][^>]*>/u.test(html),
-      'Generated search page must load its search module, stylesheet, and Lunr');
+    assert(/<script\b[^>]*\btype=["']module["'][^>]*\bsrc=["'][^"']*assets\/search\/launch-v1\.mjs["'][^>]*>/u.test(html) &&
+      /<link\b[^>]*\bid=["']search-styles["'][^>]*\bhref=["'][^"']*assets\/search\/styles\.css["'][^>]*>/u.test(html),
+      'Generated search page must load its versioned launcher and replaceable stylesheet');
+    assert(!/<script\b[^>]*\bsrc=["'][^"']*assets\/search\/(?:app\.mjs|vendor\/lunr\.min\.js)["']/u.test(html),
+      'Generated search page must not load an unversioned search app or library');
     result.generatedSite = destination;
     result.generatedXML = representations;
   }

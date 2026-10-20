@@ -5,7 +5,7 @@
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
 import { parseQuery, tokenizeRecord, phraseBreakOffsets } from "./engine.mjs";
-import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote } from "./ui-utils.mjs";
+import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote, spellingEquivalence } from "./ui-utils.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;
 const IDENTITY_FIELDS = ["collectionId", "work", "book", "language", "edition"];
@@ -258,7 +258,16 @@ const CSV_COLUMNS = [
   "catalog_schema_version", "lunr_version", "concordance_schema_version", "selected_sources_json", "csv_cell_encoding", "escaped_columns_json",
 ];
 const EDITORIAL_CSV_COLUMNS = ["citation_scheme", "left_context_editorial", "matched_text_editorial", "right_context_editorial", "editorial_notes"];
-const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters; unclear source spans retain their original text and attributes. Contra Apionem asterisks and Antiquities marked interruptions are phrase boundaries, with source evidence in source_segments_json. Antiquities includes the Proem and Books I–XX. III.240 and VII.69–99 are encoded omissions; X.108 is an empty source interval without an omission tag. IX.51–109 are absent from the accepted source and have no generated records. The accepted maps also mark Latin unavailable at XII.248, XIII.213 and 216, XIV.238–239, XV.338 and 347, XVI.77, 123, 189–199, 359 and 395–404, XVIII.216–217, and XX.27–36 and 238; those identities have no generated records. These new unavailable identities do not themselves mark physical gaps, so book-scope phrases can follow continuous surviving Latin across them. Phrases also stop at the recorded source interruptions between XVI.188 and 200 and between XX.26 and 37; the following record retains the controlling source-boundary evidence. Physical source order is retained throughout Antiquities: split sections in XI and XVI share Boolean scope, while phrases cannot jump between displaced portions. The Bellum insertions in XI retain their separate citations and accepted Antiquities reader associations. Source portions and registry provenance are retained in source_segments_json; coverage metadata is retained in selected_sources_json.";
+const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters; unclear source spans retain their original text and attributes.";
+const BAMBERG_LEGEND = "Bamberg Latin Antiquities includes the Proem and Books I–XX. III.240 and VII.69–99 are encoded omissions; X.108 is an empty source interval without an omission tag. IX.51–109 are absent from the accepted source and have no generated records. The accepted maps also mark Latin unavailable at XII.248, XIII.213 and 216, XIV.238–239, XV.338 and 347, XVI.77, 123, 189–199, 359 and 395–404, XVIII.216–217, and XX.27–36 and 238; those identities have no generated records. These new unavailable identities do not themselves mark physical gaps, so book-scope phrases can follow continuous surviving Latin across them. Phrases also stop at the recorded source interruptions between XVI.188 and 200 and between XX.26 and 37; the following record retains the controlling source-boundary evidence. Physical source order is retained throughout Antiquities: split sections in XI and XVI share Boolean scope, while phrases cannot jump between displaced portions. The Bellum insertions in XI retain their separate citations and accepted Antiquities reader associations. Source portions and registry provenance are retained in source_segments_json; coverage metadata is retained in selected_sources_json.";
+function editorialLegend(sources) {
+  const parts=[];
+  if(sources.some(source=>source.language==='Latin'))parts.push(EDITORIAL_LEGEND);
+  if(sources.some(source=>source.work==='contra-apionem'))parts.push('Contra Apionem asterisks are phrase boundaries, with source evidence in source_segments_json.');
+  if(sources.some(source=>source.id==='antiquities-latin-bamberg78'||source.collectionId==='antiquities-latin-bamberg78'))parts.push(BAMBERG_LEGEND);
+  if(sources.some(source=>source.id==='antiquities-english-whiston'||source.collectionId==='antiquities-english-whiston'))parts.push('Whiston English pilot: Proem (Niese 1–26) and Book I narrative (27–346) only. Original English spelling and punctuation are preserved. Headings, printed citation labels and footnotes are excluded. Whole-book phrases may cross adjacent Niese sections but stop at the Proem’s end. Latin u/v and i/j equivalence does not change English matching. Original source spans are retained in source_segments_json.');
+  return parts.join(' ');
+}
 
 // Quoting alone does not prevent spreadsheet formula evaluation. Scalar cells
 // beginning with a formula marker (including after whitespace/control chars),
@@ -336,6 +345,7 @@ export function exportConcordance(model, result, metadata = {}) {
   const allRows = [...model.rows, ...model.unhighlightedUnits];
   const selectedCollections = result.selectedCollections ?? distinct(allRows.map((row) => row.collectionId).filter(Boolean));
   const selectedBooks = result.selectedBooks ?? distinct(allRows.map((row) => row.bookId).filter(Boolean));
+  const legend = editorialLegend([...(catalog.collections || []).filter(entry => selectedCollections.includes(entry.id)), ...allRows]);
   const includeEditorialColumns = selectedCollections.some((id) => collections.get(id)?.citationScheme === "chapter-paragraph" || ["contra-apionem", "antiquities"].includes(collections.get(id)?.work))
     || allRows.some((row) => row.citationScheme === "chapter-paragraph" || row.editorialMarks?.length)
     || (result.records || []).some((record) => citationScheme(record) === "chapter-paragraph" || record.editorialMarks !== undefined);
@@ -343,6 +353,7 @@ export function exportConcordance(model, result, metadata = {}) {
   // exports explicitly identify both citation systems and editorial rendering.
   const columns = includeEditorialColumns ? [...CSV_COLUMNS.slice(0, 7), ...EDITORIAL_CSV_COLUMNS, ...CSV_COLUMNS.slice(7)] : CSV_COLUMNS;
   const selectedSources = JSON.stringify({
+    ...(result.normalization ? {normalization: result.normalization} : {}),
     collections: (catalog.collections || []).filter((entry) => selectedCollections.includes(entry.id)).map((entry) => ({
       id: entry.id, work: entry.work, language: entry.language, edition: entry.edition,
       corpusPath: entry.corpusPath, corpusSHA256: entry.corpusSHA256, manifestSHA256: entry.manifestSHA256,
@@ -362,7 +373,7 @@ export function exportConcordance(model, result, metadata = {}) {
     matching_units: result.matchingUnits, matching_sections: result.matchingSections,
     units_without_positive_hits: model.unhighlightedUnits.length,
     query: result.query, query_json: JSON.stringify(result.query), scope: result.scope,
-    spelling_equivalence: result.fold ? "u/v and i/j equivalent" : "original spelling",
+    spelling_equivalence: spellingEquivalence(result, "original spelling"),
     selected_collection_ids_json: JSON.stringify(selectedCollections), selected_book_ids_json: JSON.stringify(selectedBooks),
     search_url: metadata.searchURL ? String(metadata.searchURL) : "", exported_at_utc: exportedAt, context_words: model.contextWords,
     offset_unit: "UTF-16 code units; start inclusive, end exclusive",
@@ -392,8 +403,8 @@ export function exportConcordance(model, result, metadata = {}) {
       matched_text_editorial: editorialText(markedText, row.left.length, row.left.length + row.match.length),
       right_context_editorial: editorialText(markedText, row.left.length + row.match.length, markedText.text.length),
       editorial_notes: emptyNotes.length
-        ? `${emptyNotes.join(" ")} ${EDITORIAL_LEGEND}`
-        : editorialKinds.length ? `This excerpt includes ${editorialKinds.join(", ")} text. ${EDITORIAL_LEGEND}` : (includeEditorialColumns && rowIndex === 0 ? EDITORIAL_LEGEND : ""),
+        ? `${emptyNotes.join(" ")} ${legend}`
+        : editorialKinds.length ? `This excerpt includes ${editorialKinds.join(", ")} text. ${legend}` : (includeEditorialColumns && rowIndex === 0 ? legend : ""),
       row_type: row.kind === "matching-unit" ? "matching-unit" : model.countKind === "evidence" ? "positive-evidence" : "occurrence",
       match_kind: row.kind === "matching-unit" ? "" : row.kind,
       work: row.work, book: row.book, collection_id: row.collectionId, book_id: row.bookId,
@@ -407,7 +418,7 @@ export function exportConcordance(model, result, metadata = {}) {
     }, columns);
   });
   if (!body.length) body.push(csvRow({ ...common, row_type: "search-summary", selected_sources_json: selectedSources,
-    ...(includeEditorialColumns ? { editorial_notes: EDITORIAL_LEGEND } : {}) }, columns));
+    ...(includeEditorialColumns ? { editorial_notes: legend } : {}) }, columns));
   return {
     text: `\uFEFF${columns.map((value) => `"${value}"`).join(",")}\r\n${body.join("\r\n")}\r\n`,
     mimeType: "text/csv;charset=utf-8", filename: `LatinJosephus-search-${exportedAt.slice(0, 10)}.csv`, rowCount: allRows.length,

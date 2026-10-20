@@ -292,15 +292,22 @@ export function createCollection(catalog, lunr, options = {}) {
 
   async function search(query, searchOptions = {}) {
     const scope = searchOptions.scope ?? "section";
-    const fold = Boolean(searchOptions.fold);
     if (scope !== "section" && scope !== "book") throw new TypeError("Search scope must be section or book.");
     // Reject syntax errors before any download. Each unchanged book engine will
     // parse the same expression independently when its turn is reached.
     parseQuery(query);
     const selected = selection(searchOptions.books, searchOptions.collections);
+    // Latin spelling equivalence is a property of the selected edition. It
+    // must not turn English "just" into "iust" in a mixed-language search.
+    const selectedCollections = collectionIdsFor(selected);
+    const foldedCollectionIds = searchOptions.fold
+      ? selectedCollections.filter(id => collectionById.get(id).language === "Latin") : [];
+    const fold = foldedCollectionIds.length > 0;
     const loaded = await loadBooks(selected.map((entry) => entry.id), searchOptions);
     const merged = {
       query, scope, fold,
+      normalization: {caseSensitive: false, spellingEquivalence: fold ? "latin-uv-ij" : "none",
+        foldedCollectionIds, literalCollectionIds: selectedCollections.filter(id => !foldedCollectionIds.includes(id))},
       selectedBooks: loaded.selectedBooks, selectedCollections: loaded.selectedCollections,
       matchingBooks: [], matchingCollections: [],
       matchingUnits: 0, matchingSections: 0, occurrences: 0,
@@ -314,7 +321,7 @@ export function createCollection(catalog, lunr, options = {}) {
       checkAborted(searchOptions.signal);
       let result;
       try {
-        result = cached.get(entry.id).search(query, { scope, fold });
+        result = cached.get(entry.id).search(query, { scope, fold: foldedCollectionIds.includes(entry.collectionId) });
       } catch (error) {
         cached.delete(entry.id);
         throw new CollectionLoadError(`${label(entry)} could not be searched. No partial results have been returned; reload the page and retry.`, "BOOK_SEARCH_FAILED", entry, error);

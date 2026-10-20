@@ -8,13 +8,37 @@
   "inputs": [
     {
       "path": "_includes/search-interface.html",
-      "sha256": "f0ce22b6f80ecc7928e8b10008f72b41aa1d55a8355828ee8bf071ae75e8f8b2",
-      "bytes": 11482
+      "sha256": "6f9385061316073793ef3eeb345bb3be4aff48afb43f434ecc14860c3c89c15b",
+      "bytes": 12615
     },
     {
       "path": "_pages/search.html",
-      "sha256": "3427905773bd91cac26e1d8f0103ef9c6e2ef2a46ca4b60ef04ea23b0c9d86e5",
-      "bytes": 588
+      "sha256": "21f5e1d159ce628666463455999820f4d2169f65ef0f9adca1312debd871aca7",
+      "bytes": 533
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-01.xml",
+      "sha256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+      "bytes": 133661,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-09.xml",
+      "sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+      "bytes": 123475,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-11.xml",
+      "sha256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2",
+      "bytes": 127260,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/English/preface.xml",
+      "sha256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+      "bytes": 10799,
+      "hashMode": "crlf-to-lf"
     },
     {
       "path": "assets/xml/antiquities/Latin/book-01.xml",
@@ -298,8 +322,13 @@
     },
     {
       "path": "bin/search/app.mjs",
-      "sha256": "758fce8e60452a07731072ca32e21052005206d1f5230b2b0f6ffdbc0a170cd3",
-      "bytes": 25737
+      "sha256": "4ada0cb1d4062099e6b70602cb92ecbf1c52e0adeda532f423134ebc08717f16",
+      "bytes": 27160
+    },
+    {
+      "path": "bin/search/browser-release.mjs",
+      "sha256": "be010aef57d0d4b38ddbebf5d93a0341ad9a7f46feab4333dc01bca4b2bb2c40",
+      "bytes": 6136
     },
     {
       "path": "bin/search/build-index.mjs",
@@ -308,8 +337,8 @@
     },
     {
       "path": "bin/search/build-preview.mjs",
-      "sha256": "0fbd526551c11dd32566d12a2b99b11987c32b48be8f1e45b6ba3749d60cc6ed",
-      "bytes": 2022
+      "sha256": "e62e78f213b980ed84199bdbf646e8b9f7d95cc2c48ccf5d6e2eed1e504d1d7e",
+      "bytes": 2023
     },
     {
       "path": "bin/search/build-search.mjs",
@@ -323,13 +352,18 @@
     },
     {
       "path": "bin/search/collection.mjs",
-      "sha256": "fed1931abc23a58b66ebce9d9ec0f575aaeadd9b6b8124c8658b9dc81539315e",
-      "bytes": 19552
+      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
+      "bytes": 20177
     },
     {
       "path": "bin/search/concordance.mjs",
-      "sha256": "13372e378a545202f06f214cb98e70f34819899fde92d3adc221f4f24d65a502",
-      "bytes": 28789
+      "sha256": "716599cb52f85e7848f93e236b61e125dba8c9583df19911f87ebf8ec7f28c2d",
+      "bytes": 29907
+    },
+    {
+      "path": "bin/search/config/antiquities-english-whiston.json",
+      "sha256": "237daef41dc276975889af8ce790929b1af827429fae4244f3c8d1a5b04a130e",
+      "bytes": 861
     },
     {
       "path": "bin/search/config/antiquities-latin-bamberg78.json",
@@ -343,8 +377,8 @@
     },
     {
       "path": "bin/search/config/collections.json",
-      "sha256": "b50f377293fcdd2986fd32d2a4433cc3b5a782922b424ca302c1fb67b2badcfd",
-      "bytes": 171
+      "sha256": "8b9687ec245e2e2ea561634d4e53b924f9b1c1e8a4cb444c765fc182c36cd4cb",
+      "bytes": 231
     },
     {
       "path": "bin/search/config/contra-apionem-latin-boysen.json",
@@ -358,8 +392,8 @@
     },
     {
       "path": "bin/search/config/publication.json",
-      "sha256": "d3ec83dae57db10bda700f78f45b65f7efb4728a1b9f902bed62217f26ca13a7",
-      "bytes": 3845
+      "sha256": "e755209c0545c2b95e3cab71f164066a60a01943b7d0f35f44a34d28e9facde8",
+      "bytes": 4403
     },
     {
       "path": "bin/search/engine.mjs",
@@ -382,19 +416,29 @@
       "bytes": 29130
     },
     {
+      "path": "bin/search/extract-whiston.py",
+      "sha256": "464355d33860c1bddd3a41893ac6bcb3b9b03b7e45f500447b1301dd4614cabd",
+      "bytes": 27201
+    },
+    {
       "path": "bin/search/extract.py",
       "sha256": "c48787272756dc4538eff2bc3c79ee6fd107784475a7ddcc4db8199676b449e8",
       "bytes": 28606
     },
     {
       "path": "bin/search/index.html",
-      "sha256": "87223007f2102813fb68e4f2fdb1e7638c85d8520481285a6c9b7d7ba782dd44",
-      "bytes": 12771
+      "sha256": "3bf88209aec94dbce22e35d4c8c53d373e4f564c22f1e9f3acd077eb8a2a9c83",
+      "bytes": 13905
+    },
+    {
+      "path": "bin/search/launch-v1.mjs",
+      "sha256": "6d09b6a5f95818a7bd2f71c671ff0a9615cc52bfa80b6803bd2b596f3fec9bbd",
+      "bytes": 4640
     },
     {
       "path": "bin/search/publication.mjs",
-      "sha256": "afa0ab20dc27d565d1d11505d11353a21e2d14f39897bc23da6bcb4bf41838d8",
-      "bytes": 81050
+      "sha256": "f750833eaef85fc30f41b1659676bc652934bdaabd0e2867a8eecc4123857247",
+      "bytes": 83071
     },
     {
       "path": "bin/search/styles.css",
@@ -418,13 +462,18 @@
     },
     {
       "path": "bin/search/tests/antiquities-presentation.test.mjs",
-      "sha256": "e66742002389eb1f84b461b7a65ac1efc153ac6a214379cb168d064f34516333",
-      "bytes": 40603
+      "sha256": "b319cacacbc69d7aea8e59d3519d738a81784a4927d23df2115ffc75bf9eabb6",
+      "bytes": 40673
     },
     {
       "path": "bin/search/tests/antiquities-source-witness.py",
       "sha256": "cd285a194be26209f7f74354d1a01251b84abce6743b61f6f7e2e886950872a4",
       "bytes": 55582
+    },
+    {
+      "path": "bin/search/tests/browser-release.test.mjs",
+      "sha256": "1087054e438027d654c13918ac22b67b4ba26ab4e63cabfeac15253482fafe1f",
+      "bytes": 7908
     },
     {
       "path": "bin/search/tests/build-index.test.mjs",
@@ -493,8 +542,8 @@
     },
     {
       "path": "bin/search/tests/publication.test.mjs",
-      "sha256": "b448d5e9ad6e15562a6e3124d6f49a9d958d1fb46fda9c00e99c4556c01ed131",
-      "bytes": 12005
+      "sha256": "b46a15c5290ac646b75c2a5056a969438e07247ccde2789295c116615fe113d9",
+      "bytes": 13567
     },
     {
       "path": "bin/search/tests/report-path.mjs",
@@ -527,14 +576,34 @@
       "bytes": 19031
     },
     {
+      "path": "bin/search/tests/test_extract_whiston.py",
+      "sha256": "eb01a37c2b2efe2d3276626bc421d5b5d4169e47cc74de2da5118edd86b0158f",
+      "bytes": 12559
+    },
+    {
       "path": "bin/search/tests/ui-utils.test.mjs",
       "sha256": "c1099a56b974b5ba52123d9e53e8ec0215844dc201f4da34447e45edb2521735",
       "bytes": 7124
     },
     {
+      "path": "bin/search/tests/whiston-corpus-qa.mjs",
+      "sha256": "795cc1da2a4c6601c0d5777834303e40cb5267a2962f920216ae8b9145784b45",
+      "bytes": 37292
+    },
+    {
+      "path": "bin/search/tests/whiston-publication.test.mjs",
+      "sha256": "d2a1a3a66ea71da608e29374ece32fdab017b4a9072ec0442808475ed5694d21",
+      "bytes": 6655
+    },
+    {
+      "path": "bin/search/tests/whiston-source-witness.py",
+      "sha256": "00438adb7ec57a644794cfeb242e44b1e1ade613d46fa2ae77669cb480e6443b",
+      "bytes": 11570
+    },
+    {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "31334c88863a4fb3676943e94ef5771056790e9d39e2f1744787a53395508b59",
-      "bytes": 14369
+      "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
+      "bytes": 15264
     },
     {
       "path": "bin/search/vendor/LUNR-LICENSE.txt",
@@ -555,6 +624,11 @@
       "path": "bin/search/vendor/provenance.json",
       "sha256": "bad0f93456f74c989cb93a7262d1ed459149740f27226c193e8642bc9de5c20d",
       "bytes": 533
+    },
+    {
+      "path": "bin/search/whiston-publication.mjs",
+      "sha256": "6ed7cb3154087f7817be57331fedded72e994a9c47b7afc67da97131c76479a3",
+      "bytes": 16831
     }
   ],
   "collections": [
@@ -581,7 +655,7 @@
       ],
       "qa": {
         "path": "qa-report.json",
-        "sha256": "c9e3091bc7ce8ffa9f927293b2b1aebbb8d6ce2af6c5ad0401181724ca02e70a",
+        "sha256": "63583d626b2ba6be1b0cf922f70c968b6706f2ca8f350dbf27db84756078ddc4",
         "status": "PASS",
         "assertions": 1663053,
         "queries": 98856,
@@ -610,7 +684,7 @@
       ],
       "qa": {
         "path": "data/deh-latin-ussani/qa-report.json",
-        "sha256": "3bed4d5cb987ce929588082a52b7afadc8ac20a79ab79c4fbc5d745386231828",
+        "sha256": "628a90b1e60bd4bfcd90fa0e5f38d7f4cbdb33eb9cc23f389503c3514c9ee953",
         "status": "PASS",
         "assertions": 907742,
         "queries": 76170,
@@ -636,7 +710,7 @@
       ],
       "qa": {
         "path": "data/contra-apionem-latin-boysen/qa-report.json",
-        "sha256": "13e8efa36da8e5aaec99255e3bd8b106537aa07c4a770cc1fd43041f69374cd9",
+        "sha256": "21f70fa4fb093d3a57dd375bd94ef58aa6d40823b0d780b955c884de51217634",
         "status": "PASS",
         "assertions": 346953,
         "queries": 24167,
@@ -691,20 +765,46 @@
       ],
       "qa": {
         "path": "data/antiquities-latin-bamberg78/qa-report.json",
-        "sha256": "e686d7a0ed59db1d876b56bbe9d15947c1adada17478050bea7b88997de21816",
+        "sha256": "ff68e38c55a01438e817ac50cd5ea06be58e61b435c9d38ef3db90a34deead4b",
         "status": "PASS",
-        "assertions": 3835029,
+        "assertions": 3837112,
         "queries": 293134,
+        "failedAssertions": 0,
+        "readerEvidenceIsHistorical": true
+      }
+    },
+    {
+      "id": "antiquities-english-whiston",
+      "totals": {
+        "books": 1,
+        "sections": 346,
+        "tokens": 21994,
+        "bytes": 2951595
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-whiston/extraction-report.json",
+        "sha256": "826d2c18d31855784b58ac1ec2b1a14971ead304a77f9605433dc1384a28af6b"
+      },
+      "sourceFiles": [
+        "assets/xml/antiquities/English/book-01.xml",
+        "assets/xml/antiquities/English/preface.xml"
+      ],
+      "qa": {
+        "path": "data/antiquities-english-whiston/qa-report.json",
+        "sha256": "2b7558273d4397929b99db3ec1d740402995f60d9dcbcd070410dd25e42ffa40",
+        "status": "PASS",
+        "assertions": 100581,
+        "queries": 4577,
         "failedAssertions": 0,
         "readerEvidenceIsHistorical": true
       }
     }
   ],
   "totals": {
-    "books": 34,
-    "sections": 12458,
-    "tokens": 488307,
-    "bytes": 84711572
+    "books": 35,
+    "sections": 12804,
+    "tokens": 510301,
+    "bytes": 87663167
   },
   "validation": {
     "sourceAndArtifactHashes": "PASS",
@@ -733,6 +833,7 @@
             "bin/search/tests/antiquities-fragment-presentation.test.mjs",
             "bin/search/tests/antiquities-fragments.test.mjs",
             "bin/search/tests/antiquities-presentation.test.mjs",
+            "bin/search/tests/browser-release.test.mjs",
             "bin/search/tests/build-index.test.mjs",
             "bin/search/tests/ca-presentation.test.mjs",
             "bin/search/tests/collection.test.mjs",
@@ -744,41 +845,142 @@
             "bin/search/tests/phrase-breaks.test.mjs",
             "bin/search/tests/publication.test.mjs",
             "bin/search/tests/report-path.test.mjs",
-            "bin/search/tests/ui-utils.test.mjs"
+            "bin/search/tests/ui-utils.test.mjs",
+            "bin/search/tests/whiston-publication.test.mjs"
           ]
         }
       ]
     },
     "readerHashIsPublicationInput": false
   },
+  "browserRelease": {
+    "schemaVersion": 1,
+    "generatedBy": "bin/search/browser-release.mjs",
+    "launcher": "launch-v1.mjs",
+    "entry": "app.c0d55c776e879d6de3782547715df6fa1b8cc464ba79160846ec64d6a652eae2.mjs",
+    "modules": {
+      "engine.mjs": {
+        "path": "engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs",
+        "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
+        "bytes": 25180
+      },
+      "ui-utils.mjs": {
+        "path": "ui-utils.7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc.mjs",
+        "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
+        "bytes": 15264
+      },
+      "collection.mjs": {
+        "path": "collection.8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245.mjs",
+        "sha256": "8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245",
+        "bytes": 20307
+      },
+      "concordance.mjs": {
+        "path": "concordance.826e5a655fba2a2caf249e8edfab252733d4412a779613c1e0632ec156510da1.mjs",
+        "sha256": "826e5a655fba2a2caf249e8edfab252733d4412a779613c1e0632ec156510da1",
+        "bytes": 30037
+      },
+      "app.mjs": {
+        "path": "app.c0d55c776e879d6de3782547715df6fa1b8cc464ba79160846ec64d6a652eae2.mjs",
+        "sha256": "c0d55c776e879d6de3782547715df6fa1b8cc464ba79160846ec64d6a652eae2",
+        "bytes": 27420
+      }
+    },
+    "catalog": {
+      "path": "catalog.3a112e80d1205d9ea5f824cb7b185c80bf44318cec5be07f603b59df2ef2b954.json",
+      "sha256": "3a112e80d1205d9ea5f824cb7b185c80bf44318cec5be07f603b59df2ef2b954",
+      "bytes": 33299
+    },
+    "stylesheet": {
+      "path": "styles.b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028.css",
+      "sha256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
+      "bytes": 11667
+    },
+    "lunr": {
+      "path": "lunr.0c50d9002b85780a842afffb567bb54ede402dae7c6dc5997a018614d8044fc8.min.js",
+      "sha256": "0c50d9002b85780a842afffb567bb54ede402dae7c6dc5997a018614d8044fc8",
+      "bytes": 29510
+    }
+  },
   "artifacts": [
+    {
+      "path": "app.c0d55c776e879d6de3782547715df6fa1b8cc464ba79160846ec64d6a652eae2.mjs",
+      "source": "bin/search/app.mjs",
+      "sourceSHA256": "4ada0cb1d4062099e6b70602cb92ecbf1c52e0adeda532f423134ebc08717f16",
+      "sha256": "c0d55c776e879d6de3782547715df6fa1b8cc464ba79160846ec64d6a652eae2",
+      "bytes": 27420,
+      "role": "browser-module",
+      "generated": true
+    },
     {
       "path": "app.mjs",
       "source": "bin/search/app.mjs",
-      "sha256": "758fce8e60452a07731072ca32e21052005206d1f5230b2b0f6ffdbc0a170cd3",
-      "bytes": 25737,
+      "sha256": "4ada0cb1d4062099e6b70602cb92ecbf1c52e0adeda532f423134ebc08717f16",
+      "bytes": 27160,
       "role": "runtime"
+    },
+    {
+      "path": "browser-release.json",
+      "source": "bin/search/browser-release.mjs",
+      "sourceSHA256": "be010aef57d0d4b38ddbebf5d93a0341ad9a7f46feab4333dc01bca4b2bb2c40",
+      "sha256": "8aaae90deefe0a73f5dcaeb36e0eee6d400dc414e78ebba44cc53abdb202c025",
+      "bytes": 1993,
+      "role": "browser-release",
+      "generated": true
+    },
+    {
+      "path": "catalog.3a112e80d1205d9ea5f824cb7b185c80bf44318cec5be07f603b59df2ef2b954.json",
+      "source": "bin/search/catalog.json",
+      "sourceSHA256": "3a112e80d1205d9ea5f824cb7b185c80bf44318cec5be07f603b59df2ef2b954",
+      "sha256": "3a112e80d1205d9ea5f824cb7b185c80bf44318cec5be07f603b59df2ef2b954",
+      "bytes": 33299,
+      "role": "browser-catalog",
+      "generated": true
     },
     {
       "path": "catalog.json",
       "source": "bin/search/catalog.json",
-      "sha256": "ccce5a02e032080587b2b2da44fe106a54bb616487153ce607c8ebcf2294f8f7",
-      "bytes": 31545,
+      "sha256": "3a112e80d1205d9ea5f824cb7b185c80bf44318cec5be07f603b59df2ef2b954",
+      "bytes": 33299,
       "role": "catalog"
+    },
+    {
+      "path": "collection.8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245.mjs",
+      "source": "bin/search/collection.mjs",
+      "sourceSHA256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
+      "sha256": "8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245",
+      "bytes": 20307,
+      "role": "browser-module",
+      "generated": true
     },
     {
       "path": "collection.mjs",
       "source": "bin/search/collection.mjs",
-      "sha256": "fed1931abc23a58b66ebce9d9ec0f575aaeadd9b6b8124c8658b9dc81539315e",
-      "bytes": 19552,
+      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
+      "bytes": 20177,
       "role": "runtime"
+    },
+    {
+      "path": "concordance.826e5a655fba2a2caf249e8edfab252733d4412a779613c1e0632ec156510da1.mjs",
+      "source": "bin/search/concordance.mjs",
+      "sourceSHA256": "716599cb52f85e7848f93e236b61e125dba8c9583df19911f87ebf8ec7f28c2d",
+      "sha256": "826e5a655fba2a2caf249e8edfab252733d4412a779613c1e0632ec156510da1",
+      "bytes": 30037,
+      "role": "browser-module",
+      "generated": true
     },
     {
       "path": "concordance.mjs",
       "source": "bin/search/concordance.mjs",
-      "sha256": "13372e378a545202f06f214cb98e70f34819899fde92d3adc221f4f24d65a502",
-      "bytes": 28789,
+      "sha256": "716599cb52f85e7848f93e236b61e125dba8c9583df19911f87ebf8ec7f28c2d",
+      "bytes": 29907,
       "role": "runtime"
+    },
+    {
+      "path": "config/antiquities-english-whiston.json",
+      "source": "bin/search/config/antiquities-english-whiston.json",
+      "sha256": "237daef41dc276975889af8ce790929b1af827429fae4244f3c8d1a5b04a130e",
+      "bytes": 861,
+      "role": "evidence"
     },
     {
       "path": "config/antiquities-latin-bamberg78.json",
@@ -797,8 +999,8 @@
     {
       "path": "config/collections.json",
       "source": "bin/search/config/collections.json",
-      "sha256": "b50f377293fcdd2986fd32d2a4433cc3b5a782922b424ca302c1fb67b2badcfd",
-      "bytes": 171,
+      "sha256": "8b9687ec245e2e2ea561634d4e53b924f9b1c1e8a4cb444c765fc182c36cd4cb",
+      "bytes": 231,
       "role": "evidence"
     },
     {
@@ -818,8 +1020,8 @@
     {
       "path": "config/publication.json",
       "source": "bin/search/config/publication.json",
-      "sha256": "d3ec83dae57db10bda700f78f45b65f7efb4728a1b9f902bed62217f26ca13a7",
-      "bytes": 3845,
+      "sha256": "e755209c0545c2b95e3cab71f164066a60a01943b7d0f35f44a34d28e9facde8",
+      "bytes": 4403,
       "role": "evidence"
     },
     {
@@ -827,6 +1029,48 @@
       "source": "bin/search/corpus.json",
       "sha256": "8bc3cda02112ff7522b78f1945fe56bad622b77e1c6b84676ad1075ce7bd9c45",
       "bytes": 2073135,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-english-whiston/book-01.bundle.json",
+      "source": "bin/search/data/antiquities-english-whiston/book-01.bundle.json",
+      "sha256": "8957992760eaeffdd875e9d061d046ef3190401e3dafb876866dce7d0c415fe1",
+      "bytes": 2951595,
+      "role": "bundle"
+    },
+    {
+      "path": "data/antiquities-english-whiston/book-01.corpus.json",
+      "source": "bin/search/data/antiquities-english-whiston/book-01.corpus.json",
+      "sha256": "5d94451f1363230e0578d995ece458dd8a4b40e56064487f1362194de21404f0",
+      "bytes": 397694,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-english-whiston/book-01.extraction-report.json",
+      "source": "bin/search/data/antiquities-english-whiston/book-01.extraction-report.json",
+      "sha256": "5ff96ccfd1a08a6abdc3a37e6e832db53db7d9f9a7e12c6eb02bfee6130e53a9",
+      "bytes": 1500825,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-english-whiston/corpus.json",
+      "source": "bin/search/data/antiquities-english-whiston/corpus.json",
+      "sha256": "5d94451f1363230e0578d995ece458dd8a4b40e56064487f1362194de21404f0",
+      "bytes": 397694,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-english-whiston/extraction-report.json",
+      "source": "bin/search/data/antiquities-english-whiston/extraction-report.json",
+      "sha256": "826d2c18d31855784b58ac1ec2b1a14971ead304a77f9605433dc1384a28af6b",
+      "bytes": 3758,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-english-whiston/qa-report.json",
+      "source": "bin/search/data/antiquities-english-whiston/qa-report.json",
+      "sha256": "2b7558273d4397929b99db3ec1d740402995f60d9dcbcd070410dd25e42ffa40",
+      "bytes": 21015,
       "role": "evidence"
     },
     {
@@ -1266,8 +1510,8 @@
     {
       "path": "data/antiquities-latin-bamberg78/qa-report.json",
       "source": "bin/search/data/antiquities-latin-bamberg78/qa-report.json",
-      "sha256": "e686d7a0ed59db1d876b56bbe9d15947c1adada17478050bea7b88997de21816",
-      "bytes": 212394,
+      "sha256": "ff68e38c55a01438e817ac50cd5ea06be58e61b435c9d38ef3db90a34deead4b",
+      "bytes": 212558,
       "role": "evidence"
     },
     {
@@ -1476,7 +1720,7 @@
     {
       "path": "data/contra-apionem-latin-boysen/qa-report.json",
       "source": "bin/search/data/contra-apionem-latin-boysen/qa-report.json",
-      "sha256": "13e8efa36da8e5aaec99255e3bd8b106537aa07c4a770cc1fd43041f69374cd9",
+      "sha256": "21f70fa4fb093d3a57dd375bd94ef58aa6d40823b0d780b955c884de51217634",
       "bytes": 36663,
       "role": "evidence"
     },
@@ -1602,9 +1846,18 @@
     {
       "path": "data/deh-latin-ussani/qa-report.json",
       "source": "bin/search/data/deh-latin-ussani/qa-report.json",
-      "sha256": "3bed4d5cb987ce929588082a52b7afadc8ac20a79ab79c4fbc5d745386231828",
-      "bytes": 29586,
+      "sha256": "628a90b1e60bd4bfcd90fa0e5f38d7f4cbdb33eb9cc23f389503c3514c9ee953",
+      "bytes": 29585,
       "role": "evidence"
+    },
+    {
+      "path": "engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs",
+      "source": "bin/search/engine.mjs",
+      "sourceSHA256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
+      "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
+      "bytes": 25180,
+      "role": "browser-module",
+      "generated": true
     },
     {
       "path": "engine.mjs",
@@ -1621,11 +1874,36 @@
       "role": "evidence"
     },
     {
+      "path": "launch-v1.mjs",
+      "source": "bin/search/launch-v1.mjs",
+      "sha256": "6d09b6a5f95818a7bd2f71c671ff0a9615cc52bfa80b6803bd2b596f3fec9bbd",
+      "bytes": 4640,
+      "role": "runtime"
+    },
+    {
+      "path": "lunr.0c50d9002b85780a842afffb567bb54ede402dae7c6dc5997a018614d8044fc8.min.js",
+      "source": "bin/search/vendor/lunr.min.js",
+      "sourceSHA256": "0c50d9002b85780a842afffb567bb54ede402dae7c6dc5997a018614d8044fc8",
+      "sha256": "0c50d9002b85780a842afffb567bb54ede402dae7c6dc5997a018614d8044fc8",
+      "bytes": 29510,
+      "role": "browser-library",
+      "generated": true
+    },
+    {
       "path": "qa-report.json",
       "source": "bin/search/qa-report.json",
-      "sha256": "c9e3091bc7ce8ffa9f927293b2b1aebbb8d6ce2af6c5ad0401181724ca02e70a",
-      "bytes": 111790,
+      "sha256": "63583d626b2ba6be1b0cf922f70c968b6706f2ca8f350dbf27db84756078ddc4",
+      "bytes": 111795,
       "role": "evidence"
+    },
+    {
+      "path": "styles.b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028.css",
+      "source": "bin/search/styles.css",
+      "sourceSHA256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
+      "sha256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
+      "bytes": 11667,
+      "role": "browser-stylesheet",
+      "generated": true
     },
     {
       "path": "styles.css",
@@ -1635,10 +1913,19 @@
       "role": "runtime"
     },
     {
+      "path": "ui-utils.7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc.mjs",
+      "source": "bin/search/ui-utils.mjs",
+      "sourceSHA256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
+      "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
+      "bytes": 15264,
+      "role": "browser-module",
+      "generated": true
+    },
+    {
       "path": "ui-utils.mjs",
       "source": "bin/search/ui-utils.mjs",
-      "sha256": "31334c88863a4fb3676943e94ef5771056790e9d39e2f1744787a53395508b59",
-      "bytes": 14369,
+      "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
+      "bytes": 15264,
       "role": "runtime"
     },
     {

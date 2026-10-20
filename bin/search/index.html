@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Search the Latin Bellum Judaicum, De excidio, Contra Apionem and Antiquities I–XX with exact phrases, Boolean logic, wildcards, and a concordance.">
+  <meta name="description" content="Search the Latin Josephus texts and Whiston English Antiquities pilot with exact phrases, Boolean logic, wildcards, and a concordance.">
   <title>Search preview · Latin Josephus</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
@@ -18,12 +18,12 @@
   <script type="module" src="./app.mjs"></script>
 </head>
 <body>
-  <header class="preview-header"><a href="https://latinjosephus.github.io/">Latin Josephus</a><span>Search preview · Four Latin collections</span></header>
+  <header class="preview-header"><a href="https://latinjosephus.github.io/">Latin Josephus</a><span>Search preview · Latin texts and Whiston English pilot</span></header>
 <main id="lj-search" lang="en" data-reader-base="https://latinjosephus.github.io/">
   <section class="intro" aria-labelledby="search-title">
-    <p class="eyebrow">A concordance of the Latin text</p>
+    <p class="eyebrow">Latin texts and a Whiston English pilot</p>
     <h1 id="search-title">Search the Latin Josephus</h1>
-    <p class="subtitle" id="collection-description"><i>Bellum Judaicum</i> · Cardwell Latin (1837) / <i>De excidio</i> · Ussani Latin (1932) / <i>Contra Apionem</i> · Boysen Latin (1898) / <i>Antiquities</i> I–XX and Proem · Bamberg Msc. Class. 78</p>
+    <p class="subtitle" id="collection-description"><i>Bellum Judaicum</i> · Cardwell Latin (1837) / <i>De excidio</i> · Ussani Latin (1932) / <i>Contra Apionem</i> · Boysen Latin (1898) / <i>Antiquities</i> I–XX and Proem · Bamberg Latin / <i>Antiquities</i> Proem and Book I · Whiston English pilot</p>
     <p class="coverage" id="coverage">Loading the text catalogue…</p>
   </section>
   <section class="search-panel" aria-label="Search controls">
@@ -50,7 +50,7 @@
             <option value="book">Within each whole book</option>
           </select>
         </div>
-        <label class="checkbox-option" for="fold"><input type="checkbox" id="fold" name="fold"><span>Treat <b>u/v</b> and <b>i/j</b> as equivalent</span></label>
+        <label class="checkbox-option" for="fold"><input type="checkbox" id="fold" name="fold"><span>Treat <b>u/v</b> and <b>i/j</b> as equivalent (Latin only)</span></label>
       </div>
       <p class="scope-hint" id="scope-hint">All parts of the expression must match within the same Niese section. Choose whole-book scope to include phrases that cross section boundaries.</p>
     </form>
@@ -62,6 +62,7 @@
       <button type="button" class="example" data-query='"neque cuiquam alii servire nisi Deo"' data-work="bellum-latin-cardwell" data-scope="section">A phrase in Book VII</button>
       <button type="button" class="example" data-query="Cenedaei" data-work="deh-latin-ussani" data-scope="section">Cenedaei in De excidio</button>
       <button type="button" class="example" data-query='"In principio creauit deus"' data-work="antiquities-latin-bamberg78" data-scope="section">An Antiquities phrase</button>
+      <button type="button" class="example" data-query='"In the beginning God created"' data-work="antiquities-english-whiston" data-scope="section">A Whiston English phrase</button>
     </div>
     <details class="syntax-guide">
       <summary>Search syntax and what is included</summary>
@@ -79,15 +80,16 @@
         </div>
         <div>
           <h2>Text and scope</h2>
-          <p id="included-text">Currently indexed: Cardwell’s Latin <i>Bellum Judaicum</i>, all seven books including the proem of Book I; Ussani’s Latin <i>De excidio</i>, all five books and the Prologue; Boysen’s Latin <i>Contra Apionem</i>, both books; and the Bamberg Msc. Class. 78 Latin <i>Antiquities</i>, Books I–XX with the separate Proem included in Book I. All twenty Antiquities books are included. Explicitly marked titles, citation labels and annotation notes are excluded. Source additions and untagged letters within the accepted passages remain searchable, including inline Roman chapter letters.</p>
-          <p>Every word remains searchable. Spelling is preserved in the excerpts; the optional equivalence setting affects matching only. No grammatical stemming or automatic spelling correction is applied.</p>
+          <p id="included-text">Currently indexed: Cardwell’s Latin <i>Bellum Judaicum</i>, all seven books including the proem of Book I; Ussani’s Latin <i>De excidio</i>, all five books and the Prologue; Boysen’s Latin <i>Contra Apionem</i>, both books; and the Bamberg Msc. Class. 78 Latin <i>Antiquities</i>, Books I–XX with the separate Proem included in Book I. The Whiston English pilot adds the Proem (Niese 1–26) and Book I narrative (27–346), a total of 346 sections; Whiston Books II–XX are not yet indexed. Explicitly marked titles, citation labels and annotation notes are excluded. Source additions and untagged letters within the accepted passages remain searchable, including inline Roman chapter letters.</p>
+          <p>Every word in the indexed main text remains searchable, including common words such as <i>the</i> and <i>and</i>. Spelling is preserved in the excerpts; the optional u/v and i/j equivalence setting affects Latin matching only. English keeps its source spelling apart from capitalization. No grammatical stemming or automatic spelling correction is applied.</p>
           <p><b>Within each citation unit:</b> every Boolean condition and exact phrase is evaluated in that unit. <i>Bellum</i>, <i>Contra Apionem</i> and <i>Antiquities</i> use Niese sections; <i>De excidio</i> uses the reader’s book, chapter and paragraph citations, with <b>Prol.</b> for the Prologue.</p>
           <p><b>Whole book:</b> Boolean conditions may be satisfied anywhere in the same book; exact phrases must still be consecutive and may cross citation or chapter boundaries. Each book, work and edition is evaluated separately. A phrase never continues into another book, from the <i>De excidio</i> Prologue into its Book I narrative, or from the separate <i>Antiquities</i> Proem into its Book I narrative.</p>
           <p><b>Passages:</b> results follow the order of the text. A citation unit with several matches appears once in citation-unit scope. In whole-book scope, a phrase spanning units can have its own excerpt. Click a citation to open the corresponding passage in the reader.</p>
           <p><b>Concordance:</b> each positive word or phrase match has its own row, with up to ten words of context on each side. Original spelling is retained. A phrase spanning citation units appears in one row.</p>
           <p><b>Editorial text:</b> in <i>De excidio</i>, [brackets] mark supplied letters, <del>struck text</del> marks deletion, and † indicates textual uncertainty. Supplied and deleted letters remain searchable, including letters inside a word. A dagger is treated as punctuation, so phrase searches may match across it. The CSV retains exact text and offsets and adds editorial columns using [supplied] and ⟦deleted⟧.</p>
           <p><b><i>Contra Apionem</i> markings:</b> the source’s asterisks, brackets, angle brackets and Greek quotations are retained. Exact phrases stop at asterisk-marked interruptions, including those at section boundaries; Boolean conditions can relate words on either side. <span class="editorial-add">Bold green text</span> marks an addition encoded in the source, shown as ⟨added text⟩ in the CSV’s editorial columns. The search makes no new textual repairs.</p>
-          <p><b><i>Antiquities</i> markings and coverage:</b> added, deleted and uncertain letters remain searchable, displayed as <span class="editorial-add">bold green text</span>, <del>struck text</del> and <span class="editorial-unclear">dotted underlining</span>. Original brackets, ellipses and erased-dot interruptions are preserved. Exact phrases stop at marked gaps, empty source intervals, the documented Book IX lacuna and the delimited interruptions between XVI.188 and 200 and between XX.26 and 37; Boolean conditions can relate words on either side. III.240 and VII.69–99 retain their citations and encoded omissions. X.108 has a citation label but no Latin before the next Niese marker. IX.51–109 are absent from the accepted source and have no generated records. Other identities marked unavailable in the accepted maps also have no generated records; a skipped number alone does not imply a physical gap. Split portions in Books XI and XVI share Boolean scope, while exact phrases follow physical source order. The two Bellum insertions in XI retain separate citations. The CSV preserves these distinctions, source markings and coverage metadata. Proem results link directly to the separate Proem reader.</p>
+          <p><b>Bamberg Latin <i>Antiquities</i> markings and coverage:</b> added, deleted and uncertain letters remain searchable, displayed as <span class="editorial-add">bold green text</span>, <del>struck text</del> and <span class="editorial-unclear">dotted underlining</span>. Original brackets, ellipses and erased-dot interruptions are preserved. Exact phrases stop at marked gaps, empty source intervals, the documented Book IX lacuna and the delimited interruptions between XVI.188 and 200 and between XX.26 and 37; Boolean conditions can relate words on either side. III.240 and VII.69–99 retain their citations and encoded omissions. X.108 has a citation label but no Latin before the next Niese marker. IX.51–109 are absent from the accepted source and have no generated records. Other identities marked unavailable in the accepted maps also have no generated records; a skipped number alone does not imply a physical gap. Split portions in Books XI and XVI share Boolean scope, while exact phrases follow physical source order. The two Bellum insertions in XI retain separate citations. The CSV preserves these distinctions, source markings and coverage metadata. Proem results link directly to the separate Proem reader.</p>
+          <p><b>Whiston English <i>Antiquities</i> pilot:</b> the Proem and Book I retain their original English spelling, punctuation and Niese section divisions. Headings, printed citation labels and footnotes are excluded. Exact phrases may cross adjacent Niese sections in whole-book scope, but never cross from the Proem into the narrative. English and Latin editions are searched separately, even when both are selected; Boolean conditions and phrases cannot combine evidence from different editions. Proem results link to the separate Proem reader with Whiston selected.</p>
           <p><b>Counts:</b> a single word, wildcard or quoted phrase has an occurrence count as well as a count of matching citation units or books. Boolean queries count matching units or books; concordance rows show their positive matches and are not word frequencies. A citation unit or book can satisfy a negative condition without a word to highlight.</p>
           <p><b>Download all results:</b> the CSV includes every concordance row and the citations of any matching sections or books without positive matches, regardless of which view or page is displayed. It records the completed query, its settings, the edition and links to the reader. Changes typed into the search box take effect after you press Search.</p>
         </div>
@@ -115,7 +117,7 @@
     <noscript><p class="error">JavaScript is needed to search. You can still <a href="https://latinjosephus.github.io/bellum-judaicum/?book=1">read the seven books on Latin Josephus</a>.</p></noscript>
   </section>
   <footer class="search-footer">
-    <p>Searches run in your browser. Quotations and highlights use the project’s Latin main text, with links back to the reader.</p>
+    <p>Searches run in your browser. Quotations and highlights use the selected edition’s main text, with links back to the reader.</p>
   </footer>
 </main>
 

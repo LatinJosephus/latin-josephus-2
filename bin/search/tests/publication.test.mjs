@@ -31,7 +31,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [34, 12458, 488307]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [35, 12804, 510301]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
@@ -40,7 +40,12 @@ test('search publication preserves current inputs and refuses stale or incomplet
     assert.deepEqual([ca.totals.books, ca.totals.sections, ca.totals.tokens], [2, 616, 21018]);
     const antiquities = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-bamberg78');
     assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [20, 7283, 265023]);
-    assert.equal(result.sourceXML.length, 45);
+    const whiston = baseline.catalog.collections.find(collection => collection.id === 'antiquities-english-whiston');
+    assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [1, 346, 21994]);
+    assert.equal(result.sourceXML.length, 47);
+    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 2);
+    assert.equal(result.assets, baseline.artifacts.length + 1);
+    assert.equal(baseline.manifest.browserRelease.launcher, 'launch-v1.mjs');
     assert.equal(result.sourceXML.filter(source => /\/niese\/book-(?:1[1-9]|20)\.json$/u.test(source.path)).length, 10);
   });
 
@@ -67,6 +72,18 @@ test('search publication preserves current inputs and refuses stale or incomplet
       changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
         () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*XML/u));
     }
+  });
+
+  await t.test('the Whiston pilot rejects changed narrative or Proem source bytes', () => {
+    for (const relative of ['assets/xml/antiquities/English/book-01.xml', 'assets/xml/antiquities/English/preface.xml']) {
+      changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
+        () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed|Whiston source/u));
+    }
+  });
+
+  await t.test('later English test witnesses cannot become stale while the pilot still passes', () => {
+    changed('assets/xml/antiquities/English/book-09.xml', bytes => Buffer.concat([bytes, Buffer.from('\n<!-- test source changed -->\n')]),
+      () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*test-only QA XML/u));
   });
 
   await t.test('accepted Latin identity registry changes invalidate their indexed source spans', () => {
@@ -177,9 +194,8 @@ test('search publication preserves current inputs and refuses stale or incomplet
   }
   fs.mkdirSync(path.join(site, 'search'), {recursive: true});
   fs.writeFileSync(path.join(site, 'search/index.html'), '<main id="lj-search"></main>\n' +
-    '<link rel="stylesheet" href="/assets/search/styles.css">\n' +
-    '<script src="/assets/search/vendor/lunr.min.js" defer></script>\n' +
-    '<script type="module" src="/assets/search/app.mjs"></script>\n');
+    '<link id="search-styles" rel="stylesheet" href="/assets/search/styles.css">\n' +
+    '<script type="module" src="/assets/search/launch-v1.mjs"></script>\n');
 
   await t.test('generated XML permits line-ending representation changes only', () => {
     assert.equal(verifySearchAssets(fixture, {site}).status, 'PASS');
@@ -195,6 +211,11 @@ test('search publication preserves current inputs and refuses stale or incomplet
 
   await t.test('an incomplete generated search page fails publication', () => {
     changed('_site/search/index.html', () => '<main id="lj-search"></main>',
-      () => assert.throws(() => verifySearchAssets(fixture, {site}), /must load its search module/u));
+      () => assert.throws(() => verifySearchAssets(fixture, {site}), /must load its versioned launcher/u));
+  });
+
+  await t.test('a generated page cannot add the old mutable app beside the launcher', () => {
+    changed('_site/search/index.html', bytes => Buffer.concat([bytes, Buffer.from('<script type="module" src="/assets/search/app.mjs"></script>')]),
+      () => assert.throws(() => verifySearchAssets(fixture, {site}), /must not load an unversioned/u));
   });
 });

@@ -21,7 +21,8 @@ const manifest = read(`config/${ANT}.json`);
 const originalCorpus = corpus.filter(record => record.book <= 10);
 const originalAntiquitiesBooks = Array.from({length: 10}, (_, index) => `${ANT}:${index + 1}`);
 const allAntiquitiesBooks = Array.from({length: 20}, (_, index) => index + 1);
-const originalCollectionBooks = catalog.books.filter(book => book.collectionId !== ANT || book.number <= 10).map(book => book.id);
+const originalCollectionBooks = catalog.books.filter(book => [BELLUM, DEH, CA].includes(book.collectionId)
+  || (book.collectionId === ANT && book.number <= 10)).map(book => book.id);
 const readerBase = 'https://latinjosephus.github.io/';
 const byCitation = new Map(corpus.map(record => [record.citationLabel, record]));
 const reports = new Map(manifest.books.map(book => [book.number, read(`data/${ANT}/book-${String(book.number).padStart(2, '0')}.extraction-report.json`)]));
@@ -493,7 +494,7 @@ test('the original 24 books retain separate work identities and 421 sacerdot* oc
 });
 
 test('negative-only whole-book exports retain all 34 book identities and numeric Book I links', async () => {
-  const {result, model} = await run('NOT zzzznonoccurrit', {collections: 'all', books: 'all', scope: 'book'});
+  const {result, model} = await run('NOT zzzznonoccurrit', {collections: [BELLUM, DEH, CA, ANT], books: 'all', scope: 'book'});
   assert.deepEqual([result.matchingUnits, result.occurrences], [34, 0]);
   assert.equal(model.unhighlightedUnits.length, 34);
   const file = csv(model, result);

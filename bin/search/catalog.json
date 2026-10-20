@@ -136,6 +136,33 @@
         "tokens": 265023,
         "bytes": 49051412
       }
+    },
+    {
+      "id": "antiquities-english-whiston",
+      "work": "antiquities",
+      "label": "Antiquities Proem and Book I (pilot)",
+      "citationPrefix": "Antiquities",
+      "language": "English",
+      "edition": "Whiston",
+      "readerPath": "antiquities/",
+      "books": [
+        "antiquities-english-whiston:1"
+      ],
+      "citationScheme": "niese",
+      "unitLabel": "Niese section",
+      "unitLabelPlural": "Niese sections",
+      "manifestPath": "config/antiquities-english-whiston.json",
+      "manifestSHA256": "237daef41dc276975889af8ce790929b1af827429fae4244f3c8d1a5b04a130e",
+      "corpusPath": "data/antiquities-english-whiston/corpus.json",
+      "corpusSHA256": "5d94451f1363230e0578d995ece458dd8a4b40e56064487f1362194de21404f0",
+      "extractionReportPath": "data/antiquities-english-whiston/extraction-report.json",
+      "extractionReportSHA256": "826d2c18d31855784b58ac1ec2b1a14971ead304a77f9605433dc1384a28af6b",
+      "totals": {
+        "books": 1,
+        "sections": 346,
+        "tokens": 21994,
+        "bytes": 2951595
+      }
     }
   ],
   "books": [
@@ -936,17 +963,34 @@
       "additionalSources": [
         "assets/xml/antiquities/niese/book-20.json"
       ]
+    },
+    {
+      "id": "antiquities-english-whiston:1",
+      "collectionId": "antiquities-english-whiston",
+      "number": 1,
+      "label": "Book I (including Proem)",
+      "sections": 346,
+      "tokens": 21994,
+      "vocabulary": 2923,
+      "bytes": 2951595,
+      "path": "data/antiquities-english-whiston/book-01.bundle.json",
+      "sha256": "8957992760eaeffdd875e9d061d046ef3190401e3dafb876866dce7d0c415fe1",
+      "corpusPath": "data/antiquities-english-whiston/book-01.corpus.json",
+      "corpusSHA256": "5d94451f1363230e0578d995ece458dd8a4b40e56064487f1362194de21404f0",
+      "additionalSources": [
+        "assets/xml/antiquities/English/preface.xml"
+      ]
     }
   ],
   "totals": {
-    "books": 34,
-    "sections": 12458,
-    "tokens": 488307,
-    "bytes": 84711572
+    "books": 35,
+    "sections": 12804,
+    "tokens": 510301,
+    "bytes": 87663167
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "b50f377293fcdd2986fd32d2a4433cc3b5a782922b424ca302c1fb67b2badcfd",
+    "manifestSHA256": "8b9687ec245e2e2ea561634d4e53b924f9b1c1e8a4cb444c765fc182c36cd4cb",
     "enginePath": "engine.mjs",
     "engineSHA256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
     "lunrPath": "vendor/lunr.cjs",

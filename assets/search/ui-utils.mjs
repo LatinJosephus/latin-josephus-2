@@ -118,7 +118,25 @@ export function readerURL(record,baseURL,{section=true}={}) {
     }
     url.searchParams.set('niese',niese);
   }
+  const english=record.readerLink?.params?.english;
+  if(record.collectionId==='antiquities-english-whiston'||english!==undefined){
+    if(record.work!=='antiquities'||record.language!=='English'||record.edition!=='Whiston'
+      ||(english!==undefined&&english!=='whiston')){
+      throw new TypeError('A Whiston reader link requires its English Antiquities edition metadata.');
+    }
+    url.searchParams.set('english','whiston');
+  }
   return url.href;
+}
+/** Language and matching labels are kept with the source edition. */
+export function textLanguage(source) {
+  return ({Latin:'la',English:'en',Greek:'grc'})[source.language]||'und';
+}
+export function spellingEquivalence(result, literal='source spelling') {
+  if(!result.fold)return literal;
+  return result.normalization?.literalCollectionIds?.length
+    ?'Latin: u/v and i/j equivalent; other languages: original spelling'
+    :'u/v and i/j equivalent';
 }
 /** A source omission is displayed as a note, never added to searchable Latin. */
 export function emptySourceNote(record) {

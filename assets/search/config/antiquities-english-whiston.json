@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "antiquities-english-whiston",
+  "work": "antiquities",
+  "label": "Antiquities Proem and Book I (pilot)",
+  "citationPrefix": "Antiquities",
+  "citationScheme": "niese",
+  "unitLabel": "Niese section",
+  "unitLabelPlural": "Niese sections",
+  "language": "English",
+  "edition": "Whiston",
+  "readerPath": "antiquities/",
+  "corpus": "../data/antiquities-english-whiston/corpus.json",
+  "extractionReport": "../data/antiquities-english-whiston/extraction-report.json",
+  "books": [
+    {
+      "number": 1,
+      "label": "Book I (including Proem)",
+      "corpus": "../data/antiquities-english-whiston/book-01.corpus.json",
+      "sections": 346,
+      "sectionRange": [1, 346],
+      "source": "assets/xml/antiquities/English/book-01.xml",
+      "additionalSources": ["assets/xml/antiquities/English/preface.xml"]
+    }
+  ]
+}

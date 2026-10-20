@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-20T15:58:45.220Z",
+  "generatedAt": "2026-10-20T23:49:07.696Z",
   "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -179,8 +179,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "ccce5a02e032080587b2b2da44fe106a54bb616487153ce607c8ebcf2294f8f7",
-      "bytes": 31545
+      "sha256": "3a112e80d1205d9ea5f824cb7b185c80bf44318cec5be07f603b59df2ef2b954",
+      "bytes": 33299
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -189,8 +189,8 @@
     },
     "collection": {
       "path": "bin/search/collection.mjs",
-      "sha256": "fed1931abc23a58b66ebce9d9ec0f575aaeadd9b6b8124c8658b9dc81539315e",
-      "bytes": 19552
+      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
+      "bytes": 20177
     },
     "lunr": {
       "path": "bin/search/vendor/lunr.cjs",
@@ -219,8 +219,8 @@
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "31334c88863a4fb3676943e94ef5771056790e9d39e2f1744787a53395508b59",
-      "bytes": 14369
+      "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
+      "bytes": 15264
     },
     "books": [
       {
@@ -2069,9 +2069,9 @@
     "MixedFourWorkCollectionMatchingUnits": 8,
     "MixedFourWorkCollectionOccurrences": 8,
     "MixedFourWorkCollectionUnitIdentity": 8,
-    "MixedFourWorkCollectionEvidence": 26100,
-    "MixedFourWorkCollectionRecordIds": 26100,
-    "MixedFourWorkCollectionSections": 26100,
+    "MixedFourWorkCollectionEvidence": 26794,
+    "MixedFourWorkCollectionRecordIds": 26794,
+    "MixedFourWorkCollectionSections": 26794,
     "MixedFourWorkCollectionMatchingSections": 8,
     "MixedFourWorkCollectionSelectionOrder": 8,
     "MixedFourWorkCollectionUniqueRecordIdentity": 8,
@@ -2086,10 +2086,10 @@
     "BundleFetchCaching": 1,
     "InvalidSelectionRejected": 3,
     "MissingSelectedBookRejectsCompleteSearch": 1,
-    "InputUnchangedDuringQA": 115
+    "InputUnchangedDuringQA": 116
   },
   "totalQueries": 293134,
-  "assertions": 3835029,
+  "assertions": 3837112,
   "failedAssertions": 0,
   "examples": [
     {
@@ -7570,7 +7570,8 @@
         "antiquities-latin-bamberg78:17",
         "antiquities-latin-bamberg78:18",
         "antiquities-latin-bamberg78:19",
-        "antiquities-latin-bamberg78:20"
+        "antiquities-latin-bamberg78:20",
+        "antiquities-english-whiston:1"
       ],
       "matchingUnits": 532,
       "matchingSections": 532,
@@ -7614,7 +7615,8 @@
         "antiquities-latin-bamberg78:17",
         "antiquities-latin-bamberg78:18",
         "antiquities-latin-bamberg78:19",
-        "antiquities-latin-bamberg78:20"
+        "antiquities-latin-bamberg78:20",
+        "antiquities-english-whiston:1"
       ],
       "matchingUnits": 34,
       "matchingSections": 532,
@@ -7658,10 +7660,11 @@
         "antiquities-latin-bamberg78:17",
         "antiquities-latin-bamberg78:18",
         "antiquities-latin-bamberg78:19",
-        "antiquities-latin-bamberg78:20"
+        "antiquities-latin-bamberg78:20",
+        "antiquities-english-whiston:1"
       ],
-      "matchingUnits": 12450,
-      "matchingSections": 12450,
+      "matchingUnits": 12796,
+      "matchingSections": 12796,
       "occurrences": 0
     },
     {
@@ -7702,14 +7705,15 @@
         "antiquities-latin-bamberg78:17",
         "antiquities-latin-bamberg78:18",
         "antiquities-latin-bamberg78:19",
-        "antiquities-latin-bamberg78:20"
+        "antiquities-latin-bamberg78:20",
+        "antiquities-english-whiston:1"
       ],
-      "matchingUnits": 34,
+      "matchingUnits": 35,
       "matchingSections": 0,
       "occurrences": 0
     }
   ],
-  "durationSeconds": 303.48,
+  "durationSeconds": 278.15,
   "limitations": [
     "Automated Node/Python acceptance, not browser or visual acceptance.",
     "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",
