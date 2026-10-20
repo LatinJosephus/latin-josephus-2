@@ -12,7 +12,7 @@ const html=`<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Search Cardwell’s Latin Bellum Judaicum with exact phrases, Boolean logic, and wildcards.">
+  <meta name="description" content="Search the Latin Bellum Judaicum, De excidio, Contra Apionem and Antiquities I–X with exact phrases, Boolean logic, wildcards, and a concordance.">
   <title>Search preview · Latin Josephus</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
@@ -26,7 +26,7 @@ const html=`<!doctype html>
   <script type="module" src="./app.mjs"></script>
 </head>
 <body>
-  <header class="preview-header"><a href="${readerBase}">Latin Josephus</a><span>Search preview · Books I–VII</span></header>
+  <header class="preview-header"><a href="${readerBase}">Latin Josephus</a><span>Search preview · Four Latin collections</span></header>
 ${body}
 </body>
 </html>

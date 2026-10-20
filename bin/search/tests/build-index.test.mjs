@@ -141,3 +141,77 @@ test("declared coverage and combined corpus disagreements fail without creating 
   await assert.rejects(f.build(), /Combined corpus differs from its book shard/);
   await assert.rejects(access(join(f.base, "data")), { code: "ENOENT" });
 });
+
+test("declared missing citations remain absent and cannot create a phrase across the gap", async (t) => {
+  const f = await fixture(t), definition = f.definitions[1];
+  const first = {...definition.records[0], text: "ante"};
+  definition.records = [first, {...first, id: `${definition.id}-1-3`, section: 3, order: 1, text: "post", breakBefore: true}];
+  Object.assign(definition.manifest.books[0], {sections: 2, sectionRange: [1, 3], missingSections: [2]});
+  await f.rewrite(definition);
+  await f.build();
+  const catalog = JSON.parse(await readFile(f.catalogPath));
+  const entry = catalog.books.find(book => book.collectionId === definition.id);
+  assert.deepEqual(entry.sectionRange, [1, 3]);
+  assert.deepEqual(entry.missingSections, [2]);
+  const bundle = JSON.parse(await readFile(join(f.base, entry.path)));
+  assert.deepEqual(bundle.records.map(record => record.section), [1, 3]);
+  const collection = createCollection(catalog, lunr, {baseURL: "https://test.example/search/", fetchImpl: async url => new Response(await readFile(join(f.base, url.pathname.slice("/search/".length))))});
+  assert.equal((await collection.search('"ante post"', {collections: [definition.id], scope: "book"})).matchingUnits, 0);
+  assert.equal((await collection.search("ante AND post", {collections: [definition.id], scope: "book"})).matchingUnits, 1);
+});
+
+test("unreviewed missing-section declarations and missing phrase boundaries fail before output", async (t) => {
+  const f = await fixture(t), definition = f.definitions[1], first = definition.records[0];
+  definition.records = [first, {...first, id: `${definition.id}-1-3`, section: 3, order: 1, text: "post", breakBefore: true}];
+  const spec = definition.manifest.books[0];
+  Object.assign(spec, {sections: 2, sectionRange: [1, 3], missingSections: [2]});
+  for (const missing of [[2, 2], [3, 2], [0], [4], [1]]) {
+    spec.missingSections = missing;
+    await f.rewrite(definition);
+    await assert.rejects(f.build(), /Invalid|declared missing section/);
+    await assert.rejects(access(join(f.base, "data")), {code: "ENOENT"});
+  }
+  spec.missingSections = [2];
+  definition.records[1].breakBefore = false;
+  await f.rewrite(definition);
+  await assert.rejects(f.build(), /needs a phrase boundary/);
+  await assert.rejects(access(join(f.base, "data")), {code: "ENOENT"});
+  delete spec.sectionRange;
+  await f.rewrite(definition);
+  await assert.rejects(f.build(), /Invalid missingSections/);
+});
+
+test("encoded omissions and untexted source intervals keep distinct coverage metadata", async (t) => {
+  const f = await fixture(t), definition = f.definitions[1], first = definition.records[0];
+  const gap = {kind: "tei-gap", start: 0, end: 0, text: "", sourceAttributes: {reason: "omitted"}};
+  definition.records = [
+    {...first, text: "", textGaps: [gap], phraseBreaks: [0], breakBefore: true},
+    {...first, id: `${definition.id}-1-2`, section: 2, order: 1, text: "", textGaps: [], phraseBreaks: [], breakBefore: true,
+      emptySource: {kind: "empty-source-interval"}},
+  ];
+  Object.assign(definition.manifest.books[0], {sections: 2, sectionRange: [1, 2], omittedSections: [1], emptySections: [1, 2]});
+  await f.rewrite(definition);
+  await f.build();
+  const catalog = JSON.parse(await readFile(f.catalogPath));
+  const entry = catalog.books.find(book => book.collectionId === definition.id);
+  assert.deepEqual(entry.omittedSections, [1]);
+  assert.deepEqual(entry.emptySections, [1, 2]);
+  const bundle = JSON.parse(await readFile(join(f.base, entry.path)));
+  assert.equal(bundle.stats.tokens, 0);
+  assert.deepEqual(bundle.records[0].textGaps, [gap]);
+  assert.deepEqual(bundle.records[1].emptySource, {kind: "empty-source-interval"});
+});
+
+test("an empty citation cannot be claimed as an encoded omission without source evidence", async (t) => {
+  const f = await fixture(t), definition = f.definitions[1];
+  definition.records[0].text = "";
+  definition.manifest.books[0].omittedSections = [1];
+  await f.rewrite(definition);
+  await assert.rejects(f.build(), /inconsistent documented empty sections/);
+  await assert.rejects(access(join(f.base, "data")), {code: "ENOENT"});
+  delete definition.manifest.books[0].omittedSections;
+  definition.manifest.books[0].emptySections = [1];
+  await f.rewrite(definition);
+  await assert.rejects(f.build(), /inconsistent documented empty sections/);
+  await assert.rejects(access(join(f.base, "data")), {code: "ENOENT"});
+});

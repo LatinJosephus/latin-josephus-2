@@ -29,7 +29,7 @@ function updateScopeHint(){
     ?`Each selected book, work and edition is evaluated separately. Boolean conditions may match anywhere in that book. Exact phrases remain consecutive and can cross citation and chapter boundaries within it.${deh?' The De excidio Prologue is separated from the Book I narrative; phrases do not cross that boundary.':''}`
     :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
   if(apion)els.scopeHint.textContent+=' In Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
-  if(collections.some(collection=>collection.work==='antiquities'))els.scopeHint.textContent+=' Antiquities includes the Proem with Book I. Phrases stop at marked gaps and at the Proem’s end; Boolean conditions can relate words on either side.';
+  if(collections.some(collection=>collection.work==='antiquities'))els.scopeHint.textContent+=' Antiquities includes the Proem with Book I. Phrases stop at marked gaps, empty source intervals, missing citation ranges and the Proem’s end; Boolean conditions can relate words on either side.';
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
@@ -55,7 +55,7 @@ function populateControls(){
   const coverage=catalog.collections.map(collection=>`${collection.citationPrefix}: ${collection.totals.sections.toLocaleString()} ${citationUnitLabels([collection]).plural}`).join(' · ');
   $('coverage').textContent=`${catalog.books.length} books · ${coverage} · ${catalog.totals.tokens.toLocaleString()} words · Latin main text`;
   const included=catalog.collections.map(c=>`${c.label}, ${c.language}, ${c.edition} (${c.books.length} books)`).join('; ');
-  const future=catalog.collections.some(c=>c.work==='antiquities')?' Antiquities currently covers the Proem and Books I–V; later books are not yet indexed.':' Antiquities will be added after its text repairs and verification are complete.';
+  const future=catalog.collections.some(c=>c.work==='antiquities')?' Antiquities currently covers the Proem and Books I–X; later books are not yet indexed.':' Antiquities will be added after its text repairs and verification are complete.';
   $('included-text').textContent=`Currently indexed: ${included}. Editorial titles, printed division labels and manuscript annotations are excluded.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units. Supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':''}${future}`;
 }
 function applyState(state){
@@ -203,7 +203,7 @@ function resultContext(result,model){
   }
   if(collections.some(collection=>citationScheme(collection)==='chapter-paragraph'))parts.push('De excidio citations give book, chapter and paragraph (or Prol.). [Brackets] mark supplied text; struck text marks editorial deletion; † marks unresolved text. These markings are retained in the CSV’s editorial columns.');
   if(collections.some(collection=>collection.work==='contra-apionem'))parts.push('Contra Apionem uses Niese sections. Asterisks retain the source’s marked interruptions, which exact phrases cannot cross. Bold green text marks an addition in the source; the CSV’s editorial columns show it as ⟨added text⟩.');
-  if(collections.some(collection=>collection.work==='antiquities'))parts.push('Antiquities currently includes the Proem and Books I–V of Bamberg Msc. Class. 78. Added and deleted letters remain searchable: bold green text marks additions and struck text marks deletions. Exact phrases stop at marked gaps and at the end of the Proem. III.240 retains its citation and the source’s omission, without generated Latin text.');
+  if(collections.some(collection=>collection.work==='antiquities'))parts.push('Antiquities currently includes the Proem and Books I–X of Bamberg Msc. Class. 78. Added, deleted and uncertain letters remain searchable: bold green text marks additions, struck text marks deletions and dotted underlining marks uncertain readings. Exact phrases stop at source gaps, empty intervals, missing citation ranges and the end of the Proem. III.240 and VII.69–99 retain their citations and encoded omissions. X.108 has a citation label but no Latin before the next Niese marker. IX.51–109 are absent from the accepted source; no records have been generated for them.');
   return parts.join(' ');
 }
 function renderSuccessful(){
@@ -216,7 +216,7 @@ function renderSuccessful(){
   els.resultQuery.replaceChildren(node('span','Query: '),node('code',successful.state.query));els.resultQuery.hidden=false;
   if(items.length)renderNext();else{els.more.hidden=true;renderEmpty(result);}
   els.status.textContent=summarize(result,model);els.copy.disabled=false;
-  els.download.disabled=result.matchingUnits===0;updateViewButtons();
+  els.download.disabled=false;updateViewButtons();
 }
 function changeView(nextView){
   if(!successful||view===nextView)return;
@@ -292,18 +292,20 @@ els.concordance.addEventListener('click',()=>changeView('concordance'));
 root.querySelectorAll('[data-query]').forEach(button=>button.addEventListener('click',()=>search({example:button.dataset})));
 els.copy.addEventListener('click',async()=>{if(!successful)return;try{await navigator.clipboard.writeText(successfulURL().href);els.copy.textContent='Link copied';setTimeout(()=>els.copy.textContent='Copy search link',2000);}catch{els.copy.textContent='Copy the address bar URL';}});
 els.download.addEventListener('click',()=>{
-  if(!successful||successful.result.matchingUnits===0)return;
+  if(!successful)return;
   els.download.disabled=true;els.downloadStatus.textContent='Preparing all results…';
   try{
     const exported=exportConcordance(successful.model,successful.result,{catalog,searchURL:successfulURL().href,exportedAt:new Date()});
     const url=URL.createObjectURL(new Blob([exported.text],{type:exported.mimeType}));
     const a=node('a');a.href=url;a.download=exported.filename;a.hidden=true;document.body.append(a);a.click();a.remove();
     setTimeout(()=>URL.revokeObjectURL(url),60000);
-    els.downloadStatus.textContent=`CSV prepared: ${exported.rowCount.toLocaleString()} ${exported.rowCount===1?'row':'rows'} from all results for the displayed query.`;
+    els.downloadStatus.textContent=exported.rowCount===0
+      ?'CSV prepared: no matches; search settings and source coverage are included.'
+      :`CSV prepared: ${exported.rowCount.toLocaleString()} ${exported.rowCount===1?'row':'rows'} from all results for the displayed query.`;
   }catch(error){
     els.downloadStatus.textContent=error?.message||'The CSV could not be prepared. Please try the download again.';
   }finally{
-    els.download.disabled=!successful||successful.result.matchingUnits===0;
+    els.download.disabled=!successful;
   }
 });
 window.addEventListener('popstate',()=>{

@@ -14,6 +14,7 @@ export const jsonBytes = value => Buffer.from(JSON.stringify(value, null, 2) + '
 const posix = value => value.split(path.sep).join('/');
 const equal = (actual, expected, message) => assert.deepEqual(actual, expected, message);
 const sorted = values => [...values].sort();
+const sectionRange = (first, last) => Array.from({length: last - first + 1}, (_, index) => first + index);
 // Latin-1 preserves every byte while changing only the two-byte CRLF sequence.
 const lfBytes = bytes => Buffer.from(bytes.toString('latin1').replace(/\r\n/gu, '\n'), 'latin1');
 
@@ -279,13 +280,25 @@ export function validateCaSourceProjection(corpus, report, manifest, spec) {
       report.counts.asteriskMarkerClusters, report.counts.breakBeforeUnits], 'CA markup and phrase-boundary totals differ');
 }
 
-/** Check the first Antiquities batch, including the separate Proem and an encoded empty unit. */
+/** Check the accepted Antiquities I–X snapshot, including omissions and missing citation labels. */
 export function validateAntiquitiesSourceProjection(corpus, report, manifest, spec) {
   equal(manifest.citationScheme, 'niese', 'Antiquities requires Niese citations');
-  assert([1, 2, 3, 4, 5].includes(spec.number), 'Unreviewed Antiquities book');
-  const roman = ['', 'I', 'II', 'III', 'IV', 'V'][spec.number];
-  const primary = `assets/xml/antiquities/Latin/book-0${spec.number}.xml`;
+  assert(sectionRange(1, 10).includes(spec.number), 'Unreviewed Antiquities book');
+  const roman = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'][spec.number];
+  const primary = `assets/xml/antiquities/Latin/book-${String(spec.number).padStart(2, '0')}.xml`;
   const additional = spec.number === 1 ? ['assets/xml/antiquities/Latin/preface.xml'] : [];
+  const omissions = spec.number === 3 ? [240] : spec.number === 7 ? sectionRange(69, 99) : [];
+  const intervals = spec.number === 10 ? [108] : [];
+  const missing = spec.number === 9 ? sectionRange(51, 109) : [];
+  equal(spec.missingSections || [], missing, 'Antiquities declared missing citations differ');
+  equal(spec.omittedSections || [], spec.number === 7 ? omissions : [], 'Antiquities declared omissions differ');
+  equal(spec.emptySections || [], intervals, 'Antiquities declared empty intervals differ');
+  equal(report.coverage.missingSections, missing, 'Antiquities missing-citation evidence differs');
+  equal(report.coverage.sourceOrderIsConsecutive, missing.length === 0, 'Antiquities citation continuity differs');
+  if (spec.number > 5) {
+    equal(report.coverage.omittedSections, omissions, 'Antiquities omission coverage differs');
+    equal(report.coverage.emptySourceIntervals, intervals, 'Antiquities empty-interval coverage differs');
+  }
   equal(spec.source, primary, 'Antiquities manifest has the wrong source');
   equal(spec.additionalSources || [], additional, 'Antiquities Proem inventory differs');
   equal(report.sources.map(source => source.path), [...additional, primary], 'Antiquities source reading order differs');
@@ -295,12 +308,13 @@ export function validateAntiquitiesSourceProjection(corpus, report, manifest, sp
   equal(report.coverage.generatedDisplayGlyphs, 0, 'Antiquities must not generate running text');
   equal(report.coverage.sourceProjectionExactlyRestoresSource, true, 'Antiquities restoration is unverified');
   const empty = corpus.filter(record => record.text === '').map(record => record.section);
-  equal(empty, spec.number === 3 ? [240] : [], 'Unexpected empty Antiquities section');
+  equal(empty, [...omissions, ...intervals], 'Unexpected empty Antiquities section');
   equal(report.coverage.allowedEmptySections, empty, 'Antiquities empty-section evidence differs');
   equal(report.coverage.allSectionTextsNonempty, empty.length === 0, 'Antiquities nonempty-text evidence is inaccurate');
   const bySection = new Map(corpus.map(record => [record.section, record]));
   const digest = text => sha256(Buffer.from(text));
-  let literalGaps = 0, sourceGaps = 0;
+  let sourceGaps = 0, omissionNotices = 0;
+  const literalGaps = [];
   for (let index = 0; index < corpus.length; index++) {
     const record = corpus[index], audit = report.sectionAudits[index];
     const proem = spec.number === 1 && record.section <= 26, readerBook = proem ? 'preface' : spec.number;
@@ -317,41 +331,65 @@ export function validateAntiquitiesSourceProjection(corpus, report, manifest, sp
     equal(record.sourceId, record.sourceIds[0], 'Antiquities first source paragraph differs');
     equal(audit.recordId, record.id, 'Antiquities section audit has the wrong identity');
     equal(audit.displayTextSha256, digest(record.text), 'Antiquities display text differs from source audit');
-    for (const key of ['section', 'sourcePath', 'sourceIds', 'editorialMarks', 'sourceMarkup', 'textGaps', 'phraseBreaks'])
+    for (const key of ['section', 'sourcePath', 'sourceIds', 'editorialMarks', 'sourceMarkup', 'textGaps', 'phraseBreaks', 'emptySource'])
       equal(record[key], audit[key], `Antiquities source metadata differs: ${record.id}.${key}`);
+    if (intervals.includes(record.section)) {
+      equal(record.emptySource, {kind: 'empty-source-interval', sourcePath: primary, sourceId: 'latin-book10-num108',
+        label: {sourceTag: 'num', sourceAttributes: {}, text: '[VII.iii.108]', sourceTextStart: 0, sourceTextEnd: 13},
+        nextBoundary: {sourceTag: 'milestone', sourceAttributes: {unit: 'niese', n: '109'}, sourceTextOffset: 14},
+        interveningText: ' '}, 'Antiquities empty interval has different source evidence');
+      equal([record.text, record.textGaps, record.phraseBreaks], ['', [], []], 'An empty interval cannot invent Latin or an encoded gap');
+    } else equal(record.emptySource, undefined, 'Unreviewed Antiquities empty source interval');
     editorialMarksFor(record);
     for (const mark of record.editorialMarks) {
-      assert(['add', 'del'].includes(mark.kind) && mark.sourceTag === mark.kind && mark.sourceAttributes,
+      assert(['add', 'del', ...(spec.number > 5 ? ['unclear'] : [])].includes(mark.kind) && mark.sourceTag === mark.kind && mark.sourceAttributes,
         'Antiquities editorial source tag or attributes differ');
     }
     for (const mark of record.sourceMarkup) {
-      assert(['ref', 's'].includes(mark.kind) && mark.sourceTag === mark.kind && mark.sourceAttributes &&
+      assert(['ref', 's', ...(spec.number > 5 ? ['corr', 'expan'] : [])].includes(mark.kind) && mark.sourceTag === mark.kind && mark.sourceAttributes &&
         Number.isInteger(mark.start) && Number.isInteger(mark.end) && mark.start >= 0 && mark.end > mark.start && mark.end <= record.text.length,
         'Invalid Antiquities transparent source span');
       equal(record.text.slice(mark.start, mark.end), mark.text, 'Antiquities transparent source text differs');
     }
     for (const gap of record.textGaps) {
       if (gap.kind === 'tei-gap') {
-        equal([spec.number, record.section, record.text], [3, 240, ''], 'Unexpected Antiquities encoded omission');
+        assert(omissions.includes(record.section) && record.text === '', 'Unexpected Antiquities encoded omission');
         equal(gap, {kind: 'tei-gap', start: 0, end: 0, text: '', sourceAttributes: {reason: 'omitted'}}, 'Antiquities omission metadata differs');
         sourceGaps++;
       } else {
-        equal(gap.kind, 'literal-dots', 'Unreviewed Antiquities phrase gap');
+        assert(['literal-dots', 'literal-ellipsis', 'source-marked-dots'].includes(gap.kind), 'Unreviewed Antiquities phrase gap');
         assert(Number.isInteger(gap.start) && Number.isInteger(gap.end) && gap.start >= 0 && gap.end > gap.start && gap.end <= record.text.length,
           'Invalid Antiquities dotted interruption offsets');
         equal(record.text.slice(gap.start, gap.end), gap.text, 'Antiquities dotted interruption differs');
-        assert(/^\.(?:\s*\.)*$/u.test(gap.text), 'Antiquities gap contains non-dot running text');
-        literalGaps++;
+        if (gap.kind === 'literal-ellipsis') equal(gap.text, '…', 'Antiquities ellipsis differs');
+        else assert(/^\.(?:\s*\.)*$/u.test(gap.text), 'Antiquities gap contains non-dot running text');
+        if (gap.kind === 'source-marked-dots') {
+          equal([spec.number, record.section, gap.sourceTag, gap.sourceAttributes],
+            [10, 154, 'del', {hand: '?', rend: 'scraping'}], 'Unreviewed Antiquities source-marked interruption');
+          assert(record.editorialMarks.some(mark => mark.kind === 'del' && mark.start === gap.start && mark.end === gap.end &&
+            mark.text === gap.text && JSON.stringify(mark.sourceAttributes) === JSON.stringify(gap.sourceAttributes)),
+          'Antiquities scraped interruption has no corresponding source span');
+        } else {
+          equal(gap.sourceTag, undefined, 'A literal Antiquities gap cannot invent a source tag');
+          equal(gap.sourceAttributes, undefined, 'A literal Antiquities gap cannot invent source attributes');
+        }
+        literalGaps.push([record.section, gap.kind]);
       }
     }
     equal(record.phraseBreaks, [...new Set(record.textGaps.map(gap => gap.start))].sort((a, b) => a - b), 'Antiquities phrase barriers differ');
     phraseBreakOffsets(record);
-    const breakBefore = (spec.number === 1 && record.section === 27) || (spec.number === 3 && [240, 241].includes(record.section));
+    const breakBefore = (spec.number === 1 && record.section === 27) || (spec.number === 3 && [240, 241].includes(record.section)) ||
+      (spec.number === 7 && record.section >= 69 && record.section <= 100) ||
+      (spec.number === 9 && record.section === 110) || (spec.number === 10 && [108, 109].includes(record.section));
     equal(Boolean(record.breakBefore), breakBefore, 'Antiquities composition or omission boundary differs');
     equal(audit.breakBefore, breakBefore, 'Antiquities source boundary audit differs');
   }
-  equal(literalGaps, ({1: 2, 2: 2, 3: 0, 4: 2, 5: 0})[spec.number], 'Antiquities dotted interruption count differs');
-  equal(sourceGaps, spec.number === 3 ? 1 : 0, 'Antiquities encoded omission count differs');
+  equal(literalGaps, ({1: [[34, 'literal-dots'], [53, 'literal-dots']], 2: [[80, 'literal-dots'], [93, 'literal-dots']],
+    3: [], 4: [[84, 'literal-dots'], [84, 'literal-dots']], 5: [], 6: [],
+    7: [[68, 'literal-ellipsis'], [140, 'literal-ellipsis'], [141, 'literal-ellipsis'], [378, 'literal-dots']],
+    8: [[54, 'literal-ellipsis']], 9: [[110, 'literal-ellipsis']],
+    10: [[154, 'source-marked-dots'], [154, 'source-marked-dots']]})[spec.number], 'Antiquities phrase-gap inventory differs');
+  equal(sourceGaps, omissions.length, 'Antiquities encoded omission count differs');
   for (const document of report.documentReports) {
     const paragraphs = report.paragraphs.filter(paragraph => paragraph.sourcePath === document.source.path);
     const records = corpus.filter(record => record.sourcePath === document.source.path);
@@ -368,9 +406,14 @@ export function validateAntiquitiesSourceProjection(corpus, report, manifest, sp
           part = Array.from(record.text).slice(segment.recordTextStart, segment.recordTextEnd).join('');
           equal(digest(part), segment.textSha256, 'Antiquities restored running text differs');
         } else {
-          assert(['excluded-label', 'excluded-note', 'trimmed-edge-whitespace'].includes(segment.kind), 'Unreviewed Antiquities restoration segment');
+          assert(['excluded-label', 'excluded-note', 'trimmed-edge-whitespace', 'excluded-omission-notice'].includes(segment.kind), 'Unreviewed Antiquities restoration segment');
           part = segment.text;
           if (segment.kind === 'trimmed-edge-whitespace') assert(/^\s*$/u.test(part), 'Antiquities trimmed source letters');
+          if (segment.kind === 'excluded-omission-notice') {
+            equal([spec.number, part, segment.sourceTag, segment.sourceAttributes], [7, ' Omitted in Bamberg MS', '#text', {}],
+              'Antiquities omission notice exclusion differs');
+            omissionNotices++;
+          }
         }
         equal(Array.from(part).length, segment.sourceTextEnd - segment.sourceTextStart, 'Antiquities restored source offset differs');
         text += part; cursor = segment.sourceTextEnd;
@@ -381,6 +424,13 @@ export function validateAntiquitiesSourceProjection(corpus, report, manifest, sp
       return text;
     });
     const coverage = document.coverage;
+    equal(coverage.missingSections, missing, 'Antiquities source document missing citations differ');
+    equal(coverage.sourceOrderIsConsecutive, missing.length === 0, 'Antiquities source document citation continuity differs');
+    const lacunaNotices = document.excluded.filter(item => item.kind === 'lacuna-notice');
+    equal(lacunaNotices, spec.number === 9 ? [{kind: 'lacuna-notice', sourceId: 'latin-book09-num51',
+      sourceAttributes: {'{http://www.w3.org/XML/1998/namespace}id': 'latin-book09-num51'},
+      text: '[Lacuna 51–109; cf. Blatt, p. 67]', textSha256: digest('[Lacuna 51–109; cf. Blatt, p. 67]'), missingSections: missing}] : [],
+    'Antiquities excluded lacuna notice differs');
     for (const key of ['wordSequencePreserved', 'nonWhitespaceContentPreserved', 'sourceProjectionExactlyRestoresSource'])
       equal(coverage[key], true, `Antiquities document coverage failed: ${key}`);
     equal(coverage.paragraphsExactlyRestored, paragraphs.length, 'Antiquities document restoration count differs');
@@ -394,6 +444,7 @@ export function validateAntiquitiesSourceProjection(corpus, report, manifest, sp
     equal(words.length, document.counts.runningWordTokens, 'Antiquities document word count differs');
     equal(coverage.displayTextSequenceSha256, digest(displays.join('\n')), 'Antiquities display order differs');
   }
+  equal(omissionNotices, spec.number === 7 ? 6 : 0, 'Antiquities omission notice count differs');
 }
 
 const extractedSources = book => [book.source, ...(book.additionalSources || [])];
@@ -445,10 +496,12 @@ export function validateSearchSources(root, {qa = true} = {}) {
     for (const key of ['wordSequencePreserved', 'nonWhitespaceContentPreserved', 'globalIdsUnique', 'globalOrderIsConsecutive'])
       equal(report.coverage[key], true, `Extraction coverage failed: ${key}`);
     if (manifest.id === 'antiquities-latin-bamberg78') {
-      equal(report.coverage.allSectionTextsNonempty, false, 'Antiquities must report its encoded omission accurately');
-      equal(report.coverage.allowedEmptySections, [{book: 3, section: 240}], 'Unreviewed empty Antiquities citation');
+      const emptySections = [{book: 3, section: 240}, ...sectionRange(69, 99).map(section => ({book: 7, section})), {book: 10, section: 108}];
+      equal(report.coverage.allSectionTextsNonempty, false, 'Antiquities must report its empty intervals accurately');
+      equal(report.coverage.allowedEmptySections, emptySections, 'Unreviewed empty Antiquities citation');
+      equal(report.coverage.missingSectionsByBook, {'9': sectionRange(51, 109)}, 'Antiquities missing-citation summary differs');
       equal(combined.filter(record => record.text === '').map(record => ({book: record.book, section: record.section})),
-        [{book: 3, section: 240}], 'Unexpected missing Antiquities running text');
+        emptySections, 'Unexpected missing Antiquities running text');
     } else equal(report.coverage.allSectionTextsNonempty, true, 'Extraction coverage failed: allSectionTextsNonempty');
     for (const key of ['id', 'work', 'label', 'citationPrefix', 'language', 'edition', 'readerPath'])
       equal(collection[key], manifest[key], `Catalog metadata differs: ${manifest.id}.${key}`);
@@ -468,6 +521,10 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(book.collectionId, manifest.id, `Wrong book collection: ${id}`);
       equal(book.number, spec.number, `Wrong book number: ${id}`);
       equal(book.label, spec.label, `Wrong book label: ${id}`);
+      const hasCoverageMetadata = ['missingSections', 'omittedSections', 'emptySections'].some(field => spec[field] !== undefined);
+      equal(book.sectionRange, hasCoverageMetadata ? spec.sectionRange : undefined, `Catalog coverage differs: ${id}.sectionRange`);
+      for (const field of ['missingSections', 'omittedSections', 'emptySections'])
+        equal(book[field], spec[field], `Catalog coverage differs: ${id}.${field}`);
       equal(book.corpusPath, configuredPath(spec.corpus), `Wrong book corpus: ${id}`);
       const corpus = artifact(book.corpusPath, book.corpusSHA256).value();
       const extracted = report.books.find(candidate => candidate.book === spec.number);
@@ -487,7 +544,8 @@ export function validateSearchSources(root, {qa = true} = {}) {
         ['sourceWordSequenceSha256', 'indexedWordSequenceSha256'],
         ['sourceNonWhitespaceContentSha256', 'indexedNonWhitespaceContentSha256']])
         equal(bookReport.coverage[a], bookReport.coverage[b], `Source coverage differs: ${id}.${a}`);
-      for (const key of ['missingSections', 'unexpectedSections', 'duplicateSections']) equal(bookReport.coverage[key], [], `${id}: ${key}`);
+      equal(bookReport.coverage.missingSections, spec.missingSections || [], `${id}: missingSections`);
+      for (const key of ['unexpectedSections', 'duplicateSections']) equal(bookReport.coverage[key], [], `${id}: ${key}`);
       equal(bookReport.coverage.completeRange, spec.sectionRange, `Section range differs: ${id}`);
       equal(corpus.length, spec.sections, `Corpus section count differs: ${id}`);
       if (manifest.id === 'deh-latin-ussani') validateDehSourceProjection(corpus, bookReport, manifest, spec);
@@ -504,6 +562,8 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(bundle.stats.tokens, book.tokens, `Catalog token count differs: ${id}`);
       equal(bundle.stats.vocabulary, book.vocabulary, `Catalog vocabulary count differs: ${id}`);
       equal(book.tokens, bookReport.counts.runningWordTokens, `Extracted word count differs: ${id}`);
+      const acceptedSections = spec.sectionRange ? sectionRange(...spec.sectionRange).filter(section => !(spec.missingSections || []).includes(section)) : null;
+      if (acceptedSections) equal(acceptedSections.length, corpus.length, `Accepted section range differs: ${id}`);
       for (let index = 0; index < corpus.length; index++, order++) {
         const record = corpus[index], indexed = bundle.records[index];
         for (const [key, value] of Object.entries(record)) equal(indexed[key], value, `Bundle record differs: ${record.id}.${key}`);
@@ -511,7 +571,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
         equal(record.order, order, `Corpus order differs at ${record.id}`);
         equal(record.book, spec.number, `Corpus book differs at ${record.id}`);
         for (const key of ['work', 'language', 'edition']) equal(record[key], manifest[key], `Wrong version at ${record.id}`);
-        if (spec.sectionRange) equal(record.section, spec.sectionRange[0] + index, `Section order differs at ${record.id}`);
+        if (acceptedSections) equal(record.section, acceptedSections[index], `Section order differs at ${record.id}`);
         assert(!allIds.has(record.id), `Duplicate passage ID: ${record.id}`);
         allIds.add(record.id);
       }

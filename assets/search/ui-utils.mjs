@@ -78,8 +78,10 @@ export function readerURL(record,baseURL,{section=true}={}) {
 }
 /** A source omission is displayed as a note, never added to searchable Latin. */
 export function emptySourceNote(record) {
-  return record.text===''&&record.textGaps?.some(gap=>gap.kind==='tei-gap'&&gap.sourceAttributes?.reason==='omitted')
-    ?'Text marked as omitted in the source.':'';
+  if(record.text!=='')return '';
+  if(record.textGaps?.some(gap=>gap.kind==='tei-gap'&&gap.sourceAttributes?.reason==='omitted'))return 'Text marked as omitted in the source.';
+  return record.emptySource?.kind==='empty-source-interval'
+    ?'No Latin text occurs between this citation label and the next Niese marker.':'';
 }
 export function defaultCollection(catalog) {
   if(catalog.collections.some(collection=>collection.id==='bellum-latin-cardwell'))return 'bellum-latin-cardwell';

@@ -5,7 +5,7 @@
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
 import { parseQuery, tokenizeText, phraseBreakOffsets } from "./engine.mjs";
-import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText } from "./ui-utils.mjs";
+import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote } from "./ui-utils.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;
 const IDENTITY_FIELDS = ["collectionId", "work", "book", "language", "edition"];
@@ -247,7 +247,7 @@ const CSV_COLUMNS = [
   "catalog_schema_version", "lunr_version", "concordance_schema_version", "selected_sources_json", "csv_cell_encoding", "escaped_columns_json",
 ];
 const EDITORIAL_CSV_COLUMNS = ["citation_scheme", "left_context_editorial", "matched_text_editorial", "right_context_editorial", "editorial_notes"];
-const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters. Contra Apionem asterisks and Antiquities dotted interruptions or encoded omissions are phrase boundaries; their spans and source markup are retained in source_segments_json. Antiquities includes the Proem and Books I–V.";
+const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters; unclear source spans retain their original text and attributes. Contra Apionem asterisks and Antiquities marked interruptions are phrase boundaries, with source evidence in source_segments_json. Antiquities includes the Proem and Books I–X. III.240 and VII.69–99 are encoded omissions; X.108 is an empty source interval without an omission tag. IX.51–109 are absent from the accepted source and have no generated records. Coverage metadata is retained in selected_sources_json.";
 
 // Quoting alone does not prevent spreadsheet formula evaluation. Scalar cells
 // beginning with a formula marker (including after whitespace/control chars),
@@ -294,6 +294,7 @@ function exportedSegments(row) {
         sourceAnnotations: record.sourceAnnotations || [], breakBefore: Boolean(record.breakBefore),
       } : {}),
       ...(record.sourcePath ? {sourcePath: record.sourcePath, sourceIds: record.sourceIds, division: record.division} : {}),
+      ...(record.emptySource ? {emptySource: record.emptySource} : {}),
     };
   });
 }
@@ -336,6 +337,8 @@ export function exportConcordance(model, result, metadata = {}) {
     books: (catalog.books || []).filter((entry) => selectedBooks.includes(entry.id)).map((entry) => ({
       id: entry.id, collectionId: entry.collectionId, number: entry.number,
       path: entry.path, sha256: entry.sha256, corpusPath: entry.corpusPath, corpusSHA256: entry.corpusSHA256,
+      ...Object.fromEntries(["sectionRange", "missingSections", "omittedSections", "emptySections"]
+        .filter(field => entry[field] !== undefined).map(field => [field, entry[field]])),
     })),
   });
   const common = {
@@ -363,6 +366,7 @@ export function exportConcordance(model, result, metadata = {}) {
     const markedText = { text: row.left + row.match + row.right, editorialMarks: row.editorialMarks || [] };
     const marks = row.kind === "matching-unit" ? segments.flatMap((segment) => segment.editorialMarks || []) : markedText.editorialMarks;
     const editorialKinds = distinct(marks.map((mark) => ({ del: "deleted", supplied: "supplied", unclear: "unresolved", add: "added" })[mark.kind]));
+    const emptyNotes = distinct(segments.map(emptySourceNote).filter(Boolean));
     return csvRow({
       ...common,
       citation: row.citation, left_context: row.left, matched_text: row.match, right_context: row.right,
@@ -371,8 +375,8 @@ export function exportConcordance(model, result, metadata = {}) {
       left_context_editorial: editorialText(markedText, 0, row.left.length),
       matched_text_editorial: editorialText(markedText, row.left.length, row.left.length + row.match.length),
       right_context_editorial: editorialText(markedText, row.left.length + row.match.length, markedText.text.length),
-      editorial_notes: segments.some(segment => segment.text === "" && segment.textGaps?.some(gap => gap.kind === "tei-gap" && gap.sourceAttributes?.reason === "omitted"))
-        ? `Text marked as omitted in the source. ${EDITORIAL_LEGEND}`
+      editorial_notes: emptyNotes.length
+        ? `${emptyNotes.join(" ")} ${EDITORIAL_LEGEND}`
         : editorialKinds.length ? `This excerpt includes ${editorialKinds.join(", ")} text. ${EDITORIAL_LEGEND}` : (includeEditorialColumns && rowIndex === 0 ? EDITORIAL_LEGEND : ""),
       row_type: row.kind === "matching-unit" ? "matching-unit" : model.countKind === "evidence" ? "positive-evidence" : "occurrence",
       match_kind: row.kind === "matching-unit" ? "" : row.kind,

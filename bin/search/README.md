@@ -9,14 +9,16 @@ This directory contains the source and verification tools for the main site's
   558 chapter/paragraph citation units and 87,472 word tokens.
 - **Boysen's *Contra Apionem*, Books I–II:** 616 Niese sections and
   21,018 word tokens, including the Greek words quoted in this Latin text.
-- **Bamberg Msc. Class. 78 *Antiquities*, Proem and Books I–V:** 1,710 Niese
-  citation units and 67,657 word tokens. Book I includes the separately
+- **Bamberg Msc. Class. 78 *Antiquities*, Proem and Books I–X:** 3,415 Niese
+  citation units and 137,858 word tokens. Book I includes the separately
   transmitted Proem's 26 units and 986 words.
 
-Together these comprise **19 books, 6,885 citation units, and 290,941 word
-tokens**. Antiquities VI–XX and translations are not yet indexed. Antiquities
-III.240 retains its citation and the source's explicit omission, with no
-generated searchable text.
+Together these comprise **24 books, 8,590 citation units, and 361,142 word
+tokens**. Antiquities XI–XX and translations are not yet indexed. Antiquities
+III.240 and VII.69–99 retain their citations and the source's explicit omissions.
+X.108 retains an empty interval between its citation label and the next Niese
+marker, without an omission tag. IX.51–109 are absent from the accepted source;
+no records or searchable Latin have been generated for them.
 
 The Jekyll page is [`_pages/search.html`](../../_pages/search.html), with
 `permalink: /search/`, the shared `default` layout, and `nav: true` for the
@@ -76,11 +78,14 @@ not an inferred lacuna. Whole-book Boolean conditions can still relate
 Prologue and narrative hits within Book I.
 
 Antiquities follows the same separation for its separately transmitted Proem:
-I.1–26 are in the Proem source, and I.27 begins the narrative. Six literal
-dotted interruptions conservatively block phrase adjacency. The explicit
-omission at III.240 blocks phrases across that citation. Ordinary Niese seams
-and the six sections continued across coarse source paragraphs remain
-consecutive, subject to the selected search scope.
+I.1–26 are in the Proem source, and I.27 begins the narrative. Literal dotted
+interruptions, ellipses and the erased-dot spans in X.154 conservatively block
+phrase adjacency. Phrases cannot cross the explicit omissions at III.240 and
+VII.69–99, the empty citation interval X.108, or the missing range IX.51–109.
+Uncertain sentence periods in X.65 and X.75 are ordinary punctuation and do
+not block phrases. Ordinary Niese seams and the eight sections continued
+across coarse source paragraphs remain consecutive, subject to the selected
+search scope.
 
 Neither Boolean conditions nor phrases combine evidence from different books,
 works, languages, or editions. For example, `A AND NOT B` in whole-book scope
@@ -178,7 +183,7 @@ behavior is retained. Legacy explicit numeric books and `book=all` are also
 resolved within Bellum. New links include collection identity so De excidio I
 and Contra Apionem I cannot be confused with Bellum I. The bare page retains **Bellum, all seven
 books** as its default. Choose **De excidio Hierosolymitano** for its five books,
-**Contra Apionem** for its two books, **Antiquities I–V, including Proem** for
+**Contra Apionem** for its two books, **Antiquities I–X, including Proem** for
 the first Antiquities batch, or **All works** to search all four collections.
 Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
 use `antiquities/?book=1`.
@@ -331,7 +336,7 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `extract.py`, `tests/test_extract.py` | Bellum extraction and reconstruction checks. |
 | `extract-deh.py`, `tests/test_extract_deh.py` | De excidio extraction, editorial annotations, and reconstruction checks. |
 | `extract-ca.py`, `tests/test_extract_ca.py` | Contra Apionem extraction, markup, phrase barriers, and reconstruction checks. |
-| `extract-antiquities.py`, `tests/test_extract_antiquities.py` | Antiquities I–V and Proem extraction, source restoration, and gap checks. |
+| `extract-antiquities.py`, `tests/test_extract_antiquities.py` | Antiquities I–X and Proem extraction, source restoration, and gap checks. |
 | `corpus.json`, `data/book-0N.corpus.json` | Generated combined and per-book original-text records. |
 | `extraction-report.json`, `data/book-0N.extraction-report.json` | Generated coverage and reconstruction evidence. |
 | `engine.mjs`, `vendor/` | Boolean/phrase/wildcard engine and pinned Lunr 2.3.9 with licence and provenance. |
@@ -348,7 +353,7 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `data/contra-apionem-latin-boysen/` | Contra Apionem corpus shards, extraction reports, book indexes, and independent QA report. |
 | `tests/ca-corpus-qa.mjs`, `tests/ca-source-witness.py` | Independent Contra Apionem XML witness, token, query, markup, and seam checks. |
 | `tests/phrase-breaks.test.mjs`, `tests/ca-presentation.test.mjs` | Phrase barrier, citation, full export, and three-work compatibility tests. |
-| `data/antiquities-latin-bamberg78/` | Antiquities I–V corpus, per-book indexes, extraction evidence, and independent QA; the Proem is included in book-01. |
+| `data/antiquities-latin-bamberg78/` | Antiquities I–X corpus, per-book indexes, extraction evidence, and independent QA; the Proem is included in book-01. |
 | `tests/antiquities-corpus-qa.mjs`, `tests/antiquities-source-witness.py`, `tests/antiquities-presentation.test.mjs` | Independent six-document witness, all-token and query checks, Proem links, gap boundaries, editorial exports, and four-work integration. |
 | `build-search.mjs`, `publication.mjs`, `check-assets.mjs` | Rebuild orchestration, export validation, and read-only freshness checks. |
 | `assets/search/` at repository root | Generated runtime and evidence export, including `publication-manifest.json`. |
@@ -553,13 +558,62 @@ The adapter preserves all 424 numbered source paragraphs through reversible
 extraction evidence. Every running source word and non-whitespace character
 is retained. Original `<add>` and `<del>` content remains searchable, with
 its original attributes; `<s>` and `<ref>` spans remain distinct metadata.
-III.240 is the only permitted empty citation and requires the source's exact
+In that first batch, III.240 is the only permitted empty citation and requires the source's exact
 `<gap reason="omitted"/>` representation. Its English omission note is UI
 text, never indexed Latin. CSV source segments retain its zero-width gap.
 Titles, subscriptions, printed labels, and annotation notes are excluded with
 source evidence. No medieval chapter is invented for a Niese section.
 
-For VI–X, XI–XV, and XVI–XX, extend the same collection only after reviewing
+### Second batch: Books VI–X
+
+The second batch adds five explicitly reviewed XML files at the same repaired
+source snapshot. It retains all first-batch records, per-book corpora,
+extraction reports and index bundles byte for byte.
+
+| Book | Citation units | Word tokens | Coverage |
+| --- | ---: | ---: | --- |
+| VI | 378 | 16,460 | 1–378 |
+| VII | 394 | 15,801 | 1–394, including 31 explicitly omitted empty citations at 69–99 |
+| VIII | 420 | 17,810 | 1–420 |
+| IX | 232 | 9,209 | 1–50 and 110–291; the source labels 51–109 as a lacuna |
+| X | 281 | 10,921 | 1–281, including the empty source interval at 108 |
+| Added batch | 1,705 | 70,201 | Books VI–X |
+
+All 342 new numbered running-text paragraphs have reversible source evidence.
+The six English notices `Omitted in Bamberg MS` in VII are excluded from the
+Latin index with their exact source positions. IX's separate lacuna-notice
+paragraph is preserved as excluded source evidence, not a synthetic Niese
+record. The manifest and catalog distinguish `missingSections`,
+`omittedSections` and `emptySections`; CSV coverage metadata carries them
+even when a search returns no matches.
+
+X.108 has a printed citation label followed by whitespace and the milestone
+for 109. Its `emptySource` metadata preserves that exact interval and the
+following marker. It has no invented TEI gap and does not assert a manuscript
+omission. Negative-only searches can return an empty citation with a factual
+explanation, without inventing an occurrence.
+
+The source's explicit Niese milestones govern the irregular paragraph starts
+at VI.269, VI.271 and X.150. Leading words before the milestone for VIII.187
+continue VIII.186; VIII.255 is also continued across source paragraphs.
+Coarse division numbers and paragraph IDs remain source evidence and do not
+override these citation boundaries.
+
+Added and deleted text remains searchable. New `<unclear>` spans also retain
+all original characters and attributes, with visible uncertainty marks and
+clipped offsets where a span crosses X.199–200. `<corr>` and `<expan>` preserve
+their accepted running letters and source metadata. Column and image markers
+are structural; annotation notes and stand-off apparatus are excluded.
+
+There are eight new internal phrase barriers: four in VII, one in VIII,
+one in IX, and the two scraped-dot spans in X.154. Ordinary uncertain sentence
+periods in X.65 and X.75 remain normal punctuation. Empty intervals, explicit
+omissions, the absent IX range and the Proem boundary also stop adjacency.
+Whole-book Boolean conditions can still relate words on either side.
+
+### Subsequent five-book batches
+
+For XI–XV and XVI–XX, extend the same collection only after reviewing
 the relevant five-book snapshot. Update the extractor's accepted ranges,
 markup and gap inventory, manifest, publication source projection checks,
 and independent witness together. Do not automatically discover and index

@@ -87,13 +87,50 @@ async function readCollection(manifestPath) {
     const bytes = await readFile(path);
     const records = recordsFrom(bytes);
     if (records.length !== book.sections) throw new Error(`${manifest.id}, book ${book.number} requires ${book.sections} sections; found ${records.length}.`);
+    const coverageLists = {};
+    for (const field of ["missingSections", "omittedSections", "emptySections"]) {
+      if (book[field] === undefined) continue;
+      const values = book[field];
+      if (!Array.isArray(values) || values.some((value, index) => !Number.isInteger(value) || value < 1
+        || (index > 0 && value <= values[index - 1])) || book.sectionRange === undefined) {
+        throw new Error(`Invalid ${field} for ${manifest.id}, book ${book.number}.`);
+      }
+      coverageLists[field] = values;
+    }
     if (book.sectionRange !== undefined) {
       const range = book.sectionRange;
+      const missing = new Set(coverageLists.missingSections || []);
       if (!Array.isArray(range) || range.length !== 2 || range.some((value) => !Number.isInteger(value))
-        || range[0] > range[1] || range[1] - range[0] + 1 !== book.sections) throw new Error(`Invalid expected section range for ${manifest.id}, book ${book.number}.`);
+        || range[0] < 1 || range[0] > range[1] || range[1] - range[0] + 1 - missing.size !== book.sections
+        || Object.values(coverageLists).flat().some(value => value < range[0] || value > range[1])) {
+        throw new Error(`Invalid expected section range for ${manifest.id}, book ${book.number}.`);
+      }
       const labels = new Set(records.map((record) => Number(record.section)));
+      if (labels.size !== records.length) throw new Error(`${manifest.id}, book ${book.number} repeats a section label.`);
       for (let section = range[0]; section <= range[1]; section += 1) {
+        if (missing.has(section)) {
+          if (labels.has(section)) throw new Error(`${manifest.id}, book ${book.number} contains declared missing section ${section}.`);
+          continue;
+        }
         if (!labels.has(section)) throw new Error(`${manifest.id}, book ${book.number} is missing expected section ${section}.`);
+      }
+      for (let index = 1; index < records.length; index += 1) {
+        const left = Number(records[index - 1].section), right = Number(records[index].section);
+        if ([...missing].some(section => section > Math.min(left, right) && section < Math.max(left, right)) && !records[index].breakBefore) {
+          throw new Error(`${manifest.id}, book ${book.number} needs a phrase boundary across its declared missing sections.`);
+        }
+      }
+    }
+    const documentedEmpty = coverageLists.emptySections ?? coverageLists.omittedSections;
+    if (documentedEmpty !== undefined) {
+      const actual = records.filter(record => record.text === "").map(record => Number(record.section)).sort((a, b) => a - b);
+      const omitted = new Set(coverageLists.omittedSections || []);
+      if (JSON.stringify(actual) !== JSON.stringify(documentedEmpty) || [...omitted].some(section => !actual.includes(section))
+        || records.some(record => record.text === "" && (omitted.has(Number(record.section))
+          ? !record.textGaps?.some(gap => gap.kind === "tei-gap" && gap.start === 0 && gap.end === 0
+            && gap.text === "" && gap.sourceAttributes?.reason === "omitted")
+          : record.emptySource?.kind !== "empty-source-interval"))) {
+        throw new Error(`${manifest.id}, book ${book.number} has inconsistent documented empty sections.`);
       }
     }
     books.push({ ...book, path, bytes, records });
@@ -165,6 +202,10 @@ export async function buildCatalog(options = {}) {
         sections: result.bundle.stats.records, tokens: result.bundle.stats.tokens, vocabulary: result.bundle.stats.vocabulary,
         bytes: result.bytes, path: portableRelative(outputBase, outputPath), sha256: result.sha256,
         corpusPath: portableRelative(outputBase, book.path), corpusSHA256: result.bundle.source.corpusSHA256,
+        ...(["missingSections", "omittedSections", "emptySections"].some(field => book[field] !== undefined) ? {
+          sectionRange: book.sectionRange,
+          ...Object.fromEntries(["missingSections", "omittedSections", "emptySections"].filter(field => book[field] !== undefined).map(field => [field, book[field]])),
+        } : {}),
       });
     }
     const { id, work, label, citationPrefix, language, edition, readerPath } = manifest;

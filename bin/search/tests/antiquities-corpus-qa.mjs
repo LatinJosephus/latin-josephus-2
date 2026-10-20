@@ -1,4 +1,4 @@
-/** Independent Antiquities I–V source, token, and query acceptance.
+/** Independent Antiquities I–X source, token, and query acceptance.
  * The exact Python minidom witness is embedded and checked against the separate
  * witness file. No production extractor, tokenizer, parser or phrase matcher
  * is used to generate expected source content or expected query results.
@@ -52,7 +52,7 @@ function check(category, actual, expected, context = {}) {
 
 
 const pythonWitness = String.raw`#!/usr/bin/env python3
-"""Independent source witness for Antiquities Proem and Books I–V.
+"""Independent source witness for Antiquities Proem and Books I–X.
 
 This verifier uses minidom and a text-node event stream, independently of the
 production ElementTree extractor. It does not import any search code. Its XML
@@ -80,8 +80,13 @@ SPECS = [
     ("book-03", 3, 1, 322, "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59"),
     ("book-04", 4, 1, 331, "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1"),
     ("book-05", 5, 1, 362, "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554"),
+    ("book-06", 6, 1, 378, "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f"),
+    ("book-07", 7, 1, 394, "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd"),
+    ("book-08", 8, 1, 420, "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af"),
+    ("book-09", 9, 1, 291, "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640"),
+    ("book-10", 10, 1, 281, "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863"),
 ]
-ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"}
+ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X"}
 LABEL = re.compile(r"\[(?:[IVXLCDMivxlcdm]+\.)?(?:[IVXLCDMivxlcdm]+\.)?(\d+)\]\Z")
 LITERAL_DOTS = re.compile(r"(?<=<)\.+(?=>)|\.{3,}")
 
@@ -139,7 +144,8 @@ def extract_file(root, spec, order):
     assert len(ids) == len(set(ids)), ("Duplicate source ID", source)
     body_tags = Counter(e.localName for e in [body] + list(body.getElementsByTagName("*")))
     assert set(body_tags) <= {"body", "note", "div1", "div2", "p", "num", "pb", "lb",
-                              "milestone", "add", "del", "s", "ref", "anchor", "gap", "trailer"}
+                              "milestone", "add", "del", "s", "ref", "anchor", "gap", "trailer",
+                              "cb", "corr", "unclear", "expan", "head"}
     rows = []
     paragraph_rows = []
     excluded = []
@@ -147,6 +153,7 @@ def extract_file(root, spec, order):
     current_p = None
     raw_offset = 0
     editorial = []
+    niese_evidence = []
 
     def touch():
         if active is None:
@@ -159,7 +166,13 @@ def extract_file(root, spec, order):
 
     def start(number, kind):
         nonlocal active
-        assert number == first + len(rows), ("Niese sequence", source, number, len(rows))
+        if active is not None and number == active["section"]:
+            assert (book, number) == (8, 255) and kind == "num", ("Unexpected repeated label", source, number)
+            return
+        expected = rows[-1]["section"] + 1 if rows else first
+        if book == 9 and expected == 51:
+            expected = 110
+        assert number == expected, ("Niese sequence", source, number, expected)
         active = {"book": book, "section": number, "sourceFile": source,
                   "readerBook": "preface" if name == "preface" else book,
                   "sourceIds": [], "events": [], "lastParagraph": None,
@@ -171,6 +184,13 @@ def extract_file(root, spec, order):
     def walk(node):
         nonlocal raw_offset, active
         if node.nodeType in (Node.TEXT_NODE, Node.CDATA_SECTION_NODE):
+            if book == 7 and current_p in {f"latin-book07-num{n}" for n in (69, 71, 78, 87, 90, 96)}:
+                assert node.data == " Omitted in Bamberg MS", ("Unexpected omission notice", current_p, node.data)
+                excluded.append({"kind": "omission-notice", "sourceId": current_p,
+                                 "rawStart": raw_offset, "rawEnd": raw_offset + len(node.data),
+                                 "text": node.data, "attributes": {}})
+                raw_offset += len(node.data)
+                return
             if active is None:
                 assert not node.data.strip(), ("Narrative without Niese identity", source, current_p, node.data)
             else:
@@ -187,7 +207,13 @@ def extract_file(root, spec, order):
             if tag == "num":
                 match = LABEL.fullmatch(content.strip())
                 if match:
-                    start(int(match[1]), "num")
+                    # These accepted coarse printed labels are displaced from
+                    # the explicit Niese milestones. Preserve the label as
+                    # source evidence and let the actual milestone start the
+                    # section; VIII.186 retains the preceding Latin words.
+                    displaced = {(8, "latin-book08-num187"), (10, "latin-book10-num151")}
+                    if (book, current_p) not in displaced:
+                        start(int(match[1]), "num")
             excluded.append({"kind": tag, "sourceId": current_p, "rawStart": raw_offset,
                              "rawEnd": raw_offset + len(content), "text": content,
                              "attributes": attrs(node)})
@@ -196,21 +222,26 @@ def extract_file(root, spec, order):
         if tag == "milestone":
             assert not all_text(node) and not children(node)
             if node.getAttribute("unit") == "niese":
+                niese_evidence.append({"sourceId": current_p, "rawOffset": raw_offset, "attributes": attrs(node)})
                 start(int(node.getAttribute("n")), "milestone")
             elif node.getAttribute("unit") == "niese-end":
                 assert name == "preface" and active["section"] == 26
                 active = None
             else:
-                raise AssertionError(("Unaccepted milestone", source, attrs(node)))
+                assert book in (9, 10) and set(attrs(node)) == {"n"} and re.fullmatch(r"sbb00000114_\d+\.jpg", node.getAttribute("n")), ("Unaccepted milestone", source, attrs(node))
+                if active is not None:
+                    touch()
+                    active["events"].append({"kind": "milestone", "sourceId": current_p,
+                                             "rawOffset": raw_offset, "attributes": attrs(node)})
             return
-        if tag in ("pb", "lb", "anchor", "gap"):
+        if tag in ("pb", "lb", "anchor", "gap", "cb"):
             assert not all_text(node) and not children(node)
             if active is not None:
                 touch()
                 active["events"].append({"kind": tag, "sourceId": current_p,
                                          "rawOffset": raw_offset, "attributes": attrs(node)})
             return
-        assert tag in ("add", "del", "s", "ref"), ("Unknown inline element", source, tag)
+        assert tag in ("add", "del", "s", "ref", "corr", "unclear", "expan"), ("Unknown inline element", source, tag)
         begin = raw_offset
         for child in node.childNodes:
             walk(child)
@@ -221,6 +252,13 @@ def extract_file(root, spec, order):
         source_id = p.getAttribute("xml:id")
         if not source_id:
             excluded.append({"kind": "heading-or-subscription", "text": all_text(p)})
+            continue
+        if book == 9 and source_id == "latin-book09-num51":
+            notice = all_text(p)
+            assert notice == "[Lacuna 51–109; cf. Blatt, p. 67]" and not children(p)
+            excluded.append({"kind": "lacuna-notice", "sourceId": source_id,
+                             "rawStart": 0, "rawEnd": len(notice), "text": notice,
+                             "attributes": attrs(p)})
             continue
         current_p = source_id
         raw_offset = 0
@@ -234,7 +272,12 @@ def extract_file(root, spec, order):
                                "rawTextSha256": sha(raw_text), "chapter": chapter})
     for trailer in body.getElementsByTagName("trailer"):
         excluded.append({"kind": "trailer", "text": all_text(trailer)})
-    assert len(rows) == last - first + 1
+    if book >= 6:
+        for head in body.getElementsByTagName("head"):
+            excluded.append({"kind": "head", "text": all_text(head), "attributes": attrs(head)})
+        for note in children(body, "note"):
+            excluded.append({"kind": "body-note", "text": all_text(note), "attributes": attrs(note)})
+    assert len(rows) == last - first + 1 - (59 if book == 9 else 0)
 
     for row in rows:
         # The established search convention trims a paragraph fragment's edge
@@ -274,7 +317,7 @@ def extract_file(root, spec, order):
         left = len(raw_display) - len(raw_display.lstrip())
         right = len(raw_display.rstrip())
         row.update({"text": text, "leadingWhitespace": raw_display[:left],
-                    "trailingWhitespace": raw_display[right:], "rawDisplaySha256": sha(raw_display),
+                    "trailingWhitespace": "" if book >= 6 and not text else raw_display[right:], "rawDisplaySha256": sha(raw_display),
                     "textSha256": sha(text), "tokens": tokens(text), "sourceSpans": [],
                     "inlineMarks": [], "structuralMarkers": []})
         position = 0
@@ -315,20 +358,53 @@ def extract_file(root, spec, order):
         row["literalGaps"] = [{"kind": "literal-dots", "start": u16(text[:m.start()]),
                                 "end": u16(text[:m.end()]), "text": m.group()}
                                for m in LITERAL_DOTS.finditer(text)]
+        if book >= 6:
+            row["literalGaps"].extend({"kind": "literal-ellipsis", "start": u16(text[:m.start()]),
+                                       "end": u16(text[:m.end()]), "text": m.group()}
+                                      for m in re.finditer("…", text))
+            # Scraped punctuation is explicitly source-marked erasure. The two
+            # uncertainty-marked sentence periods at X.65/75 remain ordinary
+            # punctuation and do not become phrase interruptions.
+            for mark in row["inlineMarks"]:
+                if mark["kind"] == "del" and mark["attributes"].get("rend") == "scraping" and re.fullmatch(r"\.+", mark["text"]):
+                    if not any(gap["start"] <= mark["start"] and gap["end"] >= mark["end"] for gap in row["literalGaps"]):
+                        row["literalGaps"].append({"kind": "source-marked-dots", "start": mark["start"],
+                                                  "end": mark["end"], "text": mark["text"],
+                                                  "sourceTag": "del", "sourceAttributes": mark["attributes"]})
+            row["literalGaps"].sort(key=lambda gap: (gap["start"], gap["end"], gap["kind"]))
         row["teiGaps"] = [m for m in row["structuralMarkers"] if m["kind"] == "gap"]
         row["phraseBreaks"] = sorted(set([gap["start"] for gap in row["literalGaps"]]
                                           + [gap["offset"] for gap in row["teiGaps"]]))
-        row["breakBefore"] = book == 1 and row["section"] == 27 or book == 3 and row["section"] in (240, 241)
+        row["breakBefore"] = book == 1 and row["section"] == 27 or book == 3 and row["section"] in (240, 241) or book == 7 and 69 <= row["section"] <= 100 or book == 9 and row["section"] == 110 or book == 10 and row["section"] in (108, 109)
         row["citationLabel"] = f"{ROMAN[book]}.{row['section']}"
         row["url"] = f"/antiquities/?book={row['readerBook']}&niese={row['section']}"
         row.pop("events")
         row.pop("lastParagraph")
-    return rows, {"sourceFile": source, "book": book, "readerBook": "preface" if name == "preface" else book,
+    if book == 10:
+        row = next(row for row in rows if row["section"] == 108)
+        source_id = "latin-book10-num108"
+        label = next(item for item in excluded if item.get("sourceId") == source_id and item["kind"] == "num")
+        marker = next(item for item in niese_evidence if item["sourceId"] == source_id and item["attributes"] == {"unit": "niese", "n": "109"})
+        paragraph = next(item for item in paragraph_rows if item["sourceId"] == source_id)
+        between = paragraph["rawText"][label["rawEnd"]:marker["rawOffset"]]
+        assert row["text"] == "" and between == " " and not row["teiGaps"] and not row["literalGaps"]
+        row["emptySource"] = {
+            "kind": "empty-source-interval", "sourcePath": source, "sourceId": source_id,
+            "label": {"sourceTag": "num", "sourceAttributes": label["attributes"], "text": label["text"],
+                      "sourceTextStart": label["rawStart"], "sourceTextEnd": label["rawEnd"]},
+            "nextBoundary": {"sourceTag": "milestone", "sourceAttributes": marker["attributes"],
+                             "sourceTextOffset": marker["rawOffset"]},
+            "interveningText": between,
+        }
+    file = {"sourceFile": source, "book": book, "readerBook": "preface" if name == "preface" else book,
                   "sha256": sha(raw), "acceptedLF_sha256": accepted_hash,
                   "nieseRange": [first, last], "sections": len(rows),
                   "wordTokens": sum(len(row["tokens"]) for row in rows),
                   "stableIds": len(ids), "bodyTags": dict(body_tags),
                   "paragraphs": paragraph_rows, "excluded": excluded}
+    if book >= 6:
+        file["missingNieseRanges"] = [[51, 109]] if book == 9 else []
+    return rows, file
 
 
 def build(root):
@@ -337,14 +413,16 @@ def build(root):
         new_rows, file = extract_file(root, spec, len(rows))
         rows.extend(new_rows)
         files.append(file)
-    assert len(rows) == 1710
-    assert sum(len(row["literalGaps"]) for row in rows) == 6
-    assert [(row["book"], row["section"]) for row in rows if not row["text"]] == [(3, 240)]
-    assert sum(len(row["teiGaps"]) for row in rows) == 1
-    assert sum(mark["kind"] == "add" for row in rows for mark in row["inlineMarks"]) == 19
-    assert sum(mark["kind"] == "del" for row in rows for mark in row["inlineMarks"]) == 23
+    assert len(rows) == 3415
+    assert sum(len(row["literalGaps"]) for row in rows if row["book"] <= 5) == 6
+    assert [(row["book"], row["section"]) for row in rows if not row["text"]] == [(3, 240)] + [(7, n) for n in range(69, 100)] + [(10, 108)]
+    assert sum(len(row["teiGaps"]) for row in rows) == 32
+    assert sum(mark["kind"] == "add" for row in rows for mark in row["inlineMarks"]) == 45
+    assert sum(mark["kind"] == "del" for row in rows for mark in row["inlineMarks"]) == 30
+    assert sum(x["kind"] == "omission-notice" for f in files for x in f["excluded"]) == 6
+    assert sum(x["kind"] == "lacuna-notice" for f in files for x in f["excluded"]) == 1
     return {"sourceCommit": SOURCE_COMMIT, "files": files, "rows": rows,
-            "totals": {"books": 5, "sourceFiles": 6, "sections": len(rows),
+            "totals": {"books": 10, "sourceFiles": 11, "sections": len(rows),
                        "wordTokens": sum(len(row["tokens"]) for row in rows)},
             "runtime": {"python": sys.version.split()[0], "unicode": unicodedata.unidata_version,
                         "xmlParser": "xml.dom.minidom"}}
@@ -544,19 +622,17 @@ function compareSourceRecord(record, row, index) {
     id: `${collectionId}-${row.book}-${row.section}`, work: 'antiquities', book: row.book,
     section: row.section, language: 'Latin', edition: 'Bamberg Msc. Class. 78',
     citationScheme: 'niese', citationLabel: row.citationLabel,
-    citation: {book: ['I', 'II', 'III', 'IV', 'V'][row.book - 1], section: row.section, ...(isProem ? {proem: true} : {})},
-    text: row.text, editorialMarks: row.inlineMarks.filter(mark => ['add', 'del'].includes(mark.kind)).map(attributesFor),
-    sourceMarkup: row.inlineMarks.filter(mark => ['s', 'ref'].includes(mark.kind)).map(attributesFor),
+    citation: {book: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'][row.book - 1], section: row.section, ...(isProem ? {proem: true} : {})},
+    text: row.text, editorialMarks: row.inlineMarks.filter(mark => ['add', 'del', 'unclear'].includes(mark.kind)).map(attributesFor),
+    sourceMarkup: row.inlineMarks.filter(mark => ['s', 'ref', 'corr', 'expan'].includes(mark.kind)).map(attributesFor),
     textGaps: [...row.literalGaps, ...row.teiGaps.map(gap => ({kind: 'tei-gap', start: gap.offset, end: gap.offset,
       text: '', sourceAttributes: gap.attributes}))],
     phraseBreaks: row.phraseBreaks, url: row.url,
     readerLink: {path: 'antiquities/', params: {book: row.readerBook, niese: row.section}},
     sourceId: row.sourceId, sourceIds: row.sourceIds, sourcePath: row.sourceFile, order: index,
     ...(isProem ? {sourceDivision: 'proem', division: 'proem'} : {}),
-    ...(row.breakBefore ? {breakBefore: true, breakReason: row.book === 1
-      ? 'Book I narrative begins after the separately transmitted Proem.'
-      : row.section === 240 ? 'The accepted source explicitly omits the Latin text at Antiquities III.240.'
-        : 'The preceding Latin Niese section III.240 is explicitly omitted.'} : {}),
+    ...(row.emptySource ? {emptySource: row.emptySource} : {}),
+    ...(row.breakBefore ? {breakBefore: true, breakReason: sourceBreakReason(row)} : {}),
   };
   check('CompleteSourceRecord', record, expectedComplete, context);
   for (const [key, expected] of Object.entries({
@@ -568,7 +644,7 @@ function compareSourceRecord(record, row, index) {
   check('RecordSourceIds', record.sourceIds || [record.sourceId], row.sourceIds, context);
   check('RecordPhraseBreaks', record.phraseBreaks || [], row.phraseBreaks, context);
   check('RecordBreakBefore', Boolean(record.breakBefore), Boolean(row.breakBefore), context);
-  const editorial = row.inlineMarks.filter(mark => ['add', 'del'].includes(mark.kind))
+  const editorial = row.inlineMarks.filter(mark => ['add', 'del', 'unclear'].includes(mark.kind))
     .map(({kind, start, end, text}) => ({kind, start, end, text}));
   check('OriginalEditorialCharactersAndOffsets', (record.editorialMarks || []).map(({kind, start, end, text}) => ({kind, start, end, text})), editorial, context);
   check('IndependentTokenizersAgree', independentTokens(record.text), row.tokens, context);
@@ -576,6 +652,19 @@ function compareSourceRecord(record, row, index) {
     `https://latinjosephus.github.io${row.url}`, context);
   assert.ok(!/undefined|NaN/.test(passageDivisionLabel([record])), 'A search result must have a valid division label.');
   assertions++; counts.ValidPassageLabels = (counts.ValidPassageLabels || 0) + 1;
+}
+
+function sourceBreakReason(row) {
+  if (row.book === 1 && row.section === 27) return 'Book I narrative begins after the separately transmitted Proem.';
+  if (row.book === 3 && row.section === 240) return 'The accepted source explicitly omits the Latin text at Antiquities III.240.';
+  if (row.book === 3 && row.section === 241) return 'The preceding Latin Niese section III.240 is explicitly omitted.';
+  if (row.book === 7 && row.section >= 69 && row.section <= 99)
+    return `The accepted source explicitly omits the Latin text at Antiquities VII.${row.section}.`;
+  if (row.book === 7 && row.section === 100) return 'The preceding Latin Niese sections VII.69–99 are explicitly omitted.';
+  if (row.book === 9 && row.section === 110) return 'The accepted source marks a lacuna for Antiquities IX.51–109 before IX.110.';
+  if (row.book === 10 && row.section === 108) return 'No Latin text occurs between the citation label for X.108 and the next Niese marker.';
+  if (row.book === 10 && row.section === 109) return 'The preceding citation interval X.108 contains no Latin text in the accepted source.';
+  assert.fail(`Unreviewed source division boundary ${row.citationLabel}`);
 }
 
 function inspectParagraphProjection(report, witnessFiles, records) {
@@ -620,7 +709,8 @@ function inspectParagraphProjection(report, witnessFiles, records) {
         else {
           const omission = excluded.get(`${key}:${cursor}:${part.sourceTextEnd}`);
           assert.ok(omission, 'An excluded non-whitespace span must be an independently observed label or note.');
-          check('ProjectionExcludedKind', part.kind, omission.kind === 'num' ? 'excluded-label' : 'excluded-note', {key});
+          check('ProjectionExcludedKind', part.kind, omission.kind === 'num' ? 'excluded-label'
+            : omission.kind === 'omission-notice' ? 'excluded-omission-notice' : 'excluded-note', {key});
           check('ProjectionExcludedAttributes', part.sourceAttributes, omission.attributes, {key});
         }
         reconstructed.push(part.text);
@@ -629,6 +719,34 @@ function inspectParagraphProjection(report, witnessFiles, records) {
     }
     check('ProjectionCompleteSourceCoverage', cursor, originalPoints.length, {key});
     check('ProjectionExactSourceRestoration', reconstructed.join(''), original.rawText, {key});
+    if (report.scope.book >= 6) {
+      const expectedMarkers = records.flatMap(record => sourceRows.get(record.id).structuralMarkers
+        .filter(marker => marker.sourceId === paragraph.sourceId)
+        .map(marker => ({kind: marker.kind === 'milestone' ? 'image-milestone' : marker.kind,
+          sourceTextOffset: marker.rawOffset, sourceAttributes: marker.attributes,
+          section: record.section, recordTextOffsetUTF16: marker.offset})));
+      const actualMarkers = paragraph.structuralMarkers.map(({kind, sourceTextOffset, sourceAttributes, section, recordTextOffsetUTF16}) =>
+        ({kind, sourceTextOffset, sourceAttributes, section, recordTextOffsetUTF16}));
+      const sortMarkers = values => values.sort((a, b) => a.sourceTextOffset - b.sourceTextOffset || a.section - b.section || a.kind.localeCompare(b.kind));
+      check('IndependentStructuralMarkerEvidence', sortMarkers(actualMarkers), sortMarkers(expectedMarkers), {key});
+    }
+  }
+  const missing = witnessFiles.flatMap(file => (file.missingNieseRanges || []).flatMap(([start, end]) =>
+    Array.from({length: end - start + 1}, (_, index) => start + index)));
+  check('DeclaredMissingSourceSections', report.coverage.missingSections, missing, {book: report.scope.book});
+  check('SourceOrderConsecutiveness', report.coverage.sourceOrderIsConsecutive, missing.length === 0);
+  const empty = records.filter(record => !sourceRows.get(record.id).text).map(record => record.section);
+  check('DeclaredEmptySourceSections', report.coverage.allowedEmptySections, empty);
+  if (report.scope.book >= 6) {
+    check('DeclaredTEIOmissions', report.coverage.omittedSections,
+      records.filter(record => sourceRows.get(record.id).teiGaps.length).map(record => record.section));
+    check('DeclaredEmptyIntervals', report.coverage.emptySourceIntervals,
+      records.filter(record => sourceRows.get(record.id).emptySource).map(record => record.section));
+    const sourceNotices = witnessFiles.flatMap(file => file.excluded.filter(item => item.kind === 'lacuna-notice'));
+    const reportedNotices = report.documentReports.flatMap(document => document.excluded.filter(item => item.kind === 'lacuna-notice'));
+    check('IndependentLacunaNotices', reportedNotices.map(item => ({sourceId: item.sourceId, text: item.text, attributes: item.sourceAttributes})),
+      sourceNotices.map(item => ({sourceId: item.sourceId, text: item.text, attributes: Object.fromEntries(Object.entries(item.attributes)
+        .map(([name, value]) => [name === 'xml:id' ? '{http://www.w3.org/XML/1998/namespace}id' : name, value]))})));
   }
 }
 
@@ -655,6 +773,13 @@ const fixtures = [
   ['"nisi qu*"', phrase(['nisi', 'qu*'])],
   ['quem AND consparsa', and(leaf('quem'), leaf('consparsa'))],
   ['con perit', and(leaf('con'), leaf('perit'))],
+  ['"efficere Tunc"', phrase(['efficere', 'Tunc'])],
+  ['"interfecit Dum"', phrase(['interfecit', 'Dum'])],
+  ['"regu riter"', phrase(['regu', 'riter'])],
+  ['"sepe lisset"', phrase(['sepe', 'lisset'])],
+  ['"Huc ergo causa delectationis"', phrase(['Huc', 'ergo', 'causa', 'delectationis'])],
+  ['"Nam uerba uesaniae"', phrase(['Nam', 'uerba', 'uesaniae'])],
+  ['Omitted OR Bamberg OR Blatt', or(or(leaf('Omitted'), leaf('Bamberg')), leaf('Blatt'))],
 ];
 
 async function main() {
@@ -666,21 +791,21 @@ async function main() {
   const corpusPath = preserve(resolve(base, 'data', collectionId, 'corpus.json'));
   const catalog = readJSON(catalogPath), corpus = readJSON(corpusPath);
   const config = catalog.collections.find(collection => collection.id === collectionId);
-  assert.ok(config, 'The catalog must include Antiquities I–V.');
+  assert.ok(config, 'The catalog must include Antiquities I–X.');
   const selectedEntries = catalog.books.filter(entry => entry.collectionId === collectionId);
-  check('CatalogBookOrder', selectedEntries.map(entry => entry.number), [1, 2, 3, 4, 5]);
+  check('CatalogBookOrder', selectedEntries.map(entry => entry.number), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   check('CatalogCitationScheme', config.citationScheme, 'niese');
   for (const path of [readerPath, resolve(base, 'engine.mjs'), resolve(base, 'collection.mjs'),
     resolve(base, 'ui-utils.mjs'), resolve(base, 'vendor/lunr.cjs'), fileURLToPath(import.meta.url)]) preserve(path);
   const witness = JSON.parse(execFileSync(process.env.PYTHON || 'python3', ['-c', pythonWitness, root], {encoding: 'utf8', maxBuffer: 80 * 1024 * 1024}));
-  check('IndependentCoverage', witness.totals, {books: 5, sourceFiles: 6, sections: 1710, wordTokens: 67657});
-  check('CombinedRecordCount', corpus.length, 1710);
+  check('IndependentCoverage', witness.totals, {books: 10, sourceFiles: 11, sections: 3415, wordTokens: 137858});
+  check('CombinedRecordCount', corpus.length, 3415);
   sourceRows = new Map(witness.rows.map(row => [`${collectionId}-${row.book}-${row.section}`, row]));
   for (let index = 0; index < corpus.length; index++) compareSourceRecord(corpus[index], witness.rows[index], index);
   const combinedReportPath = preserve(resolve(base, config.extractionReportPath));
   const combinedReport = readJSON(combinedReportPath);
   const states = [];
-  let adjacentPairs = 0, ordinaryPairs = 0, emptyPairs = 0, proemPairs = 0, barrierChecks = 0;
+  let adjacentPairs = 0, ordinaryPairs = 0, emptyPairs = 0, proemPairs = 0, lacunaPairs = 0, literalBoundaryPairs = 0, barrierChecks = 0, emptyIntervalChecks = 0;
 
   for (const entry of selectedEntries) {
     const bookStarted = performance.now();
@@ -716,21 +841,25 @@ async function main() {
     for (const index of unitIndices) {
       const ts = oracle.tokenLists[index];
       if (!ts.length) {
-        check('ExplicitEmptySectionIdentity', [records[index].book, records[index].section], [3, 240]);
+        const row = expectedRows[index];
+        check('ExplicitEmptySectionEvidence', Boolean(row.teiGaps.length || row.emptySource), true,
+          {book: row.book, section: row.section});
         continue;
       }
       const start = Math.max(0, Math.floor(ts.length / 2) - 1);
       const ast = phrase(ts.slice(start, start + 3).map(token => token.term));
       for (const scope of ['section', 'book']) for (const fold of [false, true]) verify(engine, oracle, ast, {scope, fold}, 'WithinEveryNonemptyUnit');
     }
-    const seamIndices = smoke ? [...new Set([0, 25, 177, 238, 239].filter(index => index < records.length - 1))] : records.slice(1).map((_, index) => index);
+    const seamIndices = smoke ? [...new Set([0, 25, 49, 53, 67, 68, 98, 106, 107, 139, 177, 238, 239].filter(index => index < records.length - 1))] : records.slice(1).map((_, index) => index);
     for (const index of seamIndices) {
       adjacentPairs++;
       const leftTokens = oracle.tokenLists[index], rightTokens = oracle.tokenLists[index + 1];
       if (!leftTokens.length || !rightTokens.length) {
         emptyPairs++;
-        check('EmptySectionMarksAnUnsearchablePhraseSeam', [entry.number, records[index].section, records[index + 1].section],
-          leftTokens.length ? [3, 239, 240] : [3, 240, 241]);
+        check('EmptySectionMarksAnUnsearchablePhraseSeam',
+          Boolean(!leftTokens.length && (expectedRows[index].teiGaps.length || expectedRows[index].emptySource)
+            || !rightTokens.length && (expectedRows[index + 1].teiGaps.length || expectedRows[index + 1].emptySource)), true,
+          {book: entry.number, left: records[index].section, right: records[index + 1].section});
         continue;
       }
       const ast = phrase([...leftTokens.slice(-1), ...rightTokens.slice(0, 1)].map(token => token.term));
@@ -738,14 +867,30 @@ async function main() {
       const ownSeam = [...matching.values()].flatMap(hits => [...hits]).some(hit => {
         const spans = JSON.parse(hit); return spans.length === 2 && spans[0][0] === records[index].id && spans[1][0] === records[index + 1].id;
       });
-      const blocked = entry.number === 1 && records[index].section === 26;
-      if (blocked) proemPairs++; else ordinaryPairs++;
+      const leftSource = expectedRows[index], rightSource = expectedRows[index + 1];
+      const blocked = rightSource.breakBefore || leftSource.phraseBreaks.some(offset => offset > leftTokens.at(-1).start)
+        || rightSource.phraseBreaks.some(offset => offset <= rightTokens[0].start);
+      if (entry.number === 1 && records[index].section === 26) proemPairs++;
+      else if (entry.number === 9 && records[index].section === 50) lacunaPairs++;
+      else if (blocked) literalBoundaryPairs++;
+      else ordinaryPairs++;
       check('BoundaryOracleExpectation', ownSeam, !blocked, {book: entry.number, left: records[index].citationLabel, right: records[index + 1].citationLabel});
       for (const scope of ['section', 'book']) for (const fold of [false, true])
-        verify(engine, oracle, ast, {scope, fold}, blocked ? 'ProemNarrativeBoundaryBlocked' : 'EveryAdjacentUnitBoundary');
+        verify(engine, oracle, ast, {scope, fold}, blocked ? 'SourceBoundaryBlocked' : 'EveryAdjacentUnitBoundary');
       const contextPhrase = phrase([...leftTokens.slice(-2), ...rightTokens.slice(0, 2)].map(token => token.term));
       for (const scope of ['section', 'book']) for (const fold of [false, true])
         verify(engine, oracle, contextPhrase, {scope, fold}, 'ExtendedBoundaryContextPhrase');
+    }
+    for (const row of expectedRows.filter(row => row.emptySource)) {
+      emptyIntervalChecks++;
+      const index = records.findIndex(record => record.section === row.section);
+      const left = oracle.tokenLists[index - 1].slice(-2), right = oracle.tokenLists[index + 1].slice(0, 2);
+      const ast = phrase([...left, ...right].map(token => token.term));
+      for (const scope of ['section', 'book']) for (const fold of [false, true])
+        verify(engine, oracle, ast, {scope, fold}, 'EmptySourceIntervalBlocksPhrase');
+      const boolean = and(leaf(left.at(-1).term), leaf(right[0].term));
+      check('BooleanAcrossEmptyIntervalAllowed', oracle.evaluate(boolean, 'book', false).has(identity(records[index])), true);
+      verify(engine, oracle, boolean, {scope: 'book', fold: false}, 'BooleanAcrossEmptyIntervalAllowed');
     }
     for (const row of expectedRows) for (const marker of [...row.literalGaps, ...row.teiGaps.map(gap => ({start: gap.offset, end: gap.offset, text: ''}))]) {
       barrierChecks++;
@@ -769,12 +914,15 @@ async function main() {
     console.log(JSON.stringify({phase: 'Antiquities book complete', book: entry.number, vocabulary: oracle.vocabulary.length,
       queriesSoFar: totalQueries, seconds: Math.round((performance.now() - bookStarted) / 100) / 10}));
   }
-  check('EverySourceGapExercised', barrierChecks, 7);
+  check('EverySourceGapExercised', barrierChecks, 46);
+  check('EveryEmptySourceIntervalExercised', emptyIntervalChecks, 1);
   if (!smoke) {
-    check('AllAdjacentPairsExercised', adjacentPairs, 1705);
-    check('AllOrdinaryPairsExercised', ordinaryPairs, 1702);
-    check('BothEmptyCitationEdgesExercised', emptyPairs, 2);
+    check('AllAdjacentPairsExercised', adjacentPairs, 3405);
+    check('AllOrdinaryPairsExercised', ordinaryPairs, 3365);
+    check('AllEmptyCitationEdgesExercised', emptyPairs, 36);
     check('SeparateProemNarrativeEdgeExercised', proemPairs, 1);
+    check('DeclaredLacunaEdgeExercised', lacunaPairs, 1);
+    check('LiteralBoundaryEdgesExercised', literalBoundaryPairs, 2);
   }
 
   const bundleEntries = new Map(catalog.books.map(entry => [new URL(entry.path, 'https://qa.invalid/assets/search/').pathname, entry]));
@@ -801,7 +949,7 @@ async function main() {
   for (const selected of selectedEntries.map(entry => [entry.id]).concat([selectedEntries.map(entry => entry.id).reverse()]))
     for (const [query, ast] of fixtures.filter((_, index) => [0, 1, 10, 11, 15, 18, 19, 20].includes(index)))
       for (const scope of ['section', 'book']) for (const fold of [false, true])
-        await verifyCollection(ast, selected, scope, fold, 'SelectedAntiquitiesCollection', query, selected.length === 5 && !fold);
+        await verifyCollection(ast, selected, scope, fold, 'SelectedAntiquitiesCollection', query, selected.length === 10 && !fold);
   for (let index = 0; index < states.length - 1; index++) {
     const junction = phrase([...states[index].oracle.all.slice(-3), ...states[index + 1].oracle.all.slice(0, 3)].map(token => token.term));
     for (const scope of ['section', 'book']) for (const fold of [false, true]) {
@@ -828,7 +976,7 @@ async function main() {
   }
   check('BundleFetchCaching', [...fetchCounts.entries()].sort(), catalog.books.map(entry => [entry.id, 1]).sort());
   for (const invalid of [{collections: [collectionId], books: [1]}, {collections: [collectionId], books: [catalog.books[0].id]},
-    {collections: [collectionId], books: [`${collectionId}:6`]}]) {
+    {collections: [collectionId], books: [`${collectionId}:11`]}]) {
     await assert.rejects(collection.search('sacerdot*', invalid));
     assertions++; counts.InvalidSelectionRejected = (counts.InvalidSelectionRejected || 0) + 1;
   }
@@ -843,7 +991,7 @@ async function main() {
   const report = {
     status: 'PASS', generatedAt: new Date().toISOString(), independentVerifier: 'bin/search/tests/antiquities-corpus-qa.mjs', readerBaseline,
     runtime: {node: process.versions.node, ...witness.runtime},
-    source: {books: 5, sourceFiles: 6, sections: 1710, tokens: 67657,
+    source: {books: 10, sourceFiles: 11, sections: 3415, tokens: 137858,
       uniqueLiteralVocabulary: new Set(states.flatMap(state => state.oracle.vocabulary)).size},
     sources: witness.files.map(file => ({path: file.sourceFile, sha256: file.sha256, sections: file.sections, tokens: file.wordTokens, stableIds: file.stableIds})),
     verifiedFiles: {corpus: evidence(corpusPath), catalog: evidence(catalogPath), engine: evidence(resolve(base, 'engine.mjs')),
@@ -852,23 +1000,28 @@ async function main() {
       extractionReport: evidence(combinedReportPath), originalReader: evidence(readerPath), uiUtils: evidence(resolve(base, 'ui-utils.mjs')),
       books: states.map(state => ({book: state.entry.number, bundle: evidence(state.bundlePath), corpus: evidence(state.shardPath),
         source: evidence(state.sourcePath), additionalSources: state.additionalSources.map(evidence), extractionReport: evidence(state.reportPath)}))},
-    method: {source: 'Independent minidom text-node event stream over six SHA-pinned XML files, without production extractor imports. The complete witness is embedded and checked against its standalone file.',
+    method: {source: 'Independent minidom text-node event stream over eleven SHA-pinned XML files, without production extractor imports. The complete witness is embedded and checked against its standalone file.',
       tokens: 'Every Unicode-category token and UTF-16 offset is checked against each bundle; a separate JavaScript character scanner agrees on every citation unit.',
       queries: 'Independent AST/set Boolean logic, regular-expression globs, and sequential phrase scanning. Phrase barriers derive from witness source marks and explicit source-division boundaries.',
       vocabulary: 'Every distinct source token in every book queried in source-spelling and u/v–i/j-folded modes.',
-      boundaries: 'Every within-book adjacent citation pair, all six literal dot-clusters, the empty III.240 gap, the Proem-to-narrative boundary, and every book junction checked.',
-      collection: 'All five Antiquities bundles, selected subsets and order, limited four-work integration queries, caching, invalid selection and unavailable-book rejection.'},
+      boundaries: 'Every within-book adjacent citation pair, all14 literal source interruptions, all32 TEI omissions, X.108 empty interval, IX missing51–109, the Proem-to-narrative boundary, and every book junction checked. Uncertain sentence punctuation remains ordinarily joinable.',
+      collection: 'All ten Antiquities bundles, selected subsets and order, limited four-work integration queries, caching, invalid selection and unavailable-book rejection.'},
     boundaryCoverage: {withinBookPairs: adjacentPairs, ordinaryPairs, emptyCitationEdges: emptyPairs,
-      proemNarrativeEdges: proemPairs, literalGapClusters: 6, teiGaps: 1, bookJunctions: 4},
-    editorialCoverage: {add: 19, del: 23, sourceNotesExcluded: 12, emptyCitation: 'III.240',
-      proemSections: 26, preservedNieseUnits: 1710, continuationSections: ['II.95', 'III.178', 'IV.106', 'IV.155', 'IV.276', 'V.32']},
+      proemNarrativeEdges: proemPairs, declaredLacunaEdges: lacunaPairs, literalBoundaryEdges: literalBoundaryPairs,
+      literalGapClusters: 14, literalDots: 7, literalEllipses: 5, sourceMarkedDotSpans: 2, teiGaps: 32,
+      emptySourceIntervals: emptyIntervalChecks, bookJunctions: 9},
+    editorialCoverage: {add: 45, del: 30, unclear: 63, corr: 48, expan: 6, sourceNotesExcluded: 31,
+      emptyCitations: witness.rows.filter(row => !row.text).map(row => row.citationLabel),
+      missingSectionsByBook: {'9': Array.from({length: 59}, (_, index) => index + 51)},
+      omissionNoticesExcluded: 6, lacunaNoticesExcluded: 1, proemSections: 26, preservedNieseUnits: 3415,
+      continuationSections: ['II.95', 'III.178', 'IV.106', 'IV.155', 'IV.276', 'V.32', 'VIII.186', 'VIII.255']},
     counts, totalQueries, assertions, failedAssertions: 0, examples,
     durationSeconds: Math.round((performance.now() - started) / 10) / 100,
     limitations: ['Automated Node/Python acceptance, not browser or visual acceptance.',
       'Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.',
       'The accepted corrected project XML is preserved faithfully; this does not re-collate the text with manuscript images.',
       'Earlier collections receive limited mixed-work integration checks; their independent source-fidelity reports remain separately required.',
-      'Literal dot-clusters conservatively suppress phrase adjacency without assigning new scholarly meanings or missing-text extents.'], failures: [],
+      'Literal source interruptions conservatively suppress phrase adjacency without assigning new scholarly meanings or missing-text extents.'], failures: [],
   };
   if (!smoke) writeFileSync(destination, JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify({status: smoke ? 'DEVELOPMENT_SMOKE_PASS' : 'PASS', source: report.source,

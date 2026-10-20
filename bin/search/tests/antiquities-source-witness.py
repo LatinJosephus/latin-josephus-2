@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent source witness for Antiquities Proem and Books I–V.
+"""Independent source witness for Antiquities Proem and Books I–X.
 
 This verifier uses minidom and a text-node event stream, independently of the
 production ElementTree extractor. It does not import any search code. Its XML
@@ -27,8 +27,13 @@ SPECS = [
     ("book-03", 3, 1, 322, "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59"),
     ("book-04", 4, 1, 331, "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1"),
     ("book-05", 5, 1, 362, "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554"),
+    ("book-06", 6, 1, 378, "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f"),
+    ("book-07", 7, 1, 394, "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd"),
+    ("book-08", 8, 1, 420, "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af"),
+    ("book-09", 9, 1, 291, "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640"),
+    ("book-10", 10, 1, 281, "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863"),
 ]
-ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"}
+ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X"}
 LABEL = re.compile(r"\[(?:[IVXLCDMivxlcdm]+\.)?(?:[IVXLCDMivxlcdm]+\.)?(\d+)\]\Z")
 LITERAL_DOTS = re.compile(r"(?<=<)\.+(?=>)|\.{3,}")
 
@@ -86,7 +91,8 @@ def extract_file(root, spec, order):
     assert len(ids) == len(set(ids)), ("Duplicate source ID", source)
     body_tags = Counter(e.localName for e in [body] + list(body.getElementsByTagName("*")))
     assert set(body_tags) <= {"body", "note", "div1", "div2", "p", "num", "pb", "lb",
-                              "milestone", "add", "del", "s", "ref", "anchor", "gap", "trailer"}
+                              "milestone", "add", "del", "s", "ref", "anchor", "gap", "trailer",
+                              "cb", "corr", "unclear", "expan", "head"}
     rows = []
     paragraph_rows = []
     excluded = []
@@ -94,6 +100,7 @@ def extract_file(root, spec, order):
     current_p = None
     raw_offset = 0
     editorial = []
+    niese_evidence = []
 
     def touch():
         if active is None:
@@ -106,7 +113,13 @@ def extract_file(root, spec, order):
 
     def start(number, kind):
         nonlocal active
-        assert number == first + len(rows), ("Niese sequence", source, number, len(rows))
+        if active is not None and number == active["section"]:
+            assert (book, number) == (8, 255) and kind == "num", ("Unexpected repeated label", source, number)
+            return
+        expected = rows[-1]["section"] + 1 if rows else first
+        if book == 9 and expected == 51:
+            expected = 110
+        assert number == expected, ("Niese sequence", source, number, expected)
         active = {"book": book, "section": number, "sourceFile": source,
                   "readerBook": "preface" if name == "preface" else book,
                   "sourceIds": [], "events": [], "lastParagraph": None,
@@ -118,6 +131,13 @@ def extract_file(root, spec, order):
     def walk(node):
         nonlocal raw_offset, active
         if node.nodeType in (Node.TEXT_NODE, Node.CDATA_SECTION_NODE):
+            if book == 7 and current_p in {f"latin-book07-num{n}" for n in (69, 71, 78, 87, 90, 96)}:
+                assert node.data == " Omitted in Bamberg MS", ("Unexpected omission notice", current_p, node.data)
+                excluded.append({"kind": "omission-notice", "sourceId": current_p,
+                                 "rawStart": raw_offset, "rawEnd": raw_offset + len(node.data),
+                                 "text": node.data, "attributes": {}})
+                raw_offset += len(node.data)
+                return
             if active is None:
                 assert not node.data.strip(), ("Narrative without Niese identity", source, current_p, node.data)
             else:
@@ -134,7 +154,13 @@ def extract_file(root, spec, order):
             if tag == "num":
                 match = LABEL.fullmatch(content.strip())
                 if match:
-                    start(int(match[1]), "num")
+                    # These accepted coarse printed labels are displaced from
+                    # the explicit Niese milestones. Preserve the label as
+                    # source evidence and let the actual milestone start the
+                    # section; VIII.186 retains the preceding Latin words.
+                    displaced = {(8, "latin-book08-num187"), (10, "latin-book10-num151")}
+                    if (book, current_p) not in displaced:
+                        start(int(match[1]), "num")
             excluded.append({"kind": tag, "sourceId": current_p, "rawStart": raw_offset,
                              "rawEnd": raw_offset + len(content), "text": content,
                              "attributes": attrs(node)})
@@ -143,21 +169,26 @@ def extract_file(root, spec, order):
         if tag == "milestone":
             assert not all_text(node) and not children(node)
             if node.getAttribute("unit") == "niese":
+                niese_evidence.append({"sourceId": current_p, "rawOffset": raw_offset, "attributes": attrs(node)})
                 start(int(node.getAttribute("n")), "milestone")
             elif node.getAttribute("unit") == "niese-end":
                 assert name == "preface" and active["section"] == 26
                 active = None
             else:
-                raise AssertionError(("Unaccepted milestone", source, attrs(node)))
+                assert book in (9, 10) and set(attrs(node)) == {"n"} and re.fullmatch(r"sbb00000114_\d+\.jpg", node.getAttribute("n")), ("Unaccepted milestone", source, attrs(node))
+                if active is not None:
+                    touch()
+                    active["events"].append({"kind": "milestone", "sourceId": current_p,
+                                             "rawOffset": raw_offset, "attributes": attrs(node)})
             return
-        if tag in ("pb", "lb", "anchor", "gap"):
+        if tag in ("pb", "lb", "anchor", "gap", "cb"):
             assert not all_text(node) and not children(node)
             if active is not None:
                 touch()
                 active["events"].append({"kind": tag, "sourceId": current_p,
                                          "rawOffset": raw_offset, "attributes": attrs(node)})
             return
-        assert tag in ("add", "del", "s", "ref"), ("Unknown inline element", source, tag)
+        assert tag in ("add", "del", "s", "ref", "corr", "unclear", "expan"), ("Unknown inline element", source, tag)
         begin = raw_offset
         for child in node.childNodes:
             walk(child)
@@ -168,6 +199,13 @@ def extract_file(root, spec, order):
         source_id = p.getAttribute("xml:id")
         if not source_id:
             excluded.append({"kind": "heading-or-subscription", "text": all_text(p)})
+            continue
+        if book == 9 and source_id == "latin-book09-num51":
+            notice = all_text(p)
+            assert notice == "[Lacuna 51–109; cf. Blatt, p. 67]" and not children(p)
+            excluded.append({"kind": "lacuna-notice", "sourceId": source_id,
+                             "rawStart": 0, "rawEnd": len(notice), "text": notice,
+                             "attributes": attrs(p)})
             continue
         current_p = source_id
         raw_offset = 0
@@ -181,7 +219,12 @@ def extract_file(root, spec, order):
                                "rawTextSha256": sha(raw_text), "chapter": chapter})
     for trailer in body.getElementsByTagName("trailer"):
         excluded.append({"kind": "trailer", "text": all_text(trailer)})
-    assert len(rows) == last - first + 1
+    if book >= 6:
+        for head in body.getElementsByTagName("head"):
+            excluded.append({"kind": "head", "text": all_text(head), "attributes": attrs(head)})
+        for note in children(body, "note"):
+            excluded.append({"kind": "body-note", "text": all_text(note), "attributes": attrs(note)})
+    assert len(rows) == last - first + 1 - (59 if book == 9 else 0)
 
     for row in rows:
         # The established search convention trims a paragraph fragment's edge
@@ -221,7 +264,7 @@ def extract_file(root, spec, order):
         left = len(raw_display) - len(raw_display.lstrip())
         right = len(raw_display.rstrip())
         row.update({"text": text, "leadingWhitespace": raw_display[:left],
-                    "trailingWhitespace": raw_display[right:], "rawDisplaySha256": sha(raw_display),
+                    "trailingWhitespace": "" if book >= 6 and not text else raw_display[right:], "rawDisplaySha256": sha(raw_display),
                     "textSha256": sha(text), "tokens": tokens(text), "sourceSpans": [],
                     "inlineMarks": [], "structuralMarkers": []})
         position = 0
@@ -262,20 +305,53 @@ def extract_file(root, spec, order):
         row["literalGaps"] = [{"kind": "literal-dots", "start": u16(text[:m.start()]),
                                 "end": u16(text[:m.end()]), "text": m.group()}
                                for m in LITERAL_DOTS.finditer(text)]
+        if book >= 6:
+            row["literalGaps"].extend({"kind": "literal-ellipsis", "start": u16(text[:m.start()]),
+                                       "end": u16(text[:m.end()]), "text": m.group()}
+                                      for m in re.finditer("…", text))
+            # Scraped punctuation is explicitly source-marked erasure. The two
+            # uncertainty-marked sentence periods at X.65/75 remain ordinary
+            # punctuation and do not become phrase interruptions.
+            for mark in row["inlineMarks"]:
+                if mark["kind"] == "del" and mark["attributes"].get("rend") == "scraping" and re.fullmatch(r"\.+", mark["text"]):
+                    if not any(gap["start"] <= mark["start"] and gap["end"] >= mark["end"] for gap in row["literalGaps"]):
+                        row["literalGaps"].append({"kind": "source-marked-dots", "start": mark["start"],
+                                                  "end": mark["end"], "text": mark["text"],
+                                                  "sourceTag": "del", "sourceAttributes": mark["attributes"]})
+            row["literalGaps"].sort(key=lambda gap: (gap["start"], gap["end"], gap["kind"]))
         row["teiGaps"] = [m for m in row["structuralMarkers"] if m["kind"] == "gap"]
         row["phraseBreaks"] = sorted(set([gap["start"] for gap in row["literalGaps"]]
                                           + [gap["offset"] for gap in row["teiGaps"]]))
-        row["breakBefore"] = book == 1 and row["section"] == 27 or book == 3 and row["section"] in (240, 241)
+        row["breakBefore"] = book == 1 and row["section"] == 27 or book == 3 and row["section"] in (240, 241) or book == 7 and 69 <= row["section"] <= 100 or book == 9 and row["section"] == 110 or book == 10 and row["section"] in (108, 109)
         row["citationLabel"] = f"{ROMAN[book]}.{row['section']}"
         row["url"] = f"/antiquities/?book={row['readerBook']}&niese={row['section']}"
         row.pop("events")
         row.pop("lastParagraph")
-    return rows, {"sourceFile": source, "book": book, "readerBook": "preface" if name == "preface" else book,
+    if book == 10:
+        row = next(row for row in rows if row["section"] == 108)
+        source_id = "latin-book10-num108"
+        label = next(item for item in excluded if item.get("sourceId") == source_id and item["kind"] == "num")
+        marker = next(item for item in niese_evidence if item["sourceId"] == source_id and item["attributes"] == {"unit": "niese", "n": "109"})
+        paragraph = next(item for item in paragraph_rows if item["sourceId"] == source_id)
+        between = paragraph["rawText"][label["rawEnd"]:marker["rawOffset"]]
+        assert row["text"] == "" and between == " " and not row["teiGaps"] and not row["literalGaps"]
+        row["emptySource"] = {
+            "kind": "empty-source-interval", "sourcePath": source, "sourceId": source_id,
+            "label": {"sourceTag": "num", "sourceAttributes": label["attributes"], "text": label["text"],
+                      "sourceTextStart": label["rawStart"], "sourceTextEnd": label["rawEnd"]},
+            "nextBoundary": {"sourceTag": "milestone", "sourceAttributes": marker["attributes"],
+                             "sourceTextOffset": marker["rawOffset"]},
+            "interveningText": between,
+        }
+    file = {"sourceFile": source, "book": book, "readerBook": "preface" if name == "preface" else book,
                   "sha256": sha(raw), "acceptedLF_sha256": accepted_hash,
                   "nieseRange": [first, last], "sections": len(rows),
                   "wordTokens": sum(len(row["tokens"]) for row in rows),
                   "stableIds": len(ids), "bodyTags": dict(body_tags),
                   "paragraphs": paragraph_rows, "excluded": excluded}
+    if book >= 6:
+        file["missingNieseRanges"] = [[51, 109]] if book == 9 else []
+    return rows, file
 
 
 def build(root):
@@ -284,14 +360,16 @@ def build(root):
         new_rows, file = extract_file(root, spec, len(rows))
         rows.extend(new_rows)
         files.append(file)
-    assert len(rows) == 1710
-    assert sum(len(row["literalGaps"]) for row in rows) == 6
-    assert [(row["book"], row["section"]) for row in rows if not row["text"]] == [(3, 240)]
-    assert sum(len(row["teiGaps"]) for row in rows) == 1
-    assert sum(mark["kind"] == "add" for row in rows for mark in row["inlineMarks"]) == 19
-    assert sum(mark["kind"] == "del" for row in rows for mark in row["inlineMarks"]) == 23
+    assert len(rows) == 3415
+    assert sum(len(row["literalGaps"]) for row in rows if row["book"] <= 5) == 6
+    assert [(row["book"], row["section"]) for row in rows if not row["text"]] == [(3, 240)] + [(7, n) for n in range(69, 100)] + [(10, 108)]
+    assert sum(len(row["teiGaps"]) for row in rows) == 32
+    assert sum(mark["kind"] == "add" for row in rows for mark in row["inlineMarks"]) == 45
+    assert sum(mark["kind"] == "del" for row in rows for mark in row["inlineMarks"]) == 30
+    assert sum(x["kind"] == "omission-notice" for f in files for x in f["excluded"]) == 6
+    assert sum(x["kind"] == "lacuna-notice" for f in files for x in f["excluded"]) == 1
     return {"sourceCommit": SOURCE_COMMIT, "files": files, "rows": rows,
-            "totals": {"books": 5, "sourceFiles": 6, "sections": len(rows),
+            "totals": {"books": 10, "sourceFiles": 11, "sections": len(rows),
                        "wordTokens": sum(len(row["tokens"]) for row in rows)},
             "runtime": {"python": sys.version.split()[0], "unicode": unicodedata.unidata_version,
                         "xmlParser": "xml.dom.minidom"}}
