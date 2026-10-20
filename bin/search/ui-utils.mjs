@@ -47,6 +47,8 @@ export function excerptCitation(record) {return citationScheme(record)==='chapte
 export function passageDivisionLabel(records) {
   const first=records[0],last=records.at(-1);
   if(!first)return '';
+  const proem=records.every(record=>record.division==='proem'||record.citation?.proem===true);
+  if(proem)return first.section===last.section?`Proem · Niese section ${first.section}`:`Proem · Niese sections ${first.section}–${last.section}`;
   const chapters=[...new Set(records.map(record=>record.chapter))];
   if(chapters.every(Number.isInteger))return chapters.length===1
     ?chapters[0]===0?(citationScheme(first)==='chapter-paragraph'?'Prologue':'Proem'):`Chapter ${chapters[0]}`
@@ -67,12 +69,17 @@ export function citationFor(records) {
 export function readerURL(record,baseURL,{section=true}={}) {
   const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/','contra-apionem':'contra-apionem/'}[record.work])||'bellum-judaicum/';
   const url=new URL(readerPath,baseURL);
-  url.searchParams.set('book',record.book??record.number);
+  url.searchParams.set('book',section?(record.readerLink?.params?.book??record.book??record.number):(record.book??record.number));
   if(section&&citationScheme(record)==='chapter-paragraph'){
     url.searchParams.set('chapter',record.chapter);
     url.searchParams.set('unit',record.paragraph);
   }else if(section&&record.section!==undefined)url.searchParams.set('niese',record.section);
   return url.href;
+}
+/** A source omission is displayed as a note, never added to searchable Latin. */
+export function emptySourceNote(record) {
+  return record.text===''&&record.textGaps?.some(gap=>gap.kind==='tei-gap'&&gap.sourceAttributes?.reason==='omitted')
+    ?'Text marked as omitted in the source.':'';
 }
 export function defaultCollection(catalog) {
   if(catalog.collections.some(collection=>collection.id==='bellum-latin-cardwell'))return 'bellum-latin-cardwell';

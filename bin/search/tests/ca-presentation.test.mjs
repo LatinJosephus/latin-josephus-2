@@ -94,8 +94,8 @@ test('CA word and wildcard counts export every occurrence and retain both select
   assert.ok(subset.rows.every(row => row.book === '2' && row.collection_id === CA));
 });
 
-test('all three works export 194 distinct sacerdot* occurrences with their own citation schemes', async () => {
-  const {result, model} = await run('sacerdot*', {collections: 'all'});
+test('the three previously published works retain 194 sacerdot* occurrences and their citation schemes', async () => {
+  const {result, model} = await run('sacerdot*', {collections: [BELLUM, DEH, CA]});
   assert.deepEqual(result.selectedCollections, [BELLUM, DEH, CA]);
   assert.equal(result.selectedBooks.length, 14);
   assert.deepEqual([result.occurrences, result.matchingUnits], [194, 118]);
@@ -142,8 +142,8 @@ test('ordinary CA section seams allow whole-book phrases and marked seams preven
   assert.equal((await run('Herculis AND fecit', {scope: 'book'})).result.matchingUnits, 1);
 });
 
-test('negative-only results retain all 14 book citations without inventing an occurrence', async () => {
-  const {result, model} = await run('NOT zzzznonoccurrit', {collections: 'all', scope: 'book'});
+test('negative-only results retain the 14 previously published book citations without inventing an occurrence', async () => {
+  const {result, model} = await run('NOT zzzznonoccurrit', {collections: [BELLUM, DEH, CA], scope: 'book'});
   assert.equal(result.matchingUnits, 14); assert.equal(result.occurrences, 0);
   assert.equal(model.rows.length, 0); assert.equal(model.unhighlightedUnits.length, 14);
   const file = csv(model, result);

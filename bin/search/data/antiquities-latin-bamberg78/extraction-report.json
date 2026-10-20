@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 4,
+  "status": "PASS",
+  "scope": {
+    "work": "Antiquities",
+    "books": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "language": "Latin",
+    "edition": "Bamberg Msc. Class. 78",
+    "unit": "Niese section",
+    "citationScheme": "niese",
+    "includesProem": true
+  },
+  "counts": {
+    "books": 5,
+    "sourceDocuments": 6,
+    "bodyParagraphs": 431,
+    "numberedParagraphs": 424,
+    "citationParagraphs": 418,
+    "continuationParagraphs": 6,
+    "sections": 1710,
+    "nieseMilestones": 1292,
+    "nieseEndMilestones": 1,
+    "chapterDivisions": 77,
+    "pageBreaks": 124,
+    "addedSpans": 19,
+    "deletedSpans": 23,
+    "sentenceSpans": 1,
+    "referenceSpans": 3,
+    "bambergAnchors": 4,
+    "excludedAnnotationNotes": 12,
+    "sourceGapMarkers": 1,
+    "literalGapClusters": 6,
+    "emptySections": 1,
+    "breakBeforeUnits": 3,
+    "paragraphSeparatorsInserted": 6,
+    "runningWordTokens": 67657
+  },
+  "coverage": {
+    "paragraphsExactlyRestored": 424,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "sourceProjectionExactlyRestoresSource": true,
+    "generatedDisplayGlyphs": 0,
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true,
+    "globalOrderRange": [
+      0,
+      1709
+    ],
+    "completeSectionCoverageByBook": {
+      "1": [
+        1,
+        346
+      ],
+      "2": [
+        1,
+        349
+      ],
+      "3": [
+        1,
+        322
+      ],
+      "4": [
+        1,
+        331
+      ],
+      "5": [
+        1,
+        362
+      ]
+    },
+    "allSectionTextsNonempty": false,
+    "allowedEmptySections": [
+      {
+        "book": 3,
+        "section": 240
+      }
+    ],
+    "sourceProjectionDefinition": "Running text from the accepted six XML documents is preserved exactly, except reversible edge whitespace and inserted paragraph-boundary newlines. No running source words or punctuation are generated, removed or corrected."
+  },
+  "corpus": {
+    "path": "data/antiquities-latin-bamberg78/corpus.json",
+    "sha256": "e6529a5861be2c59ea855355c7cc7b8bd754948da16f8efc3796d28669a38796",
+    "bytes": 1779114,
+    "records": 1710
+  },
+  "books": [
+    {
+      "book": 1,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-01.xml",
+        "sha256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+        "bytes": 137000
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/Latin/preface.xml",
+          "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+          "bytes": 9646
+        }
+      ],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/preface.xml",
+          "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+          "bytes": 9646
+        },
+        {
+          "path": "assets/xml/antiquities/Latin/book-01.xml",
+          "sha256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+          "bytes": 137000
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 86,
+        "numberedParagraphs": 83,
+        "citationParagraphs": 83,
+        "continuationParagraphs": 0,
+        "sections": 346,
+        "nieseMilestones": 263,
+        "nieseEndMilestones": 1,
+        "chapterDivisions": 23,
+        "pageBreaks": 25,
+        "addedSpans": 19,
+        "deletedSpans": 22,
+        "sentenceSpans": 1,
+        "referenceSpans": 3,
+        "bambergAnchors": 1,
+        "excludedAnnotationNotes": 12,
+        "sourceGapMarkers": 0,
+        "literalGapClusters": 2,
+        "emptySections": 0,
+        "breakBeforeUnits": 1,
+        "paragraphSeparatorsInserted": 0,
+        "runningWordTokens": 14209
+      },
+      "orderStart": 0,
+      "orderEnd": 345,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-01.corpus.json",
+        "sha256": "1c746d5b9a0adba0d01e1de2fe4e4760210c565002ffccd724da6b33b73f9b95",
+        "bytes": 371416,
+        "records": 346
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-01.extraction-report.json",
+        "sha256": "3e36e7188fd5ab22a31e46e67b84499ab9bca52f2f00bf233cd7f473b1435fb1",
+        "bytes": 650656
+      }
+    },
+    {
+      "book": 2,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-02.xml",
+        "sha256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+        "bytes": 143327
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-02.xml",
+          "sha256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+          "bytes": 143327
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 77,
+        "numberedParagraphs": 76,
+        "citationParagraphs": 75,
+        "continuationParagraphs": 1,
+        "sections": 349,
+        "nieseMilestones": 274,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 17,
+        "pageBreaks": 26,
+        "addedSpans": 0,
+        "deletedSpans": 1,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 0,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 0,
+        "literalGapClusters": 2,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 1,
+        "runningWordTokens": 13570
+      },
+      "orderStart": 346,
+      "orderEnd": 694,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-02.corpus.json",
+        "sha256": "a3f703b4685b7fe7093c404e1d1e3ca4a590eee13964e913ebdfa1c1a5bcc09a",
+        "bytes": 361217,
+        "records": 349
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-02.extraction-report.json",
+        "sha256": "6c259f4bdfc4c9d68ff0b401c9119145755c95ab58c9be1dd4842af8aa39471c",
+        "bytes": 600926
+      }
+    },
+    {
+      "book": 3,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-03.xml",
+        "sha256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+        "bytes": 138026
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-03.xml",
+          "sha256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+          "bytes": 138026
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 80,
+        "numberedParagraphs": 79,
+        "citationParagraphs": 78,
+        "continuationParagraphs": 1,
+        "sections": 322,
+        "nieseMilestones": 244,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 16,
+        "pageBreaks": 24,
+        "addedSpans": 0,
+        "deletedSpans": 0,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 1,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 1,
+        "literalGapClusters": 0,
+        "emptySections": 1,
+        "breakBeforeUnits": 2,
+        "paragraphSeparatorsInserted": 1,
+        "runningWordTokens": 12793
+      },
+      "orderStart": 695,
+      "orderEnd": 1016,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-03.corpus.json",
+        "sha256": "5743399ea0a32db424a2c060d3bb974c4ebed9ec92e3fe8f4fd79e57d36958bd",
+        "bytes": 334103,
+        "records": 322
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-03.extraction-report.json",
+        "sha256": "b32e839194e1f33f05413e557f842e3eb50ae341534781864bae8e1ed87717aa",
+        "bytes": 563100
+      }
+    },
+    {
+      "book": 4,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-04.xml",
+        "sha256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+        "bytes": 138762
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-04.xml",
+          "sha256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+          "bytes": 138762
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 89,
+        "numberedParagraphs": 88,
+        "citationParagraphs": 85,
+        "continuationParagraphs": 3,
+        "sections": 331,
+        "nieseMilestones": 246,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 9,
+        "pageBreaks": 25,
+        "addedSpans": 0,
+        "deletedSpans": 0,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 1,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 0,
+        "literalGapClusters": 2,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 3,
+        "runningWordTokens": 13180
+      },
+      "orderStart": 1017,
+      "orderEnd": 1347,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-04.corpus.json",
+        "sha256": "19f3752e9412a97611ee8cbfe8ad73da5f300234955d96c9252d33cab74974e1",
+        "bytes": 342023,
+        "records": 331
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-04.extraction-report.json",
+        "sha256": "9fbbbcedcf1f6be351053571ce194255ef5f63d5326f301978144372dcc042b4",
+        "bytes": 588502
+      }
+    },
+    {
+      "book": 5,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/Latin/book-05.xml",
+        "sha256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+        "bytes": 144112
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/Latin/book-05.xml",
+          "sha256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+          "bytes": 144112
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 99,
+        "numberedParagraphs": 98,
+        "citationParagraphs": 97,
+        "continuationParagraphs": 1,
+        "sections": 362,
+        "nieseMilestones": 265,
+        "nieseEndMilestones": 0,
+        "chapterDivisions": 12,
+        "pageBreaks": 24,
+        "addedSpans": 0,
+        "deletedSpans": 0,
+        "sentenceSpans": 0,
+        "referenceSpans": 0,
+        "bambergAnchors": 1,
+        "excludedAnnotationNotes": 0,
+        "sourceGapMarkers": 0,
+        "literalGapClusters": 0,
+        "emptySections": 0,
+        "breakBeforeUnits": 0,
+        "paragraphSeparatorsInserted": 1,
+        "runningWordTokens": 13905
+      },
+      "orderStart": 1348,
+      "orderEnd": 1709,
+      "corpus": {
+        "path": "data/antiquities-latin-bamberg78/book-05.corpus.json",
+        "sha256": "8c422c21d7e99ccd3d4b8bb3c30aebf28f99b6214a9e2f65ea541cdca3a02f68",
+        "bytes": 370367,
+        "records": 362
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/book-05.extraction-report.json",
+        "sha256": "641affd7a704d6157ebb209d83cd00140ed4e229dcf802ead8b789e11cf89ed2",
+        "bytes": 638870
+      }
+    }
+  ]
+}

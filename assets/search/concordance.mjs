@@ -247,7 +247,7 @@ const CSV_COLUMNS = [
   "catalog_schema_version", "lunr_version", "concordance_schema_version", "selected_sources_json", "csv_cell_encoding", "escaped_columns_json",
 ];
 const EDITORIAL_CSV_COLUMNS = ["citation_scheme", "left_context_editorial", "matched_text_editorial", "right_context_editorial", "editorial_notes"];
-const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters. In Contra Apionem, source asterisks are phrase boundaries; their literal spans and the source markup are retained in source_segments_json.";
+const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text⟧; ⟨added text⟩; † unresolved text. Literal context columns retain all indexed letters. Contra Apionem asterisks and Antiquities dotted interruptions or encoded omissions are phrase boundaries; their spans and source markup are retained in source_segments_json. Antiquities includes the Proem and Books I–V.";
 
 // Quoting alone does not prevent spreadsheet formula evaluation. Scalar cells
 // beginning with a formula marker (including after whitespace/control chars),
@@ -287,10 +287,13 @@ function exportedSegments(row) {
         editorialMarks: editorialMarksFor(record, span.start, span.end).map((mark) => ({ ...mark })) } : {}),
       ...(record.phraseBreaks !== undefined ? {
         phraseBreaks: phraseBreakOffsets(record).filter(offset => offset >= span.start && offset <= span.end),
-        textGaps: (record.textGaps || []).filter(mark => mark.start < span.end && mark.end > span.start),
+        textGaps: (record.textGaps || []).filter(mark => mark.start === mark.end
+          ? mark.start >= span.start && mark.start <= span.end
+          : mark.start < span.end && mark.end > span.start),
         sourceMarkup: (record.sourceMarkup || []).filter(mark => mark.start < span.end && mark.end > span.start),
         sourceAnnotations: record.sourceAnnotations || [], breakBefore: Boolean(record.breakBefore),
       } : {}),
+      ...(record.sourcePath ? {sourcePath: record.sourcePath, sourceIds: record.sourceIds, division: record.division} : {}),
     };
   });
 }
@@ -318,7 +321,7 @@ export function exportConcordance(model, result, metadata = {}) {
   const allRows = [...model.rows, ...model.unhighlightedUnits];
   const selectedCollections = result.selectedCollections ?? distinct(allRows.map((row) => row.collectionId).filter(Boolean));
   const selectedBooks = result.selectedBooks ?? distinct(allRows.map((row) => row.bookId).filter(Boolean));
-  const includeEditorialColumns = selectedCollections.some((id) => collections.get(id)?.citationScheme === "chapter-paragraph" || collections.get(id)?.work === "contra-apionem")
+  const includeEditorialColumns = selectedCollections.some((id) => collections.get(id)?.citationScheme === "chapter-paragraph" || ["contra-apionem", "antiquities"].includes(collections.get(id)?.work))
     || allRows.some((row) => row.citationScheme === "chapter-paragraph" || row.editorialMarks?.length)
     || (result.records || []).some((record) => citationScheme(record) === "chapter-paragraph" || record.editorialMarks !== undefined);
   // Keep the accepted 51-column contract for Bellum-only exports. Extended
@@ -368,7 +371,9 @@ export function exportConcordance(model, result, metadata = {}) {
       left_context_editorial: editorialText(markedText, 0, row.left.length),
       matched_text_editorial: editorialText(markedText, row.left.length, row.left.length + row.match.length),
       right_context_editorial: editorialText(markedText, row.left.length + row.match.length, markedText.text.length),
-      editorial_notes: editorialKinds.length ? `This excerpt includes ${editorialKinds.join(", ")} text. ${EDITORIAL_LEGEND}` : (includeEditorialColumns && rowIndex === 0 ? EDITORIAL_LEGEND : ""),
+      editorial_notes: segments.some(segment => segment.text === "" && segment.textGaps?.some(gap => gap.kind === "tei-gap" && gap.sourceAttributes?.reason === "omitted"))
+        ? `Text marked as omitted in the source. ${EDITORIAL_LEGEND}`
+        : editorialKinds.length ? `This excerpt includes ${editorialKinds.join(", ")} text. ${EDITORIAL_LEGEND}` : (includeEditorialColumns && rowIndex === 0 ? EDITORIAL_LEGEND : ""),
       row_type: row.kind === "matching-unit" ? "matching-unit" : model.countKind === "evidence" ? "positive-evidence" : "occurrence",
       match_kind: row.kind === "matching-unit" ? "" : row.kind,
       work: row.work, book: row.book, collection_id: row.collectionId, book_id: row.bookId,

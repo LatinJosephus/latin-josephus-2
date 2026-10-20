@@ -322,6 +322,11 @@ async function main() {
   const config = catalog.collections.find(collection => collection.id === collectionId);
   assert.ok(config, 'The catalog must include the DEH collection before this verifier runs.');
   const selectedEntries = catalog.books.filter(entry => entry.collectionId === collectionId);
+  // Preserve the established three-collection regression scope as the catalog
+  // grows; the Antiquities verifier exercises its new source and gap rules.
+  const legacyCollections = new Set(['bellum-latin-cardwell', collectionId, 'contra-apionem-latin-boysen']);
+  const legacyEntries = catalog.books.filter(entry => legacyCollections.has(entry.collectionId));
+  check('LegacyThreeWorkBookCounts', [...legacyCollections].map(id => legacyEntries.filter(entry => entry.collectionId === id).length), [7, 5, 2]);
   check('CatalogBookOrder', selectedEntries.map(entry => entry.number), [1, 2, 3, 4, 5]);
   check('CatalogCitationScheme', config.citationScheme, 'chapter-paragraph');
   preserve(readerPath); preserve(resolve(base, 'engine.mjs')); preserve(resolve(base, 'collection.mjs')); preserve(fileURLToPath(import.meta.url));
@@ -406,7 +411,7 @@ async function main() {
     console.log(JSON.stringify({phase: 'DEH book complete', book: entry.number, vocabulary: oracle.vocabulary.length, queriesSoFar: totalQueries, seconds: Math.round((performance.now() - bookStarted) / 100) / 10}));
   }
 
-  const bundleEntries = new Map(catalog.books.map(entry => [new URL(entry.path, 'https://qa.invalid/assets/search/').pathname, entry]));
+  const bundleEntries = new Map(legacyEntries.map(entry => [new URL(entry.path, 'https://qa.invalid/assets/search/').pathname, entry]));
   const fetchCounts = new Map();
   const fetchImpl = async url => {
     const entry = bundleEntries.get(new URL(url).pathname);
@@ -416,13 +421,13 @@ async function main() {
     return new Response(readFileSync(path), {status: 200});
   };
   const collection = createCollection(catalog, lunr, {baseURL: 'https://qa.invalid/assets/search/', fetchImpl});
-  const allEntryRecords = new Map(catalog.books.map(entry => {
+  const allEntryRecords = new Map(legacyEntries.map(entry => {
     const path = preserve(resolve(base, entry.path));
     return [entry.id, readJSON(path).records];
   }));
   async function verifyCollection(ast, selected, scope, fold, category, query = print(ast), example = false) {
     totalQueries++; counts[`${category}Queries`] = (counts[`${category}Queries`] || 0) + 1;
-    const selectedSet = new Set(selected), ordered = catalog.books.filter(entry => selectedSet.has(entry.id));
+    const selectedSet = new Set(selected), ordered = legacyEntries.filter(entry => selectedSet.has(entry.id));
     const records = ordered.flatMap(entry => allEntryRecords.get(entry.id));
     const oracle = makeOracle(records);
     const expected = oracle.evaluate(ast, scope, fold);
@@ -460,7 +465,7 @@ async function main() {
   }
   const bellum = catalog.books.filter(entry => entry.collectionId === 'bellum-latin-cardwell');
   assert.equal(bellum.length, 7, 'Mixed-work acceptance expects the already accepted seven Bellum books.');
-  const mixedSelections = [catalog.books.map(entry => entry.id), [selectedEntries[0].id, bellum[0].id]];
+  const mixedSelections = [legacyEntries.map(entry => entry.id), [selectedEntries[0].id, bellum[0].id]];
   for (const selected of mixedSelections) for (const ast of [leaf('Iosephus'), leaf('sacerdot*'), phrase(['tamquam', 'in', 'spinis', 'rosam', 'quaerentes']), not(leaf('zzzznonoccurrit'))])
     for (const scope of ['section', 'book']) for (const fold of [false, true])
       await verifyCollection(ast, selected, scope, fold, 'MixedWorkCollection', print(ast), !fold && scope === 'book');
@@ -477,7 +482,7 @@ async function main() {
     const checked = await verifyCollection(mixedSeam, [bellum[0].id, selectedEntries[0].id], scope, false, 'CrossWorkPhraseBlocked');
     check('CrossWorkPhraseAbsent', checked.expected.size, 0);
   }
-  check('BundleFetchCaching', [...fetchCounts.entries()].sort(), catalog.books.map(entry => [entry.id, 1]).sort());
+  check('BundleFetchCaching', [...fetchCounts.entries()].sort(), legacyEntries.map(entry => [entry.id, 1]).sort());
   for (const invalid of [{collections: [collectionId], books: [1]}, {collections: [collectionId], books: [bellum[0].id]}]) {
     await assert.rejects(collection.search('Iosephus', invalid));
     assertions++; counts.InvalidSelectionRejected = (counts.InvalidSelectionRejected || 0) + 1;

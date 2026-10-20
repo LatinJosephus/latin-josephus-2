@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "antiquities-latin-bamberg78",
+  "work": "antiquities",
+  "label": "Antiquities I–V, including Proem",
+  "citationPrefix": "Antiquities",
+  "citationScheme": "niese",
+  "unitLabel": "Niese section",
+  "unitLabelPlural": "Niese sections",
+  "language": "Latin",
+  "edition": "Bamberg Msc. Class. 78",
+  "readerPath": "antiquities/",
+  "corpus": "../data/antiquities-latin-bamberg78/corpus.json",
+  "extractionReport": "../data/antiquities-latin-bamberg78/extraction-report.json",
+  "books": [
+    {"number": 1, "label": "Book I (including Proem)", "corpus": "../data/antiquities-latin-bamberg78/book-01.corpus.json", "sections": 346, "sectionRange": [1, 346], "source": "assets/xml/antiquities/Latin/book-01.xml", "additionalSources": ["assets/xml/antiquities/Latin/preface.xml"]},
+    {"number": 2, "label": "Book II", "corpus": "../data/antiquities-latin-bamberg78/book-02.corpus.json", "sections": 349, "sectionRange": [1, 349], "source": "assets/xml/antiquities/Latin/book-02.xml"},
+    {"number": 3, "label": "Book III", "corpus": "../data/antiquities-latin-bamberg78/book-03.corpus.json", "sections": 322, "sectionRange": [1, 322], "source": "assets/xml/antiquities/Latin/book-03.xml"},
+    {"number": 4, "label": "Book IV", "corpus": "../data/antiquities-latin-bamberg78/book-04.corpus.json", "sections": 331, "sectionRange": [1, 331], "source": "assets/xml/antiquities/Latin/book-04.xml"},
+    {"number": 5, "label": "Book V", "corpus": "../data/antiquities-latin-bamberg78/book-05.corpus.json", "sections": 362, "sectionRange": [1, 362], "source": "assets/xml/antiquities/Latin/book-05.xml"}
+  ]
+}

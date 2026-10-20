@@ -1,5 +1,5 @@
 import {createCollection} from './collection.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel} from './ui-utils.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote} from './ui-utils.mjs';
 import {buildConcordance,exportConcordance} from './concordance.mjs';
 
 const root=document.getElementById('lj-search');
@@ -29,6 +29,7 @@ function updateScopeHint(){
     ?`Each selected book, work and edition is evaluated separately. Boolean conditions may match anywhere in that book. Exact phrases remain consecutive and can cross citation and chapter boundaries within it.${deh?' The De excidio Prologue is separated from the Book I narrative; phrases do not cross that boundary.':''}`
     :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
   if(apion)els.scopeHint.textContent+=' In Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
+  if(collections.some(collection=>collection.work==='antiquities'))els.scopeHint.textContent+=' Antiquities includes the Proem with Book I. Phrases stop at marked gaps and at the Proem’s end; Boolean conditions can relate words on either side.';
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
@@ -36,7 +37,8 @@ function populateBooks(selected='all'){
   els.book.replaceChildren(option(work==='all'?'All available books':'All books in this work','all'));
   for(const b of books){
     const c=catalog.collections.find(c=>c.id===b.collectionId);
-    els.book.append(option(work==='all'?`${bookCitation({...c,...b})} · ${c.edition}`:`Book ${romanBook(b.number)}`,b.id));
+    const proem=c.work==='antiquities'&&b.number===1?' (including Proem)':'';
+    els.book.append(option(work==='all'?`${bookCitation({...c,...b})}${proem} · ${c.edition}`:(b.label||`Book ${romanBook(b.number)}`),b.id));
   }
   els.book.value=selected;
   els.book.disabled=false;
@@ -53,7 +55,7 @@ function populateControls(){
   const coverage=catalog.collections.map(collection=>`${collection.citationPrefix}: ${collection.totals.sections.toLocaleString()} ${citationUnitLabels([collection]).plural}`).join(' · ');
   $('coverage').textContent=`${catalog.books.length} books · ${coverage} · ${catalog.totals.tokens.toLocaleString()} words · Latin main text`;
   const included=catalog.collections.map(c=>`${c.label}, ${c.language}, ${c.edition} (${c.books.length} books)`).join('; ');
-  const future=catalog.collections.some(c=>c.work==='antiquities')?'':' Antiquities will be added after its text repairs and verification are complete.';
+  const future=catalog.collections.some(c=>c.work==='antiquities')?' Antiquities currently covers the Proem and Books I–V; later books are not yet indexed.':' Antiquities will be added after its text repairs and verification are complete.';
   $('included-text').textContent=`Currently indexed: ${included}. Editorial titles, printed division labels and manuscript annotations are excluded.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units. Supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':''}${future}`;
 }
 function applyState(state){
@@ -87,6 +89,8 @@ function appendTextRange(parent,record,start,end,ranges=[]){
 function makeExcerpt(record,rawRanges,full=false,label=false){
   const p=node('p',undefined,'excerpt');p.lang='la';
   if(label)p.append(link(excerptCitation(record),readerURL(record,readerBase),'section-label'));
+  const omission=emptySourceNote(record);
+  if(omission){const note=node('span',omission,'source-note');note.lang='en';p.append(note);return p;}
   const ranges=mergedRanges(rawRanges||[],record.text.length);
   const windows=full?[{start:0,end:record.text.length}]:excerptWindows(record.text,ranges);
   for(let i=0;i<windows.length;i++){
@@ -134,6 +138,7 @@ function makeConcordanceRow(row){
 function makeMatchingUnit(unit){
   const article=node('article',undefined,'concordance-row matching-unit');article.append(concordanceHeader(unit));
   article.append(node('p',`This ${unit.scope==='book'?'book':unit.citationUnitLabel||'section'} satisfies the full query without a positive word or phrase to highlight.`));
+  if(unit.scope!=='book')for(const record of unit.records){const omission=emptySourceNote(record);if(omission)article.append(node('p',omission,'source-note'));}
   return article;
 }
 function orderItems(entries,records){
@@ -198,6 +203,7 @@ function resultContext(result,model){
   }
   if(collections.some(collection=>citationScheme(collection)==='chapter-paragraph'))parts.push('De excidio citations give book, chapter and paragraph (or Prol.). [Brackets] mark supplied text; struck text marks editorial deletion; † marks unresolved text. These markings are retained in the CSV’s editorial columns.');
   if(collections.some(collection=>collection.work==='contra-apionem'))parts.push('Contra Apionem uses Niese sections. Asterisks retain the source’s marked interruptions, which exact phrases cannot cross. Bold green text marks an addition in the source; the CSV’s editorial columns show it as ⟨added text⟩.');
+  if(collections.some(collection=>collection.work==='antiquities'))parts.push('Antiquities currently includes the Proem and Books I–V of Bamberg Msc. Class. 78. Added and deleted letters remain searchable: bold green text marks additions and struck text marks deletions. Exact phrases stop at marked gaps and at the end of the Proem. III.240 retains its citation and the source’s omission, without generated Latin text.');
   return parts.join(' ');
 }
 function renderSuccessful(){

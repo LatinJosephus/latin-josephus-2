@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-19T15:56:58.601Z",
+  "generatedAt": "2026-10-20T00:31:24.079Z",
   "independentVerifier": "bin/search/tests/deh-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -139,7 +139,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "58a7fcec5e3dc1f046334b76439cda7d9459b8437de2e232ee5bb9a04354db64"
+      "sha256": "4ee275c99b4e8bf54f176434b6ade89920698847ee5e04680d18fdb980de8ef0"
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -151,7 +151,7 @@
     },
     "verifier": {
       "path": "bin/search/tests/deh-corpus-qa.mjs",
-      "sha256": "dcbd7c71693f9880c571a1f3e87a6b9081302a47ec50c4c11e6de1f5c89b2153"
+      "sha256": "8c746327bc7710553e4713ff14a5150be718a9a1f11c6c9ebc992512674a5140"
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
@@ -260,6 +260,7 @@
   },
   "counts": {
     "ReviewedReaderBaseline": 1,
+    "LegacyThreeWorkBookCounts": 1,
     "CatalogBookOrder": 1,
     "CatalogCitationScheme": 1,
     "CanonicalStableIds": 1,
@@ -390,7 +391,7 @@
     "InputUnchangedDuringQA": 30
   },
   "totalQueries": 76170,
-  "assertions": 907741,
+  "assertions": 907742,
   "failedAssertions": 0,
   "examples": [
     {
@@ -990,7 +991,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 66.75,
+  "durationSeconds": 92.82,
   "limitations": [
     "Automated Node/Python verification, not browser or visual acceptance.",
     "Reader URLs checked against canonical citation/ID structure; reader pages are not opened by this verifier.",

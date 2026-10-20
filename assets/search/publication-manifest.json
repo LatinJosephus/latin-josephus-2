@@ -8,13 +8,49 @@
   "inputs": [
     {
       "path": "_includes/search-interface.html",
-      "sha256": "a049f112de9825c8a3b1a3c98073b3ff520b5a822a0e6577eeeee085ab348d88",
-      "bytes": 9727
+      "sha256": "5478225eefa93aa157d52c09e0a30b4607675444e142a7cda02e8b40075b2595",
+      "bytes": 10737
     },
     {
       "path": "_pages/search.html",
       "sha256": "3427905773bd91cac26e1d8f0103ef9c6e2ef2a46ca4b60ef04ea23b0c9d86e5",
       "bytes": 588
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-01.xml",
+      "sha256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+      "bytes": 137000,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-02.xml",
+      "sha256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+      "bytes": 143327,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-03.xml",
+      "sha256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+      "bytes": 138026,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-04.xml",
+      "sha256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+      "bytes": 138762,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-05.xml",
+      "sha256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+      "bytes": 144112,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/preface.xml",
+      "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+      "bytes": 9646,
+      "hashMode": "crlf-to-lf"
     },
     {
       "path": "assets/xml/bellum/Latin/book-01.xml",
@@ -112,8 +148,8 @@
     },
     {
       "path": "bin/search/app.mjs",
-      "sha256": "80d883cd15a66f1ed64029d4e401001b5380e65b39b7f4f90fda001644ce5d4f",
-      "bytes": 22600
+      "sha256": "052b5d55aa48518b04c74094e9038bf4524746387e24c2db7d24c235593562b3",
+      "bytes": 23783
     },
     {
       "path": "bin/search/build-index.mjs",
@@ -142,8 +178,13 @@
     },
     {
       "path": "bin/search/concordance.mjs",
-      "sha256": "306494e83eddcbe74d101d6a9850e18001147ca319cd69ea1039f58d0421e546",
-      "bytes": 25472
+      "sha256": "92ab7ff4e2148383d5dab925714c959936cdff926e1112af941bdb87aac3b0ce",
+      "bytes": 26031
+    },
+    {
+      "path": "bin/search/config/antiquities-latin-bamberg78.json",
+      "sha256": "ca8359372159d9ccc015bf9f5bda2e79b187124a6a13ef54c1e2a128cbe37520",
+      "bytes": 1640
     },
     {
       "path": "bin/search/config/bellum-latin-cardwell.json",
@@ -152,8 +193,8 @@
     },
     {
       "path": "bin/search/config/collections.json",
-      "sha256": "d9c663f295d8cf5bee93630e4f93a2a4cd11e11e9360acedf946440454fe07eb",
-      "bytes": 135
+      "sha256": "b50f377293fcdd2986fd32d2a4433cc3b5a782922b424ca302c1fb67b2badcfd",
+      "bytes": 171
     },
     {
       "path": "bin/search/config/contra-apionem-latin-boysen.json",
@@ -167,13 +208,18 @@
     },
     {
       "path": "bin/search/config/publication.json",
-      "sha256": "d9ed9eb40cbd24763813bb6b64292c255ae642e687a1a7befa7cdd06f30db57f",
-      "bytes": 1925
+      "sha256": "10c10f4075f144fadad03d4699a0b99312e29747351fb94ad72a84dc195bce23",
+      "bytes": 2535
     },
     {
       "path": "bin/search/engine.mjs",
       "sha256": "98093386a2e48fa1b56789cec18a465d37cc2924f0e26a6cf0d1d0e0d0e431bd",
       "bytes": 22953
+    },
+    {
+      "path": "bin/search/extract-antiquities.py",
+      "sha256": "5238b990f6743f423e4628df2d1ee22f2fab1e60c850b392d3f4549a7d36b926",
+      "bytes": 45919
     },
     {
       "path": "bin/search/extract-ca.py",
@@ -192,18 +238,33 @@
     },
     {
       "path": "bin/search/index.html",
-      "sha256": "6cae68797d25fd436ef9de45d2fc1692b287a935f42d9115892416abbc6c39c1",
-      "bytes": 10979
+      "sha256": "3108f4afd5da74bf29e1e0c71c30245d9e5298b32bf97334abff86be30f7a95a",
+      "bytes": 12019
     },
     {
       "path": "bin/search/publication.mjs",
-      "sha256": "19d2526d8753d1665c980d2c3d8fb69b5bca8ea1c8329d045790ef1bc57fd542",
-      "bytes": 37590
+      "sha256": "0d195e9444bbcc419b84087ab1bbb3a08fd5b60c145dab7beb913e3667614d09",
+      "bytes": 49161
     },
     {
       "path": "bin/search/styles.css",
       "sha256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
       "bytes": 11667
+    },
+    {
+      "path": "bin/search/tests/antiquities-corpus-qa.mjs",
+      "sha256": "d1ab7a17c33ef4d471aa8ae9734662de97781defcc320d911d3b0156e42dcc29",
+      "bytes": 55592
+    },
+    {
+      "path": "bin/search/tests/antiquities-presentation.test.mjs",
+      "sha256": "bd2aeec80f9291752a3494e78358aeadcc34f9129671acf5e51bdd2a37f062c6",
+      "bytes": 21180
+    },
+    {
+      "path": "bin/search/tests/antiquities-source-witness.py",
+      "sha256": "a238233bc6abf52a4293d575b52f84d3b21574cfed4008efaa512dce4f0d4b36",
+      "bytes": 15185
     },
     {
       "path": "bin/search/tests/build-index.test.mjs",
@@ -212,13 +273,13 @@
     },
     {
       "path": "bin/search/tests/ca-corpus-qa.mjs",
-      "sha256": "f68d054fc6225c2922fe64a78f45bcc1135bdd423504cf290ea39046037952dd",
-      "bytes": 47705
+      "sha256": "eaf77ea81cb3d1101cfb545cfbfbeac4dc8d15821774eb2eea6827805bd522fb",
+      "bytes": 48135
     },
     {
       "path": "bin/search/tests/ca-presentation.test.mjs",
-      "sha256": "f3ea5b62bfb05984af34433c86ec9e92dda24de659b05fe5de34fcd63fb34418",
-      "bytes": 10333
+      "sha256": "8a4612aa4c381f48b443c308fc215f3358fd51cf5d777305e12dbf726ad26e6c",
+      "bytes": 10385
     },
     {
       "path": "bin/search/tests/ca-source-witness.py",
@@ -247,8 +308,8 @@
     },
     {
       "path": "bin/search/tests/deh-corpus-qa.mjs",
-      "sha256": "dcbd7c71693f9880c571a1f3e87a6b9081302a47ec50c4c11e6de1f5c89b2153",
-      "bytes": 35420
+      "sha256": "8c746327bc7710553e4713ff14a5150be718a9a1f11c6c9ebc992512674a5140",
+      "bytes": 35931
     },
     {
       "path": "bin/search/tests/deh-presentation.test.mjs",
@@ -272,8 +333,8 @@
     },
     {
       "path": "bin/search/tests/publication.test.mjs",
-      "sha256": "11196f728838263693c587bc2ace8c8be355c3885f4692daf6a5f79010ae7b82",
-      "bytes": 8862
+      "sha256": "816c1814752e5b34e9ea69f474094a34904a129968e50d04bcefa2934be21b78",
+      "bytes": 10235
     },
     {
       "path": "bin/search/tests/report-path.mjs",
@@ -289,6 +350,11 @@
       "path": "bin/search/tests/test_extract.py",
       "sha256": "0ad33eabbd358f3e28843d5fdf9b4dc4c00c13ec4e433b7d64fa7ee9c53a6e20",
       "bytes": 13307
+    },
+    {
+      "path": "bin/search/tests/test_extract_antiquities.py",
+      "sha256": "d1fc0b9332044f9538e115d4f1608668e1ecffd1ba61785b5f694173a8792b5c",
+      "bytes": 20269
     },
     {
       "path": "bin/search/tests/test_extract_ca.py",
@@ -307,8 +373,8 @@
     },
     {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "b7e201ea21220142556fa2573574561427539b8e79889133d08ce70e8669fd98",
-      "bytes": 10522
+      "sha256": "3de8dbb8dafa783036b0c8d32d3a40d6216b710068aa28d66148bd92bc53dac1",
+      "bytes": 11133
     },
     {
       "path": "bin/search/vendor/LUNR-LICENSE.txt",
@@ -355,7 +421,7 @@
       ],
       "qa": {
         "path": "qa-report.json",
-        "sha256": "e2c843e4b1d26df88ce583ca386e29319c8b1b611bfe40c55b4cade6832e1482",
+        "sha256": "ee59999e4607a99a4893657a204b85b70ab2485c417a2c59d67ab8dc3643a359",
         "status": "PASS",
         "assertions": 1663053,
         "queries": 98856,
@@ -384,9 +450,9 @@
       ],
       "qa": {
         "path": "data/deh-latin-ussani/qa-report.json",
-        "sha256": "aab7ca4dd6364a72a6de73d3b662326f9728289d4d4506f7a53a325c1b11a47e",
+        "sha256": "9a3fc7244f66b2a3b3fdd5994dcbe32633490a43890c0040533f7c908ea1e12b",
         "status": "PASS",
-        "assertions": 907741,
+        "assertions": 907742,
         "queries": 76170,
         "failedAssertions": 0,
         "readerEvidenceIsHistorical": true
@@ -410,20 +476,50 @@
       ],
       "qa": {
         "path": "data/contra-apionem-latin-boysen/qa-report.json",
-        "sha256": "f1934761279b9e1e182bc82afbf24cb20821995a40f6926ebc7b081e3e086c5a",
+        "sha256": "f41acaa15dd00a7e96d448fd96c8f24d11d67649ab22e7ea55dc29448f68d507",
         "status": "PASS",
         "assertions": 346953,
         "queries": 24167,
         "failedAssertions": 0,
         "readerEvidenceIsHistorical": true
       }
+    },
+    {
+      "id": "antiquities-latin-bamberg78",
+      "totals": {
+        "books": 5,
+        "sections": 1710,
+        "tokens": 67657,
+        "bytes": 12155556
+      },
+      "extractionReport": {
+        "path": "data/antiquities-latin-bamberg78/extraction-report.json",
+        "sha256": "df1bda194f9e06a1e0430d3c08e39574923c62333f3aeb65ee1099277286ea0f"
+      },
+      "sourceFiles": [
+        "assets/xml/antiquities/Latin/book-01.xml",
+        "assets/xml/antiquities/Latin/preface.xml",
+        "assets/xml/antiquities/Latin/book-02.xml",
+        "assets/xml/antiquities/Latin/book-03.xml",
+        "assets/xml/antiquities/Latin/book-04.xml",
+        "assets/xml/antiquities/Latin/book-05.xml"
+      ],
+      "qa": {
+        "path": "data/antiquities-latin-bamberg78/qa-report.json",
+        "sha256": "be8d78f17d6eb35b0361e59df8fb7f5bf1efce31c6499a04e9afcbdabc7c0136",
+        "status": "PASS",
+        "assertions": 970088,
+        "queries": 72559,
+        "failedAssertions": 0,
+        "readerEvidenceIsHistorical": true
+      }
     }
   ],
   "totals": {
-    "books": 14,
-    "sections": 5175,
-    "tokens": 223284,
-    "bytes": 35660160
+    "books": 19,
+    "sections": 6885,
+    "tokens": 290941,
+    "bytes": 47815716
   },
   "validation": {
     "sourceAndArtifactHashes": "PASS",
@@ -449,6 +545,7 @@
           "runtime": "node",
           "arguments": [
             "--test",
+            "bin/search/tests/antiquities-presentation.test.mjs",
             "bin/search/tests/build-index.test.mjs",
             "bin/search/tests/ca-presentation.test.mjs",
             "bin/search/tests/collection.test.mjs",
@@ -471,15 +568,15 @@
     {
       "path": "app.mjs",
       "source": "bin/search/app.mjs",
-      "sha256": "80d883cd15a66f1ed64029d4e401001b5380e65b39b7f4f90fda001644ce5d4f",
-      "bytes": 22600,
+      "sha256": "052b5d55aa48518b04c74094e9038bf4524746387e24c2db7d24c235593562b3",
+      "bytes": 23783,
       "role": "runtime"
     },
     {
       "path": "catalog.json",
       "source": "bin/search/catalog.json",
-      "sha256": "58a7fcec5e3dc1f046334b76439cda7d9459b8437de2e232ee5bb9a04354db64",
-      "bytes": 11395,
+      "sha256": "4ee275c99b4e8bf54f176434b6ade89920698847ee5e04680d18fdb980de8ef0",
+      "bytes": 15519,
       "role": "catalog"
     },
     {
@@ -492,9 +589,16 @@
     {
       "path": "concordance.mjs",
       "source": "bin/search/concordance.mjs",
-      "sha256": "306494e83eddcbe74d101d6a9850e18001147ca319cd69ea1039f58d0421e546",
-      "bytes": 25472,
+      "sha256": "92ab7ff4e2148383d5dab925714c959936cdff926e1112af941bdb87aac3b0ce",
+      "bytes": 26031,
       "role": "runtime"
+    },
+    {
+      "path": "config/antiquities-latin-bamberg78.json",
+      "source": "bin/search/config/antiquities-latin-bamberg78.json",
+      "sha256": "ca8359372159d9ccc015bf9f5bda2e79b187124a6a13ef54c1e2a128cbe37520",
+      "bytes": 1640,
+      "role": "evidence"
     },
     {
       "path": "config/bellum-latin-cardwell.json",
@@ -506,8 +610,8 @@
     {
       "path": "config/collections.json",
       "source": "bin/search/config/collections.json",
-      "sha256": "d9c663f295d8cf5bee93630e4f93a2a4cd11e11e9360acedf946440454fe07eb",
-      "bytes": 135,
+      "sha256": "b50f377293fcdd2986fd32d2a4433cc3b5a782922b424ca302c1fb67b2badcfd",
+      "bytes": 171,
       "role": "evidence"
     },
     {
@@ -527,8 +631,8 @@
     {
       "path": "config/publication.json",
       "source": "bin/search/config/publication.json",
-      "sha256": "d9ed9eb40cbd24763813bb6b64292c255ae642e687a1a7befa7cdd06f30db57f",
-      "bytes": 1925,
+      "sha256": "10c10f4075f144fadad03d4699a0b99312e29747351fb94ad72a84dc195bce23",
+      "bytes": 2535,
       "role": "evidence"
     },
     {
@@ -536,6 +640,132 @@
       "source": "bin/search/corpus.json",
       "sha256": "8bc3cda02112ff7522b78f1945fe56bad622b77e1c6b84676ad1075ce7bd9c45",
       "bytes": 2073135,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-01.bundle.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-01.bundle.json",
+      "sha256": "aee13b21033aaabd531db5c5dede9054eda3839c79c66b2066625c664c0c049f",
+      "bytes": 2523363,
+      "role": "bundle"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-01.corpus.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-01.corpus.json",
+      "sha256": "1c746d5b9a0adba0d01e1de2fe4e4760210c565002ffccd724da6b33b73f9b95",
+      "bytes": 371416,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-01.extraction-report.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-01.extraction-report.json",
+      "sha256": "3e36e7188fd5ab22a31e46e67b84499ab9bca52f2f00bf233cd7f473b1435fb1",
+      "bytes": 650656,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-02.bundle.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-02.bundle.json",
+      "sha256": "a9a16ef36ec0d4645d31c4a040787d34601fa0dbfbf92e958fcf5e5c3a7b2e63",
+      "bytes": 2467727,
+      "role": "bundle"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-02.corpus.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-02.corpus.json",
+      "sha256": "a3f703b4685b7fe7093c404e1d1e3ca4a590eee13964e913ebdfa1c1a5bcc09a",
+      "bytes": 361217,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-02.extraction-report.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-02.extraction-report.json",
+      "sha256": "6c259f4bdfc4c9d68ff0b401c9119145755c95ab58c9be1dd4842af8aa39471c",
+      "bytes": 600926,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-03.bundle.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-03.bundle.json",
+      "sha256": "b0b225699c448384ab04bf2fd5f5962d17a39a23e5673712ab1b10f0b4179ed0",
+      "bytes": 2299223,
+      "role": "bundle"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-03.corpus.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-03.corpus.json",
+      "sha256": "5743399ea0a32db424a2c060d3bb974c4ebed9ec92e3fe8f4fd79e57d36958bd",
+      "bytes": 334103,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-03.extraction-report.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-03.extraction-report.json",
+      "sha256": "b32e839194e1f33f05413e557f842e3eb50ae341534781864bae8e1ed87717aa",
+      "bytes": 563100,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-04.bundle.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-04.bundle.json",
+      "sha256": "8c61ccaa4cdad5100f7803ba0e10cab62dd16acbca31d224a3d12a829bfdc068",
+      "bytes": 2365087,
+      "role": "bundle"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-04.corpus.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-04.corpus.json",
+      "sha256": "19f3752e9412a97611ee8cbfe8ad73da5f300234955d96c9252d33cab74974e1",
+      "bytes": 342023,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-04.extraction-report.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-04.extraction-report.json",
+      "sha256": "9fbbbcedcf1f6be351053571ce194255ef5f63d5326f301978144372dcc042b4",
+      "bytes": 588502,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-05.bundle.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-05.bundle.json",
+      "sha256": "e57c60244ac21d005bf47e7b1282a6bd80c0d8c30fa0d7d66b9e51155fbd4bfd",
+      "bytes": 2500156,
+      "role": "bundle"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-05.corpus.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-05.corpus.json",
+      "sha256": "8c422c21d7e99ccd3d4b8bb3c30aebf28f99b6214a9e2f65ea541cdca3a02f68",
+      "bytes": 370367,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/book-05.extraction-report.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/book-05.extraction-report.json",
+      "sha256": "641affd7a704d6157ebb209d83cd00140ed4e229dcf802ead8b789e11cf89ed2",
+      "bytes": 638870,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/corpus.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/corpus.json",
+      "sha256": "e6529a5861be2c59ea855355c7cc7b8bd754948da16f8efc3796d28669a38796",
+      "bytes": 1779114,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/extraction-report.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/extraction-report.json",
+      "sha256": "df1bda194f9e06a1e0430d3c08e39574923c62333f3aeb65ee1099277286ea0f",
+      "bytes": 11087,
+      "role": "evidence"
+    },
+    {
+      "path": "data/antiquities-latin-bamberg78/qa-report.json",
+      "source": "bin/search/data/antiquities-latin-bamberg78/qa-report.json",
+      "sha256": "be8d78f17d6eb35b0361e59df8fb7f5bf1efce31c6499a04e9afcbdabc7c0136",
+      "bytes": 49152,
       "role": "evidence"
     },
     {
@@ -744,8 +974,8 @@
     {
       "path": "data/contra-apionem-latin-boysen/qa-report.json",
       "source": "bin/search/data/contra-apionem-latin-boysen/qa-report.json",
-      "sha256": "f1934761279b9e1e182bc82afbf24cb20821995a40f6926ebc7b081e3e086c5a",
-      "bytes": 36586,
+      "sha256": "f41acaa15dd00a7e96d448fd96c8f24d11d67649ab22e7ea55dc29448f68d507",
+      "bytes": 36663,
       "role": "evidence"
     },
     {
@@ -870,8 +1100,8 @@
     {
       "path": "data/deh-latin-ussani/qa-report.json",
       "source": "bin/search/data/deh-latin-ussani/qa-report.json",
-      "sha256": "aab7ca4dd6364a72a6de73d3b662326f9728289d4d4506f7a53a325c1b11a47e",
-      "bytes": 29549,
+      "sha256": "9a3fc7244f66b2a3b3fdd5994dcbe32633490a43890c0040533f7c908ea1e12b",
+      "bytes": 29585,
       "role": "evidence"
     },
     {
@@ -891,8 +1121,8 @@
     {
       "path": "qa-report.json",
       "source": "bin/search/qa-report.json",
-      "sha256": "e2c843e4b1d26df88ce583ca386e29319c8b1b611bfe40c55b4cade6832e1482",
-      "bytes": 111792,
+      "sha256": "ee59999e4607a99a4893657a204b85b70ab2485c417a2c59d67ab8dc3643a359",
+      "bytes": 111794,
       "role": "evidence"
     },
     {
@@ -905,8 +1135,8 @@
     {
       "path": "ui-utils.mjs",
       "source": "bin/search/ui-utils.mjs",
-      "sha256": "b7e201ea21220142556fa2573574561427539b8e79889133d08ce70e8669fd98",
-      "bytes": 10522,
+      "sha256": "3de8dbb8dafa783036b0c8d32d3a40d6216b710068aa28d66148bd92bc53dac1",
+      "bytes": 11133,
       "role": "runtime"
     },
     {

@@ -1,7 +1,7 @@
 # Latin Josephus search
 
 This directory contains the source and verification tools for the main site's
-`/search/` page. Current coverage comprises three Latin collections:
+`/search/` page. Current coverage comprises four Latin collections:
 
 - **Cardwell's *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
   114,794 word tokens.
@@ -9,10 +9,14 @@ This directory contains the source and verification tools for the main site's
   558 chapter/paragraph citation units and 87,472 word tokens.
 - **Boysen's *Contra Apionem*, Books I–II:** 616 Niese sections and
   21,018 word tokens, including the Greek words quoted in this Latin text.
+- **Bamberg Msc. Class. 78 *Antiquities*, Proem and Books I–V:** 1,710 Niese
+  citation units and 67,657 word tokens. Book I includes the separately
+  transmitted Proem's 26 units and 986 words.
 
-Together these comprise **14 books, 5,175 citation units, and 223,284 word
-tokens**. **Antiquities is not indexed**; it can be added after the relevant
-text repairs and extraction checks are accepted. Translations are not indexed.
+Together these comprise **19 books, 6,885 citation units, and 290,941 word
+tokens**. Antiquities VI–XX and translations are not yet indexed. Antiquities
+III.240 retains its citation and the source's explicit omission, with no
+generated searchable text.
 
 The Jekyll page is [`_pages/search.html`](../../_pages/search.html), with
 `permalink: /search/`, the shared `default` layout, and `nav: true` for the
@@ -52,7 +56,7 @@ Accents are retained.
 ### Section and whole-book scope
 
 **Section / citation-unit scope** evaluates the complete Boolean expression
-within one Niese section of Bellum or Contra Apionem, or one cited paragraph
+within one Niese section of Bellum, Contra Apionem or Antiquities, or one cited paragraph
 of De excidio. A
 phrase must fit entirely within that unit.
 
@@ -70,6 +74,13 @@ joined to each other in whole-book phrases, but a phrase cannot cross from the
 end of the Prologue into the Book I narrative. This is a composition boundary,
 not an inferred lacuna. Whole-book Boolean conditions can still relate
 Prologue and narrative hits within Book I.
+
+Antiquities follows the same separation for its separately transmitted Proem:
+I.1–26 are in the Proem source, and I.27 begins the narrative. Six literal
+dotted interruptions conservatively block phrase adjacency. The explicit
+omission at III.240 blocks phrases across that citation. Ordinary Niese seams
+and the six sections continued across coarse source paragraphs remain
+consecutive, subject to the selected search scope.
 
 Neither Boolean conditions nor phrases combine evidence from different books,
 works, languages, or editions. For example, `A AND NOT B` in whole-book scope
@@ -167,8 +178,10 @@ behavior is retained. Legacy explicit numeric books and `book=all` are also
 resolved within Bellum. New links include collection identity so De excidio I
 and Contra Apionem I cannot be confused with Bellum I. The bare page retains **Bellum, all seven
 books** as its default. Choose **De excidio Hierosolymitano** for its five books,
-**Contra Apionem** for its two books, or **All works** to search all three
-collections.
+**Contra Apionem** for its two books, **Antiquities I–V, including Proem** for
+the first Antiquities batch, or **All works** to search all four collections.
+Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
+use `antiquities/?book=1`.
 
 The page uses ES modules, `fetch`, and browser WebCrypto. Serve it over HTTPS or
 localhost; opening a local HTML file with a `file:` URL is unsupported. The
@@ -318,13 +331,14 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `extract.py`, `tests/test_extract.py` | Bellum extraction and reconstruction checks. |
 | `extract-deh.py`, `tests/test_extract_deh.py` | De excidio extraction, editorial annotations, and reconstruction checks. |
 | `extract-ca.py`, `tests/test_extract_ca.py` | Contra Apionem extraction, markup, phrase barriers, and reconstruction checks. |
+| `extract-antiquities.py`, `tests/test_extract_antiquities.py` | Antiquities I–V and Proem extraction, source restoration, and gap checks. |
 | `corpus.json`, `data/book-0N.corpus.json` | Generated combined and per-book original-text records. |
 | `extraction-report.json`, `data/book-0N.extraction-report.json` | Generated coverage and reconstruction evidence. |
 | `engine.mjs`, `vendor/` | Boolean/phrase/wildcard engine and pinned Lunr 2.3.9 with licence and provenance. |
 | `collection.mjs` | Qualified selection, verified loading, caching, and independent per-book evaluation. |
 | `app.mjs`, `ui-utils.mjs`, `styles.css` | Source for the browser interface, citations, links, and excerpts. |
 | `config/collections.json` | Ordered registry of enabled collection manifests. |
-| `config/bellum-latin-cardwell.json`, `config/deh-latin-ussani.json`, `config/contra-apionem-latin-boysen.json` | Collection metadata, corpus inputs, citation terminology, and expected coverage. |
+| `config/bellum-latin-cardwell.json`, `config/deh-latin-ussani.json`, `config/contra-apionem-latin-boysen.json`, `config/antiquities-latin-bamberg78.json` | Collection metadata, corpus inputs, citation terminology, and expected coverage. |
 | `config/publication.json` | Runtime export inventory, site/build inputs, and approved extraction/QA adapters. |
 | `build-index.mjs`, `catalog.json` | Manifest-driven index builder and generated catalog. |
 | `data/bellum-latin-cardwell/book-0N.bundle.json` | Generated independent indexes, one per book. |
@@ -334,6 +348,8 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `data/contra-apionem-latin-boysen/` | Contra Apionem corpus shards, extraction reports, book indexes, and independent QA report. |
 | `tests/ca-corpus-qa.mjs`, `tests/ca-source-witness.py` | Independent Contra Apionem XML witness, token, query, markup, and seam checks. |
 | `tests/phrase-breaks.test.mjs`, `tests/ca-presentation.test.mjs` | Phrase barrier, citation, full export, and three-work compatibility tests. |
+| `data/antiquities-latin-bamberg78/` | Antiquities I–V corpus, per-book indexes, extraction evidence, and independent QA; the Proem is included in book-01. |
+| `tests/antiquities-corpus-qa.mjs`, `tests/antiquities-source-witness.py`, `tests/antiquities-presentation.test.mjs` | Independent six-document witness, all-token and query checks, Proem links, gap boundaries, editorial exports, and four-work integration. |
 | `build-search.mjs`, `publication.mjs`, `check-assets.mjs` | Rebuild orchestration, export validation, and read-only freshness checks. |
 | `assets/search/` at repository root | Generated runtime and evidence export, including `publication-manifest.json`. |
 
@@ -526,11 +542,28 @@ These commands alone do not refresh the published asset export; finish with
 an alias for that mode. The explicit `--single` mode is useful for isolated
 fixtures, not the main site's multi-book export.
 
-## Adding Antiquities after the text repairs
+## Antiquities first batch and later five-book additions
 
-The generic page and collection loader can remain in place while Antiquities
-repairs continue. Addition should be tied to a reviewed text snapshot and its
-own extraction evidence, not to a directory-wide discovery of XML files.
+The first batch uses the corrected Bamberg text at development commit
+`5d48b5285a5fa921ec5e666f60d04216e6e9270d`. It indexes only the Proem and
+Books I–V, bound to six explicitly listed XML files. The public-preview text
+at `c303113430c0bd088a7dbeecebcc65997c1e0a1f` has the same source bytes.
+
+The adapter preserves all 424 numbered source paragraphs through reversible
+extraction evidence. Every running source word and non-whitespace character
+is retained. Original `<add>` and `<del>` content remains searchable, with
+its original attributes; `<s>` and `<ref>` spans remain distinct metadata.
+III.240 is the only permitted empty citation and requires the source's exact
+`<gap reason="omitted"/>` representation. Its English omission note is UI
+text, never indexed Latin. CSV source segments retain its zero-width gap.
+Titles, subscriptions, printed labels, and annotation notes are excluded with
+source evidence. No medieval chapter is invented for a Niese section.
+
+For VI–X, XI–XV, and XVI–XX, extend the same collection only after reviewing
+the relevant five-book snapshot. Update the extractor's accepted ranges,
+markup and gap inventory, manifest, publication source projection checks,
+and independent witness together. Do not automatically discover and index
+every XML file in the directory. The following procedure remains required:
 
 1. **Accept the repaired source and numbering.** Establish which main text,
    edition, languages, divisions, and section labels are included. Coordinate
@@ -546,7 +579,7 @@ own extraction evidence, not to a directory-wide discovery of XML files.
    wildcard behavior, phrases at valid boundaries, and exclusions at gaps.
    Include checks that Antiquities I and Bellum I remain separate. The reader
    route and numbering used in result links must match the accepted reader.
-4. **Register the accepted collection.** Add its manifest to
+4. **Extend the accepted collection.** Update its existing manifest in
    `config/collections.json` and its collection-ID keyed adapter in
    `config/publication.json`: `extractor`, `outputDirectory`, explicit `sources`,
    `verifier`, and `qaReport`. Use separate corpus/report paths and the new

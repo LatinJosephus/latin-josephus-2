@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {editorialMarksFor} from './ui-utils.mjs';
+import {phraseBreakOffsets} from './engine.mjs';
 
 export const SOURCE_DIRECTORY = 'bin/search';
 export const ASSET_DIRECTORY = 'assets/search';
@@ -277,6 +279,125 @@ export function validateCaSourceProjection(corpus, report, manifest, spec) {
       report.counts.asteriskMarkerClusters, report.counts.breakBeforeUnits], 'CA markup and phrase-boundary totals differ');
 }
 
+/** Check the first Antiquities batch, including the separate Proem and an encoded empty unit. */
+export function validateAntiquitiesSourceProjection(corpus, report, manifest, spec) {
+  equal(manifest.citationScheme, 'niese', 'Antiquities requires Niese citations');
+  assert([1, 2, 3, 4, 5].includes(spec.number), 'Unreviewed Antiquities book');
+  const roman = ['', 'I', 'II', 'III', 'IV', 'V'][spec.number];
+  const primary = `assets/xml/antiquities/Latin/book-0${spec.number}.xml`;
+  const additional = spec.number === 1 ? ['assets/xml/antiquities/Latin/preface.xml'] : [];
+  equal(spec.source, primary, 'Antiquities manifest has the wrong source');
+  equal(spec.additionalSources || [], additional, 'Antiquities Proem inventory differs');
+  equal(report.sources.map(source => source.path), [...additional, primary], 'Antiquities source reading order differs');
+  equal(report.documentReports.map(document => document.source), report.sources, 'Antiquities document fingerprints differ');
+  equal(report.sectionAudits.length, corpus.length, 'Antiquities section audit is incomplete');
+  equal(report.paragraphs.length, report.counts.numberedParagraphs, 'Antiquities paragraph audit is incomplete');
+  equal(report.coverage.generatedDisplayGlyphs, 0, 'Antiquities must not generate running text');
+  equal(report.coverage.sourceProjectionExactlyRestoresSource, true, 'Antiquities restoration is unverified');
+  const empty = corpus.filter(record => record.text === '').map(record => record.section);
+  equal(empty, spec.number === 3 ? [240] : [], 'Unexpected empty Antiquities section');
+  equal(report.coverage.allowedEmptySections, empty, 'Antiquities empty-section evidence differs');
+  equal(report.coverage.allSectionTextsNonempty, empty.length === 0, 'Antiquities nonempty-text evidence is inaccurate');
+  const bySection = new Map(corpus.map(record => [record.section, record]));
+  const digest = text => sha256(Buffer.from(text));
+  let literalGaps = 0, sourceGaps = 0;
+  for (let index = 0; index < corpus.length; index++) {
+    const record = corpus[index], audit = report.sectionAudits[index];
+    const proem = spec.number === 1 && record.section <= 26, readerBook = proem ? 'preface' : spec.number;
+    equal(record.id, `${manifest.id}-${spec.number}-${record.section}`, 'Antiquities stable citation identity differs');
+    equal(record.citationScheme, 'niese', 'Antiquities citation scheme differs');
+    equal(record.citationLabel, `${roman}.${record.section}`, 'Antiquities citation label differs');
+    equal(record.citation, {book: roman, section: record.section, ...(proem ? {proem: true} : {})}, 'Antiquities structured citation differs');
+    equal(record.chapter, undefined, 'A coarse medieval division cannot define a Niese section chapter');
+    equal(record.division, proem ? 'proem' : undefined, 'Antiquities Proem identity differs');
+    equal(record.sourcePath, proem ? additional[0] : primary, 'Antiquities record has the wrong XML document');
+    equal(record.readerLink, {path: 'antiquities/', params: {book: readerBook, niese: record.section}}, 'Antiquities reader route differs');
+    equal(record.url, `/antiquities/?book=${readerBook}&niese=${record.section}`, 'Antiquities reader URL differs');
+    assert(Array.isArray(record.sourceIds) && record.sourceIds.length, 'Antiquities source paragraph identities are missing');
+    equal(record.sourceId, record.sourceIds[0], 'Antiquities first source paragraph differs');
+    equal(audit.recordId, record.id, 'Antiquities section audit has the wrong identity');
+    equal(audit.displayTextSha256, digest(record.text), 'Antiquities display text differs from source audit');
+    for (const key of ['section', 'sourcePath', 'sourceIds', 'editorialMarks', 'sourceMarkup', 'textGaps', 'phraseBreaks'])
+      equal(record[key], audit[key], `Antiquities source metadata differs: ${record.id}.${key}`);
+    editorialMarksFor(record);
+    for (const mark of record.editorialMarks) {
+      assert(['add', 'del'].includes(mark.kind) && mark.sourceTag === mark.kind && mark.sourceAttributes,
+        'Antiquities editorial source tag or attributes differ');
+    }
+    for (const mark of record.sourceMarkup) {
+      assert(['ref', 's'].includes(mark.kind) && mark.sourceTag === mark.kind && mark.sourceAttributes &&
+        Number.isInteger(mark.start) && Number.isInteger(mark.end) && mark.start >= 0 && mark.end > mark.start && mark.end <= record.text.length,
+        'Invalid Antiquities transparent source span');
+      equal(record.text.slice(mark.start, mark.end), mark.text, 'Antiquities transparent source text differs');
+    }
+    for (const gap of record.textGaps) {
+      if (gap.kind === 'tei-gap') {
+        equal([spec.number, record.section, record.text], [3, 240, ''], 'Unexpected Antiquities encoded omission');
+        equal(gap, {kind: 'tei-gap', start: 0, end: 0, text: '', sourceAttributes: {reason: 'omitted'}}, 'Antiquities omission metadata differs');
+        sourceGaps++;
+      } else {
+        equal(gap.kind, 'literal-dots', 'Unreviewed Antiquities phrase gap');
+        assert(Number.isInteger(gap.start) && Number.isInteger(gap.end) && gap.start >= 0 && gap.end > gap.start && gap.end <= record.text.length,
+          'Invalid Antiquities dotted interruption offsets');
+        equal(record.text.slice(gap.start, gap.end), gap.text, 'Antiquities dotted interruption differs');
+        assert(/^\.(?:\s*\.)*$/u.test(gap.text), 'Antiquities gap contains non-dot running text');
+        literalGaps++;
+      }
+    }
+    equal(record.phraseBreaks, [...new Set(record.textGaps.map(gap => gap.start))].sort((a, b) => a - b), 'Antiquities phrase barriers differ');
+    phraseBreakOffsets(record);
+    const breakBefore = (spec.number === 1 && record.section === 27) || (spec.number === 3 && [240, 241].includes(record.section));
+    equal(Boolean(record.breakBefore), breakBefore, 'Antiquities composition or omission boundary differs');
+    equal(audit.breakBefore, breakBefore, 'Antiquities source boundary audit differs');
+  }
+  equal(literalGaps, ({1: 2, 2: 2, 3: 0, 4: 2, 5: 0})[spec.number], 'Antiquities dotted interruption count differs');
+  equal(sourceGaps, spec.number === 3 ? 1 : 0, 'Antiquities encoded omission count differs');
+  for (const document of report.documentReports) {
+    const paragraphs = report.paragraphs.filter(paragraph => paragraph.sourcePath === document.source.path);
+    const records = corpus.filter(record => record.sourcePath === document.source.path);
+    equal(paragraphs.length, document.counts.numberedParagraphs, 'Antiquities source document paragraph count differs');
+    equal(records.length, document.counts.sections, 'Antiquities source document section count differs');
+    const restored = paragraphs.map(paragraph => {
+      let cursor = 0, text = '';
+      for (const segment of paragraph.segments) {
+        equal(segment.sourceTextStart, cursor, 'Antiquities paragraph restoration has a gap or overlap');
+        let part;
+        if (segment.kind === 'source-text') {
+          const record = bySection.get(segment.section);
+          assert(record && record.sourcePath === paragraph.sourcePath && record.sourceIds.includes(paragraph.sourceId), 'Antiquities restored segment has the wrong source paragraph');
+          part = Array.from(record.text).slice(segment.recordTextStart, segment.recordTextEnd).join('');
+          equal(digest(part), segment.textSha256, 'Antiquities restored running text differs');
+        } else {
+          assert(['excluded-label', 'excluded-note', 'trimmed-edge-whitespace'].includes(segment.kind), 'Unreviewed Antiquities restoration segment');
+          part = segment.text;
+          if (segment.kind === 'trimmed-edge-whitespace') assert(/^\s*$/u.test(part), 'Antiquities trimmed source letters');
+        }
+        equal(Array.from(part).length, segment.sourceTextEnd - segment.sourceTextStart, 'Antiquities restored source offset differs');
+        text += part; cursor = segment.sourceTextEnd;
+      }
+      equal(cursor, paragraph.rawTextCharacters, 'Antiquities raw paragraph coverage differs');
+      equal(digest(text), paragraph.rawTextSha256, 'Antiquities raw paragraph is not exactly restored');
+      equal(paragraph.exactRestorationVerified, true, 'Antiquities paragraph restoration was not verified');
+      return text;
+    });
+    const coverage = document.coverage;
+    for (const key of ['wordSequencePreserved', 'nonWhitespaceContentPreserved', 'sourceProjectionExactlyRestoresSource'])
+      equal(coverage[key], true, `Antiquities document coverage failed: ${key}`);
+    equal(coverage.paragraphsExactlyRestored, paragraphs.length, 'Antiquities document restoration count differs');
+    for (const key of ['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'])
+      equal(coverage[key], digest(restored.join('\n')), 'Antiquities raw source order differs');
+    const displays = records.map(record => record.text), content = digest(displays.join('').replace(/\s/gu, ''));
+    for (const key of ['sourceNonWhitespaceContentSha256', 'indexedNonWhitespaceContentSha256', 'sourceProjectionNonWhitespaceContentSha256', 'displayNonWhitespaceContentSha256'])
+      equal(coverage[key], content, `Antiquities running text coverage differs: ${key}`);
+    const words = displays.flatMap(text => Array.from(text.matchAll(/[\p{L}\p{N}][\p{L}\p{M}\p{N}]*/gu), match => match[0]));
+    for (const key of ['sourceWordSequenceSha256', 'indexedWordSequenceSha256']) equal(coverage[key], digest(words.join('\n')), 'Antiquities source word sequence differs');
+    equal(words.length, document.counts.runningWordTokens, 'Antiquities document word count differs');
+    equal(coverage.displayTextSequenceSha256, digest(displays.join('\n')), 'Antiquities display order differs');
+  }
+}
+
+const extractedSources = book => [book.source, ...(book.additionalSources || [])];
+
 /** Validate the generated index against current configs, XML, corpora, and extraction evidence. */
 export function validateSearchSources(root, {qa = true} = {}) {
   const context = loadPublicationConfig(root), {base, config, collections} = context;
@@ -321,15 +442,21 @@ export function validateSearchSources(root, {qa = true} = {}) {
     equal(report.corpus.sha256, collection.corpusSHA256, 'Extraction report describes a different corpus');
     equal(report.counts.books, manifest.books.length, 'Extraction book count differs from collection');
     equal(report.coverage.paragraphsExactlyRestored, report.counts.numberedParagraphs, 'Incomplete paragraph restoration');
-    for (const key of ['wordSequencePreserved', 'nonWhitespaceContentPreserved', 'globalIdsUnique', 'globalOrderIsConsecutive', 'allSectionTextsNonempty'])
+    for (const key of ['wordSequencePreserved', 'nonWhitespaceContentPreserved', 'globalIdsUnique', 'globalOrderIsConsecutive'])
       equal(report.coverage[key], true, `Extraction coverage failed: ${key}`);
+    if (manifest.id === 'antiquities-latin-bamberg78') {
+      equal(report.coverage.allSectionTextsNonempty, false, 'Antiquities must report its encoded omission accurately');
+      equal(report.coverage.allowedEmptySections, [{book: 3, section: 240}], 'Unreviewed empty Antiquities citation');
+      equal(combined.filter(record => record.text === '').map(record => ({book: record.book, section: record.section})),
+        [{book: 3, section: 240}], 'Unexpected missing Antiquities running text');
+    } else equal(report.coverage.allSectionTextsNonempty, true, 'Extraction coverage failed: allSectionTextsNonempty');
     for (const key of ['id', 'work', 'label', 'citationPrefix', 'language', 'edition', 'readerPath'])
       equal(collection[key], manifest[key], `Catalog metadata differs: ${manifest.id}.${key}`);
     for (const key of ['citationScheme', 'unitLabel', 'unitLabelPlural'])
       equal(collection[key], manifest[key], `Catalog citation metadata differs: ${manifest.id}.${key}`);
     equal(collection.books, manifest.books.map(book => `${manifest.id}:${book.number}`), 'Collection book identities differ');
     equal(report.books.map(book => book.book), manifest.books.map(book => book.number), 'Extraction book order differs');
-    equal(sorted(report.books.map(book => book.source.path)), sorted(adapter.sources),
+    equal(sorted(report.books.flatMap(book => extractedSources(book).map(source => source.path))), sorted(adapter.sources),
       `Extracted XML differs from the approved source list: ${manifest.id}`);
     const collectionTotals = {books: 0, sections: 0, tokens: 0, bytes: 0};
     let order = 0;
@@ -352,10 +479,11 @@ export function validateSearchSources(root, {qa = true} = {}) {
       const bookReport = bookReportArtifact.value();
       equal(bookReport.status, 'PASS', `Book extraction failed: ${id}`);
       equal(bookReport.source, extracted.source, 'Combined and per-book source fingerprints differ');
-      const source = checkIndexedXML(root, extracted.source, `${id} XML`);
-      sources.push(source);
+      equal(bookReport.additionalSources || [], extracted.additionalSources || [], 'Combined and per-book additional source fingerprints differ');
+      equal((extracted.additionalSources || []).map(source => source.path), spec.additionalSources || [], 'Additional XML differs from the collection manifest');
+      for (const source of extractedSources(extracted)) sources.push(checkIndexedXML(root, source, `${id} XML`));
       equal(bookReport.coverage.paragraphsExactlyRestored, bookReport.counts.numberedParagraphs, 'Book has incomplete paragraph restoration');
-      for (const [a, b] of [['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'],
+      if (manifest.id !== 'antiquities-latin-bamberg78') for (const [a, b] of [['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'],
         ['sourceWordSequenceSha256', 'indexedWordSequenceSha256'],
         ['sourceNonWhitespaceContentSha256', 'indexedNonWhitespaceContentSha256']])
         equal(bookReport.coverage[a], bookReport.coverage[b], `Source coverage differs: ${id}.${a}`);
@@ -364,6 +492,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(corpus.length, spec.sections, `Corpus section count differs: ${id}`);
       if (manifest.id === 'deh-latin-ussani') validateDehSourceProjection(corpus, bookReport, manifest, spec);
       if (manifest.id === 'contra-apionem-latin-boysen') validateCaSourceProjection(corpus, bookReport, manifest, spec);
+      if (manifest.id === 'antiquities-latin-bamberg78') validateAntiquitiesSourceProjection(corpus, bookReport, manifest, spec);
       const bundleArtifact = artifact(book.path, book.sha256, 'bundle');
       equal(bundleArtifact.item.bytes, book.bytes, `Bundle byte count differs: ${id}`);
       const bundle = bundleArtifact.value();
@@ -400,7 +529,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
     }
     audits.push({id: manifest.id, totals: collectionTotals,
       extractionReport: {path: collection.extractionReportPath, sha256: collection.extractionReportSHA256},
-      sourceFiles: report.books.map(book => book.source.path), ...(qaSummary ? {qa: qaSummary} : {})});
+      sourceFiles: report.books.flatMap(book => extractedSources(book).map(source => source.path)), ...(qaSummary ? {qa: qaSummary} : {})});
   }
   equal(catalog.books.map(book => book.id), expectedBookIds, 'Catalog contains missing, extra, or reordered books');
   equal(catalog.totals, totals, 'Catalog totals differ');
@@ -421,6 +550,7 @@ export function validateQaReport(root, {catalog, collection, configured, report}
   const expected = {corpus: collection.corpusPath, catalog: 'catalog.json', engine: catalog.source.enginePath,
     collection: 'collection.mjs', verifier: adapter.verifier};
   if (manifest.id === 'contra-apionem-latin-boysen') expected.witness = 'tests/ca-source-witness.py';
+  if (manifest.id === 'antiquities-latin-bamberg78') expected.witness = 'tests/antiquities-source-witness.py';
   for (const [key, relative] of Object.entries(expected)) {
     equal(qa.verifiedFiles?.[key]?.path, `${SOURCE_DIRECTORY}/${relative}`, `Independent QA omits current ${key}`);
     checkEvidence(root, qa.verifiedFiles[key], `independent QA ${key}`);
@@ -437,6 +567,9 @@ export function validateQaReport(root, {catalog, collection, configured, report}
       if (key === 'source') checkIndexedXML(root, verified[key], `independent QA ${key}`);
       else checkEvidence(root, verified[key], `independent QA ${key}`);
     }
+    equal((verified.additionalSources || []).map(source => source.path), (extracted.additionalSources || []).map(source => source.path),
+      `Independent QA omits an additional source for ${book.id}`);
+    for (const source of verified.additionalSources || []) checkIndexedXML(root, source, 'independent QA additional source');
   }
   const item = evidence(root, `${SOURCE_DIRECTORY}/${adapter.qaReport}`);
   return {path: adapter.qaReport, sha256: item.sha256, status: 'PASS',

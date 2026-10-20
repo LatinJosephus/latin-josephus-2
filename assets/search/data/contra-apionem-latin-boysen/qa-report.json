@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-19T15:57:39.413Z",
+  "generatedAt": "2026-10-20T00:30:45.309Z",
   "independentVerifier": "bin/search/tests/ca-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -70,7 +70,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "58a7fcec5e3dc1f046334b76439cda7d9459b8437de2e232ee5bb9a04354db64"
+      "sha256": "4ee275c99b4e8bf54f176434b6ade89920698847ee5e04680d18fdb980de8ef0"
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -86,7 +86,7 @@
     },
     "verifier": {
       "path": "bin/search/tests/ca-corpus-qa.mjs",
-      "sha256": "f68d054fc6225c2922fe64a78f45bcc1135bdd423504cf290ea39046037952dd"
+      "sha256": "eaf77ea81cb3d1101cfb545cfbfbeac4dc8d15821774eb2eea6827805bd522fb"
     },
     "witness": {
       "path": "bin/search/tests/ca-source-witness.py",
@@ -147,7 +147,7 @@
     "queries": "AST/set semantics, independent regex globs, full sequential phrase scan; the source asterisk positions are derived from the independently verified text, not generated barrier metadata.",
     "vocabulary": "Every distinct source token in each book queried in both source-spelling and u/v–i/j-folded modes.",
     "boundaries": "All 614 within-book section pairs and all 25 source-asterisk markers checked; the three marked section-edge seams and the book junction cannot be crossed by a phrase.",
-    "collection": "Actual checksum-verified loading, both CA books and all 14 books in three works, independent book/work identity, caching, unavailable-book and invalid-selection rejection."
+    "collection": "Actual checksum-verified loading, both CA books and the 14 previously published Bellum/DEH/CA books, independent book/work identity, caching, unavailable-book and invalid-selection rejection. New collections have separate mixed-work acceptance."
   },
   "boundaryCoverage": {
     "withinBookPairs": 614,
@@ -176,7 +176,7 @@
     "StandaloneWitnessMatchesEmbeddedFingerprint": 1,
     "CatalogBookOrder": 1,
     "CatalogCitationScheme": 1,
-    "AllThreeWorkBookCount": 1,
+    "LegacyThreeWorkBookCount": 1,
     "CanonicalStableIds": 1,
     "CombinedRecordCount": 1,
     "CompleteSourceRecord": 616,
@@ -1256,7 +1256,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 40.5,
+  "durationSeconds": 54.13,
   "limitations": [
     "Automated Node/Python verification, not browser or visual acceptance.",
     "Reader URLs are checked against canonical citation/ID structure; reader pages are not opened by this verifier.",

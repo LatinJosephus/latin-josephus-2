@@ -524,9 +524,13 @@ async function main() {
   const config = catalog.collections.find(collection => collection.id === collectionId);
   assert.ok(config, 'The catalog must include Contra Apionem before this verifier runs.');
   const selectedEntries = catalog.books.filter(entry => entry.collectionId === collectionId);
+  // This source-specific verifier retains the accepted Bellum/DEH/CA regression
+  // scope. New collections have their own source and mixed-work acceptance.
+  const legacyCollections = new Set(['bellum-latin-cardwell', 'deh-latin-ussani', collectionId]);
+  const legacyEntries = catalog.books.filter(entry => legacyCollections.has(entry.collectionId));
   check('CatalogBookOrder', selectedEntries.map(entry => entry.number), [1, 2]);
   check('CatalogCitationScheme', config.citationScheme, 'niese');
-  check('AllThreeWorkBookCount', catalog.books.length, 14);
+  check('LegacyThreeWorkBookCount', legacyEntries.length, 14);
   preserve(readerPath); preserve(resolve(base, 'engine.mjs')); preserve(resolve(base, 'collection.mjs'));
   preserve(resolve(base, 'vendor/lunr.cjs')); preserve(fileURLToPath(import.meta.url));
   const witness = JSON.parse(execFileSync(process.env.PYTHON || 'python3', ['-c', pythonWitness, root], {encoding: 'utf8', maxBuffer: 40 * 1024 * 1024}));
@@ -624,7 +628,7 @@ async function main() {
   check('AllSourceAsteriskMarkersExercised', barrierChecks, 25);
   check('ThreeWithinBookGapSeamsExercised', blockedSeams, 3);
 
-  const bundleEntries = new Map(catalog.books.map(entry => [new URL(entry.path, 'https://qa.invalid/assets/search/').pathname, entry]));
+  const bundleEntries = new Map(legacyEntries.map(entry => [new URL(entry.path, 'https://qa.invalid/assets/search/').pathname, entry]));
   const fetchCounts = new Map();
   const fetchImpl = async url => {
     const entry = bundleEntries.get(new URL(url).pathname);
@@ -634,10 +638,10 @@ async function main() {
     return new Response(readFileSync(path), {status: 200});
   };
   const collection = createCollection(catalog, lunr, {baseURL: 'https://qa.invalid/assets/search/', fetchImpl});
-  const allEntryRecords = new Map(catalog.books.map(entry => [entry.id, readJSON(preserve(resolve(base, entry.path))).records]));
+  const allEntryRecords = new Map(legacyEntries.map(entry => [entry.id, readJSON(preserve(resolve(base, entry.path))).records]));
   async function verifyCollection(ast, selected, scope, fold, category, query = print(ast), example = false) {
     totalQueries++; counts[`${category}Queries`] = (counts[`${category}Queries`] || 0) + 1;
-    const selectedSet = new Set(selected), ordered = catalog.books.filter(entry => selectedSet.has(entry.id));
+    const selectedSet = new Set(selected), ordered = legacyEntries.filter(entry => selectedSet.has(entry.id));
     const records = ordered.flatMap(entry => allEntryRecords.get(entry.id)), oracle = makeOracle(records);
     const expected = oracle.evaluate(ast, scope, fold), collections = [...new Set(ordered.map(entry => entry.collectionId))];
     const actual = await collection.search(query, {collections, books: selected, scope, fold});
@@ -670,7 +674,7 @@ async function main() {
   const bellum = catalog.books.filter(entry => entry.collectionId === 'bellum-latin-cardwell');
   const deh = catalog.books.filter(entry => entry.collectionId === 'deh-latin-ussani');
   check('ExistingCollectionsBookCounts', [bellum.length, deh.length], [7, 5]);
-  const mixedSelections = [catalog.books.map(entry => entry.id), [selectedEntries[0].id, bellum[0].id, deh[0].id]];
+  const mixedSelections = [legacyEntries.map(entry => entry.id), [selectedEntries[0].id, bellum[0].id, deh[0].id]];
   for (const selected of mixedSelections) for (const ast of [leaf('Iosephus'), leaf('sacerdot*'), phrase(['ex', 'nostris', 'sacris', 'libris']), not(leaf('zzzznonoccurrit'))])
     for (const scope of ['section', 'book']) for (const fold of [false, true])
       await verifyCollection(ast, selected, scope, fold, 'MixedThreeWorkCollection', print(ast), !fold && scope === 'book');
@@ -687,7 +691,7 @@ async function main() {
       check('CrossWorkPhraseAbsent', phraseChecked.expected.size, 0, {other: other.id});
     }
   }
-  check('BundleFetchCaching', [...fetchCounts.entries()].sort(), catalog.books.map(entry => [entry.id, 1]).sort());
+  check('BundleFetchCaching', [...fetchCounts.entries()].sort(), legacyEntries.map(entry => [entry.id, 1]).sort());
   for (const invalid of [{collections: [collectionId], books: [1]}, {collections: [collectionId], books: [bellum[0].id]}, {collections: [collectionId], books: [deh[0].id]}]) {
     await assert.rejects(collection.search('sacerdot*', invalid));
     assertions++; counts.InvalidSelectionRejected = (counts.InvalidSelectionRejected || 0) + 1;
@@ -715,7 +719,7 @@ async function main() {
       queries: 'AST/set semantics, independent regex globs, full sequential phrase scan; the source asterisk positions are derived from the independently verified text, not generated barrier metadata.',
       vocabulary: 'Every distinct source token in each book queried in both source-spelling and u/v–i/j-folded modes.',
       boundaries: 'All 614 within-book section pairs and all 25 source-asterisk markers checked; the three marked section-edge seams and the book junction cannot be crossed by a phrase.',
-      collection: 'Actual checksum-verified loading, both CA books and all 14 books in three works, independent book/work identity, caching, unavailable-book and invalid-selection rejection.'},
+      collection: 'Actual checksum-verified loading, both CA books and the 14 previously published Bellum/DEH/CA books, independent book/work identity, caching, unavailable-book and invalid-selection rejection. New collections have separate mixed-work acceptance.'},
     boundaryCoverage: {withinBookPairs: states.reduce((sum, state) => sum + state.withinBookBoundaries, 0),
       legalWholeBookPairs: 611, blockedSourceMarkedPairs: 3, asteriskMarkers: 25, interiorAsteriskMarkers: 22,
       asteriskMarkersAtSectionEdges: 3, bookJunctions: 1, mixedWorkJunctions: 2},

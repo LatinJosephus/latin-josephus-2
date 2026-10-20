@@ -1,0 +1,1774 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-10-20T00:26:15.900Z",
+  "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
+  "readerBaseline": {
+    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "provenance": "corrected-source-2026-10-19",
+    "preservationDuringRunRequired": true,
+    "publicationInput": false
+  },
+  "runtime": {
+    "node": "24.19.0",
+    "python": "3.12.14",
+    "unicode": "15.0.0",
+    "xmlParser": "xml.dom.minidom"
+  },
+  "source": {
+    "books": 5,
+    "sourceFiles": 6,
+    "sections": 1710,
+    "tokens": 67657,
+    "uniqueLiteralVocabulary": 15585
+  },
+  "sources": [
+    {
+      "path": "assets/xml/antiquities/Latin/preface.xml",
+      "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+      "sections": 26,
+      "tokens": 986,
+      "stableIds": 31
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-01.xml",
+      "sha256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+      "sections": 320,
+      "tokens": 13223,
+      "stableIds": 118
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-02.xml",
+      "sha256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+      "sections": 349,
+      "tokens": 13570,
+      "stableIds": 107
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-03.xml",
+      "sha256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+      "sections": 322,
+      "tokens": 12793,
+      "stableIds": 111
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-04.xml",
+      "sha256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+      "sections": 331,
+      "tokens": 13180,
+      "stableIds": 113
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-05.xml",
+      "sha256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+      "sections": 362,
+      "tokens": 13905,
+      "stableIds": 125
+    }
+  ],
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/antiquities-latin-bamberg78/corpus.json",
+      "sha256": "e6529a5861be2c59ea855355c7cc7b8bd754948da16f8efc3796d28669a38796",
+      "bytes": 1779114
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "sha256": "4ee275c99b4e8bf54f176434b6ade89920698847ee5e04680d18fdb980de8ef0",
+      "bytes": 15519
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "sha256": "98093386a2e48fa1b56789cec18a465d37cc2924f0e26a6cf0d1d0e0d0e431bd",
+      "bytes": 22953
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "sha256": "fed1931abc23a58b66ebce9d9ec0f575aaeadd9b6b8124c8658b9dc81539315e",
+      "bytes": 19552
+    },
+    "lunr": {
+      "path": "bin/search/vendor/lunr.cjs",
+      "sha256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
+      "bytes": 99804
+    },
+    "verifier": {
+      "path": "bin/search/tests/antiquities-corpus-qa.mjs",
+      "sha256": "d1ab7a17c33ef4d471aa8ae9734662de97781defcc320d911d3b0156e42dcc29",
+      "bytes": 55592
+    },
+    "witness": {
+      "path": "bin/search/tests/antiquities-source-witness.py",
+      "sha256": "a238233bc6abf52a4293d575b52f84d3b21574cfed4008efaa512dce4f0d4b36",
+      "bytes": 15185
+    },
+    "extractionReport": {
+      "path": "bin/search/data/antiquities-latin-bamberg78/extraction-report.json",
+      "sha256": "df1bda194f9e06a1e0430d3c08e39574923c62333f3aeb65ee1099277286ea0f",
+      "bytes": 11087
+    },
+    "originalReader": {
+      "path": "assets/js/renderTei.js",
+      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+      "bytes": 161463
+    },
+    "uiUtils": {
+      "path": "bin/search/ui-utils.mjs",
+      "sha256": "3de8dbb8dafa783036b0c8d32d3a40d6216b710068aa28d66148bd92bc53dac1",
+      "bytes": 11133
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-01.bundle.json",
+          "sha256": "aee13b21033aaabd531db5c5dede9054eda3839c79c66b2066625c664c0c049f",
+          "bytes": 2523363
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-01.corpus.json",
+          "sha256": "1c746d5b9a0adba0d01e1de2fe4e4760210c565002ffccd724da6b33b73f9b95",
+          "bytes": 371416
+        },
+        "source": {
+          "path": "assets/xml/antiquities/Latin/book-01.xml",
+          "sha256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+          "bytes": 137000
+        },
+        "additionalSources": [
+          {
+            "path": "assets/xml/antiquities/Latin/preface.xml",
+            "sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+            "bytes": 9646
+          }
+        ],
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-01.extraction-report.json",
+          "sha256": "3e36e7188fd5ab22a31e46e67b84499ab9bca52f2f00bf233cd7f473b1435fb1",
+          "bytes": 650656
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-02.bundle.json",
+          "sha256": "a9a16ef36ec0d4645d31c4a040787d34601fa0dbfbf92e958fcf5e5c3a7b2e63",
+          "bytes": 2467727
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-02.corpus.json",
+          "sha256": "a3f703b4685b7fe7093c404e1d1e3ca4a590eee13964e913ebdfa1c1a5bcc09a",
+          "bytes": 361217
+        },
+        "source": {
+          "path": "assets/xml/antiquities/Latin/book-02.xml",
+          "sha256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+          "bytes": 143327
+        },
+        "additionalSources": [],
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-02.extraction-report.json",
+          "sha256": "6c259f4bdfc4c9d68ff0b401c9119145755c95ab58c9be1dd4842af8aa39471c",
+          "bytes": 600926
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-03.bundle.json",
+          "sha256": "b0b225699c448384ab04bf2fd5f5962d17a39a23e5673712ab1b10f0b4179ed0",
+          "bytes": 2299223
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-03.corpus.json",
+          "sha256": "5743399ea0a32db424a2c060d3bb974c4ebed9ec92e3fe8f4fd79e57d36958bd",
+          "bytes": 334103
+        },
+        "source": {
+          "path": "assets/xml/antiquities/Latin/book-03.xml",
+          "sha256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+          "bytes": 138026
+        },
+        "additionalSources": [],
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-03.extraction-report.json",
+          "sha256": "b32e839194e1f33f05413e557f842e3eb50ae341534781864bae8e1ed87717aa",
+          "bytes": 563100
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-04.bundle.json",
+          "sha256": "8c61ccaa4cdad5100f7803ba0e10cab62dd16acbca31d224a3d12a829bfdc068",
+          "bytes": 2365087
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-04.corpus.json",
+          "sha256": "19f3752e9412a97611ee8cbfe8ad73da5f300234955d96c9252d33cab74974e1",
+          "bytes": 342023
+        },
+        "source": {
+          "path": "assets/xml/antiquities/Latin/book-04.xml",
+          "sha256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+          "bytes": 138762
+        },
+        "additionalSources": [],
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-04.extraction-report.json",
+          "sha256": "9fbbbcedcf1f6be351053571ce194255ef5f63d5326f301978144372dcc042b4",
+          "bytes": 588502
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-05.bundle.json",
+          "sha256": "e57c60244ac21d005bf47e7b1282a6bd80c0d8c30fa0d7d66b9e51155fbd4bfd",
+          "bytes": 2500156
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-05.corpus.json",
+          "sha256": "8c422c21d7e99ccd3d4b8bb3c30aebf28f99b6214a9e2f65ea541cdca3a02f68",
+          "bytes": 370367
+        },
+        "source": {
+          "path": "assets/xml/antiquities/Latin/book-05.xml",
+          "sha256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+          "bytes": 144112
+        },
+        "additionalSources": [],
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-latin-bamberg78/book-05.extraction-report.json",
+          "sha256": "641affd7a704d6157ebb209d83cd00140ed4e229dcf802ead8b789e11cf89ed2",
+          "bytes": 638870
+        }
+      }
+    ]
+  },
+  "method": {
+    "source": "Independent minidom text-node event stream over six SHA-pinned XML files, without production extractor imports. The complete witness is embedded and checked against its standalone file.",
+    "tokens": "Every Unicode-category token and UTF-16 offset is checked against each bundle; a separate JavaScript character scanner agrees on every citation unit.",
+    "queries": "Independent AST/set Boolean logic, regular-expression globs, and sequential phrase scanning. Phrase barriers derive from witness source marks and explicit source-division boundaries.",
+    "vocabulary": "Every distinct source token in every book queried in source-spelling and u/v–i/j-folded modes.",
+    "boundaries": "Every within-book adjacent citation pair, all six literal dot-clusters, the empty III.240 gap, the Proem-to-narrative boundary, and every book junction checked.",
+    "collection": "All five Antiquities bundles, selected subsets and order, limited four-work integration queries, caching, invalid selection and unavailable-book rejection."
+  },
+  "boundaryCoverage": {
+    "withinBookPairs": 1705,
+    "ordinaryPairs": 1702,
+    "emptyCitationEdges": 2,
+    "proemNarrativeEdges": 1,
+    "literalGapClusters": 6,
+    "teiGaps": 1,
+    "bookJunctions": 4
+  },
+  "editorialCoverage": {
+    "add": 19,
+    "del": 23,
+    "sourceNotesExcluded": 12,
+    "emptyCitation": "III.240",
+    "proemSections": 26,
+    "preservedNieseUnits": 1710,
+    "continuationSections": [
+      "II.95",
+      "III.178",
+      "IV.106",
+      "IV.155",
+      "IV.276",
+      "V.32"
+    ]
+  },
+  "counts": {
+    "ReviewedReaderBaseline": 1,
+    "StandaloneWitnessMatchesEmbeddedFingerprint": 1,
+    "CatalogBookOrder": 1,
+    "CatalogCitationScheme": 1,
+    "IndependentCoverage": 1,
+    "CombinedRecordCount": 1,
+    "CompleteSourceRecord": 1710,
+    "SourceRecord_id": 1710,
+    "SourceRecord_work": 1710,
+    "SourceRecord_book": 1710,
+    "SourceRecord_section": 1710,
+    "SourceRecord_language": 1710,
+    "SourceRecord_edition": 1710,
+    "SourceRecord_citationScheme": 1710,
+    "SourceRecord_citationLabel": 1710,
+    "SourceRecord_text": 1710,
+    "SourceRecord_sourceId": 1710,
+    "SourceRecord_order": 1710,
+    "SourceRecord_url": 1710,
+    "RecordSourceIds": 1710,
+    "RecordPhraseBreaks": 1710,
+    "RecordBreakBefore": 1710,
+    "OriginalEditorialCharactersAndOffsets": 1710,
+    "IndependentTokenizersAgree": 1710,
+    "ActualReaderLinkForEveryCitation": 1710,
+    "ValidPassageLabels": 1710,
+    "ProjectionParagraphSet": 5,
+    "ProjectionOriginalParagraphFingerprint": 424,
+    "ProjectionOriginalParagraphLength": 424,
+    "ProjectionSegmentContiguity": 4077,
+    "ProjectionExcludedSourceText": 2156,
+    "ProjectionExcludedKind": 436,
+    "ProjectionExcludedAttributes": 436,
+    "ProjectionMatchesOriginalSourceSlice": 1921,
+    "ProjectionSourceSliceFingerprint": 1921,
+    "ProjectionIndependentSourcePosition": 1921,
+    "ProjectionCompleteSourceCoverage": 424,
+    "ProjectionExactSourceRestoration": 424,
+    "ShardMatchesCombinedCorpus": 5,
+    "BundleMatchesShard": 5,
+    "CatalogBundleHash": 5,
+    "CatalogCorpusHash": 5,
+    "AllIndexedTokenOffsets": 5,
+    "ExpectedTokenCount": 5,
+    "ExhaustiveVocabularyQueries": 48734,
+    "ExhaustiveVocabularyMatchingUnits": 48734,
+    "ExhaustiveVocabularyOccurrences": 48734,
+    "ExhaustiveVocabularyUnitIdentity": 48734,
+    "ExhaustiveVocabularyEvidence": 124346,
+    "ExhaustiveVocabularyRecordIds": 124346,
+    "ExhaustiveVocabularySections": 124346,
+    "ExhaustiveVocabularyMatchingSections": 48734,
+    "FixtureQueries": 480,
+    "FixtureMatchingUnits": 480,
+    "FixtureOccurrences": 480,
+    "FixtureUnitIdentity": 480,
+    "FixtureEvidence": 4828,
+    "FixtureRecordIds": 4828,
+    "FixtureSections": 4828,
+    "FixtureMatchingSections": 480,
+    "WildcardQueries": 2628,
+    "WildcardMatchingUnits": 2628,
+    "WildcardOccurrences": 2628,
+    "WildcardUnitIdentity": 2628,
+    "WildcardEvidence": 43817,
+    "WildcardRecordIds": 43817,
+    "WildcardSections": 43817,
+    "WildcardMatchingSections": 2628,
+    "WithinEveryNonemptyUnitQueries": 6836,
+    "WithinEveryNonemptyUnitMatchingUnits": 6836,
+    "WithinEveryNonemptyUnitOccurrences": 6836,
+    "WithinEveryNonemptyUnitUnitIdentity": 6836,
+    "WithinEveryNonemptyUnitEvidence": 6876,
+    "WithinEveryNonemptyUnitRecordIds": 6876,
+    "WithinEveryNonemptyUnitSections": 6876,
+    "WithinEveryNonemptyUnitMatchingSections": 6836,
+    "BoundaryOracleExpectation": 1703,
+    "EveryAdjacentUnitBoundaryQueries": 6808,
+    "EveryAdjacentUnitBoundaryMatchingUnits": 6808,
+    "EveryAdjacentUnitBoundaryOccurrences": 6808,
+    "EveryAdjacentUnitBoundaryUnitIdentity": 6808,
+    "EveryAdjacentUnitBoundaryMatchingSections": 6808,
+    "EveryAdjacentUnitBoundaryEvidence": 3624,
+    "EveryAdjacentUnitBoundaryRecordIds": 3624,
+    "EveryAdjacentUnitBoundarySections": 3624,
+    "ExtendedBoundaryContextPhraseQueries": 6812,
+    "ExtendedBoundaryContextPhraseMatchingUnits": 6812,
+    "ExtendedBoundaryContextPhraseOccurrences": 6812,
+    "ExtendedBoundaryContextPhraseUnitIdentity": 6812,
+    "ExtendedBoundaryContextPhraseMatchingSections": 6812,
+    "ExtendedBoundaryContextPhraseEvidence": 3406,
+    "ExtendedBoundaryContextPhraseRecordIds": 3406,
+    "ExtendedBoundaryContextPhraseSections": 3406,
+    "ProemNarrativeBoundaryBlockedQueries": 4,
+    "ProemNarrativeBoundaryBlockedMatchingUnits": 4,
+    "ProemNarrativeBoundaryBlockedOccurrences": 4,
+    "ProemNarrativeBoundaryBlockedUnitIdentity": 4,
+    "ProemNarrativeBoundaryBlockedMatchingSections": 4,
+    "EverySourceGapBarrierBlockedQueries": 28,
+    "EverySourceGapBarrierBlockedMatchingUnits": 28,
+    "EverySourceGapBarrierBlockedOccurrences": 28,
+    "EverySourceGapBarrierBlockedUnitIdentity": 28,
+    "EverySourceGapBarrierBlockedMatchingSections": 28,
+    "BooleanAcrossGapAllowed": 7,
+    "BooleanAcrossGapAllowedQueries": 7,
+    "BooleanAcrossGapAllowedMatchingUnits": 7,
+    "BooleanAcrossGapAllowedOccurrences": 7,
+    "BooleanAcrossGapAllowedUnitIdentity": 7,
+    "BooleanAcrossGapAllowedEvidence": 7,
+    "BooleanAcrossGapAllowedRecordIds": 7,
+    "BooleanAcrossGapAllowedSections": 7,
+    "BooleanAcrossGapAllowedMatchingSections": 7,
+    "ExplicitEmptySectionIdentity": 1,
+    "EmptySectionMarksAnUnsearchablePhraseSeam": 2,
+    "EverySourceGapExercised": 1,
+    "AllAdjacentPairsExercised": 1,
+    "AllOrdinaryPairsExercised": 1,
+    "BothEmptyCitationEdgesExercised": 1,
+    "SeparateProemNarrativeEdgeExercised": 1,
+    "SelectedAntiquitiesCollectionQueries": 192,
+    "SelectedAntiquitiesCollectionMatchingUnits": 192,
+    "SelectedAntiquitiesCollectionOccurrences": 192,
+    "SelectedAntiquitiesCollectionUnitIdentity": 192,
+    "SelectedAntiquitiesCollectionEvidence": 8420,
+    "SelectedAntiquitiesCollectionRecordIds": 8420,
+    "SelectedAntiquitiesCollectionSections": 8420,
+    "SelectedAntiquitiesCollectionMatchingSections": 192,
+    "SelectedAntiquitiesCollectionSelectionOrder": 192,
+    "SelectedAntiquitiesCollectionUniqueRecordIdentity": 192,
+    "CrossBookPhraseBlockedQueries": 16,
+    "CrossBookPhraseBlockedMatchingUnits": 16,
+    "CrossBookPhraseBlockedOccurrences": 16,
+    "CrossBookPhraseBlockedUnitIdentity": 16,
+    "CrossBookPhraseBlockedMatchingSections": 16,
+    "CrossBookPhraseBlockedSelectionOrder": 16,
+    "CrossBookPhraseBlockedUniqueRecordIdentity": 16,
+    "CrossBookPhraseAbsent": 16,
+    "PriorCollectionsRetained": 1,
+    "MixedFourWorkCollectionQueries": 8,
+    "MixedFourWorkCollectionMatchingUnits": 8,
+    "MixedFourWorkCollectionOccurrences": 8,
+    "MixedFourWorkCollectionUnitIdentity": 8,
+    "MixedFourWorkCollectionEvidence": 14280,
+    "MixedFourWorkCollectionRecordIds": 14280,
+    "MixedFourWorkCollectionSections": 14280,
+    "MixedFourWorkCollectionMatchingSections": 8,
+    "MixedFourWorkCollectionSelectionOrder": 8,
+    "MixedFourWorkCollectionUniqueRecordIdentity": 8,
+    "CrossWorkBooleanIsolationQueries": 6,
+    "CrossWorkBooleanIsolationMatchingUnits": 6,
+    "CrossWorkBooleanIsolationOccurrences": 6,
+    "CrossWorkBooleanIsolationUnitIdentity": 6,
+    "CrossWorkBooleanIsolationMatchingSections": 6,
+    "CrossWorkBooleanIsolationSelectionOrder": 6,
+    "CrossWorkBooleanIsolationUniqueRecordIdentity": 6,
+    "CrossWorkBooleanAbsent": 6,
+    "BundleFetchCaching": 1,
+    "InvalidSelectionRejected": 3,
+    "MissingSelectedBookRejectsCompleteSearch": 1,
+    "InputUnchangedDuringQA": 45
+  },
+  "totalQueries": 72559,
+  "assertions": 970088,
+  "failedAssertions": 0,
+  "examples": [
+    {
+      "query": "\"Historiam conscribere disponentibus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"In principio creauit deus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"noctem et aliud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"quem consparsa\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"con perit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"del em\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"f s\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"se ba\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"ba apud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Herculis fecit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Ioseph*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 3,
+      "occurrences": 3
+    },
+    {
+      "query": "Moyses OR Moses",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 8,
+      "occurrences": 8
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 11,
+      "occurrences": 12
+    },
+    {
+      "query": "Ioseph* sacerdot* OR templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 5,
+      "occurrences": 5
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT NOT Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 10,
+      "occurrences": 13
+    },
+    {
+      "query": "\"nisi qu*\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "quem AND consparsa",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 23,
+      "occurrences": 24
+    },
+    {
+      "query": "con perit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 3,
+      "occurrences": 4
+    },
+    {
+      "query": "\"Historiam conscribere disponentibus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"In principio creauit deus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"noctem et aliud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"quem consparsa\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"con perit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"del em\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"f s\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"se ba\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"ba apud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Herculis fecit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Ioseph*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 69,
+      "occurrences": 82
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 5,
+      "occurrences": 5
+    },
+    {
+      "query": "Moyses OR Moses",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 28,
+      "occurrences": 29
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Ioseph* sacerdot* OR templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 74,
+      "occurrences": 87
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 74,
+      "occurrences": 87
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT NOT Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 18,
+      "occurrences": 18
+    },
+    {
+      "query": "\"nisi qu*\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "quem AND consparsa",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "con perit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Historiam conscribere disponentibus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"In principio creauit deus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"noctem et aliud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"quem consparsa\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"con perit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"del em\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"f s\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"se ba\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"ba apud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Herculis fecit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Ioseph*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 2,
+      "occurrences": 4
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 42,
+      "occurrences": 49
+    },
+    {
+      "query": "Moyses OR Moses",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 50,
+      "occurrences": 53
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 43,
+      "occurrences": 50
+    },
+    {
+      "query": "Ioseph* sacerdot* OR templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 58,
+      "occurrences": 73
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT NOT Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"nisi qu*\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "quem AND consparsa",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 12,
+      "occurrences": 17
+    },
+    {
+      "query": "con perit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Historiam conscribere disponentibus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"In principio creauit deus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"noctem et aliud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"quem consparsa\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"con perit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"del em\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"f s\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"se ba\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"ba apud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Herculis fecit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Ioseph*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 32,
+      "occurrences": 37
+    },
+    {
+      "query": "Moyses OR Moses",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 45,
+      "occurrences": 46
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 34,
+      "occurrences": 39
+    },
+    {
+      "query": "Ioseph* sacerdot* OR templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 9,
+      "occurrences": 10
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 32,
+      "occurrences": 37
+    },
+    {
+      "query": "NOT NOT Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 4,
+      "occurrences": 5
+    },
+    {
+      "query": "\"nisi qu*\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "quem AND consparsa",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "con perit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Historiam conscribere disponentibus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"In principio creauit deus\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"noctem et aliud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"quem consparsa\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"con perit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"del em\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"f s\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"se ba\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"ba apud\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Herculis fecit\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "Ioseph*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 17,
+      "occurrences": 20
+    },
+    {
+      "query": "Moyses OR Moses",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 6,
+      "occurrences": 6
+    },
+    {
+      "query": "Iudae* OR Roman* AND sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 2,
+      "occurrences": 2
+    },
+    {
+      "query": "Ioseph* sacerdot* OR templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 3,
+      "occurrences": 3
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT (Ioseph* OR NOT sacerdot*)",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 17,
+      "occurrences": 20
+    },
+    {
+      "query": "NOT NOT Iosephus",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 3,
+      "occurrences": 3
+    },
+    {
+      "query": "\"nisi qu*\"",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "quem AND consparsa",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "con perit",
+      "scope": "book",
+      "fold": false,
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "\"Historiam conscribere disponentibus\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"Historiam conscribere disponentibus\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"In principio creauit deus\"",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "\"In principio creauit deus\"",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 1
+    },
+    {
+      "query": "Ioseph*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 72,
+      "matchingSections": 72,
+      "occurrences": 87
+    },
+    {
+      "query": "Ioseph*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 3,
+      "matchingSections": 72,
+      "occurrences": 87
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 99,
+      "matchingSections": 99,
+      "occurrences": 114
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 99,
+      "occurrences": 114
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 164,
+      "matchingSections": 164,
+      "occurrences": 192
+    },
+    {
+      "query": "(Ioseph* OR sacerdot*) AND NOT templ*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 74,
+      "occurrences": 87
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 1710,
+      "matchingSections": 1710,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT zzzznonoccurrit",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 1,
+      "matchingSections": 1,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT *",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 0,
+      "matchingSections": 0,
+      "occurrences": 0
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 36,
+      "matchingSections": 36,
+      "occurrences": 40
+    },
+    {
+      "query": "rex OR rex*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "antiquities-latin-bamberg78:5",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:1"
+      ],
+      "matchingUnits": 5,
+      "matchingSections": 36,
+      "occurrences": 40
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2",
+        "antiquities-latin-bamberg78:1",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:5"
+      ],
+      "matchingUnits": 217,
+      "matchingSections": 217,
+      "occurrences": 308
+    },
+    {
+      "query": "sacerdot*",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2",
+        "antiquities-latin-bamberg78:1",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:5"
+      ],
+      "matchingUnits": 19,
+      "matchingSections": 217,
+      "occurrences": 308
+    },
+    {
+      "query": "NOT (zzzznonoccurrit)",
+      "scope": "section",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2",
+        "antiquities-latin-bamberg78:1",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:5"
+      ],
+      "matchingUnits": 6885,
+      "matchingSections": 6885,
+      "occurrences": 0
+    },
+    {
+      "query": "NOT (zzzznonoccurrit)",
+      "scope": "book",
+      "fold": false,
+      "selectedBooks": [
+        "bellum-latin-cardwell:1",
+        "bellum-latin-cardwell:2",
+        "bellum-latin-cardwell:3",
+        "bellum-latin-cardwell:4",
+        "bellum-latin-cardwell:5",
+        "bellum-latin-cardwell:6",
+        "bellum-latin-cardwell:7",
+        "deh-latin-ussani:1",
+        "deh-latin-ussani:2",
+        "deh-latin-ussani:3",
+        "deh-latin-ussani:4",
+        "deh-latin-ussani:5",
+        "contra-apionem-latin-boysen:1",
+        "contra-apionem-latin-boysen:2",
+        "antiquities-latin-bamberg78:1",
+        "antiquities-latin-bamberg78:2",
+        "antiquities-latin-bamberg78:3",
+        "antiquities-latin-bamberg78:4",
+        "antiquities-latin-bamberg78:5"
+      ],
+      "matchingUnits": 19,
+      "matchingSections": 0,
+      "occurrences": 0
+    }
+  ],
+  "durationSeconds": 47.86,
+  "limitations": [
+    "Automated Node/Python acceptance, not browser or visual acceptance.",
+    "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",
+    "The accepted corrected project XML is preserved faithfully; this does not re-collate the text with manuscript images.",
+    "Earlier collections receive limited mixed-work integration checks; their independent source-fidelity reports remain separately required.",
+    "Literal dot-clusters conservatively suppress phrase adjacency without assigning new scholarly meanings or missing-text extents."
+  ],
+  "failures": []
+}

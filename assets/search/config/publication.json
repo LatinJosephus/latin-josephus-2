@@ -60,6 +60,20 @@
       ],
       "verifier": "tests/deh-corpus-qa.mjs",
       "qaReport": "data/deh-latin-ussani/qa-report.json"
+    },
+    "antiquities-latin-bamberg78": {
+      "extractor": "extract-antiquities.py",
+      "outputDirectory": "data/antiquities-latin-bamberg78",
+      "sources": [
+        "assets/xml/antiquities/Latin/preface.xml",
+        "assets/xml/antiquities/Latin/book-01.xml",
+        "assets/xml/antiquities/Latin/book-02.xml",
+        "assets/xml/antiquities/Latin/book-03.xml",
+        "assets/xml/antiquities/Latin/book-04.xml",
+        "assets/xml/antiquities/Latin/book-05.xml"
+      ],
+      "verifier": "tests/antiquities-corpus-qa.mjs",
+      "qaReport": "data/antiquities-latin-bamberg78/qa-report.json"
     }
   }
 }
