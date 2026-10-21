@@ -8,7 +8,12 @@
       2,
       3,
       4,
-      5
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
     ],
     "language": "English",
     "edition": "Whiston",
@@ -17,21 +22,21 @@
     "includesProem": true
   },
   "counts": {
-    "books": 5,
-    "sourceDocuments": 6,
-    "bodyParagraphs": 513,
-    "narrativeParagraphs": 424,
-    "excludedHeadingParagraphs": 89,
-    "excludedFootnotes": 0,
-    "excludedCitationLabels": 416,
-    "excludedSourceNotes": 6,
-    "nieseMilestones": 1710,
-    "structuralMarkers": 10,
-    "sections": 1710,
-    "runningWordTokens": 112265,
-    "numberedParagraphs": 424,
+    "books": 10,
+    "sourceDocuments": 11,
+    "bodyParagraphs": 915,
+    "narrativeParagraphs": 774,
+    "excludedHeadingParagraphs": 141,
+    "excludedFootnotes": 7,
+    "excludedCitationLabels": 753,
+    "excludedSourceNotes": 11,
+    "nieseMilestones": 3474,
+    "structuralMarkers": 12,
+    "sections": 3474,
+    "runningWordTokens": 236049,
+    "numberedParagraphs": 774,
     "breakBeforeUnits": 1,
-    "continuationParagraphs": 1
+    "continuationParagraphs": 2
   },
   "coverage": {
     "completeRangesByBook": {
@@ -54,29 +59,49 @@
       "5": [
         1,
         362
+      ],
+      "6": [
+        1,
+        378
+      ],
+      "7": [
+        1,
+        394
+      ],
+      "8": [
+        1,
+        420
+      ],
+      "9": [
+        1,
+        291
+      ],
+      "10": [
+        1,
+        281
       ]
     },
     "missingSections": [],
     "unexpectedSections": [],
     "duplicateSections": [],
     "allSectionTextsNonempty": true,
-    "paragraphsExactlyRestored": 424,
+    "paragraphsExactlyRestored": 774,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "cc2345064a5678b2592f1e06de8a591f72facf36f8d823ef0e81e0517f4e4038",
-    "restoredParagraphSequenceSha256": "cc2345064a5678b2592f1e06de8a591f72facf36f8d823ef0e81e0517f4e4038",
-    "sourceWordSequenceSha256": "72bf58613f8a821c411c2bc28dacfe5a6f081fabdecead66b08929a789ed7544",
-    "indexedWordSequenceSha256": "72bf58613f8a821c411c2bc28dacfe5a6f081fabdecead66b08929a789ed7544",
-    "sourceNonWhitespaceContentSha256": "688823863a9ecb9a9459737feb9d82411c2c38a4e66c975228ca8b61aa48dd27",
-    "indexedNonWhitespaceContentSha256": "688823863a9ecb9a9459737feb9d82411c2c38a4e66c975228ca8b61aa48dd27",
+    "rawParagraphSequenceSha256": "e8716648b9881998026070b97fd4d4b1700deb347ef9775f442ca15387025d82",
+    "restoredParagraphSequenceSha256": "e8716648b9881998026070b97fd4d4b1700deb347ef9775f442ca15387025d82",
+    "sourceWordSequenceSha256": "1ab59899a5ee6f4d8d6e944ba9087cb7e143c76cc2e391170bcdd0ee1a5f3a92",
+    "indexedWordSequenceSha256": "1ab59899a5ee6f4d8d6e944ba9087cb7e143c76cc2e391170bcdd0ee1a5f3a92",
+    "sourceNonWhitespaceContentSha256": "e136bdc910d0574d8ead692bd27409bb89f64012326d53f99d2a361b493a4ee6",
+    "indexedNonWhitespaceContentSha256": "e136bdc910d0574d8ead692bd27409bb89f64012326d53f99d2a361b493a4ee6",
     "globalIdsUnique": true,
     "globalOrderIsConsecutive": true
   },
   "corpus": {
     "path": "data/antiquities-english-whiston/corpus.json",
-    "sha256": "bf7a22965bc1d13e403dde418cbc077668bdcdb5d634497ca974fabfc01023ea",
-    "bytes": 1974432,
-    "records": 1710
+    "sha256": "7f3837c1b147266511cadd23c7fd616dba894ff16147b44a2857b4ad559fac56",
+    "bytes": 4052308,
+    "records": 3474
   },
   "books": [
     {
@@ -309,6 +334,227 @@
         "path": "data/antiquities-english-whiston/book-05.extraction-report.json",
         "sha256": "d59fe5d530f2a5ea401957dc2d1bcdf542670711b98c9d2c2b19b20e670d7d6a",
         "bytes": 1593931
+      }
+    },
+    {
+      "book": 6,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/English/book-06.xml",
+        "sha256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+        "bytes": 175282
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/English/book-06.xml",
+          "sha256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+          "bytes": 175282
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 98,
+        "narrativeParagraphs": 83,
+        "excludedHeadingParagraphs": 15,
+        "excludedFootnotes": 0,
+        "excludedCitationLabels": 83,
+        "excludedSourceNotes": 1,
+        "nieseMilestones": 378,
+        "structuralMarkers": 0,
+        "sections": 378,
+        "runningWordTokens": 28422,
+        "numberedParagraphs": 83,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 1710,
+      "orderEnd": 2087,
+      "corpus": {
+        "path": "data/antiquities-english-whiston/book-06.corpus.json",
+        "sha256": "142daee893d0f76385ec4da56a3f02d0dbc62a0f2a1ba6d70937bc1840ed22aa",
+        "bytes": 453216,
+        "records": 378
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-whiston/book-06.extraction-report.json",
+        "sha256": "73f8bb987096e2fae58361f4fe682aba3601d95ad249aa6e7979063adb3906b2",
+        "bytes": 1710119
+      }
+    },
+    {
+      "book": 7,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/English/book-07.xml",
+        "sha256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+        "bytes": 175083
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/English/book-07.xml",
+          "sha256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+          "bytes": 175083
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 92,
+        "narrativeParagraphs": 76,
+        "excludedHeadingParagraphs": 16,
+        "excludedFootnotes": 0,
+        "excludedCitationLabels": 73,
+        "excludedSourceNotes": 1,
+        "nieseMilestones": 394,
+        "structuralMarkers": 0,
+        "sections": 394,
+        "runningWordTokens": 28285,
+        "numberedParagraphs": 76,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 2088,
+      "orderEnd": 2481,
+      "corpus": {
+        "path": "data/antiquities-english-whiston/book-07.corpus.json",
+        "sha256": "e6c7f4848665e900ac0e1afe2cbb8fe4ed69aba048b6406dcf447b3300df4988",
+        "bytes": 466476,
+        "records": 394
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-whiston/book-07.extraction-report.json",
+        "sha256": "6a88571253d7b8e3730e5aa815d0fd13ec7ae44730424c6d544a85307c9beb81",
+        "bytes": 1738136
+      }
+    },
+    {
+      "book": 8,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/English/book-08.xml",
+        "sha256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+        "bytes": 187016
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/English/book-08.xml",
+          "sha256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+          "bytes": 187016
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 101,
+        "narrativeParagraphs": 85,
+        "excludedHeadingParagraphs": 16,
+        "excludedFootnotes": 0,
+        "excludedCitationLabels": 85,
+        "excludedSourceNotes": 1,
+        "nieseMilestones": 420,
+        "structuralMarkers": 2,
+        "continuationParagraphs": 1,
+        "sections": 420,
+        "runningWordTokens": 29968,
+        "numberedParagraphs": 85,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 2482,
+      "orderEnd": 2901,
+      "corpus": {
+        "path": "data/antiquities-english-whiston/book-08.corpus.json",
+        "sha256": "0ecd93f5267d3d3897aa89ea81a13f8134145c1ceafd14987446d39a50bd37f4",
+        "bytes": 498460,
+        "records": 420
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-whiston/book-08.extraction-report.json",
+        "sha256": "ee24daad593d279c7b8e9dba27bfe0608ffe12c328214e91f5fcf242db0502b3",
+        "bytes": 1868617
+      }
+    },
+    {
+      "book": 9,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/English/book-09.xml",
+        "sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+        "bytes": 123475
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/English/book-09.xml",
+          "sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+          "bytes": 123475
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 57,
+        "narrativeParagraphs": 54,
+        "excludedHeadingParagraphs": 3,
+        "excludedFootnotes": 7,
+        "excludedCitationLabels": 45,
+        "excludedSourceNotes": 1,
+        "nieseMilestones": 291,
+        "structuralMarkers": 0,
+        "sections": 291,
+        "runningWordTokens": 19074,
+        "numberedParagraphs": 54,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 2902,
+      "orderEnd": 3192,
+      "corpus": {
+        "path": "data/antiquities-english-whiston/book-09.corpus.json",
+        "sha256": "ca43d1c591ae901a2fa63e708b014cd07b840eb0c4b8ad0fd47ab6d3ee6a49da",
+        "bytes": 336477,
+        "records": 291
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-whiston/book-09.extraction-report.json",
+        "sha256": "3b560d3b506d3d868730d6baf461c086f12ca7bdedb16054d279645915444806",
+        "bytes": 1266930
+      }
+    },
+    {
+      "book": 10,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/antiquities/English/book-10.xml",
+        "sha256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+        "bytes": 112960
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/antiquities/English/book-10.xml",
+          "sha256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+          "bytes": 112960
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 54,
+        "narrativeParagraphs": 52,
+        "excludedHeadingParagraphs": 2,
+        "excludedFootnotes": 0,
+        "excludedCitationLabels": 51,
+        "excludedSourceNotes": 1,
+        "nieseMilestones": 281,
+        "structuralMarkers": 0,
+        "sections": 281,
+        "runningWordTokens": 18035,
+        "numberedParagraphs": 52,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 3193,
+      "orderEnd": 3473,
+      "corpus": {
+        "path": "data/antiquities-english-whiston/book-10.corpus.json",
+        "sha256": "030de30df76282de086c78fbcfbafed69b2623fa5dad4d92e2b342e3ae038903",
+        "bytes": 323262,
+        "records": 281
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-whiston/book-10.extraction-report.json",
+        "sha256": "1adf83a25272f7cef6ac661b05c42ac1036369961774099741e1e741c3b55e27",
+        "bytes": 1206621
       }
     }
   ]

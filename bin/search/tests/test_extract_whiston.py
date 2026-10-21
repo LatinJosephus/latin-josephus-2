@@ -19,7 +19,20 @@ spec.loader.exec_module(extract)
 NS = "{http://www.tei-c.org/ns/1.0}"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 ORDER_STARTS = {"preface": 0, "book-01": 26, "book-02": 346, "book-03": 695,
-                "book-04": 1017, "book-05": 1348, "book-09": 0, "book-11": 0}
+                "book-04": 1017, "book-05": 1348, "book-06": 1710, "book-07": 2088,
+                "book-08": 2482, "book-09": 2902, "book-10": 3193, "book-11": 0}
+PRIOR_ARTIFACT_HASHES = {
+    "book-01.corpus.json": "5d94451f1363230e0578d995ece458dd8a4b40e56064487f1362194de21404f0",
+    "book-01.extraction-report.json": "5ff96ccfd1a08a6abdc3a37e6e832db53db7d9f9a7e12c6eb02bfee6130e53a9",
+    "book-02.corpus.json": "7000e802415b3246a14e3fb9fc0c5e40490fb8fa31351c228aaf31353b7b663f",
+    "book-02.extraction-report.json": "3eab5244d80df012cfc7c5dec46a78be90ba3b805c759c009954eed8cb18f6ab",
+    "book-03.corpus.json": "26e09b435952e06b7911a4d985b44ede81bdc291ea10d18a8218f79f340fd36b",
+    "book-03.extraction-report.json": "67acd98bdc96a4e357fdfac47276f375f021c5e917f2b42e5c08d151213afa6c",
+    "book-04.corpus.json": "108edd83587cf34f2a901a74ba92bd7821f0b64a7555b505a9f7f855b42d1d78",
+    "book-04.extraction-report.json": "e771f5e133a471447489a16f08b1d2fedab03356f6543143e9858ee637dae500",
+    "book-05.corpus.json": "fb309ee22dc2f98b65d189679657219fc808b00e64fa5737ecb8e7044e876a80",
+    "book-05.extraction-report.json": "d59fe5d530f2a5ea401957dc2d1bcdf542670711b98c9d2c2b19b20e670d7d6a",
+}
 
 
 def utf16_slice(text: str, start: int, end: int) -> str:
@@ -50,7 +63,7 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
                                                        preface=name == "preface", order_offset=ORDER_STARTS[name])
                          for name, data in cls.sources.items()}
         cls.pilot = cls.documents["preface"][0] + cls.documents["book-01"][0]
-        cls.collection = cls.pilot + [record for book in range(2, 6) for record in cls.documents[f"book-{book:02}"][0]]
+        cls.collection = cls.pilot + [record for book in range(2, 11) for record in cls.documents[f"book-{book:02}"][0]]
 
     def test_reviewed_pilot_has_346_intervals_and_21994_tokens(self):
         self.assertEqual([r["section"] for r in self.pilot], list(range(1, 347)))
@@ -60,17 +73,19 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
         for name, expected in {"preface": (26, 1646), "book-01": (320, 20348),
                                "book-02": (349, 23020), "book-03": (322, 20955),
                                "book-04": (331, 22900), "book-05": (362, 23396),
-                               "book-09": (291, 19074), "book-11": (347, 20213)}.items():
+                               "book-06": (378, 28422), "book-07": (394, 28285),
+                               "book-08": (420, 29968), "book-09": (291, 19074),
+                               "book-10": (281, 18035), "book-11": (347, 20213)}.items():
             records, report = self.documents[name]
             self.assertEqual((len(records), report["counts"]["runningWordTokens"]), expected)
             self.assertEqual(report["source"]["sha256"], hashlib.sha256(self.sources[name]).hexdigest())
 
-    def test_expanded_collection_has_1710_intervals_and_112265_tokens(self):
-        self.assertEqual(len(self.collection), 1710)
-        self.assertEqual(len({r["id"] for r in self.collection}), 1710)
-        self.assertEqual([r["order"] for r in self.collection], list(range(1710)))
-        self.assertEqual(sum(len(extract.words(r["text"])) for r in self.collection), 112265)
-        for book, last in [(2, 349), (3, 322), (4, 331), (5, 362)]:
+    def test_expanded_collection_has_3474_intervals_and_236049_tokens(self):
+        self.assertEqual(len(self.collection), 3474)
+        self.assertEqual(len({r["id"] for r in self.collection}), 3474)
+        self.assertEqual([r["order"] for r in self.collection], list(range(3474)))
+        self.assertEqual(sum(len(extract.words(r["text"])) for r in self.collection), 236049)
+        for book, last in [(2, 349), (3, 322), (4, 331), (5, 362), (6, 378), (7, 394), (8, 420), (9, 291), (10, 281)]:
             records = self.documents[f"book-{book:02}"][0]
             self.assertEqual([r["section"] for r in records], list(range(1, last + 1)))
             for record in records:
@@ -79,6 +94,8 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
                 self.assertNotIn("division", record)
                 self.assertNotIn("breakBefore", record)
                 self.assertTrue(record["text"])
+                self.assertEqual(record["textGaps"], [])
+                self.assertEqual(record["phraseBreaks"], [])
 
     def test_proem_reader_edition_and_narrative_boundary(self):
         self.assertEqual([r["section"] for r in self.pilot if r.get("breakBefore")], [27])
@@ -143,6 +160,48 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
         self.assertEqual(report["counts"]["narrativeParagraphs"], 98)
         self.assertNotIn("Concerning The Fortitude Of Samson", " ".join(r["text"] for r in records))
 
+    def test_viii_255_retains_all_42_prefix_words_with_exact_original_spans(self):
+        records, report = self.documents["book-08"]
+        record = records[254]
+        first = ("Now therefore when he fell upon the country of the Hebrews, he took the strongest cities of Rehoboam's "
+                 "kingdom without fighting; and when he had put garrisons in them, he came last of all to Jerusalem.")
+        second = ("Now when Rehoboam, and the multitude with him, were shut up in Jerusalem by the means of the army "
+                  "of Shishak, and when they besought God to give them victory and deliverance, they could not persuade "
+                  "God to be on their side.")
+        self.assertEqual(len(extract.words(second)), 42)
+        self.assertEqual(record["text"], first + "\n\n" + second)
+        self.assertEqual(record["sourceIds"], ["english-book08-num251", "english-book08-num255"])
+        self.assertEqual(record["sourceId"], "english-book08-num251")
+        self.assertEqual(report["counts"]["continuationParagraphs"], 1)
+        continuation = next(p for p in report["paragraphs"] if p["sourceId"] == "english-book08-num255")
+        self.assertEqual([m["section"] for m in continuation["nieseMarkers"]], list(range(256, 263)))
+        self.assertEqual([s["section"] for s in continuation["sections"]], list(range(255, 263)))
+        self.assertEqual(continuation["recordJoin"], {"kind": "paragraph-separator", "recordId": record["id"],
+                         "start": 201, "end": 203, "text": "\n\n"})
+        self.assertEqual(continuation["continuationOf"], {"recordId": record["id"], "section": 255,
+                         "previousSourceId": "english-book08-num251", "nextSourceId": "english-book08-num263",
+                         "firstMilestone": 256, "nextSection": 263})
+        self.assertEqual(continuation["sections"][0]["recordOffset"], 203)
+        self.assertTrue(all("recordOffset" not in section for section in continuation["sections"][1:]))
+        pieces = [p for p in continuation["sourcePieces"] if p.get("recordId") == record["id"]]
+        self.assertEqual([(p["sourceStart"], p["sourceEnd"], p["recordStart"], p["recordEnd"]) for p in pieces],
+                         [(3, 226, 203, 426)])
+        self.assertEqual(utf16_slice(record["text"], 203, 426), second)
+        self.assertTrue(records[255]["text"].startswith("But Shemaiah the prophet told them"))
+
+    def test_viii_letter_salutation_and_x_bold_words_remain_narrative(self):
+        letter, report = self.documents["book-08"]
+        self.assertIn("Hiram To King Solomon", letter[52]["text"])
+        self.assertEqual(report["counts"]["structuralMarkers"], 2)
+        records = self.documents["book-10"][0]
+        for section, words in [(184, ["Samaritans"]), (243, ["Number"]), (244, ["weight", "fragment"])]:
+            record = records[section - 1]
+            for word in words:
+                self.assertIn(word, record["text"])
+            self.assertEqual(record["editorialMarks"], [])
+            self.assertEqual(record["sourceMarkup"], [])
+            self.assertEqual(record["phraseBreaks"], [])
+
     def test_english_iii_240_does_not_inherit_the_latin_omission(self):
         record = self.documents["book-03"][0][239]
         self.assertEqual(record["section"], 240)
@@ -189,7 +248,7 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
         self.assertEqual(report["coverage"]["sourceWordSequenceSha256"], report["coverage"]["indexedWordSequenceSha256"])
 
     def test_source_changes_fail_but_crlf_only_representation_is_accepted(self):
-        for book in range(1, 6):
+        for book in range(1, 11):
             name = f"book-{book:02}"
             original = self.sources[name]
             with self.subTest(book=book), self.assertRaisesRegex(extract.ExtractionError, "accepted source"):
@@ -198,24 +257,23 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
                                                        order_offset=ORDER_STARTS[name])
             self.assertEqual(crlf_records, self.documents[name][0])
 
-    def test_build_is_reproducible_preserves_book_i_and_publishes_only_six_sources(self):
+    def test_build_is_reproducible_preserves_books_i_v_and_publishes_only_eleven_sources(self):
         with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
             report = extract.build_corpus(REPOSITORY, Path(first))
             extract.build_corpus(REPOSITORY, Path(second))
-            self.assertEqual(report["scope"]["books"], [1, 2, 3, 4, 5])
+            self.assertEqual(report["scope"]["books"], list(range(1, 11)))
             self.assertNotIn("pilot", report["scope"])
-            self.assertEqual(report["counts"]["sourceDocuments"], 6)
-            self.assertEqual(report["counts"]["runningWordTokens"], 112265)
+            self.assertEqual(report["counts"]["sourceDocuments"], 11)
+            self.assertEqual(report["counts"]["runningWordTokens"], 236049)
             self.assertEqual({s["path"] for book in report["books"] for s in book["sources"]},
-                             {f"assets/xml/antiquities/English/{name}.xml" for name in ["preface"] + [f"book-{b:02}" for b in range(1, 6)]})
+                             {f"assets/xml/antiquities/English/{name}.xml" for name in ["preface"] + [f"book-{b:02}" for b in range(1, 11)]})
             self.assertEqual(sorted(p.name for p in Path(first).iterdir()),
-                             [name for b in range(1, 6) for name in [f"book-{b:02}.corpus.json", f"book-{b:02}.extraction-report.json"]]
+                             [name for b in range(1, 11) for name in [f"book-{b:02}.corpus.json", f"book-{b:02}.extraction-report.json"]]
                              + ["corpus.json", "extraction-report.json"])
             for file in Path(first).iterdir():
                 self.assertEqual(file.read_bytes(), (Path(second) / file.name).read_bytes())
             self.assertEqual(json.loads((Path(first) / "corpus.json").read_text()), self.collection)
-            for name, expected in {"book-01.corpus.json": "5d94451f1363230e0578d995ece458dd8a4b40e56064487f1362194de21404f0",
-                                   "book-01.extraction-report.json": "5ff96ccfd1a08a6abdc3a37e6e832db53db7d9f9a7e12c6eb02bfee6130e53a9"}.items():
+            for name, expected in PRIOR_ARTIFACT_HASHES.items():
                 self.assertEqual(hashlib.sha256((Path(first) / name).read_bytes()).hexdigest(), expected)
 
     def test_iv_continuation_cannot_be_removed_reassigned_or_given_a_fake_milestone(self):
@@ -236,8 +294,41 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
             with self.subTest(mode=mode), self.assertRaises(extract.ExtractionError):
                 extract.extract_document(ET.tostring(root), book_number=4, verify_source=False)
 
+    def test_viii_prefix_continuation_cannot_be_removed_reassigned_or_given_a_fake_milestone(self):
+        for mode in ["remove_prefix", "rename", "move", "milestone"]:
+            root = ET.fromstring(self.sources["book-08"])
+            continuation = root.find(f".//{NS}p[@xml:id='english-book08-num255']", {"xml": "http://www.w3.org/XML/1998/namespace"})
+            parent = next(p for p in root.iter() if continuation in list(p))
+            if mode == "remove_prefix":
+                continuation.find(NS + "num").tail = ""
+            elif mode == "rename":
+                continuation.set(XML_ID, "english-book08-unreviewed")
+            elif mode == "move":
+                index = list(parent).index(continuation)
+                parent.remove(continuation)
+                parent.insert(index + 1, continuation)
+            else:
+                continuation.insert(0, ET.Element(NS + "milestone", {"unit": "niese", "n": "255"}))
+            with self.subTest(mode=mode), self.assertRaises(extract.ExtractionError):
+                extract.extract_document(ET.tostring(root), book_number=8, verify_source=False)
+
 
 class WhistonBoundaryAndRefusalTests(unittest.TestCase):
+    def test_partial_paragraph_continuation_uses_utf16_and_resets_later_record_offsets(self):
+        source = fixture(paragraph('<milestone unit="niese" n="255"/>😀 First.', "english-book08-num251") +
+                         paragraph('<num>3.</num> 😀 Continued. <milestone unit="niese" n="256"/>Next section.',
+                                   "english-book08-num255") +
+                         paragraph('<milestone unit="niese" n="263"/>Third.', "english-book08-num263"))
+        records, report = extract.extract_document(source, book_number=8, verify_source=False, expected_sections=[255, 256, 263])
+        self.assertEqual(records[0]["text"], "😀 First.\n\n😀 Continued.")
+        self.assertEqual(records[1]["text"], "Next section.")
+        continuation = report["paragraphs"][1]
+        self.assertEqual((continuation["recordJoin"]["start"], continuation["recordJoin"]["end"]), (9, 11))
+        pieces = [piece for piece in continuation["sourcePieces"] if piece["kind"] == "record"]
+        self.assertEqual([(p["recordStart"], p["recordEnd"]) for p in pieces], [(11, 24), (0, 13)])
+        self.assertNotIn("recordOffset", continuation["sections"][1])
+        self.assertEqual([m["section"] for m in continuation["nieseMarkers"]], [256])
+
     def test_continuation_record_offsets_count_utf16_code_units(self):
         source = fixture(paragraph('<milestone unit="niese" n="276"/>😀 First.', "english-book04-num276") +
                          paragraph('<num>32.</num> Second.', "english-book04-num276b") +

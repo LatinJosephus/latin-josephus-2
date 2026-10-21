@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Independent source witness for Whiston Antiquities Proem and Books I-V.
+"""Independent source witness for Whiston Antiquities Proem and Books I-X.
 
 This verifier imports no search or production-extractor code. It uses minidom,
-an explicit text-node stream, and Unicode character categories. Books IX and
-XI are deliberately test-only: their notes and source order are future guards,
-not additional published coverage. Only CRLF-to-LF changes are accepted when
-checking the eight reviewed XML fingerprints.
+an explicit text-node stream, and Unicode character categories. Book IX's
+restored text is indexed but its footnotes and headings are excluded. Book XI
+is deliberately test-only: its physical source order is a future guard, not
+additional published coverage. Only CRLF-to-LF changes are accepted when
+checking the twelve reviewed XML fingerprints.
 """
 from __future__ import annotations
 
@@ -19,7 +20,7 @@ import unicodedata
 from xml.dom import Node, minidom
 
 TEI = "http://www.tei-c.org/ns/1.0"
-SOURCE_COMMIT = "7befd862818b4b52699cdb2fbd76c4846a0c13cf"
+SOURCE_COMMIT = "ba8c6f27111d811250eee569515b6e1c41929793"
 COLLECTION = "antiquities-english-whiston"
 SPECS = [
     ("preface", 1, True, "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb"),
@@ -28,7 +29,11 @@ SPECS = [
     ("book-03", 3, True, "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44"),
     ("book-04", 4, True, "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554"),
     ("book-05", 5, True, "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722"),
-    ("book-09", 9, False, "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36"),
+    ("book-06", 6, True, "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb"),
+    ("book-07", 7, True, "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3"),
+    ("book-08", 8, True, "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289"),
+    ("book-09", 9, True, "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36"),
+    ("book-10", 10, True, "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb"),
     ("book-11", 11, False, "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2"),
 ]
 
@@ -79,8 +84,8 @@ def extract_source(root, spec, order=0):
     ids = [element.getAttribute("xml:id") for element in elements if element.hasAttribute("xml:id")]
     assert len(ids) == len(set(ids)), ("Duplicate XML IDs", path)
     counts = Counter(element.localName for element in elements)
-    assert set(counts) <= {"TEI", "text", "body", "note", "div1", "div2", "p", "num", "milestone", "anchor", "lb"}, (path, counts)
-    rows, exclusions, paragraphs, structural = [], [], [], []
+    assert set(counts) <= {"TEI", "text", "body", "note", "div1", "div2", "p", "num", "milestone", "anchor", "lb", "hi"}, (path, counts)
+    rows, exclusions, paragraphs, structural, formatting = [], [], [], [], []
 
     # Source/editor notes outside a narrative paragraph are excluded as a
     # complete subtree, rather than allowing their words into the first unit.
@@ -96,10 +101,12 @@ def extract_source(root, spec, order=0):
         source_id = paragraph.getAttribute("xml:id") or None
         markers = [marker for marker in paragraph.getElementsByTagName("milestone")
                    if marker.getAttribute("unit") == "niese"]
-        continuation = (stem, source_id) == ("book-04", "english-book04-num276b")
+        continuation = {("book-04", "english-book04-num276b"): (276, "english-book04-num276", []),
+                        ("book-08", "english-book08-num255"): (255, "english-book08-num251", list(range(256, 263)))}.get((stem, source_id))
         if continuation:
-            assert not markers and rows and rows[-1]["section"] == 276
-            assert rows[-1]["sourceId"] == "english-book04-num276"
+            section, previous_id, paragraph_markers = continuation
+            assert rows and rows[-1]["section"] == section and rows[-1]["sourceId"] == previous_id
+            assert [int(marker.getAttribute("n")) for marker in markers] == paragraph_markers
         if not markers and not continuation:
             assert re.match(r"(?:BOOK\b|CHAPTER\b|CONTAINING\b|Antiquities of the Jews -- Preface$)",
                             all_text(paragraph).strip(), re.I), ("Unclassified markerless paragraph", path, source_id)
@@ -110,7 +117,7 @@ def extract_source(root, spec, order=0):
         assert source_id, ("Narrative paragraph without a stable ID", path)
         raw_offset, active, prefix = 0, None, []
         if continuation:
-            active = {"section": 276, "events": []}
+            active = {"section": continuation[0], "events": [], "continuesPrevious": True}
         paragraph_rows = []
 
         def finish():
@@ -137,7 +144,7 @@ def extract_source(root, spec, order=0):
             assert "".join(segment["text"] for segment in segments) == trimmed
             active.update(text=trimmed, tokens=scan_words(trimmed), sourceSegments=segments)
             assert active["tokens"], ("Empty Whiston interval", path, active["section"])
-            if continuation:
+            if active.pop("continuesPrevious", False):
                 previous = rows[-1]
                 start = u16(previous["text"])
                 join = "\n\n"
@@ -165,6 +172,16 @@ def extract_source(root, spec, order=0):
                 return
             assert node.nodeType == Node.ELEMENT_NODE, ("Unexpected XML node", path, node.nodeType)
             tag = node.localName
+            if tag == "hi":
+                assert book == 10 and dict(node.attributes.items()) == {"rend": "bold"}
+                assert active is not None and all(child.nodeType in (Node.TEXT_NODE, Node.CDATA_SECTION_NODE) for child in node.childNodes)
+                start = raw_offset
+                for child in node.childNodes:
+                    walk(child)
+                formatting.append({"kind": tag, "sourceId": source_id, "section": active["section"],
+                                   "rawStart": start, "rawEnd": raw_offset, "text": all_text(node),
+                                   "attributes": dict(node.attributes.items())})
+                return
             if tag in {"num", "note"}:
                 text = all_text(node)
                 exclusions.append({"kind": tag, "sourceId": source_id, "text": text,
@@ -200,11 +217,11 @@ def extract_source(root, spec, order=0):
                                "reason": "The reader begins the Niese interval immediately after its milestone."})
         assert raw_offset == u16(all_text(paragraph)), ("Unaccounted source text", path, source_id)
         paragraphs.append({"sourceId": source_id, "rawText": all_text(paragraph),
-                           "sections": paragraph_rows, "rawLength": raw_offset})
+                           "sections": paragraph_rows, "nieseSections": [int(marker.getAttribute("n")) for marker in markers],
+                           "rawLength": raw_offset})
 
     expected = (list(range(1, 27)) if stem == "preface" else list(range(27, 347)) if book == 1
-                else list(range(1, {2: 349, 3: 322, 4: 331, 5: 362}[book] + 1)) if book in {2, 3, 4, 5}
-                else list(range(1, 292)) if book == 9
+                else list(range(1, {2: 349, 3: 322, 4: 331, 5: 362, 6: 378, 7: 394, 8: 420, 9: 291, 10: 281}[book] + 1)) if 2 <= book <= 10
                 else list(range(1, 312)) + list(range(326, 343)) + list(range(312, 326)) + list(range(343, 348)))
     assert [row["section"] for row in rows] == expected, ("Niese physical sequence", path)
     assert len({row["id"] for row in rows}) == len(rows)
@@ -216,7 +233,7 @@ def extract_source(root, spec, order=0):
                 "excludedNotes": sum(item["kind"] == "note" for item in exclusions),
                 "excludedLabels": sum(item["kind"] == "num" for item in exclusions)}
     return {"evidence": evidence, "rows": rows, "exclusions": exclusions,
-            "paragraphs": paragraphs, "structural": structural}
+            "paragraphs": paragraphs, "structural": structural, "formatting": formatting}
 
 
 def main():
@@ -231,15 +248,21 @@ def main():
     indexed_files = [file for file in files if file["evidence"]["indexed"]]
     test_files = [file for file in files if not file["evidence"]["indexed"]]
     rows = [row for file in indexed_files for row in file["rows"]]
-    assert len(rows) == 1710
+    assert len(rows) == 3474
     assert len({row["id"] for row in rows}) == len(rows)
-    assert [row["order"] for row in rows] == list(range(1710))
+    assert [row["order"] for row in rows] == list(range(3474))
     book_one = [row for row in rows if row["book"] == 1]
     assert [row["section"] for row in book_one] == list(range(1, 347))
     assert sum(len(row["tokens"]) for row in book_one) == 21994
-    assert len([item for item in test_files[0]["exclusions"] if item["kind"] == "note" and item["sourceId"]]) == 7
-    headings_with_ids = [item["sourceId"] for item in test_files[0]["exclusions"] if item["kind"] == "heading" and item["sourceId"]]
+    previous_batch = [row for row in rows if row["book"] <= 5]
+    assert len(previous_batch) == 1710 and sum(len(row["tokens"]) for row in previous_batch) == 112265
+    book_nine = next(file for file in indexed_files if file["evidence"]["book"] == 9)
+    assert len([item for item in book_nine["exclusions"] if item["kind"] == "note" and item["sourceId"]]) == 7
+    headings_with_ids = [item["sourceId"] for item in book_nine["exclusions"] if item["kind"] == "heading" and item["sourceId"]]
     assert headings_with_ids == ["english-book09-restored-heading-05", "english-book09-restored-heading-06"]
+    assert [row["section"] for row in book_nine["rows"] if 51 <= row["section"] <= 109] == list(range(51, 110))
+    assert [(item["section"], item["text"]) for item in indexed_files[-1]["formatting"]] == [(184, "Samaritans"), (243, "Number"), (244, "weight"), (244, "fragment")]
+    assert len(test_files) == 1 and test_files[0]["evidence"]["book"] == 11
     result = {"sourceCommit": SOURCE_COMMIT,
               "runtime": {"python": sys.version.split()[0], "unicode": unicodedata.unidata_version,
                           "xmlParser": "xml.dom.minidom"},
@@ -247,8 +270,8 @@ def main():
               "indexedFiles": indexed_files, "testSources": test_files,
               "bookTotals": [{"book": book, "sections": sum(row["book"] == book for row in rows),
                               "tokens": sum(len(row["tokens"]) for row in rows if row["book"] == book)}
-                             for book in range(1, 6)],
-              "totals": {"books": 5, "sections": len(rows), "tokens": sum(len(row["tokens"]) for row in rows)}}
+                             for book in range(1, 11)],
+              "totals": {"books": 10, "sections": len(rows), "tokens": sum(len(row["tokens"]) for row in rows)}}
     print(json.dumps(result, ensure_ascii=False, separators=(",", ":")))
 
 

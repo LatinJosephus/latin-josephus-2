@@ -1,4 +1,4 @@
-/** Verify Whiston Antiquities I–V directly against their accepted, unchanged XML. */
+/** Verify Whiston Antiquities I–X directly against their accepted, unchanged XML. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,6 +19,16 @@ const SOURCES = [
     sha256: '6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554'},
   {path: 'assets/xml/antiquities/English/book-05.xml', book: 5, proem: false, first: 1, last: 362,
     sha256: 'a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722'},
+  {path: 'assets/xml/antiquities/English/book-06.xml', book: 6, proem: false, first: 1, last: 378,
+    sha256: '116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb'},
+  {path: 'assets/xml/antiquities/English/book-07.xml', book: 7, proem: false, first: 1, last: 394,
+    sha256: 'd8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3'},
+  {path: 'assets/xml/antiquities/English/book-08.xml', book: 8, proem: false, first: 1, last: 420,
+    sha256: '609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289'},
+  {path: 'assets/xml/antiquities/English/book-09.xml', book: 9, proem: false, first: 1, last: 291,
+    sha256: 'd973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36'},
+  {path: 'assets/xml/antiquities/English/book-10.xml', book: 10, proem: false, first: 1, last: 281,
+    sha256: '7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb'},
 ];
 const BOOKS = new Map([
   [1, {roman: 'I', sections: 346, tokens: 21994, paragraphs: 83}],
@@ -26,9 +36,18 @@ const BOOKS = new Map([
   [3, {roman: 'III', sections: 322, tokens: 20955, paragraphs: 79}],
   [4, {roman: 'IV', sections: 331, tokens: 22900, paragraphs: 88}],
   [5, {roman: 'V', sections: 362, tokens: 23396, paragraphs: 98}],
+  [6, {roman: 'VI', sections: 378, tokens: 28422, paragraphs: 83}],
+  [7, {roman: 'VII', sections: 394, tokens: 28285, paragraphs: 76}],
+  [8, {roman: 'VIII', sections: 420, tokens: 29968, paragraphs: 85}],
+  [9, {roman: 'IX', sections: 291, tokens: 19074, paragraphs: 54}],
+  [10, {roman: 'X', sections: 281, tokens: 18035, paragraphs: 52}],
 ]);
-const CONTINUATIONS = new Map([[4, {'english-book04-num276b': {section: 276,
-  previousSourceId: 'english-book04-num276', nextSourceId: 'english-book04-num277'}}]]);
+const CONTINUATIONS = new Map([
+  [4, {'english-book04-num276b': {section: 276,
+    previousSourceId: 'english-book04-num276', nextSourceId: 'english-book04-num277'}}],
+  [8, {'english-book08-num255': {section: 255, previousSourceId: 'english-book08-num251',
+    nextSourceId: 'english-book08-num263', firstMilestone: 256, nextSection: 263}}],
+]);
 const digest = value => createHash('sha256').update(value).digest('hex');
 const equal = (actual, expected, message) => assert.deepEqual(actual, expected, `Whiston ${message}`);
 const range = (first, last) => Array.from({length: last - first + 1}, (_, index) => first + index);
@@ -58,14 +77,14 @@ function attributes(text) {
 
 /** A deliberately narrow XML token reader, usable only after the source hash pin passes. */
 function paragraphProjection(contents) {
-  let raw = '', flat = '', label = null, consumed = 0;
-  const spans = [], exclusions = [], markers = [], structures = [];
+  let raw = '', flat = '', excluded = null, consumed = 0;
+  const spans = [], exclusions = [], markers = [], structures = [], inline = [];
   for (const token of contents.matchAll(/<[^>]*>|[^<]+/gu)) {
     equal(token.index, consumed, 'source token reader left an unparsed character');
     consumed += token[0].length;
     if (!token[0].startsWith('<')) {
       const text = decodeXML(token[0]);
-      if (!label) {
+      if (!excluded) {
         spans.push({rawStart: raw.length, rawEnd: raw.length + text.length,
           flatStart: flat.length, flatEnd: flat.length + text.length});
         flat += text;
@@ -73,18 +92,30 @@ function paragraphProjection(contents) {
       raw += text;
       continue;
     }
-    if (/^<num(?:\s|>)/u.test(token[0])) {
-      assert(label === null, 'Whiston nested citation labels are unreviewed');
-      const opening = /^<num\b([^>]*)>$/u.exec(token[0]);
-      assert(opening && !opening[1].endsWith('/'), 'Whiston unreviewed citation label');
-      label = {rawStart: raw.length, sourceAttributes: attributes(opening[1])};
-    } else if (/^<\/num\s*>$/u.test(token[0])) {
-      assert(label, 'Whiston citation label has no opening element');
-      exclusions.push({kind: 'excluded', reason: 'citation-label', text: raw.slice(label.rawStart),
-        sourceStart: label.rawStart, sourceEnd: raw.length, sourceAttributes: label.sourceAttributes});
-      label = null;
+    if (/^<(?:num|note)(?:\s|>)/u.test(token[0])) {
+      assert(excluded === null, 'Whiston nested citation labels or footnotes are unreviewed');
+      const opening = /^<(num|note)\b([^>]*)>$/u.exec(token[0]);
+      assert(opening && !opening[2].endsWith('/'), 'Whiston unreviewed excluded element');
+      const sourceAttributes = attributes(opening[2]);
+      if (opening[1] === 'note') equal(sourceAttributes.type, 'whiston-footnote', 'inline note type differs');
+      excluded = {tag: opening[1], rawStart: raw.length, sourceAttributes};
+    } else if (/^<\/(?:num|note)\s*>$/u.test(token[0])) {
+      const closing = /^<\/(num|note)\s*>$/u.exec(token[0]);
+      assert(excluded && excluded.tag === closing[1], 'Whiston excluded element has no matching opening');
+      exclusions.push({kind: 'excluded', reason: excluded.tag === 'num' ? 'citation-label' : 'whiston-footnote',
+        text: raw.slice(excluded.rawStart), sourceStart: excluded.rawStart, sourceEnd: raw.length,
+        sourceAttributes: excluded.sourceAttributes});
+      excluded = null;
+    } else if (/^<hi(?:\s|>)/u.test(token[0])) {
+      assert(excluded === null, 'Whiston markup inside an excluded element is unreviewed');
+      const opening = /^<hi\b([^>]*)>$/u.exec(token[0]);
+      assert(opening && !opening[1].endsWith('/'), 'Whiston unreviewed inline formatting');
+      equal(attributes(opening[1]), {rend: 'bold'}, 'inline formatting differs from the accepted source');
+      inline.push('hi');
+    } else if (/^<\/hi\s*>$/u.test(token[0])) {
+      assert(excluded === null && inline.pop() === 'hi', 'Whiston inline formatting has no matching opening');
     } else {
-      assert(label === null, 'Whiston markup inside a citation label is unreviewed');
+      assert(excluded === null, 'Whiston markup inside an excluded element is unreviewed');
       const structural = /^<(milestone|anchor|lb)\b([^>]*)\/\s*>$/u.exec(token[0]);
       assert(structural, `Whiston unreviewed narrative token: ${token[0].slice(0, 80)}`);
       const sourceAttributes = attributes(structural[2]);
@@ -97,7 +128,8 @@ function paragraphProjection(contents) {
     }
   }
   equal(consumed, contents.length, 'source token reader stopped early');
-  equal(label, null, 'citation label is not closed');
+  equal(excluded, null, 'excluded element is not closed');
+  equal(inline, [], 'inline formatting is not closed');
   return {raw, flat, spans, exclusions, markers, structures};
 }
 
@@ -179,19 +211,21 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
   const body = bodies[0][1], paragraphs = [], records = [], excludedBlocks = [];
   const counts = {bodyParagraphs: 0, narrativeParagraphs: 0, excludedHeadingParagraphs: 0, excludedFootnotes: 0,
     excludedCitationLabels: 0, excludedSourceNotes: 0, nieseMilestones: 0, structuralMarkers: 0};
-  const notes = [...body.matchAll(/<note\b([^>]*)>([\s\S]*?)<\/note\s*>/gu)];
+  const sourceParagraphs = [...body.matchAll(/<p\b([^>]*)>([\s\S]*?)<\/p\s*>/gu)];
+  const outsideParagraphs = body.replace(/<p\b[^>]*>[\s\S]*?<\/p\s*>/gu, '');
+  const notes = [...outsideParagraphs.matchAll(/<note\b([^>]*)>([\s\S]*?)<\/note\s*>/gu)];
   equal(notes.length, 1, 'source notice count differs');
   const noteText = decodeXML(notes[0][2]);
   equal(noteText.trim(), 'William Whiston (1737)', 'source notice differs');
   excludedBlocks.push({kind: 'source-note', text: noteText, sourceAttributes: attributes(notes[0][1])});
   counts.excludedSourceNotes++;
-  const sourceParagraphs = [...body.matchAll(/<p\b([^>]*)>([\s\S]*?)<\/p\s*>/gu)];
   for (const match of sourceParagraphs) {
     const sourceAttributes = attributes(match[1]), ordinal = counts.bodyParagraphs++;
     const projected = paragraphProjection(match[2]);
     const continuation = CONTINUATIONS.get(source.book)?.[sourceAttributes[XML_ID]];
     if (!projected.markers.length && !continuation) {
-      assert(!sourceAttributes[XML_ID] && /^(?:BOOK\b|CHAPTER\b|CONTAINING\b|Antiquities of the Jews -- Preface$)/iu.test(projected.raw.trim()),
+      assert((!sourceAttributes[XML_ID] || sourceAttributes.rend === 'whiston-chapter-heading')
+        && /^(?:BOOK\b|CHAPTER\b|CONTAINING\b|Antiquities of the Jews -- Preface$)/iu.test(projected.raw.trim()),
         'Whiston unreviewed heading');
       excludedBlocks.push({kind: 'heading', text: projected.raw, sourceAttributes, paragraphOrdinal: ordinal});
       counts.excludedHeadingParagraphs++;
@@ -200,26 +234,31 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
     const sourceId = sourceAttributes[XML_ID];
     assert(sourceId && !paragraphs.some(paragraph => paragraph.sourceId === sourceId), 'Whiston missing or duplicate paragraph identity');
     if (continuation) {
-      assert(!projected.markers.length && records.length && ordinal > 0 && ordinal + 1 < sourceParagraphs.length,
+      assert(records.length && ordinal > 0 && ordinal + 1 < sourceParagraphs.length,
         'Whiston continuation must follow an accepted citation');
+      if (continuation.firstMilestone) {
+        equal(projected.markers[0]?.section, continuation.firstMilestone, 'prefix continuation first milestone differs');
+        equal(continuation.firstMilestone, continuation.section + 1, 'prefix continuation citation differs');
+      } else equal(projected.markers, [], 'markerless continuation contains an invented milestone');
       equal([attributes(sourceParagraphs[ordinal - 1][1])[XML_ID], attributes(sourceParagraphs[ordinal + 1][1])[XML_ID],
         records.at(-1).section, paragraphProjection(sourceParagraphs[ordinal + 1][2]).markers[0]?.section],
-      [continuation.previousSourceId, continuation.nextSourceId, continuation.section, continuation.section + 1],
+      [continuation.previousSourceId, continuation.nextSourceId, continuation.section, continuation.nextSection ?? continuation.section + 1],
       'continuation is outside its accepted physical location');
     }
-    const prefix = projected.markers.length ? projected.flat.slice(0, projected.markers[0].runningTextOffset) : '';
+    const prefix = projected.markers.length && !continuation ? projected.flat.slice(0, projected.markers[0].runningTextOffset) : '';
     assert(/^[\s.]*$/u.test(prefix), 'Whiston running words precede the first marker');
     const intervals = [], sections = [];
-    const intervalMarkers = projected.markers.length ? projected.markers : [{section: continuation.section, runningTextOffset: 0}];
+    const intervalMarkers = [...(continuation ? [{section: continuation.section, runningTextOffset: 0}] : []), ...projected.markers];
     let recordJoin;
     for (let index = 0; index < intervalMarkers.length; index++) {
+      const continuing = Boolean(continuation && index === 0);
       const marker = intervalMarkers[index], flatStart = marker.runningTextOffset;
       const flatEnd = intervalMarkers[index + 1]?.runningTextOffset ?? projected.flat.length;
       const fragment = projected.flat.slice(flatStart, flatEnd), text = fragment.trim();
       assert(text.length, 'Whiston accepted citation interval is empty');
       const leading = fragment.match(/^\s*/u)[0], start = flatStart + leading.length, end = start + text.length;
       let record;
-      if (continuation) {
+      if (continuing) {
         record = records.at(-1);
         recordJoin = {kind: 'paragraph-separator', recordId: record.id, start: record.text.length,
           end: record.text.length + 2, text: '\n\n'};
@@ -229,12 +268,12 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
         record = expectedRecord(text, marker.section, sourceId, source, orderOffset + records.length);
         records.push(record);
       }
-      intervals.push({recordId: record.id, start, end, flatStart, ...(recordJoin ? {recordOffset: recordJoin.end} : {})});
+      intervals.push({recordId: record.id, start, end, flatStart, ...(continuing ? {recordOffset: recordJoin.end} : {})});
       sections.push({recordId: record.id, section: marker.section, leadingWhitespace: leading,
         trailingWhitespace: fragment.slice(leading.length + text.length), textSHA256: digest(text),
         flatStartCodePoints: codePoints(projected.flat.slice(0, flatStart)), flatEndCodePoints: codePoints(projected.flat.slice(0, flatEnd)),
         textStartCodePoints: codePoints(projected.flat.slice(0, start)), textEndCodePoints: codePoints(projected.flat.slice(0, end)),
-        ...(recordJoin ? {recordOffset: recordJoin.end} : {})});
+        ...(continuing ? {recordOffset: recordJoin.end} : {})});
     }
     const sourcePieces = expectedPieces(projected, intervals, new Map(records.map(record => [record.id, record])));
     paragraphs.push({sourceId, sourcePath: source.path, paragraphOrdinal: ordinal,
@@ -245,7 +284,8 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
       counts.continuationParagraphs = (counts.continuationParagraphs || 0) + 1;
     }
     counts.narrativeParagraphs++;
-    counts.excludedCitationLabels += projected.exclusions.length;
+    counts.excludedCitationLabels += projected.exclusions.filter(piece => piece.reason === 'citation-label').length;
+    counts.excludedFootnotes += projected.exclusions.filter(piece => piece.reason === 'whiston-footnote').length;
     counts.nieseMilestones += projected.markers.length;
     counts.structuralMarkers += projected.structures.length;
   }
@@ -260,7 +300,7 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
     coverage: coverage(paragraphs, records, [source.first, source.last], true), excludedBlocks, paragraphs}};
 }
 
-/** This gate accepts a per-book extraction report; IX/XI remain test-only sources. */
+/** This gate accepts a per-book extraction report; XI remains a test-only source. */
 export function validateWhistonSourceProjection(corpus, report, manifest, spec, root) {
   equal([manifest.id, manifest.work, manifest.language, manifest.edition, manifest.citationScheme, manifest.readerPath],
     [COLLECTION, 'antiquities', 'English', 'Whiston', 'niese', 'antiquities/'], 'collection identity differs');

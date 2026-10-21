@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Extract the accepted Whiston Antiquities Proem and Books I–V for search.
+"""Extract the accepted Whiston Antiquities Proem and Books I–X for search.
 
 Explicit English Niese milestones govern the projection.  XML files and their
-accepted boundaries are read only.  IX and XI are supported solely as focused
-extraction-test inputs; build_corpus never publishes those test-only books.
+accepted boundaries are read only.  XI is supported solely as a focused
+extraction-test input; build_corpus never publishes that test-only book.
 """
 
 from __future__ import annotations
@@ -31,15 +31,21 @@ SOURCE_CONTRACTS = {
     3: {"sha256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44", "range": [1, 322]},
     4: {"sha256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554", "range": [1, 331]},
     5: {"sha256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722", "range": [1, 362]},
+    6: {"sha256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb", "range": [1, 378]},
+    7: {"sha256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3", "range": [1, 394]},
+    8: {"sha256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289", "range": [1, 420]},
     9: {"sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36", "range": [1, 291]},
+    10: {"sha256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb", "range": [1, 281]},
     11: {"sha256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2", "range": [1, 347]},
 }
-ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 9: "IX", 11: "XI"}
-PUBLISHED_BOOKS = [1, 2, 3, 4, 5]
+ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X", 11: "XI"}
+PUBLISHED_BOOKS = list(range(1, 11))
 # This identity comes from its place between the accepted English milestones,
 # not from a parallel Latin label. No unreviewed markerless narrative is inferred.
 CONTINUATIONS = {4: {"english-book04-num276b": {"section": 276,
-    "previousSourceId": "english-book04-num276", "nextSourceId": "english-book04-num277"}}}
+    "previousSourceId": "english-book04-num276", "nextSourceId": "english-book04-num277"}},
+    8: {"english-book08-num255": {"section": 255, "previousSourceId": "english-book08-num251",
+        "nextSourceId": "english-book08-num263", "firstMilestone": 256, "nextSection": 263}}}
 TRANSPARENT_TAGS = {"hi", "emph", "seg", "ref", "q", "quote", "foreign", "s"}
 STRUCTURAL_TAGS = {"anchor", "lb", "pb", "cb"}
 
@@ -276,19 +282,25 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
         flat = flatten_paragraph(paragraph)
         join = None
         if continuation:
-            require(not markers and not flat["markers"] and records, "Whiston continuation must follow an existing citation")
+            require(records, "Whiston continuation must follow an existing citation")
+            if "firstMilestone" in continuation:
+                require(flat["markers"] and flat["markers"][0]["section"] == continuation["firstMilestone"]
+                        == continuation["section"] + 1, "Whiston prefix continuation has an unexpected first milestone")
+            else:
+                require(not markers and not flat["markers"], "Whiston continuation must have no invented milestone")
             require(number > 0 and number + 1 < len(source_paragraphs)
                     and source_paragraphs[number - 1].get(XML_ID) == continuation["previousSourceId"]
                     and source_paragraphs[number + 1].get(XML_ID) == continuation["nextSourceId"]
                     and records[-1]["section"] == continuation["section"], "Whiston continuation is outside its accepted physical location")
             next_markers = source_paragraphs[number + 1].findall(f".//{q('milestone')}[@unit='niese']")
-            require(next_markers and int(next_markers[0].get("n")) == continuation["section"] + 1,
+            require(next_markers and int(next_markers[0].get("n")) == continuation.get("nextSection", continuation["section"] + 1),
                     "Whiston continuation has an unexpected following milestone")
-        prefix = flat["flatText"][:flat["markers"][0]["flatOffset"]] if flat["markers"] else ""
+        prefix = flat["flatText"][:flat["markers"][0]["flatOffset"]] if flat["markers"] and not continuation else ""
         require(re.fullmatch(r"[\s.]*", prefix), "Narrative words occur before the first Whiston milestone")
         sections = []
-        interval_markers = flat["markers"] or [{"section": continuation["section"], "flatOffset": 0}]
+        interval_markers = ([{"section": continuation["section"], "flatOffset": 0}] if continuation else []) + flat["markers"]
         for index, marker in enumerate(interval_markers):
+            continuing = continuation is not None and index == 0
             start = marker["flatOffset"]
             end = interval_markers[index + 1]["flatOffset"] if index + 1 < len(interval_markers) else len(flat["flatText"])
             fragment = flat["flatText"][start:end]
@@ -298,7 +310,7 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
             text_start, text_end = start + left, start + left + len(text)
             section = marker["section"]
             reader_book = "preface" if preface else book_number
-            if continuation:
+            if continuing:
                 record = records[-1]
                 separator_start = utf16_length(record["text"])
                 join = {"kind": "paragraph-separator", "recordId": record["id"], "start": separator_start,
@@ -323,7 +335,7 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
             sections.append({"recordId": record["id"], "section": section, "flatStart": start, "flatEnd": end,
                              "textStart": text_start, "textEnd": text_end, "leadingWhitespace": fragment[:left],
                              "trailingWhitespace": fragment[left + len(text):], "textSHA256": sha(text)})
-            if join:
+            if continuing:
                 sections[-1]["recordOffset"] = join["end"]
         by_id = {record["id"]: record for record in records}
         pieces, restored = restore_pieces(flat, sections, by_id)
@@ -346,7 +358,7 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
                            "nieseMarkers": flat["markers"], "structuralMarkers": flat["structuralMarkers"],
                            "exactRestorationVerified": restored == flat["rawText"]})
         if continuation:
-            paragraphs[-1].update(continuationOf={"recordId": record["id"], **continuation}, recordJoin=join)
+            paragraphs[-1].update(continuationOf={"recordId": join["recordId"], **continuation}, recordJoin=join)
             counts["continuationParagraphs"] += 1
         counts.update(narrativeParagraphs=1, nieseMilestones=len(flat["markers"]),
                       structuralMarkers=len(flat["structuralMarkers"]),
@@ -422,10 +434,11 @@ def build_book_report(records: list[dict], documents: list[dict], book_number: i
     section_range = [1, SOURCE_CONTRACTS[book_number]["range"][1]]
     counts, paragraphs, coverage = aggregate_evidence(records, documents, {"completeRange": section_range})
     sources = [report["source"] for report in documents]
-    # Book I retains its original reviewed report bytes as well as its corpus.
-    # Its scope statement describes that per-book artifact, not the expanded catalog.
+    # Books I–V retain their original reviewed report bytes as well as their corpora.
+    # Historical scope statements describe those releases, not the expanded catalog.
     published_scope = ("Proem and Book I only. IX and XI are extraction-test inputs, not indexed pilot books."
-                       if book_number == 1 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–V; IX and XI remain test-only.")
+                       if book_number == 1 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–V; IX and XI remain test-only."
+                       if book_number <= 5 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–X; XI remains test-only.")
     book_report = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "Antiquities", "book": book_number, "language": "English",
                    "edition": EDITION, "unit": "Niese section", "citationScheme": "niese", "includesProem": book_number == 1},
                    "source": sources[-1], "additionalSources": sources[:-1], "sources": sources,
@@ -438,7 +451,8 @@ def build_book_report(records: list[dict], documents: list[dict], book_number: i
                    "publishedScope": published_scope},
                    "counts": dict(counts), "coverage": coverage, "documentReports": documents, "paragraphs": paragraphs}
     if book_number in CONTINUATIONS:
-        book_report["rules"]["paragraphContinuations"] = "The explicitly reviewed markerless paragraph continues its preceding Niese interval. Two display newlines preserve its paragraph boundary; recordJoin documents this separator and sourcePieces retain exact original-text spans."
+        book_report["rules"]["paragraphContinuations"] = ("The explicitly reviewed markerless paragraph continues its preceding Niese interval. Two display newlines preserve its paragraph boundary; recordJoin documents this separator and sourcePieces retain exact original-text spans."
+            if book_number == 4 else "The explicitly reviewed paragraph prefix continues VIII.255 until the existing milestone256. No Niese marker is invented. Two display newlines preserve the paragraph boundary; recordJoin documents this separator and sourcePieces retain exact original-text spans.")
     return book_report
 
 

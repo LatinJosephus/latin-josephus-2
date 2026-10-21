@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T00:32:55.132Z",
+  "generatedAt": "2026-10-21T02:12:13.896Z",
   "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -179,8 +179,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "88462bbc0ded54be9eb088099f45a9e77b1e85d1b3ae84740d249470e89fd1bc",
-      "bytes": 35747
+      "sha256": "2b2b7ea1f1d2330473dd0f643451e5728b50b1b3489c7a20ba1b5588c6c1471c",
+      "bytes": 38814
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -2069,9 +2069,9 @@
     "MixedFourWorkCollectionMatchingUnits": 8,
     "MixedFourWorkCollectionOccurrences": 8,
     "MixedFourWorkCollectionUnitIdentity": 8,
-    "MixedFourWorkCollectionEvidence": 29534,
-    "MixedFourWorkCollectionRecordIds": 29534,
-    "MixedFourWorkCollectionSections": 29534,
+    "MixedFourWorkCollectionEvidence": 33084,
+    "MixedFourWorkCollectionRecordIds": 33084,
+    "MixedFourWorkCollectionSections": 33084,
     "MixedFourWorkCollectionMatchingSections": 8,
     "MixedFourWorkCollectionSelectionOrder": 8,
     "MixedFourWorkCollectionUniqueRecordIdentity": 8,
@@ -2086,10 +2086,10 @@
     "BundleFetchCaching": 1,
     "InvalidSelectionRejected": 3,
     "MissingSelectedBookRejectsCompleteSearch": 1,
-    "InputUnchangedDuringQA": 120
+    "InputUnchangedDuringQA": 125
   },
   "totalQueries": 293134,
-  "assertions": 3845336,
+  "assertions": 3855991,
   "failedAssertions": 0,
   "examples": [
     {
@@ -7575,11 +7575,16 @@
         "antiquities-english-whiston:2",
         "antiquities-english-whiston:3",
         "antiquities-english-whiston:4",
-        "antiquities-english-whiston:5"
+        "antiquities-english-whiston:5",
+        "antiquities-english-whiston:6",
+        "antiquities-english-whiston:7",
+        "antiquities-english-whiston:8",
+        "antiquities-english-whiston:9",
+        "antiquities-english-whiston:10"
       ],
-      "matchingUnits": 533,
-      "matchingSections": 533,
-      "occurrences": 678
+      "matchingUnits": 537,
+      "matchingSections": 537,
+      "occurrences": 683
     },
     {
       "query": "sacerdot*",
@@ -7624,11 +7629,16 @@
         "antiquities-english-whiston:2",
         "antiquities-english-whiston:3",
         "antiquities-english-whiston:4",
-        "antiquities-english-whiston:5"
+        "antiquities-english-whiston:5",
+        "antiquities-english-whiston:6",
+        "antiquities-english-whiston:7",
+        "antiquities-english-whiston:8",
+        "antiquities-english-whiston:9",
+        "antiquities-english-whiston:10"
       ],
-      "matchingUnits": 35,
-      "matchingSections": 533,
-      "occurrences": 678
+      "matchingUnits": 37,
+      "matchingSections": 537,
+      "occurrences": 683
     },
     {
       "query": "NOT (zzzznonoccurrit)",
@@ -7673,10 +7683,15 @@
         "antiquities-english-whiston:2",
         "antiquities-english-whiston:3",
         "antiquities-english-whiston:4",
-        "antiquities-english-whiston:5"
+        "antiquities-english-whiston:5",
+        "antiquities-english-whiston:6",
+        "antiquities-english-whiston:7",
+        "antiquities-english-whiston:8",
+        "antiquities-english-whiston:9",
+        "antiquities-english-whiston:10"
       ],
-      "matchingUnits": 14160,
-      "matchingSections": 14160,
+      "matchingUnits": 15924,
+      "matchingSections": 15924,
       "occurrences": 0
     },
     {
@@ -7722,14 +7737,19 @@
         "antiquities-english-whiston:2",
         "antiquities-english-whiston:3",
         "antiquities-english-whiston:4",
-        "antiquities-english-whiston:5"
+        "antiquities-english-whiston:5",
+        "antiquities-english-whiston:6",
+        "antiquities-english-whiston:7",
+        "antiquities-english-whiston:8",
+        "antiquities-english-whiston:9",
+        "antiquities-english-whiston:10"
       ],
-      "matchingUnits": 39,
+      "matchingUnits": 44,
       "matchingSections": 0,
       "occurrences": 0
     }
   ],
-  "durationSeconds": 290.7,
+  "durationSeconds": 314.92,
   "limitations": [
     "Automated Node/Python acceptance, not browser or visual acceptance.",
     "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",
