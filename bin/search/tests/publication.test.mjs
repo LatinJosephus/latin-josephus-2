@@ -31,7 +31,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [49, 18062, 851426]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [54, 19834, 959245]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
@@ -41,9 +41,9 @@ test('search publication preserves current inputs and refuses stale or incomplet
     const antiquities = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-bamberg78');
     assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [20, 7283, 265023]);
     const whiston = baseline.catalog.collections.find(collection => collection.id === 'antiquities-english-whiston');
-    assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [15, 5604, 363119]);
-    assert.equal(result.sourceXML.length, 61);
-    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 16);
+    assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [20, 7376, 470938]);
+    assert.equal(result.sourceXML.length, 66);
+    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 21);
     assert.equal(result.assets, baseline.artifacts.length + 1);
     assert.equal(baseline.manifest.browserRelease.launcher, 'launch-v1.mjs');
     assert.equal(result.sourceXML.filter(source => /\/niese\/book-(?:1[1-9]|20)\.json$/u.test(source.path)).length, 10);
@@ -74,9 +74,9 @@ test('search publication preserves current inputs and refuses stale or incomplet
     }
   });
 
-  await t.test('Whiston I–XV rejects changed narrative or Proem source bytes', () => {
+  await t.test('Whiston I–XX rejects changed narrative or Proem source bytes', () => {
     for (const relative of ['assets/xml/antiquities/English/preface.xml',
-      ...Array.from({length: 15}, (_, i) => i + 1).map(number => `assets/xml/antiquities/English/book-${String(number).padStart(2, '0')}.xml`)]) {
+      ...Array.from({length: 20}, (_, i) => i + 1).map(number => `assets/xml/antiquities/English/book-${String(number).padStart(2, '0')}.xml`)]) {
       changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
         () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed|Whiston source/u));
     }
@@ -114,15 +114,21 @@ test('search publication preserves current inputs and refuses stale or incomplet
     });
   });
 
-  await t.test('the accepted CRLF Whiston Book XII keeps its fingerprint after LF checkout conversion', () => {
-    const relative = 'assets/xml/antiquities/English/book-12.xml', original = verifySearchAssets(fixture);
+  for (const [number, rawSHA256, normalizedSHA256] of [
+    [12, 'e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c', 'ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286'],
+    [17, '29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1', 'd6056846f61ae43003989a2d799501d5e9edb7c3b407d9292b3c89064df6a0ac'],
+    [18, 'db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d', 'ba1529509dddf72ec82a5eda63fb95f6d0f8d88dad87c69f5cf7a431536c63fa'],
+    [19, '9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129', 'e025279ffb304a08f2f960845c6dca1e09162188bffd44f541cd787ae0aaf094'],
+    [20, '229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e', '8f5437db04d4423b79db151603187f50400a9d41938f94394a8da744842af673'],
+  ]) await t.test(`accepted CRLF Whiston Book ${number} keeps its fingerprint after LF checkout conversion`, () => {
+    const relative = `assets/xml/antiquities/English/book-${number}.xml`, original = verifySearchAssets(fixture);
     const indexed = original.sourceXML.find(source => source.path === relative);
-    assert.equal(indexed.indexedSHA256, 'e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c');
+    assert.equal(indexed.indexedSHA256, rawSHA256);
     changed(relative, bytes => bytes.toString('utf8').replace(/\r\n/gu, '\n'), () => {
       const converted = verifySearchAssets(fixture);
       assert.equal(converted.publicationManifestSHA256, original.publicationManifestSHA256);
       const source = converted.sourceXML.find(item => item.path === relative);
-      assert.equal(source.normalizedSHA256, 'ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286');
+      assert.equal(source.normalizedSHA256, normalizedSHA256);
       assert.equal(source.worktreeSHA256, source.normalizedSHA256);
       assert.notEqual(source.worktreeSHA256, source.indexedSHA256);
     });

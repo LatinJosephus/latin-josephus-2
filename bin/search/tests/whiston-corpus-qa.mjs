@@ -1,8 +1,8 @@
-/** Independent acceptance for Whiston Antiquities Proem and Books I-XV.
+/** Independent acceptance for Whiston Antiquities Proem and Books I-XX.
  * Expected source text and tokens come from the separately fingerprinted
  * minidom witness, never from the production extractor or engine. Query
  * expectations use explicit trees, a sequential phrase scan, and a small
- * independent wildcard matcher. All fifteen books, including XI in its accepted physical order, are published.
+ * independent wildcard matcher. All twenty books, including XI in its accepted physical order, are published.
  */
 import assert from 'node:assert/strict';
 import {readFileSync, writeFileSync, mkdirSync} from 'node:fs';
@@ -28,7 +28,7 @@ for (let index = 0; index < args.length; index++) {
 const base = resolve(root, 'bin/search');
 const collectionId = 'antiquities-english-whiston';
 const bookId = `${collectionId}:1`;
-const expectedBooks = Array.from({length:15},(_,index)=>index+1);
+const expectedBooks = Array.from({length:20},(_,index)=>index+1);
 const expectedBookTotals = [
   {book:1,sections:346,tokens:21994}, {book:2,sections:349,tokens:23020},
   {book:3,sections:322,tokens:20955}, {book:4,sections:331,tokens:22900},
@@ -39,6 +39,9 @@ const expectedBookTotals = [
   {book:11,sections:347,tokens:20213}, {book:12,sections:434,tokens:25083},
   {book:13,sections:433,tokens:25616}, {book:14,sections:491,tokens:29186},
   {book:15,sections:425,tokens:26972},
+  {book:16,sections:404,tokens:23831}, {book:17,sections:355,tokens:23725},
+  {book:18,sections:379,tokens:24253}, {book:19,sections:366,tokens:21575},
+  {book:20,sections:268,tokens:14435},
 ];
 const acceptedPriorBookHashes = {
   "1": {
@@ -90,6 +93,31 @@ const acceptedPriorBookHashes = {
     "corpus": "030de30df76282de086c78fbcfbafed69b2623fa5dad4d92e2b342e3ae038903",
     "extractionReport": "1adf83a25272f7cef6ac661b05c42ac1036369961774099741e1e741c3b55e27",
     "bundle": "71995b7a437f1c2b0700a27bd1a91708519b35c831eb67d57ff6310eb6b530e1"
+  },
+  "11": {
+    "corpus": "abecea45451d3c3b16134b2baee8eb748cdf269b290c5d2b37b5ab6ee421debd",
+    "extractionReport": "676227b0565269bfbb1571e9968441a7a71d5feb129895610410f7feae5346f5",
+    "bundle": "f5d5e0e0f1ef20e72620bd4771671967c65d52c5ca7230858f66604a093d796e"
+  },
+  "12": {
+    "corpus": "383dc20706ae59faf9783d305c3308dca9d965c353173b9cb1f22bc3b82982c0",
+    "extractionReport": "8f31bd84d74217aeb4ef3442061dea6abf97f143bd2762c52a51061f4871870e",
+    "bundle": "b3ce84ed86f2fa9203141b8cb2dc1f42649c27b2180ba80b29d63dac8f4bb6f8"
+  },
+  "13": {
+    "corpus": "58d4c4b9bc50f18553039d18ff426b357aa055fcb5fc5fe9e332d983f673f9e6",
+    "extractionReport": "4f547d03aa6fc7a69d52787d3fafaa65a1246c5cbe5137c29dad7ecdfc9257a5",
+    "bundle": "ea530687801675be3ce020345f9fe08d4cec7c2049da03d596a955efccab8ba0"
+  },
+  "14": {
+    "corpus": "77faa2febc172b5268b92f3251eb81db97c28f995caec6b40eae3e44154eaad7",
+    "extractionReport": "cf7b8f9d4d3fe089fcca7d482f1fd3b957e0e42e0c35e164073056166658f041",
+    "bundle": "a6badb8aa0ebdc4db0d7223d2776aba2216969e58e756c4a6a53b86b98b71a83"
+  },
+  "15": {
+    "corpus": "8a9f38dc0227e78c28ee380df4132cbb7ba3effd69ef784bbb8f34f4e6b42a01",
+    "extractionReport": "9b3fa3b455af3df3141e6226c7da33a4a0b6dc903a40ce90678c74fb231211d3",
+    "bundle": "699f2ae17366f4adb7599b66c8fba68f98d34b12de10cc0f6f8e0f1992f39f7d"
   }
 };
 const destination = resolve(base, 'data', collectionId, 'qa-report.json');
@@ -244,7 +272,7 @@ function inspectRecords(records, expected, category) {
     for (const field of ['id', 'book', 'section', 'order', 'text', 'sourcePath', 'sourceId', 'sourceIds'])
       check(`${category}Source${field}`, record[field], row[field], context);
     check(`${category}Version`, [record.work, record.language, record.edition], ['antiquities', 'English', 'Whiston'], context);
-    check(`${category}Citation`, record.citation, {book: ({1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI',7:'VII',8:'VIII',9:'IX',10:'X',11:'XI',12:'XII',13:'XIII',14:'XIV',15:'XV'})[row.book], section: row.section, ...(row.proem ? {proem:true} : {})}, context);
+    check(`${category}Citation`, record.citation, {book: ({1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI',7:'VII',8:'VIII',9:'IX',10:'X',11:'XI',12:'XII',13:'XIII',14:'XIV',15:'XV',16:'XVI',17:'XVII',18:'XVIII',19:'XIX',20:'XX'})[row.book], section: row.section, ...(row.proem ? {proem:true} : {})}, context);
     check(`${category}ReaderLink`, record.readerLink, {path:'antiquities/', params:{book:row.readerBook, niese:row.section, english:'whiston'}}, context);
     const link = new URL(readerURL(record, 'https://latinjosephus.github.io/'));
     check(`${category}ReaderURL`, [link.pathname, link.searchParams.get('book'), link.searchParams.get('niese'), link.searchParams.get('english')],
@@ -301,6 +329,13 @@ function inspectProjection(report, files, records, category) {
   });
   check(`${category}TokenCount`, report.counts.runningWordTokens, expectedRows.reduce((sum,row) => sum + row.tokens.length,0));
   check(`${category}HeadingExclusions`, report.counts.excludedHeadingParagraphs, files.reduce((sum,file) => sum + file.evidence.excludedHeadings,0));
+  const headExclusions = files.flatMap(file => file.exclusions.filter(item => item.element === 'head'));
+  check(`${category}StructuralHeadingCount`, report.counts.excludedStructuralHeadings || 0, headExclusions.length);
+  const normalizedAttributes = attributes => Object.fromEntries(Object.entries(attributes).map(([name,value]) =>
+    [name.replace('{http://www.w3.org/XML/1998/namespace}','xml:'),value]));
+  check(`${category}StructuralHeadingEvidence`, report.documentReports.flatMap(document => document.excludedBlocks).filter(item => item.kind === 'structural-heading').map(item =>
+    ({element:item.element,text:item.text,attributes:normalizedAttributes(item.sourceAttributes),parentAttributes:normalizedAttributes(item.parentAttributes)})),
+    headExclusions.map(item => ({element:item.element,text:item.text,attributes:item.attributes,parentAttributes:item.parentAttributes})));
   check(`${category}LabelExclusions`, report.counts.excludedCitationLabels, files.reduce((sum,file) => sum + file.evidence.excludedLabels,0));
   check(`${category}FootnoteExclusions`, report.counts.excludedFootnotes, files.reduce((sum,file) => sum + file.exclusions.filter(e => e.kind === 'note' && e.sourceId).length,0));
   check(`${category}ContinuationCount`, report.counts.continuationParagraphs || 0, expectedRows.reduce((sum,row) => sum + (row.paragraphJoins?.length || 0),0));
@@ -421,7 +456,7 @@ async function main() {
     provenance:explicitReaderSHA ? 'explicit-argument' : 'observed-source-checkout',preservationDuringRunRequired:true,publicationInput:false};
   const catalogPath = preserve(resolve(base,'catalog.json'));
   const catalog = readJSON(catalogPath), config = catalog.collections.find(c => c.id === collectionId);
-  assert.ok(config,'Build the Whiston I-XV collection and catalog before running acceptance.');
+  assert.ok(config,'Build the Whiston I-XX collection and catalog before running acceptance.');
   const entries = catalog.books.filter(entry => entry.collectionId === collectionId);
   check('OnlyAcceptedBooksPublished',entries.map(entry => entry.number),expectedBooks);
   check('EnglishCollectionIdentity',[config.work,config.language,config.edition],['antiquities','English','Whiston']);
@@ -433,14 +468,14 @@ async function main() {
   const sourcePaths = Object.fromEntries(['preface',...expectedBooks.map(book=>`book-${String(book).padStart(2,'0')}`)]
     .map(stem => [stem,preserve(resolve(root,`assets/xml/antiquities/English/${stem}.xml`))]));
   const witness = JSON.parse(execFileSync(process.env.SEARCH_PYTHON || process.env.PYTHON || 'python3',[witnessPath,root],{encoding:'utf8',maxBuffer:128*1024*1024}));
-  check('IndependentCollectionTotals',witness.totals,{books:15,sections:5604,tokens:363119});
+  check('IndependentCollectionTotals',witness.totals,{books:20,sections:7376,tokens:470938});
   check('IndependentBookTotals',witness.bookTotals,expectedBookTotals);
   const corpus = readJSON(corpusPath), extraction = readJSON(extractionPath);
   inspectRecords(corpus,witness.rows,'Indexed');
   check('CollectionCorpusHash',config.corpusSHA256,digest(corpusPath));
   check('CollectionManifestHash',config.manifestSHA256,digest(manifestPath));
-  check('ExtractionTokens',extraction.counts.runningWordTokens,363119);
-  check('ExtractionSections',extraction.counts.sections,5604);
+  check('ExtractionTokens',extraction.counts.runningWordTokens,470938);
+  check('ExtractionSections',extraction.counts.sections,7376);
   check('ExtractionPublishedBooks',extraction.scope.books,expectedBooks);
   const oracle = makeOracle(witness.rows);
   const bookData = entries.map(entry => {
@@ -552,6 +587,11 @@ async function main() {
     {book:13,tree:phrase(['BY','what','means','the','nation','of','the','Jews'])},
     {book:14,tree:phrase(['WE','have','related','the','affairs','of','queen','Alexandra'])},
     {book:15,tree:phrase(['HOW','Sosius','and','Herod','took','Jerusalem','by','force'])},
+    {book:16,tree:phrase(['AS','king','Herod','was','very','zealous'])},
+    {book:17,tree:phrase(['WHEN','Antipater','had','thus','taken','off','his','brethren'])},
+    {book:18,tree:phrase(['NOW','Cyrenius','a','Roman','senator'])},
+    {book:19,tree:phrase(['NOW','this','Caius','did','not','demonstrate','his','madness'])},
+    {book:20,tree:phrase(['UPON','the','death','of','king','Agrippa'])},
   ];
   for (const {book,tree} of openings) {
     const data = bookData[book-1];
@@ -738,10 +778,38 @@ async function main() {
   const chapterMarkers=bookData[14].files[0].structural.filter(item=>item.kind==='chapter-milestone');
   check('XVAllChapterMarkersRetainedInSource',chapterMarkers.map(item=>Number(item.attributes.n)),Array.from({length:13},(_,i)=>i+1));
   check('XVChaptersDoNotCreateTextOrBarriers',bookData[14].engine.records.every(row=>!row.breakBefore&&!row.phraseBreaks?.length),true);
+  const finalChapterMarkers=[];
+  for(const [book,number] of [[16,16],[17,19],[18,21],[19,8],[20,20]]) {
+    const data=bookData[book-1],markers=data.files[0].structural.filter(item=>item.kind==='chapter-milestone');
+    check('FinalBooksCompleteChapterMilestones',markers.map(item=>Number(item.attributes.n)),Array.from({length:number},(_,i)=>i+1),{book});
+    check('FinalBooksNoChapterPhraseBarriers',data.engine.records.every(row=>!row.breakBefore&&!row.phraseBreaks?.length),true,{book});
+    check('FinalBooksNoParagraphContinuations',data.rows.some(row=>row.paragraphJoins?.length),false,{book});
+    finalChapterMarkers.push({book,markers});
+  }
+  const twentiethBook=bookData[19],finalExample=phrase(['the','brother','of','Jesus']);
+  for(const scope of ['section','book']) {
+    const result=await selectedSearch(finalExample,scope,false,'PublishedXXExample',print(finalExample),expectedBooks);
+    check('XXExampleUnique',result.occurrences,1,{scope});
+    check('XXExampleCitation',result.hitGroups[0].recordIds,[`${collectionId}-20-200`],{scope});
+    validateConcordance(result,oracle,oracle.evaluate(finalExample,scope),finalExample,catalog,'PublishedXXExampleCSV');
+    noteExample(print(finalExample),scope,result,'Whiston Book XX example, preserving the accepted section marker');
+  }
+  const xxHeading=twentiethBook.files[0].exclusions.find(item=>item.element==='head');
+  check('XXDistinctHeadElement',Boolean(xxHeading),true);
+  const headingPhrase=phrase(independentTokens(xxHeading.text).map(token=>token.term));
+  const headingResult=await selectedSearch(headingPhrase,'book',false,'XXExcludedHead',print(headingPhrase),[20]);
+  check('XXHeadingNotSearchableNarrative',headingResult.occurrences,0);
+  const nineteenthBook=bookData[18];
+  for(const section of [363,364]) {
+    const row=nineteenthBook.rows.find(row=>row.section===section),tree=phrase(row.tokens.slice(0,8).map(token=>token.term));
+    const result=await selectedSearch(tree,'section',false,'XIXSeparateFinalIntervals',print(tree),[19]);
+    check('XIX363364SeparateCitations',result.hitGroups.map(group=>group.recordIds),[[row.id]],{section});
+    validateConcordance(result,nineteenthBook.oracle,nineteenthBook.oracle.evaluate(tree,'section'),tree,catalog,'XIXFinalIntervalsCSV');
+  }
   check('NoUnpublishedFutureWitness',witness.testSources,[]);
   for(const [path,before] of checkedFiles)check('InputUnchangedDuringRun',digest(path),before,{path:relative(root,path)});
   const report={status:'PASS',generatedAt:new Date().toISOString(),independentVerifier:'bin/search/tests/whiston-corpus-qa.mjs',readerBaseline,
-    runtime:{node:process.version,...witness.runtime},source:{...witness.totals,uniqueLiteralVocabulary:oracle.vocabulary.length,proemSections:26,narrativeSections:5578,bookTotals:witness.bookTotals},
+    runtime:{node:process.version,...witness.runtime},source:{...witness.totals,uniqueLiteralVocabulary:oracle.vocabulary.length,proemSections:26,narrativeSections:7350,bookTotals:witness.bookTotals},
     sources:witness.sources,testSources:[],
     sourceCases:{restoredIX:{sections:59,range:[51,109],excludedInlineNotes:7,excludedRestoredHeadings:2},
       paragraphContinuations:[{book:4,section:276,sourceIds:['english-book04-num276','english-book04-num276b']},
@@ -750,6 +818,8 @@ async function main() {
       newParagraphContinuations:newContinuationCases,physicalXISeams:[[311,326],[342,312],[325,343]],
       ordinaryFormattingXII:twelfthBook.files[0].formatting.map(({section,text,attributes})=>({section,text,attributes,treatment:'Running text; not editorial addition'})),
       chapterMilestonesXV:chapterMarkers,
+      chapterMilestonesXVIThroughXX:finalChapterMarkers,excludedHeadXX:xxHeading,
+      separateXIXFinalIntervals:nineteenthBook.rows.filter(row=>[363,364].includes(row.section)).map(({section,text,sourceId})=>({section,text,sourceId})),
       preservedPriorBooks:Object.keys(acceptedPriorBookHashes).map(Number)},
     verifiedFiles:{corpus:evidence(corpusPath),catalog:evidence(catalogPath),engine:evidence(resolve(base,'engine.mjs')),
       collection:evidence(resolve(base,'collection.mjs')),concordance:evidence(resolve(base,'concordance.mjs')),uiUtils:evidence(resolve(base,'ui-utils.mjs')),
@@ -758,13 +828,13 @@ async function main() {
       testSources:[],
       books:bookData.map(book=>({book:book.entry.number,bundle:evidence(book.paths.bundle),corpus:evidence(book.paths.corpus),source:evidence(book.paths.source),
         ...(book.entry.number===1?{additionalSources:[evidence(sourcePaths.preface)]}:{}),extractionReport:evidence(book.paths.extractionReport)}))},
-    method:{source:'Independent minidom text-node projection from sixteen SHA-pinned XML files, all published inputs. Every source-to-record slice and exact paragraph restoration is checked, including the markerless IV.276 paragraph and the pre-milestone VIII.255 continuation with their explicit paragraph separators. The Book I-X corpora, extraction reports and search bundles remain byte-for-byte identical to the accepted prior release. Book XI keeps its actual physical order and does not invent numerical-order phrase adjacency. Prefix continuations in XII.147, XII.226 and XIV.237 retain their source IDs, exact offsets and paragraph joins; XIII and XIV anchors and XV chapter milestones contribute no extra searchable text or phrase barrier. Book IX restored text is published; its seven inline footnotes and restored headings are excluded. Book X transparent bold formatting preserves running text without inventing editorial additions.',
+    method:{source:'Independent minidom text-node projection from twenty-one SHA-pinned XML files, all published inputs. Every source-to-record slice and exact paragraph restoration is checked, including the markerless IV.276 paragraph and the pre-milestone VIII.255 continuation with their explicit paragraph separators. The Book I-XV corpora, extraction reports and search bundles remain byte-for-byte identical to the accepted prior release. Book XI keeps its actual physical order and does not invent numerical-order phrase adjacency. Prefix continuations in XII.147, XII.226 and XIV.237 retain their source IDs, exact offsets and paragraph joins; XIII, XIV and XVI anchors and XV-XX chapter milestones contribute no extra searchable text or phrase barrier. The separate Book XX head element is excluded and audited. XIX.363 and XIX.364 retain their separate explicit source identities. Book IX restored text is published; its seven inline footnotes and restored headings are excluded. Book X transparent bold formatting preserves running text without inventing editorial additions.',
       tokens:'Every indexed Unicode word and original UTF-16 offset independently scanned in Python and JavaScript and compared with each serialized book index.',
-      queries:'All literal vocabulary per book, one exact phrase per interval, every neighboring citation seam, all fourteen book boundaries, bounded wildcard and explicit Boolean fixtures. Expected ASTs and sequential phrase scans do not import production parsing/tokenization. Published Book IX footnote exclusions, phrases across excluded notes, restored English intervals and Book X transparent formatting have focused checks. Combined selections preserve distinct same-numbered sections and keep phrases and Boolean conditions inside their own book.',
+      queries:'All literal vocabulary per book, one exact phrase per interval, every neighboring citation seam, all nineteen book boundaries, bounded wildcard and explicit Boolean fixtures. Expected ASTs and sequential phrase scans do not import production parsing/tokenization. Published Book IX footnote exclusions, phrases across excluded notes, restored English intervals and Book X transparent formatting have focused checks. Combined selections preserve distinct same-numbered sections and keep phrases and Boolean conditions inside their own book.',
       language:'English-only and mixed English/Latin collection requests verify Latin-only spelling equivalence and separate Boolean scopes.',
       exports:'Concordance geometry, original context, reader parameters, source slices, source fingerprints, CSV decoding, negative-only units and zero-result summaries.'},
     counts,totalQueries,assertions,failedAssertions:0,examples,durationSeconds:Math.round((performance.now()-started)/100)/10,
-    limitations:['Coverage is the accepted Whiston Proem and Books I-XV XML only; Books XVI-XX are not indexed by this release.',
+    limitations:['Coverage is all accepted Whiston Antiquities Proem and Books I-XX XML; the search does not create a new edition or add other Whiston works.',
       'This source/query acceptance does not establish a new translation text or collate printed editions; browser interaction is verified separately.'],failures:[]};
   if(!smoke)writeFileSync(destination,JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify({status:smoke?'DEVELOPMENT_SMOKE_PASS':'PASS',source:report.source,totalQueries,assertions,durationSeconds:report.durationSeconds,report:smoke?null:relative(root,destination)},null,2));

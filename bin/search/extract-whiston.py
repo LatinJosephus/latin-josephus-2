@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract the accepted Whiston Antiquities Proem and Books I–XV for search.
+"""Extract the accepted Whiston Antiquities Proem and Books I–XX for search.
 
 Explicit English Niese milestones govern the projection.  XML files and their
 accepted boundaries are read only. Book XI retains its accepted physical
@@ -41,9 +41,14 @@ SOURCE_CONTRACTS = {
     13: {"sha256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9", "range": [1, 433]},
     14: {"sha256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1", "range": [1, 491]},
     15: {"sha256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579", "range": [1, 425]},
+    16: {"sha256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8", "range": [1, 404]},
+    17: {"sha256": "d6056846f61ae43003989a2d799501d5e9edb7c3b407d9292b3c89064df6a0ac", "range": [1, 355]},
+    18: {"sha256": "ba1529509dddf72ec82a5eda63fb95f6d0f8d88dad87c69f5cf7a431536c63fa", "range": [1, 379]},
+    19: {"sha256": "e025279ffb304a08f2f960845c6dca1e09162188bffd44f541cd787ae0aaf094", "range": [1, 366]},
+    20: {"sha256": "8f5437db04d4423b79db151603187f50400a9d41938f94394a8da744842af673", "range": [1, 268]},
 }
-ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X", 11: "XI", 12: "XII", 13: "XIII", 14: "XIV", 15: "XV"}
-PUBLISHED_BOOKS = list(range(1, 16))
+ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X", 11: "XI", 12: "XII", 13: "XIII", 14: "XIV", 15: "XV", 16: "XVI", 17: "XVII", 18: "XVIII", 19: "XIX", 20: "XX"}
+PUBLISHED_BOOKS = list(range(1, 21))
 # This identity comes from its place between the accepted English milestones,
 # not from a parallel Latin label. No unreviewed markerless narrative is inferred.
 CONTINUATIONS = {4: {"english-book04-num276b": {"section": 276,
@@ -59,6 +64,99 @@ CONTINUATIONS = {4: {"english-book04-num276b": {"section": 276,
 CHAPTER_MILESTONES = {15: [(f"english-book15-num{paragraph}", str(chapter)) for chapter, paragraph in
     [(1, 1), (2, 11), (3, 39), (4, 88), (5, 106), (6, 121), (7, 121),
      (8, 161), (9, 194), (10, 213), (11, 299), (12, 326), (13, 380)]]}
+
+CHAPTER_MILESTONES.update({16: [('english-book16-num1', '1'),
+      ('english-book16-num12', '2'),
+      ('english-book16-num16', '3'),
+      ('english-book16-num27', '4'),
+      ('english-book16-num58', '5'),
+      ('english-book16-num58', '6'),
+      ('english-book16-num66', '7'),
+      ('english-book16-num73', '8'),
+      ('english-book16-num104', '9'),
+      ('english-book16-num136', '10'),
+      ('english-book16-num162', '11'),
+      ('english-book16-num179', '12'),
+      ('english-book16-num261', '13'),
+      ('english-book16-num271', '14'),
+      ('english-book16-num271', '15'),
+      ('english-book16-num286', '16')],
+ 17: [('english-book17-num1', '1'),
+      ('english-book17-num12', '2'),
+      ('english-book17-num32', '3'),
+      ('english-book17-num46', '4'),
+      ('english-book17-num52', '5'),
+      ('english-book17-num61', '6'),
+      ('english-book17-num61', '7'),
+      ('english-book17-num83', '8'),
+      ('english-book17-num131', '9'),
+      ('english-book17-num146', '10'),
+      ('english-book17-num182', '11'),
+      ('english-book17-num188', '12'),
+      ('english-book17-num188', '13'),
+      ('english-book17-num193', '14'),
+      ('english-book17-num196', '15'),
+      ('english-book17-num206', '16'),
+      ('english-book17-num213', '17'),
+      ('english-book17-num250', '18'),
+      ('english-book17-num299', '19')],
+ 18: [('english-book18-num1', '1'),
+      ('english-book18-num1', '2'),
+      ('english-book18-num1', '3'),
+      ('english-book18-num1', '4'),
+      ('english-book18-num11', '5'),
+      ('english-book18-num26', '6'),
+      ('english-book18-num29', '7'),
+      ('english-book18-num29', '8'),
+      ('english-book18-num55', '9'),
+      ('english-book18-num65', '10'),
+      ('english-book18-num88', '11'),
+      ('english-book18-num88', '12'),
+      ('english-book18-num90', '13'),
+      ('english-book18-num96', '14'),
+      ('english-book18-num106', '15'),
+      ('english-book18-num130', '16'),
+      ('english-book18-num240', '17'),
+      ('english-book18-num257', '18'),
+      ('english-book18-num257', '19'),
+      ('english-book18-num261', '20'),
+      ('english-book18-num310', '21')],
+ 19: [('english-book19-num1', '1'),
+      ('english-book19-num162', '2'),
+      ('english-book19-num236', '3'),
+      ('english-book19-num274', '4'),
+      ('english-book19-num292', '5'),
+      ('english-book19-num299', '6'),
+      ('english-book19-num326', '7'),
+      ('english-book19-num335', '8')],
+ 20: [('english-book20-num1', '1'),
+      ('english-book20-num1', '2'),
+      ('english-book20-num1', '3'),
+      ('english-book20-num10', '4'),
+      ('english-book20-num17', '5'),
+      ('english-book20-num49', '6'),
+      ('english-book20-num100', '7'),
+      ('english-book20-num100', '8'),
+      ('english-book20-num105', '9'),
+      ('english-book20-num118', '10'),
+      ('english-book20-num125', '11'),
+      ('english-book20-num134', '12'),
+      ('english-book20-num137', '13'),
+      ('english-book20-num148', '14'),
+      ('english-book20-num167', '15'),
+      ('english-book20-num173', '16'),
+      ('english-book20-num182', '17'),
+      ('english-book20-num189', '18'),
+      ('english-book20-num197', '19'),
+      ('english-book20-num215', '20')]})
+STRUCTURAL_HEADINGS = {20: [{'kind': 'structural-heading',
+       'element': 'head',
+       'text': 'CONTAINING THE INTERVAL OF TWENTY-TWO YEARS. FROM FADUS THE PROCURATOR TO FLORUS.',
+       'sourceAttributes': {'sameAs': '#latin-book20-chapter1-head'},
+       'parentAttributes': {'n': '1',
+                            'sameAs': '#latin-book20-chapter1',
+                            'type': 'chapter',
+                            '{http://www.w3.org/XML/1998/namespace}id': 'english-book20-chapter1'}}]}
 TRANSPARENT_TAGS = {"hi", "emph", "seg", "ref", "q", "quote", "foreign", "s"}
 STRUCTURAL_TAGS = {"anchor", "lb", "pb", "cb"}
 
@@ -245,11 +343,12 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
     bodies = root.findall(f".//{q('body')}")
     require(len(bodies) == 1, "Whiston source needs exactly one body")
     body = bodies[0]
-    allowed = {q(tag) for tag in {"body", "div1", "div2", "p", "note", "num", "milestone"}
+    allowed = {q(tag) for tag in {"body", "div1", "div2", "p", "head", "note", "num", "milestone"}
                | STRUCTURAL_TAGS | TRANSPARENT_TAGS}
     require(all(element.tag in allowed for element in body.iter()), "Unreviewed Whiston body element")
     parents = {child: parent for parent in body.iter() for child in parent}
     containers = {q("body"), q("div1"), q("div2")}
+    structural_headings = []
     for element in body.iter():
         parent = parents.get(element)
         if element.tag in containers:
@@ -259,12 +358,20 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
                     "Unclassified tail text outside Whiston paragraphs")
         elif element.tag == q("p"):
             require(parent.tag in containers, "Whiston paragraph is outside a reviewed division")
+        elif element.tag == q("head"):
+            require(parent.tag == q("div2") and parent[0] is element and not len(element),
+                    "Whiston structural heading is outside its accepted location or contains markup")
+            structural_headings.append({"kind": "structural-heading", "element": "head",
+                                        "text": element.text or "", "sourceAttributes": dict(element.attrib),
+                                        "parentAttributes": dict(parent.attrib)})
         else:
             ancestor = parent
             while ancestor is not None and ancestor.tag != q("p"):
                 ancestor = parents.get(ancestor)
             require(ancestor is not None or (element.tag == q("note") and parent is body),
                     "Unclassified Whiston inline element outside a paragraph")
+    require(structural_headings == STRUCTURAL_HEADINGS.get(book_number, []),
+            "Whiston structural headings differ from the accepted source")
     records, paragraphs, excluded_blocks, source_words, source_content = [], [], [], [], []
     raw_paragraphs, restored_paragraphs = [], []
     source_ids = set()
@@ -277,6 +384,9 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
             excluded_blocks.append({"kind": "source-note", "text": "".join(element.itertext()),
                                     "sourceAttributes": dict(element.attrib)})
             counts["excludedSourceNotes"] += 1
+    if structural_headings:
+        excluded_blocks.extend(structural_headings)
+        counts["excludedStructuralHeadings"] = len(structural_headings)
     source_paragraphs = body.findall(f".//{q('p')}")
     for number, paragraph in enumerate(source_paragraphs):
         require(not paragraph.findall(f".//{q('p')}"), "Nested Whiston paragraphs are unreviewed")
@@ -456,12 +566,13 @@ def build_book_report(records: list[dict], documents: list[dict], book_number: i
     section_range = [1, SOURCE_CONTRACTS[book_number]["range"][1]]
     counts, paragraphs, coverage = aggregate_evidence(records, documents, {"completeRange": section_range})
     sources = [report["source"] for report in documents]
-    # Books I–X retain their original reviewed report bytes as well as their corpora.
+    # Books I–XV retain their original reviewed report bytes as well as their corpora.
     # Historical scope statements describe those releases, not the expanded catalog.
     published_scope = ("Proem and Book I only. IX and XI are extraction-test inputs, not indexed pilot books."
                        if book_number == 1 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–V; IX and XI remain test-only."
                        if book_number <= 5 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–X; XI remains test-only."
-                       if book_number <= 10 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–XV.")
+                       if book_number <= 10 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–XV."
+                       if book_number <= 15 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–XX.")
     book_report = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "Antiquities", "book": book_number, "language": "English",
                    "edition": EDITION, "unit": "Niese section", "citationScheme": "niese", "includesProem": book_number == 1},
                    "source": sources[-1], "additionalSources": sources[:-1], "sources": sources,

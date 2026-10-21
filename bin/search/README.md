@@ -13,15 +13,15 @@ This directory contains the source and verification tools for the main site's
   Niese identities, two separately labelled Bellum insertions, and 265,023 word tokens. Book I includes the separately
   transmitted Proem's 26 units and 986 words.
 
-- **Whiston English *Antiquities*, Proem and Books I–XV:** 5,604 Niese
-  sections and 363,119 word tokens. The Proem accounts for 26 sections and
+- **Whiston English *Antiquities*, Proem and Books I–XX:** 7,376 Niese
+  sections and 470,938 word tokens. The Proem accounts for 26 sections and
   1,646 tokens; Book I’s narrative supplies 320 sections and 20,348 tokens.
-  Books XI–XV add 2,130 sections and 127,070 word tokens to the accepted I–X search.
+  Books XVI–XX add 1,772 sections and 107,819 word tokens to the accepted I–XV search.
 
-Together these comprise **49 book editions, 18,054 citation units, and 851,426
-word tokens**. The indexes contain 18,062 physical records because four Bamberg
+Together these comprise **54 book editions, 19,826 citation units, and 959,245
+word tokens**. The indexes contain 19,834 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
-Whiston Books XVI–XX and Greek editions are not indexed. Bamberg Latin Antiquities
+The English Antiquities is complete; Greek editions are not indexed. Bamberg Latin Antiquities
 III.240 and VII.69–99 retain their citations and the source's explicit omissions.
 X.108 retains an empty interval between its citation label and the next Niese
 marker, without an omission tag. IX.51–109 are absent from the accepted source;
@@ -199,7 +199,7 @@ and Contra Apionem I cannot be confused with Bellum I. The bare page retains **B
 books** as its default. Choose **De excidio Hierosolymitano** for its five books,
 **Contra Apionem** for its two books, **Antiquities I–XX, including Proem** for
 all twenty Bamberg Latin Antiquities books, **Whiston** for the English Proem
-and Books I–XV, or **All works** to search all five collections.
+and Books I–XX, or **All works** to search all five collections.
 Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
 use `antiquities/?book=1`.
 
@@ -526,10 +526,10 @@ node bin/search/check-assets.mjs --site _site
 
 When publishing already committed exports from a CRLF XML checkout, begin with
 `check-assets.mjs` and `bin/cibuild`; reserve regeneration for the LF checkout.
-The accepted Whiston Book XII Git blob itself contains CRLF. The build permits
-that one file only with its pinned raw SHA-256 and retains those original bytes
-in extraction provenance. It does not rewrite the XML. Publication checks accept
-its LF representation through the same explicit CRLF-to-LF source comparison
+The accepted Whiston Book XII and XVII–XX Git blobs themselves contain CRLF.
+The build permits those five files only with their pinned raw SHA-256 values
+and retains their original bytes in extraction provenance. It does not rewrite
+the XML. Publication checks accept their LF representations through the same explicit CRLF-to-LF source comparison
 used for the other indexed files; substantive changes still invalidate the index.
 
 The final check verifies the generated page, search assets, and indexed XML.
@@ -820,11 +820,11 @@ submission, pagination, copying links, and navigation into the reader before
 publication review is complete.
 
 
-## Whiston English I–XV and browser release consistency
+## Whiston English I–XX and browser release consistency
 
 The English adapter (`extract-whiston.py`) uses explicit `milestone unit="niese"`
 boundaries in the accepted English `preface.xml` and `book-01.xml` through
-`book-15.xml`. Printed
+`book-20.xml`. Printed
 labels, titles and source notes are excluded; inline narrative words and all
 punctuation after the controlling milestone are retained. Every raw source
 paragraph is reconstructible from UTF-16 source slices and recorded exclusions.
@@ -836,8 +836,8 @@ XML bytes. `tests/whiston-source-witness.py` independently walks text nodes with
 minidom; `tests/whiston-corpus-qa.mjs` checks every indexed word, every interval,
 citation seams, cross-book isolation, representative Boolean/wildcard queries,
 links and CSV. Book IX's seven inline footnotes are excluded annotations;
-their anchors do not interrupt the consecutive running text. All sixteen English
-XML files are indexed inputs, among 61 indexed publication inputs overall.
+their anchors do not interrupt the consecutive running text. All twenty-one English
+XML files are indexed inputs, among 66 indexed publication inputs overall.
 No source or reader correction is part of this search release.
 
 | Whiston book | Niese sections | Word tokens |
@@ -857,7 +857,12 @@ No source or reader correction is part of this search release.
 | XIII | 433 | 25,616 |
 | XIV | 491 | 29,186 |
 | XV | 425 | 26,972 |
-| Total | 5,604 | 363,119 |
+| XVI | 404 | 23,831 |
+| XVII | 355 | 23,725 |
+| XVIII | 379 | 24,253 |
+| XIX | 366 | 21,575 |
+| XX | 268 | 14,435 |
+| Total | 7,376 | 470,938 |
 
 In IV.276, the markerless continuation paragraph `english-book04-num276b`
 belongs to the same citation as `english-book04-num276`. Their running text
@@ -897,7 +902,18 @@ IV.276 and VIII.255 do. Book XII’s ordinary bold spans remain narrative words,
 not editorial additions. Book XV’s thirteen empty chapter milestones retain
 their structural provenance without becoming citation markers or phrase gaps.
 
-The I–XV release preserves the accepted I–X bundles, corpora and per-book
+Books XVI–XX have complete ascending Niese sequences, with no new markerless
+continuations or inline footnotes. Their 282 narrative paragraphs add 1,772
+sections and 107,819 tokens. The complete English source has 1,449 narrative
+paragraphs. Both XIX.363 and XIX.364 have explicit accepted markers and retain
+their own source text; search introduces no new segmentation decisions.
+The final five books' empty chapter milestones (16, 19, 21, 8, and 20,
+respectively) are structural evidence, not phrase barriers. Book XX's separate
+`<head sameAs="#latin-book20-chapter1-head">` is an excluded summary heading.
+The new example `"the brother of Jesus"` finds XX.200. With all English books
+selected, `jews` yields 612 occurrences in 544 Niese sections.
+
+The I–XX release preserves the accepted I–XV bundles, corpora and per-book
 extraction reports, together with all 34 Latin books. Current coverage in the
 loaded interface is taken from the catalog; CSV source metadata identifies the
 selected books and their source fingerprints.

@@ -30,17 +30,18 @@ function verify(input, root = repository) {
     input.manifest.books.find(book => book.number === input.number), root);
 }
 
-test('Whiston source gate verifies all 5604 actual intervals and their reversible source offsets', () => {
+test('Whiston source gate verifies all 7376 actual intervals and their reversible source offsets', () => {
   const expected = [[346, 21994, 83], [349, 23020, 76], [322, 20955, 79], [331, 22900, 88], [362, 23396, 98],
     [378, 28422, 83], [394, 28285, 76], [420, 29968, 85], [291, 19074, 54], [281, 18035, 52],
-    [347, 20213, 57], [434, 25083, 71], [433, 25616, 87], [491, 29186, 112], [425, 26972, 66]];
+    [347, 20213, 57], [434, 25083, 71], [433, 25616, 87], [491, 29186, 112], [425, 26972, 66],
+    [404, 23831, 61], [355, 23725, 61], [379, 24253, 57], [366, 21575, 52], [268, 14435, 51]];
   for (const [index, [sections, tokens, restoredParagraphs]] of expected.entries()) {
     assert.deepEqual(verify(fresh(index + 1)), {status: 'PASS', sections, tokens, sourceDocuments: index ? 1 : 2, restoredParagraphs});
   }
 });
 
 test('Whiston source gate validates text and book-specific reader metadata in every newly added book', async t => {
-  for (const number of [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) await t.test(`Book ${number}`, () => {
+  for (const number of [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) await t.test(`Book ${number}`, () => {
     const input = fresh(number);
     input.corpus[0].text += ' Unreviewed words.';
     assert.throws(() => verify(input), /record text, source identity, reader metadata or phrase boundary differs/u);
@@ -104,9 +105,9 @@ test('Whiston source gate rejects inconsistent source ledgers even when records 
 });
 
 test('Whiston source gate refuses unreviewed books and unapproved source paths', async t => {
-  await t.test('unreviewed Book XVI cannot become published scope', () => {
+  await t.test('nonexistent Book XXI cannot become published scope', () => {
     const input = fresh();
-    input.manifest.books.push({...input.manifest.books[0], number: 16});
+    input.manifest.books.push({...input.manifest.books[0], number: 21});
     assert.throws(() => verify(input), /collection includes an unreviewed book/u);
   });
   await t.test('Latin source cannot be substituted for Whiston', () => {
@@ -298,6 +299,56 @@ test('Whiston XII bold epithets are searchable ordinary text and XV chapter mark
   });
 });
 
+test('Whiston XVI–XX chapter milestones retain evidence without false phrase boundaries', async t => {
+  for (const [number, chapterCount, structuralCount] of [[16, 16, 20], [17, 19, 19], [18, 21, 21], [19, 8, 8], [20, 20, 20]]) {
+    const original = books.get(number);
+    assert.equal(original.report.counts.structuralMarkers, structuralCount);
+    assert.equal(original.report.paragraphs.flatMap(paragraph => paragraph.structuralMarkers)
+      .filter(marker => marker.kind === 'milestone' && marker.sourceAttributes.unit === 'chapter').length, chapterCount);
+    assert.ok(original.corpus.every(record => !record.breakBefore && record.phraseBreaks.length === 0));
+    await t.test(`Book ${number} altered chapter evidence is rejected`, () => {
+      const input = fresh(number);
+      const paragraph = input.report.documentReports[0].paragraphs.find(p => p.structuralMarkers.some(m => m.kind === 'milestone'));
+      paragraph.structuralMarkers.find(marker => marker.kind === 'milestone').sourceAttributes.unit = 'niese';
+      assert.throws(() => verify(input), /Whiston/u);
+    });
+  }
+});
+
+test('Whiston XX excludes its exact book-summary head and verifies its audit evidence', async t => {
+  const original = books.get(20);
+  const heading = original.report.documentReports[0].excludedBlocks.find(item => item.kind === 'structural-heading');
+  assert.equal(heading.text, 'CONTAINING THE INTERVAL OF TWENTY-TWO YEARS. FROM FADUS THE PROCURATOR TO FLORUS.');
+  assert.deepEqual(heading.sourceAttributes, {sameAs: '#latin-book20-chapter1-head'});
+  assert.equal(heading.parentAttributes['{http://www.w3.org/XML/1998/namespace}id'], 'english-book20-chapter1');
+  assert.equal(original.report.counts.excludedStructuralHeadings, 1);
+  assert.ok(!original.corpus.some(record => record.text.includes(heading.text)));
+  for (const mode of ['missing', 'text', 'parent', 'included-in-record']) await t.test(mode, () => {
+    const input = fresh(20), blocks = input.report.documentReports[0].excludedBlocks;
+    const item = blocks.find(block => block.kind === 'structural-heading');
+    if (mode === 'missing') blocks.splice(blocks.indexOf(item), 1);
+    else if (mode === 'text') item.text += ' changed';
+    else if (mode === 'parent') item.parentAttributes.sameAs = '#another-parent';
+    else input.corpus[0].text = heading.text + input.corpus[0].text;
+    assert.throws(() => verify(input), /Whiston/u);
+  });
+});
+
+test('Whiston XIX.363–364 use separate canonical identities and remain adjacent for whole-book phrases', () => {
+  const records = books.get(19).corpus;
+  const a = records.find(record => record.section === 363), b = records.find(record => record.section === 364);
+  assert.ok(a.text.startsWith('Accordingly he sent Cuspins Fadus'));
+  assert.ok(b.text.startsWith('But he determined, in the first place,'));
+  assert.equal(a.sourceId, b.sourceId);
+  assert.deepEqual(b.readerLink.params, {book: 19, niese: 364, english: 'whiston'});
+  const engine = createEngine(buildBundle(records, lunr), lunr);
+  assert.equal(engine.search('"into his kingdom But he determined"', {scope: 'section'}).matchingUnits, 0);
+  const joined = engine.search('"into his kingdom But he determined"', {scope: 'book'});
+  assert.equal(joined.matchingUnits, 1);
+  assert.equal(joined.occurrences, 1);
+  assert.deepEqual(joined.hitGroups.flatMap(group => group.recordIds), [a.id, b.id]);
+});
+
 test('Whiston source gate accepts CRLF equivalence but refuses actual XML changes', async t => {
   const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'latin-josephus-whiston-source-'));
   t.after(() => fs.rmSync(fixture, {recursive: true, force: true}));
@@ -307,20 +358,25 @@ test('Whiston source gate accepts CRLF equivalence but refuses actual XML change
     fs.mkdirSync(path.dirname(filename), {recursive: true});
     fs.copyFileSync(path.join(repository, relative), filename);
   }
-  await t.test('all sixteen indexed files may have Windows line endings', () => {
-    assert.equal(sourcePaths.length, 16);
+  await t.test('all twenty-one indexed files may have Windows line endings', () => {
+    assert.equal(sourcePaths.length, 21);
     for (const relative of sourcePaths) {
       const filename = path.join(fixture, relative);
       fs.writeFileSync(filename, fs.readFileSync(filename, 'utf8').replace(/\r?\n/gu, '\r\n'));
     }
     for (const number of manifest.books.map(book => book.number)) assert.equal(verify(fresh(number), fixture).status, 'PASS');
   });
-  await t.test('Book XII retains accepted raw CRLF provenance while an LF checkout projects identically', () => {
-    const input = fresh(12), relative = manifest.books.find(book => book.number === 12).source;
-    assert.deepEqual(input.report.source, {path: relative, bytes: 158411,
-      sha256: 'e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c'});
-    assert.equal(input.report.documentReports[0].sourceContract.normalizedSHA256,
-      'ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286');
+  for (const [number, bytes, sha256, normalizedSHA256] of [
+    [12, 158411, 'e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c', 'ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286'],
+    [17, 148192, '29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1', 'd6056846f61ae43003989a2d799501d5e9edb7c3b407d9292b3c89064df6a0ac'],
+    [18, 150720, 'db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d', 'ba1529509dddf72ec82a5eda63fb95f6d0f8d88dad87c69f5cf7a431536c63fa'],
+    [19, 136009, '9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129', 'e025279ffb304a08f2f960845c6dca1e09162188bffd44f541cd787ae0aaf094'],
+    [20, 94225, '229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e', '8f5437db04d4423b79db151603187f50400a9d41938f94394a8da744842af673'],
+
+  ]) await t.test(`Book ${number} retains accepted raw CRLF provenance while an LF checkout projects identically`, () => {
+    const input = fresh(number), relative = manifest.books.find(book => book.number === number).source;
+    assert.deepEqual(input.report.source, {path: relative, bytes, sha256});
+    assert.equal(input.report.documentReports[0].sourceContract.normalizedSHA256, normalizedSHA256);
     const filename = path.join(fixture, relative), original = fs.readFileSync(filename);
     const normalized = Buffer.from(original.toString('latin1').replace(/\r\n/gu, '\n'), 'latin1');
     assert.notEqual(normalized.length, original.length);

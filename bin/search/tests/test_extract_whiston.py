@@ -21,7 +21,8 @@ XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 ORDER_STARTS = {"preface": 0, "book-01": 26, "book-02": 346, "book-03": 695,
                 "book-04": 1017, "book-05": 1348, "book-06": 1710, "book-07": 2088,
                 "book-08": 2482, "book-09": 2902, "book-10": 3193, "book-11": 3474,
-                "book-12": 3821, "book-13": 4255, "book-14": 4688, "book-15": 5179}
+                "book-12": 3821, "book-13": 4255, "book-14": 4688, "book-15": 5179, "book-16": 5604, "book-17": 6008,
+                "book-18": 6363, "book-19": 6742, "book-20": 7108}
 PRIOR_ARTIFACT_HASHES = {
     "book-01.corpus.json": "5d94451f1363230e0578d995ece458dd8a4b40e56064487f1362194de21404f0",
     "book-01.extraction-report.json": "5ff96ccfd1a08a6abdc3a37e6e832db53db7d9f9a7e12c6eb02bfee6130e53a9",
@@ -43,6 +44,16 @@ PRIOR_ARTIFACT_HASHES = {
     "book-09.extraction-report.json": "3b560d3b506d3d868730d6baf461c086f12ca7bdedb16054d279645915444806",
     "book-10.corpus.json": "030de30df76282de086c78fbcfbafed69b2623fa5dad4d92e2b342e3ae038903",
     "book-10.extraction-report.json": "1adf83a25272f7cef6ac661b05c42ac1036369961774099741e1e741c3b55e27",
+    "book-11.corpus.json": "abecea45451d3c3b16134b2baee8eb748cdf269b290c5d2b37b5ab6ee421debd",
+    "book-11.extraction-report.json": "676227b0565269bfbb1571e9968441a7a71d5feb129895610410f7feae5346f5",
+    "book-12.corpus.json": "383dc20706ae59faf9783d305c3308dca9d965c353173b9cb1f22bc3b82982c0",
+    "book-12.extraction-report.json": "8f31bd84d74217aeb4ef3442061dea6abf97f143bd2762c52a51061f4871870e",
+    "book-13.corpus.json": "58d4c4b9bc50f18553039d18ff426b357aa055fcb5fc5fe9e332d983f673f9e6",
+    "book-13.extraction-report.json": "4f547d03aa6fc7a69d52787d3fafaa65a1246c5cbe5137c29dad7ecdfc9257a5",
+    "book-14.corpus.json": "77faa2febc172b5268b92f3251eb81db97c28f995caec6b40eae3e44154eaad7",
+    "book-14.extraction-report.json": "cf7b8f9d4d3fe089fcca7d482f1fd3b957e0e42e0c35e164073056166658f041",
+    "book-15.corpus.json": "8a9f38dc0227e78c28ee380df4132cbb7ba3effd69ef784bbb8f34f4e6b42a01",
+    "book-15.extraction-report.json": "9b3fa3b455af3df3141e6226c7da33a4a0b6dc903a40ce90678c74fb231211d3"
 }
 
 
@@ -74,7 +85,7 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
                                                        preface=name == "preface", order_offset=ORDER_STARTS[name])
                          for name, data in cls.sources.items()}
         cls.pilot = cls.documents["preface"][0] + cls.documents["book-01"][0]
-        cls.collection = cls.pilot + [record for book in range(2, 16) for record in cls.documents[f"book-{book:02}"][0]]
+        cls.collection = cls.pilot + [record for book in range(2, 21) for record in cls.documents[f"book-{book:02}"][0]]
 
     def test_reviewed_pilot_has_346_intervals_and_21994_tokens(self):
         self.assertEqual([r["section"] for r in self.pilot], list(range(1, 347)))
@@ -88,18 +99,21 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
                                "book-08": (420, 29968), "book-09": (291, 19074),
                                "book-10": (281, 18035), "book-11": (347, 20213),
                                "book-12": (434, 25083), "book-13": (433, 25616),
-                               "book-14": (491, 29186), "book-15": (425, 26972)}.items():
+                               "book-14": (491, 29186), "book-15": (425, 26972),
+                               "book-16": (404, 23831), "book-17": (355, 23725),
+                               "book-18": (379, 24253), "book-19": (366, 21575),
+                               "book-20": (268, 14435)}.items():
             records, report = self.documents[name]
             self.assertEqual((len(records), report["counts"]["runningWordTokens"]), expected)
             self.assertEqual(report["source"]["sha256"], hashlib.sha256(self.sources[name]).hexdigest())
 
-    def test_expanded_collection_has_5604_intervals_and_363119_tokens(self):
-        self.assertEqual(len(self.collection), 5604)
-        self.assertEqual(len({r["id"] for r in self.collection}), 5604)
-        self.assertEqual([r["order"] for r in self.collection], list(range(5604)))
-        self.assertEqual(sum(len(extract.words(r["text"])) for r in self.collection), 363119)
+    def test_complete_collection_has_7376_intervals_and_470938_tokens(self):
+        self.assertEqual(len(self.collection), 7376)
+        self.assertEqual(len({r["id"] for r in self.collection}), 7376)
+        self.assertEqual([r["order"] for r in self.collection], list(range(7376)))
+        self.assertEqual(sum(len(extract.words(r["text"])) for r in self.collection), 470938)
         for book, last in [(2, 349), (3, 322), (4, 331), (5, 362), (6, 378), (7, 394), (8, 420), (9, 291), (10, 281),
-                           (11, 347), (12, 434), (13, 433), (14, 491), (15, 425)]:
+                           (11, 347), (12, 434), (13, 433), (14, 491), (15, 425), (16, 404), (17, 355), (18, 379), (19, 366), (20, 268)]:
             records = self.documents[f"book-{book:02}"][0]
             self.assertEqual(sorted(r["section"] for r in records), list(range(1, last + 1)))
             self.assertEqual([r["section"] for r in records], extract.expected_sequence(book, False))
@@ -263,7 +277,7 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
         self.assertEqual(report["coverage"]["sourceWordSequenceSha256"], report["coverage"]["indexedWordSequenceSha256"])
 
     def test_source_changes_fail_but_crlf_only_representation_is_accepted(self):
-        for book in range(1, 16):
+        for book in range(1, 21):
             name = f"book-{book:02}"
             original = self.sources[name]
             with self.subTest(book=book), self.assertRaisesRegex(extract.ExtractionError, "accepted source"):
@@ -272,19 +286,29 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
                                                        order_offset=ORDER_STARTS[name])
             self.assertEqual(crlf_records, self.documents[name][0])
 
-    def test_xii_keeps_accepted_crlf_provenance_and_accepts_its_lf_representation(self):
-        original = self.sources["book-12"]
-        report = self.documents["book-12"][1]
-        self.assertEqual(len(original), 158411)
-        self.assertEqual(report["source"]["sha256"], "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c")
-        self.assertEqual(report["source"]["bytes"], len(original))
-        self.assertEqual(report["sourceContract"]["normalizedSHA256"], "ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286")
-        normalized = original.replace(b"\r\n", b"\n")
-        self.assertNotEqual(original, normalized)
-        records, lf_report = extract.extract_document(normalized, book_number=12, order_offset=3821)
-        self.assertEqual(records, self.documents["book-12"][0])
-        self.assertEqual(lf_report["source"]["sha256"], report["sourceContract"]["normalizedSHA256"])
-        self.assertEqual(lf_report["paragraphs"], report["paragraphs"])
+    def test_native_crlf_sources_retain_raw_provenance_and_accept_lf_representations(self):
+        cases = [
+            (12, 158411, "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c", "ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286"),
+            (17, 148192, "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1", "d6056846f61ae43003989a2d799501d5e9edb7c3b407d9292b3c89064df6a0ac"),
+            (18, 150720, "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d", "ba1529509dddf72ec82a5eda63fb95f6d0f8d88dad87c69f5cf7a431536c63fa"),
+            (19, 136009, "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129", "e025279ffb304a08f2f960845c6dca1e09162188bffd44f541cd787ae0aaf094"),
+            (20, 94225, "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e", "8f5437db04d4423b79db151603187f50400a9d41938f94394a8da744842af673"),
+        ]
+        for book, size, raw_hash, normalized_hash in cases:
+            with self.subTest(book=book):
+                name = f"book-{book:02}"
+                original = self.sources[name]
+                report = self.documents[name][1]
+                self.assertEqual(len(original), size)
+                self.assertEqual(report["source"]["sha256"], raw_hash)
+                self.assertEqual(report["source"]["bytes"], size)
+                self.assertEqual(report["sourceContract"]["normalizedSHA256"], normalized_hash)
+                normalized = original.replace(b"\r\n", b"\n")
+                self.assertNotEqual(original, normalized)
+                records, lf_report = extract.extract_document(normalized, book_number=book, order_offset=ORDER_STARTS[name])
+                self.assertEqual(records, self.documents[name][0])
+                self.assertEqual(lf_report["source"]["sha256"], normalized_hash)
+                self.assertEqual(lf_report["paragraphs"], report["paragraphs"])
 
     def test_xii_and_xiv_prefixes_keep_every_word_in_the_preceding_citation(self):
         cases = [
@@ -355,18 +379,71 @@ class WhistonAcceptedSourceTests(unittest.TestCase):
             with self.subTest(mode=mode), self.assertRaises(extract.ExtractionError):
                 extract.extract_document(ET.tostring(root), book_number=15, verify_source=False)
 
-    def test_build_is_reproducible_preserves_books_i_x_and_publishes_only_sixteen_sources(self):
+    def test_new_chapter_milestones_remain_structure_without_new_citations_or_phrase_gaps(self):
+        for book, chapters, structures in [(16, 16, 20), (17, 19, 19), (18, 21, 21), (19, 8, 8), (20, 20, 20)]:
+            with self.subTest(book=book):
+                records, report = self.documents[f"book-{book:02}"]
+                markers = [marker for paragraph in report["paragraphs"] for marker in paragraph["structuralMarkers"]]
+                self.assertEqual(len(markers), structures)
+                self.assertEqual(sum(marker["kind"] == "milestone" and marker["sourceAttributes"]["unit"] == "chapter"
+                                     for marker in markers), chapters)
+                self.assertTrue(all(not record["phraseBreaks"] and not record.get("breakBefore") for record in records))
+                root = ET.fromstring(self.sources[f"book-{book:02}"])
+                marker = root.find(f".//{NS}milestone[@unit='chapter']")
+                marker.set("unit", "niese")
+                with self.assertRaises(extract.ExtractionError):
+                    extract.extract_document(ET.tostring(root), book_number=book, verify_source=False)
+
+    def test_xx_structural_summary_heading_is_excluded_with_its_exact_parent_and_text(self):
+        records, report = self.documents["book-20"]
+        heading = next(item for item in report["excludedBlocks"] if item["kind"] == "structural-heading")
+        self.assertEqual(heading, {"kind": "structural-heading", "element": "head",
+            "text": "CONTAINING THE INTERVAL OF TWENTY-TWO YEARS. FROM FADUS THE PROCURATOR TO FLORUS.",
+            "sourceAttributes": {"sameAs": "#latin-book20-chapter1-head"},
+            "parentAttributes": {"n": "1", "sameAs": "#latin-book20-chapter1", "type": "chapter", XML_ID: "english-book20-chapter1"}})
+        self.assertEqual(report["counts"]["excludedStructuralHeadings"], 1)
+        self.assertNotIn(heading["text"], "\n".join(record["text"] for record in records))
+        self.assertEqual(records[-1]["section"], 268)
+        self.assertTrue(records[-1]["text"].endswith("and others are prohibited."))
+        for mode in ["remove", "change-text", "change-identity", "move", "nested-markup"]:
+            root = ET.fromstring(self.sources["book-20"])
+            element = root.find(f".//{NS}head")
+            parent = next(item for item in root.iter() if element in list(item))
+            if mode == "remove":
+                parent.remove(element)
+            elif mode == "change-text":
+                element.text += " Unreviewed words."
+            elif mode == "change-identity":
+                element.set("sameAs", "#different-heading")
+            elif mode == "move":
+                parent.remove(element)
+                parent.append(element)
+            else:
+                ET.SubElement(element, f"{NS}hi").text = "Unreviewed words."
+            with self.subTest(mode=mode), self.assertRaises(extract.ExtractionError):
+                extract.extract_document(ET.tostring(root), book_number=20, verify_source=False)
+
+    def test_xix_363_and_364_remain_separate_accepted_intervals(self):
+        records = self.documents["book-19"][0]
+        self.assertEqual([r["section"] for r in records], list(range(1, 367)))
+        self.assertTrue(records[362]["text"].startswith("Accordingly he sent Cuspins Fadus"))
+        self.assertTrue(records[363]["text"].startswith("But he determined, in the first place,"))
+        self.assertEqual(records[362]["sourceId"], records[363]["sourceId"])
+        self.assertNotEqual(records[362]["id"], records[363]["id"])
+        self.assertEqual(records[363]["readerLink"]["params"], {"book": 19, "niese": 364, "english": "whiston"})
+
+    def test_build_is_reproducible_preserves_books_i_xv_and_publishes_all_twenty_one_sources(self):
         with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
             report = extract.build_corpus(REPOSITORY, Path(first))
             extract.build_corpus(REPOSITORY, Path(second))
-            self.assertEqual(report["scope"]["books"], list(range(1, 16)))
+            self.assertEqual(report["scope"]["books"], list(range(1, 21)))
             self.assertNotIn("pilot", report["scope"])
-            self.assertEqual(report["counts"]["sourceDocuments"], 16)
-            self.assertEqual(report["counts"]["runningWordTokens"], 363119)
+            self.assertEqual(report["counts"]["sourceDocuments"], 21)
+            self.assertEqual(report["counts"]["runningWordTokens"], 470938)
             self.assertEqual({s["path"] for book in report["books"] for s in book["sources"]},
-                             {f"assets/xml/antiquities/English/{name}.xml" for name in ["preface"] + [f"book-{b:02}" for b in range(1, 16)]})
+                             {f"assets/xml/antiquities/English/{name}.xml" for name in ["preface"] + [f"book-{b:02}" for b in range(1, 21)]})
             self.assertEqual(sorted(p.name for p in Path(first).iterdir()),
-                             [name for b in range(1, 16) for name in [f"book-{b:02}.corpus.json", f"book-{b:02}.extraction-report.json"]]
+                             [name for b in range(1, 21) for name in [f"book-{b:02}.corpus.json", f"book-{b:02}.extraction-report.json"]]
                              + ["corpus.json", "extraction-report.json"])
             for file in Path(first).iterdir():
                 self.assertEqual(file.read_bytes(), (Path(second) / file.name).read_bytes())

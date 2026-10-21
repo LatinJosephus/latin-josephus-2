@@ -12,10 +12,14 @@ import {
 } from './publication.mjs';
 
 const root = path.resolve(fileURLToPath(new URL('../../', import.meta.url)));
-// The accepted Book XII Git blob itself uses CRLF. Preserve its exact bytes;
-// this pin is not permission to regenerate from an arbitrary CRLF checkout.
+// The accepted Book XII and XVII–XX Git blobs themselves use CRLF. Preserve
+// their exact bytes; these pins do not admit an arbitrary CRLF checkout.
 const acceptedCRLF = new Map([
   ['assets/xml/antiquities/English/book-12.xml', 'e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c'],
+  ['assets/xml/antiquities/English/book-17.xml', '29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1'],
+  ['assets/xml/antiquities/English/book-18.xml', 'db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d'],
+  ['assets/xml/antiquities/English/book-19.xml', '9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129'],
+  ['assets/xml/antiquities/English/book-20.xml', '229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e'],
 ]);
 
 function options(arguments_) {

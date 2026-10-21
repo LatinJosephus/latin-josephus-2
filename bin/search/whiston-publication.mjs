@@ -1,4 +1,4 @@
-/** Verify Whiston Antiquities I–XV directly against their accepted, unchanged XML. */
+/** Verify Whiston Antiquities I–XX directly against their accepted, unchanged XML. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,6 +39,16 @@ const SOURCES = [
     sha256: '9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1'},
   {path: 'assets/xml/antiquities/English/book-15.xml', book: 15, proem: false, first: 1, last: 425,
     sha256: '223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579'},
+  {path: 'assets/xml/antiquities/English/book-16.xml', book: 16, proem: false, first: 1, last: 404,
+    sha256: 'df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8'},
+  {path: 'assets/xml/antiquities/English/book-17.xml', book: 17, proem: false, first: 1, last: 355,
+    sha256: 'd6056846f61ae43003989a2d799501d5e9edb7c3b407d9292b3c89064df6a0ac'},
+  {path: 'assets/xml/antiquities/English/book-18.xml', book: 18, proem: false, first: 1, last: 379,
+    sha256: 'ba1529509dddf72ec82a5eda63fb95f6d0f8d88dad87c69f5cf7a431536c63fa'},
+  {path: 'assets/xml/antiquities/English/book-19.xml', book: 19, proem: false, first: 1, last: 366,
+    sha256: 'e025279ffb304a08f2f960845c6dca1e09162188bffd44f541cd787ae0aaf094'},
+  {path: 'assets/xml/antiquities/English/book-20.xml', book: 20, proem: false, first: 1, last: 268,
+    sha256: '8f5437db04d4423b79db151603187f50400a9d41938f94394a8da744842af673'},
 ];
 const BOOKS = new Map([
   [1, {roman: 'I', sections: 346, tokens: 21994, paragraphs: 83}],
@@ -56,6 +66,11 @@ const BOOKS = new Map([
   [13, {roman: 'XIII', sections: 433, tokens: 25616, paragraphs: 87}],
   [14, {roman: 'XIV', sections: 491, tokens: 29186, paragraphs: 112}],
   [15, {roman: 'XV', sections: 425, tokens: 26972, paragraphs: 66}],
+  [16, {roman: 'XVI', sections: 404, tokens: 23831, paragraphs: 61}],
+  [17, {roman: 'XVII', sections: 355, tokens: 23725, paragraphs: 61}],
+  [18, {roman: 'XVIII', sections: 379, tokens: 24253, paragraphs: 57}],
+  [19, {roman: 'XIX', sections: 366, tokens: 21575, paragraphs: 52}],
+  [20, {roman: 'XX', sections: 268, tokens: 14435, paragraphs: 51}],
 ]);
 const CONTINUATIONS = new Map([
   [4, {'english-book04-num276b': {section: 276,
@@ -72,6 +87,13 @@ const CONTINUATIONS = new Map([
 const CHAPTER_MILESTONES = new Map([[15, [[1, 1], [2, 11], [3, 39], [4, 88], [5, 106], [6, 121], [7, 121],
   [8, 161], [9, 194], [10, 213], [11, 299], [12, 326], [13, 380]]
   .map(([chapter, paragraph]) => [`english-book15-num${paragraph}`, String(chapter)])]]);
+
+CHAPTER_MILESTONES.set(16, [["english-book16-num1", "1"], ["english-book16-num12", "2"], ["english-book16-num16", "3"], ["english-book16-num27", "4"], ["english-book16-num58", "5"], ["english-book16-num58", "6"], ["english-book16-num66", "7"], ["english-book16-num73", "8"], ["english-book16-num104", "9"], ["english-book16-num136", "10"], ["english-book16-num162", "11"], ["english-book16-num179", "12"], ["english-book16-num261", "13"], ["english-book16-num271", "14"], ["english-book16-num271", "15"], ["english-book16-num286", "16"]]);
+CHAPTER_MILESTONES.set(17, [["english-book17-num1", "1"], ["english-book17-num12", "2"], ["english-book17-num32", "3"], ["english-book17-num46", "4"], ["english-book17-num52", "5"], ["english-book17-num61", "6"], ["english-book17-num61", "7"], ["english-book17-num83", "8"], ["english-book17-num131", "9"], ["english-book17-num146", "10"], ["english-book17-num182", "11"], ["english-book17-num188", "12"], ["english-book17-num188", "13"], ["english-book17-num193", "14"], ["english-book17-num196", "15"], ["english-book17-num206", "16"], ["english-book17-num213", "17"], ["english-book17-num250", "18"], ["english-book17-num299", "19"]]);
+CHAPTER_MILESTONES.set(18, [["english-book18-num1", "1"], ["english-book18-num1", "2"], ["english-book18-num1", "3"], ["english-book18-num1", "4"], ["english-book18-num11", "5"], ["english-book18-num26", "6"], ["english-book18-num29", "7"], ["english-book18-num29", "8"], ["english-book18-num55", "9"], ["english-book18-num65", "10"], ["english-book18-num88", "11"], ["english-book18-num88", "12"], ["english-book18-num90", "13"], ["english-book18-num96", "14"], ["english-book18-num106", "15"], ["english-book18-num130", "16"], ["english-book18-num240", "17"], ["english-book18-num257", "18"], ["english-book18-num257", "19"], ["english-book18-num261", "20"], ["english-book18-num310", "21"]]);
+CHAPTER_MILESTONES.set(19, [["english-book19-num1", "1"], ["english-book19-num162", "2"], ["english-book19-num236", "3"], ["english-book19-num274", "4"], ["english-book19-num292", "5"], ["english-book19-num299", "6"], ["english-book19-num326", "7"], ["english-book19-num335", "8"]]);
+CHAPTER_MILESTONES.set(20, [["english-book20-num1", "1"], ["english-book20-num1", "2"], ["english-book20-num1", "3"], ["english-book20-num10", "4"], ["english-book20-num17", "5"], ["english-book20-num49", "6"], ["english-book20-num100", "7"], ["english-book20-num100", "8"], ["english-book20-num105", "9"], ["english-book20-num118", "10"], ["english-book20-num125", "11"], ["english-book20-num134", "12"], ["english-book20-num137", "13"], ["english-book20-num148", "14"], ["english-book20-num167", "15"], ["english-book20-num173", "16"], ["english-book20-num182", "17"], ["english-book20-num189", "18"], ["english-book20-num197", "19"], ["english-book20-num215", "20"]]);
+const STRUCTURAL_HEADINGS = new Map([[20, [{"kind": "structural-heading", "element": "head", "text": "CONTAINING THE INTERVAL OF TWENTY-TWO YEARS. FROM FADUS THE PROCURATOR TO FLORUS.", "sourceAttributes": {"sameAs": "#latin-book20-chapter1-head"}, "parentAttributes": {"n": "1", "sameAs": "#latin-book20-chapter1", "type": "chapter", "{http://www.w3.org/XML/1998/namespace}id": "english-book20-chapter1"}}]]]);
 const digest = value => createHash('sha256').update(value).digest('hex');
 const equal = (actual, expected, message) => assert.deepEqual(actual, expected, `Whiston ${message}`);
 const range = (first, last) => Array.from({length: last - first + 1}, (_, index) => first + index);
@@ -244,6 +266,16 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
   equal(noteText.trim(), 'William Whiston (1737)', 'source notice differs');
   excludedBlocks.push({kind: 'source-note', text: noteText, sourceAttributes: attributes(notes[0][1])});
   counts.excludedSourceNotes++;
+  const headingMatches = [...outsideParagraphs.matchAll(/<div2\b([^>]*)>\s*<head\b([^>]*)>([^<]*)<\/head\s*>/gu)];
+  equal((outsideParagraphs.match(/<head\b/gu) || []).length, headingMatches.length,
+    'structural heading is outside its accepted location or contains markup');
+  const structuralHeadings = headingMatches.map(match => ({kind: 'structural-heading', element: 'head',
+    text: decodeXML(match[3]), sourceAttributes: attributes(match[2]), parentAttributes: attributes(match[1])}));
+  equal(structuralHeadings, STRUCTURAL_HEADINGS.get(source.book) || [], 'structural headings differ from the accepted source');
+  if (structuralHeadings.length) {
+    excludedBlocks.push(...structuralHeadings);
+    counts.excludedStructuralHeadings = structuralHeadings.length;
+  }
   for (const match of sourceParagraphs) {
     const sourceAttributes = attributes(match[1]), ordinal = counts.bodyParagraphs++;
     const projected = paragraphProjection(match[2]);
@@ -331,7 +363,7 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
     coverage: coverage(paragraphs, records, [source.first, source.last], true), excludedBlocks, paragraphs}};
 }
 
-/** This gate accepts every per-book extraction report in the reviewed I–XV collection. */
+/** This gate accepts every per-book extraction report in the reviewed I–XX collection. */
 export function validateWhistonSourceProjection(corpus, report, manifest, spec, root) {
   equal([manifest.id, manifest.work, manifest.language, manifest.edition, manifest.citationScheme, manifest.readerPath],
     [COLLECTION, 'antiquities', 'English', 'Whiston', 'niese', 'antiquities/'], 'collection identity differs');

@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T10:44:48.076Z",
+  "generatedAt": "2026-10-21T12:10:19.043Z",
   "independentVerifier": "bin/search/tests/whiston-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -16,12 +16,12 @@
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
-    "books": 15,
-    "sections": 5604,
-    "tokens": 363119,
-    "uniqueLiteralVocabulary": 10257,
+    "books": 20,
+    "sections": 7376,
+    "tokens": 470938,
+    "uniqueLiteralVocabulary": 11501,
     "proemSections": 26,
-    "narrativeSections": 5578,
+    "narrativeSections": 7350,
     "bookTotals": [
       {
         "book": 1,
@@ -97,6 +97,31 @@
         "book": 15,
         "sections": 425,
         "tokens": 26972
+      },
+      {
+        "book": 16,
+        "sections": 404,
+        "tokens": 23831
+      },
+      {
+        "book": 17,
+        "sections": 355,
+        "tokens": 23725
+      },
+      {
+        "book": 18,
+        "sections": 379,
+        "tokens": 24253
+      },
+      {
+        "book": 19,
+        "sections": 366,
+        "tokens": 21575
+      },
+      {
+        "book": 20,
+        "sections": 268,
+        "tokens": 14435
       }
     ]
   },
@@ -124,6 +149,7 @@
       "sections": 26,
       "tokens": 1646,
       "excludedHeadings": 1,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 4
     },
@@ -153,6 +179,7 @@
       "sections": 320,
       "tokens": 20348,
       "excludedHeadings": 23,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 73
     },
@@ -181,6 +208,7 @@
       "sections": 349,
       "tokens": 23020,
       "excludedHeadings": 17,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 76
     },
@@ -209,6 +237,7 @@
       "sections": 322,
       "tokens": 20955,
       "excludedHeadings": 16,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 77
     },
@@ -237,6 +266,7 @@
       "sections": 331,
       "tokens": 22900,
       "excludedHeadings": 9,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 88
     },
@@ -265,6 +295,7 @@
       "sections": 362,
       "tokens": 23396,
       "excludedHeadings": 23,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 98
     },
@@ -292,6 +323,7 @@
       "sections": 378,
       "tokens": 28422,
       "excludedHeadings": 15,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 83
     },
@@ -319,6 +351,7 @@
       "sections": 394,
       "tokens": 28285,
       "excludedHeadings": 16,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 73
     },
@@ -347,6 +380,7 @@
       "sections": 420,
       "tokens": 29968,
       "excludedHeadings": 16,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 85
     },
@@ -374,6 +408,7 @@
       "sections": 291,
       "tokens": 19074,
       "excludedHeadings": 3,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 8,
       "excludedLabels": 45
     },
@@ -402,6 +437,7 @@
       "sections": 281,
       "tokens": 18035,
       "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 51
     },
@@ -430,6 +466,7 @@
       "sections": 347,
       "tokens": 20213,
       "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 59
     },
@@ -459,6 +496,7 @@
       "sections": 434,
       "tokens": 25083,
       "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 69
     },
@@ -487,6 +525,7 @@
       "sections": 433,
       "tokens": 25616,
       "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 86
     },
@@ -515,6 +554,7 @@
       "sections": 491,
       "tokens": 29186,
       "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 108
     },
@@ -543,8 +583,151 @@
       "sections": 425,
       "tokens": 26972,
       "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
       "excludedNotes": 1,
       "excludedLabels": 66
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-16.xml",
+      "book": 16,
+      "proem": false,
+      "indexed": true,
+      "sha256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+      "lfSHA256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+      "bytes": 151002,
+      "stableIds": 68,
+      "bodyTags": {
+        "TEI": 1,
+        "text": 1,
+        "body": 1,
+        "note": 1,
+        "div1": 1,
+        "div2": 2,
+        "p": 63,
+        "milestone": 420,
+        "num": 60,
+        "anchor": 4
+      },
+      "paragraphs": 61,
+      "sections": 404,
+      "tokens": 23831,
+      "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
+      "excludedNotes": 1,
+      "excludedLabels": 60
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-17.xml",
+      "book": 17,
+      "proem": false,
+      "indexed": true,
+      "sha256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+      "lfSHA256": "d6056846f61ae43003989a2d799501d5e9edb7c3b407d9292b3c89064df6a0ac",
+      "bytes": 148192,
+      "stableIds": 64,
+      "bodyTags": {
+        "TEI": 1,
+        "text": 1,
+        "body": 1,
+        "note": 1,
+        "div1": 1,
+        "div2": 2,
+        "p": 63,
+        "milestone": 374,
+        "num": 60
+      },
+      "paragraphs": 61,
+      "sections": 355,
+      "tokens": 23725,
+      "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
+      "excludedNotes": 1,
+      "excludedLabels": 60
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-18.xml",
+      "book": 18,
+      "proem": false,
+      "indexed": true,
+      "sha256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+      "lfSHA256": "ba1529509dddf72ec82a5eda63fb95f6d0f8d88dad87c69f5cf7a431536c63fa",
+      "bytes": 150720,
+      "stableIds": 60,
+      "bodyTags": {
+        "TEI": 1,
+        "text": 1,
+        "body": 1,
+        "note": 1,
+        "div1": 1,
+        "div2": 2,
+        "p": 59,
+        "milestone": 400,
+        "num": 56
+      },
+      "paragraphs": 57,
+      "sections": 379,
+      "tokens": 24253,
+      "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
+      "excludedNotes": 1,
+      "excludedLabels": 56
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-19.xml",
+      "book": 19,
+      "proem": false,
+      "indexed": true,
+      "sha256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+      "lfSHA256": "e025279ffb304a08f2f960845c6dca1e09162188bffd44f541cd787ae0aaf094",
+      "bytes": 136009,
+      "stableIds": 55,
+      "bodyTags": {
+        "TEI": 1,
+        "text": 1,
+        "body": 1,
+        "note": 1,
+        "div1": 1,
+        "div2": 2,
+        "p": 54,
+        "milestone": 374,
+        "num": 51
+      },
+      "paragraphs": 52,
+      "sections": 366,
+      "tokens": 21575,
+      "excludedHeadings": 2,
+      "excludedStructuralHeadings": 0,
+      "excludedNotes": 1,
+      "excludedLabels": 51
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-20.xml",
+      "book": 20,
+      "proem": false,
+      "indexed": true,
+      "sha256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+      "lfSHA256": "8f5437db04d4423b79db151603187f50400a9d41938f94394a8da744842af673",
+      "bytes": 94225,
+      "stableIds": 54,
+      "bodyTags": {
+        "TEI": 1,
+        "text": 1,
+        "body": 1,
+        "note": 1,
+        "div1": 1,
+        "div2": 2,
+        "p": 52,
+        "head": 1,
+        "milestone": 288,
+        "num": 50
+      },
+      "paragraphs": 51,
+      "sections": 268,
+      "tokens": 14435,
+      "excludedHeadings": 1,
+      "excludedStructuralHeadings": 1,
+      "excludedNotes": 1,
+      "excludedLabels": 50
     }
   ],
   "testSources": [],
@@ -824,6 +1007,900 @@
         }
       }
     ],
+    "chapterMilestonesXVIThroughXX": [
+      {
+        "book": 16,
+        "markers": [
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num1",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "1"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num12",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "2"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num16",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "3"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num27",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "4"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num58",
+            "rawOffset": 631,
+            "section": 59,
+            "attributes": {
+              "unit": "chapter",
+              "n": "5"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num58",
+            "rawOffset": 1617,
+            "section": 62,
+            "attributes": {
+              "unit": "chapter",
+              "n": "6"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num66",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "7"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num73",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "8"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num104",
+            "rawOffset": 294,
+            "section": 104,
+            "attributes": {
+              "unit": "chapter",
+              "n": "9"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num136",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "10"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num162",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "11"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num179",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "12"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num261",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "13"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num271",
+            "rawOffset": 633,
+            "section": 272,
+            "attributes": {
+              "unit": "chapter",
+              "n": "14"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num271",
+            "rawOffset": 1439,
+            "section": 275,
+            "attributes": {
+              "unit": "chapter",
+              "n": "15"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book16-num286",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "16"
+            }
+          }
+        ]
+      },
+      {
+        "book": 17,
+        "markers": [
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num1",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "1"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num12",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "2"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num32",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "3"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num46",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "4"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num52",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "5"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num61",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "6"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num61",
+            "rawOffset": 1175,
+            "section": 64,
+            "attributes": {
+              "unit": "chapter",
+              "n": "7"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num83",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "8"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num131",
+            "rawOffset": 553,
+            "section": 132,
+            "attributes": {
+              "unit": "chapter",
+              "n": "9"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num146",
+            "rawOffset": 189,
+            "section": 146,
+            "attributes": {
+              "unit": "chapter",
+              "n": "10"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num182",
+            "rawOffset": 1206,
+            "section": 184,
+            "attributes": {
+              "unit": "chapter",
+              "n": "11"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num188",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "12"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num188",
+            "rawOffset": 947,
+            "section": 191,
+            "attributes": {
+              "unit": "chapter",
+              "n": "13"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num193",
+            "rawOffset": 285,
+            "section": 193,
+            "attributes": {
+              "unit": "chapter",
+              "n": "14"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num196",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "15"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num206",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "16"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num213",
+            "rawOffset": 3466,
+            "section": 222,
+            "attributes": {
+              "unit": "chapter",
+              "n": "17"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num250",
+            "rawOffset": 1046,
+            "section": 253,
+            "attributes": {
+              "unit": "chapter",
+              "n": "18"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book17-num299",
+            "rawOffset": 123,
+            "section": 299,
+            "attributes": {
+              "unit": "chapter",
+              "n": "19"
+            }
+          }
+        ]
+      },
+      {
+        "book": 18,
+        "markers": [
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num1",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "1"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num1",
+            "rawOffset": 330,
+            "section": 1,
+            "attributes": {
+              "unit": "chapter",
+              "n": "2"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num1",
+            "rawOffset": 936,
+            "section": 3,
+            "attributes": {
+              "unit": "chapter",
+              "n": "3"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num1",
+            "rawOffset": 1708,
+            "section": 5,
+            "attributes": {
+              "unit": "chapter",
+              "n": "4"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num11",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "5"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num26",
+            "rawOffset": 354,
+            "section": 26,
+            "attributes": {
+              "unit": "chapter",
+              "n": "6"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num29",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "7"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num29",
+            "rawOffset": 695,
+            "section": 30,
+            "attributes": {
+              "unit": "chapter",
+              "n": "8"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num55",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "9"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num65",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "10"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num88",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "11"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num88",
+            "rawOffset": 411,
+            "section": 89,
+            "attributes": {
+              "unit": "chapter",
+              "n": "12"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num90",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "13"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num96",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "14"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num106",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "15"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num130",
+            "rawOffset": 3562,
+            "section": 142,
+            "attributes": {
+              "unit": "chapter",
+              "n": "16"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num240",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "17"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num257",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "18"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num257",
+            "rawOffset": 192,
+            "section": 257,
+            "attributes": {
+              "unit": "chapter",
+              "n": "19"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num261",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "20"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book18-num310",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "21"
+            }
+          }
+        ]
+      },
+      {
+        "book": 19,
+        "markers": [
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book19-num1",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "1"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book19-num162",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "2"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book19-num236",
+            "rawOffset": 499,
+            "section": 236,
+            "attributes": {
+              "unit": "chapter",
+              "n": "3"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book19-num274",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "4"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book19-num292",
+            "rawOffset": 158,
+            "section": 292,
+            "attributes": {
+              "unit": "chapter",
+              "n": "5"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book19-num299",
+            "rawOffset": 1010,
+            "section": 302,
+            "attributes": {
+              "unit": "chapter",
+              "n": "6"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book19-num326",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "7"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book19-num335",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "8"
+            }
+          }
+        ]
+      },
+      {
+        "book": 20,
+        "markers": [
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num1",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "1"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num1",
+            "rawOffset": 1163,
+            "section": 4,
+            "attributes": {
+              "unit": "chapter",
+              "n": "2"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num1",
+            "rawOffset": 1418,
+            "section": 5,
+            "attributes": {
+              "unit": "chapter",
+              "n": "3"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num10",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "4"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num17",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "5"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num49",
+            "rawOffset": 777,
+            "section": 51,
+            "attributes": {
+              "unit": "chapter",
+              "n": "6"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num100",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "7"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num100",
+            "rawOffset": 847,
+            "section": 102,
+            "attributes": {
+              "unit": "chapter",
+              "n": "8"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num105",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "9"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num118",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "10"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num125",
+            "rawOffset": 1174,
+            "section": 129,
+            "attributes": {
+              "unit": "chapter",
+              "n": "11"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num134",
+            "rawOffset": 692,
+            "section": 135,
+            "attributes": {
+              "unit": "chapter",
+              "n": "12"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num137",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "13"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num148",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "14"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num167",
+            "rawOffset": 442,
+            "section": 168,
+            "attributes": {
+              "unit": "chapter",
+              "n": "15"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num173",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "16"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num182",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "17"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num189",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "18"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num197",
+            "rawOffset": 803,
+            "section": 199,
+            "attributes": {
+              "unit": "chapter",
+              "n": "19"
+            }
+          },
+          {
+            "kind": "chapter-milestone",
+            "sourceId": "english-book20-num215",
+            "rawOffset": 0,
+            "section": null,
+            "attributes": {
+              "unit": "chapter",
+              "n": "20"
+            }
+          }
+        ]
+      }
+    ],
+    "excludedHeadXX": {
+      "kind": "heading",
+      "sourceId": null,
+      "text": "CONTAINING THE INTERVAL OF TWENTY-TWO YEARS. FROM FADUS THE PROCURATOR TO FLORUS.",
+      "attributes": {
+        "sameAs": "#latin-book20-chapter1-head"
+      },
+      "element": "head",
+      "parentAttributes": {
+        "n": "1",
+        "sameAs": "#latin-book20-chapter1",
+        "type": "chapter",
+        "xml:id": "english-book20-chapter1"
+      }
+    },
+    "separateXIXFinalIntervals": [
+      {
+        "section": 363,
+        "text": "Accordingly he sent Cuspins Fadus to be procurator of Judea, and of the entire kingdom, and paid that respect to the eceased as not to introduce Marcus, who had been at variance with him, into his kingdom.",
+        "sourceId": "english-book19-num360"
+      },
+      {
+        "section": 364,
+        "text": "But he determined, in the first place, to send orders to Fadus, that he should chastise the inhabitants of Cesarca and Sebaste for those abuses they had offered to him that was deceased, and their madness towards his daughters that were still alive;",
+        "sourceId": "english-book19-num360"
+      }
+    ],
     "preservedPriorBooks": [
       1,
       2,
@@ -834,19 +1911,24 @@
       7,
       8,
       9,
-      10
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
     ]
   },
   "verifiedFiles": {
     "corpus": {
       "path": "bin/search/data/antiquities-english-whiston/corpus.json",
-      "sha256": "71addc82bbf5eb687c0d80b4073a3c394b9d58aa0b841ba5785a7becb0aac9a5",
-      "bytes": 6463513
+      "sha256": "738ad8013adab8fb361604d4b259547cabaf8ae8bd44088763565de1a348073a",
+      "bytes": 8481437
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "89ad5081a1848ed4fed889fedcb275aa5082fb6c7390b568aacdfd7c87e0b416",
-      "bytes": 41894
+      "sha256": "a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a",
+      "bytes": 44976
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -870,23 +1952,23 @@
     },
     "verifier": {
       "path": "bin/search/tests/whiston-corpus-qa.mjs",
-      "sha256": "b05b364d02ee9ab43b23c3d6c9721f0602c77424a1cadf12f0732322ea5dab08",
-      "bytes": 60115
+      "sha256": "09d03107b972529182dd9a0112fafe6aee91741b4a39e6ec81ac7beb1ace6ab0",
+      "bytes": 65681
     },
     "witness": {
       "path": "bin/search/tests/whiston-source-witness.py",
-      "sha256": "3651f22227f362ae11cb1b9ea317824dcc1b155eac6a870d14980072cbe49688",
-      "bytes": 17931
+      "sha256": "f24c51936a4ed533da35a7f96e4becc66d116fc7eb31d629988efb80069a2dc6",
+      "bytes": 20120
     },
     "extractor": {
       "path": "bin/search/extract-whiston.py",
-      "sha256": "a2bb964b090d4568fd771456857b9b9e18a2df8a03bc479619ab21dcb5544dad",
-      "bytes": 36711
+      "sha256": "d4a353314644b2823558f28fec3517e60f425a827aee190f42a2de92031c92c0",
+      "bytes": 42012
     },
     "manifest": {
       "path": "bin/search/config/antiquities-english-whiston.json",
-      "sha256": "2b7472e5df00430b562856c960224c0722324fac0aac9c47b15de94a40bb2689",
-      "bytes": 4357
+      "sha256": "c7ea457be928fb5086b73d1ebb5bfd8953af85189cb9a1ee5c7b1d6b28b48fc1",
+      "bytes": 5614
     },
     "lunr": {
       "path": "bin/search/vendor/lunr.cjs",
@@ -895,8 +1977,8 @@
     },
     "extractionReport": {
       "path": "bin/search/data/antiquities-english-whiston/extraction-report.json",
-      "sha256": "97fb4d6c33dfda9c4b99f2db1c72e934de30ff9dde3d2dd8119b8c4292602464",
-      "bytes": 25028
+      "sha256": "2769bd5179ef5e451ee2bfbecf40b4ece07b4eb708467bf1c6efd8b683611a3e",
+      "bytes": 32634
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
@@ -1256,13 +2338,128 @@
           "sha256": "9b3fa3b455af3df3141e6226c7da33a4a0b6dc903a40ce90678c74fb231211d3",
           "bytes": 1801833
         }
+      },
+      {
+        "book": 16,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-whiston/book-16.bundle.json",
+          "sha256": "b63f350bcf3b19b63ee0fbde7df1192bb1b6adb03a960aae5d0de6ef52c5882d",
+          "bytes": 3281030
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-whiston/book-16.corpus.json",
+          "sha256": "542bcdb1dd7488045b9a33dcca5f854d7f6acacd84595425fb87b67eaa6f3bd4",
+          "bytes": 455895
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/book-16.xml",
+          "sha256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+          "bytes": 151002
+        },
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-english-whiston/book-16.extraction-report.json",
+          "sha256": "bc15b6a13828449264a470148843b1687dbf9d05c5def7aedb975ff375123932",
+          "bytes": 1675718
+        }
+      },
+      {
+        "book": 17,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-whiston/book-17.bundle.json",
+          "sha256": "c2af68e021aa791d58abe4d7954784202c92b554ea23da7842b85d47c6fc0bfb",
+          "bytes": 3178458
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-whiston/book-17.corpus.json",
+          "sha256": "d5ae531f894a517355a70a0c4d69daf8ac4e931fc07b012cf6193acce85c5bb4",
+          "bytes": 416149
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/book-17.xml",
+          "sha256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+          "bytes": 148192
+        },
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-english-whiston/book-17.extraction-report.json",
+          "sha256": "a7a12370f5e8299b270af7be7e8652dc752ce545561b273061d4d131f6006de8",
+          "bytes": 1546256
+        }
+      },
+      {
+        "book": 18,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-whiston/book-18.bundle.json",
+          "sha256": "0bbf65f6a8b99c4ca26072cc41b599f57254c5d66d884b1165ec424428d42f9a",
+          "bytes": 3275998
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-whiston/book-18.corpus.json",
+          "sha256": "70e681bb7a0d20468594b244b052d6a5372cf28651f7d96779287ac2cc8c5c55",
+          "bytes": 438445
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/book-18.xml",
+          "sha256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+          "bytes": 150720
+        },
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-english-whiston/book-18.extraction-report.json",
+          "sha256": "5befc6bde0e7d31c4e72b1a5f2cf5e8bad97000dd0cce319871e38c875058e3d",
+          "bytes": 1610223
+        }
+      },
+      {
+        "book": 19,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-whiston/book-19.bundle.json",
+          "sha256": "f0225e495205f9a837246663aa2d01ff58ee5452cf0c1d8e13343accefbe4f8a",
+          "bytes": 2992496
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-whiston/book-19.corpus.json",
+          "sha256": "dbea256be6aeb493a4f760dfa1ccbf982fe2e5ddd48caee79d19dd2fada430c2",
+          "bytes": 412973
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/book-19.xml",
+          "sha256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+          "bytes": 136009
+        },
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-english-whiston/book-19.extraction-report.json",
+          "sha256": "25a853bf2cdc539dc989e06f63767bbde9839f0812d55d4caa000b4899bb8a21",
+          "bytes": 1508565
+        }
+      },
+      {
+        "book": 20,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-whiston/book-20.bundle.json",
+          "sha256": "b5597fa8e901b099db30f6fdf664355f275ec11e767389a29e43f458d8385e45",
+          "bytes": 2026813
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-whiston/book-20.corpus.json",
+          "sha256": "d1b9e60f3d6329f2ff2595f4bbab83af82e12661f53ad15e59d15c8a512b99d0",
+          "bytes": 294477
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/book-20.xml",
+          "sha256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+          "bytes": 94225
+        },
+        "extractionReport": {
+          "path": "bin/search/data/antiquities-english-whiston/book-20.extraction-report.json",
+          "sha256": "de1f5231b027b9a673dfb682f0211aee9939561603d343fd2901dffabbc0b2f2",
+          "bytes": 1101279
+        }
       }
     ]
   },
   "method": {
-    "source": "Independent minidom text-node projection from sixteen SHA-pinned XML files, all published inputs. Every source-to-record slice and exact paragraph restoration is checked, including the markerless IV.276 paragraph and the pre-milestone VIII.255 continuation with their explicit paragraph separators. The Book I-X corpora, extraction reports and search bundles remain byte-for-byte identical to the accepted prior release. Book XI keeps its actual physical order and does not invent numerical-order phrase adjacency. Prefix continuations in XII.147, XII.226 and XIV.237 retain their source IDs, exact offsets and paragraph joins; XIII and XIV anchors and XV chapter milestones contribute no extra searchable text or phrase barrier. Book IX restored text is published; its seven inline footnotes and restored headings are excluded. Book X transparent bold formatting preserves running text without inventing editorial additions.",
+    "source": "Independent minidom text-node projection from twenty-one SHA-pinned XML files, all published inputs. Every source-to-record slice and exact paragraph restoration is checked, including the markerless IV.276 paragraph and the pre-milestone VIII.255 continuation with their explicit paragraph separators. The Book I-XV corpora, extraction reports and search bundles remain byte-for-byte identical to the accepted prior release. Book XI keeps its actual physical order and does not invent numerical-order phrase adjacency. Prefix continuations in XII.147, XII.226 and XIV.237 retain their source IDs, exact offsets and paragraph joins; XIII, XIV and XVI anchors and XV-XX chapter milestones contribute no extra searchable text or phrase barrier. The separate Book XX head element is excluded and audited. XIX.363 and XIX.364 retain their separate explicit source identities. Book IX restored text is published; its seven inline footnotes and restored headings are excluded. Book X transparent bold formatting preserves running text without inventing editorial additions.",
     "tokens": "Every indexed Unicode word and original UTF-16 offset independently scanned in Python and JavaScript and compared with each serialized book index.",
-    "queries": "All literal vocabulary per book, one exact phrase per interval, every neighboring citation seam, all fourteen book boundaries, bounded wildcard and explicit Boolean fixtures. Expected ASTs and sequential phrase scans do not import production parsing/tokenization. Published Book IX footnote exclusions, phrases across excluded notes, restored English intervals and Book X transparent formatting have focused checks. Combined selections preserve distinct same-numbered sections and keep phrases and Boolean conditions inside their own book.",
+    "queries": "All literal vocabulary per book, one exact phrase per interval, every neighboring citation seam, all nineteen book boundaries, bounded wildcard and explicit Boolean fixtures. Expected ASTs and sequential phrase scans do not import production parsing/tokenization. Published Book IX footnote exclusions, phrases across excluded notes, restored English intervals and Book X transparent formatting have focused checks. Combined selections preserve distinct same-numbered sections and keep phrases and Boolean conditions inside their own book.",
     "language": "English-only and mixed English/Latin collection requests verify Latin-only spelling equivalence and separate Boolean scopes.",
     "exports": "Concordance geometry, original context, reader parameters, source slices, source fingerprints, CSV decoding, negative-only units and zero-result summaries."
   },
@@ -1272,25 +2469,25 @@
     "IndependentCollectionTotals": 1,
     "IndependentBookTotals": 1,
     "IndexedRecordCount": 1,
-    "IndexedSourceid": 5604,
-    "IndexedSourcebook": 5604,
-    "IndexedSourcesection": 5604,
-    "IndexedSourceorder": 5604,
-    "IndexedSourcetext": 5604,
-    "IndexedSourcesourcePath": 5604,
-    "IndexedSourcesourceId": 5604,
-    "IndexedSourcesourceIds": 5604,
-    "IndexedVersion": 5604,
-    "IndexedCitation": 5604,
-    "IndexedReaderLink": 5604,
-    "IndexedReaderURL": 5604,
-    "IndexedSourceDivision": 5604,
-    "IndexedPhraseBarrier": 5604,
-    "IndexedNoInventededitorialMarks": 5604,
-    "IndexedNoInventedsourceMarkup": 5604,
-    "IndexedNoInventedtextGaps": 5604,
-    "IndexedNoInventedphraseBreaks": 5604,
-    "IndexedIndependentTokenizers": 5604,
+    "IndexedSourceid": 7376,
+    "IndexedSourcebook": 7376,
+    "IndexedSourcesection": 7376,
+    "IndexedSourceorder": 7376,
+    "IndexedSourcetext": 7376,
+    "IndexedSourcesourcePath": 7376,
+    "IndexedSourcesourceId": 7376,
+    "IndexedSourcesourceIds": 7376,
+    "IndexedVersion": 7376,
+    "IndexedCitation": 7376,
+    "IndexedReaderLink": 7376,
+    "IndexedReaderURL": 7376,
+    "IndexedSourceDivision": 7376,
+    "IndexedPhraseBarrier": 7376,
+    "IndexedNoInventededitorialMarks": 7376,
+    "IndexedNoInventedsourceMarkup": 7376,
+    "IndexedNoInventedtextGaps": 7376,
+    "IndexedNoInventedphraseBreaks": 7376,
+    "IndexedIndependentTokenizers": 7376,
     "CollectionCorpusHash": 1,
     "CollectionManifestHash": 1,
     "ExtractionTokens": 1,
@@ -1311,6 +2508,8 @@
     "Book1ProjectionExplicitMarkerIdentity": 83,
     "Book1ProjectionTokenCount": 1,
     "Book1ProjectionHeadingExclusions": 1,
+    "Book1ProjectionStructuralHeadingCount": 1,
+    "Book1ProjectionStructuralHeadingEvidence": 1,
     "Book1ProjectionLabelExclusions": 1,
     "Book1ProjectionFootnoteExclusions": 1,
     "Book1ProjectionContinuationCount": 1,
@@ -1323,7 +2522,7 @@
     "Book1CatalogCorpusHash": 1,
     "Book1CatalogTokens": 1,
     "Book1CatalogSections": 1,
-    "PriorBookAssetUnchanged": 30,
+    "PriorBookAssetUnchanged": 45,
     "Book2CorpusShard": 1,
     "Book2ProjectionParagraphIDs": 1,
     "Book2ProjectionRawParagraph": 76,
@@ -1339,6 +2538,8 @@
     "Book2ProjectionExplicitMarkerIdentity": 76,
     "Book2ProjectionTokenCount": 1,
     "Book2ProjectionHeadingExclusions": 1,
+    "Book2ProjectionStructuralHeadingCount": 1,
+    "Book2ProjectionStructuralHeadingEvidence": 1,
     "Book2ProjectionLabelExclusions": 1,
     "Book2ProjectionFootnoteExclusions": 1,
     "Book2ProjectionContinuationCount": 1,
@@ -1366,6 +2567,8 @@
     "Book3ProjectionExplicitMarkerIdentity": 79,
     "Book3ProjectionTokenCount": 1,
     "Book3ProjectionHeadingExclusions": 1,
+    "Book3ProjectionStructuralHeadingCount": 1,
+    "Book3ProjectionStructuralHeadingEvidence": 1,
     "Book3ProjectionLabelExclusions": 1,
     "Book3ProjectionFootnoteExclusions": 1,
     "Book3ProjectionContinuationCount": 1,
@@ -1399,6 +2602,8 @@
     "Book4ProjectionLaterParagraphIntervalsNotShifted": 1,
     "Book4ProjectionTokenCount": 1,
     "Book4ProjectionHeadingExclusions": 1,
+    "Book4ProjectionStructuralHeadingCount": 1,
+    "Book4ProjectionStructuralHeadingEvidence": 1,
     "Book4ProjectionLabelExclusions": 1,
     "Book4ProjectionFootnoteExclusions": 1,
     "Book4ProjectionContinuationCount": 1,
@@ -1426,6 +2631,8 @@
     "Book5ProjectionExplicitMarkerIdentity": 98,
     "Book5ProjectionTokenCount": 1,
     "Book5ProjectionHeadingExclusions": 1,
+    "Book5ProjectionStructuralHeadingCount": 1,
+    "Book5ProjectionStructuralHeadingEvidence": 1,
     "Book5ProjectionLabelExclusions": 1,
     "Book5ProjectionFootnoteExclusions": 1,
     "Book5ProjectionContinuationCount": 1,
@@ -1453,6 +2660,8 @@
     "Book6ProjectionExplicitMarkerIdentity": 83,
     "Book6ProjectionTokenCount": 1,
     "Book6ProjectionHeadingExclusions": 1,
+    "Book6ProjectionStructuralHeadingCount": 1,
+    "Book6ProjectionStructuralHeadingEvidence": 1,
     "Book6ProjectionLabelExclusions": 1,
     "Book6ProjectionFootnoteExclusions": 1,
     "Book6ProjectionContinuationCount": 1,
@@ -1480,6 +2689,8 @@
     "Book7ProjectionExplicitMarkerIdentity": 76,
     "Book7ProjectionTokenCount": 1,
     "Book7ProjectionHeadingExclusions": 1,
+    "Book7ProjectionStructuralHeadingCount": 1,
+    "Book7ProjectionStructuralHeadingEvidence": 1,
     "Book7ProjectionLabelExclusions": 1,
     "Book7ProjectionFootnoteExclusions": 1,
     "Book7ProjectionContinuationCount": 1,
@@ -1513,6 +2724,8 @@
     "Book8ProjectionLaterParagraphIntervalsNotShifted": 1,
     "Book8ProjectionTokenCount": 1,
     "Book8ProjectionHeadingExclusions": 1,
+    "Book8ProjectionStructuralHeadingCount": 1,
+    "Book8ProjectionStructuralHeadingEvidence": 1,
     "Book8ProjectionLabelExclusions": 1,
     "Book8ProjectionFootnoteExclusions": 1,
     "Book8ProjectionContinuationCount": 1,
@@ -1540,6 +2753,8 @@
     "Book9ProjectionExplicitMarkerIdentity": 54,
     "Book9ProjectionTokenCount": 1,
     "Book9ProjectionHeadingExclusions": 1,
+    "Book9ProjectionStructuralHeadingCount": 1,
+    "Book9ProjectionStructuralHeadingEvidence": 1,
     "Book9ProjectionLabelExclusions": 1,
     "Book9ProjectionFootnoteExclusions": 1,
     "Book9ProjectionContinuationCount": 1,
@@ -1567,6 +2782,8 @@
     "Book10ProjectionExplicitMarkerIdentity": 52,
     "Book10ProjectionTokenCount": 1,
     "Book10ProjectionHeadingExclusions": 1,
+    "Book10ProjectionStructuralHeadingCount": 1,
+    "Book10ProjectionStructuralHeadingEvidence": 1,
     "Book10ProjectionLabelExclusions": 1,
     "Book10ProjectionFootnoteExclusions": 1,
     "Book10ProjectionContinuationCount": 1,
@@ -1594,6 +2811,8 @@
     "Book11ProjectionExplicitMarkerIdentity": 57,
     "Book11ProjectionTokenCount": 1,
     "Book11ProjectionHeadingExclusions": 1,
+    "Book11ProjectionStructuralHeadingCount": 1,
+    "Book11ProjectionStructuralHeadingEvidence": 1,
     "Book11ProjectionLabelExclusions": 1,
     "Book11ProjectionFootnoteExclusions": 1,
     "Book11ProjectionContinuationCount": 1,
@@ -1627,6 +2846,8 @@
     "Book12ProjectionLaterParagraphIntervalsNotShifted": 2,
     "Book12ProjectionTokenCount": 1,
     "Book12ProjectionHeadingExclusions": 1,
+    "Book12ProjectionStructuralHeadingCount": 1,
+    "Book12ProjectionStructuralHeadingEvidence": 1,
     "Book12ProjectionLabelExclusions": 1,
     "Book12ProjectionFootnoteExclusions": 1,
     "Book12ProjectionContinuationCount": 1,
@@ -1654,6 +2875,8 @@
     "Book13ProjectionExplicitMarkerIdentity": 87,
     "Book13ProjectionTokenCount": 1,
     "Book13ProjectionHeadingExclusions": 1,
+    "Book13ProjectionStructuralHeadingCount": 1,
+    "Book13ProjectionStructuralHeadingEvidence": 1,
     "Book13ProjectionLabelExclusions": 1,
     "Book13ProjectionFootnoteExclusions": 1,
     "Book13ProjectionContinuationCount": 1,
@@ -1687,6 +2910,8 @@
     "Book14ProjectionLaterParagraphIntervalsNotShifted": 1,
     "Book14ProjectionTokenCount": 1,
     "Book14ProjectionHeadingExclusions": 1,
+    "Book14ProjectionStructuralHeadingCount": 1,
+    "Book14ProjectionStructuralHeadingEvidence": 1,
     "Book14ProjectionLabelExclusions": 1,
     "Book14ProjectionFootnoteExclusions": 1,
     "Book14ProjectionContinuationCount": 1,
@@ -1714,6 +2939,8 @@
     "Book15ProjectionExplicitMarkerIdentity": 66,
     "Book15ProjectionTokenCount": 1,
     "Book15ProjectionHeadingExclusions": 1,
+    "Book15ProjectionStructuralHeadingCount": 1,
+    "Book15ProjectionStructuralHeadingEvidence": 1,
     "Book15ProjectionLabelExclusions": 1,
     "Book15ProjectionFootnoteExclusions": 1,
     "Book15ProjectionContinuationCount": 1,
@@ -1726,41 +2953,186 @@
     "Book15CatalogCorpusHash": 1,
     "Book15CatalogTokens": 1,
     "Book15CatalogSections": 1,
-    "VocabularyQueries": 40903,
-    "VocabularyUnits": 40903,
-    "VocabularyOccurrences": 40903,
-    "VocabularyUnitIdentity": 40903,
-    "VocabularyEvidence": 260827,
-    "VocabularyRecords": 260827,
-    "VocabularySections": 40903,
-    "FixtureQueries": 540,
-    "FixtureUnits": 540,
-    "FixtureOccurrences": 540,
-    "FixtureUnitIdentity": 540,
-    "FixtureEvidence": 15013,
-    "FixtureRecords": 15013,
-    "FixtureSections": 540,
-    "WildcardQueries": 2630,
-    "WildcardUnits": 2630,
-    "WildcardOccurrences": 2630,
-    "WildcardUnitIdentity": 2630,
-    "WildcardEvidence": 65161,
-    "WildcardRecords": 65161,
-    "WildcardSections": 2630,
-    "WithinEveryIntervalQueries": 11208,
-    "WithinEveryIntervalUnits": 11208,
-    "WithinEveryIntervalOccurrences": 11208,
-    "WithinEveryIntervalUnitIdentity": 11208,
-    "WithinEveryIntervalEvidence": 15079,
-    "WithinEveryIntervalRecords": 15079,
-    "WithinEveryIntervalSections": 11208,
-    "EveryCitationSeamQueries": 11178,
-    "EveryCitationSeamUnits": 11178,
-    "EveryCitationSeamOccurrences": 11178,
-    "EveryCitationSeamUnitIdentity": 11178,
-    "EveryCitationSeamSections": 11178,
-    "EveryCitationSeamEvidence": 5644,
-    "EveryCitationSeamRecords": 5644,
+    "Book16CorpusShard": 1,
+    "Book16ProjectionParagraphIDs": 1,
+    "Book16ProjectionRawParagraph": 61,
+    "Book16ProjectionSourceContinuity": 869,
+    "Book16ProjectionSourceSlice": 869,
+    "Book16ProjectionSourceSliceHash": 869,
+    "Book16ProjectionExactRestoration": 61,
+    "Book16ProjectionRestorationLength": 61,
+    "Book16ProjectionIndependentProjection": 61,
+    "Book16ProjectionParagraphSections": 61,
+    "Book16ProjectionNoUnexpectedContinuation": 61,
+    "Book16ProjectionNoUnexpectedJoin": 61,
+    "Book16ProjectionExplicitMarkerIdentity": 61,
+    "Book16ProjectionTokenCount": 1,
+    "Book16ProjectionHeadingExclusions": 1,
+    "Book16ProjectionStructuralHeadingCount": 1,
+    "Book16ProjectionStructuralHeadingEvidence": 1,
+    "Book16ProjectionLabelExclusions": 1,
+    "Book16ProjectionFootnoteExclusions": 1,
+    "Book16ProjectionContinuationCount": 1,
+    "Book16ProjectionIndependentStructuralMarkers": 1,
+    "Book16BundleMatchesCorpus": 1,
+    "Book16AllIndexedTokenOffsets": 1,
+    "Book16BundleTokens": 1,
+    "Book16CatalogBundleHash": 1,
+    "Book16CatalogBundleBytes": 1,
+    "Book16CatalogCorpusHash": 1,
+    "Book16CatalogTokens": 1,
+    "Book16CatalogSections": 1,
+    "Book17CorpusShard": 1,
+    "Book17ProjectionParagraphIDs": 1,
+    "Book17ProjectionRawParagraph": 61,
+    "Book17ProjectionSourceContinuity": 776,
+    "Book17ProjectionSourceSlice": 776,
+    "Book17ProjectionSourceSliceHash": 776,
+    "Book17ProjectionExactRestoration": 61,
+    "Book17ProjectionRestorationLength": 61,
+    "Book17ProjectionIndependentProjection": 61,
+    "Book17ProjectionParagraphSections": 61,
+    "Book17ProjectionNoUnexpectedContinuation": 61,
+    "Book17ProjectionNoUnexpectedJoin": 61,
+    "Book17ProjectionExplicitMarkerIdentity": 61,
+    "Book17ProjectionTokenCount": 1,
+    "Book17ProjectionHeadingExclusions": 1,
+    "Book17ProjectionStructuralHeadingCount": 1,
+    "Book17ProjectionStructuralHeadingEvidence": 1,
+    "Book17ProjectionLabelExclusions": 1,
+    "Book17ProjectionFootnoteExclusions": 1,
+    "Book17ProjectionContinuationCount": 1,
+    "Book17ProjectionIndependentStructuralMarkers": 1,
+    "Book17BundleMatchesCorpus": 1,
+    "Book17AllIndexedTokenOffsets": 1,
+    "Book17BundleTokens": 1,
+    "Book17CatalogBundleHash": 1,
+    "Book17CatalogBundleBytes": 1,
+    "Book17CatalogCorpusHash": 1,
+    "Book17CatalogTokens": 1,
+    "Book17CatalogSections": 1,
+    "Book18CorpusShard": 1,
+    "Book18ProjectionParagraphIDs": 1,
+    "Book18ProjectionRawParagraph": 57,
+    "Book18ProjectionSourceContinuity": 816,
+    "Book18ProjectionSourceSlice": 816,
+    "Book18ProjectionSourceSliceHash": 816,
+    "Book18ProjectionExactRestoration": 57,
+    "Book18ProjectionRestorationLength": 57,
+    "Book18ProjectionIndependentProjection": 57,
+    "Book18ProjectionParagraphSections": 57,
+    "Book18ProjectionNoUnexpectedContinuation": 57,
+    "Book18ProjectionNoUnexpectedJoin": 57,
+    "Book18ProjectionExplicitMarkerIdentity": 57,
+    "Book18ProjectionTokenCount": 1,
+    "Book18ProjectionHeadingExclusions": 1,
+    "Book18ProjectionStructuralHeadingCount": 1,
+    "Book18ProjectionStructuralHeadingEvidence": 1,
+    "Book18ProjectionLabelExclusions": 1,
+    "Book18ProjectionFootnoteExclusions": 1,
+    "Book18ProjectionContinuationCount": 1,
+    "Book18ProjectionIndependentStructuralMarkers": 1,
+    "Book18BundleMatchesCorpus": 1,
+    "Book18AllIndexedTokenOffsets": 1,
+    "Book18BundleTokens": 1,
+    "Book18CatalogBundleHash": 1,
+    "Book18CatalogBundleBytes": 1,
+    "Book18CatalogCorpusHash": 1,
+    "Book18CatalogTokens": 1,
+    "Book18CatalogSections": 1,
+    "Book19CorpusShard": 1,
+    "Book19ProjectionParagraphIDs": 1,
+    "Book19ProjectionRawParagraph": 52,
+    "Book19ProjectionSourceContinuity": 784,
+    "Book19ProjectionSourceSlice": 784,
+    "Book19ProjectionSourceSliceHash": 784,
+    "Book19ProjectionExactRestoration": 52,
+    "Book19ProjectionRestorationLength": 52,
+    "Book19ProjectionIndependentProjection": 52,
+    "Book19ProjectionParagraphSections": 52,
+    "Book19ProjectionNoUnexpectedContinuation": 52,
+    "Book19ProjectionNoUnexpectedJoin": 52,
+    "Book19ProjectionExplicitMarkerIdentity": 52,
+    "Book19ProjectionTokenCount": 1,
+    "Book19ProjectionHeadingExclusions": 1,
+    "Book19ProjectionStructuralHeadingCount": 1,
+    "Book19ProjectionStructuralHeadingEvidence": 1,
+    "Book19ProjectionLabelExclusions": 1,
+    "Book19ProjectionFootnoteExclusions": 1,
+    "Book19ProjectionContinuationCount": 1,
+    "Book19ProjectionIndependentStructuralMarkers": 1,
+    "Book19BundleMatchesCorpus": 1,
+    "Book19AllIndexedTokenOffsets": 1,
+    "Book19BundleTokens": 1,
+    "Book19CatalogBundleHash": 1,
+    "Book19CatalogBundleBytes": 1,
+    "Book19CatalogCorpusHash": 1,
+    "Book19CatalogTokens": 1,
+    "Book19CatalogSections": 1,
+    "Book20CorpusShard": 1,
+    "Book20ProjectionParagraphIDs": 1,
+    "Book20ProjectionRawParagraph": 51,
+    "Book20ProjectionSourceContinuity": 587,
+    "Book20ProjectionSourceSlice": 587,
+    "Book20ProjectionSourceSliceHash": 587,
+    "Book20ProjectionExactRestoration": 51,
+    "Book20ProjectionRestorationLength": 51,
+    "Book20ProjectionIndependentProjection": 51,
+    "Book20ProjectionParagraphSections": 51,
+    "Book20ProjectionNoUnexpectedContinuation": 51,
+    "Book20ProjectionNoUnexpectedJoin": 51,
+    "Book20ProjectionExplicitMarkerIdentity": 51,
+    "Book20ProjectionTokenCount": 1,
+    "Book20ProjectionHeadingExclusions": 1,
+    "Book20ProjectionStructuralHeadingCount": 1,
+    "Book20ProjectionStructuralHeadingEvidence": 1,
+    "Book20ProjectionLabelExclusions": 1,
+    "Book20ProjectionFootnoteExclusions": 1,
+    "Book20ProjectionContinuationCount": 1,
+    "Book20ProjectionIndependentStructuralMarkers": 1,
+    "Book20BundleMatchesCorpus": 1,
+    "Book20AllIndexedTokenOffsets": 1,
+    "Book20BundleTokens": 1,
+    "Book20CatalogBundleHash": 1,
+    "Book20CatalogBundleBytes": 1,
+    "Book20CatalogCorpusHash": 1,
+    "Book20CatalogTokens": 1,
+    "Book20CatalogSections": 1,
+    "VocabularyQueries": 54058,
+    "VocabularyUnits": 54058,
+    "VocabularyOccurrences": 54058,
+    "VocabularyUnitIdentity": 54058,
+    "VocabularyEvidence": 340827,
+    "VocabularyRecords": 340827,
+    "VocabularySections": 54058,
+    "FixtureQueries": 720,
+    "FixtureUnits": 720,
+    "FixtureOccurrences": 720,
+    "FixtureUnitIdentity": 720,
+    "FixtureEvidence": 18801,
+    "FixtureRecords": 18801,
+    "FixtureSections": 720,
+    "WildcardQueries": 3486,
+    "WildcardUnits": 3486,
+    "WildcardOccurrences": 3486,
+    "WildcardUnitIdentity": 3486,
+    "WildcardEvidence": 83813,
+    "WildcardRecords": 83813,
+    "WildcardSections": 3486,
+    "WithinEveryIntervalQueries": 14752,
+    "WithinEveryIntervalUnits": 14752,
+    "WithinEveryIntervalOccurrences": 14752,
+    "WithinEveryIntervalUnitIdentity": 14752,
+    "WithinEveryIntervalEvidence": 19435,
+    "WithinEveryIntervalRecords": 19435,
+    "WithinEveryIntervalSections": 14752,
+    "EveryCitationSeamQueries": 14712,
+    "EveryCitationSeamUnits": 14712,
+    "EveryCitationSeamOccurrences": 14712,
+    "EveryCitationSeamUnitIdentity": 14712,
+    "EveryCitationSeamSections": 14712,
+    "EveryCitationSeamEvidence": 7416,
+    "EveryCitationSeamRecords": 7416,
     "ProemSeamQueries": 1,
     "ProemSeamUnits": 1,
     "ProemSeamOccurrences": 1,
@@ -1840,58 +3212,58 @@
     "ConcordanceCSVSelectedBooks": 16,
     "ConcordanceCSVNormalizationMetadata": 16,
     "ConcordanceNegativeReader": 347,
-    "NewBookOpeningQueries": 28,
-    "NewBookOpeningUnits": 28,
-    "NewBookOpeningOccurrences": 28,
-    "NewBookOpeningUnitIdentity": 28,
-    "NewBookOpeningEvidence": 28,
-    "NewBookOpeningRecords": 28,
-    "NewBookOpeningSections": 28,
-    "NewBookOpeningSelectedBooks": 28,
-    "NewBookOpeningEnglishNeverFolds": 28,
-    "NewBookOpeningNormalizationMetadata": 28,
-    "NewBookExportGeometries": 28,
-    "NewBookExportNegativeUnits": 28,
-    "NewBookExportCountKind": 28,
-    "NewBookExportOccurrenceCount": 28,
-    "NewBookExportOriginalMatchedText": 28,
-    "NewBookExportEdition": 28,
-    "NewBookExportPassageReader": 28,
-    "NewBookExportCSVRowCount": 28,
-    "NewBookExportCSVTotalRows": 28,
-    "NewBookExportCSVQuery": 28,
-    "NewBookExportCSVQueryJSON": 28,
-    "NewBookExportCSVScope": 28,
-    "NewBookExportCSVEnglishNormalization": 28,
-    "NewBookExportCSVVersion": 28,
-    "NewBookExportCSVOriginalContext": 28,
-    "NewBookExportCSVSourceSegment": 28,
-    "NewBookExportCSVSourcePath": 28,
-    "NewBookExportCSVJoinedContext": 28,
-    "NewBookExportCSVExpectedHit": 28,
-    "NewBookExportCSVNoLatinCoverage": 28,
-    "NewBookExportCSVSelectedCollections": 28,
-    "NewBookExportCSVSelectedBooks": 28,
-    "NewBookExportCSVNormalizationMetadata": 28,
-    "NewBookOpeningUnique": 28,
-    "NewBookOpeningCitation": 28,
-    "CombinedBookSelectionQueries": 14,
-    "CombinedBookSelectionUnits": 14,
-    "CombinedBookSelectionOccurrences": 14,
-    "CombinedBookSelectionUnitIdentity": 14,
-    "CombinedBookSelectionEvidence": 14,
-    "CombinedBookSelectionRecords": 14,
-    "CombinedBookSelectionSections": 14,
-    "CombinedBookSelectionSelectedBooks": 14,
-    "CombinedBookSelectionEnglishNeverFolds": 14,
-    "CombinedBookSelectionNormalizationMetadata": 14,
-    "OpeningRemainsOneAcrossAllBooks": 14,
+    "NewBookOpeningQueries": 38,
+    "NewBookOpeningUnits": 38,
+    "NewBookOpeningOccurrences": 38,
+    "NewBookOpeningUnitIdentity": 38,
+    "NewBookOpeningEvidence": 38,
+    "NewBookOpeningRecords": 38,
+    "NewBookOpeningSections": 38,
+    "NewBookOpeningSelectedBooks": 38,
+    "NewBookOpeningEnglishNeverFolds": 38,
+    "NewBookOpeningNormalizationMetadata": 38,
+    "NewBookExportGeometries": 38,
+    "NewBookExportNegativeUnits": 38,
+    "NewBookExportCountKind": 38,
+    "NewBookExportOccurrenceCount": 38,
+    "NewBookExportOriginalMatchedText": 38,
+    "NewBookExportEdition": 38,
+    "NewBookExportPassageReader": 38,
+    "NewBookExportCSVRowCount": 38,
+    "NewBookExportCSVTotalRows": 38,
+    "NewBookExportCSVQuery": 38,
+    "NewBookExportCSVQueryJSON": 38,
+    "NewBookExportCSVScope": 38,
+    "NewBookExportCSVEnglishNormalization": 38,
+    "NewBookExportCSVVersion": 38,
+    "NewBookExportCSVOriginalContext": 38,
+    "NewBookExportCSVSourceSegment": 38,
+    "NewBookExportCSVSourcePath": 38,
+    "NewBookExportCSVJoinedContext": 38,
+    "NewBookExportCSVExpectedHit": 38,
+    "NewBookExportCSVNoLatinCoverage": 38,
+    "NewBookExportCSVSelectedCollections": 38,
+    "NewBookExportCSVSelectedBooks": 38,
+    "NewBookExportCSVNormalizationMetadata": 38,
+    "NewBookOpeningUnique": 38,
+    "NewBookOpeningCitation": 38,
+    "CombinedBookSelectionQueries": 19,
+    "CombinedBookSelectionUnits": 19,
+    "CombinedBookSelectionOccurrences": 19,
+    "CombinedBookSelectionUnitIdentity": 19,
+    "CombinedBookSelectionEvidence": 19,
+    "CombinedBookSelectionRecords": 19,
+    "CombinedBookSelectionSections": 19,
+    "CombinedBookSelectionSelectedBooks": 19,
+    "CombinedBookSelectionEnglishNeverFolds": 19,
+    "CombinedBookSelectionNormalizationMetadata": 19,
+    "OpeningRemainsOneAcrossAllBooks": 19,
     "AllEnglishLiteralQueries": 12,
     "AllEnglishLiteralUnits": 12,
     "AllEnglishLiteralOccurrences": 12,
     "AllEnglishLiteralUnitIdentity": 12,
-    "AllEnglishLiteralEvidence": 1198,
-    "AllEnglishLiteralRecords": 1198,
+    "AllEnglishLiteralEvidence": 1712,
+    "AllEnglishLiteralRecords": 1712,
     "AllEnglishLiteralSections": 12,
     "AllEnglishLiteralSelectedBooks": 12,
     "AllEnglishLiteralEnglishNeverFolds": 12,
@@ -1900,8 +3272,8 @@
     "AllBookConcordanceSearchUnits": 10,
     "AllBookConcordanceSearchOccurrences": 10,
     "AllBookConcordanceSearchUnitIdentity": 10,
-    "AllBookConcordanceSearchEvidence": 6885,
-    "AllBookConcordanceSearchRecords": 6885,
+    "AllBookConcordanceSearchEvidence": 8777,
+    "AllBookConcordanceSearchRecords": 8777,
     "AllBookConcordanceSearchSections": 10,
     "AllBookConcordanceSearchSelectedBooks": 10,
     "AllBookConcordanceSearchEnglishNeverFolds": 10,
@@ -1910,21 +3282,21 @@
     "AllBookConcordanceNegativeUnits": 10,
     "AllBookConcordanceCountKind": 10,
     "AllBookConcordanceOccurrenceCount": 10,
-    "AllBookConcordanceOriginalMatchedText": 3208,
-    "AllBookConcordanceEdition": 3208,
-    "AllBookConcordancePassageReader": 3208,
+    "AllBookConcordanceOriginalMatchedText": 3452,
+    "AllBookConcordanceEdition": 3452,
+    "AllBookConcordancePassageReader": 3452,
     "AllBookConcordanceCSVRowCount": 10,
     "AllBookConcordanceCSVTotalRows": 10,
-    "AllBookConcordanceCSVQuery": 8829,
-    "AllBookConcordanceCSVQueryJSON": 8829,
-    "AllBookConcordanceCSVScope": 8829,
-    "AllBookConcordanceCSVEnglishNormalization": 8829,
-    "AllBookConcordanceCSVVersion": 8827,
-    "AllBookConcordanceCSVOriginalContext": 8827,
-    "AllBookConcordanceCSVSourceSegment": 8812,
-    "AllBookConcordanceCSVSourcePath": 8812,
-    "AllBookConcordanceCSVJoinedContext": 3208,
-    "AllBookConcordanceCSVExpectedHit": 3208,
+    "AllBookConcordanceCSVQuery": 10850,
+    "AllBookConcordanceCSVQueryJSON": 10850,
+    "AllBookConcordanceCSVScope": 10850,
+    "AllBookConcordanceCSVEnglishNormalization": 10850,
+    "AllBookConcordanceCSVVersion": 10848,
+    "AllBookConcordanceCSVOriginalContext": 10848,
+    "AllBookConcordanceCSVSourceSegment": 10828,
+    "AllBookConcordanceCSVSourcePath": 10828,
+    "AllBookConcordanceCSVJoinedContext": 3452,
+    "AllBookConcordanceCSVExpectedHit": 3452,
     "AllBookConcordanceCSVNoLatinCoverage": 10,
     "AllBookConcordanceCSVSelectedCollections": 10,
     "AllBookConcordanceCSVSelectedBooks": 10,
@@ -1933,16 +3305,16 @@
     "ContinuationCSVRetainsBothSourceIDs": 2,
     "VIII255CSVRetainsParagraphBreak": 2,
     "VIII255CSVRetainsBothSourceIDs": 2,
-    "AllBookConcordanceNegativeReader": 5619,
-    "CrossBookPhraseBoundaryQueries": 28,
-    "CrossBookPhraseBoundaryUnits": 28,
-    "CrossBookPhraseBoundaryOccurrences": 28,
-    "CrossBookPhraseBoundaryUnitIdentity": 28,
-    "CrossBookPhraseBoundarySections": 28,
-    "CrossBookPhraseBoundarySelectedBooks": 28,
-    "CrossBookPhraseBoundaryEnglishNeverFolds": 28,
-    "CrossBookPhraseBoundaryNormalizationMetadata": 28,
-    "NoPhraseCrossesBooks": 28,
+    "AllBookConcordanceNegativeReader": 7396,
+    "CrossBookPhraseBoundaryQueries": 38,
+    "CrossBookPhraseBoundaryUnits": 38,
+    "CrossBookPhraseBoundaryOccurrences": 38,
+    "CrossBookPhraseBoundaryUnitIdentity": 38,
+    "CrossBookPhraseBoundarySections": 38,
+    "CrossBookPhraseBoundarySelectedBooks": 38,
+    "CrossBookPhraseBoundaryEnglishNeverFolds": 38,
+    "CrossBookPhraseBoundaryNormalizationMetadata": 38,
+    "NoPhraseCrossesBooks": 38,
     "CrossBookBooleanQueries": 2,
     "CrossBookBooleanUnits": 2,
     "CrossBookBooleanOccurrences": 2,
@@ -2132,8 +3504,8 @@
     "MixedAllEnglishLiteralUnits": 4,
     "MixedAllEnglishLiteralOccurrences": 4,
     "MixedAllEnglishLiteralUnitIdentity": 4,
-    "MixedAllEnglishLiteralEvidence": 435,
-    "MixedAllEnglishLiteralRecords": 435,
+    "MixedAllEnglishLiteralEvidence": 492,
+    "MixedAllEnglishLiteralRecords": 492,
     "MixedAllEnglishLiteralSections": 4,
     "MixedAllEnglishLiteralCollections": 4,
     "XIPhysicalSourceOrder": 1,
@@ -2284,11 +3656,93 @@
     "XIIOrdinaryBoldCSVCSVNormalizationMetadata": 2,
     "XVAllChapterMarkersRetainedInSource": 1,
     "XVChaptersDoNotCreateTextOrBarriers": 1,
+    "FinalBooksCompleteChapterMilestones": 5,
+    "FinalBooksNoChapterPhraseBarriers": 5,
+    "FinalBooksNoParagraphContinuations": 5,
+    "PublishedXXExampleQueries": 2,
+    "PublishedXXExampleUnits": 2,
+    "PublishedXXExampleOccurrences": 2,
+    "PublishedXXExampleUnitIdentity": 2,
+    "PublishedXXExampleEvidence": 2,
+    "PublishedXXExampleRecords": 2,
+    "PublishedXXExampleSections": 2,
+    "PublishedXXExampleSelectedBooks": 2,
+    "PublishedXXExampleEnglishNeverFolds": 2,
+    "PublishedXXExampleNormalizationMetadata": 2,
+    "XXExampleUnique": 2,
+    "XXExampleCitation": 2,
+    "PublishedXXExampleCSVGeometries": 2,
+    "PublishedXXExampleCSVNegativeUnits": 2,
+    "PublishedXXExampleCSVCountKind": 2,
+    "PublishedXXExampleCSVOccurrenceCount": 2,
+    "PublishedXXExampleCSVOriginalMatchedText": 2,
+    "PublishedXXExampleCSVEdition": 2,
+    "PublishedXXExampleCSVPassageReader": 2,
+    "PublishedXXExampleCSVCSVRowCount": 2,
+    "PublishedXXExampleCSVCSVTotalRows": 2,
+    "PublishedXXExampleCSVCSVQuery": 2,
+    "PublishedXXExampleCSVCSVQueryJSON": 2,
+    "PublishedXXExampleCSVCSVScope": 2,
+    "PublishedXXExampleCSVCSVEnglishNormalization": 2,
+    "PublishedXXExampleCSVCSVVersion": 2,
+    "PublishedXXExampleCSVCSVOriginalContext": 2,
+    "PublishedXXExampleCSVCSVSourceSegment": 2,
+    "PublishedXXExampleCSVCSVSourcePath": 2,
+    "PublishedXXExampleCSVCSVJoinedContext": 2,
+    "PublishedXXExampleCSVCSVExpectedHit": 2,
+    "PublishedXXExampleCSVCSVNoLatinCoverage": 2,
+    "PublishedXXExampleCSVCSVSelectedCollections": 2,
+    "PublishedXXExampleCSVCSVSelectedBooks": 2,
+    "PublishedXXExampleCSVCSVNormalizationMetadata": 2,
+    "XXDistinctHeadElement": 1,
+    "XXExcludedHeadQueries": 1,
+    "XXExcludedHeadUnits": 1,
+    "XXExcludedHeadOccurrences": 1,
+    "XXExcludedHeadUnitIdentity": 1,
+    "XXExcludedHeadSections": 1,
+    "XXExcludedHeadSelectedBooks": 1,
+    "XXExcludedHeadEnglishNeverFolds": 1,
+    "XXExcludedHeadNormalizationMetadata": 1,
+    "XXHeadingNotSearchableNarrative": 1,
+    "XIXSeparateFinalIntervalsQueries": 2,
+    "XIXSeparateFinalIntervalsUnits": 2,
+    "XIXSeparateFinalIntervalsOccurrences": 2,
+    "XIXSeparateFinalIntervalsUnitIdentity": 2,
+    "XIXSeparateFinalIntervalsEvidence": 2,
+    "XIXSeparateFinalIntervalsRecords": 2,
+    "XIXSeparateFinalIntervalsSections": 2,
+    "XIXSeparateFinalIntervalsSelectedBooks": 2,
+    "XIXSeparateFinalIntervalsEnglishNeverFolds": 2,
+    "XIXSeparateFinalIntervalsNormalizationMetadata": 2,
+    "XIX363364SeparateCitations": 2,
+    "XIXFinalIntervalsCSVGeometries": 2,
+    "XIXFinalIntervalsCSVNegativeUnits": 2,
+    "XIXFinalIntervalsCSVCountKind": 2,
+    "XIXFinalIntervalsCSVOccurrenceCount": 2,
+    "XIXFinalIntervalsCSVOriginalMatchedText": 2,
+    "XIXFinalIntervalsCSVEdition": 2,
+    "XIXFinalIntervalsCSVPassageReader": 2,
+    "XIXFinalIntervalsCSVCSVRowCount": 2,
+    "XIXFinalIntervalsCSVCSVTotalRows": 2,
+    "XIXFinalIntervalsCSVCSVQuery": 2,
+    "XIXFinalIntervalsCSVCSVQueryJSON": 2,
+    "XIXFinalIntervalsCSVCSVScope": 2,
+    "XIXFinalIntervalsCSVCSVEnglishNormalization": 2,
+    "XIXFinalIntervalsCSVCSVVersion": 2,
+    "XIXFinalIntervalsCSVCSVOriginalContext": 2,
+    "XIXFinalIntervalsCSVCSVSourceSegment": 2,
+    "XIXFinalIntervalsCSVCSVSourcePath": 2,
+    "XIXFinalIntervalsCSVCSVJoinedContext": 2,
+    "XIXFinalIntervalsCSVCSVExpectedHit": 2,
+    "XIXFinalIntervalsCSVCSVNoLatinCoverage": 2,
+    "XIXFinalIntervalsCSVCSVSelectedCollections": 2,
+    "XIXFinalIntervalsCSVCSVSelectedBooks": 2,
+    "XIXFinalIntervalsCSVCSVNormalizationMetadata": 2,
     "NoUnpublishedFutureWitness": 1,
-    "InputUnchangedDuringRun": 75
+    "InputUnchangedDuringRun": 95
   },
-  "totalQueries": 66645,
-  "assertions": 1266230,
+  "totalQueries": 87944,
+  "assertions": 1640726,
   "failedAssertions": 0,
   "examples": [
     {
@@ -2425,6 +3879,41 @@
       "purpose": "Book 15 opening"
     },
     {
+      "query": "\"AS king Herod was very zealous\"",
+      "scope": "section",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Book 16 opening"
+    },
+    {
+      "query": "\"WHEN Antipater had thus taken off his brethren\"",
+      "scope": "section",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Book 17 opening"
+    },
+    {
+      "query": "\"NOW Cyrenius a Roman senator\"",
+      "scope": "section",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Book 18 opening"
+    },
+    {
+      "query": "\"NOW this Caius did not demonstrate his madness\"",
+      "scope": "section",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Book 19 opening"
+    },
+    {
+      "query": "\"UPON the death of king Agrippa\"",
+      "scope": "section",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Book 20 opening"
+    },
+    {
       "query": "\"Elisha also sent a hasty message\"",
       "scope": "section",
       "matchingUnits": 1,
@@ -2451,11 +3940,25 @@
       "matchingUnits": 1,
       "occurrences": 1,
       "purpose": "Whiston Book XI example, retained in physical source order"
+    },
+    {
+      "query": "\"the brother of Jesus\"",
+      "scope": "section",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Whiston Book XX example, preserving the accepted section marker"
+    },
+    {
+      "query": "\"the brother of Jesus\"",
+      "scope": "book",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Whiston Book XX example, preserving the accepted section marker"
     }
   ],
-  "durationSeconds": 94.9,
+  "durationSeconds": 68.5,
   "limitations": [
-    "Coverage is the accepted Whiston Proem and Books I-XV XML only; Books XVI-XX are not indexed by this release.",
+    "Coverage is all accepted Whiston Antiquities Proem and Books I-XX XML; the search does not create a new edition or add other Whiston works.",
     "This source/query acceptance does not establish a new translation text or collate printed editions; browser interaction is verified separately."
   ],
   "failures": []
