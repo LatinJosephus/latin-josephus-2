@@ -119,7 +119,7 @@ export function readerURL(record,baseURL,{section=true}={}) {
     url.searchParams.set('niese',niese);
   }
   const english=record.readerLink?.params?.english;
-  const whistonCollections={antiquities:'antiquities-english-whiston',bellum:'bellum-english-whiston'};
+  const whistonCollections={antiquities:'antiquities-english-whiston',bellum:'bellum-english-whiston','contra-apionem':'contra-apionem-english-whiston'};
   if(Object.values(whistonCollections).includes(record.collectionId)||english!==undefined){
     const expectedCollection=whistonCollections[record.work];
     if(!expectedCollection||record.language!=='English'||record.edition!=='Whiston'

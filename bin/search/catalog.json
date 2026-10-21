@@ -215,6 +215,34 @@
         "tokens": 215072,
         "bytes": 27848918
       }
+    },
+    {
+      "id": "contra-apionem-english-whiston",
+      "work": "contra-apionem",
+      "label": "Contra Apionem",
+      "citationPrefix": "Contra Apionem",
+      "language": "English",
+      "edition": "Whiston",
+      "readerPath": "contra-apionem/",
+      "books": [
+        "contra-apionem-english-whiston:1",
+        "contra-apionem-english-whiston:2"
+      ],
+      "citationScheme": "niese",
+      "unitLabel": "Niese section",
+      "unitLabelPlural": "Niese sections",
+      "manifestPath": "config/contra-apionem-english-whiston.json",
+      "manifestSHA256": "e6c6d707b44d592c9c4357555cb94cbb2b8804d6000e4fc88fc8b115d5fe0f34",
+      "corpusPath": "data/contra-apionem-english-whiston/corpus.json",
+      "corpusSHA256": "92f30399085643d6d6f81cf820b75a264ad2aad0be4c4399b09e650cb2585c1e",
+      "extractionReportPath": "data/contra-apionem-english-whiston/extraction-report.json",
+      "extractionReportSHA256": "fde55357d243d2a01d1697823406cf094cc5e27c388c5afdeaaeb2e3fcf99bde",
+      "totals": {
+        "books": 2,
+        "sections": 616,
+        "tokens": 36853,
+        "bytes": 5259181
+      }
     }
   ],
   "books": [
@@ -1396,17 +1424,45 @@
       "sha256": "3a99f1ab5dbfb768cd515013735087b23aa4180d6164b9f62c7e1612163cdb71",
       "corpusPath": "data/bellum-english-whiston/book-07.corpus.json",
       "corpusSHA256": "02cfe3eb95d04be13feefd37628ef15f4d83a99a24ba41bb4942379f8cb6b230"
+    },
+    {
+      "id": "contra-apionem-english-whiston:1",
+      "collectionId": "contra-apionem-english-whiston",
+      "number": 1,
+      "label": "Book I",
+      "sections": 320,
+      "tokens": 18497,
+      "vocabulary": 2383,
+      "bytes": 2640497,
+      "path": "data/contra-apionem-english-whiston/book-01.bundle.json",
+      "sha256": "6147bebbcb736e20e07cb2e2df420902ffb6f3e9b4045837311733a2d5fcb1ea",
+      "corpusPath": "data/contra-apionem-english-whiston/book-01.corpus.json",
+      "corpusSHA256": "10ca9d4e071e3fff0ef3352301956237a6f052ae6b0a227f60405afa5b183183"
+    },
+    {
+      "id": "contra-apionem-english-whiston:2",
+      "collectionId": "contra-apionem-english-whiston",
+      "number": 2,
+      "label": "Book II",
+      "sections": 296,
+      "tokens": 18356,
+      "vocabulary": 2586,
+      "bytes": 2618684,
+      "path": "data/contra-apionem-english-whiston/book-02.bundle.json",
+      "sha256": "122a14220c7768eca98367136bf731a9633cca660e8416e634c79a73ea36d272",
+      "corpusPath": "data/contra-apionem-english-whiston/book-02.corpus.json",
+      "corpusSHA256": "89b022a2cf47250995d4f2b1207c254bef1a350a500be89d491b4fd7c333fed4"
     }
   ],
   "totals": {
-    "books": 61,
-    "sections": 23835,
-    "tokens": 1174317,
-    "bytes": 175303522
+    "books": 63,
+    "sections": 24451,
+    "tokens": 1211170,
+    "bytes": 180562703
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "89db0e5f8188914a6e246a2e56e7537022c7db82dccea7281d17dfd96086b1e5",
+    "manifestSHA256": "d721edfdcd49d3b5213c4afe1e0fde36bdb0108b3bbc28a15f844a24f070ba7b",
     "enginePath": "engine.mjs",
     "engineSHA256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
     "lunrPath": "vendor/lunr.cjs",

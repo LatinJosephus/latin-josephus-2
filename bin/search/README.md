@@ -1,7 +1,7 @@
 # Latin Josephus search
 
 This directory contains the source and verification tools for the main site's
-`/search/` page. Current coverage comprises four Latin collections and two English collections:
+`/search/` page. Current coverage comprises four Latin collections and three English collections:
 
 - **Cardwell's *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
   114,794 word tokens.
@@ -21,10 +21,13 @@ This directory contains the source and verification tools for the main site's
 - **Whiston English *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
   215,072 word tokens, including Book I's embedded preface (I.1–30).
 
-Together these comprise **61 book editions, 23,827 citation units, and 1,174,317
-word tokens**. The indexes contain 23,835 physical records because four Bamberg
+- **Whiston English *Contra Apionem*, Books I–II:** 616 Niese sections and
+  36,853 word tokens.
+
+Together these comprise **63 book editions, 24,443 citation units, and 1,211,170
+word tokens**. The indexes contain 24,451 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
-The English Antiquities and Bellum are complete; Greek editions are not indexed. Bamberg Latin Antiquities
+The Whiston English Antiquities, Bellum and Contra Apionem are complete; Greek editions are not indexed. Bamberg Latin Antiquities
 III.240 and VII.69–99 retain their citations and the source's explicit omissions.
 X.108 retains an empty interval between its citation label and the next Niese
 marker, without an omission tag. IX.51–109 are absent from the accepted source;
@@ -81,10 +84,13 @@ of one work, language, and edition. Distinct Boolean terms can occur in differen
 sections of that book. A phrase must remain consecutive, but may cross Niese or
 chapter boundaries within the book. An explicit structural boundary or textual
 gap, represented by `breakBefore` or an internal `phraseBreaks` offset,
-prevents a phrase from joining the text on either side. In Contra Apionem,
+prevents a phrase from joining the text on either side. In Boysen's Latin Contra Apionem,
 all 25 literal asterisk clusters are conservative phrase-adjacency barriers,
 including clusters inside a section or at its edge. This rule does not infer
 the missing-text extent or a precise editorial meaning for every mark.
+Whiston's English Contra Apionem preserves its own accepted section text and
+has no such asterisk barriers. Whiston's division markers, including the two
+inside II.109 and II.112, do not interrupt phrases.
 In De excidio, the three Prologue units are searchable and can be
 joined to each other in whole-book phrases, but a phrase cannot cross from the
 end of the Prologue into the Book I narrative. This is a composition boundary,
@@ -203,7 +209,8 @@ books** as its default. Choose **De excidio Hierosolymitano** for its five books
 **Contra Apionem** for its two books, **Antiquities I–XX, including Proem** for
 all twenty Bamberg Latin Antiquities books, **Antiquities · English · Whiston**
 for the English Proem and Books I–XX, **Bellum Judaicum · English · Whiston**
-for all seven English Bellum books, or **All works** to search all six collections.
+for all seven English Bellum books, **Contra Apionem · English · Whiston**
+for both English Contra Apionem books, or **All works** to search all seven collections.
 Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
 use `antiquities/?book=1`.
 
@@ -226,19 +233,22 @@ uses **`main` for generated output only**. It is separate from the authoritative
 source checkout for the site's reader and ongoing Antiquities repairs.
 
 Prepare updates in an isolated LF checkout and review source and generated
-changes together. The combined release package includes the reviewed Bellum
-concordance (v2), De excidio, and Contra Apionem history. It can publish from
-the earlier live search, concordance, or De excidio stages; the two repository
-branches may independently be at any reviewed stage. Its helper verifies the Git
-objects and uses ordinary fast-forward pushes without applying a patch to the
-user's working files. See the release package for its pinned commits, supported
-starting states, checksums, and publication command. A patch is a review aid.
+changes together. The Whiston Contra Apionem I–II release adds one reviewed
+commit to each already-installed Whiston Bellum branch. Its helper verifies
+the exact Git objects and all indexed source inputs, then uses ordinary
+fast-forward pushes. The user's working files, index, settings and local
+branches are preserved. Remote branches must be at the accepted base or the
+reviewed final commit; the release package records those exact pins and its
+publication command. Earlier local branches are accepted only when the
+helper verifies their ancestry and all indexed input contents.
 
 The search build **reads canonical XML without modifying it**:
 `assets/xml/bellum/Latin/book-01.xml` through `book-07.xml`,
 `assets/xml/deh/Latin/book-01.xml` through `book-05.xml`, and
-`assets/xml/contra-apionem/Latin/book-01.xml` through `book-02.xml`. The configured source
-lists, extraction reports, and independent QA record the actual source hashes.
+`assets/xml/contra-apionem/Latin/book-01.xml` through `book-02.xml`, the accepted
+Latin Antiquities sources and citation maps, and the accepted English Whiston
+sources under each work's `English/` directory. The configured source lists,
+extraction reports, and independent QA record the actual source hashes.
 
 ### Bellum
 
@@ -310,7 +320,7 @@ and reader URL. An independent verifier parses the canonical XML separately,
 checks every character and token offset, and compares query answers with its
 own full-scan oracle. Neither extractor nor search changes the accepted XML.
 
-### Contra Apionem
+### Boysen Latin Contra Apionem
 
 | Book | Niese sections | Word tokens |
 | --- | ---: | ---: |
@@ -357,6 +367,7 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `extract-ca.py`, `tests/test_extract_ca.py` | Contra Apionem extraction, markup, phrase barriers, and reconstruction checks. |
 | `extract-antiquities.py`, `tests/test_extract_antiquities.py` | Antiquities I–XX and Proem extraction, source restoration, and gap checks. |
 | `extract-whiston-bellum.py`, `tests/test_extract_whiston_bellum.py` | Whiston Bellum I–VII extraction, embedded milestones, supplied text, and exact paragraph restoration. |
+| `extract-whiston-contra-apionem.py`, `tests/test_extract_whiston_contra_apionem.py` | Whiston Contra Apionem I–II extraction, exact Niese paragraph identities, and Whiston division-marker provenance. |
 | `corpus.json`, `data/book-0N.corpus.json` | Generated combined and per-book original-text records. |
 | `extraction-report.json`, `data/book-0N.extraction-report.json` | Generated coverage and reconstruction evidence. |
 | `engine.mjs`, `vendor/` | Boolean/phrase/wildcard engine and pinned Lunr 2.3.9 with licence and provenance. |
@@ -377,6 +388,8 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `tests/antiquities-corpus-qa.mjs`, `tests/antiquities-source-witness.py`, `tests/antiquities-presentation.test.mjs` | Independent 21-document witness with ten accepted registries, all-token and query checks, Proem links, gap boundaries, editorial exports, and four-work integration. |
 | `tests/whiston-bellum-corpus-qa.mjs`, `tests/whiston-bellum-source-witness.py` | Independent seven-document English Bellum witness, exhaustive word and phrase checks, supplied spans, reader links, and mixed-edition isolation. |
 | `data/bellum-english-whiston/`, `config/bellum-english-whiston.json`, `whiston-bellum-publication.mjs` | Seven English Bellum indexes, original-text records, extraction/QA evidence, and the strict source projection gate. |
+| `tests/whiston-contra-apionem-corpus-qa.mjs`, `tests/whiston-contra-apionem-source-witness.py` | Independent two-document English Contra Apionem witness, all-word and phrase checks, source divisions, literal brackets, reader links, and mixed-edition isolation. |
+| `data/contra-apionem-english-whiston/`, `config/contra-apionem-english-whiston.json`, `whiston-contra-apionem-publication.mjs` | Two English Contra Apionem indexes, original-text records, extraction/QA evidence, and the strict source projection gate. |
 | `build-search.mjs`, `publication.mjs`, `check-assets.mjs` | Rebuild orchestration, export validation, and read-only freshness checks. |
 | `assets/search/` at repository root | Generated runtime and evidence export, including `publication-manifest.json`. |
 
@@ -397,7 +410,8 @@ The registry currently contains:
     "contra-apionem-latin-boysen.json",
     "antiquities-latin-bamberg78.json",
     "antiquities-english-whiston.json",
-    "bellum-english-whiston.json"
+    "bellum-english-whiston.json",
+    "contra-apionem-english-whiston.json"
   ]
 }
 ```
@@ -848,7 +862,7 @@ minidom; `tests/whiston-corpus-qa.mjs` checks every indexed word, every interval
 citation seams, cross-book isolation, representative Boolean/wildcard queries,
 links and CSV. Book IX's seven inline footnotes are excluded annotations;
 their anchors do not interrupt the consecutive running text. All twenty-one English
-Antiquities XML files are indexed inputs, among 73 indexed publication inputs overall.
+Antiquities XML files are indexed inputs, among 75 indexed publication inputs overall.
 No source or reader correction is part of this search release.
 
 | Whiston book | Niese sections | Word tokens |
@@ -1005,6 +1019,60 @@ within their own work, book, and edition.
 `tests/whiston-bellum-corpus-qa.mjs` compares every indexed interval, word sequence,
 source seam, supplied span, and the published query results. The source gate
 `whiston-bellum-publication.mjs` rejects changed narrative or source markup,
-including a changed supplied span. The complete build now verifies 73 indexed
-inputs across six collections. Existing Latin and Antiquities per-book data
-remain unchanged from the accepted Whiston Antiquities I–XX baseline.
+including a changed supplied span. The Bellum addition brought coverage to
+73 indexed inputs across six collections. Its existing Latin and Antiquities
+per-book data remain unchanged from the accepted Whiston Antiquities I–XX baseline.
+
+## Whiston English Contra Apionem I–II
+
+The collection `contra-apionem-english-whiston` indexes the two accepted
+`assets/xml/contra-apionem/English/book-0N.xml` files. It is separate from
+Boysen's Latin text and from the other two Whiston works. All sections are
+present in ascending source order:
+
+| Whiston Contra Apionem book | Niese sections | Word tokens |
+| --- | ---: | ---: |
+| I | 320 | 18,497 |
+| II | 296 | 18,356 |
+| **Total** | **616** | **36,853** |
+
+Each accepted English `p@n` already represents a single Niese section and has
+its own `xml:id`, such as `english-apion1-num38`. The extractor preserves that
+identity, every running character, internal whitespace, punctuation and the
+literal brackets in 44 paragraphs. Only section-edge whitespace is trimmed;
+the report retains it for exact paragraph restoration. The source contains no
+encoded additions, deletions or gaps requiring editorial display markup.
+
+Niese chapter and Whiston division milestones remain structural metadata.
+Book I has 35 chapter and 35 Whiston division markers; Book II has 41 chapter
+and 42 Whiston division markers. Two Whiston markers occur inside Niese
+paragraphs: division 9 at UTF-16 offset 106 in II.109 and division 10 at offset
+4 in II.112. Their following text remains part of the same section. They
+contribute no searchable words and create no phrase barrier. The extraction
+reports retain every marker's position and original attributes.
+
+Exact phrases work within a section; whole-book phrases may also cross all
+614 adjacent section seams, including chapter boundaries. Neither Boolean
+conditions nor phrases combine different books, languages, works or editions.
+English matching remains literal apart from case, and Latin u/v and i/j
+equivalence does not change it. The example `"only twenty two books"` finds
+I.38 while retaining the source's hyphenated `twenty-two` in its excerpt.
+The word `jews` has 79 occurrences in 71 sections; `the` has 1,859 in 557.
+
+Result and CSV links use `contra-apionem/?book=N&niese=S&english=whiston`;
+whole-book links omit the Niese parameter. CSV text columns preserve original
+punctuation and brackets, and source segments retain the English XML identity
+and source path. The interface and CSV describe Boysen's Latin asterisk
+barriers only when that edition is selected.
+
+The independent `tests/whiston-contra-apionem-source-witness.py` parses the
+accepted XML with a separate XML implementation. Its corpus verifier checks
+every section, token and original-text offset, each source marker, every
+adjacent seam, both internal Whiston division markers, quoted and wildcard
+phrases, Boolean logic, complete CSV results and collection isolation.
+`whiston-contra-apionem-publication.mjs` independently projects the pinned
+canonical XML and rejects altered text, identities, structure or provenance,
+even when artifact hashes have been recalculated. The build now verifies
+75 indexed inputs: 65 XML files and ten accepted citation maps. All 61 prior
+book editions and their 183 corpus, extraction-report and bundle files remain
+unchanged from the accepted Whiston Bellum release.

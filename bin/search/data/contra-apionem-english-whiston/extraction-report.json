@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "scope": {
+    "work": "Contra Apionem",
+    "books": [
+      1,
+      2
+    ],
+    "language": "English",
+    "edition": "Whiston",
+    "unit": "Niese section",
+    "citationScheme": "niese"
+  },
+  "counts": {
+    "books": 2,
+    "sourceDocuments": 2,
+    "bodyParagraphs": 616,
+    "narrativeParagraphs": 616,
+    "numberedParagraphs": 616,
+    "sections": 616,
+    "runningWordTokens": 36853,
+    "chapterMilestones": 76,
+    "whistonSectionMilestones": 77,
+    "inlineWhistonSectionMilestones": 2,
+    "breakBeforeUnits": 0
+  },
+  "coverage": {
+    "completeRangesByBook": {
+      "1": [
+        1,
+        320
+      ],
+      "2": [
+        1,
+        296
+      ]
+    },
+    "missingSections": [],
+    "unexpectedSections": [],
+    "duplicateSections": [],
+    "allSectionTextsNonempty": true,
+    "paragraphsExactlyRestored": 616,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "rawParagraphSequenceSha256": "49548ea0672ae133f48456846d884799754d590c3f4486374ced9bdf86ab072e",
+    "restoredParagraphSequenceSha256": "49548ea0672ae133f48456846d884799754d590c3f4486374ced9bdf86ab072e",
+    "sourceWordSequenceSha256": "2bb0cbdb7d61ff244ec070e7d5607fc49d4a00e2d0f609c00ebf0d70d1e2f964",
+    "indexedWordSequenceSha256": "2bb0cbdb7d61ff244ec070e7d5607fc49d4a00e2d0f609c00ebf0d70d1e2f964",
+    "sourceNonWhitespaceContentSha256": "c219200aef17e8b3663222ec8d35a0ae675c70ab2738ad024ecea74daa9981bf",
+    "indexedNonWhitespaceContentSha256": "c219200aef17e8b3663222ec8d35a0ae675c70ab2738ad024ecea74daa9981bf",
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true
+  },
+  "corpus": {
+    "path": "data/contra-apionem-english-whiston/corpus.json",
+    "sha256": "92f30399085643d6d6f81cf820b75a264ad2aad0be4c4399b09e650cb2585c1e",
+    "bytes": 725533,
+    "records": 616
+  },
+  "books": [
+    {
+      "book": 1,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/contra-apionem/English/book-01.xml",
+        "sha256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+        "bytes": 125731
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/contra-apionem/English/book-01.xml",
+          "sha256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+          "bytes": 125731
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 320,
+        "narrativeParagraphs": 320,
+        "numberedParagraphs": 320,
+        "sections": 320,
+        "runningWordTokens": 18497,
+        "chapterMilestones": 35,
+        "whistonSectionMilestones": 35,
+        "inlineWhistonSectionMilestones": 0,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 0,
+      "orderEnd": 319,
+      "corpus": {
+        "path": "data/contra-apionem-english-whiston/book-01.corpus.json",
+        "sha256": "10ca9d4e071e3fff0ef3352301956237a6f052ae6b0a227f60405afa5b183183",
+        "bytes": 373694,
+        "records": 320
+      },
+      "extractionReport": {
+        "path": "data/contra-apionem-english-whiston/book-01.extraction-report.json",
+        "sha256": "95d92ec67975806d9a84b480e179514576df1794ae4fdc615ad67061c9f1a6f5",
+        "bytes": 679719
+      }
+    },
+    {
+      "book": 2,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/contra-apionem/English/book-02.xml",
+        "sha256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+        "bytes": 122963
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/contra-apionem/English/book-02.xml",
+          "sha256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+          "bytes": 122963
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 296,
+        "narrativeParagraphs": 296,
+        "numberedParagraphs": 296,
+        "sections": 296,
+        "runningWordTokens": 18356,
+        "chapterMilestones": 41,
+        "whistonSectionMilestones": 42,
+        "inlineWhistonSectionMilestones": 2,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 320,
+      "orderEnd": 615,
+      "corpus": {
+        "path": "data/contra-apionem-english-whiston/book-02.corpus.json",
+        "sha256": "89b022a2cf47250995d4f2b1207c254bef1a350a500be89d491b4fd7c333fed4",
+        "bytes": 351842,
+        "records": 296
+      },
+      "extractionReport": {
+        "path": "data/contra-apionem-english-whiston/book-02.extraction-report.json",
+        "sha256": "dba55fa3f612335917df359cc13ef32712301c90437c1f9c9a0345969d56d074",
+        "bytes": 644351
+      }
+    }
+  ]
+}

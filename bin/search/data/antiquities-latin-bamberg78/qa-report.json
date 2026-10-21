@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T13:36:51.992Z",
+  "generatedAt": "2026-10-21T15:02:59.333Z",
   "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -179,8 +179,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1",
-      "bytes": 50096
+      "sha256": "0d713dd31bdac92813b8496a76863413e2058cdafc46d39d08530a9714159011",
+      "bytes": 52382
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -219,8 +219,8 @@
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
-      "bytes": 15520
+      "sha256": "09a7dc73ff8dcb30fd747e562e87d463041d39d4667febceafd381e74c2dd481",
+      "bytes": 15570
     },
     "books": [
       {
@@ -2069,9 +2069,9 @@
     "MixedFourWorkCollectionMatchingUnits": 8,
     "MixedFourWorkCollectionOccurrences": 8,
     "MixedFourWorkCollectionUnitIdentity": 8,
-    "MixedFourWorkCollectionEvidence": 48938,
-    "MixedFourWorkCollectionRecordIds": 48938,
-    "MixedFourWorkCollectionSections": 48938,
+    "MixedFourWorkCollectionEvidence": 50178,
+    "MixedFourWorkCollectionRecordIds": 50178,
+    "MixedFourWorkCollectionSections": 50178,
     "MixedFourWorkCollectionMatchingSections": 8,
     "MixedFourWorkCollectionSelectionOrder": 8,
     "MixedFourWorkCollectionUniqueRecordIdentity": 8,
@@ -2086,10 +2086,10 @@
     "BundleFetchCaching": 1,
     "InvalidSelectionRejected": 3,
     "MissingSelectedBookRejectsCompleteSearch": 1,
-    "InputUnchangedDuringQA": 142
+    "InputUnchangedDuringQA": 144
   },
   "totalQueries": 293134,
-  "assertions": 3903570,
+  "assertions": 3907292,
   "failedAssertions": 0,
   "examples": [
     {
@@ -7597,11 +7597,13 @@
         "bellum-english-whiston:4",
         "bellum-english-whiston:5",
         "bellum-english-whiston:6",
-        "bellum-english-whiston:7"
+        "bellum-english-whiston:7",
+        "contra-apionem-english-whiston:1",
+        "contra-apionem-english-whiston:2"
       ],
-      "matchingUnits": 541,
-      "matchingSections": 541,
-      "occurrences": 687
+      "matchingUnits": 542,
+      "matchingSections": 542,
+      "occurrences": 688
     },
     {
       "query": "sacerdot*",
@@ -7668,11 +7670,13 @@
         "bellum-english-whiston:4",
         "bellum-english-whiston:5",
         "bellum-english-whiston:6",
-        "bellum-english-whiston:7"
+        "bellum-english-whiston:7",
+        "contra-apionem-english-whiston:1",
+        "contra-apionem-english-whiston:2"
       ],
-      "matchingUnits": 40,
-      "matchingSections": 541,
-      "occurrences": 687
+      "matchingUnits": 41,
+      "matchingSections": 542,
+      "occurrences": 688
     },
     {
       "query": "NOT (zzzznonoccurrit)",
@@ -7739,10 +7743,12 @@
         "bellum-english-whiston:4",
         "bellum-english-whiston:5",
         "bellum-english-whiston:6",
-        "bellum-english-whiston:7"
+        "bellum-english-whiston:7",
+        "contra-apionem-english-whiston:1",
+        "contra-apionem-english-whiston:2"
       ],
-      "matchingUnits": 23827,
-      "matchingSections": 23827,
+      "matchingUnits": 24443,
+      "matchingSections": 24443,
       "occurrences": 0
     },
     {
@@ -7810,14 +7816,16 @@
         "bellum-english-whiston:4",
         "bellum-english-whiston:5",
         "bellum-english-whiston:6",
-        "bellum-english-whiston:7"
+        "bellum-english-whiston:7",
+        "contra-apionem-english-whiston:1",
+        "contra-apionem-english-whiston:2"
       ],
-      "matchingUnits": 61,
+      "matchingUnits": 63,
       "matchingSections": 0,
       "occurrences": 0
     }
   ],
-  "durationSeconds": 622,
+  "durationSeconds": 493.2,
   "limitations": [
     "Automated Node/Python acceptance, not browser or visual acceptance.",
     "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",

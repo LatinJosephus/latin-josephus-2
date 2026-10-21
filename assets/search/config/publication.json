@@ -144,6 +144,16 @@
       ],
       "verifier": "tests/whiston-bellum-corpus-qa.mjs",
       "qaReport": "data/bellum-english-whiston/qa-report.json"
+    },
+    "contra-apionem-english-whiston": {
+      "extractor": "extract-whiston-contra-apionem.py",
+      "outputDirectory": "data/contra-apionem-english-whiston",
+      "sources": [
+        "assets/xml/contra-apionem/English/book-01.xml",
+        "assets/xml/contra-apionem/English/book-02.xml"
+      ],
+      "verifier": "tests/whiston-contra-apionem-corpus-qa.mjs",
+      "qaReport": "data/contra-apionem-english-whiston/qa-report.json"
     }
   }
 }

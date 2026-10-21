@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T13:39:01.800Z",
+  "generatedAt": "2026-10-21T15:04:58.389Z",
   "independentVerifier": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -268,8 +268,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1",
-      "bytes": 50096
+      "sha256": "0d713dd31bdac92813b8496a76863413e2058cdafc46d39d08530a9714159011",
+      "bytes": 52382
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -283,13 +283,13 @@
     },
     "concordance": {
       "path": "bin/search/concordance.mjs",
-      "sha256": "046a58fb0e4959bba4b86c3aed6b69d82a221f11dce3250b26a3470345818ca5",
-      "bytes": 30801
+      "sha256": "d269f61e6fecfdae540cf3fb0d0a8da0d1567689b50f249028a95367f0140521",
+      "bytes": 31468
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
-      "bytes": 15520
+      "sha256": "09a7dc73ff8dcb30fd747e562e87d463041d39d4667febceafd381e74c2dd481",
+      "bytes": 15570
     },
     "verifier": {
       "path": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
@@ -1006,7 +1006,7 @@
       "purpose": "Complete Bellum count"
     }
   ],
-  "durationSeconds": 47.4,
+  "durationSeconds": 40.1,
   "limitations": [
     "This validates the accepted Whiston Bellum XML, not a new translation or printed-edition collation.",
     "Browser interaction is verified separately."

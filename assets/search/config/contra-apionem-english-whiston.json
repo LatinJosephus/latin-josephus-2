@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "contra-apionem-english-whiston",
+  "work": "contra-apionem",
+  "label": "Contra Apionem",
+  "citationPrefix": "Contra Apionem",
+  "citationScheme": "niese",
+  "unitLabel": "Niese section",
+  "unitLabelPlural": "Niese sections",
+  "language": "English",
+  "edition": "Whiston",
+  "readerPath": "contra-apionem/",
+  "corpus": "../data/contra-apionem-english-whiston/corpus.json",
+  "extractionReport": "../data/contra-apionem-english-whiston/extraction-report.json",
+  "books": [
+    {
+      "number": 1,
+      "label": "Book I",
+      "corpus": "../data/contra-apionem-english-whiston/book-01.corpus.json",
+      "sections": 320,
+      "sectionRange": [1, 320],
+      "source": "assets/xml/contra-apionem/English/book-01.xml"
+    },
+    {
+      "number": 2,
+      "label": "Book II",
+      "corpus": "../data/contra-apionem-english-whiston/book-02.corpus.json",
+      "sections": 296,
+      "sectionRange": [1, 296],
+      "source": "assets/xml/contra-apionem/English/book-02.xml"
+    }
+  ]
+}

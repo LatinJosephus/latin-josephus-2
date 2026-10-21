@@ -72,6 +72,33 @@ test("Whiston Bellum CSV preserves supplied text, its provenance, and English re
   assert.doesNotMatch(rows[0].editorial_notes, /Whiston English Antiquities|Bamberg/);
 });
 
+test("Whiston Contra Apionem CSV retains literal brackets and hyphens without Latin editorial guidance", () => {
+  const records = [record(38, "but only twenty-two books, [which] contain the records", {
+    id: "contra-apionem-english-whiston-1-38", sourceId: "english-apion1-num38",
+    work: "contra-apionem", citationPrefix: "Contra Apionem", readerPath: "contra-apionem/",
+    collectionId: "contra-apionem-english-whiston", bookId: "contra-apionem-english-whiston:1",
+    language: "English", edition: "Whiston", order: 0,
+    url: "/contra-apionem/?book=1&niese=38&english=whiston",
+    readerLink: { params: { english: "whiston" } }, editorialMarks: [],
+    sourcePath: "assets/xml/contra-apionem/English/book-01.xml", sourceIds: ["english-apion1-num38"],
+  })];
+  const { result, model } = search(records, '"only twenty two books"');
+  const { rows } = parseCSV(exportConcordance(model, result, { readerBase, exportedAt }).text);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].matched_text, "only twenty-two books");
+  assert.equal(rows[0].matched_text_editorial, rows[0].matched_text);
+  assert.match(rows[0].right_context, /\[which\]/);
+  assert.equal(rows[0].right_context_editorial, rows[0].right_context);
+  assert.equal(rows[0].reader_url, "https://example.org/project/contra-apionem/?book=1&niese=38&english=whiston");
+  assert.equal(rows[0].collection_id, "contra-apionem-english-whiston");
+  const [segment] = JSON.parse(rows[0].source_segments_json);
+  assert.equal(segment.sourceId, "english-apion1-num38");
+  assert.equal(segment.sourcePath, records[0].sourcePath);
+  assert.deepEqual(segment.editorialMarks, []);
+  assert.match(rows[0].editorial_notes, /Whiston English Contra Apionem/);
+  assert.doesNotMatch(rows[0].editorial_notes, /asterisks|Boysen|Bamberg|Whiston English Bellum|Whiston English Antiquities/);
+});
+
 test("each original word occurrence gets a row, including repeated hits in one section", () => {
   const records = [record(1, "Bellum, bellum; BELLUM."), record(2, "Bellorum bell.")];
   const snapshot = JSON.stringify(records);
