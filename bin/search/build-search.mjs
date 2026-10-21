@@ -5,12 +5,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {spawn} from 'node:child_process';
+import {createHash} from 'node:crypto';
 import {
   SOURCE_DIRECTORY, loadPublicationConfig, inside, sourceInputs, unitTestCommands,
   validateSearchSources, validateQaReport, publicationPlan, exportSearchAssets,
 } from './publication.mjs';
 
 const root = path.resolve(fileURLToPath(new URL('../../', import.meta.url)));
+// The accepted Book XII Git blob itself uses CRLF. Preserve its exact bytes;
+// this pin is not permission to regenerate from an arbitrary CRLF checkout.
+const acceptedCRLF = new Map([
+  ['assets/xml/antiquities/English/book-12.xml', 'e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c'],
+]);
 
 function options(arguments_) {
   const result = {python: process.env.SEARCH_PYTHON || 'python3', forceQA: false};
@@ -47,7 +53,8 @@ async function main() {
     const bytes = fs.readFileSync(inside(root, relative));
     // Accepted registry JSON can itself contain CRLF; its normalized content
     // is pinned without rewriting the canonical source file.
-    assert(!relative.endsWith('.xml') || !bytes.includes(Buffer.from('\r\n')),
+    const acceptedSource = acceptedCRLF.get(relative) === createHash('sha256').update(bytes).digest('hex');
+    assert(!relative.endsWith('.xml') || !bytes.includes(Buffer.from('\r\n')) || acceptedSource,
       `Source rebuilds require a clean LF checkout: ${relative} contains CRLF. Use an isolated clone with core.autocrlf=false; no files have been written.`);
   }
   const extractionRuns = new Set();

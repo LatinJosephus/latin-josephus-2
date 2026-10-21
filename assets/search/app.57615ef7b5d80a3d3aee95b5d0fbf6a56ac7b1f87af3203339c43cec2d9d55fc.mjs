@@ -1,6 +1,6 @@
 import {createCollection} from './collection.8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245.mjs';
 import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc.mjs';
-import {buildConcordance,exportConcordance} from './concordance.97d550a0e0f949d93293593b67d5a5e9937670cb7f13e0ad19707d490e0a91e0.mjs';
+import {buildConcordance,exportConcordance} from './concordance.4aa7c370c2812c6d938fe1c45edcb7031bd2940279902df714f366d85b79cf6c.mjs';
 
 const root=document.getElementById('lj-search');
 const $=id=>root.querySelector(`#${id}`);
@@ -32,7 +32,7 @@ function updateScopeHint(){
     :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
   if(apion)els.scopeHint.textContent+=' In Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
   if(collections.some(collection=>collection.id==='antiquities-latin-bamberg78'))els.scopeHint.textContent+=' The Bamberg Latin Antiquities includes the Proem with Book I. Phrases stop at marked gaps, empty source intervals, the documented Book IX lacuna, the delimited interruptions in XVI and XX, and the Proem’s end. Split portions of the same Niese section share Boolean scope; exact phrases follow physical source order. The two labelled Bellum insertions in Book XI are separate citation units.';
-  if(collections.some(collection=>collection.id==='antiquities-english-whiston'))els.scopeHint.textContent+=' Whiston English phrases may cross adjacent Niese sections in whole-book scope, but stay within one book and stop at the Proem’s end. Headings, printed citation labels and footnotes are excluded.';
+  if(collections.some(collection=>collection.id==='antiquities-english-whiston'))els.scopeHint.textContent+=' Whiston English phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent Niese sections in whole-book scope, but stay within one book and stop at the Proem’s end. Headings, printed citation labels and footnotes are excluded.';
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
@@ -218,7 +218,7 @@ function resultContext(result,model){
   if(collections.some(collection=>citationScheme(collection)==='chapter-paragraph'))parts.push('De excidio citations give book, chapter and paragraph (or Prol.). [Brackets] mark supplied text; struck text marks editorial deletion; † marks unresolved text. These markings are retained in the CSV’s editorial columns.');
   if(collections.some(collection=>collection.work==='contra-apionem'))parts.push('Contra Apionem uses Niese sections. Asterisks retain the source’s marked interruptions, which exact phrases cannot cross. Bold green text marks an addition in the source; the CSV’s editorial columns show it as ⟨added text⟩.');
   if(collections.some(collection=>collection.id==='antiquities-latin-bamberg78'))parts.push('Antiquities includes the Proem and Books I–XX of Bamberg Msc. Class. 78. Added, deleted and uncertain letters remain searchable: bold green text marks additions, struck text marks deletions and dotted underlining marks uncertain readings. Exact phrases stop at source gaps, empty intervals, the documented Book IX lacuna and the end of the Proem. III.240 and VII.69–99 retain their citations and encoded omissions. X.108 has a citation label but no Latin before the next Niese marker. IX.51–109 are absent from the accepted source; no records have been generated for them. The accepted maps also mark Latin unavailable at XII.248, XIII.213 and 216, XIV.238–239, XV.338 and 347, XVI.77, 123, 189–199, 359 and 395–404, XVIII.216–217, and XX.27–36 and 238; those identities have no generated records. Actual source interruptions also block phrases between XVI.188 and 200 and between XX.26 and 37. Skipped section numbers alone do not create a physical gap. Books XI and XVI retain physical source order: their split sections share Boolean scope, while exact phrases cannot jump between displaced portions. The two Bellum insertions in XI have separate, explicitly labelled citations.');
-  if(collections.some(collection=>collection.id==='antiquities-english-whiston'))parts.push('Whiston English Antiquities: exact phrases may cross adjacent sections in whole-book scope, but stay within one book and never cross the Proem’s end. Headings, printed citation labels and footnotes are excluded. Original English spelling is retained; Latin u/v and i/j equivalence does not affect English matches.');
+  if(collections.some(collection=>collection.id==='antiquities-english-whiston'))parts.push('Whiston English Antiquities: exact phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent sections in whole-book scope, but stay within one book and never cross the Proem’s end. Headings, printed citation labels and footnotes are excluded. Original English spelling is retained; Latin u/v and i/j equivalence does not affect English matches.');
   return parts.join(' ');
 }
 function renderSuccessful(){
@@ -240,7 +240,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.2b2b7ea1f1d2330473dd0f643451e5728b50b1b3489c7a20ba1b5588c6c1471c.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.89ad5081a1848ed4fed889fedcb275aa5082fb6c7390b568aacdfd7c87e0b416.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');

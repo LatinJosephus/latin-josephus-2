@@ -140,7 +140,7 @@
     {
       "id": "antiquities-english-whiston",
       "work": "antiquities",
-      "label": "Antiquities Proem and Books I–X",
+      "label": "Antiquities Proem and Books I–XV",
       "citationPrefix": "Antiquities",
       "language": "English",
       "edition": "Whiston",
@@ -155,22 +155,27 @@
         "antiquities-english-whiston:7",
         "antiquities-english-whiston:8",
         "antiquities-english-whiston:9",
-        "antiquities-english-whiston:10"
+        "antiquities-english-whiston:10",
+        "antiquities-english-whiston:11",
+        "antiquities-english-whiston:12",
+        "antiquities-english-whiston:13",
+        "antiquities-english-whiston:14",
+        "antiquities-english-whiston:15"
       ],
       "citationScheme": "niese",
       "unitLabel": "Niese section",
       "unitLabelPlural": "Niese sections",
       "manifestPath": "config/antiquities-english-whiston.json",
-      "manifestSHA256": "960cefea46ae3f99759465a58e20ded0889fc38dd2efe3429ff15d5b653120d8",
+      "manifestSHA256": "2b7472e5df00430b562856c960224c0722324fac0aac9c47b15de94a40bb2689",
       "corpusPath": "data/antiquities-english-whiston/corpus.json",
-      "corpusSHA256": "7f3837c1b147266511cadd23c7fd616dba894ff16147b44a2857b4ad559fac56",
+      "corpusSHA256": "71addc82bbf5eb687c0d80b4073a3c394b9d58aa0b841ba5785a7becb0aac9a5",
       "extractionReportPath": "data/antiquities-english-whiston/extraction-report.json",
-      "extractionReportSHA256": "a703ec36e2a6d551036428b29a965035b35c2b5fcfdba22381755169d9092afb",
+      "extractionReportSHA256": "97fb4d6c33dfda9c4b99f2db1c72e934de30ff9dde3d2dd8119b8c4292602464",
       "totals": {
-        "books": 10,
-        "sections": 3474,
-        "tokens": 236049,
-        "bytes": 30804343
+        "books": 15,
+        "sections": 5604,
+        "tokens": 363119,
+        "bytes": 47988237
       }
     }
   ],
@@ -1115,13 +1120,83 @@
       "sha256": "71995b7a437f1c2b0700a27bd1a91708519b35c831eb67d57ff6310eb6b530e1",
       "corpusPath": "data/antiquities-english-whiston/book-10.corpus.json",
       "corpusSHA256": "030de30df76282de086c78fbcfbafed69b2623fa5dad4d92e2b342e3ae038903"
+    },
+    {
+      "id": "antiquities-english-whiston:11",
+      "collectionId": "antiquities-english-whiston",
+      "number": 11,
+      "label": "Book XI",
+      "sections": 347,
+      "tokens": 20213,
+      "vocabulary": 2324,
+      "bytes": 2717819,
+      "path": "data/antiquities-english-whiston/book-11.bundle.json",
+      "sha256": "f5d5e0e0f1ef20e72620bd4771671967c65d52c5ca7230858f66604a093d796e",
+      "corpusPath": "data/antiquities-english-whiston/book-11.corpus.json",
+      "corpusSHA256": "abecea45451d3c3b16134b2baee8eb748cdf269b290c5d2b37b5ab6ee421debd"
+    },
+    {
+      "id": "antiquities-english-whiston:12",
+      "collectionId": "antiquities-english-whiston",
+      "number": 12,
+      "label": "Book XII",
+      "sections": 434,
+      "tokens": 25083,
+      "vocabulary": 2733,
+      "bytes": 3398975,
+      "path": "data/antiquities-english-whiston/book-12.bundle.json",
+      "sha256": "b3ce84ed86f2fa9203141b8cb2dc1f42649c27b2180ba80b29d63dac8f4bb6f8",
+      "corpusPath": "data/antiquities-english-whiston/book-12.corpus.json",
+      "corpusSHA256": "383dc20706ae59faf9783d305c3308dca9d965c353173b9cb1f22bc3b82982c0"
+    },
+    {
+      "id": "antiquities-english-whiston:13",
+      "collectionId": "antiquities-english-whiston",
+      "number": 13,
+      "label": "Book XIII",
+      "sections": 433,
+      "tokens": 25616,
+      "vocabulary": 2656,
+      "bytes": 3471992,
+      "path": "data/antiquities-english-whiston/book-13.bundle.json",
+      "sha256": "ea530687801675be3ce020345f9fe08d4cec7c2049da03d596a955efccab8ba0",
+      "corpusPath": "data/antiquities-english-whiston/book-13.corpus.json",
+      "corpusSHA256": "58d4c4b9bc50f18553039d18ff426b357aa055fcb5fc5fe9e332d983f673f9e6"
+    },
+    {
+      "id": "antiquities-english-whiston:14",
+      "collectionId": "antiquities-english-whiston",
+      "number": 14,
+      "label": "Book XIV",
+      "sections": 491,
+      "tokens": 29186,
+      "vocabulary": 2976,
+      "bytes": 3946703,
+      "path": "data/antiquities-english-whiston/book-14.bundle.json",
+      "sha256": "a6badb8aa0ebdc4db0d7223d2776aba2216969e58e756c4a6a53b86b98b71a83",
+      "corpusPath": "data/antiquities-english-whiston/book-14.corpus.json",
+      "corpusSHA256": "77faa2febc172b5268b92f3251eb81db97c28f995caec6b40eae3e44154eaad7"
+    },
+    {
+      "id": "antiquities-english-whiston:15",
+      "collectionId": "antiquities-english-whiston",
+      "number": 15,
+      "label": "Book XV",
+      "sections": 425,
+      "tokens": 26972,
+      "vocabulary": 3051,
+      "bytes": 3648405,
+      "path": "data/antiquities-english-whiston/book-15.bundle.json",
+      "sha256": "699f2ae17366f4adb7599b66c8fba68f98d34b12de10cc0f6f8e0f1992f39f7d",
+      "corpusPath": "data/antiquities-english-whiston/book-15.corpus.json",
+      "corpusSHA256": "8a9f38dc0227e78c28ee380df4132cbb7ba3effd69ef784bbb8f34f4e6b42a01"
     }
   ],
   "totals": {
-    "books": 44,
-    "sections": 15932,
-    "tokens": 724356,
-    "bytes": 115515915
+    "books": 49,
+    "sections": 18062,
+    "tokens": 851426,
+    "bytes": 132699809
   },
   "source": {
     "manifestPath": "config/collections.json",

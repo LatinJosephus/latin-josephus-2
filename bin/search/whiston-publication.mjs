@@ -1,4 +1,4 @@
-/** Verify Whiston Antiquities I–X directly against their accepted, unchanged XML. */
+/** Verify Whiston Antiquities I–XV directly against their accepted, unchanged XML. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -29,6 +29,16 @@ const SOURCES = [
     sha256: 'd973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36'},
   {path: 'assets/xml/antiquities/English/book-10.xml', book: 10, proem: false, first: 1, last: 281,
     sha256: '7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb'},
+  {path: 'assets/xml/antiquities/English/book-11.xml', book: 11, proem: false, first: 1, last: 347,
+    sha256: '0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2'},
+  {path: 'assets/xml/antiquities/English/book-12.xml', book: 12, proem: false, first: 1, last: 434,
+    sha256: 'ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286'},
+  {path: 'assets/xml/antiquities/English/book-13.xml', book: 13, proem: false, first: 1, last: 433,
+    sha256: '01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9'},
+  {path: 'assets/xml/antiquities/English/book-14.xml', book: 14, proem: false, first: 1, last: 491,
+    sha256: '9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1'},
+  {path: 'assets/xml/antiquities/English/book-15.xml', book: 15, proem: false, first: 1, last: 425,
+    sha256: '223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579'},
 ];
 const BOOKS = new Map([
   [1, {roman: 'I', sections: 346, tokens: 21994, paragraphs: 83}],
@@ -41,13 +51,27 @@ const BOOKS = new Map([
   [8, {roman: 'VIII', sections: 420, tokens: 29968, paragraphs: 85}],
   [9, {roman: 'IX', sections: 291, tokens: 19074, paragraphs: 54}],
   [10, {roman: 'X', sections: 281, tokens: 18035, paragraphs: 52}],
+  [11, {roman: 'XI', sections: 347, tokens: 20213, paragraphs: 57}],
+  [12, {roman: 'XII', sections: 434, tokens: 25083, paragraphs: 71}],
+  [13, {roman: 'XIII', sections: 433, tokens: 25616, paragraphs: 87}],
+  [14, {roman: 'XIV', sections: 491, tokens: 29186, paragraphs: 112}],
+  [15, {roman: 'XV', sections: 425, tokens: 26972, paragraphs: 66}],
 ]);
 const CONTINUATIONS = new Map([
   [4, {'english-book04-num276b': {section: 276,
     previousSourceId: 'english-book04-num276', nextSourceId: 'english-book04-num277'}}],
   [8, {'english-book08-num255': {section: 255, previousSourceId: 'english-book08-num251',
     nextSourceId: 'english-book08-num263', firstMilestone: 256, nextSection: 263}}],
+  [12, {'english-book12-num148': {section: 147, previousSourceId: 'english-book12-num145',
+    nextSourceId: 'english-book12-num154', firstMilestone: 148, nextSection: 154},
+    'english-book12-num225': {section: 226, previousSourceId: 'english-book12-num223',
+      nextSourceId: 'english-book12-num228', firstMilestone: 227, nextSection: 228}}],
+  [14, {'english-book14-num237': {section: 237, previousSourceId: 'english-book14-num236',
+    nextSourceId: 'english-book14-num241', firstMilestone: 238, nextSection: 241}}],
 ]);
+const CHAPTER_MILESTONES = new Map([[15, [[1, 1], [2, 11], [3, 39], [4, 88], [5, 106], [6, 121], [7, 121],
+  [8, 161], [9, 194], [10, 213], [11, 299], [12, 326], [13, 380]]
+  .map(([chapter, paragraph]) => [`english-book15-num${paragraph}`, String(chapter)])]]);
 const digest = value => createHash('sha256').update(value).digest('hex');
 const equal = (actual, expected, message) => assert.deepEqual(actual, expected, `Whiston ${message}`);
 const range = (first, last) => Array.from({length: last - first + 1}, (_, index) => first + index);
@@ -121,9 +145,10 @@ function paragraphProjection(contents) {
       const sourceAttributes = attributes(structural[2]);
       const offsets = {sourceAttributes, sourceTextOffset: raw.length, runningTextOffset: flat.length};
       if (structural[1] === 'milestone') {
-        equal(sourceAttributes.unit, 'niese', 'milestone unit differs');
+        assert(['niese', 'chapter'].includes(sourceAttributes.unit), 'Whiston milestone unit differs');
         assert(/^[1-9]\d*$/u.test(sourceAttributes.n), 'Whiston milestone identity is invalid');
-        markers.push({section: Number(sourceAttributes.n), ...offsets});
+        if (sourceAttributes.unit === 'niese') markers.push({section: Number(sourceAttributes.n), ...offsets});
+        else structures.push({kind: 'milestone', ...offsets});
       } else structures.push({kind: structural[1], ...offsets});
     }
   }
@@ -289,7 +314,13 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
     counts.nieseMilestones += projected.markers.length;
     counts.structuralMarkers += projected.structures.length;
   }
-  equal(records.map(record => record.section), range(source.first, source.last), 'accepted citation sequence differs');
+  const expectedOrder = source.book === 11 ? [...range(1, 311), ...range(326, 342), ...range(312, 325), ...range(343, 347)]
+    : range(source.first, source.last);
+  equal(records.map(record => record.section), expectedOrder, 'accepted citation sequence differs');
+  equal(paragraphs.flatMap(paragraph => paragraph.structuralMarkers
+    .filter(marker => marker.kind === 'milestone' && marker.sourceAttributes.unit === 'chapter')
+    .map(marker => [paragraph.sourceId, marker.sourceAttributes.n])), CHAPTER_MILESTONES.get(source.book) || [],
+  'chapter milestones differ from the accepted source');
   equal(paragraphs.filter(paragraph => paragraph.continuationOf).map(paragraph => paragraph.sourceId),
     Object.keys(CONTINUATIONS.get(source.book) || {}), 'reviewed continuation identities differ');
   Object.assign(counts, {sections: records.length, runningWordTokens: records.reduce((total, record) => total + words(record.text).length, 0),
@@ -300,7 +331,7 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
     coverage: coverage(paragraphs, records, [source.first, source.last], true), excludedBlocks, paragraphs}};
 }
 
-/** This gate accepts a per-book extraction report; XI remains a test-only source. */
+/** This gate accepts every per-book extraction report in the reviewed I–XV collection. */
 export function validateWhistonSourceProjection(corpus, report, manifest, spec, root) {
   equal([manifest.id, manifest.work, manifest.language, manifest.edition, manifest.citationScheme, manifest.readerPath],
     [COLLECTION, 'antiquities', 'English', 'Whiston', 'niese', 'antiquities/'], 'collection identity differs');

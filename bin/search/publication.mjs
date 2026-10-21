@@ -863,6 +863,13 @@ export function validateSearchSources(root, {qa = true} = {}) {
       const acceptedSections = spec.sectionRange && spec.coverageMode !== 'registered-source-spans'
         ? sectionRange(...spec.sectionRange).filter(section => !(spec.missingSections || []).includes(section)) : null;
       if (acceptedSections) equal(acceptedSections.length, corpus.length, `Accepted section range differs: ${id}`);
+      // Whiston's range defines citation identities, not a sortable narrative.
+      // Its source projection above pins every section's actual physical order,
+      // including XI's displaced sequence. Keep the complete identity check here.
+      const sourceOrderedWhiston = manifest.id === 'antiquities-english-whiston';
+      if (acceptedSections && sourceOrderedWhiston)
+        equal(corpus.map(record => record.section).sort((a, b) => a - b), acceptedSections,
+          `Accepted section identities differ: ${id}`);
       for (let index = 0; index < corpus.length; index++, order++) {
         const record = corpus[index], indexed = bundle.records[index];
         for (const [key, value] of Object.entries(record)) equal(indexed[key], value, `Bundle record differs: ${record.id}.${key}`);
@@ -870,7 +877,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
         equal(record.order, order, `Corpus order differs at ${record.id}`);
         equal(record.book, spec.number, `Corpus book differs at ${record.id}`);
         for (const key of ['work', 'language', 'edition']) equal(record[key], manifest[key], `Wrong version at ${record.id}`);
-        if (acceptedSections) equal(record.section, acceptedSections[index], `Section order differs at ${record.id}`);
+        if (acceptedSections && !sourceOrderedWhiston) equal(record.section, acceptedSections[index], `Section order differs at ${record.id}`);
         assert(!allIds.has(record.id), `Duplicate passage ID: ${record.id}`);
         allIds.add(record.id);
       }

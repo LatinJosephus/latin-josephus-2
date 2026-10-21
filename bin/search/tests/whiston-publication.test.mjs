@@ -30,16 +30,17 @@ function verify(input, root = repository) {
     input.manifest.books.find(book => book.number === input.number), root);
 }
 
-test('Whiston source gate verifies all 3474 actual intervals and their reversible source offsets', () => {
+test('Whiston source gate verifies all 5604 actual intervals and their reversible source offsets', () => {
   const expected = [[346, 21994, 83], [349, 23020, 76], [322, 20955, 79], [331, 22900, 88], [362, 23396, 98],
-    [378, 28422, 83], [394, 28285, 76], [420, 29968, 85], [291, 19074, 54], [281, 18035, 52]];
+    [378, 28422, 83], [394, 28285, 76], [420, 29968, 85], [291, 19074, 54], [281, 18035, 52],
+    [347, 20213, 57], [434, 25083, 71], [433, 25616, 87], [491, 29186, 112], [425, 26972, 66]];
   for (const [index, [sections, tokens, restoredParagraphs]] of expected.entries()) {
     assert.deepEqual(verify(fresh(index + 1)), {status: 'PASS', sections, tokens, sourceDocuments: index ? 1 : 2, restoredParagraphs});
   }
 });
 
 test('Whiston source gate validates text and book-specific reader metadata in every newly added book', async t => {
-  for (const number of [2, 3, 4, 5, 6, 7, 8, 9, 10]) await t.test(`Book ${number}`, () => {
+  for (const number of [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) await t.test(`Book ${number}`, () => {
     const input = fresh(number);
     input.corpus[0].text += ' Unreviewed words.';
     assert.throws(() => verify(input), /record text, source identity, reader metadata or phrase boundary differs/u);
@@ -103,9 +104,9 @@ test('Whiston source gate rejects inconsistent source ledgers even when records 
 });
 
 test('Whiston source gate refuses unreviewed books and unapproved source paths', async t => {
-  await t.test('test-only Book XI cannot become published scope', () => {
+  await t.test('unreviewed Book XVI cannot become published scope', () => {
     const input = fresh();
-    input.manifest.books.push({...input.manifest.books[0], number: 11});
+    input.manifest.books.push({...input.manifest.books[0], number: 16});
     assert.throws(() => verify(input), /collection includes an unreviewed book/u);
   });
   await t.test('Latin source cannot be substituted for Whiston', () => {
@@ -205,6 +206,98 @@ test('Whiston IX retains restored narrative and excludes footnotes with exact ev
   });
 });
 
+test('Whiston XI whole-book phrases follow accepted physical order at all three nonnumeric seams', () => {
+  const records = books.get(11).corpus;
+  const engine = createEngine(buildBundle(records, lunr), lunr);
+  for (const [left, right, phrase] of [
+    [311, 326, 'was then in years and Jaddua the high'],
+    [342, 312, 'to their temple also But there was now'],
+    [325, 343, 'go up to Jerusalem to whom he promised'],
+  ]) {
+    const query = `"${phrase}"`;
+    assert.equal(engine.search(query, {scope: 'section'}).matchingUnits, 0);
+    const result = engine.search(query, {scope: 'book'});
+    assert.equal(result.matchingUnits, 1);
+    assert.equal(result.occurrences, 1);
+    assert.deepEqual(result.hitGroups.flatMap(group => group.recordIds),
+      [left, right].map(section => `antiquities-english-whiston-11-${section}`));
+  }
+  for (const invented of ['was then in years But there was now',
+    'go up to Jerusalem and Jaddua the high', 'to their temple also to whom he promised']) {
+    assert.equal(engine.search(`"${invented}"`, {scope: 'book'}).matchingUnits, 0);
+  }
+  const reordered = fresh(11);
+  reordered.corpus.sort((a, b) => a.section - b.section);
+  assert.throws(() => verify(reordered), /record text, source identity, reader metadata or phrase boundary differs/u);
+  const interrupted = fresh(11);
+  interrupted.corpus.find(record => record.section === 326).breakBefore = true;
+  assert.throws(() => verify(interrupted), /record text, source identity, reader metadata or phrase boundary differs/u);
+});
+
+test('Whiston XII and XIV retain phrases across all newly reviewed paragraph-prefix joins', () => {
+  for (const [book, section, phrase, previousId, sourceId] of [
+    [12, 147, 'into Phrygia The epistle was this', 'english-book12-num145', 'english-book12-num148'],
+    [12, 226, 'sendeth greeting We have met', 'english-book12-num223', 'english-book12-num225'],
+    [14, 237, 'calends of October In the month Quntius', 'english-book14-num236', 'english-book14-num237'],
+  ]) {
+    const record = books.get(book).corpus.find(record => record.section === section);
+    const engine = createEngine(buildBundle([record], lunr), lunr);
+    const result = engine.search(`"${phrase}"`, {scope: 'section'});
+    assert.equal(result.matchingUnits, 1);
+    assert.equal(result.occurrences, 1);
+    assert.deepEqual(result.hitGroups.flatMap(group => group.recordIds), [record.id]);
+    assert.deepEqual(record.sourceIds, [previousId, sourceId]);
+  }
+});
+
+test('Whiston XII and XIV prefix text, citation assignments and source spans are independently checked', async t => {
+  for (const [book, section, sourceId] of [[12, 147, 'english-book12-num148'],
+    [12, 226, 'english-book12-num225'], [14, 237, 'english-book14-num237']]) {
+    for (const mode of ['lost-prefix', 'reassigned-prefix', 'source-identity', 'record-offset', 'invented-marker', 'separator']) {
+      await t.test(`${book}.${section}: ${mode}`, () => {
+        const input = fresh(book), record = input.corpus.find(record => record.section === section);
+        const paragraph = input.report.documentReports[0].paragraphs.find(paragraph => paragraph.sourceId === sourceId);
+        if (mode === 'lost-prefix') record.text = record.text.split('\n\n')[0];
+        else if (mode === 'reassigned-prefix') {
+          const [first, prefix] = record.text.split('\n\n');
+          record.text = first;
+          const next = input.corpus.find(record => record.section === section + 1);
+          next.text = `${prefix} ${next.text}`;
+        } else if (mode === 'source-identity') record.sourceIds.pop();
+        else if (mode === 'record-offset') paragraph.sourcePieces.find(piece => piece.kind === 'record').recordStart++;
+        else if (mode === 'invented-marker') paragraph.nieseMarkers.unshift({section});
+        else delete paragraph.recordJoin;
+        assert.throws(() => verify(input), /Whiston/u);
+      });
+    }
+  }
+});
+
+test('Whiston XII bold epithets are searchable ordinary text and XV chapter markers do not create gaps', async t => {
+  for (const [section, phrase] of [[125, 'The God'], [157, 'The Just']]) {
+    const record = books.get(12).corpus.find(record => record.section === section);
+    assert.ok(record.text.includes(phrase));
+    assert.deepEqual(record.editorialMarks, []);
+    assert.deepEqual(record.sourceMarkup, []);
+  }
+  const xv = books.get(15);
+  assert.equal(xv.report.counts.nieseMilestones, 425);
+  assert.equal(xv.report.counts.structuralMarkers, 14);
+  assert.equal(xv.report.paragraphs.flatMap(paragraph => paragraph.structuralMarkers)
+    .filter(marker => marker.kind === 'milestone').length, 13);
+  assert.ok(xv.corpus.every(record => !record.breakBefore && record.phraseBreaks.length === 0));
+  for (const mode of ['lost-marker', 'changed-unit', 'shifted-offset', 'false-boundary']) await t.test(mode, () => {
+    const input = fresh(15), paragraph = input.report.documentReports[0].paragraphs
+      .find(paragraph => paragraph.structuralMarkers.some(marker => marker.kind === 'milestone'));
+    const marker = paragraph.structuralMarkers.find(marker => marker.kind === 'milestone');
+    if (mode === 'lost-marker') paragraph.structuralMarkers = paragraph.structuralMarkers.filter(item => item !== marker);
+    else if (mode === 'changed-unit') marker.sourceAttributes.unit = 'niese';
+    else if (mode === 'shifted-offset') marker.sourceTextOffset++;
+    else input.corpus.find(record => record.section === 11).breakBefore = true;
+    assert.throws(() => verify(input), /Whiston/u);
+  });
+});
+
 test('Whiston source gate accepts CRLF equivalence but refuses actual XML changes', async t => {
   const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'latin-josephus-whiston-source-'));
   t.after(() => fs.rmSync(fixture, {recursive: true, force: true}));
@@ -214,13 +307,33 @@ test('Whiston source gate accepts CRLF equivalence but refuses actual XML change
     fs.mkdirSync(path.dirname(filename), {recursive: true});
     fs.copyFileSync(path.join(repository, relative), filename);
   }
-  await t.test('all eleven indexed files may have Windows line endings', () => {
-    assert.equal(sourcePaths.length, 11);
+  await t.test('all sixteen indexed files may have Windows line endings', () => {
+    assert.equal(sourcePaths.length, 16);
     for (const relative of sourcePaths) {
       const filename = path.join(fixture, relative);
       fs.writeFileSync(filename, fs.readFileSync(filename, 'utf8').replace(/\r?\n/gu, '\r\n'));
     }
     for (const number of manifest.books.map(book => book.number)) assert.equal(verify(fresh(number), fixture).status, 'PASS');
+  });
+  await t.test('Book XII retains accepted raw CRLF provenance while an LF checkout projects identically', () => {
+    const input = fresh(12), relative = manifest.books.find(book => book.number === 12).source;
+    assert.deepEqual(input.report.source, {path: relative, bytes: 158411,
+      sha256: 'e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c'});
+    assert.equal(input.report.documentReports[0].sourceContract.normalizedSHA256,
+      'ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286');
+    const filename = path.join(fixture, relative), original = fs.readFileSync(filename);
+    const normalized = Buffer.from(original.toString('latin1').replace(/\r\n/gu, '\n'), 'latin1');
+    assert.notEqual(normalized.length, original.length);
+    fs.writeFileSync(filename, normalized);
+    try {
+      assert.equal(verify(input, fixture).status, 'PASS');
+      const fingerprint = {path: relative, bytes: normalized.length,
+        sha256: createHash('sha256').update(normalized).digest('hex')};
+      input.report.source = fingerprint;
+      input.report.sources[0] = fingerprint;
+      input.report.documentReports[0].source = fingerprint;
+      assert.equal(verify(input, fixture).status, 'PASS');
+    } finally { fs.writeFileSync(filename, original); }
   });
   for (const number of manifest.books.map(book => book.number)) await t.test(`Book ${number} source changes fail despite a refreshed fingerprint`, () => {
     const input = fresh(number), relative = manifest.books.find(book => book.number === number).source;

@@ -13,15 +13,15 @@ This directory contains the source and verification tools for the main site's
   Niese identities, two separately labelled Bellum insertions, and 265,023 word tokens. Book I includes the separately
   transmitted Proem's 26 units and 986 words.
 
-- **Whiston English *Antiquities*, Proem and Books I–X:** 3,474 Niese
-  sections and 236,049 word tokens. The Proem accounts for 26 sections and
+- **Whiston English *Antiquities*, Proem and Books I–XV:** 5,604 Niese
+  sections and 363,119 word tokens. The Proem accounts for 26 sections and
   1,646 tokens; Book I’s narrative supplies 320 sections and 20,348 tokens.
-  Books VI–X add 1,764 sections and 123,784 word tokens to the accepted I–V search.
+  Books XI–XV add 2,130 sections and 127,070 word tokens to the accepted I–X search.
 
-Together these comprise **44 book editions, 15,924 citation units, and 724,356
-word tokens**. The indexes contain 15,932 physical records because four Bamberg
+Together these comprise **49 book editions, 18,054 citation units, and 851,426
+word tokens**. The indexes contain 18,062 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
-Whiston Books XI–XX and Greek editions are not indexed. Bamberg Latin Antiquities
+Whiston Books XVI–XX and Greek editions are not indexed. Bamberg Latin Antiquities
 III.240 and VII.69–99 retain their citations and the source's explicit omissions.
 X.108 retains an empty interval between its citation label and the next Niese
 marker, without an omission tag. IX.51–109 are absent from the accepted source;
@@ -199,7 +199,7 @@ and Contra Apionem I cannot be confused with Bellum I. The bare page retains **B
 books** as its default. Choose **De excidio Hierosolymitano** for its five books,
 **Contra Apionem** for its two books, **Antiquities I–XX, including Proem** for
 all twenty Bamberg Latin Antiquities books, **Whiston** for the English Proem
-and Books I–X, or **All works** to search all five collections.
+and Books I–XV, or **All works** to search all five collections.
 Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
 use `antiquities/?book=1`.
 
@@ -526,6 +526,11 @@ node bin/search/check-assets.mjs --site _site
 
 When publishing already committed exports from a CRLF XML checkout, begin with
 `check-assets.mjs` and `bin/cibuild`; reserve regeneration for the LF checkout.
+The accepted Whiston Book XII Git blob itself contains CRLF. The build permits
+that one file only with its pinned raw SHA-256 and retains those original bytes
+in extraction provenance. It does not rewrite the XML. Publication checks accept
+its LF representation through the same explicit CRLF-to-LF source comparison
+used for the other indexed files; substantive changes still invalidate the index.
 
 The final check verifies the generated page, search assets, and indexed XML.
 The existing reader publication command also performs it after its established
@@ -815,11 +820,11 @@ submission, pagination, copying links, and navigation into the reader before
 publication review is complete.
 
 
-## Whiston English I–X and browser release consistency
+## Whiston English I–XV and browser release consistency
 
 The English adapter (`extract-whiston.py`) uses explicit `milestone unit="niese"`
 boundaries in the accepted English `preface.xml` and `book-01.xml` through
-`book-10.xml`. Printed
+`book-15.xml`. Printed
 labels, titles and source notes are excluded; inline narrative words and all
 punctuation after the controlling milestone are retained. Every raw source
 paragraph is reconstructible from UTF-16 source slices and recorded exclusions.
@@ -831,11 +836,9 @@ XML bytes. `tests/whiston-source-witness.py` independently walks text nodes with
 minidom; `tests/whiston-corpus-qa.mjs` checks every indexed word, every interval,
 citation seams, cross-book isolation, representative Boolean/wildcard queries,
 links and CSV. Book IX's seven inline footnotes are excluded annotations;
-their anchors do not interrupt the consecutive running text. Book XI remains
-a test-only witness for displaced physical source order. Its file is included
-in build freshness checks but not in the search catalog, book bundles, or the
-56 indexed publication inputs. No source or reader correction is part of this
-search release.
+their anchors do not interrupt the consecutive running text. All sixteen English
+XML files are indexed inputs, among 61 indexed publication inputs overall.
+No source or reader correction is part of this search release.
 
 | Whiston book | Niese sections | Word tokens |
 | --- | ---: | ---: |
@@ -849,7 +852,12 @@ search release.
 | VIII | 420 | 29,968 |
 | IX | 291 | 19,074 |
 | X | 281 | 18,035 |
-| Total | 3,474 | 236,049 |
+| XI | 347 | 20,213 |
+| XII | 434 | 25,083 |
+| XIII | 433 | 25,616 |
+| XIV | 491 | 29,186 |
+| XV | 425 | 26,972 |
+| Total | 5,604 | 363,119 |
 
 In IV.276, the markerless continuation paragraph `english-book04-num276b`
 belongs to the same citation as `english-book04-num276`. Their running text
@@ -870,11 +878,26 @@ words without being classified as editorial additions.
 The English IX.51–109 passages remain included, independently of the missing
 Latin range. The two restored Book IX headings and all seven inline footnotes
 are excluded from running text. English VII.69–99 and X.108 also retain their
-own source text. All five added books retain complete ascending citation
-ranges. No phrase or Boolean condition can join evidence from different books,
-languages or editions.
+own source text. No phrase or Boolean condition can join evidence from different
+books, languages or editions.
 
-The I–X release preserves the accepted I–V bundles, corpora and per-book
+Book XI contains all 347 Niese sections in the accepted physical sequence
+**1–311, 326–342, 312–325, 343–347**. Extraction and search preserve that order.
+Whole-book phrases may cross 311→326, 342→312, and 325→343; they cannot invent
+the numerical joins 311→312, 325→326, or 342→343. Excerpts and CSV rows name
+the actual nonconsecutive citations. The example `"with one voice salute Alexander"`
+finds XI.332. The publication gate independently checks the complete section
+identity set and the exact source order rather than requiring numerical order.
+
+XII.147 and XII.226 retain continuations before the following paragraphs’ first
+Niese markers. XIV.237 likewise retains the twelve opening words of the next
+paragraph, including the accepted spellings `Quntius` and `Mercellus`. These
+joins use explicit paragraph separators and reversible source spans, just as
+IV.276 and VIII.255 do. Book XII’s ordinary bold spans remain narrative words,
+not editorial additions. Book XV’s thirteen empty chapter milestones retain
+their structural provenance without becoming citation markers or phrase gaps.
+
+The I–XV release preserves the accepted I–X bundles, corpora and per-book
 extraction reports, together with all 34 Latin books. Current coverage in the
 loaded interface is taken from the catalog; CSV source metadata identifies the
 selected books and their source fingerprints.

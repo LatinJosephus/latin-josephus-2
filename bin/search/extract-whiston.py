@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Extract the accepted Whiston Antiquities Proem and Books I–X for search.
+"""Extract the accepted Whiston Antiquities Proem and Books I–XV for search.
 
 Explicit English Niese milestones govern the projection.  XML files and their
-accepted boundaries are read only.  XI is supported solely as a focused
-extraction-test input; build_corpus never publishes that test-only book.
+accepted boundaries are read only. Book XI retains its accepted physical
+section order; no citation sorting or textual repair is performed.
 """
 
 from __future__ import annotations
@@ -37,15 +37,28 @@ SOURCE_CONTRACTS = {
     9: {"sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36", "range": [1, 291]},
     10: {"sha256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb", "range": [1, 281]},
     11: {"sha256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2", "range": [1, 347]},
+    12: {"sha256": "ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286", "range": [1, 434]},
+    13: {"sha256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9", "range": [1, 433]},
+    14: {"sha256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1", "range": [1, 491]},
+    15: {"sha256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579", "range": [1, 425]},
 }
-ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X", 11: "XI"}
-PUBLISHED_BOOKS = list(range(1, 11))
+ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X", 11: "XI", 12: "XII", 13: "XIII", 14: "XIV", 15: "XV"}
+PUBLISHED_BOOKS = list(range(1, 16))
 # This identity comes from its place between the accepted English milestones,
 # not from a parallel Latin label. No unreviewed markerless narrative is inferred.
 CONTINUATIONS = {4: {"english-book04-num276b": {"section": 276,
     "previousSourceId": "english-book04-num276", "nextSourceId": "english-book04-num277"}},
     8: {"english-book08-num255": {"section": 255, "previousSourceId": "english-book08-num251",
-        "nextSourceId": "english-book08-num263", "firstMilestone": 256, "nextSection": 263}}}
+        "nextSourceId": "english-book08-num263", "firstMilestone": 256, "nextSection": 263}},
+    12: {"english-book12-num148": {"section": 147, "previousSourceId": "english-book12-num145",
+          "nextSourceId": "english-book12-num154", "firstMilestone": 148, "nextSection": 154},
+         "english-book12-num225": {"section": 226, "previousSourceId": "english-book12-num223",
+          "nextSourceId": "english-book12-num228", "firstMilestone": 227, "nextSection": 228}},
+    14: {"english-book14-num237": {"section": 237, "previousSourceId": "english-book14-num236",
+          "nextSourceId": "english-book14-num241", "firstMilestone": 238, "nextSection": 241}}}
+CHAPTER_MILESTONES = {15: [(f"english-book15-num{paragraph}", str(chapter)) for chapter, paragraph in
+    [(1, 1), (2, 11), (3, 39), (4, 88), (5, 106), (6, 121), (7, 121),
+     (8, 161), (9, 194), (10, 213), (11, 299), (12, 326), (13, 380)]]}
 TRANSPARENT_TAGS = {"hi", "emph", "seg", "ref", "q", "quote", "foreign", "s"}
 STRUCTURAL_TAGS = {"anchor", "lb", "pb", "cb"}
 
@@ -136,10 +149,14 @@ def flatten_paragraph(paragraph: ET.Element) -> dict:
                 raw_length += len(raw)
             elif name == "milestone":
                 require(not len(child) and not (child.text or ""), "A Whiston milestone contains text")
-                require(child.get("unit") == "niese" and re.fullmatch(r"[1-9][0-9]*", child.get("n", "")),
-                        "Unreviewed Whiston milestone")
-                markers.append({"section": int(child.get("n")), "rawOffset": raw_length,
-                                "flatOffset": flat_length, "sourceAttributes": dict(child.attrib)})
+                require(child.get("unit") in {"niese", "chapter"}
+                        and re.fullmatch(r"[1-9][0-9]*", child.get("n", "")), "Unreviewed Whiston milestone")
+                if child.get("unit") == "niese":
+                    markers.append({"section": int(child.get("n")), "rawOffset": raw_length,
+                                    "flatOffset": flat_length, "sourceAttributes": dict(child.attrib)})
+                else:
+                    structure.append({"kind": "milestone", "rawOffset": raw_length,
+                                      "flatOffset": flat_length, "sourceAttributes": dict(child.attrib)})
             elif name in STRUCTURAL_TAGS:
                 require(not len(child) and not (child.text or ""), f"A Whiston {name} marker contains text")
                 structure.append({"kind": name, "rawOffset": raw_length, "flatOffset": flat_length,
@@ -364,6 +381,11 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
                       structuralMarkers=len(flat["structuralMarkers"]),
                       excludedFootnotes=sum(item["kind"] == "whiston-footnote" for item in flat["exclusions"]),
                       excludedCitationLabels=sum(item["kind"] == "citation-label" for item in flat["exclusions"]))
+    chapter_milestones = [(paragraph["sourceId"], marker["sourceAttributes"]["n"])
+                          for paragraph in paragraphs for marker in paragraph["structuralMarkers"]
+                          if marker["kind"] == "milestone" and marker["sourceAttributes"].get("unit") == "chapter"]
+    require(chapter_milestones == CHAPTER_MILESTONES.get(book_number, []),
+            "Whiston chapter milestones differ from the accepted source")
     actual = [record["section"] for record in records]
     require(actual == wanted, f"Whiston milestone identities or physical order differ in {path}")
     require(len({record["id"] for record in records}) == len(records), "Duplicate Whiston record identity")
@@ -434,11 +456,12 @@ def build_book_report(records: list[dict], documents: list[dict], book_number: i
     section_range = [1, SOURCE_CONTRACTS[book_number]["range"][1]]
     counts, paragraphs, coverage = aggregate_evidence(records, documents, {"completeRange": section_range})
     sources = [report["source"] for report in documents]
-    # Books I–V retain their original reviewed report bytes as well as their corpora.
+    # Books I–X retain their original reviewed report bytes as well as their corpora.
     # Historical scope statements describe those releases, not the expanded catalog.
     published_scope = ("Proem and Book I only. IX and XI are extraction-test inputs, not indexed pilot books."
                        if book_number == 1 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–V; IX and XI remain test-only."
-                       if book_number <= 5 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–X; XI remains test-only.")
+                       if book_number <= 5 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–X; XI remains test-only."
+                       if book_number <= 10 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–XV.")
     book_report = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "Antiquities", "book": book_number, "language": "English",
                    "edition": EDITION, "unit": "Niese section", "citationScheme": "niese", "includesProem": book_number == 1},
                    "source": sources[-1], "additionalSources": sources[:-1], "sources": sources,
@@ -452,7 +475,8 @@ def build_book_report(records: list[dict], documents: list[dict], book_number: i
                    "counts": dict(counts), "coverage": coverage, "documentReports": documents, "paragraphs": paragraphs}
     if book_number in CONTINUATIONS:
         book_report["rules"]["paragraphContinuations"] = ("The explicitly reviewed markerless paragraph continues its preceding Niese interval. Two display newlines preserve its paragraph boundary; recordJoin documents this separator and sourcePieces retain exact original-text spans."
-            if book_number == 4 else "The explicitly reviewed paragraph prefix continues VIII.255 until the existing milestone256. No Niese marker is invented. Two display newlines preserve the paragraph boundary; recordJoin documents this separator and sourcePieces retain exact original-text spans.")
+            if book_number == 4 else "The explicitly reviewed paragraph prefix continues VIII.255 until the existing milestone256. No Niese marker is invented. Two display newlines preserve the paragraph boundary; recordJoin documents this separator and sourcePieces retain exact original-text spans."
+            if book_number == 8 else "Explicitly reviewed paragraph prefixes continue their preceding accepted Niese intervals until the next existing milestones. No marker is invented. Two display newlines preserve paragraph boundaries; recordJoin documents each separator and sourcePieces retain exact original-text spans.")
     return book_report
 
 
@@ -469,8 +493,9 @@ def build_corpus(source_root: Path, output_dir: Path) -> dict:
                                               preface=preface, order_offset=len(records) + len(book_records), source_path=relative)
             book_records.extend(part)
             book_documents.append(document)
-        require([record["section"] for record in book_records] == list(range(1, SOURCE_CONTRACTS[book_number]["range"][1] + 1)),
-                f"Whiston Book {ROMANS[book_number]} coverage differs")
+        expected_book_order = list(range(1, 347)) if book_number == 1 else expected_sequence(book_number, False)
+        require([record["section"] for record in book_records] == expected_book_order,
+                f"Whiston Book {ROMANS[book_number]} coverage or physical order differs")
         book_report = build_book_report(book_records, book_documents, book_number)
         corpus_bytes, book_report_bytes = json_bytes(book_records), json_bytes(book_report)
         stem = f"book-{book_number:02d}"

@@ -31,7 +31,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [44, 15932, 724356]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [49, 18062, 851426]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
@@ -41,9 +41,9 @@ test('search publication preserves current inputs and refuses stale or incomplet
     const antiquities = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-bamberg78');
     assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [20, 7283, 265023]);
     const whiston = baseline.catalog.collections.find(collection => collection.id === 'antiquities-english-whiston');
-    assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [10, 3474, 236049]);
-    assert.equal(result.sourceXML.length, 56);
-    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 11);
+    assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [15, 5604, 363119]);
+    assert.equal(result.sourceXML.length, 61);
+    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 16);
     assert.equal(result.assets, baseline.artifacts.length + 1);
     assert.equal(baseline.manifest.browserRelease.launcher, 'launch-v1.mjs');
     assert.equal(result.sourceXML.filter(source => /\/niese\/book-(?:1[1-9]|20)\.json$/u.test(source.path)).length, 10);
@@ -74,17 +74,12 @@ test('search publication preserves current inputs and refuses stale or incomplet
     }
   });
 
-  await t.test('Whiston I–X rejects changed narrative or Proem source bytes', () => {
+  await t.test('Whiston I–XV rejects changed narrative or Proem source bytes', () => {
     for (const relative of ['assets/xml/antiquities/English/preface.xml',
-      ...Array.from({length: 10}, (_, i) => i + 1).map(number => `assets/xml/antiquities/English/book-${String(number).padStart(2, '0')}.xml`)]) {
+      ...Array.from({length: 15}, (_, i) => i + 1).map(number => `assets/xml/antiquities/English/book-${String(number).padStart(2, '0')}.xml`)]) {
       changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
         () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed|Whiston source/u));
     }
-  });
-
-  await t.test('later English test witnesses cannot become stale while the indexed books still pass', () => {
-    changed('assets/xml/antiquities/English/book-11.xml', bytes => Buffer.concat([bytes, Buffer.from('\n<!-- test source changed -->\n')]),
-      () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*test-only QA XML/u));
   });
 
   await t.test('accepted Latin identity registry changes invalidate their indexed source spans', () => {
@@ -116,6 +111,20 @@ test('search publication preserves current inputs and refuses stale or incomplet
       const proem = converted.sourceXML.find(source => source.path === relative);
       assert.equal(proem.hashMode, 'crlf-to-lf');
       assert.notEqual(proem.worktreeSHA256, proem.normalizedSHA256);
+    });
+  });
+
+  await t.test('the accepted CRLF Whiston Book XII keeps its fingerprint after LF checkout conversion', () => {
+    const relative = 'assets/xml/antiquities/English/book-12.xml', original = verifySearchAssets(fixture);
+    const indexed = original.sourceXML.find(source => source.path === relative);
+    assert.equal(indexed.indexedSHA256, 'e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c');
+    changed(relative, bytes => bytes.toString('utf8').replace(/\r\n/gu, '\n'), () => {
+      const converted = verifySearchAssets(fixture);
+      assert.equal(converted.publicationManifestSHA256, original.publicationManifestSHA256);
+      const source = converted.sourceXML.find(item => item.path === relative);
+      assert.equal(source.normalizedSHA256, 'ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286');
+      assert.equal(source.worktreeSHA256, source.normalizedSHA256);
+      assert.notEqual(source.worktreeSHA256, source.indexedSHA256);
     });
   });
 
