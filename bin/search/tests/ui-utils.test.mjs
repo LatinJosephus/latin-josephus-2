@@ -86,6 +86,27 @@ test('Whiston reader links reject a conflicting work, collection, language or ed
   assert.equal(readerURL({work:'bellum',language:'Latin',edition:'Cardwell (1837)',book:7,section:209},'https://example.org/'),
     'https://example.org/bellum-judaicum/?book=7&niese=209');
 });
+test('Pollard De excidio links use chapter-local citations and select the English edition',()=>{
+  for(const [book,chapter,paragraph] of [[1,0,2],[1,30,8],[5,53,1]]){
+    const record={work:'deh',readerPath:'deh/',collectionId:'deh-english-pollard',language:'English',
+      edition:'Pollard v1.0',citationScheme:'chapter-paragraph',book,chapter,paragraph};
+    assert.equal(readerURL(record,'https://example.org/project/'),
+      `https://example.org/project/deh/?book=${book}&chapter=${chapter}&unit=${paragraph}&english=pollard`);
+    assert.equal(readerURL(record,'https://example.org/project/',{section:false}),
+      `https://example.org/project/deh/?book=${book}&english=pollard`);
+    assert.equal(citationFor([record]),chapter===0?'De excidio Prol.2':`De excidio ${romanBook(book)}.${chapter}.${paragraph}`);
+  }
+});
+test('Pollard reader links reject conflicting language, edition, work, collection or citation scheme',()=>{
+  const record={work:'deh',collectionId:'deh-english-pollard',language:'English',edition:'Pollard v1.0',
+    citationScheme:'chapter-paragraph',book:1,chapter:0,paragraph:2,readerLink:{params:{english:'pollard'}}};
+  for(const change of [{work:'bellum'},{collectionId:'deh-latin-ussani'},{language:'Latin'},
+    {edition:'Whiston'},{citationScheme:'niese'},{readerLink:{params:{english:'whiston'}}}]){
+    assert.throws(()=>readerURL({...record,...change},'https://example.org/'),/matching English work and edition/);
+  }
+  assert.equal(readerURL({...record,collectionId:'deh-latin-ussani',language:'Latin',edition:'Ussani (1932)',readerLink:undefined},'https://example.org/'),
+    'https://example.org/deh/?book=1&chapter=0&unit=2');
+});
 test('old Book I and seven-book pilot links retain their original search coverage',()=>{
   assert.deepEqual(locationState('?q=bellum',catalog,'default'),{query:'bellum',work:'bellum-latin-cardwell',book:'bellum-latin-cardwell:1',scope:'section',fold:false,view:'passages'});
   assert.equal(locationState('?q=bellum&book=all',catalog,'default').work,'bellum-latin-cardwell');

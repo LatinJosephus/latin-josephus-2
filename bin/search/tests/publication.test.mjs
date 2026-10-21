@@ -31,7 +31,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [63, 24451, 1211170]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [68, 25009, 1347214]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
@@ -46,8 +46,10 @@ test('search publication preserves current inputs and refuses stale or incomplet
     assert.deepEqual([whistonBellum.totals.books, whistonBellum.totals.sections, whistonBellum.totals.tokens], [7, 4001, 215072]);
     const whistonApion = baseline.catalog.collections.find(collection => collection.id === 'contra-apionem-english-whiston');
     assert.deepEqual([whistonApion.totals.books, whistonApion.totals.sections, whistonApion.totals.tokens], [2, 616, 36853]);
-    assert.equal(result.sourceXML.length, 75);
-    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 30);
+    const pollardDeh = baseline.catalog.collections.find(collection => collection.id === 'deh-english-pollard');
+    assert.deepEqual([pollardDeh.totals.books, pollardDeh.totals.sections, pollardDeh.totals.tokens], [5, 558, 136044]);
+    assert.equal(result.sourceXML.length, 80);
+    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 35);
     assert.equal(result.assets, baseline.artifacts.length + 1);
     assert.equal(baseline.manifest.browserRelease.launcher, 'launch-v1.mjs');
     assert.equal(result.sourceXML.filter(source => /\/niese\/book-(?:1[1-9]|20)\.json$/u.test(source.path)).length, 10);
@@ -60,6 +62,10 @@ test('search publication preserves current inputs and refuses stale or incomplet
 
   await t.test('a De excidio source change is rejected before its old index can be published', () => {
     changed('assets/xml/deh/Latin/book-01.xml', bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
+      () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*XML/u));
+  });
+  await t.test('an English De excidio source change is rejected before its old index can be published', () => {
+    changed('assets/xml/deh/English/book-01.xml', bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
       () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*XML/u));
   });
 

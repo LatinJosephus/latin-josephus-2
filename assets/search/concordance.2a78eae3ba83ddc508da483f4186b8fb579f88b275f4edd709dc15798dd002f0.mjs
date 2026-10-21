@@ -5,7 +5,7 @@
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
 import { parseQuery, tokenizeRecord, phraseBreakOffsets } from "./engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs";
-import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote, spellingEquivalence } from "./ui-utils.09a7dc73ff8dcb30fd747e562e87d463041d39d4667febceafd381e74c2dd481.mjs";
+import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote, spellingEquivalence } from "./ui-utils.bddc39cc1ce40ad46e820e632e17a8bd6bf94347b919347044793e02a64c8003.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;
 const IDENTITY_FIELDS = ["collectionId", "work", "book", "language", "edition"];
@@ -268,6 +268,7 @@ function editorialLegend(sources) {
   if(sources.some(source=>source.id==='antiquities-english-whiston'||source.collectionId==='antiquities-english-whiston'))parts.push('Whiston English Antiquities: original English spelling and punctuation are preserved. Headings, printed citation labels and footnotes are excluded. Whole-book phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent Niese sections but stay within one book and stop at the Proem’s end. Latin u/v and i/j equivalence does not change English matching. Original source spans are retained in source_segments_json; the selected books and their source fingerprints are recorded in selected_sources_json.');
   if(sources.some(source=>source.id==='bellum-english-whiston'||source.collectionId==='bellum-english-whiston'))parts.push('Whiston English Bellum: all seven books preserve their original English spelling and punctuation. Whole-book phrases may cross adjacent Niese sections, including the embedded Book I preface, but stay within one book and edition. The accepted supplied passage in VII.208–209 remains searchable; [supplied text] appears in the readable editorial columns. Literal columns retain the indexed text without added brackets. Exact source spans and supplied attributes are retained in source_segments_json; selected_sources_json records the source fingerprints. Latin u/v and i/j equivalence does not change English matching.');
   if(sources.some(source=>source.id==='contra-apionem-english-whiston'||source.collectionId==='contra-apionem-english-whiston'))parts.push('Whiston English Contra Apionem: both books preserve original English spelling, punctuation and literal brackets. Whiston’s division markers, including those inside II.109 and II.112, do not interrupt exact phrases. Whole-book phrases may cross adjacent Niese sections but stay within one book and edition. Exact source spans are retained in source_segments_json; selected_sources_json records the source fingerprints. Latin u/v and i/j equivalence does not change English matching.');
+  if(sources.some(source=>source.id==='deh-english-pollard'||source.collectionId==='deh-english-pollard'))parts.push('Pollard English De excidio (v1.0): all five books and the Prologue retain their accepted English spelling and punctuation. Citations use book, chapter and paragraph, with Prol. for the Prologue. Headings, printed citation labels and release notes are excluded. Whole-book phrases may cross adjacent paragraphs and chapters, but stop at the Prologue’s end and remain within one book and edition. Reader links explicitly select Pollard v1.0. Exact source spans and English-to-Latin alignment metadata are retained in source_segments_json; selected_sources_json records the source fingerprints. Latin u/v and i/j equivalence does not change English matching.');
   return parts.join(' ');
 }
 
@@ -317,7 +318,7 @@ function exportedSegments(row) {
       } : {}),
       ...(record.sourcePath ? {sourcePath: record.sourcePath, sourceIds: record.sourceIds, division: record.division} : {}),
       ...Object.fromEntries(["citationLabel", "citationUnitId", "citationUnitCitation", "sourceOccurrence",
-        "continuationRank", "fragmentCount", "sourcePassage", "identityRegistry", "breakReason", "sourceBoundaryEvidence"]
+        "continuationRank", "fragmentCount", "sourcePassage", "identityRegistry", "breakReason", "sourceBoundaryEvidence", "sourceSameAs"]
         .filter(field => record[field] !== undefined).map(field => [field, record[field]])),
       ...(record.emptySource ? {emptySource: record.emptySource} : {}),
     };

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "deh-english-pollard",
+  "work": "deh",
+  "label": "De excidio Hierosolymitano",
+  "citationPrefix": "De excidio",
+  "citationScheme": "chapter-paragraph",
+  "unitLabel": "citation unit",
+  "unitLabelPlural": "citation units",
+  "language": "English",
+  "edition": "Pollard v1.0",
+  "readerPath": "deh/",
+  "corpus": "../data/deh-english-pollard/corpus.json",
+  "extractionReport": "../data/deh-english-pollard/extraction-report.json",
+  "books": [
+    {
+      "number": 1,
+      "label": "Book I (including Prologue)",
+      "corpus": "../data/deh-english-pollard/book-01.corpus.json",
+      "sections": 215,
+      "sectionRange": [
+        1,
+        215
+      ],
+      "source": "assets/xml/deh/English/book-01.xml"
+    },
+    {
+      "number": 2,
+      "label": "Book II",
+      "corpus": "../data/deh-english-pollard/book-02.corpus.json",
+      "sections": 73,
+      "sectionRange": [
+        1,
+        73
+      ],
+      "source": "assets/xml/deh/English/book-02.xml"
+    },
+    {
+      "number": 3,
+      "label": "Book III",
+      "corpus": "../data/deh-english-pollard/book-03.corpus.json",
+      "sections": 70,
+      "sectionRange": [
+        1,
+        70
+      ],
+      "source": "assets/xml/deh/English/book-03.xml"
+    },
+    {
+      "number": 4,
+      "label": "Book IV",
+      "corpus": "../data/deh-english-pollard/book-04.corpus.json",
+      "sections": 79,
+      "sectionRange": [
+        1,
+        79
+      ],
+      "source": "assets/xml/deh/English/book-04.xml"
+    },
+    {
+      "number": 5,
+      "label": "Book V",
+      "corpus": "../data/deh-english-pollard/book-05.corpus.json",
+      "sections": 121,
+      "sectionRange": [
+        1,
+        121
+      ],
+      "source": "assets/xml/deh/English/book-05.xml"
+    }
+  ]
+}

@@ -154,6 +154,26 @@
       ],
       "verifier": "tests/whiston-contra-apionem-corpus-qa.mjs",
       "qaReport": "data/contra-apionem-english-whiston/qa-report.json"
+    },
+    "deh-english-pollard": {
+      "extractor": "extract-deh-english.py",
+      "outputDirectory": "data/deh-english-pollard",
+      "sources": [
+        "assets/xml/deh/English/book-01.xml",
+        "assets/xml/deh/English/book-02.xml",
+        "assets/xml/deh/English/book-03.xml",
+        "assets/xml/deh/English/book-04.xml",
+        "assets/xml/deh/English/book-05.xml"
+      ],
+      "testSources": [
+        "assets/xml/deh/Latin/book-01.xml",
+        "assets/xml/deh/Latin/book-02.xml",
+        "assets/xml/deh/Latin/book-03.xml",
+        "assets/xml/deh/Latin/book-04.xml",
+        "assets/xml/deh/Latin/book-05.xml"
+      ],
+      "verifier": "tests/deh-english-corpus-qa.mjs",
+      "qaReport": "data/deh-english-pollard/qa-report.json"
     }
   }
 }

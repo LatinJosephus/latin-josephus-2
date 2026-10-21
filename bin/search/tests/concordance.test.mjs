@@ -99,6 +99,39 @@ test("Whiston Contra Apionem CSV retains literal brackets and hyphens without La
   assert.doesNotMatch(rows[0].editorial_notes, /asterisks|Boysen|Bamberg|Whiston English Bellum|Whiston English Antiquities/);
 });
 
+test("Pollard De excidio CSV retains English citations, exact alignment and reader selection", () => {
+  const records = [record(2, "Like people seeking a rose among thorns, we seek to draw out", {
+    id: "deh-english-pollard-1-2", sourceId: "english-deh1-num2", sourceSameAs: "#latin-deh1-num2",
+    sourceIds: ["english-deh1-num2"], sourcePath: "assets/xml/deh/English/book-01.xml",
+    work: "deh", citationPrefix: "De excidio", readerPath: "deh/", citationScheme: "chapter-paragraph",
+    citationLabel: "Prol.2", chapter: 0, paragraph: 2, division: "prologue",
+    collectionId: "deh-english-pollard", bookId: "deh-english-pollard:1",
+    language: "English", edition: "Pollard v1.0", order: 0,
+    url: "/deh/?book=1&chapter=0&unit=2&english=pollard",
+    readerLink: { params: { book: 1, chapter: 0, unit: 2, english: "pollard" } }, editorialMarks: [],
+  })];
+  const { result, model } = search(records, '"a rose among thorns"');
+  const { rows } = parseCSV(exportConcordance(model, result, { readerBase, exportedAt }).text);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].citation, "De excidio Prol.2");
+  assert.equal(rows[0].citation_scheme, "chapter-paragraph");
+  assert.equal(rows[0].matched_text, "a rose among thorns");
+  assert.equal(rows[0].matched_text_editorial, rows[0].matched_text);
+  assert.equal(rows[0].reader_url, "https://example.org/project/deh/?book=1&chapter=0&unit=2&english=pollard");
+  const [segment] = JSON.parse(rows[0].source_segments_json);
+  assert.equal(segment.sourceId, "english-deh1-num2");
+  assert.equal(segment.sourceSameAs, "#latin-deh1-num2");
+  assert.equal(segment.chapter, 0);
+  assert.equal(segment.paragraph, 2);
+  assert.deepEqual(segment.editorialMarks, []);
+  assert.match(rows[0].editorial_notes, /Pollard English De excidio/);
+  assert.doesNotMatch(rows[0].editorial_notes, /Editorial notation:|supplied text|unresolved text|Whiston|Bamberg|Boysen/);
+  const negative = search(records, "NOT absentword", { scope: "book" });
+  const exportedNegative = parseCSV(exportConcordance(negative.model, negative.result, { readerBase, exportedAt }).text);
+  assert.equal(exportedNegative.rows.length, 1);
+  assert.equal(exportedNegative.rows[0].reader_url, "https://example.org/project/deh/?book=1&english=pollard");
+});
+
 test("each original word occurrence gets a row, including repeated hits in one section", () => {
   const records = [record(1, "Bellum, bellum; BELLUM."), record(2, "Bellorum bell.")];
   const snapshot = JSON.stringify(records);

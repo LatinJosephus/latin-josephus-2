@@ -1,7 +1,7 @@
 # Latin Josephus search
 
 This directory contains the source and verification tools for the main site's
-`/search/` page. Current coverage comprises four Latin collections and three English collections:
+`/search/` page. Current coverage comprises four Latin collections and four English collections:
 
 - **Cardwell's *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
   114,794 word tokens.
@@ -24,10 +24,13 @@ This directory contains the source and verification tools for the main site's
 - **Whiston English *Contra Apionem*, Books I–II:** 616 Niese sections and
   36,853 word tokens.
 
-Together these comprise **63 book editions, 24,443 citation units, and 1,211,170
-word tokens**. The indexes contain 24,451 physical records because four Bamberg
+- **Pollard English *De excidio Hierosolymitano*, version 1.0, Prologue and Books I–V:**
+  558 chapter-and-paragraph citation units and 136,044 word tokens.
+
+Together these comprise **68 book editions, 25,001 citation units, and 1,347,214
+word tokens**. The indexes contain 25,009 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
-The Whiston English Antiquities, Bellum and Contra Apionem are complete; Greek editions are not indexed. Bamberg Latin Antiquities
+The Whiston English Antiquities, Bellum and Contra Apionem and Pollard English De excidio are complete; Greek editions are not indexed. Bamberg Latin Antiquities
 III.240 and VII.69–99 retain their citations and the source's explicit omissions.
 X.108 retains an empty interval between its citation label and the next Niese
 marker, without an omission tag. IX.51–109 are absent from the accepted source;
@@ -210,7 +213,8 @@ books** as its default. Choose **De excidio Hierosolymitano** for its five books
 all twenty Bamberg Latin Antiquities books, **Antiquities · English · Whiston**
 for the English Proem and Books I–XX, **Bellum Judaicum · English · Whiston**
 for all seven English Bellum books, **Contra Apionem · English · Whiston**
-for both English Contra Apionem books, or **All works** to search all seven collections.
+for both English Contra Apionem books, **De excidio Hierosolymitano · English · Pollard v1.0**
+for its Prologue and all five books, or **All works** to search all eight collections.
 Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
 use `antiquities/?book=1`.
 
@@ -233,8 +237,8 @@ uses **`main` for generated output only**. It is separate from the authoritative
 source checkout for the site's reader and ongoing Antiquities repairs.
 
 Prepare updates in an isolated LF checkout and review source and generated
-changes together. The Whiston Contra Apionem I–II release adds one reviewed
-commit to each already-installed Whiston Bellum branch. Its helper verifies
+changes together. The Pollard English De excidio release adds one reviewed
+commit to each already-installed Whiston Contra Apionem branch. Its helper verifies
 the exact Git objects and all indexed source inputs, then uses ordinary
 fast-forward pushes. The user's working files, index, settings and local
 branches are preserved. Remote branches must be at the accepted base or the
@@ -247,7 +251,8 @@ The search build **reads canonical XML without modifying it**:
 `assets/xml/deh/Latin/book-01.xml` through `book-05.xml`, and
 `assets/xml/contra-apionem/Latin/book-01.xml` through `book-02.xml`, the accepted
 Latin Antiquities sources and citation maps, and the accepted English Whiston
-sources under each work's `English/` directory. The configured source lists,
+sources under each work's `English/` directory, plus the five accepted Pollard
+files under `assets/xml/deh/English/`. The configured source lists,
 extraction reports, and independent QA record the actual source hashes.
 
 ### Bellum
@@ -281,7 +286,7 @@ explicit update to extraction expectations and independent QA fixtures before
 regeneration will pass. These checks establish fidelity to the accepted XML;
 they do not replace an editorial comparison with printed source pages.
 
-### De excidio
+### Ussani Latin De excidio
 
 | Book | Citation units | Word tokens |
 | --- | ---: | ---: |
@@ -364,6 +369,7 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | --- | --- |
 | `extract.py`, `tests/test_extract.py` | Bellum extraction and reconstruction checks. |
 | `extract-deh.py`, `tests/test_extract_deh.py` | De excidio extraction, editorial annotations, and reconstruction checks. |
+| `extract-deh-english.py`, `tests/test_extract_deh_english.py` | Pollard English De excidio extraction, chapter-local citations, alignment and paragraph restoration. |
 | `extract-ca.py`, `tests/test_extract_ca.py` | Contra Apionem extraction, markup, phrase barriers, and reconstruction checks. |
 | `extract-antiquities.py`, `tests/test_extract_antiquities.py` | Antiquities I–XX and Proem extraction, source restoration, and gap checks. |
 | `extract-whiston-bellum.py`, `tests/test_extract_whiston_bellum.py` | Whiston Bellum I–VII extraction, embedded milestones, supplied text, and exact paragraph restoration. |
@@ -381,6 +387,8 @@ annotation, reader reference, asterisk barrier, and adjacent section seam.
 | `tests/corpus-qa.mjs`, `qa-report.json` | Independent source/query verification and its current evidence. |
 | `data/deh-latin-ussani/` | De excidio corpus shards, extraction reports, book indexes, and independent QA report. |
 | `tests/deh-corpus-qa.mjs` | Independent De excidio XML witness, token, query, boundary, and mixed-collection checks. |
+| `tests/deh-english-corpus-qa.mjs`, `tests/deh-english-source-witness.py` | Independent English De excidio witness, accepted Latin alignment, all-token and phrase checks, Prologue boundary, reader links and CSV. |
+| `data/deh-english-pollard/`, `config/deh-english-pollard.json`, `deh-english-publication.mjs` | Five English De excidio indexes, original-text records, extraction/QA evidence and the strict source projection gate. |
 | `data/contra-apionem-latin-boysen/` | Contra Apionem corpus shards, extraction reports, book indexes, and independent QA report. |
 | `tests/ca-corpus-qa.mjs`, `tests/ca-source-witness.py` | Independent Contra Apionem XML witness, token, query, markup, and seam checks. |
 | `tests/phrase-breaks.test.mjs`, `tests/ca-presentation.test.mjs` | Phrase barrier, citation, full export, and three-work compatibility tests. |
@@ -411,7 +419,8 @@ The registry currently contains:
     "antiquities-latin-bamberg78.json",
     "antiquities-english-whiston.json",
     "bellum-english-whiston.json",
-    "contra-apionem-english-whiston.json"
+    "contra-apionem-english-whiston.json",
+    "deh-english-pollard.json"
   ]
 }
 ```
@@ -862,7 +871,7 @@ minidom; `tests/whiston-corpus-qa.mjs` checks every indexed word, every interval
 citation seams, cross-book isolation, representative Boolean/wildcard queries,
 links and CSV. Book IX's seven inline footnotes are excluded annotations;
 their anchors do not interrupt the consecutive running text. All twenty-one English
-Antiquities XML files are indexed inputs, among 75 indexed publication inputs overall.
+Antiquities XML files are indexed inputs, among 80 indexed publication inputs overall.
 No source or reader correction is part of this search release.
 
 | Whiston book | Niese sections | Word tokens |
@@ -1072,7 +1081,60 @@ adjacent seam, both internal Whiston division markers, quoted and wildcard
 phrases, Boolean logic, complete CSV results and collection isolation.
 `whiston-contra-apionem-publication.mjs` independently projects the pinned
 canonical XML and rejects altered text, identities, structure or provenance,
-even when artifact hashes have been recalculated. The build now verifies
+even when artifact hashes have been recalculated. The Contra Apionem release verified
 75 indexed inputs: 65 XML files and ten accepted citation maps. All 61 prior
 book editions and their 183 corpus, extraction-report and bundle files remain
 unchanged from the accepted Whiston Bellum release.
+
+## Pollard English De excidio, Prologue and Books I–V
+
+The `deh-english-pollard` collection indexes the five accepted English XML files
+without changing their text or the reader. Its edition label, **Pollard v1.0**,
+matches the canonical reader. English and Latin remain separate search editions.
+
+| Book | Citation units | Word tokens |
+| --- | ---: | ---: |
+| I, including Prologue | 215 | 40,796 |
+| II | 73 | 17,141 |
+| III | 70 | 18,640 |
+| IV | 79 | 17,263 |
+| V | 121 | 42,204 |
+| **Total** | **558** | **136,044** |
+
+Each accepted paragraph already supplies an English XML identity, a printed
+book–chapter–paragraph citation, and a fragment-only `sameAs` alignment to the
+accepted Latin. The extractor retains those identities and the exact original
+`sameAs` value. It excludes the complete leading `num` label together with any
+indentation before it, rather than treating printed citation numbers as words.
+Five release notes and six headings are also excluded. The accepted running
+English has no inline editorial tags; the Latin edition's annotations are not
+transferred to the translation.
+
+Every citation paragraph has a reversible text ledger. Whole-book phrases may
+cross adjacent paragraphs and chapters. The three Prologue paragraphs may join
+one another, but `breakBefore` on I.1.1 prevents a phrase from crossing into the
+Book I narrative. Boolean conditions may still relate Prologue and narrative
+words within Book I. No query combines evidence across different books or editions.
+
+The example `"a rose among thorns"` has one occurrence, in **Prol.2**. The word
+`jews` has 262 occurrences in 158 citation units. Common words are indexed;
+`the` has 9,172 occurrences in 556 units. English spelling is retained apart
+from case; Latin u/v and i/j equivalence does not change English matching.
+
+Result and CSV links use `deh/?book=N&chapter=C&unit=P&english=pollard`.
+The Prologue uses chapter 0; `unit` is the paragraph number within the chapter,
+not the internal book-wide index ordinal. Whole-book links omit chapter and unit.
+CSV source segments preserve the English source identity, exact original-text
+spans, citations and `sourceSameAs` alignment string.
+
+The independent witness uses a separate XML parser and checks every English
+citation, all 740 book/chapter/paragraph `sameAs` links and their accepted Latin
+targets. Those five Latin files are pinned as test inputs and remain indexed
+by the existing Latin collection. The new source gate independently projects
+the canonical English XML and rejects altered running text, labels, identities,
+alignment or source exclusions, even if artifact fingerprints are refreshed.
+
+The combined build verifies **80 unique indexed inputs: 70 XML files and ten
+accepted citation maps**, including 35 English XML files. All 63 previous book
+editions, seven collection metadata entries, and 189 per-book corpus/report/index
+files remain unchanged from the accepted Whiston Contra Apionem release.

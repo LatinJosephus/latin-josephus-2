@@ -10,6 +10,7 @@ import {planBrowserRelease, BROWSER_LAUNCHER_NAME} from './browser-release.mjs';
 import {validateWhistonSourceProjection} from './whiston-publication.mjs';
 import {validateWhistonBellumSourceProjection} from './whiston-bellum-publication.mjs';
 import {validateWhistonContraApionemSourceProjection} from './whiston-contra-apionem-publication.mjs';
+import {validateDehEnglishSourceProjection} from './deh-english-publication.mjs';
 
 export const SOURCE_DIRECTORY = 'bin/search';
 export const ASSET_DIRECTORY = 'assets/search';
@@ -853,6 +854,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
       if (manifest.id === 'antiquities-english-whiston') validateWhistonSourceProjection(corpus, bookReport, manifest, spec, root);
       if (manifest.id === 'bellum-english-whiston') validateWhistonBellumSourceProjection(corpus, bookReport, manifest, spec, root);
       if (manifest.id === 'contra-apionem-english-whiston') validateWhistonContraApionemSourceProjection(corpus, bookReport, manifest, spec, root);
+      if (manifest.id === 'deh-english-pollard') validateDehEnglishSourceProjection(corpus, bookReport, manifest, spec, root);
       const bundleArtifact = artifact(book.path, book.sha256, 'bundle');
       equal(bundleArtifact.item.bytes, book.bytes, `Bundle byte count differs: ${id}`);
       const bundle = bundleArtifact.value();
@@ -931,6 +933,10 @@ export function validateQaReport(root, {catalog, collection, configured, report}
   });
   if (manifest.id === 'contra-apionem-english-whiston') Object.assign(expected, {
     witness: 'tests/whiston-contra-apionem-source-witness.py', concordance: 'concordance.mjs', uiUtils: 'ui-utils.mjs',
+    extractor: adapter.extractor, manifest: configured.manifestPath,
+  });
+  if (manifest.id === 'deh-english-pollard') Object.assign(expected, {
+    witness: 'tests/deh-english-source-witness.py', concordance: 'concordance.mjs', uiUtils: 'ui-utils.mjs',
     extractor: adapter.extractor, manifest: configured.manifestPath,
   });
   for (const [key, relative] of Object.entries(expected)) {

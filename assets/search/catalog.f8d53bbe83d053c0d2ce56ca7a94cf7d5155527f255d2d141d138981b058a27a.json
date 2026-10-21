@@ -243,6 +243,37 @@
         "tokens": 36853,
         "bytes": 5259181
       }
+    },
+    {
+      "id": "deh-english-pollard",
+      "work": "deh",
+      "label": "De excidio Hierosolymitano",
+      "citationPrefix": "De excidio",
+      "language": "English",
+      "edition": "Pollard v1.0",
+      "readerPath": "deh/",
+      "books": [
+        "deh-english-pollard:1",
+        "deh-english-pollard:2",
+        "deh-english-pollard:3",
+        "deh-english-pollard:4",
+        "deh-english-pollard:5"
+      ],
+      "citationScheme": "chapter-paragraph",
+      "unitLabel": "citation unit",
+      "unitLabelPlural": "citation units",
+      "manifestPath": "config/deh-english-pollard.json",
+      "manifestSHA256": "ea279e318dcc6677c0483d4033782589a028d542255f8734eb23a4319c9f9b8f",
+      "corpusPath": "data/deh-english-pollard/corpus.json",
+      "corpusSHA256": "c60b63c4038897aabfc3f9f250f6f84c0a7d3d4a371d0425c19ee69ff5897e0f",
+      "extractionReportPath": "data/deh-english-pollard/extraction-report.json",
+      "extractionReportSHA256": "6a16dd3a83b7395161d77d6417ed4e1e2674863e5e611b453f7195fecfcd6274",
+      "totals": {
+        "books": 5,
+        "sections": 558,
+        "tokens": 136044,
+        "bytes": 13794789
+      }
     }
   ],
   "books": [
@@ -1452,17 +1483,87 @@
       "sha256": "122a14220c7768eca98367136bf731a9633cca660e8416e634c79a73ea36d272",
       "corpusPath": "data/contra-apionem-english-whiston/book-02.corpus.json",
       "corpusSHA256": "89b022a2cf47250995d4f2b1207c254bef1a350a500be89d491b4fd7c333fed4"
+    },
+    {
+      "id": "deh-english-pollard:1",
+      "collectionId": "deh-english-pollard",
+      "number": 1,
+      "label": "Book I (including Prologue)",
+      "sections": 215,
+      "tokens": 40796,
+      "vocabulary": 4389,
+      "bytes": 4309263,
+      "path": "data/deh-english-pollard/book-01.bundle.json",
+      "sha256": "64048d4779c276f72c9bf38555e7eb814ab62061d9f9d34bf765602d4939e14a",
+      "corpusPath": "data/deh-english-pollard/book-01.corpus.json",
+      "corpusSHA256": "006bf4b559938306d04d050ccdfd6105550d98e79e8e208db25d5889cb45f1a7"
+    },
+    {
+      "id": "deh-english-pollard:2",
+      "collectionId": "deh-english-pollard",
+      "number": 2,
+      "label": "Book II",
+      "sections": 73,
+      "tokens": 17141,
+      "vocabulary": 2864,
+      "bytes": 1762775,
+      "path": "data/deh-english-pollard/book-02.bundle.json",
+      "sha256": "ba38633dea57affd084331769da4842df394bdca1a9ca856edeb697269f6ec8a",
+      "corpusPath": "data/deh-english-pollard/book-02.corpus.json",
+      "corpusSHA256": "d75a341ea2192bff4e8d83e12a7ec089b12c46ccb2a0e59bdd4dc6d38e742787"
+    },
+    {
+      "id": "deh-english-pollard:3",
+      "collectionId": "deh-english-pollard",
+      "number": 3,
+      "label": "Book III",
+      "sections": 70,
+      "tokens": 18640,
+      "vocabulary": 3040,
+      "bytes": 1878034,
+      "path": "data/deh-english-pollard/book-03.bundle.json",
+      "sha256": "f40799b1ad504b0f2a6c04712484293d39069653cd935a8a39ee632194a77cc4",
+      "corpusPath": "data/deh-english-pollard/book-03.corpus.json",
+      "corpusSHA256": "eb5cd2b21c49dafc4ffd8560d094de4011e55a84af29a5930c75d886302ec97c"
+    },
+    {
+      "id": "deh-english-pollard:4",
+      "collectionId": "deh-english-pollard",
+      "number": 4,
+      "label": "Book IV",
+      "sections": 79,
+      "tokens": 17263,
+      "vocabulary": 3033,
+      "bytes": 1852736,
+      "path": "data/deh-english-pollard/book-04.bundle.json",
+      "sha256": "c77c07644ec06e96be7841b08473829c2f9782f08c789e34ed8c3c36aeeb40bb",
+      "corpusPath": "data/deh-english-pollard/book-04.corpus.json",
+      "corpusSHA256": "081c62bd9250ccb428e8f0f0d09a227c6c89e669964e94fc9b763e67fc3208d2"
+    },
+    {
+      "id": "deh-english-pollard:5",
+      "collectionId": "deh-english-pollard",
+      "number": 5,
+      "label": "Book V",
+      "sections": 121,
+      "tokens": 42204,
+      "vocabulary": 4523,
+      "bytes": 3991981,
+      "path": "data/deh-english-pollard/book-05.bundle.json",
+      "sha256": "55126d4c90e919db7f96b5ffe133b43e653830d06d096d665111bfb0ecaa6779",
+      "corpusPath": "data/deh-english-pollard/book-05.corpus.json",
+      "corpusSHA256": "346e1afeef159bc88c308ad400392d5f27c5f994d4a7b347efc0925ba4fab0cc"
     }
   ],
   "totals": {
-    "books": 63,
-    "sections": 24451,
-    "tokens": 1211170,
-    "bytes": 180562703
+    "books": 68,
+    "sections": 25009,
+    "tokens": 1347214,
+    "bytes": 194357492
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "d721edfdcd49d3b5213c4afe1e0fde36bdb0108b3bbc28a15f844a24f070ba7b",
+    "manifestSHA256": "7415465e707ea96f2bb8131fb6bfd4a76417182a456de3c4e47f4fb87d61ee7b",
     "enginePath": "engine.mjs",
     "engineSHA256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
     "lunrPath": "vendor/lunr.cjs",

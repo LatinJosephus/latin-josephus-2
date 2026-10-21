@@ -119,15 +119,21 @@ export function readerURL(record,baseURL,{section=true}={}) {
     url.searchParams.set('niese',niese);
   }
   const english=record.readerLink?.params?.english;
-  const whistonCollections={antiquities:'antiquities-english-whiston',bellum:'bellum-english-whiston','contra-apionem':'contra-apionem-english-whiston'};
-  if(Object.values(whistonCollections).includes(record.collectionId)||english!==undefined){
-    const expectedCollection=whistonCollections[record.work];
-    if(!expectedCollection||record.language!=='English'||record.edition!=='Whiston'
-      ||(record.collectionId!==undefined&&record.collectionId!==expectedCollection)
-      ||(english!==undefined&&english!=='whiston')){
-      throw new TypeError('A Whiston reader link requires matching English work and edition metadata.');
+  const englishEditions={
+    antiquities:{collection:'antiquities-english-whiston',edition:'Whiston',source:'whiston',scheme:'niese'},
+    bellum:{collection:'bellum-english-whiston',edition:'Whiston',source:'whiston',scheme:'niese'},
+    'contra-apionem':{collection:'contra-apionem-english-whiston',edition:'Whiston',source:'whiston',scheme:'niese'},
+    deh:{collection:'deh-english-pollard',edition:'Pollard v1.0',source:'pollard',scheme:'chapter-paragraph'},
+  };
+  if(Object.values(englishEditions).some(edition=>edition.collection===record.collectionId)||english!==undefined){
+    const expected=englishEditions[record.work];
+    if(!expected||record.language!=='English'||record.edition!==expected.edition
+      ||citationScheme(record)!==expected.scheme
+      ||(record.collectionId!==undefined&&record.collectionId!==expected.collection)
+      ||(english!==undefined&&english!==expected.source)){
+      throw new TypeError('An English reader link requires matching English work and edition metadata.');
     }
-    url.searchParams.set('english','whiston');
+    url.searchParams.set('english',expected.source);
   }
   return url.href;
 }
