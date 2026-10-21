@@ -1,7 +1,7 @@
 # Latin Josephus search
 
 This directory contains the source and verification tools for the main site's
-`/search/` page. Current coverage comprises four Latin collections and one English pilot:
+`/search/` page. Current coverage comprises four Latin collections and one English collection:
 
 - **Cardwell's *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
   114,794 word tokens.
@@ -13,14 +13,15 @@ This directory contains the source and verification tools for the main site's
   Niese identities, two separately labelled Bellum insertions, and 265,023 word tokens. Book I includes the separately
   transmitted Proem's 26 units and 986 words.
 
-- **Whiston English *Antiquities*, Proem and Book I (pilot):** 346 Niese
-  sections and 21,994 word tokens. The Proem accounts for 26 sections and
+- **Whiston English *Antiquities*, Proem and Books I–V:** 1,710 Niese
+  sections and 112,265 word tokens. The Proem accounts for 26 sections and
   1,646 tokens; Book I’s narrative supplies 320 sections and 20,348 tokens.
+  Books II–V add 1,364 sections and 90,271 word tokens.
 
-Together these comprise **35 book editions, 12,796 citation units, and 510,301
-word tokens**. The indexes contain 12,804 physical records because four Bamberg
+Together these comprise **39 book editions, 14,160 citation units, and 600,572
+word tokens**. The indexes contain 14,168 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
-Whiston Books II–XX and Greek editions are not indexed. Bamberg Latin Antiquities
+Whiston Books VI–XX and Greek editions are not indexed. Bamberg Latin Antiquities
 III.240 and VII.69–99 retain their citations and the source's explicit omissions.
 X.108 retains an empty interval between its citation label and the next Niese
 marker, without an omission tag. IX.51–109 are absent from the accepted source;
@@ -198,7 +199,7 @@ and Contra Apionem I cannot be confused with Bellum I. The bare page retains **B
 books** as its default. Choose **De excidio Hierosolymitano** for its five books,
 **Contra Apionem** for its two books, **Antiquities I–XX, including Proem** for
 all twenty Bamberg Latin Antiquities books, **Whiston** for the English Proem
-and Book I pilot, or **All works** to search all five collections.
+and Books I–V, or **All works** to search all five collections.
 Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
 use `antiquities/?book=1`.
 
@@ -814,10 +815,11 @@ submission, pagination, copying links, and navigation into the reader before
 publication review is complete.
 
 
-## Whiston English pilot and browser release consistency
+## Whiston English I–V and browser release consistency
 
 The English adapter (`extract-whiston.py`) uses explicit `milestone unit="niese"`
-boundaries in the accepted English `preface.xml` and `book-01.xml`. Printed
+boundaries in the accepted English `preface.xml` and `book-01.xml` through
+`book-05.xml`. Printed
 labels, titles and source notes are excluded; inline narrative words and all
 punctuation after the controlling milestone are retained. Every raw source
 paragraph is reconstructible from UTF-16 source slices and recorded exclusions.
@@ -826,12 +828,36 @@ unit. Boolean expressions may use evidence in both within Book I.
 
 `whiston-publication.mjs` verifies the source projection against the accepted
 XML bytes. `tests/whiston-source-witness.py` independently walks text nodes with
-minidom; `tests/whiston-corpus-qa.mjs` checks every pilot word, every interval,
-citation seams, representative Boolean/wildcard queries, links and CSV. Books
+minidom; `tests/whiston-corpus-qa.mjs` checks every indexed word, every interval,
+citation seams, cross-book isolation, representative Boolean/wildcard queries,
+links and CSV. Books
 IX and XI are test-only witnesses for inline footnotes and physical source
 order. Their files are included in build freshness checks but not in the
-search catalog, book bundles, or the 47 indexed publication inputs. No source
+search catalog, book bundles, or the 51 indexed publication inputs. No source
 or reader correction is part of this search release.
+
+| Whiston book | Niese sections | Word tokens |
+| --- | ---: | ---: |
+| I, including the Proem | 346 | 21,994 |
+| II | 349 | 23,020 |
+| III | 322 | 20,955 |
+| IV | 331 | 22,900 |
+| V | 362 | 23,396 |
+| Total | 1,710 | 112,265 |
+
+In IV.276, the markerless continuation paragraph `english-book04-num276b`
+belongs to the same citation as `english-book04-num276`. Their running text
+remains one search record with an explicit paragraph separator and reversible
+source evidence for each paragraph. Phrases may cross this paragraph boundary
+within section scope. Book V's repeated contents headings and chapter titles
+are excluded; they do not interrupt the running narrative. All four added books
+retain their accepted physical order. No phrase or Boolean condition can join
+evidence from different books, languages or editions.
+
+The I–V release preserves the original Book I bundle, corpus and per-book
+extraction report, together with all 34 Latin books. Current coverage in the
+loaded interface is taken from the catalog; CSV source metadata identifies the
+selected books and their source fingerprints.
 
 Public search HTML loads `launch-v1.mjs`. That launcher name is immutable:
 changes to its protocol require a new filename. It fetches `browser-release.json`

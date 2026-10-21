@@ -265,7 +265,7 @@ function editorialLegend(sources) {
   if(sources.some(source=>source.language==='Latin'))parts.push(EDITORIAL_LEGEND);
   if(sources.some(source=>source.work==='contra-apionem'))parts.push('Contra Apionem asterisks are phrase boundaries, with source evidence in source_segments_json.');
   if(sources.some(source=>source.id==='antiquities-latin-bamberg78'||source.collectionId==='antiquities-latin-bamberg78'))parts.push(BAMBERG_LEGEND);
-  if(sources.some(source=>source.id==='antiquities-english-whiston'||source.collectionId==='antiquities-english-whiston'))parts.push('Whiston English pilot: Proem (Niese 1–26) and Book I narrative (27–346) only. Original English spelling and punctuation are preserved. Headings, printed citation labels and footnotes are excluded. Whole-book phrases may cross adjacent Niese sections but stop at the Proem’s end. Latin u/v and i/j equivalence does not change English matching. Original source spans are retained in source_segments_json.');
+  if(sources.some(source=>source.id==='antiquities-english-whiston'||source.collectionId==='antiquities-english-whiston'))parts.push('Whiston English Antiquities: original English spelling and punctuation are preserved. Headings, printed citation labels and footnotes are excluded. Whole-book phrases may cross adjacent Niese sections but stay within one book and stop at the Proem’s end. Latin u/v and i/j equivalence does not change English matching. Original source spans are retained in source_segments_json; the selected books and their source fingerprints are recorded in selected_sources_json.');
   return parts.join(' ');
 }
 

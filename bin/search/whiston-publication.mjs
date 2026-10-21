@@ -1,4 +1,4 @@
-/** Verify the Whiston pilot directly against its accepted, unchanged XML. */
+/** Verify Whiston Antiquities I–V directly against their accepted, unchanged XML. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -7,11 +7,28 @@ import {createHash} from 'node:crypto';
 const COLLECTION = 'antiquities-english-whiston';
 const XML_ID = '{http://www.w3.org/XML/1998/namespace}id';
 const SOURCES = [
-  {path: 'assets/xml/antiquities/English/preface.xml', proem: true, first: 1, last: 26,
+  {path: 'assets/xml/antiquities/English/preface.xml', book: 1, proem: true, first: 1, last: 26,
     sha256: 'd04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb'},
-  {path: 'assets/xml/antiquities/English/book-01.xml', proem: false, first: 27, last: 346,
+  {path: 'assets/xml/antiquities/English/book-01.xml', book: 1, proem: false, first: 27, last: 346,
     sha256: '9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3'},
+  {path: 'assets/xml/antiquities/English/book-02.xml', book: 2, proem: false, first: 1, last: 349,
+    sha256: '70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584'},
+  {path: 'assets/xml/antiquities/English/book-03.xml', book: 3, proem: false, first: 1, last: 322,
+    sha256: '0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44'},
+  {path: 'assets/xml/antiquities/English/book-04.xml', book: 4, proem: false, first: 1, last: 331,
+    sha256: '6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554'},
+  {path: 'assets/xml/antiquities/English/book-05.xml', book: 5, proem: false, first: 1, last: 362,
+    sha256: 'a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722'},
 ];
+const BOOKS = new Map([
+  [1, {roman: 'I', sections: 346, tokens: 21994, paragraphs: 83}],
+  [2, {roman: 'II', sections: 349, tokens: 23020, paragraphs: 76}],
+  [3, {roman: 'III', sections: 322, tokens: 20955, paragraphs: 79}],
+  [4, {roman: 'IV', sections: 331, tokens: 22900, paragraphs: 88}],
+  [5, {roman: 'V', sections: 362, tokens: 23396, paragraphs: 98}],
+]);
+const CONTINUATIONS = new Map([[4, {'english-book04-num276b': {section: 276,
+  previousSourceId: 'english-book04-num276', nextSourceId: 'english-book04-num277'}}]]);
 const digest = value => createHash('sha256').update(value).digest('hex');
 const equal = (actual, expected, message) => assert.deepEqual(actual, expected, `Whiston ${message}`);
 const range = (first, last) => Array.from({length: last - first + 1}, (_, index) => first + index);
@@ -85,16 +102,17 @@ function paragraphProjection(contents) {
 }
 
 function expectedRecord(text, section, sourceId, source, order) {
-  const readerBook = source.proem ? 'preface' : 1;
-  return {id: `${COLLECTION}-1-${section}`, work: 'antiquities', book: 1, section,
-    language: 'English', edition: 'Whiston', citationScheme: 'niese', citationLabel: `I.${section}`,
-    citation: {book: 'I', section, ...(source.proem ? {proem: true} : {})},
+  const readerBook = source.proem ? 'preface' : source.book, roman = BOOKS.get(source.book).roman;
+  return {id: `${COLLECTION}-${source.book}-${section}`, work: 'antiquities', book: source.book, section,
+    language: 'English', edition: 'Whiston', citationScheme: 'niese', citationLabel: `${roman}.${section}`,
+    citation: {book: roman, section, ...(source.proem ? {proem: true} : {})},
     text, editorialMarks: [], sourceMarkup: [], textGaps: [], phraseBreaks: [],
     url: `/antiquities/?book=${readerBook}&niese=${section}&english=whiston`,
     readerLink: {path: 'antiquities/', params: {book: readerBook, niese: section, english: 'whiston'}},
     sourceId, sourceIds: [sourceId], sourcePath: source.path, order,
     ...(source.proem ? {sourceDivision: 'proem', division: 'proem'} : {}),
-    ...(section === 27 ? {breakBefore: true, breakReason: 'Book I narrative begins after the separately transmitted Proem.'} : {}),
+    ...(source.book === 1 && !source.proem && section === 27
+      ? {breakBefore: true, breakReason: 'Book I narrative begins after the separately transmitted Proem.'} : {}),
   };
 }
 
@@ -108,8 +126,8 @@ function expectedPieces(projected, intervals, byId) {
       const sourceStart = span.rawStart + left - span.flatStart, sourceEnd = sourceStart + right - left;
       const interval = intervals.find(item => item.start <= left && right <= item.end);
       const piece = interval
-        ? {kind: 'record', recordId: interval.recordId, recordStart: left - interval.start,
-          recordEnd: right - interval.start, sourceStart, sourceEnd}
+        ? {kind: 'record', recordId: interval.recordId, recordStart: (interval.recordOffset || 0) + left - interval.start,
+          recordEnd: (interval.recordOffset || 0) + right - interval.start, sourceStart, sourceEnd}
         : {kind: 'excluded', reason: right <= intervals[0].flatStart ? 'pre-marker-label-punctuation' : 'section-edge-whitespace',
           text: projected.raw.slice(sourceStart, sourceEnd), sourceStart, sourceEnd};
       pieces.push(piece);
@@ -167,10 +185,12 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
   equal(noteText.trim(), 'William Whiston (1737)', 'source notice differs');
   excludedBlocks.push({kind: 'source-note', text: noteText, sourceAttributes: attributes(notes[0][1])});
   counts.excludedSourceNotes++;
-  for (const match of body.matchAll(/<p\b([^>]*)>([\s\S]*?)<\/p\s*>/gu)) {
+  const sourceParagraphs = [...body.matchAll(/<p\b([^>]*)>([\s\S]*?)<\/p\s*>/gu)];
+  for (const match of sourceParagraphs) {
     const sourceAttributes = attributes(match[1]), ordinal = counts.bodyParagraphs++;
     const projected = paragraphProjection(match[2]);
-    if (!projected.markers.length) {
+    const continuation = CONTINUATIONS.get(source.book)?.[sourceAttributes[XML_ID]];
+    if (!projected.markers.length && !continuation) {
       assert(!sourceAttributes[XML_ID] && /^(?:BOOK\b|CHAPTER\b|CONTAINING\b|Antiquities of the Jews -- Preface$)/iu.test(projected.raw.trim()),
         'Whiston unreviewed heading');
       excludedBlocks.push({kind: 'heading', text: projected.raw, sourceAttributes, paragraphOrdinal: ordinal});
@@ -179,63 +199,101 @@ function sourceDocument(root, source, indexedSource, orderOffset) {
     }
     const sourceId = sourceAttributes[XML_ID];
     assert(sourceId && !paragraphs.some(paragraph => paragraph.sourceId === sourceId), 'Whiston missing or duplicate paragraph identity');
-    const prefix = projected.flat.slice(0, projected.markers[0].runningTextOffset);
+    if (continuation) {
+      assert(!projected.markers.length && records.length && ordinal > 0 && ordinal + 1 < sourceParagraphs.length,
+        'Whiston continuation must follow an accepted citation');
+      equal([attributes(sourceParagraphs[ordinal - 1][1])[XML_ID], attributes(sourceParagraphs[ordinal + 1][1])[XML_ID],
+        records.at(-1).section, paragraphProjection(sourceParagraphs[ordinal + 1][2]).markers[0]?.section],
+      [continuation.previousSourceId, continuation.nextSourceId, continuation.section, continuation.section + 1],
+      'continuation is outside its accepted physical location');
+    }
+    const prefix = projected.markers.length ? projected.flat.slice(0, projected.markers[0].runningTextOffset) : '';
     assert(/^[\s.]*$/u.test(prefix), 'Whiston running words precede the first marker');
     const intervals = [], sections = [];
-    for (let index = 0; index < projected.markers.length; index++) {
-      const marker = projected.markers[index], flatStart = marker.runningTextOffset;
-      const flatEnd = projected.markers[index + 1]?.runningTextOffset ?? projected.flat.length;
+    const intervalMarkers = projected.markers.length ? projected.markers : [{section: continuation.section, runningTextOffset: 0}];
+    let recordJoin;
+    for (let index = 0; index < intervalMarkers.length; index++) {
+      const marker = intervalMarkers[index], flatStart = marker.runningTextOffset;
+      const flatEnd = intervalMarkers[index + 1]?.runningTextOffset ?? projected.flat.length;
       const fragment = projected.flat.slice(flatStart, flatEnd), text = fragment.trim();
       assert(text.length, 'Whiston accepted citation interval is empty');
       const leading = fragment.match(/^\s*/u)[0], start = flatStart + leading.length, end = start + text.length;
-      const record = expectedRecord(text, marker.section, sourceId, source, orderOffset + records.length);
-      records.push(record);
-      intervals.push({recordId: record.id, start, end, flatStart});
+      let record;
+      if (continuation) {
+        record = records.at(-1);
+        recordJoin = {kind: 'paragraph-separator', recordId: record.id, start: record.text.length,
+          end: record.text.length + 2, text: '\n\n'};
+        record.text += recordJoin.text + text;
+        record.sourceIds.push(sourceId);
+      } else {
+        record = expectedRecord(text, marker.section, sourceId, source, orderOffset + records.length);
+        records.push(record);
+      }
+      intervals.push({recordId: record.id, start, end, flatStart, ...(recordJoin ? {recordOffset: recordJoin.end} : {})});
       sections.push({recordId: record.id, section: marker.section, leadingWhitespace: leading,
         trailingWhitespace: fragment.slice(leading.length + text.length), textSHA256: digest(text),
         flatStartCodePoints: codePoints(projected.flat.slice(0, flatStart)), flatEndCodePoints: codePoints(projected.flat.slice(0, flatEnd)),
-        textStartCodePoints: codePoints(projected.flat.slice(0, start)), textEndCodePoints: codePoints(projected.flat.slice(0, end))});
+        textStartCodePoints: codePoints(projected.flat.slice(0, start)), textEndCodePoints: codePoints(projected.flat.slice(0, end)),
+        ...(recordJoin ? {recordOffset: recordJoin.end} : {})});
     }
     const sourcePieces = expectedPieces(projected, intervals, new Map(records.map(record => [record.id, record])));
     paragraphs.push({sourceId, sourcePath: source.path, paragraphOrdinal: ordinal,
       rawText: projected.raw, runningText: projected.flat.slice(prefix.length), sourcePieces, sections,
       nieseMarkers: projected.markers, structuralMarkers: projected.structures, exactRestorationVerified: true});
+    if (continuation) {
+      Object.assign(paragraphs.at(-1), {continuationOf: {recordId: intervals[0].recordId, ...continuation}, recordJoin});
+      counts.continuationParagraphs = (counts.continuationParagraphs || 0) + 1;
+    }
     counts.narrativeParagraphs++;
     counts.excludedCitationLabels += projected.exclusions.length;
     counts.nieseMilestones += projected.markers.length;
     counts.structuralMarkers += projected.structures.length;
   }
   equal(records.map(record => record.section), range(source.first, source.last), 'accepted citation sequence differs');
+  equal(paragraphs.filter(paragraph => paragraph.continuationOf).map(paragraph => paragraph.sourceId),
+    Object.keys(CONTINUATIONS.get(source.book) || {}), 'reviewed continuation identities differ');
   Object.assign(counts, {sections: records.length, runningWordTokens: records.reduce((total, record) => total + words(record.text).length, 0),
     numberedParagraphs: counts.narrativeParagraphs, breakBeforeUnits: records.filter(record => record.breakBefore).length});
-  return {records, report: {schemaVersion: 1, status: 'PASS', scope: {work: 'Antiquities', book: 1, language: 'English',
+  return {records, report: {schemaVersion: 1, status: 'PASS', scope: {work: 'Antiquities', book: source.book, language: 'English',
     edition: 'Whiston', unit: 'Niese section', citationScheme: 'niese', proem: source.proem}, source: indexedSource,
     sourceContract: {normalizedSHA256: source.sha256, hashMode: 'CRLF-to-LF only', verified: true}, counts,
     coverage: coverage(paragraphs, records, [source.first, source.last], true), excludedBlocks, paragraphs}};
 }
 
-/** This gate accepts the per-book extraction report; no IX/XI test source can enter the pilot. */
+/** This gate accepts a per-book extraction report; IX/XI remain test-only sources. */
 export function validateWhistonSourceProjection(corpus, report, manifest, spec, root) {
   equal([manifest.id, manifest.work, manifest.language, manifest.edition, manifest.citationScheme, manifest.readerPath],
     [COLLECTION, 'antiquities', 'English', 'Whiston', 'niese', 'antiquities/'], 'collection identity differs');
-  equal(manifest.books.map(book => book.number), [1], 'pilot includes an unreviewed book');
-  equal([spec.number, spec.sections, spec.sectionRange, spec.source, spec.additionalSources],
-    [1, 346, [1, 346], SOURCES[1].path, [SOURCES[0].path]], 'pilot source scope differs');
-  equal([report.schemaVersion, report.status, report.scope], [1, 'PASS', {work: 'Antiquities', book: 1, language: 'English',
-    edition: 'Whiston', unit: 'Niese section', citationScheme: 'niese', includesProem: true}], 'book report scope differs');
-  assert(Array.isArray(report.documentReports) && report.documentReports.length === 2, 'Whiston document reports are incomplete');
-  const documents = SOURCES.map((source, index) => sourceDocument(root, source, report.documentReports[index].source, index ? 26 : 0));
+  equal(manifest.books.map(book => book.number), [...BOOKS.keys()], 'collection includes an unreviewed book');
+  const contract = BOOKS.get(spec.number);
+  assert(contract, 'Whiston per-book report is outside the reviewed collection');
+  const sources = SOURCES.filter(source => source.book === spec.number), narrative = sources.find(source => !source.proem);
+  const includesProem = sources.some(source => source.proem), sectionRange = [1, contract.sections];
+  equal([spec.sections, spec.sectionRange, spec.source, spec.additionalSources || []],
+    [contract.sections, sectionRange, narrative.path, sources.filter(source => source.proem).map(source => source.path)],
+    'book source scope differs');
+  equal([report.schemaVersion, report.status, report.scope], [1, 'PASS', {work: 'Antiquities', book: spec.number, language: 'English',
+    edition: 'Whiston', unit: 'Niese section', citationScheme: 'niese', includesProem}], 'book report scope differs');
+  assert(Array.isArray(report.documentReports) && report.documentReports.length === sources.length, 'Whiston document reports are incomplete');
+  let offset = [...BOOKS].filter(([number]) => number < spec.number).reduce((total, [, book]) => total + book.sections, 0);
+  const documents = sources.map((source, index) => {
+    const result = sourceDocument(root, source, report.documentReports[index].source, offset);
+    offset += result.records.length;
+    return result;
+  });
   const expected = documents.flatMap(document => document.records), paragraphs = documents.flatMap(document => document.report.paragraphs);
   equal(corpus, expected, 'record text, source identity, reader metadata or phrase boundary differs from accepted XML');
   equal(report.documentReports, documents.map(document => document.report), 'per-document audit differs from accepted XML');
   equal(report.paragraphs, paragraphs, 'source paragraph restoration evidence differs from accepted XML');
   equal(report.sources, documents.map(document => document.report.source), 'source list differs');
-  equal(report.source, documents[1].report.source, 'narrative fingerprint differs');
-  equal(report.additionalSources, [documents[0].report.source], 'Proem fingerprint differs');
+  equal(report.source, documents.find(document => !document.report.scope.proem).report.source, 'narrative fingerprint differs');
+  equal(report.additionalSources, documents.filter(document => document.report.scope.proem).map(document => document.report.source),
+    'additional source fingerprints differ');
   const counts = {};
   for (const document of documents) for (const [key, value] of Object.entries(document.report.counts)) counts[key] = (counts[key] || 0) + value;
   equal(report.counts, counts, 'extraction counts differ from actual source');
-  equal(report.coverage, coverage(paragraphs, expected, [1, 346]), 'source preservation hashes differ from actual source');
-  equal([counts.sections, counts.runningWordTokens, counts.narrativeParagraphs], [346, 21994, 83], 'reviewed pilot totals differ');
-  return {status: 'PASS', sections: counts.sections, tokens: counts.runningWordTokens, sourceDocuments: 2, restoredParagraphs: paragraphs.length};
+  equal(report.coverage, coverage(paragraphs, expected, sectionRange), 'source preservation hashes differ from actual source');
+  equal([counts.sections, counts.runningWordTokens, counts.narrativeParagraphs], [contract.sections, contract.tokens, contract.paragraphs],
+    'reviewed book totals differ');
+  return {status: 'PASS', sections: counts.sections, tokens: counts.runningWordTokens, sourceDocuments: sources.length, restoredParagraphs: paragraphs.length};
 }

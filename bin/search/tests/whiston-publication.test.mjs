@@ -11,19 +11,39 @@ import {validateWhistonSourceProjection} from '../whiston-publication.mjs';
 const repository = path.resolve(fileURLToPath(new URL('../../../', import.meta.url)));
 const read = relative => JSON.parse(fs.readFileSync(path.join(repository, relative), 'utf8'));
 const manifest = read('bin/search/config/antiquities-english-whiston.json');
-const corpus = read('bin/search/data/antiquities-english-whiston/book-01.corpus.json');
-const report = read('bin/search/data/antiquities-english-whiston/book-01.extraction-report.json');
+const books = new Map(manifest.books.map(spec => {
+  const stem = `bin/search/data/antiquities-english-whiston/book-${String(spec.number).padStart(2, '0')}`;
+  return [spec.number, {corpus: read(`${stem}.corpus.json`), report: read(`${stem}.extraction-report.json`)}];
+}));
 
-function fresh() {
-  return {corpus: structuredClone(corpus), report: structuredClone(report), manifest: structuredClone(manifest)};
+function fresh(number = 1) {
+  return {number, ...structuredClone(books.get(number)), manifest: structuredClone(manifest)};
 }
 
 function verify(input, root = repository) {
-  return validateWhistonSourceProjection(input.corpus, input.report, input.manifest, input.manifest.books[0], root);
+  return validateWhistonSourceProjection(input.corpus, input.report, input.manifest,
+    input.manifest.books.find(book => book.number === input.number), root);
 }
 
-test('Whiston source gate verifies all346 actual intervals and their reversible source offsets', () => {
-  assert.deepEqual(verify(fresh()), {status: 'PASS', sections: 346, tokens: 21994, sourceDocuments: 2, restoredParagraphs: 83});
+test('Whiston source gate verifies all1710 actual intervals and their reversible source offsets', () => {
+  const expected = [[346, 21994, 83], [349, 23020, 76], [322, 20955, 79], [331, 22900, 88], [362, 23396, 98]];
+  for (const [index, [sections, tokens, restoredParagraphs]] of expected.entries()) {
+    assert.deepEqual(verify(fresh(index + 1)), {status: 'PASS', sections, tokens, sourceDocuments: index ? 1 : 2, restoredParagraphs});
+  }
+});
+
+test('Whiston source gate validates text and book-specific reader metadata in every newly added book', async t => {
+  for (const number of [2, 3, 4, 5]) await t.test(`Book ${number}`, () => {
+    const input = fresh(number);
+    input.corpus[0].text += ' Unreviewed words.';
+    assert.throws(() => verify(input), /record text, source identity, reader metadata or phrase boundary differs/u);
+    const wrongReader = fresh(number);
+    wrongReader.corpus[0].readerLink.params.book = 1;
+    assert.throws(() => verify(wrongReader), /record text, source identity, reader metadata or phrase boundary differs/u);
+    const falseProemBoundary = fresh(number);
+    falseProemBoundary.corpus[26].breakBefore = true;
+    assert.throws(() => verify(falseProemBoundary), /record text, source identity, reader metadata or phrase boundary differs/u);
+  });
 });
 
 test('Whiston source gate rejects altered words, punctuation and source order', async t => {
@@ -76,43 +96,69 @@ test('Whiston source gate rejects inconsistent source ledgers even when records 
   });
 });
 
-test('Whiston source gate refuses additional pilot books and unapproved source paths', async t => {
+test('Whiston source gate refuses unreviewed books and unapproved source paths', async t => {
   await t.test('test-only Book IX cannot become published scope', () => {
     const input = fresh();
     input.manifest.books.push({...input.manifest.books[0], number: 9});
-    assert.throws(() => verify(input), /pilot includes an unreviewed book/u);
+    assert.throws(() => verify(input), /collection includes an unreviewed book/u);
   });
   await t.test('Latin source cannot be substituted for Whiston', () => {
     const input = fresh();
     input.manifest.books[0].source = 'assets/xml/antiquities/Latin/book-01.xml';
-    assert.throws(() => verify(input), /pilot source scope differs/u);
+    assert.throws(() => verify(input), /book source scope differs/u);
+  });
+});
+
+test('Whiston IV.276 continuation evidence is checked independently of its displayed record', async t => {
+  for (const [label, mutate] of [
+    ['deleted continuation text', value => { value.corpus[275].text = value.corpus[275].text.split('\n\n')[0]; }],
+    ['wrong continuation source identity', value => { value.corpus[275].sourceIds.pop(); }],
+    ['unrecorded paragraph separator', value => {
+      delete value.report.paragraphs.find(paragraph => paragraph.sourceId === 'english-book04-num276b').recordJoin;
+    }],
+    ['altered synthetic separator span', value => {
+      value.report.documentReports[0].paragraphs.find(paragraph => paragraph.sourceId === 'english-book04-num276b').recordJoin.end++;
+    }],
+    ['invented Niese milestone', value => {
+      value.report.paragraphs.find(paragraph => paragraph.sourceId === 'english-book04-num276b').nieseMarkers = [{section: 276}];
+    }],
+    ['changed continuation record offset', value => {
+      value.report.paragraphs.find(paragraph => paragraph.sourceId === 'english-book04-num276b').sections[0].recordOffset--;
+    }],
+  ]) await t.test(label, () => {
+    const input = fresh(4);
+    mutate(input);
+    assert.throws(() => verify(input), /Whiston/u);
   });
 });
 
 test('Whiston source gate accepts CRLF equivalence but refuses actual XML changes', async t => {
   const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'latin-josephus-whiston-source-'));
   t.after(() => fs.rmSync(fixture, {recursive: true, force: true}));
-  const sourcePaths = [manifest.books[0].source, ...manifest.books[0].additionalSources];
+  const sourcePaths = manifest.books.flatMap(book => [book.source, ...(book.additionalSources || [])]);
   for (const relative of sourcePaths) {
     const filename = path.join(fixture, relative);
     fs.mkdirSync(path.dirname(filename), {recursive: true});
     fs.copyFileSync(path.join(repository, relative), filename);
   }
-  await t.test('both files may have Windows line endings', () => {
+  await t.test('all six indexed files may have Windows line endings', () => {
     for (const relative of sourcePaths) {
       const filename = path.join(fixture, relative);
       fs.writeFileSync(filename, fs.readFileSync(filename, 'utf8').replace(/\r?\n/gu, '\r\n'));
     }
-    assert.equal(verify(fresh(), fixture).status, 'PASS');
+    for (const number of [1, 2, 3, 4, 5]) assert.equal(verify(fresh(number), fixture).status, 'PASS');
   });
-  await t.test('source text changes fail even if their report fingerprint is refreshed', () => {
-    const input = fresh(), filename = path.join(fixture, sourcePaths[0]);
-    fs.writeFileSync(filename, fs.readFileSync(filename, 'utf8').replace('In the beginning', 'At the beginning'));
-    const changed = fs.readFileSync(filename), fingerprint = {path: sourcePaths[0],
-      sha256: createHash('sha256').update(changed).digest('hex'), bytes: changed.length};
-    input.report.source = fingerprint;
-    input.report.sources[1] = fingerprint;
-    input.report.documentReports[1].source = fingerprint;
-    assert.throws(() => verify(input, fixture), /source differs from the accepted source/u);
+  for (const number of [1, 2, 3, 4, 5]) await t.test(`Book ${number} source changes fail despite a refreshed fingerprint`, () => {
+    const input = fresh(number), relative = manifest.books.find(book => book.number === number).source;
+    const filename = path.join(fixture, relative), original = fs.readFileSync(filename);
+    fs.appendFileSync(filename, '\n<!-- Unreviewed source change -->\n');
+    try {
+      const changed = fs.readFileSync(filename), fingerprint = {path: relative,
+        sha256: createHash('sha256').update(changed).digest('hex'), bytes: changed.length};
+      input.report.source = fingerprint;
+      input.report.sources[number === 1 ? 1 : 0] = fingerprint;
+      input.report.documentReports[number === 1 ? 1 : 0].source = fingerprint;
+      assert.throws(() => verify(input, fixture), /source differs from the accepted source/u);
+    } finally { fs.writeFileSync(filename, original); }
   });
 });

@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-20T23:49:07.696Z",
+  "generatedAt": "2026-10-21T00:32:55.132Z",
   "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -179,8 +179,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "3a112e80d1205d9ea5f824cb7b185c80bf44318cec5be07f603b59df2ef2b954",
-      "bytes": 33299
+      "sha256": "88462bbc0ded54be9eb088099f45a9e77b1e85d1b3ae84740d249470e89fd1bc",
+      "bytes": 35747
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -2069,9 +2069,9 @@
     "MixedFourWorkCollectionMatchingUnits": 8,
     "MixedFourWorkCollectionOccurrences": 8,
     "MixedFourWorkCollectionUnitIdentity": 8,
-    "MixedFourWorkCollectionEvidence": 26794,
-    "MixedFourWorkCollectionRecordIds": 26794,
-    "MixedFourWorkCollectionSections": 26794,
+    "MixedFourWorkCollectionEvidence": 29534,
+    "MixedFourWorkCollectionRecordIds": 29534,
+    "MixedFourWorkCollectionSections": 29534,
     "MixedFourWorkCollectionMatchingSections": 8,
     "MixedFourWorkCollectionSelectionOrder": 8,
     "MixedFourWorkCollectionUniqueRecordIdentity": 8,
@@ -2086,10 +2086,10 @@
     "BundleFetchCaching": 1,
     "InvalidSelectionRejected": 3,
     "MissingSelectedBookRejectsCompleteSearch": 1,
-    "InputUnchangedDuringQA": 116
+    "InputUnchangedDuringQA": 120
   },
   "totalQueries": 293134,
-  "assertions": 3837112,
+  "assertions": 3845336,
   "failedAssertions": 0,
   "examples": [
     {
@@ -7571,11 +7571,15 @@
         "antiquities-latin-bamberg78:18",
         "antiquities-latin-bamberg78:19",
         "antiquities-latin-bamberg78:20",
-        "antiquities-english-whiston:1"
+        "antiquities-english-whiston:1",
+        "antiquities-english-whiston:2",
+        "antiquities-english-whiston:3",
+        "antiquities-english-whiston:4",
+        "antiquities-english-whiston:5"
       ],
-      "matchingUnits": 532,
-      "matchingSections": 532,
-      "occurrences": 677
+      "matchingUnits": 533,
+      "matchingSections": 533,
+      "occurrences": 678
     },
     {
       "query": "sacerdot*",
@@ -7616,11 +7620,15 @@
         "antiquities-latin-bamberg78:18",
         "antiquities-latin-bamberg78:19",
         "antiquities-latin-bamberg78:20",
-        "antiquities-english-whiston:1"
+        "antiquities-english-whiston:1",
+        "antiquities-english-whiston:2",
+        "antiquities-english-whiston:3",
+        "antiquities-english-whiston:4",
+        "antiquities-english-whiston:5"
       ],
-      "matchingUnits": 34,
-      "matchingSections": 532,
-      "occurrences": 677
+      "matchingUnits": 35,
+      "matchingSections": 533,
+      "occurrences": 678
     },
     {
       "query": "NOT (zzzznonoccurrit)",
@@ -7661,10 +7669,14 @@
         "antiquities-latin-bamberg78:18",
         "antiquities-latin-bamberg78:19",
         "antiquities-latin-bamberg78:20",
-        "antiquities-english-whiston:1"
+        "antiquities-english-whiston:1",
+        "antiquities-english-whiston:2",
+        "antiquities-english-whiston:3",
+        "antiquities-english-whiston:4",
+        "antiquities-english-whiston:5"
       ],
-      "matchingUnits": 12796,
-      "matchingSections": 12796,
+      "matchingUnits": 14160,
+      "matchingSections": 14160,
       "occurrences": 0
     },
     {
@@ -7706,14 +7718,18 @@
         "antiquities-latin-bamberg78:18",
         "antiquities-latin-bamberg78:19",
         "antiquities-latin-bamberg78:20",
-        "antiquities-english-whiston:1"
+        "antiquities-english-whiston:1",
+        "antiquities-english-whiston:2",
+        "antiquities-english-whiston:3",
+        "antiquities-english-whiston:4",
+        "antiquities-english-whiston:5"
       ],
-      "matchingUnits": 35,
+      "matchingUnits": 39,
       "matchingSections": 0,
       "occurrences": 0
     }
   ],
-  "durationSeconds": 278.15,
+  "durationSeconds": 290.7,
   "limitations": [
     "Automated Node/Python acceptance, not browser or visual acceptance.",
     "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",

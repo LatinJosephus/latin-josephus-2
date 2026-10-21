@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Extract the accepted Whiston Antiquities Proem and Book I for search.
+"""Extract the accepted Whiston Antiquities Proem and Books I–V for search.
 
 Explicit English Niese milestones govern the projection.  XML files and their
 accepted boundaries are read only.  IX and XI are supported solely as focused
-extraction-test inputs; build_corpus never publishes those books in this pilot.
+extraction-test inputs; build_corpus never publishes those test-only books.
 """
 
 from __future__ import annotations
@@ -27,10 +27,19 @@ SOURCE_PREFIX = "assets/xml/antiquities/English"
 SOURCE_CONTRACTS = {
     "preface": {"sha256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb", "range": [1, 26]},
     1: {"sha256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3", "range": [27, 346]},
+    2: {"sha256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584", "range": [1, 349]},
+    3: {"sha256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44", "range": [1, 322]},
+    4: {"sha256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554", "range": [1, 331]},
+    5: {"sha256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722", "range": [1, 362]},
     9: {"sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36", "range": [1, 291]},
     11: {"sha256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2", "range": [1, 347]},
 }
-ROMANS = {1: "I", 9: "IX", 11: "XI"}
+ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 9: "IX", 11: "XI"}
+PUBLISHED_BOOKS = [1, 2, 3, 4, 5]
+# This identity comes from its place between the accepted English milestones,
+# not from a parallel Latin label. No unreviewed markerless narrative is inferred.
+CONTINUATIONS = {4: {"english-book04-num276b": {"section": 276,
+    "previousSourceId": "english-book04-num276", "nextSourceId": "english-book04-num277"}}}
 TRANSPARENT_TAGS = {"hi", "emph", "seg", "ref", "q", "quote", "foreign", "s"}
 STRUCTURAL_TAGS = {"anchor", "lb", "pb", "cb"}
 
@@ -163,7 +172,7 @@ def restore_pieces(flattened: dict, sections: list[dict], records_by_id: dict) -
                              if section["textStart"] <= left and right <= section["textEnd"]), None)
             if selected:
                 record = records_by_id[selected["recordId"]]
-                record_start = utf16_length(flattened["flatText"][selected["textStart"]:left])
+                record_start = selected.get("recordOffset", 0) + utf16_length(flattened["flatText"][selected["textStart"]:left])
                 record_end = record_start + utf16_length(flattened["flatText"][left:right])
                 pieces.append({"kind": "record", "recordId": record["id"],
                                "recordStart": record_start, "recordEnd": record_end,
@@ -245,10 +254,12 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
             excluded_blocks.append({"kind": "source-note", "text": "".join(element.itertext()),
                                     "sourceAttributes": dict(element.attrib)})
             counts["excludedSourceNotes"] += 1
-    for number, paragraph in enumerate(body.findall(f".//{q('p')}")):
+    source_paragraphs = body.findall(f".//{q('p')}")
+    for number, paragraph in enumerate(source_paragraphs):
         require(not paragraph.findall(f".//{q('p')}"), "Nested Whiston paragraphs are unreviewed")
         markers = paragraph.findall(f".//{q('milestone')}[@unit='niese']")
-        if not markers:
+        continuation = CONTINUATIONS.get(book_number, {}).get(paragraph.get(XML_ID)) if not preface else None
+        if not markers and not continuation:
             value = "".join(paragraph.itertext())
             heading = (not paragraph.get(XML_ID) or paragraph.get("rend") == "whiston-chapter-heading")
             require(heading and not paragraph.findall(f".//{q('milestone')}"),
@@ -263,12 +274,23 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
         require(paragraph.get(XML_ID) not in source_ids, "Duplicate Whiston narrative source ID")
         source_ids.add(paragraph.get(XML_ID))
         flat = flatten_paragraph(paragraph)
-        prefix = flat["flatText"][:flat["markers"][0]["flatOffset"]]
+        join = None
+        if continuation:
+            require(not markers and not flat["markers"] and records, "Whiston continuation must follow an existing citation")
+            require(number > 0 and number + 1 < len(source_paragraphs)
+                    and source_paragraphs[number - 1].get(XML_ID) == continuation["previousSourceId"]
+                    and source_paragraphs[number + 1].get(XML_ID) == continuation["nextSourceId"]
+                    and records[-1]["section"] == continuation["section"], "Whiston continuation is outside its accepted physical location")
+            next_markers = source_paragraphs[number + 1].findall(f".//{q('milestone')}[@unit='niese']")
+            require(next_markers and int(next_markers[0].get("n")) == continuation["section"] + 1,
+                    "Whiston continuation has an unexpected following milestone")
+        prefix = flat["flatText"][:flat["markers"][0]["flatOffset"]] if flat["markers"] else ""
         require(re.fullmatch(r"[\s.]*", prefix), "Narrative words occur before the first Whiston milestone")
         sections = []
-        for index, marker in enumerate(flat["markers"]):
+        interval_markers = flat["markers"] or [{"section": continuation["section"], "flatOffset": 0}]
+        for index, marker in enumerate(interval_markers):
             start = marker["flatOffset"]
-            end = flat["markers"][index + 1]["flatOffset"] if index + 1 < len(flat["markers"]) else len(flat["flatText"])
+            end = interval_markers[index + 1]["flatOffset"] if index + 1 < len(interval_markers) else len(flat["flatText"])
             fragment = flat["flatText"][start:end]
             text = fragment.strip()
             require(text, f"Empty Whiston citation interval: {book_number}.{marker['section']}")
@@ -276,7 +298,15 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
             text_start, text_end = start + left, start + left + len(text)
             section = marker["section"]
             reader_book = "preface" if preface else book_number
-            record = {"id": f"{COLLECTION}-{book_number}-{section}", "work": "antiquities", "book": book_number,
+            if continuation:
+                record = records[-1]
+                separator_start = utf16_length(record["text"])
+                join = {"kind": "paragraph-separator", "recordId": record["id"], "start": separator_start,
+                        "end": separator_start + 2, "text": "\n\n"}
+                record["text"] += join["text"] + text
+                record["sourceIds"].append(paragraph.get(XML_ID))
+            else:
+                record = {"id": f"{COLLECTION}-{book_number}-{section}", "work": "antiquities", "book": book_number,
                       "section": section, "language": "English", "edition": EDITION, "citationScheme": "niese",
                       "citationLabel": f"{ROMANS[book_number]}.{section}",
                       "citation": {"book": ROMANS[book_number], "section": section, **({"proem": True} if preface else {})},
@@ -285,14 +315,16 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
                       "readerLink": {"path": "antiquities/", "params": {"book": reader_book, "niese": section, "english": "whiston"}},
                       "sourceId": paragraph.get(XML_ID), "sourceIds": [paragraph.get(XML_ID)], "sourcePath": path,
                       "order": order_offset + len(records)}
-            if preface:
-                record.update(sourceDivision="proem", division="proem")
-            elif book_number == 1 and section == 27:
-                record.update(breakBefore=True, breakReason="Book I narrative begins after the separately transmitted Proem.")
-            records.append(record)
+                if preface:
+                    record.update(sourceDivision="proem", division="proem")
+                elif book_number == 1 and section == 27:
+                    record.update(breakBefore=True, breakReason="Book I narrative begins after the separately transmitted Proem.")
+                records.append(record)
             sections.append({"recordId": record["id"], "section": section, "flatStart": start, "flatEnd": end,
                              "textStart": text_start, "textEnd": text_end, "leadingWhitespace": fragment[:left],
                              "trailingWhitespace": fragment[left + len(text):], "textSHA256": sha(text)})
+            if join:
+                sections[-1]["recordOffset"] = join["end"]
         by_id = {record["id"]: record for record in records}
         pieces, restored = restore_pieces(flat, sections, by_id)
         projected = flat["flatText"][len(prefix):]
@@ -313,6 +345,9 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
                            "sourcePieces": pieces, "sections": sections,
                            "nieseMarkers": flat["markers"], "structuralMarkers": flat["structuralMarkers"],
                            "exactRestorationVerified": restored == flat["rawText"]})
+        if continuation:
+            paragraphs[-1].update(continuationOf={"recordId": record["id"], **continuation}, recordJoin=join)
+            counts["continuationParagraphs"] += 1
         counts.update(narrativeParagraphs=1, nieseMilestones=len(flat["markers"]),
                       structuralMarkers=len(flat["structuralMarkers"]),
                       excludedFootnotes=sum(item["kind"] == "whiston-footnote" for item in flat["exclusions"]),
@@ -320,6 +355,8 @@ def extract_document(xml_bytes: bytes, *, book_number: int = 1, preface: bool = 
     actual = [record["section"] for record in records]
     require(actual == wanted, f"Whiston milestone identities or physical order differ in {path}")
     require(len({record["id"] for record in records}) == len(records), "Duplicate Whiston record identity")
+    require({p["sourceId"] for p in paragraphs if "continuationOf" in p} == set(CONTINUATIONS.get(book_number, {})),
+            "Whiston source omits a reviewed continuation paragraph")
     indexed_words = [word for record in records for word in words(record["text"])]
     indexed_content = "".join(re.sub(r"\s", "", record["text"]) for record in records)
     require(source_words == indexed_words, "Whiston interval boundaries changed the source word sequence")
@@ -354,15 +391,7 @@ def write_bytes(path: Path, value: bytes) -> None:
     path.write_bytes(value)
 
 
-def build_corpus(source_root: Path, output_dir: Path) -> dict:
-    records, documents = [], []
-    for name, preface in [("preface", True), ("book-01", False)]:
-        relative = f"{SOURCE_PREFIX}/{name}.xml"
-        part, report = extract_document((source_root / relative).read_bytes(), preface=preface,
-                                        order_offset=len(records), source_path=relative)
-        records.extend(part)
-        documents.append(report)
-    require([record["section"] for record in records] == list(range(1, 347)), "Whiston pilot must contain exactly I.1–346")
+def aggregate_evidence(records: list[dict], documents: list[dict], ranges: dict) -> tuple[Counter, list[dict], dict]:
     counts = Counter()
     for report in documents:
         counts.update(report["counts"])
@@ -375,8 +404,7 @@ def build_corpus(source_root: Path, output_dir: Path) -> dict:
     indexed_words = [word for record in records for word in words(record["text"])]
     source_content = "".join(re.sub(r"\s", "", paragraph["runningText"]) for paragraph in paragraphs)
     indexed_content = "".join(re.sub(r"\s", "", record["text"]) for record in records)
-    sources = [report["source"] for report in documents]
-    coverage = {"completeRange": [1, 346], "missingSections": [], "unexpectedSections": [], "duplicateSections": [],
+    coverage = {**ranges, "missingSections": [], "unexpectedSections": [], "duplicateSections": [],
                 "allSectionTextsNonempty": all(record["text"] for record in records), "paragraphsExactlyRestored": len(restored),
                 "wordSequencePreserved": source_words == indexed_words, "nonWhitespaceContentPreserved": source_content == indexed_content,
                 "rawParagraphSequenceSha256": sha("\n".join(p["rawText"] for p in paragraphs)),
@@ -387,31 +415,71 @@ def build_corpus(source_root: Path, output_dir: Path) -> dict:
                           ("sourceWordSequenceSha256", "indexedWordSequenceSha256"),
                           ("sourceNonWhitespaceContentSha256", "indexedNonWhitespaceContentSha256")]:
         require(coverage[first] == coverage[second], f"Whiston combined coverage failed: {first}")
-    book_report = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "Antiquities", "book": 1, "language": "English",
-                   "edition": EDITION, "unit": "Niese section", "citationScheme": "niese", "includesProem": True},
-                   "source": sources[1], "additionalSources": [sources[0]], "sources": sources,
+    return counts, paragraphs, coverage
+
+
+def build_book_report(records: list[dict], documents: list[dict], book_number: int) -> dict:
+    section_range = [1, SOURCE_CONTRACTS[book_number]["range"][1]]
+    counts, paragraphs, coverage = aggregate_evidence(records, documents, {"completeRange": section_range})
+    sources = [report["source"] for report in documents]
+    # Book I retains its original reviewed report bytes as well as its corpus.
+    # Its scope statement describes that per-book artifact, not the expanded catalog.
+    published_scope = ("Proem and Book I only. IX and XI are extraction-test inputs, not indexed pilot books."
+                       if book_number == 1 else f"Book {ROMANS[book_number]}. The collection covers the Proem and Books I–V; IX and XI remain test-only.")
+    book_report = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "Antiquities", "book": book_number, "language": "English",
+                   "edition": EDITION, "unit": "Niese section", "citationScheme": "niese", "includesProem": book_number == 1},
+                   "source": sources[-1], "additionalSources": sources[:-1], "sources": sources,
                    "rules": {"boundaries": "Accepted English milestone unit=niese positions; never inferred from Latin IDs or gaps.",
                    "text": "Preserve running source characters; trim interval edges; exclude documented headings, num labels and footnotes.",
                    "prefixPunctuation": "Only whitespace and periods before a paragraph's first accepted Niese milestone are excluded; exact source positions and characters remain in sourcePieces. Punctuation after that milestone is preserved.",
-                   "phraseBoundaries": "Book I narrative begins after the separate Proem; no phrase crosses I.26–27.",
+                   "phraseBoundaries": ("Book I narrative begins after the separate Proem; no phrase crosses I.26–27."
+                                        if book_number == 1 else "Exact phrases follow the accepted English source order within this book; they never cross to another book."),
                    "coordinates": "sourcePieces sourceStart/sourceEnd and recordStart/recordEnd are original-text UTF-16 offsets.",
-                   "publishedScope": "Proem and Book I only. IX and XI are extraction-test inputs, not indexed pilot books."},
+                   "publishedScope": published_scope},
                    "counts": dict(counts), "coverage": coverage, "documentReports": documents, "paragraphs": paragraphs}
-    corpus_bytes, book_report_bytes = json_bytes(records), json_bytes(book_report)
-    write_bytes(output_dir / "book-01.corpus.json", corpus_bytes)
+    if book_number in CONTINUATIONS:
+        book_report["rules"]["paragraphContinuations"] = "The explicitly reviewed markerless paragraph continues its preceding Niese interval. Two display newlines preserve its paragraph boundary; recordJoin documents this separator and sourcePieces retain exact original-text spans."
+    return book_report
+
+
+def build_corpus(source_root: Path, output_dir: Path) -> dict:
+    records, documents, books = [], [], []
+    for book_number in PUBLISHED_BOOKS:
+        book_records, book_documents = [], []
+        filenames = [(f"book-{book_number:02d}", False)]
+        if book_number == 1:
+            filenames.insert(0, ("preface", True))
+        for name, preface in filenames:
+            relative = f"{SOURCE_PREFIX}/{name}.xml"
+            part, document = extract_document((source_root / relative).read_bytes(), book_number=book_number,
+                                              preface=preface, order_offset=len(records) + len(book_records), source_path=relative)
+            book_records.extend(part)
+            book_documents.append(document)
+        require([record["section"] for record in book_records] == list(range(1, SOURCE_CONTRACTS[book_number]["range"][1] + 1)),
+                f"Whiston Book {ROMANS[book_number]} coverage differs")
+        book_report = build_book_report(book_records, book_documents, book_number)
+        corpus_bytes, book_report_bytes = json_bytes(book_records), json_bytes(book_report)
+        stem = f"book-{book_number:02d}"
+        write_bytes(output_dir / f"{stem}.corpus.json", corpus_bytes)
+        write_bytes(output_dir / f"{stem}.extraction-report.json", book_report_bytes)
+        books.append({"book": book_number, "status": "PASS", "source": book_report["source"],
+                      "additionalSources": book_report["additionalSources"], "sources": book_report["sources"],
+                      "counts": book_report["counts"], "orderStart": len(records), "orderEnd": len(records) + len(book_records) - 1,
+                      "corpus": {"path": f"{OUTPUT_PREFIX}/{stem}.corpus.json", "sha256": sha(corpus_bytes), "bytes": len(corpus_bytes), "records": len(book_records)},
+                      "extractionReport": {"path": f"{OUTPUT_PREFIX}/{stem}.extraction-report.json", "sha256": sha(book_report_bytes), "bytes": len(book_report_bytes)}})
+        records.extend(book_records)
+        documents.extend(book_documents)
+    counts, _, coverage = aggregate_evidence(records, documents, {"completeRangesByBook":
+                                             {str(book): [1, SOURCE_CONTRACTS[book]["range"][1]] for book in PUBLISHED_BOOKS}})
+    corpus_bytes = json_bytes(records)
     write_bytes(output_dir / "corpus.json", corpus_bytes)
-    write_bytes(output_dir / "book-01.extraction-report.json", book_report_bytes)
-    book = {"book": 1, "status": "PASS", "source": sources[1], "additionalSources": [sources[0]], "sources": sources,
-            "counts": dict(counts), "orderStart": 0, "orderEnd": len(records) - 1,
-            "corpus": {"path": f"{OUTPUT_PREFIX}/book-01.corpus.json", "sha256": sha(corpus_bytes), "bytes": len(corpus_bytes), "records": len(records)},
-            "extractionReport": {"path": f"{OUTPUT_PREFIX}/book-01.extraction-report.json", "sha256": sha(book_report_bytes), "bytes": len(book_report_bytes)}}
-    combined = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "Antiquities", "books": [1], "language": "English",
-                "edition": EDITION, "unit": "Niese section", "citationScheme": "niese", "includesProem": True, "pilot": True},
-                "counts": {"books": 1, "sourceDocuments": 2, **dict(counts)},
-                "coverage": {**coverage, "globalIdsUnique": len(by_id) == len(records),
+    combined = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "Antiquities", "books": PUBLISHED_BOOKS, "language": "English",
+                "edition": EDITION, "unit": "Niese section", "citationScheme": "niese", "includesProem": True},
+                "counts": {"books": len(PUBLISHED_BOOKS), "sourceDocuments": len(documents), **dict(counts)},
+                "coverage": {**coverage, "globalIdsUnique": len({record["id"] for record in records}) == len(records),
                 "globalOrderIsConsecutive": [record["order"] for record in records] == list(range(len(records)))},
                 "corpus": {"path": f"{OUTPUT_PREFIX}/corpus.json", "sha256": sha(corpus_bytes), "bytes": len(corpus_bytes), "records": len(records)},
-                "books": [book]}
+                "books": books}
     write_bytes(output_dir / "extraction-report.json", json_bytes(combined))
     return combined
 

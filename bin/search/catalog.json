@@ -140,28 +140,32 @@
     {
       "id": "antiquities-english-whiston",
       "work": "antiquities",
-      "label": "Antiquities Proem and Book I (pilot)",
+      "label": "Antiquities Proem and Books I–V",
       "citationPrefix": "Antiquities",
       "language": "English",
       "edition": "Whiston",
       "readerPath": "antiquities/",
       "books": [
-        "antiquities-english-whiston:1"
+        "antiquities-english-whiston:1",
+        "antiquities-english-whiston:2",
+        "antiquities-english-whiston:3",
+        "antiquities-english-whiston:4",
+        "antiquities-english-whiston:5"
       ],
       "citationScheme": "niese",
       "unitLabel": "Niese section",
       "unitLabelPlural": "Niese sections",
       "manifestPath": "config/antiquities-english-whiston.json",
-      "manifestSHA256": "237daef41dc276975889af8ce790929b1af827429fae4244f3c8d1a5b04a130e",
+      "manifestSHA256": "994e812d0cb7ce3ebac688990cd8e4c5fc4268be3590672f529f40498f92fd55",
       "corpusPath": "data/antiquities-english-whiston/corpus.json",
-      "corpusSHA256": "5d94451f1363230e0578d995ece458dd8a4b40e56064487f1362194de21404f0",
+      "corpusSHA256": "bf7a22965bc1d13e403dde418cbc077668bdcdb5d634497ca974fabfc01023ea",
       "extractionReportPath": "data/antiquities-english-whiston/extraction-report.json",
-      "extractionReportSHA256": "826d2c18d31855784b58ac1ec2b1a14971ead304a77f9605433dc1384a28af6b",
+      "extractionReportSHA256": "e1073b0477cc4626186a9a2c0118c418eb4af8def0534b0e0cddc3476084fea1",
       "totals": {
-        "books": 1,
-        "sections": 346,
-        "tokens": 21994,
-        "bytes": 2951595
+        "books": 5,
+        "sections": 1710,
+        "tokens": 112265,
+        "bytes": 14869201
       }
     }
   ],
@@ -980,13 +984,69 @@
       "additionalSources": [
         "assets/xml/antiquities/English/preface.xml"
       ]
+    },
+    {
+      "id": "antiquities-english-whiston:2",
+      "collectionId": "antiquities-english-whiston",
+      "number": 2,
+      "label": "Book II",
+      "sections": 349,
+      "tokens": 23020,
+      "vocabulary": 2794,
+      "bytes": 3056486,
+      "path": "data/antiquities-english-whiston/book-02.bundle.json",
+      "sha256": "1202b7653d8ca9195206e15bc950f29b049595cad789001df99aefb8daaa991c",
+      "corpusPath": "data/antiquities-english-whiston/book-02.corpus.json",
+      "corpusSHA256": "7000e802415b3246a14e3fb9fc0c5e40490fb8fa31351c228aaf31353b7b663f"
+    },
+    {
+      "id": "antiquities-english-whiston:3",
+      "collectionId": "antiquities-english-whiston",
+      "number": 3,
+      "label": "Book III",
+      "sections": 322,
+      "tokens": 20955,
+      "vocabulary": 2754,
+      "bytes": 2783156,
+      "path": "data/antiquities-english-whiston/book-03.bundle.json",
+      "sha256": "1637aa21fc1237308145f03661839ac7fd1fa10b0a637e19b4cd9ab8825526fc",
+      "corpusPath": "data/antiquities-english-whiston/book-03.corpus.json",
+      "corpusSHA256": "26e09b435952e06b7911a4d985b44ede81bdc291ea10d18a8218f79f340fd36b"
+    },
+    {
+      "id": "antiquities-english-whiston:4",
+      "collectionId": "antiquities-english-whiston",
+      "number": 4,
+      "label": "Book IV",
+      "sections": 331,
+      "tokens": 22900,
+      "vocabulary": 2778,
+      "bytes": 3005403,
+      "path": "data/antiquities-english-whiston/book-04.bundle.json",
+      "sha256": "d80b924343825fbf4af9eccd0309cb4a04eec15725ab2573b27a362d0839206b",
+      "corpusPath": "data/antiquities-english-whiston/book-04.corpus.json",
+      "corpusSHA256": "108edd83587cf34f2a901a74ba92bd7821f0b64a7555b505a9f7f855b42d1d78"
+    },
+    {
+      "id": "antiquities-english-whiston:5",
+      "collectionId": "antiquities-english-whiston",
+      "number": 5,
+      "label": "Book V",
+      "sections": 362,
+      "tokens": 23396,
+      "vocabulary": 2631,
+      "bytes": 3072561,
+      "path": "data/antiquities-english-whiston/book-05.bundle.json",
+      "sha256": "d5ede93651b7500c387f3332eb8f1ae77570e9ad9de9813548a798415cbdb6f8",
+      "corpusPath": "data/antiquities-english-whiston/book-05.corpus.json",
+      "corpusSHA256": "fb309ee22dc2f98b65d189679657219fc808b00e64fa5737ecb8e7044e876a80"
     }
   ],
   "totals": {
-    "books": 35,
-    "sections": 12804,
-    "tokens": 510301,
-    "bytes": 87663167
+    "books": 39,
+    "sections": 14168,
+    "tokens": 600572,
+    "bytes": 99580773
   },
   "source": {
     "manifestPath": "config/collections.json",

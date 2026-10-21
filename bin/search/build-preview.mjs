@@ -12,7 +12,7 @@ const html=`<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Search the Latin Josephus texts and Whiston English Antiquities pilot with exact phrases, Boolean logic, wildcards, and a concordance.">
+  <meta name="description" content="Search the Latin Josephus texts and Whiston English Antiquities I–V with exact phrases, Boolean logic, wildcards, and a concordance.">
   <title>Search preview · Latin Josephus</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
@@ -26,7 +26,7 @@ const html=`<!doctype html>
   <script type="module" src="./app.mjs"></script>
 </head>
 <body>
-  <header class="preview-header"><a href="${readerBase}">Latin Josephus</a><span>Search preview · Latin texts and Whiston English pilot</span></header>
+  <header class="preview-header"><a href="${readerBase}">Latin Josephus</a><span>Search preview · Latin texts and Whiston English</span></header>
 ${body}
 </body>
 </html>
