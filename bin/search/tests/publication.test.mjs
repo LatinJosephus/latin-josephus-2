@@ -31,7 +31,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [54, 19834, 959245]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [61, 23835, 1174317]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
@@ -42,8 +42,10 @@ test('search publication preserves current inputs and refuses stale or incomplet
     assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [20, 7283, 265023]);
     const whiston = baseline.catalog.collections.find(collection => collection.id === 'antiquities-english-whiston');
     assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [20, 7376, 470938]);
-    assert.equal(result.sourceXML.length, 66);
-    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 21);
+    const whistonBellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-english-whiston');
+    assert.deepEqual([whistonBellum.totals.books, whistonBellum.totals.sections, whistonBellum.totals.tokens], [7, 4001, 215072]);
+    assert.equal(result.sourceXML.length, 73);
+    assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 28);
     assert.equal(result.assets, baseline.artifacts.length + 1);
     assert.equal(baseline.manifest.browserRelease.launcher, 'launch-v1.mjs');
     assert.equal(result.sourceXML.filter(source => /\/niese\/book-(?:1[1-9]|20)\.json$/u.test(source.path)).length, 10);
@@ -79,6 +81,22 @@ test('search publication preserves current inputs and refuses stale or incomplet
       ...Array.from({length: 20}, (_, i) => i + 1).map(number => `assets/xml/antiquities/English/book-${String(number).padStart(2, '0')}.xml`)]) {
       changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
         () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed|Whiston source/u));
+    }
+  });
+
+  await t.test('every Whiston Bellum source is protected and accepts only line-ending equivalence', () => {
+    const original = verifySearchAssets(fixture);
+    for (let number = 1; number <= 7; number++) {
+      const relative = `assets/xml/bellum/English/book-${String(number).padStart(2, '0')}.xml`;
+      changed(relative, bytes => bytes.toString('utf8').replace(/\r?\n/gu, '\r\n'), () => {
+        const converted = verifySearchAssets(fixture);
+        assert.equal(converted.publicationManifestSHA256, original.publicationManifestSHA256);
+        const source = converted.sourceXML.find(item => item.path === relative);
+        assert.equal(source.normalizedSHA256, original.sourceXML.find(item => item.path === relative).normalizedSHA256);
+        assert.notEqual(source.worktreeSHA256, source.normalizedSHA256);
+      });
+      changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
+        () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed|Whiston Bellum source/u));
     }
   });
 

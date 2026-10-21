@@ -129,6 +129,21 @@
       ],
       "verifier": "tests/whiston-corpus-qa.mjs",
       "qaReport": "data/antiquities-english-whiston/qa-report.json"
+    },
+    "bellum-english-whiston": {
+      "extractor": "extract-whiston-bellum.py",
+      "outputDirectory": "data/bellum-english-whiston",
+      "sources": [
+        "assets/xml/bellum/English/book-01.xml",
+        "assets/xml/bellum/English/book-02.xml",
+        "assets/xml/bellum/English/book-03.xml",
+        "assets/xml/bellum/English/book-04.xml",
+        "assets/xml/bellum/English/book-05.xml",
+        "assets/xml/bellum/English/book-06.xml",
+        "assets/xml/bellum/English/book-07.xml"
+      ],
+      "verifier": "tests/whiston-bellum-corpus-qa.mjs",
+      "qaReport": "data/bellum-english-whiston/qa-report.json"
     }
   }
 }

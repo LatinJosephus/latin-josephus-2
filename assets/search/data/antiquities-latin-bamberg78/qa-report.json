@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T12:09:09.703Z",
+  "generatedAt": "2026-10-21T13:36:51.992Z",
   "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
@@ -179,8 +179,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a",
-      "bytes": 44976
+      "sha256": "449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1",
+      "bytes": 50096
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -219,8 +219,8 @@
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
-      "bytes": 15264
+      "sha256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
+      "bytes": 15520
     },
     "books": [
       {
@@ -2069,9 +2069,9 @@
     "MixedFourWorkCollectionMatchingUnits": 8,
     "MixedFourWorkCollectionOccurrences": 8,
     "MixedFourWorkCollectionUnitIdentity": 8,
-    "MixedFourWorkCollectionEvidence": 40922,
-    "MixedFourWorkCollectionRecordIds": 40922,
-    "MixedFourWorkCollectionSections": 40922,
+    "MixedFourWorkCollectionEvidence": 48938,
+    "MixedFourWorkCollectionRecordIds": 48938,
+    "MixedFourWorkCollectionSections": 48938,
     "MixedFourWorkCollectionMatchingSections": 8,
     "MixedFourWorkCollectionSelectionOrder": 8,
     "MixedFourWorkCollectionUniqueRecordIdentity": 8,
@@ -2086,10 +2086,10 @@
     "BundleFetchCaching": 1,
     "InvalidSelectionRejected": 3,
     "MissingSelectedBookRejectsCompleteSearch": 1,
-    "InputUnchangedDuringQA": 135
+    "InputUnchangedDuringQA": 142
   },
   "totalQueries": 293134,
-  "assertions": 3879515,
+  "assertions": 3903570,
   "failedAssertions": 0,
   "examples": [
     {
@@ -7590,7 +7590,14 @@
         "antiquities-english-whiston:17",
         "antiquities-english-whiston:18",
         "antiquities-english-whiston:19",
-        "antiquities-english-whiston:20"
+        "antiquities-english-whiston:20",
+        "bellum-english-whiston:1",
+        "bellum-english-whiston:2",
+        "bellum-english-whiston:3",
+        "bellum-english-whiston:4",
+        "bellum-english-whiston:5",
+        "bellum-english-whiston:6",
+        "bellum-english-whiston:7"
       ],
       "matchingUnits": 541,
       "matchingSections": 541,
@@ -7654,7 +7661,14 @@
         "antiquities-english-whiston:17",
         "antiquities-english-whiston:18",
         "antiquities-english-whiston:19",
-        "antiquities-english-whiston:20"
+        "antiquities-english-whiston:20",
+        "bellum-english-whiston:1",
+        "bellum-english-whiston:2",
+        "bellum-english-whiston:3",
+        "bellum-english-whiston:4",
+        "bellum-english-whiston:5",
+        "bellum-english-whiston:6",
+        "bellum-english-whiston:7"
       ],
       "matchingUnits": 40,
       "matchingSections": 541,
@@ -7718,10 +7732,17 @@
         "antiquities-english-whiston:17",
         "antiquities-english-whiston:18",
         "antiquities-english-whiston:19",
-        "antiquities-english-whiston:20"
+        "antiquities-english-whiston:20",
+        "bellum-english-whiston:1",
+        "bellum-english-whiston:2",
+        "bellum-english-whiston:3",
+        "bellum-english-whiston:4",
+        "bellum-english-whiston:5",
+        "bellum-english-whiston:6",
+        "bellum-english-whiston:7"
       ],
-      "matchingUnits": 19826,
-      "matchingSections": 19826,
+      "matchingUnits": 23827,
+      "matchingSections": 23827,
       "occurrences": 0
     },
     {
@@ -7782,14 +7803,21 @@
         "antiquities-english-whiston:17",
         "antiquities-english-whiston:18",
         "antiquities-english-whiston:19",
-        "antiquities-english-whiston:20"
+        "antiquities-english-whiston:20",
+        "bellum-english-whiston:1",
+        "bellum-english-whiston:2",
+        "bellum-english-whiston:3",
+        "bellum-english-whiston:4",
+        "bellum-english-whiston:5",
+        "bellum-english-whiston:6",
+        "bellum-english-whiston:7"
       ],
-      "matchingUnits": 54,
+      "matchingUnits": 61,
       "matchingSections": 0,
       "occurrences": 0
     }
   ],
-  "durationSeconds": 341.67,
+  "durationSeconds": 622,
   "limitations": [
     "Automated Node/Python acceptance, not browser or visual acceptance.",
     "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",

@@ -182,6 +182,39 @@
         "tokens": 470938,
         "bytes": 62743032
       }
+    },
+    {
+      "id": "bellum-english-whiston",
+      "work": "bellum",
+      "label": "Bellum Judaicum",
+      "citationPrefix": "Bellum",
+      "language": "English",
+      "edition": "Whiston",
+      "readerPath": "bellum-judaicum/",
+      "books": [
+        "bellum-english-whiston:1",
+        "bellum-english-whiston:2",
+        "bellum-english-whiston:3",
+        "bellum-english-whiston:4",
+        "bellum-english-whiston:5",
+        "bellum-english-whiston:6",
+        "bellum-english-whiston:7"
+      ],
+      "citationScheme": "niese",
+      "unitLabel": "Niese section",
+      "unitLabelPlural": "Niese sections",
+      "manifestPath": "config/bellum-english-whiston.json",
+      "manifestSHA256": "670358a2d7cd8c1b7ab901528570568e562ccd45d9df0dd7b7980ebe9c055e97",
+      "corpusPath": "data/bellum-english-whiston/corpus.json",
+      "corpusSHA256": "e4c6f9d3f1e54ab12f1564e6d0561d5eb4b142de9feb1299aedacd508df68172",
+      "extractionReportPath": "data/bellum-english-whiston/extraction-report.json",
+      "extractionReportSHA256": "08e4cdfc44b141e0ce074b51d4d946b27f42d3dd11efce036c669a45bebadb67",
+      "totals": {
+        "books": 7,
+        "sections": 4001,
+        "tokens": 215072,
+        "bytes": 27848918
+      }
     }
   ],
   "books": [
@@ -1265,17 +1298,115 @@
       "sha256": "b5597fa8e901b099db30f6fdf664355f275ec11e767389a29e43f458d8385e45",
       "corpusPath": "data/antiquities-english-whiston/book-20.corpus.json",
       "corpusSHA256": "d1b9e60f3d6329f2ff2595f4bbab83af82e12661f53ad15e59d15c8a512b99d0"
+    },
+    {
+      "id": "bellum-english-whiston:1",
+      "collectionId": "bellum-english-whiston",
+      "number": 1,
+      "label": "Book I (including Preface)",
+      "sections": 673,
+      "tokens": 50097,
+      "vocabulary": 4151,
+      "bytes": 6095201,
+      "path": "data/bellum-english-whiston/book-01.bundle.json",
+      "sha256": "0e00cf12043f6bf9651d8b53c0cb1d5ee6c96f457f779ce06df42bafd8a2140c",
+      "corpusPath": "data/bellum-english-whiston/book-01.corpus.json",
+      "corpusSHA256": "aac1c10f2203169373adee4ef2c5fb868bedd5d9bf79b0db5e53dd6deeeb1a1b"
+    },
+    {
+      "id": "bellum-english-whiston:2",
+      "collectionId": "bellum-english-whiston",
+      "number": 2,
+      "label": "Book II",
+      "sections": 654,
+      "tokens": 38098,
+      "vocabulary": 3684,
+      "bytes": 4845083,
+      "path": "data/bellum-english-whiston/book-02.bundle.json",
+      "sha256": "cd83ff7f5199f6b9564ed797104dbb65653c2350513bbf4db3d1a1fb97c941af",
+      "corpusPath": "data/bellum-english-whiston/book-02.corpus.json",
+      "corpusSHA256": "5c679f878e9cf98f94a80b2da0f69ee9f483459372417a5dd94730e5893672af"
+    },
+    {
+      "id": "bellum-english-whiston:3",
+      "collectionId": "bellum-english-whiston",
+      "number": 3,
+      "label": "Book III",
+      "sections": 542,
+      "tokens": 24777,
+      "vocabulary": 2817,
+      "bytes": 3311104,
+      "path": "data/bellum-english-whiston/book-03.bundle.json",
+      "sha256": "a7a6d825893ec17adeadca50ebc1962e0b082c15d96b011a215a3229d82a04d5",
+      "corpusPath": "data/bellum-english-whiston/book-03.corpus.json",
+      "corpusSHA256": "10fa31a36b3254b35c28fd6400ff715c618d607e2c46807e624f0ad313da6e39"
+    },
+    {
+      "id": "bellum-english-whiston:4",
+      "collectionId": "bellum-english-whiston",
+      "number": 4,
+      "label": "Book IV",
+      "sections": 663,
+      "tokens": 30489,
+      "vocabulary": 3234,
+      "bytes": 4082982,
+      "path": "data/bellum-english-whiston/book-04.bundle.json",
+      "sha256": "0ab055466bbcdc3a97a138b232f7c7a39e1a34cbb04dda1c07726f380135fd7d",
+      "corpusPath": "data/bellum-english-whiston/book-04.corpus.json",
+      "corpusSHA256": "c479280138aeee9af89cc9a4c7e4a601bda4af3fd00d1b0ce5890e0763ed76c4"
+    },
+    {
+      "id": "bellum-english-whiston:5",
+      "collectionId": "bellum-english-whiston",
+      "number": 5,
+      "label": "Book V",
+      "sections": 572,
+      "tokens": 29415,
+      "vocabulary": 3024,
+      "bytes": 3835820,
+      "path": "data/bellum-english-whiston/book-05.bundle.json",
+      "sha256": "de09fd499fe83f61396dc12ea27227078518a046528d3aef475b98577fce1af2",
+      "corpusPath": "data/bellum-english-whiston/book-05.corpus.json",
+      "corpusSHA256": "b3ec5b24f61ffd089f4f41787874fcaf27bb8049c7d45316f8e6688aea99c5ad"
+    },
+    {
+      "id": "bellum-english-whiston:6",
+      "collectionId": "bellum-english-whiston",
+      "number": 6,
+      "label": "Book VI",
+      "sections": 442,
+      "tokens": 21949,
+      "vocabulary": 2593,
+      "bytes": 2905323,
+      "path": "data/bellum-english-whiston/book-06.bundle.json",
+      "sha256": "3f2bbca840a156508ecce562e9296dcd582da820d9a3a706c7675346242252c2",
+      "corpusPath": "data/bellum-english-whiston/book-06.corpus.json",
+      "corpusSHA256": "8cba1565c892502a4fb9d3642bd8613f8a9b1f94cde1b1e057a5a28d8e505828"
+    },
+    {
+      "id": "bellum-english-whiston:7",
+      "collectionId": "bellum-english-whiston",
+      "number": 7,
+      "label": "Book VII",
+      "sections": 455,
+      "tokens": 20247,
+      "vocabulary": 2605,
+      "bytes": 2773405,
+      "path": "data/bellum-english-whiston/book-07.bundle.json",
+      "sha256": "3a99f1ab5dbfb768cd515013735087b23aa4180d6164b9f62c7e1612163cdb71",
+      "corpusPath": "data/bellum-english-whiston/book-07.corpus.json",
+      "corpusSHA256": "02cfe3eb95d04be13feefd37628ef15f4d83a99a24ba41bb4942379f8cb6b230"
     }
   ],
   "totals": {
-    "books": 54,
-    "sections": 19834,
-    "tokens": 959245,
-    "bytes": 147454604
+    "books": 61,
+    "sections": 23835,
+    "tokens": 1174317,
+    "bytes": 175303522
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "8b9687ec245e2e2ea561634d4e53b924f9b1c1e8a4cb444c765fc182c36cd4cb",
+    "manifestSHA256": "89db0e5f8188914a6e246a2e56e7537022c7db82dccea7281d17dfd96086b1e5",
     "enginePath": "engine.mjs",
     "engineSHA256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
     "lunrPath": "vendor/lunr.cjs",

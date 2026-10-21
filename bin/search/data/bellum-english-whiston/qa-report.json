@@ -1,0 +1,1015 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-10-21T13:39:01.800Z",
+  "independentVerifier": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
+  "readerBaseline": {
+    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "provenance": "observed-source-checkout",
+    "preservationDuringRunRequired": true,
+    "publicationInput": false
+  },
+  "runtime": {
+    "node": "v24.19.0",
+    "python": "3.12.14",
+    "unicode": "15.0.0",
+    "xmlParser": "xml.dom.minidom"
+  },
+  "source": {
+    "books": 7,
+    "sections": 4001,
+    "tokens": 215072,
+    "uniqueLiteralVocabulary": 7944,
+    "bookTotals": [
+      {
+        "book": 1,
+        "sections": 673,
+        "tokens": 50097
+      },
+      {
+        "book": 2,
+        "sections": 654,
+        "tokens": 38098
+      },
+      {
+        "book": 3,
+        "sections": 542,
+        "tokens": 24777
+      },
+      {
+        "book": 4,
+        "sections": 663,
+        "tokens": 30489
+      },
+      {
+        "book": 5,
+        "sections": 572,
+        "tokens": 29415
+      },
+      {
+        "book": 6,
+        "sections": 442,
+        "tokens": 21949
+      },
+      {
+        "book": 7,
+        "sections": 455,
+        "tokens": 20247
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "assets/xml/bellum/English/book-01.xml",
+      "book": 1,
+      "indexed": true,
+      "sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+      "lfSHA256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+      "bytes": 310858,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 34,
+        "p": 234,
+        "milestone": 673
+      },
+      "paragraphs": 234,
+      "sections": 673,
+      "tokens": 50097,
+      "chapters": 34,
+      "suppliedElements": 0
+    },
+    {
+      "path": "assets/xml/bellum/English/book-02.xml",
+      "book": 2,
+      "indexed": true,
+      "sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+      "lfSHA256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+      "bytes": 239671,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 22,
+        "p": 143,
+        "milestone": 654
+      },
+      "paragraphs": 143,
+      "sections": 654,
+      "tokens": 38098,
+      "chapters": 22,
+      "suppliedElements": 0
+    },
+    {
+      "path": "assets/xml/bellum/English/book-03.xml",
+      "book": 3,
+      "indexed": true,
+      "sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+      "lfSHA256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+      "bytes": 157139,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 10,
+        "p": 88,
+        "milestone": 542
+      },
+      "paragraphs": 88,
+      "sections": 542,
+      "tokens": 24777,
+      "chapters": 10,
+      "suppliedElements": 0
+    },
+    {
+      "path": "assets/xml/bellum/English/book-04.xml",
+      "book": 4,
+      "indexed": true,
+      "sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+      "lfSHA256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+      "bytes": 193824,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 11,
+        "p": 78,
+        "milestone": 663
+      },
+      "paragraphs": 78,
+      "sections": 663,
+      "tokens": 30489,
+      "chapters": 11,
+      "suppliedElements": 0
+    },
+    {
+      "path": "assets/xml/bellum/English/book-05.xml",
+      "book": 5,
+      "indexed": true,
+      "sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+      "lfSHA256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+      "bytes": 183522,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 13,
+        "p": 65,
+        "milestone": 572
+      },
+      "paragraphs": 65,
+      "sections": 572,
+      "tokens": 29415,
+      "chapters": 13,
+      "suppliedElements": 0
+    },
+    {
+      "path": "assets/xml/bellum/English/book-06.xml",
+      "book": 6,
+      "indexed": true,
+      "sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+      "lfSHA256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+      "bytes": 136773,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 10,
+        "p": 50,
+        "milestone": 442
+      },
+      "paragraphs": 50,
+      "sections": 442,
+      "tokens": 21949,
+      "chapters": 10,
+      "suppliedElements": 0
+    },
+    {
+      "path": "assets/xml/bellum/English/book-07.xml",
+      "book": 7,
+      "indexed": true,
+      "sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+      "lfSHA256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+      "bytes": 128876,
+      "bodyTags": {
+        "body": 1,
+        "div1": 1,
+        "div2": 11,
+        "p": 46,
+        "milestone": 455,
+        "supplied": 1
+      },
+      "paragraphs": 46,
+      "sections": 455,
+      "tokens": 20247,
+      "chapters": 11,
+      "suppliedElements": 1
+    }
+  ],
+  "testSources": [],
+  "sourceCases": {
+    "embeddedPreface": {
+      "book": 1,
+      "sections": [
+        1,
+        30
+      ],
+      "continuousWith": 31
+    },
+    "supplied": [
+      {
+        "book": 7,
+        "section": 208,
+        "text": "The most courageous, therefore, of those men that went out prevented the enemy, and got away, and fled for it; but for those men that were caught within they were slain, to the number of one thousand seven hundred, as were the women and the children made slaves;",
+        "editorial": [
+          {
+            "kind": "supplied",
+            "start": 157,
+            "end": 262,
+            "text": " were slain, to the number of one thousand seven hundred, as were the women and the children made slaves;",
+            "sourceAttributes": {
+              "reason": "omitted",
+              "source": "https://lexundria.com/j_bj/7.208-7.209/wst"
+            },
+            "rawStart": 5129,
+            "rawEnd": 5234
+          }
+        ]
+      },
+      {
+        "book": 7,
+        "section": 209,
+        "text": "but as Bassus thought he must perform the covenant, he had made with those that had surrendered the citadel, he let them go, and restored Eleazar to them.",
+        "editorial": [
+          {
+            "kind": "supplied",
+            "start": 0,
+            "end": 154,
+            "text": "but as Bassus thought he must perform the covenant, he had made with those that had surrendered the citadel, he let them go, and restored Eleazar to them.",
+            "sourceAttributes": {
+              "reason": "omitted",
+              "source": "https://lexundria.com/j_bj/7.208-7.209/wst"
+            },
+            "rawStart": 5235,
+            "rawEnd": 5389
+          }
+        ]
+      }
+    ],
+    "untypedChapter": {
+      "book": 5,
+      "chapter": 13,
+      "attributes": {
+        "n": "13",
+        "sameAs": "#latin-bellum5-chapter13"
+      }
+    }
+  },
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/bellum-english-whiston/corpus.json",
+      "sha256": "e4c6f9d3f1e54ab12f1564e6d0561d5eb4b142de9feb1299aedacd508df68172",
+      "bytes": 4491178
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "sha256": "449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1",
+      "bytes": 50096
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
+      "bytes": 25180
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
+      "bytes": 20177
+    },
+    "concordance": {
+      "path": "bin/search/concordance.mjs",
+      "sha256": "046a58fb0e4959bba4b86c3aed6b69d82a221f11dce3250b26a3470345818ca5",
+      "bytes": 30801
+    },
+    "uiUtils": {
+      "path": "bin/search/ui-utils.mjs",
+      "sha256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
+      "bytes": 15520
+    },
+    "verifier": {
+      "path": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
+      "sha256": "3087ba85e12d780d6b85d6fed60faac6ee0b4abd27cbd2d1db1182ddc3970c5c",
+      "bytes": 39386
+    },
+    "witness": {
+      "path": "bin/search/tests/whiston-bellum-source-witness.py",
+      "sha256": "f171e3d7e8e93a44e9b609bf5fc62b9b732369c7aadba0b659da9c1dbd0b7613",
+      "bytes": 12190
+    },
+    "extractor": {
+      "path": "bin/search/extract-whiston-bellum.py",
+      "sha256": "8d0d11dde888accc0f591e25bb5a934a701ef0c873dbea22c0db2a4f4c19ee26",
+      "bytes": 21046
+    },
+    "manifest": {
+      "path": "bin/search/config/bellum-english-whiston.json",
+      "sha256": "670358a2d7cd8c1b7ab901528570568e562ccd45d9df0dd7b7980ebe9c055e97",
+      "bytes": 2339
+    },
+    "lunr": {
+      "path": "bin/search/vendor/lunr.cjs",
+      "sha256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
+      "bytes": 99804
+    },
+    "extractionReport": {
+      "path": "bin/search/data/bellum-english-whiston/extraction-report.json",
+      "sha256": "08e4cdfc44b141e0ce074b51d4d946b27f42d3dd11efce036c669a45bebadb67",
+      "bytes": 11610
+    },
+    "originalReader": {
+      "path": "assets/js/renderTei.js",
+      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+      "bytes": 161463
+    },
+    "testSources": [],
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-whiston/book-01.bundle.json",
+          "sha256": "0e00cf12043f6bf9651d8b53c0cb1d5ee6c96f457f779ce06df42bafd8a2140c",
+          "bytes": 6095201
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-whiston/book-01.corpus.json",
+          "sha256": "aac1c10f2203169373adee4ef2c5fb868bedd5d9bf79b0db5e53dd6deeeb1a1b",
+          "bytes": 831082
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/book-01.xml",
+          "sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+          "bytes": 310858
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-english-whiston/book-01.extraction-report.json",
+          "sha256": "ef0d4bc72252933775a88669ef45028e0ddce3eef639b3167379268a50f0c2ff",
+          "bytes": 1460582
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-whiston/book-02.bundle.json",
+          "sha256": "cd83ff7f5199f6b9564ed797104dbb65653c2350513bbf4db3d1a1fb97c941af",
+          "bytes": 4845083
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-whiston/book-02.corpus.json",
+          "sha256": "5c679f878e9cf98f94a80b2da0f69ee9f483459372417a5dd94730e5893672af",
+          "bytes": 751462
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/book-02.xml",
+          "sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+          "bytes": 239671
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-english-whiston/book-02.extraction-report.json",
+          "sha256": "e327d287038c9335be7ca4ed8b84317f7e6768fd5f0ccde61c0c2d4942d78e69",
+          "bytes": 1252691
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-whiston/book-03.bundle.json",
+          "sha256": "a7a6d825893ec17adeadca50ebc1962e0b082c15d96b011a215a3229d82a04d5",
+          "bytes": 3311104
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-whiston/book-03.corpus.json",
+          "sha256": "10fa31a36b3254b35c28fd6400ff715c618d607e2c46807e624f0ad313da6e39",
+          "bytes": 584440
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/book-03.xml",
+          "sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+          "bytes": 157139
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-english-whiston/book-03.extraction-report.json",
+          "sha256": "5b9af4d7dfc6c1c92ee57ef4bfc20f5ee8c9a4de16fd57402b33d46c68215871",
+          "bytes": 940365
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-whiston/book-04.bundle.json",
+          "sha256": "0ab055466bbcdc3a97a138b232f7c7a39e1a34cbb04dda1c07726f380135fd7d",
+          "bytes": 4082982
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-whiston/book-04.corpus.json",
+          "sha256": "c479280138aeee9af89cc9a4c7e4a601bda4af3fd00d1b0ce5890e0763ed76c4",
+          "bytes": 716823
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/book-04.xml",
+          "sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+          "bytes": 193824
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-english-whiston/book-04.extraction-report.json",
+          "sha256": "4b7f83d6573a73e87b1091d6b837c0a7531ad675e64dc3371abc700d13e44f6e",
+          "bytes": 1138365
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-whiston/book-05.bundle.json",
+          "sha256": "de09fd499fe83f61396dc12ea27227078518a046528d3aef475b98577fce1af2",
+          "bytes": 3835820
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-whiston/book-05.corpus.json",
+          "sha256": "b3ec5b24f61ffd089f4f41787874fcaf27bb8049c7d45316f8e6688aea99c5ad",
+          "bytes": 633314
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/book-05.xml",
+          "sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+          "bytes": 183522
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-english-whiston/book-05.extraction-report.json",
+          "sha256": "09d49d21d616da8428f5f69c05ff5515ddc7decb72438c782f41e6632cd5a964",
+          "bytes": 1013524
+        }
+      },
+      {
+        "book": 6,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-whiston/book-06.bundle.json",
+          "sha256": "3f2bbca840a156508ecce562e9296dcd582da820d9a3a706c7675346242252c2",
+          "bytes": 2905323
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-whiston/book-06.corpus.json",
+          "sha256": "8cba1565c892502a4fb9d3642bd8613f8a9b1f94cde1b1e057a5a28d8e505828",
+          "bytes": 484942
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/book-06.xml",
+          "sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+          "bytes": 136773
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-english-whiston/book-06.extraction-report.json",
+          "sha256": "ef059360ccea2c1ff0ea40efa261f4e8bcfbfc4a5caf633319dc10951cb13f06",
+          "bytes": 773337
+        }
+      },
+      {
+        "book": 7,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-whiston/book-07.bundle.json",
+          "sha256": "3a99f1ab5dbfb768cd515013735087b23aa4180d6164b9f62c7e1612163cdb71",
+          "bytes": 2773405
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-whiston/book-07.corpus.json",
+          "sha256": "02cfe3eb95d04be13feefd37628ef15f4d83a99a24ba41bb4942379f8cb6b230",
+          "bytes": 489133
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/book-07.xml",
+          "sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+          "bytes": 128876
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-english-whiston/book-07.extraction-report.json",
+          "sha256": "7b0d53cf30c100fb8366275db9dc405a030e74df7c31462e00150508d5ea9ce8",
+          "bytes": 770230
+        }
+      }
+    ]
+  },
+  "method": {
+    "source": "Independent minidom text-node projection from seven SHA-pinned canonical XML files. All 704 paragraphs are restored exactly and every source-to-record slice is compared. Paragraph sameAs identities remain literal source anchors. The single supplied element spans VII.208–209 and its nested 209 milestone; original text, exact clipped UTF-16 offsets and attributes are retained. Book V chapter 13 keeps its absent type attribute. All 4,001 Niese units follow source order.",
+    "tokens": "Every serialized token and original UTF-16 offset is compared with independent Python Unicode-category and JavaScript character scanners.",
+    "queries": "All literal vocabulary per book, one exact phrase per section, every neighboring section seam, every chapter seam, all six book boundaries, bounded wildcards and explicit Boolean trees. Embedded I.1–30 continues into 31 in whole-book scope. Supplied text does not create a false gap.",
+    "language": "English spelling remains literal with Latin-only equivalence. Separate English Antiquities and Bellum book identities prevent cross-work Boolean matches and retain distinct reader paths.",
+    "exports": "Exact concordance geometry, source slices, editorial marks, ordinary and negative-only CSV exports, all selected books and reader parameters."
+  },
+  "counts": {
+    "OnlyAcceptedBooksPublished": 1,
+    "CollectionIdentity": 1,
+    "IndependentCollectionTotals": 1,
+    "IndependentBookTotals": 1,
+    "IndexedRecordCount": 1,
+    "IndexedSourceid": 4001,
+    "IndexedSourcebook": 4001,
+    "IndexedSourcesection": 4001,
+    "IndexedSourceorder": 4001,
+    "IndexedSourcetext": 4001,
+    "IndexedSourcesourcePath": 4001,
+    "IndexedSourcesourceId": 4001,
+    "IndexedSourcesourceIds": 4001,
+    "IndexedVersion": 4001,
+    "IndexedCitation": 4001,
+    "IndexedReaderLink": 4001,
+    "IndexedReaderURL": 4001,
+    "IndexedNoFalsePhraseBoundary": 4001,
+    "IndexedNoSeparateProem": 4001,
+    "IndexedSuppliedMarks": 4001,
+    "IndexedNoInventedsourceMarkup": 4001,
+    "IndexedNoInventedtextGaps": 4001,
+    "IndexedNoInventedphraseBreaks": 4001,
+    "IndexedIndependentTokenizers": 4001,
+    "CollectionCorpusHash": 1,
+    "CollectionManifestHash": 1,
+    "ExtractionTokens": 1,
+    "ExtractionSections": 1,
+    "ExtractionPublishedBooks": 1,
+    "Book1CorpusShard": 1,
+    "Book1ProjectionParagraphIDs": 1,
+    "Book1ProjectionSameAsIdentityKind": 234,
+    "Book1ProjectionSourceAttributes": 234,
+    "Book1ProjectionRawParagraph": 234,
+    "Book1ProjectionSourceContinuity": 1345,
+    "Book1ProjectionSourceSlice": 1345,
+    "Book1ProjectionSourceSliceHash": 1345,
+    "Book1ProjectionFullRestoration": 234,
+    "Book1ProjectionRestorationLength": 234,
+    "Book1ProjectionRecordProjection": 234,
+    "Book1ProjectionNieseMarkers": 234,
+    "Book1ProjectionSectionIDs": 234,
+    "Book1ProjectionEditorialSpans": 234,
+    "Book1ProjectionTokens": 1,
+    "Book1ProjectionParagraphs": 1,
+    "Book1BundleRecords": 1,
+    "Book1AllIndexedOffsets": 1,
+    "Book1BundleTokens": 1,
+    "Book1CatalogBundleHash": 1,
+    "Book1CatalogBundleBytes": 1,
+    "Book1CatalogCorpusHash": 1,
+    "Book1CatalogTokens": 1,
+    "Book1CatalogSections": 1,
+    "Book2CorpusShard": 1,
+    "Book2ProjectionParagraphIDs": 1,
+    "Book2ProjectionSameAsIdentityKind": 143,
+    "Book2ProjectionSourceAttributes": 143,
+    "Book2ProjectionRawParagraph": 143,
+    "Book2ProjectionSourceContinuity": 1307,
+    "Book2ProjectionSourceSlice": 1307,
+    "Book2ProjectionSourceSliceHash": 1307,
+    "Book2ProjectionFullRestoration": 143,
+    "Book2ProjectionRestorationLength": 143,
+    "Book2ProjectionRecordProjection": 143,
+    "Book2ProjectionNieseMarkers": 143,
+    "Book2ProjectionSectionIDs": 143,
+    "Book2ProjectionEditorialSpans": 143,
+    "Book2ProjectionTokens": 1,
+    "Book2ProjectionParagraphs": 1,
+    "Book2BundleRecords": 1,
+    "Book2AllIndexedOffsets": 1,
+    "Book2BundleTokens": 1,
+    "Book2CatalogBundleHash": 1,
+    "Book2CatalogBundleBytes": 1,
+    "Book2CatalogCorpusHash": 1,
+    "Book2CatalogTokens": 1,
+    "Book2CatalogSections": 1,
+    "Book3CorpusShard": 1,
+    "Book3ProjectionParagraphIDs": 1,
+    "Book3ProjectionSameAsIdentityKind": 88,
+    "Book3ProjectionSourceAttributes": 88,
+    "Book3ProjectionRawParagraph": 88,
+    "Book3ProjectionSourceContinuity": 1083,
+    "Book3ProjectionSourceSlice": 1083,
+    "Book3ProjectionSourceSliceHash": 1083,
+    "Book3ProjectionFullRestoration": 88,
+    "Book3ProjectionRestorationLength": 88,
+    "Book3ProjectionRecordProjection": 88,
+    "Book3ProjectionNieseMarkers": 88,
+    "Book3ProjectionSectionIDs": 88,
+    "Book3ProjectionEditorialSpans": 88,
+    "Book3ProjectionTokens": 1,
+    "Book3ProjectionParagraphs": 1,
+    "Book3BundleRecords": 1,
+    "Book3AllIndexedOffsets": 1,
+    "Book3BundleTokens": 1,
+    "Book3CatalogBundleHash": 1,
+    "Book3CatalogBundleBytes": 1,
+    "Book3CatalogCorpusHash": 1,
+    "Book3CatalogTokens": 1,
+    "Book3CatalogSections": 1,
+    "Book4CorpusShard": 1,
+    "Book4ProjectionParagraphIDs": 1,
+    "Book4ProjectionSameAsIdentityKind": 78,
+    "Book4ProjectionSourceAttributes": 78,
+    "Book4ProjectionRawParagraph": 78,
+    "Book4ProjectionSourceContinuity": 1324,
+    "Book4ProjectionSourceSlice": 1324,
+    "Book4ProjectionSourceSliceHash": 1324,
+    "Book4ProjectionFullRestoration": 78,
+    "Book4ProjectionRestorationLength": 78,
+    "Book4ProjectionRecordProjection": 78,
+    "Book4ProjectionNieseMarkers": 78,
+    "Book4ProjectionSectionIDs": 78,
+    "Book4ProjectionEditorialSpans": 78,
+    "Book4ProjectionTokens": 1,
+    "Book4ProjectionParagraphs": 1,
+    "Book4BundleRecords": 1,
+    "Book4AllIndexedOffsets": 1,
+    "Book4BundleTokens": 1,
+    "Book4CatalogBundleHash": 1,
+    "Book4CatalogBundleBytes": 1,
+    "Book4CatalogCorpusHash": 1,
+    "Book4CatalogTokens": 1,
+    "Book4CatalogSections": 1,
+    "Book5CorpusShard": 1,
+    "Book5ProjectionParagraphIDs": 1,
+    "Book5ProjectionSameAsIdentityKind": 65,
+    "Book5ProjectionSourceAttributes": 65,
+    "Book5ProjectionRawParagraph": 65,
+    "Book5ProjectionSourceContinuity": 1142,
+    "Book5ProjectionSourceSlice": 1142,
+    "Book5ProjectionSourceSliceHash": 1142,
+    "Book5ProjectionFullRestoration": 65,
+    "Book5ProjectionRestorationLength": 65,
+    "Book5ProjectionRecordProjection": 65,
+    "Book5ProjectionNieseMarkers": 65,
+    "Book5ProjectionSectionIDs": 65,
+    "Book5ProjectionEditorialSpans": 65,
+    "Book5ProjectionTokens": 1,
+    "Book5ProjectionParagraphs": 1,
+    "Book5BundleRecords": 1,
+    "Book5AllIndexedOffsets": 1,
+    "Book5BundleTokens": 1,
+    "Book5CatalogBundleHash": 1,
+    "Book5CatalogBundleBytes": 1,
+    "Book5CatalogCorpusHash": 1,
+    "Book5CatalogTokens": 1,
+    "Book5CatalogSections": 1,
+    "Book6CorpusShard": 1,
+    "Book6ProjectionParagraphIDs": 1,
+    "Book6ProjectionSameAsIdentityKind": 50,
+    "Book6ProjectionSourceAttributes": 50,
+    "Book6ProjectionRawParagraph": 50,
+    "Book6ProjectionSourceContinuity": 882,
+    "Book6ProjectionSourceSlice": 882,
+    "Book6ProjectionSourceSliceHash": 882,
+    "Book6ProjectionFullRestoration": 50,
+    "Book6ProjectionRestorationLength": 50,
+    "Book6ProjectionRecordProjection": 50,
+    "Book6ProjectionNieseMarkers": 50,
+    "Book6ProjectionSectionIDs": 50,
+    "Book6ProjectionEditorialSpans": 50,
+    "Book6ProjectionTokens": 1,
+    "Book6ProjectionParagraphs": 1,
+    "Book6BundleRecords": 1,
+    "Book6AllIndexedOffsets": 1,
+    "Book6BundleTokens": 1,
+    "Book6CatalogBundleHash": 1,
+    "Book6CatalogBundleBytes": 1,
+    "Book6CatalogCorpusHash": 1,
+    "Book6CatalogTokens": 1,
+    "Book6CatalogSections": 1,
+    "Book7CorpusShard": 1,
+    "Book7ProjectionParagraphIDs": 1,
+    "Book7ProjectionSameAsIdentityKind": 46,
+    "Book7ProjectionSourceAttributes": 46,
+    "Book7ProjectionRawParagraph": 46,
+    "Book7ProjectionSourceContinuity": 910,
+    "Book7ProjectionSourceSlice": 910,
+    "Book7ProjectionSourceSliceHash": 910,
+    "Book7ProjectionFullRestoration": 46,
+    "Book7ProjectionRestorationLength": 46,
+    "Book7ProjectionRecordProjection": 46,
+    "Book7ProjectionNieseMarkers": 46,
+    "Book7ProjectionSectionIDs": 46,
+    "Book7ProjectionEditorialSpans": 46,
+    "Book7ProjectionTokens": 1,
+    "Book7ProjectionParagraphs": 1,
+    "Book7BundleRecords": 1,
+    "Book7AllIndexedOffsets": 1,
+    "Book7BundleTokens": 1,
+    "Book7CatalogBundleHash": 1,
+    "Book7CatalogBundleBytes": 1,
+    "Book7CatalogCorpusHash": 1,
+    "Book7CatalogTokens": 1,
+    "Book7CatalogSections": 1,
+    "VocabularyQueries": 22108,
+    "VocabularyUnits": 22108,
+    "VocabularyOccurrences": 22108,
+    "VocabularyUnitIdentity": 22108,
+    "VocabularyEvidence": 162545,
+    "VocabularyRecords": 162545,
+    "VocabularySections": 22108,
+    "FixtureQueries": 238,
+    "FixtureUnits": 238,
+    "FixtureOccurrences": 238,
+    "FixtureUnitIdentity": 238,
+    "FixtureEvidence": 10428,
+    "FixtureRecords": 10428,
+    "FixtureSections": 238,
+    "WildcardQueries": 1400,
+    "WildcardUnits": 1400,
+    "WildcardOccurrences": 1400,
+    "WildcardUnitIdentity": 1400,
+    "WildcardEvidence": 41287,
+    "WildcardRecords": 41287,
+    "WildcardSections": 1400,
+    "WithinEveryIntervalQueries": 8002,
+    "WithinEveryIntervalUnits": 8002,
+    "WithinEveryIntervalOccurrences": 8002,
+    "WithinEveryIntervalUnitIdentity": 8002,
+    "WithinEveryIntervalEvidence": 10992,
+    "WithinEveryIntervalRecords": 10992,
+    "WithinEveryIntervalSections": 8002,
+    "EveryCitationSeamQueries": 7988,
+    "EveryCitationSeamUnits": 7988,
+    "EveryCitationSeamOccurrences": 7988,
+    "EveryCitationSeamUnitIdentity": 7988,
+    "EveryCitationSeamSections": 7988,
+    "EveryCitationSeamEvidence": 4019,
+    "EveryCitationSeamRecords": 4019,
+    "EnglishLiteralQueries": 12,
+    "EnglishLiteralUnits": 12,
+    "EnglishLiteralOccurrences": 12,
+    "EnglishLiteralUnitIdentity": 12,
+    "EnglishLiteralEvidence": 248,
+    "EnglishLiteralRecords": 248,
+    "EnglishLiteralSections": 12,
+    "EnglishLiteralSelectedBooks": 12,
+    "EnglishLiteralEnglishNeverFolds": 12,
+    "EnglishLiteralNormalizationMetadata": 12,
+    "LoaderInitiallyOnlyBookI": 1,
+    "PublishedBookEdgesQueries": 14,
+    "PublishedBookEdgesUnits": 14,
+    "PublishedBookEdgesOccurrences": 14,
+    "PublishedBookEdgesUnitIdentity": 14,
+    "PublishedBookEdgesEvidence": 15,
+    "PublishedBookEdgesRecords": 15,
+    "PublishedBookEdgesSections": 14,
+    "PublishedBookEdgesSelectedBooks": 14,
+    "PublishedBookEdgesEnglishNeverFolds": 14,
+    "PublishedBookEdgesNormalizationMetadata": 14,
+    "PublishedBookEdgeIdentity": 14,
+    "PublishedBookEdgeCSVGeometries": 14,
+    "PublishedBookEdgeCSVNegativeUnits": 14,
+    "PublishedBookEdgeCSVCountKind": 14,
+    "PublishedBookEdgeCSVOccurrenceCount": 14,
+    "PublishedBookEdgeCSVOriginalMatchedText": 15,
+    "PublishedBookEdgeCSVEdition": 15,
+    "PublishedBookEdgeCSVPassageReader": 15,
+    "PublishedBookEdgeCSVCSVRowCount": 14,
+    "PublishedBookEdgeCSVCSVTotalRows": 14,
+    "PublishedBookEdgeCSVCSVQuery": 15,
+    "PublishedBookEdgeCSVCSVQueryJSON": 15,
+    "PublishedBookEdgeCSVCSVScope": 15,
+    "PublishedBookEdgeCSVCSVEnglishNormalization": 15,
+    "PublishedBookEdgeCSVCSVVersion": 15,
+    "PublishedBookEdgeCSVCSVOriginalContext": 15,
+    "PublishedBookEdgeCSVCSVSourceSegment": 15,
+    "PublishedBookEdgeCSVCSVSourcePath": 15,
+    "PublishedBookEdgeCSVCSVEditorialEvidence": 15,
+    "PublishedBookEdgeCSVCSVJoinedContext": 15,
+    "PublishedBookEdgeCSVCSVExpectedHit": 15,
+    "PublishedBookEdgeCSVCSVNoLatinCoverage": 14,
+    "PublishedBookEdgeCSVCSVSelectedCollections": 14,
+    "PublishedBookEdgeCSVCSVSelectedBooks": 14,
+    "PublishedBookEdgeCSVCSVNormalizationMetadata": 14,
+    "PublishedChapterSeamQueries": 104,
+    "PublishedChapterSeamUnits": 104,
+    "PublishedChapterSeamOccurrences": 104,
+    "PublishedChapterSeamUnitIdentity": 104,
+    "PublishedChapterSeamEvidence": 104,
+    "PublishedChapterSeamRecords": 104,
+    "PublishedChapterSeamSections": 104,
+    "PublishedChapterSeamSelectedBooks": 104,
+    "PublishedChapterSeamEnglishNeverFolds": 104,
+    "PublishedChapterSeamNormalizationMetadata": 104,
+    "ChapterSeamOccurs": 104,
+    "EmbeddedPrefaceSeamQueries": 2,
+    "EmbeddedPrefaceSeamUnits": 2,
+    "EmbeddedPrefaceSeamOccurrences": 2,
+    "EmbeddedPrefaceSeamUnitIdentity": 2,
+    "EmbeddedPrefaceSeamSections": 2,
+    "EmbeddedPrefaceSeamSelectedBooks": 2,
+    "EmbeddedPrefaceSeamEnglishNeverFolds": 2,
+    "EmbeddedPrefaceSeamNormalizationMetadata": 2,
+    "EmbeddedPrefaceContinuity": 2,
+    "PrefaceSeamCSVGeometries": 2,
+    "PrefaceSeamCSVNegativeUnits": 2,
+    "PrefaceSeamCSVCountKind": 2,
+    "PrefaceSeamCSVOccurrenceCount": 2,
+    "PrefaceSeamCSVCSVRowCount": 2,
+    "PrefaceSeamCSVCSVTotalRows": 2,
+    "PrefaceSeamCSVCSVQuery": 2,
+    "PrefaceSeamCSVCSVQueryJSON": 2,
+    "PrefaceSeamCSVCSVScope": 2,
+    "PrefaceSeamCSVCSVEnglishNormalization": 2,
+    "PrefaceSeamCSVCSVNoLatinCoverage": 2,
+    "PrefaceSeamCSVCSVSelectedCollections": 2,
+    "PrefaceSeamCSVCSVSelectedBooks": 2,
+    "PrefaceSeamCSVCSVNormalizationMetadata": 2,
+    "EmbeddedPrefaceSeamEvidence": 1,
+    "EmbeddedPrefaceSeamRecords": 1,
+    "PrefaceSeamCSVOriginalMatchedText": 1,
+    "PrefaceSeamCSVEdition": 1,
+    "PrefaceSeamCSVPassageReader": 1,
+    "PrefaceSeamCSVCSVVersion": 1,
+    "PrefaceSeamCSVCSVOriginalContext": 1,
+    "PrefaceSeamCSVCSVSourceSegment": 2,
+    "PrefaceSeamCSVCSVSourcePath": 2,
+    "PrefaceSeamCSVCSVEditorialEvidence": 2,
+    "PrefaceSeamCSVCSVJoinedContext": 1,
+    "PrefaceSeamCSVCSVExpectedHit": 1,
+    "SuppliedClippedOffsets": 1,
+    "SuppliedTextQueries": 8,
+    "SuppliedTextUnits": 8,
+    "SuppliedTextOccurrences": 8,
+    "SuppliedTextUnitIdentity": 8,
+    "SuppliedTextEvidence": 8,
+    "SuppliedTextRecords": 8,
+    "SuppliedTextSections": 8,
+    "SuppliedTextSelectedBooks": 8,
+    "SuppliedTextEnglishNeverFolds": 8,
+    "SuppliedTextNormalizationMetadata": 8,
+    "SuppliedCSVGeometries": 8,
+    "SuppliedCSVNegativeUnits": 8,
+    "SuppliedCSVCountKind": 8,
+    "SuppliedCSVOccurrenceCount": 8,
+    "SuppliedCSVOriginalMatchedText": 9,
+    "SuppliedCSVEdition": 9,
+    "SuppliedCSVPassageReader": 9,
+    "SuppliedCSVCSVRowCount": 8,
+    "SuppliedCSVCSVTotalRows": 8,
+    "SuppliedCSVCSVQuery": 10,
+    "SuppliedCSVCSVQueryJSON": 10,
+    "SuppliedCSVCSVScope": 10,
+    "SuppliedCSVCSVEnglishNormalization": 10,
+    "SuppliedCSVCSVVersion": 9,
+    "SuppliedCSVCSVOriginalContext": 9,
+    "SuppliedCSVCSVSourceSegment": 10,
+    "SuppliedCSVCSVSourcePath": 10,
+    "SuppliedCSVCSVEditorialEvidence": 10,
+    "SuppliedCSVCSVJoinedContext": 9,
+    "SuppliedCSVCSVExpectedHit": 9,
+    "SuppliedCSVCSVNoLatinCoverage": 8,
+    "SuppliedCSVCSVSelectedCollections": 8,
+    "SuppliedCSVCSVSelectedBooks": 8,
+    "SuppliedCSVCSVNormalizationMetadata": 8,
+    "SuppliedCSVRelevantHitPresent": 7,
+    "SuppliedCSVMarkPresent": 7,
+    "SuppliedCSVExactAttributes": 7,
+    "SuppliedCSVReadableBrackets": 7,
+    "SuppliedCSVLiteralNoInventedBrackets": 7,
+    "PublishedVIExampleQueries": 2,
+    "PublishedVIExampleUnits": 2,
+    "PublishedVIExampleOccurrences": 2,
+    "PublishedVIExampleUnitIdentity": 2,
+    "PublishedVIExampleEvidence": 2,
+    "PublishedVIExampleRecords": 2,
+    "PublishedVIExampleSections": 2,
+    "PublishedVIExampleSelectedBooks": 2,
+    "PublishedVIExampleEnglishNeverFolds": 2,
+    "PublishedVIExampleNormalizationMetadata": 2,
+    "VIExampleUnique": 2,
+    "VIExampleIdentity": 2,
+    "VIExampleCSVGeometries": 2,
+    "VIExampleCSVNegativeUnits": 2,
+    "VIExampleCSVCountKind": 2,
+    "VIExampleCSVOccurrenceCount": 2,
+    "VIExampleCSVOriginalMatchedText": 2,
+    "VIExampleCSVEdition": 2,
+    "VIExampleCSVPassageReader": 2,
+    "VIExampleCSVCSVRowCount": 2,
+    "VIExampleCSVCSVTotalRows": 2,
+    "VIExampleCSVCSVQuery": 2,
+    "VIExampleCSVCSVQueryJSON": 2,
+    "VIExampleCSVCSVScope": 2,
+    "VIExampleCSVCSVEnglishNormalization": 2,
+    "VIExampleCSVCSVVersion": 2,
+    "VIExampleCSVCSVOriginalContext": 2,
+    "VIExampleCSVCSVSourceSegment": 2,
+    "VIExampleCSVCSVSourcePath": 2,
+    "VIExampleCSVCSVEditorialEvidence": 2,
+    "VIExampleCSVCSVJoinedContext": 2,
+    "VIExampleCSVCSVExpectedHit": 2,
+    "VIExampleCSVCSVNoLatinCoverage": 2,
+    "VIExampleCSVCSVSelectedCollections": 2,
+    "VIExampleCSVCSVSelectedBooks": 2,
+    "VIExampleCSVCSVNormalizationMetadata": 2,
+    "CompleteEnglishQueries": 14,
+    "CompleteEnglishUnits": 14,
+    "CompleteEnglishOccurrences": 14,
+    "CompleteEnglishUnitIdentity": 14,
+    "CompleteEnglishEvidence": 8776,
+    "CompleteEnglishRecords": 8776,
+    "CompleteEnglishSections": 14,
+    "CompleteEnglishSelectedBooks": 14,
+    "CompleteEnglishEnglishNeverFolds": 14,
+    "CompleteEnglishNormalizationMetadata": 14,
+    "CompleteEnglishCSVGeometries": 14,
+    "CompleteEnglishCSVNegativeUnits": 14,
+    "CompleteEnglishCSVCountKind": 14,
+    "CompleteEnglishCSVOccurrenceCount": 14,
+    "CompleteEnglishCSVOriginalMatchedText": 28395,
+    "CompleteEnglishCSVEdition": 28395,
+    "CompleteEnglishCSVPassageReader": 28395,
+    "CompleteEnglishCSVCSVRowCount": 14,
+    "CompleteEnglishCSVCSVTotalRows": 14,
+    "CompleteEnglishCSVCSVQuery": 32408,
+    "CompleteEnglishCSVCSVQueryJSON": 32408,
+    "CompleteEnglishCSVCSVScope": 32408,
+    "CompleteEnglishCSVCSVEnglishNormalization": 32408,
+    "CompleteEnglishCSVCSVVersion": 32403,
+    "CompleteEnglishCSVCSVOriginalContext": 32403,
+    "CompleteEnglishCSVCSVSourceSegment": 32396,
+    "CompleteEnglishCSVCSVSourcePath": 32396,
+    "CompleteEnglishCSVCSVEditorialEvidence": 32396,
+    "CompleteEnglishCSVCSVJoinedContext": 28395,
+    "CompleteEnglishCSVCSVExpectedHit": 28395,
+    "CompleteEnglishCSVCSVNoLatinCoverage": 14,
+    "CompleteEnglishCSVCSVSelectedCollections": 14,
+    "CompleteEnglishCSVCSVSelectedBooks": 14,
+    "CompleteEnglishCSVCSVNormalizationMetadata": 14,
+    "CompleteEnglishCSVNegativeReader": 4008,
+    "NoCrossBookPhraseQueries": 6,
+    "NoCrossBookPhraseUnits": 6,
+    "NoCrossBookPhraseOccurrences": 6,
+    "NoCrossBookPhraseUnitIdentity": 6,
+    "NoCrossBookPhraseSections": 6,
+    "NoCrossBookPhraseSelectedBooks": 6,
+    "NoCrossBookPhraseEnglishNeverFolds": 6,
+    "NoCrossBookPhraseNormalizationMetadata": 6,
+    "EachBookBoundaryStopsPhrase": 6,
+    "LoaderExactlyBellumBooks": 1,
+    "MixedEnglishLiteralUnits": 4,
+    "MixedEnglishLiteralOccurrences": 4,
+    "MixedEnglishLiteralUnitIdentity": 4,
+    "MixedEnglishLiteralEvidence": 115,
+    "MixedEnglishLiteralRecords": 115,
+    "MixedEnglishLiteralSections": 4,
+    "MixedNormalization": 4,
+    "NoCrossLanguageBoolean": 1,
+    "TwoEnglishWorksBothDiscoverable": 1,
+    "TwoEnglishWorksNormalization": 1,
+    "TwoEnglishWorksDistinctCSV": 1,
+    "TwoEnglishWorksCorrectReaderPath": 194,
+    "NoCrossWorkBoolean": 1,
+    "InputUnchangedDuringRun": 43
+  },
+  "totalQueries": 39905,
+  "assertions": 1182417,
+  "failedAssertions": 0,
+  "examples": [
+    {
+      "query": "\"a voice from the east\"",
+      "scope": "section",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Whiston Bellum VI example"
+    },
+    {
+      "query": "\"a voice from the east\"",
+      "scope": "book",
+      "matchingUnits": 1,
+      "occurrences": 1,
+      "purpose": "Whiston Bellum VI example"
+    },
+    {
+      "query": "Jews",
+      "scope": "section",
+      "matchingUnits": 509,
+      "occurrences": 555,
+      "purpose": "Complete Bellum count"
+    },
+    {
+      "query": "Jews",
+      "scope": "book",
+      "matchingUnits": 7,
+      "occurrences": 555,
+      "purpose": "Complete Bellum count"
+    },
+    {
+      "query": "the",
+      "scope": "section",
+      "matchingUnits": 3706,
+      "occurrences": 13280,
+      "purpose": "Complete Bellum count"
+    },
+    {
+      "query": "the",
+      "scope": "book",
+      "matchingUnits": 7,
+      "occurrences": 13280,
+      "purpose": "Complete Bellum count"
+    }
+  ],
+  "durationSeconds": 47.4,
+  "limitations": [
+    "This validates the accepted Whiston Bellum XML, not a new translation or printed-edition collation.",
+    "Browser interaction is verified separately."
+  ],
+  "failures": []
+}

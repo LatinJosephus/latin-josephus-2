@@ -119,10 +119,13 @@ export function readerURL(record,baseURL,{section=true}={}) {
     url.searchParams.set('niese',niese);
   }
   const english=record.readerLink?.params?.english;
-  if(record.collectionId==='antiquities-english-whiston'||english!==undefined){
-    if(record.work!=='antiquities'||record.language!=='English'||record.edition!=='Whiston'
+  const whistonCollections={antiquities:'antiquities-english-whiston',bellum:'bellum-english-whiston'};
+  if(Object.values(whistonCollections).includes(record.collectionId)||english!==undefined){
+    const expectedCollection=whistonCollections[record.work];
+    if(!expectedCollection||record.language!=='English'||record.edition!=='Whiston'
+      ||(record.collectionId!==undefined&&record.collectionId!==expectedCollection)
       ||(english!==undefined&&english!=='whiston')){
-      throw new TypeError('A Whiston reader link requires its English Antiquities edition metadata.');
+      throw new TypeError('A Whiston reader link requires matching English work and edition metadata.');
     }
     url.searchParams.set('english','whiston');
   }

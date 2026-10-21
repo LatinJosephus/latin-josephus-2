@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "scope": {
+    "work": "Bellum Judaicum",
+    "books": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "language": "English",
+    "edition": "Whiston",
+    "unit": "Niese section",
+    "citationScheme": "niese",
+    "includesEmbeddedPreface": true
+  },
+  "counts": {
+    "books": 7,
+    "sourceDocuments": 7,
+    "bodyParagraphs": 704,
+    "narrativeParagraphs": 704,
+    "numberedParagraphs": 704,
+    "sections": 4001,
+    "runningWordTokens": 215072,
+    "nieseMilestones": 4001,
+    "chapterDivisions": 111,
+    "suppliedSpans": 1,
+    "suppliedRecordMarks": 2,
+    "breakBeforeUnits": 0
+  },
+  "coverage": {
+    "completeRangesByBook": {
+      "1": [
+        1,
+        673
+      ],
+      "2": [
+        1,
+        654
+      ],
+      "3": [
+        1,
+        542
+      ],
+      "4": [
+        1,
+        663
+      ],
+      "5": [
+        1,
+        572
+      ],
+      "6": [
+        1,
+        442
+      ],
+      "7": [
+        1,
+        455
+      ]
+    },
+    "missingSections": [],
+    "unexpectedSections": [],
+    "duplicateSections": [],
+    "allSectionTextsNonempty": true,
+    "paragraphsExactlyRestored": 704,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "rawParagraphSequenceSha256": "40d8c9a4c11888e30ef8aa5152c5eb4c67927c41bad234ff06390b1cd9441ff7",
+    "restoredParagraphSequenceSha256": "40d8c9a4c11888e30ef8aa5152c5eb4c67927c41bad234ff06390b1cd9441ff7",
+    "sourceWordSequenceSha256": "4903c3e154910ad16554ea266d367cb59806bac1007856fc8c8142f76403e9f4",
+    "indexedWordSequenceSha256": "4903c3e154910ad16554ea266d367cb59806bac1007856fc8c8142f76403e9f4",
+    "sourceNonWhitespaceContentSha256": "3c4d49671bb24d2218c4ea5d8688dfa9a51112350356cab2a06a948b367b9352",
+    "indexedNonWhitespaceContentSha256": "3c4d49671bb24d2218c4ea5d8688dfa9a51112350356cab2a06a948b367b9352",
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true
+  },
+  "corpus": {
+    "path": "data/bellum-english-whiston/corpus.json",
+    "sha256": "e4c6f9d3f1e54ab12f1564e6d0561d5eb4b142de9feb1299aedacd508df68172",
+    "bytes": 4491178,
+    "records": 4001
+  },
+  "books": [
+    {
+      "book": 1,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/English/book-01.xml",
+        "sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+        "bytes": 310858
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/bellum/English/book-01.xml",
+          "sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+          "bytes": 310858
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 234,
+        "narrativeParagraphs": 234,
+        "numberedParagraphs": 234,
+        "sections": 673,
+        "runningWordTokens": 50097,
+        "nieseMilestones": 673,
+        "chapterDivisions": 34,
+        "suppliedSpans": 0,
+        "suppliedRecordMarks": 0,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 0,
+      "orderEnd": 672,
+      "corpus": {
+        "path": "data/bellum-english-whiston/book-01.corpus.json",
+        "sha256": "aac1c10f2203169373adee4ef2c5fb868bedd5d9bf79b0db5e53dd6deeeb1a1b",
+        "bytes": 831082,
+        "records": 673
+      },
+      "extractionReport": {
+        "path": "data/bellum-english-whiston/book-01.extraction-report.json",
+        "sha256": "ef0d4bc72252933775a88669ef45028e0ddce3eef639b3167379268a50f0c2ff",
+        "bytes": 1460582
+      }
+    },
+    {
+      "book": 2,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/English/book-02.xml",
+        "sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+        "bytes": 239671
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/bellum/English/book-02.xml",
+          "sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+          "bytes": 239671
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 143,
+        "narrativeParagraphs": 143,
+        "numberedParagraphs": 143,
+        "sections": 654,
+        "runningWordTokens": 38098,
+        "nieseMilestones": 654,
+        "chapterDivisions": 22,
+        "suppliedSpans": 0,
+        "suppliedRecordMarks": 0,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 673,
+      "orderEnd": 1326,
+      "corpus": {
+        "path": "data/bellum-english-whiston/book-02.corpus.json",
+        "sha256": "5c679f878e9cf98f94a80b2da0f69ee9f483459372417a5dd94730e5893672af",
+        "bytes": 751462,
+        "records": 654
+      },
+      "extractionReport": {
+        "path": "data/bellum-english-whiston/book-02.extraction-report.json",
+        "sha256": "e327d287038c9335be7ca4ed8b84317f7e6768fd5f0ccde61c0c2d4942d78e69",
+        "bytes": 1252691
+      }
+    },
+    {
+      "book": 3,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/English/book-03.xml",
+        "sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+        "bytes": 157139
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/bellum/English/book-03.xml",
+          "sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+          "bytes": 157139
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 88,
+        "narrativeParagraphs": 88,
+        "numberedParagraphs": 88,
+        "sections": 542,
+        "runningWordTokens": 24777,
+        "nieseMilestones": 542,
+        "chapterDivisions": 10,
+        "suppliedSpans": 0,
+        "suppliedRecordMarks": 0,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 1327,
+      "orderEnd": 1868,
+      "corpus": {
+        "path": "data/bellum-english-whiston/book-03.corpus.json",
+        "sha256": "10fa31a36b3254b35c28fd6400ff715c618d607e2c46807e624f0ad313da6e39",
+        "bytes": 584440,
+        "records": 542
+      },
+      "extractionReport": {
+        "path": "data/bellum-english-whiston/book-03.extraction-report.json",
+        "sha256": "5b9af4d7dfc6c1c92ee57ef4bfc20f5ee8c9a4de16fd57402b33d46c68215871",
+        "bytes": 940365
+      }
+    },
+    {
+      "book": 4,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/English/book-04.xml",
+        "sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+        "bytes": 193824
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/bellum/English/book-04.xml",
+          "sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+          "bytes": 193824
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 78,
+        "narrativeParagraphs": 78,
+        "numberedParagraphs": 78,
+        "sections": 663,
+        "runningWordTokens": 30489,
+        "nieseMilestones": 663,
+        "chapterDivisions": 11,
+        "suppliedSpans": 0,
+        "suppliedRecordMarks": 0,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 1869,
+      "orderEnd": 2531,
+      "corpus": {
+        "path": "data/bellum-english-whiston/book-04.corpus.json",
+        "sha256": "c479280138aeee9af89cc9a4c7e4a601bda4af3fd00d1b0ce5890e0763ed76c4",
+        "bytes": 716823,
+        "records": 663
+      },
+      "extractionReport": {
+        "path": "data/bellum-english-whiston/book-04.extraction-report.json",
+        "sha256": "4b7f83d6573a73e87b1091d6b837c0a7531ad675e64dc3371abc700d13e44f6e",
+        "bytes": 1138365
+      }
+    },
+    {
+      "book": 5,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/English/book-05.xml",
+        "sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+        "bytes": 183522
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/bellum/English/book-05.xml",
+          "sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+          "bytes": 183522
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 65,
+        "narrativeParagraphs": 65,
+        "numberedParagraphs": 65,
+        "sections": 572,
+        "runningWordTokens": 29415,
+        "nieseMilestones": 572,
+        "chapterDivisions": 13,
+        "suppliedSpans": 0,
+        "suppliedRecordMarks": 0,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 2532,
+      "orderEnd": 3103,
+      "corpus": {
+        "path": "data/bellum-english-whiston/book-05.corpus.json",
+        "sha256": "b3ec5b24f61ffd089f4f41787874fcaf27bb8049c7d45316f8e6688aea99c5ad",
+        "bytes": 633314,
+        "records": 572
+      },
+      "extractionReport": {
+        "path": "data/bellum-english-whiston/book-05.extraction-report.json",
+        "sha256": "09d49d21d616da8428f5f69c05ff5515ddc7decb72438c782f41e6632cd5a964",
+        "bytes": 1013524
+      }
+    },
+    {
+      "book": 6,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/English/book-06.xml",
+        "sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+        "bytes": 136773
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/bellum/English/book-06.xml",
+          "sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+          "bytes": 136773
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 50,
+        "narrativeParagraphs": 50,
+        "numberedParagraphs": 50,
+        "sections": 442,
+        "runningWordTokens": 21949,
+        "nieseMilestones": 442,
+        "chapterDivisions": 10,
+        "suppliedSpans": 0,
+        "suppliedRecordMarks": 0,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 3104,
+      "orderEnd": 3545,
+      "corpus": {
+        "path": "data/bellum-english-whiston/book-06.corpus.json",
+        "sha256": "8cba1565c892502a4fb9d3642bd8613f8a9b1f94cde1b1e057a5a28d8e505828",
+        "bytes": 484942,
+        "records": 442
+      },
+      "extractionReport": {
+        "path": "data/bellum-english-whiston/book-06.extraction-report.json",
+        "sha256": "ef059360ccea2c1ff0ea40efa261f4e8bcfbfc4a5caf633319dc10951cb13f06",
+        "bytes": 773337
+      }
+    },
+    {
+      "book": 7,
+      "status": "PASS",
+      "source": {
+        "path": "assets/xml/bellum/English/book-07.xml",
+        "sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+        "bytes": 128876
+      },
+      "additionalSources": [],
+      "sources": [
+        {
+          "path": "assets/xml/bellum/English/book-07.xml",
+          "sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+          "bytes": 128876
+        }
+      ],
+      "counts": {
+        "bodyParagraphs": 46,
+        "narrativeParagraphs": 46,
+        "numberedParagraphs": 46,
+        "sections": 455,
+        "runningWordTokens": 20247,
+        "nieseMilestones": 455,
+        "chapterDivisions": 11,
+        "suppliedSpans": 1,
+        "suppliedRecordMarks": 2,
+        "breakBeforeUnits": 0
+      },
+      "orderStart": 3546,
+      "orderEnd": 4000,
+      "corpus": {
+        "path": "data/bellum-english-whiston/book-07.corpus.json",
+        "sha256": "02cfe3eb95d04be13feefd37628ef15f4d83a99a24ba41bb4942379f8cb6b230",
+        "bytes": 489133,
+        "records": 455
+      },
+      "extractionReport": {
+        "path": "data/bellum-english-whiston/book-07.extraction-report.json",
+        "sha256": "7b0d53cf30c100fb8366275db9dc405a030e74df7c31462e00150508d5ea9ce8",
+        "bytes": 770230
+      }
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import {editorialMarksFor} from './ui-utils.mjs';
 import {phraseBreakOffsets, tokenizeRecord} from './engine.mjs';
 import {planBrowserRelease, BROWSER_LAUNCHER_NAME} from './browser-release.mjs';
 import {validateWhistonSourceProjection} from './whiston-publication.mjs';
+import {validateWhistonBellumSourceProjection} from './whiston-bellum-publication.mjs';
 
 export const SOURCE_DIRECTORY = 'bin/search';
 export const ASSET_DIRECTORY = 'assets/search';
@@ -849,6 +850,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
       if (manifest.id === 'contra-apionem-latin-boysen') validateCaSourceProjection(corpus, bookReport, manifest, spec);
       if (manifest.id === 'antiquities-latin-bamberg78') validateAntiquitiesSourceProjection(corpus, bookReport, manifest, spec, root);
       if (manifest.id === 'antiquities-english-whiston') validateWhistonSourceProjection(corpus, bookReport, manifest, spec, root);
+      if (manifest.id === 'bellum-english-whiston') validateWhistonBellumSourceProjection(corpus, bookReport, manifest, spec, root);
       const bundleArtifact = artifact(book.path, book.sha256, 'bundle');
       equal(bundleArtifact.item.bytes, book.bytes, `Bundle byte count differs: ${id}`);
       const bundle = bundleArtifact.value();
@@ -919,6 +921,10 @@ export function validateQaReport(root, {catalog, collection, configured, report}
   if (manifest.id === 'antiquities-latin-bamberg78') expected.witness = 'tests/antiquities-source-witness.py';
   if (manifest.id === 'antiquities-english-whiston') Object.assign(expected, {
     witness: 'tests/whiston-source-witness.py', concordance: 'concordance.mjs', uiUtils: 'ui-utils.mjs',
+    extractor: adapter.extractor, manifest: configured.manifestPath,
+  });
+  if (manifest.id === 'bellum-english-whiston') Object.assign(expected, {
+    witness: 'tests/whiston-bellum-source-witness.py', concordance: 'concordance.mjs', uiUtils: 'ui-utils.mjs',
     extractor: adapter.extractor, manifest: configured.manifestPath,
   });
   for (const [key, relative] of Object.entries(expected)) {

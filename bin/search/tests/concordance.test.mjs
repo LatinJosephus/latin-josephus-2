@@ -48,6 +48,30 @@ function parseCSV(text) {
   }) };
 }
 
+test("Whiston Bellum CSV preserves supplied text, its provenance, and English reader links", () => {
+  const sourceAttributes = { reason: "omitted", source: "https://lexundria.com/j_bj/7.208-7.209/wst" };
+  const supplied = { kind: "supplied", start: 7, end: 21, text: "supplied words", sourceAttributes };
+  const records = [record(209, "before supplied words after", {
+    id: "bellum-english-whiston-7-209", collectionId: "bellum-english-whiston", bookId: "bellum-english-whiston:7",
+    book: 7, order: 0, language: "English", edition: "Whiston",
+    readerLink: { params: { english: "whiston" } }, editorialMarks: [supplied],
+  })];
+  const { result, model } = search(records, "supplied");
+  const exported = exportConcordance(model, result, { readerBase, exportedAt });
+  const { rows } = parseCSV(exported.text);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].matched_text, "supplied");
+  assert.equal(rows[0].matched_text_editorial, "[supplied]");
+  assert.equal(rows[0].reader_url, "https://example.org/project/bellum-judaicum/?book=7&niese=209&english=whiston");
+  assert.equal(rows[0].language, "English");
+  assert.equal(rows[0].collection_id, "bellum-english-whiston");
+  const segments = JSON.parse(rows[0].source_segments_json);
+  assert.deepEqual(segments[0].editorialMarks, [supplied]);
+  assert.match(rows[0].editorial_notes, /Whiston English Bellum/);
+  assert.match(rows[0].editorial_notes, /\[supplied text\]/);
+  assert.doesNotMatch(rows[0].editorial_notes, /Whiston English Antiquities|Bamberg/);
+});
+
 test("each original word occurrence gets a row, including repeated hits in one section", () => {
   const records = [record(1, "Bellum, bellum; BELLUM."), record(2, "Bellorum bell.")];
   const snapshot = JSON.stringify(records);

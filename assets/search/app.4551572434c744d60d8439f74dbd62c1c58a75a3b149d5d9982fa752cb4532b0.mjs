@@ -1,6 +1,6 @@
-import {createCollection} from './collection.8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc.mjs';
-import {buildConcordance,exportConcordance} from './concordance.4aa7c370c2812c6d938fe1c45edcb7031bd2940279902df714f366d85b79cf6c.mjs';
+import {createCollection} from './collection.426ef5ad85addd15516f23c24a53df99bd6f0aed650aa92864c2865bd2d13e8a.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74.mjs';
+import {buildConcordance,exportConcordance} from './concordance.6338df012c64f0c2e24e3810520549499ba33cb7b998f3575e00839f670e7a18.mjs';
 
 const root=document.getElementById('lj-search');
 const $=id=>root.querySelector(`#${id}`);
@@ -32,7 +32,8 @@ function updateScopeHint(){
     :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
   if(apion)els.scopeHint.textContent+=' In Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
   if(collections.some(collection=>collection.id==='antiquities-latin-bamberg78'))els.scopeHint.textContent+=' The Bamberg Latin Antiquities includes the Proem with Book I. Phrases stop at marked gaps, empty source intervals, the documented Book IX lacuna, the delimited interruptions in XVI and XX, and the Proem’s end. Split portions of the same Niese section share Boolean scope; exact phrases follow physical source order. The two labelled Bellum insertions in Book XI are separate citation units.';
-  if(collections.some(collection=>collection.id==='antiquities-english-whiston'))els.scopeHint.textContent+=' Whiston English phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent Niese sections in whole-book scope, but stay within one book and stop at the Proem’s end. Headings, printed citation labels and footnotes are excluded.';
+  if(collections.some(collection=>collection.id==='antiquities-english-whiston'))els.scopeHint.textContent+=' Whiston English Antiquities phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent Niese sections in whole-book scope, but stay within one book and stop at the Proem’s end. Headings, printed citation labels and footnotes are excluded.';
+  if(collections.some(collection=>collection.id==='bellum-english-whiston'))els.scopeHint.textContent+=' Whiston English Bellum includes all seven books. Its Book I preface is part of the continuous book. Supplied text in VII.208–209 remains searchable and is shown in brackets; it does not interrupt exact phrases.';
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
@@ -63,8 +64,10 @@ function populateControls(){
   const included=catalog.collections.map(c=>`${c.label}, ${c.language}, ${c.edition} (${c.books.length} ${c.books.length===1?'book':'books'})`).join('; ');
   const bamberg=catalog.collections.some(c=>c.id==='antiquities-latin-bamberg78')?' The Bamberg Latin Antiquities covers the Proem and all twenty books. Books XI and XVI preserve the source’s split and transposed passages; the two Bellum insertions in XI have separate citations.':'';
   const whistonCollection=catalog.collections.find(c=>c.id==='antiquities-english-whiston');
-  const whiston=whistonCollection?` The Whiston English collection contains ${whistonCollection.totals.sections.toLocaleString()} Niese sections across ${whistonCollection.books.length} books, including the separate Proem with Book I.`:'';
-  $('included-text').textContent=`Currently indexed: ${included}. Explicitly marked titles, citation labels and annotation notes are excluded. Source additions and untagged letters within the accepted Latin passages remain searchable, including inline Roman chapter letters.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units. Supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':''}${bamberg}${whiston}`;
+  const whiston=whistonCollection?` Whiston English Antiquities contains ${whistonCollection.totals.sections.toLocaleString()} Niese sections across ${whistonCollection.books.length} books, including the separate Proem with Book I.`:'';
+  const whistonBellum=catalog.collections.find(c=>c.id==='bellum-english-whiston');
+  const bellumEnglish=whistonBellum?` Whiston English Bellum contains ${whistonBellum.totals.sections.toLocaleString()} Niese sections across all seven books, including the embedded preface in Book I. Supplied text in VII.208–209 retains its source markings.`:'';
+  $('included-text').textContent=`Currently indexed: ${included}. Explicitly marked titles, citation labels and annotation notes are excluded. Source additions and untagged letters within the accepted Latin passages remain searchable, including inline Roman chapter letters.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units. Supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':''}${bamberg}${whiston}${bellumEnglish}`;
 }
 function applyState(state){
   els.query.value=state.query;els.work.value=state.work;populateBooks(state.book);
@@ -219,6 +222,7 @@ function resultContext(result,model){
   if(collections.some(collection=>collection.work==='contra-apionem'))parts.push('Contra Apionem uses Niese sections. Asterisks retain the source’s marked interruptions, which exact phrases cannot cross. Bold green text marks an addition in the source; the CSV’s editorial columns show it as ⟨added text⟩.');
   if(collections.some(collection=>collection.id==='antiquities-latin-bamberg78'))parts.push('Antiquities includes the Proem and Books I–XX of Bamberg Msc. Class. 78. Added, deleted and uncertain letters remain searchable: bold green text marks additions, struck text marks deletions and dotted underlining marks uncertain readings. Exact phrases stop at source gaps, empty intervals, the documented Book IX lacuna and the end of the Proem. III.240 and VII.69–99 retain their citations and encoded omissions. X.108 has a citation label but no Latin before the next Niese marker. IX.51–109 are absent from the accepted source; no records have been generated for them. The accepted maps also mark Latin unavailable at XII.248, XIII.213 and 216, XIV.238–239, XV.338 and 347, XVI.77, 123, 189–199, 359 and 395–404, XVIII.216–217, and XX.27–36 and 238; those identities have no generated records. Actual source interruptions also block phrases between XVI.188 and 200 and between XX.26 and 37. Skipped section numbers alone do not create a physical gap. Books XI and XVI retain physical source order: their split sections share Boolean scope, while exact phrases cannot jump between displaced portions. The two Bellum insertions in XI have separate, explicitly labelled citations.');
   if(collections.some(collection=>collection.id==='antiquities-english-whiston'))parts.push('Whiston English Antiquities: exact phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent sections in whole-book scope, but stay within one book and never cross the Proem’s end. Headings, printed citation labels and footnotes are excluded. Original English spelling is retained; Latin u/v and i/j equivalence does not affect English matches.');
+  if(collections.some(collection=>collection.id==='bellum-english-whiston'))parts.push('Whiston English Bellum: all seven books and 4,001 Niese sections are included. Exact phrases may cross physically adjacent sections in whole-book scope, including the embedded Book I preface, but stay within one book and edition. The accepted supplied passage in VII.208–209 remains searchable and is shown in brackets. Original English spelling and source annotations are retained; Latin u/v and i/j equivalence does not affect English matches.');
   return parts.join(' ');
 }
 function renderSuccessful(){
@@ -240,7 +244,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');

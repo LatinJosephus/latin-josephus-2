@@ -64,6 +64,25 @@ test('reader links preserve a deployment subpath and select the correct work',()
   assert.equal(readerURL(record,'https://example.org/project/'),'https://example.org/project/antiquities/?book=20&niese=5');
   assert.equal(readerURL(record,'https://example.org/',{section:false}),'https://example.org/antiquities/?book=20');
 });
+test('Whiston reader links select the matching English work for sections and whole books',()=>{
+  for(const [work,readerPath,collectionId,book,section] of [
+    ['bellum','bellum-judaicum/','bellum-english-whiston',6,301],
+    ['antiquities','antiquities/','antiquities-english-whiston',20,200],
+  ]){
+    const record={work,readerPath,collectionId,language:'English',edition:'Whiston',book,section};
+    assert.equal(readerURL(record,'https://example.org/project/'),`https://example.org/project/${readerPath}?book=${book}&niese=${section}&english=whiston`);
+    assert.equal(readerURL(record,'https://example.org/project/',{section:false}),`https://example.org/project/${readerPath}?book=${book}&english=whiston`);
+  }
+});
+test('Whiston reader links reject a conflicting work, collection, language or edition',()=>{
+  const record={work:'bellum',collectionId:'bellum-english-whiston',language:'English',edition:'Whiston',book:7,section:209,readerLink:{params:{english:'whiston'}}};
+  for(const change of [{work:'antiquities'},{collectionId:'antiquities-english-whiston'},{language:'Latin'},
+    {edition:'Lodge (1602)'},{readerLink:{params:{english:'lodge1602'}}}]){
+    assert.throws(()=>readerURL({...record,...change},'https://example.org/'),/matching English work and edition/);
+  }
+  assert.equal(readerURL({work:'bellum',language:'Latin',edition:'Cardwell (1837)',book:7,section:209},'https://example.org/'),
+    'https://example.org/bellum-judaicum/?book=7&niese=209');
+});
 test('old Book I and seven-book pilot links retain their original search coverage',()=>{
   assert.deepEqual(locationState('?q=bellum',catalog,'default'),{query:'bellum',work:'bellum-latin-cardwell',book:'bellum-latin-cardwell:1',scope:'section',fold:false,view:'passages'});
   assert.equal(locationState('?q=bellum&book=all',catalog,'default').work,'bellum-latin-cardwell');

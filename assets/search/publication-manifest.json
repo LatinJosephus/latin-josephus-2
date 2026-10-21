@@ -8,13 +8,13 @@
   "inputs": [
     {
       "path": "_includes/search-interface.html",
-      "sha256": "c87658395835139d26dfce302abde9c806e65d89e1141f4d264a565f7bdc3aba",
-      "bytes": 12951
+      "sha256": "3a55d4ed8afeaf796bb392d680f2e1ed44d4f05496990a9ecd4e83f6027f23eb",
+      "bytes": 13953
     },
     {
       "path": "_pages/search.html",
-      "sha256": "7c97d9265a20048a2107d594bfdd1d62b242107115da4baf70fc40dc06fa9986",
-      "bytes": 532
+      "sha256": "838456d111c9fc8b73c83cedc0fb5f2f73ec22c9ed138c29185d596d9de1e872",
+      "bytes": 551
     },
     {
       "path": "assets/xml/antiquities/English/book-01.xml",
@@ -329,6 +329,48 @@
       "hashMode": "crlf-to-lf"
     },
     {
+      "path": "assets/xml/bellum/English/book-01.xml",
+      "sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+      "bytes": 310858,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/English/book-02.xml",
+      "sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+      "bytes": 239671,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/English/book-03.xml",
+      "sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+      "bytes": 157139,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/English/book-04.xml",
+      "sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+      "bytes": 193824,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/English/book-05.xml",
+      "sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+      "bytes": 183522,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/English/book-06.xml",
+      "sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+      "bytes": 136773,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/bellum/English/book-07.xml",
+      "sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+      "bytes": 128876,
+      "hashMode": "crlf-to-lf"
+    },
+    {
       "path": "assets/xml/bellum/Latin/book-01.xml",
       "sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
       "bytes": 298013,
@@ -424,8 +466,8 @@
     },
     {
       "path": "bin/search/app.mjs",
-      "sha256": "5d8f8c58b11e96d7b46636a36175c49615d7bd0356c136f299874e43f9cf97d8",
-      "bytes": 27373
+      "sha256": "14e5aa8f197a27e310d06d1900495e97b35a6eb16cd9d7f5bf8fac413aa93c07",
+      "bytes": 28607
     },
     {
       "path": "bin/search/browser-release.mjs",
@@ -439,8 +481,8 @@
     },
     {
       "path": "bin/search/build-preview.mjs",
-      "sha256": "da3fa9292aecab0cb98ef5408ba2d8a767d9603d8acc578b87cbfb94a71e0b5a",
-      "bytes": 2018
+      "sha256": "6ed45d51500fe064d9343f899ca0df1f0321794fa50b75612d300f40cae30e19",
+      "bytes": 2037
     },
     {
       "path": "bin/search/build-search.mjs",
@@ -459,8 +501,8 @@
     },
     {
       "path": "bin/search/concordance.mjs",
-      "sha256": "ddd42638087b01a6b5ae6578805900674620d2f9210ad46bc44b2c622178fdb7",
-      "bytes": 30055
+      "sha256": "046a58fb0e4959bba4b86c3aed6b69d82a221f11dce3250b26a3470345818ca5",
+      "bytes": 30801
     },
     {
       "path": "bin/search/config/antiquities-english-whiston.json",
@@ -473,14 +515,19 @@
       "bytes": 8771
     },
     {
+      "path": "bin/search/config/bellum-english-whiston.json",
+      "sha256": "670358a2d7cd8c1b7ab901528570568e562ccd45d9df0dd7b7980ebe9c055e97",
+      "bytes": 2339
+    },
+    {
       "path": "bin/search/config/bellum-latin-cardwell.json",
       "sha256": "c5655ef8a06048714d8a1a2b9e945d17a5232eee469045a6d7944d8681a61844",
       "bytes": 1188
     },
     {
       "path": "bin/search/config/collections.json",
-      "sha256": "8b9687ec245e2e2ea561634d4e53b924f9b1c1e8a4cb444c765fc182c36cd4cb",
-      "bytes": 231
+      "sha256": "89db0e5f8188914a6e246a2e56e7537022c7db82dccea7281d17dfd96086b1e5",
+      "bytes": 266
     },
     {
       "path": "bin/search/config/contra-apionem-latin-boysen.json",
@@ -494,8 +541,8 @@
     },
     {
       "path": "bin/search/config/publication.json",
-      "sha256": "8003376e8766d073f51aef576775ddc2a102db678d3577e591499a36425a43c2",
-      "bytes": 5290
+      "sha256": "6bedd55a934ceb302c0d267292878738e057d72b027cd73b69257abeb1657e1b",
+      "bytes": 5922
     },
     {
       "path": "bin/search/engine.mjs",
@@ -518,6 +565,11 @@
       "bytes": 29130
     },
     {
+      "path": "bin/search/extract-whiston-bellum.py",
+      "sha256": "8d0d11dde888accc0f591e25bb5a934a701ef0c873dbea22c0db2a4f4c19ee26",
+      "bytes": 21046
+    },
+    {
       "path": "bin/search/extract-whiston.py",
       "sha256": "d4a353314644b2823558f28fec3517e60f425a827aee190f42a2de92031c92c0",
       "bytes": 42012
@@ -529,8 +581,8 @@
     },
     {
       "path": "bin/search/index.html",
-      "sha256": "f86a28d6f0f063510476bcbc095d686ab42737d111d2185f8f0ea24c9caecc8a",
-      "bytes": 14236
+      "sha256": "6b2fae2ec553fa0132fcec0e7665f9cdaba45ad2ded42a29e460fd32331d09c3",
+      "bytes": 15257
     },
     {
       "path": "bin/search/launch-v1.mjs",
@@ -539,8 +591,8 @@
     },
     {
       "path": "bin/search/publication.mjs",
-      "sha256": "dd73d56a3f22c75ecd7b430f1d572611f70e52af353d85f32e99e7d26fb33852",
-      "bytes": 83622
+      "sha256": "bd71504c876cf54fcf56ccc38dd46063e51bd04f6b2b026ebd7254311146d311",
+      "bytes": 84104
     },
     {
       "path": "bin/search/styles.css",
@@ -609,8 +661,8 @@
     },
     {
       "path": "bin/search/tests/concordance.test.mjs",
-      "sha256": "600e13b9bcfde5e4fa50f1074b6e2e4a07b39847b774b9c2b0b1d02cf3f05aa9",
-      "bytes": 20910
+      "sha256": "b865b27d2cf780c66e777138eb4660516260e72f41a77d56d290c938590b8e69",
+      "bytes": 22443
     },
     {
       "path": "bin/search/tests/corpus-qa.mjs",
@@ -644,8 +696,8 @@
     },
     {
       "path": "bin/search/tests/publication.test.mjs",
-      "sha256": "3314ece7b2aaa337bf7064cc39e51a5da4b5fd0803b5f2004690f39ae4ae471e",
-      "bytes": 14989
+      "sha256": "183bd302092eadc2bfa19b869afcb35e6ad1d4a3421dbecf8675a2ca0314a6bc",
+      "bytes": 16293
     },
     {
       "path": "bin/search/tests/report-path.mjs",
@@ -683,9 +735,29 @@
       "bytes": 41067
     },
     {
+      "path": "bin/search/tests/test_extract_whiston_bellum.py",
+      "sha256": "81fc1c5af6b608a1c5b7dbbcd3a1bca49cdf91ebd7d381f69f2fc124352a0b1a",
+      "bytes": 9867
+    },
+    {
       "path": "bin/search/tests/ui-utils.test.mjs",
-      "sha256": "c1099a56b974b5ba52123d9e53e8ec0215844dc201f4da34447e45edb2521735",
-      "bytes": 7124
+      "sha256": "eecc56f023a6bfd99e3b17c5bce73435835ffc5a316256e4b9404735f476afba",
+      "bytes": 8606
+    },
+    {
+      "path": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
+      "sha256": "3087ba85e12d780d6b85d6fed60faac6ee0b4abd27cbd2d1db1182ddc3970c5c",
+      "bytes": 39386
+    },
+    {
+      "path": "bin/search/tests/whiston-bellum-publication.test.mjs",
+      "sha256": "4fbaf88d8afa5416bb84a1599d5c4c72117b043986a5fff3e582aa1ae5d35b27",
+      "bytes": 11403
+    },
+    {
+      "path": "bin/search/tests/whiston-bellum-source-witness.py",
+      "sha256": "f171e3d7e8e93a44e9b609bf5fc62b9b732369c7aadba0b659da9c1dbd0b7613",
+      "bytes": 12190
     },
     {
       "path": "bin/search/tests/whiston-corpus-qa.mjs",
@@ -704,8 +776,8 @@
     },
     {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
-      "bytes": 15264
+      "sha256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
+      "bytes": 15520
     },
     {
       "path": "bin/search/vendor/LUNR-LICENSE.txt",
@@ -726,6 +798,11 @@
       "path": "bin/search/vendor/provenance.json",
       "sha256": "bad0f93456f74c989cb93a7262d1ed459149740f27226c193e8642bc9de5c20d",
       "bytes": 533
+    },
+    {
+      "path": "bin/search/whiston-bellum-publication.mjs",
+      "sha256": "188d7dad34997147e89815397904fefd0734f7b9b8728b502c59abea85efbffd",
+      "bytes": 17051
     },
     {
       "path": "bin/search/whiston-publication.mjs",
@@ -757,7 +834,7 @@
       ],
       "qa": {
         "path": "qa-report.json",
-        "sha256": "62193d87514e13b097f2ad73df092eb29e716680e13cecdaa1bb5307107b9107",
+        "sha256": "a8f663e2c69d20f8fd41c3ff387ea88c45430378384cb16d9cb7da7a3df69a1c",
         "status": "PASS",
         "assertions": 1663053,
         "queries": 98856,
@@ -786,7 +863,7 @@
       ],
       "qa": {
         "path": "data/deh-latin-ussani/qa-report.json",
-        "sha256": "454f4318326122d8f19e201eadc19b3d3615173bf864aa75aee5334bef5718d8",
+        "sha256": "ba526f67b4544d0d20cba0b414f1d434099468dcbadff361b679461c30935a34",
         "status": "PASS",
         "assertions": 907742,
         "queries": 76170,
@@ -812,7 +889,7 @@
       ],
       "qa": {
         "path": "data/contra-apionem-latin-boysen/qa-report.json",
-        "sha256": "22b8b83c423ad746a545fc6877bea594faa2e58c85e47d0ee8910ccc89eb617a",
+        "sha256": "fb821a3c2c92ad75868bff4c94db2ed0aad9984b7f0dc4c97e434759907663ac",
         "status": "PASS",
         "assertions": 346953,
         "queries": 24167,
@@ -867,9 +944,9 @@
       ],
       "qa": {
         "path": "data/antiquities-latin-bamberg78/qa-report.json",
-        "sha256": "3a302b471b2c5a78dcf997e9473a99c5682bdc36ba61432c399978a422ca6ce6",
+        "sha256": "6f429a40dbbd9d12f7782fee4e655e14595fe3de39ac42a1a79682d41b673975",
         "status": "PASS",
-        "assertions": 3879515,
+        "assertions": 3903570,
         "queries": 293134,
         "failedAssertions": 0,
         "readerEvidenceIsHistorical": true
@@ -912,20 +989,51 @@
       ],
       "qa": {
         "path": "data/antiquities-english-whiston/qa-report.json",
-        "sha256": "82145d1abbbcfad28eddc3bff7a7c30d7685a4a9e0d38a1f2cab598337ec19d3",
+        "sha256": "d46cbecf6c486fbde848c928a34e037de186d5921b21d411972469cb7571b2a6",
         "status": "PASS",
         "assertions": 1640726,
         "queries": 87944,
         "failedAssertions": 0,
         "readerEvidenceIsHistorical": true
       }
+    },
+    {
+      "id": "bellum-english-whiston",
+      "totals": {
+        "books": 7,
+        "sections": 4001,
+        "tokens": 215072,
+        "bytes": 27848918
+      },
+      "extractionReport": {
+        "path": "data/bellum-english-whiston/extraction-report.json",
+        "sha256": "08e4cdfc44b141e0ce074b51d4d946b27f42d3dd11efce036c669a45bebadb67"
+      },
+      "sourceFiles": [
+        "assets/xml/bellum/English/book-01.xml",
+        "assets/xml/bellum/English/book-02.xml",
+        "assets/xml/bellum/English/book-03.xml",
+        "assets/xml/bellum/English/book-04.xml",
+        "assets/xml/bellum/English/book-05.xml",
+        "assets/xml/bellum/English/book-06.xml",
+        "assets/xml/bellum/English/book-07.xml"
+      ],
+      "qa": {
+        "path": "data/bellum-english-whiston/qa-report.json",
+        "sha256": "870e1378a05014ab3083ff13d9d0086079bcffd7a8591198781291c4d8411250",
+        "status": "PASS",
+        "assertions": 1182417,
+        "queries": 39905,
+        "failedAssertions": 0,
+        "readerEvidenceIsHistorical": true
+      }
     }
   ],
   "totals": {
-    "books": 54,
-    "sections": 19834,
-    "tokens": 959245,
-    "bytes": 147454604
+    "books": 61,
+    "sections": 23835,
+    "tokens": 1174317,
+    "bytes": 175303522
   },
   "validation": {
     "sourceAndArtifactHashes": "PASS",
@@ -967,6 +1075,7 @@
             "bin/search/tests/publication.test.mjs",
             "bin/search/tests/report-path.test.mjs",
             "bin/search/tests/ui-utils.test.mjs",
+            "bin/search/tests/whiston-bellum-publication.test.mjs",
             "bin/search/tests/whiston-publication.test.mjs"
           ]
         }
@@ -978,7 +1087,7 @@
     "schemaVersion": 1,
     "generatedBy": "bin/search/browser-release.mjs",
     "launcher": "launch-v1.mjs",
-    "entry": "app.62bfe1e0d4b436926145b7c2b387a7eb6602e6abc4325a64c09b4d10d60db776.mjs",
+    "entry": "app.4551572434c744d60d8439f74dbd62c1c58a75a3b149d5d9982fa752cb4532b0.mjs",
     "modules": {
       "engine.mjs": {
         "path": "engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs",
@@ -986,30 +1095,30 @@
         "bytes": 25180
       },
       "ui-utils.mjs": {
-        "path": "ui-utils.7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc.mjs",
-        "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
-        "bytes": 15264
+        "path": "ui-utils.b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74.mjs",
+        "sha256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
+        "bytes": 15520
       },
       "collection.mjs": {
-        "path": "collection.8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245.mjs",
-        "sha256": "8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245",
+        "path": "collection.426ef5ad85addd15516f23c24a53df99bd6f0aed650aa92864c2865bd2d13e8a.mjs",
+        "sha256": "426ef5ad85addd15516f23c24a53df99bd6f0aed650aa92864c2865bd2d13e8a",
         "bytes": 20307
       },
       "concordance.mjs": {
-        "path": "concordance.4aa7c370c2812c6d938fe1c45edcb7031bd2940279902df714f366d85b79cf6c.mjs",
-        "sha256": "4aa7c370c2812c6d938fe1c45edcb7031bd2940279902df714f366d85b79cf6c",
-        "bytes": 30185
+        "path": "concordance.6338df012c64f0c2e24e3810520549499ba33cb7b998f3575e00839f670e7a18.mjs",
+        "sha256": "6338df012c64f0c2e24e3810520549499ba33cb7b998f3575e00839f670e7a18",
+        "bytes": 30931
       },
       "app.mjs": {
-        "path": "app.62bfe1e0d4b436926145b7c2b387a7eb6602e6abc4325a64c09b4d10d60db776.mjs",
-        "sha256": "62bfe1e0d4b436926145b7c2b387a7eb6602e6abc4325a64c09b4d10d60db776",
-        "bytes": 27633
+        "path": "app.4551572434c744d60d8439f74dbd62c1c58a75a3b149d5d9982fa752cb4532b0.mjs",
+        "sha256": "4551572434c744d60d8439f74dbd62c1c58a75a3b149d5d9982fa752cb4532b0",
+        "bytes": 28867
       }
     },
     "catalog": {
-      "path": "catalog.a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a.json",
-      "sha256": "a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a",
-      "bytes": 44976
+      "path": "catalog.449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1.json",
+      "sha256": "449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1",
+      "bytes": 50096
     },
     "stylesheet": {
       "path": "styles.b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028.css",
@@ -1024,51 +1133,51 @@
   },
   "artifacts": [
     {
-      "path": "app.62bfe1e0d4b436926145b7c2b387a7eb6602e6abc4325a64c09b4d10d60db776.mjs",
+      "path": "app.4551572434c744d60d8439f74dbd62c1c58a75a3b149d5d9982fa752cb4532b0.mjs",
       "source": "bin/search/app.mjs",
-      "sourceSHA256": "5d8f8c58b11e96d7b46636a36175c49615d7bd0356c136f299874e43f9cf97d8",
-      "sha256": "62bfe1e0d4b436926145b7c2b387a7eb6602e6abc4325a64c09b4d10d60db776",
-      "bytes": 27633,
+      "sourceSHA256": "14e5aa8f197a27e310d06d1900495e97b35a6eb16cd9d7f5bf8fac413aa93c07",
+      "sha256": "4551572434c744d60d8439f74dbd62c1c58a75a3b149d5d9982fa752cb4532b0",
+      "bytes": 28867,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "app.mjs",
       "source": "bin/search/app.mjs",
-      "sha256": "5d8f8c58b11e96d7b46636a36175c49615d7bd0356c136f299874e43f9cf97d8",
-      "bytes": 27373,
+      "sha256": "14e5aa8f197a27e310d06d1900495e97b35a6eb16cd9d7f5bf8fac413aa93c07",
+      "bytes": 28607,
       "role": "runtime"
     },
     {
       "path": "browser-release.json",
       "source": "bin/search/browser-release.mjs",
       "sourceSHA256": "be010aef57d0d4b38ddbebf5d93a0341ad9a7f46feab4333dc01bca4b2bb2c40",
-      "sha256": "9508ac4604307814952ea0f1d0e9ae56ec0b7d7b3a1fbb5d864c0ce715859587",
+      "sha256": "b7134ea4b0b8b888141aeae43f4755921a86df727bc12e61d6c4dc2824a16f0d",
       "bytes": 1993,
       "role": "browser-release",
       "generated": true
     },
     {
-      "path": "catalog.a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a.json",
+      "path": "catalog.449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1.json",
       "source": "bin/search/catalog.json",
-      "sourceSHA256": "a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a",
-      "sha256": "a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a",
-      "bytes": 44976,
+      "sourceSHA256": "449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1",
+      "sha256": "449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1",
+      "bytes": 50096,
       "role": "browser-catalog",
       "generated": true
     },
     {
       "path": "catalog.json",
       "source": "bin/search/catalog.json",
-      "sha256": "a2bbaf66ed37b38b2a95645e53fd954eb68bca26c4221fd23918089ed849be1a",
-      "bytes": 44976,
+      "sha256": "449b7682d52db4b814369cd6810508c8fb76f46d0b52ba580d86ed98891d33c1",
+      "bytes": 50096,
       "role": "catalog"
     },
     {
-      "path": "collection.8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245.mjs",
+      "path": "collection.426ef5ad85addd15516f23c24a53df99bd6f0aed650aa92864c2865bd2d13e8a.mjs",
       "source": "bin/search/collection.mjs",
       "sourceSHA256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
-      "sha256": "8af1f4f7421d0062064ba5568957f6d55565e4971030ceda338663d9a153f245",
+      "sha256": "426ef5ad85addd15516f23c24a53df99bd6f0aed650aa92864c2865bd2d13e8a",
       "bytes": 20307,
       "role": "browser-module",
       "generated": true
@@ -1081,19 +1190,19 @@
       "role": "runtime"
     },
     {
-      "path": "concordance.4aa7c370c2812c6d938fe1c45edcb7031bd2940279902df714f366d85b79cf6c.mjs",
+      "path": "concordance.6338df012c64f0c2e24e3810520549499ba33cb7b998f3575e00839f670e7a18.mjs",
       "source": "bin/search/concordance.mjs",
-      "sourceSHA256": "ddd42638087b01a6b5ae6578805900674620d2f9210ad46bc44b2c622178fdb7",
-      "sha256": "4aa7c370c2812c6d938fe1c45edcb7031bd2940279902df714f366d85b79cf6c",
-      "bytes": 30185,
+      "sourceSHA256": "046a58fb0e4959bba4b86c3aed6b69d82a221f11dce3250b26a3470345818ca5",
+      "sha256": "6338df012c64f0c2e24e3810520549499ba33cb7b998f3575e00839f670e7a18",
+      "bytes": 30931,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "concordance.mjs",
       "source": "bin/search/concordance.mjs",
-      "sha256": "ddd42638087b01a6b5ae6578805900674620d2f9210ad46bc44b2c622178fdb7",
-      "bytes": 30055,
+      "sha256": "046a58fb0e4959bba4b86c3aed6b69d82a221f11dce3250b26a3470345818ca5",
+      "bytes": 30801,
       "role": "runtime"
     },
     {
@@ -1111,6 +1220,13 @@
       "role": "evidence"
     },
     {
+      "path": "config/bellum-english-whiston.json",
+      "source": "bin/search/config/bellum-english-whiston.json",
+      "sha256": "670358a2d7cd8c1b7ab901528570568e562ccd45d9df0dd7b7980ebe9c055e97",
+      "bytes": 2339,
+      "role": "evidence"
+    },
+    {
       "path": "config/bellum-latin-cardwell.json",
       "source": "bin/search/config/bellum-latin-cardwell.json",
       "sha256": "c5655ef8a06048714d8a1a2b9e945d17a5232eee469045a6d7944d8681a61844",
@@ -1120,8 +1236,8 @@
     {
       "path": "config/collections.json",
       "source": "bin/search/config/collections.json",
-      "sha256": "8b9687ec245e2e2ea561634d4e53b924f9b1c1e8a4cb444c765fc182c36cd4cb",
-      "bytes": 231,
+      "sha256": "89db0e5f8188914a6e246a2e56e7537022c7db82dccea7281d17dfd96086b1e5",
+      "bytes": 266,
       "role": "evidence"
     },
     {
@@ -1141,8 +1257,8 @@
     {
       "path": "config/publication.json",
       "source": "bin/search/config/publication.json",
-      "sha256": "8003376e8766d073f51aef576775ddc2a102db678d3577e591499a36425a43c2",
-      "bytes": 5290,
+      "sha256": "6bedd55a934ceb302c0d267292878738e057d72b027cd73b69257abeb1657e1b",
+      "bytes": 5922,
       "role": "evidence"
     },
     {
@@ -1589,7 +1705,7 @@
     {
       "path": "data/antiquities-english-whiston/qa-report.json",
       "source": "bin/search/data/antiquities-english-whiston/qa-report.json",
-      "sha256": "82145d1abbbcfad28eddc3bff7a7c30d7685a4a9e0d38a1f2cab598337ec19d3",
+      "sha256": "d46cbecf6c486fbde848c928a34e037de186d5921b21d411972469cb7571b2a6",
       "bytes": 131814,
       "role": "evidence"
     },
@@ -2030,8 +2146,176 @@
     {
       "path": "data/antiquities-latin-bamberg78/qa-report.json",
       "source": "bin/search/data/antiquities-latin-bamberg78/qa-report.json",
-      "sha256": "3a302b471b2c5a78dcf997e9473a99c5682bdc36ba61432c399978a422ca6ce6",
-      "bytes": 215718,
+      "sha256": "6f429a40dbbd9d12f7782fee4e655e14595fe3de39ac42a1a79682d41b673975",
+      "bytes": 216723,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-01.bundle.json",
+      "source": "bin/search/data/bellum-english-whiston/book-01.bundle.json",
+      "sha256": "0e00cf12043f6bf9651d8b53c0cb1d5ee6c96f457f779ce06df42bafd8a2140c",
+      "bytes": 6095201,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-01.corpus.json",
+      "source": "bin/search/data/bellum-english-whiston/book-01.corpus.json",
+      "sha256": "aac1c10f2203169373adee4ef2c5fb868bedd5d9bf79b0db5e53dd6deeeb1a1b",
+      "bytes": 831082,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-01.extraction-report.json",
+      "source": "bin/search/data/bellum-english-whiston/book-01.extraction-report.json",
+      "sha256": "ef0d4bc72252933775a88669ef45028e0ddce3eef639b3167379268a50f0c2ff",
+      "bytes": 1460582,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-02.bundle.json",
+      "source": "bin/search/data/bellum-english-whiston/book-02.bundle.json",
+      "sha256": "cd83ff7f5199f6b9564ed797104dbb65653c2350513bbf4db3d1a1fb97c941af",
+      "bytes": 4845083,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-02.corpus.json",
+      "source": "bin/search/data/bellum-english-whiston/book-02.corpus.json",
+      "sha256": "5c679f878e9cf98f94a80b2da0f69ee9f483459372417a5dd94730e5893672af",
+      "bytes": 751462,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-02.extraction-report.json",
+      "source": "bin/search/data/bellum-english-whiston/book-02.extraction-report.json",
+      "sha256": "e327d287038c9335be7ca4ed8b84317f7e6768fd5f0ccde61c0c2d4942d78e69",
+      "bytes": 1252691,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-03.bundle.json",
+      "source": "bin/search/data/bellum-english-whiston/book-03.bundle.json",
+      "sha256": "a7a6d825893ec17adeadca50ebc1962e0b082c15d96b011a215a3229d82a04d5",
+      "bytes": 3311104,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-03.corpus.json",
+      "source": "bin/search/data/bellum-english-whiston/book-03.corpus.json",
+      "sha256": "10fa31a36b3254b35c28fd6400ff715c618d607e2c46807e624f0ad313da6e39",
+      "bytes": 584440,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-03.extraction-report.json",
+      "source": "bin/search/data/bellum-english-whiston/book-03.extraction-report.json",
+      "sha256": "5b9af4d7dfc6c1c92ee57ef4bfc20f5ee8c9a4de16fd57402b33d46c68215871",
+      "bytes": 940365,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-04.bundle.json",
+      "source": "bin/search/data/bellum-english-whiston/book-04.bundle.json",
+      "sha256": "0ab055466bbcdc3a97a138b232f7c7a39e1a34cbb04dda1c07726f380135fd7d",
+      "bytes": 4082982,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-04.corpus.json",
+      "source": "bin/search/data/bellum-english-whiston/book-04.corpus.json",
+      "sha256": "c479280138aeee9af89cc9a4c7e4a601bda4af3fd00d1b0ce5890e0763ed76c4",
+      "bytes": 716823,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-04.extraction-report.json",
+      "source": "bin/search/data/bellum-english-whiston/book-04.extraction-report.json",
+      "sha256": "4b7f83d6573a73e87b1091d6b837c0a7531ad675e64dc3371abc700d13e44f6e",
+      "bytes": 1138365,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-05.bundle.json",
+      "source": "bin/search/data/bellum-english-whiston/book-05.bundle.json",
+      "sha256": "de09fd499fe83f61396dc12ea27227078518a046528d3aef475b98577fce1af2",
+      "bytes": 3835820,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-05.corpus.json",
+      "source": "bin/search/data/bellum-english-whiston/book-05.corpus.json",
+      "sha256": "b3ec5b24f61ffd089f4f41787874fcaf27bb8049c7d45316f8e6688aea99c5ad",
+      "bytes": 633314,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-05.extraction-report.json",
+      "source": "bin/search/data/bellum-english-whiston/book-05.extraction-report.json",
+      "sha256": "09d49d21d616da8428f5f69c05ff5515ddc7decb72438c782f41e6632cd5a964",
+      "bytes": 1013524,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-06.bundle.json",
+      "source": "bin/search/data/bellum-english-whiston/book-06.bundle.json",
+      "sha256": "3f2bbca840a156508ecce562e9296dcd582da820d9a3a706c7675346242252c2",
+      "bytes": 2905323,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-06.corpus.json",
+      "source": "bin/search/data/bellum-english-whiston/book-06.corpus.json",
+      "sha256": "8cba1565c892502a4fb9d3642bd8613f8a9b1f94cde1b1e057a5a28d8e505828",
+      "bytes": 484942,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-06.extraction-report.json",
+      "source": "bin/search/data/bellum-english-whiston/book-06.extraction-report.json",
+      "sha256": "ef059360ccea2c1ff0ea40efa261f4e8bcfbfc4a5caf633319dc10951cb13f06",
+      "bytes": 773337,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-07.bundle.json",
+      "source": "bin/search/data/bellum-english-whiston/book-07.bundle.json",
+      "sha256": "3a99f1ab5dbfb768cd515013735087b23aa4180d6164b9f62c7e1612163cdb71",
+      "bytes": 2773405,
+      "role": "bundle"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-07.corpus.json",
+      "source": "bin/search/data/bellum-english-whiston/book-07.corpus.json",
+      "sha256": "02cfe3eb95d04be13feefd37628ef15f4d83a99a24ba41bb4942379f8cb6b230",
+      "bytes": 489133,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/book-07.extraction-report.json",
+      "source": "bin/search/data/bellum-english-whiston/book-07.extraction-report.json",
+      "sha256": "7b0d53cf30c100fb8366275db9dc405a030e74df7c31462e00150508d5ea9ce8",
+      "bytes": 770230,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/corpus.json",
+      "source": "bin/search/data/bellum-english-whiston/corpus.json",
+      "sha256": "e4c6f9d3f1e54ab12f1564e6d0561d5eb4b142de9feb1299aedacd508df68172",
+      "bytes": 4491178,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/extraction-report.json",
+      "source": "bin/search/data/bellum-english-whiston/extraction-report.json",
+      "sha256": "08e4cdfc44b141e0ce074b51d4d946b27f42d3dd11efce036c669a45bebadb67",
+      "bytes": 11610,
+      "role": "evidence"
+    },
+    {
+      "path": "data/bellum-english-whiston/qa-report.json",
+      "source": "bin/search/data/bellum-english-whiston/qa-report.json",
+      "sha256": "870e1378a05014ab3083ff13d9d0086079bcffd7a8591198781291c4d8411250",
+      "bytes": 36313,
       "role": "evidence"
     },
     {
@@ -2240,7 +2524,7 @@
     {
       "path": "data/contra-apionem-latin-boysen/qa-report.json",
       "source": "bin/search/data/contra-apionem-latin-boysen/qa-report.json",
-      "sha256": "22b8b83c423ad746a545fc6877bea594faa2e58c85e47d0ee8910ccc89eb617a",
+      "sha256": "fb821a3c2c92ad75868bff4c94db2ed0aad9984b7f0dc4c97e434759907663ac",
       "bytes": 36663,
       "role": "evidence"
     },
@@ -2366,7 +2650,7 @@
     {
       "path": "data/deh-latin-ussani/qa-report.json",
       "source": "bin/search/data/deh-latin-ussani/qa-report.json",
-      "sha256": "454f4318326122d8f19e201eadc19b3d3615173bf864aa75aee5334bef5718d8",
+      "sha256": "ba526f67b4544d0d20cba0b414f1d434099468dcbadff361b679461c30935a34",
       "bytes": 29585,
       "role": "evidence"
     },
@@ -2412,7 +2696,7 @@
     {
       "path": "qa-report.json",
       "source": "bin/search/qa-report.json",
-      "sha256": "62193d87514e13b097f2ad73df092eb29e716680e13cecdaa1bb5307107b9107",
+      "sha256": "a8f663e2c69d20f8fd41c3ff387ea88c45430378384cb16d9cb7da7a3df69a1c",
       "bytes": 111795,
       "role": "evidence"
     },
@@ -2433,19 +2717,19 @@
       "role": "runtime"
     },
     {
-      "path": "ui-utils.7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc.mjs",
+      "path": "ui-utils.b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74.mjs",
       "source": "bin/search/ui-utils.mjs",
-      "sourceSHA256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
-      "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
-      "bytes": 15264,
+      "sourceSHA256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
+      "sha256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
+      "bytes": 15520,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "ui-utils.mjs",
       "source": "bin/search/ui-utils.mjs",
-      "sha256": "7706bb9cd53ef3d9fc4b412691b9f2dd440061ae6f92a1a64673494d053d5dcc",
-      "bytes": 15264,
+      "sha256": "b80e06a1a565167f5c862ef76b7ecb9a0af4023b8b006a38d91446c07c24fe74",
+      "bytes": 15520,
       "role": "runtime"
     },
     {
