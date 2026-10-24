@@ -262,6 +262,10 @@ document.addEventListener("DOMContentLoaded", () => {
         source: "ussani"
       },
       languages: {
+        French: {
+          defaultSource: "millet1556",
+          sources: {millet1556: {label: "Millet 1556", nativeMillet: true}}
+        },
         Latin: {
           defaultSource: "ussani",
           sources: {
@@ -1234,6 +1238,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const fetchTei = async (language, sourceKey, filename) => {
+    // Millet keeps native French divisions and a separately verified offset
+    // adapter. Its opt-in pane loads book-scoped JSON through milletReader.
+    if (sourceConfig(language, sourceKey)?.nativeMillet) return null;
     let result;
 
     // Native TCP elements already carry their source text. Bypass default
@@ -4163,6 +4170,17 @@ document.addEventListener("DOMContentLoaded", () => {
   updateLanguageUI();
   setBookSelectOptions();
   addEventListeners();
+
+  if (activeWork.slug === "deh") document.addEventListener("deh-select-canonical", event => {
+    const c = event.detail;
+    if (!c || !Number.isInteger(c.book) || c.book < 1 || c.book > 5
+      || !Number.isInteger(c.ordinal) || c.ordinal < 1 || !/^\d+$/.test(String(c.chapter))) return;
+    setState(() => {
+      state.bookNum = String(c.book).padStart(2, "0");
+      state.chapterNum = String(c.chapter); state.sectionNum = String(c.ordinal);
+      state.nieseNum = null; state.viewingLevel = "section-level";
+    });
+  });
 
   window.addEventListener("popstate", async () => {
     const locationRequested = applyNavigationFromUrl();

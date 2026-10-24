@@ -92,6 +92,12 @@
         <div id="languages-select" class="accordion-row">
           <span>Select panes:</span>
           <div>
+            {% if page.permalink == '/deh/' %}
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="french-pane-select" value="french" />
+              <label class="form-check-label" for="french-pane-select">French — Millet 1556</label>
+            </div>
+            {% endif %}
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="latin-pane-select" value="latin" checked disabled />
               <label class="form-check-label" for="latin-pane-select">Latin</label>
@@ -130,6 +136,13 @@
             <select id="greek-source-selector"></select>
           </div>
         </div>
+
+        {% if page.permalink == '/deh/' %}
+        <section id="millet-controls" hidden aria-labelledby="millet-controls-title">
+          <h4 id="millet-controls-title">Millet 1556</h4>
+          <div id="millet-general-controls"></div>
+        </section>
+        {% endif %}
 
         <div id="level-select" class="accordion-row">
           <span>Select viewing level:</span>

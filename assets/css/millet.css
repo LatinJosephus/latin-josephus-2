@@ -1,0 +1,32 @@
+/* Millet controls and reading layout; scholarly source payloads stay exact. */
+/* This stylesheet is included on DEH only; let its existing controls wrap. */
+#display-settings-header .inline{flex-wrap:wrap;min-width:0;text-align:start}
+#pane-container{grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
+#pane-container>.pane{min-width:0}
+#millet-controls{border-top:1px solid #bbb;margin-block:1rem;padding-top:1rem;text-align:start}
+#millet-controls .millet-toolbar{display:flex;flex-wrap:wrap;gap:.7rem 1.2rem;align-items:center;margin-bottom:1rem;font:inherit}
+#millet-controls .millet-toolbar>a:first-child{flex-basis:100%}
+#millet-controls select{max-width:100%;padding:.2rem;box-sizing:border-box}
+#millet-controls button{border:1px solid currentColor;border-radius:.25rem;padding:.3rem .6rem;background:transparent;color:inherit}
+#millet-controls .millet-status{border-inline-start:3px solid #537b88;padding:.5rem .8rem;margin:1rem 0;font-size:.9em;overflow-wrap:anywhere}
+#millet-controls .millet-status a{margin-inline-end:1em}
+#french .millet-source{font-family:var(--lj-font-text,Georgia,serif);font-size:1.125rem}
+#french .millet-line{display:inline;white-space:normal}
+#french .millet-paragraph{margin-bottom:1em;line-height:1.7;overflow-wrap:anywhere}
+#french .millet-division-marker{display:none}
+#french .millet-outside-view{display:none}
+#french .millet-reading-gap{color:var(--global-theme-color);font-style:italic}
+#french .millet-folio-marker{font:.75em system-ui;color:var(--global-theme-color);white-space:nowrap}
+#french .millet-passage-label{font:italic .9em system-ui;text-align:start}
+#french .millet-linked{cursor:pointer}
+#french .millet-linked:hover{background-color:#fff4c260}
+#french .millet-selected{background:#fff0a8;color:#192629;box-shadow:0 1px 0 #a67b00}
+#french .millet-annotated{text-decoration-style:dotted}
+.millet-latin-target{outline:2px solid #b38d21;outline-offset:.2rem;background-color:#fff4c233}
+#french .millet-role-heading{font-weight:600;margin-block:.25em}
+#french .millet-role-header,#french .millet-role-footer{font-size:.85em;opacity:.75}
+#french .millet-role-marginalia{font-style:italic;border-inline-start:1px dashed currentColor;padding-inline-start:.5rem}
+#french .millet-ancillary-label,#french .millet-empty{font:italic .9em/1.5 system-ui}
+#millet-controls .millet-attention{border:1px solid #b38d21;padding:.5rem}
+#french .millet-target-picker{display:flex;gap:.5rem;flex-wrap:wrap}
+@media(max-width:700px){#millet-controls .millet-toolbar>*{max-width:100%}}
