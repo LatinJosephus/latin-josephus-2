@@ -58,10 +58,11 @@ export function visibleLines(data,{mode='running',chapter=null,page=null}={}) {
   const headingLines=new Set(data.divisions.filter(d=>d.is_native_chapter||(range&&d.image_number>=range[0]&&d.image_number<=range[1])).flatMap(d=>d.line_refs));
   return data.lines.filter(l=>l.primary||headingLines.has(l.TEI_line_id));
 }
+export const chapterMappings = (data,chapter) => data.mappings.filter(m=>(m.canonical_targets||[m.canonical]).some(c=>String(c.chapter)===String(chapter)));
 export function readingView(data,view,navigation,canonical) {
   const lines=visibleLines(data,view);
   if(view.mode!=='running'||!['section-level','chapter-level'].includes(navigation.level))return {lines,included:null};
-  const mappings=data.mappings.filter(m=>navigation.level==='section-level'?canonicalIds(m).includes(canonical):(m.canonical_targets||[m.canonical]).some(c=>String(c.chapter)===String(navigation.chapter)));
+  const mappings=navigation.level==='chapter-level'?chapterMappings(data,navigation.chapter):data.mappings.filter(m=>canonicalIds(m).includes(canonical));
   if(!mappings.length)return {lines:[],included:new Set()};
   const ids=new Set(mappings.flatMap(m=>m.fragments.map(f=>f.line)));
   return {lines:lines.filter(l=>ids.has(l.TEI_line_id)),included:new Set(mappings.map(m=>m.id))};

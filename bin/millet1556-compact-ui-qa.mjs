@@ -82,10 +82,11 @@ try{
  await page.setViewportSize({width:1440,height:900});await go();
  await settings();await page.locator('#millet-folios').check();await page.locator('#millet-alignment').check();
  await page.locator('#chapter-selector').selectOption('42');await ready();
- // Choosing a chapter clears the global sub-chapter. The independent aligned
- // passage remains selected until an actual new global unit is selected.
+ // Choosing a global chapter selects the union of its sub-chapters, even
+ // before a particular global sub-chapter has been selected.
  await page.waitForFunction(()=>document.querySelector('#chapter-selector').value==='42'&&document.querySelector('#latin tei-p tei-num')?.textContent.trim()==='[I.42.1]');
- assert.equal(await page.locator('#millet-ussani').inputValue(),'latin-deh1-num188');
+ assert.equal(await page.locator('#millet-ussani').inputValue(),'');
+ assert.match(await page.locator('#millet-status').textContent(),/Ussani I\.42: 9 sub-chapter correspondences/);
  await page.locator('#section-selector').selectOption({label:'[I.42.1]'});await ready();
  await page.waitForFunction(()=>document.querySelector('.millet-passage-label')?.textContent==='[I.42.1]');
  assert(await page.locator('#millet-folios').isChecked());assert(await page.locator('#millet-alignment').isChecked());assert(await page.locator('#millet-view').isVisible());

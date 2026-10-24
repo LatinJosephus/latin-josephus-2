@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-import {codepoints,utf16Offset,indexBook,lineAtoms,visibleLines,canonicalIds,locationFromUrl,updateMilletUrl,createMilletLoader,flowSeparator,flowGroups,readingParts,folioLabels,readingView} from '../assets/js/milletCore.js';
+import {codepoints,utf16Offset,indexBook,lineAtoms,visibleLines,canonicalIds,locationFromUrl,updateMilletUrl,createMilletLoader,flowSeparator,flowGroups,readingParts,folioLabels,readingView,chapterMappings} from '../assets/js/milletCore.js';
 const folder=fileURLToPath(new URL('../assets/data/deh-millet1556/',import.meta.url));
 const read=name=>JSON.parse(fs.readFileSync(folder+name,'utf8'));
 const manifest=read('manifest.json'),books=manifest.books.map(b=>read(b.path));
@@ -96,4 +96,19 @@ test('current unit view presents its recorded French intervals; complete text re
  for(const b of books)for(const m of b.mappings){const v=readingView(b,{mode:'running'},{level:'section-level'},m.canonical.xml_id);assert.deepEqual([...v.included],[m.id]);assert.deepEqual(v.lines.map(l=>l.TEI_line_id),[...new Set(m.fragments.map(f=>f.line))]);}
  const d=books[0];assert.equal(readingView(d,{mode:'book'},{level:'section-level'},'latin-deh1-num4').included,null);
  const chapter=readingView(d,{mode:'running'},{level:'chapter-level',chapter:'1'},null);assert.equal(chapter.included.size,10);
+});
+
+test('every Ussani chapter is the exact union of its existing sub-chapter mappings',()=>{
+ let units=0;
+ for(const b of books){const index=indexBook(b);for(const chapter of new Set(b.mappings.flatMap(m=>(m.canonical_targets||[m.canonical]).map(c=>c.chapter)))){
+  const expected=b.mappings.filter(m=>(m.canonical_targets||[m.canonical]).some(c=>c.chapter===chapter));
+  const selected=chapterMappings(b,chapter);assert.deepEqual(selected,expected);units+=selected.length;
+  const view=readingView(b,{mode:'running'},{level:'chapter-level',chapter},null);
+  assert.deepEqual([...view.included],selected.map(m=>m.id));
+  const ids=new Set(selected.flatMap(m=>m.fragments.map(f=>f.line)));
+  assert.deepEqual(new Set(view.lines.map(l=>l.TEI_line_id)),ids);
+  assert.equal(view.lines.length,ids.size); // Shared physical lines occur once.
+  for(const l of view.lines){const atoms=lineAtoms(l,index.byLine.get(l.TEI_line_id)||[]);assert.equal(atoms.map(a=>a.text).join(''),l.text_exact);}
+ }}
+ assert.equal(units,558);assert.deepEqual(chapterMappings(books[0],'missing'),[]);
 });

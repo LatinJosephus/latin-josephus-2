@@ -1,10 +1,11 @@
-import {createMilletLoader,indexBook,lineAtoms,canonicalIds,locationFromUrl,updateMilletUrl,flowGroups,flowSeparator,folioLabels,readingParts,readingView} from './milletCore.js';
+import {createMilletLoader,indexBook,lineAtoms,canonicalIds,locationFromUrl,updateMilletUrl,flowGroups,flowSeparator,folioLabels,readingParts,readingView,chapterMappings} from './milletCore.js';
 
 const start=()=>{
   const pane=document.getElementById('french'),toggle=document.getElementById('french-pane-select');
   if(!pane||!toggle||location.pathname!=='/deh/')return;
   const loader=createMilletLoader(new URL('../data/deh-millet1556/',import.meta.url));
   let state=locationFromUrl(location.href),navigation={book:Number(new URL(location.href).searchParams.get('book'))||1},data,index,manifest,generation=0,concordance;
+  let unitOverride=new URL(location.href).searchParams.get('millet-select')==='unit';
   const disclosures=new Set();
   toggle.checked=state.enabled;
   const el=(name,text,attrs={})=>{const e=document.createElement(name);if(text!==null)e.textContent=text;for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);return e;};
@@ -18,21 +19,24 @@ const start=()=>{
   };
   // Keep focus on the same control when a display preference rerenders the pane.
   const rerender=()=>{const id=pane.contains(document.activeElement)?document.activeElement.id:null;render();if(id)document.getElementById(id)?.focus({preventScroll:true});};
-  const writeUrl=(push=false)=>{const u=updateMilletUrl(location.href,state);if(u.href!==location.href)history[push?'pushState':'replaceState']({},'',u);};
-  const selectedMappings=()=>index?.byCanonical.get(state.canonical)||[];
+  const writeUrl=(push=false)=>{const u=updateMilletUrl(location.href,state);u.searchParams.delete('millet-select');if(state.enabled&&unitOverride&&chapterNavigation())u.searchParams.set('millet-select','unit');if(u.href!==location.href)history[push?'pushState':'replaceState']({},'',u);};
+  const chapterNavigation=()=>navigation.chapter!=null&&(navigation.level==='chapter-level'||navigation.level==='section-level'&&!navigation.num);
+  const chapterSelected=()=>!unitOverride&&chapterNavigation();
+  const selectedMappings=()=>chapterSelected()&&data?chapterMappings(data,navigation.chapter):index?.byCanonical.get(state.canonical)||[];
   const selectedCanonical=()=>selectedMappings().flatMap(m=>m.canonical_targets||[m.canonical]).find(c=>c.xml_id===state.canonical);
+  const selectionLabel=()=>chapterSelected()?String(navigation.chapter)==='0'?'Prologue':`${['','I','II','III','IV','V'][navigation.book]}.${navigation.chapter}`:selectedCanonical()?.citation;
   const canonicalLink=c=>{
     const u=updateMilletUrl(location.href,{...state,canonical:c.xml_id});
-    for(const k of ['num','niese','parallel','parallel-work','deh-source','bj-source','aj-source','view'])u.searchParams.delete(k);
+    for(const k of ['num','niese','parallel','parallel-work','deh-source','bj-source','aj-source','view','millet-select'])u.searchParams.delete(k);
     u.searchParams.set('book',c.book);u.searchParams.set('chapter',c.chapter);u.searchParams.set('unit',c.unit);u.hash='';return u;
   };
   const markLatin=()=>{
     document.querySelectorAll('.millet-latin-target').forEach(e=>e.classList.remove('millet-latin-target'));
-    if(state.alignment&&state.enabled&&state.canonical)document.getElementById(state.canonical)?.classList.add('millet-latin-target');
+    if(state.alignment&&state.enabled)for(const m of selectedMappings())for(const c of m.canonical_targets||[m.canonical])if(!chapterSelected()||String(c.chapter)===String(navigation.chapter))document.getElementById(c.xml_id)?.classList.add('millet-latin-target');
   };
   const choose=(id,locate=false)=>{
     if(!index.byCanonical.has(id))return;
-    state.canonical=id;writeUrl(true);rerender();
+    unitOverride=true;state.canonical=id;writeUrl(true);rerender();
     const target=document.getElementById(id);
     if(locate&&target)target.scrollIntoView({block:'center',behavior:'smooth'});
     else if(locate){const c=selectedCanonical();if(c)document.dispatchEvent(new CustomEvent('deh-select-canonical',{detail:c}));}
@@ -82,24 +86,24 @@ const start=()=>{
     const folioToggle=el('input',null,{type:'checkbox',id:'millet-folios'});folioToggle.checked=state.folios;
     folioToggle.addEventListener('change',()=>{state.folios=folioToggle.checked;writeUrl(true);rerender();});options.append(label('Show Millet folio numbers',folioToggle));
     if(data.book){
-      const units=el('select',null,{id:'millet-ussani','aria-label':'Aligned passage (Ussani)',title:'Select any correspondence in this book, independently of the global sub-chapter selector'});units.add(new Option('Select a correspondence…',''));
+      const units=el('select',null,{id:'millet-ussani','aria-label':'Aligned passage (Ussani)',title:'Select any correspondence in this book, independently of the global sub-chapter selector'});units.add(new Option(chapterNavigation()?'Whole Ussani chapter':'Select a correspondence…',''));
       for(const [id,records]of index.byCanonical){const c=(records[0].canonical_targets||[records[0].canonical]).find(c=>c.xml_id===id);units.add(new Option(c.citation,id));}
-      units.value=state.canonical||'';units.addEventListener('change',()=>{if(units.value)choose(units.value,true);});options.append(label('Aligned passage:',units));
+      units.value=state.canonical||'';units.addEventListener('change',()=>{if(units.value)choose(units.value,true);else if(chapterNavigation()){unitOverride=false;state.canonical=null;writeUrl(true);rerender();}});options.append(label('Aligned passage:',units));
     }
     const share=el('a','Link',{id:'millet-share',href:updateMilletUrl(location.href,state).href,title:'Link to this French view','aria-label':'Link to this French view'});toolbar.append(about,settings,share);
     controls.append(toolbar);
     const status=disclosure('millet-status','Correspondence'),mm=selectedMappings(),mappedIds=new Set(mm.map(m=>m.id));status.className='millet-status';
     status.firstElementChild.title='About the selected Millet–Ussani correspondence';
-    const view=readingView(data,state,navigation,state.canonical),ll=view.lines,visibleIds=new Set(ll.map(l=>l.TEI_line_id)),all=mm.flatMap(m=>m.fragments),shown=all.filter(f=>visibleIds.has(f.line));
+    const view=readingView(data,state,chapterSelected()?{...navigation,level:'chapter-level'}:navigation,state.canonical),ll=view.lines,visibleIds=new Set(ll.map(l=>l.TEI_line_id)),all=mm.flatMap(m=>m.fragments),shown=all.filter(f=>visibleIds.has(f.line));
     if(mm.length){
-      const c=selectedCanonical();status.append(el('p',`Ussani ${c.citation}: ${mm.map(m=>m.relation).join(', ')}; ${shown.length}/${all.length} source intervals visible. Passage correspondence does not imply word-for-word identity.`));
+      const c=selectedCanonical();status.append(el('p',`Ussani ${selectionLabel()}: ${chapterSelected()?`${mm.length} sub-chapter correspondences`:mm.map(m=>m.relation).join(', ')}; ${shown.length}/${all.length} source intervals visible. Passage correspondence does not imply word-for-word identity.`));
       if(!all.length)status.append(el('p','No separate French counterpart is recorded for this canonical unit.'));
       if(shown.length<all.length)status.append(button('Show all corresponding French spans',()=>{state.mode='book';writeUrl(true);refresh();}));
-      const latin=el('a',`Read Ussani ${c.citation}`,{href:canonicalLink(c).href});status.append(latin);
-      parallels(status,c,generation);
+      if(c){status.append(el('a',`Read Ussani ${c.citation}`,{href:canonicalLink(c).href}));parallels(status,c,generation);}
       for(const m of mm){
         if(m.editorial_attention)status.append(el('p','Editorial attention remains pending. This inherited flag has not been adjudicated.',{class:'millet-attention'}));
-        const evidence=el('details',null),summary=el('summary',`${m.id} — ${m.certainty}`);evidence.append(summary,el('p',m.evidence_reason));
+        const evidence=el('details',null),summary=el('summary',`${chapterSelected()?`[${m.canonical.citation}] — `:''}${m.id} — ${m.certainty}`);evidence.append(summary,el('p',m.evidence_reason));
+        if(chapterSelected()){evidence.append(el('a',`Read Ussani ${m.canonical.citation}`,{href:canonicalLink(m.canonical).href}));parallels(evidence,m.canonical,generation);}
         for(const a of data.annotations.filter(a=>a.mapping_id===m.id)){
           evidence.append(el('p',`${a.kind}: ${typeof a.original==='string'?a.original:JSON.stringify(a.original)}`));
           if(a.secondary_target){const target=[...index.byCanonical.get(a.secondary_target.xml_id)||[]][0]?.canonical;if(target)evidence.append(el('a',`Locate secondary correspondence: ${target.citation}`,{href:canonicalLink(target).href}));}
@@ -150,7 +154,7 @@ const start=()=>{
     // larger view, identify the selected correspondence rather than labelling
     // the start of the whole French book with an unrelated selected unit.
     if(mm.length){
-      const citation=selectedCanonical().citation_label_exact||`[${selectedCanonical().citation}]`;
+      const citation=selectedCanonical()?.citation_label_exact||`[${selectionLabel()}]`;
       if(view.included?.size===1&&mappedIds.has([...view.included][0])&&source.querySelector('.millet-paragraph'))source.querySelector('.millet-paragraph').prepend(el('span',citation,{class:'millet-passage-label',lang:'en'}));
       else status.firstElementChild.append(` ${citation}`);
     }
@@ -166,16 +170,17 @@ const start=()=>{
     try{
       manifest=await loader.manifest();const loaded=await loader.book(state.mode==='preliminary'?0:navigation.book);if(mine!==generation)return;
       data=loaded;index=indexBook(data);
-      if(navigation.num&&data.book!==0)state.canonical=`latin-deh${navigation.book}-num${navigation.num}`;
+      if(chapterSelected())state.canonical=null;
+      else if(navigation.num&&data.book!==0&&!(unitOverride&&chapterNavigation()))state.canonical=`latin-deh${navigation.book}-num${navigation.num}`;
       if(state.canonical&&!index.byCanonical.has(state.canonical)&&data.book!==0)state.canonical=null;
       if(navigation.level==='chapter-level'&&selectedCanonical()&&String(selectedCanonical().chapter)!==String(navigation.chapter))state.canonical=null;
       render();if(focus)document.getElementById(focus)?.focus({preventScroll:true});
     }catch(e){if(mine!==generation)return;pane.replaceChildren(el('h3','French: Millet 1556'),el('p',e.message,{role:'alert',lang:'en'}));}
   }
   toggle.addEventListener('change',()=>{state.enabled=toggle.checked;writeUrl(true);refresh();});
-  document.addEventListener('deh-view-rendered',e=>{navigation=e.detail;state.enabled=toggle.checked;refresh();});
+  document.addEventListener('deh-view-rendered',e=>{if(navigation.level&&['book','chapter','num','level'].some(k=>String(navigation[k])!==String(e.detail[k])))unitOverride=false;navigation=e.detail;state.enabled=toggle.checked;refresh();});
   document.getElementById('latin').addEventListener('click',e=>{if(!state.enabled)return;const p=e.target.closest('tei-p[id^="latin-deh"]');if(p)choose(p.id);});
-  window.addEventListener('popstate',()=>{state=locationFromUrl(location.href);toggle.checked=state.enabled;navigation.book=Number(new URL(location.href).searchParams.get('book'))||1;refresh();});
+  window.addEventListener('popstate',()=>{state=locationFromUrl(location.href);unitOverride=new URL(location.href).searchParams.get('millet-select')==='unit';toggle.checked=state.enabled;navigation={book:Number(new URL(location.href).searchParams.get('book'))||1};refresh();});
   if(state.enabled)refresh();
 };
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
