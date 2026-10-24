@@ -1,15 +1,37 @@
 /* Millet controls and reading layout; scholarly source payloads stay exact. */
-/* This stylesheet is included on DEH only; let its existing controls wrap. */
+/* DEH-only overrides; other readers keep their existing navigation. */
 #display-settings-header .inline{flex-wrap:wrap;min-width:0;text-align:start}
+.deh-settings #book-title{font-size:clamp(1.25rem,2.5vw,2rem);margin:0}
+.deh-settings #display-settings-header .label{font-size:.95rem;margin-block:0}
+.deh-settings #collapse-settings .accordion-body{grid-template-columns:repeat(3,max-content);gap:.35rem 1.25rem;justify-content:start;padding:.5rem .75rem}
+.deh-settings #collapse-settings .accordion-body>div:has(>form.hidden){display:none}
+.deh-settings #collapse-settings .accordion-row{min-height:1.5rem;gap:.4rem}
+.deh-settings #collapse-settings .accordion-row select{min-width:4.5rem;max-width:10rem;height:1.85rem}
+.deh-settings #collapse-settings #book-select{grid-column:1;grid-row:1}
+.deh-settings #collapse-settings #chapter-select{grid-column:2;grid-row:1}
+.deh-settings #collapse-settings #section-select{grid-column:3;grid-row:1}
+.deh-settings #collapse-settings #level-select{grid-column:1 / 3;grid-row:2;flex-wrap:wrap}
+.deh-settings #collapse-settings #languages-select{grid-column:3;grid-row:2}
+.deh-settings #collapse-settings #source-selects:not(:has(>.source-select-row:not([hidden]):not(.hidden))){display:none}
+.deh-settings #collapse-settings #languages-select>div,.deh-settings #collapse-settings #level-select>div{display:flex;gap:.65rem;flex-wrap:wrap}
+.deh-settings #collapse-settings .form-check-inline{margin-inline-end:0;white-space:nowrap}
 #pane-container{grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
 #pane-container>.pane{min-width:0}
-#millet-controls{border-top:1px solid #bbb;margin-block:1rem;padding-top:1rem;text-align:start}
-#millet-controls .millet-toolbar{display:flex;flex-wrap:wrap;gap:.7rem 1.2rem;align-items:center;margin-bottom:1rem;font:inherit}
-#millet-controls .millet-toolbar>a:first-child{flex-basis:100%}
-#millet-controls select{max-width:100%;padding:.2rem;box-sizing:border-box}
-#millet-controls button{border:1px solid currentColor;border-radius:.25rem;padding:.3rem .6rem;background:transparent;color:inherit}
-#millet-controls .millet-status{border-inline-start:3px solid #537b88;padding:.5rem .8rem;margin:1rem 0;font-size:.9em;overflow-wrap:anywhere}
+#french>h3{margin-bottom:.3rem}
+#millet-controls{text-align:start;font:.8rem/1.4 system-ui,sans-serif;margin-bottom:.7rem}
+#millet-controls .millet-toolbar{display:flex;flex-wrap:wrap;gap:.2rem .8rem;align-items:baseline}
+#millet-controls .millet-highlight-control{display:flex;align-items:center;gap:.4rem;flex-basis:100%;margin:0;min-height:1.5rem}
+#millet-controls label{margin:0}
+#millet-controls select{max-width:100%;min-width:0;padding:.15rem;box-sizing:border-box;color:inherit;background:var(--global-bg-color,#fff)}
+#millet-controls button{border:1px solid currentColor;border-radius:.25rem;padding:.2rem .4rem;background:transparent;color:inherit}
+#millet-controls summary{cursor:pointer;list-style:revert;min-height:1.5rem;color:var(--global-theme-color)}
+#millet-controls details[open]{flex-basis:100%;order:1}
+#millet-controls .millet-options{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-block:.4rem .6rem;padding-inline-start:.6rem;border-inline-start:2px solid #aaa}
+#millet-controls .millet-options label{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;max-width:100%}
+#millet-controls .millet-status[open]{border-inline-start:2px solid #537b88;padding-inline-start:.6rem;overflow-wrap:anywhere}
+#millet-controls .millet-status p{margin-block:.4rem}
 #millet-controls .millet-status a{margin-inline-end:1em}
+#millet-controls :is(a,button,input,select,summary):focus-visible{outline:2px solid var(--global-theme-color);outline-offset:3px}
 #french .millet-source{font-family:var(--lj-font-text,Georgia,serif);font-size:1.125rem}
 #french .millet-line{display:inline;white-space:normal}
 #french .millet-paragraph{margin-bottom:1em;line-height:1.7;overflow-wrap:anywhere}
@@ -17,7 +39,7 @@
 #french .millet-outside-view{display:none}
 #french .millet-reading-gap{color:var(--global-theme-color);font-style:italic}
 #french .millet-folio-marker{font:.75em system-ui;color:var(--global-theme-color);white-space:nowrap}
-#french .millet-passage-label{font:italic .9em system-ui;text-align:start}
+#french .millet-passage-label{font:inherit;font-weight:bold;margin-inline-end:.3em}
 #french .millet-linked{cursor:pointer}
 #french .millet-linked:hover{background-color:#fff4c260}
 #french .millet-selected{background:#fff0a8;color:#192629;box-shadow:0 1px 0 #a67b00}
@@ -29,4 +51,12 @@
 #french .millet-ancillary-label,#french .millet-empty{font:italic .9em/1.5 system-ui}
 #millet-controls .millet-attention{border:1px solid #b38d21;padding:.5rem}
 #french .millet-target-picker{display:flex;gap:.5rem;flex-wrap:wrap}
-@media(max-width:700px){#millet-controls .millet-toolbar>*{max-width:100%}}
+@media(max-width:760px){
+ .deh-settings #collapse-settings .accordion-body{grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem .65rem}
+ .deh-settings #collapse-settings #section-select{grid-column:1 / -1;grid-row:2}
+ .deh-settings #collapse-settings #level-select{grid-column:1 / -1;grid-row:3}
+ .deh-settings #collapse-settings #languages-select{grid-column:1 / -1;grid-row:4}
+ .deh-settings #collapse-settings .accordion-row{flex-wrap:wrap}
+ .deh-settings #collapse-settings .accordion-row select{max-width:100%}
+ #millet-controls .millet-toolbar>*{max-width:100%}
+}

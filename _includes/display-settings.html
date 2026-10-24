@@ -1,4 +1,4 @@
-<div class="accordion card" id="display-settings">
+<div class="accordion card{% if page.permalink == '/deh/' %} deh-settings{% endif %}" id="display-settings">
   <div class="accordion-item">
     <h3 class="accordion-header" id="display-settings-header">
       <button
@@ -37,14 +37,14 @@
 
         <div id="book-select">
           <form class="accordion-row">
-            <label for="book-selector">Select a book:</label>
+            <label for="book-selector">{% if page.permalink == '/deh/' %}Book:{% else %}Select a book:{% endif %}</label>
             <select id="book-selector"></select>
           </form>
         </div>
 
         <div id="chapter-select">
           <form class="accordion-row hidden">
-            <label for="chapter-selector">Select a chapter:</label>
+            <label for="chapter-selector">{% if page.permalink == '/deh/' %}Chapter:{% else %}Select a chapter:{% endif %}</label>
             <select id="chapter-selector"></select>
           </form>
         </div>
@@ -58,7 +58,7 @@
 
         <div id="section-select">
           <form class="accordion-row hidden">
-            <label for="section-selector">{% if page.permalink == "/antiquities/" %}Select an Alignment unit:{% else %}Select a sub-chapter:{% endif %}</label>
+            <label for="section-selector">{% if page.permalink == "/antiquities/" %}Select an Alignment unit:{% elsif page.permalink == '/deh/' %}Sub-chapter:{% else %}Select a sub-chapter:{% endif %}</label>
             <select id="section-selector"></select>
             {% if page.permalink == "/contra-apionem/" %}
             <button type="button" id="niese-previous" aria-label="Previous Niese section">Previous</button>
@@ -90,14 +90,8 @@
         </div>
 
         <div id="languages-select" class="accordion-row">
-          <span>Select panes:</span>
+          <span>{% if page.permalink == '/deh/' %}Texts:{% else %}Select panes:{% endif %}</span>
           <div>
-            {% if page.permalink == '/deh/' %}
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="french-pane-select" value="french" />
-              <label class="form-check-label" for="french-pane-select">French — Millet 1556</label>
-            </div>
-            {% endif %}
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="latin-pane-select" value="latin" checked disabled />
               <label class="form-check-label" for="latin-pane-select">Latin</label>
@@ -107,6 +101,13 @@
               <input class="form-check-input" type="checkbox" id="english-pane-select" value="english" checked />
               <label class="form-check-label" for="english-pane-select">English</label>
             </div>
+
+            {% if page.permalink == '/deh/' %}
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="french-pane-select" value="french" />
+              <label class="form-check-label" for="french-pane-select">French</label>
+            </div>
+            {% endif %}
 
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="greek-pane-select" value="greek" checked />
@@ -137,15 +138,8 @@
           </div>
         </div>
 
-        {% if page.permalink == '/deh/' %}
-        <section id="millet-controls" hidden aria-labelledby="millet-controls-title">
-          <h4 id="millet-controls-title">Millet 1556</h4>
-          <div id="millet-general-controls"></div>
-        </section>
-        {% endif %}
-
         <div id="level-select" class="accordion-row">
-          <span>Select viewing level:</span>
+          <span>{% if page.permalink == '/deh/' %}View:{% else %}Select viewing level:{% endif %}</span>
           <div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="level-options" id="book-level" value="book-level" checked />

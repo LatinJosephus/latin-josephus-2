@@ -1,14 +1,23 @@
 import {createMilletLoader,indexBook,lineAtoms,canonicalIds,locationFromUrl,updateMilletUrl,flowGroups,flowSeparator,folioLabels,readingParts,readingView} from './milletCore.js';
 
 const start=()=>{
-  const pane=document.getElementById('french'),toggle=document.getElementById('french-pane-select'),controls=document.getElementById('millet-general-controls'),controlPanel=document.getElementById('millet-controls');
+  const pane=document.getElementById('french'),toggle=document.getElementById('french-pane-select');
   if(!pane||!toggle||location.pathname!=='/deh/')return;
   const loader=createMilletLoader(new URL('../data/deh-millet1556/',import.meta.url));
   let state=locationFromUrl(location.href),navigation={book:Number(new URL(location.href).searchParams.get('book'))||1},data,index,manifest,generation=0,concordance;
+  const disclosures=new Set();
   toggle.checked=state.enabled;
   const el=(name,text,attrs={})=>{const e=document.createElement(name);if(text!==null)e.textContent=text;for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);return e;};
   const button=(text,handler)=>{const b=el('button',text,{type:'button'});b.addEventListener('click',handler);return b;};
   const label=(text,control)=>{const l=el('label',text);l.append(' ',control);return l;};
+  const disclosure=(id,title)=>{
+    const d=el('details',null,{id,lang:'en'});d.open=disclosures.has(id);
+    d.append(el('summary',title));
+    d.addEventListener('toggle',()=>{if(d.isConnected){if(d.open)disclosures.add(id);else disclosures.delete(id);}});
+    return d;
+  };
+  // Keep focus on the same control when a display preference rerenders the pane.
+  const rerender=()=>{const id=pane.contains(document.activeElement)?document.activeElement.id:null;render();if(id)document.getElementById(id)?.focus({preventScroll:true});};
   const writeUrl=(push=false)=>{const u=updateMilletUrl(location.href,state);if(u.href!==location.href)history[push?'pushState':'replaceState']({},'',u);};
   const selectedMappings=()=>index?.byCanonical.get(state.canonical)||[];
   const selectedCanonical=()=>selectedMappings().flatMap(m=>m.canonical_targets||[m.canonical]).find(c=>c.xml_id===state.canonical);
@@ -23,7 +32,7 @@ const start=()=>{
   };
   const choose=(id,locate=false)=>{
     if(!index.byCanonical.has(id))return;
-    state.canonical=id;writeUrl(true);render();
+    state.canonical=id;writeUrl(true);rerender();
     const target=document.getElementById(id);
     if(locate&&target)target.scrollIntoView({block:'center',behavior:'smooth'});
     else if(locate){const c=selectedCanonical();if(c)document.dispatchEvent(new CustomEvent('deh-select-canonical',{detail:c}));}
@@ -42,46 +51,48 @@ const start=()=>{
   function render(){
     if(!data||!index)return;
     pane.replaceChildren(el('h3','French: Millet 1556'));
-    controls.replaceChildren();controlPanel.hidden=false;
     const folios=folioLabels(data);
-    const toolbar=el('div',null,{class:'millet-toolbar',lang:'en'});
-    const about=el('a','About this edition, conventions and provisional status',{href:'/deh/millet-1556/'});
+    const controls=el('div',null,{id:'millet-controls',lang:'en','aria-label':'French reading controls'});
+    const toolbar=el('div',null,{class:'millet-toolbar'});
+    const about=el('a','About',{href:'/deh/millet-1556/',title:'About this edition, conventions and provisional status','aria-label':'About this edition: Millet 1556'});
+    const settings=disclosure('millet-settings','Settings');
+    const options=el('div',null,{class:'millet-options'});settings.append(options);
     const mode=el('select',null,{id:'millet-view','aria-label':'Millet viewing mode'});
     for(const[v,t]of [['running','Text — current reading view'],['book','Complete text'],['source','Complete source'],['chapter','Millet chapter'],['page','Folio'],['preliminary','Preliminary matter']])mode.add(new Option(t,v));mode.value=state.mode;
     mode.addEventListener('change',()=>{state.mode=mode.value;writeUrl(true);refresh();});
-    toolbar.append(about,label('French view:',mode));
+    options.append(label('French display:',mode));
     const chapters=data.divisions.filter(d=>d.is_native_chapter);
     if(state.mode==='chapter'){
       const menu=el('select',null,{id:'millet-chapter','aria-label':'Printed French chapter'});
       for(const d of chapters)menu.add(new Option(d.label,d.id));
       if(!chapters.some(d=>d.id===state.chapter))state.chapter=chapters[0]?.id||null;
-      menu.value=state.chapter||'';menu.addEventListener('change',()=>{state.chapter=menu.value;writeUrl(true);render();});toolbar.append(menu);
+      menu.value=state.chapter||'';menu.addEventListener('change',()=>{state.chapter=menu.value;writeUrl(true);rerender();});options.append(label('Printed chapter:',menu));
     }
     if(state.mode==='page'){
       const pages=data.pages.map(p=>p.image_number);if(!pages.includes(Number(state.page)))state.page=String(pages[0]);
       const menu=el('select',null,{id:'millet-page','aria-label':'Millet folio'});for(const im of pages)menu.add(new Option(folios.get(im),im));menu.value=state.page;
-      const setPage=im=>{state.page=String(im);writeUrl(true);render();};
+      const setPage=im=>{state.page=String(im);writeUrl(true);rerender();};
       menu.addEventListener('change',()=>setPage(menu.value));
       const prev=button('Previous leaf',()=>setPage(pages[pages.indexOf(Number(state.page))-1])),next=button('Next leaf',()=>setPage(pages[pages.indexOf(Number(state.page))+1]));
-      prev.disabled=pages.indexOf(Number(state.page))===0;next.disabled=pages.indexOf(Number(state.page))===pages.length-1;toolbar.append(prev,menu,next);
+      prev.disabled=pages.indexOf(Number(state.page))===0;next.disabled=pages.indexOf(Number(state.page))===pages.length-1;options.append(label('Millet folio:',menu),prev,next);
     }
     const alignment=el('input',null,{type:'checkbox',id:'millet-alignment'});alignment.checked=state.alignment;
-    alignment.addEventListener('change',()=>{state.alignment=alignment.checked;writeUrl(true);render();});toolbar.append(label('Millet ↔ Ussani highlighting',alignment));
+    alignment.addEventListener('change',()=>{state.alignment=alignment.checked;writeUrl(true);rerender();});
+    const highlight=label('Highlight correspondences',alignment);highlight.className='millet-highlight-control';highlight.title='Highlight corresponding Millet and Ussani passages';toolbar.append(highlight);
     const folioToggle=el('input',null,{type:'checkbox',id:'millet-folios'});folioToggle.checked=state.folios;
-    folioToggle.addEventListener('change',()=>{state.folios=folioToggle.checked;writeUrl(true);render();});toolbar.append(label('Show Millet folio numbers',folioToggle));
+    folioToggle.addEventListener('change',()=>{state.folios=folioToggle.checked;writeUrl(true);rerender();});options.append(label('Show Millet folio numbers',folioToggle));
     if(data.book){
-      const units=el('select',null,{id:'millet-ussani','aria-label':'Corresponding Ussani unit'});units.add(new Option('Select a Ussani correspondence…',''));
+      const units=el('select',null,{id:'millet-ussani','aria-label':'Aligned passage (Ussani)',title:'Select any correspondence in this book, independently of the global sub-chapter selector'});units.add(new Option('Select a correspondence…',''));
       for(const [id,records]of index.byCanonical){const c=(records[0].canonical_targets||[records[0].canonical]).find(c=>c.xml_id===id);units.add(new Option(c.citation,id));}
-      units.value=state.canonical||'';units.addEventListener('change',()=>{if(units.value)choose(units.value,true);});toolbar.append(units);
+      units.value=state.canonical||'';units.addEventListener('change',()=>{if(units.value)choose(units.value,true);});options.append(label('Aligned passage:',units));
     }
-    const share=el('a','Link to this French view',{id:'millet-share',href:updateMilletUrl(location.href,state).href});toolbar.append(share);
+    const share=el('a','Link',{id:'millet-share',href:updateMilletUrl(location.href,state).href,title:'Link to this French view','aria-label':'Link to this French view'});toolbar.append(about,settings,share);
     controls.append(toolbar);
-    const status=el('details',null,{class:'millet-status',lang:'en',id:'millet-status'}),mm=selectedMappings(),mappedIds=new Set(mm.map(m=>m.id));
-    status.append(el('summary','About the selected correspondence'));
+    const status=disclosure('millet-status','Correspondence'),mm=selectedMappings(),mappedIds=new Set(mm.map(m=>m.id));status.className='millet-status';
+    status.firstElementChild.title='About the selected Millet–Ussani correspondence';
     const view=readingView(data,state,navigation,state.canonical),ll=view.lines,visibleIds=new Set(ll.map(l=>l.TEI_line_id)),all=mm.flatMap(m=>m.fragments),shown=all.filter(f=>visibleIds.has(f.line));
     if(mm.length){
       const c=selectedCanonical();status.append(el('p',`Ussani ${c.citation}: ${mm.map(m=>m.relation).join(', ')}; ${shown.length}/${all.length} source intervals visible. Passage correspondence does not imply word-for-word identity.`));
-      pane.append(el('p',`Ussani ${c.citation}`,{class:'millet-passage-label',lang:'en'}));
       if(!all.length)status.append(el('p','No separate French counterpart is recorded for this canonical unit.'));
       if(shown.length<all.length)status.append(button('Show all corresponding French spans',()=>{state.mode='book';writeUrl(true);refresh();}));
       const latin=el('a',`Read Ussani ${c.citation}`,{href:canonicalLink(c).href});status.append(latin);
@@ -96,7 +107,7 @@ const start=()=>{
         status.append(evidence);
       }
     }else status.append(el('p','Select a Latin Ussani unit or a linked French passage to locate its correspondence. Unmapped source matter is retained without inferred links.'));
-    controls.append(status);
+    toolbar.append(status);pane.append(controls);
     const source=el('section',null,{id:'millet-source',class:'millet-source',lang:'fr','aria-label':'Millet exact source text'});
     const secondary=new Map();
     for(const a of data.annotations)for(const f of a.fragments||[]){if(!secondary.has(f.line))secondary.set(f.line,[]);secondary.get(f.line).push({...f,annotation:a.id});}
@@ -135,13 +146,22 @@ const start=()=>{
       if(targets.length===1)choose(targets[0],true);
       else{const picker=el('div',null,{class:'millet-target-picker',lang:'en'});picker.append(el('p','This span has multiple canonical correspondences:'));for(const id of targets){const m=index.byCanonical.get(id)[0],c=(m.canonical_targets||[m.canonical]).find(c=>c.xml_id===id);picker.append(button(c.citation,()=>choose(id,true)));}status.open=true;status.append(picker);}
     });
+    // Interface citations remain outside exact source-line/offset nodes. In a
+    // larger view, identify the selected correspondence rather than labelling
+    // the start of the whole French book with an unrelated selected unit.
+    if(mm.length){
+      const citation=selectedCanonical().citation_label_exact||`[${selectedCanonical().citation}]`;
+      if(view.included?.size===1&&mappedIds.has([...view.included][0])&&source.querySelector('.millet-paragraph'))source.querySelector('.millet-paragraph').prepend(el('span',citation,{class:'millet-passage-label',lang:'en'}));
+      else status.firstElementChild.append(` ${citation}`);
+    }
     pane.append(source);markLatin();writeUrl();share.href=location.href;
     pane.dataset.milletReady=String(data.book);pane.dataset.milletVersion=data.version;
     const hash=decodeURIComponent(location.hash.slice(1));if(hash.startsWith('millet1556-'))document.getElementById(hash)?.scrollIntoView({block:'center'});
     document.dispatchEvent(new CustomEvent('millet-view-rendered',{detail:{book:data.book,mode:state.mode,canonical:state.canonical,lines:ll.length,intervals:all.length,visibleIntervals:shown.length}}));
   }
   async function refresh(){
-    const mine=++generation;if(!state.enabled){controlPanel.hidden=true;markLatin();return;}
+    const focus=pane.contains(document.activeElement)?document.activeElement.id:null;
+    const mine=++generation;if(!state.enabled){pane.hidden=true;pane.classList.add('hidden');markLatin();return;}
     pane.hidden=false;pane.classList.remove('hidden');pane.replaceChildren(el('h3','French: Millet 1556'),el('p','Loading certified Millet source…',{lang:'en',role:'status'}));
     try{
       manifest=await loader.manifest();const loaded=await loader.book(state.mode==='preliminary'?0:navigation.book);if(mine!==generation)return;
@@ -149,7 +169,7 @@ const start=()=>{
       if(navigation.num&&data.book!==0)state.canonical=`latin-deh${navigation.book}-num${navigation.num}`;
       if(state.canonical&&!index.byCanonical.has(state.canonical)&&data.book!==0)state.canonical=null;
       if(navigation.level==='chapter-level'&&selectedCanonical()&&String(selectedCanonical().chapter)!==String(navigation.chapter))state.canonical=null;
-      render();
+      render();if(focus)document.getElementById(focus)?.focus({preventScroll:true});
     }catch(e){if(mine!==generation)return;pane.replaceChildren(el('h3','French: Millet 1556'),el('p',e.message,{role:'alert',lang:'en'}));}
   }
   toggle.addEventListener('change',()=>{state.enabled=toggle.checked;writeUrl(true);refresh();});

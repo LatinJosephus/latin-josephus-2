@@ -23,7 +23,8 @@ page.on('response',r=>{if(r.status()>=400&&r.url().startsWith(base))result.local
 page.on('requestfailed',r=>{if(!r.url().startsWith(base)&&!r.failure()?.errorText.includes('ERR_ABORTED'))result.externalFailures.push({url:r.url(),error:r.failure()?.errorText});});
 const go=async url=>{await page.goto(base+url,{waitUntil:'domcontentloaded'});await page.waitForSelector('#latin tei-p[id^="latin-deh"]');const button=page.locator('#display-settings-header button');if(await button.getAttribute('aria-expanded')!=='true')await button.click();};
 const ready=async n=>page.waitForFunction(n=>document.querySelector('#french')?.dataset.milletReady===String(n)&&!!document.querySelector('#millet-source'),n);
-const select=async(selector,value)=>{await page.locator(selector).selectOption(String(value));};
+const settings=async()=>{if(!await page.locator('#millet-view').isVisible())await page.locator('#millet-settings > summary').click();};
+const select=async(selector,value)=>{await settings();await page.locator(selector).selectOption(String(value));};
 const note=(name,detail={})=>{result.checks.push({name,...detail});save();console.log('PASS '+name);};
 try {
  let milletRequests=[];page.on('request',r=>{if(r.url().includes('/deh-millet1556/'))milletRequests.push(r.url());});
@@ -34,14 +35,15 @@ try {
  await page.evaluate(()=>document.getElementById('french-pane-select').click());await ready(1);
  assert.deepEqual(await page.evaluate(snapshot),baseline);
  note('Default panes preserved; French opt-in; lazy book assets');
- assert.equal(await page.locator('#french select,#french input').count(),0);
- assert.equal(await page.locator('#millet-general-controls #millet-view').count(),1);
+ assert.equal(await page.locator('#collapse-settings #millet-controls').count(),0);
+ assert.equal(await page.locator('#french #millet-view').count(),1);
+ assert.equal(await page.locator('#millet-settings').getAttribute('open'),null);
  assert.equal(await page.locator('#millet-folios').isChecked(),false);
  assert.equal(await page.locator('#millet-source .millet-folio-marker').count(),0);
  assert(!(await page.locator('#millet-source').innerText()).includes('¬'));
  assert.equal(await page.locator('#millet-source .millet-line').first().evaluate(e=>getComputedStyle(e).display),'inline');
- await page.locator('#millet-folios').check();assert(await page.locator('.millet-folio-marker').count());await page.locator('#millet-folios').uncheck();
- note('Flowing paragraphs; division markers hidden without source edits; folios opt-in; controls in general panel');
+ await settings();await page.locator('#millet-folios').check();assert(await page.locator('.millet-folio-marker').count());await page.locator('#millet-folios').uncheck();
+ note('Flowing paragraphs; division markers hidden without source edits; folios opt-in; compact French pane controls');
  for(let b=1;b<=5;b++){
   if(b!==1)await go(`/deh/?book=${b}&french=millet1556`);await ready(b);
   await select('#millet-view','source');await ready(b);
@@ -97,8 +99,8 @@ try {
  await go('/deh/?book=5&french=millet1556&millet-view=page&millet-page=588');await ready(5);assert(await page.locator('#millet-source [data-source-line]').count());note('Colophon page 588 retained');
  await go('/deh/?book=1&french=millet1556');await ready(1);
  const french=page.locator('#millet-source [data-mappings]').first();await french.click();assert(await page.locator('#latin .millet-latin-target').count());note('French passage click locates Latin');
- await page.locator('#millet-ussani').selectOption('latin-deh1-num1');assert.match(await page.locator('#millet-status').textContent(),/Prol\.1/);note('Prologue selectable through accessible Ussani control');
- await page.locator('#millet-ussani').selectOption('latin-deh1-num4');
+ await select('#millet-ussani','latin-deh1-num1');assert.match(await page.locator('#millet-status').textContent(),/Prol\.1/);note('Prologue selectable through accessible Ussani control');
+ await select('#millet-ussani','latin-deh1-num4');
  await page.locator('#millet-status > summary').click();
  const parallel=page.getByRole('link',{name:'Open existing DEH ↔ Josephus parallels'});await parallel.waitFor();await parallel.click();
  await page.waitForSelector('#parallel-bj-text tei-p');assert(await page.locator('#parallel-deh-text tei-p').count());
