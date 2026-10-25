@@ -1,0 +1,197 @@
+{
+  "revision": "Pollard English DEH v1.1",
+  "approved_date": "2026-10-25",
+  "base_commit": "00bfd2a1178aa27ca471c90959701554c14628e1",
+  "instructions": "Approved A1–A8 and B1–B8 supplied in this chat, referring to Pasted markdown(20261025-171332).md. A separately named local copy of that markdown was not located; the full user-supplied instructions govern.",
+  "governing_documents": {
+    "DEH_English_Translation_Style_Guide_v1.0.md": "0acd04215d42d3b30143d0dd70777362d786b0588ded99f82826aec55e142a81",
+    "Latin_Josephus_FairCopy_TEI_Technical_Spec_v1.3.md": "2f6bca5bcdc902073a6e4fef9a33215bf6862f65a97989303a4ead18488a27bf"
+  },
+  "note_encoding": "Existing TEI note with only specification-v1.3-enabled type=\"uncertainty\" and source attributes; source points to the unchanged canonical Latin citation unit, and nesting anchors the note to the corresponding English paragraph. Translation comparison prefix distinguishes it from variants. No new note attributes, schema or citation IDs.",
+  "decisions": [
+    {
+      "decision": "A1",
+      "citation": "I.32.6",
+      "canonical_unit_id": "latin-deh1-num124",
+      "English_unit_id": "english-deh1-num124",
+      "action": "REVISED",
+      "Latin_lemma": "Quid seruatur post terrae motum ac pestilentiam nisi misericordia, quia soluimus duplicia peccata?",
+      "previous_English": "What remains after earthquake and pestilence except mercy, since we have paid for twofold sins?",
+      "revised_English": "What remains after earthquake and pestilence but mercy, since we have paid twice over for our sins?",
+      "justification": "Approved transferred or metonymic interpretation of punishment already exacted. Duplicia grammatically modifies peccata; that grammatical attachment remains recorded and the Latin is unchanged.",
+      "storage": "assets/xml/deh/English/book-01.xml#english-deh1-num124"
+    },
+    {
+      "decision": "A2",
+      "citation": "I.42.2",
+      "canonical_unit_id": "latin-deh1-num178",
+      "English_unit_id": "english-deh1-num178",
+      "action": "REVISED",
+      "Latin_lemma": "Herodias quoque, et Mariammes filiae, quas sexus non inpediret et regni cupido exagitaret",
+      "previous_English": "Aristobulus was survived by Herod, Agrippa and Aristobulus, born of Berenice, Salome’s daughter. Herodias too survived, and Mariamne’s daughters, whom their sex would not hinder and desire for the kingdom would stir.",
+      "revised_English": "Aristobulus was survived by Herod, Agrippa and Aristobulus, born of Berenice, Salome’s daughter, and by two daughters, Herodias and Mariamne, whom their sex would not hinder and desire for the kingdom would stir.",
+      "justification": "Approved identification of Herodias and Mariamne as the two named daughters of Aristobulus. The unusual canonical name-form Mariammes is preserved without Latin emendation.",
+      "storage": "assets/xml/deh/English/book-01.xml#english-deh1-num178"
+    },
+    {
+      "decision": "A3",
+      "citation": "I.44.1",
+      "canonical_unit_id": "latin-deh1-num194",
+      "English_unit_id": "english-deh1-num194",
+      "action": "REVISED",
+      "Latin_lemma": "Obstare itaque eos suis utilitatibus Antipater arbitrabatur atque incumbere suis artibus, ut spe adulescentium simulata omnia factionis suae studia obumbrarentur",
+      "previous_English": "Antipater therefore thought that they stood in the way of his interests and pressed upon his devices, so that the hope placed in the young men would overshadow all the feigned efforts of his intrigue.",
+      "revised_English": "Antipater therefore thought that they stood in the way of his interests, and set to work with his own stratagems, so that by pretending to place his hopes in the young men he might conceal all the efforts of his faction.",
+      "justification": "Antipater resumes as the understood subject of incumbere; spe adulescentium simulata expresses his pretended hopes, concealing his factional activity. The following fabricated letters remain unchanged.",
+      "storage": "assets/xml/deh/English/book-01.xml#english-deh1-num194"
+    },
+    {
+      "decision": "A4",
+      "citation": "I.44.3",
+      "canonical_unit_id": "latin-deh1-num196",
+      "English_unit_id": "english-deh1-num196",
+      "action": "REVISED",
+      "Latin_lemma": "credidit itaque uolentia magis quam necessaria suadentibus",
+      "previous_English": "Thus he believed those who advised what he wanted rather than what he needed.",
+      "revised_English": "Thus he trusted those who advised what they wanted rather than what he needed.",
+      "justification": "The advisers’ explicitly stated longing for their homeland motivates their advice.",
+      "storage": "assets/xml/deh/English/book-01.xml#english-deh1-num196"
+    },
+    {
+      "decision": "A5",
+      "citation": "II.10.5",
+      "canonical_unit_id": "latin-deh2-num38",
+      "English_unit_id": "english-deh2-num38",
+      "action": "REVISED",
+      "Latin_lemma": "Octauus sollemnitatis dies, qua ligna omnes altaribus solebant inponere",
+      "previous_English": "The eighth day of the festival, at which everyone was accustomed to lay wood on the altars so that the fire should never fail—it had to remain unextinguished—increased their frenzy, so that all the attendants were excluded from the temple.",
+      "revised_English": "On the eighth day, a festival day when everyone was accustomed to lay wood on the altars so that the fire should never fail—it had to remain unextinguished—the occasion increased their frenzy, so that all the attendants were excluded from the temple.",
+      "justification": "The eighth day follows the preceding seven days of fighting; no eight-day wood-offering festival is implied. The approved adverbial opening requires a main-clause subject, so the occasion is supplied; the fire qualification and remainder of the sentence are retained.",
+      "storage": "assets/xml/deh/English/book-02.xml#english-deh2-num38"
+    },
+    {
+      "decision": "A6",
+      "citation": "IV.26.1",
+      "canonical_unit_id": "latin-deh4-num63",
+      "English_unit_id": "english-deh4-num63",
+      "action": "REVISED",
+      "Latin_lemma": "Properandum maturius, ne prius ab aliis eligeretur et his, cum quibus in militia consenuerit triumphando, esset despectui.",
+      "previous_English": "They must hasten before he was chosen by others and became an object of disregard to those with whom he had grown old in military service and triumphs.",
+      "revised_English": "They must hasten, lest others choose him first, to the discredit of those with whom he had grown old in military service and triumphs.",
+      "justification": "The discredit falls on Vespasian’s veteran comrades if another army anticipates their choice.",
+      "storage": "assets/xml/deh/English/book-04.xml#english-deh4-num63"
+    },
+    {
+      "decision": "A7",
+      "citation": "V.15.1",
+      "canonical_unit_id": "latin-deh5-num40",
+      "English_unit_id": "english-deh5-num40",
+      "action": "REVISED",
+      "Latin_lemma": "Tremit hos Scothia, quae terris nihil debet",
+      "previous_English": "Scothia, which owes nothing to the land, trembles before them",
+      "revised_English": "Scothia, which owes nothing to the mainland, trembles before them",
+      "justification": "Clarifies geographical isolation while preserving the obligation metaphor and the source designation Scothia; no modern geographical identification is supplied.",
+      "storage": "assets/xml/deh/English/book-05.xml#english-deh5-num40"
+    },
+    {
+      "decision": "A8",
+      "citation": "V.18.2",
+      "canonical_unit_id": "latin-deh5-num44",
+      "English_unit_id": "english-deh5-num44",
+      "action": "REVISED",
+      "Latin_lemma": "quippe non multo post uirenti corpore, turgescentibus mediis, intimorum dolore uiscerum quatiebantur",
+      "previous_English": "For not long afterwards, with bodies turning green and bellies swelling, they were shaken by pain in their innermost entrails",
+      "revised_English": "For not long afterwards, though their bodies were still vigorous, their bellies swelled and they were shaken by pain deep in their entrails",
+      "justification": "Adopts bodily vigour or freshness for uirenti corpore. Literal colour remains possible. The subsequent account of bodily weakness is retained unchanged.",
+      "storage": "assets/xml/deh/English/book-05.xml#english-deh5-num44"
+    },
+    {
+      "decision": "B1",
+      "citation": "I.10.3",
+      "canonical_unit_id": "latin-deh1-num31",
+      "English_unit_id": "english-deh1-num31",
+      "action": "ANNOTATED",
+      "Latin_lemma": "Cuius uictoria libertate adsuetis dominationis metum mouebat",
+      "annotation": "Translation comparison: The antecedent of cuius is not explicitly named: Pollard understands Demetrius, while Alexander’s recovered ascendancy is another possible referent. Millet recasts the sentence and does not unambiguously resolve the antecedent.",
+      "justification": "Approved annotation-only decision; running English retained exactly. This is translation commentary, not a textual variant.",
+      "storage": "assets/xml/deh/English/book-01.xml#english-deh1-num31/note[@type=\"uncertainty\"][@source=\"#latin-deh1-num31\"]"
+    },
+    {
+      "decision": "B2",
+      "citation": "I.12.3",
+      "canonical_unit_id": "latin-deh1-num36",
+      "English_unit_id": "english-deh1-num36",
+      "action": "ANNOTATED",
+      "Latin_lemma": "secundum scientiam iuris diuini, extollendo suam fecere",
+      "annotation": "Translation comparison: Millet presents the Pharisees as flattering the queen by attributing to her a perfect understanding of Scripture. The Latin supplies no possessive with scientiam, permitting different attachments; Pollard retains the Pharisees’ own knowledge of divine law.",
+      "justification": "Approved annotation-only decision; running English retained exactly. This is translation commentary, not a textual variant.",
+      "storage": "assets/xml/deh/English/book-01.xml#english-deh1-num36/note[@type=\"uncertainty\"][@source=\"#latin-deh1-num36\"]"
+    },
+    {
+      "decision": "B3",
+      "citation": "I.24.2",
+      "canonical_unit_id": "latin-deh1-num70",
+      "English_unit_id": "english-deh1-num70",
+      "action": "ANNOTATED",
+      "Latin_lemma": "Mitridate praesertim non solum suae absolutionis interprete sed etiam fortitudinis praedicatore",
+      "annotation": "Translation comparison: Millet presents Mithridates’s testimony as supporting Antipater against accusations before Caesar, giving the episode a forensic interpretation. Absolutio permits consideration of acquittal or defence, but does not establish a separate hearing here; Pollard retains the immediate rescue narrative.",
+      "justification": "Approved annotation-only decision; running English retained exactly. This is translation commentary, not a textual variant.",
+      "storage": "assets/xml/deh/English/book-01.xml#english-deh1-num70/note[@type=\"uncertainty\"][@source=\"#latin-deh1-num70\"]"
+    },
+    {
+      "decision": "B4",
+      "citation": "I.37.5",
+      "canonical_unit_id": "latin-deh1-num141",
+      "English_unit_id": "english-deh1-num141",
+      "action": "ANNOTATED",
+      "Latin_lemma": "quibus se adflictam diceret ardere odiis uiri",
+      "annotation": "Translation comparison: Millet substantially agrees with Pollard in presenting Mariamne as hating her husband. The genitive uiri could instead be subjective, referring to Herod’s hatred of Mariamne; the existing interpretation is retained in view of the narrative context.",
+      "justification": "Approved annotation-only decision; running English retained exactly. This is translation commentary, not a textual variant.",
+      "storage": "assets/xml/deh/English/book-01.xml#english-deh1-num141/note[@type=\"uncertainty\"][@source=\"#latin-deh1-num141\"]"
+    },
+    {
+      "decision": "B5",
+      "citation": "II.18.1",
+      "canonical_unit_id": "latin-deh2-num73",
+      "English_unit_id": "english-deh2-num73",
+      "action": "ANNOTATED",
+      "Latin_lemma": "quibus iustius perfidia tribueretur",
+      "annotation": "Translation comparison: Pollard takes perfidia tribueretur as attributing faithlessness to the Scythopolitans. Millet instead makes Simon say that he would have been more justified in treating them treacherously: tribuere can concern attribution or the bestowal of treatment.",
+      "justification": "Approved annotation-only decision; running English retained exactly. This is translation commentary, not a textual variant.",
+      "storage": "assets/xml/deh/English/book-02.xml#english-deh2-num73/note[@type=\"uncertainty\"][@source=\"#latin-deh2-num73\"]"
+    },
+    {
+      "decision": "B6",
+      "citation": "III.11.3",
+      "canonical_unit_id": "latin-deh3-num36",
+      "English_unit_id": "english-deh3-num36",
+      "action": "ANNOTATED",
+      "Latin_lemma": "rapuit illud atque in murum ferebat",
+      "annotation": "Translation comparison: Pollard refers illud to caput machinamenti, the head of the battering ram. Millet has Eleazar seize both the machine and his stone; the later reappearance of the stone makes the sequence difficult, but his version supplies an additional object not explicit in the Latin pronoun.",
+      "justification": "Approved annotation-only decision; running English retained exactly. This is translation commentary, not a textual variant.",
+      "storage": "assets/xml/deh/English/book-03.xml#english-deh3-num36/note[@type=\"uncertainty\"][@source=\"#latin-deh3-num36\"]"
+    },
+    {
+      "decision": "B7",
+      "citation": "III.16.1",
+      "canonical_unit_id": "latin-deh3-num47",
+      "English_unit_id": "english-deh3-num47",
+      "action": "ANNOTATED",
+      "Latin_lemma": "Perferemus certe nos quod seruire elegeris",
+      "annotation": "Translation comparison: Pollard takes perferemus as enduring Josephus’s decision. Millet understands carrying news of it to the dead, whose imagined speech immediately precedes this passage; that interpretation supplies a message and recipients not expressly stated in the Latin.",
+      "justification": "Approved annotation-only decision; running English retained exactly. This is translation commentary, not a textual variant.",
+      "storage": "assets/xml/deh/English/book-03.xml#english-deh3-num47/note[@type=\"uncertainty\"][@source=\"#latin-deh3-num47\"]"
+    },
+    {
+      "decision": "B8",
+      "citation": "V.31.2",
+      "canonical_unit_id": "latin-deh5-num72",
+      "English_unit_id": "english-deh5-num72",
+      "action": "ANNOTATED",
+      "Latin_lemma": "Si tibi cibum aliqui negaret, Iohannes, quaereres eum",
+      "annotation": "Translation comparison: Eum may refer either to the person denying food, as in Pollard, or to cibum, the food denied. Millet omits the entire analogy and therefore supplies no independent interpretation of the pronoun.",
+      "justification": "Approved annotation-only decision; running English retained exactly. This is translation commentary, not a textual variant.",
+      "storage": "assets/xml/deh/English/book-05.xml#english-deh5-num72/note[@type=\"uncertainty\"][@source=\"#latin-deh5-num72\"]"
+    }
+  ]
+}

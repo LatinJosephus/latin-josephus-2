@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
           defaultSource: "pollard",
           sources: {
             pollard: {
-              label: "Pollard v1.0",
+              label: "Pollard v1.1",
               directory: "English",
               availableBooks: [1, 2, 3, 4, 5]
             }

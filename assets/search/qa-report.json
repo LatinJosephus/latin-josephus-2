@@ -1,18 +1,14 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T15:58:23.187Z",
+  "generatedAt": "2026-10-25T18:07:22.872Z",
   "independentVerifier": "bin/search/tests/corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "provenance": "canonical-2026-10-14",
+    "expectedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+    "observedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+    "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false,
-    "acceptedBaselineComparison": {
-      "classification": "Substantive difference; both reviewed files use LF line endings.",
-      "difference": "The public-preview reader adds antiquitiesBookNumberingDisplayCopy (117 lines) and calls it during view rendering. The canonical-2026-10-14 reader lacks that helper and call. No other differences were found.",
-      "consequence": "The difference concerns Antiquities book-level numbering display. Both accepted baselines retain the same Bellum Niese extraction and URL navigation code."
-    }
+    "acceptedBaselineComparison": null
   },
   "source": {
     "books": 7,
@@ -124,7 +120,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "f8d53bbe83d053c0d2ce56ca7a94cf7d5155527f255d2d141d138981b058a27a"
+      "sha256": "6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe"
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -140,7 +136,7 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+      "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
     },
     "books": [
       {
@@ -254,7 +250,7 @@
     {
       "book": 1,
       "status": "PASS",
-      "generatedAt": "2026-10-21T15:57:45.767Z",
+      "generatedAt": "2026-10-25T18:06:44.287Z",
       "independentVerifier": "bin/search/tests/corpus-qa.mjs",
       "source": {
         "book": 1,
@@ -288,7 +284,7 @@
         },
         "originalReader": {
           "path": "assets/js/renderTei.js",
-          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+          "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
         }
       },
       "method": {
@@ -634,7 +630,7 @@
       "withinBookSeams": 672,
       "assertions": 344975,
       "failedAssertions": 0,
-      "durationSeconds": 10.85,
+      "durationSeconds": 6.1,
       "limitations": [
         "Automated Node/corpus QA, not browser or visual interaction testing.",
         "Deep links verified for all 673 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
@@ -646,7 +642,7 @@
     {
       "book": 2,
       "status": "PASS",
-      "generatedAt": "2026-10-21T15:57:54.040Z",
+      "generatedAt": "2026-10-25T18:06:49.294Z",
       "independentVerifier": "bin/search/tests/corpus-qa.mjs",
       "source": {
         "book": 2,
@@ -680,7 +676,7 @@
         },
         "originalReader": {
           "path": "assets/js/renderTei.js",
-          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+          "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
         }
       },
       "method": {
@@ -1060,7 +1056,7 @@
       "withinBookSeams": 653,
       "assertions": 289435,
       "failedAssertions": 0,
-      "durationSeconds": 8.27,
+      "durationSeconds": 5,
       "limitations": [
         "Automated Node/corpus QA, not browser or visual interaction testing.",
         "Deep links verified for all 654 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
@@ -1072,7 +1068,7 @@
     {
       "book": 3,
       "status": "PASS",
-      "generatedAt": "2026-10-21T15:57:58.621Z",
+      "generatedAt": "2026-10-25T18:06:52.088Z",
       "independentVerifier": "bin/search/tests/corpus-qa.mjs",
       "source": {
         "book": 3,
@@ -1106,7 +1102,7 @@
         },
         "originalReader": {
           "path": "assets/js/renderTei.js",
-          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+          "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
         }
       },
       "method": {
@@ -1442,7 +1438,7 @@
       "withinBookSeams": 541,
       "assertions": 210040,
       "failedAssertions": 0,
-      "durationSeconds": 4.58,
+      "durationSeconds": 2.79,
       "limitations": [
         "Automated Node/corpus QA, not browser or visual interaction testing.",
         "Deep links verified for all 542 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
@@ -1454,7 +1450,7 @@
     {
       "book": 4,
       "status": "PASS",
-      "generatedAt": "2026-10-21T15:58:05.314Z",
+      "generatedAt": "2026-10-25T18:06:55.870Z",
       "independentVerifier": "bin/search/tests/corpus-qa.mjs",
       "source": {
         "book": 4,
@@ -1488,7 +1484,7 @@
         },
         "originalReader": {
           "path": "assets/js/renderTei.js",
-          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+          "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
         }
       },
       "method": {
@@ -1828,7 +1824,7 @@
       "withinBookSeams": 662,
       "assertions": 247427,
       "failedAssertions": 0,
-      "durationSeconds": 6.69,
+      "durationSeconds": 3.78,
       "limitations": [
         "Automated Node/corpus QA, not browser or visual interaction testing.",
         "Deep links verified for all 663 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
@@ -1840,7 +1836,7 @@
     {
       "book": 5,
       "status": "PASS",
-      "generatedAt": "2026-10-21T15:58:10.927Z",
+      "generatedAt": "2026-10-25T18:06:59.016Z",
       "independentVerifier": "bin/search/tests/corpus-qa.mjs",
       "source": {
         "book": 5,
@@ -1874,7 +1870,7 @@
         },
         "originalReader": {
           "path": "assets/js/renderTei.js",
-          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+          "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
         }
       },
       "method": {
@@ -2222,7 +2218,7 @@
       "withinBookSeams": 571,
       "assertions": 221794,
       "failedAssertions": 0,
-      "durationSeconds": 5.61,
+      "durationSeconds": 3.15,
       "limitations": [
         "Automated Node/corpus QA, not browser or visual interaction testing.",
         "Deep links verified for all 572 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
@@ -2234,7 +2230,7 @@
     {
       "book": 6,
       "status": "PASS",
-      "generatedAt": "2026-10-21T15:58:14.422Z",
+      "generatedAt": "2026-10-25T18:07:01.034Z",
       "independentVerifier": "bin/search/tests/corpus-qa.mjs",
       "source": {
         "book": 6,
@@ -2268,7 +2264,7 @@
         },
         "originalReader": {
           "path": "assets/js/renderTei.js",
-          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+          "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
         }
       },
       "method": {
@@ -2712,7 +2708,7 @@
       "withinBookSeams": 441,
       "assertions": 176062,
       "failedAssertions": 0,
-      "durationSeconds": 3.49,
+      "durationSeconds": 2.02,
       "limitations": [
         "Automated Node/corpus QA, not browser or visual interaction testing.",
         "Deep links verified for all 442 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
@@ -2724,7 +2720,7 @@
     {
       "book": 7,
       "status": "PASS",
-      "generatedAt": "2026-10-21T15:58:17.970Z",
+      "generatedAt": "2026-10-25T18:07:03.050Z",
       "independentVerifier": "bin/search/tests/corpus-qa.mjs",
       "source": {
         "book": 7,
@@ -2758,7 +2754,7 @@
         },
         "originalReader": {
           "path": "assets/js/renderTei.js",
-          "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+          "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
         }
       },
       "method": {
@@ -3136,7 +3132,7 @@
       "withinBookSeams": 454,
       "assertions": 170672,
       "failedAssertions": 0,
-      "durationSeconds": 3.55,
+      "durationSeconds": 2.02,
       "limitations": [
         "Automated Node/corpus QA, not browser or visual interaction testing.",
         "Deep links verified for all 455 query parameter sets and original reader syntax; destination pages not opened by this verifier.",
@@ -3600,7 +3596,7 @@
   ],
   "assertions": 1663053,
   "failedAssertions": 0,
-  "durationSeconds": 48.28,
+  "durationSeconds": 44.69,
   "limitations": [
     "Automated Node/corpus QA, not browser or visual interaction testing.",
     "All 4,001 reader link parameter sets verified; destination pages not opened by this verifier.",

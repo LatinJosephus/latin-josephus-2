@@ -11,7 +11,7 @@
       5
     ],
     "language": "English",
-    "edition": "Pollard v1.0",
+    "edition": "Pollard v1.1",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
@@ -21,12 +21,13 @@
     "bodyParagraphs": 558,
     "numberedParagraphs": 558,
     "sections": 558,
-    "runningWordTokens": 136044,
+    "runningWordTokens": 136053,
     "chapterDivisionsIncludingPrologue": 177,
     "prologueUnits": 3,
     "excludedCitationLabels": 558,
     "excludedHeadings": 6,
     "excludedReleaseNotes": 5,
+    "excludedTranslationNotes": 8,
     "breakBeforeUnits": 1
   },
   "coverage": {
@@ -60,19 +61,19 @@
     "paragraphsExactlyRestored": 558,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "8cb23bc85df4adbfee7f6e3b078afd3fff87b0ff21ecc81031bd0b7e70d8db81",
-    "restoredParagraphSequenceSha256": "8cb23bc85df4adbfee7f6e3b078afd3fff87b0ff21ecc81031bd0b7e70d8db81",
-    "sourceWordSequenceSha256": "bd958f51348ff8e8eff05c7fcd1db88206325ebc473c5d32b6eb523d8ecbb61a",
-    "indexedWordSequenceSha256": "bd958f51348ff8e8eff05c7fcd1db88206325ebc473c5d32b6eb523d8ecbb61a",
-    "sourceNonWhitespaceContentSha256": "316c94d869728af8d24e57abf48f1d924dd8df0a544d470f127e57761ef6afec",
-    "indexedNonWhitespaceContentSha256": "316c94d869728af8d24e57abf48f1d924dd8df0a544d470f127e57761ef6afec",
+    "rawParagraphSequenceSha256": "273ab7bef4fad3017d2cf0b753d86d8b2431447dc2ac55dc8be76c4dbaa9a32c",
+    "restoredParagraphSequenceSha256": "273ab7bef4fad3017d2cf0b753d86d8b2431447dc2ac55dc8be76c4dbaa9a32c",
+    "sourceWordSequenceSha256": "a1042f341558ab2b2a06b75f3374cebebd8580f02f6cee5deea0b065a9308d2a",
+    "indexedWordSequenceSha256": "a1042f341558ab2b2a06b75f3374cebebd8580f02f6cee5deea0b065a9308d2a",
+    "sourceNonWhitespaceContentSha256": "003070ffef48da466c80ce44fa82e66dd9d5a0d56365ea37dfdb3d17a1e371f5",
+    "indexedNonWhitespaceContentSha256": "003070ffef48da466c80ce44fa82e66dd9d5a0d56365ea37dfdb3d17a1e371f5",
     "globalIdsUnique": true,
     "globalOrderIsConsecutive": true
   },
   "corpus": {
     "path": "data/deh-english-pollard/corpus.json",
-    "sha256": "c60b63c4038897aabfc3f9f250f6f84c0a7d3d4a371d0425c19ee69ff5897e0f",
-    "bytes": 1311567,
+    "sha256": "bf90e1a421cdb7b43003826ffce702dc166373792658ca4368d57b73688ab268",
+    "bytes": 1311598,
     "records": 558
   },
   "books": [
@@ -81,41 +82,42 @@
       "status": "PASS",
       "source": {
         "path": "assets/xml/deh/English/book-01.xml",
-        "sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
-        "bytes": 268011
+        "sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+        "bytes": 269974
       },
       "additionalSources": [],
       "sources": [
         {
           "path": "assets/xml/deh/English/book-01.xml",
-          "sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
-          "bytes": 268011
+          "sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+          "bytes": 269974
         }
       ],
       "counts": {
         "bodyParagraphs": 215,
         "numberedParagraphs": 215,
         "sections": 215,
-        "runningWordTokens": 40796,
+        "runningWordTokens": 40804,
         "chapterDivisionsIncludingPrologue": 47,
         "prologueUnits": 3,
         "excludedCitationLabels": 215,
         "excludedHeadings": 2,
         "excludedReleaseNotes": 1,
+        "excludedTranslationNotes": 4,
         "breakBeforeUnits": 1
       },
       "orderStart": 0,
       "orderEnd": 214,
       "corpus": {
         "path": "data/deh-english-pollard/book-01.corpus.json",
-        "sha256": "006bf4b559938306d04d050ccdfd6105550d98e79e8e208db25d5889cb45f1a7",
-        "bytes": 441847,
+        "sha256": "bf03faa44eb3860c9da9052c4a357ea46518cabdde2aeba909597a6f70614cae",
+        "bytes": 441866,
         "records": 215
       },
       "extractionReport": {
         "path": "data/deh-english-pollard/book-01.extraction-report.json",
-        "sha256": "91ed244d69163c2a882468a50cebf6967d273e44801dac26ab3841b922512845",
-        "bytes": 952098
+        "sha256": "a0bf458d76a2f592b08df66e281f047cee4b0bb8fe1557f6a4599fccf0ffbcaf",
+        "bytes": 955641
       }
     },
     {
@@ -123,41 +125,42 @@
       "status": "PASS",
       "source": {
         "path": "assets/xml/deh/English/book-02.xml",
-        "sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
-        "bytes": 112867
+        "sha256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+        "bytes": 113787
       },
       "additionalSources": [],
       "sources": [
         {
           "path": "assets/xml/deh/English/book-02.xml",
-          "sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
-          "bytes": 112867
+          "sha256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+          "bytes": 113787
         }
       ],
       "counts": {
         "bodyParagraphs": 73,
         "numberedParagraphs": 73,
         "sections": 73,
-        "runningWordTokens": 17141,
+        "runningWordTokens": 17143,
         "chapterDivisionsIncludingPrologue": 18,
         "prologueUnits": 0,
         "excludedCitationLabels": 73,
         "excludedHeadings": 1,
         "excludedReleaseNotes": 1,
+        "excludedTranslationNotes": 1,
         "breakBeforeUnits": 0
       },
       "orderStart": 215,
       "orderEnd": 287,
       "corpus": {
         "path": "data/deh-english-pollard/book-02.corpus.json",
-        "sha256": "d75a341ea2192bff4e8d83e12a7ec089b12c46ccb2a0e59bdd4dc6d38e742787",
-        "bytes": 168183,
+        "sha256": "656f6a6be37b15921c4a244b65f4c3653eecafab9aab2d47e64959d16d85d159",
+        "bytes": 168194,
         "records": 73
       },
       "extractionReport": {
         "path": "data/deh-english-pollard/book-02.extraction-report.json",
-        "sha256": "0923897917b0b4d3168ad373d1ef4f62d621bfa428e9f51d5eb68306f83a2de0",
-        "bytes": 364232
+        "sha256": "0d8cbc97e95bdd2231913de5e2e92375bee8ae2a7bdf9d09ece04a125e469d58",
+        "bytes": 365220
       }
     },
     {
@@ -165,15 +168,15 @@
       "status": "PASS",
       "source": {
         "path": "assets/xml/deh/English/book-03.xml",
-        "sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
-        "bytes": 118793
+        "sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+        "bytes": 120069
       },
       "additionalSources": [],
       "sources": [
         {
           "path": "assets/xml/deh/English/book-03.xml",
-          "sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
-          "bytes": 118793
+          "sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+          "bytes": 120069
         }
       ],
       "counts": {
@@ -186,20 +189,21 @@
         "excludedCitationLabels": 70,
         "excludedHeadings": 1,
         "excludedReleaseNotes": 1,
+        "excludedTranslationNotes": 2,
         "breakBeforeUnits": 0
       },
       "orderStart": 288,
       "orderEnd": 357,
       "corpus": {
         "path": "data/deh-english-pollard/book-03.corpus.json",
-        "sha256": "eb5cd2b21c49dafc4ffd8560d094de4011e55a84af29a5930c75d886302ec97c",
+        "sha256": "47bd6c8863396dd54e49d18b15b55341732927811a438dac13d85f4b04c6f79b",
         "bytes": 171772,
         "records": 70
       },
       "extractionReport": {
         "path": "data/deh-english-pollard/book-03.extraction-report.json",
-        "sha256": "2bb54e4635a567bfcd6c960fa14f2036336a1b6ea2acb0945cc2f9a82f378114",
-        "bytes": 368349
+        "sha256": "63947a2777ade5d60f9dbc3c68ac4e241462c35d4024c927530bf5c3b59dc868",
+        "bytes": 370206
       }
     },
     {
@@ -207,41 +211,42 @@
       "status": "PASS",
       "source": {
         "path": "assets/xml/deh/English/book-04.xml",
-        "sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
-        "bytes": 114200
+        "sha256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
+        "bytes": 114758
       },
       "additionalSources": [],
       "sources": [
         {
           "path": "assets/xml/deh/English/book-04.xml",
-          "sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
-          "bytes": 114200
+          "sha256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
+          "bytes": 114758
         }
       ],
       "counts": {
         "bodyParagraphs": 79,
         "numberedParagraphs": 79,
         "sections": 79,
-        "runningWordTokens": 17263,
+        "runningWordTokens": 17259,
         "chapterDivisionsIncludingPrologue": 33,
         "prologueUnits": 0,
         "excludedCitationLabels": 79,
         "excludedHeadings": 1,
         "excludedReleaseNotes": 1,
+        "excludedTranslationNotes": 0,
         "breakBeforeUnits": 0
       },
       "orderStart": 358,
       "orderEnd": 436,
       "corpus": {
         "path": "data/deh-english-pollard/book-04.corpus.json",
-        "sha256": "081c62bd9250ccb428e8f0f0d09a227c6c89e669964e94fc9b763e67fc3208d2",
-        "bytes": 174517,
+        "sha256": "48c61c130cef67b03ad796e6e7a15479efb0a03e4427124adff89bc836c88091",
+        "bytes": 174500,
         "records": 79
       },
       "extractionReport": {
         "path": "data/deh-english-pollard/book-04.extraction-report.json",
-        "sha256": "be5a8cc04b4ccd99d47b9dc1f46ceafe9335c22d960ba272a57a19ee539f3605",
-        "bytes": 375248
+        "sha256": "573f0e050c0f4125778b5e99271507b3924eabbc574d056644c0cf6505339be6",
+        "bytes": 375355
       }
     },
     {
@@ -249,41 +254,42 @@
       "status": "PASS",
       "source": {
         "path": "assets/xml/deh/English/book-05.xml",
-        "sha256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27",
-        "bytes": 261734
+        "sha256": "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667",
+        "bytes": 262604
       },
       "additionalSources": [],
       "sources": [
         {
           "path": "assets/xml/deh/English/book-05.xml",
-          "sha256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27",
-          "bytes": 261734
+          "sha256": "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667",
+          "bytes": 262604
         }
       ],
       "counts": {
         "bodyParagraphs": 121,
         "numberedParagraphs": 121,
         "sections": 121,
-        "runningWordTokens": 42204,
+        "runningWordTokens": 42207,
         "chapterDivisionsIncludingPrologue": 53,
         "prologueUnits": 0,
         "excludedCitationLabels": 121,
         "excludedHeadings": 1,
         "excludedReleaseNotes": 1,
+        "excludedTranslationNotes": 1,
         "breakBeforeUnits": 0
       },
       "orderStart": 437,
       "orderEnd": 557,
       "corpus": {
         "path": "data/deh-english-pollard/book-05.corpus.json",
-        "sha256": "346e1afeef159bc88c308ad400392d5f27c5f994d4a7b347efc0925ba4fab0cc",
-        "bytes": 355260,
+        "sha256": "5ef8615e901e297a9a1463aacca106741bdf795b8c424032fd4d524a88cf6f2d",
+        "bytes": 355278,
         "records": 121
       },
       "extractionReport": {
         "path": "data/deh-english-pollard/book-05.extraction-report.json",
-        "sha256": "e2d2171c62559d9470a2b9e150ed53b1e53baad24911af16941bd00ba9d56d2e",
-        "bytes": 747835
+        "sha256": "629a5c63444feec77ac683eedb0ed9d7c4822738866a51f15780545e18bd9fda",
+        "bytes": 748723
       }
     }
   ]

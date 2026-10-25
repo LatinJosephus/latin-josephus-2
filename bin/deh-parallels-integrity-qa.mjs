@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {verifyReaderCorpus,sha} from './reader-corpus-integrity.mjs';
-import {createTextLoader,loadConcordance,sources,sourceIntegrityPolicy} from '../assets/js/dehParallelsCore.js';
+import {createTextLoader,loadConcordance,sources,sourceIntegrityPolicy,pollardPublicationHashes} from '../assets/js/dehParallelsCore.js';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const corpus=verifyReaderCorpus(root);
 const frozenBytes=fs.readFileSync(path.join(root,'assets/data/deh-josephus-concordance.json'));
@@ -23,10 +23,10 @@ try {
  for(const [source,identity] of Object.entries(sources))for(let book=1;book<=(identity.work==='deh'?5:7);book++){
   const relative=`assets/xml/${identity.work}/${identity.language}/book-${String(book).padStart(2,'0')}.xml`;
   const literal=corpus.publication[relative],lf=Buffer.from(literal.toString('utf8').replace(/\r\n/g,'\n'));
-  assert.equal(sha(literal),frozen.canonical_xml_sha256[relative]);
-  assert(!lf.includes(13));assert(!literal.equals(lf),'Fixture lacks nonvacuous line-ending difference');
+  assert.equal(sha(literal),source==='pollard'?pollardPublicationHashes[book]:frozen.canonical_xml_sha256[relative]);
+  assert(!lf.includes(13));if(source!=='pollard')assert(!literal.equals(lf),'Fixture lacks nonvacuous line-ending difference');
   const original=await load(source,book,literal),checkout=await load(source,book,lf);
-  assert.equal(checkout.text.replace(/\n/g,'\r\n'),original.text);
+  assert.equal(source==='pollard'?checkout.text:checkout.text.replace(/\n/g,'\r\n'),original.text);
   checks.push({source,book,relative,reviewed_sha256:sha(literal),LF_sha256:sha(lf),literal_accepted:true,LF_accepted:true});
   const changedText=Buffer.from(lf.toString().replace(/<body>/,'<body>corruption'));
   const changedId=Buffer.from(lf.toString().replace('xml:id=','xml:id="changed" old-id='));

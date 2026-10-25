@@ -26,7 +26,7 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const phraseAcross = pair => [...tokens(pair[0].text).slice(-4), ...tokens(pair[1].text).slice(0, 4)].join(' ');
 
 test('English DEH source gate verifies all five books and all 558 original citation paragraphs', () => {
-  for (const [index, [sections, count]] of [[215, 40796], [73, 17141], [70, 18640], [79, 17263], [121, 42204]].entries()) {
+  for (const [index, [sections, count]] of [[215, 40804], [73, 17143], [70, 18640], [79, 17259], [121, 42207]].entries()) {
     assert.deepEqual(verify(fresh(index + 1)), {status: 'PASS', sections, tokens: count, sourceDocuments: 1, restoredParagraphs: sections});
   }
 });

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract the accepted Pollard v1.0 English De excidio without editing its TEI.
+"""Extract the accepted Pollard v1.1 English De excidio without editing its TEI.
 
 One original English paragraph is one chapter-local citation unit. Number labels
 and their preceding indentation are excluded explicitly and reversibly. The
@@ -24,19 +24,20 @@ SOURCE_PREFIX = "assets/xml/deh/English"
 OUTPUT_PREFIX = f"data/{COLLECTION}"
 ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"}
 CONTRACTS = {
-    1: {"sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12", "sections": 215, "tokens": 40796, "chapters": 47, "headings": 2, "heading": "Book I", "releaseNote": "English translation, version 1.0: Prologue and Book I chapters 1–46, ending at [I.46.2]."},
-    2: {"sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81", "sections": 73, "tokens": 17141, "chapters": 18, "headings": 1, "heading": "Book II", "releaseNote": "English translation, version 1.0: complete Book II, chapters 1–18, [II.1.1]–[II.18.1]."},
-    3: {"sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262", "sections": 70, "tokens": 18640, "chapters": 26, "headings": 1, "heading": "BOOK III", "releaseNote": "English translation, version 1.0: complete Book III, chapters 1–26, [III.1.1]–[III.26.4]."},
-    4: {"sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26", "sections": 79, "tokens": 17263, "chapters": 33, "headings": 1, "heading": "BOOK IV", "releaseNote": "English translation, version 1.0: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3]."},
-    5: {"sha256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27", "sections": 121, "tokens": 42204, "chapters": 53, "headings": 1, "heading": "BOOK V", "releaseNote": "English translation, version 1.0: complete Book V, chapters 1–53, [V.1.1]–[V.53.2]."},
+    1: {"sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47", "sections": 215, "tokens": 40804, "chapters": 47, "headings": 2, "heading": "Book I", "releaseNote": "English translation, version 1.1: Prologue and Book I chapters 1–46, ending at [I.46.2]."},
+    2: {"sha256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c", "sections": 73, "tokens": 17143, "chapters": 18, "headings": 1, "heading": "Book II", "releaseNote": "English translation, version 1.1: complete Book II, chapters 1–18, [II.1.1]–[II.18.1]."},
+    3: {"sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c", "sections": 70, "tokens": 18640, "chapters": 26, "headings": 1, "heading": "BOOK III", "releaseNote": "English translation, version 1.1: complete Book III, chapters 1–26, [III.1.1]–[III.26.4]."},
+    4: {"sha256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54", "sections": 79, "tokens": 17259, "chapters": 33, "headings": 1, "heading": "BOOK IV", "releaseNote": "English translation, version 1.1: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3]."},
+    5: {"sha256": "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667", "sections": 121, "tokens": 42207, "chapters": 53, "headings": 1, "heading": "BOOK V", "releaseNote": "English translation, version 1.1: complete Book V, chapters 1–53, [V.1.1]–[V.53.2]."},
 }
 BREAK_REASON = "The separately labelled Prologue ends before Book I narrative."
+TRANSLATION_NOTE_UNITS = {1: {31, 36, 70, 141}, 2: {73}, 3: {36, 47}, 4: set(), 5: {72}}
 RULES = {
     "boundaries": "Each accepted English xml:id and num label identify one complete chapter/paragraph citation unit. section is its stable paragraph ordinal within the book, never a Niese section.",
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local.",
@@ -179,20 +180,29 @@ def extract_document(xml_bytes: bytes, *, book_number: int, order_offset: int | 
             same_as = f"#latin-deh{book_number}-num{section}"
             require(attributes(paragraph) == {"xml:id": source_id, "sameAs": same_as}, "English DEH paragraph identity or alignment differs")
             require(not (paragraph.text or "").strip(), "English DEH has running text before its citation label")
-            require(len(paragraph) == 1 and paragraph[0].tag == q("num"), "English DEH paragraph has unreviewed inline markup")
+            require(1 <= len(paragraph) <= 2 and paragraph[0].tag == q("num"), "English DEH paragraph has unreviewed inline markup")
+            annotation = ""
+            if len(paragraph) == 2:
+                note = paragraph[1]
+                require(section in TRANSLATION_NOTE_UNITS[book_number] and note.tag == q("note")
+                        and attributes(note) == {"type": "uncertainty", "source": same_as}
+                        and not len(note) and not note.tail and bool(note.text)
+                        and note.text.startswith("Translation comparison: "), "English DEH paragraph has unreviewed inline markup")
+                annotation = note.text
             number = paragraph[0]
             label = f"Prol.{local_paragraph}" if chapter == 0 else f"{ROMANS[book_number]}.{chapter}.{local_paragraph}"
             require(not number.attrib and not len(number) and number.text == f"[{label}]", "English DEH citation label differs from chapter/paragraph")
             prefix = (paragraph.text or "") + number.text
             running = number.tail or ""
-            raw = prefix + running
+            running_end = len(prefix) + len(running)
+            raw = prefix + running + annotation
             require(raw == "".join(paragraph.itertext()), "English DEH traversal lost paragraph text")
             text = running.strip()
             require(text and words(text), "Empty English DEH citation unit")
             start = len(prefix) + len(running) - len(running.lstrip())
             end = start + len(text)
             record = {"id": f"{COLLECTION}-{book_number}-{section}", "work": "deh", "book": book_number,
-                "section": section, "language": "English", "edition": "Pollard v1.0", "chapter": chapter, "paragraph": local_paragraph,
+                "section": section, "language": "English", "edition": "Pollard v1.1", "chapter": chapter, "paragraph": local_paragraph,
                 "citationScheme": "chapter-paragraph", "citationLabel": label,
                 "citation": {"book": ROMANS[book_number], "chapter": chapter, "paragraph": local_paragraph, "prologue": chapter == 0},
                 "text": text, "editorialMarks": [], "sourceMarkup": [], "textGaps": [], "phraseBreaks": [],
@@ -217,7 +227,10 @@ def extract_document(xml_bytes: bytes, *, book_number: int, order_offset: int | 
             excluded_whitespace(len(prefix), start)
             pieces.append({"kind": "record", "recordId": record["id"], "recordStart": 0, "recordEnd": utf16_length(text),
                            "sourceStart": utf16_length(raw[:start]), "sourceEnd": utf16_length(raw[:end]), "textSHA256": sha(text)})
-            excluded_whitespace(end, len(raw))
+            excluded_whitespace(end, running_end)
+            if annotation:
+                pieces.append({"kind": "excluded", "reason": "translation-comparison-note", "text": annotation,
+                    "sourceStart": utf16_length(raw[:running_end]), "sourceEnd": utf16_length(raw), "textSHA256": sha(annotation)})
             require(pieces[0]["sourceStart"] == 0 and pieces[-1]["sourceEnd"] == utf16_length(raw)
                     and all(a["sourceEnd"] == b["sourceStart"] for a, b in zip(pieces, pieces[1:])), "English DEH source ledger is discontinuous")
             paragraphs.append({"sourceId": source_id, "sourceIdentityKind": "xml:id", "sourcePath": source_path,
@@ -226,7 +239,7 @@ def extract_document(xml_bytes: bytes, *, book_number: int, order_offset: int | 
                 "rawText": raw, "runningText": running, "removedPrefix": prefix, "sourcePieces": pieces,
                 "sections": [{"recordId": record["id"], "section": section, "sourceStart": 0, "sourceEnd": utf16_length(raw),
                     "textStart": utf16_length(raw[:start]), "textEnd": utf16_length(raw[:end]),
-                    "leadingWhitespace": raw[len(prefix):start], "trailingWhitespace": raw[end:], "textSHA256": sha(text)}],
+                    "leadingWhitespace": raw[len(prefix):start], "trailingWhitespace": raw[end:running_end], "textSHA256": sha(text)}],
                 "editorialSpans": [], "structuralMarkers": [], "exactRestorationVerified": True})
         require(local_paragraph > 0, "English DEH chapter has no paragraphs")
     require(len(records) == wanted and len(chapters) == chapter_count, "English DEH unit or chapter count differs")
@@ -236,12 +249,14 @@ def extract_document(xml_bytes: bytes, *, book_number: int, order_offset: int | 
     counts = {"bodyParagraphs": len(paragraphs), "numberedParagraphs": len(paragraphs), "sections": len(records),
         "runningWordTokens": sum(len(words(record["text"])) for record in records), "chapterDivisionsIncludingPrologue": len(chapters),
         "prologueUnits": sum(record["chapter"] == 0 for record in records), "excludedCitationLabels": len(records),
-        "excludedHeadings": heading_count, "excludedReleaseNotes": 1, "breakBeforeUnits": sum(bool(record.get("breakBefore")) for record in records)}
+        "excludedHeadings": heading_count, "excludedReleaseNotes": 1,
+        "excludedTranslationNotes": sum(len(p) == 2 for p in root.findall('.//'+q('body')+'//'+q('p'))),
+        "breakBeforeUnits": sum(bool(record.get("breakBefore")) for record in records)}
     if verify_source:
         require(counts["runningWordTokens"] == contract["tokens"], "English DEH running word count differs")
     source = {"path": source_path, "sha256": sha(xml_bytes), "bytes": len(xml_bytes)}
     report = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "De excidio Hierosolymitano", "book": book_number,
-        "language": "English", "edition": "Pollard v1.0", "unit": "existing chapter/paragraph citation unit", "citationScheme": "chapter-paragraph"},
+        "language": "English", "edition": "Pollard v1.1", "unit": "existing chapter/paragraph citation unit", "citationScheme": "chapter-paragraph"},
         "source": source, "additionalSources": [], "sources": [source],
         "sourceContract": {"normalizedSHA256": contract["sha256"], "hashMode": "CRLF-to-LF only", "verified": verify_source},
         "rules": RULES, "counts": counts, "coverage": coverage(paragraphs, records, {"completeRange": [1, wanted]}),
@@ -273,7 +288,7 @@ def build_corpus(source_root: Path, output_dir: Path) -> dict:
     corpus_bytes = json_bytes(records)
     artifacts["corpus.json"] = corpus_bytes
     combined = {"schemaVersion": 1, "status": "PASS", "scope": {"work": "De excidio Hierosolymitano", "books": list(CONTRACTS),
-        "language": "English", "edition": "Pollard v1.0", "unit": "existing chapter/paragraph citation unit", "citationScheme": "chapter-paragraph"},
+        "language": "English", "edition": "Pollard v1.1", "unit": "existing chapter/paragraph citation unit", "citationScheme": "chapter-paragraph"},
         "counts": {"books": len(CONTRACTS), "sourceDocuments": len(CONTRACTS), **dict(counts)},
         "coverage": {**coverage([p for report in reports for p in report["paragraphs"]], records,
             {"completeRangesByBook": {str(n): [1, c["sections"]] for n, c in CONTRACTS.items()}}),

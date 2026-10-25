@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 4,
     "language": "English",
-    "edition": "Pollard v1.0",
+    "edition": "Pollard v1.1",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-04.xml",
-    "sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
-    "bytes": 114200
+    "sha256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
+    "bytes": 114758
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-04.xml",
-      "sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
-      "bytes": 114200
+      "sha256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
+      "bytes": 114758
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
+    "normalizedSHA256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -41,12 +41,13 @@
     "bodyParagraphs": 79,
     "numberedParagraphs": 79,
     "sections": 79,
-    "runningWordTokens": 17263,
+    "runningWordTokens": 17259,
     "chapterDivisionsIncludingPrologue": 33,
     "prologueUnits": 0,
     "excludedCitationLabels": 79,
     "excludedHeadings": 1,
     "excludedReleaseNotes": 1,
+    "excludedTranslationNotes": 0,
     "breakBeforeUnits": 0
   },
   "coverage": {
@@ -62,25 +63,25 @@
     "paragraphsExactlyRestored": 79,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "df6fbc732fb775caeb0a6d2f5170ecb42cee3f0320b4b1bd30a4981cba94fe47",
-    "restoredParagraphSequenceSha256": "df6fbc732fb775caeb0a6d2f5170ecb42cee3f0320b4b1bd30a4981cba94fe47",
-    "sourceWordSequenceSha256": "0dd8f4e4ae8837d742714ac36eb9a320ce35267349e9faa8695bf3e84f9366f4",
-    "indexedWordSequenceSha256": "0dd8f4e4ae8837d742714ac36eb9a320ce35267349e9faa8695bf3e84f9366f4",
-    "sourceNonWhitespaceContentSha256": "b8ce5fdcd25d865c03b54e63fff678bfe6c2680b57bc0082799091156bb4f5be",
-    "indexedNonWhitespaceContentSha256": "b8ce5fdcd25d865c03b54e63fff678bfe6c2680b57bc0082799091156bb4f5be"
+    "rawParagraphSequenceSha256": "89c1fadd84e8ede847dd32c2da2f18f8c6362eccce420e35d5cc30185a85488f",
+    "restoredParagraphSequenceSha256": "89c1fadd84e8ede847dd32c2da2f18f8c6362eccce420e35d5cc30185a85488f",
+    "sourceWordSequenceSha256": "a7cc1b3c1e95b8b0e76f12c50ad66631f335d6e78a2e7e7d7185a7dab71d52c1",
+    "indexedWordSequenceSha256": "a7cc1b3c1e95b8b0e76f12c50ad66631f335d6e78a2e7e7d7185a7dab71d52c1",
+    "sourceNonWhitespaceContentSha256": "7cdd70d4bd8343bc16351e6fb9a9ac8c411eda8a8502c5c6c53622efbebbcb69",
+    "indexedNonWhitespaceContentSha256": "7cdd70d4bd8343bc16351e6fb9a9ac8c411eda8a8502c5c6c53622efbebbcb69"
   },
   "excludedBlocks": [
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 3577,
-      "textSHA256": "3a5d7e06b38165e7d2b749a1910d4980eb06fa7abb6e516ff2e51caf556efb7b"
+      "textCharacters": 4143,
+      "textSHA256": "668b1e65935a10f3795347588dd9e4042c4ec05f6a34c99c20135e7a347f4166"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.0: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3].",
-      "textSHA256": "10ef8b2982fd39d09cdbb515a25938762294f6cdd7728272e5067211e76bbe49"
+      "text": "English translation, version 1.1: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3].",
+      "textSHA256": "0393742152c571feec24756755a58b8e40d63b975cae56e59e7b31ecde22eda1"
     },
     {
       "kind": "heading",
@@ -4580,8 +4581,8 @@
       "chapter": 26,
       "paragraph": 1,
       "citationLabel": "IV.26.1",
-      "rawText": "[IV.26.1] Reports of civil wars gained strength in the Roman army. The deaths of Galba and Otho became known, and the rule of Vitellius, who, more wicked than his predecessors, had settled like dregs. Veteran soldiers began to confer among themselves and resent the presumption of the praetorian legions at Rome: although they had long ceased to experience the dangers of war and did not know the names of the nations that made war, they nevertheless appointed an emperor for wars and claimed that the choice of the arbiter of Roman affairs lay in their hands. Then, following this example, the soldiers stationed in Gaul had aspired to give Vitellius imperial power without consulting the senate and Roman people. They themselves meanwhile were treated as mercenaries, following the decisions of others, first in danger and last in honour. For so long they had waged war, with their triumphs increasing daily, yet received masters from their inferiors—not even useful ones, but men utterly idle or devoted to their bellies and to disgrace. They must confront and remove this injury. They had an energetic man in Vespasian, whom everyone ought to have chosen as emperor, mature in years for counsel and stronger than younger men in battle. They must hasten before he was chosen by others and became an object of disregard to those with whom he had grown old in military service and triumphs. When was there a more opportune time to repay his labours with a worthy reward? Vitellius’s voracity was a disgrace to private citizens, to say nothing of emperors. Neither the senate nor the Roman people would endure for long that this disgrace of drunkards should remain at the summit of imperial power, a man for whose expenditure the Roman state could not suffice. “For who could endure a tyrant’s rule when he has in the army a worthy governor of the Roman dominion? What nations would subject themselves to luxury and surrender to vice, when an emperor’s idleness is an incentive to war, whereas the firmness of peace rests on valour in an enemy and sobriety in the ruler of the state? Who would not admire in Vespasian, still a private citizen, the splendour of kingship and the authority of the Roman dominion, when so many military units and the stronger force of the whole Roman army are at his disposal? Why do we wait, so that, supported by our valour, he may owe to others his position as emperor, and we may yield to others what lies within our rightful power? Certainly, if we do not wish to honour him, let us not disparage him or inflict this injury: that by our judgement he should be rejected as unworthy of the imperial power of which Vitellius is held worthy. Finally, since his brother and his son Domitian are in Italy, there is surely reason to fear that a man who should long ago have been a distinction to his family may become a danger to them. Or, if they begin, as we suppose, to press the tyrant, their rebellion as his brother and son may count against him, and we may begin to see as an accused man the one whom we are unwilling to see as emperor.”",
-      "runningText": " Reports of civil wars gained strength in the Roman army. The deaths of Galba and Otho became known, and the rule of Vitellius, who, more wicked than his predecessors, had settled like dregs. Veteran soldiers began to confer among themselves and resent the presumption of the praetorian legions at Rome: although they had long ceased to experience the dangers of war and did not know the names of the nations that made war, they nevertheless appointed an emperor for wars and claimed that the choice of the arbiter of Roman affairs lay in their hands. Then, following this example, the soldiers stationed in Gaul had aspired to give Vitellius imperial power without consulting the senate and Roman people. They themselves meanwhile were treated as mercenaries, following the decisions of others, first in danger and last in honour. For so long they had waged war, with their triumphs increasing daily, yet received masters from their inferiors—not even useful ones, but men utterly idle or devoted to their bellies and to disgrace. They must confront and remove this injury. They had an energetic man in Vespasian, whom everyone ought to have chosen as emperor, mature in years for counsel and stronger than younger men in battle. They must hasten before he was chosen by others and became an object of disregard to those with whom he had grown old in military service and triumphs. When was there a more opportune time to repay his labours with a worthy reward? Vitellius’s voracity was a disgrace to private citizens, to say nothing of emperors. Neither the senate nor the Roman people would endure for long that this disgrace of drunkards should remain at the summit of imperial power, a man for whose expenditure the Roman state could not suffice. “For who could endure a tyrant’s rule when he has in the army a worthy governor of the Roman dominion? What nations would subject themselves to luxury and surrender to vice, when an emperor’s idleness is an incentive to war, whereas the firmness of peace rests on valour in an enemy and sobriety in the ruler of the state? Who would not admire in Vespasian, still a private citizen, the splendour of kingship and the authority of the Roman dominion, when so many military units and the stronger force of the whole Roman army are at his disposal? Why do we wait, so that, supported by our valour, he may owe to others his position as emperor, and we may yield to others what lies within our rightful power? Certainly, if we do not wish to honour him, let us not disparage him or inflict this injury: that by our judgement he should be rejected as unworthy of the imperial power of which Vitellius is held worthy. Finally, since his brother and his son Domitian are in Italy, there is surely reason to fear that a man who should long ago have been a distinction to his family may become a danger to them. Or, if they begin, as we suppose, to press the tyrant, their rebellion as his brother and son may count against him, and we may begin to see as an accused man the one whom we are unwilling to see as emperor.”",
+      "rawText": "[IV.26.1] Reports of civil wars gained strength in the Roman army. The deaths of Galba and Otho became known, and the rule of Vitellius, who, more wicked than his predecessors, had settled like dregs. Veteran soldiers began to confer among themselves and resent the presumption of the praetorian legions at Rome: although they had long ceased to experience the dangers of war and did not know the names of the nations that made war, they nevertheless appointed an emperor for wars and claimed that the choice of the arbiter of Roman affairs lay in their hands. Then, following this example, the soldiers stationed in Gaul had aspired to give Vitellius imperial power without consulting the senate and Roman people. They themselves meanwhile were treated as mercenaries, following the decisions of others, first in danger and last in honour. For so long they had waged war, with their triumphs increasing daily, yet received masters from their inferiors—not even useful ones, but men utterly idle or devoted to their bellies and to disgrace. They must confront and remove this injury. They had an energetic man in Vespasian, whom everyone ought to have chosen as emperor, mature in years for counsel and stronger than younger men in battle. They must hasten, lest others choose him first, to the discredit of those with whom he had grown old in military service and triumphs. When was there a more opportune time to repay his labours with a worthy reward? Vitellius’s voracity was a disgrace to private citizens, to say nothing of emperors. Neither the senate nor the Roman people would endure for long that this disgrace of drunkards should remain at the summit of imperial power, a man for whose expenditure the Roman state could not suffice. “For who could endure a tyrant’s rule when he has in the army a worthy governor of the Roman dominion? What nations would subject themselves to luxury and surrender to vice, when an emperor’s idleness is an incentive to war, whereas the firmness of peace rests on valour in an enemy and sobriety in the ruler of the state? Who would not admire in Vespasian, still a private citizen, the splendour of kingship and the authority of the Roman dominion, when so many military units and the stronger force of the whole Roman army are at his disposal? Why do we wait, so that, supported by our valour, he may owe to others his position as emperor, and we may yield to others what lies within our rightful power? Certainly, if we do not wish to honour him, let us not disparage him or inflict this injury: that by our judgement he should be rejected as unworthy of the imperial power of which Vitellius is held worthy. Finally, since his brother and his son Domitian are in Italy, there is surely reason to fear that a man who should long ago have been a distinction to his family may become a danger to them. Or, if they begin, as we suppose, to press the tyrant, their rebellion as his brother and son may count against him, and we may begin to see as an accused man the one whom we are unwilling to see as emperor.”",
+      "runningText": " Reports of civil wars gained strength in the Roman army. The deaths of Galba and Otho became known, and the rule of Vitellius, who, more wicked than his predecessors, had settled like dregs. Veteran soldiers began to confer among themselves and resent the presumption of the praetorian legions at Rome: although they had long ceased to experience the dangers of war and did not know the names of the nations that made war, they nevertheless appointed an emperor for wars and claimed that the choice of the arbiter of Roman affairs lay in their hands. Then, following this example, the soldiers stationed in Gaul had aspired to give Vitellius imperial power without consulting the senate and Roman people. They themselves meanwhile were treated as mercenaries, following the decisions of others, first in danger and last in honour. For so long they had waged war, with their triumphs increasing daily, yet received masters from their inferiors—not even useful ones, but men utterly idle or devoted to their bellies and to disgrace. They must confront and remove this injury. They had an energetic man in Vespasian, whom everyone ought to have chosen as emperor, mature in years for counsel and stronger than younger men in battle. They must hasten, lest others choose him first, to the discredit of those with whom he had grown old in military service and triumphs. When was there a more opportune time to repay his labours with a worthy reward? Vitellius’s voracity was a disgrace to private citizens, to say nothing of emperors. Neither the senate nor the Roman people would endure for long that this disgrace of drunkards should remain at the summit of imperial power, a man for whose expenditure the Roman state could not suffice. “For who could endure a tyrant’s rule when he has in the army a worthy governor of the Roman dominion? What nations would subject themselves to luxury and surrender to vice, when an emperor’s idleness is an incentive to war, whereas the firmness of peace rests on valour in an enemy and sobriety in the ruler of the state? Who would not admire in Vespasian, still a private citizen, the splendour of kingship and the authority of the Roman dominion, when so many military units and the stronger force of the whole Roman army are at his disposal? Why do we wait, so that, supported by our valour, he may owe to others his position as emperor, and we may yield to others what lies within our rightful power? Certainly, if we do not wish to honour him, let us not disparage him or inflict this injury: that by our judgement he should be rejected as unworthy of the imperial power of which Vitellius is held worthy. Finally, since his brother and his son Domitian are in Italy, there is surely reason to fear that a man who should long ago have been a distinction to his family may become a danger to them. Or, if they begin, as we suppose, to press the tyrant, their rebellion as his brother and son may count against him, and we may begin to see as an accused man the one whom we are unwilling to see as emperor.”",
       "removedPrefix": "[IV.26.1]",
       "sourcePieces": [
         {
@@ -4604,10 +4605,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-4-63",
           "recordStart": 0,
-          "recordEnd": 3062,
+          "recordEnd": 3045,
           "sourceStart": 10,
-          "sourceEnd": 3072,
-          "textSHA256": "828c3963aff57e047fb5ea2ff1ec674422576801724abce22984c41f8d5d46f8"
+          "sourceEnd": 3055,
+          "textSHA256": "4d33797f15bc739edb52d22709defdcfc858db67594ff5fca854d748ec44c59f"
         }
       ],
       "sections": [
@@ -4615,12 +4616,12 @@
           "recordId": "deh-english-pollard-4-63",
           "section": 63,
           "sourceStart": 0,
-          "sourceEnd": 3072,
+          "sourceEnd": 3055,
           "textStart": 10,
-          "textEnd": 3072,
+          "textEnd": 3055,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "828c3963aff57e047fb5ea2ff1ec674422576801724abce22984c41f8d5d46f8"
+          "textSHA256": "4d33797f15bc739edb52d22709defdcfc858db67594ff5fca854d748ec44c59f"
         }
       ],
       "editorialSpans": [],

@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 3,
     "language": "English",
-    "edition": "Pollard v1.0",
+    "edition": "Pollard v1.1",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-03.xml",
-    "sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
-    "bytes": 118793
+    "sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+    "bytes": 120069
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-03.xml",
-      "sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
-      "bytes": 118793
+      "sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+      "bytes": 120069
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
+    "normalizedSHA256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -47,6 +47,7 @@
     "excludedCitationLabels": 70,
     "excludedHeadings": 1,
     "excludedReleaseNotes": 1,
+    "excludedTranslationNotes": 2,
     "breakBeforeUnits": 0
   },
   "coverage": {
@@ -62,8 +63,8 @@
     "paragraphsExactlyRestored": 70,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "e2cb014107a61ca5070ecef67e9c0cccd501aad30be9a7f5f96d3fd305234a42",
-    "restoredParagraphSequenceSha256": "e2cb014107a61ca5070ecef67e9c0cccd501aad30be9a7f5f96d3fd305234a42",
+    "rawParagraphSequenceSha256": "c8f2bb42a8f5037f158e6695e9edf5478c864224a6f42e968c0578c6f8cfbad2",
+    "restoredParagraphSequenceSha256": "c8f2bb42a8f5037f158e6695e9edf5478c864224a6f42e968c0578c6f8cfbad2",
     "sourceWordSequenceSha256": "00a33459282fb5fb73d029d3a267a23e743c287c220c4dc42a80c7d020c6b8a3",
     "indexedWordSequenceSha256": "00a33459282fb5fb73d029d3a267a23e743c287c220c4dc42a80c7d020c6b8a3",
     "sourceNonWhitespaceContentSha256": "412beea9a179b6747382c2247a93469cba308bf4437071430e28c8aa0dce2125",
@@ -73,14 +74,14 @@
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 3755,
-      "textSHA256": "b35426ade5672d7a57f186592dd92d3d4cfca354ae51e0a85323195edfd482a3"
+      "textCharacters": 4321,
+      "textSHA256": "b84f2121c49e68a35c6e566d51980958471be8497c46511c9efc6eb16e4d4365"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.0: complete Book III, chapters 1–26, [III.1.1]–[III.26.4].",
-      "textSHA256": "1b441dc77019772b9f9f7d977f1b78e49400f8c35692bdc45a0ce76e20a1a215"
+      "text": "English translation, version 1.1: complete Book III, chapters 1–26, [III.1.1]–[III.26.4].",
+      "textSHA256": "b6dfe8cdea093b922a44ab6bc2e1a4690ecf79b6e213a5013a0c93bcad8163da"
     },
     {
       "kind": "heading",
@@ -2636,7 +2637,7 @@
       "chapter": 11,
       "paragraph": 3,
       "citationLabel": "III.11.3",
-      "rawText": "[III.11.3] When the thrust of the engine was thus renewed and the Jews saw themselves hard pressed, one of them, Eleazar, lifted a stone of immense size and dashed it from the wall onto the ram with such force that it shattered the head of the engine. Leaping also into the midst of the enemy, he seized the head of the engine and was carrying it to the wall, fearless in the sight of his adversaries and exposed to wounds. He was pierced by five javelins, but, paying no attention to his wounds, he bent his thoughts on how he himself might overwhelm the enemy with the falling stone. He therefore climbed the wall and stood conspicuous in his great daring, a victor over pain. He hurled himself and the stone onto the ram and fell with it, defeated indeed by death but victor over the engine. For in his own person he alone was lost to his country, but in shattering the engine he had saved the whole city from destruction. Netiras and Philip also threw themselves into the midst of the column, to turn back those whom they had attacked.",
+      "rawText": "[III.11.3] When the thrust of the engine was thus renewed and the Jews saw themselves hard pressed, one of them, Eleazar, lifted a stone of immense size and dashed it from the wall onto the ram with such force that it shattered the head of the engine. Leaping also into the midst of the enemy, he seized the head of the engine and was carrying it to the wall, fearless in the sight of his adversaries and exposed to wounds. He was pierced by five javelins, but, paying no attention to his wounds, he bent his thoughts on how he himself might overwhelm the enemy with the falling stone. He therefore climbed the wall and stood conspicuous in his great daring, a victor over pain. He hurled himself and the stone onto the ram and fell with it, defeated indeed by death but victor over the engine. For in his own person he alone was lost to his country, but in shattering the engine he had saved the whole city from destruction. Netiras and Philip also threw themselves into the midst of the column, to turn back those whom they had attacked.Translation comparison: Pollard refers illud to caput machinamenti, the head of the battering ram. Millet has Eleazar seize both the machine and his stone; the later reappearance of the stone makes the sequence difficult, but his version supplies an additional object not explicit in the Latin pronoun.",
       "runningText": " When the thrust of the engine was thus renewed and the Jews saw themselves hard pressed, one of them, Eleazar, lifted a stone of immense size and dashed it from the wall onto the ram with such force that it shattered the head of the engine. Leaping also into the midst of the enemy, he seized the head of the engine and was carrying it to the wall, fearless in the sight of his adversaries and exposed to wounds. He was pierced by five javelins, but, paying no attention to his wounds, he bent his thoughts on how he himself might overwhelm the enemy with the falling stone. He therefore climbed the wall and stood conspicuous in his great daring, a victor over pain. He hurled himself and the stone onto the ram and fell with it, defeated indeed by death but victor over the engine. For in his own person he alone was lost to his country, but in shattering the engine he had saved the whole city from destruction. Netiras and Philip also threw themselves into the midst of the column, to turn back those whom they had attacked.",
       "removedPrefix": "[III.11.3]",
       "sourcePieces": [
@@ -2664,6 +2665,14 @@
           "sourceStart": 11,
           "sourceEnd": 1039,
           "textSHA256": "61a9a9b9693b378da3d1879d706847e1557619f8f79c69c2412147d73e735921"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Pollard refers illud to caput machinamenti, the head of the battering ram. Millet has Eleazar seize both the machine and his stone; the later reappearance of the stone makes the sequence difficult, but his version supplies an additional object not explicit in the Latin pronoun.",
+          "sourceStart": 1039,
+          "sourceEnd": 1341,
+          "textSHA256": "147b516ed998b9ffe62060312451693bca1bd31331f56553b8ba58c5757d0f99"
         }
       ],
       "sections": [
@@ -2671,7 +2680,7 @@
           "recordId": "deh-english-pollard-3-36",
           "section": 36,
           "sourceStart": 0,
-          "sourceEnd": 1039,
+          "sourceEnd": 1341,
           "textStart": 11,
           "textEnd": 1039,
           "leadingWhitespace": " ",
@@ -3428,7 +3437,7 @@
       "chapter": 16,
       "paragraph": 1,
       "citationLabel": "III.16.1",
-      "rawText": "[III.16.1] “Now a greater ruin threatens the Jewish name, now fouler ashes threaten to bury and hide the discipline of a most illustrious lineage and overthrow all its honour, when Josephus is ordered to be kept captive for a triumph. What do these suddenly so earnest invitations from our enemies mean? What these unsolicited gifts of safety? They did not spare others when they begged for life: Josephus is summoned, Josephus is begged to live. Clearly they fear losing the pomp of a triumph, having no captive for Rome to gaze upon, no one for Vespasian to lead in chains before his chariot. Do you wish, then, to be kept for this mockery? And how will they triumph if the leader of those over whom they triumph is missing? Or what triumph is there if friendship is granted to the conquered? Do not believe them, Josephus. Life is promised to you, but things worse than death are being prepared. Roman arms may have conquered you; do not let deceit capture you. Their gifts are more terrible than their wounds: the former threaten captivity, the latter preserve freedom. Are you yielding, Josephus, broken by some softness of spirit, and do you wish to outlive your country? Where is the teaching of Moses, who asked to be blotted out of the heavenly book so that he would not outlive the Lord’s people? Where is Aaron, who stood between the living and the dead so that death would not devour the living people with its savage contagion? Where is the spirit of King Saul and Jonathan, devoted to their country, and that death for their fellow citizens, bravely undertaken, gloriously sought? The son called his father by his example; the father did not forsake his son in his resolve to die. Though he could have lived, he preferred to be killed rather than led in triumph by the enemy. He urged his armour-bearer, saying, ‘Strike me, lest these uncircumcised men come and strike me and mock me.’ Because his armour-bearer was afraid, he ran himself through with his own sword. He was worthy to be avenged by David in the prophetic spirit, because a man of Amalekite descent had falsely boasted of his death and thought to diminish the glory of the man who had snatched himself from the enemy by lying that he had killed him. He was worthy also to be praised by so great a prophet, who said, ‘Saul and Jonathan, lovely and most dear, inseparable in their life, and in death they were not separated, swifter than eagles, stronger than lions.’ David himself too, when he saw the people struck by the angel, wished to turn the heavenly vengeance upon himself, so that he would not be spared while the people perished. Finally, where is the divine law, whose interpreter you have always been, which has promised the righteous everlasting immortality in exchange for this brief life? Where is the God of the Hebrews, who teaches the righteous to despise death, that they ought even to shun their earthly dwelling and fly back to the heights, to that region of paradise where God has consecrated devout souls? Do you now at last desire to live, Josephus, when you ought not—indeed, when it is not lawful, indeed, what is more, not fitting? Do you long to enjoy this light—I would dare to call it the light of slavery—which is in another’s power? So that the Roman may snatch it away when he wishes, or veil it in the darkness of prison when he wishes? So that you may long to flee from here and not be allowed to die? And with what sense of shame will you go to those whom you persuaded to die for their country? What excuse will you have for lingering so long? They are waiting to see what you do; surely they are already saying, ‘Why does Josephus delay, when he ought to have gone before us? Why does he follow so late? Why does he refuse to imitate his pupils, whom he urged to die for freedom?’ Are we indeed to endure your choosing slavery, champion of freedom, your binding yourself to the Romans as a slave, your preferring captivity to freedom? But suppose you wish to live: how will you obtain this from those against whom you have fought so often? How will they look at you, with what eyes, with what feelings? How will you wish to live under angry masters, even if you are allowed? Or who will not believe you to have been a traitor to your country when he sees you paid the reward of treachery? Choose which you prefer. One of these two things must be: your life will be either the reward of treachery or the punishment of slavery.” With these words they levelled their swords, adding, “If you consent to die, we offer our service as friends; if you refuse, we exact vengeance as men betrayed.”",
+      "rawText": "[III.16.1] “Now a greater ruin threatens the Jewish name, now fouler ashes threaten to bury and hide the discipline of a most illustrious lineage and overthrow all its honour, when Josephus is ordered to be kept captive for a triumph. What do these suddenly so earnest invitations from our enemies mean? What these unsolicited gifts of safety? They did not spare others when they begged for life: Josephus is summoned, Josephus is begged to live. Clearly they fear losing the pomp of a triumph, having no captive for Rome to gaze upon, no one for Vespasian to lead in chains before his chariot. Do you wish, then, to be kept for this mockery? And how will they triumph if the leader of those over whom they triumph is missing? Or what triumph is there if friendship is granted to the conquered? Do not believe them, Josephus. Life is promised to you, but things worse than death are being prepared. Roman arms may have conquered you; do not let deceit capture you. Their gifts are more terrible than their wounds: the former threaten captivity, the latter preserve freedom. Are you yielding, Josephus, broken by some softness of spirit, and do you wish to outlive your country? Where is the teaching of Moses, who asked to be blotted out of the heavenly book so that he would not outlive the Lord’s people? Where is Aaron, who stood between the living and the dead so that death would not devour the living people with its savage contagion? Where is the spirit of King Saul and Jonathan, devoted to their country, and that death for their fellow citizens, bravely undertaken, gloriously sought? The son called his father by his example; the father did not forsake his son in his resolve to die. Though he could have lived, he preferred to be killed rather than led in triumph by the enemy. He urged his armour-bearer, saying, ‘Strike me, lest these uncircumcised men come and strike me and mock me.’ Because his armour-bearer was afraid, he ran himself through with his own sword. He was worthy to be avenged by David in the prophetic spirit, because a man of Amalekite descent had falsely boasted of his death and thought to diminish the glory of the man who had snatched himself from the enemy by lying that he had killed him. He was worthy also to be praised by so great a prophet, who said, ‘Saul and Jonathan, lovely and most dear, inseparable in their life, and in death they were not separated, swifter than eagles, stronger than lions.’ David himself too, when he saw the people struck by the angel, wished to turn the heavenly vengeance upon himself, so that he would not be spared while the people perished. Finally, where is the divine law, whose interpreter you have always been, which has promised the righteous everlasting immortality in exchange for this brief life? Where is the God of the Hebrews, who teaches the righteous to despise death, that they ought even to shun their earthly dwelling and fly back to the heights, to that region of paradise where God has consecrated devout souls? Do you now at last desire to live, Josephus, when you ought not—indeed, when it is not lawful, indeed, what is more, not fitting? Do you long to enjoy this light—I would dare to call it the light of slavery—which is in another’s power? So that the Roman may snatch it away when he wishes, or veil it in the darkness of prison when he wishes? So that you may long to flee from here and not be allowed to die? And with what sense of shame will you go to those whom you persuaded to die for their country? What excuse will you have for lingering so long? They are waiting to see what you do; surely they are already saying, ‘Why does Josephus delay, when he ought to have gone before us? Why does he follow so late? Why does he refuse to imitate his pupils, whom he urged to die for freedom?’ Are we indeed to endure your choosing slavery, champion of freedom, your binding yourself to the Romans as a slave, your preferring captivity to freedom? But suppose you wish to live: how will you obtain this from those against whom you have fought so often? How will they look at you, with what eyes, with what feelings? How will you wish to live under angry masters, even if you are allowed? Or who will not believe you to have been a traitor to your country when he sees you paid the reward of treachery? Choose which you prefer. One of these two things must be: your life will be either the reward of treachery or the punishment of slavery.” With these words they levelled their swords, adding, “If you consent to die, we offer our service as friends; if you refuse, we exact vengeance as men betrayed.”Translation comparison: Pollard takes perferemus as enduring Josephus’s decision. Millet understands carrying news of it to the dead, whose imagined speech immediately precedes this passage; that interpretation supplies a message and recipients not expressly stated in the Latin.",
       "runningText": " “Now a greater ruin threatens the Jewish name, now fouler ashes threaten to bury and hide the discipline of a most illustrious lineage and overthrow all its honour, when Josephus is ordered to be kept captive for a triumph. What do these suddenly so earnest invitations from our enemies mean? What these unsolicited gifts of safety? They did not spare others when they begged for life: Josephus is summoned, Josephus is begged to live. Clearly they fear losing the pomp of a triumph, having no captive for Rome to gaze upon, no one for Vespasian to lead in chains before his chariot. Do you wish, then, to be kept for this mockery? And how will they triumph if the leader of those over whom they triumph is missing? Or what triumph is there if friendship is granted to the conquered? Do not believe them, Josephus. Life is promised to you, but things worse than death are being prepared. Roman arms may have conquered you; do not let deceit capture you. Their gifts are more terrible than their wounds: the former threaten captivity, the latter preserve freedom. Are you yielding, Josephus, broken by some softness of spirit, and do you wish to outlive your country? Where is the teaching of Moses, who asked to be blotted out of the heavenly book so that he would not outlive the Lord’s people? Where is Aaron, who stood between the living and the dead so that death would not devour the living people with its savage contagion? Where is the spirit of King Saul and Jonathan, devoted to their country, and that death for their fellow citizens, bravely undertaken, gloriously sought? The son called his father by his example; the father did not forsake his son in his resolve to die. Though he could have lived, he preferred to be killed rather than led in triumph by the enemy. He urged his armour-bearer, saying, ‘Strike me, lest these uncircumcised men come and strike me and mock me.’ Because his armour-bearer was afraid, he ran himself through with his own sword. He was worthy to be avenged by David in the prophetic spirit, because a man of Amalekite descent had falsely boasted of his death and thought to diminish the glory of the man who had snatched himself from the enemy by lying that he had killed him. He was worthy also to be praised by so great a prophet, who said, ‘Saul and Jonathan, lovely and most dear, inseparable in their life, and in death they were not separated, swifter than eagles, stronger than lions.’ David himself too, when he saw the people struck by the angel, wished to turn the heavenly vengeance upon himself, so that he would not be spared while the people perished. Finally, where is the divine law, whose interpreter you have always been, which has promised the righteous everlasting immortality in exchange for this brief life? Where is the God of the Hebrews, who teaches the righteous to despise death, that they ought even to shun their earthly dwelling and fly back to the heights, to that region of paradise where God has consecrated devout souls? Do you now at last desire to live, Josephus, when you ought not—indeed, when it is not lawful, indeed, what is more, not fitting? Do you long to enjoy this light—I would dare to call it the light of slavery—which is in another’s power? So that the Roman may snatch it away when he wishes, or veil it in the darkness of prison when he wishes? So that you may long to flee from here and not be allowed to die? And with what sense of shame will you go to those whom you persuaded to die for their country? What excuse will you have for lingering so long? They are waiting to see what you do; surely they are already saying, ‘Why does Josephus delay, when he ought to have gone before us? Why does he follow so late? Why does he refuse to imitate his pupils, whom he urged to die for freedom?’ Are we indeed to endure your choosing slavery, champion of freedom, your binding yourself to the Romans as a slave, your preferring captivity to freedom? But suppose you wish to live: how will you obtain this from those against whom you have fought so often? How will they look at you, with what eyes, with what feelings? How will you wish to live under angry masters, even if you are allowed? Or who will not believe you to have been a traitor to your country when he sees you paid the reward of treachery? Choose which you prefer. One of these two things must be: your life will be either the reward of treachery or the punishment of slavery.” With these words they levelled their swords, adding, “If you consent to die, we offer our service as friends; if you refuse, we exact vengeance as men betrayed.”",
       "removedPrefix": "[III.16.1]",
       "sourcePieces": [
@@ -3456,6 +3465,14 @@
           "sourceStart": 11,
           "sourceEnd": 4604,
           "textSHA256": "d8688facaec36496767ab78f0c111b3658e2311cae0989835bcb55799f768c50"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Pollard takes perferemus as enduring Josephus’s decision. Millet understands carrying news of it to the dead, whose imagined speech immediately precedes this passage; that interpretation supplies a message and recipients not expressly stated in the Latin.",
+          "sourceStart": 4604,
+          "sourceEnd": 4883,
+          "textSHA256": "d647c68808d1cc90d4c9091df9ae61903066c4715ff7440c6ee226365be26ca2"
         }
       ],
       "sections": [
@@ -3463,7 +3480,7 @@
           "recordId": "deh-english-pollard-3-47",
           "section": 47,
           "sourceStart": 0,
-          "sourceEnd": 4604,
+          "sourceEnd": 4883,
           "textStart": 11,
           "textEnd": 4604,
           "leadingWhitespace": " ",

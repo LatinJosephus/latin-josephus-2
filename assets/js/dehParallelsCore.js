@@ -1,11 +1,27 @@
 /* Shared publication and excerpt logic; canonical XML and editorial data are read-only. */
 export const frozenSha = "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c";
 // v1 accepts the literal reviewed bytes or their exact LF checkout equivalent.
-// Both must reproduce the ORIGINAL frozen SHA; no text/XML normalization occurs.
+// Frozen sources reproduce their original SHA; the five approved Pollard v1.1
+// files use explicit successor hashes, without rewriting the frozen concordance.
+// No text/XML normalization occurs.
 export const sourceIntegrityPolicy = "reviewed-crlf-or-exact-lf-v1";
+export const pollardPublicationHashes = Object.freeze({
+  1: "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+  2: "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+  3: "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+  4: "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
+  5: "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667"
+});
+const previousPollardHashes = Object.freeze({
+  1: "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
+  2: "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
+  3: "e5dc0d008801809385c8bcaf43c5ee2d42d861b572968e3ba6f6659543175d6b",
+  4: "79068f7cbc2591b38fab9b36ee300d7e173ced0fab7e0dfac1668f56726445bc",
+  5: "7658e545360849e75627a3ff771742d5fc06127da7613740c595c21e2aff5298"
+});
 export const romanBooks = ["", "I", "II", "III", "IV", "V", "VI", "VII"];
 export const sources = {
-  pollard: { work: "deh", language: "English", lang: "en", identity: "Pollard v1.0 — English translation of the Latin DEH." },
+  pollard: { work: "deh", language: "English", lang: "en", identity: "Pollard v1.1 — English translation of the Latin DEH." },
   ussani: { work: "deh", language: "Latin", lang: "la", identity: "Ussani (1932) — critical Latin text of DEH." },
   niese: { work: "bellum", language: "Greek", lang: "grc", identity: "Niese — Greek Bellum." },
   whiston: { work: "bellum", language: "English", lang: "en", identity: "Whiston — English translation of the Greek Bellum." },
@@ -95,7 +111,12 @@ export function createTextLoader(xmlBase, hashes) {
       const path = `${source.work}/${source.language}/book-${String(book).padStart(2, "0")}.xml`;
       const url = new URL(path, xmlBase);
       cache.set(key, fetch(url).then(async response => {
-        const text = await checkedBytes(response, hashes[`assets/xml/${path}`], `${sourceKey} Book ${book}`, true);
+        let expectedHash = hashes[`assets/xml/${path}`];
+        if (sourceKey === "pollard") {
+          if (expectedHash !== previousPollardHashes[book]) throw new Error(`${sourceKey} Book ${book} differs from the frozen reviewed authority.`);
+          expectedHash = pollardPublicationHashes[book];
+        }
+        const text = await checkedBytes(response, expectedHash, `${sourceKey} Book ${book}`, true);
         const xml = new DOMParser().parseFromString(text, "text/xml");
         if (xml.querySelector("parsererror")) throw new Error(`Invalid XML for ${sourceKey}.`);
         return tei.domToHTML5(xml);

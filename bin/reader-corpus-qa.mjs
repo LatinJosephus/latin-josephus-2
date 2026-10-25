@@ -25,6 +25,10 @@ rejection('assets/xml/bellum/English/Lodge1602/unexpected.xml','<TEI xmlns="http
 const source='assets/xml/antiquities/English/book-01.xml';
 rejection(source,Buffer.concat([fs.readFileSync(path.join(fixture,source)),Buffer.from('corruption')]),/Source XML differs/,'segmented English corruption rejected');
 rejection('assets/xml/bellum/English/Lodge1602/book-01.xml','<malformed',/Source XML differs/,'Lodge has no hash exemption');
+for (let book=1;book<=5;book++) {
+  const relative=`assets/xml/deh/English/book-${String(book).padStart(2,'0')}.xml`;
+  rejection(relative,Buffer.concat([fs.readFileSync(path.join(fixture,relative)),Buffer.from('corruption')]),/Source XML differs/,'Revised Pollard corruption rejected: '+book);
+}
 for(const name of ['preface','book-01','book-03','book-04','book-05','book-06','book-07','book-08','book-09','book-10','book-11','book-12','book-13','book-14','book-15','book-16','book-17','book-18','book-19','book-20']) {
   const relative=`assets/xml/antiquities/English/Lodge1602/${name}.xml`;
   rejection(relative,Buffer.concat([fs.readFileSync(path.join(fixture,relative)),Buffer.from('corruption')]),/Source XML differs/,'Frozen Lodge batch corruption rejected: '+name);
@@ -43,6 +47,6 @@ assert(fs.readFileSync(path.join(root,source)).equals(saved),'Original source un
 const site=option('--site',null);
 if(site) {
   for(const [relative,expected] of Object.entries(corpus.publication)) assert.equal(sha(fs.readFileSync(path.join(site,relative))),sha(expected),'Built frozen authority: '+relative);
-  checks.push('all 38 generated frozen publication inputs match literal authority hashes');
+  checks.push('all 38 generated publication inputs match literal authority hashes (33 frozen, 5 approved Pollard v1.1)');
 }
 console.log(JSON.stringify({...corpus.report,negative_tests:checks,source_mutation_tests_use_temporary_copies:true},null,2));

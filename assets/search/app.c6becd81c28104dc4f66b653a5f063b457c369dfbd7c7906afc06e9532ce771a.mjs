@@ -1,6 +1,6 @@
-import {createCollection} from './collection.c072c6353f42f52790327fe7b12bd40ce6cfb7fe17764d0b090a584ae25e5e71.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.bddc39cc1ce40ad46e820e632e17a8bd6bf94347b919347044793e02a64c8003.mjs';
-import {buildConcordance,exportConcordance} from './concordance.2a78eae3ba83ddc508da483f4186b8fb579f88b275f4edd709dc15798dd002f0.mjs';
+import {createCollection} from './collection.0551464ed42c810dc0dc554501a449989e92f85a13bfc7612b7edc67c181f5d7.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.39a13121b8de63e4a70d5600a38c3aab124275b3a9dfccc0476839c330dba644.mjs';
+import {buildConcordance,exportConcordance} from './concordance.0d3a9629facb0f3cb388a9e6ef5d7a01792bad5b0e40ac81f3a21d35dd7f62e5.mjs';
 
 const root=document.getElementById('lj-search');
 const $=id=>root.querySelector(`#${id}`);
@@ -35,7 +35,7 @@ function updateScopeHint(){
   if(collections.some(collection=>collection.id==='antiquities-english-whiston'))els.scopeHint.textContent+=' Whiston English Antiquities phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent Niese sections in whole-book scope, but stay within one book and stop at the Proem’s end. Headings, printed citation labels and footnotes are excluded.';
   if(collections.some(collection=>collection.id==='bellum-english-whiston'))els.scopeHint.textContent+=' Whiston English Bellum includes all seven books. Its Book I preface is part of the continuous book. Supplied text in VII.208–209 remains searchable and is shown in brackets; it does not interrupt exact phrases.';
   if(collections.some(collection=>collection.id==='contra-apionem-english-whiston'))els.scopeHint.textContent+=' Whiston English Contra Apionem includes both books. Whiston’s internal division markers do not interrupt phrases. Whole-book phrases may cross adjacent Niese sections, but remain within one book and edition.';
-  if(collections.some(collection=>collection.id==='deh-english-pollard'))els.scopeHint.textContent+=' Pollard v1.0 English De excidio includes the Prologue and all five books. Original English spelling and punctuation are preserved; Latin spelling equivalence does not affect English matches.';
+  if(collections.some(collection=>collection.id==='deh-english-pollard'))els.scopeHint.textContent+=' Pollard v1.1 English De excidio includes the Prologue and all five books. Original English spelling and punctuation are preserved; Latin spelling equivalence does not affect English matches.';
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
@@ -72,7 +72,7 @@ function populateControls(){
   const whistonApion=catalog.collections.find(c=>c.id==='contra-apionem-english-whiston');
   const apionEnglish=whistonApion?` Whiston English Contra Apionem contains ${whistonApion.totals.sections.toLocaleString()} Niese sections across both books. Original brackets and punctuation are retained; Whiston’s division markers remain citation metadata.`:'';
   const pollardDeh=catalog.collections.find(c=>c.id==='deh-english-pollard');
-  const dehEnglish=pollardDeh?` Pollard v1.0 English De excidio contains ${pollardDeh.totals.sections.toLocaleString()} chapter-and-paragraph citation units across all five books, including the Prologue. The accepted English wording and punctuation are preserved.`:'';
+  const dehEnglish=pollardDeh?` Pollard v1.1 English De excidio contains ${pollardDeh.totals.sections.toLocaleString()} chapter-and-paragraph citation units across all five books, including the Prologue. The accepted English wording and punctuation are preserved.`:'';
   const dehEditorial=catalog.collections.some(c=>c.id==='deh-latin-ussani')?' In Ussani Latin De excidio, supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':'';
   $('included-text').textContent=`Currently indexed: ${included}. Explicitly marked titles, citation labels and annotation notes are excluded. Source additions and untagged letters within the accepted Latin passages remain searchable, including inline Roman chapter letters.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units.':''}${dehEditorial}${bamberg}${whiston}${bellumEnglish}${apionEnglish}${dehEnglish}`;
 }
@@ -231,7 +231,7 @@ function resultContext(result,model){
   if(collections.some(collection=>collection.id==='antiquities-english-whiston'))parts.push('Whiston English Antiquities: exact phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent sections in whole-book scope, but stay within one book and never cross the Proem’s end. Headings, printed citation labels and footnotes are excluded. Original English spelling is retained; Latin u/v and i/j equivalence does not affect English matches.');
   if(collections.some(collection=>collection.id==='bellum-english-whiston'))parts.push('Whiston English Bellum: all seven books and 4,001 Niese sections are included. Exact phrases may cross physically adjacent sections in whole-book scope, including the embedded Book I preface, but stay within one book and edition. The accepted supplied passage in VII.208–209 remains searchable and is shown in brackets. Original English spelling and source annotations are retained; Latin u/v and i/j equivalence does not affect English matches.');
   if(collections.some(collection=>collection.id==='contra-apionem-english-whiston'))parts.push('Whiston English Contra Apionem: both books and 616 Niese sections are included. Original English spelling, punctuation and literal brackets are preserved. Whiston’s division markers, including those inside II.109 and II.112, do not interrupt exact phrases. Whole-book phrases may cross adjacent Niese sections, but stay within one book and edition. Latin u/v and i/j equivalence does not affect English matches.');
-  if(collections.some(collection=>collection.id==='deh-english-pollard'))parts.push('Pollard English De excidio (v1.0): all five books and the Prologue are included, with 558 chapter-and-paragraph citation units. Original English spelling and punctuation are preserved. Whole-book phrases may cross adjacent paragraphs and chapters, but stop at the Prologue’s end and remain within one book and edition. Citations open the corresponding English passage with Pollard v1.0 selected. Latin u/v and i/j equivalence does not affect English matches.');
+  if(collections.some(collection=>collection.id==='deh-english-pollard'))parts.push('Pollard English De excidio (v1.1): all five books and the Prologue are included, with 558 chapter-and-paragraph citation units. Original English spelling and punctuation are preserved. Whole-book phrases may cross adjacent paragraphs and chapters, but stop at the Prologue’s end and remain within one book and edition. Citations open the corresponding English passage with Pollard v1.1 selected. Latin u/v and i/j equivalence does not affect English matches.');
   return parts.join(' ');
 }
 function renderSuccessful(){
@@ -253,7 +253,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.f8d53bbe83d053c0d2ce56ca7a94cf7d5155527f255d2d141d138981b058a27a.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');

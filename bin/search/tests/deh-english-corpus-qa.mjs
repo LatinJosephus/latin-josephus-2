@@ -29,8 +29,8 @@ const collectionId = 'deh-english-pollard';
 const bookId = `${collectionId}:1`;
 const expectedBooks = [1,2,3,4,5];
 const expectedBookTotals = [
-  {book:1,sections:215,tokens:40796},{book:2,sections:73,tokens:17141},
-  {book:3,sections:70,tokens:18640},{book:4,sections:79,tokens:17263},{book:5,sections:121,tokens:42204},
+  {book:1,sections:215,tokens:40804},{book:2,sections:73,tokens:17143},
+  {book:3,sections:70,tokens:18640},{book:4,sections:79,tokens:17259},{book:5,sections:121,tokens:42207},
 ];
 const destination = resolve(base, 'data', collectionId, 'qa-report.json');
 const require = createRequire(import.meta.url);
@@ -217,7 +217,7 @@ function inspectRecords(records, expected, category) {
     const row=expected[index],context={id:row.id};
     for(const field of ['id','book','section','order','text','sourcePath','sourceId','sourceIds',
       'sourceSameAs','chapter','paragraph','citationLabel'])check(`${category}Source${field}`,record[field],row[field],context);
-    check(`${category}Version`,[record.work,record.language,record.edition],['deh','English','Pollard v1.0'],context);
+    check(`${category}Version`,[record.work,record.language,record.edition],['deh','English','Pollard v1.1'],context);
     check(`${category}CitationScheme`,record.citationScheme,'chapter-paragraph',context);
     check(`${category}Citation`,record.citation,{book:romans[row.book-1],chapter:row.chapter,
       paragraph:row.paragraph,prologue:row.prologue},context);
@@ -249,6 +249,7 @@ function inspectProjection(report,file,records,category) {
       if(piece.kind!=='record') {
         check(`${category}ExcludedPieceKind`,piece.kind,'excluded',context);
         if(piece.reason==='citation-label-and-preceding-whitespace')check(`${category}ExcludedPrefix`,text,expected.removedPrefix,context);
+        else if(piece.reason==='translation-comparison-note')check(`${category}ExcludedTranslationNote`,text,expected.annotationText,context);
         else check(`${category}ExcludedWhitespace`,text.trim(),'',context);
       }
       cursor=piece.sourceEnd;restored+=text;
@@ -275,6 +276,7 @@ function inspectProjection(report,file,records,category) {
   check(`${category}ExcludedLabels`,report.counts.excludedCitationLabels,file.evidence.paragraphs);
   check(`${category}ExcludedHeads`,report.counts.excludedHeadings,file.evidence.excludedHeadings);
   check(`${category}ExcludedNotes`,report.counts.excludedReleaseNotes,1);
+  check(`${category}ExcludedTranslationNotes`,report.counts.excludedTranslationNotes,file.evidence.excludedTranslationNotes);
   check(`${category}RawSequenceHash`,report.coverage.rawParagraphSequenceSha256,hash(file.paragraphs.map(p=>p.rawText).join('\n')));
   check(`${category}RestoredSequenceHash`,report.coverage.restoredParagraphSequenceSha256,hash(file.paragraphs.map(p=>p.rawText).join('\n')));
 }
@@ -297,7 +299,7 @@ function validateConcordance(result,oracle,expected,tree,catalog,category='Conco
       return source.slice(index?0:span.start,index===spans.length-1?span.end:source.length);
     }).join(' ');
     check(`${category}OriginalMatchedText`,row.match,match,{spans});
-    check(`${category}Edition`,[row.language,row.edition,row.collectionId],['English','Pollard v1.0',collectionId]);
+    check(`${category}Edition`,[row.language,row.edition,row.collectionId],['English','Pollard v1.1',collectionId]);
     const first=oracle.byId.get(spans[0].recordId);
     check(`${category}PassageReader`,linkParts(row.readerURL),expectedLink(first));
   }
@@ -311,7 +313,7 @@ function validateConcordance(result,oracle,expected,tree,catalog,category='Conco
     check(`${category}CSVScope`,row.scope,result.scope);
     check(`${category}CSVEnglishNormalization`,row.spelling_equivalence,'original spelling');
     if(row.row_type==='search-summary')continue;
-    check(`${category}CSVVersion`,[row.language,row.edition,row.collection_id],['English','Pollard v1.0',collectionId]);
+    check(`${category}CSVVersion`,[row.language,row.edition,row.collection_id],['English','Pollard v1.1',collectionId]);
     const original=JSON.parse(row.original_context_json),segments=JSON.parse(row.source_segments_json);
     check(`${category}CSVOriginalContext`,original,{left:row.left_context,match:row.matched_text,right:row.right_context});
     for(const segment of segments) {
@@ -365,21 +367,21 @@ async function main() {
   assert.ok(config,'Build Pollard English De excidio and the combined catalog before running acceptance.');
   const entries=catalog.books.filter(entry=>entry.collectionId===collectionId);
   check('OnlyAcceptedBooksPublished',entries.map(entry=>entry.number),expectedBooks);
-  check('CollectionIdentity',[config.work,config.language,config.edition],['deh','English','Pollard v1.0']);
+  check('CollectionIdentity',[config.work,config.language,config.edition],['deh','English','Pollard v1.1']);
   const corpusPath=preserve(resolve(base,config.corpusPath)),extractionPath=preserve(resolve(base,config.extractionReportPath));
   const manifestPath=preserve(resolve(base,config.manifestPath));
   for(const p of ['engine.mjs','collection.mjs','concordance.mjs','ui-utils.mjs','extract-deh-english.py','vendor/lunr.cjs'])preserve(resolve(base,p));
   const sourcePaths=Object.fromEntries(expectedBooks.map(book=>[book,preserve(resolve(root,`assets/xml/deh/English/book-${String(book).padStart(2,'0')}.xml`))]));
   const latinPaths=expectedBooks.map(book=>preserve(resolve(root,`assets/xml/deh/Latin/book-${String(book).padStart(2,'0')}.xml`)));
   const witness=JSON.parse(execFileSync(process.env.SEARCH_PYTHON||process.env.PYTHON||'python3',[witnessPath,root],{encoding:'utf8',maxBuffer:128*1024*1024}));
-  check('IndependentCollectionTotals',witness.totals,{books:5,sections:558,tokens:136044});
+  check('IndependentCollectionTotals',witness.totals,{books:5,sections:558,tokens:136053});
   check('IndependentBookTotals',witness.bookTotals,expectedBookTotals);
   check('IndependentLatinAlignmentInputs',witness.testSources.map(item=>item.path),latinPaths.map(path=>relative(root,path).replaceAll('\\','/')));
   const corpus=readJSON(corpusPath),extraction=readJSON(extractionPath);
   inspectRecords(corpus,witness.rows,'Indexed');
   check('CollectionCorpusHash',config.corpusSHA256,digest(corpusPath));
   check('CollectionManifestHash',config.manifestSHA256,digest(manifestPath));
-  check('ExtractionTokens',extraction.counts.runningWordTokens,136044);
+  check('ExtractionTokens',extraction.counts.runningWordTokens,136053);
   check('ExtractionSections',extraction.counts.sections,558);
   check('ExtractionPublishedBooks',extraction.scope.books,expectedBooks);
   check('NoRunningCitationLabelTokens',witness.rows.some(row=>/^\[/.test(row.text)),false);

@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T16:10:40.240Z",
+  "generatedAt": "2026-10-25T18:22:39.848Z",
   "independentVerifier": "bin/search/tests/deh-english-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "expectedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+    "observedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
     "provenance": "observed-source-checkout",
     "preservationDuringRunRequired": true,
     "publicationInput": false
@@ -18,18 +18,18 @@
   "source": {
     "books": 5,
     "sections": 558,
-    "tokens": 136044,
-    "uniqueLiteralVocabulary": 7836,
+    "tokens": 136053,
+    "uniqueLiteralVocabulary": 7839,
     "bookTotals": [
       {
         "book": 1,
         "sections": 215,
-        "tokens": 40796
+        "tokens": 40804
       },
       {
         "book": 2,
         "sections": 73,
-        "tokens": 17141
+        "tokens": 17143
       },
       {
         "book": 3,
@@ -39,26 +39,26 @@
       {
         "book": 4,
         "sections": 79,
-        "tokens": 17263
+        "tokens": 17259
       },
       {
         "book": 5,
         "sections": 121,
-        "tokens": 42204
+        "tokens": 42207
       }
     ]
   },
   "sources": [
     {
       "path": "assets/xml/deh/English/book-01.xml",
-      "sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
-      "lfSHA256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
-      "bytes": 268011,
+      "sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+      "lfSHA256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+      "bytes": 269974,
       "book": 1,
       "indexed": true,
       "bodyTags": {
         "body": 1,
-        "note": 1,
+        "note": 5,
         "div1": 1,
         "div2": 47,
         "head": 2,
@@ -67,26 +67,27 @@
       },
       "paragraphs": 215,
       "sections": 215,
-      "tokens": 40796,
+      "tokens": 40804,
       "chapters": 47,
       "prologueUnits": 3,
       "indentedBeforeCitationLabel": 126,
       "sameAsLinks": 263,
       "excludedBodyNotes": 1,
       "excludedHeadings": 2,
-      "editorialElements": 0,
+      "editorialElements": 4,
+      "excludedTranslationNotes": 4,
       "literalBracketParagraphs": 0
     },
     {
       "path": "assets/xml/deh/English/book-02.xml",
-      "sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
-      "lfSHA256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
-      "bytes": 112867,
+      "sha256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+      "lfSHA256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+      "bytes": 113787,
       "book": 2,
       "indexed": true,
       "bodyTags": {
         "body": 1,
-        "note": 1,
+        "note": 2,
         "div1": 1,
         "div2": 18,
         "head": 1,
@@ -95,26 +96,27 @@
       },
       "paragraphs": 73,
       "sections": 73,
-      "tokens": 17141,
+      "tokens": 17143,
       "chapters": 18,
       "prologueUnits": 0,
       "indentedBeforeCitationLabel": 73,
       "sameAsLinks": 92,
       "excludedBodyNotes": 1,
       "excludedHeadings": 1,
-      "editorialElements": 0,
+      "editorialElements": 1,
+      "excludedTranslationNotes": 1,
       "literalBracketParagraphs": 0
     },
     {
       "path": "assets/xml/deh/English/book-03.xml",
-      "sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
-      "lfSHA256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
-      "bytes": 118793,
+      "sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+      "lfSHA256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+      "bytes": 120069,
       "book": 3,
       "indexed": true,
       "bodyTags": {
         "body": 1,
-        "note": 1,
+        "note": 3,
         "div1": 1,
         "div2": 26,
         "head": 1,
@@ -130,14 +132,15 @@
       "sameAsLinks": 97,
       "excludedBodyNotes": 1,
       "excludedHeadings": 1,
-      "editorialElements": 0,
+      "editorialElements": 2,
+      "excludedTranslationNotes": 2,
       "literalBracketParagraphs": 0
     },
     {
       "path": "assets/xml/deh/English/book-04.xml",
-      "sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
-      "lfSHA256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
-      "bytes": 114200,
+      "sha256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
+      "lfSHA256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
+      "bytes": 114758,
       "book": 4,
       "indexed": true,
       "bodyTags": {
@@ -151,7 +154,7 @@
       },
       "paragraphs": 79,
       "sections": 79,
-      "tokens": 17263,
+      "tokens": 17259,
       "chapters": 33,
       "prologueUnits": 0,
       "indentedBeforeCitationLabel": 0,
@@ -159,18 +162,19 @@
       "excludedBodyNotes": 1,
       "excludedHeadings": 1,
       "editorialElements": 0,
+      "excludedTranslationNotes": 0,
       "literalBracketParagraphs": 0
     },
     {
       "path": "assets/xml/deh/English/book-05.xml",
-      "sha256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27",
-      "lfSHA256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27",
-      "bytes": 261734,
+      "sha256": "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667",
+      "lfSHA256": "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667",
+      "bytes": 262604,
       "book": 5,
       "indexed": true,
       "bodyTags": {
         "body": 1,
-        "note": 1,
+        "note": 2,
         "div1": 1,
         "div2": 53,
         "head": 1,
@@ -179,14 +183,15 @@
       },
       "paragraphs": 121,
       "sections": 121,
-      "tokens": 42204,
+      "tokens": 42207,
       "chapters": 53,
       "prologueUnits": 0,
       "indentedBeforeCitationLabel": 0,
       "sameAsLinks": 175,
       "excludedBodyNotes": 1,
       "excludedHeadings": 1,
-      "editorialElements": 0,
+      "editorialElements": 1,
+      "excludedTranslationNotes": 1,
       "literalBracketParagraphs": 0
     }
   ],
@@ -250,12 +255,12 @@
   "verifiedFiles": {
     "corpus": {
       "path": "bin/search/data/deh-english-pollard/corpus.json",
-      "sha256": "c60b63c4038897aabfc3f9f250f6f84c0a7d3d4a371d0425c19ee69ff5897e0f",
-      "bytes": 1311567
+      "sha256": "bf90e1a421cdb7b43003826ffce702dc166373792658ca4368d57b73688ab268",
+      "bytes": 1311598
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "f8d53bbe83d053c0d2ce56ca7a94cf7d5155527f255d2d141d138981b058a27a",
+      "sha256": "6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe",
       "bytes": 56253
     },
     "engine": {
@@ -270,32 +275,32 @@
     },
     "concordance": {
       "path": "bin/search/concordance.mjs",
-      "sha256": "fe89290371c1e9dc4f531657a8165c5b679d24e6869e834b93455372e04fa900",
+      "sha256": "cfe34e5bcad06f8f4d50b29498c6cc84ee47f1f5a114a51af849f4c50267dcef",
       "bytes": 32263
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "bddc39cc1ce40ad46e820e632e17a8bd6bf94347b919347044793e02a64c8003",
+      "sha256": "39a13121b8de63e4a70d5600a38c3aab124275b3a9dfccc0476839c330dba644",
       "bytes": 15956
     },
     "verifier": {
       "path": "bin/search/tests/deh-english-corpus-qa.mjs",
-      "sha256": "9c519515d8b8c92979eb549f2cafa0ae69efd2aa0f0f6396e3a2a82ce5ad4749",
-      "bytes": 40628
+      "sha256": "cdbf0257b0866bf89122c54df0624eb0b2bf7d8299866201fd1b8ef771899833",
+      "bytes": 40897
     },
     "witness": {
       "path": "bin/search/tests/deh-english-source-witness.py",
-      "sha256": "904d28e89e883309710b538fe36d3b69fb00f9bdb601769ff1d7c08dc42c46fc",
-      "bytes": 13823
+      "sha256": "7d5fc4697b1b737c58a8493ac8969ae980f7319e5286e504f47faf4080dc2cf1",
+      "bytes": 14724
     },
     "extractor": {
       "path": "bin/search/extract-deh-english.py",
-      "sha256": "b770e5eee327b73eafa98807127cd741bcb3a8327b5b280c9b37d59fcd8d712c",
-      "bytes": 21870
+      "sha256": "2194b08eb023f44d03eec16c9e73098eb25c217651b0ed634079f59b967a94d8",
+      "bytes": 23073
     },
     "manifest": {
       "path": "bin/search/config/deh-english-pollard.json",
-      "sha256": "ea279e318dcc6677c0483d4033782589a028d542255f8734eb23a4319c9f9b8f",
+      "sha256": "5b7c8448e3ab27aff52388920541ae984cebb001ff588ce5cc69f38063f13059",
       "bytes": 1785
     },
     "lunr": {
@@ -305,13 +310,13 @@
     },
     "extractionReport": {
       "path": "bin/search/data/deh-english-pollard/extraction-report.json",
-      "sha256": "6a16dd3a83b7395161d77d6417ed4e1e2674863e5e611b453f7195fecfcd6274",
-      "bytes": 8927
+      "sha256": "6594b567c1f6114d4e9129fbef837a5eab446019a4f3a6513905902c86e9a1b1",
+      "bytes": 9157
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-      "bytes": 161463
+      "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+      "bytes": 169964
     },
     "testSources": [
       {
@@ -345,115 +350,115 @@
         "book": 1,
         "bundle": {
           "path": "bin/search/data/deh-english-pollard/book-01.bundle.json",
-          "sha256": "64048d4779c276f72c9bf38555e7eb814ab62061d9f9d34bf765602d4939e14a",
-          "bytes": 4309263
+          "sha256": "a5951481c18fb5a2f3e3e0dd8e432776ede4b99a2fe79ee5c415990a41a608f1",
+          "bytes": 4309696
         },
         "corpus": {
           "path": "bin/search/data/deh-english-pollard/book-01.corpus.json",
-          "sha256": "006bf4b559938306d04d050ccdfd6105550d98e79e8e208db25d5889cb45f1a7",
-          "bytes": 441847
+          "sha256": "bf03faa44eb3860c9da9052c4a357ea46518cabdde2aeba909597a6f70614cae",
+          "bytes": 441866
         },
         "source": {
           "path": "assets/xml/deh/English/book-01.xml",
-          "sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
-          "bytes": 268011
+          "sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+          "bytes": 269974
         },
         "extractionReport": {
           "path": "bin/search/data/deh-english-pollard/book-01.extraction-report.json",
-          "sha256": "91ed244d69163c2a882468a50cebf6967d273e44801dac26ab3841b922512845",
-          "bytes": 952098
+          "sha256": "a0bf458d76a2f592b08df66e281f047cee4b0bb8fe1557f6a4599fccf0ffbcaf",
+          "bytes": 955641
         }
       },
       {
         "book": 2,
         "bundle": {
           "path": "bin/search/data/deh-english-pollard/book-02.bundle.json",
-          "sha256": "ba38633dea57affd084331769da4842df394bdca1a9ca856edeb697269f6ec8a",
-          "bytes": 1762775
+          "sha256": "462abce86fee552f182160ad3bec948476ed29a60c1de38f7ecfd49ad3f4898b",
+          "bytes": 1763085
         },
         "corpus": {
           "path": "bin/search/data/deh-english-pollard/book-02.corpus.json",
-          "sha256": "d75a341ea2192bff4e8d83e12a7ec089b12c46ccb2a0e59bdd4dc6d38e742787",
-          "bytes": 168183
+          "sha256": "656f6a6be37b15921c4a244b65f4c3653eecafab9aab2d47e64959d16d85d159",
+          "bytes": 168194
         },
         "source": {
           "path": "assets/xml/deh/English/book-02.xml",
-          "sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
-          "bytes": 112867
+          "sha256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+          "bytes": 113787
         },
         "extractionReport": {
           "path": "bin/search/data/deh-english-pollard/book-02.extraction-report.json",
-          "sha256": "0923897917b0b4d3168ad373d1ef4f62d621bfa428e9f51d5eb68306f83a2de0",
-          "bytes": 364232
+          "sha256": "0d8cbc97e95bdd2231913de5e2e92375bee8ae2a7bdf9d09ece04a125e469d58",
+          "bytes": 365220
         }
       },
       {
         "book": 3,
         "bundle": {
           "path": "bin/search/data/deh-english-pollard/book-03.bundle.json",
-          "sha256": "f40799b1ad504b0f2a6c04712484293d39069653cd935a8a39ee632194a77cc4",
+          "sha256": "cc5d74c19efc49f81c2b7c8f32842ed03144b81096027da87d907543d38f186a",
           "bytes": 1878034
         },
         "corpus": {
           "path": "bin/search/data/deh-english-pollard/book-03.corpus.json",
-          "sha256": "eb5cd2b21c49dafc4ffd8560d094de4011e55a84af29a5930c75d886302ec97c",
+          "sha256": "47bd6c8863396dd54e49d18b15b55341732927811a438dac13d85f4b04c6f79b",
           "bytes": 171772
         },
         "source": {
           "path": "assets/xml/deh/English/book-03.xml",
-          "sha256": "950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262",
-          "bytes": 118793
+          "sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+          "bytes": 120069
         },
         "extractionReport": {
           "path": "bin/search/data/deh-english-pollard/book-03.extraction-report.json",
-          "sha256": "2bb54e4635a567bfcd6c960fa14f2036336a1b6ea2acb0945cc2f9a82f378114",
-          "bytes": 368349
+          "sha256": "63947a2777ade5d60f9dbc3c68ac4e241462c35d4024c927530bf5c3b59dc868",
+          "bytes": 370206
         }
       },
       {
         "book": 4,
         "bundle": {
           "path": "bin/search/data/deh-english-pollard/book-04.bundle.json",
-          "sha256": "c77c07644ec06e96be7841b08473829c2f9782f08c789e34ed8c3c36aeeb40bb",
-          "bytes": 1852736
+          "sha256": "a4a58b21570d6cb94a7305c4a16487400e2845b23c34b1578e8cdef36bb4fdc5",
+          "bytes": 1852842
         },
         "corpus": {
           "path": "bin/search/data/deh-english-pollard/book-04.corpus.json",
-          "sha256": "081c62bd9250ccb428e8f0f0d09a227c6c89e669964e94fc9b763e67fc3208d2",
-          "bytes": 174517
+          "sha256": "48c61c130cef67b03ad796e6e7a15479efb0a03e4427124adff89bc836c88091",
+          "bytes": 174500
         },
         "source": {
           "path": "assets/xml/deh/English/book-04.xml",
-          "sha256": "40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26",
-          "bytes": 114200
+          "sha256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
+          "bytes": 114758
         },
         "extractionReport": {
           "path": "bin/search/data/deh-english-pollard/book-04.extraction-report.json",
-          "sha256": "be5a8cc04b4ccd99d47b9dc1f46ceafe9335c22d960ba272a57a19ee539f3605",
-          "bytes": 375248
+          "sha256": "573f0e050c0f4125778b5e99271507b3924eabbc574d056644c0cf6505339be6",
+          "bytes": 375355
         }
       },
       {
         "book": 5,
         "bundle": {
           "path": "bin/search/data/deh-english-pollard/book-05.bundle.json",
-          "sha256": "55126d4c90e919db7f96b5ffe133b43e653830d06d096d665111bfb0ecaa6779",
-          "bytes": 3991981
+          "sha256": "4d378c283cfd4963d1026add2d42cf7e7dfdd6edb3447a39e5901b125fcc657c",
+          "bytes": 3992170
         },
         "corpus": {
           "path": "bin/search/data/deh-english-pollard/book-05.corpus.json",
-          "sha256": "346e1afeef159bc88c308ad400392d5f27c5f994d4a7b347efc0925ba4fab0cc",
-          "bytes": 355260
+          "sha256": "5ef8615e901e297a9a1463aacca106741bdf795b8c424032fd4d524a88cf6f2d",
+          "bytes": 355278
         },
         "source": {
           "path": "assets/xml/deh/English/book-05.xml",
-          "sha256": "b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27",
-          "bytes": 261734
+          "sha256": "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667",
+          "bytes": 262604
         },
         "extractionReport": {
           "path": "bin/search/data/deh-english-pollard/book-05.extraction-report.json",
-          "sha256": "e2d2171c62559d9470a2b9e150ed53b1e53baad24911af16941bd00ba9d56d2e",
-          "bytes": 747835
+          "sha256": "629a5c63444feec77ac683eedb0ed9d7c4822738866a51f15780545e18bd9fda",
+          "bytes": 748723
         }
       }
     ]
@@ -519,10 +524,10 @@
     "Book1ProjectionSourcerawText": 215,
     "Book1ProjectionSourcerunningText": 215,
     "Book1ProjectionSourceremovedPrefix": 215,
-    "Book1ProjectionSourceContinuity": 645,
-    "Book1ProjectionSourceSlice": 645,
-    "Book1ProjectionSourceSliceHash": 645,
-    "Book1ProjectionExcludedPieceKind": 430,
+    "Book1ProjectionSourceContinuity": 649,
+    "Book1ProjectionSourceSlice": 649,
+    "Book1ProjectionSourceSliceHash": 649,
+    "Book1ProjectionExcludedPieceKind": 434,
     "Book1ProjectionExcludedPrefix": 215,
     "Book1ProjectionExcludedWhitespace": 215,
     "Book1ProjectionFullRestoration": 215,
@@ -533,6 +538,7 @@
     "Book1ProjectionNoInventedEditorialSpans": 215,
     "Book1ProjectionNoInventedStructuralMarkers": 215,
     "Book1ProjectionRestorationClaim": 215,
+    "Book1ProjectionExcludedTranslationNote": 4,
     "Book1ProjectionExcludedBlocks": 1,
     "Book1ProjectionTokens": 1,
     "Book1ProjectionParagraphs": 1,
@@ -541,6 +547,7 @@
     "Book1ProjectionExcludedLabels": 1,
     "Book1ProjectionExcludedHeads": 1,
     "Book1ProjectionExcludedNotes": 1,
+    "Book1ProjectionExcludedTranslationNotes": 1,
     "Book1ProjectionRawSequenceHash": 1,
     "Book1ProjectionRestoredSequenceHash": 1,
     "Book1BundleRecords": 1,
@@ -566,10 +573,10 @@
     "Book2ProjectionSourcerawText": 73,
     "Book2ProjectionSourcerunningText": 73,
     "Book2ProjectionSourceremovedPrefix": 73,
-    "Book2ProjectionSourceContinuity": 219,
-    "Book2ProjectionSourceSlice": 219,
-    "Book2ProjectionSourceSliceHash": 219,
-    "Book2ProjectionExcludedPieceKind": 146,
+    "Book2ProjectionSourceContinuity": 220,
+    "Book2ProjectionSourceSlice": 220,
+    "Book2ProjectionSourceSliceHash": 220,
+    "Book2ProjectionExcludedPieceKind": 147,
     "Book2ProjectionExcludedPrefix": 73,
     "Book2ProjectionExcludedWhitespace": 73,
     "Book2ProjectionFullRestoration": 73,
@@ -580,6 +587,7 @@
     "Book2ProjectionNoInventedEditorialSpans": 73,
     "Book2ProjectionNoInventedStructuralMarkers": 73,
     "Book2ProjectionRestorationClaim": 73,
+    "Book2ProjectionExcludedTranslationNote": 1,
     "Book2ProjectionExcludedBlocks": 1,
     "Book2ProjectionTokens": 1,
     "Book2ProjectionParagraphs": 1,
@@ -588,6 +596,7 @@
     "Book2ProjectionExcludedLabels": 1,
     "Book2ProjectionExcludedHeads": 1,
     "Book2ProjectionExcludedNotes": 1,
+    "Book2ProjectionExcludedTranslationNotes": 1,
     "Book2ProjectionRawSequenceHash": 1,
     "Book2ProjectionRestoredSequenceHash": 1,
     "Book2BundleRecords": 1,
@@ -613,10 +622,10 @@
     "Book3ProjectionSourcerawText": 70,
     "Book3ProjectionSourcerunningText": 70,
     "Book3ProjectionSourceremovedPrefix": 70,
-    "Book3ProjectionSourceContinuity": 210,
-    "Book3ProjectionSourceSlice": 210,
-    "Book3ProjectionSourceSliceHash": 210,
-    "Book3ProjectionExcludedPieceKind": 140,
+    "Book3ProjectionSourceContinuity": 212,
+    "Book3ProjectionSourceSlice": 212,
+    "Book3ProjectionSourceSliceHash": 212,
+    "Book3ProjectionExcludedPieceKind": 142,
     "Book3ProjectionExcludedPrefix": 70,
     "Book3ProjectionExcludedWhitespace": 70,
     "Book3ProjectionFullRestoration": 70,
@@ -627,6 +636,7 @@
     "Book3ProjectionNoInventedEditorialSpans": 70,
     "Book3ProjectionNoInventedStructuralMarkers": 70,
     "Book3ProjectionRestorationClaim": 70,
+    "Book3ProjectionExcludedTranslationNote": 2,
     "Book3ProjectionExcludedBlocks": 1,
     "Book3ProjectionTokens": 1,
     "Book3ProjectionParagraphs": 1,
@@ -635,6 +645,7 @@
     "Book3ProjectionExcludedLabels": 1,
     "Book3ProjectionExcludedHeads": 1,
     "Book3ProjectionExcludedNotes": 1,
+    "Book3ProjectionExcludedTranslationNotes": 1,
     "Book3ProjectionRawSequenceHash": 1,
     "Book3ProjectionRestoredSequenceHash": 1,
     "Book3BundleRecords": 1,
@@ -682,6 +693,7 @@
     "Book4ProjectionExcludedLabels": 1,
     "Book4ProjectionExcludedHeads": 1,
     "Book4ProjectionExcludedNotes": 1,
+    "Book4ProjectionExcludedTranslationNotes": 1,
     "Book4ProjectionRawSequenceHash": 1,
     "Book4ProjectionRestoredSequenceHash": 1,
     "Book4BundleRecords": 1,
@@ -707,10 +719,10 @@
     "Book5ProjectionSourcerawText": 121,
     "Book5ProjectionSourcerunningText": 121,
     "Book5ProjectionSourceremovedPrefix": 121,
-    "Book5ProjectionSourceContinuity": 363,
-    "Book5ProjectionSourceSlice": 363,
-    "Book5ProjectionSourceSliceHash": 363,
-    "Book5ProjectionExcludedPieceKind": 242,
+    "Book5ProjectionSourceContinuity": 364,
+    "Book5ProjectionSourceSlice": 364,
+    "Book5ProjectionSourceSliceHash": 364,
+    "Book5ProjectionExcludedPieceKind": 243,
     "Book5ProjectionExcludedPrefix": 121,
     "Book5ProjectionExcludedWhitespace": 121,
     "Book5ProjectionFullRestoration": 121,
@@ -721,6 +733,7 @@
     "Book5ProjectionNoInventedEditorialSpans": 121,
     "Book5ProjectionNoInventedStructuralMarkers": 121,
     "Book5ProjectionRestorationClaim": 121,
+    "Book5ProjectionExcludedTranslationNote": 1,
     "Book5ProjectionExcludedBlocks": 1,
     "Book5ProjectionTokens": 1,
     "Book5ProjectionParagraphs": 1,
@@ -729,6 +742,7 @@
     "Book5ProjectionExcludedLabels": 1,
     "Book5ProjectionExcludedHeads": 1,
     "Book5ProjectionExcludedNotes": 1,
+    "Book5ProjectionExcludedTranslationNotes": 1,
     "Book5ProjectionRawSequenceHash": 1,
     "Book5ProjectionRestoredSequenceHash": 1,
     "Book5BundleRecords": 1,
@@ -739,13 +753,13 @@
     "Book5CatalogCorpusHash": 1,
     "Book5CatalogTokens": 1,
     "Book5CatalogSections": 1,
-    "VocabularyQueries": 17849,
-    "VocabularyUnits": 17849,
-    "VocabularyOccurrences": 17849,
-    "VocabularyUnitIdentity": 17849,
-    "VocabularyEvidence": 73507,
-    "VocabularyRecords": 73507,
-    "VocabularySections": 17849,
+    "VocabularyQueries": 17851,
+    "VocabularyUnits": 17851,
+    "VocabularyOccurrences": 17851,
+    "VocabularyUnitIdentity": 17851,
+    "VocabularyEvidence": 73512,
+    "VocabularyRecords": 73512,
+    "VocabularySections": 17851,
     "FixtureQueries": 170,
     "FixtureUnits": 170,
     "FixtureOccurrences": 170,
@@ -753,19 +767,19 @@
     "FixtureEvidence": 1993,
     "FixtureRecords": 1993,
     "FixtureSections": 170,
-    "WildcardQueries": 954,
-    "WildcardUnits": 954,
-    "WildcardOccurrences": 954,
-    "WildcardUnitIdentity": 954,
-    "WildcardEvidence": 13212,
-    "WildcardRecords": 13212,
-    "WildcardSections": 954,
+    "WildcardQueries": 962,
+    "WildcardUnits": 962,
+    "WildcardOccurrences": 962,
+    "WildcardUnitIdentity": 962,
+    "WildcardEvidence": 13612,
+    "WildcardRecords": 13612,
+    "WildcardSections": 962,
     "WithinEveryUnitQueries": 1116,
     "WithinEveryUnitUnits": 1116,
     "WithinEveryUnitOccurrences": 1116,
     "WithinEveryUnitUnitIdentity": 1116,
-    "WithinEveryUnitEvidence": 1307,
-    "WithinEveryUnitRecords": 1307,
+    "WithinEveryUnitEvidence": 1309,
+    "WithinEveryUnitRecords": 1309,
     "WithinEveryUnitSections": 1116,
     "EveryCitationSeamQueries": 1106,
     "EveryCitationSeamUnits": 1106,
@@ -984,8 +998,8 @@
     "NoCrossWorkBoolean": 6,
     "InputUnchangedDuringRun": 42
   },
-  "totalQueries": 21424,
-  "assertions": 638164,
+  "totalQueries": 21434,
+  "assertions": 639063,
   "failedAssertions": 0,
   "examples": [
     {
@@ -1031,7 +1045,7 @@
       "purpose": "Complete English De excidio count"
     }
   ],
-  "durationSeconds": 26.9,
+  "durationSeconds": 23.7,
   "limitations": [
     "This validates the accepted English De excidio v1.0 files, not a new translation or textual revision.",
     "Browser interaction is verified separately."

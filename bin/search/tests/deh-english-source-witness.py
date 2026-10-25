@@ -20,12 +20,13 @@ TEI = 'http://www.tei-c.org/ns/1.0'
 COLLECTION = 'deh-english-pollard'
 SOURCE_COMMIT = '21f9fbcef3b5a5dc9499756495d47b2e498d87f2'
 ROMANS = [None, 'I', 'II', 'III', 'IV', 'V']
+TRANSLATION_NOTES = {1: {31, 36, 70, 141}, 2: {73}, 3: {36, 47}, 4: set(), 5: {72}}
 SPECS = [
-    (1, 215, 40796, 47, 126, 'f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12'),
-    (2, 73, 17141, 18, 73, '947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81'),
-    (3, 70, 18640, 26, 18, '950b5b7d7eecb9c1b194645c4c1659b6453a8c44bb5325169df39cadf71c7262'),
-    (4, 79, 17263, 33, 0, '40abebbe6bf09ff061652b41cfb1efa84ed9b3a3f7184404bbaa2aacae1a6c26'),
-    (5, 121, 42204, 53, 0, 'b7e67496c37deab6482fccb524d104d62f0478f6b2fa19701e32219252fb0f27'),
+    (1, 215, 40804, 47, 126, '1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47'),
+    (2, 73, 17143, 18, 73, 'e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c'),
+    (3, 70, 18640, 26, 18, 'f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c'),
+    (4, 79, 17259, 33, 0, '3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54'),
+    (5, 121, 42207, 53, 0, '57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667'),
 ]
 LATIN_SHA = [
     '690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7',
@@ -105,7 +106,7 @@ def extract_source(root, spec, order):
     assert len(bodies) == 1 and attributes(bodies[0]) == {}
     body = bodies[0]
     body_tags = Counter([body.localName, *(node.localName for node in body.getElementsByTagName('*'))])
-    assert body_tags == {'body': 1, 'note': 1, 'div1': 1, 'div2': chapter_count,
+    assert body_tags == {'body': 1, 'note': 1 + len(TRANSLATION_NOTES[book]), 'div1': 1, 'div2': chapter_count,
                         'head': 2 if book == 1 else 1, 'p': units, 'num': units}
     body_children = elements(body)
     assert [node.localName for node in body_children] == ['note', 'div1']
@@ -149,15 +150,23 @@ def extract_source(root, spec, order):
             same_as = f'#latin-deh{book}-num{section}'
             assert attributes(node) == {'xml:id': source_id, 'sameAs': same_as}
             label = f'Prol.{local_paragraph}' if chapter == 0 else f'{ROMANS[book]}.{chapter}.{local_paragraph}'
-            prefix_parts, running_parts, seen_label = [], [], False
+            prefix_parts, running_parts, seen_label, annotation = [], [], False, ''
             for child in node.childNodes:
                 if child.nodeType in (Node.TEXT_NODE, Node.CDATA_SECTION_NODE):
                     if seen_label:
+                        assert not annotation, 'Unreviewed text after a translation note'
                         running_parts.append(child.data)
                     else:
                         assert not child.data.strip()
                         prefix_parts.append(child.data)
                 else:
+                    if child.nodeType == Node.ELEMENT_NODE and child.localName == 'note':
+                        assert seen_label and not annotation and section in TRANSLATION_NOTES[book]
+                        assert attributes(child) == {'type': 'uncertainty', 'source': same_as}
+                        assert not child.getElementsByTagName('*')
+                        annotation = all_text(child)
+                        assert annotation.startswith('Translation comparison: ')
+                        continue
                     assert child.nodeType == Node.ELEMENT_NODE and child.localName == 'num' and not seen_label
                     assert attributes(child) == {} and not child.getElementsByTagName('*')
                     assert all_text(child) == f'[{label}]'
@@ -169,14 +178,14 @@ def extract_source(root, spec, order):
             assert seen_label
             prefix, running = ''.join(prefix_parts), ''.join(running_parts)
             raw = all_text(node)
-            assert prefix + running == raw
+            assert prefix + running + annotation == raw
             text = running.strip()
             leading = running[:len(running) - len(running.lstrip())]
             trailing = running[len(running.rstrip()):]
-            assert prefix + leading + text + trailing == raw and text
+            assert prefix + leading + text + trailing + annotation == raw and text
             tokens = scan_words(text)
             assert tokens
-            start, end = u16(prefix + leading), u16(raw) - u16(trailing)
+            start, end = u16(prefix + leading), u16(prefix + leading + text)
             assert end - start == u16(text)
             row = {'id': f'{COLLECTION}-{book}-{section}', 'book': book, 'section': section,
                    'order': order + len(rows), 'text': text, 'tokens': tokens,
@@ -195,7 +204,7 @@ def extract_source(root, spec, order):
                                'citationLabel': label, 'rawText': raw, 'rawLength': u16(raw),
                                'runningText': running, 'removedPrefix': prefix,
                                'leadingWhitespace': leading, 'trailingWhitespace': trailing,
-                               'sections': [section]})
+                               'annotationText': annotation, 'sections': [section]})
             chapter_rows.append(section)
         assert local_paragraph > 0
         chapters.append({'chapter': chapter, 'attributes': chapter_attributes, 'sections': chapter_rows})
@@ -211,7 +220,8 @@ def extract_source(root, spec, order):
                 'prologueUnits': sum(row['prologue'] for row in rows),
                 'indentedBeforeCitationLabel': indented, 'sameAsLinks': len(links),
                 'excludedBodyNotes': 1, 'excludedHeadings': 2 if book == 1 else 1,
-                'editorialElements': 0, 'literalBracketParagraphs': 0}
+                'editorialElements': len(TRANSLATION_NOTES[book]),
+                'excludedTranslationNotes': len(TRANSLATION_NOTES[book]), 'literalBracketParagraphs': 0}
     return {'evidence': evidence, 'rows': rows, 'paragraphs': paragraphs, 'chapters': chapters,
             'sameAsLinks': links, 'exclusions': excluded,
             'latinEvidence': {**latin_source, 'book': book, 'indexed': False, 'purpose': 'Existing sameAs targets and exact citation-label alignment'}}
@@ -227,7 +237,7 @@ def main():
         order += len(item['rows'])
     rows = [row for item in files for row in item['rows']]
     assert len(rows) == 558 and [row['order'] for row in rows] == list(range(558))
-    assert sum(len(row['tokens']) for row in rows) == 136044
+    assert sum(len(row['tokens']) for row in rows) == 136053
     assert sum(source['evidence']['sameAsLinks'] for source in files) == 740
     assert sum(source['evidence']['indentedBeforeCitationLabel'] for source in files) == 217
     result = {'sourceCommit': SOURCE_COMMIT, 'collectionId': COLLECTION,

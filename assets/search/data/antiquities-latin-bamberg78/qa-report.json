@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T16:08:01.534Z",
+  "generatedAt": "2026-10-25T18:18:58.756Z",
   "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "provenance": "corrected-source-2026-10-19",
+    "expectedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+    "observedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+    "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
@@ -179,7 +179,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "f8d53bbe83d053c0d2ce56ca7a94cf7d5155527f255d2d141d138981b058a27a",
+      "sha256": "6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe",
       "bytes": 56253
     },
     "engine": {
@@ -199,8 +199,8 @@
     },
     "verifier": {
       "path": "bin/search/tests/antiquities-corpus-qa.mjs",
-      "sha256": "90c59a2b192c42950a3fc953e78f29131473080fb858f8c86b01304808c5c12d",
-      "bytes": 121585
+      "sha256": "ff98f4d65592ffb7b70d7aad34c52c323216d7b379ba5f055c021b8c8e4d8476",
+      "bytes": 121773
     },
     "witness": {
       "path": "bin/search/tests/antiquities-source-witness.py",
@@ -214,12 +214,12 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-      "bytes": 161463
+      "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+      "bytes": 169964
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "bddc39cc1ce40ad46e820e632e17a8bd6bf94347b919347044793e02a64c8003",
+      "sha256": "39a13121b8de63e4a70d5600a38c3aab124275b3a9dfccc0476839c330dba644",
       "bytes": 15956
     },
     "books": [
@@ -7845,7 +7845,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 440.46,
+  "durationSeconds": 266.08,
   "limitations": [
     "Automated Node/Python acceptance, not browser or visual acceptance.",
     "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",

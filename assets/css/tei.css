@@ -201,3 +201,13 @@ tei-div[data-structural-identity^="niese-"] > .niese-correspondence-note a,
 #english[data-lodge-work].lodge-notes-hidden .lodge-source-context { display: none; }
 #english[data-lodge-work] .lodge-source-controls select { max-width: 100%; }
 #english[data-lodge-work] tei-div[type="chapter"] { scroll-margin-top: 6em; }
+
+/* Approved Pollard–Millet translation commentary uses the existing TEI note
+   convention. Keep it after the paragraph, separate from running English. */
+#english tei-p[id^="english-deh"] > tei-note[type="uncertainty"][source^="#latin-deh"],
+#parallel-deh-text tei-p[sameAs^="#latin-deh"] > tei-note[type="uncertainty"][source^="#latin-deh"] {
+  display: block;
+  font-size: .9em;
+  font-style: normal;
+  margin-block: .65em .2em;
+}

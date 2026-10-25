@@ -48,10 +48,12 @@ class EnglishDehExtraction(unittest.TestCase):
                 restored = ''.join(EXTRACTOR.utf16_slice(by_id[piece['recordId']]['text'], piece['recordStart'], piece['recordEnd'])
                                    if piece['kind'] == 'record' else piece['text'] for piece in paragraph['sourcePieces'])
                 self.assertEqual(restored, paragraph['rawText'])
-                self.assertEqual(paragraph['removedPrefix'] + paragraph['runningText'], paragraph['rawText'])
+                notes = ''.join(piece['text'] for piece in paragraph['sourcePieces']
+                                if piece.get('reason') == 'translation-comparison-note')
+                self.assertEqual(paragraph['removedPrefix'] + paragraph['runningText'] + notes, paragraph['rawText'])
             total += len(records)
             tokens += report['counts']['runningWordTokens']
-        self.assertEqual((total, tokens), (558, 136044))
+        self.assertEqual((total, tokens), (558, 136053))
 
     def test_indentation_before_num_is_removed_with_the_entire_label(self):
         self.assertEqual([sum(p['removedPrefix'].startswith('\n') for p in report['paragraphs'])
@@ -65,6 +67,27 @@ class EnglishDehExtraction(unittest.TestCase):
         records, _ = small(' actual running text', indent='\n            ')
         self.assertEqual(records[0]['text'], 'actual running text')
         self.assertEqual(EXTRACTOR.words(records[0]['text']), ['actual', 'running', 'text'])
+
+    def test_approved_translation_notes_are_preserved_but_not_searchable_prose(self):
+        count = 0
+        for records, report in self.books.values():
+            by_id = {record['sourceId']: record for record in records}
+            for paragraph in report['paragraphs']:
+                for piece in paragraph['sourcePieces']:
+                    if piece.get('reason') != 'translation-comparison-note':
+                        continue
+                    count += 1
+                    self.assertTrue(piece['text'].startswith('Translation comparison: '))
+                    self.assertNotIn('Translation comparison:', by_id[paragraph['sourceId']]['text'])
+                    self.assertEqual(EXTRACTOR.utf16_slice(paragraph['rawText'], piece['sourceStart'], piece['sourceEnd']), piece['text'])
+        self.assertEqual(count, 8)
+        self.assertEqual(sum(report['counts']['excludedTranslationNotes'] for _, report in self.books.values()), 8)
+
+    def test_unapproved_translation_note_attributes_are_refused(self):
+        raw = source(1).replace(b'type="uncertainty" source="#latin-deh1-num31"',
+                                b'type="certainty" source="#latin-deh1-num31"', 1)
+        with self.assertRaisesRegex(EXTRACTOR.ExtractionError, 'inline markup'):
+            EXTRACTOR.extract_document(raw, book_number=1, verify_source=False)
 
     def test_original_ids_same_as_and_chapter_local_reader_urls(self):
         for book, (records, report) in self.books.items():
@@ -119,7 +142,7 @@ class EnglishDehExtraction(unittest.TestCase):
             self.assertEqual(report['coverage'], windows_report['coverage'])
             self.assertEqual(windows_report['source']['sha256'], EXTRACTOR.sha(crlf))
             with self.assertRaisesRegex(EXTRACTOR.ExtractionError, 'source differs'):
-                EXTRACTOR.extract_document(raw.replace(b'version 1.0', b'version 1.1', 1), book_number=book)
+                EXTRACTOR.extract_document(raw.replace(b'version 1.1', b'version 1.2', 1), book_number=book)
 
     def test_unknown_inline_elements_never_silently_drop_or_invent_words(self):
         for markup in ['<note>annotation</note>', '<supplied>supplied</supplied>', '<del>deleted</del>', '<unclear/>',
@@ -147,7 +170,7 @@ class EnglishDehExtraction(unittest.TestCase):
         cases = [(b'english-deh2"', b'english-deh3"'), (b'#latin-deh2-chapter1', b'#latin-deh2-chapter2'),
                  (b'<head>Book II</head>', b'<head>New prose</head>'),
                  (b'<head>Book II</head>', b''), (b'<body>', b'<body>unclassified '),
-                 (b'version 1.0:', b'version 1.1:'), (b'<p xml:id=', b'<note>unexpected</note><p xml:id=')]
+                 (b'version 1.1:', b'version 1.2:'), (b'<p xml:id=', b'<note>unexpected</note><p xml:id=')]
         for before, after in cases:
             with self.subTest(after=after), self.assertRaises(EXTRACTOR.ExtractionError):
                 EXTRACTOR.extract_document(raw.replace(before, after, 1), book_number=2, verify_source=False,

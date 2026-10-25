@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T15:59:52.007Z",
+  "generatedAt": "2026-10-25T18:08:25.383Z",
   "independentVerifier": "bin/search/tests/deh-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "provenance": "canonical-2026-10-14",
+    "expectedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+    "observedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+    "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
@@ -139,7 +139,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "f8d53bbe83d053c0d2ce56ca7a94cf7d5155527f255d2d141d138981b058a27a"
+      "sha256": "6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe"
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -155,7 +155,7 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294"
+      "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7"
     },
     "books": [
       {
@@ -991,7 +991,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 88.75,
+  "durationSeconds": 62.35,
   "limitations": [
     "Automated Node/Python verification, not browser or visual acceptance.",
     "Reader URLs checked against canonical citation/ID structure; reader pages are not opened by this verifier.",

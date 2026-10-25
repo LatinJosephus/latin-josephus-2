@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 1,
     "language": "English",
-    "edition": "Pollard v1.0",
+    "edition": "Pollard v1.1",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-01.xml",
-    "sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
-    "bytes": 268011
+    "sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+    "bytes": 269974
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-01.xml",
-      "sha256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
-      "bytes": 268011
+      "sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+      "bytes": 269974
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "f561a58ebfd2087326bde625eef895d5396c90fc8da02af1fe24dd710e45af12",
+    "normalizedSHA256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -41,12 +41,13 @@
     "bodyParagraphs": 215,
     "numberedParagraphs": 215,
     "sections": 215,
-    "runningWordTokens": 40796,
+    "runningWordTokens": 40804,
     "chapterDivisionsIncludingPrologue": 47,
     "prologueUnits": 3,
     "excludedCitationLabels": 215,
     "excludedHeadings": 2,
     "excludedReleaseNotes": 1,
+    "excludedTranslationNotes": 4,
     "breakBeforeUnits": 1
   },
   "coverage": {
@@ -62,25 +63,25 @@
     "paragraphsExactlyRestored": 215,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "64e9d050f0de2df0a1472fea2a49191c0e25a34ad822ee06f4792b6cd55ed136",
-    "restoredParagraphSequenceSha256": "64e9d050f0de2df0a1472fea2a49191c0e25a34ad822ee06f4792b6cd55ed136",
-    "sourceWordSequenceSha256": "e7dd1202c72db257b8239ca2cd10fb52f8fd2a4be73e8408578af1754dc0e1e1",
-    "indexedWordSequenceSha256": "e7dd1202c72db257b8239ca2cd10fb52f8fd2a4be73e8408578af1754dc0e1e1",
-    "sourceNonWhitespaceContentSha256": "a7da08c3c671d175bb228761d347571c20b77be9c3a5af4a61c5f799f3bfc263",
-    "indexedNonWhitespaceContentSha256": "a7da08c3c671d175bb228761d347571c20b77be9c3a5af4a61c5f799f3bfc263"
+    "rawParagraphSequenceSha256": "f1853380aae09cf398a78ff20528b4b74b13774b22c081a4bb87c343235d3226",
+    "restoredParagraphSequenceSha256": "f1853380aae09cf398a78ff20528b4b74b13774b22c081a4bb87c343235d3226",
+    "sourceWordSequenceSha256": "66fca112397220bde97ae4491634fbac93818ae1548f84666e136db6e17b141b",
+    "indexedWordSequenceSha256": "66fca112397220bde97ae4491634fbac93818ae1548f84666e136db6e17b141b",
+    "sourceNonWhitespaceContentSha256": "4ac1e1d233f7ce36a3090f585f221712ce408293a679f3c6706f441717807b4f",
+    "indexedNonWhitespaceContentSha256": "4ac1e1d233f7ce36a3090f585f221712ce408293a679f3c6706f441717807b4f"
   },
   "excludedBlocks": [
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 4872,
-      "textSHA256": "c41b0d4cf75a53dde0657fbfcb9dbb9b0732eeea08e505068711b942bc1d51f5"
+      "textCharacters": 5438,
+      "textSHA256": "3963ec679e4c60f83f0f213c75a4d827e653b18af8ff66edc744bf1d02104d69"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.0: Prologue and Book I chapters 1–46, ending at [I.46.2].",
-      "textSHA256": "8f06770ce2e05772fe5ed1c0c941b94b83e59a2ee76923cf23a448f639854d2d"
+      "text": "English translation, version 1.1: Prologue and Book I chapters 1–46, ending at [I.46.2].",
+      "textSHA256": "21696ffe2c7a1defa82583c81e5362a47c5acac79bc27769e7dadc0c584a82d4"
     },
     {
       "kind": "heading",
@@ -2283,7 +2284,7 @@
       "chapter": 10,
       "paragraph": 3,
       "citationLabel": "I.10.3",
-      "rawText": "[I.10.3] Demetrius’s victory stirred fear of domination in those accustomed to freedom. Alexander’s savagery returned along with his security. His rule over his own people and the practice of war were restored. When he asked them what he could do to win the goodwill of the people, they replied that he should die. After suffering such grievous things, they would scarcely perhaps be reconciled even with him dead, so as to lay aside their hatred of the deceased. Roused by these words and their habitual rebellion, he killed many and forced the rest into the city called Bemeselel. Its capture brought a scourge more bitter than usual, with cruelty carried to such a savage extreme that he crucified eight hundred of their number in the middle of the city and ordered their wives and children to have their throats cut before their eyes.",
+      "rawText": "[I.10.3] Demetrius’s victory stirred fear of domination in those accustomed to freedom. Alexander’s savagery returned along with his security. His rule over his own people and the practice of war were restored. When he asked them what he could do to win the goodwill of the people, they replied that he should die. After suffering such grievous things, they would scarcely perhaps be reconciled even with him dead, so as to lay aside their hatred of the deceased. Roused by these words and their habitual rebellion, he killed many and forced the rest into the city called Bemeselel. Its capture brought a scourge more bitter than usual, with cruelty carried to such a savage extreme that he crucified eight hundred of their number in the middle of the city and ordered their wives and children to have their throats cut before their eyes.Translation comparison: The antecedent of cuius is not explicitly named: Pollard understands Demetrius, while Alexander’s recovered ascendancy is another possible referent. Millet recasts the sentence and does not unambiguously resolve the antecedent.",
       "runningText": " Demetrius’s victory stirred fear of domination in those accustomed to freedom. Alexander’s savagery returned along with his security. His rule over his own people and the practice of war were restored. When he asked them what he could do to win the goodwill of the people, they replied that he should die. After suffering such grievous things, they would scarcely perhaps be reconciled even with him dead, so as to lay aside their hatred of the deceased. Roused by these words and their habitual rebellion, he killed many and forced the rest into the city called Bemeselel. Its capture brought a scourge more bitter than usual, with cruelty carried to such a savage extreme that he crucified eight hundred of their number in the middle of the city and ordered their wives and children to have their throats cut before their eyes.",
       "removedPrefix": "[I.10.3]",
       "sourcePieces": [
@@ -2311,6 +2312,14 @@
           "sourceStart": 9,
           "sourceEnd": 838,
           "textSHA256": "93fbc6ea7364983984432d4dd401525fd27db4484d08be8d0a7cdcb802db37d4"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: The antecedent of cuius is not explicitly named: Pollard understands Demetrius, while Alexander’s recovered ascendancy is another possible referent. Millet recasts the sentence and does not unambiguously resolve the antecedent.",
+          "sourceStart": 838,
+          "sourceEnd": 1089,
+          "textSHA256": "0091e31a3f10003e1d1ce8c688d09b5c1d5da6ece158594806dc7ecc5dde4190"
         }
       ],
       "sections": [
@@ -2318,7 +2327,7 @@
           "recordId": "deh-english-pollard-1-31",
           "section": 31,
           "sourceStart": 0,
-          "sourceEnd": 838,
+          "sourceEnd": 1089,
           "textStart": 9,
           "textEnd": 838,
           "leadingWhitespace": " ",
@@ -2643,7 +2652,7 @@
       "chapter": 12,
       "paragraph": 3,
       "citationLabel": "I.12.3",
-      "rawText": "[I.12.3] The Pharisees attached themselves to the woman: a class of men practised in the teaching of the law, cunning in disposition, eager for business, and hungry for money. Using their knowledge of divine law, they played upon the conceited little woman and won her over by flattery, so that she entrusted even many affairs of the kingdom to them. They brought in whom they wished and excluded whom they wished, stripping them of service at court. What more need be said? They insinuated themselves so far that the fruit of every advantage came to them; the woman alone bore the expense and trouble. Nor was the woman’s spirit slight: she dared the greatest undertakings and planned battles beyond the condition of her sex. She prepared a force of the finest of her own men and assembled vast numbers of foreign troops, so that she would not only be safe at home in complete security of rule but would also be formidable to foreign powers. Yet she who surpassed all the rest obeyed the Pharisees as though their inferior.",
+      "rawText": "[I.12.3] The Pharisees attached themselves to the woman: a class of men practised in the teaching of the law, cunning in disposition, eager for business, and hungry for money. Using their knowledge of divine law, they played upon the conceited little woman and won her over by flattery, so that she entrusted even many affairs of the kingdom to them. They brought in whom they wished and excluded whom they wished, stripping them of service at court. What more need be said? They insinuated themselves so far that the fruit of every advantage came to them; the woman alone bore the expense and trouble. Nor was the woman’s spirit slight: she dared the greatest undertakings and planned battles beyond the condition of her sex. She prepared a force of the finest of her own men and assembled vast numbers of foreign troops, so that she would not only be safe at home in complete security of rule but would also be formidable to foreign powers. Yet she who surpassed all the rest obeyed the Pharisees as though their inferior.Translation comparison: Millet presents the Pharisees as flattering the queen by attributing to her a perfect understanding of Scripture. The Latin supplies no possessive with scientiam, permitting different attachments; Pollard retains the Pharisees’ own knowledge of divine law.",
       "runningText": " The Pharisees attached themselves to the woman: a class of men practised in the teaching of the law, cunning in disposition, eager for business, and hungry for money. Using their knowledge of divine law, they played upon the conceited little woman and won her over by flattery, so that she entrusted even many affairs of the kingdom to them. They brought in whom they wished and excluded whom they wished, stripping them of service at court. What more need be said? They insinuated themselves so far that the fruit of every advantage came to them; the woman alone bore the expense and trouble. Nor was the woman’s spirit slight: she dared the greatest undertakings and planned battles beyond the condition of her sex. She prepared a force of the finest of her own men and assembled vast numbers of foreign troops, so that she would not only be safe at home in complete security of rule but would also be formidable to foreign powers. Yet she who surpassed all the rest obeyed the Pharisees as though their inferior.",
       "removedPrefix": "[I.12.3]",
       "sourcePieces": [
@@ -2671,6 +2680,14 @@
           "sourceStart": 9,
           "sourceEnd": 1024,
           "textSHA256": "4c4b87d53289d07f23ecfffdbb821d2fcf6f47fc361f8b83f652aacd6ab57101"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Millet presents the Pharisees as flattering the queen by attributing to her a perfect understanding of Scripture. The Latin supplies no possessive with scientiam, permitting different attachments; Pollard retains the Pharisees’ own knowledge of divine law.",
+          "sourceStart": 1024,
+          "sourceEnd": 1304,
+          "textSHA256": "33c2a7cf9064948fb22cba48480cc68b3bc5d9e67dc74cc2065d588faec921ce"
         }
       ],
       "sections": [
@@ -2678,7 +2695,7 @@
           "recordId": "deh-english-pollard-1-36",
           "section": 36,
           "sourceStart": 0,
-          "sourceEnd": 1024,
+          "sourceEnd": 1304,
           "textStart": 9,
           "textEnd": 1024,
           "leadingWhitespace": " ",
@@ -5091,7 +5108,7 @@
       "chapter": 24,
       "paragraph": 2,
       "citationLabel": "I.24.2",
-      "rawText": "[I.24.2] Yet this was not the end of his labour and assistance. As the army advanced further inland, the Egyptian Jews around the district called that of Onias wished to resist and block its passage. Antipater again not only averted battle but brought it about that the very people who had prepared arms against them supplied the army with the necessities of human life. Hence the people of Memphis too turned their minds from battle and willingly joined Mithridates’s alliance. Having passed beyond the more suspect places, Mithridates thought he must engage the remaining Egyptians. The ground was more open, but the men of that region, whose settlement was called the Army of the Jews, were stronger. He fought so vigorously that he put himself in headlong danger and would almost have been killed had Antipater not seen the whole right wing, where Mithridates was, hard pressed by the enemy and enclosed on another side by the river, with no escape for the men. From the left wing Antipater rushed upon those pursuing the retreating Mithridates and pursued them until the entire body of the enemy was destroyed. In that battle Antipater lost only eighty of his men, Mithridates more than eight hundred; his own escape was beyond expectation. This disaster befell in a single moment. Antipater received many wounds in his body and won outstanding testimony to his valour before Caesar, particularly from Mithridates, who not only gave an account of his deliverance but proclaimed Antipater’s courage.",
+      "rawText": "[I.24.2] Yet this was not the end of his labour and assistance. As the army advanced further inland, the Egyptian Jews around the district called that of Onias wished to resist and block its passage. Antipater again not only averted battle but brought it about that the very people who had prepared arms against them supplied the army with the necessities of human life. Hence the people of Memphis too turned their minds from battle and willingly joined Mithridates’s alliance. Having passed beyond the more suspect places, Mithridates thought he must engage the remaining Egyptians. The ground was more open, but the men of that region, whose settlement was called the Army of the Jews, were stronger. He fought so vigorously that he put himself in headlong danger and would almost have been killed had Antipater not seen the whole right wing, where Mithridates was, hard pressed by the enemy and enclosed on another side by the river, with no escape for the men. From the left wing Antipater rushed upon those pursuing the retreating Mithridates and pursued them until the entire body of the enemy was destroyed. In that battle Antipater lost only eighty of his men, Mithridates more than eight hundred; his own escape was beyond expectation. This disaster befell in a single moment. Antipater received many wounds in his body and won outstanding testimony to his valour before Caesar, particularly from Mithridates, who not only gave an account of his deliverance but proclaimed Antipater’s courage.Translation comparison: Millet presents Mithridates’s testimony as supporting Antipater against accusations before Caesar, giving the episode a forensic interpretation. Absolutio permits consideration of acquittal or defence, but does not establish a separate hearing here; Pollard retains the immediate rescue narrative.",
       "runningText": " Yet this was not the end of his labour and assistance. As the army advanced further inland, the Egyptian Jews around the district called that of Onias wished to resist and block its passage. Antipater again not only averted battle but brought it about that the very people who had prepared arms against them supplied the army with the necessities of human life. Hence the people of Memphis too turned their minds from battle and willingly joined Mithridates’s alliance. Having passed beyond the more suspect places, Mithridates thought he must engage the remaining Egyptians. The ground was more open, but the men of that region, whose settlement was called the Army of the Jews, were stronger. He fought so vigorously that he put himself in headlong danger and would almost have been killed had Antipater not seen the whole right wing, where Mithridates was, hard pressed by the enemy and enclosed on another side by the river, with no escape for the men. From the left wing Antipater rushed upon those pursuing the retreating Mithridates and pursued them until the entire body of the enemy was destroyed. In that battle Antipater lost only eighty of his men, Mithridates more than eight hundred; his own escape was beyond expectation. This disaster befell in a single moment. Antipater received many wounds in his body and won outstanding testimony to his valour before Caesar, particularly from Mithridates, who not only gave an account of his deliverance but proclaimed Antipater’s courage.",
       "removedPrefix": "[I.24.2]",
       "sourcePieces": [
@@ -5119,6 +5136,14 @@
           "sourceStart": 9,
           "sourceEnd": 1503,
           "textSHA256": "e2b36278d9140472a528503d4edf698af123c64dd28b89a9b732613843d060d4"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Millet presents Mithridates’s testimony as supporting Antipater against accusations before Caesar, giving the episode a forensic interpretation. Absolutio permits consideration of acquittal or defence, but does not establish a separate hearing here; Pollard retains the immediate rescue narrative.",
+          "sourceStart": 1503,
+          "sourceEnd": 1824,
+          "textSHA256": "ee73b2da3775fa15c61c9bba80da98295429902ef2f6eafc8744d63e948af1b7"
         }
       ],
       "sections": [
@@ -5126,7 +5151,7 @@
           "recordId": "deh-english-pollard-1-70",
           "section": 70,
           "sourceStart": 0,
-          "sourceEnd": 1503,
+          "sourceEnd": 1824,
           "textStart": 9,
           "textEnd": 1503,
           "leadingWhitespace": " ",
@@ -8979,8 +9004,8 @@
       "chapter": 32,
       "paragraph": 6,
       "citationLabel": "I.32.6",
-      "rawText": "\n            [I.32.6] “After so many successful battles on our side, the enemy’s fortunes have been broken, even by their own admission: driven by frenzied grief, like defeated men, they murdered our envoys. It therefore seems strange to me that an irrational fear has so shaken you that you set the accidents of the elements above the known successes of valour. There has been no encounter in which the Arabs did not immediately give way and turn to flight, thinking they must retreat. As is the way with the stealthy devices of war, they sought remedies in deceit and ambushes, not to win themselves, but to delay our victory. In place of the confidence this should have brought, agitation has arisen, as though the war were terrifying, because the earth shook, although the very men who wage war were alone unharmed. Or, if we wish to consider whom it harmed, we shall judge it to be the Arabs rather, whom it brought back to war so that they should not escape stronger men by fleeing. For I see that they have returned to the battle line relying not on their arms and strength but on the loss of our livestock. Yet frail is the hope that depends not on confidence in one’s own valour but on another’s misery, since nothing on earth is so changeable as prosperity or adversity. For the state of human affairs is renewed by slight turns; prosperity does not endure, nor does hardship persist. Thus neither misery nor its contrary is perpetual: fortunes frequently alternate and vary even for the same people. Indeed, we may take an example from events. In the earlier clash we had the advantage, but as the battle advanced our fortune changed, and we were defeated by those we had defeated. We too therefore have grounds to hope that those who defeated us will be defeated by us. For excessive confidence is always incautious and careless of itself. Fear, however, warns us to look ahead and teaches diligence. In prosperity, audacity steals upon us, and unthinking rashness does not know how to await the commander’s counsel. Indeed, it was when you advanced against my judgement that Athenion’s wickedness found an opportunity to do harm. Now your trembling pledges me the first claim to victory. Raise your spirits, then, and exalt the Jews’ ancient greatness of soul. Do not let the disturbances of insensible things terrify you, nor think that movements of the earth indicate some other disaster. The disturbances of the elements have their own harm: fear nothing other than the injury that lies in them. For an earthquake and the destruction of living creatures are not signs of dangers, but the dangers themselves. There is therefore no reason for us to fear as though we were about to suffer grievous things, when we have already suffered the most grievous. He who has exacted punishment can now be favourable, and gentler than if he had not exacted it. What remains after earthquake and pestilence except mercy, since we have paid for twofold sins? Yet we have intact what is useful for war. For pestilence carried off those outside the war, while our victory took from the enemy those they had chosen as fit for war. Moreover, our livestock have died, but their judgement has died: they thought the envoys we sent should have their throats cut against human and divine law. They have transgressed the law of all human beings, even of the barbarians themselves. Even among those who know nothing of humanity, envoys are held inviolable, through dread of heavenly vengeance and fear of God as the avenger of so great a crime. Our adversaries have therefore committed what neither human nor divine laws leave unavenged. Let us go out, then, to fight not for territory or spoils, but for an injury to God. Let us be roused to war not by love of wife or children, but by our confidence in God’s protection. We carry out not our own decisions, but the sacred precepts of divine law, to exact vengeance for those whom religion requires to be inviolable. Amid hostile arms, an embassy alone mediates peace; one who serves as an envoy lays aside the character of an enemy. Their blood now cries out to God and demands vengeance. Let us hasten to battle, then, while we have God as avenger, vindicator of the slain. They fight better on our behalf and, surrounded by legions of angels, stand before us in the battle line.”",
-      "runningText": " “After so many successful battles on our side, the enemy’s fortunes have been broken, even by their own admission: driven by frenzied grief, like defeated men, they murdered our envoys. It therefore seems strange to me that an irrational fear has so shaken you that you set the accidents of the elements above the known successes of valour. There has been no encounter in which the Arabs did not immediately give way and turn to flight, thinking they must retreat. As is the way with the stealthy devices of war, they sought remedies in deceit and ambushes, not to win themselves, but to delay our victory. In place of the confidence this should have brought, agitation has arisen, as though the war were terrifying, because the earth shook, although the very men who wage war were alone unharmed. Or, if we wish to consider whom it harmed, we shall judge it to be the Arabs rather, whom it brought back to war so that they should not escape stronger men by fleeing. For I see that they have returned to the battle line relying not on their arms and strength but on the loss of our livestock. Yet frail is the hope that depends not on confidence in one’s own valour but on another’s misery, since nothing on earth is so changeable as prosperity or adversity. For the state of human affairs is renewed by slight turns; prosperity does not endure, nor does hardship persist. Thus neither misery nor its contrary is perpetual: fortunes frequently alternate and vary even for the same people. Indeed, we may take an example from events. In the earlier clash we had the advantage, but as the battle advanced our fortune changed, and we were defeated by those we had defeated. We too therefore have grounds to hope that those who defeated us will be defeated by us. For excessive confidence is always incautious and careless of itself. Fear, however, warns us to look ahead and teaches diligence. In prosperity, audacity steals upon us, and unthinking rashness does not know how to await the commander’s counsel. Indeed, it was when you advanced against my judgement that Athenion’s wickedness found an opportunity to do harm. Now your trembling pledges me the first claim to victory. Raise your spirits, then, and exalt the Jews’ ancient greatness of soul. Do not let the disturbances of insensible things terrify you, nor think that movements of the earth indicate some other disaster. The disturbances of the elements have their own harm: fear nothing other than the injury that lies in them. For an earthquake and the destruction of living creatures are not signs of dangers, but the dangers themselves. There is therefore no reason for us to fear as though we were about to suffer grievous things, when we have already suffered the most grievous. He who has exacted punishment can now be favourable, and gentler than if he had not exacted it. What remains after earthquake and pestilence except mercy, since we have paid for twofold sins? Yet we have intact what is useful for war. For pestilence carried off those outside the war, while our victory took from the enemy those they had chosen as fit for war. Moreover, our livestock have died, but their judgement has died: they thought the envoys we sent should have their throats cut against human and divine law. They have transgressed the law of all human beings, even of the barbarians themselves. Even among those who know nothing of humanity, envoys are held inviolable, through dread of heavenly vengeance and fear of God as the avenger of so great a crime. Our adversaries have therefore committed what neither human nor divine laws leave unavenged. Let us go out, then, to fight not for territory or spoils, but for an injury to God. Let us be roused to war not by love of wife or children, but by our confidence in God’s protection. We carry out not our own decisions, but the sacred precepts of divine law, to exact vengeance for those whom religion requires to be inviolable. Amid hostile arms, an embassy alone mediates peace; one who serves as an envoy lays aside the character of an enemy. Their blood now cries out to God and demands vengeance. Let us hasten to battle, then, while we have God as avenger, vindicator of the slain. They fight better on our behalf and, surrounded by legions of angels, stand before us in the battle line.”",
+      "rawText": "\n            [I.32.6] “After so many successful battles on our side, the enemy’s fortunes have been broken, even by their own admission: driven by frenzied grief, like defeated men, they murdered our envoys. It therefore seems strange to me that an irrational fear has so shaken you that you set the accidents of the elements above the known successes of valour. There has been no encounter in which the Arabs did not immediately give way and turn to flight, thinking they must retreat. As is the way with the stealthy devices of war, they sought remedies in deceit and ambushes, not to win themselves, but to delay our victory. In place of the confidence this should have brought, agitation has arisen, as though the war were terrifying, because the earth shook, although the very men who wage war were alone unharmed. Or, if we wish to consider whom it harmed, we shall judge it to be the Arabs rather, whom it brought back to war so that they should not escape stronger men by fleeing. For I see that they have returned to the battle line relying not on their arms and strength but on the loss of our livestock. Yet frail is the hope that depends not on confidence in one’s own valour but on another’s misery, since nothing on earth is so changeable as prosperity or adversity. For the state of human affairs is renewed by slight turns; prosperity does not endure, nor does hardship persist. Thus neither misery nor its contrary is perpetual: fortunes frequently alternate and vary even for the same people. Indeed, we may take an example from events. In the earlier clash we had the advantage, but as the battle advanced our fortune changed, and we were defeated by those we had defeated. We too therefore have grounds to hope that those who defeated us will be defeated by us. For excessive confidence is always incautious and careless of itself. Fear, however, warns us to look ahead and teaches diligence. In prosperity, audacity steals upon us, and unthinking rashness does not know how to await the commander’s counsel. Indeed, it was when you advanced against my judgement that Athenion’s wickedness found an opportunity to do harm. Now your trembling pledges me the first claim to victory. Raise your spirits, then, and exalt the Jews’ ancient greatness of soul. Do not let the disturbances of insensible things terrify you, nor think that movements of the earth indicate some other disaster. The disturbances of the elements have their own harm: fear nothing other than the injury that lies in them. For an earthquake and the destruction of living creatures are not signs of dangers, but the dangers themselves. There is therefore no reason for us to fear as though we were about to suffer grievous things, when we have already suffered the most grievous. He who has exacted punishment can now be favourable, and gentler than if he had not exacted it. What remains after earthquake and pestilence but mercy, since we have paid twice over for our sins? Yet we have intact what is useful for war. For pestilence carried off those outside the war, while our victory took from the enemy those they had chosen as fit for war. Moreover, our livestock have died, but their judgement has died: they thought the envoys we sent should have their throats cut against human and divine law. They have transgressed the law of all human beings, even of the barbarians themselves. Even among those who know nothing of humanity, envoys are held inviolable, through dread of heavenly vengeance and fear of God as the avenger of so great a crime. Our adversaries have therefore committed what neither human nor divine laws leave unavenged. Let us go out, then, to fight not for territory or spoils, but for an injury to God. Let us be roused to war not by love of wife or children, but by our confidence in God’s protection. We carry out not our own decisions, but the sacred precepts of divine law, to exact vengeance for those whom religion requires to be inviolable. Amid hostile arms, an embassy alone mediates peace; one who serves as an envoy lays aside the character of an enemy. Their blood now cries out to God and demands vengeance. Let us hasten to battle, then, while we have God as avenger, vindicator of the slain. They fight better on our behalf and, surrounded by legions of angels, stand before us in the battle line.”",
+      "runningText": " “After so many successful battles on our side, the enemy’s fortunes have been broken, even by their own admission: driven by frenzied grief, like defeated men, they murdered our envoys. It therefore seems strange to me that an irrational fear has so shaken you that you set the accidents of the elements above the known successes of valour. There has been no encounter in which the Arabs did not immediately give way and turn to flight, thinking they must retreat. As is the way with the stealthy devices of war, they sought remedies in deceit and ambushes, not to win themselves, but to delay our victory. In place of the confidence this should have brought, agitation has arisen, as though the war were terrifying, because the earth shook, although the very men who wage war were alone unharmed. Or, if we wish to consider whom it harmed, we shall judge it to be the Arabs rather, whom it brought back to war so that they should not escape stronger men by fleeing. For I see that they have returned to the battle line relying not on their arms and strength but on the loss of our livestock. Yet frail is the hope that depends not on confidence in one’s own valour but on another’s misery, since nothing on earth is so changeable as prosperity or adversity. For the state of human affairs is renewed by slight turns; prosperity does not endure, nor does hardship persist. Thus neither misery nor its contrary is perpetual: fortunes frequently alternate and vary even for the same people. Indeed, we may take an example from events. In the earlier clash we had the advantage, but as the battle advanced our fortune changed, and we were defeated by those we had defeated. We too therefore have grounds to hope that those who defeated us will be defeated by us. For excessive confidence is always incautious and careless of itself. Fear, however, warns us to look ahead and teaches diligence. In prosperity, audacity steals upon us, and unthinking rashness does not know how to await the commander’s counsel. Indeed, it was when you advanced against my judgement that Athenion’s wickedness found an opportunity to do harm. Now your trembling pledges me the first claim to victory. Raise your spirits, then, and exalt the Jews’ ancient greatness of soul. Do not let the disturbances of insensible things terrify you, nor think that movements of the earth indicate some other disaster. The disturbances of the elements have their own harm: fear nothing other than the injury that lies in them. For an earthquake and the destruction of living creatures are not signs of dangers, but the dangers themselves. There is therefore no reason for us to fear as though we were about to suffer grievous things, when we have already suffered the most grievous. He who has exacted punishment can now be favourable, and gentler than if he had not exacted it. What remains after earthquake and pestilence but mercy, since we have paid twice over for our sins? Yet we have intact what is useful for war. For pestilence carried off those outside the war, while our victory took from the enemy those they had chosen as fit for war. Moreover, our livestock have died, but their judgement has died: they thought the envoys we sent should have their throats cut against human and divine law. They have transgressed the law of all human beings, even of the barbarians themselves. Even among those who know nothing of humanity, envoys are held inviolable, through dread of heavenly vengeance and fear of God as the avenger of so great a crime. Our adversaries have therefore committed what neither human nor divine laws leave unavenged. Let us go out, then, to fight not for territory or spoils, but for an injury to God. Let us be roused to war not by love of wife or children, but by our confidence in God’s protection. We carry out not our own decisions, but the sacred precepts of divine law, to exact vengeance for those whom religion requires to be inviolable. Amid hostile arms, an embassy alone mediates peace; one who serves as an envoy lays aside the character of an enemy. Their blood now cries out to God and demands vengeance. Let us hasten to battle, then, while we have God as avenger, vindicator of the slain. They fight better on our behalf and, surrounded by legions of angels, stand before us in the battle line.”",
       "removedPrefix": "\n            [I.32.6]",
       "sourcePieces": [
         {
@@ -9003,10 +9028,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-1-124",
           "recordStart": 0,
-          "recordEnd": 4302,
+          "recordEnd": 4306,
           "sourceStart": 22,
-          "sourceEnd": 4324,
-          "textSHA256": "072171625ab59c5fffe53eaf315c769e5dd0033e55c2f3812cb2f53423d04760"
+          "sourceEnd": 4328,
+          "textSHA256": "bc1577f5073d59ce64267121d2f58539173c19d7d4e819adee1684d36408a8dd"
         }
       ],
       "sections": [
@@ -9014,12 +9039,12 @@
           "recordId": "deh-english-pollard-1-124",
           "section": 124,
           "sourceStart": 0,
-          "sourceEnd": 4324,
+          "sourceEnd": 4328,
           "textStart": 22,
-          "textEnd": 4324,
+          "textEnd": 4328,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "072171625ab59c5fffe53eaf315c769e5dd0033e55c2f3812cb2f53423d04760"
+          "textSHA256": "bc1577f5073d59ce64267121d2f58539173c19d7d4e819adee1684d36408a8dd"
         }
       ],
       "editorialSpans": [],
@@ -10203,7 +10228,7 @@
       "chapter": 37,
       "paragraph": 5,
       "citationLabel": "I.37.5",
-      "rawText": "\n            [I.37.5] Before setting out, however, he privately disclosed to his brother-in-law Josephus, whom the king’s sister Salome had married, that he feared being killed because of desire for his wife’s beauty, which the woman was accused of having made known by sending an image of her comeliness. He entrusted this task to him as his brother-in-law: if he himself were killed by Antony, he was to kill Mariamne, so that no reward for the disgrace should survive. Josephus, by no means, I think, from a desire to betray him, but to soothe the woman’s complaints against her husband, in which she said that in her affliction she burned with hatred for him, revealed the instruction. He interpreted it as a lover’s affection: not even in death would Herod allow himself to be separated from his union with his wife. But, far differently from what Josephus had supposed, the woman took it as proof of his still unappeased cruelty towards her. He had charged his own brother-in-law with carrying it out even after his death. He wronged her in his hostility: he did not test his suspicions against any evidence of truth but pressed them through to the destruction of headlong death. There would be no end to hatred that extended beyond the very end of life and safety. But Josephus, forgetful of trouble at home, inflamed his own wife’s suspicions against him while seeking to reconcile another man’s wife to her husband. She thought that her own husband’s conversations with Mariamne and his lingering in the royal palace should not be taken lightly. Indeed, when her brother returned, she did not delay her accusation, adding her own injury to the insults against the king: Mariamne had taken her husband from her too. But Herod, although shaken, was at first by no means greatly moved. He did not show himself hostile to his wife; indeed, broken by the force of love, one day he began to swear to the woman that he loved her with such affection that he had never burned with desire for another woman. He had cast them all from his mind so as to remain faithful to his wife. But she said: “You showed your love for me well enough in the instructions you gave Josephus, ordering him to kill me. How can a man love who can kill?”",
+      "rawText": "\n            [I.37.5] Before setting out, however, he privately disclosed to his brother-in-law Josephus, whom the king’s sister Salome had married, that he feared being killed because of desire for his wife’s beauty, which the woman was accused of having made known by sending an image of her comeliness. He entrusted this task to him as his brother-in-law: if he himself were killed by Antony, he was to kill Mariamne, so that no reward for the disgrace should survive. Josephus, by no means, I think, from a desire to betray him, but to soothe the woman’s complaints against her husband, in which she said that in her affliction she burned with hatred for him, revealed the instruction. He interpreted it as a lover’s affection: not even in death would Herod allow himself to be separated from his union with his wife. But, far differently from what Josephus had supposed, the woman took it as proof of his still unappeased cruelty towards her. He had charged his own brother-in-law with carrying it out even after his death. He wronged her in his hostility: he did not test his suspicions against any evidence of truth but pressed them through to the destruction of headlong death. There would be no end to hatred that extended beyond the very end of life and safety. But Josephus, forgetful of trouble at home, inflamed his own wife’s suspicions against him while seeking to reconcile another man’s wife to her husband. She thought that her own husband’s conversations with Mariamne and his lingering in the royal palace should not be taken lightly. Indeed, when her brother returned, she did not delay her accusation, adding her own injury to the insults against the king: Mariamne had taken her husband from her too. But Herod, although shaken, was at first by no means greatly moved. He did not show himself hostile to his wife; indeed, broken by the force of love, one day he began to swear to the woman that he loved her with such affection that he had never burned with desire for another woman. He had cast them all from his mind so as to remain faithful to his wife. But she said: “You showed your love for me well enough in the instructions you gave Josephus, ordering him to kill me. How can a man love who can kill?”Translation comparison: Millet substantially agrees with Pollard in presenting Mariamne as hating her husband. The genitive uiri could instead be subjective, referring to Herod’s hatred of Mariamne; the existing interpretation is retained in view of the narrative context.",
       "runningText": " Before setting out, however, he privately disclosed to his brother-in-law Josephus, whom the king’s sister Salome had married, that he feared being killed because of desire for his wife’s beauty, which the woman was accused of having made known by sending an image of her comeliness. He entrusted this task to him as his brother-in-law: if he himself were killed by Antony, he was to kill Mariamne, so that no reward for the disgrace should survive. Josephus, by no means, I think, from a desire to betray him, but to soothe the woman’s complaints against her husband, in which she said that in her affliction she burned with hatred for him, revealed the instruction. He interpreted it as a lover’s affection: not even in death would Herod allow himself to be separated from his union with his wife. But, far differently from what Josephus had supposed, the woman took it as proof of his still unappeased cruelty towards her. He had charged his own brother-in-law with carrying it out even after his death. He wronged her in his hostility: he did not test his suspicions against any evidence of truth but pressed them through to the destruction of headlong death. There would be no end to hatred that extended beyond the very end of life and safety. But Josephus, forgetful of trouble at home, inflamed his own wife’s suspicions against him while seeking to reconcile another man’s wife to her husband. She thought that her own husband’s conversations with Mariamne and his lingering in the royal palace should not be taken lightly. Indeed, when her brother returned, she did not delay her accusation, adding her own injury to the insults against the king: Mariamne had taken her husband from her too. But Herod, although shaken, was at first by no means greatly moved. He did not show himself hostile to his wife; indeed, broken by the force of love, one day he began to swear to the woman that he loved her with such affection that he had never burned with desire for another woman. He had cast them all from his mind so as to remain faithful to his wife. But she said: “You showed your love for me well enough in the instructions you gave Josephus, ordering him to kill me. How can a man love who can kill?”",
       "removedPrefix": "\n            [I.37.5]",
       "sourcePieces": [
@@ -10231,6 +10256,14 @@
           "sourceStart": 22,
           "sourceEnd": 2232,
           "textSHA256": "323fd6441de47ac6fd99cb3c27b9b57a9eb13c1ddfd690263238f4e26d05c5fa"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Millet substantially agrees with Pollard in presenting Mariamne as hating her husband. The genitive uiri could instead be subjective, referring to Herod’s hatred of Mariamne; the existing interpretation is retained in view of the narrative context.",
+          "sourceStart": 2232,
+          "sourceEnd": 2504,
+          "textSHA256": "c8cf9168170dbb764c1955a7490e2608404f8ffac35a4632e3cd1db432a2b608"
         }
       ],
       "sections": [
@@ -10238,7 +10271,7 @@
           "recordId": "deh-english-pollard-1-141",
           "section": 141,
           "sourceStart": 0,
-          "sourceEnd": 2232,
+          "sourceEnd": 2504,
           "textStart": 22,
           "textEnd": 2232,
           "leadingWhitespace": " ",
@@ -12867,8 +12900,8 @@
       "chapter": 42,
       "paragraph": 2,
       "citationLabel": "I.42.2",
-      "rawText": "\n            [I.42.2] Antipater did not rejoice long in their death. With them removed, he flattered himself that his succession was beyond doubt; but the grave hatred of the whole nation soon blazed against him, since it was plain to everyone that his brothers had fallen through his intrigue. No small fear also followed as he considered how numerous the offspring of the slain grew day by day. Alexander had left his sons Tigranes and Alexander, born to him by Glaphyra; Aristobulus was survived by Herod, Agrippa and Aristobulus, born of Berenice, Salome’s daughter. Herodias too survived, and Mariamne’s daughters, whom their sex would not hinder and desire for the kingdom would stir. Terrified by these things, Antipater placed his hope in fraud and cunning and tried to bind each man to himself more and more with gifts and presents, even attempting to buy the favour of Caesar’s friends and household. But, on the contrary, even affairs at home turned against him. For, with the passage of time, the king gradually softened towards his grandchildren born to Alexander and Aristobulus and displayed remorse for his deed, pitying those whose parents he had killed.",
-      "runningText": " Antipater did not rejoice long in their death. With them removed, he flattered himself that his succession was beyond doubt; but the grave hatred of the whole nation soon blazed against him, since it was plain to everyone that his brothers had fallen through his intrigue. No small fear also followed as he considered how numerous the offspring of the slain grew day by day. Alexander had left his sons Tigranes and Alexander, born to him by Glaphyra; Aristobulus was survived by Herod, Agrippa and Aristobulus, born of Berenice, Salome’s daughter. Herodias too survived, and Mariamne’s daughters, whom their sex would not hinder and desire for the kingdom would stir. Terrified by these things, Antipater placed his hope in fraud and cunning and tried to bind each man to himself more and more with gifts and presents, even attempting to buy the favour of Caesar’s friends and household. But, on the contrary, even affairs at home turned against him. For, with the passage of time, the king gradually softened towards his grandchildren born to Alexander and Aristobulus and displayed remorse for his deed, pitying those whose parents he had killed.",
+      "rawText": "\n            [I.42.2] Antipater did not rejoice long in their death. With them removed, he flattered himself that his succession was beyond doubt; but the grave hatred of the whole nation soon blazed against him, since it was plain to everyone that his brothers had fallen through his intrigue. No small fear also followed as he considered how numerous the offspring of the slain grew day by day. Alexander had left his sons Tigranes and Alexander, born to him by Glaphyra; Aristobulus was survived by Herod, Agrippa and Aristobulus, born of Berenice, Salome’s daughter, and by two daughters, Herodias and Mariamne, whom their sex would not hinder and desire for the kingdom would stir. Terrified by these things, Antipater placed his hope in fraud and cunning and tried to bind each man to himself more and more with gifts and presents, even attempting to buy the favour of Caesar’s friends and household. But, on the contrary, even affairs at home turned against him. For, with the passage of time, the king gradually softened towards his grandchildren born to Alexander and Aristobulus and displayed remorse for his deed, pitying those whose parents he had killed.",
+      "runningText": " Antipater did not rejoice long in their death. With them removed, he flattered himself that his succession was beyond doubt; but the grave hatred of the whole nation soon blazed against him, since it was plain to everyone that his brothers had fallen through his intrigue. No small fear also followed as he considered how numerous the offspring of the slain grew day by day. Alexander had left his sons Tigranes and Alexander, born to him by Glaphyra; Aristobulus was survived by Herod, Agrippa and Aristobulus, born of Berenice, Salome’s daughter, and by two daughters, Herodias and Mariamne, whom their sex would not hinder and desire for the kingdom would stir. Terrified by these things, Antipater placed his hope in fraud and cunning and tried to bind each man to himself more and more with gifts and presents, even attempting to buy the favour of Caesar’s friends and household. But, on the contrary, even affairs at home turned against him. For, with the passage of time, the king gradually softened towards his grandchildren born to Alexander and Aristobulus and displayed remorse for his deed, pitying those whose parents he had killed.",
       "removedPrefix": "\n            [I.42.2]",
       "sourcePieces": [
         {
@@ -12891,10 +12924,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-1-178",
           "recordStart": 0,
-          "recordEnd": 1149,
+          "recordEnd": 1145,
           "sourceStart": 22,
-          "sourceEnd": 1171,
-          "textSHA256": "188cfd25005c8d0f0083ed1435e359ff2eaf3de7014eacad39acd27e7f163a60"
+          "sourceEnd": 1167,
+          "textSHA256": "20c9c44085490d69aef8f670a9c55afc02b92a0d2254a6121d2d22f86d79741f"
         }
       ],
       "sections": [
@@ -12902,12 +12935,12 @@
           "recordId": "deh-english-pollard-1-178",
           "section": 178,
           "sourceStart": 0,
-          "sourceEnd": 1171,
+          "sourceEnd": 1167,
           "textStart": 22,
-          "textEnd": 1171,
+          "textEnd": 1167,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "188cfd25005c8d0f0083ed1435e359ff2eaf3de7014eacad39acd27e7f163a60"
+          "textSHA256": "20c9c44085490d69aef8f670a9c55afc02b92a0d2254a6121d2d22f86d79741f"
         }
       ],
       "editorialSpans": [],
@@ -14019,8 +14052,8 @@
       "chapter": 44,
       "paragraph": 1,
       "citationLabel": "I.44.1",
-      "rawText": "\n            [I.44.1] Letters fabricated against his brothers Archelaus and Philip were also found. These were sons of the king being educated in Rome. Antipater assailed them especially because he saw that they possessed no small wisdom and that the king’s fatherly affection inclined towards them; indeed, he had summoned them by letter to return home sooner. Antipater therefore thought that they stood in the way of his interests and pressed upon his devices, so that the hope placed in the young men would overshadow all the feigned efforts of his intrigue. He therefore composed letters in the names of powerful men whom he had drawn into his friendship while in Rome, and also paid others to write that the young men were assailing their father with hostile hatred and lamenting the deaths of Alexander and Aristobulus with excessive complaint.",
-      "runningText": " Letters fabricated against his brothers Archelaus and Philip were also found. These were sons of the king being educated in Rome. Antipater assailed them especially because he saw that they possessed no small wisdom and that the king’s fatherly affection inclined towards them; indeed, he had summoned them by letter to return home sooner. Antipater therefore thought that they stood in the way of his interests and pressed upon his devices, so that the hope placed in the young men would overshadow all the feigned efforts of his intrigue. He therefore composed letters in the names of powerful men whom he had drawn into his friendship while in Rome, and also paid others to write that the young men were assailing their father with hostile hatred and lamenting the deaths of Alexander and Aristobulus with excessive complaint.",
+      "rawText": "\n            [I.44.1] Letters fabricated against his brothers Archelaus and Philip were also found. These were sons of the king being educated in Rome. Antipater assailed them especially because he saw that they possessed no small wisdom and that the king’s fatherly affection inclined towards them; indeed, he had summoned them by letter to return home sooner. Antipater therefore thought that they stood in the way of his interests, and set to work with his own stratagems, so that by pretending to place his hopes in the young men he might conceal all the efforts of his faction. He therefore composed letters in the names of powerful men whom he had drawn into his friendship while in Rome, and also paid others to write that the young men were assailing their father with hostile hatred and lamenting the deaths of Alexander and Aristobulus with excessive complaint.",
+      "runningText": " Letters fabricated against his brothers Archelaus and Philip were also found. These were sons of the king being educated in Rome. Antipater assailed them especially because he saw that they possessed no small wisdom and that the king’s fatherly affection inclined towards them; indeed, he had summoned them by letter to return home sooner. Antipater therefore thought that they stood in the way of his interests, and set to work with his own stratagems, so that by pretending to place his hopes in the young men he might conceal all the efforts of his faction. He therefore composed letters in the names of powerful men whom he had drawn into his friendship while in Rome, and also paid others to write that the young men were assailing their father with hostile hatred and lamenting the deaths of Alexander and Aristobulus with excessive complaint.",
       "removedPrefix": "\n            [I.44.1]",
       "sourcePieces": [
         {
@@ -14043,10 +14076,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-1-194",
           "recordStart": 0,
-          "recordEnd": 829,
+          "recordEnd": 849,
           "sourceStart": 22,
-          "sourceEnd": 851,
-          "textSHA256": "d3b8fe21c29ef79737af8d7d673830c30c57b514aeb58f7c0486a957f0258562"
+          "sourceEnd": 871,
+          "textSHA256": "237bdc499d08877b20039968ee6d21134a0186aea36f556ee10dbf49ca4a4c7a"
         }
       ],
       "sections": [
@@ -14054,12 +14087,12 @@
           "recordId": "deh-english-pollard-1-194",
           "section": 194,
           "sourceStart": 0,
-          "sourceEnd": 851,
+          "sourceEnd": 871,
           "textStart": 22,
-          "textEnd": 851,
+          "textEnd": 871,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "d3b8fe21c29ef79737af8d7d673830c30c57b514aeb58f7c0486a957f0258562"
+          "textSHA256": "237bdc499d08877b20039968ee6d21134a0186aea36f556ee10dbf49ca4a4c7a"
         }
       ],
       "editorialSpans": [],
@@ -14163,8 +14196,8 @@
       "chapter": 44,
       "paragraph": 3,
       "citationLabel": "I.44.3",
-      "rawText": "\n            [I.44.3] Herod replied to this letter that he ought to hasten back, assured of his father’s affection. Not only had it diminished in no way through his absence, but so much favour had been added that for his sake his mother’s offence would be lessened. For, after discovering her complicity in her son’s devices, he had again expelled her from his house, stripped of the gains of royal generosity. He wrote as though he would relent in his indignation towards her, fearing that Antipater, on learning of his mother’s expulsion, would grow suspicious and take precautions. On reaching Tarentum, Antipater first learnt of Pheroras’s death and there mourned greatly. Some attributed this to family devotion, thinking he could not bear the grief of his uncle’s death. But he was groaning at the loss of the agent of his attempted murder of his father. Not only had the preparation of the crime failed; the poison had also remained, and this terrified him, lest it somehow come to the king’s knowledge and Herod expose the scene of the crime. He therefore crossed to the harbour of Caesarea, by no means free from graver care and anxiety, since his mother’s expulsion gave no small prejudgement against her condemned offspring. But his friends urged him on, thinking that whatever served Antipater’s interests should take second place to their longing for their homeland. Having also observed his disposition, by which he had been accustomed readily to sway his father through his counsels even when estranged from favour towards him, they urged him to present himself all the sooner to his father and the kingdom destined for him. No one would dare oppose him when he was present; only the opportunity of his absence had smiled upon them, so that they thought the king’s mind could be turned away from him. He should therefore forestall this quickly, lest by delaying he either offend a father who longed for him or further embitter a suspicious one by betraying his own lack of confidence. Thus he believed those who advised what he wanted rather than what he needed.",
-      "runningText": " Herod replied to this letter that he ought to hasten back, assured of his father’s affection. Not only had it diminished in no way through his absence, but so much favour had been added that for his sake his mother’s offence would be lessened. For, after discovering her complicity in her son’s devices, he had again expelled her from his house, stripped of the gains of royal generosity. He wrote as though he would relent in his indignation towards her, fearing that Antipater, on learning of his mother’s expulsion, would grow suspicious and take precautions. On reaching Tarentum, Antipater first learnt of Pheroras’s death and there mourned greatly. Some attributed this to family devotion, thinking he could not bear the grief of his uncle’s death. But he was groaning at the loss of the agent of his attempted murder of his father. Not only had the preparation of the crime failed; the poison had also remained, and this terrified him, lest it somehow come to the king’s knowledge and Herod expose the scene of the crime. He therefore crossed to the harbour of Caesarea, by no means free from graver care and anxiety, since his mother’s expulsion gave no small prejudgement against her condemned offspring. But his friends urged him on, thinking that whatever served Antipater’s interests should take second place to their longing for their homeland. Having also observed his disposition, by which he had been accustomed readily to sway his father through his counsels even when estranged from favour towards him, they urged him to present himself all the sooner to his father and the kingdom destined for him. No one would dare oppose him when he was present; only the opportunity of his absence had smiled upon them, so that they thought the king’s mind could be turned away from him. He should therefore forestall this quickly, lest by delaying he either offend a father who longed for him or further embitter a suspicious one by betraying his own lack of confidence. Thus he believed those who advised what he wanted rather than what he needed.",
+      "rawText": "\n            [I.44.3] Herod replied to this letter that he ought to hasten back, assured of his father’s affection. Not only had it diminished in no way through his absence, but so much favour had been added that for his sake his mother’s offence would be lessened. For, after discovering her complicity in her son’s devices, he had again expelled her from his house, stripped of the gains of royal generosity. He wrote as though he would relent in his indignation towards her, fearing that Antipater, on learning of his mother’s expulsion, would grow suspicious and take precautions. On reaching Tarentum, Antipater first learnt of Pheroras’s death and there mourned greatly. Some attributed this to family devotion, thinking he could not bear the grief of his uncle’s death. But he was groaning at the loss of the agent of his attempted murder of his father. Not only had the preparation of the crime failed; the poison had also remained, and this terrified him, lest it somehow come to the king’s knowledge and Herod expose the scene of the crime. He therefore crossed to the harbour of Caesarea, by no means free from graver care and anxiety, since his mother’s expulsion gave no small prejudgement against her condemned offspring. But his friends urged him on, thinking that whatever served Antipater’s interests should take second place to their longing for their homeland. Having also observed his disposition, by which he had been accustomed readily to sway his father through his counsels even when estranged from favour towards him, they urged him to present himself all the sooner to his father and the kingdom destined for him. No one would dare oppose him when he was present; only the opportunity of his absence had smiled upon them, so that they thought the king’s mind could be turned away from him. He should therefore forestall this quickly, lest by delaying he either offend a father who longed for him or further embitter a suspicious one by betraying his own lack of confidence. Thus he trusted those who advised what they wanted rather than what he needed.",
+      "runningText": " Herod replied to this letter that he ought to hasten back, assured of his father’s affection. Not only had it diminished in no way through his absence, but so much favour had been added that for his sake his mother’s offence would be lessened. For, after discovering her complicity in her son’s devices, he had again expelled her from his house, stripped of the gains of royal generosity. He wrote as though he would relent in his indignation towards her, fearing that Antipater, on learning of his mother’s expulsion, would grow suspicious and take precautions. On reaching Tarentum, Antipater first learnt of Pheroras’s death and there mourned greatly. Some attributed this to family devotion, thinking he could not bear the grief of his uncle’s death. But he was groaning at the loss of the agent of his attempted murder of his father. Not only had the preparation of the crime failed; the poison had also remained, and this terrified him, lest it somehow come to the king’s knowledge and Herod expose the scene of the crime. He therefore crossed to the harbour of Caesarea, by no means free from graver care and anxiety, since his mother’s expulsion gave no small prejudgement against her condemned offspring. But his friends urged him on, thinking that whatever served Antipater’s interests should take second place to their longing for their homeland. Having also observed his disposition, by which he had been accustomed readily to sway his father through his counsels even when estranged from favour towards him, they urged him to present himself all the sooner to his father and the kingdom destined for him. No one would dare oppose him when he was present; only the opportunity of his absence had smiled upon them, so that they thought the king’s mind could be turned away from him. He should therefore forestall this quickly, lest by delaying he either offend a father who longed for him or further embitter a suspicious one by betraying his own lack of confidence. Thus he trusted those who advised what they wanted rather than what he needed.",
       "removedPrefix": "\n            [I.44.3]",
       "sourcePieces": [
         {
@@ -14187,10 +14220,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-1-196",
           "recordStart": 0,
-          "recordEnd": 2055,
+          "recordEnd": 2056,
           "sourceStart": 22,
-          "sourceEnd": 2077,
-          "textSHA256": "305f7d46169fd02ac1462d43fe527849044c20e59f71f7fe83483eea66117cde"
+          "sourceEnd": 2078,
+          "textSHA256": "01e417ee24fde6207c150f8863282a445a4297582a03d04ee23ea3df6fa30b3d"
         }
       ],
       "sections": [
@@ -14198,12 +14231,12 @@
           "recordId": "deh-english-pollard-1-196",
           "section": 196,
           "sourceStart": 0,
-          "sourceEnd": 2077,
+          "sourceEnd": 2078,
           "textStart": 22,
-          "textEnd": 2077,
+          "textEnd": 2078,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "305f7d46169fd02ac1462d43fe527849044c20e59f71f7fe83483eea66117cde"
+          "textSHA256": "01e417ee24fde6207c150f8863282a445a4297582a03d04ee23ea3df6fa30b3d"
         }
       ],
       "editorialSpans": [],

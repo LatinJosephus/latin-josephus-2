@@ -2,7 +2,7 @@
 import {
   sources, romanBooks, bjTargets, componentCitation, publicationRecords,
   loadConcordance, createTextLoader, dehParagraphs, bellumIndex, bellumSection, namespaceIds
-} from "./dehParallelsCore.js?v=20261012-integrity-v1";
+} from "./dehParallelsCore.js?v=20261025-pollard-v1.1";
 
 import {ajSources, ajTargets, loadAjLayer, createAjTextLoader, ajSection} from "./dehAntiquitiesCore.js?v=20261014-aj-v1";
 const initialize = () => {

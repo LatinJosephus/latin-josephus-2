@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 2,
     "language": "English",
-    "edition": "Pollard v1.0",
+    "edition": "Pollard v1.1",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-02.xml",
-    "sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
-    "bytes": 112867
+    "sha256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+    "bytes": 113787
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-02.xml",
-      "sha256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
-      "bytes": 112867
+      "sha256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+      "bytes": 113787
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "947e6cb37ae5918469476e1c85189382d4d7e3c6f67203b8a5e9381a187f5d81",
+    "normalizedSHA256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -41,12 +41,13 @@
     "bodyParagraphs": 73,
     "numberedParagraphs": 73,
     "sections": 73,
-    "runningWordTokens": 17141,
+    "runningWordTokens": 17143,
     "chapterDivisionsIncludingPrologue": 18,
     "prologueUnits": 0,
     "excludedCitationLabels": 73,
     "excludedHeadings": 1,
     "excludedReleaseNotes": 1,
+    "excludedTranslationNotes": 1,
     "breakBeforeUnits": 0
   },
   "coverage": {
@@ -62,25 +63,25 @@
     "paragraphsExactlyRestored": 73,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "ceed6eb5ca0afb68c9e548a20eada5dbb7e621bb6b24a6627e7a97dab398a700",
-    "restoredParagraphSequenceSha256": "ceed6eb5ca0afb68c9e548a20eada5dbb7e621bb6b24a6627e7a97dab398a700",
-    "sourceWordSequenceSha256": "723ac8f99bf78c91dfaed7dcf73a52298853ac0ab3d66a034249253340f7b80b",
-    "indexedWordSequenceSha256": "723ac8f99bf78c91dfaed7dcf73a52298853ac0ab3d66a034249253340f7b80b",
-    "sourceNonWhitespaceContentSha256": "c2e05b2ac0f77a8627f28d40e39c9dbed17e4a5c6fe51b35072d21b68d36d79a",
-    "indexedNonWhitespaceContentSha256": "c2e05b2ac0f77a8627f28d40e39c9dbed17e4a5c6fe51b35072d21b68d36d79a"
+    "rawParagraphSequenceSha256": "b3160bec65737db21f9dc1a8f9ddfd01332b0f240ac6f093c517dbe66d6f4197",
+    "restoredParagraphSequenceSha256": "b3160bec65737db21f9dc1a8f9ddfd01332b0f240ac6f093c517dbe66d6f4197",
+    "sourceWordSequenceSha256": "43b8b0a49e8047d446395b19b6bc8dbe6b13a2f6c63fcf5930200fb9a3ebd6a0",
+    "indexedWordSequenceSha256": "43b8b0a49e8047d446395b19b6bc8dbe6b13a2f6c63fcf5930200fb9a3ebd6a0",
+    "sourceNonWhitespaceContentSha256": "3384ca40207ae2af346f12f897f1cfcd2f0b72c54655239ac4e6b39074160a9a",
+    "indexedNonWhitespaceContentSha256": "3384ca40207ae2af346f12f897f1cfcd2f0b72c54655239ac4e6b39074160a9a"
   },
   "excludedBlocks": [
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 4157,
-      "textSHA256": "b03f271423a80237e21a2b6f7cbd7869195872010a107b599f44b5aa97514185"
+      "textCharacters": 4723,
+      "textSHA256": "4554543f914d3a412d63e7eab43c407ba2f28eaa64e2aeac876542529fb9c47f"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.0: complete Book II, chapters 1–18, [II.1.1]–[II.18.1].",
-      "textSHA256": "8796523d6165c637d11a4414c4a1b4f4d9895b2103102cd9ead880a520a2e79d"
+      "text": "English translation, version 1.1: complete Book II, chapters 1–18, [II.1.1]–[II.18.1].",
+      "textSHA256": "e79afa0b115e49cd60352357a9ceadfe7779fd8aa5e1ca5459640a93d555544f"
     },
     {
       "kind": "heading",
@@ -2780,8 +2781,8 @@
       "chapter": 10,
       "paragraph": 5,
       "citationLabel": "II.10.5",
-      "rawText": "\n            [II.10.5] The eighth day of the festival, at which everyone was accustomed to lay wood on the altars so that the fire should never fail—it had to remain unextinguished—increased their frenzy, so that all the attendants were excluded from the temple. As the Sicarii rushed forward more boldly than usual, the royal troops yielded and did not dare to hold their ground even in the upper parts. The houses of Agrippa and Berenice were burned and all the royal furnishings plundered. Fire was carried around, so that even the debt notes stored in the public archives were burned, so that the poor might rise more insolently against their moneylenders. Thinking themselves released from every bond, they set fire to the city with their own hands. The sinews of the city were burned away. The fortress called Antonia was stormed, all the guards found there were killed, and it was afterwards burned.",
-      "runningText": " The eighth day of the festival, at which everyone was accustomed to lay wood on the altars so that the fire should never fail—it had to remain unextinguished—increased their frenzy, so that all the attendants were excluded from the temple. As the Sicarii rushed forward more boldly than usual, the royal troops yielded and did not dare to hold their ground even in the upper parts. The houses of Agrippa and Berenice were burned and all the royal furnishings plundered. Fire was carried around, so that even the debt notes stored in the public archives were burned, so that the poor might rise more insolently against their moneylenders. Thinking themselves released from every bond, they set fire to the city with their own hands. The sinews of the city were burned away. The fortress called Antonia was stormed, all the guards found there were killed, and it was afterwards burned.",
+      "rawText": "\n            [II.10.5] On the eighth day, a festival day when everyone was accustomed to lay wood on the altars so that the fire should never fail—it had to remain unextinguished—the occasion increased their frenzy, so that all the attendants were excluded from the temple. As the Sicarii rushed forward more boldly than usual, the royal troops yielded and did not dare to hold their ground even in the upper parts. The houses of Agrippa and Berenice were burned and all the royal furnishings plundered. Fire was carried around, so that even the debt notes stored in the public archives were burned, so that the poor might rise more insolently against their moneylenders. Thinking themselves released from every bond, they set fire to the city with their own hands. The sinews of the city were burned away. The fortress called Antonia was stormed, all the guards found there were killed, and it was afterwards burned.",
+      "runningText": " On the eighth day, a festival day when everyone was accustomed to lay wood on the altars so that the fire should never fail—it had to remain unextinguished—the occasion increased their frenzy, so that all the attendants were excluded from the temple. As the Sicarii rushed forward more boldly than usual, the royal troops yielded and did not dare to hold their ground even in the upper parts. The houses of Agrippa and Berenice were burned and all the royal furnishings plundered. Fire was carried around, so that even the debt notes stored in the public archives were burned, so that the poor might rise more insolently against their moneylenders. Thinking themselves released from every bond, they set fire to the city with their own hands. The sinews of the city were burned away. The fortress called Antonia was stormed, all the guards found there were killed, and it was afterwards burned.",
       "removedPrefix": "\n            [II.10.5]",
       "sourcePieces": [
         {
@@ -2804,10 +2805,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-2-38",
           "recordStart": 0,
-          "recordEnd": 883,
+          "recordEnd": 894,
           "sourceStart": 23,
-          "sourceEnd": 906,
-          "textSHA256": "a2c2303735d7afceb39c00bfcac4e927184202710f42e9dfc26226cd4e1ea658"
+          "sourceEnd": 917,
+          "textSHA256": "f03931552cf83cd519c4a1560c9901d89a076489020c7c10030f5971f6a042f6"
         }
       ],
       "sections": [
@@ -2815,12 +2816,12 @@
           "recordId": "deh-english-pollard-2-38",
           "section": 38,
           "sourceStart": 0,
-          "sourceEnd": 906,
+          "sourceEnd": 917,
           "textStart": 23,
-          "textEnd": 906,
+          "textEnd": 917,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "a2c2303735d7afceb39c00bfcac4e927184202710f42e9dfc26226cd4e1ea658"
+          "textSHA256": "f03931552cf83cd519c4a1560c9901d89a076489020c7c10030f5971f6a042f6"
         }
       ],
       "editorialSpans": [],
@@ -5300,7 +5301,7 @@
       "chapter": 18,
       "paragraph": 1,
       "citationLabel": "II.18.1",
-      "rawText": "\n            [II.18.1] Simon’s suffering demands an account: bitter to see and pitiable to hear, yet memorable for the unusual nature of the event. He was one of the Jewish people, born of Saul, a father of no mean standing. Endowed with boldness of spirit and strength of body, he exercised both to destroy his own tribesmen. In repeated attacks he killed very many of the Jews who had come from elsewhere. If they happened to come against him in a united body, he was accustomed to withstand their battle line alone and drive back their massed ranks. He was the knot that held up the whole battle, and often brought a reversal when the situation was desperate. As a resident of Scythopolis he rendered this military service to his fellow citizens against his own people. But the vengeance owed to kindred blood was not long delayed. For when the people of Scythopolis broke faith, surrounded those who had gone to the grove by agreement and began to press and assail them in war, they destroyed the rest of the multitude and attacked even Simon’s children and parents, though from a distance, with missiles and weapons. Simon saw the countless multitude gaining an easy advantage, so that it could not be withstood much longer. He drew his sword, turned towards the enemy and cried out: “People of Scythopolis, I receive what my deeds deserve. By killing my kinsmen I testified to the goodwill I bestowed upon you, and I gave the blood of my brothers as a pledge of your favour, though faithlessness would more justly be ascribed to you. Now, by keeping faith with foreigners, I have failed to keep it with my own. I have also betrayed my children and parents; yet you ought not to have killed them, if you had considered the reward for my crime. I shall therefore die, angry with everyone, a friend to no one, since I have betrayed my own people; and with my own hands I shall first exact vengeance upon myself. I have killed the companions of my religion and those who shared my faith; I recognise the debt of my crime. I shall pay with a murder of kin worthy of so great a sacrilege, so that this may be both punishment for my outrage and glory for my valour, lest anyone else boast of wounding my family. Afterwards my right hand will turn against myself, so that my death may be seen to come from madness, not weakness. Let no one mock me as I fall. Let madness avenge the murder of kin, and the murder of kin avenge sacrilege.” Having said this, he turned his gaze upon his children and parents. With indignant eyes, as pity mingled with anger was already coming upon him, he seized his father from their midst and ran him through with his sword. After him his mother was dragged forward, so that there would be no one to intercede for her grandchildren. His wife willingly offered herself next, so that she would not survive the fall of so great a husband. His children came forward, lest in death itself they be judged unworthy of so great a father. He hastened to forestall the enemy with swift strokes. When he had killed his whole family, he stood amid the corpses of his own people, as though he had triumphed over his family affections because he had seen none of his own die by another’s sword. He raised his right hand so that everyone could see and, mastering the death that was terrible to all, ran himself through with his own sword as a victor. He was a memorable young man for his outstanding bodily strength and greatness of spirit; but because he gave his faith to foreigners rather than to his own people, he deserved such an end.",
+      "rawText": "\n            [II.18.1] Simon’s suffering demands an account: bitter to see and pitiable to hear, yet memorable for the unusual nature of the event. He was one of the Jewish people, born of Saul, a father of no mean standing. Endowed with boldness of spirit and strength of body, he exercised both to destroy his own tribesmen. In repeated attacks he killed very many of the Jews who had come from elsewhere. If they happened to come against him in a united body, he was accustomed to withstand their battle line alone and drive back their massed ranks. He was the knot that held up the whole battle, and often brought a reversal when the situation was desperate. As a resident of Scythopolis he rendered this military service to his fellow citizens against his own people. But the vengeance owed to kindred blood was not long delayed. For when the people of Scythopolis broke faith, surrounded those who had gone to the grove by agreement and began to press and assail them in war, they destroyed the rest of the multitude and attacked even Simon’s children and parents, though from a distance, with missiles and weapons. Simon saw the countless multitude gaining an easy advantage, so that it could not be withstood much longer. He drew his sword, turned towards the enemy and cried out: “People of Scythopolis, I receive what my deeds deserve. By killing my kinsmen I testified to the goodwill I bestowed upon you, and I gave the blood of my brothers as a pledge of your favour, though faithlessness would more justly be ascribed to you. Now, by keeping faith with foreigners, I have failed to keep it with my own. I have also betrayed my children and parents; yet you ought not to have killed them, if you had considered the reward for my crime. I shall therefore die, angry with everyone, a friend to no one, since I have betrayed my own people; and with my own hands I shall first exact vengeance upon myself. I have killed the companions of my religion and those who shared my faith; I recognise the debt of my crime. I shall pay with a murder of kin worthy of so great a sacrilege, so that this may be both punishment for my outrage and glory for my valour, lest anyone else boast of wounding my family. Afterwards my right hand will turn against myself, so that my death may be seen to come from madness, not weakness. Let no one mock me as I fall. Let madness avenge the murder of kin, and the murder of kin avenge sacrilege.” Having said this, he turned his gaze upon his children and parents. With indignant eyes, as pity mingled with anger was already coming upon him, he seized his father from their midst and ran him through with his sword. After him his mother was dragged forward, so that there would be no one to intercede for her grandchildren. His wife willingly offered herself next, so that she would not survive the fall of so great a husband. His children came forward, lest in death itself they be judged unworthy of so great a father. He hastened to forestall the enemy with swift strokes. When he had killed his whole family, he stood amid the corpses of his own people, as though he had triumphed over his family affections because he had seen none of his own die by another’s sword. He raised his right hand so that everyone could see and, mastering the death that was terrible to all, ran himself through with his own sword as a victor. He was a memorable young man for his outstanding bodily strength and greatness of spirit; but because he gave his faith to foreigners rather than to his own people, he deserved such an end.Translation comparison: Pollard takes perfidia tribueretur as attributing faithlessness to the Scythopolitans. Millet instead makes Simon say that he would have been more justified in treating them treacherously: tribuere can concern attribution or the bestowal of treatment.",
       "runningText": " Simon’s suffering demands an account: bitter to see and pitiable to hear, yet memorable for the unusual nature of the event. He was one of the Jewish people, born of Saul, a father of no mean standing. Endowed with boldness of spirit and strength of body, he exercised both to destroy his own tribesmen. In repeated attacks he killed very many of the Jews who had come from elsewhere. If they happened to come against him in a united body, he was accustomed to withstand their battle line alone and drive back their massed ranks. He was the knot that held up the whole battle, and often brought a reversal when the situation was desperate. As a resident of Scythopolis he rendered this military service to his fellow citizens against his own people. But the vengeance owed to kindred blood was not long delayed. For when the people of Scythopolis broke faith, surrounded those who had gone to the grove by agreement and began to press and assail them in war, they destroyed the rest of the multitude and attacked even Simon’s children and parents, though from a distance, with missiles and weapons. Simon saw the countless multitude gaining an easy advantage, so that it could not be withstood much longer. He drew his sword, turned towards the enemy and cried out: “People of Scythopolis, I receive what my deeds deserve. By killing my kinsmen I testified to the goodwill I bestowed upon you, and I gave the blood of my brothers as a pledge of your favour, though faithlessness would more justly be ascribed to you. Now, by keeping faith with foreigners, I have failed to keep it with my own. I have also betrayed my children and parents; yet you ought not to have killed them, if you had considered the reward for my crime. I shall therefore die, angry with everyone, a friend to no one, since I have betrayed my own people; and with my own hands I shall first exact vengeance upon myself. I have killed the companions of my religion and those who shared my faith; I recognise the debt of my crime. I shall pay with a murder of kin worthy of so great a sacrilege, so that this may be both punishment for my outrage and glory for my valour, lest anyone else boast of wounding my family. Afterwards my right hand will turn against myself, so that my death may be seen to come from madness, not weakness. Let no one mock me as I fall. Let madness avenge the murder of kin, and the murder of kin avenge sacrilege.” Having said this, he turned his gaze upon his children and parents. With indignant eyes, as pity mingled with anger was already coming upon him, he seized his father from their midst and ran him through with his sword. After him his mother was dragged forward, so that there would be no one to intercede for her grandchildren. His wife willingly offered herself next, so that she would not survive the fall of so great a husband. His children came forward, lest in death itself they be judged unworthy of so great a father. He hastened to forestall the enemy with swift strokes. When he had killed his whole family, he stood amid the corpses of his own people, as though he had triumphed over his family affections because he had seen none of his own die by another’s sword. He raised his right hand so that everyone could see and, mastering the death that was terrible to all, ran himself through with his own sword as a victor. He was a memorable young man for his outstanding bodily strength and greatness of spirit; but because he gave his faith to foreigners rather than to his own people, he deserved such an end.",
       "removedPrefix": "\n            [II.18.1]",
       "sourcePieces": [
@@ -5328,6 +5329,14 @@
           "sourceStart": 23,
           "sourceEnd": 3555,
           "textSHA256": "f0e4f9aeff79060c5183ccc21676c04bfd6cc745f624b71cbe3e40b27a6b5b05"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Pollard takes perfidia tribueretur as attributing faithlessness to the Scythopolitans. Millet instead makes Simon say that he would have been more justified in treating them treacherously: tribuere can concern attribution or the bestowal of treatment.",
+          "sourceStart": 3555,
+          "sourceEnd": 3830,
+          "textSHA256": "eaf0428cf347af090e099bb594c6ba7783d8c5db6bf3d5a7805089b6b529d259"
         }
       ],
       "sections": [
@@ -5335,7 +5344,7 @@
           "recordId": "deh-english-pollard-2-73",
           "section": 73,
           "sourceStart": 0,
-          "sourceEnd": 3555,
+          "sourceEnd": 3830,
           "textStart": 23,
           "textEnd": 3555,
           "leadingWhitespace": " ",

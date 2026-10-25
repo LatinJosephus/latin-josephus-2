@@ -1,0 +1,86 @@
+DEH POLLARD–MILLET EDITORIAL REVISION — 25 OCTOBER 2026
+Pollard English DEH v1.1
+
+8/8 English improvements implemented.
+8/8 annotation-only cases addressed in the reader.
+
+Scope and preservation
+Exactly eight designated running-text units changed. Eight different units retain
+their entire original English and receive one translation-comparison note each.
+Reversing the eight recorded replacements and removing the eight added notes
+restores every original English paragraph and the complete body structure,
+apart from identified release metadata. No other running English changed.
+All 558 units, 740 English identifiers, citation labels, order, sameAs links and
+existing source descriptions/apparatus are retained. No alignment map was edited.
+All 161 other repository XML files and all 9 Millet website assets are byte-identical
+to the before-edit manifest. The frozen Millet master, alignment file and 582
+original French XML files match the certified freeze hashes. Canonical Latin
+wording, apparatus and 415 source page milestones are unchanged.
+
+XML checks
+All five revised XML files are well formed. The complete 166-file production
+corpus is parsed with external entities disabled. Project-profile checks against
+Technical Specification v1.3 pass, including hierarchy, namespace, stable IDs,
+labels, sameAs and the enabled note attributes and uncertainty vocabulary.
+Formal RNG/XSD validation is not claimed: the approved specification supplies
+no agreed formal schema. This is a validation limitation, not a failed XML test.
+
+Scholarly notes and rendered reader
+Notes use the existing TEI note mechanism, nested in the relevant English p:
+<note type="uncertainty" source="#latin-dehN-numU">...</note>
+The unchanged parent identifier anchors each note; the source points to the
+canonical Latin unit. The visible prefix "Translation comparison:" distinguishes
+these annotations from textual variants. Existing CETEI note behaviour displays
+them in parentheses after the passage; a narrowly scoped style separates them
+from running translation. No new annotation schema or numbering was introduced.
+All 16 full English passages match their expected text in the actual Jekyll reader.
+All 8 exact scholarly notes are visible, including in the existing parallel reader.
+All 8 note screenshots were visually inspected for complete, legible display.
+The 390px layout has no horizontal overflow; the note remains accessible.
+Chapter controls, deep links, reload/back and Antiquities Niese navigation pass.
+Existing DEH–Josephus parallels open with Whiston Bellum and with Antiquities
+Latin, Greek and English. All 16 target passages retain aligned French highlights.
+No browser JavaScript errors or local HTTP failures occurred in the final run.
+
+Search and publication checks
+All 8 independent collection acceptance reports pass. The DEH English index has
+558 stable citation units and 136,053 running-text tokens. Each of the 8 notes is
+preserved verbatim in the reversible exclusion ledger and excluded from running
+translation search. Updated phrase searches and their reader links pass in the
+actual website; superseded "turning green" and "Translation comparison" return
+no running-text matches. Source-derived assets pass the normal publication gate.
+All unrelated corpus text, token offsets and scholarly source files remain fixed.
+All 196 extraction tests, 565 JavaScript tests and 12 Millet tests pass; detailed logs
+accompany this report. Corruption/missing-file tests reject changed publication inputs.
+
+Local build
+Jekyll built successfully with the established dependency lockfile and configured
+plugins. For local Windows QA, the private historical review/ archive was excluded
+from the generated website to avoid path-length failures; no source configuration
+was changed. Generated XML and search assets pass publication preparation and
+the complete corpus guard. No deployment or push was performed.
+
+Editorial and technical qualifications
+At II.10.5, the approved adverbial opening needs a subject for the preserved verb
+"increased". The minimal supplied subject "the occasion" is recorded explicitly
+in A5 of the decision log; the complete old and new sentence are reproduced there.
+The separate file named Pasted markdown(20261025-171332).md was not located.
+The complete approved instructions pasted into this chat governed implementation,
+checked against the frozen category-B export and authoritative current XML.
+No approved decision remains unimplemented. Formal schema validation is unavailable
+as explained above; reader-note display has no unresolved limitation.
+An existing Antiquities QA launcher was changed to execute its identical preserved
+Python witness file instead of a long inline command, avoiding the Windows command
+length limit without changing its scholarly checks. Reader/search authority pins
+and edition labels were updated for the approved v1.1 release; historical authority
+records and the frozen concordance remain retained and unchanged.
+
+Files
+assets/xml/deh/English/book-01.xml
+assets/xml/deh/English/book-02.xml
+assets/xml/deh/English/book-03.xml
+assets/xml/deh/English/book-04.xml
+assets/xml/deh/English/book-05.xml
+
+Exact old/new wording, final annotations and storage locations: EDITORIAL_DECISION_LOG.md.
+Commit and branch: REVISION_IDENTITY.json (written after local commit).

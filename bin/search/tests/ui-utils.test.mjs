@@ -89,7 +89,7 @@ test('Whiston reader links reject a conflicting work, collection, language or ed
 test('Pollard De excidio links use chapter-local citations and select the English edition',()=>{
   for(const [book,chapter,paragraph] of [[1,0,2],[1,30,8],[5,53,1]]){
     const record={work:'deh',readerPath:'deh/',collectionId:'deh-english-pollard',language:'English',
-      edition:'Pollard v1.0',citationScheme:'chapter-paragraph',book,chapter,paragraph};
+      edition:'Pollard v1.1',citationScheme:'chapter-paragraph',book,chapter,paragraph};
     assert.equal(readerURL(record,'https://example.org/project/'),
       `https://example.org/project/deh/?book=${book}&chapter=${chapter}&unit=${paragraph}&english=pollard`);
     assert.equal(readerURL(record,'https://example.org/project/',{section:false}),
@@ -98,7 +98,7 @@ test('Pollard De excidio links use chapter-local citations and select the Englis
   }
 });
 test('Pollard reader links reject conflicting language, edition, work, collection or citation scheme',()=>{
-  const record={work:'deh',collectionId:'deh-english-pollard',language:'English',edition:'Pollard v1.0',
+  const record={work:'deh',collectionId:'deh-english-pollard',language:'English',edition:'Pollard v1.1',
     citationScheme:'chapter-paragraph',book:1,chapter:0,paragraph:2,readerLink:{params:{english:'pollard'}}};
   for(const change of [{work:'bellum'},{collectionId:'deh-latin-ussani'},{language:'Latin'},
     {edition:'Whiston'},{citationScheme:'niese'},{readerLink:{params:{english:'whiston'}}}]){

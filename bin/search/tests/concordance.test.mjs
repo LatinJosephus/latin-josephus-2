@@ -106,7 +106,7 @@ test("Pollard De excidio CSV retains English citations, exact alignment and read
     work: "deh", citationPrefix: "De excidio", readerPath: "deh/", citationScheme: "chapter-paragraph",
     citationLabel: "Prol.2", chapter: 0, paragraph: 2, division: "prologue",
     collectionId: "deh-english-pollard", bookId: "deh-english-pollard:1",
-    language: "English", edition: "Pollard v1.0", order: 0,
+    language: "English", edition: "Pollard v1.1", order: 0,
     url: "/deh/?book=1&chapter=0&unit=2&english=pollard",
     readerLink: { params: { book: 1, chapter: 0, unit: 2, english: "pollard" } }, editorialMarks: [],
   })];

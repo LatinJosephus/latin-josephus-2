@@ -1508,7 +1508,9 @@ async function main() {
   check('CatalogCitationScheme', config.citationScheme, 'niese');
   for (const path of [readerPath, resolve(base, 'engine.mjs'), resolve(base, 'collection.mjs'),
     resolve(base, 'ui-utils.mjs'), resolve(base, 'vendor/lunr.cjs'), fileURLToPath(import.meta.url)]) preserve(path);
-  const witness = JSON.parse(execFileSync(process.env.PYTHON || 'python3', ['-c', pythonWitness, root], {encoding: 'utf8', maxBuffer: 80 * 1024 * 1024}));
+  // The preserved standalone witness is checked against the embedded source above.
+  // Execute its path to avoid Windows' command-line limit for the long -c source.
+  const witness = JSON.parse(execFileSync(process.env.SEARCH_PYTHON || process.env.PYTHON || 'python3', [witnessPath, root], {encoding: 'utf8', maxBuffer: 80 * 1024 * 1024}));
   check('IndependentCoverage', witness.totals, {books: 20, sourceFiles: 21, sections: 7283, wordTokens: 265023});
   check('CombinedRecordCount', corpus.length, 7283);
   sourceRows = new Map(witness.rows.map(row => [witnessRecordId(row), row]));

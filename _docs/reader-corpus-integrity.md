@@ -56,3 +56,17 @@ Books XI–XV add five frozen Lodge XML derivatives (2,130 identities), with com
 Books XVI–XX add five frozen Lodge XML derivatives (1,772 identities), with complete independent inverse and section-coordinate receipts. All 159 earlier inventory records remain unchanged; the inventory now contains 164 XML files.
 
 Lodge Contra Apionem Books I-II add two frozen derivatives (616 identities), using `--work contra-apionem --unit book-01` or `book-02` with the existing Lodge importer and independent verifier. All 164 earlier records remain unchanged; strict inventory is now 166 XML files. All six MEDIUM boundaries remain HUMAN_APPROVED. No empty intervals. Original TCP paragraphs and lettered milestones are not project chapters; the existing Apion chapter selector displays explicitly qualified containing Niese context.
+
+## Pollard DEH English v1.1, 25 October 2026
+
+The five DEH English authorities now bind the approved eight running-text revisions
+and eight translation-comparison notes. Each prior authority record is retained
+verbatim under `previous_authority`; the current record accepts only the exact
+reviewed v1.1 bytes. See `DEH_POLLARD_MILLET_EDITORIAL_20261025.md` for all sixteen
+decisions. The other 161 production XML authorities are unchanged.
+
+The historical DEH concordance, canonical Latin and Millet transcription remain
+frozen. Publication preparation retains the other 33 frozen publication inputs;
+the five Pollard files use their explicitly registered v1.1 publication hashes.
+No historical concordance hash is rewritten or treated as current English.
+The corpus gate still rejects unregistered files, changed XML and corrupt manifests.

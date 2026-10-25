@@ -5,7 +5,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 export const sha = bytes => createHash('sha256').update(bytes).digest('hex');
-const manifestSHA = 'e6885ddec4a08a487a1bf02a37b6c5ee272510e8d287c09b721e4080e839de3f';
+const manifestSHA = 'd78cdad76b4722782c609a7e02e8db499010fd45431a873f19353739df13fa05';
 const frozenSHA = 'c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c';
 function files(directory, prefix = 'assets/xml') {
   return fs.readdirSync(directory, {withFileTypes:true}).flatMap(entry => {
@@ -33,6 +33,15 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
   assert.equal(sha(lodgeBytes), manifest.lodge_manifest_sha256, 'Frozen Lodge source manifest changed');
   const lodge = JSON.parse(lodgeBytes);
   const publicationHashes = Object.fromEntries(Object.entries(frozen).filter(([relative]) => /^assets\/xml\/(deh|bellum)\//.test(relative)));
+  // The concordance remains a frozen historical source. Only the five explicitly
+  // adjudicated Pollard v1.1 files supersede its English publication bytes.
+  const editorialEnglish = Array.from({length:5}, (_, i) => `assets/xml/deh/English/book-${String(i+1).padStart(2,'0')}.xml`);
+  for (const relative of editorialEnglish) {
+    const record = manifest.files[relative];
+    assert.equal(record.authority_revision, 'deh-pollard-millet-editorial-20261025-v1.1');
+    assert(record.previous_authority.allowed_worktree_sha256.includes(frozen[relative]), 'Historical Pollard authority changed');
+    publicationHashes[relative] = record.pinned_canonical_sha256;
+  }
   for (const book of lodge.books) publicationHashes[`assets/xml/bellum/English/Lodge1602/book-${String(book.book).padStart(2,'0')}.xml`] = book.production_sha256;
   const publication = {};
   for (const [relative, expected] of Object.entries(publicationHashes)) {
@@ -48,7 +57,9 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
       {env:{...process.env, READER_QA_XML_ROOT:path.join(root,'assets/xml')}, stdio:'pipe'});
   }
   return {manifest, checked, publication, report:{status:'PASS', production_XML:Object.keys(checked).length,
-    all_production_XML_parsed:parse, frozen_publication_inputs:Object.keys(publication).length,
+    all_production_XML_parsed:parse, publication_inputs:Object.keys(publication).length,
+    frozen_publication_inputs:Object.keys(publication).length-editorialEnglish.length,
+    approved_editorial_revision_inputs:editorialEnglish.length,
     publication_xml_sha256:Object.fromEntries(Object.entries(publication).map(([relative,bytes])=>[relative,sha(bytes)])),
     frozen_concordance_sha256:sha(frozenBytes), manifest_sha256:sha(bytes)}};
 }

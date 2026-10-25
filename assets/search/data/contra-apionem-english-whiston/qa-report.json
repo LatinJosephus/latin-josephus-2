@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-21T16:10:13.237Z",
+  "generatedAt": "2026-10-25T18:22:16.018Z",
   "independentVerifier": "bin/search/tests/whiston-contra-apionem-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-    "observedSha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
+    "expectedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+    "observedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
     "provenance": "observed-source-checkout",
     "preservationDuringRunRequired": true,
     "publicationInput": false
@@ -129,7 +129,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "f8d53bbe83d053c0d2ce56ca7a94cf7d5155527f255d2d141d138981b058a27a",
+      "sha256": "6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe",
       "bytes": 56253
     },
     "engine": {
@@ -144,12 +144,12 @@
     },
     "concordance": {
       "path": "bin/search/concordance.mjs",
-      "sha256": "fe89290371c1e9dc4f531657a8165c5b679d24e6869e834b93455372e04fa900",
+      "sha256": "cfe34e5bcad06f8f4d50b29498c6cc84ee47f1f5a114a51af849f4c50267dcef",
       "bytes": 32263
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "bddc39cc1ce40ad46e820e632e17a8bd6bf94347b919347044793e02a64c8003",
+      "sha256": "39a13121b8de63e4a70d5600a38c3aab124275b3a9dfccc0476839c330dba644",
       "bytes": 15956
     },
     "verifier": {
@@ -184,8 +184,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "03bfb9b0de5e13e6b07bd638413b2b82a9ed2f7b0cc7c33eb6c09dabde3c9294",
-      "bytes": 161463
+      "sha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
+      "bytes": 169964
     },
     "testSources": [],
     "books": [
@@ -647,7 +647,7 @@
       "purpose": "Complete Contra Apionem count"
     }
   ],
-  "durationSeconds": 5.9,
+  "durationSeconds": 7.3,
   "limitations": [
     "This validates the accepted Whiston Contra Apionem XML, not a new translation or printed-edition collation.",
     "Browser interaction is verified separately."

@@ -123,7 +123,7 @@ export function readerURL(record,baseURL,{section=true}={}) {
     antiquities:{collection:'antiquities-english-whiston',edition:'Whiston',source:'whiston',scheme:'niese'},
     bellum:{collection:'bellum-english-whiston',edition:'Whiston',source:'whiston',scheme:'niese'},
     'contra-apionem':{collection:'contra-apionem-english-whiston',edition:'Whiston',source:'whiston',scheme:'niese'},
-    deh:{collection:'deh-english-pollard',edition:'Pollard v1.0',source:'pollard',scheme:'chapter-paragraph'},
+    deh:{collection:'deh-english-pollard',edition:'Pollard v1.1',source:'pollard',scheme:'chapter-paragraph'},
   };
   if(Object.values(englishEditions).some(edition=>edition.collection===record.collectionId)||english!==undefined){
     const expected=englishEditions[record.work];
