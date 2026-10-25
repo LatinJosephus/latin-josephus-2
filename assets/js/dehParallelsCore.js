@@ -7,10 +7,10 @@ export const frozenSha = "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac
 export const sourceIntegrityPolicy = "reviewed-crlf-or-exact-lf-v1";
 export const pollardPublicationHashes = Object.freeze({
   1: "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
-  2: "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c",
+  2: "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
   3: "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
-  4: "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54",
-  5: "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667"
+  4: "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+  5: "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91"
 });
 const previousPollardHashes = Object.freeze({
   1: "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",

@@ -253,7 +253,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.d4ff8c423ede05b8d74a72b460d6d2ede8d5482bd26cfe83e57b397638344c1c.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');

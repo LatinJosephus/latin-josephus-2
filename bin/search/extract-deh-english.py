@@ -25,10 +25,10 @@ OUTPUT_PREFIX = f"data/{COLLECTION}"
 ROMANS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"}
 CONTRACTS = {
     1: {"sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47", "sections": 215, "tokens": 40804, "chapters": 47, "headings": 2, "heading": "Book I", "releaseNote": "English translation, version 1.1: Prologue and Book I chapters 1–46, ending at [I.46.2]."},
-    2: {"sha256": "e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c", "sections": 73, "tokens": 17143, "chapters": 18, "headings": 1, "heading": "Book II", "releaseNote": "English translation, version 1.1: complete Book II, chapters 1–18, [II.1.1]–[II.18.1]."},
+    2: {"sha256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c", "sections": 73, "tokens": 17142, "chapters": 18, "headings": 1, "heading": "Book II", "releaseNote": "English translation, version 1.1: complete Book II, chapters 1–18, [II.1.1]–[II.18.1]."},
     3: {"sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c", "sections": 70, "tokens": 18640, "chapters": 26, "headings": 1, "heading": "BOOK III", "releaseNote": "English translation, version 1.1: complete Book III, chapters 1–26, [III.1.1]–[III.26.4]."},
-    4: {"sha256": "3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54", "sections": 79, "tokens": 17259, "chapters": 33, "headings": 1, "heading": "BOOK IV", "releaseNote": "English translation, version 1.1: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3]."},
-    5: {"sha256": "57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667", "sections": 121, "tokens": 42207, "chapters": 53, "headings": 1, "heading": "BOOK V", "releaseNote": "English translation, version 1.1: complete Book V, chapters 1–53, [V.1.1]–[V.53.2]."},
+    4: {"sha256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370", "sections": 79, "tokens": 17259, "chapters": 33, "headings": 1, "heading": "BOOK IV", "releaseNote": "English translation, version 1.1: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3]."},
+    5: {"sha256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91", "sections": 121, "tokens": 42207, "chapters": 53, "headings": 1, "heading": "BOOK V", "releaseNote": "English translation, version 1.1: complete Book V, chapters 1–53, [V.1.1]–[V.53.2]."},
 }
 BREAK_REASON = "The separately labelled Prologue ends before Book I narrative."
 TRANSLATION_NOTE_UNITS = {1: {31, 36, 70, 141}, 2: {73}, 3: {36, 47}, 4: set(), 5: {72}}

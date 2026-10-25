@@ -8,10 +8,10 @@ const COLLECTION = 'deh-english-pollard';
 const ROMANS = ['I', 'II', 'III', 'IV', 'V'];
 const CONTRACTS = [
   ['1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47', 215, 40804, 47, 2, 'Book I', 'English translation, version 1.1: Prologue and Book I chapters 1–46, ending at [I.46.2].'],
-  ['e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c', 73, 17143, 18, 1, 'Book II', 'English translation, version 1.1: complete Book II, chapters 1–18, [II.1.1]–[II.18.1].'],
+  ['b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c', 73, 17142, 18, 1, 'Book II', 'English translation, version 1.1: complete Book II, chapters 1–18, [II.1.1]–[II.18.1].'],
   ['f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c', 70, 18640, 26, 1, 'BOOK III', 'English translation, version 1.1: complete Book III, chapters 1–26, [III.1.1]–[III.26.4].'],
-  ['3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54', 79, 17259, 33, 1, 'BOOK IV', 'English translation, version 1.1: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3].'],
-  ['57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667', 121, 42207, 53, 1, 'BOOK V', 'English translation, version 1.1: complete Book V, chapters 1–53, [V.1.1]–[V.53.2].'],
+  ['1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370', 79, 17259, 33, 1, 'BOOK IV', 'English translation, version 1.1: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3].'],
+  ['4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91', 121, 42207, 53, 1, 'BOOK V', 'English translation, version 1.1: complete Book V, chapters 1–53, [V.1.1]–[V.53.2].'],
 ].map(([sha256, sections, tokens, chapters, headings, heading, releaseNote], index) => ({book: index + 1,
   sha256, sections, tokens, chapters, headings, heading, releaseNote,
   path: `assets/xml/deh/English/book-${String(index + 1).padStart(2, '0')}.xml`}));

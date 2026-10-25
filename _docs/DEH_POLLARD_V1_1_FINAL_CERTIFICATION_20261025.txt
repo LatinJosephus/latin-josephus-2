@@ -1,0 +1,79 @@
+DEH POLLARD v1.1 — FINAL CORRECTIONS AND CERTIFICATION
+
+Starting commit: b8af72efb19cce5191f8b0b25543e3015291cc1e
+New local commit: recorded in REVISION_IDENTITY.json accompanying this report.
+The designation Pollard v1.1 is retained. This is a supplementary correction.
+
+Exact II.10.5 correction — english-deh2-num38
+
+BEFORE
+On the eighth day, a festival day when everyone was accustomed to lay wood on the altars so that the fire should never fail—it had to remain unextinguished—the occasion increased their frenzy, so that all the attendants were excluded from the temple.
+
+AFTER
+The eighth day—a festival day on which everyone was accustomed to lay wood on the altars so that the fire should never fail, since it had to remain unextinguished—increased their frenzy, so that all the attendants were excluded from the temple.
+
+Nothing else in II.10.5 changed.
+
+Metadata corrections — four occurrences
+Book 2: 1 approved running-text revisions -> 1 approved running-text revision (publicationStmt/p[1])
+Book 2: 1 annotation-only decisions -> 1 annotation-only decision (publicationStmt/p[1])
+Book 4: 1 approved running-text revisions -> 1 approved running-text revision (publicationStmt/p[1])
+Book 5: 1 annotation-only decisions -> 1 annotation-only decision (publicationStmt/p[1])
+
+Books I and III need no metadata corrections and remain byte-identical to b8af72e.
+Counts, release designation, all other header content, style guide and TEI
+specification are unchanged.
+
+Verification
+PASS — All five XML files compared against b8af72e. Reversing only the authorised
+sentence and four metadata agreement changes restores all five files byte for byte.
+PASS — Exactly one running-text difference, at english-deh2-num38. All other
+running English is untouched. All 558 units, 740 English XML IDs, citations, order
+and alignment targets remain unchanged.
+PASS — All sixteen earlier editorial decisions remain substantively unchanged.
+A5 receives only the exact final sentence supplied by the editor. All eight
+translation-comparison notes remain word-for-word identical and attached to their
+original English units. No additional editorial judgement was applied.
+PASS — XML well-formedness and the established Technical Specification v1.3
+project profile. No TEI structural or attribute changes were made. Formal RNG/XSD
+validation is not claimed because no approved schema was supplied.
+PASS — Canonical Latin, apparatus and Millet transcription remain unchanged.
+All 172 other XML/website-French source assets match the starting snapshot; the
+frozen Millet master, alignment and 582 original French XML files match certified
+hashes. Governing specification and style-guide hashes are unchanged.
+PASS — Actual Jekyll reader tests for all sixteen editorial locations, all eight
+visible notes, chapter navigation, deep links, reload/back, Niese navigation and
+existing cross-work parallels. II.10.5 displays the exact corrected wording in
+both English reading and parallel-text views. Screenshots are supplied.
+PASS — Search indexes all 558 English units with 136,052 running-text tokens;
+the one-word reduction follows the authorised sentence. Only II.10.5 differs
+from the previous running-text index; stable citation links and note exclusions
+are retained. The corrected phrase is found and opens the intended passage;
+the superseded "the occasion increased their frenzy" is absent.
+PASS — All eight independent search collection checks, 196 extraction tests,
+565 JavaScript regression tests, 12 Millet tests, parallel-source integrity tests,
+the complete 166-file corpus guard and generated-site publication checks.
+
+Implementation support
+The existing source fingerprints, expected token counts and generated search
+assets were refreshed for the three changed XML files. The existing parallel
+module's cache token was refreshed for its changed source fingerprints. No
+renderer/navigation behaviour, annotation mechanism or scholarly alignment was
+redesigned or changed. No unrelated website improvements were undertaken.
+
+Local build qualification
+The established dependency lockfile and configured Jekyll plugins were used.
+As in the accepted b8af72e QA, the private historical review/ archive was omitted
+from the local Windows build to avoid its path-length limitation; no repository
+site configuration was changed. No RNG/XSD certification is implied.
+
+Recovery and historical record
+The corrected package includes all five complete English XML files, this report,
+the exact correction ledger, QA receipts/screenshots, baseline XML from b8af72e,
+and a verified Git bundle containing both v1.1 commits from the original base.
+The previously delivered package and original sixteen-entry log remain historical
+records of b8af72e. This report supersedes only the earlier A5 sentence and its
+"the occasion" explanation; all other editorial decisions are retained.
+
+No unresolved correction or reader-display issue remains. Nothing was pushed to
+the public preview or production. Publication requires separate authorisation.

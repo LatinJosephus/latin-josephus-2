@@ -25,9 +25,9 @@ This directory contains the source and verification tools for the main site's
   36,853 word tokens.
 
 - **Pollard English *De excidio Hierosolymitano*, version 1.1, Prologue and Books I–V:**
-  558 chapter-and-paragraph citation units and 136,053 word tokens.
+  558 chapter-and-paragraph citation units and 136,052 word tokens.
 
-Together these comprise **68 book editions, 25,001 citation units, and 1,347,223
+Together these comprise **68 book editions, 25,001 citation units, and 1,347,222
 word tokens**. The indexes contain 25,009 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
 The Whiston English Antiquities, Bellum and Contra Apionem and Pollard English De excidio are complete; Greek editions are not indexed. Bamberg Latin Antiquities
@@ -1095,11 +1095,11 @@ matches the canonical reader. English and Latin remain separate search editions.
 | Book | Citation units | Word tokens |
 | --- | ---: | ---: |
 | I, including Prologue | 215 | 40,804 |
-| II | 73 | 17,143 |
+| II | 73 | 17,142 |
 | III | 70 | 18,640 |
 | IV | 79 | 17,259 |
 | V | 121 | 42,207 |
-| **Total** | **558** | **136,053** |
+| **Total** | **558** | **136,052** |
 
 Each accepted paragraph already supplies an English XML identity, a printed
 book–chapter–paragraph citation, and a fragment-only `sameAs` alignment to the

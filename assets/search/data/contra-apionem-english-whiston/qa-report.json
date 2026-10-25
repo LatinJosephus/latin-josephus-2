@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-25T18:22:16.018Z",
+  "generatedAt": "2026-10-25T20:58:05.836Z",
   "independentVerifier": "bin/search/tests/whiston-contra-apionem-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
     "observedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
-    "provenance": "observed-source-checkout",
+    "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
@@ -129,7 +129,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe",
+      "sha256": "d4ff8c423ede05b8d74a72b460d6d2ede8d5482bd26cfe83e57b397638344c1c",
       "bytes": 56253
     },
     "engine": {
@@ -245,6 +245,7 @@
     "exports": "Exact concordance geometry, original source slices and brackets, ordinary and negative-only CSV exports, every selected book and explicit Whiston reader parameters."
   },
   "counts": {
+    "ExplicitReaderBaseline": 1,
     "OnlyAcceptedBooksPublished": 1,
     "CollectionIdentity": 1,
     "IndependentCollectionTotals": 1,
@@ -601,7 +602,7 @@
     "InputUnchangedDuringRun": 24
   },
   "totalQueries": 8001,
-  "assertions": 196533,
+  "assertions": 196534,
   "failedAssertions": 0,
   "examples": [
     {
@@ -647,7 +648,7 @@
       "purpose": "Complete Contra Apionem count"
     }
   ],
-  "durationSeconds": 7.3,
+  "durationSeconds": 7.6,
   "limitations": [
     "This validates the accepted Whiston Contra Apionem XML, not a new translation or printed-edition collation.",
     "Browser interaction is verified separately."

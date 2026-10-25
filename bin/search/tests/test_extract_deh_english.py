@@ -53,7 +53,7 @@ class EnglishDehExtraction(unittest.TestCase):
                 self.assertEqual(paragraph['removedPrefix'] + paragraph['runningText'] + notes, paragraph['rawText'])
             total += len(records)
             tokens += report['counts']['runningWordTokens']
-        self.assertEqual((total, tokens), (558, 136053))
+        self.assertEqual((total, tokens), (558, 136052))
 
     def test_indentation_before_num_is_removed_with_the_entire_label(self):
         self.assertEqual([sum(p['removedPrefix'].startswith('\n') for p in report['paragraphs'])

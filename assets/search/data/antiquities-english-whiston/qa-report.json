@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-10-25T18:21:39.040Z",
+  "generatedAt": "2026-10-25T20:57:27.200Z",
   "independentVerifier": "bin/search/tests/whiston-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
     "observedSha256": "17d9b3940cff1672d6645487e0b9de501236d84f661ea6802ca3379c2bfbede7",
-    "provenance": "observed-source-checkout",
+    "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
@@ -1927,7 +1927,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "6e043d85bb492f97754433ae2add603a2242d1923d7475c6dfad93d6c4e7fafe",
+      "sha256": "d4ff8c423ede05b8d74a72b460d6d2ede8d5482bd26cfe83e57b397638344c1c",
       "bytes": 56253
     },
     "engine": {
@@ -2464,6 +2464,7 @@
     "exports": "Concordance geometry, original context, reader parameters, source slices, source fingerprints, CSV decoding, negative-only units and zero-result summaries."
   },
   "counts": {
+    "ExplicitReaderBaseline": 1,
     "OnlyAcceptedBooksPublished": 1,
     "EnglishCollectionIdentity": 1,
     "IndependentCollectionTotals": 1,
@@ -3742,7 +3743,7 @@
     "InputUnchangedDuringRun": 95
   },
   "totalQueries": 87944,
-  "assertions": 1640726,
+  "assertions": 1640727,
   "failedAssertions": 0,
   "examples": [
     {
@@ -3956,7 +3957,7 @@
       "purpose": "Whiston Book XX example, preserving the accepted section marker"
     }
   ],
-  "durationSeconds": 84.5,
+  "durationSeconds": 82.5,
   "limitations": [
     "Coverage is all accepted Whiston Antiquities Proem and Books I-XX XML; the search does not create a new edition or add other Whiston works.",
     "This source/query acceptance does not establish a new translation text or collate printed editions; browser interaction is verified separately."

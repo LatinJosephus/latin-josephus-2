@@ -29,7 +29,7 @@ const collectionId = 'deh-english-pollard';
 const bookId = `${collectionId}:1`;
 const expectedBooks = [1,2,3,4,5];
 const expectedBookTotals = [
-  {book:1,sections:215,tokens:40804},{book:2,sections:73,tokens:17143},
+  {book:1,sections:215,tokens:40804},{book:2,sections:73,tokens:17142},
   {book:3,sections:70,tokens:18640},{book:4,sections:79,tokens:17259},{book:5,sections:121,tokens:42207},
 ];
 const destination = resolve(base, 'data', collectionId, 'qa-report.json');
@@ -374,14 +374,14 @@ async function main() {
   const sourcePaths=Object.fromEntries(expectedBooks.map(book=>[book,preserve(resolve(root,`assets/xml/deh/English/book-${String(book).padStart(2,'0')}.xml`))]));
   const latinPaths=expectedBooks.map(book=>preserve(resolve(root,`assets/xml/deh/Latin/book-${String(book).padStart(2,'0')}.xml`)));
   const witness=JSON.parse(execFileSync(process.env.SEARCH_PYTHON||process.env.PYTHON||'python3',[witnessPath,root],{encoding:'utf8',maxBuffer:128*1024*1024}));
-  check('IndependentCollectionTotals',witness.totals,{books:5,sections:558,tokens:136053});
+  check('IndependentCollectionTotals',witness.totals,{books:5,sections:558,tokens:136052});
   check('IndependentBookTotals',witness.bookTotals,expectedBookTotals);
   check('IndependentLatinAlignmentInputs',witness.testSources.map(item=>item.path),latinPaths.map(path=>relative(root,path).replaceAll('\\','/')));
   const corpus=readJSON(corpusPath),extraction=readJSON(extractionPath);
   inspectRecords(corpus,witness.rows,'Indexed');
   check('CollectionCorpusHash',config.corpusSHA256,digest(corpusPath));
   check('CollectionManifestHash',config.manifestSHA256,digest(manifestPath));
-  check('ExtractionTokens',extraction.counts.runningWordTokens,136053);
+  check('ExtractionTokens',extraction.counts.runningWordTokens,136052);
   check('ExtractionSections',extraction.counts.sections,558);
   check('ExtractionPublishedBooks',extraction.scope.books,expectedBooks);
   check('NoRunningCitationLabelTokens',witness.rows.some(row=>/^\[/.test(row.text)),false);

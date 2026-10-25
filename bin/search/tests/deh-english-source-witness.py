@@ -23,10 +23,10 @@ ROMANS = [None, 'I', 'II', 'III', 'IV', 'V']
 TRANSLATION_NOTES = {1: {31, 36, 70, 141}, 2: {73}, 3: {36, 47}, 4: set(), 5: {72}}
 SPECS = [
     (1, 215, 40804, 47, 126, '1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47'),
-    (2, 73, 17143, 18, 73, 'e4c6a7357b6fcb5082b61b9528d7f8ae8a24ae2a5700fc5341752f2008218e5c'),
+    (2, 73, 17142, 18, 73, 'b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c'),
     (3, 70, 18640, 26, 18, 'f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c'),
-    (4, 79, 17259, 33, 0, '3f9c4873c13aae9d8adcbe11db5226eb794b2c363cc14ec106ff77dca95a6b54'),
-    (5, 121, 42207, 53, 0, '57654bac30bbc73d6447ec4180f9e51c65a6b6eb8835e1f86e15742a65188667'),
+    (4, 79, 17259, 33, 0, '1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370'),
+    (5, 121, 42207, 53, 0, '4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91'),
 ]
 LATIN_SHA = [
     '690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7',
@@ -237,7 +237,7 @@ def main():
         order += len(item['rows'])
     rows = [row for item in files for row in item['rows']]
     assert len(rows) == 558 and [row['order'] for row in rows] == list(range(558))
-    assert sum(len(row['tokens']) for row in rows) == 136053
+    assert sum(len(row['tokens']) for row in rows) == 136052
     assert sum(source['evidence']['sameAsLinks'] for source in files) == 740
     assert sum(source['evidence']['indentedBeforeCitationLabel'] for source in files) == 217
     result = {'sourceCommit': SOURCE_COMMIT, 'collectionId': COLLECTION,
