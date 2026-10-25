@@ -59,3 +59,10 @@
 /_includes/search-interface.html -text
 /bin/cibuild -text
 /bin/prepare-reader-publication.mjs -text
+
+# Audited AJ display derivative and its independent certification retain bytes.
+/assets/data/deh-aj-display.v1.json -text
+/_includes/deh-parallels.html -text
+/_docs/aj-latin-reconciliation/** -text whitespace=cr-at-eol
+/bin/aj-latin-* -text
+/bin/deh-aj-display-qa.mjs -text

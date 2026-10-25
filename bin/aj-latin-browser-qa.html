@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>AJ Latin reconciliation browser QA</title>
+<style>body{font:16px system-ui;max-width:1100px;margin:2rem auto;padding:0 1rem}table{border-collapse:collapse;width:100%}td,th{padding:.4rem;border:1px solid #ddd;text-align:left}pre{white-space:pre-wrap}#sample{max-height:180px;overflow:auto}</style>
+<h1>DEH–Antiquities Latin repair: browser checks</h1>
+<p>Actual browser DOM Range extraction compared with independently certified XML text and coordinates. This is automated validation of the recorded boundary audit.</p>
+<button id="run">Run all 420 witness-section checks</button> <strong id="qa-status">Ready</strong>
+<pre id="qa-result"></pre><table><thead><tr><th>DEH correspondence</th><th>Witness</th><th>Sections</th><th>Result</th></tr></thead><tbody id="rows"></tbody></table>
+<div id="sample"></div><script src="/assets/js/CETEI.js"></script><script type="module" src="/__qa__/aj-latin-browser-qa.mjs"></script></html>

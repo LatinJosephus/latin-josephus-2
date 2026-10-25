@@ -1,0 +1,23 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Current certified AJ source changed: assets/xml/antiquities/Latin/book-14.xml
++ actual - expected
+
++ '211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76'
+- 'beeaa404131ffeb8a29aec12b9ac9a67270223e72638c9169d85a9e2d7f1f9a3'
+
+    at file:///C:/Users/Pollard_R/.codex/.chatgpt-projects/g-p-69862e643cc08191a8457368cb0c460f/worktrees/aj-latin-reconciliation-20261025/bin/deh-aj-display-qa.mjs:41:63
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76',
+  expected: 'beeaa404131ffeb8a29aec12b9ac9a67270223e72638c9169d85a9e2d7f1f9a3',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

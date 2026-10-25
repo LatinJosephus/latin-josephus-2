@@ -1,0 +1,141 @@
+{
+  "status": "GO",
+  "base_commit": "5bb301c1b41d63c89c33a79826fc62892ac3890f",
+  "boundary_audit": {
+    "DEH_records": 31,
+    "AJ_components": 44,
+    "Latin_section_occurrences": 140,
+    "available_occurrences": 139,
+    "retained_unavailable_occurrences": 1,
+    "changed_selected_texts": 1,
+    "adjusted_dom_paths_or_sides": 0,
+    "absolute_boundary_offsets_changed": 164,
+    "editorial_questions": 0
+  },
+  "actual_browser": {
+    "status": "PASS",
+    "sections": 420,
+    "coordinates": 278,
+    "components": 132,
+    "witness_views": 93,
+    "source_corruptions_rejected": 8,
+    "failures": [],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+  },
+  "browser_BJ": {
+    "passed": true,
+    "failures": [],
+    "reviewedRecords": 555,
+    "eligibleRecords": 539,
+    "noBjRecords": [
+      "deh-1-3-1",
+      "deh-1-38-1",
+      "deh-1-38-2",
+      "deh-2-4-1",
+      "deh-2-5-1",
+      "deh-2-5-3",
+      "deh-2-12-1",
+      "deh-2-12-2",
+      "deh-2-12-3",
+      "deh-2-13-2",
+      "deh-2-13-6",
+      "deh-2-13-7",
+      "deh-2-13-8",
+      "deh-3-2-1",
+      "deh-4-5-1",
+      "deh-5-1-1"
+    ],
+    "bjComponents": 705,
+    "supplementaryComponents": 6,
+    "dehSourceChecks": 1110,
+    "finalBoundaryChecks": 21,
+    "sectionOccurrences": 8193,
+    "eligibilityGuardChecks": 8,
+    "elapsedMs": 848
+  },
+  "reader_UI": {
+    "Latin_comparison_routes": 31,
+    "source_switches": 6,
+    "ordinary_AJ_books": 8,
+    "numbering_books": 3,
+    "Millet_books": 5,
+    "Millet_round_trip": {
+      "returnHref": "http://127.0.0.1:4025/deh/?book=1&chapter=16&unit=3&french=millet1556",
+      "frenchVisible": true,
+      "highlight": true,
+      "length": 822,
+      "selected": "http://127.0.0.1:4025/deh/?book=1&chapter=16&unit=3&french=millet1556&millet-unit=latin-deh1-num48"
+    }
+  },
+  "corpus": {
+    "status": "PASS",
+    "production_XML": 166,
+    "all_production_XML_parsed": true,
+    "frozen_publication_inputs": 38,
+    "frozen_concordance_sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c",
+    "manifest_sha256": "e6885ddec4a08a487a1bf02a37b6c5ee272510e8d287c09b721e4080e839de3f",
+    "negative_tests": [
+      "unexpected XML rejected",
+      "segmented English corruption rejected",
+      "Lodge has no hash exemption",
+      "Frozen Lodge batch corruption rejected: preface",
+      "Frozen Lodge batch corruption rejected: book-01",
+      "Frozen Lodge batch corruption rejected: book-03",
+      "Frozen Lodge batch corruption rejected: book-04",
+      "Frozen Lodge batch corruption rejected: book-05",
+      "Frozen Lodge batch corruption rejected: book-06",
+      "Frozen Lodge batch corruption rejected: book-07",
+      "Frozen Lodge batch corruption rejected: book-08",
+      "Frozen Lodge batch corruption rejected: book-09",
+      "Frozen Lodge batch corruption rejected: book-10",
+      "Frozen Lodge batch corruption rejected: book-11",
+      "Frozen Lodge batch corruption rejected: book-12",
+      "Frozen Lodge batch corruption rejected: book-13",
+      "Frozen Lodge batch corruption rejected: book-14",
+      "Frozen Lodge batch corruption rejected: book-15",
+      "Frozen Lodge batch corruption rejected: book-16",
+      "Frozen Lodge batch corruption rejected: book-17",
+      "Frozen Lodge batch corruption rejected: book-18",
+      "Frozen Lodge batch corruption rejected: book-19",
+      "Frozen Lodge batch corruption rejected: book-20",
+      "Frozen Lodge Apion corruption rejected: book-01",
+      "Frozen Lodge Apion corruption rejected: book-02",
+      "manifest alteration rejected",
+      "frozen concordance alteration rejected",
+      "frozen Lodge authority alteration rejected",
+      "missing XML rejected"
+    ],
+    "source_mutation_tests_use_temporary_copies": true
+  },
+  "strict_AJ": {
+    "status": "PASS",
+    "AJ_units": 31,
+    "AJ_components": 44,
+    "raw_closed_components": 43,
+    "raw_open_with_prior_approval": 1,
+    "qualified_components": 2,
+    "genuine_witness_gaps": 1,
+    "section_occurrences": 420,
+    "all_source_hashes_verified": 32,
+    "original_order_and_frozen_targets_exact": true,
+    "no_new_scholarly_authority": true
+  },
+  "Node_reconciliation_tests": {
+    "passed": 3,
+    "static_corruptions_rejected": 36,
+    "repinned_boundary_mutations_rejected": 3
+  },
+  "Millet_tests": {
+    "passed": 12
+  },
+  "BJ_integrity": {
+    "status": "PASS",
+    "policy": "reviewed-crlf-or-exact-lf-v1",
+    "sources": 31,
+    "accepted": 62,
+    "rejected_source_mutations": 279,
+    "concordance_serialization_change_rejected": true,
+    "failed_cache_entry_evicted": true,
+    "HTTP_failure_rejected": true
+  }
+}

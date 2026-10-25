@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
 const root=path.resolve(process.argv[2]||fileURLToPath(new URL('../',import.meta.url)));
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p)));
@@ -39,4 +40,14 @@ layer.records.forEach((r,i)=>{
 });
 assert.equal(components,44);assert.equal(rawOpen,1);assert.equal(qualified,2);assert.equal(gaps,1);
 for(const [p,h] of Object.entries(layer.source_sha256))assert.equal(sha(fs.readFileSync(path.join(root,p))),h,'Current certified AJ source changed: '+p);
+// This certification binds the rechecked text, identities, exclusions, and
+// recomputed codepoint/UTF-16 coordinates, independently of the browser extractor.
+const auditPath='_docs/aj-latin-reconciliation/certified-boundaries.json';
+const auditSHA='706a31747f16d5dc8dee37702f94b6e510b04135981ad5a76a4afbb11cf433f4';
+assert.equal(layer.reconciliation?.audit,auditPath);
+assert.equal(layer.reconciliation?.audit_sha256,auditSHA);
+assert.equal(sha(fs.readFileSync(path.join(root,auditPath))),auditSHA,'AJ boundary certification changed');
+const audit=JSON.parse(execFileSync(process.env.PYTHON||'python',
+ [fileURLToPath(new URL('./aj-latin-boundary-audit.py',import.meta.url)),'--root',root],{encoding:'utf8'}));
+assert.equal(audit.status,'PASS');assert.equal(audit.AJ_components,44);
 console.log(JSON.stringify({status:'PASS',AJ_units:31,AJ_components:components,raw_closed_components:closed,raw_open_with_prior_approval:rawOpen,qualified_components:qualified,genuine_witness_gaps:gaps,section_occurrences:sectionOccurrences,all_source_hashes_verified:Object.keys(layer.source_sha256).length,original_order_and_frozen_targets_exact:true,no_new_scholarly_authority:true},null,2));
