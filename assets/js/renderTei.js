@@ -2672,6 +2672,123 @@ document.addEventListener("DOMContentLoaded", () => {
     return bellumNieseView(language, data, nieseNum);
   };
 
+  const antiquitiesBookNumberingDisplayCopy = (language, data) => {
+    const auditedWhistonBook = String(state.bookNum) === "preface"
+      || [1, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].includes(Number(state.bookNum));
+    if (!data || activeWork.slug !== "antiquities"
+      || state.viewingLevel !== "book-level"
+      || !((language === "Latin" && ["16", "18", "19"].includes(String(state.bookNum))
+          && state.sources.Latin === "bamberg78")
+        || (language === "English" && auditedWhistonBook && state.sources.English === "whiston"))) return data;
+
+    // Book view can share its tree with the navigation and boundary resolvers.
+    // Add or hide labels only on the final display copy, after view selection.
+    const display = data.cloneNode(true);
+    const nextContentNode = node => {
+      while (node && (node.nodeType === Node.COMMENT_NODE
+        || (node.nodeType === Node.TEXT_NODE && !node.textContent.trim()))) node = node.nextSibling;
+      return node;
+    };
+
+    if (language === "Latin") {
+      // These six audited starts are anchors or structural element edges,
+      // rather than explicit Niese milestones. Resolve all points before
+      // inserting display labels, so registered ordinals cannot move.
+      const inlineNumbers = {16: [356, 368], 18: [2, 4, 6, 27]}[state.bookNum] || [];
+      const inlineStarts = (nieseIdentityRegistry()?.sections || [])
+        .filter(section => inlineNumbers.includes(section.number) && section.Latin && section.Latin.available !== false)
+        .map(section => {
+          const start = section.Latin.start
+            || (section.Latin.spans?.length === 1 ? section.Latin.spans[0].start : null);
+          return {section, node: ["anchor", "element-edge"].includes(start?.kind)
+            ? traditionalPoint(display, start)?.node : null};
+        });
+      (nieseIdentityRegistry()?.sections || []).forEach(section => {
+        const start = section.Latin?.start;
+        if (section.Latin?.available === false || start?.kind !== "paragraph") return;
+        const paragraph = traditionalPoint(display, start)?.node;
+        if (!paragraph?.matches("tei-p") || !paragraph.closest("tei-body")
+          || paragraph.closest("tei-note, tei-app, tei-rdg, [data-original], tei-teiheader")) return;
+        const first = nextContentNode(paragraph.firstChild);
+        const label = `[${section.number}]`;
+        if (!first?.hidden && ((first?.matches?.("tei-num") && first.textContent.trim() === label)
+          || (first?.matches?.('tei-milestone[unit="niese"]')
+            && first.getAttribute("n") === String(section.number)))) return;
+        const generated = makeGeneratedNieseLabel(section.number);
+        if (section.Latin.note) generated.title = section.Latin.note;
+        paragraph.insertBefore(generated, paragraph.firstChild);
+      });
+      inlineStarts.forEach(({section, node}) => {
+        if (!node?.closest("tei-p") || !node.closest("tei-body")
+          || node.closest("tei-note, tei-app, tei-rdg, [data-original], tei-teiheader")) return;
+        let previous = node.previousSibling;
+        while (previous && (previous.nodeType === Node.COMMENT_NODE
+          || (previous.nodeType === Node.TEXT_NODE && !previous.textContent.trim()))) previous = previous.previousSibling;
+        if (node.matches('tei-milestone[unit="niese"]') && node.getAttribute("n") === String(section.number)) return;
+        if (previous?.matches?.("tei-num") && !previous.hidden
+          && previous.textContent.trim() === `[${section.number}]`) return;
+        if (previous?.matches?.('tei-milestone[unit="niese"]') && !previous.hidden
+          && previous.getAttribute("n") === String(section.number)) return;
+        const generated = makeGeneratedNieseLabel(section.number);
+        if (section.Latin.note) generated.title = section.Latin.note;
+        node.before(generated);
+      });
+    } else {
+      const nextCitationNode = node => {
+        node = nextContentNode(node);
+        // Empty structural anchors have no displayed text. Keep the anchor,
+        // but allow an otherwise adjacent matching citation across it.
+        while (node?.matches?.('tei-anchor[type="traditional-boundary"], tei-anchor[type="bamberg-boundary"]')
+          && !node.textContent.trim()) node = nextContentNode(node.nextSibling);
+        return node;
+      };
+      display.querySelectorAll("tei-p > tei-num").forEach(label => {
+        if (!label.closest("tei-body")
+          || label.closest("tei-note, tei-app, tei-rdg, [data-original], tei-teiheader")) return;
+        const match = label.textContent.trim().match(/^\[([1-9]\d*)\]$/);
+        const marker = nextCitationNode(label.nextSibling);
+        if (match && marker?.matches?.('tei-milestone[unit="niese"]')
+          && marker.getAttribute("n") === match[1]) label.hidden = true;
+
+        // Retain the richer inherited citation in I and the Proem, hiding
+        // only an equivalent short marker at the same physical boundary.
+        if ((Number(state.bookNum) === 1 || String(state.bookNum) === "preface") && !label.hidden) {
+          const compound = label.textContent.trim().match(/^\[(?:[IVXLCDMivxlcdm]+\.)+([1-9]\d*)\]$/);
+          let shortMarker = marker;
+          // Proem 5 has a single intervening full stop, which stays in place.
+          if (String(state.bookNum) === "preface" && label.parentElement.id === "english-preface-num5"
+            && label.textContent.trim() === "[ii.5]" && marker?.nodeType === Node.TEXT_NODE
+            && marker.textContent.trim() === ".") shortMarker = nextCitationNode(marker.nextSibling);
+          if (compound && shortMarker?.matches?.('tei-milestone[unit="niese"]')
+            && shortMarker.getAttribute("n") === compound[1]) shortMarker.hidden = true;
+        }
+      });
+
+      if (String(state.bookNum) === "12") {
+        // Two audited inherited labels repeat a certified number away from
+        // its milestone. Check their actual context instead of deduplicating
+        // arbitrary equal numbers across paragraphs or intervening prose.
+        const letter = display.querySelector('[id="english-book12-num148"]');
+        const letterLabel = nextContentNode(letter?.firstChild);
+        const introduction = nextContentNode(letterLabel?.nextSibling);
+        const letterStart = nextContentNode(introduction?.nextSibling);
+        if (letterLabel?.matches?.("tei-num") && letterLabel.textContent.trim() === "[148]"
+          && !letterLabel.closest("tei-note, tei-app, tei-rdg, [data-original], tei-teiheader")
+          && introduction?.nodeType === Node.TEXT_NODE && introduction.textContent.trim() === "The epistle was this:"
+          && letterStart?.matches?.('tei-milestone[unit="niese"][n="148"]')) letterLabel.hidden = true;
+
+        const continuation = display.querySelector('[id="english-book12-num225"]');
+        const continuationLabel = nextContentNode(continuation?.firstChild);
+        const priorStart = display.querySelector('[id="english-book12-num223"] > tei-milestone[unit="niese"][n="226"]');
+        if (continuationLabel?.matches?.("tei-num") && continuationLabel.textContent.trim() === "[226]"
+          && !continuationLabel.closest("tei-note, tei-app, tei-rdg, [data-original], tei-teiheader")
+          && priorStart && (priorStart.compareDocumentPosition(continuationLabel) & Node.DOCUMENT_POSITION_FOLLOWING)
+          && continuation.querySelector('tei-milestone[unit="niese"][n="227"]')) continuationLabel.hidden = true;
+      }
+    }
+    return display;
+  };
+
   const decorateNieseMarkers = (language, data) => {
     if (!data || !supportsNieseSections()) return;
 
@@ -3464,7 +3581,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    Object.entries(viewData).forEach(([language, data]) => {
+    Object.entries(viewData).forEach(([language, sourceData]) => {
+      const data = antiquitiesBookNumberingDisplayCopy(language, sourceData);
       const pane = languagePanes[language];
 
       if (pane && data) {
