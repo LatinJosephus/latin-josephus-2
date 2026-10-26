@@ -1,20 +1,40 @@
-<div class="logo-flex">
-  <a href="https://frq.gouv.qc.ca">
-    <img
-      src="/assets/img/logo-frqsc.png"
-      alt="FRQSC"
-    >
-  </a>
-  <a href="https://uqam.ca/">
-    <img
-        src="/assets/img/logo-uqam.svg"
-        alt="UQAM"
-    >
-  </a>
-  <a href="https://www.performantsoftware.com/">
-      <img
-          src="/assets/img/logo-performant.png"
-          alt="Performant Software Solutions LLC"
-      >
-  </a>
-</div>
+<section class="lj-support" aria-labelledby="lj-support-heading">
+  <h2 id="lj-support-heading" class="lj-support__heading">Institutional affiliation and research support</h2>
+
+  <div class="lj-support__institutions">
+    <div class="lj-support__institution">
+      <p class="lj-support__label">Institutional affiliation</p>
+      <a class="lj-support__mark lj-support__mark--uqam" href="https://uqam.ca/" aria-label="Université du Québec à Montréal">
+        <img class="lj-support__light" src="{{ '/assets/img/support/uqam-black.svg' | relative_url }}" width="575" height="118" alt="" loading="lazy" decoding="async">
+        <img class="lj-support__dark" src="{{ '/assets/img/support/uqam-reverse.svg' | relative_url }}" width="575" height="118" alt="" loading="lazy" decoding="async">
+      </a>
+    </div>
+    <div class="lj-support__institution">
+      <p class="lj-support__label">Research funding</p>
+      <a class="lj-support__mark lj-support__mark--frq" href="https://frq.gouv.qc.ca/" aria-label="Fonds de recherche du Québec">
+        <img class="lj-support__light" src="{{ '/assets/img/support/frq-colour.png' | relative_url }}" width="1034" height="396" alt="" loading="lazy" decoding="async">
+        <img class="lj-support__dark" src="{{ '/assets/img/support/frq-reverse.png' | relative_url }}" width="1034" height="396" alt="" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </div>
+
+  <div class="lj-support__federal">
+    <a class="lj-support__mark lj-support__mark--sshrc" href="https://sshrc-crsh.canada.ca/" aria-label="Social Sciences and Humanities Research Council of Canada">
+      <img class="lj-support__light" src="{{ '/assets/img/support/sshrc-signature-colour.svg' | relative_url }}" width="3512" height="197" alt="" loading="lazy" decoding="async">
+      <img class="lj-support__dark" src="{{ '/assets/img/support/sshrc-signature-reverse.svg' | relative_url }}" width="3512" height="197" alt="" loading="lazy" decoding="async">
+    </a>
+    <a class="lj-support__mark lj-support__mark--canada" href="https://www.canada.ca/" aria-label="Government of Canada">
+      <img class="lj-support__light" src="{{ '/assets/img/support/canada-wordmark-colour.svg' | relative_url }}" width="824" height="207" alt="" loading="lazy" decoding="async">
+      <img class="lj-support__dark" src="{{ '/assets/img/support/canada-wordmark-reverse.svg' | relative_url }}" width="1273" height="318" alt="" loading="lazy" decoding="async">
+    </a>
+    <p class="lj-support__credit">This project draws on research supported by the Social Sciences and Humanities Research Council of Canada.</p>
+    <p class="lj-support__credit" lang="fr">Ce projet s’appuie sur des recherches financées par le Conseil de recherches en sciences humaines du Canada.</p>
+  </div>
+
+  <p class="lj-support__development">
+    Site development by
+    <a href="https://www.performantsoftware.com/">
+      <img src="{{ '/assets/img/logo-performant.png' | relative_url }}" width="280" height="280" alt="Performant Software Solutions LLC" loading="lazy" decoding="async">
+    </a>
+  </p>
+</section>
