@@ -36,6 +36,11 @@
               </div>
           </li>
           {% else %}
+          {% if p.url == '/search/' %}
+          <li class="nav-item {% if page.url == '/manuscripts/' %}active{% endif %}">
+              <a class="nav-link" href="{{ '/manuscripts/' | relative_url }}"{% if page.url == '/manuscripts/' %} aria-current="page"{% endif %}>manuscripts</a>
+          </li>
+          {% endif %}
           <li class="nav-item {% if page.title == p.title %}active{% endif %}">
               <a class="nav-link" href="{{ p.url | relative_url }}">
                 {{ p.title }}
