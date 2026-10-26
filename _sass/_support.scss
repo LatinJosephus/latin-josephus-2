@@ -1,6 +1,14 @@
+@font-face {
+  font-family: "LJ Coelacanth Caption";
+  src: url("../fonts/latin-josephus/coelacanth-caption-bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 /* Original institutional colourways follow the existing manual theme state. */
 .lj-support {
-  font-family: var(--lj-font-ui);
+  font-family: var(--lj-font-text);
   margin-block: 2.5rem 1.5rem;
   padding-block: 1.75rem .5rem;
   border-top: 1px solid var(--lj-brand-rule);
@@ -9,7 +17,9 @@
 
 .lj-support .lj-support__heading {
   margin: 0 0 1.5rem;
-  font-size: 1.125rem;
+  font-family: "LJ Coelacanth Caption", var(--lj-font-text);
+  font-size: 1.375rem;
+  font-weight: 700;
   line-height: 1.4;
 }
 
@@ -24,11 +34,6 @@
 .lj-support__institution {
   flex: 0 1 320px;
   min-width: 0;
-}
-
-.lj-support .lj-support__label {
-  margin: 0;
-  font-size: .875rem;
 }
 
 .lj-support__mark {
