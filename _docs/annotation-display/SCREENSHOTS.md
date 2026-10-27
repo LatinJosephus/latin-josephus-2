@@ -19,4 +19,8 @@ Additional checks: [dark mode](screenshots/antiquities-hands-dark.png), [mobile 
 
 English editorial-note follow-up: [correction with a sign](screenshots/english-editorial-correction.png), [English comment within unchanged Latin](screenshots/english-editorial-mixed.png). The original French remains in scholarly details.
 
+Approved Book I follow-up: [Bern partial transcription and provisional David reading](screenshots/bern-partial-after.png), [Bodmer reviewed diuisa reading with original worksheet evidence](screenshots/bodmer-reviewed-after.png). The UI checks verify the recovered Sabbath entry separately at Book 1, Niese §§27–33.
+
+[Relaunched local reader in context](screenshots/reader-relaunched.png) shows the user-facing preview open at the updated Book I passage.
+
 Visual review verified readable transcription, separate folio and Niese references, restrained hand labels, independent categories, underlined links, wrapped manuscript designations, expandable details and a panel that reserves space for passage links beneath it. Native details were opened and closed with the keyboard. Animation was disabled during capture to avoid judging intermediate theme-transition colours.

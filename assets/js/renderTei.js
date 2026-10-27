@@ -3723,15 +3723,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const parseAnnotations = async () => {
     const annotations = [...canonicalFullData.getElementsByTagName("tei-app")];
-    if (annotations.length) await loadAnnotationCitations();
+    const supplements = annotationApi?.getSupplementalAnnotations(activeWork.slug, state.bookNum) || [];
+    if (annotations.length || supplements.length) await loadAnnotationCitations();
     annotatedParagraphs = [];
     let htmlString = annotationApi?.legend(annotationLanguage) || "";
-    let displayNumber = 1, readingCount = 0;
+    let displayNumber = 1, readingCount = 0, supplementalCount = 0;
     const occurrences = new Map(), links = new Map();
     const witnesses = new Map([...canonicalFullData.getElementsByTagName("tei-witness")].map(w => [w.id, w.textContent]));
     const visibleNodes = [canonicalViewData, ...canonicalViewData.querySelectorAll("[id], [sameAs]")];
     const visibleIds = new Set(visibleNodes.flatMap(node => [node.id,
       ...(node.getAttribute("sameAs") || "").split(/\s+/).map(id => id.replace(/^#/, ""))]).filter(Boolean));
+    const appendRecord = record => {
+      const rendered = annotationApi?.renderAnnotation(record, {lang: annotationLanguage, startNumber: displayNumber});
+      if (!rendered) return;
+      htmlString += rendered.html; displayNumber += rendered.count;
+      if (record.editorialSupplementId) supplementalCount++; else readingCount++;
+      if (visibleIds.has(record.alignmentUnitId) && rendered.count) {
+        links.set(record.alignmentUnitId, links.get(record.alignmentUnitId) || {anchor: rendered.interpreted.anchor, count: 0});
+        links.get(record.alignmentUnitId).count += rendered.count;
+      }
+    };
+    const appendedSupplements = new Set();
+    const appendSupplements = paragraphId => supplements.forEach(record => {
+      if (record.alignmentUnitId !== paragraphId || !visibleIds.has(paragraphId)
+          || appendedSupplements.has(record.editorialSupplementId)) return;
+      appendRecord(record); appendedSupplements.add(record.editorialSupplementId);
+    });
     annotations.forEach(anno => {
       const children = [...anno.children];
       const paragraphTag = children[0]?.getAttribute("source") || "";
@@ -3749,19 +3766,16 @@ document.addEventListener("DOMContentLoaded", () => {
           originalId: child.id || anno.id || null, notation: child.textContent,
           originalAlignmentReference: children[0]?.getAttribute("source") || null,
           originalManuscriptReference: child.getAttribute("source"), witnessLabel: witnesses.get(siglum) || null};
-        const rendered = annotationApi?.renderAnnotation(record, {lang: annotationLanguage, startNumber: displayNumber});
-        if (!rendered) return;
-        htmlString += rendered.html; displayNumber += rendered.count; readingCount++;
-        if (visibleIds.has(paragraphId) && rendered.count) {
-          links.set(paragraphId, links.get(paragraphId) || {anchor: rendered.interpreted.anchor, count: 0});
-          links.get(paragraphId).count += rendered.count;
-        }
+        appendRecord(record);
       });
+      appendSupplements(paragraphId);
     });
+    supplements.forEach(record => appendSupplements(record.alignmentUnitId));
     annotationsList.innerHTML = htmlString;
     annotationsList.dataset.readingCount = String(readingCount);
+    annotationsList.dataset.supplementalReadingCount = String(supplementalCount);
     annotationsList.dataset.annotationCount = String(displayNumber - 1);
-    const hasAnnotations = readingCount > 0;
+    const hasAnnotations = readingCount + supplementalCount > 0;
     if (annotationsPanel) annotationsPanel.hidden = !hasAnnotations;
     document.documentElement.classList.toggle("has-manuscript-annotations", hasAnnotations);
     const heading = document.querySelector("#annotations-header button");

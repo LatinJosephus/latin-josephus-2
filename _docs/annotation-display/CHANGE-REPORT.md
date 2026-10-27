@@ -6,6 +6,8 @@ Implementation commit: `46ec691d6bce48af0d93191e2eca7453223fb3d8`. It contains t
 
 ## Result
 
+Approved Book I follow-up: Bern 118's `§ dicit` now identifies a partial transcription and separately labels the editor's provisional David reading. Three recovered Bodmer 98 worksheet annotations appear at their reviewed existing alignment units; `uiro diuisa` is the reviewed reading and `si` remains uncertain. Original XML and the complete worksheet notation are preserved. The missing note targets remain unresolved. See [the editorial update report](EDITORIAL-READINGS-20261027.md). The suite now has 53 annotation/citation/translation tests plus five Python tests.
+
 Historical hand-key follow-up, 27 October: the editor confirmed the exact sequence through Hand 9. The shared interpreter now recognises the additional codes in annotation prefixes, keeps the bracketed `¤` folio role distinct, and separates the explicit `(³1)yo` component in Bodmer 98. All 84 observed additional prefixes resolve as Hands 5, 6 and 8. No Hand 4, 7 or 9 annotations are invented. See [the evidence and preservation report](HISTORICAL-HAND-KEY.md). The current suite has 45 annotation/citation/translation tests and five Python citation/preservation tests, all passing.
 
 English editorial-note follow-up: the English display now translates the inspected French descriptions and inline comments through `assets/js/annotationEditorialEnglish.js`. Original notation and Latin wording remain intact. Ten additional tests bring the annotation suite to 34 passing tests; see [the translation report](ENGLISH-EDITORIAL-NOTES.md). The original implementation commit above remains the initial redesign commit; the delivery receipt records the current branch HEAD.

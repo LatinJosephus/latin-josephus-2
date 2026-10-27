@@ -15,7 +15,7 @@ for (const r of inventory.records) {
   const stats = report.works[r.work] ||= {records: 0, components: 0, folioOnlyRecords: 0, verifiedCitationRecords: 0,
     unlocatedRecords: 0, fullyInterpretedRecords: 0, categories: {}, hands: {}, codes: {}, issues: {},
     confirmedAbbreviations: 0, unresolvedEllipses: 0, firstFolioMarkers: 0, repeatedFolioReferences: 0,
-    additionalHandPrefixes: {}};
+    additionalHandPrefixes: {}, partialTranscriptions: 0};
   stats.records++; stats.components += parsed.parts.length;
   if (!parsed.parts.length) stats.folioOnlyRecords++;
   if (citation.verificationStatus === 'verified') stats.verifiedCitationRecords++; else stats.unlocatedRecords++;
@@ -27,6 +27,7 @@ for (const r of inventory.records) {
     add(stats.categories, part.category); add(stats.hands, String(part.hand || 'unknown'));
     for (const code of part.codes) add(stats.codes, code);
     if (part.hand > 3) add(stats.additionalHandPrefixes, part.handCode);
+    if (part.transcriptionStatus === 'partial') stats.partialTranscriptions++;
     if (part.abbreviated) stats.confirmedAbbreviations++;
     if (part.ellipsisUnresolved) stats.unresolvedEllipses++;
   }
@@ -38,5 +39,11 @@ for (const r of inventory.records) {
   if (reasons.length) report.exceptions.push({...r, displayAnchor: parsed.anchor, reasons,
     publicCitation: citation.publicCitation, manuscriptStatus: ms.verificationStatus});
 }
+const supplements = api.getSupplementalAnnotations('antiquities', 1);
+report.editorialSupplements = {sourceCells: 1, entries: supplements.length,
+  components: supplements.reduce((n, r) => n + api.interpretManuscriptAnnotation(r).parts.length, 0),
+  verifiedCitationEntries: supplements.filter(r => api.resolveAlignmentCitation(r.work, r.alignmentUnitId).verificationStatus === 'verified').length,
+  source: 'Annotations - Latin Antiquities (libri I-XII).xlsx, Feuil1!E11',
+  canonicalSourceRecordCountUnchanged: true};
 fs.writeFileSync(path.join(output, 'notation-qa.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({sourceRecords: report.sourceRecords, works: report.works, exceptionRecords: report.exceptions.length}, null, 2));

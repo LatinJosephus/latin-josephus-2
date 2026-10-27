@@ -24,13 +24,15 @@ Other parenthesised prefixes include `+` (two components), `?` (two) and `*` (on
 
 | Interpreted components | Antiquities | Bellum | Total |
 |---|---:|---:|---:|
-| Textual | 1,953 | 1,860 | 3,813 |
+| Textual (including one confirmed partial transcription) | 1,954 | 1,860 | 3,814 |
 | Symbolic | 1,061 | 1,028 | 2,089 |
-| Cannot be transcribed | 207 | 62 | 269 |
+| Cannot be transcribed | 206 | 62 | 268 |
 | Unresolved | 23 | 8 | 31 |
 | All components | 3,244 | 2,958 | 6,202 |
 
 The 6,202 figure is a presentation-component inventory, **not a certified total of manuscript annotations**: unresolved syntax may require editorial adjudication. The additional component compared with the earlier 6,201 count separates the explicit `(³1)yo` annotation from the preceding `tertium` in Bodmer 98. One additional reading contains only a folio reference and creates no numbered annotation. No annotation is created by a folio marker alone.
+
+The table inventories original XML records only. The [approved Book I supplement](EDITORIAL-READINGS-20261027.md) adds three entries from one recovered worksheet cell, for 6,205 components in the combined display. Bern 118's surviving `dicit` now has partial-transcription status; its preceding untranscribed material and provisional David reading are explicitly distinguished.
 
 Thirteen components identify a hand but supply no transcription outside the prefix description. They display “No transcription recorded”, retain the description and hand, and are not automatically classified as untranscribable or symbolic.
 

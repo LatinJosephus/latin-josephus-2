@@ -5,6 +5,7 @@ Implementation for LatinJosephus v3, based on the current `v2-development` branc
 - [Reconnaissance and source exceptions](RECONNAISSANCE.md)
 - [Editorial notation inventory](NOTATION-INVENTORY.md)
 - [Historical nine-hand key confirmed 27 October](HISTORICAL-HAND-KEY.md)
+- [Approved Book I readings, partial transcription and recovered worksheet entries](EDITORIAL-READINGS-20261027.md)
 - [English translations of editorial notes](ENGLISH-EDITORIAL-NOTES.md)
 - [Citation mapping, provenance and exceptions](CITATIONS.md)
 - [Automated QA and visual checks](QA-REPORT.md)

@@ -2,6 +2,8 @@
 
 Updated 27 October 2026. **PASS**, with the source and environment limitations below.
 
+Latest Book I follow-up: **53 annotation/citation/translation tests and five Python tests pass**. The original XML inventory remains 2,958 records / 6,202 components; one component now has a confirmed partial-transcription status. Three recovered worksheet components are separately counted and displayed at their editor-reviewed citations, giving 6,205 combined display components. See [the approved editorial update report](EDITORIAL-READINGS-20261027.md). The prior certifications described below retain their recorded scope.
+
 Current follow-up: **45 annotation/citation/translation tests and five Python citation/preservation tests pass**. Eleven additional tests verify the [editor-confirmed historical nine-hand key](HISTORICAL-HAND-KEY.md), context-sensitive `¤`, actual additional hand prefixes and the newly separated Hand 8 component. The ten translation tests audit all 216 source-description variants and preserve every recorded-text segment across all 2,958 readings. The existing corpus, DEH and search asset guards are rerun. The 565 search tests below are the previous certification of unchanged search code. See [ENGLISH-EDITORIAL-NOTES.md](ENGLISH-EDITORIAL-NOTES.md).
 
 ## Preservation and interpretation
