@@ -15,7 +15,10 @@
   .manuscript-annotation { padding: .65rem 0; border-top: 1px solid var(--global-text-color-light); }
   h4 { font-family: inherit; font-size: 1rem; line-height: 1.5; margin: 0 0 .3rem; }
   p { margin: .3rem 0; }
-  .annotation-transcription { font-family: var(--font-serif, Georgia, serif); font-size: 1.12rem; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .annotation-transcription, .annotation-wording { color: var(--lj-brand-accent, var(--global-theme-color)); font-family: var(--font-serif, Georgia, serif); font-size: 1.12rem; line-height: 1.6; }
+  .annotation-transcription { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .annotation-transcription .annotation-editorial-note, .annotation-wording .annotation-editorial-note, .annotation-reading-status { color: var(--global-text-color); }
+  .annotation-reading-status { font-size: .85em; font-style: normal; }
   .annotation-category { font-style: italic; }
   .annotation-meta, .annotation-status, .annotation-description, .annotation-details { font-size: .9rem; }
   .annotation-editorial-note { font-family: inherit; font-size: .9rem; font-style: normal; }

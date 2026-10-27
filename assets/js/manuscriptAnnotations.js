@@ -296,14 +296,19 @@
     const number = options.startNumber || 1;
     const parts = interpreted.parts.map((part, index) => {
       const anchor = `${interpreted.anchor}-at-${part.offset}`;
-      const category = part.transcriptionStatus === 'partial' ? l.partial
+      const provisional = part.provisionalReading?.[lang] || part.provisionalReading?.en;
+      const category = provisional ? null : part.transcriptionStatus === 'partial' ? l.partial
         : part.category === 'symbolic' ? l.symbolic : part.category === 'untranscribable' ? l.untranscribable
         : part.category === 'unresolved' ? l.unresolved : !part.text ? l.noTranscription : null;
       const segments = annotationTextSegments(part, lang, record.work);
-      const text = part.displayText ? escape(part.displayText) : segments.map(segment => segment.kind === 'editorial'
+      const text = provisional ? provisional.split(/(\[[^\]]+\])/u).map(segment => /^\[/u.test(segment)
+        ? `<span class="annotation-editorial-note" lang="${lang}">${escape(segment)}</span>` : escape(segment)).join('')
+        : part.displayText ? escape(part.displayText) : segments.map(segment => segment.kind === 'editorial'
         ? `<span class="annotation-editorial-note" lang="en">${escape(segment.text)}</span>` : escape(segment.text)).join('');
       const editorialOnly = segments.length && segments.every(segment => segment.kind === 'editorial');
       const description = translateEditorialDescription(part.description, lang);
+      const categoryEntry = part.category === 'symbolic' || part.category === 'untranscribable';
+      const categoryWording = categoryEntry ? [escape(description), text].filter(Boolean).join(' · ') : '';
       const handLabel = part.hand ? `${l.hand} ${part.hand}` : '';
       const codes = part.codes.map(code => `${code} = ${numberedHands[code] ? `${l.hand} ${numberedHands[code]}`
         : ({'#': l.symbolic, '§': part.transcriptionStatus === 'partial' ? l.untranscribedText : l.untranscribable})[code] || l.unresolved}`).join('; ');
@@ -314,10 +319,11 @@
         [l.completeness, part.transcriptionStatus === 'partial' ? l.partial : part.abbreviated ? l.abbreviated : part.ellipsisUnresolved ? l.uncertainEllipsis
           : part.category === 'untranscribable' ? l.untranscribable : part.category === 'symbolic' ? l.symbolic
             : !part.text ? l.noTranscription : l.recorded]];
-      if (record.editorialSource) fields.push([l.sourceRecord, record.editorialSource]);
+      if (record.editorialSource) fields.push([l.sourceRecord, `${l.recovered}; ${record.editorialSource}`]);
       if (record.editorialEvidenceUrl) fields.push([l.evidence, record.editorialEvidenceUrl]);
       if (part.editorialExplanation) fields.push([l.evidence, part.editorialExplanation[lang] || part.editorialExplanation.en]);
-      if (part.displayText) fields.push([l.originalFragment, part.text], [l.reviewedReading, part.displayText]);
+      if (part.displayText || provisional) fields.push([l.originalFragment, part.text]);
+      if (part.displayText) fields.push([l.reviewedReading, part.displayText]);
       if (part.provisionalReading) fields.push([l.provisionalReading, part.provisionalReading[lang] || part.provisionalReading.en]);
       if (ms.verificationStatus !== 'verified') fields.push([l.manuscript, lang === 'fr' ? 'Référence du manuscrit à vérifier ; désignation originale conservée' : 'Manuscript reference requires review; original designation retained']);
       if (record.originalAlignmentReference != null) fields.push([lang === 'fr' ? 'Référence source du passage' : 'Original passage source reference', record.originalAlignmentReference]);
@@ -326,13 +332,9 @@
         `<dt>${escape(key)}</dt><dd>${escape(value)}</dd>`).join('')}</dl><p>${l.original}</p><pre>${escape(interpreted.originalNotation)}</pre></details>`;
       return `<article class="manuscript-annotation" id="${escape(anchor)}" tabindex="-1" data-alignment-unit="${escape(record.alignmentUnitId)}">
         <h4><span class="annotation-number">${number + index}.</span> ${escape(citation.publicCitation)}</h4>
-        ${record.editorialSupplementId ? `<p class="annotation-status">${l.recovered}</p>` : ''}
-        ${category ? `<p class="annotation-category">${escape(category)}</p>` : ''}
-        ${part.displayText ? `<p class="annotation-status">${l.reviewedReading}</p>` : ''}
-        ${text ? `<p class="${editorialOnly ? 'annotation-description' : 'annotation-transcription'}"${part.category === 'textual' && !editorialOnly ? ' lang="la"' : ''}>${editorialOnly ? `${l.editorialNote}: ` : ''}${part.untranscribedBefore ? `<span class="annotation-editorial-note" lang="${lang}">[${l.untranscribedText}]</span> ` : ''}${text}</p>` : ''}
-        ${part.provisionalReading ? `<p class="annotation-description">${l.provisionalReading}: <span lang="la">${escape(part.provisionalReading[lang] || part.provisionalReading.en)}</span></p>` : ''}
-        ${part.editorialExplanation ? `<p class="annotation-description" lang="${lang}">${escape(part.editorialExplanation[lang] || part.editorialExplanation.en)}</p>` : ''}
-        ${description ? `<p class="annotation-description" lang="${lang}">${l.editorialNote}: ${escape(description)}</p>` : ''}
+        ${category ? `<p class="annotation-category">${escape(category)}${categoryWording ? `: <span class="annotation-wording">${categoryWording}</span>` : ''}</p>` : ''}
+        ${text && !categoryEntry ? `<p class="${editorialOnly ? 'annotation-description' : 'annotation-transcription'}"${part.category === 'textual' && !editorialOnly ? ' lang="la"' : ''}>${editorialOnly ? `${l.editorialNote}: ` : ''}${part.untranscribedBefore && !provisional ? `<span class="annotation-editorial-note" lang="${lang}">[${l.untranscribedText}]</span> ` : ''}${text}${provisional || part.displayText ? ` <span class="annotation-reading-status" lang="${lang}">(${escape((provisional ? l.provisionalReading : l.reviewedReading).toLocaleLowerCase(lang))})</span>` : ''}</p>` : ''}
+        ${description && !categoryEntry ? `<p class="annotation-description" lang="${lang}">${l.editorialNote}: ${escape(description)}</p>` : ''}
         <p class="annotation-meta">${l.manuscript}: ${ms.url ? `<a href="${ms.url}">${escape(ms.displayName)}</a>` : escape(ms.displayName)}${part.folio?.reference ? ` · fol. ${escape(part.folio.reference)}` : ''}${handLabel ? ` · <span class="annotation-hand">${escape(handLabel)}</span>` : ''}</p>
         ${part.abbreviated ? `<p class="annotation-status">${l.abbreviated}. ${l.abbreviationHelp}</p>` : ''}
         ${part.issues.length ? `<p class="annotation-status">${part.ellipsisUnresolved ? l.uncertainEllipsis : l.review}</p>` : ''}

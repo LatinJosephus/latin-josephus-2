@@ -4,7 +4,7 @@
 
 ## Bern 118, folio 2v
 
-Original source record remains exactly `[¤2v] (§) dicit (@1) issa (#2 nota NT)`. The editor clarified that untranscribed material precedes the surviving `dicit`. The first component now displays **Partly transcribed**, with `[Untranscribed text] dicit`. The editorial proposal `david [uncertain text] dicit` appears separately as **Provisional reading**; it does not replace the source transcription, resolve the unknown middle words or assign a hand.
+Original source record remains exactly `[¤2v] (§) dicit (@1) issa (#2 nota NT)`. The editor clarified that untranscribed material precedes the surviving `dicit`. Following the requested display cleanup, the first component presents one reading: **david [uncertain text] dicit (provisional reading)**. Its partial-transcription status, surviving original fragment `dicit`, editorial explanation and complete original notation are retained in Scholarly details. The main panel does not duplicate the reading or its explanation. The proposal does not replace the source transcription, resolve the unknown middle words or assign a hand.
 
 This interpretation is guarded by the exact work, book, alignment unit, witness and original record. It is not a global reinterpretation of every § entry. The independent category and transcription-status model supports partial transcription without treating it as deliberate abbreviation.
 
@@ -24,7 +24,11 @@ The editor agreed with the facsimile-supported locations and requested their app
 
 The third entry displays the reviewed reading `issa si a uiro diuisa`. The grammatical preference for `diuisa` uses the project's Latin account of the woman's formation from Adam; it is not inferred from automated image transcription. The worksheet's `si` remains explicitly uncertain. The full exact original cell and the original fragment `issa si a uira diuisat` remain in scholarly details alongside the source workbook/cell and the [e-codices facsimile](https://www.e-codices.unifr.ch/en/fmb/cb-0098/1v).
 
-These are labelled **Recovered worksheet annotation**. They use stable presentation anchors derived from the worksheet entry, not invented canonical IDs or display numbers. The source offset selects each component without altering the cell. They are inserted after the existing entries for the relevant unit, preserving every original XML reading's relative order. Navigation and highlighting continue to cover entire alignment units.
+Their **Recovered worksheet annotation** provenance and editorial explanations appear in Scholarly details; the reviewed wording has a short inline qualification. They use stable presentation anchors derived from the worksheet entry, not invented canonical IDs or display numbers. The source offset selects each component without altering the cell. They are inserted after the existing entries for the relevant unit, preserving every original XML reading's relative order. Navigation and highlighting continue to cover entire alignment units.
+
+Actual annotation words use the site's existing `--lj-brand-accent` colour, with the existing global theme colour as fallback. Explanatory brackets and inline reading-status labels retain the normal text colour. Both site themes retain the transcription font, so colour is an additional cue rather than the only distinction. Browser checks verify text contrast of at least 4.5:1 and wrapping at 390 pixels.
+
+Symbolic entries combine their category and supplied description on one line, for example **Symbolic annotation: nota NT**. The label uses the normal text colour and the description uses the annotation accent colour. Entries marked as untranscribable likewise combine any supplied wording/description with their distinct category label. Neither category is inferred from the other, and entries without supplied wording show only their category.
 
 ## Source preservation and unresolved references
 

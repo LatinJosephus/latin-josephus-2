@@ -14,8 +14,11 @@ test('Bern retains dicit and identifies preceding untranscribed material indepen
   assert.equal(p.hand, null); assert.equal(p.abbreviated, false);
   assert.equal(r.parts.length, 3); assert.equal(JSON.stringify(bern), before);
   const html = api.renderAnnotation(bern).html;
-  assert(visible(html).includes('Partly transcribed'));
-  assert(visible(html).includes('[Untranscribed text]'));
+  assert(html.includes('Partly transcribed'));
+  assert(!visible(html).includes('Partly transcribed'));
+  assert(!visible(html).includes('[Untranscribed text]'));
+  assert(!visible(html).includes('The editor confirms'));
+  assert(html.includes('The editor confirms that untranscribed material precedes the surviving word dicit.'));
   assert(html.includes(`<pre>${bern.notation}</pre>`));
 });
 test('David remains a labelled provisional reading, never inserted into original transcription', () => {
@@ -23,7 +26,8 @@ test('David remains a labelled provisional reading, never inserted into original
   assert.equal(r.parts[0].provisionalReading.en, 'david [uncertain text] dicit');
   assert.equal(r.parts[0].text, 'dicit'); assert(!r.originalNotation.includes('david'));
   const html = visible(api.renderAnnotation(bern).html);
-  assert(html.includes('Provisional reading:')); assert(html.includes('david [uncertain text] dicit'));
+  assert(html.includes('(provisional reading)')); assert(!html.includes('Provisional reading:'));
+  assert(html.includes('david <span')); assert(html.includes('[uncertain text]</span> dicit'));
 });
 test('Bern clarification is guarded by exact source record identity and does not reinterpret every §', () => {
   for (const r of [{...bern, siglum: 'BernBBMs50'}, {...bern, alignmentUnitId: 'latin-book01-num37'},
@@ -56,7 +60,8 @@ test('reviewed Bodmer reading uses uiro diuisa while preserving si uncertainty a
   assert.equal(parsed.parts[0].text, 'issa si a uira diuisat');
   assert.equal(parsed.parts[0].displayText, 'issa si a uiro diuisa');
   const html = api.renderAnnotation(r).html;
-  assert(visible(html).includes('issa si a uiro diuisa')); assert(visible(html).includes('si remains uncertain'));
+  assert(visible(html).includes('issa si a uiro diuisa')); assert(html.includes('si remains uncertain'));
+  assert(!visible(html).includes('si remains uncertain')); assert(visible(html).includes('(reviewed reading)'));
   assert(html.includes('Original recorded fragment')); assert(html.includes('issa si a uira diuisat'));
 });
 test('editorial additions do not leak into Bellum, other books or unconfigured DEH notation', () => {
@@ -66,8 +71,8 @@ test('editorial additions do not leak into Bellum, other books or unconfigured D
 });
 test('English and French distinguish partial, provisional and reviewed readings', () => {
   const html = visible(api.renderAnnotation(bern, {lang:'fr'}).html);
-  assert(html.includes('Transcription partielle')); assert(html.includes('Lecture provisoire'));
-  assert(html.includes('david [texte incertain] dicit'));
+  assert(!html.includes('Transcription partielle')); assert(html.includes('(lecture provisoire)'));
+  assert(html.includes('david <span')); assert(html.includes('[texte incertain]</span> dicit'));
   const bodmer = visible(api.renderAnnotation(api.getSupplementalAnnotations('antiquities',1)[2], {lang:'fr'}).html);
-  assert(bodmer.includes('Lecture révisée')); assert(bodmer.includes('reste incertain'));
+  assert(bodmer.includes('(lecture révisée)')); assert(!bodmer.includes('reste incertain'));
 });

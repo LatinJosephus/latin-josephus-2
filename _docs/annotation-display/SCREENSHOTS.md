@@ -23,4 +23,10 @@ Approved Book I follow-up: [Bern partial transcription and provisional David rea
 
 [Relaunched local reader in context](screenshots/reader-relaunched.png) shows the user-facing preview open at the updated Book I passage.
 
+Concise display follow-up: [light mode](screenshots/bern-clean-light.png), [dark mode](screenshots/bern-clean-dark.png), [mobile dark mode](screenshots/bern-clean-mobile.png). The provisional reading appears once, while the explanation stays in Scholarly details. Annotation wording uses the site's accent colour.
+
+[Compact symbolic annotation](screenshots/symbolic-clean-after.png) shows the category and coloured supplied description on one line.
+
+[Updated reader in context](screenshots/reader-cleaned.png) shows the concise symbolic entry in the user-facing local preview.
+
 Visual review verified readable transcription, separate folio and Niese references, restrained hand labels, independent categories, underlined links, wrapped manuscript designations, expandable details and a panel that reserves space for passage links beneath it. Native details were opened and closed with the keyboard. Animation was disabled during capture to avoid judging intermediate theme-transition colours.

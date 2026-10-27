@@ -4,6 +4,8 @@ Updated 27 October 2026. **PASS**, with the source and environment limitations b
 
 Latest Book I follow-up: **53 annotation/citation/translation tests and five Python tests pass**. The original XML inventory remains 2,958 records / 6,202 components; one component now has a confirmed partial-transcription status. Three recovered worksheet components are separately counted and displayed at their editor-reviewed citations, giving 6,205 combined display components. See [the approved editorial update report](EDITORIAL-READINGS-20261027.md). The prior certifications described below retain their recorded scope.
 
+Concise display follow-up: browser checks verify a single provisional reading with its explanation inside Scholarly details; symbolic category and supplied description on one line; accent-coloured wording with neutral editorial qualifiers; text contrast of at least 4.5:1 in both themes; and no horizontal panel overflow at 390 pixels. The data model, original notation, component counts and associations are unchanged.
+
 Current follow-up: **45 annotation/citation/translation tests and five Python citation/preservation tests pass**. Eleven additional tests verify the [editor-confirmed historical nine-hand key](HISTORICAL-HAND-KEY.md), context-sensitive `¤`, actual additional hand prefixes and the newly separated Hand 8 component. The ten translation tests audit all 216 source-description variants and preserve every recorded-text segment across all 2,958 readings. The existing corpus, DEH and search asset guards are rerun. The 565 search tests below are the previous certification of unchanged search code. See [ENGLISH-EDITORIAL-NOTES.md](ENGLISH-EDITORIAL-NOTES.md).
 
 ## Preservation and interpretation
@@ -46,7 +48,7 @@ The original redesign certification comprises **594 Node/Python tests**, plus th
 
 ## Visual checks
 
-The current browser run produced 22 screenshots covering ten before/after examples plus desktop dark mode and mobile dark mode. Two additional English-editorial images remain available. [Screenshot index](SCREENSHOTS.md).
+The main browser run produced 22 screenshots covering ten before/after examples plus desktop dark mode and mobile dark mode. Additional English-editorial, approved Book I and concise-layout images are available in the [screenshot index](SCREENSHOTS.md).
 
 Images were inspected after rendering. They include actual Hands 1, 2, 3, 5, 6 and 8, the newly separated Bodmer component, several annotations on the same folio side, symbolic and untranscribable entries, and the supported Chartres abbreviated transcription. Hands 4, 7 and 9 are absent from the source readings and are not fabricated for screenshots. Panel spacing and focus offsets were corrected during the initial visual review. Theme transitions were disabled only during screenshot capture, so captured colours represent the settled interface. Mobile panel overflow was checked at 390 pixels.
 

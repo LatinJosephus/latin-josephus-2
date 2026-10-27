@@ -6,6 +6,10 @@ Implementation commit: `46ec691d6bce48af0d93191e2eca7453223fb3d8`. It contains t
 
 ## Result
 
+Display cleanup: the editor-requested concise layout presents the provisional Bern reading once, with its qualification inline. Explanations, partial-transcription status and recovery provenance remain in Scholarly details. All annotation words use the site accent colour, adapted to light/dark mode; editorial qualifiers use the normal text colour. No scholarly data or interpretation changed in this cleanup.
+
+Symbolic and untranscribable entries combine their distinct category label and any supplied description/wording on one line. In **Symbolic annotation: nota NT**, the supplied `nota NT` uses the same accent colour as other annotation wording.
+
 Approved Book I follow-up: Bern 118's `§ dicit` now identifies a partial transcription and separately labels the editor's provisional David reading. Three recovered Bodmer 98 worksheet annotations appear at their reviewed existing alignment units; `uiro diuisa` is the reviewed reading and `si` remains uncertain. Original XML and the complete worksheet notation are preserved. The missing note targets remain unresolved. See [the editorial update report](EDITORIAL-READINGS-20261027.md). The suite now has 53 annotation/citation/translation tests plus five Python tests.
 
 Historical hand-key follow-up, 27 October: the editor confirmed the exact sequence through Hand 9. The shared interpreter now recognises the additional codes in annotation prefixes, keeps the bracketed `¤` folio role distinct, and separates the explicit `(³1)yo` component in Bodmer 98. All 84 observed additional prefixes resolve as Hands 5, 6 and 8. No Hand 4, 7 or 9 annotations are invented. See [the evidence and preservation report](HISTORICAL-HAND-KEY.md). The current suite has 45 annotation/citation/translation tests and five Python citation/preservation tests, all passing.
