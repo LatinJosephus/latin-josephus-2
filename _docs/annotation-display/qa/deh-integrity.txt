@@ -1,0 +1,632 @@
+{
+  "status": "PASS",
+  "policy": "reviewed-crlf-or-exact-lf-v1",
+  "sources": 31,
+  "accepted": 62,
+  "rejected_source_mutations": 279,
+  "concordance_serialization_change_rejected": true,
+  "failed_cache_entry_evicted": true,
+  "HTTP_failure_rejected": true,
+  "checks": [
+    {
+      "source": "pollard",
+      "book": 1,
+      "relative": "assets/xml/deh/English/book-01.xml",
+      "reviewed_sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+      "LF_sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "pollard",
+      "book": 2,
+      "relative": "assets/xml/deh/English/book-02.xml",
+      "reviewed_sha256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+      "LF_sha256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "pollard",
+      "book": 3,
+      "relative": "assets/xml/deh/English/book-03.xml",
+      "reviewed_sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+      "LF_sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "pollard",
+      "book": 4,
+      "relative": "assets/xml/deh/English/book-04.xml",
+      "reviewed_sha256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+      "LF_sha256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "pollard",
+      "book": 5,
+      "relative": "assets/xml/deh/English/book-05.xml",
+      "reviewed_sha256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+      "LF_sha256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "ussani",
+      "book": 1,
+      "relative": "assets/xml/deh/Latin/book-01.xml",
+      "reviewed_sha256": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+      "LF_sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "ussani",
+      "book": 2,
+      "relative": "assets/xml/deh/Latin/book-02.xml",
+      "reviewed_sha256": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+      "LF_sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "ussani",
+      "book": 3,
+      "relative": "assets/xml/deh/Latin/book-03.xml",
+      "reviewed_sha256": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+      "LF_sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "ussani",
+      "book": 4,
+      "relative": "assets/xml/deh/Latin/book-04.xml",
+      "reviewed_sha256": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+      "LF_sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "ussani",
+      "book": 5,
+      "relative": "assets/xml/deh/Latin/book-05.xml",
+      "reviewed_sha256": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+      "LF_sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "niese",
+      "book": 1,
+      "relative": "assets/xml/bellum/Greek/book-01.xml",
+      "reviewed_sha256": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+      "LF_sha256": "d58bd11884c2e8742e2ee8d585d6a5e8740d1624ccf6fad41c37811427c45969",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "niese",
+      "book": 2,
+      "relative": "assets/xml/bellum/Greek/book-02.xml",
+      "reviewed_sha256": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+      "LF_sha256": "bbd99e5aa819f485df14680242948da6bffe8dd5ff3fd127d9467d399d7d7f64",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "niese",
+      "book": 3,
+      "relative": "assets/xml/bellum/Greek/book-03.xml",
+      "reviewed_sha256": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+      "LF_sha256": "55a7b2d4d1be28b40e52097b2f8a92025a643a7cea3a84a77853a45e8a2d443c",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "niese",
+      "book": 4,
+      "relative": "assets/xml/bellum/Greek/book-04.xml",
+      "reviewed_sha256": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+      "LF_sha256": "a3ae25b99ca75509401f95fc3405341e6c1c882f2d2e3dbec366a1f6dbdebaf9",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "niese",
+      "book": 5,
+      "relative": "assets/xml/bellum/Greek/book-05.xml",
+      "reviewed_sha256": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+      "LF_sha256": "520db5852f3e0299413b2db9a9071c61d4912495c3a06a99198a3c174ca97d9b",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "niese",
+      "book": 6,
+      "relative": "assets/xml/bellum/Greek/book-06.xml",
+      "reviewed_sha256": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+      "LF_sha256": "9380e9d4f6744467a4cd935cb1f6f4501c14283a13a02879564564aa45399b25",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "niese",
+      "book": 7,
+      "relative": "assets/xml/bellum/Greek/book-07.xml",
+      "reviewed_sha256": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+      "LF_sha256": "9b18443363cdef6d252d7d5382f868e7f66318702e0e80554311832cc25a5cc5",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "whiston",
+      "book": 1,
+      "relative": "assets/xml/bellum/English/book-01.xml",
+      "reviewed_sha256": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+      "LF_sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "whiston",
+      "book": 2,
+      "relative": "assets/xml/bellum/English/book-02.xml",
+      "reviewed_sha256": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+      "LF_sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "whiston",
+      "book": 3,
+      "relative": "assets/xml/bellum/English/book-03.xml",
+      "reviewed_sha256": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+      "LF_sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "whiston",
+      "book": 4,
+      "relative": "assets/xml/bellum/English/book-04.xml",
+      "reviewed_sha256": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+      "LF_sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "whiston",
+      "book": 5,
+      "relative": "assets/xml/bellum/English/book-05.xml",
+      "reviewed_sha256": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+      "LF_sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "whiston",
+      "book": 6,
+      "relative": "assets/xml/bellum/English/book-06.xml",
+      "reviewed_sha256": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+      "LF_sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "whiston",
+      "book": 7,
+      "relative": "assets/xml/bellum/English/book-07.xml",
+      "reviewed_sha256": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+      "LF_sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "cardwell",
+      "book": 1,
+      "relative": "assets/xml/bellum/Latin/book-01.xml",
+      "reviewed_sha256": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+      "LF_sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "cardwell",
+      "book": 2,
+      "relative": "assets/xml/bellum/Latin/book-02.xml",
+      "reviewed_sha256": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+      "LF_sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "cardwell",
+      "book": 3,
+      "relative": "assets/xml/bellum/Latin/book-03.xml",
+      "reviewed_sha256": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+      "LF_sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "cardwell",
+      "book": 4,
+      "relative": "assets/xml/bellum/Latin/book-04.xml",
+      "reviewed_sha256": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+      "LF_sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "cardwell",
+      "book": 5,
+      "relative": "assets/xml/bellum/Latin/book-05.xml",
+      "reviewed_sha256": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+      "LF_sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "cardwell",
+      "book": 6,
+      "relative": "assets/xml/bellum/Latin/book-06.xml",
+      "reviewed_sha256": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+      "LF_sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    },
+    {
+      "source": "cardwell",
+      "book": 7,
+      "relative": "assets/xml/bellum/Latin/book-07.xml",
+      "reviewed_sha256": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+      "LF_sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+      "literal_accepted": true,
+      "LF_accepted": true,
+      "rejected_mutations": [
+        "text",
+        "IDs",
+        "extra whitespace",
+        "BOM",
+        "truncation",
+        "mixed line endings",
+        "bare CR",
+        "missing hash",
+        "wrong hash"
+      ]
+    }
+  ]
+}
