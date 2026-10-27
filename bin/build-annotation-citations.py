@@ -180,7 +180,30 @@ def build():
                     mappings[chapter.get(XMLID)] = {'book': book, 'intervals': intervals(numbers),
                         'citationSystem': 'niese', 'status': 'verified' if numbers else 'unresolved', 'provenance': provenance}
             if work == 'deh':
-                continue  # No DEH annotations are imported, generated, or interpreted.
+                # Chapter-level annotation locations have their own verified targets.
+                # They must not be assigned to a chapter's first alignment unit.
+                for chapter in tree.iter(NS + 'div2'):
+                    chapter_id = chapter.get(XMLID) or ''
+                    if not chapter_id.startswith('latin-deh'):
+                        continue
+                    unit_ids = [p.get(XMLID) for p in chapter.iter(NS + 'p')
+                                if p.get(XMLID) in mappings]
+                    chapter_number = int(chapter.get('n'))
+                    labels = [mappings[unit]['citation'] for unit in unit_ids]
+                    citation = 'Prologue' if chapter_number == 0 else None
+                    if chapter_number and labels:
+                        prefixes = {label.rsplit('.', 1)[0] for label in labels}
+                        if len(prefixes) == 1:
+                            citation = prefixes.pop()
+                    mappings[chapter_id] = {'book': book, 'chapter': chapter_number,
+                        'citationSystem': 'deh', 'granularity': 'chapter',
+                        'citation': citation, 'alignmentUnitIds': unit_ids,
+                        'startCitation': labels[0] if labels else None,
+                        'endCitation': labels[-1] if labels else None,
+                        'intervals': [], 'provenance': provenance,
+                        'status': 'verified' if citation and unit_ids else 'unresolved'}
+                result['works'][work] = mappings
+                continue
             witnesses = {w.get(XMLID): ''.join(w.itertext()) for w in tree.iter(NS + 'witness')}
             occurrences = collections.Counter()
             for app in tree.iter(NS + 'app'):

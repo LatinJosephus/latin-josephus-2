@@ -1,0 +1,2105 @@
+{
+  "status": "PASS",
+  "production_XML": 166,
+  "all_production_XML_parsed": true,
+  "publication_inputs": 38,
+  "frozen_publication_inputs": 33,
+  "approved_editorial_revision_inputs": 5,
+  "publication_xml_sha256": {
+    "assets/xml/bellum/English/book-01.xml": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+    "assets/xml/bellum/English/book-02.xml": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+    "assets/xml/bellum/English/book-03.xml": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+    "assets/xml/bellum/English/book-04.xml": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+    "assets/xml/bellum/English/book-05.xml": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+    "assets/xml/bellum/English/book-06.xml": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+    "assets/xml/bellum/English/book-07.xml": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+    "assets/xml/bellum/Greek/book-01.xml": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+    "assets/xml/bellum/Greek/book-02.xml": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+    "assets/xml/bellum/Greek/book-03.xml": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+    "assets/xml/bellum/Greek/book-04.xml": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+    "assets/xml/bellum/Greek/book-05.xml": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+    "assets/xml/bellum/Greek/book-06.xml": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+    "assets/xml/bellum/Greek/book-07.xml": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+    "assets/xml/bellum/Latin/book-01.xml": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+    "assets/xml/bellum/Latin/book-02.xml": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+    "assets/xml/bellum/Latin/book-03.xml": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+    "assets/xml/bellum/Latin/book-04.xml": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+    "assets/xml/bellum/Latin/book-05.xml": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+    "assets/xml/bellum/Latin/book-06.xml": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+    "assets/xml/bellum/Latin/book-07.xml": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+    "assets/xml/deh/English/book-01.xml": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+    "assets/xml/deh/English/book-02.xml": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+    "assets/xml/deh/English/book-03.xml": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+    "assets/xml/deh/English/book-04.xml": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+    "assets/xml/deh/English/book-05.xml": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+    "assets/xml/deh/Latin/book-01.xml": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+    "assets/xml/deh/Latin/book-02.xml": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+    "assets/xml/deh/Latin/book-03.xml": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+    "assets/xml/deh/Latin/book-04.xml": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+    "assets/xml/deh/Latin/book-05.xml": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+    "assets/xml/bellum/English/Lodge1602/book-01.xml": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119",
+    "assets/xml/bellum/English/Lodge1602/book-02.xml": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592",
+    "assets/xml/bellum/English/Lodge1602/book-03.xml": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e",
+    "assets/xml/bellum/English/Lodge1602/book-04.xml": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e",
+    "assets/xml/bellum/English/Lodge1602/book-05.xml": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b",
+    "assets/xml/bellum/English/Lodge1602/book-06.xml": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8",
+    "assets/xml/bellum/English/Lodge1602/book-07.xml": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5"
+  },
+  "frozen_concordance_sha256": "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c",
+  "manifest_sha256": "e97cc6b2b5515af838035fcebaec5a888fb79460499aeee6de45df0c733c549f",
+  "generated_site": "C:\\Users\\Pollard_R\\.codex\\.chatgpt-projects\\g-p-69862e643cc08191a8457368cb0c460f\\DEH_Annotations_QA_20261027\\site",
+  "repository_sources_modified": false,
+  "files": [
+    {
+      "path": "assets/xml/antiquities/English/book-01.xml",
+      "source_sha256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+      "publication_sha256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-02.xml",
+      "source_sha256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584",
+      "publication_sha256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-03.xml",
+      "source_sha256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44",
+      "publication_sha256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-04.xml",
+      "source_sha256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554",
+      "publication_sha256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-05.xml",
+      "source_sha256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722",
+      "publication_sha256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-06.xml",
+      "source_sha256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+      "publication_sha256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-07.xml",
+      "source_sha256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+      "publication_sha256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-08.xml",
+      "source_sha256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+      "publication_sha256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-09.xml",
+      "source_sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+      "publication_sha256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-10.xml",
+      "source_sha256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+      "publication_sha256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-11.xml",
+      "source_sha256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2",
+      "publication_sha256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-12.xml",
+      "source_sha256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+      "publication_sha256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-13.xml",
+      "source_sha256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+      "publication_sha256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-14.xml",
+      "source_sha256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+      "publication_sha256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-15.xml",
+      "source_sha256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+      "publication_sha256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-16.xml",
+      "source_sha256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+      "publication_sha256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-17.xml",
+      "source_sha256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+      "publication_sha256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-18.xml",
+      "source_sha256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+      "publication_sha256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-19.xml",
+      "source_sha256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+      "publication_sha256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/book-20.xml",
+      "source_sha256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+      "publication_sha256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/preface.xml",
+      "source_sha256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+      "publication_sha256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-01.xml",
+      "source_sha256": "7c82be2ce7299a389995a93ef905f905db14b79c6a49288569e52cf4fd65d4c9",
+      "publication_sha256": "7c82be2ce7299a389995a93ef905f905db14b79c6a49288569e52cf4fd65d4c9",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-02.xml",
+      "source_sha256": "f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da",
+      "publication_sha256": "f00d53181a4b3403f70346bcdd0c47c86c22c53c774c0a7bdaf4ae862ac2d1da",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-03.xml",
+      "source_sha256": "967280266aec51e390b057f309157989070185cd3d3ae08102f723eea14a50d7",
+      "publication_sha256": "967280266aec51e390b057f309157989070185cd3d3ae08102f723eea14a50d7",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-04.xml",
+      "source_sha256": "6a829c561e267d857d3609b01c8afd9cdb533edbb7dd828f5dd72438fbbce4b3",
+      "publication_sha256": "6a829c561e267d857d3609b01c8afd9cdb533edbb7dd828f5dd72438fbbce4b3",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-05.xml",
+      "source_sha256": "6da4f29227376a81789955f5d1230018a5f1fee4aabbffa398f18aef64f5214c",
+      "publication_sha256": "6da4f29227376a81789955f5d1230018a5f1fee4aabbffa398f18aef64f5214c",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-06.xml",
+      "source_sha256": "0415434537ab6f1802daeca943f01ad1cf35b7eebca69dbfcf0417e696b25a64",
+      "publication_sha256": "0415434537ab6f1802daeca943f01ad1cf35b7eebca69dbfcf0417e696b25a64",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-07.xml",
+      "source_sha256": "1ecd613ea829466177ea90f6699e7f44e40fdcf7e0b219504796a7cc1862a18f",
+      "publication_sha256": "1ecd613ea829466177ea90f6699e7f44e40fdcf7e0b219504796a7cc1862a18f",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-08.xml",
+      "source_sha256": "3ae0e04f7ccb24c05bdcb166f40a143098c4f5c73be74e1edc2985b1a09cbb9e",
+      "publication_sha256": "3ae0e04f7ccb24c05bdcb166f40a143098c4f5c73be74e1edc2985b1a09cbb9e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-09.xml",
+      "source_sha256": "3bc7dcdef2e994181b9faa62564c544e4ce2d620ef0509bbc3435861b4f560aa",
+      "publication_sha256": "3bc7dcdef2e994181b9faa62564c544e4ce2d620ef0509bbc3435861b4f560aa",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-10.xml",
+      "source_sha256": "764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7",
+      "publication_sha256": "764d48e565f9a97348d4bd1806805e50606ade01f824e87a4b351fe8fb0051d7",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-11.xml",
+      "source_sha256": "2aee7fab8664607c0139532ee7d49cc9a6e6ace0e6e4c34346adac42bc0c4f89",
+      "publication_sha256": "2aee7fab8664607c0139532ee7d49cc9a6e6ace0e6e4c34346adac42bc0c4f89",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-12.xml",
+      "source_sha256": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec",
+      "publication_sha256": "be4ddb75b3382a8dc8bbe27147952c0f87fbb6e2126c1f59e0e63b10fadd02ec",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-13.xml",
+      "source_sha256": "5d8895efde76b679083a7c08b5f236d5f3e9d8e9dadb75e6fc3661da1200007c",
+      "publication_sha256": "5d8895efde76b679083a7c08b5f236d5f3e9d8e9dadb75e6fc3661da1200007c",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-14.xml",
+      "source_sha256": "afd794b3f7370f740bab151fe5fdf1c73f699d8af72229fc5dc0f0502eab995e",
+      "publication_sha256": "afd794b3f7370f740bab151fe5fdf1c73f699d8af72229fc5dc0f0502eab995e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-15.xml",
+      "source_sha256": "d7b93caaf77bc2bfa7ef46aed5edd8af80408e93796c23fdb5cfc8e969b2eaf0",
+      "publication_sha256": "d7b93caaf77bc2bfa7ef46aed5edd8af80408e93796c23fdb5cfc8e969b2eaf0",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-16.xml",
+      "source_sha256": "52fbccbf4e2ca17ea43f7756db48360e60c3fac90178dc42b6abf1bf6d72910f",
+      "publication_sha256": "52fbccbf4e2ca17ea43f7756db48360e60c3fac90178dc42b6abf1bf6d72910f",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-17.xml",
+      "source_sha256": "730d904e88c8dc292d859a1d41796b22fd06bee1b912cbb7e44b941210b26eef",
+      "publication_sha256": "730d904e88c8dc292d859a1d41796b22fd06bee1b912cbb7e44b941210b26eef",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-18.xml",
+      "source_sha256": "c00a428cb042469f0f71e4d6b87c46ccf3b44d6e3fbfe55180f878dc97af647e",
+      "publication_sha256": "c00a428cb042469f0f71e4d6b87c46ccf3b44d6e3fbfe55180f878dc97af647e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-19.xml",
+      "source_sha256": "9e3750336c4a0380d8daa4c1f3f0899dabf8260cab6a3128e1e1aa77970805be",
+      "publication_sha256": "9e3750336c4a0380d8daa4c1f3f0899dabf8260cab6a3128e1e1aa77970805be",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/book-20.xml",
+      "source_sha256": "193f0a654ba827838afa3bbde3f95fa31c318f2a6431efadd453b7977f5617b1",
+      "publication_sha256": "193f0a654ba827838afa3bbde3f95fa31c318f2a6431efadd453b7977f5617b1",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Greek/preface.xml",
+      "source_sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+      "publication_sha256": "fe56423bbd4df728f6a54dca7b81a178d4bf48cfe85f70daf0a5bebc662aa63e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-01.xml",
+      "source_sha256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+      "publication_sha256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-02.xml",
+      "source_sha256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+      "publication_sha256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-03.xml",
+      "source_sha256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+      "publication_sha256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-04.xml",
+      "source_sha256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+      "publication_sha256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-05.xml",
+      "source_sha256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+      "publication_sha256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-06.xml",
+      "source_sha256": "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f",
+      "publication_sha256": "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-07.xml",
+      "source_sha256": "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd",
+      "publication_sha256": "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-08.xml",
+      "source_sha256": "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af",
+      "publication_sha256": "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-09.xml",
+      "source_sha256": "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640",
+      "publication_sha256": "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-10.xml",
+      "source_sha256": "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863",
+      "publication_sha256": "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-11.xml",
+      "source_sha256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+      "publication_sha256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-12.xml",
+      "source_sha256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+      "publication_sha256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-13.xml",
+      "source_sha256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+      "publication_sha256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-14.xml",
+      "source_sha256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+      "publication_sha256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-15.xml",
+      "source_sha256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+      "publication_sha256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-16.xml",
+      "source_sha256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+      "publication_sha256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-17.xml",
+      "source_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "publication_sha256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-18.xml",
+      "source_sha256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+      "publication_sha256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-19.xml",
+      "source_sha256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+      "publication_sha256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/book-20.xml",
+      "source_sha256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+      "publication_sha256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/Latin/preface.xml",
+      "source_sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+      "publication_sha256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/bamberg78/book-02-contents.xml",
+      "source_sha256": "0af258453b21ead4f81d6649083b5ded4f6f6571be6c4fa1a31153020a838786",
+      "publication_sha256": "0af258453b21ead4f81d6649083b5ded4f6f6571be6c4fa1a31153020a838786",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/bamberg78/book-03-contents.xml",
+      "source_sha256": "c39dd3333f82180d321ebd89e390637148d44d8c58f329ff6a8246d7e0db8b62",
+      "publication_sha256": "c39dd3333f82180d321ebd89e390637148d44d8c58f329ff6a8246d7e0db8b62",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/bamberg78/book-04-contents.xml",
+      "source_sha256": "f3b923d5d7d409d1038c45072bdb6f00205415a2f17e3dcb27fb7c75851412de",
+      "publication_sha256": "f3b923d5d7d409d1038c45072bdb6f00205415a2f17e3dcb27fb7c75851412de",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/bamberg78/book-05-contents.xml",
+      "source_sha256": "2f4f399819a3ce9d1f0a4598e030660cd0a321f41352cc8d58a2692ececed934",
+      "publication_sha256": "2f4f399819a3ce9d1f0a4598e030660cd0a321f41352cc8d58a2692ececed934",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/bamberg78/book-14-contents.xml",
+      "source_sha256": "447f326e75b9791ee8a5ae5e16a9757afec5431f531867b8fa71dffc7885ee87",
+      "publication_sha256": "447f326e75b9791ee8a5ae5e16a9757afec5431f531867b8fa71dffc7885ee87",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-01-contents.xml",
+      "source_sha256": "a207dc793d50629e1b4968fd657780194221104b50d6cd87f8423a0e4c8e0c0f",
+      "publication_sha256": "a207dc793d50629e1b4968fd657780194221104b50d6cd87f8423a0e4c8e0c0f",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-02-contents.xml",
+      "source_sha256": "8bbf9b91615d94ae48f398fede9f9e388709f22414463a804d08836cb36f8339",
+      "publication_sha256": "8bbf9b91615d94ae48f398fede9f9e388709f22414463a804d08836cb36f8339",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-03-contents.xml",
+      "source_sha256": "ec18224bd0dff88d173f6e9b7afffbf98e0b3fd3a58fb210ea302afc4eb664a3",
+      "publication_sha256": "ec18224bd0dff88d173f6e9b7afffbf98e0b3fd3a58fb210ea302afc4eb664a3",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-04-contents.xml",
+      "source_sha256": "cdd115cf3e8622d23ef2ac2146c99d14457b3108f05042dc1da6566ac89dea18",
+      "publication_sha256": "cdd115cf3e8622d23ef2ac2146c99d14457b3108f05042dc1da6566ac89dea18",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-06-contents.xml",
+      "source_sha256": "86ff06efecf4cbb1ceff5621ccf70c7b6e7c23b2033b1df6950c1e0c6bd92534",
+      "publication_sha256": "86ff06efecf4cbb1ceff5621ccf70c7b6e7c23b2033b1df6950c1e0c6bd92534",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-07-contents.xml",
+      "source_sha256": "6135c8e95ebd6ae4fb829797dca284869eb105f098964db61b88c75641b1f768",
+      "publication_sha256": "6135c8e95ebd6ae4fb829797dca284869eb105f098964db61b88c75641b1f768",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-08-contents.xml",
+      "source_sha256": "16fa639cb136f6c81984a45f177a1f8cbb12b00952b80a2499b3d8c3870a13f6",
+      "publication_sha256": "16fa639cb136f6c81984a45f177a1f8cbb12b00952b80a2499b3d8c3870a13f6",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-09-contents.xml",
+      "source_sha256": "01f556da6bf7f2443500f0de8f3183640e44075681449f55b66cf98ab06c83d0",
+      "publication_sha256": "01f556da6bf7f2443500f0de8f3183640e44075681449f55b66cf98ab06c83d0",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/niese/book-10-contents.xml",
+      "source_sha256": "2d9fb947ef225ae9159b1d39715c0c7660bd3b4998f9e574705b4a9ff7fb51ab",
+      "publication_sha256": "2d9fb947ef225ae9159b1d39715c0c7660bd3b4998f9e574705b4a9ff7fb51ab",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-01-contents.xml",
+      "source_sha256": "7ca283155eb1545e3bdbc86aaef69edc2c1163adab877514746eae73b1a73598",
+      "publication_sha256": "7ca283155eb1545e3bdbc86aaef69edc2c1163adab877514746eae73b1a73598",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-02-contents.xml",
+      "source_sha256": "33f1e06edb5e97eadaa44b312473a45c5f28630e0f136e87ac6453a06e7b2649",
+      "publication_sha256": "33f1e06edb5e97eadaa44b312473a45c5f28630e0f136e87ac6453a06e7b2649",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-03-contents.xml",
+      "source_sha256": "dd0b31266fcf86dd0aa317ed4be004bdbe8987bb061772ebaef98ca8b1c6237a",
+      "publication_sha256": "dd0b31266fcf86dd0aa317ed4be004bdbe8987bb061772ebaef98ca8b1c6237a",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-04-contents.xml",
+      "source_sha256": "225413ca660953afae020d862184867fee4c7369e8ebf3c8c97297b08afac8f8",
+      "publication_sha256": "225413ca660953afae020d862184867fee4c7369e8ebf3c8c97297b08afac8f8",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-05-contents.xml",
+      "source_sha256": "0b6096eb4570209d690ae86dbd8ba29ffcaba2fce5b07f4f71bc625ead76c71c",
+      "publication_sha256": "0b6096eb4570209d690ae86dbd8ba29ffcaba2fce5b07f4f71bc625ead76c71c",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-06-contents.xml",
+      "source_sha256": "f2650bca8faed07af9b1a708464116eba4f3976c88b9a6d466e283fbc7cbfede",
+      "publication_sha256": "f2650bca8faed07af9b1a708464116eba4f3976c88b9a6d466e283fbc7cbfede",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-07-contents.xml",
+      "source_sha256": "7eb4de28eca307a8172edd585e0de35a44303fc2702dc02667c68cd4d7535456",
+      "publication_sha256": "7eb4de28eca307a8172edd585e0de35a44303fc2702dc02667c68cd4d7535456",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-08-contents.xml",
+      "source_sha256": "03c22831fcdbd2f8927051765b0fedb65770a7343e1ab933968c42469218641f",
+      "publication_sha256": "03c22831fcdbd2f8927051765b0fedb65770a7343e1ab933968c42469218641f",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-09-contents.xml",
+      "source_sha256": "b0abebda34324463d3684258272b4301816ece9d17e31def20c53d15d8b292b2",
+      "publication_sha256": "b0abebda34324463d3684258272b4301816ece9d17e31def20c53d15d8b292b2",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-10-contents.xml",
+      "source_sha256": "4dfeb50455e3b2312e3c5e6bc196f36fec7068e7d2cae790e1d9d4926aeeb02a",
+      "publication_sha256": "4dfeb50455e3b2312e3c5e6bc196f36fec7068e7d2cae790e1d9d4926aeeb02a",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-11-contents.xml",
+      "source_sha256": "cb29439b213504ebd6e2cdcb4f9acbdfa685d96c37f8934e48977bce174ebe0a",
+      "publication_sha256": "cb29439b213504ebd6e2cdcb4f9acbdfa685d96c37f8934e48977bce174ebe0a",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-12-contents.xml",
+      "source_sha256": "b5f18879c0f8f307dac4990f999347841312c7d5666faa03173290a15fe8b7fe",
+      "publication_sha256": "b5f18879c0f8f307dac4990f999347841312c7d5666faa03173290a15fe8b7fe",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-13-contents.xml",
+      "source_sha256": "13b5f89b1a7e3919e67f48f54a0a6f310f4ca2a2172e4f8eef76c9afed121075",
+      "publication_sha256": "13b5f89b1a7e3919e67f48f54a0a6f310f4ca2a2172e4f8eef76c9afed121075",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-14-contents.xml",
+      "source_sha256": "437c371ab39b34204e38edf347bb3ebeb15c6cd8d9f0dbb320e4b78fc7f859a2",
+      "publication_sha256": "437c371ab39b34204e38edf347bb3ebeb15c6cd8d9f0dbb320e4b78fc7f859a2",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-15-contents.xml",
+      "source_sha256": "01315a820b1fc7cf33f7c95965e04f04bc4f82ae67e212db91032af280454a15",
+      "publication_sha256": "01315a820b1fc7cf33f7c95965e04f04bc4f82ae67e212db91032af280454a15",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-16-contents.xml",
+      "source_sha256": "1cc5109ad9c1279d19022b9976f129bce67b7a6198f8a5f25e413e3dc9e27afd",
+      "publication_sha256": "1cc5109ad9c1279d19022b9976f129bce67b7a6198f8a5f25e413e3dc9e27afd",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-17-contents.xml",
+      "source_sha256": "41d8fa1c459445f3d88287655f7c09f1b415008862d79414bd443cabe37f00e3",
+      "publication_sha256": "41d8fa1c459445f3d88287655f7c09f1b415008862d79414bd443cabe37f00e3",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-18-contents.xml",
+      "source_sha256": "d65a8c8bff7d26bfffdea525c29a6f10e15995e4d24804bd0bb4bde0cf326a97",
+      "publication_sha256": "d65a8c8bff7d26bfffdea525c29a6f10e15995e4d24804bd0bb4bde0cf326a97",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-19-contents.xml",
+      "source_sha256": "02d4a853b54081306ab8f3502334236c7071e6b181487b32c929948446756daf",
+      "publication_sha256": "02d4a853b54081306ab8f3502334236c7071e6b181487b32c929948446756daf",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/paratext/whiston/book-20-contents.xml",
+      "source_sha256": "f2eeff4952f6e6ed0b648be7d8f1dfe9c584dfbc1418e85c4ed7e3da194c5434",
+      "publication_sha256": "f2eeff4952f6e6ed0b648be7d8f1dfe9c584dfbc1418e85c4ed7e3da194c5434",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/structure.xml",
+      "source_sha256": "82dcc4bdc0215c83a8b0505160cae32224e2bfd081473e6041dc68a3067748bd",
+      "publication_sha256": "82dcc4bdc0215c83a8b0505160cae32224e2bfd081473e6041dc68a3067748bd",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/bellum/English/Lodge1602/book-01.xml",
+      "source_sha256": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119",
+      "publication_sha256": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/bellum/English/Lodge1602/book-02.xml",
+      "source_sha256": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592",
+      "publication_sha256": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/bellum/English/Lodge1602/book-03.xml",
+      "source_sha256": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e",
+      "publication_sha256": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/bellum/English/Lodge1602/book-04.xml",
+      "source_sha256": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e",
+      "publication_sha256": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/bellum/English/Lodge1602/book-05.xml",
+      "source_sha256": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b",
+      "publication_sha256": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/bellum/English/Lodge1602/book-06.xml",
+      "source_sha256": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8",
+      "publication_sha256": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/bellum/English/Lodge1602/book-07.xml",
+      "source_sha256": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5",
+      "publication_sha256": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/bellum/English/book-01.xml",
+      "source_sha256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+      "publication_sha256": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-02.xml",
+      "source_sha256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+      "publication_sha256": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-03.xml",
+      "source_sha256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+      "publication_sha256": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-04.xml",
+      "source_sha256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+      "publication_sha256": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-05.xml",
+      "source_sha256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+      "publication_sha256": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-06.xml",
+      "source_sha256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+      "publication_sha256": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/English/book-07.xml",
+      "source_sha256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+      "publication_sha256": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-01.xml",
+      "source_sha256": "d58bd11884c2e8742e2ee8d585d6a5e8740d1624ccf6fad41c37811427c45969",
+      "publication_sha256": "4126ddfc092633930eb7f32438bfd318c6f89cdfb40502ebf2d3f3b53aa00ec9",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-02.xml",
+      "source_sha256": "bbd99e5aa819f485df14680242948da6bffe8dd5ff3fd127d9467d399d7d7f64",
+      "publication_sha256": "e7acdc74996d1419b09658f2abefeba167535511063ebe5994654bd682fcde1a",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-03.xml",
+      "source_sha256": "55a7b2d4d1be28b40e52097b2f8a92025a643a7cea3a84a77853a45e8a2d443c",
+      "publication_sha256": "e964cf89f16c39c8479b87b870b2163e0d50e69c5e0a34a49056a7c116fe4a8b",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-04.xml",
+      "source_sha256": "a3ae25b99ca75509401f95fc3405341e6c1c882f2d2e3dbec366a1f6dbdebaf9",
+      "publication_sha256": "164789a436ad466323673b368fcb34d7531d6459c325666239ec2c4c03d27df1",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-05.xml",
+      "source_sha256": "520db5852f3e0299413b2db9a9071c61d4912495c3a06a99198a3c174ca97d9b",
+      "publication_sha256": "5971e524d46cc1dd206c44b89bde3370d4b0b104193388ae16a2a6687ec7890b",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-06.xml",
+      "source_sha256": "9380e9d4f6744467a4cd935cb1f6f4501c14283a13a02879564564aa45399b25",
+      "publication_sha256": "2924178221cbf90418c4373e2395b8e889832f40177328d3b79e33b1e1f801db",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Greek/book-07.xml",
+      "source_sha256": "9b18443363cdef6d252d7d5382f868e7f66318702e0e80554311832cc25a5cc5",
+      "publication_sha256": "8e7aaf299ad9f23d33137cedc16ee7f1aaf995cb63d33eca044a09bde5abacbf",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-01.xml",
+      "source_sha256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+      "publication_sha256": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-02.xml",
+      "source_sha256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+      "publication_sha256": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-03.xml",
+      "source_sha256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+      "publication_sha256": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-04.xml",
+      "source_sha256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+      "publication_sha256": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-05.xml",
+      "source_sha256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+      "publication_sha256": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-06.xml",
+      "source_sha256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+      "publication_sha256": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/bellum/Latin/book-07.xml",
+      "source_sha256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+      "publication_sha256": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/contra-apionem/English/book-01.xml",
+      "source_sha256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+      "publication_sha256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/contra-apionem/English/book-02.xml",
+      "source_sha256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+      "publication_sha256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/contra-apionem/Greek/book-01.xml",
+      "source_sha256": "183e885e7ddd61894f2e5cef1a423689be6cbe3160bf42746b33c1bd47fa2b2e",
+      "publication_sha256": "183e885e7ddd61894f2e5cef1a423689be6cbe3160bf42746b33c1bd47fa2b2e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/contra-apionem/Greek/book-02.xml",
+      "source_sha256": "b6d836463f85f717f0b73acbf09a847545ddc3893cb744de21b38575968b4381",
+      "publication_sha256": "b6d836463f85f717f0b73acbf09a847545ddc3893cb744de21b38575968b4381",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/contra-apionem/Latin/book-01.xml",
+      "source_sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+      "publication_sha256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/contra-apionem/Latin/book-02.xml",
+      "source_sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+      "publication_sha256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/deh/English/book-01.xml",
+      "source_sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+      "publication_sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/deh/English/book-02.xml",
+      "source_sha256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+      "publication_sha256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/deh/English/book-03.xml",
+      "source_sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+      "publication_sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/deh/English/book-04.xml",
+      "source_sha256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+      "publication_sha256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/deh/English/book-05.xml",
+      "source_sha256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+      "publication_sha256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-01.xml",
+      "source_sha256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+      "publication_sha256": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-02.xml",
+      "source_sha256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+      "publication_sha256": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-03.xml",
+      "source_sha256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+      "publication_sha256": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-04.xml",
+      "source_sha256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+      "publication_sha256": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/deh/Latin/book-05.xml",
+      "source_sha256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+      "publication_sha256": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+      "EOL_representation_restored": true
+    },
+    {
+      "path": "assets/xml/source-contents.xml",
+      "source_sha256": "80ce03fb99b7627646dde07e869665840b670244892d724fe1f2a8845eed5c10",
+      "publication_sha256": "80ce03fb99b7627646dde07e869665840b670244892d724fe1f2a8845eed5c10",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-02.xml",
+      "source_sha256": "69ed805eb0585ec8b93f4d330a2c69c52f5fb5aae72d583fcd8e180eade5d729",
+      "publication_sha256": "69ed805eb0585ec8b93f4d330a2c69c52f5fb5aae72d583fcd8e180eade5d729",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/preface.xml",
+      "source_sha256": "ea3af6e844ba0158bc41c9897b1983e4fbf718ad1097e3c1b32b8b2ceb75a509",
+      "publication_sha256": "ea3af6e844ba0158bc41c9897b1983e4fbf718ad1097e3c1b32b8b2ceb75a509",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-01.xml",
+      "source_sha256": "aa5463ce701777bd8db32539df1bc3081e830c0a7bde4fcf5db0076f8b887031",
+      "publication_sha256": "aa5463ce701777bd8db32539df1bc3081e830c0a7bde4fcf5db0076f8b887031",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-03.xml",
+      "source_sha256": "d6c7e919347594fc9e152a79da2710922f55c068c0045ab6c0b342082805b5d6",
+      "publication_sha256": "d6c7e919347594fc9e152a79da2710922f55c068c0045ab6c0b342082805b5d6",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-04.xml",
+      "source_sha256": "bdd423e7104210cab3cfcb437cd67f1dd872c16a820b3edfd89bb59b4655fe4f",
+      "publication_sha256": "bdd423e7104210cab3cfcb437cd67f1dd872c16a820b3edfd89bb59b4655fe4f",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-05.xml",
+      "source_sha256": "fcd4d982de21bd8a83ba1f2ebfd89141b1500f3f013412f3fde81c68e1b6aa4d",
+      "publication_sha256": "fcd4d982de21bd8a83ba1f2ebfd89141b1500f3f013412f3fde81c68e1b6aa4d",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-06.xml",
+      "source_sha256": "d9749fd66b25a75984ab98e0e15b59531873af8d8e21e1da691c3f309040d65e",
+      "publication_sha256": "d9749fd66b25a75984ab98e0e15b59531873af8d8e21e1da691c3f309040d65e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-07.xml",
+      "source_sha256": "c809b44802245653ba40eb75138208b3624243980a7333de3e1f4362c326043a",
+      "publication_sha256": "c809b44802245653ba40eb75138208b3624243980a7333de3e1f4362c326043a",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-08.xml",
+      "source_sha256": "a88a4d057ca18c3a19d0e6f606bdda86cbed74a7d05193a7e265968cfe0832e1",
+      "publication_sha256": "a88a4d057ca18c3a19d0e6f606bdda86cbed74a7d05193a7e265968cfe0832e1",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-09.xml",
+      "source_sha256": "4e31123e6fbaa89c97089ba328c239f27bbe70c2143285cf73b82f0992fbdd17",
+      "publication_sha256": "4e31123e6fbaa89c97089ba328c239f27bbe70c2143285cf73b82f0992fbdd17",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-10.xml",
+      "source_sha256": "b3d00d20a390e2ba45a20a8cde76fb1f194c1af7bb551567289965ec67b9886a",
+      "publication_sha256": "b3d00d20a390e2ba45a20a8cde76fb1f194c1af7bb551567289965ec67b9886a",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-11.xml",
+      "source_sha256": "59263d450caa98feb36e95111fbf5fb49189223736a7762fc2e2f0cb62a2fae6",
+      "publication_sha256": "59263d450caa98feb36e95111fbf5fb49189223736a7762fc2e2f0cb62a2fae6",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-12.xml",
+      "source_sha256": "08bf8fce1ed2d05dea4fd7bb6b008b7cdce0577a5ee0f0bd07a9321e2673a3f7",
+      "publication_sha256": "08bf8fce1ed2d05dea4fd7bb6b008b7cdce0577a5ee0f0bd07a9321e2673a3f7",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-13.xml",
+      "source_sha256": "1dfa7085a30a782ea734ea603f1c2a1ee492e16461dcbfee7bb5b81560f8934d",
+      "publication_sha256": "1dfa7085a30a782ea734ea603f1c2a1ee492e16461dcbfee7bb5b81560f8934d",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-14.xml",
+      "source_sha256": "384b080cdfdb578a0e7f67065d12803d05cccebc189111f51e377a6a718cb9ca",
+      "publication_sha256": "384b080cdfdb578a0e7f67065d12803d05cccebc189111f51e377a6a718cb9ca",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-15.xml",
+      "source_sha256": "28e9e95c781854b91c87cd57f48a34ab80d81ac9d765a902a03162a588316b7a",
+      "publication_sha256": "28e9e95c781854b91c87cd57f48a34ab80d81ac9d765a902a03162a588316b7a",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-16.xml",
+      "source_sha256": "e66394e4b572dd0137addda58dcf214dfb75dc2aea5c0d2c486808aa1e36e11e",
+      "publication_sha256": "e66394e4b572dd0137addda58dcf214dfb75dc2aea5c0d2c486808aa1e36e11e",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-17.xml",
+      "source_sha256": "6ff35f8d94f27d826c7030275e2b6a582b83a76f07e7979bed991548e187fd56",
+      "publication_sha256": "6ff35f8d94f27d826c7030275e2b6a582b83a76f07e7979bed991548e187fd56",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-18.xml",
+      "source_sha256": "c0c4b97923245ee57bd76e3d992e67caea0fa618f8a1377dc712d10c2a1dfbae",
+      "publication_sha256": "c0c4b97923245ee57bd76e3d992e67caea0fa618f8a1377dc712d10c2a1dfbae",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-19.xml",
+      "source_sha256": "43a05d447921b1b341f479864b7a405e676f421004e811f60031033214f41bb6",
+      "publication_sha256": "43a05d447921b1b341f479864b7a405e676f421004e811f60031033214f41bb6",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/book-20.xml",
+      "source_sha256": "f742eb2565dd7fbe76b1d07f736bb059fc5dd5b48499ae0dc904fed113f9b68f",
+      "publication_sha256": "f742eb2565dd7fbe76b1d07f736bb059fc5dd5b48499ae0dc904fed113f9b68f",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/contra-apionem/English/Lodge1602/book-01.xml",
+      "source_sha256": "3dea35680c9e7bad46d7e8ecca6876be0e957c0de0c29dcc39625f044127b5fc",
+      "publication_sha256": "3dea35680c9e7bad46d7e8ecca6876be0e957c0de0c29dcc39625f044127b5fc",
+      "EOL_representation_restored": false
+    },
+    {
+      "path": "assets/xml/contra-apionem/English/Lodge1602/book-02.xml",
+      "source_sha256": "0af3a2ca46f22de52a8c481a70512a116d57463561fa739fd0754af6097b55ba",
+      "publication_sha256": "0af3a2ca46f22de52a8c481a70512a116d57463561fa739fd0754af6097b55ba",
+      "EOL_representation_restored": false
+    }
+  ],
+  "search": {
+    "status": "PASS",
+    "assets": 260,
+    "books": 68,
+    "sections": 25009,
+    "tokens": 1347222,
+    "bytes": 194358307,
+    "sourceFiles": 80,
+    "publicationManifestSHA256": "ebbc8aaade9f1ec96cd250ae22b58b77e109916a76a6f19c831d4371002d198a",
+    "sourceXML": [
+      {
+        "path": "assets/xml/bellum/Latin/book-01.xml",
+        "indexedSHA256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+        "worktreeSHA256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+        "normalizedSHA256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-02.xml",
+        "indexedSHA256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+        "worktreeSHA256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+        "normalizedSHA256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-03.xml",
+        "indexedSHA256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+        "worktreeSHA256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+        "normalizedSHA256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-04.xml",
+        "indexedSHA256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+        "worktreeSHA256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+        "normalizedSHA256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-05.xml",
+        "indexedSHA256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+        "worktreeSHA256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+        "normalizedSHA256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-06.xml",
+        "indexedSHA256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+        "worktreeSHA256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+        "normalizedSHA256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-07.xml",
+        "indexedSHA256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+        "worktreeSHA256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+        "normalizedSHA256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-01.xml",
+        "indexedSHA256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+        "worktreeSHA256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+        "normalizedSHA256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-02.xml",
+        "indexedSHA256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+        "worktreeSHA256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+        "normalizedSHA256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-03.xml",
+        "indexedSHA256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+        "worktreeSHA256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+        "normalizedSHA256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-04.xml",
+        "indexedSHA256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+        "worktreeSHA256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+        "normalizedSHA256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-05.xml",
+        "indexedSHA256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+        "worktreeSHA256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+        "normalizedSHA256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/contra-apionem/Latin/book-01.xml",
+        "indexedSHA256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+        "worktreeSHA256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+        "normalizedSHA256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/contra-apionem/Latin/book-02.xml",
+        "indexedSHA256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+        "worktreeSHA256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+        "normalizedSHA256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-01.xml",
+        "indexedSHA256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+        "worktreeSHA256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+        "normalizedSHA256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/preface.xml",
+        "indexedSHA256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+        "worktreeSHA256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+        "normalizedSHA256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-02.xml",
+        "indexedSHA256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+        "worktreeSHA256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+        "normalizedSHA256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-03.xml",
+        "indexedSHA256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+        "worktreeSHA256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+        "normalizedSHA256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-04.xml",
+        "indexedSHA256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+        "worktreeSHA256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+        "normalizedSHA256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-05.xml",
+        "indexedSHA256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+        "worktreeSHA256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+        "normalizedSHA256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-06.xml",
+        "indexedSHA256": "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f",
+        "worktreeSHA256": "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f",
+        "normalizedSHA256": "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-07.xml",
+        "indexedSHA256": "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd",
+        "worktreeSHA256": "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd",
+        "normalizedSHA256": "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-08.xml",
+        "indexedSHA256": "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af",
+        "worktreeSHA256": "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af",
+        "normalizedSHA256": "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-09.xml",
+        "indexedSHA256": "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640",
+        "worktreeSHA256": "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640",
+        "normalizedSHA256": "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-10.xml",
+        "indexedSHA256": "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863",
+        "worktreeSHA256": "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863",
+        "normalizedSHA256": "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-11.xml",
+        "indexedSHA256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+        "worktreeSHA256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+        "normalizedSHA256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-11.json",
+        "indexedSHA256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+        "worktreeSHA256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+        "normalizedSHA256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-12.xml",
+        "indexedSHA256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+        "worktreeSHA256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+        "normalizedSHA256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-12.json",
+        "indexedSHA256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+        "worktreeSHA256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+        "normalizedSHA256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-13.xml",
+        "indexedSHA256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+        "worktreeSHA256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+        "normalizedSHA256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-13.json",
+        "indexedSHA256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+        "worktreeSHA256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+        "normalizedSHA256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-14.xml",
+        "indexedSHA256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+        "worktreeSHA256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+        "normalizedSHA256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-14.json",
+        "indexedSHA256": "325d35ef23923d3cc94e706789596fca4d30adec68baa9df5dcd200adb8dcfc8",
+        "worktreeSHA256": "325d35ef23923d3cc94e706789596fca4d30adec68baa9df5dcd200adb8dcfc8",
+        "normalizedSHA256": "99361742e1e0aa7fe77ee61b879b283a6ec30692fb006d953ee5700050ab06f9",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-15.xml",
+        "indexedSHA256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+        "worktreeSHA256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+        "normalizedSHA256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-15.json",
+        "indexedSHA256": "b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35",
+        "worktreeSHA256": "b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35",
+        "normalizedSHA256": "b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-16.xml",
+        "indexedSHA256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+        "worktreeSHA256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+        "normalizedSHA256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-16.json",
+        "indexedSHA256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+        "worktreeSHA256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+        "normalizedSHA256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-17.xml",
+        "indexedSHA256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+        "worktreeSHA256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+        "normalizedSHA256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-17.json",
+        "indexedSHA256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f",
+        "worktreeSHA256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f",
+        "normalizedSHA256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-18.xml",
+        "indexedSHA256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+        "worktreeSHA256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+        "normalizedSHA256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-18.json",
+        "indexedSHA256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+        "worktreeSHA256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+        "normalizedSHA256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-19.xml",
+        "indexedSHA256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+        "worktreeSHA256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+        "normalizedSHA256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-19.json",
+        "indexedSHA256": "7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9",
+        "worktreeSHA256": "7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9",
+        "normalizedSHA256": "7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-20.xml",
+        "indexedSHA256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+        "worktreeSHA256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+        "normalizedSHA256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-20.json",
+        "indexedSHA256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+        "worktreeSHA256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+        "normalizedSHA256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-01.xml",
+        "indexedSHA256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+        "worktreeSHA256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+        "normalizedSHA256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/preface.xml",
+        "indexedSHA256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+        "worktreeSHA256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+        "normalizedSHA256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-02.xml",
+        "indexedSHA256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584",
+        "worktreeSHA256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584",
+        "normalizedSHA256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-03.xml",
+        "indexedSHA256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44",
+        "worktreeSHA256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44",
+        "normalizedSHA256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-04.xml",
+        "indexedSHA256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554",
+        "worktreeSHA256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554",
+        "normalizedSHA256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-05.xml",
+        "indexedSHA256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722",
+        "worktreeSHA256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722",
+        "normalizedSHA256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-06.xml",
+        "indexedSHA256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+        "worktreeSHA256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+        "normalizedSHA256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-07.xml",
+        "indexedSHA256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+        "worktreeSHA256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+        "normalizedSHA256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-08.xml",
+        "indexedSHA256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+        "worktreeSHA256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+        "normalizedSHA256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-09.xml",
+        "indexedSHA256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+        "worktreeSHA256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+        "normalizedSHA256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-10.xml",
+        "indexedSHA256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+        "worktreeSHA256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+        "normalizedSHA256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-11.xml",
+        "indexedSHA256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2",
+        "worktreeSHA256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2",
+        "normalizedSHA256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-12.xml",
+        "indexedSHA256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+        "worktreeSHA256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+        "normalizedSHA256": "ba4808e3b5e234c2ec1bbffd3e4b662a78b2fe41c1643be3e4e7e6662d583286",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-13.xml",
+        "indexedSHA256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+        "worktreeSHA256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+        "normalizedSHA256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-14.xml",
+        "indexedSHA256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+        "worktreeSHA256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+        "normalizedSHA256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-15.xml",
+        "indexedSHA256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+        "worktreeSHA256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+        "normalizedSHA256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-16.xml",
+        "indexedSHA256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+        "worktreeSHA256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+        "normalizedSHA256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-17.xml",
+        "indexedSHA256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+        "worktreeSHA256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+        "normalizedSHA256": "d6056846f61ae43003989a2d799501d5e9edb7c3b407d9292b3c89064df6a0ac",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-18.xml",
+        "indexedSHA256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+        "worktreeSHA256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+        "normalizedSHA256": "ba1529509dddf72ec82a5eda63fb95f6d0f8d88dad87c69f5cf7a431536c63fa",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-19.xml",
+        "indexedSHA256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+        "worktreeSHA256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+        "normalizedSHA256": "e025279ffb304a08f2f960845c6dca1e09162188bffd44f541cd787ae0aaf094",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-20.xml",
+        "indexedSHA256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+        "worktreeSHA256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+        "normalizedSHA256": "8f5437db04d4423b79db151603187f50400a9d41938f94394a8da744842af673",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-01.xml",
+        "indexedSHA256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+        "worktreeSHA256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+        "normalizedSHA256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-02.xml",
+        "indexedSHA256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+        "worktreeSHA256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+        "normalizedSHA256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-03.xml",
+        "indexedSHA256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+        "worktreeSHA256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+        "normalizedSHA256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-04.xml",
+        "indexedSHA256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+        "worktreeSHA256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+        "normalizedSHA256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-05.xml",
+        "indexedSHA256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+        "worktreeSHA256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+        "normalizedSHA256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-06.xml",
+        "indexedSHA256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+        "worktreeSHA256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+        "normalizedSHA256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/bellum/English/book-07.xml",
+        "indexedSHA256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+        "worktreeSHA256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+        "normalizedSHA256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/contra-apionem/English/book-01.xml",
+        "indexedSHA256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+        "worktreeSHA256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+        "normalizedSHA256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/contra-apionem/English/book-02.xml",
+        "indexedSHA256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+        "worktreeSHA256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+        "normalizedSHA256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/English/book-01.xml",
+        "indexedSHA256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+        "worktreeSHA256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+        "normalizedSHA256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/English/book-02.xml",
+        "indexedSHA256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+        "worktreeSHA256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+        "normalizedSHA256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/English/book-03.xml",
+        "indexedSHA256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+        "worktreeSHA256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+        "normalizedSHA256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/English/book-04.xml",
+        "indexedSHA256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+        "worktreeSHA256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+        "normalizedSHA256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+        "hashMode": "crlf-to-lf"
+      },
+      {
+        "path": "assets/xml/deh/English/book-05.xml",
+        "indexedSHA256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+        "worktreeSHA256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+        "normalizedSHA256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+        "hashMode": "crlf-to-lf"
+      }
+    ],
+    "generatedSite": "C:\\Users\\Pollard_R\\.codex\\.chatgpt-projects\\g-p-69862e643cc08191a8457368cb0c460f\\DEH_Annotations_QA_20261027\\site",
+    "generatedXML": [
+      {
+        "path": "assets/xml/bellum/Latin/book-01.xml",
+        "sourceSHA256": "24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240",
+        "generatedSHA256": "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-02.xml",
+        "sourceSHA256": "6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09",
+        "generatedSHA256": "ddb0d8620d28a5c297ab008cfc0378ba62377bf4acb44972485837ed7c6d3c59",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-03.xml",
+        "sourceSHA256": "3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49",
+        "generatedSHA256": "f84a5cd354c70688e17d4260cb92b39786f3b892155604c145523659577fa8c4",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-04.xml",
+        "sourceSHA256": "8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98",
+        "generatedSHA256": "7f0971d91a54936cb53be82933ddd433e7310f6d0e4d5fe3760690fb8139fabd",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-05.xml",
+        "sourceSHA256": "b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31",
+        "generatedSHA256": "d471cf704f91dc6ea63815955d60d75ce15ed26f3f6f964b4aeead67051a7f62",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-06.xml",
+        "sourceSHA256": "a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b",
+        "generatedSHA256": "b18a408f648371a1c589a8dc4b96ab46effadcc768a9c3b5892364a62709ad43",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/Latin/book-07.xml",
+        "sourceSHA256": "c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042",
+        "generatedSHA256": "cee44dbea33b33aa0127f75e97f2644ee75852403ae0ab922b32db5efa954132",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-01.xml",
+        "sourceSHA256": "690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7",
+        "generatedSHA256": "a59685e7a2f3c574ddd833562efe0551bd69605870dc61a8cd4d160a8a2e6f44",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-02.xml",
+        "sourceSHA256": "cc2ac0d622d56b0ef0e9a74bfdbcb2836c8cd89defbc0a70c11f9cb6274ef25a",
+        "generatedSHA256": "9433b043c92007e8ca34eeda032fc516407a8333658fdb42522b8929092257aa",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-03.xml",
+        "sourceSHA256": "aeb861000317b2bbeada0a0d8918499f516f1dc524257ec90d140a5e9bf066c5",
+        "generatedSHA256": "04a2f93d19ffde345896f8ccec6b54cf929a860076b11feb4cebe0a6d3e7d97c",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-04.xml",
+        "sourceSHA256": "150fb0857b07eaa47ca0de119558ed76368d6a452c06784475b97eb15a0e10fa",
+        "generatedSHA256": "9c125745c9440f673bb0e59407ec83eb52afe23c0057472b82e934e2dde623ce",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/deh/Latin/book-05.xml",
+        "sourceSHA256": "f97fbd0992e8a540d250963109610060a8f417cb7cd18f93d5279c82cf2fcd97",
+        "generatedSHA256": "bf515e824f7977940471d044aaf46f88d3add4031a49deb6fd097bef04aeaaa6",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/contra-apionem/Latin/book-01.xml",
+        "sourceSHA256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+        "generatedSHA256": "9e72ddadf9a0d4cd0ce20ec190ed8420dd289a4704520f79c7fc2ca5b2d39a62",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/contra-apionem/Latin/book-02.xml",
+        "sourceSHA256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+        "generatedSHA256": "5336ba55f50d21d1a453cc98ec946dd9404a161c38824b00f2496c37ce69bc8b",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-01.xml",
+        "sourceSHA256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+        "generatedSHA256": "5d05cb131cfdfeb1612993f034a3264406486ac4f082f5176b63bddd84dca02b",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/preface.xml",
+        "sourceSHA256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+        "generatedSHA256": "e0588da38fe3d3e9f69735a79b204556906b1377cf8e4cf8b7ec3ce396789015",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-02.xml",
+        "sourceSHA256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+        "generatedSHA256": "b85c7973ff8183857f87d55a46c6db8b22c5ec078b8d7d5421f300acaa80c5f1",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-03.xml",
+        "sourceSHA256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+        "generatedSHA256": "4e2f268e05cd88a5cedccab1b0c9e8fd3315f013d89516eb17ca7c4c49ce6e59",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-04.xml",
+        "sourceSHA256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+        "generatedSHA256": "9f7075672bab18c816d17f05d249ecbb2abd20945b385398659752c29adb90b1",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-05.xml",
+        "sourceSHA256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+        "generatedSHA256": "9cc8e8d13ae376d16bcdab313d0e037aaf9d059dffc34abb0d21d9fd63420554",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-06.xml",
+        "sourceSHA256": "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f",
+        "generatedSHA256": "98d31d890b841cafb6a50ecd213e479ea6d1c619d1fd8d19fd7ad030cfba894f",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-07.xml",
+        "sourceSHA256": "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd",
+        "generatedSHA256": "0614d4b2180702b0286e74c7971c35ce386a015a397decf2d4b118877df507dd",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-08.xml",
+        "sourceSHA256": "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af",
+        "generatedSHA256": "511b92a43ae07a0897cb8dfc5f0ec790e9c5d0bc8195b85e59bbe1096755c4af",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-09.xml",
+        "sourceSHA256": "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640",
+        "generatedSHA256": "a018cf1fce87300451a6988c002e3a95be991ea6a685b443cceb27e387084640",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-10.xml",
+        "sourceSHA256": "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863",
+        "generatedSHA256": "a842b24648312e74e886fa91ddfc016724cd949b20b4e475c5de696645632863",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-11.xml",
+        "sourceSHA256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+        "generatedSHA256": "6c2624bbda467f64c1598530668eadbc727a4d410a549b92d65d98cc9235dbd0",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-11.json",
+        "sourceSHA256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+        "generatedSHA256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-12.xml",
+        "sourceSHA256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+        "generatedSHA256": "63c1b84520577054e10faa059f53f4bffb71714cf724008f7f9d511f85d4568f",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-12.json",
+        "sourceSHA256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+        "generatedSHA256": "6a181082bdebef79324aed4023ce532fc3086abbf1196a9a73a539ccb5a6d02a",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-13.xml",
+        "sourceSHA256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+        "generatedSHA256": "bad4303a38804f5c6bc0c274573eb81c78ba478d807008fd3fa4f633681fc95b",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-13.json",
+        "sourceSHA256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+        "generatedSHA256": "00601dd32d0cc836beb45129cdc507608ced05de305b6e4d46899571b515ead1",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-14.xml",
+        "sourceSHA256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+        "generatedSHA256": "211f49930eef6fa3a93836b8d18e32a3afa05656307e75d91e3d59d428485a76",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-14.json",
+        "sourceSHA256": "325d35ef23923d3cc94e706789596fca4d30adec68baa9df5dcd200adb8dcfc8",
+        "generatedSHA256": "325d35ef23923d3cc94e706789596fca4d30adec68baa9df5dcd200adb8dcfc8",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-15.xml",
+        "sourceSHA256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+        "generatedSHA256": "6b563b6bfa0ddd96c52030377043440e88aa90dd83913c67b5c940f4fcb02485",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-15.json",
+        "sourceSHA256": "b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35",
+        "generatedSHA256": "b2c39132e1e6d24ee94eb23fcee549ab104e4f92b3f89e7aa972b22a3f453f35",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-16.xml",
+        "sourceSHA256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+        "generatedSHA256": "25151895a46d2c8d9d6fba53bdcf92afadc689ab834a7fd4d152f1df6acc12fa",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-16.json",
+        "sourceSHA256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+        "generatedSHA256": "4255de34279ae13ff2da174421db8f98a9fbac37e66cf53bd4728cf46ae6fbfb",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-17.xml",
+        "sourceSHA256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+        "generatedSHA256": "efdcd622593626a3b9740745c1b1e23755b07d59c3423a02e76c453ed7df8c2b",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-17.json",
+        "sourceSHA256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f",
+        "generatedSHA256": "0613bbbd33166e805ca4f412f182b1ee9a5a166e1a302b3a9d011b44331a7a5f",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-18.xml",
+        "sourceSHA256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+        "generatedSHA256": "dec6665c846a7f90227502fffbc949bd0c571ed0e958ed0be1b95047a0b3be50",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-18.json",
+        "sourceSHA256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+        "generatedSHA256": "fdc0324aed5d8309cae28178c945ec0b1ea406a54f8a4625355ac6c69ef1e501",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-19.xml",
+        "sourceSHA256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+        "generatedSHA256": "01e991bf1ef3a479b31c86255fafea36529ddededbb8b39ba79130c0c3c889c4",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-19.json",
+        "sourceSHA256": "7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9",
+        "generatedSHA256": "7404cee1c29f29f991da2d30553a5259a446d9f576286b69365a717fac32dcc9",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/Latin/book-20.xml",
+        "sourceSHA256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+        "generatedSHA256": "84308f674a71fdb50a44f17097d48a1d57a79ae8b260cb69fa0afad0c187caa7",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/niese/book-20.json",
+        "sourceSHA256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+        "generatedSHA256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-01.xml",
+        "sourceSHA256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+        "generatedSHA256": "9cd8daf04bddfd94cd96f077c0b9336135c35d017fad029a56fd08e1fc2363f3",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/preface.xml",
+        "sourceSHA256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+        "generatedSHA256": "d04712a2db72f2d2c39e175591b866308f93cb15d10f4ee3be70401f7dd614eb",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-02.xml",
+        "sourceSHA256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584",
+        "generatedSHA256": "70da231aafb85aecfec0510bc7489441ca8263b45e31dd33f3ed2f20237aa584",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-03.xml",
+        "sourceSHA256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44",
+        "generatedSHA256": "0c663f9776a1249d85ceab2ad0bfa47dc3b537864598f4855a668e23e642df44",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-04.xml",
+        "sourceSHA256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554",
+        "generatedSHA256": "6d58dfa865b47e1a1f347f8f322f578381e6f8a407c597e2f36ae3bd120c6554",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-05.xml",
+        "sourceSHA256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722",
+        "generatedSHA256": "a8ab9d6b66e6d4a768f3fc247240d6423d5d9687a3f1026f327f9ea387560722",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-06.xml",
+        "sourceSHA256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+        "generatedSHA256": "116338d9f8a424bfb2ec63af5531b3c72941708ae00e7f327ba8909dc1e125eb",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-07.xml",
+        "sourceSHA256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+        "generatedSHA256": "d8109c20ceca61283dd5150bf2059f3cffda924f5f82625a4e6b1073b4c60eb3",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-08.xml",
+        "sourceSHA256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+        "generatedSHA256": "609cedd3dbab1f7af831877f2aea820781e2b34b6c998ab41b3ffa6cb0fb8289",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-09.xml",
+        "sourceSHA256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+        "generatedSHA256": "d973618661bacf96f0a7ea81f1d7e44147f7826ff1d247908467b238263edc36",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-10.xml",
+        "sourceSHA256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+        "generatedSHA256": "7f4fde2921f8c5fc670d688174f5c67f81eed7c264c63af89b6c7adb0725e7eb",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-11.xml",
+        "sourceSHA256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2",
+        "generatedSHA256": "0bdcc522c1f227dab7a61b19a4bef09a590af2bf25cbdce581277469c082acb2",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-12.xml",
+        "sourceSHA256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+        "generatedSHA256": "e28ce3914fe0e764571e049b20b5ddabfc6d3080cf6dd4537522b083be7cc83c",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-13.xml",
+        "sourceSHA256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+        "generatedSHA256": "01ff55a3e01bd82c6590ef8bbfa30c05a22a8ebc292086b10095011b552f91a9",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-14.xml",
+        "sourceSHA256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+        "generatedSHA256": "9f5ffef649c2922e54402ca7ab09795307fe0595c68d47754df8aefe47464ed1",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-15.xml",
+        "sourceSHA256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+        "generatedSHA256": "223b08bd399b58dd6da5929a5cbffacb31f461ee11d4d6dd4aa45b498283d579",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-16.xml",
+        "sourceSHA256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+        "generatedSHA256": "df3138bdceadb36ad8295445b37e7aa741c48f1d145f97b9073d6d53976991f8",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-17.xml",
+        "sourceSHA256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+        "generatedSHA256": "29a0a40375396016162920b32462f259cf3791fa6a12b4af1f6d2ed7bd41cca1",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-18.xml",
+        "sourceSHA256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+        "generatedSHA256": "db6c960c3d27457e21b4f5cccdf5a389f6d9ecdfd927a53d1379484eeef3c67d",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-19.xml",
+        "sourceSHA256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+        "generatedSHA256": "9ce4e6116a0cbd57823e07cff97559941e9015da79d02dd0ae6b2e9c0877e129",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/antiquities/English/book-20.xml",
+        "sourceSHA256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+        "generatedSHA256": "229c2c47f9c4f6ad19ae3b96aeb8c9fcdbe849bb4a733cf214ad0f133d28bc0e",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/bellum/English/book-01.xml",
+        "sourceSHA256": "39713b6768eef8e7d6ac9640255eacd962ac9677175fbc05077aafe296a1b5ec",
+        "generatedSHA256": "d96c16184ce6505ec1bff0a3974e4bda790df8629719206286b61d31a131948f",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/English/book-02.xml",
+        "sourceSHA256": "52c0e14514dc6ba6942a2ff98e5a87c96122f117fe0122f112b697cbfc12f941",
+        "generatedSHA256": "76b2008419c077a19190a9f206406794093373b706b7659954a87f2ca503c4da",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/English/book-03.xml",
+        "sourceSHA256": "ced7460be53bc6f7f94e4a842f9a3c3f28624cdaaced38d433acf2f4dd3d0cd2",
+        "generatedSHA256": "c4b5438d4f0fe4e1eb97eccc0f42a52443ef991a7983534219040ae1072ce37c",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/English/book-04.xml",
+        "sourceSHA256": "b5b299ee96671784527fc1edef4777e5a766e6f9496fcfb63470874c71824c96",
+        "generatedSHA256": "76d59ab941ff4ae2788a8929f3ce882b56e1eaa702c1370d7f44fef8543da666",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/English/book-05.xml",
+        "sourceSHA256": "5a6647478976c860b7fb771b058b4af34181eff8201d502f037f0610ca536ee7",
+        "generatedSHA256": "197375a4db1698c9f84c23c4a6b0aba6499c6eadfa5322b27f0b3977965c2a29",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/English/book-06.xml",
+        "sourceSHA256": "edf957eb0501feebbe595f44703c2caa185c9acb6d28efbe69875f3aaa8b2799",
+        "generatedSHA256": "86e63d7337e72668152cfc9a71efd5494246d4f416584de84d4c1a57ba3b4fce",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/bellum/English/book-07.xml",
+        "sourceSHA256": "2d2c308a500711fddad5cc7ba436f59c38890dd4988f6f5b505817e04e5b200b",
+        "generatedSHA256": "912cd239f72e87c90a1478dde08735e9fb2d39245a46317954989eee671c59ae",
+        "lineEndingRepresentationOnly": true
+      },
+      {
+        "path": "assets/xml/contra-apionem/English/book-01.xml",
+        "sourceSHA256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+        "generatedSHA256": "2c7731cf1eb2f4b70ff2177ef192b7b0452bf2871de023ab405ec83b60f6125a",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/contra-apionem/English/book-02.xml",
+        "sourceSHA256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+        "generatedSHA256": "12d006e8e0b296f84f5ef50ae7aa50c781ffe1b8821def5840e82cd317a7b467",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/deh/English/book-01.xml",
+        "sourceSHA256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+        "generatedSHA256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/deh/English/book-02.xml",
+        "sourceSHA256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+        "generatedSHA256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/deh/English/book-03.xml",
+        "sourceSHA256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+        "generatedSHA256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/deh/English/book-04.xml",
+        "sourceSHA256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+        "generatedSHA256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+        "lineEndingRepresentationOnly": false
+      },
+      {
+        "path": "assets/xml/deh/English/book-05.xml",
+        "sourceSHA256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+        "generatedSHA256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+        "lineEndingRepresentationOnly": false
+      }
+    ]
+  }
+}

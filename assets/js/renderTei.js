@@ -13,6 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     }).then(data => annotationApi.setCitationData(data)).catch(error => console.warn(error.message))
     : Promise.resolve();
+  let dehAnnotationLoad;
+  const loadDEHAnnotations = () => dehAnnotationLoad ||= annotationApi && annotationScript
+    ? fetch(new URL("../data/deh-annotations/annotations.json", annotationScript.src)).then(response => {
+      if (!response.ok) throw new Error("DEH manuscript annotations unavailable");
+      return response.json();
+    }).then(data => { annotationApi.setDEHAnnotationData(data); return true; })
+      .catch(error => { console.warn(error.message); return false; })
+    : Promise.resolve(false);
   const setAnnotationsExpanded = expanded => {
     document.getElementById("collapse-annotations")?.classList.toggle("show", expanded);
     const button = document.querySelector("#annotations-header button");
@@ -3722,12 +3730,14 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("hashchange", followAnnotationHash);
 
   const parseAnnotations = async () => {
+    const dehAvailable = activeWork.slug !== "deh" || await loadDEHAnnotations();
     const annotations = [...canonicalFullData.getElementsByTagName("tei-app")];
     const supplements = annotationApi?.getSupplementalAnnotations(activeWork.slug, state.bookNum) || [];
-    if (annotations.length || supplements.length) await loadAnnotationCitations();
+    const dehRecords = activeWork.slug === "deh" && dehAvailable ? annotationApi.getDEHAnnotations(state.bookNum) : [];
+    if (annotations.length || supplements.length || dehRecords.length) await loadAnnotationCitations();
     annotatedParagraphs = [];
-    let htmlString = annotationApi?.legend(annotationLanguage) || "";
-    let displayNumber = 1, readingCount = 0, supplementalCount = 0;
+    let htmlString = annotationApi?.legend(annotationLanguage, activeWork.slug) || "";
+    let displayNumber = 1, readingCount = 0, supplementalCount = 0, dehCount = 0;
     const occurrences = new Map(), links = new Map();
     const witnesses = new Map([...canonicalFullData.getElementsByTagName("tei-witness")].map(w => [w.id, w.textContent]));
     const visibleNodes = [canonicalViewData, ...canonicalViewData.querySelectorAll("[id], [sameAs]")];
@@ -3737,10 +3747,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const rendered = annotationApi?.renderAnnotation(record, {lang: annotationLanguage, startNumber: displayNumber});
       if (!rendered) return;
       htmlString += rendered.html; displayNumber += rendered.count;
-      if (record.editorialSupplementId) supplementalCount++; else readingCount++;
-      if (visibleIds.has(record.alignmentUnitId) && rendered.count) {
-        links.set(record.alignmentUnitId, links.get(record.alignmentUnitId) || {anchor: rendered.interpreted.anchor, count: 0});
-        links.get(record.alignmentUnitId).count += rendered.count;
+      if (record.sourceConvention === "deh-csv-20261027") dehCount++;
+      else if (record.editorialSupplementId) supplementalCount++; else readingCount++;
+      // CSV locations cover whole chapters. A subsection view can offer a link
+      // to its chapter's notes without asserting a narrower annotation location.
+      const targetId = record.locationTargetId || record.alignmentUnitId;
+      const visibleTarget = visibleIds.has(targetId) ? targetId
+        : record.coveredAlignmentUnitIds?.find(id => visibleIds.has(id));
+      if (visibleTarget && rendered.count) {
+        links.set(visibleTarget, links.get(visibleTarget) || {anchor: rendered.interpreted.anchor, count: 0, chapter: record.locationGranularity === "chapter"});
+        links.get(visibleTarget).count += rendered.count;
       }
     };
     const appendedSupplements = new Set();
@@ -3771,12 +3787,17 @@ document.addEventListener("DOMContentLoaded", () => {
       appendSupplements(paragraphId);
     });
     supplements.forEach(record => appendSupplements(record.alignmentUnitId));
+    dehRecords.forEach(record => {
+      if (visibleIds.has(record.locationTargetId) || record.coveredAlignmentUnitIds.some(id => visibleIds.has(id))) appendRecord(record);
+    });
+    if (!dehAvailable) htmlString = `<p role="status">${annotationLanguage === "fr" ? 'Les annotations manuscrites n’ont pas pu être chargées. Rechargez la page pour réessayer.' : 'Manuscript annotations could not be loaded. Reload the page to try again.'}</p>`;
     annotationsList.innerHTML = htmlString;
     annotationsList.dataset.readingCount = String(readingCount);
     annotationsList.dataset.supplementalReadingCount = String(supplementalCount);
+    annotationsList.dataset.dehReadingCount = String(dehCount);
     annotationsList.dataset.annotationCount = String(displayNumber - 1);
-    const hasAnnotations = readingCount + supplementalCount > 0;
-    if (annotationsPanel) annotationsPanel.hidden = !hasAnnotations;
+    const hasAnnotations = readingCount + supplementalCount + dehCount > 0;
+    if (annotationsPanel) annotationsPanel.hidden = !hasAnnotations && dehAvailable;
     document.documentElement.classList.toggle("has-manuscript-annotations", hasAnnotations);
     const heading = document.querySelector("#annotations-header button");
     if (heading && annotationLabels) heading.textContent = annotationLabels.heading;
@@ -3785,14 +3806,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!hasAnnotations && highlightCheckbox) highlightCheckbox.checked = false;
     latinPane.querySelectorAll(".text-annotations").forEach(node => node.remove());
     annotatedParagraphs = [...links.keys()];
-    links.forEach(({anchor, count}, paragraphId) => {
+    links.forEach(({anchor, count, chapter}, paragraphId) => {
       const targets = displayedLatinTargets(paragraphId);
       targets.forEach(target => target.classList.toggle("highlight", !!highlightCheckbox?.checked));
       const target = targets.at(-1);
       if (target) {
         const link = document.createElement("a"); link.className = "text-annotations";
         link.href = `#${encodeURIComponent(anchor)}`; link.lang = annotationLanguage;
-        link.textContent = `${count} ${count === 1 ? "annotation" : annotationLabels.annotations}`;
+        link.textContent = `${count} ${count === 1 ? "annotation" : annotationLabels.annotations}${chapter ? annotationLanguage === "fr" ? ' pour ce chapitre' : ' for this chapter' : ''}`;
         link.addEventListener("click", () => { setAnnotationsExpanded(true); });
         target.appendChild(link);
       }

@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "books": [
+    {
+      "book": 1,
+      "records": 687,
+      "chapterLinks": 47,
+      "sourceOrderWithinChapters": true
+    },
+    {
+      "book": 2,
+      "records": 362,
+      "chapterLinks": 17,
+      "sourceOrderWithinChapters": true
+    },
+    {
+      "book": 3,
+      "records": 272,
+      "chapterLinks": 24,
+      "sourceOrderWithinChapters": true
+    },
+    {
+      "book": 4,
+      "records": 267,
+      "chapterLinks": 30,
+      "sourceOrderWithinChapters": true
+    },
+    {
+      "book": 5,
+      "records": 329,
+      "chapterLinks": 50,
+      "sourceOrderWithinChapters": true
+    }
+  ],
+  "comparisons": [
+    {
+      "query": "book=1&chapter=0",
+      "LatinEnglishFrenchUnchanged": true
+    },
+    {
+      "query": "book=1&chapter=26",
+      "LatinEnglishFrenchUnchanged": true
+    },
+    {
+      "query": "book=1&chapter=26&unit=3",
+      "LatinEnglishFrenchUnchanged": true
+    },
+    {
+      "query": "book=3&chapter=4",
+      "LatinEnglishFrenchUnchanged": true
+    },
+    {
+      "query": "book=5&chapter=53",
+      "LatinEnglishFrenchUnchanged": true
+    }
+  ],
+  "checks": [
+    "all 1917 records, including repeated source rows, rendered once across the five books",
+    "the enabled French Millet pane displays identical actual source text in the existing and updated readers",
+    "the 0.1 source record is attached to the whole three-paragraph prologue",
+    "subsection views retain chapter citations; both navigation directions and whole-chapter highlighting work",
+    "confirmed e caudata, original notation, St. Gall page references, keyboard details, typography and mobile layout verified",
+    "a failed annotation request is visible instead of silently showing an empty apparatus"
+  ],
+  "screenshots": [
+    "deh-chapter26-light.png",
+    "deh-annotation-key.png",
+    "deh-chapter26-dark.png",
+    "deh-chapter26-mobile.png",
+    "deh-partial-source.png"
+  ],
+  "errors": []
+}

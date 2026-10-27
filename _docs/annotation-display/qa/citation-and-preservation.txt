@@ -4,8 +4,12 @@ test_internal_and_final_units_never_use_id_suffix (test_citation_generation.Cita
 test_lacuna_does_not_fill_missing_sections (test_citation_generation.CitationGeneration.test_lacuna_does_not_fill_missing_sections) ... ok
 test_protected_corpus_matches_development_git_bytes (test_citation_generation.CitationGeneration.test_protected_corpus_matches_development_git_bytes) ... ok
 test_registered_fragments_override_misleading_labels_and_skip_interpolation (test_citation_generation.CitationGeneration.test_registered_fragments_override_misleading_labels_and_skip_interpolation) ... ok
+test_all_chapter_boundaries_match_the_canonical_xml (test_deh_annotations.DEHAnnotations.test_all_chapter_boundaries_match_the_canonical_xml) ... ok
+test_every_csv_location_has_complete_chapter_coverage (test_deh_annotations.DEHAnnotations.test_every_csv_location_has_complete_chapter_coverage) ... ok
+test_existing_josephus_citations_and_annotation_inventory_are_unchanged (test_deh_annotations.DEHAnnotations.test_existing_josephus_citations_and_annotation_inventory_are_unchanged) ... ok
+test_original_csv_is_byte_exact_and_all_first_five_fields_survive (test_deh_annotations.DEHAnnotations.test_original_csv_is_byte_exact_and_all_first_five_fields_survive) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 5.550s
+Ran 9 tests in 1.165s
 
 OK

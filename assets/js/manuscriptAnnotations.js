@@ -5,10 +5,12 @@
     ? require('./annotationEditorialEnglish.js') : root.AnnotationEditorialEnglish;
   const editorialUpdates = typeof module === 'object' && module.exports
     ? require('./annotationEditorialUpdates.js') : root.AnnotationEditorialUpdates;
-  const api = factory(editorialEnglish, editorialUpdates);
+  const deh = typeof module === 'object' && module.exports
+    ? require('./dehManuscriptAnnotations.js') : root.DEHManuscriptAnnotations;
+  const api = factory(editorialEnglish, editorialUpdates, deh);
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.ManuscriptAnnotations = api;
-})(typeof globalThis === 'object' ? globalThis : this, function (editorialEnglish, editorialUpdates) {
+})(typeof globalThis === 'object' ? globalThis : this, function (editorialEnglish, editorialUpdates, deh) {
   'use strict';
   let citationData = {works: {}};
   const workNames = {antiquities: 'Antiquities', bellum: 'Bellum', deh: 'De excidio'};
@@ -76,7 +78,7 @@
     ColognyBodmer99: 'Cologny, Martin Bodmer Foundation, Ms. 99'
   };
   function resolveManuscript(siglum, fallback, lang = 'en') {
-    const row = manuscripts[siglum];
+    const row = manuscripts[siglum] || deh?.resolveManuscript(siglum);
     return {siglum, displayName: (lang === 'en' && englishManuscriptNames[siglum]) || row?.[0] || fallback || siglum,
       originalDisplayName: row?.[0] || fallback || siglum, repository: row?.[1] || null,
       shelfmark: row?.[2] || null, url: row?.[3] ? `/manuscripts/#ljm-${row[3]}` : null,
@@ -100,17 +102,19 @@
     let navigationTarget = null;
     if (row) {
       const unit = alignmentUnitId.match(/-num(\d+[a-z]*)$/)?.[1];
-      navigationTarget = `/${work === 'bellum' ? 'bellum-judaicum' : work}/?book=${row.book}` + (unit ? (row.citationSystem === 'deh' && row.chapter != null
+      navigationTarget = `/${work === 'bellum' ? 'bellum-judaicum' : work}/?book=${row.book}` + (row.granularity === 'chapter' ? `&chapter=${row.chapter}` : unit ? (row.citationSystem === 'deh' && row.chapter != null
         ? `&chapter=${row.chapter}&unit=${row.unit}` : `&unit=${unit}`) : '') + `#${encodeURIComponent(alignmentUnitId)}`;
     }
     return {work, alignmentUnitId, publicCitation: options.includeWork ? `${prefix}, ${citation}` : citation,
       citationSystem: row?.citationSystem || (work === 'deh' ? 'deh' : 'niese'), intervals: ranges.map(r => [...r]),
-      start: ranges[0]?.[0] ?? (row?.citationSystem === 'deh' ? row.citation : null),
-      end: ranges.at(-1)?.[1] ?? (row?.citationSystem === 'deh' ? row.citation : null),
+      start: ranges[0]?.[0] ?? row?.startCitation ?? (row?.citationSystem === 'deh' ? row.citation : null),
+      end: ranges.at(-1)?.[1] ?? row?.endCitation ?? (row?.citationSystem === 'deh' ? row.citation : null),
+      granularity: row?.granularity || 'alignment-unit', alignmentUnitIds: [...(row?.alignmentUnitIds || [])],
       navigationTarget, verificationStatus: row?.status || 'unresolved', provenance: [...(row?.provenance || [])]};
   }
   function recordAnchor(record) {
     if (record.originalId) return record.originalId;
+    if (record.presentationId) return record.presentationId;
     if (record.editorialSupplementId) return 'ms-annotation-worksheet-' + record.editorialSupplementId;
     // A display anchor, explicitly not a newly asserted scholarly identifier.
     return ['ms-annotation', record.work, String(Number(record.sourceBook) || record.sourceBook || 'source'), record.alignmentUnitId, record.siglum, record.occurrence || 1]
@@ -127,6 +131,8 @@
       editorialEvidenceUrl: source.facsimile}));
   }
   function interpretManuscriptAnnotation(record) {
+    const structured = deh?.interpret(record);
+    if (structured) return structured;
     const original = record.notation ?? '';
     const result = {originalRecord: record, originalNotation: original, canonicalAnnotationId: record.originalId || null,
       alignmentUnitId: record.alignmentUnitId, anchor: recordAnchor(record), parts: [], folios: [], issues: []};
@@ -233,7 +239,8 @@
     }
     return result;
   }
-  function legend(lang = 'en') {
+  function legend(lang = 'en', work = 'antiquities') {
+    if (work === 'deh' && deh) return deh.legend(lang, escape);
     const l = t(lang);
     const text = lang === 'fr'
       ? ['Les références textuelles couvrent l’unité d’alignement entière ; elles ne situent pas l’annotation à un mot précis.',
@@ -258,6 +265,7 @@
       ? editorialEnglish.descriptions[description] : description;
   }
   function annotationTextSegments(part, lang = 'en', work = 'antiquities') {
+    if (work === 'deh' && part.suppressCompletenessLabel && deh) return deh.textSegments(part, lang);
     const original = part.category === 'unresolved' ? part.notation.trim() : part.text;
     const literal = text => ({kind: 'recorded', text, original: text});
     if (lang !== 'en' || !editorialEnglish || !['antiquities', 'bellum'].includes(work)) return [literal(original)];
@@ -294,20 +302,21 @@
   }
   function renderAnnotation(record, options = {}) {
     const lang = language(options.lang), l = t(lang), interpreted = interpretManuscriptAnnotation(record);
-    const citation = resolveAlignmentCitation(record.work, record.alignmentUnitId, {lang});
+    const locationId = record.locationTargetId || record.alignmentUnitId;
+    const citation = resolveAlignmentCitation(record.work, locationId, {lang});
     const ms = resolveManuscript(record.siglum, record.witnessLabel || record.siglum || l.unknown, lang);
     const number = options.startNumber || 1;
     const parts = interpreted.parts.map((part, index) => {
       const anchor = `${interpreted.anchor}-at-${part.offset}`;
       const provisional = part.provisionalReading?.[lang] || part.provisionalReading?.en;
-      const category = provisional ? null : part.transcriptionStatus === 'partial' ? l.partial
+      const category = provisional ? null : part.transcriptionStatus === 'partial' && !part.suppressCompletenessLabel ? l.partial
         : part.category === 'symbolic' ? l.symbolic : part.category === 'untranscribable' ? l.untranscribable
         : part.category === 'unresolved' ? l.unresolved : !part.text ? l.noTranscription : null;
       const segments = annotationTextSegments(part, lang, record.work);
       const text = provisional ? provisional.split(/(\[[^\]]+\])/u).map(segment => /^\[/u.test(segment)
         ? `<span class="annotation-editorial-note" lang="${lang}">${escape(segment)}</span>` : escape(segment)).join('')
         : part.displayText ? escape(part.displayText) : segments.map(segment => segment.kind === 'editorial'
-        ? `<span class="annotation-editorial-note" lang="en">${escape(segment.text)}</span>` : escape(segment.text)).join('');
+        ? `<span class="annotation-editorial-note" lang="${lang}">${escape(segment.text)}</span>` : escape(segment.text)).join('');
       const editorialOnly = segments.length && segments.every(segment => segment.kind === 'editorial');
       const description = translateEditorialDescription(part.description, lang);
       const categoryEntry = part.category === 'symbolic' || part.category === 'untranscribable';
@@ -315,7 +324,14 @@
       const handLabel = part.hand ? `${l.hand} ${part.hand}` : '';
       const codes = part.codes.map(code => `${code} = ${numberedHands[code] ? `${l.hand} ${numberedHands[code]}`
         : ({'#': l.symbolic, '§': part.transcriptionStatus === 'partial' ? l.untranscribedText : l.untranscribable})[code] || l.unresolved}`).join('; ');
-      const fields = [[l.sourceId, record.originalId || l.noId], [l.unit, record.alignmentUnitId || l.unknown],
+      const fields = record.sourceConvention === 'deh-csv-20261027' ? [
+        [lang === 'fr' ? 'Ligne du fichier CSV' : 'CSV source row', record.sourceRow],
+        [lang === 'fr' ? 'Référence source' : 'Original chapter reference', record.originalAlignmentReference],
+        [lang === 'fr' ? 'Identifiant du chapitre dans le lecteur' : 'Reader chapter ID', locationId],
+        [l.manuscript, record.siglum], [l.folio, part.folio.original],
+        [lang === 'fr' ? 'Code de main original' : 'Original hand code', record.sourceHand],
+        [l.completeness, part.category === 'untranscribable' ? l.untranscribable : part.transcriptionStatus === 'partial' ? l.partial : l.recorded]
+      ] : [[l.sourceId, record.originalId || l.noId], [l.unit, record.alignmentUnitId || l.unknown],
         [l.siglum, record.siglum], [l.shelfmark, ms.originalDisplayName], [l.folio, part.folio?.original || l.unknown],
         [l.sourceNumber, part.sourceNumber || l.unknown], [l.codes, [codes, description,
           part.folio ? part.folio.firstOccurrence ? l.first : l.subsequent : ''].filter(Boolean).join('; ') || l.unknown],
@@ -331,22 +347,28 @@
       if (ms.verificationStatus !== 'verified') fields.push([l.manuscript, lang === 'fr' ? 'Référence du manuscrit à vérifier ; désignation originale conservée' : 'Manuscript reference requires review; original designation retained']);
       if (record.originalAlignmentReference != null) fields.push([lang === 'fr' ? 'Référence source du passage' : 'Original passage source reference', record.originalAlignmentReference]);
       if (record.originalManuscriptReference != null) fields.push([lang === 'fr' ? 'Référence source du manuscrit' : 'Original manuscript source reference', record.originalManuscriptReference]);
+      if (record.sourceConvention === 'deh-csv-20261027' && interpreted.originalNotation.includes('[*]')) fields.push([l.evidence, lang === 'fr' ? '[*] est interprété comme un passage non transcrit suivant l’indication provisoire de l’éditeur.' : '[*] is interpreted as untranscribed text following the editor’s provisional clarification.']);
+      if (record.sourceIssues?.length) fields.push([lang === 'fr' ? 'Observation sur la source' : 'Source observation', lang === 'fr' ? 'Le préfixe du code de main diffère du numéro du manuscrit. La désignation du manuscrit et le code original sont conservés ; le numéro de main suit le suffixe indiqué.' : 'The hand-code prefix differs from the manuscript number. The original manuscript designation and code are retained; the hand number follows the recorded suffix.']);
       const details = `<details class="annotation-details"><summary>${l.details}</summary><dl>${fields.map(([key, value]) =>
         `<dt>${escape(key)}</dt><dd>${escape(value)}</dd>`).join('')}</dl><p>${l.original}</p><pre>${escape(interpreted.originalNotation)}</pre></details>`;
-      return `<article class="manuscript-annotation" id="${escape(anchor)}" tabindex="-1" data-alignment-unit="${escape(record.alignmentUnitId)}">
+      return `<article class="manuscript-annotation" id="${escape(anchor)}" tabindex="-1" ${record.locationGranularity === 'chapter' ? 'data-chapter-target' : 'data-alignment-unit'}="${escape(locationId)}">
         <h4><span class="annotation-number">${number + index}.</span> ${escape(citation.publicCitation)}</h4>
         ${category ? `<p class="annotation-category">${escape(category)}${categoryWording ? `: <span class="annotation-wording">${categoryWording}</span>` : ''}</p>` : ''}
         ${text && !categoryEntry ? `<p class="${editorialOnly ? 'annotation-description' : 'annotation-transcription'}"${part.category === 'textual' && !editorialOnly ? ' lang="la"' : ''}>${editorialOnly ? `${l.editorialNote}: ` : ''}${part.untranscribedBefore && !provisional ? `<span class="annotation-editorial-note" lang="${lang}">[${l.untranscribedText}]</span> ` : ''}${text}${provisional || part.displayText ? ` <span class="annotation-reading-status" lang="${lang}">(${escape((provisional ? l.provisionalReading : l.reviewedReading).toLocaleLowerCase(lang))})</span>` : ''}</p>` : ''}
         ${description && !categoryEntry ? `<p class="annotation-description" lang="${lang}">${l.editorialNote}: ${escape(description)}</p>` : ''}
-        <p class="annotation-meta">${l.manuscript}: ${ms.url ? `<a href="${ms.url}">${escape(ms.displayName)}</a>` : escape(ms.displayName)}${part.folio?.reference ? ` · fol. ${escape(part.folio.reference)}` : ''}${handLabel ? ` · <span class="annotation-hand">${escape(handLabel)}</span>` : ''}</p>
+        <p class="annotation-meta">${l.manuscript}: ${ms.url ? `<a href="${ms.url}">${escape(ms.displayName)}</a>` : escape(ms.displayName)}${part.folio?.reference ? ` · ${part.pagination === 'page' ? 'p.' : 'fol.'} ${escape(part.folio.reference)}` : ''}${handLabel ? ` · <span class="annotation-hand">${escape(handLabel)}</span>` : ''}</p>
         ${part.abbreviated ? `<p class="annotation-status">${l.abbreviated}. ${l.abbreviationHelp}</p>` : ''}
         ${part.issues.length ? `<p class="annotation-status">${part.ellipsisUnresolved ? l.uncertainEllipsis : l.review}</p>` : ''}
-        ${citation.navigationTarget ? `<a class="annotation-passage" href="${escape(citation.navigationTarget)}" data-unit="${escape(record.alignmentUnitId)}">${l.passage}</a>` : ''}${details}</article>`;
+        ${citation.navigationTarget ? `<a class="annotation-passage" href="${escape(citation.navigationTarget)}" data-unit="${escape(locationId)}">${record.locationGranularity === 'chapter' ? lang === 'fr' ? 'Voir le chapitre' : 'View chapter' : l.passage}</a>` : ''}${details}</article>`;
     }).join('');
     const folioOnly = !interpreted.parts.length ? `<details class="annotation-folio-record"><summary>${lang === 'fr' ? 'Référence au folio uniquement' : 'Folio reference only'}: ${escape(interpreted.originalNotation)}</summary><p>${escape(l.unit)}: ${escape(record.alignmentUnitId)}</p><p>${l.original}</p><pre>${escape(interpreted.originalNotation)}</pre></details>` : '';
-    return {html: `<div class="${record.editorialSupplementId ? 'annotation-supplemental-record' : 'annotation-source-record'}" id="${escape(interpreted.anchor)}" data-source-siglum="${escape(record.siglum)}">${parts}${folioOnly}</div>`,
+    return {html: `<div class="${record.sourceConvention === 'deh-csv-20261027' ? 'annotation-deh-record' : record.editorialSupplementId ? 'annotation-supplemental-record' : 'annotation-source-record'}" id="${escape(interpreted.anchor)}" data-source-siglum="${escape(record.siglum)}">${parts}${folioOnly}</div>`,
       count: interpreted.parts.length, interpreted};
   }
   return {setCitationData, resolveAlignmentCitation, resolveManuscript, interpretManuscriptAnnotation,
-    recordAnchor, renderAnnotation, getSupplementalAnnotations, translateEditorialDescription, annotationTextSegments, legend, labels};
+    recordAnchor, renderAnnotation, getSupplementalAnnotations, translateEditorialDescription, annotationTextSegments, legend, labels,
+    setDEHAnnotationData: data => {
+      if (!deh) throw new Error('DEH annotation interpreter unavailable');
+      deh.setData(data);
+    }, getDEHAnnotations: book => deh?.recordsForBook(book) || []};
 });
