@@ -56,13 +56,13 @@
   }
   function legend(lang, escape) {
     const text = lang === 'fr' ? [
-      'Les références de ces annotations désignent un chapitre entier du De excidio. La source ne permet pas de préciser un paragraphe ou un mot.',
+      'Les références de ces annotations désignent un chapitre entier du De excidio.',
       'Les Détails scientifiques conservent les cinq champs utilisés du fichier source, leur numéro de ligne et les codes originaux de main.',
       'Les mains sont numérotées au sein de chaque manuscrit : 678-1 désigne la Main 1 de Cambrai 678. Un code non numérique n’est pas converti en numéro de main.',
       'La notation \\c{e} est affichée comme e caudata (ę). [*] est interprété comme un passage non transcrit suivant l’indication provisoire de l’éditeur. Le texte original est conservé dans les Détails scientifiques.',
       'St. Gall 626 est paginé : ses références sont affichées avec p. Les autres références suivent la colonne folio. Les points de suspension sont conservés sans appliquer la convention propre à Josèphe.'
     ] : [
-      'These annotations refer to whole chapters of De excidio. The source does not locate them at a particular paragraph or word.',
+      'These annotations refer to whole chapters of De excidio.',
       'Scholarly details preserve the five source fields used here, the CSV row number and original hand codes.',
       'Hands are numbered within each manuscript: 678-1 identifies Hand 1 in Cambrai 678. Non-numeric codes are not converted into hand numbers.',
       'The notation \\c{e} is displayed as e caudata (ę). [*] is interpreted as untranscribed text following the editor’s provisional clarification. Scholarly details retain the original wording.',
