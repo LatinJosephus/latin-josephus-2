@@ -2,7 +2,7 @@
 
 26 October 2026. Implementation completed on `feature/manuscript-annotation-display-v3`, based on current canonical remote `v2-development` at `519d607b890f76bf48e427529c4278151a124326`.
 
-Implementation commit: recorded in the final delivery receipt and Git history after this report is committed. This report is updated with the implementation commit before delivery.
+Implementation commit: `46ec691d6bce48af0d93191e2eca7453223fb3d8`. It contains the application changes, generated mapping, tests, reports and screenshots. A documentation-only follow-up records this identifier; the final branch HEAD is also recorded in the delivery receipt.
 
 ## Result
 
