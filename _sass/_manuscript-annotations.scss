@@ -9,7 +9,9 @@
   .accordion-button, .accordion-button:not(.collapsed) { font-size: 1.15rem; padding: .7rem 1rem; }
   .accordion-body { padding: .65rem 1rem 1.25rem; min-height: 0; }
   #collapse-annotations:not(.show) { display: none; }
-  .annotation-about { font-size: .9rem; margin-bottom: .8rem; }
+  .annotation-about { font-family: var(--lj-font-text); font-size: 1rem; line-height: 1.5; margin-bottom: .8rem; }
+  .annotation-about summary, .annotation-about p { font-family: inherit; font-size: inherit; }
+  .annotation-about .annotation-notation-key { font-size: .875rem; line-height: 1.45; }
   summary { cursor: pointer; padding: .3rem 0; }
   a { color: var(--global-theme-color); text-decoration: underline; }
   .manuscript-annotation { padding: .65rem 0; border-top: 1px solid var(--global-text-color-light); }

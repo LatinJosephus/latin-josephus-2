@@ -31,4 +31,6 @@ Concise display follow-up: [light mode](screenshots/bern-clean-light.png), [dark
 
 [Revised notation key](screenshots/annotation-key-details.png) identifies Scholarly details as the location of the original notation and omits the removed ellipsis sentence.
 
+[Coelacanth notation key](screenshots/annotation-key-coelacanth.png) uses the site's scholarly typeface throughout, with a smaller register from the folio explanation onward.
+
 Visual review verified readable transcription, separate folio and Niese references, restrained hand labels, independent categories, underlined links, wrapped manuscript designations, expandable details and a panel that reserves space for passage links beneath it. Native details were opened and closed with the keyboard. Animation was disabled during capture to avoid judging intermediate theme-transition colours.

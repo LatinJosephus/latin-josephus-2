@@ -6,6 +6,8 @@ Implementation commit: `46ec691d6bce48af0d93191e2eca7453223fb3d8`. It contains t
 
 ## Result
 
+Legend typography: the whole About these annotations section uses the existing Coelacanth text family. Its heading and two introductory paragraphs use the normal register; the notation key beginning with “Bracketed references identify…” uses a smaller register. The equivalent French key follows the same hierarchy.
+
 Legend wording: About these annotations now states that its key applies only to the original editorial notation in Scholarly details. The requested sentence about other ellipses and reconstruction is removed, with the equivalent French change. Interpretation and source data are unchanged.
 
 Display cleanup: the editor-requested concise layout presents the provisional Bern reading once, with its qualification inline. Explanations, partial-transcription status and recovery provenance remain in Scholarly details. All annotation words use the site accent colour, adapted to light/dark mode; editorial qualifiers use the normal text colour. No scholarly data or interpretation changed in this cleanup.

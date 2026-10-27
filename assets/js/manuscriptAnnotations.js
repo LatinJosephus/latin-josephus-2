@@ -250,7 +250,8 @@
         '# = symbolic annotation; § = an annotation or passage that cannot be transcribed. Where words survive, editorial evidence may identify a partial transcription. Category and hand are independent.',
         'Three words followed by ... indicate a transcription deliberately abbreviated by the editor.',
         'In parenthesised annotation prefixes: ¤ = Hand 4; ¬ = Hand 5; ¦ = Hand 6; ² = Hand 7; ³ = Hand 8; ¼ = Hand 9. This role is distinct from the bracketed folio marker ¤. Unresolved codes and original notation are retained. Display numbers are not scholarly identifiers.'];
-    return `<details class="annotation-about"><summary>${l.about}</summary>${text.map(p => `<p>${escape(p)}</p>`).join('')}</details>`;
+    const paragraphs = items => items.map(p => `<p>${escape(p)}</p>`).join('');
+    return `<details class="annotation-about"><summary>${l.about}</summary>${paragraphs(text.slice(0, 2))}<div class="annotation-notation-key">${paragraphs(text.slice(2))}</div></details>`;
   }
   function translateEditorialDescription(description, lang = 'en') {
     return lang === 'en' && Object.hasOwn(editorialEnglish?.descriptions || {}, description)
