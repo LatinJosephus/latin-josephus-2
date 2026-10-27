@@ -151,9 +151,10 @@ async function main() {
       }
     }
     await open('final', 'deh', 'book=1&chapter=26&unit=3');
-    assert(await page.locator('#reader-annotations').evaluate(n => n.hidden));
+    assert(!await page.locator('#reader-annotations').evaluate(n => n.hidden));
+    assert.equal(await page.locator('.annotation-deh-record').count(), 5);
     assert(await page.locator('#deh-parallels').count() || await page.locator('[id*="parallels"]').count());
-    report.interactions.push('DEH remains annotation-free with parallels controls present');
+    report.interactions.push('DEH shows five chapter-level annotations with parallels controls present');
     assert.deepEqual(report.finalErrors, [], 'Final reader JavaScript errors');
     report.status = 'PASS';
   } finally {

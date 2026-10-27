@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "name": "generated-freshness",
+      "command": [
+        "C:\\Users\\Pollard_R\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "-B",
+        "bin/build-annotation-citations.py",
+        "--check"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "deh-generated-freshness",
+      "command": [
+        "C:\\Users\\Pollard_R\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "-B",
+        "bin/build-deh-annotations.py",
+        "--check"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "citation-and-preservation",
+      "command": [
+        "C:\\Users\\Pollard_R\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "bin/annotations",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "annotation-tests",
+      "command": [
+        "node",
+        "--test",
+        "bin/annotations/annotation-qa.test.cjs",
+        "bin/annotations/editorial-english.test.cjs",
+        "bin/annotations/editorial-updates.test.cjs",
+        "bin/annotations/deh-annotations.test.cjs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "corpus-integrity",
+      "command": [
+        "node",
+        "bin/reader-corpus-qa.mjs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "deh-integrity",
+      "command": [
+        "node",
+        "bin/deh-parallels-integrity-qa.mjs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "search-assets",
+      "command": [
+        "node",
+        "bin/search/check-assets.mjs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "notation-inventory",
+      "command": [
+        "node",
+        "bin/annotations/report-qa.cjs"
+      ],
+      "status": "PASS"
+    }
+  ]
+}

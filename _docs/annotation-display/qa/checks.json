@@ -12,6 +12,16 @@
       "status": "PASS"
     },
     {
+      "name": "deh-generated-freshness",
+      "command": [
+        "C:\\Users\\Pollard_R\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "-B",
+        "bin/build-deh-annotations.py",
+        "--check"
+      ],
+      "status": "PASS"
+    },
+    {
       "name": "citation-and-preservation",
       "command": [
         "C:\\Users\\Pollard_R\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
@@ -34,7 +44,8 @@
         "--test",
         "bin/annotations/annotation-qa.test.cjs",
         "bin/annotations/editorial-english.test.cjs",
-        "bin/annotations/editorial-updates.test.cjs"
+        "bin/annotations/editorial-updates.test.cjs",
+        "bin/annotations/deh-annotations.test.cjs"
       ],
       "status": "PASS"
     },
