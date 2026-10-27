@@ -3,47 +3,54 @@
   "works": {
     "antiquities": {
       "records": 1692,
-      "components": 3243,
+      "components": 3244,
       "folioOnlyRecords": 0,
       "verifiedCitationRecords": 1673,
       "unlocatedRecords": 19,
-      "fullyInterpretedRecords": 1526,
+      "fullyInterpretedRecords": 1571,
       "categories": {
-        "textual": 1897,
-        "untranscribable": 206,
+        "textual": 1953,
+        "untranscribable": 207,
         "symbolic": 1061,
-        "unresolved": 79
+        "unresolved": 23
       },
       "hands": {
         "1": 855,
         "2": 826,
         "3": 225,
-        "unknown": 1337
+        "5": 26,
+        "6": 30,
+        "8": 1,
+        "unknown": 1281
       },
       "codes": {
         "@": 855,
-        "§": 206,
+        "§": 207,
         "#": 1061,
         "¬": 26,
         "£": 826,
         "¢": 225,
         "+": 1,
-        "¦": 30
+        "¦": 30,
+        "³": 1
       },
       "issues": {
-        "unknown-code:¬": 26,
         "ellipsis-role-unresolved": 94,
         "folio-unresolved": 1,
-        "literal-or-unresolved-code": 20,
+        "literal-or-unresolved-code": 19,
         "unparsed-notation": 22,
         "unknown-code:+": 1,
-        "code-combination-unresolved": 6,
-        "unknown-code:¦": 30
+        "code-combination-unresolved": 6
       },
       "confirmedAbbreviations": 0,
       "unresolvedEllipses": 94,
       "firstFolioMarkers": 1307,
-      "repeatedFolioReferences": 536
+      "repeatedFolioReferences": 536,
+      "additionalHandPrefixes": {
+        "¬": 26,
+        "¦": 30,
+        "³": 1
+      }
     },
     "bellum": {
       "records": 1266,
@@ -51,18 +58,21 @@
       "folioOnlyRecords": 1,
       "verifiedCitationRecords": 1264,
       "unlocatedRecords": 2,
-      "fullyInterpretedRecords": 1205,
+      "fullyInterpretedRecords": 1230,
       "categories": {
-        "textual": 1833,
+        "textual": 1860,
         "untranscribable": 62,
         "symbolic": 1028,
-        "unresolved": 35
+        "unresolved": 8
       },
       "hands": {
         "1": 1617,
         "2": 183,
         "3": 33,
-        "unknown": 1125
+        "5": 20,
+        "6": 6,
+        "8": 1,
+        "unknown": 1098
       },
       "codes": {
         "@": 1617,
@@ -74,23 +84,27 @@
         "?": 2,
         "¢": 33,
         "¦": 6,
-        "*": 1
+        "*": 1,
+        "³": 1
       },
       "issues": {
-        "unparsed-notation": 5,
-        "unknown-code:¬": 20,
+        "unparsed-notation": 4,
         "unknown-code:+": 1,
         "literal-or-unresolved-code": 2,
         "unknown-code:?": 2,
         "ellipsis-role-unresolved": 29,
-        "unknown-code:¦": 6,
         "unknown-code:*": 1
       },
       "confirmedAbbreviations": 1,
       "unresolvedEllipses": 29,
       "firstFolioMarkers": 1117,
-      "repeatedFolioReferences": 293
+      "repeatedFolioReferences": 293,
+      "additionalHandPrefixes": {
+        "¬": 20,
+        "¦": 6,
+        "³": 1
+      }
     }
   },
-  "exceptionRecords": 663
+  "exceptionRecords": 601
 }

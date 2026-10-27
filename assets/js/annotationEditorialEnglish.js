@@ -100,7 +100,7 @@
     "yphen": "yphen",
     "en haut de la 2e colonne": "at the top of the second column",
     "Nota type NOT": "Nota type NOT",
-    "1": "1",
+    "dans une main gothique": "in a Gothic hand",
     "deux traits verticaux à côté du Cum en marge à gauche - première colonne": "two vertical strokes beside Cum in the left margin, first column",
     "- en marge": "- in the margin",
     "2 mots difficillement lisible, peut-être id*bos": "two words difficult to read, perhaps id*bos",

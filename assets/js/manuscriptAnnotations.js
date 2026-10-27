@@ -39,6 +39,10 @@
   };
   const language = lang => labels[lang] ? lang : 'en';
   const t = lang => labels[language(lang)];
+  // Exact historical sequence confirmed by the editor on 27 October 2026.
+  // These additional codes are read in annotation prefixes only; bracketed ¤
+  // continues to mark the first recorded occurrence of a folio reference.
+  const numberedHands = {'@': 1, '£': 2, '¢': 3, '¤': 4, '¬': 5, '¦': 6, '²': 7, '³': 8, '¼': 9};
   const escape = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
   // Expansions are verified against listWit and the site's manuscript repertory.
   // Shelfmark conflicts retain listWit wording and are explicitly flagged.
@@ -109,7 +113,7 @@
       alignmentUnitId: record.alignmentUnitId, anchor: recordAnchor(record), parts: [], folios: [], issues: []};
     // The Josephus key is source specific. DEH requires a separately certified adapter.
     if (!['antiquities', 'bellum'].includes(record.work)) {
-      result.parts.push({notation: original, text: original, category: 'unresolved', hand: null,
+      result.parts.push({notation: original, text: original, category: 'unresolved', hand: null, handCode: null,
         folio: null, offset: 0, abbreviated: false, issues: ['source-convention-unconfigured']});
       result.issues.push('source-convention-unconfigured');
       return result;
@@ -132,12 +136,14 @@
       current = null;
     };
     const start = (offset, code = null, number = null, description = '') => {
-      current = {offset, notation: '', text: '', hand: ({'@': 1, '£': 2, '¢': 3})[code] || null,
+      const hand = numberedHands[code] || null;
+      current = {offset, notation: '', text: '', hand, handCode: hand ? code : null,
+        handVerificationStatus: hand ? 'verified' : 'not-recorded',
         category: code === '#' ? 'symbolic' : code === '§' ? 'untranscribable'
-          : ['@', '£', '¢'].includes(code) ? 'textual' : 'unresolved',
+          : hand ? 'textual' : 'unresolved',
         folio, codes: code ? [code] : [], sourceNumber: number, description, issues: []};
-      if (code && !'@£¢#§'.includes(code)) current.issues.push(`unknown-code:${code}`);
-      if (/[¤@£¢#§¬¦]/u.test(description)) current.issues.push('code-combination-unresolved');
+      if (code && !hand && !'#§'.includes(code)) current.issues.push(`unknown-code:${code}`);
+      if (/[¤@£¢#§¬¦²³¼]/u.test(description)) current.issues.push('code-combination-unresolved');
     };
     const append = (text, offset) => {
       if (!text.trim() && !current) return;
@@ -149,7 +155,7 @@
       }
       current.text += text; current.notation += text;
     };
-    const tokens = /\[¤?\d+[a-z]*\]|\[¤…\]|\([@£¢#§¬¦+?*][^()]*\)/gu;
+    const tokens = /\[¤?\d+[a-z]*\]|\[¤…\]|\([@£¢¤¬¦²³¼#§+?*][^()]*\)/gu;
     for (const token of original.matchAll(tokens)) {
       append(original.slice(cursor, token.index), cursor);
       const raw = token[0];
@@ -161,9 +167,14 @@
         result.folios.push(folio);
         if (!match) result.issues.push('folio-unresolved');
       } else {
-        const match = raw.match(/^\(([@£¢#§¬¦+?*])(\d*)\s*([^()]*)\)$/u);
+        const match = raw.match(/^\(([@£¢¤¬¦²³¼#§+?*])(\d*)\s*([^()]*)\)$/u);
+        // The source includes (¦ 1). A separated number alone is an annotation
+        // number for a hand prefix; descriptions such as (# 2 mots ...) remain text.
+        if (numberedHands[match[1]] && !match[2] && /^\d+$/u.test(match[3])) {
+          match[2] = match[3]; match[3] = '';
+        }
         // A hand followed immediately by (§) describes the same annotation.
-        if (match[1] === '§' && current?.hand && !current.text.trim()) {
+        if (match[1] === '§' && current?.handCode && !current.text.trim()) {
           current.category = 'untranscribable'; current.codes.push('§');
           current.description = match[3]; current.notation += raw;
         } else {
@@ -175,7 +186,7 @@
     append(original.slice(cursor), cursor); finish();
     for (const part of result.parts) {
       // Keep malformed/unknown notation visible and report it without inventing syntax.
-      if (/[¤@£¢#§¬¦]/u.test(part.text) && part.category !== 'untranscribable') part.issues.push('literal-or-unresolved-code');
+      if (/[¤@£¢#§¬¦²³¼]/u.test(part.text) && part.category !== 'untranscribable') part.issues.push('literal-or-unresolved-code');
       result.issues.push(...part.issues);
     }
     return result;
@@ -188,13 +199,13 @@
         '@ = Main 1 ; £ = Main 2 ; ¢ = Main 3. Ce classement est propre à chaque manuscrit ; il n’identifie ni ne date un scribe. Les nombres dans (@2), par exemple, numérotent les annotations ; ils ne désignent pas la main.',
         '# = annotation symbolique ; § = annotation qui ne peut être transcrite. Ces catégories sont indépendantes de la main.',
         'Trois mots suivis de ... signalent une transcription volontairement abrégée par l’éditeur. Les autres points de suspension restent à vérifier ; aucune suite n’est reconstituée.',
-        'Les codes non expliqués (notamment ¬ et ¦) et la notation originale sont conservés. La numérotation d’affichage ne constitue pas un identifiant scientifique.']
+        'Dans les préfixes d’annotation entre parenthèses : ¤ = Main 4 ; ¬ = Main 5 ; ¦ = Main 6 ; ² = Main 7 ; ³ = Main 8 ; ¼ = Main 9. Ce rôle se distingue du marqueur de folio ¤ entre crochets. Les codes non résolus et la notation originale sont conservés. La numérotation d’affichage ne constitue pas un identifiant scientifique.']
       : ['Textual citations cover the whole Latin alignment unit; they do not locate an annotation at a particular word.',
         'Bracketed references identify the folio. ¤ marks only its first recorded occurrence for each side: [¤1r] and [1r] both mean fol. 1r.',
         '@ = Hand 1; £ = Hand 2; ¢ = Hand 3. Hands are classified within each manuscript and do not identify or date a scribe. The numbers in (@2), for example, enumerate annotations; they do not identify the hand.',
         '# = symbolic annotation; § = annotation that cannot be transcribed. Category and hand are independent.',
         'Three words followed by ... indicate a transcription deliberately abbreviated by the editor. Other ellipses remain subject to review; no continuation is reconstructed.',
-        'Unexplained codes (including ¬ and ¦) and the original notation are retained. Display numbers are not scholarly identifiers.'];
+        'In parenthesised annotation prefixes: ¤ = Hand 4; ¬ = Hand 5; ¦ = Hand 6; ² = Hand 7; ³ = Hand 8; ¼ = Hand 9. This role is distinct from the bracketed folio marker ¤. Unresolved codes and original notation are retained. Display numbers are not scholarly identifiers.'];
     return `<details class="annotation-about"><summary>${l.about}</summary>${text.map(p => `<p>${escape(p)}</p>`).join('')}</details>`;
   }
   function translateEditorialDescription(description, lang = 'en') {
@@ -250,8 +261,9 @@
         ? `<span class="annotation-editorial-note" lang="en">${escape(segment.text)}</span>` : escape(segment.text)).join('');
       const editorialOnly = segments.length && segments.every(segment => segment.kind === 'editorial');
       const description = translateEditorialDescription(part.description, lang);
-      const codes = part.codes.map(code => `${code} = ${({'@': `${l.hand} 1`, '£': `${l.hand} 2`, '¢': `${l.hand} 3`,
-        '#': l.symbolic, '§': l.untranscribable})[code] || l.unresolved}`).join('; ');
+      const handLabel = part.hand ? `${l.hand} ${part.hand}` : '';
+      const codes = part.codes.map(code => `${code} = ${numberedHands[code] ? `${l.hand} ${numberedHands[code]}`
+        : ({'#': l.symbolic, '§': l.untranscribable})[code] || l.unresolved}`).join('; ');
       const fields = [[l.sourceId, record.originalId || l.noId], [l.unit, record.alignmentUnitId || l.unknown],
         [l.siglum, record.siglum], [l.shelfmark, ms.originalDisplayName], [l.folio, part.folio?.original || l.unknown],
         [l.sourceNumber, part.sourceNumber || l.unknown], [l.codes, [codes, description,
@@ -269,7 +281,7 @@
         ${category ? `<p class="annotation-category">${escape(category)}</p>` : ''}
         ${text ? `<p class="${editorialOnly ? 'annotation-description' : 'annotation-transcription'}"${part.category === 'textual' && !editorialOnly ? ' lang="la"' : ''}>${editorialOnly ? `${l.editorialNote}: ` : ''}${text}</p>` : ''}
         ${description ? `<p class="annotation-description" lang="${lang}">${l.editorialNote}: ${escape(description)}</p>` : ''}
-        <p class="annotation-meta">${l.manuscript}: ${ms.url ? `<a href="${ms.url}">${escape(ms.displayName)}</a>` : escape(ms.displayName)}${part.folio?.reference ? ` · fol. ${escape(part.folio.reference)}` : ''}${part.hand ? ` · <span class="annotation-hand">${l.hand} ${part.hand}</span>` : ''}</p>
+        <p class="annotation-meta">${l.manuscript}: ${ms.url ? `<a href="${ms.url}">${escape(ms.displayName)}</a>` : escape(ms.displayName)}${part.folio?.reference ? ` · fol. ${escape(part.folio.reference)}` : ''}${handLabel ? ` · <span class="annotation-hand">${escape(handLabel)}</span>` : ''}</p>
         ${part.abbreviated ? `<p class="annotation-status">${l.abbreviated}. ${l.abbreviationHelp}</p>` : ''}
         ${part.issues.length ? `<p class="annotation-status">${part.ellipsisUnresolved ? l.uncertainEllipsis : l.review}</p>` : ''}
         ${citation.navigationTarget ? `<a class="annotation-passage" href="${escape(citation.navigationTarget)}" data-unit="${escape(record.alignmentUnitId)}">${l.passage}</a>` : ''}${details}</article>`;

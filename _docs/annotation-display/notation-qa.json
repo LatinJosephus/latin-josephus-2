@@ -3,47 +3,54 @@
   "works": {
     "antiquities": {
       "records": 1692,
-      "components": 3243,
+      "components": 3244,
       "folioOnlyRecords": 0,
       "verifiedCitationRecords": 1673,
       "unlocatedRecords": 19,
-      "fullyInterpretedRecords": 1526,
+      "fullyInterpretedRecords": 1571,
       "categories": {
-        "textual": 1897,
-        "untranscribable": 206,
+        "textual": 1953,
+        "untranscribable": 207,
         "symbolic": 1061,
-        "unresolved": 79
+        "unresolved": 23
       },
       "hands": {
         "1": 855,
         "2": 826,
         "3": 225,
-        "unknown": 1337
+        "5": 26,
+        "6": 30,
+        "8": 1,
+        "unknown": 1281
       },
       "codes": {
         "@": 855,
-        "§": 206,
+        "§": 207,
         "#": 1061,
         "¬": 26,
         "£": 826,
         "¢": 225,
         "+": 1,
-        "¦": 30
+        "¦": 30,
+        "³": 1
       },
       "issues": {
-        "unknown-code:¬": 26,
         "ellipsis-role-unresolved": 94,
         "folio-unresolved": 1,
-        "literal-or-unresolved-code": 20,
+        "literal-or-unresolved-code": 19,
         "unparsed-notation": 22,
         "unknown-code:+": 1,
-        "code-combination-unresolved": 6,
-        "unknown-code:¦": 30
+        "code-combination-unresolved": 6
       },
       "confirmedAbbreviations": 0,
       "unresolvedEllipses": 94,
       "firstFolioMarkers": 1307,
-      "repeatedFolioReferences": 536
+      "repeatedFolioReferences": 536,
+      "additionalHandPrefixes": {
+        "¬": 26,
+        "¦": 30,
+        "³": 1
+      }
     },
     "bellum": {
       "records": 1266,
@@ -51,18 +58,21 @@
       "folioOnlyRecords": 1,
       "verifiedCitationRecords": 1264,
       "unlocatedRecords": 2,
-      "fullyInterpretedRecords": 1205,
+      "fullyInterpretedRecords": 1230,
       "categories": {
-        "textual": 1833,
+        "textual": 1860,
         "untranscribable": 62,
         "symbolic": 1028,
-        "unresolved": 35
+        "unresolved": 8
       },
       "hands": {
         "1": 1617,
         "2": 183,
         "3": 33,
-        "unknown": 1125
+        "5": 20,
+        "6": 6,
+        "8": 1,
+        "unknown": 1098
       },
       "codes": {
         "@": 1617,
@@ -74,44 +84,29 @@
         "?": 2,
         "¢": 33,
         "¦": 6,
-        "*": 1
+        "*": 1,
+        "³": 1
       },
       "issues": {
-        "unparsed-notation": 5,
-        "unknown-code:¬": 20,
+        "unparsed-notation": 4,
         "unknown-code:+": 1,
         "literal-or-unresolved-code": 2,
         "unknown-code:?": 2,
         "ellipsis-role-unresolved": 29,
-        "unknown-code:¦": 6,
         "unknown-code:*": 1
       },
       "confirmedAbbreviations": 1,
       "unresolvedEllipses": 29,
       "firstFolioMarkers": 1117,
-      "repeatedFolioReferences": 293
+      "repeatedFolioReferences": 293,
+      "additionalHandPrefixes": {
+        "¬": 20,
+        "¦": 6,
+        "³": 1
+      }
     }
   },
   "exceptions": [
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book01-num34",
-      "siglum": "RomeBAVPalLat814",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[¤2r](¬1)mulier",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-01.xml",
-      "witnessLabel": "Rome BAV Pal. Lat. 814 (Ant. I–XII)",
-      "originalAlignmentReference": "#latin-book01-num34",
-      "originalManuscriptReference": "#RomeBAVPalLat814",
-      "displayAnchor": "ms-annotation-antiquities-1-latin-book01-num34-RomeBAVPalLat814-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§34–36",
-      "manuscriptStatus": "verified"
-    },
     {
       "work": "antiquities",
       "alignmentUnitId": "LeidenUBVLF17",
@@ -126,7 +121,6 @@
       "originalManuscriptReference": "#BernBBMs50",
       "displayAnchor": "ms-annotation-antiquities-1-LeidenUBVLF17-BernBBMs50-1",
       "reasons": [
-        "unknown-code:¬",
         "passage-reference-unresolved"
       ],
       "publicCitation": "Textual citation not verified",
@@ -286,25 +280,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book01-num130",
-      "siglum": "BernBBMs50",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[¤6v] (#1 digitum) (¬2) de britanos",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-01.xml",
-      "witnessLabel": "Bern BB Ms. 50 (Ant. I–XII & Guerre)",
-      "originalAlignmentReference": "#latin-book01-num130",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-antiquities-1-latin-book01-num130-BernBBMs50-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§130–139",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book01-num148",
       "siglum": "book-04#latin-book04-num118",
       "sourceBook": 1,
@@ -381,63 +356,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book01-num179",
-      "siglum": "RomeBAVPalLat814",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[6v](¢2) ecce melchisedech (¢3)uerba dei ad abraham (¬1)*loco",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-01.xml",
-      "witnessLabel": "Rome BAV Pal. Lat. 814 (Ant. I–XII)",
-      "originalAlignmentReference": "#latin-book01-num179",
-      "originalManuscriptReference": "#RomeBAVPalLat814",
-      "displayAnchor": "ms-annotation-antiquities-1-latin-book01-num179-RomeBAVPalLat814-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§179–182",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book01-num191",
-      "siglum": "RomeBAVPalLat814",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[7r](¬1)curcumcisio (¢3)abraham circumcidit et ismahel",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-01.xml",
-      "witnessLabel": "Rome BAV Pal. Lat. 814 (Ant. I–XII)",
-      "originalAlignmentReference": "#latin-book01-num191",
-      "originalManuscriptReference": "#RomeBAVPalLat814",
-      "displayAnchor": "ms-annotation-antiquities-1-latin-book01-num191-RomeBAVPalLat814-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§191–193",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book01-num202",
-      "siglum": "MonzaBCMsb20",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[¤16v] (£1) os sodomam subuertit et uxor insulis statuum uestitur. (§) (¬3) hp* terramque similiter exterminauit incendio, sicut cladis a me dictum est, cum bellum iudaicum descripsissem.",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-01.xml",
-      "witnessLabel": "Monza BC Ms. b 20/136 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book01-num202",
-      "originalManuscriptReference": "#MonzaBCMsb20",
-      "displayAnchor": "ms-annotation-antiquities-1-latin-book01-num202-MonzaBCMsb20-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§202–204",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "",
       "siglum": "BernBBMs118",
       "sourceBook": 1,
@@ -471,7 +389,6 @@
       "reasons": [
         "unparsed-notation",
         "literal-or-unresolved-code",
-        "unknown-code:¬",
         "passage-reference-unresolved"
       ],
       "publicCitation": "Textual citation not verified",
@@ -644,7 +561,6 @@
       "originalManuscriptReference": "#RomeBAVPalLat814",
       "displayAnchor": "ms-annotation-antiquities-1-unknown-RomeBAVPalLat814-2",
       "reasons": [
-        "unknown-code:¬",
         "passage-reference-unresolved"
       ],
       "publicCitation": "Textual citation not verified",
@@ -804,25 +720,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num45",
-      "siglum": "RomeBAVPalLat814",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤14r](¢1)ioseph amatur sed non amatur (¬1)aliquid",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Rome BAV Pal. Lat. 814 (Ant. I–XII)",
-      "originalAlignmentReference": "#latin-book02-num45",
-      "originalManuscriptReference": "#RomeBAVPalLat814",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num45-RomeBAVPalLat814-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§45–49",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book02-num60",
       "siglum": "LeidenUBVLF17",
       "sourceBook": 2,
@@ -862,25 +759,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num84",
-      "siglum": "RomeBAVPalLat814",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤15v](¬1)nq",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Rome BAV Pal. Lat. 814 (Ant. I–XII)",
-      "originalAlignmentReference": "#latin-book02-num84",
-      "originalManuscriptReference": "#RomeBAVPalLat814",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num84-RomeBAVPalLat814-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§84–86",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book02-num95",
       "siglum": "BernBBMs118",
       "sourceBook": 2,
@@ -912,7 +790,6 @@
       "originalManuscriptReference": "#BernBBMs50",
       "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num136-BernBBMs50-1",
       "reasons": [
-        "unknown-code:¬",
         "unknown-code:+"
       ],
       "publicCitation": "Book 2, Niese §§136–159",
@@ -978,25 +855,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num176",
-      "siglum": "BernBBMs50",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤19v] (¬1) nota filiorum ioseph (@2) iosep et filiorum",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 50 (Ant. I–XII & Guerre)",
-      "originalAlignmentReference": "#latin-book02-num176",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num176-BernBBMs50-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§176–183",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book02-num184",
       "siglum": "LeidenUBVLF17",
       "sourceBook": 2,
@@ -1036,25 +894,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num205",
-      "siglum": "BernBBMs50",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤20v] (#1 nota NOA) (¬2) de natiuitate moysi (§) (¬3) pars moysi",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 50 (Ant. I–XII & Guerre)",
-      "originalAlignmentReference": "#latin-book02-num205",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num205-BernBBMs50-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§205–209",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book02-num120",
       "siglum": "BernBBMs118",
       "sourceBook": 2,
@@ -1074,44 +913,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num120",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤48r](¦1)istoria moysi [¤48v](£1)amamramis uisio",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book02-num120",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num120-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§120–123",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num224",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤49v](£1)moysen collegit filia regis (¦1)pulchrum miraculum",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book02-num224",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num224-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§224–227",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book02-num228",
       "siglum": "MonzaBCMsb20",
       "sourceBook": 2,
@@ -1127,25 +928,6 @@
         "code-combination-unresolved"
       ],
       "publicCitation": "Book 2, Niese §§228–231",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num243",
-      "siglum": "LeidenUBVLF17",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤18r](@1)moyses ducem exercitum ethibes (#yphen)(@2) uel abarfuri (¦1) moyses uxorem duxit filiam regis aethiopum",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Leiden UB VLF 17 (Ant. I–XII, XVII–XX)",
-      "originalAlignmentReference": "#latin-book02-num243",
-      "originalManuscriptReference": "#LeidenUBVLF17",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num243-LeidenUBVLF17-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§243–253",
       "manuscriptStatus": "verified"
     },
     {
@@ -1264,44 +1046,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num293",
-      "siglum": "BernBBMs50",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤23v] (¬1) prima plaga egyptae",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 50 (Ant. I–XII & Guerre)",
-      "originalAlignmentReference": "#latin-book02-num293",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num293-BernBBMs50-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§293–295",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num296",
-      "siglum": "BernBBMs50",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[23v] (¬2) nota plaga (¬3) nota plaga (#4 nota NA)",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 50 (Ant. I–XII & Guerre)",
-      "originalAlignmentReference": "#latin-book02-num296",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num296-BernBBMs50-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§296–299",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book02-num320",
       "siglum": "BernBBMs118",
       "sourceBook": 2,
@@ -1315,25 +1059,6 @@
       "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num320-BernBBMs118-1",
       "reasons": [
         "unparsed-notation"
-      ],
-      "publicCitation": "Book 2, Niese §§320–325",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book02-num320",
-      "siglum": "LeidenUBVLF17",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[20v](¦ 1)exercitus aegyptiorum",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-02.xml",
-      "witnessLabel": "Leiden UB VLF 17 (Ant. I–XII, XVII–XX)",
-      "originalAlignmentReference": "#latin-book02-num320",
-      "originalManuscriptReference": "#LeidenUBVLF17",
-      "displayAnchor": "ms-annotation-antiquities-2-latin-book02-num320-LeidenUBVLF17-1",
-      "reasons": [
-        "unknown-code:¦"
       ],
       "publicCitation": "Book 2, Niese §§320–325",
       "manuscriptStatus": "verified"
@@ -1552,25 +1277,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book03-num91",
-      "siglum": "BernBBMs50",
-      "sourceBook": 3,
-      "originalId": null,
-      "notation": "[¤28v] (¬1) uox **",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-03.xml",
-      "witnessLabel": "Bern BB Ms. 50 (Ant. I–XII & Guerre)",
-      "originalAlignmentReference": "#latin-book03-num91",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-antiquities-3-latin-book03-num91-BernBBMs50-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 3, Niese §§91–92",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book03-num95",
       "siglum": "MonzaBCMsb20",
       "sourceBook": 3,
@@ -1587,25 +1293,6 @@
         "literal-or-unresolved-code"
       ],
       "publicCitation": "Book 3, Niese §§95–98",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book03-num108",
-      "siglum": "MonzaBCMsb20",
-      "sourceBook": 3,
-      "originalId": null,
-      "notation": "[¤57r] (£1) moyses moyses ut his tabernaculi fecit [¤57v] (¬1) aspersoria aeneum (£1) ecce ipsum tabernaculum facit idem",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-03.xml",
-      "witnessLabel": "Monza BC Ms. b 20/136 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book03-num108",
-      "originalManuscriptReference": "#MonzaBCMsb20",
-      "displayAnchor": "ms-annotation-antiquities-3-latin-book03-num108-MonzaBCMsb20-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 3, Niese §§108–114",
       "manuscriptStatus": "verified"
     },
     {
@@ -1641,7 +1328,6 @@
       "originalManuscriptReference": "#ColognyBodmer98",
       "displayAnchor": "ms-annotation-antiquities-3-latin-book03-num134-ColognyBodmer98-1",
       "reasons": [
-        "unknown-code:¦",
         "ellipsis-role-unresolved"
       ],
       "publicCitation": "Book 3, Niese §§134–138",
@@ -1684,25 +1370,6 @@
         "literal-or-unresolved-code"
       ],
       "publicCitation": "Book 3, Niese §§139–143",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book03-num162",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 3,
-      "originalId": null,
-      "notation": "[73r](#chresimon)(£1)alias tres (@2)superhumerale [¤73v](#asteriscus)(¦1)per circuitum (@1)de ordinibus lapidum",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-03.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book03-num162",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-3-latin-book03-num162-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 3, Niese §§162–171",
       "manuscriptStatus": "verified"
     },
     {
@@ -1777,25 +1444,6 @@
       "displayAnchor": "ms-annotation-antiquities-3-latin-book03-num188-ColognyBodmer98-1",
       "reasons": [
         "ellipsis-role-unresolved"
-      ],
-      "publicCitation": "Book 3, Niese §§188–192",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book03-num188",
-      "siglum": "LeidenUBVLF17",
-      "sourceBook": 3,
-      "originalId": null,
-      "notation": "[27v](#trigon)(@2)aaron ad sacerdotium electum a deo dicit [¤28r](¦1)iosep safanet (en marge du haut) (¦2)moises populum alloquitur",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-03.xml",
-      "witnessLabel": "Leiden UB VLF 17 (Ant. I–XII, XVII–XX)",
-      "originalAlignmentReference": "#latin-book03-num188",
-      "originalManuscriptReference": "#LeidenUBVLF17",
-      "displayAnchor": "ms-annotation-antiquities-3-latin-book03-num188-LeidenUBVLF17-1",
-      "reasons": [
-        "unknown-code:¦"
       ],
       "publicCitation": "Book 3, Niese §§188–192",
       "manuscriptStatus": "verified"
@@ -1897,25 +1545,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book03-num265",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 3,
-      "originalId": null,
-      "notation": "[¤81r](¦1)horum",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-03.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book03-num265",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-3-latin-book03-num265-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 3, Niese §§265–268",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book03-num295",
       "siglum": "LeidenUBVLF17",
       "sourceBook": 3,
@@ -1993,25 +1622,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num14",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[87r](#t)(£2)inuidia chore contra moysen [¤87v](@1)alias facere(¦2)uerba chore",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book04-num14",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num14-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 4, Niese §§14–19",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book04-num24",
       "siglum": "BernBBMs118",
       "sourceBook": 4,
@@ -2043,8 +1653,7 @@
       "originalManuscriptReference": "#ColognyBodmer98",
       "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num24-ColognyBodmer98-1",
       "reasons": [
-        "ellipsis-role-unresolved",
-        "unknown-code:¦"
+        "ellipsis-role-unresolved"
       ],
       "publicCitation": "Book 4, Niese §§24–34",
       "manuscriptStatus": "verified"
@@ -2110,64 +1719,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num63",
-      "siglum": "MonzaBCMsb20",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[72v] (£3) principes tribuum portare uirgas iu/s scriptus iussit moyses easque in tubernaculo cumlocauit (£4) cerminauit uirga aaron amigdales [¤73r] (¦1 en haut) aaron (§2 illisible en marge)",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Monza BC Ms. b 20/136 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book04-num63",
-      "originalManuscriptReference": "#MonzaBCMsb20",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num63-MonzaBCMsb20-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 4, Niese §§63–66",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num69",
-      "siglum": "BernBBMs50",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[¤38r] (¬1) de deumas exitium [¤38v] (@1) que pane facto",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Bern BB Ms. 50 (Ant. I–XII & Guerre)",
-      "originalAlignmentReference": "#latin-book04-num69",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num69-BernBBMs50-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 4, Niese §§69–75",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num76",
-      "siglum": "MonzaBCMsb20",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[73r] (£5) moyses legatos uisit ad regem idameae (¦6 à droite) § na*",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Monza BC Ms. b 20/136 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book04-num76",
-      "originalManuscriptReference": "#MonzaBCMsb20",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num76-MonzaBCMsb20-1",
-      "reasons": [
-        "unknown-code:¦",
-        "literal-or-unresolved-code"
-      ],
-      "publicCitation": "Book 4, Niese §§76–77",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book04-num82",
       "siglum": "BernBBMs118",
       "sourceBook": 4,
@@ -2202,25 +1753,6 @@
         "ellipsis-role-unresolved"
       ],
       "publicCitation": "Book 4, Niese §§85–86",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num87",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[93v](£2)moyse consolent deum victoriam promisit (¦1)isto (£3)israhelitas nequaquam fatigatas esse persequentes hostes dicit [¤94r](#IF)(£1)ri",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book04-num87",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num87-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 4, Niese §§87–95",
       "manuscriptStatus": "verified"
     },
     {
@@ -2320,44 +1852,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num131",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[¤97v](¦1)i",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book04-num131",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num131-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 4, Niese §§131–133",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num134",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[97v](¦2)sto (£1)madianitarum allocutio mulierum ad hebreos (£2)alias cantatem [¤98r](#R)(#i)",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book04-num134",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num134-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 4, Niese §§134–138",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book04-num139",
       "siglum": "MonzaBCMsb20",
       "sourceBook": 4,
@@ -2416,25 +1910,6 @@
     {
       "work": "antiquities",
       "alignmentUnitId": "latin-book04-num194",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[¤102v](£1)legem inscriptam dedis moyses populo (£2)populum flentem consolobatur moyses (¦1)hic ponis et plus quam dei si postest; gemitus cum dolore proferret",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book04-num194",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num194-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 4, Niese §§194–195",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num194",
       "siglum": "LeidenUBVLF17",
       "sourceBook": 4,
       "originalId": null,
@@ -2450,63 +1925,6 @@
         "literal-or-unresolved-code"
       ],
       "publicCitation": "Book 4, Niese §§194–195",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book04-num260",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[¤107v](¦1)uerba parentum ad filium",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-04.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book04-num260",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-4-latin-book04-num260-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 4, Niese §§260–265",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book05-num45",
-      "siglum": "LeidenUBVLF17",
-      "sourceBook": 5,
-      "originalId": null,
-      "notation": "[43r](@4)ciuitas * ad *ptia (@5)gabaoni tarum calliditas (¦1)si dicerent",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-05.xml",
-      "witnessLabel": "Leiden UB VLF 17 (Ant. I–XII, XVII–XX)",
-      "originalAlignmentReference": "#latin-book05-num45",
-      "originalManuscriptReference": "#LeidenUBVLF17",
-      "displayAnchor": "ms-annotation-antiquities-5-latin-book05-num45-LeidenUBVLF17-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 5, Niese §§45–48",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book05-num49",
-      "siglum": "LeidenUBVLF17",
-      "sourceBook": 5,
-      "originalId": null,
-      "notation": "[43r](¦1)si dicerent [¤43v](#triangle)(@1)amicitias fecit cum gabaonitis iesus",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-05.xml",
-      "witnessLabel": "Leiden UB VLF 17 (Ant. I–XII, XVII–XX)",
-      "originalAlignmentReference": "#latin-book05-num49",
-      "originalManuscriptReference": "#LeidenUBVLF17",
-      "displayAnchor": "ms-annotation-antiquities-5-latin-book05-num49-LeidenUBVLF17-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 5, Niese §§49–57",
       "manuscriptStatus": "verified"
     },
     {
@@ -2644,25 +2062,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book05-num182",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 5,
-      "originalId": null,
-      "notation": "[¤124r](¦1)dux",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-05.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book05-num182",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-5-latin-book05-num182-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 5, Niese §§182–184",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book05-num210",
       "siglum": "BernBBMs118",
       "sourceBook": 5,
@@ -2697,25 +2096,6 @@
         "ellipsis-role-unresolved"
       ],
       "publicCitation": "Book 5, Niese §§261–262",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book05-num263",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 5,
-      "originalId": null,
-      "notation": "[¤130r](¦1)uide",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-05.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book05-num263",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-5-latin-book05-num263-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 5, Niese §§263–266",
       "manuscriptStatus": "verified"
     },
     {
@@ -2796,25 +2176,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book05-num348",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 5,
-      "originalId": null,
-      "notation": "[¤136r](£1)alias eleazar (¦1)alias eleazar",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-05.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book05-num348",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-5-latin-book05-num348-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 5, Niese §§348–351",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book06-num1",
       "siglum": "CopenhagenGKS1572o",
       "sourceBook": 6,
@@ -2872,25 +2233,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book06-num19",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 6,
-      "originalId": null,
-      "notation": "[¤139v](£1)alias arresto (¦1)ornatum uerbi",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-06.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book06-num19",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-6-latin-book06-num19-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 6, Niese §§19–22",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "ChartresBMMs29",
       "siglum": "CopenhagenGKS1572o",
       "sourceBook": 6,
@@ -2926,25 +2268,6 @@
       ],
       "publicCitation": "Book 6, Niese §§245–246",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book06-num58",
-      "siglum": "BernBBMs118",
-      "sourceBook": 6,
-      "originalId": null,
-      "notation": "[¤118r] (¬1 gothique?) aliter benner",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-06.xml",
-      "witnessLabel": "Bern BB Ms. 118 (Ant. I–XII)",
-      "originalAlignmentReference": "#latin-book06-num58",
-      "originalManuscriptReference": "#BernBBMs118",
-      "displayAnchor": "ms-annotation-antiquities-6-latin-book06-num58-BernBBMs118-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 6, Niese §§58–59",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "antiquities",
@@ -3157,25 +2480,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book06-num226",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 6,
-      "originalId": null,
-      "notation": "[¤156r](¦1)hic ponis crederet. Sed ut ad se respiceret et securus esset",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-06.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book06-num226",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-6-latin-book06-num226-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 6, Niese §§226–228",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book06-num229",
       "siglum": "MilanBACimelioSP",
       "sourceBook": 6,
@@ -3230,25 +2534,6 @@
       ],
       "publicCitation": "Book 6, Niese §§259–261",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book06-num262",
-      "siglum": "ColognyBodmer98",
-      "sourceBook": 6,
-      "originalId": null,
-      "notation": "[¤159r](£1)et humiles nec fuerunt abusi(¦1)no [¤159v](¦1)ta",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-06.xml",
-      "witnessLabel": "Cologny Bodmer 98 (Ant. I–VI)",
-      "originalAlignmentReference": "#latin-book06-num262",
-      "originalManuscriptReference": "#ColognyBodmer98",
-      "displayAnchor": "ms-annotation-antiquities-6-latin-book06-num262-ColognyBodmer98-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 6, Niese §§262–268",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "antiquities",
@@ -4397,7 +3682,6 @@
       "originalManuscriptReference": "#BernBBMs118",
       "displayAnchor": "ms-annotation-antiquities-8-unknown-BernBBMs118-1",
       "reasons": [
-        "unknown-code:¬",
         "passage-reference-unresolved"
       ],
       "publicCitation": "Textual citation not verified",
@@ -5876,7 +5160,6 @@
       "originalManuscriptReference": "#BernBBMs50",
       "displayAnchor": "ms-annotation-antiquities-10-latin-book10-num203-BernBBMs50-1",
       "reasons": [
-        "unknown-code:¬",
         "ellipsis-role-unresolved"
       ],
       "publicCitation": "Book 10, Niese §§203–210",
@@ -5922,44 +5205,6 @@
     },
     {
       "work": "antiquities",
-      "alignmentUnitId": "latin-book11-num19",
-      "siglum": "LeidenUBVLF17",
-      "sourceBook": 11,
-      "originalId": null,
-      "notation": "[108v](¦1)nota nomina *errencium ex captiuitate(#frontis)(¢2)moabitide",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-11.xml",
-      "witnessLabel": "Leiden UB VLF 17 (Ant. I–XII, XVII–XX)",
-      "originalAlignmentReference": "#latin-book11-num19",
-      "originalManuscriptReference": "#LeidenUBVLF17",
-      "displayAnchor": "ms-annotation-antiquities-11-latin-book11-num19-LeidenUBVLF17-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 11, Niese §§19–25",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book11-num33",
-      "siglum": "BernBBMs50",
-      "sourceBook": 11,
-      "originalId": null,
-      "notation": "[¤113r] (¬1) gressione sequeret",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-11.xml",
-      "witnessLabel": "Bern BB Ms. 50 (Ant. I–XII & Guerre)",
-      "originalAlignmentReference": "#latin-book11-num33",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-antiquities-11-latin-book11-num33-BernBBMs50-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 11, Niese §§33–37",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
       "alignmentUnitId": "latin-book11-num195",
       "siglum": "latin-book11-num195",
       "sourceBook": 11,
@@ -5976,44 +5221,6 @@
       ],
       "publicCitation": "Book 11, Niese §§195–204",
       "manuscriptStatus": "unresolved"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book11-num260",
-      "siglum": "LeidenUBVLF17",
-      "sourceBook": 11,
-      "originalId": null,
-      "notation": "[¤114v](#obelus)(¢1)regine [¤115r](¦1)aman digna morte perimitur",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-11.xml",
-      "witnessLabel": "Leiden UB VLF 17 (Ant. I–XII, XVII–XX)",
-      "originalAlignmentReference": "#latin-book11-num260",
-      "originalManuscriptReference": "#LeidenUBVLF17",
-      "displayAnchor": "ms-annotation-antiquities-11-latin-book11-num260-LeidenUBVLF17-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 11, Niese §§260–268",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "antiquities",
-      "alignmentUnitId": "latin-book12-num426",
-      "siglum": "LeidenUBVLF17",
-      "sourceBook": 12,
-      "originalId": null,
-      "notation": "[¤126v](¦1)be hoc loco sed minus IIII libri; Et de iosepho ualentinensi et romanensi",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/antiquities/Latin/book-12.xml",
-      "witnessLabel": "Leiden UB VLF 17 (Ant. I–XII, XVII–XX)",
-      "originalAlignmentReference": "#latin-book12-num426",
-      "originalManuscriptReference": "#LeidenUBVLF17",
-      "displayAnchor": "ms-annotation-antiquities-12-latin-book12-num426-LeidenUBVLF17-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 12, Niese §§426–434",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "antiquities",
@@ -6264,25 +5471,6 @@
     },
     {
       "work": "bellum",
-      "alignmentUnitId": "latin-bellum1-num64",
-      "siglum": "ColognyBodmer99",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[¤5r] (¬1) sebastȩ ciuitas ab Herode condita",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-01.xml",
-      "witnessLabel": "Cologny Bodmer 99",
-      "originalAlignmentReference": "#latin-bellum1-num64",
-      "originalManuscriptReference": "#ColognyBodmer99",
-      "displayAnchor": "ms-annotation-bellum-1-latin-bellum1-num64-ColognyBodmer99-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§64–66",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
       "alignmentUnitId": "latin-bellum1-num67",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 1,
@@ -6299,25 +5487,6 @@
       ],
       "publicCitation": "Book 1, Niese §§67–69",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum1-num72",
-      "siglum": "ColognyBodmer99",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[¤6r] (¬1) e cui regnum (@2) cui regnum (¬3) nota praedictam Antigoni monte (#4 quotation marks)",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-01.xml",
-      "witnessLabel": "Cologny Bodmer 99",
-      "originalAlignmentReference": "#latin-bellum1-num72",
-      "originalManuscriptReference": "#ColognyBodmer99",
-      "displayAnchor": "ms-annotation-bellum-1-latin-bellum1-num72-ColognyBodmer99-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§72–74",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "bellum",
@@ -6504,7 +5673,6 @@
       "originalManuscriptReference": "#RomeBAVPallat1992",
       "displayAnchor": "ms-annotation-bellum-1-latin-bellum1-num138-RomeBAVPallat1992-1",
       "reasons": [
-        "unknown-code:¬",
         "manuscript-shelfmark-conflict"
       ],
       "publicCitation": "Book 1, Niese §§138–140",
@@ -6832,25 +6000,6 @@
       ],
       "publicCitation": "Book 1, Niese §§265–267",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum1-num268",
-      "siglum": "ColognyBodmer99",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[¤20r] (@1) antigonus eficitur rex et auriculas hyrcani tri(pli)cat* dentibus et faselum capite fracto interim (¬2) e exolueret (#3 cryphia) (#4 quotation marks)",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-01.xml",
-      "witnessLabel": "Cologny Bodmer 99",
-      "originalAlignmentReference": "#latin-bellum1-num268",
-      "originalManuscriptReference": "#ColognyBodmer99",
-      "displayAnchor": "ms-annotation-bellum-1-latin-bellum1-num268-ColognyBodmer99-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§268–270",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "bellum",
@@ -7194,25 +6343,6 @@
       ],
       "publicCitation": "Book 1, Niese §§361–363",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum1-num364",
-      "siglum": "ColognyBodmer99",
-      "sourceBook": 1,
-      "originalId": null,
-      "notation": "[¤26r] (¬1 avec le signe) e positus (#2 trigon)",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-01.xml",
-      "witnessLabel": "Cologny Bodmer 99",
-      "originalAlignmentReference": "#latin-bellum1-num364",
-      "originalManuscriptReference": "#ColognyBodmer99",
-      "displayAnchor": "ms-annotation-bellum-1-latin-bellum1-num364-ColognyBodmer99-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 1, Niese §§364–365",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "bellum",
@@ -8263,25 +7393,6 @@
     {
       "work": "bellum",
       "alignmentUnitId": "latin-bellum2-num114",
-      "siglum": "MonteCassino123",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[103] (#2 nota N trait) (¬3) ultibus labebat (@4) nota",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Monte Cassino Casin. 123",
-      "originalAlignmentReference": "#latin-bellum2-num114",
-      "originalManuscriptReference": "#MonteCassino123",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num114-MonteCassino123-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§114–116",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num114",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 2,
       "originalId": null,
@@ -8319,63 +7430,6 @@
     },
     {
       "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num119",
-      "siglum": "BernBBMs183",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤43r] (@1) tria generea phylosophy apud iudȩos (¦3) ESSAENI (@4) essȩnorum obseruatio",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum2-num119",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num119-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§119–121",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num119",
-      "siglum": "ColognyBodmer99",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤53v] (¬1) nota de soceis Judeorum",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Cologny Bodmer 99",
-      "originalAlignmentReference": "#latin-bellum2-num119",
-      "originalManuscriptReference": "#ColognyBodmer99",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num119-ColognyBodmer99-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§119–121",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num134",
-      "siglum": "BernBBMs183",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤43v] (@1) Religio essȩnorum (¦2) CENA ION*",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum2-num134",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num134-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§134–136",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
       "alignmentUnitId": "latin-bellum2-num134",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 2,
@@ -8395,44 +7449,6 @@
     },
     {
       "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num137",
-      "siglum": "BernBBMs183",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤44r] (@1) Et neque propria sponte noceere cuiquam (¦2) TOIRATO TYCIN",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum2-num137",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num137-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§137–142",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num145",
-      "siglum": "BernBBMs183",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[44r] (@3) atque iustissimi (@4) reuerentia essenorum ergo mosen (@5) mira religio (¦6) CHA* ILLI",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum2-num145",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num145-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§145–149",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
       "alignmentUnitId": "latin-bellum2-num145",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 2,
@@ -8449,25 +7465,6 @@
       ],
       "publicCitation": "Book 2, Niese §§145–149",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num150",
-      "siglum": "BernBBMs183",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤44v] (@1) Crudelitas impia romanorum in essenis (@2) Opinio essȩnorum de statu animarum (¦3) EROES",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum2-num150",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num150-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§150–153",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "bellum",
@@ -8586,25 +7583,6 @@
     {
       "work": "bellum",
       "alignmentUnitId": "latin-bellum2-num178",
-      "siglum": "BernBBMs183",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤46r] (@1) Tiberius XXII D III (@2) gaii timeritas (¦3) UEL CRUENTAUIT (@4) gaius statuas in templo poni iubet (@5) ptholomaida",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum2-num178",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num178-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¦"
-      ],
-      "publicCitation": "Book 2, Niese §§178–180",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num178",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 2,
       "originalId": null,
@@ -8616,7 +7594,6 @@
       "originalManuscriptReference": "#RomeBAVPallat1992",
       "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num178-RomeBAVPallat1992-1",
       "reasons": [
-        "unknown-code:¬",
         "manuscript-shelfmark-conflict"
       ],
       "publicCitation": "Book 2, Niese §§178–180",
@@ -8712,7 +7689,6 @@
       "originalManuscriptReference": "#RomeBAVPallat1992",
       "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num204-RomeBAVPallat1992-1",
       "reasons": [
-        "unknown-code:¬",
         "manuscript-shelfmark-conflict"
       ],
       "publicCitation": "Book 2, Niese §§204–205",
@@ -8987,25 +7963,6 @@
     {
       "work": "bellum",
       "alignmentUnitId": "latin-bellum2-num336",
-      "siglum": "ColognyBodmer99",
-      "sourceBook": 2,
-      "originalId": null,
-      "notation": "[¤66r] (@1) ut quanta ex equitum prolixiu/i in laude romanorum (@2) allocutio agrippe ad iudeos (¬3) oratio pulcerima rege agrippe",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-02.xml",
-      "witnessLabel": "Cologny Bodmer 99",
-      "originalAlignmentReference": "#latin-bellum2-num336",
-      "originalManuscriptReference": "#ColognyBodmer99",
-      "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num336-ColognyBodmer99-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 2, Niese §§336–341",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum2-num336",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 2,
       "originalId": null,
@@ -9188,7 +8145,6 @@
       "originalManuscriptReference": "#RomeBAVPallat1992",
       "displayAnchor": "ms-annotation-bellum-2-latin-bellum2-num466-RomeBAVPallat1992-1",
       "reasons": [
-        "unknown-code:¬",
         "manuscript-shelfmark-conflict"
       ],
       "publicCitation": "Book 2, Niese §§466–468",
@@ -9725,25 +8681,6 @@
       ],
       "publicCitation": "Book 3, Niese §§59–63",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum3-num70",
-      "siglum": "ColognyBodmer99",
-      "sourceBook": 3,
-      "originalId": null,
-      "notation": "[¤91v] (¬1) descritio castrorum romanorum",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-03.xml",
-      "witnessLabel": "Cologny Bodmer 99",
-      "originalAlignmentReference": "#latin-bellum3-num70",
-      "originalManuscriptReference": "#ColognyBodmer99",
-      "displayAnchor": "ms-annotation-bellum-3-latin-bellum3-num70-ColognyBodmer99-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 3, Niese §§70–78",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "bellum",
@@ -10425,7 +9362,6 @@
       "originalManuscriptReference": "#RomeBAVPallat1992",
       "displayAnchor": "ms-annotation-bellum-4-latin-bellum4-num97-RomeBAVPallat1992-1",
       "reasons": [
-        "unknown-code:¬",
         "manuscript-shelfmark-conflict"
       ],
       "publicCitation": "Book 4, Niese §§97–105",
@@ -10871,25 +9807,6 @@
     {
       "work": "bellum",
       "alignmentUnitId": "latin-bellum4-num476",
-      "siglum": "ColognyBodmer99",
-      "sourceBook": 4,
-      "originalId": null,
-      "notation": "[¤136v] (¬1) de pena sodomitis illata (#2 lettre f seule, signe non répertorié)",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-04.xml",
-      "witnessLabel": "Cologny Bodmer 99",
-      "originalAlignmentReference": "#latin-bellum4-num476",
-      "originalManuscriptReference": "#ColognyBodmer99",
-      "displayAnchor": "ms-annotation-bellum-4-latin-bellum4-num476-ColognyBodmer99-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 4, Niese §§476–485",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum4-num476",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 4,
       "originalId": null,
@@ -11271,25 +10188,6 @@
     {
       "work": "bellum",
       "alignmentUnitId": "latin-bellum5-num71",
-      "siglum": "BernBBMs183",
-      "sourceBook": 5,
-      "originalId": null,
-      "notation": "[¤113r] (¢1) titus affuit (¢2) de fortitudine belli [¤113v] (#1 nota N) (¬2) deseruissent totis uiribus in iudȩos utebantur, et semel addescensum (¬3) obsequio, neque in iudia detraente in*",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-05.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum5-num71",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-5-latin-bellum5-num71-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 5, Niese §§71–84",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum5-num71",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 5,
       "originalId": null,
@@ -11305,25 +10203,6 @@
       ],
       "publicCitation": "Book 5, Niese §§71–84",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum5-num98",
-      "siglum": "BernBBMs183",
-      "sourceBook": 5,
-      "originalId": null,
-      "notation": "[113v] (¢4) fallacia iosyppi cum dicit oppinantur (¬5) nota de armis sub ueste",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-05.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum5-num98",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-5-latin-bellum5-num98-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 5, Niese §§98–105",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "bellum",
@@ -11860,25 +10739,6 @@
     },
     {
       "work": "bellum",
-      "alignmentUnitId": "latin-bellum5-num519",
-      "siglum": "BernBBMs183",
-      "sourceBook": 5,
-      "originalId": null,
-      "notation": "[¤129r] (¬1 pas carolingien, plus récent) factum illud iesu christi ab eis quodam crucifixi potius erat",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-05.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum5-num519",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-5-latin-bellum5-num519-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 5, Niese §§519–526",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
       "alignmentUnitId": "latin-bellum5-num527",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 5,
@@ -12066,25 +10926,6 @@
       ],
       "publicCitation": "Book 6, Niese §§169–176",
       "manuscriptStatus": "shelfmark-conflict"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum6-num177",
-      "siglum": "BernBBMs183",
-      "sourceBook": 6,
-      "originalId": null,
-      "notation": "[137r] (@1) durum bellu (@2) nota romani cadunt [¤137v] (#1 require) (#2 require) (¬3) longus (@4) de fame et siti",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-06.xml",
-      "witnessLabel": "Bern BB Ms. 183",
-      "originalAlignmentReference": "#latin-bellum6-num177",
-      "originalManuscriptReference": "#BernBBMs183",
-      "displayAnchor": "ms-annotation-bellum-6-latin-bellum6-num177-BernBBMs183-1",
-      "reasons": [
-        "unknown-code:¬"
-      ],
-      "publicCitation": "Book 6, Niese §§177–185",
-      "manuscriptStatus": "verified"
     },
     {
       "work": "bellum",
@@ -12412,25 +11253,6 @@
     {
       "work": "bellum",
       "alignmentUnitId": "latin-bellum7-num5",
-      "siglum": "BernBBMs50",
-      "sourceBook": 7,
-      "originalId": null,
-      "notation": "[¤214v] (³1 dans une main gothique) liber paris (£2) deus meus",
-      "occurrence": 1,
-      "sourceFile": "assets/xml/bellum/Latin/book-07.xml",
-      "witnessLabel": "Bern BB Ms. 50",
-      "originalAlignmentReference": "#latin-bellum7-num5",
-      "originalManuscriptReference": "#BernBBMs50",
-      "displayAnchor": "ms-annotation-bellum-7-latin-bellum7-num5-BernBBMs50-1",
-      "reasons": [
-        "unparsed-notation"
-      ],
-      "publicCitation": "Book 7, Niese §§5–12",
-      "manuscriptStatus": "verified"
-    },
-    {
-      "work": "bellum",
-      "alignmentUnitId": "latin-bellum7-num5",
       "siglum": "RomeBAVPallat1992",
       "sourceBook": 7,
       "originalId": null,
@@ -12752,7 +11574,7 @@
       "manuscriptStatus": "verified"
     }
   ],
-  "sourceConvention": "Josephus editorial instructions, including the editor’s counting-system clarification supplied 26 October 2026",
+  "sourceConvention": "Josephus editorial instructions: counting clarification of 26 October and exact historical nine-hand sequence confirmed by the editor on 27 October 2026",
   "sourceXMLModified": false,
   "canonicalAnnotationIdsEncoded": 0,
   "displayAnchorsAreCanonicalIds": false

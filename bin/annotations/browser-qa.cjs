@@ -114,6 +114,10 @@ async function main() {
       ['antiquities-hands', 'antiquities', 'book=1&unit=27'],
       ['antiquities-multiple-folios', 'antiquities', 'book=1&unit=37'],
       ['antiquities-hand3', 'antiquities', 'book=1&unit=67'],
+      ['antiquities-hand5', 'antiquities', 'book=1&unit=34'],
+      ['antiquities-hand6', 'antiquities', 'book=2&unit=120'],
+      ['antiquities-hand8', 'antiquities', 'book=3&unit=153'],
+      ['bellum-hand8', 'bellum', 'book=7&unit=5'],
       ['bellum-untranscribable', 'bellum', 'book=1&unit=7'],
       ['bellum-symbolic', 'bellum', 'book=1&unit=9'],
       ['bellum-abbreviated', 'bellum', 'book=1&unit=31']
@@ -123,9 +127,19 @@ async function main() {
       await screenshot(name + '-before.png', '#reader-annotations');
       await open('final', work, query);
       await page.locator('#annotations-header button').click();
-      const focusSelector = name === 'antiquities-hand3' ? '.annotation-hand' : name === 'bellum-abbreviated' ? '.annotation-status' : null;
-      const focusText = name === 'antiquities-hand3' ? 'Hand 3' : 'Transcription abbreviated';
+      const hand = name.match(/-hand(\d)$/)?.[1];
+      const focusSelector = hand ? '.annotation-hand' : name === 'bellum-abbreviated' ? '.annotation-status' : null;
+      const focusText = hand ? `Hand ${hand}` : 'Transcription abbreviated';
       if (focusSelector) await page.locator(focusSelector).filter({hasText: focusText}).first().evaluate(node => node.closest('article').scrollIntoView({block: 'center'}));
+      if (hand && Number(hand) > 3) {
+        assert((await page.locator('.annotation-hand').allTextContents()).includes(`Hand ${hand}`));
+        report.interactions.push(`${work} ${query}: confirmed Hand ${hand} label`);
+      }
+      if (name === 'antiquities-hand8') {
+        const parts = await page.locator('[data-source-siglum="ColognyBodmer98"] .annotation-transcription').allTextContents();
+        assert.deepEqual(parts, ['secumdum', 'de uestibus sacerdotum', 'tertium', 'yo']);
+        report.interactions.push('Bodmer 98 Hand 8 annotation is separate from tertium in source order');
+      }
       await screenshot(name + '-after.png', '#reader-annotations');
       if (name === 'antiquities-hands') {
         await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));

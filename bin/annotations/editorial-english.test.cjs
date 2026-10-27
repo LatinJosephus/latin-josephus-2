@@ -49,13 +49,14 @@ test('whole French editorial remarks and partial mixed remarks do not fabricate 
   assert.equal(api.translateEditorialDescription('XIII-XIV s.?'), '13th–14th century?');
   assert.equal(api.translateEditorialDescription('visage?'), 'face?');
 });
-test('unknown notation remains unresolved while its French description is translated', () => {
+test('confirmed legacy hand codes retain translated descriptions and unresolved literal notation', () => {
   const r = make('[1r] (¬1 pas médiévale) Menandes [#croix)');
   const parsed = api.interpretManuscriptAnnotation(r);
   const visible = mainDisplay(api.renderAnnotation(r).html);
   assert(visible.includes('not medieval')); assert(visible.includes('[#cross)'));
-  assert(visible.includes('¬1')); assert(visible.includes('Menandes'));
-  assert(parsed.issues.includes('unknown-code:¬')); assert.equal(parsed.parts[0].hand, null);
+  assert(visible.includes('Hand 5')); assert(visible.includes('Menandes'));
+  assert(!parsed.issues.includes('unknown-code:¬')); assert.equal(parsed.parts[0].hand, 5);
+  assert(parsed.issues.includes('literal-or-unresolved-code'));
   assert.equal(parsed.originalNotation, r.notation);
 });
 test('French mode retains the original editorial descriptions and comments', () => {
@@ -81,7 +82,7 @@ test('the complete corpus retains every original character and all recorded-text
     assert.equal(JSON.stringify(r), before);
     assert.equal(parsed.originalNotation, r.notation);
   }
-  assert.equal(changedDescriptions, 425); assert.equal(editorialSpans, 94);
+  assert.equal(changedDescriptions, 426); assert.equal(editorialSpans, 86);
 });
 test('French institutional designations have English display names and retained originals', () => {
   const ms = api.resolveManuscript('ChartresBMMs29');

@@ -37,6 +37,8 @@ Point 4 of that historical message says “Disons §” while giving an example 
 
 The recovered key does **not** explain every observed pattern. See [the notation inventory](NOTATION-INVENTORY.md) and the record-level exception register in [notation-qa.json](notation-qa.json).
 
+Follow-up of 27 October: the editor confirmed the exact historical hand sequence through Hand 9. This resolves the roles and numbers of the observed `¬`, `¦` and `³` prefixes; bracketed `¤` retains its distinct folio role. The initial uncertainty is superseded by this explicit confirmation, not by an inferred numbering scheme. See [the historical hand-key report](HISTORICAL-HAND-KEY.md) for the evidence, counts and source examples. Other malformed notation, ambiguous ellipses and source-association defects remain exceptions.
+
 There are 21 manuscript reading records with unverified passage associations: 19 in Antiquities and two in Bellum. Defects include missing first-reading references, manuscript identifiers in passage-reference positions, and a cross-book reference whose relationship to the source-book incipit is unresolved. These records remain visible at their source-book level under “Textual citation not verified”. No reference is repaired from an incipit, neighbouring entry or apparent numerical similarity. Their original association values remain available in scholarly details and in the exception register.
 
 Ten reading records have unresolved manuscript references, including absent references, an external alignment reference in manuscript position, and `#latin-book11-num195` used for a manuscript reading. They are retained, not reassigned to a likely witness.

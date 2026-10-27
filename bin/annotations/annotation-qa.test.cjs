@@ -65,10 +65,11 @@ test('first and subsequent folio references are distinct without creating annota
   assert.equal(parse('[¤1r]').parts.length, 0);
   assert.equal(parse('[122v]').parts.length, 0);
 });
-for (const [symbol, hand] of [['@', 1], ['£', 2], ['¢', 3]]) {
+for (const [symbol, hand] of [['@', 1], ['£', 2], ['¢', 3], ['¤', 4], ['¬', 5], ['¦', 6], ['²', 7], ['³', 8], ['¼', 9]]) {
   test(`hand ${hand} comes from ${symbol}, never the annotation number`, () => {
     const part = parse(`[1r] (${symbol}4) recorded words`).parts[0];
     assert.equal(part.hand, hand); assert.equal(part.sourceNumber, '4');
+    assert.equal(part.handCode, symbol); assert.equal(part.handVerificationStatus, 'verified');
   });
 }
 test('multiple hands and folio transitions preserve independent source order', () => {
@@ -104,7 +105,7 @@ test('other ellipses, including folio uncertainty and medial ellipses, are not i
   assert.equal(parse('[¤…]').parts.length, 0);
 });
 test('unknown notation, malformed delimiters and literal symbols stay visible', () => {
-  for (const text of ['[1r] (¬1) de prima adam', '[1r] (¦2) supplied words', '[1r] (@£) text', '[10v)(#croix)(¢1)erant prompti']) {
+  for (const text of ['[1r] (+) supplied words', '[1r] (?) supplied words', '[1r] (@£) text', '[10v)(#croix)(¢1)erant prompti']) {
     const r = parse(text); assert(r.issues.length); assert.equal(r.originalNotation, text);
     assert(api.renderAnnotation(record(text)).html.includes('annotation-status'));
   }
@@ -121,7 +122,64 @@ test('full corpus records remain byte-for-byte strings and objects without mutat
     parts += parsed.parts.length;
     for (const p of parsed.parts) assert(r.notation.includes(p.text) || p.text === '', r.notation);
   }
-  assert.equal(inventory.records.length, 2958); assert.equal(parts, 6201);
+  assert.equal(inventory.records.length, 2958); assert.equal(parts, 6202);
+});
+
+test('the confirmed Hand 4 prefix and first-folio marker have independent roles', () => {
+  const r = parse('[¤1r] (¤2) recorded words [1r] (@3) other words');
+  assert.deepEqual(r.parts.map(p => p.hand), [4, 1]);
+  assert.deepEqual(r.parts.map(p => p.folio.firstOccurrence), [true, false]);
+  assert.deepEqual(r.parts.map(p => p.folio.reference), ['1r', '1r']);
+  assert.equal(parse('[¤1r]').parts.length, 0);
+  const literal = parse('[1r] (@1) pretium ¤ et ² in textu').parts[0];
+  assert.equal(literal.text, 'pretium ¤ et ² in textu'); assert.equal(literal.hand, 1);
+  assert(literal.issues.includes('literal-or-unresolved-code'));
+});
+
+test('all observed additional hand prefixes resolve without inferring a hand from folio or category', () => {
+  const counts = {'¬': 0, '¦': 0, '³': 0};
+  for (const r of inventory.records) {
+    for (const p of api.interpretManuscriptAnnotation(r).parts) {
+      if (Object.hasOwn(counts, p.handCode)) {
+        counts[p.handCode]++; assert.equal(p.hand, {'¬': 5, '¦': 6, '³': 8}[p.handCode]);
+        assert(!p.issues.some(issue => issue.startsWith('unknown-code:')));
+      }
+    }
+  }
+  assert.deepEqual(counts, {'¬': 46, '¦': 36, '³': 2});
+  assert.equal(parse('[¤1r] (#1)').parts[0].hand, null);
+  assert.equal(parse('[¤1r] (§)').parts[0].hand, null);
+  assert.equal(inventory.records.filter(r => /\([¤²¼]/u.test(r.notation)).length, 0);
+});
+
+test('source Hand 8 starts its own annotation without changing the earlier component identity', () => {
+  const r = inventory.records.find(r => r.notation.includes('tertium (³1)yo'));
+  const parsed = api.interpretManuscriptAnnotation(r);
+  assert.deepEqual(parsed.parts.map(p => p.hand), [1, 1, 1, 8]);
+  assert.deepEqual(parsed.parts.map(p => p.text), ['secumdum', 'de uestibus sacerdotum', 'tertium', 'yo']);
+  assert.equal(parsed.parts.at(-1).offset, r.notation.indexOf('(³1)'));
+  assert.equal(parsed.parts.at(-1).folio.reference, '72v');
+  assert.equal(parsed.originalNotation, r.notation);
+});
+
+test('spaced source hand numbering is preserved without turning a symbolic description into a number', () => {
+  const r = inventory.records.find(r => r.notation.includes('(¦ 1)'));
+  const p = api.interpretManuscriptAnnotation(r).parts.find(p => p.handCode === '¦');
+  assert.equal(p.hand, 6); assert.equal(p.sourceNumber, '1'); assert.equal(p.description, '');
+  const symbolic = parse('[1r] (# 2 mots difficillement lisible, peut-être id*bos)').parts[0];
+  assert.equal(symbolic.sourceNumber, null);
+  assert.equal(symbolic.description, '2 mots difficillement lisible, peut-être id*bos');
+});
+
+test('additional hands and inability to transcribe remain independent', () => {
+  const p = parse('[¤1r] (¦1) (§)').parts[0];
+  assert.equal(p.hand, 6); assert.equal(p.category, 'untranscribable');
+  assert.deepEqual(p.codes, ['¦', '§']);
+  const html = api.renderAnnotation(record('[¤1r] (³1 dans une main gothique) liber paris')).html;
+  assert(html.includes('Hand 8')); assert(html.includes('³ = Hand 8'));
+  assert(html.includes('liber paris')); assert(!html.includes('Hand 4</span>'));
+  assert(api.legend().includes('¤ = Hand 4'));
+  assert(api.legend('fr').includes('¦ = Main 6'));
 });
 test('the folio-only source record is retained without a numbered article', () => {
   const r = inventory.records.find(r => r.notation === '[122v]');

@@ -1,8 +1,8 @@
 # Automated QA and visual verification
 
-26 October 2026. **PASS**, with the source and environment limitations below.
+Updated 27 October 2026. **PASS**, with the source and environment limitations below.
 
-English editorial-note follow-up: **34 annotation tests and five citation/preservation tests pass**, including ten new translation tests. They audit all 216 source-description variants and preserve every recorded-text segment across all 2,958 readings. The existing corpus, DEH and search asset guards are rerun. The 565 search tests below are the previous certification of unchanged search code. See [ENGLISH-EDITORIAL-NOTES.md](ENGLISH-EDITORIAL-NOTES.md).
+Current follow-up: **45 annotation/citation/translation tests and five Python citation/preservation tests pass**. Eleven additional tests verify the [editor-confirmed historical nine-hand key](HISTORICAL-HAND-KEY.md), context-sensitive `¤`, actual additional hand prefixes and the newly separated Hand 8 component. The ten translation tests audit all 216 source-description variants and preserve every recorded-text segment across all 2,958 readings. The existing corpus, DEH and search asset guards are rerun. The 565 search tests below are the previous certification of unchanged search code. See [ENGLISH-EDITORIAL-NOTES.md](ENGLISH-EDITORIAL-NOTES.md).
 
 ## Preservation and interpretation
 
@@ -12,9 +12,9 @@ English editorial-note follow-up: **34 annotation tests and five citation/preser
 | Antiquities / Bellum records | 1,692 / 1,266 |
 | Verified citation records | 2,937 |
 | Documented original association exceptions | 21; source references unchanged |
-| Presentation components | 6,201; 114 unresolved, explicitly flagged |
+| Presentation components | 6,202; 31 unresolved, explicitly flagged |
 | Folio-only record | One, retained without creating a numbered annotation |
-| Records without notation-parser issues | 2,731 |
+| Records without notation-parser issues | 2,801 |
 | Original annotation XML IDs | None encoded; no new canonical IDs created |
 | Canonical XML | All 166 production files match development Git bytes and the existing authority guard |
 | Source corpus, concordances, Niese registries, DEH parallel files | Preserved |
@@ -23,7 +23,7 @@ The count of components is not a certified total of manuscript annotations. Unre
 
 ## Automated tests
 
-- **24 annotation/citation/display tests passed.** These cover both work namespaces, the required Antiquities §§27–33 example, internal and final boundaries, actual non-contiguous Book XI coverage, source identity, all three hands, original annotation numbers, folio transitions, independent symbolic/untranscribable categories, supported abbreviation, unresolved ellipses, malformed notation, literal Unicode characters, source immutability, stable anchors, HTML escaping, native details, manuscript conflicts and the unconfigured DEH notation adapter.
+- **35 annotation/citation/display tests and ten translation tests passed.** These cover both work namespaces, the required Antiquities §§27–33 example, internal and final boundaries, actual non-contiguous Book XI coverage, source identity, all nine confirmed hand codes, original annotation numbers, folio transitions, independent symbolic/untranscribable categories, supported abbreviation, unresolved ellipses, malformed notation, literal Unicode characters, source immutability, stable anchors, HTML escaping, native details, manuscript conflicts and the unconfigured DEH notation adapter. Hands 4, 7 and 9 are key fixtures, not claims of observed source prefixes.
 - **Five Python tests passed.** Independent small XML fixtures exercise internal milestones, final units whose IDs deliberately have misleading numeric suffixes, lacunae, certified fragment precedence, interpolation exclusion and apparatus-number exclusion. A further corpus-level test in that suite compares protected files with the development Git authority, allowing the original checkout's line-ending representation only for unmodified non-corpus files.
 - **565 existing search tests passed**, with no failures, cancellations or skips. This includes existing publication rejection tests, query and concordance behaviour, metadata, citations and saved links. The full suite ran sequentially; its publication test rehashes substantial temporary source and index copies. [Complete output](qa/search-regression.txt).
 - The existing corpus guard passed, parsing all **166 XML files**, checking **38 publication authorities**, and passing **34 negative preservation tests** in temporary copies. It does not mutate the repository sources.
@@ -31,7 +31,7 @@ The count of components is not a certified total of manuscript annotations. Unre
 - Search asset checks passed for **260 assets, 68 indexed books, 25,009 sections and 1,347,222 tokens**. The generated-site publication check also passed; exact frozen publication byte representations were restored only in generated output.
 - Generated citation lookup and annotation inventory passed the deterministic `--check` freshness test. Source SHA-256 provenance matched.
 
-The original redesign certification comprises **594 Node/Python tests**, plus the existing corpus/integrity guards and browser checks. The English-editorial follow-up adds ten passing tests; current source-level checks rerun all 34 annotation tests and five citation/preservation tests, while the 565-test certification of unchanged search code is retained. [Repeatable check summary](qa/checks.json).
+The original redesign certification comprises **594 Node/Python tests**, plus the existing corpus/integrity guards and browser checks. The English-editorial and historical-key follow-ups add 21 tests. Current source-level checks rerun all 45 annotation/citation/translation tests and five Python tests, while the 565-test certification of unchanged search code is retained. These are 615 tests across those certification runs; the search suite is not claimed as rerun for this follow-up. [Repeatable check summary](qa/checks.json).
 
 ## Actual reader and navigation
 
@@ -44,9 +44,9 @@ The original redesign certification comprises **594 Node/Python tests**, plus th
 
 ## Visual checks
 
-Fourteen screenshots cover six before/after examples plus desktop dark mode and mobile dark mode. [Screenshot index](SCREENSHOTS.md).
+The current browser run produced 22 screenshots covering ten before/after examples plus desktop dark mode and mobile dark mode. Two additional English-editorial images remain available. [Screenshot index](SCREENSHOTS.md).
 
-Images were inspected after rendering. They include actual Hand 1/Hand 3 examples, several annotations on the same folio side, symbolic and untranscribable entries, and the supported Chartres abbreviated transcription. Hand 2 and all three hand codes are exercised by source-grounded automated and actual-UI tests. Panel spacing and focus offsets were corrected during visual review. Theme transitions were disabled only during screenshot capture, so captured colours represent the settled interface. Mobile panel overflow was checked at 390 pixels.
+Images were inspected after rendering. They include actual Hands 1, 2, 3, 5, 6 and 8, the newly separated Bodmer component, several annotations on the same folio side, symbolic and untranscribable entries, and the supported Chartres abbreviated transcription. Hands 4, 7 and 9 are absent from the source readings and are not fabricated for screenshots. Panel spacing and focus offsets were corrected during the initial visual review. Theme transitions were disabled only during screenshot capture, so captured colours represent the settled interface. Mobile panel overflow was checked at 390 pixels.
 
 ## Local build and limits
 
