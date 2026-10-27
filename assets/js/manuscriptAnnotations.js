@@ -237,16 +237,18 @@
     const l = t(lang);
     const text = lang === 'fr'
       ? ['Les références textuelles couvrent l’unité d’alignement entière ; elles ne situent pas l’annotation à un mot précis.',
+        'La clé ci-dessous s’applique uniquement à la notation éditoriale originale présentée dans les Détails scientifiques.',
         'Les crochets indiquent le folio. ¤ marque uniquement la première occurrence enregistrée de chaque côté : [¤1r] et [1r] désignent tous deux le fol. 1r.',
         '@ = Main 1 ; £ = Main 2 ; ¢ = Main 3. Ce classement est propre à chaque manuscrit ; il n’identifie ni ne date un scribe. Les nombres dans (@2), par exemple, numérotent les annotations ; ils ne désignent pas la main.',
         '# = annotation symbolique ; § = annotation ou passage non transcrit. Si des mots sont conservés, une transcription partielle peut être indiquée sur preuve éditoriale. Ces catégories sont indépendantes de la main.',
-        'Trois mots suivis de ... signalent une transcription volontairement abrégée par l’éditeur. Les autres points de suspension restent à vérifier ; aucune suite n’est reconstituée.',
+        'Trois mots suivis de ... signalent une transcription volontairement abrégée par l’éditeur.',
         'Dans les préfixes d’annotation entre parenthèses : ¤ = Main 4 ; ¬ = Main 5 ; ¦ = Main 6 ; ² = Main 7 ; ³ = Main 8 ; ¼ = Main 9. Ce rôle se distingue du marqueur de folio ¤ entre crochets. Les codes non résolus et la notation originale sont conservés. La numérotation d’affichage ne constitue pas un identifiant scientifique.']
       : ['Textual citations cover the whole Latin alignment unit; they do not locate an annotation at a particular word.',
+        'The key below applies only to the original editorial notation shown in Scholarly details.',
         'Bracketed references identify the folio. ¤ marks only its first recorded occurrence for each side: [¤1r] and [1r] both mean fol. 1r.',
         '@ = Hand 1; £ = Hand 2; ¢ = Hand 3. Hands are classified within each manuscript and do not identify or date a scribe. The numbers in (@2), for example, enumerate annotations; they do not identify the hand.',
         '# = symbolic annotation; § = an annotation or passage that cannot be transcribed. Where words survive, editorial evidence may identify a partial transcription. Category and hand are independent.',
-        'Three words followed by ... indicate a transcription deliberately abbreviated by the editor. Other ellipses remain subject to review; no continuation is reconstructed.',
+        'Three words followed by ... indicate a transcription deliberately abbreviated by the editor.',
         'In parenthesised annotation prefixes: ¤ = Hand 4; ¬ = Hand 5; ¦ = Hand 6; ² = Hand 7; ³ = Hand 8; ¼ = Hand 9. This role is distinct from the bracketed folio marker ¤. Unresolved codes and original notation are retained. Display numbers are not scholarly identifiers.'];
     return `<details class="annotation-about"><summary>${l.about}</summary>${text.map(p => `<p>${escape(p)}</p>`).join('')}</details>`;
   }
