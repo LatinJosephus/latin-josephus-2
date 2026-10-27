@@ -55,6 +55,9 @@
       : {kind: 'recorded', original: segment, text: segment.replaceAll('\\c{e}', 'ę')});
   }
   function legend(lang, escape) {
+    const credit = lang === 'fr'
+      ? 'Ces annotations ont été entièrement transcrites par Jean-Félix Aubé-Pronce.'
+      : 'These annotations were entirely transcribed by Jean-Félix Aubé-Pronce.';
     const text = lang === 'fr' ? [
       'Les références de ces annotations désignent un chapitre entier du De excidio.',
       'Les Détails scientifiques conservent les cinq champs utilisés du fichier source, leur numéro de ligne et les codes originaux de main.',
@@ -68,7 +71,7 @@
       'The notation \\c{e} is displayed as e caudata (ę). [*] is interpreted as untranscribed text following the editor’s provisional clarification. Scholarly details retain the original wording.',
       'St. Gall 626 is paginated, so its references use p. Other references follow the folio column. Ellipses are preserved without applying the Josephus abbreviation convention.'
     ];
-    return `<details class="annotation-about"><summary>${lang === 'fr' ? 'À propos de ces annotations' : 'About these annotations'}</summary>${text.slice(0, 2).map(p => `<p>${escape(p)}</p>`).join('')}<div class="annotation-notation-key">${text.slice(2).map(p => `<p>${escape(p)}</p>`).join('')}</div></details>`;
+    return `<details class="annotation-about"><summary>${lang === 'fr' ? 'À propos de ces annotations' : 'About these annotations'}</summary><p>${escape(credit)}</p>${text.slice(0, 2).map(p => `<p>${escape(p)}</p>`).join('')}<div class="annotation-notation-key">${text.slice(2).map(p => `<p>${escape(p)}</p>`).join('')}</div></details>`;
   }
   return {setData, recordsForBook, resolveManuscript, interpret, textSegments, legend};
 });
