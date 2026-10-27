@@ -2,6 +2,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // DOM Elements
   const annotationsList = document.getElementById("annotations-list");
   const annotationsPanel = document.getElementById("reader-annotations");
+  const annotationApi = window.ManuscriptAnnotations;
+  const annotationLanguage = document.documentElement.lang?.startsWith("fr") ? "fr" : "en";
+  const annotationLabels = annotationApi?.labels[annotationLanguage];
+  const annotationScript = document.querySelector('script[src*="/assets/js/renderTei.js"]');
+  let annotationCitationLoad;
+  const loadAnnotationCitations = () => annotationCitationLoad ||= annotationApi && annotationScript
+    ? fetch(new URL("../data/alignment-citations.json", annotationScript.src)).then(response => {
+      if (!response.ok) throw new Error("Annotation citation lookup unavailable");
+      return response.json();
+    }).then(data => annotationApi.setCitationData(data)).catch(error => console.warn(error.message))
+    : Promise.resolve();
+  const setAnnotationsExpanded = expanded => {
+    document.getElementById("collapse-annotations")?.classList.toggle("show", expanded);
+    const button = document.querySelector("#annotations-header button");
+    button?.setAttribute("aria-expanded", String(expanded));
+    button?.classList.toggle("collapsed", !expanded);
+  };
+  document.querySelector("#annotations-header button")?.addEventListener("click", () =>
+    setAnnotationsExpanded(document.querySelector("#annotations-header button").getAttribute("aria-expanded") !== "true"));
+  if (annotationsPanel && window.ResizeObserver) new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--annotation-panel-space", `${annotationsPanel.hidden ? 0 : annotationsPanel.getBoundingClientRect().height + 16}px`);
+  }).observe(annotationsPanel);
   const bookLabel = document.getElementById("book-label");
   const bookSelectForm = document.querySelector("#book-select form");
   const bookSelectMenu = document.getElementById("book-selector");
@@ -3677,77 +3699,109 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const displayedLatinTarget = (paragraphId) => {
-    const exactTarget = document.getElementById(paragraphId);
+  const displayedLatinTargets = paragraphId => [...latinPane.querySelectorAll("[id], [sameAs]")].filter(node =>
+    node.id === paragraphId || (node.getAttribute("sameAs") || "").split(/\s+/).some(id => id.replace(/^#/, "") === paragraphId));
+  const displayedLatinTarget = paragraphId => displayedLatinTargets(paragraphId)[0];
 
-    if (exactTarget) return exactTarget;
-
-    return latinPane.querySelector(`[sameAs*="${paragraphId}"]`);
+  const followAnnotationHash = () => {
+    let id;
+    try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+    if (!id) return;
+    const annotation = document.getElementById(id);
+    if (annotation && annotationsList.contains(annotation)) {
+      setAnnotationsExpanded(true);
+      const entry = annotation.matches("article") ? annotation : annotation.querySelector("article");
+      entry?.focus({preventScroll: true}); entry?.scrollIntoView({block: "nearest"});
+    } else {
+      const targets = displayedLatinTargets(id);
+      targets.forEach(target => target.classList.add("annotation-target"));
+      const first = targets[0];
+      if (first) { first.tabIndex = -1; first.focus({preventScroll: true}); first.scrollIntoView({block: "center"}); }
+    }
   };
+  window.addEventListener("hashchange", followAnnotationHash);
 
-  const parseAnnotations = () => {
-    const annotations = usesTraditionalStructure()
-      ? [...canonicalFullData.getElementsByTagName("tei-app")]
-      : canonicalFullData.getElementsByTagName("tei-app");
+  const parseAnnotations = async () => {
+    const annotations = [...canonicalFullData.getElementsByTagName("tei-app")];
+    if (annotations.length) await loadAnnotationCitations();
     annotatedParagraphs = [];
-    let htmlString = '';
-
-    const bookIdString = activeWork.idPrefix;
-
+    let htmlString = annotationApi?.legend(annotationLanguage) || "";
+    let displayNumber = 1, readingCount = 0;
+    const occurrences = new Map(), links = new Map();
+    const witnesses = new Map([...canonicalFullData.getElementsByTagName("tei-witness")].map(w => [w.id, w.textContent]));
+    const visibleNodes = [canonicalViewData, ...canonicalViewData.querySelectorAll("[id], [sameAs]")];
+    const visibleIds = new Set(visibleNodes.flatMap(node => [node.id,
+      ...(node.getAttribute("sameAs") || "").split(/\s+/).map(id => id.replace(/^#/, ""))]).filter(Boolean));
     annotations.forEach(anno => {
-      if (anno.children.length < 1) return;
-
-      const paragraphTag = anno.children[0].getAttribute('source');
-
-      if (!paragraphTag || !paragraphTag.includes(`latin-${bookIdString}`)) return;
-
-      const paragraphId = paragraphTag.replace('#', '');
-
-      // Only show annotations that refer to displayed canonical paragraphs.
-      if (
-        !canonicalViewData.querySelector(`[id*="${paragraphId}"]`)
-        && !canonicalViewData.id.includes(paragraphId)
-      ) return;
-
-      annotatedParagraphs.push(paragraphId);
-      htmlString += `<br /><b>${paragraphId}</b> <br />`;
-
-      anno.children.forEach(child => {
-        if (
-          !child.getAttribute('source')
-          || child.getAttribute('source') === ''
-          || child.getAttribute('source').includes(`latin-${bookIdString}`)
-        ) return;
-
-        const witnessElement = canonicalFullData.querySelector(
-          `[id*="${child.getAttribute('source').replace("#","")}"]`
-        );
-
-        const witnessText = witnessElement.innerText;
-
-        if (child.attributes.source.value !== "#FlaviusJosephusAntiquities") {
-          htmlString += `${witnessText}: <em>${child.innerText}</em> <br />`;
+      const children = [...anno.children];
+      const paragraphTag = children[0]?.getAttribute("source") || "";
+      const paragraphId = paragraphTag.replace(/^#/, "");
+      const citation = annotationApi?.resolveAlignmentCitation(activeWork.slug, paragraphId);
+      const unlocated = citation?.verificationStatus !== "verified";
+      children.slice(1).forEach(child => {
+        const source = child.getAttribute("source") || "", siglum = source.replace(/^#/, "");
+        const key = JSON.stringify([paragraphId, siglum]);
+        const occurrence = (occurrences.get(key) || 0) + 1; occurrences.set(key, occurrence);
+        // Unlocated records remain at source-book level; no passage is inferred.
+        if (!visibleIds.has(paragraphId) && !(unlocated && state.viewingLevel === "book-level")) return;
+        const record = {work: activeWork.slug, alignmentUnitId: paragraphId, siglum, occurrence,
+          sourceBook: state.bookNum,
+          originalId: child.id || anno.id || null, notation: child.textContent,
+          originalAlignmentReference: children[0]?.getAttribute("source") || null,
+          originalManuscriptReference: child.getAttribute("source"), witnessLabel: witnesses.get(siglum) || null};
+        const rendered = annotationApi?.renderAnnotation(record, {lang: annotationLanguage, startNumber: displayNumber});
+        if (!rendered) return;
+        htmlString += rendered.html; displayNumber += rendered.count; readingCount++;
+        if (visibleIds.has(paragraphId) && rendered.count) {
+          links.set(paragraphId, links.get(paragraphId) || {anchor: rendered.interpreted.anchor, count: 0});
+          links.get(paragraphId).count += rendered.count;
         }
       });
     });
-
     annotationsList.innerHTML = htmlString;
-
-    // Do not present an empty annotation accordion or highlight control for
-    // texts (such as DEH Book I) that contain no encoded <app> annotations.
-    const hasAnnotations = annotations.length > 0;
+    annotationsList.dataset.readingCount = String(readingCount);
+    annotationsList.dataset.annotationCount = String(displayNumber - 1);
+    const hasAnnotations = readingCount > 0;
     if (annotationsPanel) annotationsPanel.hidden = !hasAnnotations;
-
+    document.documentElement.classList.toggle("has-manuscript-annotations", hasAnnotations);
+    const heading = document.querySelector("#annotations-header button");
+    if (heading && annotationLabels) heading.textContent = annotationLabels.heading;
     const highlightWrapper = highlightCheckbox?.closest(".form-check");
     if (highlightWrapper) highlightWrapper.hidden = !hasAnnotations;
     if (!hasAnnotations && highlightCheckbox) highlightCheckbox.checked = false;
-
-    if (highlightCheckbox.checked) {
-      annotatedParagraphs.forEach(paragraphId => {
-        const target = displayedLatinTarget(paragraphId);
-        if (target) target.classList.add("highlight");
+    latinPane.querySelectorAll(".text-annotations").forEach(node => node.remove());
+    annotatedParagraphs = [...links.keys()];
+    links.forEach(({anchor, count}, paragraphId) => {
+      const targets = displayedLatinTargets(paragraphId);
+      targets.forEach(target => target.classList.toggle("highlight", !!highlightCheckbox?.checked));
+      const target = targets.at(-1);
+      if (target) {
+        const link = document.createElement("a"); link.className = "text-annotations";
+        link.href = `#${encodeURIComponent(anchor)}`; link.lang = annotationLanguage;
+        link.textContent = `${count} ${count === 1 ? "annotation" : annotationLabels.annotations}`;
+        link.addEventListener("click", () => { setAnnotationsExpanded(true); });
+        target.appendChild(link);
+      }
+    });
+    annotationsList.querySelectorAll(".annotation-passage").forEach(link => {
+      const targetUrl = new URL(link.href);
+      // Keep deployments below a base path and current source preferences.
+      const current = new URL(window.location.href);
+      targetUrl.pathname = current.pathname;
+      for (const [key, value] of current.searchParams) {
+        if (!["book", "chapter", "unit", "num", "niese", "view", "subchapter", "bamberg"].includes(key)) targetUrl.searchParams.set(key, value);
+      }
+      link.href = targetUrl.href;
+      link.addEventListener("click", event => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        if (state.viewingLevel === "book-level" && displayedLatinTarget(link.dataset.unit)) {
+          event.preventDefault();
+          history.pushState(null, "", `#${encodeURIComponent(link.dataset.unit)}`);
+          followAnnotationHash();
+        }
       });
-    }
+    });
+    followAnnotationHash();
   };
 
   const setBambergOptions = () => {
@@ -4067,7 +4121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const highlightWrapper = highlightCheckbox?.closest(".form-check");
       if (highlightWrapper) highlightWrapper.hidden = true;
     }
-    else parseAnnotations();
+    else await parseAnnotations();
   };
 
   const setState = async (callback) => {
@@ -4275,8 +4329,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     highlightCheckbox.addEventListener("change", () => {
       annotatedParagraphs.forEach(paragraphId => {
-        const target = displayedLatinTarget(paragraphId);
-        if (target) target.classList.toggle("highlight");
+        displayedLatinTargets(paragraphId).forEach(target => target.classList.toggle("highlight", highlightCheckbox.checked));
       });
     });
   };

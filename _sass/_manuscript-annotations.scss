@@ -1,0 +1,40 @@
+/* A compact apparatus, with native keyboard-accessible scholarly details. */
+#reader-annotations {
+  max-height: min(46vh, 30rem);
+  overflow-y: auto;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+  border-top: 1px solid var(--global-text-color-light);
+  .accordion-header { z-index: 1; background: var(--global-bg-color); margin: 0; }
+  .accordion-button, .accordion-button:not(.collapsed) { font-size: 1.15rem; padding: .7rem 1rem; }
+  .accordion-body { padding: .65rem 1rem 1.25rem; min-height: 0; }
+  #collapse-annotations:not(.show) { display: none; }
+  .annotation-about { font-size: .9rem; margin-bottom: .8rem; }
+  summary { cursor: pointer; padding: .3rem 0; }
+  a { color: var(--global-theme-color); text-decoration: underline; }
+  .manuscript-annotation { padding: .65rem 0; border-top: 1px solid var(--global-text-color-light); }
+  h4 { font-family: inherit; font-size: 1rem; line-height: 1.5; margin: 0 0 .3rem; }
+  p { margin: .3rem 0; }
+  .annotation-transcription { font-family: var(--font-serif, Georgia, serif); font-size: 1.12rem; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .annotation-category { font-style: italic; }
+  .annotation-meta, .annotation-status, .annotation-description, .annotation-details { font-size: .9rem; }
+  .annotation-hand { border: 1px solid currentColor; border-radius: .2rem; padding: .05rem .3rem; white-space: nowrap; }
+  .annotation-passage { display: inline-block; font-size: .9rem; margin-top: .3rem; margin-right: 1rem; }
+  .annotation-details { margin-top: .2rem; }
+  dl { display: grid; grid-template-columns: minmax(9rem, 1fr) 3fr; gap: .25rem .75rem; margin: .4rem 0; }
+  dt, dd { margin: 0; overflow-wrap: anywhere; }
+  pre { color: inherit; background: transparent; padding: .5rem 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .85rem; }
+  :focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
+  .manuscript-annotation:target, .manuscript-annotation:focus { outline: 2px solid var(--global-theme-color); outline-offset: -2px; }
+}
+.text-annotations { display: block; width: fit-content; font: .85rem/1.6 sans-serif; margin: .35rem 0; text-align: start; }
+.annotation-target { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
+#latin [id] { scroll-margin-top: 6rem; scroll-margin-bottom: 48vh; }
+#reader-annotations .manuscript-annotation { scroll-margin-top: 3rem; scroll-margin-bottom: .5rem; }
+html.has-manuscript-annotations body { padding-bottom: var(--annotation-panel-space, 4rem); }
+@media (max-width: 600px) {
+  #reader-annotations { max-height: 48vh; }
+  #reader-annotations .accordion-body { padding: .5rem .75rem 1rem; }
+  #reader-annotations dl { display: block; }
+  #reader-annotations dd { margin-bottom: .4rem; }
+}

@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "name": "generated-freshness",
+      "command": [
+        "python",
+        "-B",
+        "bin/build-annotation-citations.py",
+        "--check"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "citation-and-preservation",
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "bin/annotations",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "annotation-tests",
+      "command": [
+        "node",
+        "--test",
+        "bin/annotations/annotation-qa.test.cjs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "corpus-integrity",
+      "command": [
+        "node",
+        "bin/reader-corpus-qa.mjs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "deh-integrity",
+      "command": [
+        "node",
+        "bin/deh-parallels-integrity-qa.mjs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "search-assets",
+      "command": [
+        "node",
+        "bin/search/check-assets.mjs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "notation-inventory",
+      "command": [
+        "node",
+        "bin/annotations/report-qa.cjs"
+      ],
+      "status": "PASS"
+    }
+  ]
+}
