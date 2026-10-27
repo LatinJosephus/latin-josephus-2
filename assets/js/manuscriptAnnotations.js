@@ -1,10 +1,12 @@
 /* Presentation only. Frozen TEI, original notation and associations are inputs.
    Classic script for the existing reader; CommonJS export for dependency-free QA. */
 (function (root, factory) {
-  const api = factory();
+  const editorialEnglish = typeof module === 'object' && module.exports
+    ? require('./annotationEditorialEnglish.js') : root.AnnotationEditorialEnglish;
+  const api = factory(editorialEnglish);
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.ManuscriptAnnotations = api;
-})(typeof globalThis === 'object' ? globalThis : this, function () {
+})(typeof globalThis === 'object' ? globalThis : this, function (editorialEnglish) {
   'use strict';
   let citationData = {works: {}};
   const workNames = {antiquities: 'Antiquities', bellum: 'Bellum', deh: 'De excidio'};
@@ -20,7 +22,7 @@
       uncertainEllipsis: 'Ellipsis retained; editorial role unresolved', first: 'First recorded occurrence of this folio reference',
       subsequent: 'Folio reference without a first-occurrence marker', sourceNumber: 'Original annotation number',
       unverified: 'Textual citation not verified', annotations: 'annotations', review: 'Unresolved notation retained below',
-      noTranscription: 'No transcription recorded'},
+      noTranscription: 'No transcription recorded', editorialNote: 'Editorial note'},
     fr: {heading: 'Annotations manuscrites', about: 'À propos de ces annotations', details: 'Détails scientifiques',
       passage: 'Voir le passage', manuscript: 'Manuscrit', hand: 'Main', symbolic: 'Annotation symbolique',
       untranscribable: 'Ne peut être transcrite', unresolved: 'Notation à vérifier',
@@ -33,7 +35,7 @@
       first: 'Première occurrence enregistrée de cette référence au folio',
       subsequent: 'Référence au folio sans marque de première occurrence', sourceNumber: 'Numéro original de l’annotation',
       unverified: 'Référence textuelle non vérifiée', annotations: 'annotations', review: 'Notation non résolue conservée ci-dessous',
-      noTranscription: 'Aucune transcription enregistrée'}
+      noTranscription: 'Aucune transcription enregistrée', editorialNote: 'Note éditoriale'}
   };
   const language = lang => labels[lang] ? lang : 'en';
   const t = lang => labels[language(lang)];
@@ -56,9 +58,15 @@
     RomeBAVPallat1992: ['Rome BAV Pal. lat. 1992', null, 'Pal. lat. 1992', null, 'shelfmark-conflict'],
     StGallSBcod627: ['St. Gallen, Stiftsbibliothek, Csg 627', 'Stiftsbibliothek', 'Csg 627', 'M0509']
   };
-  function resolveManuscript(siglum, fallback) {
+  const englishManuscriptNames = {
+    ChartresBMMs29: 'Chartres, Municipal Library, Ms. 29',
+    ColognyBodmer98: 'Cologny, Martin Bodmer Foundation, Ms. 98',
+    ColognyBodmer99: 'Cologny, Martin Bodmer Foundation, Ms. 99'
+  };
+  function resolveManuscript(siglum, fallback, lang = 'en') {
     const row = manuscripts[siglum];
-    return {siglum, displayName: row?.[0] || fallback || siglum, repository: row?.[1] || null,
+    return {siglum, displayName: (lang === 'en' && englishManuscriptNames[siglum]) || row?.[0] || fallback || siglum,
+      originalDisplayName: row?.[0] || fallback || siglum, repository: row?.[1] || null,
       shelfmark: row?.[2] || null, url: row?.[3] ? `/manuscripts/#ljm-${row[3]}` : null,
       verificationStatus: row ? row[4] || 'verified' : 'unresolved'};
   }
@@ -189,21 +197,64 @@
         'Unexplained codes (including ¬ and ¦) and the original notation are retained. Display numbers are not scholarly identifiers.'];
     return `<details class="annotation-about"><summary>${l.about}</summary>${text.map(p => `<p>${escape(p)}</p>`).join('')}</details>`;
   }
+  function translateEditorialDescription(description, lang = 'en') {
+    return lang === 'en' && Object.hasOwn(editorialEnglish?.descriptions || {}, description)
+      ? editorialEnglish.descriptions[description] : description;
+  }
+  function annotationTextSegments(part, lang = 'en', work = 'antiquities') {
+    const original = part.category === 'unresolved' ? part.notation.trim() : part.text;
+    const literal = text => ({kind: 'recorded', text, original: text});
+    if (lang !== 'en' || !editorialEnglish || !['antiquities', 'bellum'].includes(work)) return [literal(original)];
+    if (Object.hasOwn(editorialEnglish.whole, original)) {
+      return [{kind: 'editorial', text: editorialEnglish.whole[original], original}];
+    }
+    const spans = [];
+    const add = (source, translated) => {
+      let position = 0;
+      while ((position = original.indexOf(source, position)) !== -1) {
+        spans.push({start: position, end: position + source.length, translated}); position += source.length;
+      }
+    };
+    // Exact, inspected editorial comments only. Latin abbreviation expansions
+    // such as d(imitte), (milia), and uncertain readings are never translated.
+    for (const [source, translated] of Object.entries({...editorialEnglish.comments, ...editorialEnglish.fragments})) add(source, translated);
+    for (const [source, translated] of editorialEnglish.spans[original] || []) add(source, translated);
+    if (part.category === 'unresolved' && part.description) {
+      const prefix = original.match(/^\([@£¢#§¬¦+?*]\d*\s*/u)?.[0];
+      if (prefix && original.slice(prefix.length, prefix.length + part.description.length) === part.description) {
+        spans.push({start: prefix.length, end: prefix.length + part.description.length,
+          translated: translateEditorialDescription(part.description, lang)});
+      }
+    }
+    const segments = []; let offset = 0;
+    for (const span of spans.sort((a, b) => a.start - b.start || b.end - a.end)) {
+      if (span.start < offset) continue;
+      if (span.start > offset) segments.push(literal(original.slice(offset, span.start)));
+      segments.push({kind: 'editorial', text: span.translated, original: original.slice(span.start, span.end)});
+      offset = span.end;
+    }
+    if (offset < original.length || !segments.length) segments.push(literal(original.slice(offset)));
+    return segments;
+  }
   function renderAnnotation(record, options = {}) {
     const lang = language(options.lang), l = t(lang), interpreted = interpretManuscriptAnnotation(record);
     const citation = resolveAlignmentCitation(record.work, record.alignmentUnitId, {lang});
-    const ms = resolveManuscript(record.siglum, record.witnessLabel || record.siglum || l.unknown);
+    const ms = resolveManuscript(record.siglum, record.witnessLabel || record.siglum || l.unknown, lang);
     const number = options.startNumber || 1;
     const parts = interpreted.parts.map((part, index) => {
       const anchor = `${interpreted.anchor}-at-${part.offset}`;
       const category = part.category === 'symbolic' ? l.symbolic : part.category === 'untranscribable' ? l.untranscribable
         : part.category === 'unresolved' ? l.unresolved : !part.text ? l.noTranscription : null;
-      const text = part.category === 'unresolved' ? part.notation.trim() : part.text;
+      const segments = annotationTextSegments(part, lang, record.work);
+      const text = segments.map(segment => segment.kind === 'editorial'
+        ? `<span class="annotation-editorial-note" lang="en">${escape(segment.text)}</span>` : escape(segment.text)).join('');
+      const editorialOnly = segments.length && segments.every(segment => segment.kind === 'editorial');
+      const description = translateEditorialDescription(part.description, lang);
       const codes = part.codes.map(code => `${code} = ${({'@': `${l.hand} 1`, '£': `${l.hand} 2`, '¢': `${l.hand} 3`,
         '#': l.symbolic, '§': l.untranscribable})[code] || l.unresolved}`).join('; ');
       const fields = [[l.sourceId, record.originalId || l.noId], [l.unit, record.alignmentUnitId || l.unknown],
-        [l.siglum, record.siglum], [l.shelfmark, ms.displayName], [l.folio, part.folio?.original || l.unknown],
-        [l.sourceNumber, part.sourceNumber || l.unknown], [l.codes, [codes, part.description,
+        [l.siglum, record.siglum], [l.shelfmark, ms.originalDisplayName], [l.folio, part.folio?.original || l.unknown],
+        [l.sourceNumber, part.sourceNumber || l.unknown], [l.codes, [codes, description,
           part.folio ? part.folio.firstOccurrence ? l.first : l.subsequent : ''].filter(Boolean).join('; ') || l.unknown],
         [l.completeness, part.abbreviated ? l.abbreviated : part.ellipsisUnresolved ? l.uncertainEllipsis
           : part.category === 'untranscribable' ? l.untranscribable : part.category === 'symbolic' ? l.symbolic
@@ -216,8 +267,8 @@
       return `<article class="manuscript-annotation" id="${escape(anchor)}" tabindex="-1" data-alignment-unit="${escape(record.alignmentUnitId)}">
         <h4><span class="annotation-number">${number + index}.</span> ${escape(citation.publicCitation)}</h4>
         ${category ? `<p class="annotation-category">${escape(category)}</p>` : ''}
-        ${text ? `<p class="annotation-transcription"${part.category === 'textual' ? ' lang="la"' : ''}>${escape(text)}</p>` : ''}
-        ${part.description ? `<p class="annotation-description">${escape(part.description)}</p>` : ''}
+        ${text ? `<p class="${editorialOnly ? 'annotation-description' : 'annotation-transcription'}"${part.category === 'textual' && !editorialOnly ? ' lang="la"' : ''}>${editorialOnly ? `${l.editorialNote}: ` : ''}${text}</p>` : ''}
+        ${description ? `<p class="annotation-description" lang="${lang}">${l.editorialNote}: ${escape(description)}</p>` : ''}
         <p class="annotation-meta">${l.manuscript}: ${ms.url ? `<a href="${ms.url}">${escape(ms.displayName)}</a>` : escape(ms.displayName)}${part.folio?.reference ? ` · fol. ${escape(part.folio.reference)}` : ''}${part.hand ? ` · <span class="annotation-hand">${l.hand} ${part.hand}</span>` : ''}</p>
         ${part.abbreviated ? `<p class="annotation-status">${l.abbreviated}. ${l.abbreviationHelp}</p>` : ''}
         ${part.issues.length ? `<p class="annotation-status">${part.ellipsisUnresolved ? l.uncertainEllipsis : l.review}</p>` : ''}
@@ -228,5 +279,5 @@
       count: interpreted.parts.length, interpreted};
   }
   return {setCitationData, resolveAlignmentCitation, resolveManuscript, interpretManuscriptAnnotation,
-    recordAnchor, renderAnnotation, legend, labels};
+    recordAnchor, renderAnnotation, translateEditorialDescription, annotationTextSegments, legend, labels};
 });

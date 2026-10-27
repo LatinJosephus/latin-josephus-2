@@ -2,6 +2,8 @@
 
 26 October 2026. **PASS**, with the source and environment limitations below.
 
+English editorial-note follow-up: **34 annotation tests and five citation/preservation tests pass**, including ten new translation tests. They audit all 216 source-description variants and preserve every recorded-text segment across all 2,958 readings. The existing corpus, DEH and search asset guards are rerun. The 565 search tests below are the previous certification of unchanged search code. See [ENGLISH-EDITORIAL-NOTES.md](ENGLISH-EDITORIAL-NOTES.md).
+
 ## Preservation and interpretation
 
 | Check | Result |
@@ -29,7 +31,7 @@ The count of components is not a certified total of manuscript annotations. Unre
 - Search asset checks passed for **260 assets, 68 indexed books, 25,009 sections and 1,347,222 tokens**. The generated-site publication check also passed; exact frozen publication byte representations were restored only in generated output.
 - Generated citation lookup and annotation inventory passed the deterministic `--check` freshness test. Source SHA-256 provenance matched.
 
-This is **594 Node/Python tests**, plus the existing corpus/integrity guards and browser checks. [Repeatable check summary](qa/checks.json).
+The original redesign certification comprises **594 Node/Python tests**, plus the existing corpus/integrity guards and browser checks. The English-editorial follow-up adds ten passing tests; current source-level checks rerun all 34 annotation tests and five citation/preservation tests, while the 565-test certification of unchanged search code is retained. [Repeatable check summary](qa/checks.json).
 
 ## Actual reader and navigation
 

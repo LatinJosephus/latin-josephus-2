@@ -13,4 +13,6 @@ Screenshots show the generated development baseline and the locally generated re
 
 Additional checks: [dark mode](screenshots/antiquities-hands-dark.png), [mobile dark mode, 390 pixels wide](screenshots/antiquities-hands-mobile.png).
 
+English editorial-note follow-up: [correction with a sign](screenshots/english-editorial-correction.png), [English comment within unchanged Latin](screenshots/english-editorial-mixed.png). The original French remains in scholarly details.
+
 Visual review verified readable transcription, separate folio and Niese references, restrained hand labels, independent categories, underlined links, wrapped manuscript designations, expandable details and a panel that reserves space for passage links beneath it. Native details were opened and closed with the keyboard. Animation was disabled during capture to avoid judging intermediate theme-transition colours.

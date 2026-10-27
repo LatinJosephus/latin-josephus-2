@@ -6,7 +6,7 @@ fs.mkdirSync(output, {recursive: true});
 const commands = [
   ['generated-freshness', process.env.LJ_PYTHON || 'python', ['-B', 'bin/build-annotation-citations.py', '--check']],
   ['citation-and-preservation', process.env.LJ_PYTHON || 'python', ['-B', '-m', 'unittest', 'discover', '-s', 'bin/annotations', '-p', 'test_*.py', '-v']],
-  ['annotation-tests', process.execPath, ['--test', 'bin/annotations/annotation-qa.test.cjs']],
+  ['annotation-tests', process.execPath, ['--test', 'bin/annotations/annotation-qa.test.cjs', 'bin/annotations/editorial-english.test.cjs']],
   ['corpus-integrity', process.execPath, ['bin/reader-corpus-qa.mjs']],
   ['deh-integrity', process.execPath, ['bin/deh-parallels-integrity-qa.mjs']],
   ['search-assets', process.execPath, ['bin/search/check-assets.mjs']],
