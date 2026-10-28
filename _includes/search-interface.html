@@ -1,12 +1,16 @@
 <main id="lj-search" lang="en" data-reader-base="{{ include.reader_base }}">
   <section class="intro" aria-labelledby="search-title">
-    <p class="eyebrow">Latin and English texts</p>
+    <p class="eyebrow">Texts and manuscript annotations</p>
     <h1 id="search-title">Search the Latin Josephus</h1>
     <p class="subtitle" id="collection-description"><i>Bellum Judaicum</i> · Cardwell Latin (1837) / <i>De excidio</i> · Ussani Latin (1932) / <i>Contra Apionem</i> · Boysen Latin (1898) / <i>Antiquities</i> I–XX and Proem · Bamberg Latin / <i>Antiquities</i> Proem and Books I–XX · Whiston English / <i>Bellum Judaicum</i> I–VII · Whiston English / <i>Contra Apionem</i> I–II · Whiston English / <i>De excidio</i> Prologue and Books I–V · Pollard English v1.0</p>
     <p class="coverage" id="coverage">Loading the text catalogue…</p>
   </section>
   <section class="search-panel" aria-label="Search controls">
     <form id="search-form" role="search" novalidate>
+      <div class="content-option">
+        <label for="content">Search in</label>
+        <select id="content" name="content"><option value="texts">Main texts</option><option value="annotations">Manuscript annotations</option></select>
+      </div>
       <label class="query-label" for="query">Words, exact phrases, or a Boolean expression</label>
       <div class="search-row">
         <input type="search" id="query" name="q" autocomplete="off" spellcheck="false" maxlength="2000" placeholder='"sacerdos ex Hierosolymis"' aria-describedby="query-hint" required>
@@ -28,6 +32,10 @@
             <option value="section">Within each Niese section</option>
             <option value="book">Within each whole book</option>
           </select>
+        </div>
+        <div id="manuscript-control" class="work-option" hidden>
+          <label for="manuscript">Manuscript</label>
+          <select id="manuscript" name="manuscript" disabled><option value="all">All manuscripts</option></select>
         </div>
         <label class="checkbox-option" for="fold"><input type="checkbox" id="fold" name="fold"><span>Treat <b>u/v</b> and <b>i/j</b> as equivalent (Latin only)</span></label>
       </div>

@@ -7,6 +7,7 @@ import {createHash} from 'node:crypto';
 import {editorialMarksFor} from './ui-utils.mjs';
 import {phraseBreakOffsets, tokenizeRecord} from './engine.mjs';
 import {planBrowserRelease, BROWSER_LAUNCHER_NAME} from './browser-release.mjs';
+import {annotationInputs, validateAnnotationBundle} from './build-annotations.mjs';
 import {validateWhistonSourceProjection} from './whiston-publication.mjs';
 import {validateWhistonBellumSourceProjection} from './whiston-bellum-publication.mjs';
 import {validateWhistonContraApionemSourceProjection} from './whiston-contra-apionem-publication.mjs';
@@ -130,7 +131,7 @@ export function sourceInputs(root, sourcePaths = []) {
   const files = listing(base).filter(relative => !relative.startsWith('data/') &&
     (/\.(?:mjs|js|cjs|py|css|html)$/u.test(relative) || relative.startsWith('config/') || relative.startsWith('vendor/')));
   const paths = new Set([...files.map(relative => `${SOURCE_DIRECTORY}/${relative}`),
-    ...config.siteInputs, ...config.hookInputs, ...collections.flatMap(c => [...c.adapter.sources, ...(c.adapter.testSources || [])]), ...sourcePaths]);
+    ...config.siteInputs, ...config.hookInputs, ...collections.flatMap(c => [...c.adapter.sources, ...(c.adapter.testSources || [])]), ...annotationInputs(root).map(item => item.path), ...sourcePaths]);
   const indexedXML = new Set(collections.flatMap(c => [...c.adapter.sources, ...(c.adapter.testSources || [])]));
   return sorted(paths).map(relative => indexedXML.has(relative) ? xmlInputEvidence(root, relative) : evidence(root, relative));
 }
@@ -970,6 +971,7 @@ export function validateQaReport(root, {catalog, collection, configured, report}
 
 export function publicationPlan(root) {
   const validated = validateSearchSources(root);
+  validateAnnotationBundle(root);
   const browser = planBrowserRelease(root);
   const artifacts = [...validated.artifacts, ...browser.artifacts].sort((a, b) => a.path.localeCompare(b.path, 'en'));
   equal(new Set(artifacts.map(item => item.path)).size, artifacts.length, 'Browser and canonical exports collide');

@@ -26,6 +26,14 @@ html[data-theme="dark"] #lj-search {
 #lj-search .coverage {font-size:12px;line-height:1.7;color:var(--muted);margin:0}
 #lj-search .search-panel {border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:26px 28px 0;box-shadow:0 3px 15px #25211a05}
 #lj-search .query-label {display:block;font-size:14px;font-weight:650;margin-bottom:9px}
+#lj-search .content-option {display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+#lj-search .content-option label {font-size:14px;font-weight:650}
+#lj-search .content-option select {padding:8px 10px;max-width:100%;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px}
+#lj-search .annotation-search-transcription {font:20px/1.55 Coelacanth,Georgia,serif;margin:12px 0}
+#lj-search .annotation-search-wording {color:#A34130}
+html[data-theme="dark"] #lj-search .annotation-search-wording {color:#E29A83}
+#lj-search .annotation-search-editorial {color:var(--muted);font-size:.85em}
+#lj-search .annotation-search-category {color:var(--muted);font-style:italic;margin:10px 0 0}
 #lj-search .search-row {display:flex;gap:10px}
 #lj-search #query {flex:1;min-width:0;border:1px solid #b6b0a8;border-radius:5px;padding:13px 14px;line-height:1.5;font-size:18px;color:var(--ink);background:var(--surface);appearance:auto}
 #lj-search #query::placeholder {color:var(--muted);opacity:.85}

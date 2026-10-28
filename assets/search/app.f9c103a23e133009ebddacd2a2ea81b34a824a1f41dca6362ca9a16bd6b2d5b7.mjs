@@ -1,6 +1,7 @@
 import {createCollection} from './collection.0551464ed42c810dc0dc554501a449989e92f85a13bfc7612b7edc67c181f5d7.mjs';
 import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.39a13121b8de63e4a70d5600a38c3aab124275b3a9dfccc0476839c330dba644.mjs';
 import {buildConcordance,exportConcordance} from './concordance.0d3a9629facb0f3cb388a9e6ef5d7a01792bad5b0e40ac81f3a21d35dd7f62e5.mjs';
+import {createEngine} from './engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs';
 
 const root=document.getElementById('lj-search');
 const $=id=>root.querySelector(`#${id}`);
@@ -74,7 +75,7 @@ function populateControls(){
   const pollardDeh=catalog.collections.find(c=>c.id==='deh-english-pollard');
   const dehEnglish=pollardDeh?` Pollard v1.1 English De excidio contains ${pollardDeh.totals.sections.toLocaleString()} chapter-and-paragraph citation units across all five books, including the Prologue. The accepted English wording and punctuation are preserved.`:'';
   const dehEditorial=catalog.collections.some(c=>c.id==='deh-latin-ussani')?' In Ussani Latin De excidio, supplied and deleted letters remain searchable and are visibly marked; unresolved text is indicated by †.':'';
-  $('included-text').textContent=`Currently indexed: ${included}. Explicitly marked titles, citation labels and annotation notes are excluded. Source additions and untagged letters within the accepted Latin passages remain searchable, including inline Roman chapter letters.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units.':''}${dehEditorial}${bamberg}${whiston}${bellumEnglish}${apionEnglish}${dehEnglish}`;
+  $('included-text').textContent=`Currently indexed: ${included}. Explicitly marked titles, citation labels and annotation notes are excluded from main-text matching. Choose Manuscript annotations in the Search in menu to search the notes separately. Source additions and untagged letters within the accepted Latin passages remain searchable, including inline Roman chapter letters.${catalog.collections.some(collection=>citationScheme(collection)==='chapter-paragraph')?' De excidio includes the Prologue and follows the canonical reader’s chapter and paragraph units.':''}${dehEditorial}${bamberg}${whiston}${bellumEnglish}${apionEnglish}${dehEnglish}`;
 }
 function applyState(state){
   els.query.value=state.query;els.work.value=state.work;populateBooks(state.book);
@@ -309,6 +310,181 @@ async function search({writeUrl=true,fromLocation=false,example=null}={}){
     if(current===sequence){els.button.disabled=false;els.region.setAttribute('aria-busy','false');}
   }
 }
+async function annotationSearch() {
+  const works = {antiquities: 'Antiquities', bellum: 'Bellum Judaicum', deh: 'De excidio'};
+  const categoryNames = {textual: 'Textual annotation', symbolic: 'Symbolic annotation', untranscribable: 'Cannot be transcribed', unresolved: 'Unresolved notation'};
+  const params = new URLSearchParams(location.search);
+  $('content').value = 'annotations';
+  $('collection-description').textContent = 'Manuscript annotations to Antiquities, Bellum Judaicum and De excidio';
+  $('coverage').textContent = 'Loading the manuscript annotations…';
+  $('included-text').textContent = 'Choose Main texts or Manuscript annotations in the search controls. Annotation searches cover the recorded words and English editorial descriptions shown in the reader. Each note is evaluated separately: Boolean conditions and phrases never combine different annotations. Phrases stop at untranscribed or uncertain text and between the transcription and an editorial description. Manuscript, folio and hand information accompany each result; use the manuscript filter to choose a witness. The original notation remains available under Scholarly details in the reader. Textual locations retain the reader’s verified alignment-unit ranges for Antiquities and Bellum, and whole chapters or the Prologue for De excidio.';
+  const coverageGuide = $('included-text').parentElement;
+  coverageGuide.querySelector('h2').textContent = 'Annotation coverage';
+  coverageGuide.querySelectorAll('p:not(#included-text)').forEach(paragraph => {paragraph.hidden = true;});
+  coverageGuide.append(node('p', 'Results retain the recorded manuscript spelling, folio and witness-local hand numbers. CSV downloads include every matching note, its original notation and reader link, including results beyond the visible page. Untranscribed text and explanatory gap labels add no searchable words. Category labels can be selected with the Annotation type filter.'));
+  root.querySelector('.eyebrow').textContent = 'Texts and manuscript annotations';
+  root.querySelector('.examples').hidden = true;
+  root.querySelector('.view-switch').hidden = true;
+  root.querySelector('.search-footer p').textContent = 'Annotation searches run in your browser. Each result links to the existing annotation in the reader.';
+  $('scope-hint').textContent = 'All parts of the expression must match within one annotation. Phrases do not cross uncertain or untranscribed text.';
+  root.querySelector('label[for="work"]').textContent = 'Work';
+  root.querySelector('label[for="scope"]').textContent = 'Annotation type';
+  els.scope.replaceChildren(option('All annotation types', 'all'), ...Object.entries(categoryNames).map(([value, label]) => option(label, value)));
+  els.scope.value = params.get('type') || 'all';
+  if (!els.scope.value) els.scope.value = 'all';
+  $('manuscript-control').hidden = false;
+  const manuscript = $('manuscript');
+  let engine, records, matches = [], displayed = 0, completed = null;
+  let request = 0;
+  function fillBooks(selected = 'all') {
+    const available = records.filter(record => els.work.value === 'all' || record.work === els.work.value);
+    const books = [...new Map(available.map(record => [`${record.work}:${record.book}`, record])).values()];
+    els.book.replaceChildren(option('All books', 'all'), ...books.map(record => option(`${works[record.work]} · Book ${romanBook(record.book)}${record.book === 1 && record.work === 'deh' ? ' (including Prologue)' : ''}`, `${record.work}:${record.book}`)));
+    els.book.value = books.some(record => `${record.work}:${record.book}` === selected) ? selected : 'all';
+    const witnesses = [...new Set(available.map(record => record.manuscript))].sort((a, b) => a.localeCompare(b));
+    const previous = manuscript.value;
+    manuscript.replaceChildren(option('All manuscripts', 'all'), ...witnesses.map(name => option(name, name)));
+    manuscript.value = witnesses.includes(previous) ? previous : 'all';
+  }
+  function resultURL(record) {
+    // Unresolved source associations retain a link to the source book; no location is inferred.
+    const url = new URL(record.passageTarget || `${({antiquities: 'antiquities/', bellum: 'bellum-judaicum/', deh: 'deh/'})[record.work]}?book=${record.book}`, readerBase);
+    url.hash = record.id;
+    if (record.passageTarget) {
+      const relative = record.passageTarget.replace(/^\//u, '');
+      const resolved = new URL(relative, readerBase);
+      resolved.hash = record.id;
+      return resolved;
+    }
+    return url;
+  }
+  function addHighlighted(parent, text, offset, ranges) {
+    let cursor = 0;
+    for (const range of mergedRanges(ranges.map(range => ({start: Math.max(0, range.start - offset), end: Math.min(text.length, range.end - offset)})), text.length)) {
+      parent.append(document.createTextNode(text.slice(cursor, range.start)), node('mark', text.slice(range.start, range.end)));
+      cursor = range.end;
+    }
+    parent.append(document.createTextNode(text.slice(cursor)));
+  }
+  function nextPage() {
+    const end = Math.min(displayed + pageSize, matches.length);
+    for (const {record, ranges} of matches.slice(displayed, end)) {
+      const article = node('article', undefined, 'result-card annotation-search-result');
+      const title = node('h3', undefined, 'result-title');
+      title.append(link(record.citation, resultURL(record))); article.append(title);
+      const text = node('p', undefined, 'annotation-search-transcription');
+      if (record.category !== 'textual') text.append(node('span', `${categoryNames[record.category] || 'Unresolved notation'}${record.displaySegments.some(segment => segment.text.trim()) ? ': ' : ''}`, 'annotation-search-editorial'));
+      for (const segment of record.displaySegments) {
+        const span = node('span', undefined, segment.kind === 'recorded' ? 'annotation-search-wording' : 'annotation-search-editorial');
+        if (segment.kind === 'gap') span.textContent = segment.text;
+        else addHighlighted(span, segment.text, segment.start, ranges);
+        text.append(span);
+      }
+      if (record.readingStatus) text.append(node('span', ` (${record.readingStatus})`, 'annotation-search-editorial'));
+      if (text.textContent) article.append(text);
+      article.append(node('p', `Manuscript: ${record.manuscript}${record.folio ? ` · ${record.pagination === 'page' ? 'p.' : 'fol.'} ${record.folio}` : ''}${record.hand ? ` · Hand ${record.hand}` : ''}`, 'result-meta'));
+      if (record.abbreviated) article.append(node('p', 'Transcription abbreviated', 'result-meta'));
+      if (record.verificationStatus !== 'verified') article.append(node('p', 'The source association has no verified textual location.', 'result-meta'));
+      article.append(link(record.passageTarget ? 'View annotation in reader' : 'View source book', resultURL(record)));
+      els.results.append(article);
+    }
+    displayed = end; els.more.hidden = displayed >= matches.length;
+  }
+  async function run(writeUrl = true) {
+    const current = ++request;
+    completed = null; els.copy.disabled = true; els.download.disabled = true;
+    els.results.replaceChildren(); els.more.hidden = true; els.error.hidden = true;
+    els.downloadStatus.textContent = ''; els.region.setAttribute('aria-busy', 'true');
+    try {
+      if (!engine) {
+        const response = await fetch(new URL('./annotations.312f4cb69d74bbb986ba7c54c0266e075231cb72480ef287223ef073d0cb5c42.bundle.json', import.meta.url), {cache: 'no-cache'});
+        if (!response.ok) throw new Error(`The annotation index could not be loaded (HTTP ${response.status}). Try Search again.`);
+        const bundle = await response.json();
+        engine = createEngine(bundle, globalThis.lunr); records = engine.records;
+        els.work.replaceChildren(option('All annotated works', 'all'), ...Object.entries(works).map(([value, label]) => option(label, value)));
+        els.work.value = Object.hasOwn(works, params.get('work')) ? params.get('work') : 'all';
+        fillBooks(params.get('book'));
+        if ([...manuscript.options].some(entry => entry.value === params.get('manuscript'))) manuscript.value = params.get('manuscript');
+        els.query.value = params.get('q') || '';
+        els.fold.checked = params.get('fold') === '1';
+        for (const select of [els.work, els.book, manuscript]) select.disabled = false;
+        $('coverage').textContent = `${records.length.toLocaleString()} annotations · Antiquities, Bellum and De excidio · Original source order retained within each work`;
+      }
+      const state = {q: els.query.value.trim(), work: els.work.value, book: els.book.value, type: els.scope.value, manuscript: manuscript.value, fold: els.fold.checked};
+      els.resultQuery.hidden = true; els.context.hidden = true;
+      const result = state.q ? engine.search(state.q, {scope: 'section', fold: state.fold})
+        : {hitGroups: records.map(record => ({recordIds: [record.id], hits: []}))};
+      if (current !== request) return;
+      const groups = new Map(result.hitGroups.map(group => [group.recordIds[0], group]));
+      matches = records.filter(record => groups.has(record.id)
+        && (state.work === 'all' || record.work === state.work)
+        && (state.book === 'all' || `${record.work}:${record.book}` === state.book)
+        && (state.type === 'all' || record.category === state.type)
+        && (state.manuscript === 'all' || record.manuscript === state.manuscript))
+        .map(record => ({record, ranges: groups.get(record.id).hits.flatMap(hit => hit.spans)}));
+      displayed = 0; nextPage();
+      if (!matches.length) els.results.append(node('p', 'No annotations match this query and these filters.'));
+      els.status.textContent = `${matches.length.toLocaleString()} matching ${matches.length === 1 ? 'annotation' : 'annotations'}`;
+      els.resultQuery.replaceChildren(node('span', 'Query: '), node('code', state.q)); els.resultQuery.hidden = !state.q;
+      const url = new URL(location.href); url.search = '';
+      url.searchParams.set('content', 'annotations');
+      for (const key of ['q', 'work', 'book', 'type', 'manuscript']) if (state[key] && state[key] !== 'all') url.searchParams.set(key, state[key]);
+      if (state.fold) url.searchParams.set('fold', '1');
+      completed = {state, url, matches: [...matches]};
+      els.copy.disabled = false; els.download.disabled = false;
+      if (writeUrl && url.href !== location.href) history.pushState(null, '', url);
+    } catch (error) {
+      els.error.textContent = error.message || 'The annotation search could not be completed.'; els.error.hidden = false;
+      els.status.textContent = 'Annotation search could not be completed. Check the query and try again.';
+    } finally { els.button.disabled = false; els.region.setAttribute('aria-busy', 'false'); }
+  }
+  els.form.addEventListener('submit', event => {event.preventDefault(); run();});
+  els.work.addEventListener('change', () => {fillBooks(); run();});
+  for (const control of [els.book, els.scope, els.fold, manuscript]) control.addEventListener('change', () => run());
+  els.more.addEventListener('click', nextPage);
+  els.copy.addEventListener('click', async () => {
+    if (!completed) return;
+    try {await navigator.clipboard.writeText(completed.url.href); els.copy.textContent = 'Link copied';}
+    catch {els.copy.textContent = 'Copy the address bar URL';}
+  });
+  els.download.addEventListener('click', () => {
+    if (!completed) return;
+    const fields = ['query', 'work', 'book', 'citation', 'manuscript', 'siglum', 'folio', 'hand', 'category', 'text', 'original_notation', 'annotation_id', 'alignment_unit_id', 'reader_url'];
+    const quote = value => `"${String(value ?? '').replaceAll('"', '""')}"`;
+    const rows = completed.matches.map(({record}) => [completed.state.q, record.work, record.book, record.citation, record.manuscript, record.siglum, record.folio, record.hand, record.category, record.displaySegments.map(segment => segment.text).join(''), record.originalNotation, record.id, record.alignmentUnitId, resultURL(record).href]);
+    const csv = '\uFEFF' + [fields, ...rows].map(row => row.map(quote).join(',')).join('\r\n') + '\r\n';
+    const url = URL.createObjectURL(new Blob([csv], {type: 'text/csv;charset=utf-8'}));
+    const anchor = node('a'); anchor.href = url; anchor.download = 'latin-josephus-annotation-search.csv'; anchor.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    els.downloadStatus.textContent = `CSV prepared: ${rows.length.toLocaleString()} annotations from all results for the displayed query.`;
+  });
+  window.addEventListener('popstate', () => location.reload());
+  await run(false);
+}
+let contentControl = $('content');
+// Older cached search HTML still receives the complete current controls.
+if (!contentControl) {
+  const container = node('div', undefined, 'content-option');
+  const label = node('label', 'Search in'); label.htmlFor = 'content';
+  contentControl = node('select'); contentControl.id = 'content';
+  contentControl.append(option('Main texts', 'texts'), option('Manuscript annotations', 'annotations'));
+  container.append(label, contentControl); els.form.prepend(container);
+}
+if (!$('manuscript-control')) {
+  const container = node('div', undefined, 'work-option'); container.id = 'manuscript-control'; container.hidden = true;
+  const label = node('label', 'Manuscript'); label.htmlFor = 'manuscript';
+  const select = node('select'); select.id = 'manuscript'; select.append(option('All manuscripts', 'all'));
+  container.append(label, select); root.querySelector('.options-row').append(container);
+}
+if (contentControl) contentControl.addEventListener('change', () => {
+  const url = new URL(location.href); url.search = '';
+  if (contentControl.value === 'annotations') url.searchParams.set('content', 'annotations');
+  if (els.query.value.trim()) url.searchParams.set('q', els.query.value.trim());
+  location.assign(url);
+});
+if (new URLSearchParams(location.search).get('content') === 'annotations') {
+  await annotationSearch();
+} else {
 els.form.addEventListener('submit',event=>{event.preventDefault();search();});
 els.work.addEventListener('change',()=>{populateBooks();search();});
 els.book.addEventListener('change',()=>search());
@@ -350,3 +526,4 @@ window.addEventListener('popstate',()=>{
 els.query.value=new URLSearchParams(location.search).get('q')||defaultQuery;
 updateScopeHint();
 await search({writeUrl:false,fromLocation:true});
+}

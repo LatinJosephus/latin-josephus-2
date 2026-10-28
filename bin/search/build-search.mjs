@@ -6,6 +6,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {spawn} from 'node:child_process';
 import {createHash} from 'node:crypto';
+import {buildAnnotationBundle} from './build-annotations.mjs';
 import {
   SOURCE_DIRECTORY, loadPublicationConfig, inside, sourceInputs, unitTestCommands,
   validateSearchSources, validateQaReport, publicationPlan, exportSearchAssets,
@@ -70,6 +71,7 @@ async function main() {
       '--output-dir', inside(base, adapter.outputDirectory, {directory: true})], `extract ${manifest.id}`);
   }
   await run(process.execPath, [`${SOURCE_DIRECTORY}/build-index.mjs`], 'build collection indexes');
+  fs.writeFileSync(inside(base, 'annotations.bundle.json', {exists: false}), JSON.stringify(buildAnnotationBundle(root)) + '\n');
   const validation = validateSearchSources(root, {qa: false});
   const qaRuns = [];
   for (const configured of validation.collections) {

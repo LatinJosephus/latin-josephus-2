@@ -1,5 +1,12 @@
 # Latin Josephus search
 
+**Manuscript annotations:** the Search in menu also searches the reader's 8,122
+annotation entries across Antiquities, Bellum and De excidio, with independent
+annotation scope, manuscript/category filters, stable reader links and CSV export.
+An empty annotation query browses the selected notes. This separate index does
+not change the main-text coverage below. See
+[the annotation-search implementation and verification notes](../../_docs/annotation-display/ANNOTATION-SEARCH.md).
+
 This directory contains the source and verification tools for the main site's
 `/search/` page. Current coverage comprises four Latin collections and four English collections:
 

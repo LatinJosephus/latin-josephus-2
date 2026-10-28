@@ -14,7 +14,7 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 function fixture(t) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'latin-josephus-browser-release-'));
   t.after(() => fs.rmSync(root, {recursive: true, force: true}));
-  for (const relative of [...BROWSER_MODULES, 'browser-release.mjs', 'catalog.json', 'styles.css', 'vendor/lunr.min.js']) {
+  for (const relative of [...BROWSER_MODULES, 'browser-release.mjs', 'catalog.json', 'annotations.bundle.json', 'styles.css', 'vendor/lunr.min.js']) {
     const target = path.join(root, 'bin/search', relative);
     fs.mkdirSync(path.dirname(target), {recursive: true});
     fs.copyFileSync(path.join(repository, 'bin/search', relative), target);
@@ -30,7 +30,7 @@ test('browser output pins every module import and the matching catalog to verifi
   const root = fixture(t), result = planBrowserRelease(root), repeated = planBrowserRelease(root);
   assert.deepEqual(result, repeated, 'Planning must be deterministic and make no output writes');
   assert.equal(fs.existsSync(path.join(root, 'assets/search')), false);
-  assert.equal(result.artifacts.length, 9);
+  assert.equal(result.artifacts.length, 10);
   assert.equal(validateBrowserRelease(result.descriptor).entry.path, result.descriptor.entry);
   for (const item of result.artifacts) {
     const source = fs.readFileSync(path.join(root, item.source)), output = result.contents.get(item.path);
@@ -55,6 +55,19 @@ test('browser output pins every module import and the matching catalog to verifi
   assert.deepEqual(result.contents.get(result.descriptor.catalog.path), fs.readFileSync(path.join(root, 'bin/search/catalog.json')));
   assert.deepEqual(result.contents.get(result.descriptor.stylesheet.path), fs.readFileSync(path.join(root, 'bin/search/styles.css')));
   assert.deepEqual(result.contents.get(result.descriptor.lunr.path), fs.readFileSync(path.join(root, 'bin/search/vendor/lunr.min.js')));
+  const annotation = result.artifacts.find(item => item.role === 'browser-annotations');
+  assert.ok(app.includes(`./${annotation.path}`));
+  assert.deepEqual(result.contents.get(annotation.path), fs.readFileSync(path.join(root, 'bin/search/annotations.bundle.json')));
+});
+
+test('changed annotation data changes its content address and the app without altering main-text bundles', t => {
+  const root = fixture(t), before = planBrowserRelease(root);
+  change(root, 'annotations.bundle.json', value => value + '\n');
+  const after = planBrowserRelease(root);
+  assert.notEqual(before.descriptor.entry, after.descriptor.entry);
+  assert.notEqual(before.artifacts.find(item => item.role === 'browser-annotations').path, after.artifacts.find(item => item.role === 'browser-annotations').path);
+  assert.deepEqual(before.descriptor.catalog, after.descriptor.catalog);
+  assert.deepEqual(before.descriptor.modules['engine.mjs'], after.descriptor.modules['engine.mjs']);
 });
 
 test('a changed engine changes both intermediate modules and the app, so cached imports cannot survive an upgrade', t => {

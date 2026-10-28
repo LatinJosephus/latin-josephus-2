@@ -55,6 +55,8 @@ export function planBrowserRelease(root) {
   const catalogJSON = JSON.parse(catalogBytes.toString('utf8'));
   assert(catalogJSON && typeof catalogJSON === 'object' && !Array.isArray(catalogJSON), 'Invalid browser catalog');
   const catalog = generated('catalog.json', `catalog.${digest(catalogBytes)}.json`, catalogBytes, 'browser-catalog');
+  const annotationBytes = source('annotations.bundle.json');
+  const annotations = generated('annotations.bundle.json', `annotations.${digest(annotationBytes)}.bundle.json`, annotationBytes, 'browser-annotations');
 
   function buildModule(name) {
     if (modules.has(name)) return modules.get(name);
@@ -91,6 +93,9 @@ export function planBrowserRelease(root) {
       });
       assert.equal(catalogReferences, 1, 'The browser app must have exactly one reviewed catalog URL');
       assert(!/['"]\.\/catalog\.json['"]/u.test(code), 'The browser app still references a mutable catalog URL');
+      const annotationURL = "new URL('./annotations.bundle.json', import.meta.url)";
+      assert.equal(code.split(annotationURL).length, 2, 'The browser app must have exactly one reviewed annotation URL');
+      code = code.replace(annotationURL, `new URL('./${annotations.path}', import.meta.url)`);
     }
     const bytes = Buffer.from(code, 'utf8');
     const item = generated(name, moduleName(name, digest(bytes)), bytes, 'browser-module');

@@ -7,14 +7,54 @@
   "catalog": "catalog.json",
   "inputs": [
     {
+      "path": "_docs/annotation-source-inventory.json",
+      "sha256": "ceadd9caab6f8fa89e76d30e18ec992d5c5454f7c8d1be92b7ee3cb03bccac21",
+      "bytes": 1501740
+    },
+    {
+      "path": "_docs/deh-annotations/source.csv",
+      "sha256": "dfe4d299390481525c358b1baef864640ef700e7a94d941b91746feeed4a398d",
+      "bytes": 157866
+    },
+    {
       "path": "_includes/search-interface.html",
-      "sha256": "5880d9b9ee1db8bceeeef26adb41bcd03f6fdb9c94097753573f49cea80048ce",
-      "bytes": 15867
+      "sha256": "2557a3c3f9c1f59b1b69faebf98785c1c67be01196f3017a028ac81fa6507063",
+      "bytes": 16373
     },
     {
       "path": "_pages/search.html",
-      "sha256": "3971a4ffca9860959a77f30e25660c25642227d8436ff1a671475f66a379b458",
-      "bytes": 590
+      "sha256": "7abca65a2be9070cc2a66643c7833871d40b7d738b72dbe1652c97fb3fd068ec",
+      "bytes": 520
+    },
+    {
+      "path": "assets/data/alignment-citations.json",
+      "sha256": "951701b0a30c19cd409335d89d157621b45864a778ae05315ae563e6051e84a5",
+      "bytes": 1033353
+    },
+    {
+      "path": "assets/data/deh-annotations/annotations.json",
+      "sha256": "a0f03d24fa1b734eedf68c18020daf963e0c3797fb66ced881e61fb3b6a496cc",
+      "bytes": 1110180
+    },
+    {
+      "path": "assets/js/annotationEditorialEnglish.js",
+      "sha256": "5968b256bec89c107dc47e2338ec45aa0429f1e92e982be3b9d49744fb4c6480",
+      "bytes": 16573
+    },
+    {
+      "path": "assets/js/annotationEditorialUpdates.js",
+      "sha256": "96bf2c1fd7cb7279ca3123d207a4c76e3603d89897b7de2dfb594e0b106485b4",
+      "bytes": 2002
+    },
+    {
+      "path": "assets/js/dehManuscriptAnnotations.js",
+      "sha256": "c412c41b61a5b44749b508286f750d1bd7efb317adbf25bf4271c6d8cdba1a9c",
+      "bytes": 5564
+    },
+    {
+      "path": "assets/js/manuscriptAnnotations.js",
+      "sha256": "f3f452202590c4fdfa6fae19ff2827de19e6e0e9df68c736bcb728d2aef9e837",
+      "bytes": 32262
     },
     {
       "path": "assets/xml/antiquities/English/book-01.xml",
@@ -269,6 +309,21 @@
       "hashMode": "crlf-to-lf"
     },
     {
+      "path": "assets/xml/antiquities/niese/book-08.json",
+      "sha256": "f5b9773bd744535f695ac6f6875f0563d8a6a5c91bb69a42cc860d3ed84460f6",
+      "bytes": 80538
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-09.json",
+      "sha256": "5dbc75c63fc0afc59fa4d59768e54ad197d716f2ed55f36a0669b3f375412b64",
+      "bytes": 103282
+    },
+    {
+      "path": "assets/xml/antiquities/niese/book-10.json",
+      "sha256": "8646d7f86b5241f65433eff8d1cb5cf8c520676bd8be9ea99e6e4e54743f7853",
+      "bytes": 54517
+    },
+    {
       "path": "assets/xml/antiquities/niese/book-11.json",
       "sha256": "b89420a9520192d592d9166eb5cc340b1d1dd13e68b7641514be6e9dd36fc309",
       "bytes": 528008,
@@ -327,6 +382,11 @@
       "sha256": "3542ef335653869483d9f62c41ce14687ab0845b47f5045eb428aef7b65094c3",
       "bytes": 54667,
       "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/xml/antiquities/niese/preface.json",
+      "sha256": "0a0e46771df523aad8a3dad9e696ec51bbe5cd9da084ec81eed0a20aeb6b2e18",
+      "bytes": 8086
     },
     {
       "path": "assets/xml/bellum/English/book-01.xml",
@@ -508,13 +568,18 @@
     },
     {
       "path": "bin/search/app.mjs",
-      "sha256": "ac6cafe65ee67dceec908efafbc93aca0b299df616254516ecabe9eb328789bc",
-      "bytes": 31195
+      "sha256": "d46a5e36d01e0844563930f089809c5684315022e7c0e5ef74e8b4ec339f4a45",
+      "bytes": 45328
     },
     {
       "path": "bin/search/browser-release.mjs",
-      "sha256": "be010aef57d0d4b38ddbebf5d93a0341ad9a7f46feab4333dc01bca4b2bb2c40",
-      "bytes": 6136
+      "sha256": "eddd41533e9220661e6c626744ce4524c270217d999cf587815e8e0473963cb5",
+      "bytes": 6653
+    },
+    {
+      "path": "bin/search/build-annotations.mjs",
+      "sha256": "47f0beabacf2141a536a6aa3a17cdac7ca4710b7b4c20d3660d10d5551963083",
+      "bytes": 7770
     },
     {
       "path": "bin/search/build-index.mjs",
@@ -528,8 +593,8 @@
     },
     {
       "path": "bin/search/build-search.mjs",
-      "sha256": "f476cce44860e9a2df68770172287c1033a84572dc4bb5cb7e4af90d7fddfbc3",
-      "bytes": 5924
+      "sha256": "e945010add73d0c51b5bee19eb4411555a4f9b6c45a2e8be4ad1cb1813cbcf6a",
+      "bytes": 6117
     },
     {
       "path": "bin/search/check-assets.mjs",
@@ -648,8 +713,8 @@
     },
     {
       "path": "bin/search/index.html",
-      "sha256": "2f113879a57808b7789c6563bd22d9d3397588a2be6715ef999cf17f125b4996",
-      "bytes": 17202
+      "sha256": "2aea97f96782f6d1d5392b4021e3387f2f8d80dbb851a513d5dfe6d448efc030",
+      "bytes": 17708
     },
     {
       "path": "bin/search/launch-v1.mjs",
@@ -658,13 +723,18 @@
     },
     {
       "path": "bin/search/publication.mjs",
-      "sha256": "bb5a3693dd1d137cca32ef5e19196db2c4d1c9a11ea94d3a5cffb0b07754b7f6",
-      "bytes": 85096
+      "sha256": "2595bab823eeb7b72c476d4dd4d06539cea29891709ba388b169dc353519b849",
+      "bytes": 85264
     },
     {
       "path": "bin/search/styles.css",
-      "sha256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
-      "bytes": 11667
+      "sha256": "fbec5570d159f784f77a545d5ec80fa43ecaf48d2caa4b4429a7be9ad2e67736",
+      "bytes": 12398
+    },
+    {
+      "path": "bin/search/tests/annotations.test.mjs",
+      "sha256": "8d60e32f5671eb3d900530299bde2e3c846590b23b540de25dae254cbf059c49",
+      "bytes": 6652
     },
     {
       "path": "bin/search/tests/antiquities-corpus-qa.mjs",
@@ -693,8 +763,8 @@
     },
     {
       "path": "bin/search/tests/browser-release.test.mjs",
-      "sha256": "1087054e438027d654c13918ac22b67b4ba26ab4e63cabfeac15253482fafe1f",
-      "bytes": 7908
+      "sha256": "f91fae6db1d44d763e711ecadb964916c73659c8c138bc5dbf0b53ab6f42cc7c",
+      "bytes": 8901
     },
     {
       "path": "bin/search/tests/build-index.test.mjs",
@@ -1226,6 +1296,7 @@
           "runtime": "node",
           "arguments": [
             "--test",
+            "bin/search/tests/annotations.test.mjs",
             "bin/search/tests/antiquities-fragment-presentation.test.mjs",
             "bin/search/tests/antiquities-fragments.test.mjs",
             "bin/search/tests/antiquities-presentation.test.mjs",
@@ -1256,7 +1327,7 @@
     "schemaVersion": 1,
     "generatedBy": "bin/search/browser-release.mjs",
     "launcher": "launch-v1.mjs",
-    "entry": "app.ca61c9a3c27552ac77e788d77f4dd604245f3f54c294b69bce740a4b5360690e.mjs",
+    "entry": "app.f9c103a23e133009ebddacd2a2ea81b34a824a1f41dca6362ca9a16bd6b2d5b7.mjs",
     "modules": {
       "engine.mjs": {
         "path": "engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs",
@@ -1279,9 +1350,9 @@
         "bytes": 32393
       },
       "app.mjs": {
-        "path": "app.ca61c9a3c27552ac77e788d77f4dd604245f3f54c294b69bce740a4b5360690e.mjs",
-        "sha256": "ca61c9a3c27552ac77e788d77f4dd604245f3f54c294b69bce740a4b5360690e",
-        "bytes": 31455
+        "path": "app.f9c103a23e133009ebddacd2a2ea81b34a824a1f41dca6362ca9a16bd6b2d5b7.mjs",
+        "sha256": "f9c103a23e133009ebddacd2a2ea81b34a824a1f41dca6362ca9a16bd6b2d5b7",
+        "bytes": 45718
       }
     },
     "catalog": {
@@ -1290,9 +1361,9 @@
       "bytes": 56253
     },
     "stylesheet": {
-      "path": "styles.b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028.css",
-      "sha256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
-      "bytes": 11667
+      "path": "styles.fbec5570d159f784f77a545d5ec80fa43ecaf48d2caa4b4429a7be9ad2e67736.css",
+      "sha256": "fbec5570d159f784f77a545d5ec80fa43ecaf48d2caa4b4429a7be9ad2e67736",
+      "bytes": 12398
     },
     "lunr": {
       "path": "lunr.0c50d9002b85780a842afffb567bb54ede402dae7c6dc5997a018614d8044fc8.min.js",
@@ -1302,26 +1373,35 @@
   },
   "artifacts": [
     {
-      "path": "app.ca61c9a3c27552ac77e788d77f4dd604245f3f54c294b69bce740a4b5360690e.mjs",
+      "path": "annotations.312f4cb69d74bbb986ba7c54c0266e075231cb72480ef287223ef073d0cb5c42.bundle.json",
+      "source": "bin/search/annotations.bundle.json",
+      "sourceSHA256": "312f4cb69d74bbb986ba7c54c0266e075231cb72480ef287223ef073d0cb5c42",
+      "sha256": "312f4cb69d74bbb986ba7c54c0266e075231cb72480ef287223ef073d0cb5c42",
+      "bytes": 15156013,
+      "role": "browser-annotations",
+      "generated": true
+    },
+    {
+      "path": "app.f9c103a23e133009ebddacd2a2ea81b34a824a1f41dca6362ca9a16bd6b2d5b7.mjs",
       "source": "bin/search/app.mjs",
-      "sourceSHA256": "ac6cafe65ee67dceec908efafbc93aca0b299df616254516ecabe9eb328789bc",
-      "sha256": "ca61c9a3c27552ac77e788d77f4dd604245f3f54c294b69bce740a4b5360690e",
-      "bytes": 31455,
+      "sourceSHA256": "d46a5e36d01e0844563930f089809c5684315022e7c0e5ef74e8b4ec339f4a45",
+      "sha256": "f9c103a23e133009ebddacd2a2ea81b34a824a1f41dca6362ca9a16bd6b2d5b7",
+      "bytes": 45718,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "app.mjs",
       "source": "bin/search/app.mjs",
-      "sha256": "ac6cafe65ee67dceec908efafbc93aca0b299df616254516ecabe9eb328789bc",
-      "bytes": 31195,
+      "sha256": "d46a5e36d01e0844563930f089809c5684315022e7c0e5ef74e8b4ec339f4a45",
+      "bytes": 45328,
       "role": "runtime"
     },
     {
       "path": "browser-release.json",
       "source": "bin/search/browser-release.mjs",
-      "sourceSHA256": "be010aef57d0d4b38ddbebf5d93a0341ad9a7f46feab4333dc01bca4b2bb2c40",
-      "sha256": "5d6fdead86f34fc8ee8ffa2c986ab49b2a50cb7ae3ba147eeffa8997939e567d",
+      "sourceSHA256": "eddd41533e9220661e6c626744ce4524c270217d999cf587815e8e0473963cb5",
+      "sha256": "40d64391934a11888cff53ebf7bfec2b88cde539302502a38521e95f8c54ae70",
       "bytes": 1993,
       "role": "browser-release",
       "generated": true
@@ -3073,20 +3153,20 @@
       "role": "evidence"
     },
     {
-      "path": "styles.b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028.css",
-      "source": "bin/search/styles.css",
-      "sourceSHA256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
-      "sha256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
-      "bytes": 11667,
-      "role": "browser-stylesheet",
-      "generated": true
-    },
-    {
       "path": "styles.css",
       "source": "bin/search/styles.css",
-      "sha256": "b454da8e79caba2177566e0fccb3c0acf85e29e324d71558ea4d1d4bd367b028",
-      "bytes": 11667,
+      "sha256": "fbec5570d159f784f77a545d5ec80fa43ecaf48d2caa4b4429a7be9ad2e67736",
+      "bytes": 12398,
       "role": "runtime"
+    },
+    {
+      "path": "styles.fbec5570d159f784f77a545d5ec80fa43ecaf48d2caa4b4429a7be9ad2e67736.css",
+      "source": "bin/search/styles.css",
+      "sourceSHA256": "fbec5570d159f784f77a545d5ec80fa43ecaf48d2caa4b4429a7be9ad2e67736",
+      "sha256": "fbec5570d159f784f77a545d5ec80fa43ecaf48d2caa4b4429a7be9ad2e67736",
+      "bytes": 12398,
+      "role": "browser-stylesheet",
+      "generated": true
     },
     {
       "path": "ui-utils.39a13121b8de63e4a70d5600a38c3aab124275b3a9dfccc0476839c330dba644.mjs",
