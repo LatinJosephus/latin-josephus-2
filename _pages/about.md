@@ -4,131 +4,108 @@ permalink: /about/
 title: about
 description: The Latin Josephus Project
 nav: true
+dropdown: true
+children:
+    - title: About the project
+      permalink: /about/
+    - title: Our editions and translations
+      permalink: /texts/
 ---
-
 
 ## The Latin Josephus Project
 
 ### Flavius Josephus
 
-[Flavius Josephus](http://en.wikipedia.org/wiki/Josephus) (c. 37–100 CE) was a historian who wrote the *Antiquities*, a history of the Jews up to Roman times, and the *Jewish War*, describing the Jewish rebellion against the Romans in 66–73 CE, as well as the *Against Apion*.
+[Flavius Josephus](http://en.wikipedia.org/wiki/Josephus) (c. 37–100 CE) was a historian who wrote the _Antiquities_, a history of the Jews up to Roman times, and the _Jewish War_, describing the Jewish rebellion against the Romans in 66–73 CE, as well as the _Against Apion_, a defense of Jewish traditions.
 
-While Josephus originally wrote these works in Greek, they were extremely popular and influential during late antiquity and the Middle Ages in Latin translations and reimaginings. James J. O'Donnell suggested that the *Antiquities* was "the single most often copied historical work of the Middle Ages".
+While Josephus originally wrote these works in Greek, they were extremely popular and influential during late antiquity and the Middle Ages in Latin translations, as well as in reimaginings, like the _De excidio Hierosolymitano_. James J. O’Donnell suggested that the _Antiquities_ was “the single most often copied historical work of the Middle Ages”.  Our [new list of Latin Josephus manuscrits]({{site.baseurl}}/manuscripts/) (over 500) speaks for itself in this regard.
 
-Before the completion of our text in 2019, the most recent publicly available edition of the Latin *Antiquities* was that of [J. Froben, printed in 1524](https://books.google.ca/books?id=E_NCAAAAcAAJ&pg=PP7#v=onepage&q&f=false).
+Before the completion of our text in 2019, the most recent publicly available edition of the Latin _Antiquities_ was that of [J. Froben, printed in 1524](https://books.google.ca/books?id=E_NCAAAAcAAJ&pg=PP7#v=onepage&q&f=false).
 
 ### This Project
 
-This site will eventually offer a transcription/edition of all the Latin versions of Flavius Josephus' works:
-- The *Jewish Antiquities*, in 20 books, translated s. VI under Cassiodorus. **Complete**.
-- The *Jewish War*, namely the literal Latin translation in 7 books, translated c. 400. **Complete**.
-- The *Against Apion* in 2 books, translated at the same time as the *Antiquities*.
-- The *De excidio Hierosolymitano* (*On the Ruin of Jerusalem*), a **heavily** reworked version of the *Jewish War* in five books.  Attributed to Josephus until at least 825, thereafter to "Hegesippus" (aka Ps. Hegesippus).
+This site now offers a transcription/edition of all the Latin versions of Flavius Josephus’ works:
 
-In time, this project will also reproduce every early medieval manuscript annotation to these four texts. 
+-   The _Jewish Antiquities_, in 20 books, translated s. VI under Cassiodorus. **Complete**.
+-   The _Jewish War_, namely the literal Latin translation in 7 books, translated c. 400. **Complete**.
+-   The _Against Apion_ in 2 books, translated at the same time as the _Antiquities_. **Complete**.
+-   The _De excidio Hierosolymitano_ or *DEH* (_On the Ruin of Jerusalem_), a **heavily** reworked version of the _Jewish War_ in five books. Attributed to Josephus until at least 825, thereafter to “Hegesippus” (aka Ps. Hegesippus). **Complete**.
+
+Translations are provided for each of these texts.
+
+This project also now reproduces nearly every early medieval manuscript annotation to these texts.
+
 
 ### Project History
 
-At UBC, in 2013, we began with the latter, based on a Carolingian era (s. IXmed) copy: [Bamberg Msc.Class.78](https://zendsbb.digitale-sammlungen.de/db/0000/sbb00000114/images/) (Blatt, no. 113).  The Latin has been made to align with the Greek text (from Niese), which is then aligned with the English translation produced by Whiston in 1737.
+At UBC, in 2013, we began with the Latin *Antiquities*, based on a Carolingian era (s. IXmed) copy: [Bamberg Msc.Class.78](https://zendsbb.digitale-sammlungen.de/db/0000/sbb00000114/images/) (Blatt, no. 113). The Latin was aligned with the Greek text (from Niese), which was then aligned with the English translation produced by Whiston in 1737.
 
-In 2014–15, the project transcribed much of Book 1 of the *Bellum Judaicum* (i.e. *Jewish War*) from the 1524 Frobenius edition. This was done with the help of William Glaeser.  This again has been paired with the Niese Greek text and the Whiston translation. (This text has now been labelled as the "Froben" for Book 1).
+From 2016 to 2019, at UQAM (with generous support of the FRQSC), a great deal of progress was made. Books 9 to 20 of the _Antiquities_ were transcribed by Maxime Laprade, Jonathan di Gregorio and Jean-Félix Aubé-Pronce. Also, in June 2017, Richard Pollard produced an electronic text of the complete Latin _Jewish War_, using the edition of Edward Cardwell from 1837, which is indirectly based on the Galenius edition of 1534.
 
-From 2016 to 2019, at UQAM (with generous support of the FRQSC), at great deal of progress was made.  Books 9 to 20 of the *Antiquities* were transcribed by Maxime Laprade, Jonathan di Gregorio and Jean-Félix Aubé-Pronce.  Also, in June 2017, Richard Pollard produced an electronic text of the complete Latin Bellum Judaicum, using the edition of Edward Cardwell from 1837, which is based on the Galenius edition of 1534.  This means that the text occasionally contains hyper-corrections based on the Greek text, but on the whole it is a decent approximation of the Latin text found in the medieval manuscript tradition.
+The complete Latin text, transcribed over a number of years, was made available on 28 May 2019. It was the first complete new edition of the Latin _Antiquities_ since 1524.
 
-This project has superseded the editions of both Blatt and the Frobenius (see below): it now provides a complete, searchable text of the Latin versions of Josephus' two largest works (Blatt is incomplete).  It is based on an early manuscript only for the *Antiquities*, but both works have now been carefully organised according to the modern editorial divisions in the text (the latter two both lacking in Frobenius). The complete Latin text was made available May 28th, 2019.  As of June 13th 2019, the site provides *Antiquities* I-XX in triglot form, as well as the complete Latin *Jewish War*, far exceeding the coverage of Blatt (Ant. I-V).  In fact, it is now the first complete new edition of the Latin *Antiquities* since 1524!
+In 2021, the first 8 books of the _Antiquities_ were carefully corrected and manuscript annotations were transcribed.
 
-In 2021, the first 8 books of the *Antiquities* were carefully corrected and manuscript annotations were transcribed. 
+In spring 2022, the project moved to a website built by [Performant Software Solutions](https://www.performantsoftware.com/), with improved functionality (LatinJosephus v. 2.0). Early medieval annotations began to be integrated into the online edition.
 
-In spring 2022, the project was moved to this new site built by [Performant Software Solutions](https://www.performantsoftware.com/), with improved functionality. Early medieval annotations began to be integrated into the online edition.  
+In autumn of 2026, the content and website were thoroughly updated and expanded (LatinJosephus v. 3.0):
 
-### Bellum witnesses
+ 1. The *DEH* was added, first in Ussani's Latin, then with English, then French, then Italian translations.  All of its early medieval manuscript annotations were added as well.
+ 2. The *Against Apion* was added.
+ 3. The previous Latin texts of the *Antiquities* and *Jewish War* were carefully corrected, removing thousands of mistakes.
+ 4. Greek text was added for the *Jewish War*.
+ 5. The *Antiquities*, *Jewish War*, and *Against Apion* were provided with Niese section segmentation, as well as various other divisions (e.g. Bamberg manuscript segmentation).
+ 6. An English translation by Thomas Lodge (1602), based on the Latin, was added for the *Antiquities*, the *Jewish War*, and the *Against Apion*.
+ 7. A powerful [search and concordance tool]({{site.baseurl}}/search/) was added, covering all original language texts, translation, and even annotations.
+ 8. The most comprehensive list to date of [Latin Josephus manuscripts]({{site.baseurl}}/manuscripts/) was added.
 
-The *Bellum Judaicum* reader offers Cardwell (1837) in Latin, Niese in Greek,
-and two independently selectable English translations: Whiston, translated
-from Greek, and Thomas Lodge (1602), whose title page describes his translation
-as “translated out of the Latin, and French”.
-
-Lodge's text comes from EEBO-TCP A04680, released under
-[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
-LatinJosephus supplies its structural correspondence with the site's Cardwell
-chapters and 704 coarse units, together with the independently accepted
-4,001-section Niese alignment. Lodge's original wording and TCP source markup
-are preserved.
-
-### Lodge Antiquities Proem and Books I–XX
-
-The *Antiquities* reader also offers Thomas Lodge’s Proem and Books I–XX from *The famous
-and memorable workes of Iosephus* (London, 1602), transcribed by EEBO-TCP as
-A04680. The underlying TCP transcription is released under
-[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
-LatinJosephus independently supplies the certified Niese segmentation of its
-7,376 sections, preserving Lodge’s wording, printed chapters and source evidence.
-This source licence concerns the TCP transcription; it does not assign a licence
-to the project’s independent scholarly apparatus. The Proem is independently
-accessible as I.1–26; Book I narrative begins at I.27. The complete Antiquities is available in this reader.
-
-### Lodge Contra Apionem Books I–II
-
-The *Contra Apionem* reader offers Thomas Lodge’s two books from *The famous
-and memorable workes of Iosephus* (London, 1602), using EEBO-TCP A04680.
-The original heading describes the work as “WRITTEN AGAINST APION, AS TOVCHING
-THE ANTIQVITIE OF THE IEWES.” The underlying TCP transcription is released
-under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
-LatinJosephus independently aligns all 616 Niese sections, retaining the original
-headings, paragraphs, marginal notes, gaps and source order. Six historically
-MEDIUM boundaries were explicitly human approved; their interwoven or paraphrastic
-correspondences remain source specific. The TCP licence does not assign a licence
-to this independent segmentation apparatus.
+For details about the editions, translations and textual correspondences used in the readers, see [Texts]({{site.baseurl}}/texts/).
 
 ### Corrections
 
-The Latin transcription has been double-checked up to book 8 of the *Antiquities*.  For the rest, the process is ongoing. As such, if you spot an inevitable error or two (or more!), please contact [pollard.richard_matthew@uqam.ca](mailto:pollard.richard_matthew@uqam.ca).
+The Latin transcription was very thoroughly checked and corrected in autumn of 2026.  Few errors should remain. If you spot any, please contact [pollard.richard_matthew@uqam.ca](mailto:pollard.richard_matthew@uqam.ca).
 
 ### How to cite:
-- Flavius Josephus (Latin trans.), *Antiquities*, book/chapter, eds. R.M. Pollard, J. Timmermann, J. di Gregorio, M. Laprade, and J.-F. Aubé-Pronce, 2013-2019 (https://www.latinjosephus.org/).
-- Flavius Josephus (Latin trans.), *Bellum Judaicum*, book/chapter, eds. R.M. Pollard and W. Glaeser, 2014– (https://www.latinjosephus.org/).
-- Flavius Josephus (Latin trans.), *Bellum Judaicum*, book/chapter, eds. E. Cardwell and R.M. Pollard, 2017 (https://www.latinjosephus.org/).
 
+Give the work, the passage reference displayed in the reader, a link to the passage, and the date of access. For the _Antiquities_, _Bellum Judaicum_ and _Contra Apionem_, use the book and Niese section where available. For _De excidio Hierosolymitano_, use the book, chapter and paragraph, or the Prologue paragraph. Suggested forms for the Latin texts are:
+
+-   Flavius Josephus (Latin trans.), _Antiquities_, book and Niese section, eds. R.M. Pollard, J. Timmermann, J. di Gregorio, M. Laprade, and J.-F. Aubé-Pronce, 2013–2019, revised 2026, [_Latin Josephus Project_]({{site.baseurl}}/antiquities/).
+-   Flavius Josephus (Latin trans.), _Bellum Judaicum_, book and Niese section, ed. E. Cardwell (1837), electronic edition by R.M. Pollard, 2017, revised 2026, [_Latin Josephus Project_]({{site.baseurl}}/bellum-judaicum/).
+-   Flavius Josephus (Latin trans.), _Contra Apionem_, book and Niese section, ed. K. Boysen (1898), electronic edition by R.M. Pollard, 2026, [_Latin Josephus Project_]({{site.baseurl}}/contra-apionem/).
+-   _De excidio Hierosolymitano_, book, chapter and paragraph, ed. V. Ussani (1932), electronic edition by R.M. Pollard, 2026, [_Latin Josephus Project_]({{site.baseurl}}/deh/).
+
+When citing a Greek text, a translation, or a manuscript annotation, also identify the editor, translator or manuscript shown in the reader.
 
 ### Bibliography associated with this project
 
-- Richard Matthew Pollard, “Flavius Josephus: A Carolingian Church Father?,” forthcoming in Paul Hilliard and Karen Kletter (eds.), A Companion to the Latin Josephus in the Western Middle Ages (Leiden: Brill, [2022?]).
-- Richard Matthew Pollard and Anne-Gaëlle Weber, “[Le canon des Pères à l’époque carolingienne et la place de Flavius Josèphe](https://www.academia.edu/77271923/Le_canon_des_P%C3%A8res_%C3%A0_l_%C3%A9poque_carolingienne_et_la_place_de_Flavius_Jos%C3%A8phe),” *Revue d'études augustiniennes et patristiques*, 67.2 (2021) : 275-318.
-- Jean-Félix Aubé-Pronce and Richard Matthew Pollard, “[Annotating Flavius Josephus in the Early Middle Ages: Early Impressions from Thousands of Notes](https://books.google.ca/books?id=DZMdEAAAQBAJ&pg=PA167&lpg=PA167),” *Medievalia et Humanistica*, 46 (2021): 167-200.
-- Richard Matthew Pollard, “[Flavius Josephus: the most influential classical historian of the early Middle Ages](https://www.cambridge.org/core/books/abs/writing-the-early-medieval-west/flavius-josephus-the-most-influential-classical-historian-of-the-early-middle-ages/7084D4986AD317026EE0B5DE7D5FB9B5),” in *Writing the Early Medieval West. Studies in Honour of Rosamond McKitterick*, eds. C. West and E. Screen (Cambridge: Cambridge University Press, 2018), 15-32.
-- Richard Matthew Pollard, “[The De Excidio of ʻHegesippusʼ and the Reception of Josephus in the Early Middle Ages](https://www.brepolsonline.net/doi/abs/10.1484/J.VIATOR.5.105362?journalCode=viator),” *Viator*, vol. 46, no. 2 (2015): 65-100.
-- Richard Matthew Pollard, “[Reading Josephus at Vivarium? Annotations and Exegesis in Early Copies of the Antiquities](https://www.utpjournals.press/doi/abs/10.3138/flor.30.103?journalCode=flor),” *Florilegium*, vol. 30 (2015 for 2013): 103-142.
+-   Richard Matthew Pollard, “Flavius Josephus: A Carolingian Church Father?,” in Paul Hilliard and Karen Kletter (eds.), A Companion to Josephus in the Medieval West (Leiden: Brill, 2024), pp. 61–93. (DOI: [10.1163/9789004684270_005](https://doi.org/10.1163/9789004684270_005))
+-   Richard Matthew Pollard and Anne-Gaëlle Weber, “[Le canon des Pères à l’époque carolingienne et la place de Flavius Josèphe](https://www.academia.edu/77271923/Le_canon_des_P%C3%A8res_%C3%A0_l_%C3%A9poque_carolingienne_et_la_place_de_Flavius_Jos%C3%A8phe),” _Revue d’études augustiniennes et patristiques_, 67.2 (2021) : 275-318.
+-   Jean-Félix Aubé-Pronce and Richard Matthew Pollard, “[Annotating Flavius Josephus in the Early Middle Ages: Early Impressions from Thousands of Notes](https://books.google.ca/books?id=DZMdEAAAQBAJ&pg=PA167&lpg=PA167),” _Medievalia et Humanistica_, 46 (2021): 167-200.
+-   Richard Matthew Pollard, “[Flavius Josephus: the most influential classical historian of the early Middle Ages](https://www.cambridge.org/core/books/abs/writing-the-early-medieval-west/flavius-josephus-the-most-influential-classical-historian-of-the-early-middle-ages/7084D4986AD317026EE0B5DE7D5FB9B5),” in _Writing the Early Medieval West. Studies in Honour of Rosamond McKitterick_, eds. C. West and E. Screen (Cambridge: Cambridge University Press, 2018), 15-32.
+-   Richard Matthew Pollard, “[The De Excidio of ʻHegesippusʼ and the Reception of Josephus in the Early Middle Ages](https://www.brepolsonline.net/doi/abs/10.1484/J.VIATOR.5.105362?journalCode=viator),” _Viator_, vol. 46, no. 2 (2015): 65-100.
+-   Richard Matthew Pollard, “[Reading Josephus at Vivarium? Annotations and Exegesis in Early Copies of the Antiquities](https://www.utpjournals.press/doi/abs/10.3138/flor.30.103?journalCode=flor),” _Florilegium_, vol. 30 (2015 for 2013): 103-142.
 
-**See also the wonderful project of our friends at Universität Bern, [Lege Josephum](https://www.legejosephum.unibe.ch/).** 
-
-
+**See also the wonderful project of our friends at Universität Bern, [Lege Josephum](https://www.legejosephum.unibe.ch/).**
 
 ### Some Other Resources Relating to the Latin Josephus
 
 #### Latin Editions of Josephus
 
-- Franz Blatt, ed., [*The Latin Josephus*](https://www.worldcat.org/title/latin-josephus-i/oclc/234081365&referer=brief_results) (Aarhus, 1958): incomplete, only Antiquities I-V.
-- Johannes Frobenius, ed., [*Flavii Iosephi Opera*](https://books.google.ca/books?id=E_NCAAAAcAAJ&pg=PP7#v=onepage&q&f=false) (Basel, 1524): the last Latin edition that was not 'improved' by comparison with the Greek text.
-- Edward Cardwell, [*De Bello Judaico*](https://books.google.ca/books?id=zoENAAAAQAAJ&lpg=PA395&pg=PA1) (Oxford, 1837): the basis for the complete Latin text of the Bellum presented here.
+-   Franz Blatt, ed., [_The Latin Josephus_](https://www.worldcat.org/title/latin-josephus-i/oclc/234081365&referer=brief_results) (Aarhus, 1958): incomplete, only Antiquities I-V.
+-   Johannes Frobenius, ed., [_Flavii Iosephi Opera_](https://books.google.ca/books?id=E_NCAAAAcAAJ&pg=PP7#v=onepage&q&f=false) (Basel, 1524): the last Latin edition that was not ‘improved’ by comparison with the Greek text.
+-   Edward Cardwell, [_De Bello Judaico_](https://books.google.ca/books?id=zoENAAAAQAAJ&lpg=PA395&pg=PA1) (Oxford, 1837): the basis for the complete Latin text of the Bellum presented here.
+-   Karl Boysen, ed., [_Flavii Iosephi opera ex versione Latina antiqua. Pars VI: De Iudaeorum vetustate sive Contra Apionem libri II_](https://archive.org/details/flaviilosephiope37joseuoft) (CSEL 37; Vienna, Prague and Leipzig, 1898): the basis for the Latin _Contra Apionem_ presented here.
+-   Vincenzo Ussani, ed., _Hegesippi qui dicitur Historiae libri V. Pars prior: Textum criticum continens_ (CSEL 66.1; Vienna and Leipzig, 1932): the basis for the Latin _De excidio Hierosolymitano_ presented here.
+-   Bernd Bader, ed., [_Josephus Latinus: De Bello Iudaico. Buch 1_](https://www.steiner-verlag.de/Josephus-Latinus-De-Bello-Iudaico-.-Buch-1/9783515124300) (Palingenesia 119; Stuttgart, 2019): a critical edition and commentary on Book I of the Latin _Jewish War_.
+-   Randolf Lukas, ed., [_Josephus Latinus, Antiquitates Judaicae. Buch 6 und 7. Einleitung, Edition und Kommentar zur Übersetzungstechnik_](https://www.wvttrier.de/p/josephus-latinus-antiquitates-judaicae-buch-6-und-7) (Bochumer Altertumswissenschaftliches Colloquium 112; Trier, 2022): a critical edition of Books VI–VII of the Latin _Antiquities_.
 
 #### Greek Editions of Josephus
 
-- Benedict Niese, ed., *Flavii Iosephi opera* (Berlin, 1887-), [vol. 1](https://archive.org/details/operajosephus01joseuoft/page/n5/mode/2up) (1887, Ant. I-V); [vol. 2](https://archive.org/details/operajosephus02joseuoft/mode/2up) (1885, Ant. VI-X) [vol. 3](https://archive.org/details/operajosephus02joseuoft/mode/2up) (1892, Ant. XI-XV), [vol. 4](https://archive.org/details/operajosephus04joseuoft/page/n3/mode/2up) (1890, Ant. XVI-XX & Vita), [vol. 5](https://books.google.ca/books?id=rw8aAAAAYAAJ&pg=PR1#v=onepage&q&f=false) (1889, *Contra Apionem*). [vol. 6](https://archive.org/details/operajosephus06joseuoft/page/n3/mode/2up) (1894, *Bellum Judaicum*): the best critical edition of the Greek original.
-- Arnoldus Arlenius, ed., [*Flavii Josephi opera*](https://books.google.ca/books?id=8g5nAAAAcAAJ&pg=PP7) (Basel, 1544): *editio princeps* of the Greek text of Josephus.
+-   Benedict Niese, ed., _Flavii Iosephi opera_ (Berlin), [vol. 1](https://archive.org/details/operajosephus01joseuoft/page/n5/mode/2up) (1887, Ant. I-V); [vol. 2](https://archive.org/details/operajosephus02joseuoft/mode/2up) (1885, Ant. VI-X); [vol. 3](https://books.google.com/books?id=HoT2o_iuTNgC&pg=PR1) (1892, Ant. XI-XV); [vol. 4](https://archive.org/details/operajosephus04joseuoft/page/n3/mode/2up) (1890, Ant. XVI-XX & Vita); [vol. 5](https://books.google.ca/books?id=rw8aAAAAYAAJ&pg=PR1#v=onepage&q&f=false) (1889, _Contra Apionem_); [vol. 6](https://archive.org/details/operajosephus06joseuoft/page/n3/mode/2up) (1894, _Bellum Judaicum_): the best critical edition of the Greek original.
+-   Arnoldus Arlenius, ed., [_Flavii Josephi opera_](https://books.google.ca/books?id=8g5nAAAAcAAJ&pg=PP7) (Basel, 1544): _editio princeps_ of the Greek text of Josephus.
 
-#### Some Other Digitised, Early Manuscripts of the Latin Josephus
-- Cologny, Bodmer [Ms. 98](http://www.e-codices.unifr.ch/en/cb/0098) and [99](http://www.e-codices.unifr.ch/en/list/one/cb/0099#tab_details) (9th century, Blatt no. 48): Ant. I-VI (without preface) and BJ.
-- St Gall, [CSG 627](http://www.stgallplan.org/stgallmss/viewItem.do?ark=p21198-zz0026dh5s) (9th century, Blatt p. 113): BJ.
-- Paris, [Bibliothèque Nationale Lat. 5052](http://gallica.bnf.fr/ark:/12148/btv1b9067689z) (9th century, Blatt no. 42): Ant. IV.247-XI.310.
-- Rome, [Biblioteca Vaticana Pal. Lat. 814](http://bibliotheca-laureshamensis-digital.de/bav/bav_pal_lat_814) (9th century, Blatt no. 46): Ant. I-XII, without preface.
-- Wolfenbüttel, [Ms. Guelf.22 Weiss.](http://diglib.hab.de/mss/22-weiss/start.htm?distype=thumbs-img&imgtyp=0&size=) (9th century, Blatt no. 34): Ant. I-XII and BJ.
-- Würzburg, [Mp. Theol. fol. 5](http://vb.uni-wuerzburg.de/ub/pageflip2.html?book=41667146&page=2) (9th century, Blatt no. 45): Ant. VII-XII.399.
+----------
 
----
+Latin text © Richard Matthew Pollard (UQAM), Josh Timmermann (UBC), William ‘Ben’ Glaeser (UBC 2014-15), Jonathan di Gregorio (UQAM 2016-19), Maxime Laprade (UQAM 2016-17), Jean-Félix Aubé-Pronce (UQAM 2018-19). Annotations transcribed by Jean-Félix Aubé-Pronce and Jonathan di Gregorio.
 
-Latin text © Richard Matthew Pollard (UQAM), Josh Timmermann (UBC), William 'Ben' Glaeser (UBC 2014-15), Jonathan di Gregorio (UQAM 2016-19), Maxime Laprade (UQAM 2016-17), Jean-Félix Aubé-Pronce (UQAM 2018-19).  Annotations transcribed by Jean-Félix Aubé-Pronce and Jonathan di Gregorio.
-
-Greek text used through Creative Commons license from the [Perseus Digital Library]( http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0145).
-
-
-
+Greek text used through Creative Commons license from the [Perseus Digital Library](http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0145).

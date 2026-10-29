@@ -18,19 +18,29 @@
           {% for p in sorted_pages %}
           {% if p.nav and p.autogen == nil %}
           {% if p.dropdown %}
-          <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {% assign dropdown_active = false %}
+          {% if page.url == p.url %}{% assign dropdown_active = true %}{% endif %}
+          {% for child in p.children %}
+            {% if page.url == child.permalink %}
+              {% assign dropdown_active = true %}
+            {% elsif page.nav_parent and page.nav_parent == child.permalink %}
+              {% assign dropdown_active = true %}
+            {% endif %}
+          {% endfor %}
+          {% assign dropdown_id = p.title | slugify | prepend: 'navbarDropdown-' %}
+          <li class="nav-item dropdown {% if dropdown_active %}active{% endif %}">
+              <a class="nav-link dropdown-toggle" href="#" id="{{ dropdown_id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ p.title }}
-                {% if page.title == p.title %}
+                {% if dropdown_active %}
                 <span class="sr-only">(current)</span>
                 {% endif %}
               </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="{{ dropdown_id }}">
               {% for child in p.children %}
               {% if child.title == 'divider' %}
                 <div class="dropdown-divider"></div>
               {% else %}
-                <a class="dropdown-item" href="{{ child.permalink | relative_url }}">{{ child.title }}</a>
+                <a class="dropdown-item" href="{{ child.permalink | relative_url }}"{% if page.url == child.permalink %} aria-current="page"{% elsif page.nav_parent and page.nav_parent == child.permalink %} aria-current="location"{% endif %}>{{ child.title }}</a>
               {% endif %}
               {% endfor %}
               </div>
