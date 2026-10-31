@@ -23,6 +23,10 @@ _Historia d’Egesippo tra i christiani scrittori antichissimo de le valorose im
 - [Universal Short Title Catalogue — USTC 836543](https://ustc.ac.uk/editions/836543).
 - [University of Milan — EMoBookTrade](https://emobooktrade.unimi.it/db/public/pages/sourceedition/idsources/213/view/0/page/76).
 
+## Comparison with the English translation
+
+Comparison with Lauro’s Italian translation of 1544 led to three revisions of our English, two adopting his interpretation. Across 216 Ussani sections, the audit recorded 308 cases where his rendering was judged less persuasive or freer, together with six further cases warranting reconsideration of our English.
+
 ## Related texts and translations
 
 - [Latin DEH: the project’s edition based on Ussani]({{site.baseurl}}/texts/latin-deh/).
