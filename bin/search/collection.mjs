@@ -220,10 +220,10 @@ export function createCollection(catalog, lunr, options = {}) {
         }
         citations.add(record.citationLabel);
       } else if (collection.citationScheme === 'source-span') {
-        if (record.citationScheme !== 'source-span' || record.normalizationProfile !== 'early-print-fr-v1'
+        if (record.citationScheme !== 'source-span' || !['French','Italian'].includes(record.language) || record.normalizationProfile !== ({French:'early-print-fr-v1',Italian:'early-print-it-v1'})[record.language]
           || !isText(record.sourceOccurrence) || !isText(record.citationLabel)
           || !Array.isArray(record.sourcePieces) || !record.sourcePieces.length
-          || !Array.isArray(record.canonicalCorrespondences)) fail('the French physical-source contract is incomplete.');
+          || !Array.isArray(record.canonicalCorrespondences)) fail('the witness physical-source contract is incomplete.');
       } else if (record.citationScheme !== undefined && record.citationScheme !== "niese") {
         fail("the passage citation scheme does not match the catalog.");
       }

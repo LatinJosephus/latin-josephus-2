@@ -17,7 +17,11 @@
   ],
   "siteInputs": [
     "_pages/search.html",
-    "_includes/search-interface.html"
+    "_includes/search-interface.html",
+    "assets/data/deh-lauro1544/manifest.json",
+    "assets/data/deh-lauro1544/provenance.json",
+    "assets/data/deh-lauro1544/editorial.json",
+    "assets/data/deh-lauro1544/apparatus.json"
   ],
   "hookInputs": [
     "bin/cibuild",
@@ -187,6 +191,19 @@
       ],
       "verifier": "tests/millet-corpus-qa.mjs",
       "qaReport": "data/deh-french-millet1556/qa-report.json"
+    },
+    "deh-italian-lauro1544": {
+      "extractor": "extract-lauro.py",
+      "outputDirectory": "data/deh-italian-lauro1544",
+      "sources": [
+        "assets/data/deh-lauro1544/book-01.json",
+        "assets/data/deh-lauro1544/book-02.json",
+        "assets/data/deh-lauro1544/book-03.json",
+        "assets/data/deh-lauro1544/book-04.json",
+        "assets/data/deh-lauro1544/book-05.json"
+      ],
+      "verifier": "tests/lauro-corpus-qa.mjs",
+      "qaReport": "data/deh-italian-lauro1544/qa-report.json"
     }
   }
 }

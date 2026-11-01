@@ -1168,3 +1168,25 @@ The combined build verifies **80 unique indexed inputs: 70 XML files and ten
 accepted citation maps**, including 35 English XML files. All 63 previous book
 editions, seven collection metadata entries, and 189 per-book corpus/report/index
 files remain unchanged from the accepted Whiston Contra Apionem release.
+
+
+## Lauro 1544 Italian
+
+`extract-lauro.py` projects the unchanged accepted reader release
+LAURO1544_WEBSITE_RELEASE_20261031_V1 into physical source passages; it never
+emits once per canonical target. Use `--books 1` for an explicit local pilot;
+default extraction builds all five books. `lauro-publication.mjs` independently
+restores every primary source slice and checks accepted metadata, while
+`tests/lauro-corpus-qa.mjs` compares every token/offset with a separate character
+scanner and exercises occurrence counts, phrases, wildcards, Boolean scopes,
+exports and mixed-witness isolation. The publication registry runs that gate.
+
+Matching profile `early-print-it-v1` supports long s and explicit ¬ continuations.
+Accents, ß and historical spelling remain literal. Only specifically admitted
+bracketed supplied-letter ranges join their word for matching; source brackets,
+editorial qualification and original geometry remain recoverable. Italian CSVs
+have `italian_source_references_json`, separate DEH correspondences and source
+version. The existing reader is selected with `italian=lauro1544` and a physical
+`lauro-page` route. `LAURO_SOURCE_CONTRACT.md` in the delivery gives the source
+accounting and qualifications; source text and provisional alignment are not
+newly editorially certified by a successful build.

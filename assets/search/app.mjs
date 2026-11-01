@@ -209,6 +209,7 @@ function summarize(result,model){
 function resultContext(result,model){
   const parts=[];
   const collections=catalog.collections.filter(collection=>result.selectedCollections.includes(collection.id)),labels=citationUnitLabels(collections);
+  if(collections.some(collection=>collection.id==='deh-italian-lauro1544'))parts.push('Lauro 1544 Italian: accepted corrected-199 diplomatic display and provisional correspondence. Each physical Italian passage is indexed once in source order. Long ſ matches s; ß, accents and historical spelling remain literal. Explicit ¬ word divisions join for matching. Accepted bracketed supplied letters join their word for matching; brackets remain visible and identify editorial supply, not certified print. Italian folios and DEH correspondences are recorded separately. Reader links open the Italian witness.');
   if(collections.some(collection=>collection.id==='deh-french-millet1556'))parts.push('Millet 1556 French: semi-final r1 transcription and provisional accepted correspondence. Each physical French passage is indexed once in source order. References distinguish French folios from DEH correspondences. Long ſ matches s; explicit ¬ continuations join for matching. Apostrophes and hyphens separate words; accents remain significant. French spelling is unaffected by the Latin equivalence setting. Reader links open the French source leaf.');
   if(view==='concordance'){
     if(model.countKind==='evidence'){

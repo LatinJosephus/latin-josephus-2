@@ -1,7 +1,7 @@
-import {createCollection} from './collection.ff7c7cd71bcb73b49d3aee2116bb556ad6534d658db28b56c8c9eedffd76ab8e.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6.mjs';
-import {buildConcordance,exportConcordance} from './concordance.a693769e88e97389eedb8a16c1b54bce01a5dce6cfa875ac8009b7f303815b2b.mjs';
-import {createEngine} from './engine.838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9.mjs';
+import {createCollection} from './collection.5a72274be28fd43cd43c7592c3d9337d48e284cdd4d0cd9e4add7cb536f1711f.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.f054615039fbe531bc699488a0cda58f7dc2085186a38a9cf7111243218de6bf.mjs';
+import {buildConcordance,exportConcordance} from './concordance.41605d261985ec214c0ffd38906f480c1188cecbded740aba8d02cedd1661e46.mjs';
+import {createEngine} from './engine.a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89.mjs';
 
 const root=document.getElementById('lj-search');
 const $=id=>root.querySelector(`#${id}`);
@@ -209,6 +209,7 @@ function summarize(result,model){
 function resultContext(result,model){
   const parts=[];
   const collections=catalog.collections.filter(collection=>result.selectedCollections.includes(collection.id)),labels=citationUnitLabels(collections);
+  if(collections.some(collection=>collection.id==='deh-italian-lauro1544'))parts.push('Lauro 1544 Italian: accepted corrected-199 diplomatic display and provisional correspondence. Each physical Italian passage is indexed once in source order. Long ſ matches s; ß, accents and historical spelling remain literal. Explicit ¬ word divisions join for matching. Accepted bracketed supplied letters join their word for matching; brackets remain visible and identify editorial supply, not certified print. Italian folios and DEH correspondences are recorded separately. Reader links open the Italian witness.');
   if(collections.some(collection=>collection.id==='deh-french-millet1556'))parts.push('Millet 1556 French: semi-final r1 transcription and provisional accepted correspondence. Each physical French passage is indexed once in source order. References distinguish French folios from DEH correspondences. Long ſ matches s; explicit ¬ continuations join for matching. Apostrophes and hyphens separate words; accents remain significant. French spelling is unaffected by the Latin equivalence setting. Reader links open the French source leaf.');
   if(view==='concordance'){
     if(model.countKind==='evidence'){
@@ -255,7 +256,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.ce22be91c90f791324e14b2c5c44d19a01812cbff02893ce2808e03618518574.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');
@@ -398,7 +399,7 @@ async function annotationSearch() {
     els.downloadStatus.textContent = ''; els.region.setAttribute('aria-busy', 'true');
     try {
       if (!engine) {
-        const response = await fetch(new URL('./annotations.1564b56cfd729f0f60ca7315df740a92237cffee3747717f9dc8773983392217.bundle.json', import.meta.url), {cache: 'no-cache'});
+        const response = await fetch(new URL('./annotations.7c81c9cf1df36fd6348cf5939bba2c7b10bd881a7dffe27a49645e16ce6c1f25.bundle.json', import.meta.url), {cache: 'no-cache'});
         if (!response.ok) throw new Error(`The annotation index could not be loaded (HTTP ${response.status}). Try Search again.`);
         const bundle = await response.json();
         engine = createEngine(bundle, globalThis.lunr); records = engine.records;

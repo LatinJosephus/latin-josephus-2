@@ -3,8 +3,8 @@
  * Work, language, and edition identify a collection; every book selector and
  * cache key includes its collection ID. Queries return no partial results.
  */
-import { createEngine, parseQuery, SCHEMA_VERSION } from "./engine.838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9.mjs";
-import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6.mjs";
+import { createEngine, parseQuery, SCHEMA_VERSION } from "./engine.a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89.mjs";
+import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.f054615039fbe531bc699488a0cda58f7dc2085186a38a9cf7111243218de6bf.mjs";
 
 export const CATALOG_SCHEMA_VERSION = 2;
 export const qualifiedBookId = (collectionId, number) => `${collectionId}:${number}`;
@@ -220,10 +220,10 @@ export function createCollection(catalog, lunr, options = {}) {
         }
         citations.add(record.citationLabel);
       } else if (collection.citationScheme === 'source-span') {
-        if (record.citationScheme !== 'source-span' || record.normalizationProfile !== 'early-print-fr-v1'
+        if (record.citationScheme !== 'source-span' || !['French','Italian'].includes(record.language) || record.normalizationProfile !== ({French:'early-print-fr-v1',Italian:'early-print-it-v1'})[record.language]
           || !isText(record.sourceOccurrence) || !isText(record.citationLabel)
           || !Array.isArray(record.sourcePieces) || !record.sourcePieces.length
-          || !Array.isArray(record.canonicalCorrespondences)) fail('the French physical-source contract is incomplete.');
+          || !Array.isArray(record.canonicalCorrespondences)) fail('the witness physical-source contract is incomplete.');
       } else if (record.citationScheme !== undefined && record.citationScheme !== "niese") {
         fail("the passage citation scheme does not match the catalog.");
       }

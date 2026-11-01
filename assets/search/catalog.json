@@ -305,6 +305,37 @@
         "tokens": 161125,
         "bytes": 29654723
       }
+    },
+    {
+      "id": "deh-italian-lauro1544",
+      "work": "deh",
+      "label": "De excidio Hierosolymitano — Lauro Italian",
+      "citationPrefix": "Lauro",
+      "language": "Italian",
+      "edition": "Lauro 1544 (corrected 199; provisional correspondence)",
+      "readerPath": "deh/",
+      "books": [
+        "deh-italian-lauro1544:1",
+        "deh-italian-lauro1544:2",
+        "deh-italian-lauro1544:3",
+        "deh-italian-lauro1544:4",
+        "deh-italian-lauro1544:5"
+      ],
+      "citationScheme": "source-span",
+      "unitLabel": "Italian passage",
+      "unitLabelPlural": "Italian passages",
+      "manifestPath": "config/deh-italian-lauro1544.json",
+      "manifestSHA256": "7062400d7fd4a030bc0cc25fa1921af3ac06ea48ced36ea38775e551b49e4b8a",
+      "corpusPath": "data/deh-italian-lauro1544/corpus.json",
+      "corpusSHA256": "8dc971685a79e5c80cda8e3e581f627e3a6d2081d082d0a8f5062642379bc9dd",
+      "extractionReportPath": "data/deh-italian-lauro1544/extraction-report.json",
+      "extractionReportSHA256": "85c11053805a4bb2e3b1b5c34bf30d83c4daa10921ffefd91b58e499fb574482",
+      "totals": {
+        "books": 5,
+        "sections": 558,
+        "tokens": 105756,
+        "bytes": 23656512
+      }
     }
   ],
   "books": [
@@ -1654,19 +1685,89 @@
       "sha256": "f2dce14169ea5d160e890bd9145044d5f7c3c334f818648a75d4fed7cfafa739",
       "corpusPath": "data/deh-french-millet1556/book-05.corpus.json",
       "corpusSHA256": "15665e6e09b17f62b2bdf5f4d01f83a3701c5dbacab6c6fe279391d8e832daf8"
+    },
+    {
+      "id": "deh-italian-lauro1544:1",
+      "collectionId": "deh-italian-lauro1544",
+      "number": 1,
+      "label": "Book 1 (including translated Prologue)",
+      "sections": 215,
+      "tokens": 32616,
+      "vocabulary": 5664,
+      "bytes": 7531843,
+      "path": "data/deh-italian-lauro1544/book-01.bundle.json",
+      "sha256": "afcc6003184994e8144ea15fc01f202cf04eeb8cee8b03c8b6c4db24ea402853",
+      "corpusPath": "data/deh-italian-lauro1544/book-01.corpus.json",
+      "corpusSHA256": "8735fafcf3173908d081e410658ef9bf44ed2237af79e2f57157e7177c553a70"
+    },
+    {
+      "id": "deh-italian-lauro1544:2",
+      "collectionId": "deh-italian-lauro1544",
+      "number": 2,
+      "label": "Book 2",
+      "sections": 73,
+      "tokens": 13274,
+      "vocabulary": 3262,
+      "bytes": 2997823,
+      "path": "data/deh-italian-lauro1544/book-02.bundle.json",
+      "sha256": "0233c85d1d096f4cc3a70191287ff7c25752fdbd5e54b9189bcaae3b07093c14",
+      "corpusPath": "data/deh-italian-lauro1544/book-02.corpus.json",
+      "corpusSHA256": "8bb9b088725a2194f29de65e5dfe0c8327a9bbedabc2b41e78178981e27a6f34"
+    },
+    {
+      "id": "deh-italian-lauro1544:3",
+      "collectionId": "deh-italian-lauro1544",
+      "number": 3,
+      "label": "Book 3",
+      "sections": 70,
+      "tokens": 14192,
+      "vocabulary": 3489,
+      "bytes": 3160932,
+      "path": "data/deh-italian-lauro1544/book-03.bundle.json",
+      "sha256": "5374c700858b28af9bce4c01a33fccc47b7842c7f82494a673b5f27b51d47fba",
+      "corpusPath": "data/deh-italian-lauro1544/book-03.corpus.json",
+      "corpusSHA256": "4ad23463729ad3b682dacf832db1dfec3941be8af4ddf22f7171eff41e60a006"
+    },
+    {
+      "id": "deh-italian-lauro1544:4",
+      "collectionId": "deh-italian-lauro1544",
+      "number": 4,
+      "label": "Book 4",
+      "sections": 79,
+      "tokens": 12897,
+      "vocabulary": 3319,
+      "bytes": 3048843,
+      "path": "data/deh-italian-lauro1544/book-04.bundle.json",
+      "sha256": "245b8aa878bd90da5264cf1cdb602da906530905731081dd8b9ca398244e020a",
+      "corpusPath": "data/deh-italian-lauro1544/book-04.corpus.json",
+      "corpusSHA256": "e4d01822d1d3cd8737120cac511067548e80641c0c72f8dbd79663e91f42186b"
+    },
+    {
+      "id": "deh-italian-lauro1544:5",
+      "collectionId": "deh-italian-lauro1544",
+      "number": 5,
+      "label": "Book 5",
+      "sections": 121,
+      "tokens": 32777,
+      "vocabulary": 5982,
+      "bytes": 6917071,
+      "path": "data/deh-italian-lauro1544/book-05.bundle.json",
+      "sha256": "e12ae28d8dc6e67787e9dabf9f13866638b4b24c4f8407db6d52baab5861d7bd",
+      "corpusPath": "data/deh-italian-lauro1544/book-05.corpus.json",
+      "corpusSHA256": "78e66d6cbb35ed45e5856910c971c77c7e7ce61fb1157913e39536fff51fa81d"
     }
   ],
   "totals": {
-    "books": 73,
-    "sections": 25569,
-    "tokens": 1508349,
-    "bytes": 224013579
+    "books": 78,
+    "sections": 26127,
+    "tokens": 1614105,
+    "bytes": 247670091
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "339a9333aaac3aac4a52fa8d9c490dadece6ab4cd031ba17e83e885b260040e5",
+    "manifestSHA256": "696ed8a97af977db9dc1ce881345551db8be5ec958cf45e6aad808b590a9e569",
     "enginePath": "engine.mjs",
-    "engineSHA256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+    "engineSHA256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89",
     "lunrPath": "vendor/lunr.cjs",
     "lunrSHA256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
     "lunrVersion": "2.3.9"

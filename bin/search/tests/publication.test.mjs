@@ -31,7 +31,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [73, 25569, 1508349]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [78, 26127, 1614105]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
@@ -50,7 +50,9 @@ test('search publication preserves current inputs and refuses stale or incomplet
     assert.deepEqual([pollardDeh.totals.books, pollardDeh.totals.sections, pollardDeh.totals.tokens], [5, 558, 136054]);
     const millet = baseline.catalog.collections.find(collection => collection.id === 'deh-french-millet1556');
     assert.deepEqual([millet.totals.books, millet.totals.sections, millet.totals.tokens], [5, 560, 161125]);
-    assert.equal(result.sourceXML.length, 85);
+    const lauro = baseline.catalog.collections.find(collection => collection.id === 'deh-italian-lauro1544');
+      assert.deepEqual([lauro.totals.books, lauro.totals.sections, lauro.totals.tokens], [5, 558, 105756]);
+      assert.equal(result.sourceXML.length, 90);
     assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 35);
     assert.equal(result.assets, baseline.artifacts.length + 1);
     assert.equal(baseline.manifest.browserRelease.launcher, 'launch-v1.mjs');

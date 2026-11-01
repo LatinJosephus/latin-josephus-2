@@ -50,8 +50,9 @@ export function tokenizeText(text) {
 /** A zero-width TEI gap may interrupt a word as well as phrase adjacency. */
 export function tokenizeRecord(record) {
   const text = String(record.text);
-  if (record.normalizationProfile === 'early-print-fr-v1') {
-    if (record.language !== 'French') throw new TypeError('The French early-print profile requires French source metadata.');
+  if (['early-print-fr-v1','early-print-it-v1'].includes(record.normalizationProfile)) {
+    const italian = record.normalizationProfile === 'early-print-it-v1';
+    if (record.language !== (italian ? 'Italian' : 'French')) throw new TypeError('Early-print profile requires its declared witness language.');
     // One token can cover several exact source-line pieces. Its geometry still
     // addresses the unmodified source string, including the explicit ¬ mark.
     const gaps = (record.textGaps || []).filter(gap => gap.kind === 'tei-gap');
@@ -60,11 +61,28 @@ export function tokenizeRecord(record) {
     const output = [];
     let left = 0;
     for (const right of [...boundaries, text.length]) {
-      const value = text.slice(left, right);
+      let value = text.slice(left, right), starts = null, ends = null;
+      if (italian && record.suppliedTextRanges?.length) {
+        const skip = new Set();
+        for (const range of record.suppliedTextRanges) {
+          if (!Number.isInteger(range.start) || !Number.isInteger(range.end) || range.start < 0 || range.end > text.length
+            || range.end <= range.start || range.text !== text.slice(range.start,range.end)
+            || !/^\[[\p{L}\p{M}]+\]$/u.test(range.text)) throw new TypeError('Invalid accepted Italian supplied-letter range.');
+          if (range.start >= left && range.end <= right) {skip.add(range.start);skip.add(range.end-1);}
+        }
+        let projected=''; starts=[];ends=[];
+        for(let i=left;i<right;i++) if(!skip.has(i)){projected+=text[i];starts.push(i);ends.push(i+1);}
+        for(const range of record.suppliedTextRanges) if(range.start>=left&&range.end<=right){
+          const a=starts.indexOf(range.start+1),b=ends.indexOf(range.end-1);
+          if(a<0||b<0)throw new TypeError('Italian supplied-letter geometry is incomplete.');
+          starts[a]=range.start;ends[b]=range.end;
+        }
+        value=projected;
+      }
       const words = /[\p{L}\p{N}][\p{L}\p{M}\p{N}]*(?:¬\s*[\p{L}\p{N}][\p{L}\p{M}\p{N}]*)*/gu;
       for (const match of value.matchAll(words)) {
         output.push({term: normalizeTerm(match[0].replace(/¬\s*/gu, '').replace(/ſ/gu, 's')),
-          start: left + match.index, end: left + match.index + match[0].length});
+          start: starts ? starts[match.index] : left + match.index, end: ends ? ends[match.index+match[0].length-1] : left + match.index + match[0].length});
       }
       left = right;
     }
@@ -407,6 +425,8 @@ export function createEngine(bundle, lunr) {
   if (bundle.records.length !== bundle.tokens.length) throw new TypeError("Search records and token arrays do not agree.");
   const records = bundle.records;
   const earlyFrench = records.some(record => record.normalizationProfile === 'early-print-fr-v1');
+  const earlyItalian = records.some(record => record.normalizationProfile === 'early-print-it-v1');
+  if(earlyItalian && records.some(record => record.normalizationProfile !== 'early-print-it-v1' || record.language !== 'Italian'))throw new TypeError('Early-print bundles must contain one explicit Italian matching profile.');
   if (earlyFrench && records.some(record => record.normalizationProfile !== 'early-print-fr-v1' || record.language !== 'French')) {
     throw new TypeError('Early-print bundles must contain one explicit French matching profile.');
   }
@@ -505,7 +525,7 @@ export function createEngine(bundle, lunr) {
   }
 
   function leafMatches(leaf, scope, fold) {
-    const patterns = leaf.patterns.map((term) => normalizeTerm(earlyFrench ? term.replace(/ſ/gu, 's') : term, fold));
+    const patterns = leaf.patterns.map((term) => normalizeTerm((earlyFrench || earlyItalian) ? term.replace(/ſ/gu, 's') : term, fold));
     const postings = patterns.map((pattern) => lookup(pattern, fold));
     const result = new Map();
     const push = (unitId, hit) => {

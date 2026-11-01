@@ -97,13 +97,14 @@ export function readerURL(record,baseURL,{section=true}={}) {
   const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/','contra-apionem':'contra-apionem/'}[record.work])||'bellum-judaicum/';
   const url=new URL(readerPath,baseURL);
   if(citationScheme(record)==='source-span'){
-    if(record.language!=='French'||record.readerLink?.params?.french!=='millet1556'||record.work!=='deh')throw new TypeError('Invalid French witness destination.');
+    const italian=record.language==='Italian';
+    if((italian ? record.readerLink?.params?.italian!=='lauro1544' : record.language!=='French'||record.readerLink?.params?.french!=='millet1556')||record.work!=='deh')throw new TypeError('Invalid physical witness destination.');
     url.searchParams.set('book',record.book??record.number);
-    url.searchParams.set('french','millet1556');
+    url.searchParams.set(italian?'italian':'french',italian?'lauro1544':'millet1556');
     if(section){
-      url.searchParams.set('millet-view','page');
-      url.searchParams.set('millet-page',record.sourcePieces[0].image);
-      url.searchParams.set('millet-folios','1');
+      url.searchParams.set(italian?'lauro-view':'millet-view','page');
+      url.searchParams.set(italian?'lauro-page':'millet-page',record.sourcePieces[0].image);
+      url.searchParams.set(italian?'lauro-folios':'millet-folios','1');
     }
     return url.href;
   }
@@ -151,7 +152,7 @@ export function readerURL(record,baseURL,{section=true}={}) {
 }
 /** Language and matching labels are kept with the source edition. */
 export function textLanguage(source) {
-  return ({Latin:'la',English:'en',Greek:'grc',French:'fr'})[source.language]||'und';
+  return ({Latin:'la',English:'en',Greek:'grc',French:'fr',Italian:'it'})[source.language]||'und';
 }
 export function spellingEquivalence(result, literal='source spelling') {
   if(!result.fold)return literal;
