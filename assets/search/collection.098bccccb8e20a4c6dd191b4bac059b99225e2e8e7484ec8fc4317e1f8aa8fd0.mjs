@@ -4,7 +4,7 @@
  * cache key includes its collection ID. Queries return no partial results.
  */
 import { createEngine, parseQuery, SCHEMA_VERSION } from "./engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs";
-import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.39a13121b8de63e4a70d5600a38c3aab124275b3a9dfccc0476839c330dba644.mjs";
+import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851.mjs";
 
 export const CATALOG_SCHEMA_VERSION = 2;
 export const qualifiedBookId = (collectionId, number) => `${collectionId}:${number}`;

@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 3,
     "language": "English",
-    "edition": "Pollard v1.1",
+    "edition": "Pollard v1.2",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-03.xml",
-    "sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
-    "bytes": 120069
+    "sha256": "b245bb313b56877cc51146af03cfe373be9f071eaec2a34de14f1e6e10f31ad3",
+    "bytes": 120720
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-03.xml",
-      "sha256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
-      "bytes": 120069
+      "sha256": "b245bb313b56877cc51146af03cfe373be9f071eaec2a34de14f1e6e10f31ad3",
+      "bytes": 120720
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
+    "normalizedSHA256": "b245bb313b56877cc51146af03cfe373be9f071eaec2a34de14f1e6e10f31ad3",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eleven approved comparison notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -63,25 +63,25 @@
     "paragraphsExactlyRestored": 70,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "c8f2bb42a8f5037f158e6695e9edf5478c864224a6f42e968c0578c6f8cfbad2",
-    "restoredParagraphSequenceSha256": "c8f2bb42a8f5037f158e6695e9edf5478c864224a6f42e968c0578c6f8cfbad2",
-    "sourceWordSequenceSha256": "00a33459282fb5fb73d029d3a267a23e743c287c220c4dc42a80c7d020c6b8a3",
-    "indexedWordSequenceSha256": "00a33459282fb5fb73d029d3a267a23e743c287c220c4dc42a80c7d020c6b8a3",
-    "sourceNonWhitespaceContentSha256": "412beea9a179b6747382c2247a93469cba308bf4437071430e28c8aa0dce2125",
-    "indexedNonWhitespaceContentSha256": "412beea9a179b6747382c2247a93469cba308bf4437071430e28c8aa0dce2125"
+    "rawParagraphSequenceSha256": "abfebb409ae71df977453a65e0aa5cb877d8d75de874fcf6ab8d98caf170e8ea",
+    "restoredParagraphSequenceSha256": "abfebb409ae71df977453a65e0aa5cb877d8d75de874fcf6ab8d98caf170e8ea",
+    "sourceWordSequenceSha256": "51237a9920c7ebae3000e349d9b98bf04b92c27675f61b08d6f4936ef0da6d57",
+    "indexedWordSequenceSha256": "51237a9920c7ebae3000e349d9b98bf04b92c27675f61b08d6f4936ef0da6d57",
+    "sourceNonWhitespaceContentSha256": "3ea918a569e9a235cefcf4b54172584454dfea16bea6c248d4c86a4dd22922da",
+    "indexedNonWhitespaceContentSha256": "3ea918a569e9a235cefcf4b54172584454dfea16bea6c248d4c86a4dd22922da"
   },
   "excludedBlocks": [
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 4321,
-      "textSHA256": "b84f2121c49e68a35c6e566d51980958471be8497c46511c9efc6eb16e4d4365"
+      "textCharacters": 4954,
+      "textSHA256": "be4547fc18e077b21eabe207a510950a7ca6c622ec0c357bd5f2f32f83b56e98"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.1: complete Book III, chapters 1–26, [III.1.1]–[III.26.4].",
-      "textSHA256": "b6dfe8cdea093b922a44ab6bc2e1a4690ecf79b6e213a5013a0c93bcad8163da"
+      "text": "English translation, version 1.2: complete Book III, chapters 1–26, [III.1.1]–[III.26.4].",
+      "textSHA256": "ee2607ce85c129115613ccfa1e3222845077ed4734eb76399d9f0f4602d8aec5"
     },
     {
       "kind": "heading",
@@ -3005,8 +3005,8 @@
       "chapter": 13,
       "paragraph": 1,
       "citationLabel": "III.13.1",
-      "rawText": "[III.13.1] During this delay in the siege, the people of the neighbouring city of Japha had also grown insolent because the contest had lasted so long. Vespasian, provoked by this, sent Trajan, who held command of the fifteenth legion, with a thousand cavalry and two thousand infantry. He set out without hesitation, an energetic man skilled in the arts of war, and found an outcome suited to his zeal. For although the city was protected by the nature of the place and enclosed by a double wall, its people were not content to shelter within its fortifications but thought they should go out to meet the Romans. They dared to resist for only a short time, however, and in seeking to retreat inside the outer wall they also admitted the enemy, for the Romans entered along with them as they hurried in. When they fled to the inner wall, the gates were closed lest the Romans again burst in with them. Thus the Jews fought with God’s aid withdrawn from them, the aid by which they had formerly been accustomed to conquer. But they had offended by wicked crimes, and so the penalty they owed was exacted from them, that their sufferings might be bestowed upon the nations as a gift. Indeed, almost more of them were crushed in their wars with one another than by their enemies. The people of Japha are an example: they opened their gates to the Romans and closed them against themselves. For they themselves opened the first wall for the Romans to break in; the Jews closed the second wall to prevent the Jews from passing through. The enemy was therefore admitted, the ally excluded: the one admitted so that there would be no lack of a slayer, the other excluded so that the doomed man would not escape. Between the two walls the Jews were cut down at close quarters and struck from the wall at a distance. For many men of the Roman army, confined in the narrow space, climbed the wall and hurled missiles at those below. Thus the Galileans, more hostile to their own people than to their enemies, begged to be admitted through the entrance of the inner wall, but their own people resisted them. Fighting took place on the threshold of the gate, with Jews struggling against one another. Those on one side met an advancing formation with their swords, those on the other a resisting one. They died calling down savage curses on one another and declaring with their last words that they were suffering less than they deserved. Thus twelve thousand men were killed, all of them fighting men. Trajan, a man of the old discipline, thought that no one would now resist him or that the capture of the city would be easy. He reserved the crowning victory for Vespasian and sent to ask him to dispatch his son Titus to put an end to the battle. On his arrival they broke in and many people were slain, but victory did not fall to the Romans without toil and danger. When they entered the inner wall, all who were fit for war opposed them and, stationed in the narrow passages, made the outcome of the battle uncertain for the victors. Men and women fought from above, often hurling stones and every kind of missile they happened to find even at their own people. Indeed, at the very end they fought for six hours as though the battle were just beginning. At last, when those who had stood to resist were slain, the attack turned to the rest without order, without limit, without mercy. Old men were slaughtered with the young; women and little children were kept, not for pardon but for slavery. All the males were killed except those whom boyhood or infancy protected. Two thousand one hundred and thirty slaves were led away as booty, masters together with their slaves, now sharing the same condition: captivity had made them equals.",
-      "runningText": " During this delay in the siege, the people of the neighbouring city of Japha had also grown insolent because the contest had lasted so long. Vespasian, provoked by this, sent Trajan, who held command of the fifteenth legion, with a thousand cavalry and two thousand infantry. He set out without hesitation, an energetic man skilled in the arts of war, and found an outcome suited to his zeal. For although the city was protected by the nature of the place and enclosed by a double wall, its people were not content to shelter within its fortifications but thought they should go out to meet the Romans. They dared to resist for only a short time, however, and in seeking to retreat inside the outer wall they also admitted the enemy, for the Romans entered along with them as they hurried in. When they fled to the inner wall, the gates were closed lest the Romans again burst in with them. Thus the Jews fought with God’s aid withdrawn from them, the aid by which they had formerly been accustomed to conquer. But they had offended by wicked crimes, and so the penalty they owed was exacted from them, that their sufferings might be bestowed upon the nations as a gift. Indeed, almost more of them were crushed in their wars with one another than by their enemies. The people of Japha are an example: they opened their gates to the Romans and closed them against themselves. For they themselves opened the first wall for the Romans to break in; the Jews closed the second wall to prevent the Jews from passing through. The enemy was therefore admitted, the ally excluded: the one admitted so that there would be no lack of a slayer, the other excluded so that the doomed man would not escape. Between the two walls the Jews were cut down at close quarters and struck from the wall at a distance. For many men of the Roman army, confined in the narrow space, climbed the wall and hurled missiles at those below. Thus the Galileans, more hostile to their own people than to their enemies, begged to be admitted through the entrance of the inner wall, but their own people resisted them. Fighting took place on the threshold of the gate, with Jews struggling against one another. Those on one side met an advancing formation with their swords, those on the other a resisting one. They died calling down savage curses on one another and declaring with their last words that they were suffering less than they deserved. Thus twelve thousand men were killed, all of them fighting men. Trajan, a man of the old discipline, thought that no one would now resist him or that the capture of the city would be easy. He reserved the crowning victory for Vespasian and sent to ask him to dispatch his son Titus to put an end to the battle. On his arrival they broke in and many people were slain, but victory did not fall to the Romans without toil and danger. When they entered the inner wall, all who were fit for war opposed them and, stationed in the narrow passages, made the outcome of the battle uncertain for the victors. Men and women fought from above, often hurling stones and every kind of missile they happened to find even at their own people. Indeed, at the very end they fought for six hours as though the battle were just beginning. At last, when those who had stood to resist were slain, the attack turned to the rest without order, without limit, without mercy. Old men were slaughtered with the young; women and little children were kept, not for pardon but for slavery. All the males were killed except those whom boyhood or infancy protected. Two thousand one hundred and thirty slaves were led away as booty, masters together with their slaves, now sharing the same condition: captivity had made them equals.",
+      "rawText": "[III.13.1] During this delay in the siege, the people of the neighbouring city of Japha had also grown insolent because the contest had lasted so long. Vespasian, provoked by this, sent Trajan, who held command of the fifteenth legion, with a thousand cavalry and two thousand infantry. He set out without hesitation, an energetic man skilled in the arts of war, and found an outcome suited to his zeal. For although the city was protected by the nature of the place and enclosed by a double wall, its people were not content to shelter within its fortifications but thought they should go out to meet the Romans. They dared to resist for only a short time, however, and in seeking to retreat inside the outer wall they also admitted the enemy, for the Romans entered along with them as they hurried in. When they fled to the inner wall, the gates were closed lest the Romans again burst in with them. Thus the Jews fought with God’s aid withdrawn from them, the aid by which they had formerly been accustomed to conquer. But they had offended by wicked crimes, and so the penalty they owed was exacted from them, that their sufferings might be bestowed upon the nations as a gift. Indeed, almost more of them were crushed in their wars with one another than by their enemies. The people of Japha are an example: they opened their gates to the Romans and closed them against themselves. For they themselves opened the first wall for the Romans to break in; the Jews closed the second wall to prevent the Jews from passing through. The enemy was therefore admitted, the ally excluded: the one admitted so that there would be no lack of a slayer, the other excluded so that the doomed man would not escape. Between the two walls the Jews were cut down at close quarters and struck from the wall at a distance. For many men of the Roman army, confined in the narrow space, climbed the wall and hurled missiles at those below. Thus the Galileans, in greater danger from their own people than from their enemies, begged to be admitted through the entrance of the inner wall, but their own people resisted them. Fighting took place on the threshold of the gate, with Jews struggling against one another. Those on one side met an advancing formation with their swords, those on the other a resisting one. They died calling down savage curses on one another and declaring with their last words that they were suffering less than they deserved. Thus twelve thousand men were killed, all of them fighting men. Trajan, a man of the old discipline, thought that no one would now resist him or that the capture of the city would be easy. He reserved the crowning victory for Vespasian and sent to ask him to dispatch his son Titus to put an end to the battle. On his arrival they broke in and many people were slain, but victory did not fall to the Romans without toil and danger. When they entered the inner wall, all who were fit for war opposed them and, stationed in the narrow passages, made the outcome of the battle uncertain for the victors. Men and women fought from above, often hurling stones and every kind of missile they happened to find even at their own people. Indeed, at the very end they fought for six hours as though the battle were just beginning. At last, when those who had stood to resist were slain, the attack turned to the rest without order, without limit, without mercy. Old men were slaughtered with the young; women and little children were kept, not for pardon but for slavery. All the males were killed except those whom boyhood or infancy protected. Two thousand one hundred and thirty slaves were led away as booty, masters together with their slaves, now sharing the same condition: captivity had made them equals.",
+      "runningText": " During this delay in the siege, the people of the neighbouring city of Japha had also grown insolent because the contest had lasted so long. Vespasian, provoked by this, sent Trajan, who held command of the fifteenth legion, with a thousand cavalry and two thousand infantry. He set out without hesitation, an energetic man skilled in the arts of war, and found an outcome suited to his zeal. For although the city was protected by the nature of the place and enclosed by a double wall, its people were not content to shelter within its fortifications but thought they should go out to meet the Romans. They dared to resist for only a short time, however, and in seeking to retreat inside the outer wall they also admitted the enemy, for the Romans entered along with them as they hurried in. When they fled to the inner wall, the gates were closed lest the Romans again burst in with them. Thus the Jews fought with God’s aid withdrawn from them, the aid by which they had formerly been accustomed to conquer. But they had offended by wicked crimes, and so the penalty they owed was exacted from them, that their sufferings might be bestowed upon the nations as a gift. Indeed, almost more of them were crushed in their wars with one another than by their enemies. The people of Japha are an example: they opened their gates to the Romans and closed them against themselves. For they themselves opened the first wall for the Romans to break in; the Jews closed the second wall to prevent the Jews from passing through. The enemy was therefore admitted, the ally excluded: the one admitted so that there would be no lack of a slayer, the other excluded so that the doomed man would not escape. Between the two walls the Jews were cut down at close quarters and struck from the wall at a distance. For many men of the Roman army, confined in the narrow space, climbed the wall and hurled missiles at those below. Thus the Galileans, in greater danger from their own people than from their enemies, begged to be admitted through the entrance of the inner wall, but their own people resisted them. Fighting took place on the threshold of the gate, with Jews struggling against one another. Those on one side met an advancing formation with their swords, those on the other a resisting one. They died calling down savage curses on one another and declaring with their last words that they were suffering less than they deserved. Thus twelve thousand men were killed, all of them fighting men. Trajan, a man of the old discipline, thought that no one would now resist him or that the capture of the city would be easy. He reserved the crowning victory for Vespasian and sent to ask him to dispatch his son Titus to put an end to the battle. On his arrival they broke in and many people were slain, but victory did not fall to the Romans without toil and danger. When they entered the inner wall, all who were fit for war opposed them and, stationed in the narrow passages, made the outcome of the battle uncertain for the victors. Men and women fought from above, often hurling stones and every kind of missile they happened to find even at their own people. Indeed, at the very end they fought for six hours as though the battle were just beginning. At last, when those who had stood to resist were slain, the attack turned to the rest without order, without limit, without mercy. Old men were slaughtered with the young; women and little children were kept, not for pardon but for slavery. All the males were killed except those whom boyhood or infancy protected. Two thousand one hundred and thirty slaves were led away as booty, masters together with their slaves, now sharing the same condition: captivity had made them equals.",
       "removedPrefix": "[III.13.1]",
       "sourcePieces": [
         {
@@ -3029,10 +3029,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-3-41",
           "recordStart": 0,
-          "recordEnd": 3718,
+          "recordEnd": 3727,
           "sourceStart": 11,
-          "sourceEnd": 3729,
-          "textSHA256": "ec805abce8a19a4647df8c1af6424ab4cf38a3d9b738e3ee5da0ec5ea6f44c63"
+          "sourceEnd": 3738,
+          "textSHA256": "9f84ae1f80f8b54c02846b9b241244c004bcb236a93d05ab7d4fd6d6d095a609"
         }
       ],
       "sections": [
@@ -3040,12 +3040,12 @@
           "recordId": "deh-english-pollard-3-41",
           "section": 41,
           "sourceStart": 0,
-          "sourceEnd": 3729,
+          "sourceEnd": 3738,
           "textStart": 11,
-          "textEnd": 3729,
+          "textEnd": 3738,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "ec805abce8a19a4647df8c1af6424ab4cf38a3d9b738e3ee5da0ec5ea6f44c63"
+          "textSHA256": "9f84ae1f80f8b54c02846b9b241244c004bcb236a93d05ab7d4fd6d6d095a609"
         }
       ],
       "editorialSpans": [],
@@ -3805,8 +3805,8 @@
       "chapter": 19,
       "paragraph": 1,
       "citationLabel": "III.19.1",
-      "rawText": "[III.19.1] A few days later Vespasian returned from there to Ptolemais and then hastened to Caesarea, the largest city of Judaea, but inhabited more by gentiles. They therefore welcomed the Roman army with applause and joy, not only because they desired the favour of Roman alliance, but also from an ingrained hatred of the Jewish people. With the loudest cries they shouted that Josephus, its leader, ought to be punished. Vespasian let this anger subside in silence, as the unreasoning anger of the crowd. Since both the season and the city were suitable for winter quarters, he stationed two legions in Caesarea, and the tenth and fifth legions in the city of Scythopolis, lest Caesarea be worn down by the burden of the whole army. The aforesaid city was therefore consecrated to Scythian Diana as a foundation of the Scythians, and was called the city of the Scythians, as Massilia was of the Greeks. The situation of the place shows that its founders, in their innate hardiness, chose open plains rather than ground suited to habitation. For open places bring more hardship than pleasure both in the harshness of winter and in the burning season of summer: in winter they lie more exposed to the cold, and summer’s heat is fiercer in places which receive the full sun without the delight of any green field. Thus the flat and coastal region of the aforesaid city was heated still further by the heat of the sea.",
-      "runningText": " A few days later Vespasian returned from there to Ptolemais and then hastened to Caesarea, the largest city of Judaea, but inhabited more by gentiles. They therefore welcomed the Roman army with applause and joy, not only because they desired the favour of Roman alliance, but also from an ingrained hatred of the Jewish people. With the loudest cries they shouted that Josephus, its leader, ought to be punished. Vespasian let this anger subside in silence, as the unreasoning anger of the crowd. Since both the season and the city were suitable for winter quarters, he stationed two legions in Caesarea, and the tenth and fifth legions in the city of Scythopolis, lest Caesarea be worn down by the burden of the whole army. The aforesaid city was therefore consecrated to Scythian Diana as a foundation of the Scythians, and was called the city of the Scythians, as Massilia was of the Greeks. The situation of the place shows that its founders, in their innate hardiness, chose open plains rather than ground suited to habitation. For open places bring more hardship than pleasure both in the harshness of winter and in the burning season of summer: in winter they lie more exposed to the cold, and summer’s heat is fiercer in places which receive the full sun without the delight of any green field. Thus the flat and coastal region of the aforesaid city was heated still further by the heat of the sea.",
+      "rawText": "[III.19.1] A few days later Vespasian returned from there to Ptolemais and then hastened to Caesarea, the largest city of Judaea, but inhabited more by gentiles. They therefore welcomed the Roman army with applause and joy, not only because they desired the favour of Roman alliance, but also from an ingrained hatred of the Jewish people. With the loudest cries they shouted that Josephus, its leader, ought to be punished. Vespasian let this anger subside in silence, as the unreasoning anger of the crowd. Since both the season and the city were suitable for winter quarters, he stationed two legions in Caesarea, and also the fifteenth legion in the city of Scythopolis, lest Caesarea be worn down by the burden of the whole army. The aforesaid city was therefore consecrated to Scythian Diana as a foundation of the Scythians, and was called the city of the Scythians, as Massilia was of the Greeks. The situation of the place shows that its founders, in their innate hardiness, chose open plains rather than ground suited to habitation. For open places bring more hardship than pleasure both in the harshness of winter and in the burning season of summer: in winter they lie more exposed to the cold, and summer’s heat is fiercer in places which receive the full sun without the delight of any green field. Thus the flat and coastal region of the aforesaid city was heated still further by the heat of the sea.",
+      "runningText": " A few days later Vespasian returned from there to Ptolemais and then hastened to Caesarea, the largest city of Judaea, but inhabited more by gentiles. They therefore welcomed the Roman army with applause and joy, not only because they desired the favour of Roman alliance, but also from an ingrained hatred of the Jewish people. With the loudest cries they shouted that Josephus, its leader, ought to be punished. Vespasian let this anger subside in silence, as the unreasoning anger of the crowd. Since both the season and the city were suitable for winter quarters, he stationed two legions in Caesarea, and also the fifteenth legion in the city of Scythopolis, lest Caesarea be worn down by the burden of the whole army. The aforesaid city was therefore consecrated to Scythian Diana as a foundation of the Scythians, and was called the city of the Scythians, as Massilia was of the Greeks. The situation of the place shows that its founders, in their innate hardiness, chose open plains rather than ground suited to habitation. For open places bring more hardship than pleasure both in the harshness of winter and in the burning season of summer: in winter they lie more exposed to the cold, and summer’s heat is fiercer in places which receive the full sun without the delight of any green field. Thus the flat and coastal region of the aforesaid city was heated still further by the heat of the sea.",
       "removedPrefix": "[III.19.1]",
       "sourcePieces": [
         {
@@ -3829,10 +3829,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-3-52",
           "recordStart": 0,
-          "recordEnd": 1407,
+          "recordEnd": 1405,
           "sourceStart": 11,
-          "sourceEnd": 1418,
-          "textSHA256": "73dc9127ae9cce1e068d362aabc42e0cd1833df89fc5c43a20b0b98b7b71f53c"
+          "sourceEnd": 1416,
+          "textSHA256": "93143d200f5a75a37247454729c89f7b771b4b3a4ee38e13e7894f2e2df460f1"
         }
       ],
       "sections": [
@@ -3840,12 +3840,12 @@
           "recordId": "deh-english-pollard-3-52",
           "section": 52,
           "sourceStart": 0,
-          "sourceEnd": 1418,
+          "sourceEnd": 1416,
           "textStart": 11,
-          "textEnd": 1418,
+          "textEnd": 1416,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "73dc9127ae9cce1e068d362aabc42e0cd1833df89fc5c43a20b0b98b7b71f53c"
+          "textSHA256": "93143d200f5a75a37247454729c89f7b771b4b3a4ee38e13e7894f2e2df460f1"
         }
       ],
       "editorialSpans": [],

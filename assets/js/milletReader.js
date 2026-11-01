@@ -77,14 +77,14 @@ const start=()=>{
       const menu=el('select',null,{id:'millet-page','aria-label':'Millet folio'});for(const im of pages)menu.add(new Option(folios.get(im),im));menu.value=state.page;
       const setPage=im=>{state.page=String(im);writeUrl(true);rerender();};
       menu.addEventListener('change',()=>setPage(menu.value));
-      const prev=button('Previous leaf',()=>setPage(pages[pages.indexOf(Number(state.page))-1])),next=button('Next leaf',()=>setPage(pages[pages.indexOf(Number(state.page))+1]));
-      prev.disabled=pages.indexOf(Number(state.page))===0;next.disabled=pages.indexOf(Number(state.page))===pages.length-1;options.append(label('Millet folio:',menu),prev,next);
+      const prev=button('Previous page',()=>setPage(pages[pages.indexOf(Number(state.page))-1])),next=button('Next page',()=>setPage(pages[pages.indexOf(Number(state.page))+1]));
+      prev.disabled=pages.indexOf(Number(state.page))===0;next.disabled=pages.indexOf(Number(state.page))===pages.length-1;options.append(label('Folio:',menu),prev,next);
     }
     const alignment=el('input',null,{type:'checkbox',id:'millet-alignment'});alignment.checked=state.alignment;
     alignment.addEventListener('change',()=>{state.alignment=alignment.checked;writeUrl(true);rerender();});
     const highlight=label('Highlight correspondences',alignment);highlight.className='millet-highlight-control';highlight.title='Highlight corresponding Millet and Ussani passages';toolbar.append(highlight);
     const folioToggle=el('input',null,{type:'checkbox',id:'millet-folios'});folioToggle.checked=state.folios;
-    folioToggle.addEventListener('change',()=>{state.folios=folioToggle.checked;writeUrl(true);rerender();});options.append(label('Show Millet folio numbers',folioToggle));
+    folioToggle.addEventListener('change',()=>{state.folios=folioToggle.checked;writeUrl(true);rerender();});options.append(label('Show folio labels',folioToggle));
     if(data.book){
       const units=el('select',null,{id:'millet-ussani','aria-label':'Aligned passage (Ussani)',title:'Select any correspondence in this book, independently of the global sub-chapter selector'});units.add(new Option(chapterNavigation()?'Whole Ussani chapter':'Select a correspondence…',''));
       for(const [id,records]of index.byCanonical){const c=(records[0].canonical_targets||[records[0].canonical]).find(c=>c.xml_id===id);units.add(new Option(c.citation,id));}

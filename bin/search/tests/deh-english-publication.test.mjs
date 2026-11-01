@@ -26,7 +26,7 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const phraseAcross = pair => [...tokens(pair[0].text).slice(-4), ...tokens(pair[1].text).slice(0, 4)].join(' ');
 
 test('English DEH source gate verifies all five books and all 558 original citation paragraphs', () => {
-  for (const [index, [sections, count]] of [[215, 40804], [73, 17142], [70, 18640], [79, 17259], [121, 42207]].entries()) {
+  for (const [index, [sections, count]] of [[215, 40806], [73, 17142], [70, 18640], [79, 17259], [121, 42207]].entries()) {
     assert.deepEqual(verify(fresh(index + 1)), {status: 'PASS', sections, tokens: count, sourceDocuments: 1, restoredParagraphs: sections});
   }
 });
@@ -128,6 +128,7 @@ test('English DEH phrase and Boolean evidence never crosses book or edition boun
 test('English DEH manifest cannot swap edition, ranges, sources or book order', async t => {
   for (const [label, mutate, pattern] of [
     ['wrong edition', input => { input.manifest.edition = 'Whiston'; }, /collection identity differs/u],
+    ['superseded Pollard release', input => { input.manifest.edition = 'Pollard v1.1'; }, /collection identity differs/u],
     ['wrong work', input => { input.manifest.work = 'bellum'; }, /collection identity differs/u],
     ['wrong scheme', input => { input.manifest.citationScheme = 'niese'; }, /collection identity differs/u],
     ['wrong source', input => { input.manifest.books[0].source = 'assets/xml/deh/Latin/book-01.xml'; }, /book source scope differs/u],

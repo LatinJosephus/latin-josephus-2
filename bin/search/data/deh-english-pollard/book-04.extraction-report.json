@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 4,
     "language": "English",
-    "edition": "Pollard v1.1",
+    "edition": "Pollard v1.2",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-04.xml",
-    "sha256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
-    "bytes": 114757
+    "sha256": "534150fafa5370458a78b90000e26806f4b6f01a5b563ec1f9f31be5c11c0c45",
+    "bytes": 115401
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-04.xml",
-      "sha256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
-      "bytes": 114757
+      "sha256": "534150fafa5370458a78b90000e26806f4b6f01a5b563ec1f9f31be5c11c0c45",
+      "bytes": 115401
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
+    "normalizedSHA256": "534150fafa5370458a78b90000e26806f4b6f01a5b563ec1f9f31be5c11c0c45",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eleven approved comparison notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -74,14 +74,14 @@
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 4142,
-      "textSHA256": "346653028c6056de2a2188b69ff171de8af19052826ba59ef134d67d59c42da9"
+      "textCharacters": 4775,
+      "textSHA256": "31d4450227c7895d5cef6b61ee2f501b57de2b7c235eb6d67b90170b43a07bf3"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.1: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3].",
-      "textSHA256": "0393742152c571feec24756755a58b8e40d63b975cae56e59e7b31ecde22eda1"
+      "text": "English translation, version 1.2: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3].",
+      "textSHA256": "bc7992d9b479f546842d62c2e2f17d67a587caf3c0e7251441c95e82181aa1fb"
     },
     {
       "kind": "heading",

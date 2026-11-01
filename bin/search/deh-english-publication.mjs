@@ -1,4 +1,4 @@
-/** Independently restore Pollard v1.1 English DEH from the exact accepted XML. */
+/** Independently restore Pollard v1.2 English DEH from the exact accepted XML. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -7,22 +7,22 @@ import {createHash} from 'node:crypto';
 const COLLECTION = 'deh-english-pollard';
 const ROMANS = ['I', 'II', 'III', 'IV', 'V'];
 const CONTRACTS = [
-  ['1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47', 215, 40804, 47, 2, 'Book I', 'English translation, version 1.1: Prologue and Book I chapters 1–46, ending at [I.46.2].'],
-  ['b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c', 73, 17142, 18, 1, 'Book II', 'English translation, version 1.1: complete Book II, chapters 1–18, [II.1.1]–[II.18.1].'],
-  ['f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c', 70, 18640, 26, 1, 'BOOK III', 'English translation, version 1.1: complete Book III, chapters 1–26, [III.1.1]–[III.26.4].'],
-  ['1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370', 79, 17259, 33, 1, 'BOOK IV', 'English translation, version 1.1: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3].'],
-  ['4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91', 121, 42207, 53, 1, 'BOOK V', 'English translation, version 1.1: complete Book V, chapters 1–53, [V.1.1]–[V.53.2].'],
+  ['357aaf62eff572083f9c14ecf68885866ef2ce66db8687d260038d269510d603', 215, 40806, 47, 2, 'Book I', 'English translation, version 1.2: Prologue and Book I chapters 1–46, ending at [I.46.2].'],
+  ['0e32075e99eeb8ced876cfb737197102bff976ff7f48faf00a3b19baeb505896', 73, 17142, 18, 1, 'Book II', 'English translation, version 1.2: complete Book II, chapters 1–18, [II.1.1]–[II.18.1].'],
+  ['b245bb313b56877cc51146af03cfe373be9f071eaec2a34de14f1e6e10f31ad3', 70, 18640, 26, 1, 'BOOK III', 'English translation, version 1.2: complete Book III, chapters 1–26, [III.1.1]–[III.26.4].'],
+  ['534150fafa5370458a78b90000e26806f4b6f01a5b563ec1f9f31be5c11c0c45', 79, 17259, 33, 1, 'BOOK IV', 'English translation, version 1.2: complete Book IV, chapters 1–33, [IV.1.1]–[IV.33.3].'],
+  ['da4dbbabf578becb7c253a52495a9801a408fc7c72597a3bd2ac7f9883bbf34b', 121, 42207, 53, 1, 'BOOK V', 'English translation, version 1.2: complete Book V, chapters 1–53, [V.1.1]–[V.53.2].'],
 ].map(([sha256, sections, tokens, chapters, headings, heading, releaseNote], index) => ({book: index + 1,
   sha256, sections, tokens, chapters, headings, heading, releaseNote,
   path: `assets/xml/deh/English/book-${String(index + 1).padStart(2, '0')}.xml`}));
 const BREAK_REASON = 'The separately labelled Prologue ends before Book I narrative.';
-const TRANSLATION_NOTE_UNITS = {1: [31, 36, 70, 141], 2: [73], 3: [36, 47], 4: [], 5: [72]};
+const TRANSLATION_NOTE_UNITS = {1: [31, 36, 70, 139, 141], 2: [46, 73], 3: [36, 47], 4: [], 5: [48, 72]};
 const RULES = {
   boundaries: 'Each accepted English xml:id and num label identify one complete chapter/paragraph citation unit. section is its stable paragraph ordinal within the book, never a Niese section.',
   text: 'Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.',
   sourceIdentity: 'Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.',
   excludedBlocks: 'The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.',
-  editorialMarkup: 'The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.',
+  editorialMarkup: 'The accepted English paragraphs contain a leading num element and plain running text. Eleven approved comparison notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.',
   phraseBoundaries: 'Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.',
   coordinates: 'All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.',
   readerRoute: '/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local.',
@@ -152,7 +152,7 @@ function expectedDocument(root, contract, indexedSource) {
       require(text.length && words(text).length, 'empty citation unit');
       const textStart = prefix.length + runningText.match(/^\s*/u)[0].length, textEnd = textStart + text.length;
       const record = {id: `${COLLECTION}-${contract.book}-${section}`, work: 'deh', book: contract.book,
-        section, language: 'English', edition: 'Pollard v1.1', chapter, paragraph: localParagraph,
+        section, language: 'English', edition: 'Pollard v1.2', chapter, paragraph: localParagraph,
         citationScheme: 'chapter-paragraph', citationLabel: label,
         citation: {book: ROMANS[contract.book - 1], chapter, paragraph: localParagraph, prologue: chapter === 0},
         text, editorialMarks: [], sourceMarkup: [], textGaps: [], phraseBreaks: [],
@@ -205,7 +205,7 @@ function expectedDocument(root, contract, indexedSource) {
   equal([counts.runningWordTokens, counts.prologueUnits, counts.breakBeforeUnits],
     [contract.tokens, contract.book === 1 ? 3 : 0, contract.book === 1 ? 1 : 0], 'running text or Prologue totals differ');
   return {records, report: {schemaVersion: 1, status: 'PASS', scope: {work: 'De excidio Hierosolymitano', book: contract.book,
-    language: 'English', edition: 'Pollard v1.1', unit: 'existing chapter/paragraph citation unit', citationScheme: 'chapter-paragraph'},
+    language: 'English', edition: 'Pollard v1.2', unit: 'existing chapter/paragraph citation unit', citationScheme: 'chapter-paragraph'},
     source: indexedSource, additionalSources: [], sources: [indexedSource],
     sourceContract: {normalizedSHA256: contract.sha256, hashMode: 'CRLF-to-LF only', verified: true}, rules: RULES, counts,
     coverage: coverage(paragraphs, records, [1, contract.sections]), excludedBlocks, paragraphs}};
@@ -213,7 +213,7 @@ function expectedDocument(root, contract, indexedSource) {
 
 export function validateDehEnglishSourceProjection(corpus, report, manifest, spec, root) {
   equal([manifest.id, manifest.work, manifest.language, manifest.edition, manifest.citationScheme, manifest.readerPath],
-    [COLLECTION, 'deh', 'English', 'Pollard v1.1', 'chapter-paragraph', 'deh/'], 'collection identity differs');
+    [COLLECTION, 'deh', 'English', 'Pollard v1.2', 'chapter-paragraph', 'deh/'], 'collection identity differs');
   equal(manifest.books.map(book => book.number), range(5), 'collection includes an unreviewed book');
   const contract = CONTRACTS.find(source => source.book === spec.number);
   require(contract, 'per-book report is outside the reviewed collection');

@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 2,
     "language": "English",
-    "edition": "Pollard v1.1",
+    "edition": "Pollard v1.2",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-02.xml",
-    "sha256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
-    "bytes": 113779
+    "sha256": "0e32075e99eeb8ced876cfb737197102bff976ff7f48faf00a3b19baeb505896",
+    "bytes": 114747
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-02.xml",
-      "sha256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
-      "bytes": 113779
+      "sha256": "0e32075e99eeb8ced876cfb737197102bff976ff7f48faf00a3b19baeb505896",
+      "bytes": 114747
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
+    "normalizedSHA256": "0e32075e99eeb8ced876cfb737197102bff976ff7f48faf00a3b19baeb505896",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eleven approved comparison notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -47,7 +47,7 @@
     "excludedCitationLabels": 73,
     "excludedHeadings": 1,
     "excludedReleaseNotes": 1,
-    "excludedTranslationNotes": 1,
+    "excludedTranslationNotes": 2,
     "breakBeforeUnits": 0
   },
   "coverage": {
@@ -63,8 +63,8 @@
     "paragraphsExactlyRestored": 73,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "2b6e1a7de96a388334a309b3c247365996afa77532b8cf82929b3b452a910dc7",
-    "restoredParagraphSequenceSha256": "2b6e1a7de96a388334a309b3c247365996afa77532b8cf82929b3b452a910dc7",
+    "rawParagraphSequenceSha256": "a6e22da024e06608a82be417fde83a83b6d15a3f5252c5c723296ccacd3232c5",
+    "restoredParagraphSequenceSha256": "a6e22da024e06608a82be417fde83a83b6d15a3f5252c5c723296ccacd3232c5",
     "sourceWordSequenceSha256": "a3ca4626a01d0c7713f7aa9553c3f0d99f249955854dd4eed7947b2668eca585",
     "indexedWordSequenceSha256": "a3ca4626a01d0c7713f7aa9553c3f0d99f249955854dd4eed7947b2668eca585",
     "sourceNonWhitespaceContentSha256": "65dd49f2a7a9eada5b7ac922547d2b65d36db470c0e7a1e9d37e62465d0a98b7",
@@ -74,14 +74,14 @@
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 4721,
-      "textSHA256": "e29dd5ddb291a6f4413346e09b5584d3af24f0bec774d3f155802d5a47297e78"
+      "textCharacters": 5353,
+      "textSHA256": "a45bffe6676db7be72b300e8f30d4f38a6324ccc942441636cc309be28b74945"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.1: complete Book II, chapters 1–18, [II.1.1]–[II.18.1].",
-      "textSHA256": "e79afa0b115e49cd60352357a9ceadfe7779fd8aa5e1ca5459640a93d555544f"
+      "text": "English translation, version 1.2: complete Book II, chapters 1–18, [II.1.1]–[II.18.1].",
+      "textSHA256": "f96dcc17238bc59b734d60a110f8fed22646c06e44720af73934087e67c6fa38"
     },
     {
       "kind": "heading",
@@ -3357,7 +3357,7 @@
       "chapter": 12,
       "paragraph": 2,
       "citationLabel": "II.12.2",
-      "rawText": "\n            [II.12.2] Before Jesus’ death, John the Baptist had been killed, a holy man who never held that true salvation lay in prosperity. Indeed, in addition to all the things full of righteousness that he taught, by which he invited the Jews to worship God, he had also instituted baptism for the purification of soul and body. His freedom of speech caused his death, because he could not endure Herod’s violation of his brother’s marriage rights and his taking his own brother’s wife away. For when this same Herod was going to Rome, he entered his brother’s house as a guest. His brother’s wife was Herodias, daughter of Aristobulus and sister of King Agrippa. Forgetful of nature, he dared to solicit her to leave his brother and marry him when he returned from the city of Rome; with the woman’s consent an incestuous compact was made. News of this affair reached King Aretas’s daughter, who was still married to Herod. Indignant at a rival, she conveyed to her husband on his return her wish to be sent to the town of Machaerus, on the frontier between the Petraean king and Herod. He suspected nothing. Moreover, since all his affection for her had already waned, he agreed to her departure, so that he might more easily keep faith with Herodias in their compact if he sent his wife away. But when she approached her father’s kingdom, she disclosed what she had learnt to her father Aretas. By an ambush he destroyed Herod’s whole army, which had been drawn into battle, through betrayal by those who had joined Herod from the people of Philip the tetrarch. Herod therefore brought his complaint to Caesar, but God’s indignation prevented the vengeance ordered by Caesar, for in the midst of the preparations for war Caesar’s death was reported. We find that the Jews judged and believed this, with Josephus as a competent authority against himself: Herod had lost his army not through human deceit but through God’s anger, and justly indeed, in vengeance for John the Baptist, a righteous man who had said to him, “It is not lawful for you to have that woman as your wife.”",
+      "rawText": "\n            [II.12.2] Before Jesus’ death, John the Baptist had been killed, a holy man who never held that true salvation lay in prosperity. Indeed, in addition to all the things full of righteousness that he taught, by which he invited the Jews to worship God, he had also instituted baptism for the purification of soul and body. His freedom of speech caused his death, because he could not endure Herod’s violation of his brother’s marriage rights and his taking his own brother’s wife away. For when this same Herod was going to Rome, he entered his brother’s house as a guest. His brother’s wife was Herodias, daughter of Aristobulus and sister of King Agrippa. Forgetful of nature, he dared to solicit her to leave his brother and marry him when he returned from the city of Rome; with the woman’s consent an incestuous compact was made. News of this affair reached King Aretas’s daughter, who was still married to Herod. Indignant at a rival, she conveyed to her husband on his return her wish to be sent to the town of Machaerus, on the frontier between the Petraean king and Herod. He suspected nothing. Moreover, since all his affection for her had already waned, he agreed to her departure, so that he might more easily keep faith with Herodias in their compact if he sent his wife away. But when she approached her father’s kingdom, she disclosed what she had learnt to her father Aretas. By an ambush he destroyed Herod’s whole army, which had been drawn into battle, through betrayal by those who had joined Herod from the people of Philip the tetrarch. Herod therefore brought his complaint to Caesar, but God’s indignation prevented the vengeance ordered by Caesar, for in the midst of the preparations for war Caesar’s death was reported. We find that the Jews judged and believed this, with Josephus as a competent authority against himself: Herod had lost his army not through human deceit but through God’s anger, and justly indeed, in vengeance for John the Baptist, a righteous man who had said to him, “It is not lawful for you to have that woman as your wife.”Translation comparison: Lauro’s worldly paraphrase supports the retained reading that true salvation does not lie in prosperity. In secundis could instead mean “in second place”, but this interpretation is not adopted here; salutis is construed with ueritatem.",
       "runningText": " Before Jesus’ death, John the Baptist had been killed, a holy man who never held that true salvation lay in prosperity. Indeed, in addition to all the things full of righteousness that he taught, by which he invited the Jews to worship God, he had also instituted baptism for the purification of soul and body. His freedom of speech caused his death, because he could not endure Herod’s violation of his brother’s marriage rights and his taking his own brother’s wife away. For when this same Herod was going to Rome, he entered his brother’s house as a guest. His brother’s wife was Herodias, daughter of Aristobulus and sister of King Agrippa. Forgetful of nature, he dared to solicit her to leave his brother and marry him when he returned from the city of Rome; with the woman’s consent an incestuous compact was made. News of this affair reached King Aretas’s daughter, who was still married to Herod. Indignant at a rival, she conveyed to her husband on his return her wish to be sent to the town of Machaerus, on the frontier between the Petraean king and Herod. He suspected nothing. Moreover, since all his affection for her had already waned, he agreed to her departure, so that he might more easily keep faith with Herodias in their compact if he sent his wife away. But when she approached her father’s kingdom, she disclosed what she had learnt to her father Aretas. By an ambush he destroyed Herod’s whole army, which had been drawn into battle, through betrayal by those who had joined Herod from the people of Philip the tetrarch. Herod therefore brought his complaint to Caesar, but God’s indignation prevented the vengeance ordered by Caesar, for in the midst of the preparations for war Caesar’s death was reported. We find that the Jews judged and believed this, with Josephus as a competent authority against himself: Herod had lost his army not through human deceit but through God’s anger, and justly indeed, in vengeance for John the Baptist, a righteous man who had said to him, “It is not lawful for you to have that woman as your wife.”",
       "removedPrefix": "\n            [II.12.2]",
       "sourcePieces": [
@@ -3385,6 +3385,14 @@
           "sourceStart": 23,
           "sourceEnd": 2086,
           "textSHA256": "629cbe9839a1a9302a37fdc9f2074f4d3d7f2be0d9bd98b4e319c1f41fea2484"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Lauro’s worldly paraphrase supports the retained reading that true salvation does not lie in prosperity. In secundis could instead mean “in second place”, but this interpretation is not adopted here; salutis is construed with ueritatem.",
+          "sourceStart": 2086,
+          "sourceEnd": 2346,
+          "textSHA256": "158ca6bfb31bf6f5ca8eae58c57800c09be02a99d4126ca624cc8263d6c8cd4e"
         }
       ],
       "sections": [
@@ -3392,7 +3400,7 @@
           "recordId": "deh-english-pollard-2-46",
           "section": 46,
           "sourceStart": 0,
-          "sourceEnd": 2086,
+          "sourceEnd": 2346,
           "textStart": 23,
           "textEnd": 2086,
           "leadingWhitespace": " ",

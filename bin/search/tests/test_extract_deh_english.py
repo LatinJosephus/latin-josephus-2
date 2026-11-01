@@ -53,7 +53,7 @@ class EnglishDehExtraction(unittest.TestCase):
                 self.assertEqual(paragraph['removedPrefix'] + paragraph['runningText'] + notes, paragraph['rawText'])
             total += len(records)
             tokens += report['counts']['runningWordTokens']
-        self.assertEqual((total, tokens), (558, 136052))
+        self.assertEqual((total, tokens), (558, 136054))
 
     def test_indentation_before_num_is_removed_with_the_entire_label(self):
         self.assertEqual([sum(p['removedPrefix'].startswith('\n') for p in report['paragraphs'])
@@ -80,8 +80,8 @@ class EnglishDehExtraction(unittest.TestCase):
                     self.assertTrue(piece['text'].startswith('Translation comparison: '))
                     self.assertNotIn('Translation comparison:', by_id[paragraph['sourceId']]['text'])
                     self.assertEqual(EXTRACTOR.utf16_slice(paragraph['rawText'], piece['sourceStart'], piece['sourceEnd']), piece['text'])
-        self.assertEqual(count, 8)
-        self.assertEqual(sum(report['counts']['excludedTranslationNotes'] for _, report in self.books.values()), 8)
+        self.assertEqual(count, 11)
+        self.assertEqual(sum(report['counts']['excludedTranslationNotes'] for _, report in self.books.values()), 11)
 
     def test_unapproved_translation_note_attributes_are_refused(self):
         raw = source(1).replace(b'type="uncertainty" source="#latin-deh1-num31"',
@@ -170,7 +170,7 @@ class EnglishDehExtraction(unittest.TestCase):
         cases = [(b'english-deh2"', b'english-deh3"'), (b'#latin-deh2-chapter1', b'#latin-deh2-chapter2'),
                  (b'<head>Book II</head>', b'<head>New prose</head>'),
                  (b'<head>Book II</head>', b''), (b'<body>', b'<body>unclassified '),
-                 (b'version 1.1:', b'version 1.2:'), (b'<p xml:id=', b'<note>unexpected</note><p xml:id=')]
+                 (b'version 1.2:', b'version 1.3:'), (b'<p xml:id=', b'<note>unexpected</note><p xml:id=')]
         for before, after in cases:
             with self.subTest(after=after), self.assertRaises(EXTRACTOR.ExtractionError):
                 EXTRACTOR.extract_document(raw.replace(before, after, 1), book_number=2, verify_source=False,

@@ -95,8 +95,8 @@ export function folioLabels(data) {
   for(const [i,page] of data.pages.entries()){
     const header=(headers.get(page.image_number)||'').trim();
     const number=header.match(/\b\d+\b/)?.[0];
-    if(number){labels.set(page.image_number,`Folio ${number} recto`);preceding={number,image:page.image_number};}
-    else if(header&&preceding&&page.image_number===preceding.image+1)labels.set(page.image_number,`Folio ${preceding.number} verso`);
+    if(number){labels.set(page.image_number,`f. ${number}r`);preceding={number,image:page.image_number};}
+    else if(header&&preceding&&page.image_number===preceding.image+1)labels.set(page.image_number,`f. ${preceding.number}v`);
     else{
       const dedication=data.native?.dedication_images||[];
       const d=dedication.indexOf(page.image_number);

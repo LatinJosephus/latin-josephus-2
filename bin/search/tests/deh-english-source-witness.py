@@ -18,15 +18,16 @@ from xml.dom import Node, minidom
 
 TEI = 'http://www.tei-c.org/ns/1.0'
 COLLECTION = 'deh-english-pollard'
-SOURCE_COMMIT = '21f9fbcef3b5a5dc9499756495d47b2e498d87f2'
+SOURCE_COMMIT = None
+BASE_SOURCE_COMMIT = '21f9fbcef3b5a5dc9499756495d47b2e498d87f2'
 ROMANS = [None, 'I', 'II', 'III', 'IV', 'V']
-TRANSLATION_NOTES = {1: {31, 36, 70, 141}, 2: {73}, 3: {36, 47}, 4: set(), 5: {72}}
+TRANSLATION_NOTES = {1: {31, 36, 70, 139, 141}, 2: {46, 73}, 3: {36, 47}, 4: set(), 5: {48, 72}}
 SPECS = [
-    (1, 215, 40804, 47, 126, '1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47'),
-    (2, 73, 17142, 18, 73, 'b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c'),
-    (3, 70, 18640, 26, 18, 'f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c'),
-    (4, 79, 17259, 33, 0, '1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370'),
-    (5, 121, 42207, 53, 0, '4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91'),
+    (1, 215, 40806, 47, 126, '357aaf62eff572083f9c14ecf68885866ef2ce66db8687d260038d269510d603'),
+    (2, 73, 17142, 18, 73, '0e32075e99eeb8ced876cfb737197102bff976ff7f48faf00a3b19baeb505896'),
+    (3, 70, 18640, 26, 18, 'b245bb313b56877cc51146af03cfe373be9f071eaec2a34de14f1e6e10f31ad3'),
+    (4, 79, 17259, 33, 0, '534150fafa5370458a78b90000e26806f4b6f01a5b563ec1f9f31be5c11c0c45'),
+    (5, 121, 42207, 53, 0, 'da4dbbabf578becb7c253a52495a9801a408fc7c72597a3bd2ac7f9883bbf34b'),
 ]
 LATIN_SHA = [
     '690da8720b61514199f898909c06661fddc9f3c79a06eea3b392325de7924aa7',
@@ -237,10 +238,10 @@ def main():
         order += len(item['rows'])
     rows = [row for item in files for row in item['rows']]
     assert len(rows) == 558 and [row['order'] for row in rows] == list(range(558))
-    assert sum(len(row['tokens']) for row in rows) == 136052
+    assert sum(len(row['tokens']) for row in rows) == 136054
     assert sum(source['evidence']['sameAsLinks'] for source in files) == 740
     assert sum(source['evidence']['indentedBeforeCitationLabel'] for source in files) == 217
-    result = {'sourceCommit': SOURCE_COMMIT, 'collectionId': COLLECTION,
+    result = {'sourceCommit': SOURCE_COMMIT, 'historicalBaseCommit': BASE_SOURCE_COMMIT, 'edition': 'Pollard v1.2', 'releaseDate': '2026-10-31', 'collectionId': COLLECTION,
               'runtime': {'python': sys.version.split()[0], 'unicode': unicodedata.unidata_version, 'xmlParser': 'xml.dom.minidom'},
               'rows': rows, 'sources': [item['evidence'] for item in files], 'indexedFiles': files,
               'testSources': [item['latinEvidence'] for item in files],

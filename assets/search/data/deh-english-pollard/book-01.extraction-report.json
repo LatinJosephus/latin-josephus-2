@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 1,
     "language": "English",
-    "edition": "Pollard v1.1",
+    "edition": "Pollard v1.2",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-01.xml",
-    "sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
-    "bytes": 269974
+    "sha256": "357aaf62eff572083f9c14ecf68885866ef2ce66db8687d260038d269510d603",
+    "bytes": 271016
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-01.xml",
-      "sha256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
-      "bytes": 269974
+      "sha256": "357aaf62eff572083f9c14ecf68885866ef2ce66db8687d260038d269510d603",
+      "bytes": 271016
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
+    "normalizedSHA256": "357aaf62eff572083f9c14ecf68885866ef2ce66db8687d260038d269510d603",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eleven approved comparison notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -41,13 +41,13 @@
     "bodyParagraphs": 215,
     "numberedParagraphs": 215,
     "sections": 215,
-    "runningWordTokens": 40804,
+    "runningWordTokens": 40806,
     "chapterDivisionsIncludingPrologue": 47,
     "prologueUnits": 3,
     "excludedCitationLabels": 215,
     "excludedHeadings": 2,
     "excludedReleaseNotes": 1,
-    "excludedTranslationNotes": 4,
+    "excludedTranslationNotes": 5,
     "breakBeforeUnits": 1
   },
   "coverage": {
@@ -63,25 +63,25 @@
     "paragraphsExactlyRestored": 215,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "f1853380aae09cf398a78ff20528b4b74b13774b22c081a4bb87c343235d3226",
-    "restoredParagraphSequenceSha256": "f1853380aae09cf398a78ff20528b4b74b13774b22c081a4bb87c343235d3226",
-    "sourceWordSequenceSha256": "66fca112397220bde97ae4491634fbac93818ae1548f84666e136db6e17b141b",
-    "indexedWordSequenceSha256": "66fca112397220bde97ae4491634fbac93818ae1548f84666e136db6e17b141b",
-    "sourceNonWhitespaceContentSha256": "4ac1e1d233f7ce36a3090f585f221712ce408293a679f3c6706f441717807b4f",
-    "indexedNonWhitespaceContentSha256": "4ac1e1d233f7ce36a3090f585f221712ce408293a679f3c6706f441717807b4f"
+    "rawParagraphSequenceSha256": "51d621ced13b27abad46e1b165abc5039c2d0d88f01babf8d2ab2a1eefafa560",
+    "restoredParagraphSequenceSha256": "51d621ced13b27abad46e1b165abc5039c2d0d88f01babf8d2ab2a1eefafa560",
+    "sourceWordSequenceSha256": "b0aa62b8c95c800befed79cf553acb1997e5c5d81aefea53977bc2866bef98ec",
+    "indexedWordSequenceSha256": "b0aa62b8c95c800befed79cf553acb1997e5c5d81aefea53977bc2866bef98ec",
+    "sourceNonWhitespaceContentSha256": "2d8fa154b33a580b5f09968011e94c7104b92130875e15706ab9a384a4c6aa25",
+    "indexedNonWhitespaceContentSha256": "2d8fa154b33a580b5f09968011e94c7104b92130875e15706ab9a384a4c6aa25"
   },
   "excludedBlocks": [
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 5438,
-      "textSHA256": "3963ec679e4c60f83f0f213c75a4d827e653b18af8ff66edc744bf1d02104d69"
+      "textCharacters": 6069,
+      "textSHA256": "5a2399d64530eb06b366c7815b3d207c7eb2ee20809401c2fe0a4f3ff0e638aa"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.1: Prologue and Book I chapters 1–46, ending at [I.46.2].",
-      "textSHA256": "21696ffe2c7a1defa82583c81e5362a47c5acac79bc27769e7dadc0c584a82d4"
+      "text": "English translation, version 1.2: Prologue and Book I chapters 1–46, ending at [I.46.2].",
+      "textSHA256": "8d130b73d6142e657c50cf3ef0041e0be34e8a0d5fa1d460e1868d50ebf6fc09"
     },
     {
       "kind": "heading",
@@ -5260,8 +5260,8 @@
       "chapter": 25,
       "paragraph": 1,
       "citationLabel": "I.25.1",
-      "rawText": "[I.25.1] Antigonus too met Caesar in Syria. It would have been fitting for him to lament either the misfortune of his father, who had been killed by poison at the hands of Pompey’s friends, or the execution of his brother, whom Scipio, with the utmost cruelty, had struck down with the axe as though he were a criminal. Instead, he acted from envy rather than grief. With the most vehement complaints he piled up accusations that Hyrcanus and Antipater were occupying the possessions of others, which had been criminally wrested from himself and his brothers. He had been made an exile from his father’s dwelling; the land where he was born was denied him. Yet the wrongs done to him seemed more tolerable: far more bitter were those Hyrcanus and Antipater inflicted upon the whole nation of the Jewish people. They claimed favour for their successes in Egypt, although no diligence arising from an innate goodwill towards Caesar had prompted their service in helping Mithridates. Rather, fear arising from the consciousness of their alliance with Pompey had wrung it from them, to provide a shield against offence.",
-      "runningText": " Antigonus too met Caesar in Syria. It would have been fitting for him to lament either the misfortune of his father, who had been killed by poison at the hands of Pompey’s friends, or the execution of his brother, whom Scipio, with the utmost cruelty, had struck down with the axe as though he were a criminal. Instead, he acted from envy rather than grief. With the most vehement complaints he piled up accusations that Hyrcanus and Antipater were occupying the possessions of others, which had been criminally wrested from himself and his brothers. He had been made an exile from his father’s dwelling; the land where he was born was denied him. Yet the wrongs done to him seemed more tolerable: far more bitter were those Hyrcanus and Antipater inflicted upon the whole nation of the Jewish people. They claimed favour for their successes in Egypt, although no diligence arising from an innate goodwill towards Caesar had prompted their service in helping Mithridates. Rather, fear arising from the consciousness of their alliance with Pompey had wrung it from them, to provide a shield against offence.",
+      "rawText": "[I.25.1] Antigonus too met Caesar in Syria. It would have been fitting for him to lament either the misfortune of his father, who had been killed by poison at the hands of Pompey’s friends, or the execution of his brother, whom Scipio, with the utmost cruelty, had struck down with the axe as though he were a criminal. Instead, he sought to arouse hostility rather than express grief. With the most vehement complaints he piled up accusations that Hyrcanus and Antipater were occupying the possessions of others, which had been criminally wrested from himself and his brothers. He had been made an exile from his father’s dwelling; the land where he was born was denied him. Yet the wrongs done to him seemed more tolerable: far more bitter were those Hyrcanus and Antipater inflicted upon the whole nation of the Jewish people. They claimed favour for their successes in Egypt, although no diligence arising from an innate goodwill towards Caesar had prompted their service in helping Mithridates. Rather, fear arising from the consciousness of their alliance with Pompey had wrung it from them, to provide a shield against offence.",
+      "runningText": " Antigonus too met Caesar in Syria. It would have been fitting for him to lament either the misfortune of his father, who had been killed by poison at the hands of Pompey’s friends, or the execution of his brother, whom Scipio, with the utmost cruelty, had struck down with the axe as though he were a criminal. Instead, he sought to arouse hostility rather than express grief. With the most vehement complaints he piled up accusations that Hyrcanus and Antipater were occupying the possessions of others, which had been criminally wrested from himself and his brothers. He had been made an exile from his father’s dwelling; the land where he was born was denied him. Yet the wrongs done to him seemed more tolerable: far more bitter were those Hyrcanus and Antipater inflicted upon the whole nation of the Jewish people. They claimed favour for their successes in Egypt, although no diligence arising from an innate goodwill towards Caesar had prompted their service in helping Mithridates. Rather, fear arising from the consciousness of their alliance with Pompey had wrung it from them, to provide a shield against offence.",
       "removedPrefix": "[I.25.1]",
       "sourcePieces": [
         {
@@ -5284,10 +5284,10 @@
           "kind": "record",
           "recordId": "deh-english-pollard-1-72",
           "recordStart": 0,
-          "recordEnd": 1106,
+          "recordEnd": 1125,
           "sourceStart": 9,
-          "sourceEnd": 1115,
-          "textSHA256": "551d305c371284fad4a69509289a300157b68c098c9269f3b63ab7779717e119"
+          "sourceEnd": 1134,
+          "textSHA256": "5836cdaeedc7dc330559165c850a694383fe0751d0954a06ead50631f453dcf2"
         }
       ],
       "sections": [
@@ -5295,12 +5295,12 @@
           "recordId": "deh-english-pollard-1-72",
           "section": 72,
           "sourceStart": 0,
-          "sourceEnd": 1115,
+          "sourceEnd": 1134,
           "textStart": 9,
-          "textEnd": 1115,
+          "textEnd": 1134,
           "leadingWhitespace": " ",
           "trailingWhitespace": "",
-          "textSHA256": "551d305c371284fad4a69509289a300157b68c098c9269f3b63ab7779717e119"
+          "textSHA256": "5836cdaeedc7dc330559165c850a694383fe0751d0954a06ead50631f453dcf2"
         }
       ],
       "editorialSpans": [],
@@ -10084,7 +10084,7 @@
       "chapter": 37,
       "paragraph": 3,
       "citationLabel": "I.37.3",
-      "rawText": "\n            [I.37.3] There too, Alexandra was said to have been given an opportunity to speak with Sossius, although, as a widow rather free in her conduct, she could not have lacked another opportunity to become acquainted with the guest, especially since she sought occasions and people of this kind. Then, after consulting together, they had decided that portraits of both should be sent to Antony. Dazzled by the splendour of the portraits, and especially by Sossius’s testimony, Antony had written to Herod to send Aristobulus to him without delay. Sossius, acting as a pander to excite Antony’s far from sober desires, had declared that he had never seen anything like them on earth and that their charm was divine, not human. He had passed over Mariamne because she was married to Herod, not because he was accustomed to conceal his lust even for women living with their husbands: he could enjoy them without danger and commit disgrace without shame. Rather, he guarded against Cleopatra’s indignation. She took offence at a rival of either sex, but more so if she discovered a woman attached to Antony, since she thought herself more beautiful than all other women. Upon reading the letter, Herod had therefore excused himself on the grounds that he could not tear the noble young man away from his people without their rising in sedition and the whole nation being thrown into turmoil. To satisfy Alexandra, he had promised Aristobulus the priesthood. But, thinking the promises were being delayed and that she was being cunningly deceived, Alexandra had prepared a ship. While she was making ready to flee, her plan had become known through Sabbion and she had been brought back with her son. Moved by these things, Herod had concealed the affront for a time and hastened the grant of the priesthood to Aristobulus, so as to veil the odium of the murder he had prepared beneath the appearance of honour.",
+      "rawText": "\n            [I.37.3] There too, Alexandra was said to have been given an opportunity to speak with Sossius, although, as a widow rather free in her conduct, she could not have lacked another opportunity to become acquainted with the guest, especially since she sought occasions and people of this kind. Then, after consulting together, they had decided that portraits of both should be sent to Antony. Dazzled by the splendour of the portraits, and especially by Sossius’s testimony, Antony had written to Herod to send Aristobulus to him without delay. Sossius, acting as a pander to excite Antony’s far from sober desires, had declared that he had never seen anything like them on earth and that their charm was divine, not human. He had passed over Mariamne because she was married to Herod, not because he was accustomed to conceal his lust even for women living with their husbands: he could enjoy them without danger and commit disgrace without shame. Rather, he guarded against Cleopatra’s indignation. She took offence at a rival of either sex, but more so if she discovered a woman attached to Antony, since she thought herself more beautiful than all other women. Upon reading the letter, Herod had therefore excused himself on the grounds that he could not tear the noble young man away from his people without their rising in sedition and the whole nation being thrown into turmoil. To satisfy Alexandra, he had promised Aristobulus the priesthood. But, thinking the promises were being delayed and that she was being cunningly deceived, Alexandra had prepared a ship. While she was making ready to flee, her plan had become known through Sabbion and she had been brought back with her son. Moved by these things, Herod had concealed the affront for a time and hastened the grant of the priesthood to Aristobulus, so as to veil the odium of the murder he had prepared beneath the appearance of honour.Translation comparison: Lauro’s paraphrase does not clearly distinguish a married woman from a woman attached to Antony. The Latin sociatam uiro permits the former interpretation, but the English retains the latter: Cleopatra’s claim to surpass all women in beauty favours the contrast between male and female rivals.",
       "runningText": " There too, Alexandra was said to have been given an opportunity to speak with Sossius, although, as a widow rather free in her conduct, she could not have lacked another opportunity to become acquainted with the guest, especially since she sought occasions and people of this kind. Then, after consulting together, they had decided that portraits of both should be sent to Antony. Dazzled by the splendour of the portraits, and especially by Sossius’s testimony, Antony had written to Herod to send Aristobulus to him without delay. Sossius, acting as a pander to excite Antony’s far from sober desires, had declared that he had never seen anything like them on earth and that their charm was divine, not human. He had passed over Mariamne because she was married to Herod, not because he was accustomed to conceal his lust even for women living with their husbands: he could enjoy them without danger and commit disgrace without shame. Rather, he guarded against Cleopatra’s indignation. She took offence at a rival of either sex, but more so if she discovered a woman attached to Antony, since she thought herself more beautiful than all other women. Upon reading the letter, Herod had therefore excused himself on the grounds that he could not tear the noble young man away from his people without their rising in sedition and the whole nation being thrown into turmoil. To satisfy Alexandra, he had promised Aristobulus the priesthood. But, thinking the promises were being delayed and that she was being cunningly deceived, Alexandra had prepared a ship. While she was making ready to flee, her plan had become known through Sabbion and she had been brought back with her son. Moved by these things, Herod had concealed the affront for a time and hastened the grant of the priesthood to Aristobulus, so as to veil the odium of the murder he had prepared beneath the appearance of honour.",
       "removedPrefix": "\n            [I.37.3]",
       "sourcePieces": [
@@ -10112,6 +10112,14 @@
           "sourceStart": 22,
           "sourceEnd": 1914,
           "textSHA256": "62797537a0ce7968a8f22b3746c2f0155e7dcf8edbef296059d74bf189ca2ec7"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Lauro’s paraphrase does not clearly distinguish a married woman from a woman attached to Antony. The Latin sociatam uiro permits the former interpretation, but the English retains the latter: Cleopatra’s claim to surpass all women in beauty favours the contrast between male and female rivals.",
+          "sourceStart": 1914,
+          "sourceEnd": 2231,
+          "textSHA256": "e88dd61ea37637c216c88269d24673bbe704d11ad225ea2811522300dfda6bb6"
         }
       ],
       "sections": [
@@ -10119,7 +10127,7 @@
           "recordId": "deh-english-pollard-1-139",
           "section": 139,
           "sourceStart": 0,
-          "sourceEnd": 1914,
+          "sourceEnd": 2231,
           "textStart": 22,
           "textEnd": 1914,
           "leadingWhitespace": " ",

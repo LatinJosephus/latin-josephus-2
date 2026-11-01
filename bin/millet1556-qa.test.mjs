@@ -88,7 +88,7 @@ test('flowing reading display joins physical continuations without changing sour
  const s='a͑😀 con¬  ';const parts=readingParts(s);assert.equal(parts.map(p=>p.text).join(''),s);assert.equal(parts.filter(p=>!p.hidden).map(p=>p.text).join(''),'a͑😀 con');
  for(const b of books)for(const l of b.lines){const parts=readingParts(l.text_exact);assert.equal(parts.map(p=>p.text).join(''),l.text_exact);assert(!parts.filter(p=>!p.hidden).some(p=>p.text.includes('¬')));}
  const ll=[{image_number:1,region_id:'a',source_region_type:'paragraph',text_exact:'con¬'},{image_number:2,region_id:'b',source_region_type:'paragraph',text_exact:'tinuer'}];assert.equal(flowGroups(ll).length,1);
- const labels=folioLabels(books[0]);assert.equal(labels.get(33),'Folio 1 recto');assert.equal(labels.get(34),'Folio 1 verso');assert.equal(labels.get(35),'Folio 2 recto');
+ const labels=folioLabels(books[0]);assert.equal(labels.get(33),'f. 1r');assert.equal(labels.get(34),'f. 1v');assert.equal(labels.get(35),'f. 2r');
  const state=locationFromUrl('https://example.org/deh/?french=millet1556');assert.equal(state.folios,false);state.folios=true;assert.equal(locationFromUrl(updateMilletUrl('https://example.org/deh/',state)).folios,true);
 });
 

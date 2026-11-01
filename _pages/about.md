@@ -61,6 +61,42 @@ In autumn of 2026, the content and website were thoroughly updated and expanded 
 
 For details about the editions, translations and textual correspondences used in the readers, see [Texts]({{site.baseurl}}/texts/).
 
+### De excidio and Millet 1556
+
+The [De excidio reader]({{ site.baseurl }}/deh/) pairs Ussani’s Latin edition (1932)
+with Pollard’s English translation. [Jean Millet’s French translation of 1556]({{ site.baseurl }}/deh/millet-1556/)
+can also be read alongside it. Millet’s printed chapters and source order remain
+independent of Ussani’s divisions.
+
+### Lauro 1544
+
+[Lauro’s Italian translation of 1544]({{ site.baseurl }}/texts/lauro-1544/) is available
+[alongside De excidio]({{ site.baseurl }}/deh/?book=1&italian=lauro1544).
+Its passage correspondences follow Ussani’s sections while retaining Lauro’s own
+printed chapters, historical wording and editorial qualifications.
+
+#### Comparison with Lauro and further revisions
+
+Version 1.1 was systematically compared with Lauro’s Italian translation of 1544, with differences assessed against the Latin. The AI audit covered **all 558 numbered passages**, including the Prologue, and recorded **388 findings across 262 passages**; the other 296 passages yielded no material finding. A passage could have more than one finding.
+
+In **308 findings, spread across 212 passages**, Lauro’s rendering was judged less persuasive or freer. This category includes amplification and compression as well as less persuasive interpretations. Other findings concerned legitimate interpretative differences, possible differences in the underlying Latin text, or source and alignment uncertainties. **Six cases** remained classified as English interpretations worth reconsidering (category B).
+
+Following Pollard’s editorial review, **three of these six cases were selected for revision**. These revisions, prompted by the comparison with Lauro, are included in Pollard v1.2:
+
+- [I.25.1]({{ site.baseurl }}/deh/?book=1&chapter=25&unit=1&english=pollard&italian=lauro1544): Antigonus seeks to arouse hostility rather than express grief; the emphasis falls on the rhetorical purpose of his accusations rather than personal envy.
+- [III.13.1]({{ site.baseurl }}/deh/?book=3&chapter=13&unit=1&english=pollard&italian=lauro1544): the Galileans are in greater danger from their own people than from their enemies, rather than being more hostile to their own people.
+- [III.19.1]({{ site.baseurl }}/deh/?book=3&chapter=19&unit=1&english=pollard&italian=lauro1544): *decimum … et quintum ordinem* is understood as the fifteenth legion, rather than separate tenth and fifth legions.
+
+The first two revisions adopt Lauro’s interpretation. The third arose from reconsideration of the Latin: Lauro himself presents separate tenth and fifth formations. The “fifteenth legion” is therefore an interpretative decision prompted by the comparison, rather than an adoption of Lauro or a historical correction.
+
+The other three category-B cases retain the English wording, with translation-comparison notes included at the relevant passages in the reader:
+
+- [I.37.3]({{ site.baseurl }}/deh/?book=1&chapter=37&unit=3&english=pollard&italian=lauro1544): retain “a woman attached to Antony,” while recording the possible interpretation “a married woman.” Lauro’s paraphrase does not clearly resolve the distinction.
+- [II.12.2]({{ site.baseurl }}/deh/?book=2&chapter=12&unit=2&english=pollard&italian=lauro1544): retain the statement that true salvation does not lie in prosperity, while noting the possible interpretation “in second place.” Lauro’s worldly paraphrase supports the retained reading.
+- [V.20.2]({{ site.baseurl }}/deh/?book=5&chapter=20&unit=2&english=pollard&italian=lauro1544): provisionally retain the four-person enumeration, rather than construing *Adiabenus* as “of Adiabene,” qualifying Magassarus. Lauro also presents four people; the difficulty concerning *Adiabenus* remains unresolved.
+
+These notes record interpretative alternatives and qualifications, rather than textual variants. The three revisions and three notes are included in Pollard v1.2. The audit counts describe editorial findings rather than a measured accuracy percentage.
+
 ### Corrections
 
 The Latin transcription was very thoroughly checked and corrected in autumn of 2026.  Few errors should remain. If you spot any, please contact [pollard.richard_matthew@uqam.ca](mailto:pollard.richard_matthew@uqam.ca).

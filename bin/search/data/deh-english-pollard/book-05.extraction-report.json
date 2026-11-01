@@ -5,25 +5,25 @@
     "work": "De excidio Hierosolymitano",
     "book": 5,
     "language": "English",
-    "edition": "Pollard v1.1",
+    "edition": "Pollard v1.2",
     "unit": "existing chapter/paragraph citation unit",
     "citationScheme": "chapter-paragraph"
   },
   "source": {
     "path": "assets/xml/deh/English/book-05.xml",
-    "sha256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
-    "bytes": 262603
+    "sha256": "da4dbbabf578becb7c253a52495a9801a408fc7c72597a3bd2ac7f9883bbf34b",
+    "bytes": 263616
   },
   "additionalSources": [],
   "sources": [
     {
       "path": "assets/xml/deh/English/book-05.xml",
-      "sha256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
-      "bytes": 262603
+      "sha256": "da4dbbabf578becb7c253a52495a9801a408fc7c72597a3bd2ac7f9883bbf34b",
+      "bytes": 263616
     }
   ],
   "sourceContract": {
-    "normalizedSHA256": "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91",
+    "normalizedSHA256": "da4dbbabf578becb7c253a52495a9801a408fc7c72597a3bd2ac7f9883bbf34b",
     "hashMode": "CRLF-to-LF only",
     "verified": true
   },
@@ -32,7 +32,7 @@
     "text": "Exclude the verified num label together with its preceding whitespace; trim only running-text edge whitespace. Preserve every other original running character, punctuation and internal whitespace. No spelling repair or generated text.",
     "sourceIdentity": "Retain each original English xml:id and its exact sameAs reference to the aligned Latin element. English text is extracted from its own source, not reconstructed from Latin.",
     "excludedBlocks": "The complete TEI header, verified body release note and exact chapter/book headings are metadata outside running text. Their source evidence is retained.",
-    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eight approved uncertainty notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
+    "editorialMarkup": "The accepted English paragraphs contain a leading num element and plain running text. Eleven approved comparison notes are excluded from search and preserved in the source restoration ledger. No Latin additions, deletions, gaps or dagger representations are inherited. Unknown body markup stops extraction.",
     "phraseBoundaries": "Physically consecutive paragraphs and chapters remain joinable in whole-book scope. The Prologue-to-Book-I transition has breakBefore=true. Phrases never cross books, works or editions.",
     "coordinates": "All sourcePieces and section coordinates are zero-based original-text UTF-16 offsets, end exclusive. rawText includes the removed num label and its preceding whitespace; runningText excludes that prefix.",
     "readerRoute": "/deh/?book={book}&chapter={chapter}&unit={paragraph}&english=pollard; chapter 0 is the Prologue and unit is chapter-local."
@@ -47,7 +47,7 @@
     "excludedCitationLabels": 121,
     "excludedHeadings": 1,
     "excludedReleaseNotes": 1,
-    "excludedTranslationNotes": 1,
+    "excludedTranslationNotes": 2,
     "breakBeforeUnits": 0
   },
   "coverage": {
@@ -63,8 +63,8 @@
     "paragraphsExactlyRestored": 121,
     "wordSequencePreserved": true,
     "nonWhitespaceContentPreserved": true,
-    "rawParagraphSequenceSha256": "c69beb332a9216c3451c31d2b633cf80b4abd20632813e2826dd0bfcad38af5b",
-    "restoredParagraphSequenceSha256": "c69beb332a9216c3451c31d2b633cf80b4abd20632813e2826dd0bfcad38af5b",
+    "rawParagraphSequenceSha256": "92c40e62a2f89d58b90ea5f4f90b4d3458e8737c290d4ce761ae08393f9ad82d",
+    "restoredParagraphSequenceSha256": "92c40e62a2f89d58b90ea5f4f90b4d3458e8737c290d4ce761ae08393f9ad82d",
     "sourceWordSequenceSha256": "e275266f76bb188d36f602fe31a4277fc10817526a985063d545a8f4da8d5b53",
     "indexedWordSequenceSha256": "e275266f76bb188d36f602fe31a4277fc10817526a985063d545a8f4da8d5b53",
     "sourceNonWhitespaceContentSha256": "0a58b86b46f9f8ee51645f0a41c7147a41c37cc848795467ba7ab0a8b1a73001",
@@ -74,14 +74,14 @@
     {
       "kind": "teiHeader",
       "reason": "metadata outside running text",
-      "textCharacters": 5001,
-      "textSHA256": "ed59bd172f86ac70b93dedc50e83d6c18df762554d7779adb5736eaca80f30a0"
+      "textCharacters": 5633,
+      "textSHA256": "13a67459fad2fe3dc501067c805192c982d638574300e5c9fdfefa66951c1c17"
     },
     {
       "kind": "release-note",
       "reason": "verified release metadata outside running text",
-      "text": "English translation, version 1.1: complete Book V, chapters 1–53, [V.1.1]–[V.53.2].",
-      "textSHA256": "be3b4c8a290e2c08bdea2120ab5fffa92ab9241d10849c28f28a0dd93c052df1"
+      "text": "English translation, version 1.2: complete Book V, chapters 1–53, [V.1.1]–[V.53.2].",
+      "textSHA256": "6cbc6b8d09542603fb4082df654ff033d92a807248b2b7acb145b5ad446c7715"
     },
     {
       "kind": "heading",
@@ -3501,7 +3501,7 @@
       "chapter": 20,
       "paragraph": 2,
       "citationLabel": "V.20.2",
-      "rawText": "[V.20.2] In another part, two days later, when the wall was already being battered by a ram, Tepthaeus of Galilee and Magassarus, Adiabenus and Agiras seized torches and sprang upon the engines used against the walls. Nothing bolder than these men, nothing more terrible, advanced from the city against the enemy in that war. For, rushing into the midst of the enemy, they neither trembled nor drew back. Instead, as though lingering among their own friends, they thought they must not return, though javelins, arrows and missiles were hurled at them from every side, until they had set fire underneath and kindled the equipment of the siege engines. There was a great rush of the Roman army to extinguish the fire, and shouting and eager effort from the Jews too, devising obstacles for the Romans to prevent help being given. The Romans hurried to withdraw the rams from the flames; the Jews continued to spread fires. Thus, when everything that could burn had caught fire, the flames would have surrounded the Romans had they not acted promptly. For the Jews pressed fiercely, and their success fed their boldness precisely because their efforts in that part had not been fruitless. Indeed, no longer content with the protection of the walls, they advanced beyond them and attacked the Romans’ very guard posts. They had even gone forward to overthrow the fort in which the Romans kept watch. Had the glory of the Roman name and the ancient discipline of military service, which deterred men from abandoning such duties through fear of a graver penalty, not resisted the raging attackers, the very conquerors of cities would have yielded their own fortifications. Thus the appearance of the war and the practice of siege were reversed. The Romans defended themselves with catapults and missiles of the swifter kind, to repel the Jews by the same means with which they themselves had previously been resisted.",
+      "rawText": "[V.20.2] In another part, two days later, when the wall was already being battered by a ram, Tepthaeus of Galilee and Magassarus, Adiabenus and Agiras seized torches and sprang upon the engines used against the walls. Nothing bolder than these men, nothing more terrible, advanced from the city against the enemy in that war. For, rushing into the midst of the enemy, they neither trembled nor drew back. Instead, as though lingering among their own friends, they thought they must not return, though javelins, arrows and missiles were hurled at them from every side, until they had set fire underneath and kindled the equipment of the siege engines. There was a great rush of the Roman army to extinguish the fire, and shouting and eager effort from the Jews too, devising obstacles for the Romans to prevent help being given. The Romans hurried to withdraw the rams from the flames; the Jews continued to spread fires. Thus, when everything that could burn had caught fire, the flames would have surrounded the Romans had they not acted promptly. For the Jews pressed fiercely, and their success fed their boldness precisely because their efforts in that part had not been fruitless. Indeed, no longer content with the protection of the walls, they advanced beyond them and attacked the Romans’ very guard posts. They had even gone forward to overthrow the fort in which the Romans kept watch. Had the glory of the Roman name and the ancient discipline of military service, which deterred men from abandoning such duties through fear of a graver penalty, not resisted the raging attackers, the very conquerors of cities would have yielded their own fortifications. Thus the appearance of the war and the practice of siege were reversed. The Romans defended themselves with catapults and missiles of the swifter kind, to repel the Jews by the same means with which they themselves had previously been resisted.Translation comparison: Lauro also presents a four-person list. The English provisionally retains that enumeration, rather than taking Adiabenus as “of Adiabene”, qualifying Magassarus. The latter interpretation would reduce the participants to three; the difficulty concerning Adiabenus remains unresolved.",
       "runningText": " In another part, two days later, when the wall was already being battered by a ram, Tepthaeus of Galilee and Magassarus, Adiabenus and Agiras seized torches and sprang upon the engines used against the walls. Nothing bolder than these men, nothing more terrible, advanced from the city against the enemy in that war. For, rushing into the midst of the enemy, they neither trembled nor drew back. Instead, as though lingering among their own friends, they thought they must not return, though javelins, arrows and missiles were hurled at them from every side, until they had set fire underneath and kindled the equipment of the siege engines. There was a great rush of the Roman army to extinguish the fire, and shouting and eager effort from the Jews too, devising obstacles for the Romans to prevent help being given. The Romans hurried to withdraw the rams from the flames; the Jews continued to spread fires. Thus, when everything that could burn had caught fire, the flames would have surrounded the Romans had they not acted promptly. For the Jews pressed fiercely, and their success fed their boldness precisely because their efforts in that part had not been fruitless. Indeed, no longer content with the protection of the walls, they advanced beyond them and attacked the Romans’ very guard posts. They had even gone forward to overthrow the fort in which the Romans kept watch. Had the glory of the Roman name and the ancient discipline of military service, which deterred men from abandoning such duties through fear of a graver penalty, not resisted the raging attackers, the very conquerors of cities would have yielded their own fortifications. Thus the appearance of the war and the practice of siege were reversed. The Romans defended themselves with catapults and missiles of the swifter kind, to repel the Jews by the same means with which they themselves had previously been resisted.",
       "removedPrefix": "[V.20.2]",
       "sourcePieces": [
@@ -3529,6 +3529,14 @@
           "sourceStart": 9,
           "sourceEnd": 1911,
           "textSHA256": "e70f839e434a3cb25ee6f112a35cd88ec38e278e30bf45e94c6f6dcd101a4dee"
+        },
+        {
+          "kind": "excluded",
+          "reason": "translation-comparison-note",
+          "text": "Translation comparison: Lauro also presents a four-person list. The English provisionally retains that enumeration, rather than taking Adiabenus as “of Adiabene”, qualifying Magassarus. The latter interpretation would reduce the participants to three; the difficulty concerning Adiabenus remains unresolved.",
+          "sourceStart": 1911,
+          "sourceEnd": 2218,
+          "textSHA256": "916074b2ee2495356aebdaf0a3b50719190304134b65230399720e4de4396d64"
         }
       ],
       "sections": [
@@ -3536,7 +3544,7 @@
           "recordId": "deh-english-pollard-5-48",
           "section": 48,
           "sourceStart": 0,
-          "sourceEnd": 1911,
+          "sourceEnd": 2218,
           "textStart": 9,
           "textEnd": 1911,
           "leadingWhitespace": " ",

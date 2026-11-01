@@ -29,7 +29,7 @@ const collectionId = 'deh-english-pollard';
 const bookId = `${collectionId}:1`;
 const expectedBooks = [1,2,3,4,5];
 const expectedBookTotals = [
-  {book:1,sections:215,tokens:40804},{book:2,sections:73,tokens:17142},
+  {book:1,sections:215,tokens:40806},{book:2,sections:73,tokens:17142},
   {book:3,sections:70,tokens:18640},{book:4,sections:79,tokens:17259},{book:5,sections:121,tokens:42207},
 ];
 const destination = resolve(base, 'data', collectionId, 'qa-report.json');
@@ -217,7 +217,7 @@ function inspectRecords(records, expected, category) {
     const row=expected[index],context={id:row.id};
     for(const field of ['id','book','section','order','text','sourcePath','sourceId','sourceIds',
       'sourceSameAs','chapter','paragraph','citationLabel'])check(`${category}Source${field}`,record[field],row[field],context);
-    check(`${category}Version`,[record.work,record.language,record.edition],['deh','English','Pollard v1.1'],context);
+    check(`${category}Version`,[record.work,record.language,record.edition],['deh','English','Pollard v1.2'],context);
     check(`${category}CitationScheme`,record.citationScheme,'chapter-paragraph',context);
     check(`${category}Citation`,record.citation,{book:romans[row.book-1],chapter:row.chapter,
       paragraph:row.paragraph,prologue:row.prologue},context);
@@ -299,7 +299,7 @@ function validateConcordance(result,oracle,expected,tree,catalog,category='Conco
       return source.slice(index?0:span.start,index===spans.length-1?span.end:source.length);
     }).join(' ');
     check(`${category}OriginalMatchedText`,row.match,match,{spans});
-    check(`${category}Edition`,[row.language,row.edition,row.collectionId],['English','Pollard v1.1',collectionId]);
+    check(`${category}Edition`,[row.language,row.edition,row.collectionId],['English','Pollard v1.2',collectionId]);
     const first=oracle.byId.get(spans[0].recordId);
     check(`${category}PassageReader`,linkParts(row.readerURL),expectedLink(first));
   }
@@ -313,7 +313,7 @@ function validateConcordance(result,oracle,expected,tree,catalog,category='Conco
     check(`${category}CSVScope`,row.scope,result.scope);
     check(`${category}CSVEnglishNormalization`,row.spelling_equivalence,'original spelling');
     if(row.row_type==='search-summary')continue;
-    check(`${category}CSVVersion`,[row.language,row.edition,row.collection_id],['English','Pollard v1.1',collectionId]);
+    check(`${category}CSVVersion`,[row.language,row.edition,row.collection_id],['English','Pollard v1.2',collectionId]);
     const original=JSON.parse(row.original_context_json),segments=JSON.parse(row.source_segments_json);
     check(`${category}CSVOriginalContext`,original,{left:row.left_context,match:row.matched_text,right:row.right_context});
     for(const segment of segments) {
@@ -367,21 +367,21 @@ async function main() {
   assert.ok(config,'Build Pollard English De excidio and the combined catalog before running acceptance.');
   const entries=catalog.books.filter(entry=>entry.collectionId===collectionId);
   check('OnlyAcceptedBooksPublished',entries.map(entry=>entry.number),expectedBooks);
-  check('CollectionIdentity',[config.work,config.language,config.edition],['deh','English','Pollard v1.1']);
+  check('CollectionIdentity',[config.work,config.language,config.edition],['deh','English','Pollard v1.2']);
   const corpusPath=preserve(resolve(base,config.corpusPath)),extractionPath=preserve(resolve(base,config.extractionReportPath));
   const manifestPath=preserve(resolve(base,config.manifestPath));
   for(const p of ['engine.mjs','collection.mjs','concordance.mjs','ui-utils.mjs','extract-deh-english.py','vendor/lunr.cjs'])preserve(resolve(base,p));
   const sourcePaths=Object.fromEntries(expectedBooks.map(book=>[book,preserve(resolve(root,`assets/xml/deh/English/book-${String(book).padStart(2,'0')}.xml`))]));
   const latinPaths=expectedBooks.map(book=>preserve(resolve(root,`assets/xml/deh/Latin/book-${String(book).padStart(2,'0')}.xml`)));
   const witness=JSON.parse(execFileSync(process.env.SEARCH_PYTHON||process.env.PYTHON||'python3',[witnessPath,root],{encoding:'utf8',maxBuffer:128*1024*1024}));
-  check('IndependentCollectionTotals',witness.totals,{books:5,sections:558,tokens:136052});
+  check('IndependentCollectionTotals',witness.totals,{books:5,sections:558,tokens:136054});
   check('IndependentBookTotals',witness.bookTotals,expectedBookTotals);
   check('IndependentLatinAlignmentInputs',witness.testSources.map(item=>item.path),latinPaths.map(path=>relative(root,path).replaceAll('\\','/')));
   const corpus=readJSON(corpusPath),extraction=readJSON(extractionPath);
   inspectRecords(corpus,witness.rows,'Indexed');
   check('CollectionCorpusHash',config.corpusSHA256,digest(corpusPath));
   check('CollectionManifestHash',config.manifestSHA256,digest(manifestPath));
-  check('ExtractionTokens',extraction.counts.runningWordTokens,136052);
+  check('ExtractionTokens',extraction.counts.runningWordTokens,136054);
   check('ExtractionSections',extraction.counts.sections,558);
   check('ExtractionPublishedBooks',extraction.scope.books,expectedBooks);
   check('NoRunningCitationLabelTokens',witness.rows.some(row=>/^\[/.test(row.text)),false);
@@ -526,7 +526,7 @@ async function main() {
     runtime:{node:process.version,...witness.runtime},source:{...witness.totals,uniqueLiteralVocabulary:oracle.vocabulary.length,bookTotals:witness.bookTotals},
     sources:witness.sources,testSources:witness.testSources,sourceCases:{sameAsLinks:740,indentedBeforeCitationLabels:217,
       chapterDivisionsIncludingPrologue:177,prologueUnits:3,excludedHeads:6,excludedReleaseNotes:5,
-      inlineEditorialElements:0,literalBracketParagraphs:0},
+      inlineEditorialElements:11,excludedTranslationNotes:11,literalBracketParagraphs:0},
     verifiedFiles:{corpus:evidence(corpusPath),catalog:evidence(catalogPath),engine:evidence(resolve(base,'engine.mjs')),
       collection:evidence(resolve(base,'collection.mjs')),concordance:evidence(resolve(base,'concordance.mjs')),uiUtils:evidence(resolve(base,'ui-utils.mjs')),
       verifier:evidence(verifierPath),witness:evidence(witnessPath),extractor:evidence(resolve(base,'extract-deh-english.py')),manifest:evidence(manifestPath),
@@ -539,7 +539,7 @@ async function main() {
       language:'English spelling remains literal with Latin-only equivalence. Latin and English De excidio stay separate editions; the four English works retain their own book identities and reader sources.',
       exports:'Exact concordance geometry, original source slices, chapter/paragraph citations, Prologue links, ordinary and negative-only CSV exports, every selected book and explicit Pollard reader parameters.'},
     counts,totalQueries,assertions,failedAssertions:0,examples,durationSeconds:Math.round((performance.now()-started)/100)/10,
-    limitations:['This validates the accepted English De excidio v1.0 files, not a new translation or textual revision.','Browser interaction is verified separately.'],failures:[]};
+    limitations:['This validates the approved English De excidio v1.2 files and their exact search projection; the release log records the editorial decisions.','Browser interaction is verified separately.'],failures:[]};
   if(!smoke)writeFileSync(destination,JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify({status:smoke?'DEVELOPMENT_SMOKE_PASS':'PASS',source:report.source,totalQueries,assertions,
     durationSeconds:report.durationSeconds,report:smoke?null:relative(root,destination)},null,2));

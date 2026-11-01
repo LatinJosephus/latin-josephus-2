@@ -296,6 +296,10 @@ document.addEventListener("DOMContentLoaded", () => {
           defaultSource: "millet1556",
           sources: {millet1556: {label: "Millet 1556", nativeMillet: true}}
         },
+        Italian: {
+          defaultSource: "lauro1544",
+          sources: {lauro1544: {label: "Lauro 1544", nativeLauro: true}}
+        },
         Latin: {
           defaultSource: "ussani",
           sources: {
@@ -311,7 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
           defaultSource: "pollard",
           sources: {
             pollard: {
-              label: "Pollard v1.1",
+              label: "Pollard v1.2",
               directory: "English",
               availableBooks: [1, 2, 3, 4, 5]
             }
@@ -1270,7 +1274,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchTei = async (language, sourceKey, filename) => {
     // Millet keeps native French divisions and a separately verified offset
     // adapter. Its opt-in pane loads book-scoped JSON through milletReader.
-    if (sourceConfig(language, sourceKey)?.nativeMillet) return null;
+    if (sourceConfig(language, sourceKey)?.nativeMillet || sourceConfig(language, sourceKey)?.nativeLauro) return null;
     let result;
 
     // Native TCP elements already carry their source text. Bypass default

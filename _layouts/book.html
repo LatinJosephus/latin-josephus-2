@@ -12,6 +12,7 @@ layout: default
     {% if page.permalink == '/deh/' %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/deh-parallels.css?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/millet.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/lauro.css">
     {% endif %}
     <!-- Font Awesome -->
     <link
@@ -51,6 +52,7 @@ layout: default
       </div>
       {% if page.permalink == '/deh/' %}
       <div id="french" class="pane hidden" lang="fr" hidden><h3>French: Millet 1556</h3></div>
+      <div id="italian" class="pane hidden" lang="it" hidden><h3>Italian: Lauro 1544</h3></div>
       {% endif %}
       {% include annotations-bar.html %}
     </div>

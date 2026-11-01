@@ -1,0 +1,41 @@
+/* Isolated Lauro controls and reading layout; source payloads remain exact. */
+#italian>h3{margin-bottom:.3rem}
+#lauro-controls{text-align:start;font:.8rem/1.4 system-ui,sans-serif;margin-bottom:.7rem}
+#lauro-controls .lauro-toolbar{display:flex;flex-wrap:wrap;gap:.2rem .8rem;align-items:baseline}
+#lauro-controls .lauro-highlight-control{display:flex;align-items:center;gap:.4rem;flex-basis:100%;margin:0;min-height:1.5rem}
+#lauro-controls label{margin:0}
+#lauro-controls select{max-width:100%;min-width:0;padding:.15rem;box-sizing:border-box;color:inherit;background:var(--global-bg-color,#fff)}
+#lauro-controls button{border:1px solid currentColor;border-radius:.25rem;padding:.2rem .4rem;background:transparent;color:inherit}
+#lauro-controls summary{cursor:pointer;list-style:revert;min-height:1.5rem;color:var(--global-theme-color)}
+#lauro-controls details[open]{flex-basis:100%;order:1}
+#lauro-controls .lauro-options{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-block:.4rem .6rem;padding-inline-start:.6rem;border-inline-start:2px solid #aaa}
+#lauro-controls .lauro-options label{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;max-width:100%}
+#lauro-controls .lauro-status[open]{border-inline-start:2px solid #537b88;padding-inline-start:.6rem;overflow-wrap:anywhere}
+#lauro-controls .lauro-status p{margin-block:.4rem}
+#lauro-controls .lauro-status a{margin-inline-end:1em}
+#lauro-controls :is(a,button,input,select,summary):focus-visible{outline:2px solid var(--global-theme-color);outline-offset:3px}
+#italian .lauro-source{font-family:var(--lj-font-text,Georgia,serif);font-size:1.125rem}
+#italian .lauro-line{display:inline;white-space:normal}
+#italian .lauro-paragraph{margin-bottom:1em;line-height:1.7;overflow-wrap:anywhere}
+#italian .lauro-division-marker{display:none}
+#italian .lauro-outside-view{display:none}
+#italian .lauro-reading-gap{color:var(--global-theme-color);font-style:italic}
+#italian .lauro-folio-marker{font:.75em system-ui;color:var(--global-theme-color);white-space:nowrap}
+#italian .lauro-passage-label{font:inherit;font-weight:bold;margin-inline-end:.3em}
+#italian .lauro-linked{cursor:pointer}
+#italian .lauro-linked:hover{background-color:#fff4c260}
+#italian .lauro-selected{background:#d5eddf;color:#192629;box-shadow:0 1px 0 #357b58}
+#italian .lauro-annotated{text-decoration-style:dotted}
+.lauro-latin-target{outline:2px solid #357b58;outline-offset:.2rem;background-color:#d5eddf55}
+#italian .lauro-role-heading{font-weight:600;margin-block:.25em}
+#italian .lauro-role-header,#italian .lauro-role-footer{font-size:.85em;opacity:.75}
+#italian .lauro-role-marginalia{font-style:italic;border-inline-start:1px dashed currentColor;padding-inline-start:.5rem}
+#italian .lauro-ancillary-label,#italian .lauro-empty{font:italic .9em/1.5 system-ui}
+#lauro-controls .lauro-attention{border:1px solid #357b58;padding:.5rem}
+#italian .lauro-target-picker{display:flex;gap:.5rem;flex-wrap:wrap}
+
+#italian .lauro-source.lauro-diplomatic .lauro-line{display:block;white-space:pre-wrap;min-height:1em}
+#italian .lauro-source.lauro-diplomatic .lauro-paragraph{margin-bottom:.65em}
+#italian .lauro-editorial-supply{text-decoration:underline dotted;text-underline-offset:.2em}
+#lauro-controls .lauro-source-qualification{border-inline-start:2px solid #357b58;padding-inline-start:.6rem;margin-block:.5rem;font-size:.9rem}
+@media(max-width:760px){#lauro-controls .lauro-toolbar>*{max-width:100%}}

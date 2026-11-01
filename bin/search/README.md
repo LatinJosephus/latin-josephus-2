@@ -32,9 +32,9 @@ This directory contains the source and verification tools for the main site's
   36,853 word tokens.
 
 - **Pollard English *De excidio Hierosolymitano*, version 1.1, Prologue and Books I–V:**
-  558 chapter-and-paragraph citation units and 136,052 word tokens.
+  558 chapter-and-paragraph citation units and 136,054 word tokens.
 
-Together these comprise **68 book editions, 25,001 citation units, and 1,347,222
+Together these comprise **68 book editions, 25,001 citation units, and 1,347,224
 word tokens**. The indexes contain 25,009 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
 The Whiston English Antiquities, Bellum and Contra Apionem and Pollard English De excidio are complete; Greek editions are not indexed. Bamberg Latin Antiquities
@@ -220,7 +220,7 @@ books** as its default. Choose **De excidio Hierosolymitano** for its five books
 all twenty Bamberg Latin Antiquities books, **Antiquities · English · Whiston**
 for the English Proem and Books I–XX, **Bellum Judaicum · English · Whiston**
 for all seven English Bellum books, **Contra Apionem · English · Whiston**
-for both English Contra Apionem books, **De excidio Hierosolymitano · English · Pollard v1.1**
+for both English Contra Apionem books, **De excidio Hierosolymitano · English · Pollard v1.2**
 for its Prologue and all five books, or **All works** to search all eight collections.
 Proem passage links use `antiquities/?book=preface&niese=N`; whole-Book-I links
 use `antiquities/?book=1`.
@@ -1096,17 +1096,17 @@ unchanged from the accepted Whiston Bellum release.
 ## Pollard English De excidio, Prologue and Books I–V
 
 The `deh-english-pollard` collection indexes the five accepted English XML files
-without changing their text or the reader. Its edition label, **Pollard v1.1**,
+without changing their text or the reader. Its edition label, **Pollard v1.2**,
 matches the canonical reader. English and Latin remain separate search editions.
 
 | Book | Citation units | Word tokens |
 | --- | ---: | ---: |
-| I, including Prologue | 215 | 40,804 |
+| I, including Prologue | 215 | 40,806 |
 | II | 73 | 17,142 |
 | III | 70 | 18,640 |
 | IV | 79 | 17,259 |
 | V | 121 | 42,207 |
-| **Total** | **558** | **136,052** |
+| **Total** | **558** | **136,054** |
 
 Each accepted paragraph already supplies an English XML identity, a printed
 book–chapter–paragraph citation, and a fragment-only `sameAs` alignment to the
@@ -1114,7 +1114,7 @@ accepted Latin. The extractor retains those identities and the exact original
 `sameAs` value. It excludes the complete leading `num` label together with any
 indentation before it, rather than treating printed citation numbers as words.
 Five release notes and six headings are also excluded. The accepted running
-English excludes eight translation-comparison notes from search, while its
+English excludes eleven translation-comparison notes from search, while its
 reversible ledger preserves every note verbatim. The reader displays the notes
 after their English paragraphs; Latin apparatus is not transferred to English.
 
