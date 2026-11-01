@@ -1,7 +1,7 @@
-import {createCollection} from './collection.098bccccb8e20a4c6dd191b4bac059b99225e2e8e7484ec8fc4317e1f8aa8fd0.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851.mjs';
-import {buildConcordance,exportConcordance} from './concordance.218f8bf4a2ed22006764b420c5aa6580beb36db48c67f23fdede7e59451db91f.mjs';
-import {createEngine} from './engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs';
+import {createCollection} from './collection.ff7c7cd71bcb73b49d3aee2116bb556ad6534d658db28b56c8c9eedffd76ab8e.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6.mjs';
+import {buildConcordance,exportConcordance} from './concordance.a693769e88e97389eedb8a16c1b54bce01a5dce6cfa875ac8009b7f303815b2b.mjs';
+import {createEngine} from './engine.838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9.mjs';
 
 const root=document.getElementById('lj-search');
 const $=id=>root.querySelector(`#${id}`);
@@ -209,6 +209,7 @@ function summarize(result,model){
 function resultContext(result,model){
   const parts=[];
   const collections=catalog.collections.filter(collection=>result.selectedCollections.includes(collection.id)),labels=citationUnitLabels(collections);
+  if(collections.some(collection=>collection.id==='deh-french-millet1556'))parts.push('Millet 1556 French: semi-final r1 transcription and provisional accepted correspondence. Each physical French passage is indexed once in source order. References distinguish French folios from DEH correspondences. Long ſ matches s; explicit ¬ continuations join for matching. Apostrophes and hyphens separate words; accents remain significant. French spelling is unaffected by the Latin equivalence setting. Reader links open the French source leaf.');
   if(view==='concordance'){
     if(model.countKind==='evidence'){
       parts.push(result.scope==='book'
@@ -254,7 +255,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');
@@ -397,7 +398,7 @@ async function annotationSearch() {
     els.downloadStatus.textContent = ''; els.region.setAttribute('aria-busy', 'true');
     try {
       if (!engine) {
-        const response = await fetch(new URL('./annotations.312f4cb69d74bbb986ba7c54c0266e075231cb72480ef287223ef073d0cb5c42.bundle.json', import.meta.url), {cache: 'no-cache'});
+        const response = await fetch(new URL('./annotations.1564b56cfd729f0f60ca7315df740a92237cffee3747717f9dc8773983392217.bundle.json', import.meta.url), {cache: 'no-cache'});
         if (!response.ok) throw new Error(`The annotation index could not be loaded (HTTP ${response.status}). Try Search again.`);
         const bundle = await response.json();
         engine = createEngine(bundle, globalThis.lunr); records = engine.records;

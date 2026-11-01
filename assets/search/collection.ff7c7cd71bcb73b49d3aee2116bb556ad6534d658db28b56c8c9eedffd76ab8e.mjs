@@ -3,8 +3,8 @@
  * Work, language, and edition identify a collection; every book selector and
  * cache key includes its collection ID. Queries return no partial results.
  */
-import { createEngine, parseQuery, SCHEMA_VERSION } from "./engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs";
-import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851.mjs";
+import { createEngine, parseQuery, SCHEMA_VERSION } from "./engine.838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9.mjs";
+import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6.mjs";
 
 export const CATALOG_SCHEMA_VERSION = 2;
 export const qualifiedBookId = (collectionId, number) => `${collectionId}:${number}`;
@@ -47,7 +47,7 @@ export function validateCatalog(catalog) {
       || !isRelativePath(collection.readerPath) || !Array.isArray(collection.books) || !collection.books.length) {
       invalid("The search catalog contains an invalid or duplicate text collection.");
     }
-    if ((collection.citationScheme !== undefined && !["niese", "chapter-paragraph"].includes(collection.citationScheme))
+    if ((collection.citationScheme !== undefined && !["niese", "chapter-paragraph", "source-span"].includes(collection.citationScheme))
       || ["unitLabel", "unitLabelPlural"].some((field) => collection[field] !== undefined && !isText(collection[field]))) {
       invalid("The search catalog contains an unsupported citation scheme or citation-unit label.");
     }
@@ -219,6 +219,11 @@ export function createCollection(catalog, lunr, options = {}) {
           fail("the chapter/paragraph citations do not agree with their source records.");
         }
         citations.add(record.citationLabel);
+      } else if (collection.citationScheme === 'source-span') {
+        if (record.citationScheme !== 'source-span' || record.normalizationProfile !== 'early-print-fr-v1'
+          || !isText(record.sourceOccurrence) || !isText(record.citationLabel)
+          || !Array.isArray(record.sourcePieces) || !record.sourcePieces.length
+          || !Array.isArray(record.canonicalCorrespondences)) fail('the French physical-source contract is incomplete.');
       } else if (record.citationScheme !== undefined && record.citationScheme !== "niese") {
         fail("the passage citation scheme does not match the catalog.");
       }

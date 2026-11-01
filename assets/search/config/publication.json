@@ -174,6 +174,19 @@
       ],
       "verifier": "tests/deh-english-corpus-qa.mjs",
       "qaReport": "data/deh-english-pollard/qa-report.json"
+    },
+    "deh-french-millet1556": {
+      "extractor": "extract-millet.py",
+      "outputDirectory": "data/deh-french-millet1556",
+      "sources": [
+        "assets/data/deh-millet1556/book-01.json",
+        "assets/data/deh-millet1556/book-02.json",
+        "assets/data/deh-millet1556/book-03.json",
+        "assets/data/deh-millet1556/book-04.json",
+        "assets/data/deh-millet1556/book-05.json"
+      ],
+      "verifier": "tests/millet-corpus-qa.mjs",
+      "qaReport": "data/deh-french-millet1556/qa-report.json"
     }
   }
 }

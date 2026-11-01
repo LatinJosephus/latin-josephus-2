@@ -274,6 +274,37 @@
         "tokens": 136054,
         "bytes": 13796153
       }
+    },
+    {
+      "id": "deh-french-millet1556",
+      "work": "deh",
+      "label": "De excidio Hierosolymitano — Millet French",
+      "citationPrefix": "Millet",
+      "language": "French",
+      "edition": "Millet 1556 (semi-final r1; provisional alignment)",
+      "readerPath": "deh/",
+      "books": [
+        "deh-french-millet1556:1",
+        "deh-french-millet1556:2",
+        "deh-french-millet1556:3",
+        "deh-french-millet1556:4",
+        "deh-french-millet1556:5"
+      ],
+      "citationScheme": "source-span",
+      "unitLabel": "French passage",
+      "unitLabelPlural": "French passages",
+      "manifestPath": "config/deh-french-millet1556.json",
+      "manifestSHA256": "f67ea5a09a1a36c6896105f2994e54a115b0f9605152143b1609b7fc6a8eff1d",
+      "corpusPath": "data/deh-french-millet1556/corpus.json",
+      "corpusSHA256": "4e1284135b3891b609e7085dbf6fd7d372db97ea75f35749887e08459750d4f3",
+      "extractionReportPath": "data/deh-french-millet1556/extraction-report.json",
+      "extractionReportSHA256": "795042c7aadf5622f68f020e14f43027a95a89ab080b4fbd228d3f3efcc806ab",
+      "totals": {
+        "books": 5,
+        "sections": 560,
+        "tokens": 161125,
+        "bytes": 29654723
+      }
     }
   ],
   "books": [
@@ -1553,19 +1584,89 @@
       "sha256": "ae08f5914d6767e5999c448f5179b5901603c09424f7dd72ef2cd70fb25ae9be",
       "corpusPath": "data/deh-english-pollard/book-05.corpus.json",
       "corpusSHA256": "c9c2f816c589739b4daf17f97344e9ad63b19155090405027083bde9cf60c5c5"
+    },
+    {
+      "id": "deh-french-millet1556:1",
+      "collectionId": "deh-french-millet1556",
+      "number": 1,
+      "label": "Book 1 (including translated Prologue)",
+      "sections": 217,
+      "tokens": 48718,
+      "vocabulary": 6257,
+      "bytes": 8960711,
+      "path": "data/deh-french-millet1556/book-01.bundle.json",
+      "sha256": "f0b37386c0ac739a726a492c176c96be0c8c54f680d5f45fb370f75147767d8d",
+      "corpusPath": "data/deh-french-millet1556/book-01.corpus.json",
+      "corpusSHA256": "bda2f73aee41f8713ed5c5ac372d4cffb310388eb5e35e419fd5d98702787f7c"
+    },
+    {
+      "id": "deh-french-millet1556:2",
+      "collectionId": "deh-french-millet1556",
+      "number": 2,
+      "label": "Book 2",
+      "sections": 73,
+      "tokens": 23786,
+      "vocabulary": 4322,
+      "bytes": 4489493,
+      "path": "data/deh-french-millet1556/book-02.bundle.json",
+      "sha256": "4604f88e94f4760b608d15da9d59552ece82a8b349db92abd81388e2939a8932",
+      "corpusPath": "data/deh-french-millet1556/book-02.corpus.json",
+      "corpusSHA256": "12cc34f91855bf49f49e4b7dcad19286bbd676af7aba92172413f3044e7dad0f"
+    },
+    {
+      "id": "deh-french-millet1556:3",
+      "collectionId": "deh-french-millet1556",
+      "number": 3,
+      "label": "Book 3",
+      "sections": 70,
+      "tokens": 26353,
+      "vocabulary": 4527,
+      "bytes": 4786829,
+      "path": "data/deh-french-millet1556/book-03.bundle.json",
+      "sha256": "c5b1794004d0513fbb07711460a3f5bdd94d4b79d39277771969df5a1f0fbe15",
+      "corpusPath": "data/deh-french-millet1556/book-03.corpus.json",
+      "corpusSHA256": "2100e1ab7f3b69d355faa3e87c5b1192e11d6635e7f2db39126185cb68e5c0cf"
+    },
+    {
+      "id": "deh-french-millet1556:4",
+      "collectionId": "deh-french-millet1556",
+      "number": 4,
+      "label": "Book 4",
+      "sections": 79,
+      "tokens": 22911,
+      "vocabulary": 4199,
+      "bytes": 4396630,
+      "path": "data/deh-french-millet1556/book-04.bundle.json",
+      "sha256": "082876c81a13bb8827acf50c73b755ac3b2df817573247b57a3b6857acff0a32",
+      "corpusPath": "data/deh-french-millet1556/book-04.corpus.json",
+      "corpusSHA256": "3c3bf9b9270f7aee2b92b21f5818f9565f665465f301ed9ed1e8803e530599a1"
+    },
+    {
+      "id": "deh-french-millet1556:5",
+      "collectionId": "deh-french-millet1556",
+      "number": 5,
+      "label": "Book 5",
+      "sections": 121,
+      "tokens": 39357,
+      "vocabulary": 5669,
+      "bytes": 7021060,
+      "path": "data/deh-french-millet1556/book-05.bundle.json",
+      "sha256": "f2dce14169ea5d160e890bd9145044d5f7c3c334f818648a75d4fed7cfafa739",
+      "corpusPath": "data/deh-french-millet1556/book-05.corpus.json",
+      "corpusSHA256": "15665e6e09b17f62b2bdf5f4d01f83a3701c5dbacab6c6fe279391d8e832daf8"
     }
   ],
   "totals": {
-    "books": 68,
-    "sections": 25009,
-    "tokens": 1347224,
-    "bytes": 194358856
+    "books": 73,
+    "sections": 25569,
+    "tokens": 1508349,
+    "bytes": 224013579
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "7415465e707ea96f2bb8131fb6bfd4a76417182a456de3c4e47f4fb87d61ee7b",
+    "manifestSHA256": "339a9333aaac3aac4a52fa8d9c490dadece6ab4cd031ba17e83e885b260040e5",
     "enginePath": "engine.mjs",
-    "engineSHA256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
+    "engineSHA256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
     "lunrPath": "vendor/lunr.cjs",
     "lunrSHA256": "9431726f05c0eae2a6e54dc197709422869f25cad44f2430d2fb7ddae80cc717",
     "lunrVersion": "2.3.9"

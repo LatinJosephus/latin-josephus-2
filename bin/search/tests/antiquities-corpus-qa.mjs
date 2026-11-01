@@ -1678,7 +1678,13 @@ async function main() {
   }
   const oldCollections = ['bellum-latin-cardwell', 'deh-latin-ussani', 'contra-apionem-latin-boysen'];
   check('PriorCollectionsRetained', oldCollections.map(id => catalog.books.filter(entry => entry.collectionId === id).length), [7, 5, 2]);
-  const mixed = catalog.books.map(entry => entry.id);
+  // Retain every previously exercised Latin/English book. This historical
+  // oracle has no French continuation profile; the dedicated Millet oracle
+  // independently checks mixed-language normalization and source geometry.
+  const legacyCollections = new Set([...oldCollections, collectionId,
+    'antiquities-english-whiston', 'bellum-english-whiston',
+    'contra-apionem-english-whiston', 'deh-english-pollard']);
+  const mixed = catalog.books.filter(entry => legacyCollections.has(entry.collectionId)).map(entry => entry.id);
   for (const ast of [leaf('sacerdot*'), not(leaf('zzzznonoccurrit'))])
     for (const scope of ['section', 'book']) for (const fold of [false, true])
       await verifyCollection(ast, mixed, scope, fold, 'MixedFourWorkCollection', print(ast), !fold);
@@ -1693,7 +1699,7 @@ async function main() {
       check('CrossWorkBooleanAbsent', checked.expected.size, 0, {antOnly, otherOnly, other: other.id});
     }
   }
-  check('BundleFetchCaching', [...fetchCounts.entries()].sort(), catalog.books.map(entry => [entry.id, 1]).sort());
+  check('BundleFetchCaching', [...fetchCounts.entries()].sort(), mixed.map(id => [id, 1]).sort());
   for (const invalid of [{collections: [collectionId], books: [1]}, {collections: [collectionId], books: [catalog.books[0].id]},
     {collections: [collectionId], books: [`${collectionId}:21`]}]) {
     await assert.rejects(collection.search('sacerdot*', invalid));

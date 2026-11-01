@@ -1,0 +1,430 @@
+{
+  "status": "PASS",
+  "source": {
+    "books": 5,
+    "sections": 560,
+    "tokens": 161125
+  },
+  "bookData": [
+    {
+      "book": 1,
+      "lines": 5529,
+      "primaryLines": 4924,
+      "physicalPassages": 217,
+      "targets": 215,
+      "tokens": 48718,
+      "joinedTokens": 1750
+    },
+    {
+      "book": 2,
+      "lines": 2775,
+      "primaryLines": 2422,
+      "physicalPassages": 73,
+      "targets": 73,
+      "tokens": 23786,
+      "joinedTokens": 851
+    },
+    {
+      "book": 3,
+      "lines": 3002,
+      "primaryLines": 2630,
+      "physicalPassages": 70,
+      "targets": 70,
+      "tokens": 26353,
+      "joinedTokens": 866
+    },
+    {
+      "book": 4,
+      "lines": 2669,
+      "primaryLines": 2322,
+      "physicalPassages": 79,
+      "targets": 79,
+      "tokens": 22911,
+      "joinedTokens": 724
+    },
+    {
+      "book": 5,
+      "lines": 4396,
+      "primaryLines": 3938,
+      "physicalPassages": 121,
+      "targets": 121,
+      "tokens": 39357,
+      "joinedTokens": 1234
+    }
+  ],
+  "assertions": 19680,
+  "totalQueries": 3282,
+  "failedAssertions": 0,
+  "examples": [
+    {
+      "book": 1,
+      "q": "de",
+      "units": 213,
+      "occurrences": 2054,
+      "exportRows": 2054
+    },
+    {
+      "book": 1,
+      "q": "\"l histoire\"",
+      "units": 1,
+      "occurrences": 1,
+      "exportRows": 1
+    },
+    {
+      "book": 1,
+      "q": "\"les quatre liu*\"",
+      "units": 1,
+      "occurrences": 1,
+      "exportRows": 1
+    },
+    {
+      "book": 1,
+      "q": "(Iuifs OR Romains) AND NOT zzzmilletabsent",
+      "units": 59,
+      "occurrences": 83,
+      "exportRows": 83
+    },
+    {
+      "book": 1,
+      "q": "Iuifs OR Romains AND zzzmilletabsent",
+      "units": 39,
+      "occurrences": 52,
+      "exportRows": 52
+    },
+    {
+      "book": 1,
+      "q": "NOT zzzmilletabsent",
+      "units": 217,
+      "occurrences": 0,
+      "exportRows": 217
+    },
+    {
+      "book": 1,
+      "q": "zzzmilletabsent",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 2,
+      "q": "de",
+      "units": 73,
+      "occurrences": 1035,
+      "exportRows": 1035
+    },
+    {
+      "book": 2,
+      "q": "\"l histoire\"",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 2,
+      "q": "\"les quatre liu*\"",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 2,
+      "q": "(Iuifs OR Romains) AND NOT zzzmilletabsent",
+      "units": 54,
+      "occurrences": 145,
+      "exportRows": 145
+    },
+    {
+      "book": 2,
+      "q": "Iuifs OR Romains AND zzzmilletabsent",
+      "units": 42,
+      "occurrences": 72,
+      "exportRows": 72
+    },
+    {
+      "book": 2,
+      "q": "NOT zzzmilletabsent",
+      "units": 73,
+      "occurrences": 0,
+      "exportRows": 73
+    },
+    {
+      "book": 2,
+      "q": "zzzmilletabsent",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 3,
+      "q": "de",
+      "units": 69,
+      "occurrences": 1227,
+      "exportRows": 1227
+    },
+    {
+      "book": 3,
+      "q": "\"l histoire\"",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 3,
+      "q": "\"les quatre liu*\"",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 3,
+      "q": "(Iuifs OR Romains) AND NOT zzzmilletabsent",
+      "units": 47,
+      "occurrences": 109,
+      "exportRows": 109
+    },
+    {
+      "book": 3,
+      "q": "Iuifs OR Romains AND zzzmilletabsent",
+      "units": 32,
+      "occurrences": 50,
+      "exportRows": 50
+    },
+    {
+      "book": 3,
+      "q": "NOT zzzmilletabsent",
+      "units": 70,
+      "occurrences": 0,
+      "exportRows": 70
+    },
+    {
+      "book": 3,
+      "q": "zzzmilletabsent",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 4,
+      "q": "de",
+      "units": 79,
+      "occurrences": 1086,
+      "exportRows": 1086
+    },
+    {
+      "book": 4,
+      "q": "\"l histoire\"",
+      "units": 2,
+      "occurrences": 2,
+      "exportRows": 2
+    },
+    {
+      "book": 4,
+      "q": "\"les quatre liu*\"",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 4,
+      "q": "(Iuifs OR Romains) AND NOT zzzmilletabsent",
+      "units": 29,
+      "occurrences": 64,
+      "exportRows": 64
+    },
+    {
+      "book": 4,
+      "q": "Iuifs OR Romains AND zzzmilletabsent",
+      "units": 17,
+      "occurrences": 26,
+      "exportRows": 26
+    },
+    {
+      "book": 4,
+      "q": "NOT zzzmilletabsent",
+      "units": 79,
+      "occurrences": 0,
+      "exportRows": 79
+    },
+    {
+      "book": 4,
+      "q": "zzzmilletabsent",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 5,
+      "q": "de",
+      "units": 121,
+      "occurrences": 1820,
+      "exportRows": 1820
+    },
+    {
+      "book": 5,
+      "q": "\"l histoire\"",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 5,
+      "q": "\"les quatre liu*\"",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 5,
+      "q": "(Iuifs OR Romains) AND NOT zzzmilletabsent",
+      "units": 95,
+      "occurrences": 274,
+      "exportRows": 274
+    },
+    {
+      "book": 5,
+      "q": "Iuifs OR Romains AND zzzmilletabsent",
+      "units": 69,
+      "occurrences": 114,
+      "exportRows": 114
+    },
+    {
+      "book": 5,
+      "q": "NOT zzzmilletabsent",
+      "units": 121,
+      "occurrences": 0,
+      "exportRows": 121
+    },
+    {
+      "book": 5,
+      "q": "zzzmilletabsent",
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    }
+  ],
+  "readerBaseline": {
+    "publicationInput": false
+  },
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/deh-french-millet1556/corpus.json",
+      "sha256": "4e1284135b3891b609e7085dbf6fd7d372db97ea75f35749887e08459750d4f3",
+      "bytes": 7510050
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "sha256": "8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58",
+      "bytes": 60236
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "sha256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+      "bytes": 26756
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "sha256": "5bcab0853a03c75ef1ab38aae7415a9f5460bab5494e6590c8874e84fc44c046",
+      "bytes": 20644
+    },
+    "verifier": {
+      "path": "bin/search/tests/millet-corpus-qa.mjs",
+      "sha256": "4ef1df579b61cba27422223bae4aaebb70458656dc91233d63daa6933f0fa47a",
+      "bytes": 9514
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/deh-french-millet1556/book-01.bundle.json",
+          "sha256": "f0b37386c0ac739a726a492c176c96be0c8c54f680d5f45fb370f75147767d8d",
+          "bytes": 8960711
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-french-millet1556/book-01.corpus.json",
+          "sha256": "bda2f73aee41f8713ed5c5ac372d4cffb310388eb5e35e419fd5d98702787f7c",
+          "bytes": 2321417
+        },
+        "source": {
+          "path": "assets/data/deh-millet1556/book-01.json",
+          "sha256": "72bbab493ef33e407942e8189434096219e5e45d88ab532e9c40938d749b8648",
+          "bytes": 4891794
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/deh-french-millet1556/book-02.bundle.json",
+          "sha256": "4604f88e94f4760b608d15da9d59552ece82a8b349db92abd81388e2939a8932",
+          "bytes": 4489493
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-french-millet1556/book-02.corpus.json",
+          "sha256": "12cc34f91855bf49f49e4b7dcad19286bbd676af7aba92172413f3044e7dad0f",
+          "bytes": 1111888
+        },
+        "source": {
+          "path": "assets/data/deh-millet1556/book-02.json",
+          "sha256": "a47430026adb79b6d35e1c9ce20acbc13b70dfed5b06f207e7b82fff594bc6e3",
+          "bytes": 2472999
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/deh-french-millet1556/book-03.bundle.json",
+          "sha256": "c5b1794004d0513fbb07711460a3f5bdd94d4b79d39277771969df5a1f0fbe15",
+          "bytes": 4786829
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-french-millet1556/book-03.corpus.json",
+          "sha256": "2100e1ab7f3b69d355faa3e87c5b1192e11d6635e7f2db39126185cb68e5c0cf",
+          "bytes": 1194161
+        },
+        "source": {
+          "path": "assets/data/deh-millet1556/book-03.json",
+          "sha256": "5c16095319a0d2a02407916235b3d5f6400a6ffb0903931a2b568b06083518fb",
+          "bytes": 2672659
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/deh-french-millet1556/book-04.bundle.json",
+          "sha256": "082876c81a13bb8827acf50c73b755ac3b2df817573247b57a3b6857acff0a32",
+          "bytes": 4396630
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-french-millet1556/book-04.corpus.json",
+          "sha256": "3c3bf9b9270f7aee2b92b21f5818f9565f665465f301ed9ed1e8803e530599a1",
+          "bytes": 1077164
+        },
+        "source": {
+          "path": "assets/data/deh-millet1556/book-04.json",
+          "sha256": "4c528d45dc877b3e8d0213296d817a115731ff287749f19614dbb65973689046",
+          "bytes": 2392909
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/deh-french-millet1556/book-05.bundle.json",
+          "sha256": "f2dce14169ea5d160e890bd9145044d5f7c3c334f818648a75d4fed7cfafa739",
+          "bytes": 7021060
+        },
+        "corpus": {
+          "path": "bin/search/data/deh-french-millet1556/book-05.corpus.json",
+          "sha256": "15665e6e09b17f62b2bdf5f4d01f83a3701c5dbacab6c6fe279391d8e832daf8",
+          "bytes": 1805428
+        },
+        "source": {
+          "path": "assets/data/deh-millet1556/book-05.json",
+          "sha256": "bf0e30581929a5901db6c972079cec74a3c3708d85bc8da473eca6ceb98fc7ad",
+          "bytes": 4006792
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "This is engineering verification of accepted provisional text and correspondence, not new editorial certification. Browser checks are recorded separately."
+  ]
+}

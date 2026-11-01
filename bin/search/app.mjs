@@ -209,6 +209,7 @@ function summarize(result,model){
 function resultContext(result,model){
   const parts=[];
   const collections=catalog.collections.filter(collection=>result.selectedCollections.includes(collection.id)),labels=citationUnitLabels(collections);
+  if(collections.some(collection=>collection.id==='deh-french-millet1556'))parts.push('Millet 1556 French: semi-final r1 transcription and provisional accepted correspondence. Each physical French passage is indexed once in source order. References distinguish French folios from DEH correspondences. Long ſ matches s; explicit ¬ continuations join for matching. Apostrophes and hyphens separate words; accents remain significant. French spelling is unaffected by the Latin equivalence setting. Reader links open the French source leaf.');
   if(view==='concordance'){
     if(model.countKind==='evidence'){
       parts.push(result.scope==='book'

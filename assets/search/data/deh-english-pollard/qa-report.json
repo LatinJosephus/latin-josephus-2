@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-01T00:40:55.221Z",
+  "generatedAt": "2026-11-01T14:45:39.644Z",
   "independentVerifier": "bin/search/tests/deh-english-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "fdff75797a4d6c0c463ca3e7779039a852c8ab9e70d7b7b0cea969b5a1840d42",
@@ -11,8 +11,8 @@
   },
   "runtime": {
     "node": "v24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -261,28 +261,28 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275",
-      "bytes": 56253
+      "sha256": "8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58",
+      "bytes": 60236
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
-      "bytes": 25180
+      "sha256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+      "bytes": 26756
     },
     "collection": {
       "path": "bin/search/collection.mjs",
-      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
-      "bytes": 20177
+      "sha256": "5bcab0853a03c75ef1ab38aae7415a9f5460bab5494e6590c8874e84fc44c046",
+      "bytes": 20644
     },
     "concordance": {
       "path": "bin/search/concordance.mjs",
-      "sha256": "c2a2f5a8ffbb3006e022ff6c5fdb7ab048f017212c1ff71602176f042ec6d4c9",
-      "bytes": 32263
+      "sha256": "7461174762823c9e3552a43cb99ce77972ca694bc629e5132ba13d03564be6be",
+      "bytes": 34111
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851",
-      "bytes": 15956
+      "sha256": "c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6",
+      "bytes": 16581
     },
     "verifier": {
       "path": "bin/search/tests/deh-english-corpus-qa.mjs",
@@ -1047,7 +1047,7 @@
       "purpose": "Complete English De excidio count"
     }
   ],
-  "durationSeconds": 23.5,
+  "durationSeconds": 26,
   "limitations": [
     "This validates the approved English De excidio v1.2 files and their exact search projection; the release log records the editorial decisions.",
     "Browser interaction is verified separately."

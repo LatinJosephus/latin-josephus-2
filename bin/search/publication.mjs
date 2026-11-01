@@ -12,6 +12,7 @@ import {validateWhistonSourceProjection} from './whiston-publication.mjs';
 import {validateWhistonBellumSourceProjection} from './whiston-bellum-publication.mjs';
 import {validateWhistonContraApionemSourceProjection} from './whiston-contra-apionem-publication.mjs';
 import {validateDehEnglishSourceProjection} from './deh-english-publication.mjs';
+import {validateMilletSourceProjection} from './millet-publication.mjs';
 
 export const SOURCE_DIRECTORY = 'bin/search';
 export const ASSET_DIRECTORY = 'assets/search';
@@ -856,6 +857,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
       if (manifest.id === 'bellum-english-whiston') validateWhistonBellumSourceProjection(corpus, bookReport, manifest, spec, root);
       if (manifest.id === 'contra-apionem-english-whiston') validateWhistonContraApionemSourceProjection(corpus, bookReport, manifest, spec, root);
       if (manifest.id === 'deh-english-pollard') validateDehEnglishSourceProjection(corpus, bookReport, manifest, spec, root);
+      if (manifest.id === 'deh-french-millet1556') validateMilletSourceProjection(corpus, bookReport, manifest, spec, root);
       const bundleArtifact = artifact(book.path, book.sha256, 'bundle');
       equal(bundleArtifact.item.bytes, book.bytes, `Bundle byte count differs: ${id}`);
       const bundle = bundleArtifact.value();

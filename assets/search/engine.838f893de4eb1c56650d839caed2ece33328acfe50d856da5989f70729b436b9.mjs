@@ -50,6 +50,26 @@ export function tokenizeText(text) {
 /** A zero-width TEI gap may interrupt a word as well as phrase adjacency. */
 export function tokenizeRecord(record) {
   const text = String(record.text);
+  if (record.normalizationProfile === 'early-print-fr-v1') {
+    if (record.language !== 'French') throw new TypeError('The French early-print profile requires French source metadata.');
+    // One token can cover several exact source-line pieces. Its geometry still
+    // addresses the unmodified source string, including the explicit ¬ mark.
+    const gaps = (record.textGaps || []).filter(gap => gap.kind === 'tei-gap');
+    const boundaries = [...new Set(gaps.flatMap(gap => [gap.start, gap.end]))].sort((a,b) => a-b);
+    if (boundaries.some(offset => !Number.isInteger(offset) || offset < 0 || offset > text.length)) throw new TypeError('Invalid French source gap.');
+    const output = [];
+    let left = 0;
+    for (const right of [...boundaries, text.length]) {
+      const value = text.slice(left, right);
+      const words = /[\p{L}\p{N}][\p{L}\p{M}\p{N}]*(?:¬\s*[\p{L}\p{N}][\p{L}\p{M}\p{N}]*)*/gu;
+      for (const match of value.matchAll(words)) {
+        output.push({term: normalizeTerm(match[0].replace(/¬\s*/gu, '').replace(/ſ/gu, 's')),
+          start: left + match.index, end: left + match.index + match[0].length});
+      }
+      left = right;
+    }
+    return output;
+  }
   const offsets = [...new Set((record.textGaps || [])
     .filter(gap => gap.kind === "tei-gap" && gap.start === gap.end)
     .map(gap => gap.start))].sort((a, b) => a - b);
@@ -386,6 +406,10 @@ export function createEngine(bundle, lunr) {
   if (!lunr?.Index?.load) throw new TypeError("Lunr with Index.load is required.");
   if (bundle.records.length !== bundle.tokens.length) throw new TypeError("Search records and token arrays do not agree.");
   const records = bundle.records;
+  const earlyFrench = records.some(record => record.normalizationProfile === 'early-print-fr-v1');
+  if (earlyFrench && records.some(record => record.normalizationProfile !== 'early-print-fr-v1' || record.language !== 'French')) {
+    throw new TypeError('Early-print bundles must contain one explicit French matching profile.');
+  }
   validateCitationUnits(records);
   const recordById = new Map();
   const tokenById = new Map();
@@ -481,7 +505,7 @@ export function createEngine(bundle, lunr) {
   }
 
   function leafMatches(leaf, scope, fold) {
-    const patterns = leaf.patterns.map((term) => normalizeTerm(term, fold));
+    const patterns = leaf.patterns.map((term) => normalizeTerm(earlyFrench ? term.replace(/ſ/gu, 's') : term, fold));
     const postings = patterns.map((pattern) => lookup(pattern, fold));
     const result = new Map();
     const push = (unitId, hit) => {

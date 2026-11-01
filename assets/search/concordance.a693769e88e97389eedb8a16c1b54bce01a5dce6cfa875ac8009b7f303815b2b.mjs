@@ -4,8 +4,8 @@
  * cannot distinguish repeated or overlapping occurrences. All offsets below
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
-import { parseQuery, tokenizeRecord, phraseBreakOffsets } from "./engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs";
-import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote, spellingEquivalence } from "./ui-utils.b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851.mjs";
+import { parseQuery, tokenizeRecord, phraseBreakOffsets } from "./engine.838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9.mjs";
+import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote, spellingEquivalence } from "./ui-utils.c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;
 const IDENTITY_FIELDS = ["collectionId", "work", "book", "language", "edition"];
@@ -262,6 +262,7 @@ const EDITORIAL_LEGEND = "Editorial notation: [supplied text]; ⟦deleted text�
 const BAMBERG_LEGEND = "Bamberg Latin Antiquities includes the Proem and Books I–XX. III.240 and VII.69–99 are encoded omissions; X.108 is an empty source interval without an omission tag. IX.51–109 are absent from the accepted source and have no generated records. The accepted maps also mark Latin unavailable at XII.248, XIII.213 and 216, XIV.238–239, XV.338 and 347, XVI.77, 123, 189–199, 359 and 395–404, XVIII.216–217, and XX.27–36 and 238; those identities have no generated records. These new unavailable identities do not themselves mark physical gaps, so book-scope phrases can follow continuous surviving Latin across them. Phrases also stop at the recorded source interruptions between XVI.188 and 200 and between XX.26 and 37; the following record retains the controlling source-boundary evidence. Physical source order is retained throughout Antiquities: split sections in XI and XVI share Boolean scope, while phrases cannot jump between displaced portions. The Bellum insertions in XI retain their separate citations and accepted Antiquities reader associations. Source portions and registry provenance are retained in source_segments_json; coverage metadata is retained in selected_sources_json.";
 function editorialLegend(sources) {
   const parts=[];
+  if(sources.some(source=>source.id==='deh-french-millet1556'||source.collectionId==='deh-french-millet1556'))parts.push('Millet 1556: accepted semi-final r1 diplomatic transcription and provisional alignment. French physical passages are indexed once in source order. Long ſ matches s; explicit ¬ joins map to the original source fragments. Accents and historical spelling are preserved. Apostrophes and genuine hyphens separate tokens. french_source_references_json gives physical French line/folio coordinates; deh_correspondences_json gives contextual canonical targets, not extra occurrences.');
   if(sources.some(source=>source.language==='Latin'))parts.push(EDITORIAL_LEGEND);
   if(sources.some(source=>source.work==='contra-apionem'&&source.language==='Latin'))parts.push('Boysen Latin Contra Apionem asterisks are phrase boundaries, with source evidence in source_segments_json.');
   if(sources.some(source=>source.id==='antiquities-latin-bamberg78'||source.collectionId==='antiquities-latin-bamberg78'))parts.push(BAMBERG_LEGEND);
@@ -318,8 +319,15 @@ function exportedSegments(row) {
       } : {}),
       ...(record.sourcePath ? {sourcePath: record.sourcePath, sourceIds: record.sourceIds, division: record.division} : {}),
       ...Object.fromEntries(["citationLabel", "citationUnitId", "citationUnitCitation", "sourceOccurrence",
-        "continuationRank", "fragmentCount", "sourcePassage", "identityRegistry", "breakReason", "sourceBoundaryEvidence", "sourceSameAs"]
+        "continuationRank", "fragmentCount", "sourcePassage", "identityRegistry", "breakReason", "sourceBoundaryEvidence", "sourceSameAs",
+        "canonicalCorrespondences", "sourceVersion", "normalizationProfile"]
         .filter(field => record[field] !== undefined).map(field => [field, record[field]])),
+      ...(record.sourcePieces ? {sourcePieces: record.sourcePieces.filter(piece => piece.recordStart < span.end && piece.recordEnd > span.start).map(piece => {
+        const start = Math.max(span.start, piece.recordStart), end = Math.min(span.end, piece.recordEnd);
+        const {textSHA256,...location}=piece;
+        return {...location, originalPieceTextSHA256:textSHA256, recordStart: start, recordEnd: end,
+          sourceStart: piece.sourceStart + start-piece.recordStart, sourceEnd: piece.sourceStart + end-piece.recordStart};
+      })} : {}),
       ...(record.emptySource ? {emptySource: record.emptySource} : {}),
     };
   });
@@ -349,12 +357,14 @@ export function exportConcordance(model, result, metadata = {}) {
   const selectedCollections = result.selectedCollections ?? distinct(allRows.map((row) => row.collectionId).filter(Boolean));
   const selectedBooks = result.selectedBooks ?? distinct(allRows.map((row) => row.bookId).filter(Boolean));
   const legend = editorialLegend([...(catalog.collections || []).filter(entry => selectedCollections.includes(entry.id)), ...allRows]);
-  const includeEditorialColumns = selectedCollections.some((id) => collections.get(id)?.citationScheme === "chapter-paragraph" || ["contra-apionem", "antiquities"].includes(collections.get(id)?.work))
+  const includeFrenchColumns = selectedCollections.some(id => collections.get(id)?.citationScheme === 'source-span');
+  const includeEditorialColumns = selectedCollections.some((id) => ['chapter-paragraph', 'source-span'].includes(collections.get(id)?.citationScheme) || ["contra-apionem", "antiquities"].includes(collections.get(id)?.work))
     || allRows.some((row) => row.citationScheme === "chapter-paragraph" || row.editorialMarks?.length)
     || (result.records || []).some((record) => citationScheme(record) === "chapter-paragraph" || record.editorialMarks !== undefined);
   // Keep the accepted 51-column contract for Bellum-only exports. Extended
   // exports explicitly identify both citation systems and editorial rendering.
   const columns = includeEditorialColumns ? [...CSV_COLUMNS.slice(0, 7), ...EDITORIAL_CSV_COLUMNS, ...CSV_COLUMNS.slice(7)] : CSV_COLUMNS;
+  if(includeFrenchColumns) columns.splice(7, 0, 'french_source_references_json', 'deh_correspondences_json', 'source_version');
   const selectedSources = JSON.stringify({
     ...(result.normalization ? {normalization: result.normalization} : {}),
     collections: (catalog.collections || []).filter((entry) => selectedCollections.includes(entry.id)).map((entry) => ({
@@ -401,6 +411,9 @@ export function exportConcordance(model, result, metadata = {}) {
       ...common,
       citation: row.citation, left_context: row.left, matched_text: row.match, right_context: row.right,
       edition: row.edition, language: row.language, reader_url: row.readerURL,
+      french_source_references_json: JSON.stringify(segments.flatMap(segment => segment.sourcePieces || [])),
+      deh_correspondences_json: JSON.stringify([...new Map(row.records.flatMap(record => record.canonicalCorrespondences || []).map(item => [item.mappingId, item])).values()]),
+      source_version: row.records[0]?.sourceVersion || '',
       citation_scheme: row.citationScheme || "niese",
       left_context_editorial: editorialText(markedText, 0, row.left.length),
       matched_text_editorial: editorialText(markedText, row.left.length, row.left.length + row.match.length),

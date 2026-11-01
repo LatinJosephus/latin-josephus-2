@@ -47,7 +47,7 @@ export function validateCatalog(catalog) {
       || !isRelativePath(collection.readerPath) || !Array.isArray(collection.books) || !collection.books.length) {
       invalid("The search catalog contains an invalid or duplicate text collection.");
     }
-    if ((collection.citationScheme !== undefined && !["niese", "chapter-paragraph"].includes(collection.citationScheme))
+    if ((collection.citationScheme !== undefined && !["niese", "chapter-paragraph", "source-span"].includes(collection.citationScheme))
       || ["unitLabel", "unitLabelPlural"].some((field) => collection[field] !== undefined && !isText(collection[field]))) {
       invalid("The search catalog contains an unsupported citation scheme or citation-unit label.");
     }
@@ -219,6 +219,11 @@ export function createCollection(catalog, lunr, options = {}) {
           fail("the chapter/paragraph citations do not agree with their source records.");
         }
         citations.add(record.citationLabel);
+      } else if (collection.citationScheme === 'source-span') {
+        if (record.citationScheme !== 'source-span' || record.normalizationProfile !== 'early-print-fr-v1'
+          || !isText(record.sourceOccurrence) || !isText(record.citationLabel)
+          || !Array.isArray(record.sourcePieces) || !record.sourcePieces.length
+          || !Array.isArray(record.canonicalCorrespondences)) fail('the French physical-source contract is incomplete.');
       } else if (record.citationScheme !== undefined && record.citationScheme !== "niese") {
         fail("the passage citation scheme does not match the catalog.");
       }

@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-01T00:33:56.780Z",
+  "generatedAt": "2026-11-01T14:37:20.227Z",
   "independentVerifier": "bin/search/tests/ca-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "fdff75797a4d6c0c463ca3e7779039a852c8ab9e70d7b7b0cea969b5a1840d42",
@@ -11,8 +11,8 @@
   },
   "runtime": {
     "node": "24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -70,15 +70,15 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275"
+      "sha256": "8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58"
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834"
+      "sha256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9"
     },
     "collection": {
       "path": "bin/search/collection.mjs",
-      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0"
+      "sha256": "5bcab0853a03c75ef1ab38aae7415a9f5460bab5494e6590c8874e84fc44c046"
     },
     "lunr": {
       "path": "bin/search/vendor/lunr.cjs",
@@ -1256,7 +1256,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 41.7,
+  "durationSeconds": 36.97,
   "limitations": [
     "Automated Node/Python verification, not browser or visual acceptance.",
     "Reader URLs are checked against canonical citation/ID structure; reader pages are not opened by this verifier.",

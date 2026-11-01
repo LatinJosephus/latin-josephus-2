@@ -18,8 +18,8 @@
     },
     {
       "path": "_includes/search-interface.html",
-      "sha256": "2557a3c3f9c1f59b1b69faebf98785c1c67be01196f3017a028ac81fa6507063",
-      "bytes": 16373
+      "sha256": "efdd4fe78110681fc03e2ab0f96559fd986f368038e77c928dd233ca15c7c05b",
+      "bytes": 17480
     },
     {
       "path": "_pages/search.html",
@@ -35,6 +35,36 @@
       "path": "assets/data/deh-annotations/annotations.json",
       "sha256": "a0f03d24fa1b734eedf68c18020daf963e0c3797fb66ced881e61fb3b6a496cc",
       "bytes": 1110180
+    },
+    {
+      "path": "assets/data/deh-millet1556/book-01.json",
+      "sha256": "72bbab493ef33e407942e8189434096219e5e45d88ab532e9c40938d749b8648",
+      "bytes": 4891794,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/data/deh-millet1556/book-02.json",
+      "sha256": "a47430026adb79b6d35e1c9ce20acbc13b70dfed5b06f207e7b82fff594bc6e3",
+      "bytes": 2472999,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/data/deh-millet1556/book-03.json",
+      "sha256": "5c16095319a0d2a02407916235b3d5f6400a6ffb0903931a2b568b06083518fb",
+      "bytes": 2672659,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/data/deh-millet1556/book-04.json",
+      "sha256": "4c528d45dc877b3e8d0213296d817a115731ff287749f19614dbb65973689046",
+      "bytes": 2392909,
+      "hashMode": "crlf-to-lf"
+    },
+    {
+      "path": "assets/data/deh-millet1556/book-05.json",
+      "sha256": "bf0e30581929a5901db6c972079cec74a3c3708d85bc8da473eca6ceb98fc7ad",
+      "bytes": 4006792,
+      "hashMode": "crlf-to-lf"
     },
     {
       "path": "assets/js/annotationEditorialEnglish.js",
@@ -568,8 +598,8 @@
     },
     {
       "path": "bin/search/app.mjs",
-      "sha256": "8ded6763f98ab0b7efa7f2cc7560f44827581329701c76442769242450330c6b",
-      "bytes": 45328
+      "sha256": "40c193e4bf9008340e9af6fd8c19cb43a191caef8e17fb5ef1f9f72d4c747814",
+      "bytes": 45870
     },
     {
       "path": "bin/search/browser-release.mjs",
@@ -603,13 +633,13 @@
     },
     {
       "path": "bin/search/collection.mjs",
-      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
-      "bytes": 20177
+      "sha256": "5bcab0853a03c75ef1ab38aae7415a9f5460bab5494e6590c8874e84fc44c046",
+      "bytes": 20644
     },
     {
       "path": "bin/search/concordance.mjs",
-      "sha256": "c2a2f5a8ffbb3006e022ff6c5fdb7ab048f017212c1ff71602176f042ec6d4c9",
-      "bytes": 32263
+      "sha256": "7461174762823c9e3552a43cb99ce77972ca694bc629e5132ba13d03564be6be",
+      "bytes": 34111
     },
     {
       "path": "bin/search/config/antiquities-english-whiston.json",
@@ -633,8 +663,8 @@
     },
     {
       "path": "bin/search/config/collections.json",
-      "sha256": "7415465e707ea96f2bb8131fb6bfd4a76417182a456de3c4e47f4fb87d61ee7b",
-      "bytes": 341
+      "sha256": "339a9333aaac3aac4a52fa8d9c490dadece6ab4cd031ba17e83e885b260040e5",
+      "bytes": 389
     },
     {
       "path": "bin/search/config/contra-apionem-english-whiston.json",
@@ -652,14 +682,19 @@
       "bytes": 1785
     },
     {
+      "path": "bin/search/config/deh-french-millet1556.json",
+      "sha256": "f67ea5a09a1a36c6896105f2994e54a115b0f9605152143b1609b7fc6a8eff1d",
+      "bytes": 1405
+    },
+    {
       "path": "bin/search/config/deh-latin-ussani.json",
       "sha256": "301df5897b614667c8a9022c3f9ec7388c89854d84e9de429e8e85f729867f01",
       "bytes": 1190
     },
     {
       "path": "bin/search/config/publication.json",
-      "sha256": "6edd93b646aab3538d37c59a8c4225c256bee4ef3985f03ff8f625cf2ab3a3da",
-      "bytes": 7120
+      "sha256": "89677055030ca1ef46ee9926458628318213a564114780f646952d518a0e7bf1",
+      "bytes": 7837
     },
     {
       "path": "bin/search/deh-english-publication.mjs",
@@ -668,8 +703,8 @@
     },
     {
       "path": "bin/search/engine.mjs",
-      "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
-      "bytes": 25180
+      "sha256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+      "bytes": 26756
     },
     {
       "path": "bin/search/extract-antiquities.py",
@@ -690,6 +725,11 @@
       "path": "bin/search/extract-deh.py",
       "sha256": "5eb606aa87e43053096e24777abaf99200912421c6868718fbee35284602ed12",
       "bytes": 29130
+    },
+    {
+      "path": "bin/search/extract-millet.py",
+      "sha256": "7cba3af2954daeb80e68bf53b86fb1527f7cf0c52d778be28637ef40f6e1c7ca",
+      "bytes": 11467
     },
     {
       "path": "bin/search/extract-whiston-bellum.py",
@@ -722,9 +762,14 @@
       "bytes": 4640
     },
     {
+      "path": "bin/search/millet-publication.mjs",
+      "sha256": "577538200fbb3a2c5c6f8168fd59462101f6ed6cb365eae497a2af9c8f76cc48",
+      "bytes": 4123
+    },
+    {
       "path": "bin/search/publication.mjs",
-      "sha256": "2595bab823eeb7b72c476d4dd4d06539cea29891709ba388b169dc353519b849",
-      "bytes": 85264
+      "sha256": "6e3d695f9320f69acd87d660d729d7206ee2f15a4ab2fe4074ae272750eeb1cf",
+      "bytes": 85462
     },
     {
       "path": "bin/search/styles.css",
@@ -738,8 +783,8 @@
     },
     {
       "path": "bin/search/tests/antiquities-corpus-qa.mjs",
-      "sha256": "ff98f4d65592ffb7b70d7aad34c52c323216d7b379ba5f055c021b8c8e4d8476",
-      "bytes": 121773
+      "sha256": "7c1e5ac8bbbefa05dc1327539107be6417ce71f3a7b1c38506b0e4ba9a9e7d5b",
+      "bytes": 122236
     },
     {
       "path": "bin/search/tests/antiquities-fragment-presentation.test.mjs",
@@ -842,14 +887,24 @@
       "bytes": 3672
     },
     {
+      "path": "bin/search/tests/millet-corpus-qa.mjs",
+      "sha256": "4ef1df579b61cba27422223bae4aaebb70458656dc91233d63daa6933f0fa47a",
+      "bytes": 9514
+    },
+    {
+      "path": "bin/search/tests/millet.test.mjs",
+      "sha256": "627dae6eee9344151ef4469b87fe1a0dcc8ba25fa845f00b72ccf9af2b456c27",
+      "bytes": 2782
+    },
+    {
       "path": "bin/search/tests/phrase-breaks.test.mjs",
       "sha256": "f4000e67a9b89b8cc06938a2c9b3500668a1e1b3706c7515fa3100aea00feadd",
       "bytes": 4874
     },
     {
       "path": "bin/search/tests/publication.test.mjs",
-      "sha256": "f5e469ab25e29c6162fc46f3d73b9fa84985c4a51235c85fe1f70e6c82737865",
-      "bytes": 18191
+      "sha256": "8c54a5288916c2f6e871ff4044efd934d695ede03e57aedd1f9d284c2f43f6a5",
+      "bytes": 18411
     },
     {
       "path": "bin/search/tests/report-path.mjs",
@@ -885,6 +940,11 @@
       "path": "bin/search/tests/test_extract_deh_english.py",
       "sha256": "7d288a95bb8740f4562cb6910b3195325a76d134beaf5cbba5179ce968808cc1",
       "bytes": 14384
+    },
+    {
+      "path": "bin/search/tests/test_extract_millet.py",
+      "sha256": "86ab9e4298825f954e3cf2bb7c4bc0ffaaf07b46d3cecb518386345d234ae213",
+      "bytes": 1228
     },
     {
       "path": "bin/search/tests/test_extract_whiston.py",
@@ -953,8 +1013,8 @@
     },
     {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851",
-      "bytes": 15956
+      "sha256": "c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6",
+      "bytes": 16581
     },
     {
       "path": "bin/search/vendor/LUNR-LICENSE.txt",
@@ -1016,7 +1076,7 @@
       ],
       "qa": {
         "path": "qa-report.json",
-        "sha256": "7dfc8f2d8145c2f0d24f9ff3084888bd415a93c199c7dc23ad851014fd52d43f",
+        "sha256": "a93760430bd846e46d900edea76febfb46f6773698a2c47cf07a395df773fb43",
         "status": "PASS",
         "assertions": 1663053,
         "queries": 98856,
@@ -1045,7 +1105,7 @@
       ],
       "qa": {
         "path": "data/deh-latin-ussani/qa-report.json",
-        "sha256": "578f48cedda581bf9d2d9c75eccb8fb19172981f13fe03e8e6fcd27ab05858a1",
+        "sha256": "f41596d00d63b3665486ddca83ef3a373d6c646e09031cdabef86944c68f775a",
         "status": "PASS",
         "assertions": 907742,
         "queries": 76170,
@@ -1071,7 +1131,7 @@
       ],
       "qa": {
         "path": "data/contra-apionem-latin-boysen/qa-report.json",
-        "sha256": "a80af0caeabbb501d955c057940ee00a319e5bba55bbbd7b2b2e186295b2173f",
+        "sha256": "4b1fe863a66aad169a1d434eeeed74556b59851c752815b62e38ef6395f7dc29",
         "status": "PASS",
         "assertions": 346953,
         "queries": 24167,
@@ -1126,9 +1186,9 @@
       ],
       "qa": {
         "path": "data/antiquities-latin-bamberg78/qa-report.json",
-        "sha256": "fb91e33ece6eefba9c4d11e0dcc13ec509b45cd7b3f2d922be91b5a3cd920272",
+        "sha256": "6dd56efb9b3427f11538d67bb680dc2a24d8453670bb4b02e7ca07b0eb5c68d3",
         "status": "PASS",
-        "assertions": 3910675,
+        "assertions": 3910680,
         "queries": 293134,
         "failedAssertions": 0,
         "readerEvidenceIsHistorical": true
@@ -1171,7 +1231,7 @@
       ],
       "qa": {
         "path": "data/antiquities-english-whiston/qa-report.json",
-        "sha256": "0a61c3f8298dafd7ca4bc80ebb04adf22f6cff4b501bf31f0ec9d3bfd5a2348b",
+        "sha256": "03abcaa1aae69523cd442d570df5cd89d408eb1515abf92500e134663640019f",
         "status": "PASS",
         "assertions": 1640727,
         "queries": 87944,
@@ -1202,7 +1262,7 @@
       ],
       "qa": {
         "path": "data/bellum-english-whiston/qa-report.json",
-        "sha256": "7a8602186645eaa4c83760715bb9b61977fcfb76ca1a5d7807ef43150a21acfe",
+        "sha256": "6d41af3908d96f8dcc900be94ed420deb63b533b2ad994e67197ebdefddcd9d4",
         "status": "PASS",
         "assertions": 1182418,
         "queries": 39905,
@@ -1228,7 +1288,7 @@
       ],
       "qa": {
         "path": "data/contra-apionem-english-whiston/qa-report.json",
-        "sha256": "24a29095ff4b34e8d9716c5781a2f4c60ca9f56a10588f03367270b6dfb24d4f",
+        "sha256": "f76b8a21dd23119995d240c36a9ad17afa9d5b8cbae736bcb20ab812271cc7be",
         "status": "PASS",
         "assertions": 196534,
         "queries": 8001,
@@ -1257,20 +1317,49 @@
       ],
       "qa": {
         "path": "data/deh-english-pollard/qa-report.json",
-        "sha256": "07adbf4ed22da1ff4f6c2d3520f00c899c6c003fb8be017fcc8c8cc78d98e47f",
+        "sha256": "03180e59bbbd656154fa68ca71281e80dfa6f6e721776373151ee7290a980749",
         "status": "PASS",
         "assertions": 638677,
         "queries": 21430,
         "failedAssertions": 0,
         "readerEvidenceIsHistorical": true
       }
+    },
+    {
+      "id": "deh-french-millet1556",
+      "totals": {
+        "books": 5,
+        "sections": 560,
+        "tokens": 161125,
+        "bytes": 29654723
+      },
+      "extractionReport": {
+        "path": "data/deh-french-millet1556/extraction-report.json",
+        "sha256": "795042c7aadf5622f68f020e14f43027a95a89ab080b4fbd228d3f3efcc806ab"
+      },
+      "sourceFiles": [
+        "assets/data/deh-millet1556/book-01.json",
+        "assets/data/deh-millet1556/book-02.json",
+        "assets/data/deh-millet1556/book-03.json",
+        "assets/data/deh-millet1556/book-04.json",
+        "assets/data/deh-millet1556/book-05.json"
+      ],
+      "qa": {
+        "path": "data/deh-french-millet1556/qa-report.json",
+        "sha256": "9d11afc1c22f1bc4e48e3b33adb1585657f3c5c8fd273843ea4c6d39ff349927",
+        "status": "PASS",
+        "assertions": 19680,
+        "queries": 3282,
+        "failedAssertions": 0,
+        "readerEvidenceIsHistorical": true
+      }
     }
   ],
   "totals": {
-    "books": 68,
-    "sections": 25009,
-    "tokens": 1347224,
-    "bytes": 194358856
+    "books": 73,
+    "sections": 25569,
+    "tokens": 1508349,
+    "bytes": 224013579
   },
   "validation": {
     "sourceAndArtifactHashes": "PASS",
@@ -1310,6 +1399,7 @@
             "bin/search/tests/deh-presentation.test.mjs",
             "bin/search/tests/engine.test.mjs",
             "bin/search/tests/integration.test.mjs",
+            "bin/search/tests/millet.test.mjs",
             "bin/search/tests/phrase-breaks.test.mjs",
             "bin/search/tests/publication.test.mjs",
             "bin/search/tests/report-path.test.mjs",
@@ -1327,38 +1417,38 @@
     "schemaVersion": 1,
     "generatedBy": "bin/search/browser-release.mjs",
     "launcher": "launch-v1.mjs",
-    "entry": "app.2b6b2f4a6d37322e2b9b803236bc509c8a78b5b39c7cbc3e17bd248dae719be7.mjs",
+    "entry": "app.53e27c32d2e3a618d007f6a500afd3c07cabaa3b21a7e3cb39526005db3ddb21.mjs",
     "modules": {
       "engine.mjs": {
-        "path": "engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs",
-        "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
-        "bytes": 25180
+        "path": "engine.838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9.mjs",
+        "sha256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+        "bytes": 26756
       },
       "ui-utils.mjs": {
-        "path": "ui-utils.b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851.mjs",
-        "sha256": "b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851",
-        "bytes": 15956
+        "path": "ui-utils.c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6.mjs",
+        "sha256": "c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6",
+        "bytes": 16581
       },
       "collection.mjs": {
-        "path": "collection.098bccccb8e20a4c6dd191b4bac059b99225e2e8e7484ec8fc4317e1f8aa8fd0.mjs",
-        "sha256": "098bccccb8e20a4c6dd191b4bac059b99225e2e8e7484ec8fc4317e1f8aa8fd0",
-        "bytes": 20307
+        "path": "collection.ff7c7cd71bcb73b49d3aee2116bb556ad6534d658db28b56c8c9eedffd76ab8e.mjs",
+        "sha256": "ff7c7cd71bcb73b49d3aee2116bb556ad6534d658db28b56c8c9eedffd76ab8e",
+        "bytes": 20774
       },
       "concordance.mjs": {
-        "path": "concordance.218f8bf4a2ed22006764b420c5aa6580beb36db48c67f23fdede7e59451db91f.mjs",
-        "sha256": "218f8bf4a2ed22006764b420c5aa6580beb36db48c67f23fdede7e59451db91f",
-        "bytes": 32393
+        "path": "concordance.a693769e88e97389eedb8a16c1b54bce01a5dce6cfa875ac8009b7f303815b2b.mjs",
+        "sha256": "a693769e88e97389eedb8a16c1b54bce01a5dce6cfa875ac8009b7f303815b2b",
+        "bytes": 34241
       },
       "app.mjs": {
-        "path": "app.2b6b2f4a6d37322e2b9b803236bc509c8a78b5b39c7cbc3e17bd248dae719be7.mjs",
-        "sha256": "2b6b2f4a6d37322e2b9b803236bc509c8a78b5b39c7cbc3e17bd248dae719be7",
-        "bytes": 45718
+        "path": "app.53e27c32d2e3a618d007f6a500afd3c07cabaa3b21a7e3cb39526005db3ddb21.mjs",
+        "sha256": "53e27c32d2e3a618d007f6a500afd3c07cabaa3b21a7e3cb39526005db3ddb21",
+        "bytes": 46260
       }
     },
     "catalog": {
-      "path": "catalog.66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275.json",
-      "sha256": "66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275",
-      "bytes": 56253
+      "path": "catalog.8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58.json",
+      "sha256": "8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58",
+      "bytes": 60236
     },
     "stylesheet": {
       "path": "styles.fbec5570d159f784f77a545d5ec80fa43ecaf48d2caa4b4429a7be9ad2e67736.css",
@@ -1373,85 +1463,85 @@
   },
   "artifacts": [
     {
-      "path": "annotations.312f4cb69d74bbb986ba7c54c0266e075231cb72480ef287223ef073d0cb5c42.bundle.json",
+      "path": "annotations.1564b56cfd729f0f60ca7315df740a92237cffee3747717f9dc8773983392217.bundle.json",
       "source": "bin/search/annotations.bundle.json",
-      "sourceSHA256": "312f4cb69d74bbb986ba7c54c0266e075231cb72480ef287223ef073d0cb5c42",
-      "sha256": "312f4cb69d74bbb986ba7c54c0266e075231cb72480ef287223ef073d0cb5c42",
+      "sourceSHA256": "1564b56cfd729f0f60ca7315df740a92237cffee3747717f9dc8773983392217",
+      "sha256": "1564b56cfd729f0f60ca7315df740a92237cffee3747717f9dc8773983392217",
       "bytes": 15156013,
       "role": "browser-annotations",
       "generated": true
     },
     {
-      "path": "app.2b6b2f4a6d37322e2b9b803236bc509c8a78b5b39c7cbc3e17bd248dae719be7.mjs",
+      "path": "app.53e27c32d2e3a618d007f6a500afd3c07cabaa3b21a7e3cb39526005db3ddb21.mjs",
       "source": "bin/search/app.mjs",
-      "sourceSHA256": "8ded6763f98ab0b7efa7f2cc7560f44827581329701c76442769242450330c6b",
-      "sha256": "2b6b2f4a6d37322e2b9b803236bc509c8a78b5b39c7cbc3e17bd248dae719be7",
-      "bytes": 45718,
+      "sourceSHA256": "40c193e4bf9008340e9af6fd8c19cb43a191caef8e17fb5ef1f9f72d4c747814",
+      "sha256": "53e27c32d2e3a618d007f6a500afd3c07cabaa3b21a7e3cb39526005db3ddb21",
+      "bytes": 46260,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "app.mjs",
       "source": "bin/search/app.mjs",
-      "sha256": "8ded6763f98ab0b7efa7f2cc7560f44827581329701c76442769242450330c6b",
-      "bytes": 45328,
+      "sha256": "40c193e4bf9008340e9af6fd8c19cb43a191caef8e17fb5ef1f9f72d4c747814",
+      "bytes": 45870,
       "role": "runtime"
     },
     {
       "path": "browser-release.json",
       "source": "bin/search/browser-release.mjs",
       "sourceSHA256": "eddd41533e9220661e6c626744ce4524c270217d999cf587815e8e0473963cb5",
-      "sha256": "75948e91cbc75913a67dce654d9a6f269b5851ddee1a027b2817560494824a62",
+      "sha256": "413e3e4e3f464a41305648c1d53d7077977830711e2474697144438b90e74b9d",
       "bytes": 1993,
       "role": "browser-release",
       "generated": true
     },
     {
-      "path": "catalog.66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275.json",
+      "path": "catalog.8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58.json",
       "source": "bin/search/catalog.json",
-      "sourceSHA256": "66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275",
-      "sha256": "66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275",
-      "bytes": 56253,
+      "sourceSHA256": "8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58",
+      "sha256": "8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58",
+      "bytes": 60236,
       "role": "browser-catalog",
       "generated": true
     },
     {
       "path": "catalog.json",
       "source": "bin/search/catalog.json",
-      "sha256": "66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275",
-      "bytes": 56253,
+      "sha256": "8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58",
+      "bytes": 60236,
       "role": "catalog"
     },
     {
-      "path": "collection.098bccccb8e20a4c6dd191b4bac059b99225e2e8e7484ec8fc4317e1f8aa8fd0.mjs",
+      "path": "collection.ff7c7cd71bcb73b49d3aee2116bb556ad6534d658db28b56c8c9eedffd76ab8e.mjs",
       "source": "bin/search/collection.mjs",
-      "sourceSHA256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
-      "sha256": "098bccccb8e20a4c6dd191b4bac059b99225e2e8e7484ec8fc4317e1f8aa8fd0",
-      "bytes": 20307,
+      "sourceSHA256": "5bcab0853a03c75ef1ab38aae7415a9f5460bab5494e6590c8874e84fc44c046",
+      "sha256": "ff7c7cd71bcb73b49d3aee2116bb556ad6534d658db28b56c8c9eedffd76ab8e",
+      "bytes": 20774,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "collection.mjs",
       "source": "bin/search/collection.mjs",
-      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
-      "bytes": 20177,
+      "sha256": "5bcab0853a03c75ef1ab38aae7415a9f5460bab5494e6590c8874e84fc44c046",
+      "bytes": 20644,
       "role": "runtime"
     },
     {
-      "path": "concordance.218f8bf4a2ed22006764b420c5aa6580beb36db48c67f23fdede7e59451db91f.mjs",
+      "path": "concordance.a693769e88e97389eedb8a16c1b54bce01a5dce6cfa875ac8009b7f303815b2b.mjs",
       "source": "bin/search/concordance.mjs",
-      "sourceSHA256": "c2a2f5a8ffbb3006e022ff6c5fdb7ab048f017212c1ff71602176f042ec6d4c9",
-      "sha256": "218f8bf4a2ed22006764b420c5aa6580beb36db48c67f23fdede7e59451db91f",
-      "bytes": 32393,
+      "sourceSHA256": "7461174762823c9e3552a43cb99ce77972ca694bc629e5132ba13d03564be6be",
+      "sha256": "a693769e88e97389eedb8a16c1b54bce01a5dce6cfa875ac8009b7f303815b2b",
+      "bytes": 34241,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "concordance.mjs",
       "source": "bin/search/concordance.mjs",
-      "sha256": "c2a2f5a8ffbb3006e022ff6c5fdb7ab048f017212c1ff71602176f042ec6d4c9",
-      "bytes": 32263,
+      "sha256": "7461174762823c9e3552a43cb99ce77972ca694bc629e5132ba13d03564be6be",
+      "bytes": 34111,
       "role": "runtime"
     },
     {
@@ -1485,8 +1575,8 @@
     {
       "path": "config/collections.json",
       "source": "bin/search/config/collections.json",
-      "sha256": "7415465e707ea96f2bb8131fb6bfd4a76417182a456de3c4e47f4fb87d61ee7b",
-      "bytes": 341,
+      "sha256": "339a9333aaac3aac4a52fa8d9c490dadece6ab4cd031ba17e83e885b260040e5",
+      "bytes": 389,
       "role": "evidence"
     },
     {
@@ -1511,6 +1601,13 @@
       "role": "evidence"
     },
     {
+      "path": "config/deh-french-millet1556.json",
+      "source": "bin/search/config/deh-french-millet1556.json",
+      "sha256": "f67ea5a09a1a36c6896105f2994e54a115b0f9605152143b1609b7fc6a8eff1d",
+      "bytes": 1405,
+      "role": "evidence"
+    },
+    {
       "path": "config/deh-latin-ussani.json",
       "source": "bin/search/config/deh-latin-ussani.json",
       "sha256": "301df5897b614667c8a9022c3f9ec7388c89854d84e9de429e8e85f729867f01",
@@ -1520,8 +1617,8 @@
     {
       "path": "config/publication.json",
       "source": "bin/search/config/publication.json",
-      "sha256": "6edd93b646aab3538d37c59a8c4225c256bee4ef3985f03ff8f625cf2ab3a3da",
-      "bytes": 7120,
+      "sha256": "89677055030ca1ef46ee9926458628318213a564114780f646952d518a0e7bf1",
+      "bytes": 7837,
       "role": "evidence"
     },
     {
@@ -1968,8 +2065,8 @@
     {
       "path": "data/antiquities-english-whiston/qa-report.json",
       "source": "bin/search/data/antiquities-english-whiston/qa-report.json",
-      "sha256": "0a61c3f8298dafd7ca4bc80ebb04adf22f6cff4b501bf31f0ec9d3bfd5a2348b",
-      "bytes": 131840,
+      "sha256": "03abcaa1aae69523cd442d570df5cd89d408eb1515abf92500e134663640019f",
+      "bytes": 131837,
       "role": "evidence"
     },
     {
@@ -2409,8 +2506,8 @@
     {
       "path": "data/antiquities-latin-bamberg78/qa-report.json",
       "source": "bin/search/data/antiquities-latin-bamberg78/qa-report.json",
-      "sha256": "fb91e33ece6eefba9c4d11e0dcc13ec509b45cd7b3f2d922be91b5a3cd920272",
-      "bytes": 217728,
+      "sha256": "6dd56efb9b3427f11538d67bb680dc2a24d8453670bb4b02e7ca07b0eb5c68d3",
+      "bytes": 217726,
       "role": "evidence"
     },
     {
@@ -2577,8 +2674,8 @@
     {
       "path": "data/bellum-english-whiston/qa-report.json",
       "source": "bin/search/data/bellum-english-whiston/qa-report.json",
-      "sha256": "7a8602186645eaa4c83760715bb9b61977fcfb76ca1a5d7807ef43150a21acfe",
-      "bytes": 36339,
+      "sha256": "6d41af3908d96f8dcc900be94ed420deb63b533b2ad994e67197ebdefddcd9d4",
+      "bytes": 36338,
       "role": "evidence"
     },
     {
@@ -2787,8 +2884,8 @@
     {
       "path": "data/contra-apionem-english-whiston/qa-report.json",
       "source": "bin/search/data/contra-apionem-english-whiston/qa-report.json",
-      "sha256": "24a29095ff4b34e8d9716c5781a2f4c60ca9f56a10588f03367270b6dfb24d4f",
-      "bytes": 24548,
+      "sha256": "f76b8a21dd23119995d240c36a9ad17afa9d5b8cbae736bcb20ab812271cc7be",
+      "bytes": 24547,
       "role": "evidence"
     },
     {
@@ -2850,7 +2947,7 @@
     {
       "path": "data/contra-apionem-latin-boysen/qa-report.json",
       "source": "bin/search/data/contra-apionem-latin-boysen/qa-report.json",
-      "sha256": "a80af0caeabbb501d955c057940ee00a319e5bba55bbbd7b2b2e186295b2173f",
+      "sha256": "4b1fe863a66aad169a1d434eeeed74556b59851c752815b62e38ef6395f7dc29",
       "bytes": 36659,
       "role": "evidence"
     },
@@ -2976,8 +3073,134 @@
     {
       "path": "data/deh-english-pollard/qa-report.json",
       "source": "bin/search/data/deh-english-pollard/qa-report.json",
-      "sha256": "07adbf4ed22da1ff4f6c2d3520f00c899c6c003fb8be017fcc8c8cc78d98e47f",
-      "bytes": 39679,
+      "sha256": "03180e59bbbd656154fa68ca71281e80dfa6f6e721776373151ee7290a980749",
+      "bytes": 39676,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-01.bundle.json",
+      "source": "bin/search/data/deh-french-millet1556/book-01.bundle.json",
+      "sha256": "f0b37386c0ac739a726a492c176c96be0c8c54f680d5f45fb370f75147767d8d",
+      "bytes": 8960711,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-01.corpus.json",
+      "source": "bin/search/data/deh-french-millet1556/book-01.corpus.json",
+      "sha256": "bda2f73aee41f8713ed5c5ac372d4cffb310388eb5e35e419fd5d98702787f7c",
+      "bytes": 2321417,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-01.extraction-report.json",
+      "source": "bin/search/data/deh-french-millet1556/book-01.extraction-report.json",
+      "sha256": "06a0b6356a9406aa7ceec2e6ba0f7b1d532bdf1e4bd70f49ee0deb32dfcb998c",
+      "bytes": 1347738,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-02.bundle.json",
+      "source": "bin/search/data/deh-french-millet1556/book-02.bundle.json",
+      "sha256": "4604f88e94f4760b608d15da9d59552ece82a8b349db92abd81388e2939a8932",
+      "bytes": 4489493,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-02.corpus.json",
+      "source": "bin/search/data/deh-french-millet1556/book-02.corpus.json",
+      "sha256": "12cc34f91855bf49f49e4b7dcad19286bbd676af7aba92172413f3044e7dad0f",
+      "bytes": 1111888,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-02.extraction-report.json",
+      "source": "bin/search/data/deh-french-millet1556/book-02.extraction-report.json",
+      "sha256": "a637d90483c046dc91bf67a7a6091447fe615577c9dcf8dd0c3fa477df3f69cb",
+      "bytes": 695266,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-03.bundle.json",
+      "source": "bin/search/data/deh-french-millet1556/book-03.bundle.json",
+      "sha256": "c5b1794004d0513fbb07711460a3f5bdd94d4b79d39277771969df5a1f0fbe15",
+      "bytes": 4786829,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-03.corpus.json",
+      "source": "bin/search/data/deh-french-millet1556/book-03.corpus.json",
+      "sha256": "2100e1ab7f3b69d355faa3e87c5b1192e11d6635e7f2db39126185cb68e5c0cf",
+      "bytes": 1194161,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-03.extraction-report.json",
+      "source": "bin/search/data/deh-french-millet1556/book-03.extraction-report.json",
+      "sha256": "cfc7fb41636ea323d3a1eff95facf60421c19d67c56d2b06da5e99bed75ba22b",
+      "bytes": 754237,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-04.bundle.json",
+      "source": "bin/search/data/deh-french-millet1556/book-04.bundle.json",
+      "sha256": "082876c81a13bb8827acf50c73b755ac3b2df817573247b57a3b6857acff0a32",
+      "bytes": 4396630,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-04.corpus.json",
+      "source": "bin/search/data/deh-french-millet1556/book-04.corpus.json",
+      "sha256": "3c3bf9b9270f7aee2b92b21f5818f9565f665465f301ed9ed1e8803e530599a1",
+      "bytes": 1077164,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-04.extraction-report.json",
+      "source": "bin/search/data/deh-french-millet1556/book-04.extraction-report.json",
+      "sha256": "fd5866d7193a6f295e0e7001e2991fbd928a283ba68ab5bac77afac410ac02b9",
+      "bytes": 670702,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-05.bundle.json",
+      "source": "bin/search/data/deh-french-millet1556/book-05.bundle.json",
+      "sha256": "f2dce14169ea5d160e890bd9145044d5f7c3c334f818648a75d4fed7cfafa739",
+      "bytes": 7021060,
+      "role": "bundle"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-05.corpus.json",
+      "source": "bin/search/data/deh-french-millet1556/book-05.corpus.json",
+      "sha256": "15665e6e09b17f62b2bdf5f4d01f83a3701c5dbacab6c6fe279391d8e832daf8",
+      "bytes": 1805428,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/book-05.extraction-report.json",
+      "source": "bin/search/data/deh-french-millet1556/book-05.extraction-report.json",
+      "sha256": "08cdaafa95031e6768068dcf82d9e56723649b5c08612014be9c5daa257f5dc4",
+      "bytes": 1101014,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/corpus.json",
+      "source": "bin/search/data/deh-french-millet1556/corpus.json",
+      "sha256": "4e1284135b3891b609e7085dbf6fd7d372db97ea75f35749887e08459750d4f3",
+      "bytes": 7510050,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/extraction-report.json",
+      "source": "bin/search/data/deh-french-millet1556/extraction-report.json",
+      "sha256": "795042c7aadf5622f68f020e14f43027a95a89ab080b4fbd228d3f3efcc806ab",
+      "bytes": 4419,
+      "role": "evidence"
+    },
+    {
+      "path": "data/deh-french-millet1556/qa-report.json",
+      "source": "bin/search/data/deh-french-millet1556/qa-report.json",
+      "sha256": "9d11afc1c22f1bc4e48e3b33adb1585657f3c5c8fd273843ea4c6d39ff349927",
+      "bytes": 10393,
       "role": "evidence"
     },
     {
@@ -3102,24 +3325,24 @@
     {
       "path": "data/deh-latin-ussani/qa-report.json",
       "source": "bin/search/data/deh-latin-ussani/qa-report.json",
-      "sha256": "578f48cedda581bf9d2d9c75eccb8fb19172981f13fe03e8e6fcd27ab05858a1",
-      "bytes": 29582,
+      "sha256": "f41596d00d63b3665486ddca83ef3a373d6c646e09031cdabef86944c68f775a",
+      "bytes": 29581,
       "role": "evidence"
     },
     {
-      "path": "engine.214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834.mjs",
+      "path": "engine.838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9.mjs",
       "source": "bin/search/engine.mjs",
-      "sourceSHA256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
-      "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
-      "bytes": 25180,
+      "sourceSHA256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+      "sha256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+      "bytes": 26756,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "engine.mjs",
       "source": "bin/search/engine.mjs",
-      "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
-      "bytes": 25180,
+      "sha256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+      "bytes": 26756,
       "role": "runtime"
     },
     {
@@ -3148,8 +3371,8 @@
     {
       "path": "qa-report.json",
       "source": "bin/search/qa-report.json",
-      "sha256": "7dfc8f2d8145c2f0d24f9ff3084888bd415a93c199c7dc23ad851014fd52d43f",
-      "bytes": 111287,
+      "sha256": "a93760430bd846e46d900edea76febfb46f6773698a2c47cf07a395df773fb43",
+      "bytes": 111285,
       "role": "evidence"
     },
     {
@@ -3169,19 +3392,19 @@
       "generated": true
     },
     {
-      "path": "ui-utils.b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851.mjs",
+      "path": "ui-utils.c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6.mjs",
       "source": "bin/search/ui-utils.mjs",
-      "sourceSHA256": "b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851",
-      "sha256": "b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851",
-      "bytes": 15956,
+      "sourceSHA256": "c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6",
+      "sha256": "c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6",
+      "bytes": 16581,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "ui-utils.mjs",
       "source": "bin/search/ui-utils.mjs",
-      "sha256": "b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851",
-      "bytes": 15956,
+      "sha256": "c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6",
+      "bytes": 16581,
       "role": "runtime"
     },
     {

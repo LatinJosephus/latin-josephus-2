@@ -62,6 +62,7 @@ const consecutiveNiese=records=>sameCitationContext(records)&&records.every((rec
   &&Number.isSafeInteger(Number(record.section))&&Number(record.section)>0
   &&(!index||Number(record.section)===Number(records[index-1].section)+1));
 export function sectionCitation(record) {
+  if(citationScheme(record)==='source-span')return record.citationLabel;
   return citationScheme(record)==='chapter-paragraph'
     ?record.citationLabel||(Number(record.chapter)===0?`Prol.${record.paragraph}`:`${romanBook(record.book)}.${record.chapter}.${record.paragraph}`)
     :hasExplicitPortion(record)?nieseCitation(record):String(record.section);
@@ -95,6 +96,17 @@ export function citationFor(records) {
 export function readerURL(record,baseURL,{section=true}={}) {
   const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/','contra-apionem':'contra-apionem/'}[record.work])||'bellum-judaicum/';
   const url=new URL(readerPath,baseURL);
+  if(citationScheme(record)==='source-span'){
+    if(record.language!=='French'||record.readerLink?.params?.french!=='millet1556'||record.work!=='deh')throw new TypeError('Invalid French witness destination.');
+    url.searchParams.set('book',record.book??record.number);
+    url.searchParams.set('french','millet1556');
+    if(section){
+      url.searchParams.set('millet-view','page');
+      url.searchParams.set('millet-page',record.sourcePieces[0].image);
+      url.searchParams.set('millet-folios','1');
+    }
+    return url.href;
+  }
   url.searchParams.set('book',section?(record.readerLink?.params?.book??record.book??record.number):(record.book??record.number));
   if(section&&citationScheme(record)==='chapter-paragraph'){
     url.searchParams.set('chapter',record.chapter);
@@ -139,7 +151,7 @@ export function readerURL(record,baseURL,{section=true}={}) {
 }
 /** Language and matching labels are kept with the source edition. */
 export function textLanguage(source) {
-  return ({Latin:'la',English:'en',Greek:'grc'})[source.language]||'und';
+  return ({Latin:'la',English:'en',Greek:'grc',French:'fr'})[source.language]||'und';
 }
 export function spellingEquivalence(result, literal='source spelling') {
   if(!result.fold)return literal;

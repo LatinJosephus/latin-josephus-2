@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-01T00:38:31.188Z",
+  "generatedAt": "2026-11-01T14:47:46.330Z",
   "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "fdff75797a4d6c0c463ca3e7779039a852c8ab9e70d7b7b0cea969b5a1840d42",
@@ -11,8 +11,8 @@
   },
   "runtime": {
     "node": "24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -179,18 +179,18 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "66d757b37448ba731d98ccbc05985a06638e6b4680a7c80d14cc83d19b4ad275",
-      "bytes": 56253
+      "sha256": "8f9ddccb3c948a4c9d169abcf83b658e71e60349fb88e6adda839ad79384db58",
+      "bytes": 60236
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "214c7991d16b35fa6afc4934d736a6b2fe068e197066a030bef875550cf36834",
-      "bytes": 25180
+      "sha256": "838f893de4eb1c56650d839caed2ece33328acfe50d856da5989f70729b436b9",
+      "bytes": 26756
     },
     "collection": {
       "path": "bin/search/collection.mjs",
-      "sha256": "d5225a6ac634a7b9227e86db4f2c5da3ba6c0083619127cf1203ded23037bcc0",
-      "bytes": 20177
+      "sha256": "5bcab0853a03c75ef1ab38aae7415a9f5460bab5494e6590c8874e84fc44c046",
+      "bytes": 20644
     },
     "lunr": {
       "path": "bin/search/vendor/lunr.cjs",
@@ -199,8 +199,8 @@
     },
     "verifier": {
       "path": "bin/search/tests/antiquities-corpus-qa.mjs",
-      "sha256": "ff98f4d65592ffb7b70d7aad34c52c323216d7b379ba5f055c021b8c8e4d8476",
-      "bytes": 121773
+      "sha256": "7c1e5ac8bbbefa05dc1327539107be6417ce71f3a7b1c38506b0e4ba9a9e7d5b",
+      "bytes": 122236
     },
     "witness": {
       "path": "bin/search/tests/antiquities-source-witness.py",
@@ -219,8 +219,8 @@
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "b3052ab7d7996075a92f78f2dff2c9ece310df9ac11f30d085fee2020978b851",
-      "bytes": 15956
+      "sha256": "c2521535e68bb88eafecf715af7b01429dd4d58de32e3179eb6721fe718120a6",
+      "bytes": 16581
     },
     "books": [
       {
@@ -2086,10 +2086,10 @@
     "BundleFetchCaching": 1,
     "InvalidSelectionRejected": 3,
     "MissingSelectedBookRejectsCompleteSearch": 1,
-    "InputUnchangedDuringQA": 149
+    "InputUnchangedDuringQA": 154
   },
   "totalQueries": 293134,
-  "assertions": 3910675,
+  "assertions": 3910680,
   "failedAssertions": 0,
   "examples": [
     {
@@ -7845,7 +7845,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 274.63,
+  "durationSeconds": 275.4,
   "limitations": [
     "Automated Node/Python acceptance, not browser or visual acceptance.",
     "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",

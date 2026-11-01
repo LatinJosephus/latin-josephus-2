@@ -8,7 +8,29 @@ not change the main-text coverage below. See
 [the annotation-search implementation and verification notes](../../_docs/annotation-display/ANNOTATION-SEARCH.md).
 
 This directory contains the source and verification tools for the main site's
-`/search/` page. Current coverage comprises four Latin collections and four English collections:
+`/search/` page. Current coverage comprises four Latin, four English and one French collection.
+
+**Millet 1556 French De excidio, all five books and translated Prologue:** 560
+physical French passages, 161,125 word tokens, with metadata linking to all
+558 accepted canonical DEH targets. The semi-final r1 transcription and its
+provisional scholarly qualifications remain unchanged. Physical source order,
+line offsets and distinct printed repetitions are preserved. Long ſ matches s;
+only explicit ¬ word continuations join for matching. Straight/curly apostrophes
+and genuine hyphens separate tokens; accents remain significant. The Latin-only
+u/v and i/j setting does not affect French. French reader destinations explicitly
+select Millet and its physical source leaf. Within-passage Boolean scope uses
+contiguous accepted source spans; discontinuous correspondences remain separate
+physical passages. Whole-book exact phrases follow French order across ordinary
+line/page/citation seams, stopping at the Prologue's end and between books.
+Printed paratext and marginalia remain outside this main-text layer.
+
+The combined catalogue has **73 book editions, 25,569 physical records and
+1,508,349 word tokens**. The earlier eight collections below retain their data.
+French CSV exports add separate physical-source-reference, DEH-correspondence
+and source-version columns; complete-result exports preserve original spelling
+and exact source slices, including ¬ and physical line separators.
+
+The pre-existing collections are:
 
 - **Cardwell's *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
   114,794 word tokens.
@@ -34,8 +56,8 @@ This directory contains the source and verification tools for the main site's
 - **Pollard English *De excidio Hierosolymitano*, version 1.1, Prologue and Books I–V:**
   558 chapter-and-paragraph citation units and 136,054 word tokens.
 
-Together these comprise **68 book editions, 25,001 citation units, and 1,347,224
-word tokens**. The indexes contain 25,009 physical records because four Bamberg
+These eight collections comprise **68 book editions, 25,001 citation units, and 1,347,224
+word tokens**. Their indexes contain 25,009 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
 The Whiston English Antiquities, Bellum and Contra Apionem and Pollard English De excidio are complete; Greek editions are not indexed. Bamberg Latin Antiquities
 III.240 and VII.69–99 retain their citations and the source's explicit omissions.
