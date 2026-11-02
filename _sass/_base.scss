@@ -586,6 +586,12 @@ html.transition *:after {
   padding: 8px;
 }
 
+// Italic titles inside links should follow the link colour in either theme.
+.info-container a em,
+.info-container a i {
+  color: inherit;
+}
+
 .info-container .lj-home-work > em > a {
   font-size: 1.125em;
 }

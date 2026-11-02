@@ -17,6 +17,8 @@ The Latin _De excidio Hierosolymitano_ presented here uses Vincenzo Ussani’s e
 
 Ussani’s _Hegesippi qui dicitur Historiae libri V. Pars prior: Textum criticum continens_ was published as CSEL 66.1 (Vienna and Leipzig, 1932). The project’s digital base is the digilibLT transcription, DLT000241 (2014). Editorial corrections and source provenance are recorded in the electronic text.
 
+[View Ussani’s printed text volume (Google Books)](https://books.google.com/books?id=RWcwAAAAYAAJ&printsec=frontcover).
+
 ## Scope and references
 
 The reader contains the Prologue and all five books. References follow book, chapter and paragraph; the Prologue has its own paragraph numbers.
