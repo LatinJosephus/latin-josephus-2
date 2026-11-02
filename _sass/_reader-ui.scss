@@ -314,3 +314,80 @@ html[data-theme='dark'] #display-settings {
   outline: 2px solid var(--lj-brand-accent);
   outline-offset: 3px;
 }
+
+/* One pair of passage controls surrounds the complete set of language panes. */
+.reader-frame {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  gap: .5rem;
+  align-items: stretch;
+  scroll-margin-top: calc(var(--lj-header-height, 76px) + 12px);
+}
+
+.reader-frame #pane-container {
+  min-width: 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+.reader-frame .pane { min-width: 0; }
+
+.reader-edge { min-width: 0; }
+.reader-frame[hidden] { display: none; }
+
+.reader-step {
+  position: sticky;
+  top: calc(var(--lj-header-height, 76px) + 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 55vh;
+  height: min(55dvh, calc(100dvh - var(--lj-header-height, 76px) - var(--annotation-panel-space, 0px) - 24px));
+  max-height: min(26rem, var(--reader-step-space, 26rem));
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid var(--lj-brand-rule);
+  border-radius: 5px;
+  background: var(--lj-brand-surface);
+  color: var(--lj-brand-accent);
+  cursor: pointer;
+  transition: background-color .15s, color .15s;
+}
+
+.reader-step svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.reader-step:hover:enabled {
+  background: var(--lj-brand-accent);
+  color: var(--lj-brand-paper);
+}
+
+.reader-step:focus-visible {
+  outline: 3px solid var(--lj-brand-accent);
+  outline-offset: 2px;
+}
+
+.reader-step:disabled { opacity: .35; cursor: default; }
+.reader-frame.reader-no-steps { grid-template-columns: minmax(0, 1fr); }
+.reader-no-steps .reader-edge { display: none; }
+
+@media (max-width: 575.98px) {
+  .reader-frame {
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+    gap: 4px;
+    margin-inline: -12px;
+  }
+  .reader-frame .pane { padding: 12px; }
+  .reader-step svg { width: 20px; height: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reader-step { transition: none; }
+}
