@@ -17,6 +17,8 @@ Pietro Lauro’s Italian translation of _De excidio Hierosolymitano_ was printed
 
 _Historia d’Egesippo tra i christiani scrittori antichissimo de le valorose imprese fatte da giudei ne l’assedio di Gierusaleme…_, trans. Pietro Lauro (Venice: Michel Tramezino, 1544). EDIT16 CNCE 35123.
 
+[View the 1544 edition (Google Books)](https://books.google.com/books?id=Ozkwtn9R1pMC&printsec=frontcover).
+
 ## Bibliographic records
 
 - [EDIT16 — CNCE 35123](https://edit16.iccu.sbn.it/resultset-titoli/-/titoli/detail/35123).

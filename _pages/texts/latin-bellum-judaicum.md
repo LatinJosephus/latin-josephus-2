@@ -17,7 +17,7 @@ The seven-book Latin _Bellum Judaicum_ presented here uses Edward Cardwell’s e
 
 Cardwell’s text is indirectly based on the Gelenius edition of 1534. The reader provides both chapter divisions and Niese sections, alongside the Greek and independently selectable English translations.
 
-[Read the Bellum Judaicum]({{site.baseurl}}/bellum-judaicum/).
+[Read the Bellum Judaicum]({{site.baseurl}}/bellum-judaicum/) · [View Cardwell’s Latin volume (Google Books)](https://books.google.ca/books?id=zoENAAAAQAAJ&printsec=frontcover).
 
 ## Cardwell as a witness to the medieval Latin tradition
 
@@ -49,7 +49,7 @@ These examples support using Cardwell as a historically mediated witness to medi
 
 ## Editions
 
-- Edward Cardwell, ed., [*De Bello Judaico*](https://books.google.ca/books?id=zoENAAAAQAAJ&lpg=PA395&pg=PA1) (Oxford, 1837), the source used for the project’s complete Latin text.
+- Flavius Josephus, *Flavii Josephi De bello Judaico libri septem*, ed. Edward Cardwell, 2 vols. (Oxford: e Typographeo Academico, 1837). [Digitised volume II (Google Books)](https://books.google.ca/books?id=zoENAAAAQAAJ&printsec=frontcover), the source used for the project’s complete Latin text.
 - Bernd Bader, ed., [*Josephus Latinus: De Bello Iudaico. Buch 1*](https://www.steiner-verlag.de/Josephus-Latinus-De-Bello-Iudaico-.-Buch-1/9783515124300) (Stuttgart, 2019), a critical edition and commentary on Book I.
 
 ## English translations

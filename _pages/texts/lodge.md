@@ -11,21 +11,25 @@ nav_parent: /texts/
 
 # Thomas Lodge — English translations (1602)
 
-Thomas Lodge’s translations of the _Antiquities_, the _Jewish War_ and the _Against Apion_ share this discussion page. They come from _The famous and memorable workes of Iosephus_ (London, 1602), transcribed by EEBO-TCP as A04680.
+Thomas Lodge’s _The famous and memorable workes of Iosephus_ was published in London in 1602. His translations of the _Antiquities_, the _Jewish War_ and _Against Apion_ are available here. This translation saw considerable success in early modern England.[^lodge-reception]
+
+## Translation and sources
+
+The [general title page](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:1?rgn=div1;view=fulltext) and the [separate title page for the _Jewish War_](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:58?rgn=div1;view=fulltext) both say that Lodge translated “out of the Latin, and French”. His dedications and [address to the reader](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:3?rgn=div1;view=fulltext) do not name the editions he used.
+
+Our text comes from [EEBO-TCP’s transcription](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:1?rgn=div1;view=toc), released under [CC0](https://creativecommons.org/publicdomain/zero/1.0/). Lodge’s spelling and marginal notes are retained.
 
 ## Read Lodge
 
-- [Antiquities: Proem and Books I–XX]({{site.baseurl}}/antiquities/?english=lodge1602).
-- [Jewish War: Books I–VII]({{site.baseurl}}/bellum-judaicum/?english=lodge1602).
-- [Against Apion: Books I–II]({{site.baseurl}}/contra-apionem/?english=lodge1602).
+- <span id="lodge-antiquities-proem-and-books-ixx"></span>[Antiquities: Proem and Books I–XX]({{site.baseurl}}/antiquities/?english=lodge1602) · [EEBO text](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:9?rgn=div1;view=fulltext).
+- [Jewish War: Books I–VII]({{site.baseurl}}/bellum-judaicum/?english=lodge1602) · [EEBO text](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:61?rgn=div1;view=fulltext).
+- <span id="lodge-contra-apionem-books-iii"></span>[Against Apion: Books I–II]({{site.baseurl}}/contra-apionem/?english=lodge1602) · [EEBO text](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:68?rgn=div1;view=fulltext).
 
-## Bellum witnesses
+[Whiston’s translations]({{site.baseurl}}/texts/whiston/) (based on the Greek) are also available for these three works.
 
-The _Bellum Judaicum_ reader offers Cardwell (1837) in Latin, Niese in Greek, and two independently selectable English translations: Whiston, translated from Greek, and Thomas Lodge (1602), whose title page describes his translation as “translated out of the Latin, and French”.
+<span id="bellum-witnesses"></span>
 
-Lodge’s text comes from EEBO-TCP A04680, released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). LatinJosephus supplies its structural correspondence with the site’s Cardwell chapters and 704 coarse units, together with the independently accepted 4,001-section Niese alignment. Lodge’s original wording and TCP source markup are preserved.
-
-### Lodge and the Latin tradition
+## Lodge and the Latin tradition
 
 Comparison of selected passages in Book I of the _Jewish War_ supports Lodge’s declared use of Latin and French. At several points where Niese’s Greek and the Latin differ, Lodge preserves the Latin reading. Checking these cases against Bader’s critical edition helps establish their place within the Latin tradition.[^lodge-bader]
 
@@ -41,12 +45,6 @@ Comparison of selected passages in Book I of the _Jewish War_ supports Lodge’s
 
 A Latin textual basis, reached directly or through French, is a probable explanation for these agreements. They do not identify the particular Latin or French edition Lodge consulted. For the Latin transmission itself, see [Cardwell as a witness to the medieval Latin tradition]({{site.baseurl}}/texts/latin-bellum-judaicum/#cardwell-as-a-witness-to-the-medieval-latin-tradition).
 
-## Lodge Antiquities Proem and Books I–XX
-
-The _Antiquities_ reader also offers Thomas Lodge’s Proem and Books I–XX from _The famous and memorable workes of Iosephus_ (London, 1602), transcribed by EEBO-TCP as A04680. The underlying TCP transcription is released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). LatinJosephus independently supplies the certified Niese segmentation of its 7,376 sections, preserving Lodge’s wording, printed chapters and source evidence. This source licence concerns the TCP transcription; it does not assign a licence to the project’s independent scholarly apparatus. The Proem is independently accessible as I.1–26; Book I narrative begins at I.27. The complete Antiquities is available in this reader.
-
-## Lodge Contra Apionem Books I–II
-
-The _Contra Apionem_ reader offers Thomas Lodge’s two books from _The famous and memorable workes of Iosephus_ (London, 1602), using EEBO-TCP A04680. The original heading describes the work as “WRITTEN AGAINST APION, AS TOVCHING THE ANTIQVITIE OF THE IEWES.” The underlying TCP transcription is released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). LatinJosephus independently aligns all 616 Niese sections, retaining the original headings, paragraphs, marginal notes, gaps and source order. Six historically MEDIUM boundaries were explicitly human approved; their interwoven or paraphrastic correspondences remain source specific. The TCP licence does not assign a licence to this independent segmentation apparatus.
+[^lodge-reception]: Freyja Cox Jensen, “[What Was Thomas Lodge’s *Josephus* in Early Modern England?](https://www.jstor.org/stable/44816542)”, *The Sixteenth Century Journal* 49, no. 1 (Spring 2018), pp. 3–24; Heinz Schreckenberg, *Bibliographie zu Flavius Josephus* (Leiden: Brill, 1968), p. 21; Gohei Hata, “[A Note on English Translations of Josephus from Thomas Lodge to D. S. Margoliouth](https://doi.org/10.1002/9781118325162.ch28)”, in *A Companion to Josephus*, ed. Honora Howell Chapman and Zuleika Rodgers (Wiley Blackwell, 2015), pp. 414–418.
 
 [^lodge-bader]: Bernd Bader, ed., [*Josephus Latinus: De Bello Iudaico. Buch 1*](https://www.steiner-verlag.de/Josephus-Latinus-De-Bello-Iudaico-.-Buch-1/9783515124300), Palingenesia 119 (Stuttgart, 2019). References above use the printed page numbers.

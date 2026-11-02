@@ -12,35 +12,37 @@ Notes on the editions, translations and textual correspondences used in the Lati
 
 ## Latin texts
 
-- [*Antiquitates Judaicae* — Bamberg Msc.Class.78]({{site.baseurl}}/texts/latin-antiquities/).
-- [*Bellum Judaicum* — Cardwell (1837)]({{site.baseurl}}/texts/latin-bellum-judaicum/).
-- [*Contra Apionem* — Boysen (1898)]({{site.baseurl}}/texts/latin-contra-apionem/).
-- [*De excidio Hierosolymitano* — Ussani (1932)]({{site.baseurl}}/texts/latin-deh/).
+- [*Antiquitates Judaicae* — Bamberg Msc.Class.78]({{site.baseurl}}/texts/latin-antiquities/) (s. IX, n. Italy?).
+- [*Bellum Judaicum* — E. Cardwell (Oxford, 1837)]({{site.baseurl}}/texts/latin-bellum-judaicum/).
+- [*Contra Apionem* — K. Boysen (Vienna, 1898)]({{site.baseurl}}/texts/latin-contra-apionem/).
+- [*De excidio Hierosolymitano* — V. Ussani (Vienna, 1932)]({{site.baseurl}}/texts/latin-deh/).
 
 ## Translations
 
-- [Whiston — English *Antiquities*, *Jewish War* and *Against Apion*]({{site.baseurl}}/texts/whiston/).
+- [Whiston (1737) — English *Antiquities*, *Jewish War* and *Against Apion*]({{site.baseurl}}/texts/whiston/).
 - [Lodge (1602) — English *Antiquities*, *Jewish War* and *Against Apion*]({{site.baseurl}}/texts/lodge/).
-- [Pollard — English DEH]({{site.baseurl}}/texts/pollard/).
+- [Pollard (2026)— English DEH]({{site.baseurl}}/texts/pollard/).
 - [Millet (1556) — French DEH]({{site.baseurl}}/texts/millet-1556/).
 - [Lauro (1544) — Italian DEH]({{site.baseurl}}/texts/lauro-1544/).
 
-## Bellum witnesses
+## Sources and preparation
 
-The _Bellum Judaicum_ reader offers Cardwell (1837) in Latin, Niese in Greek, and two independently selectable English translations: Whiston, translated from Greek, and Thomas Lodge (1602), whose title page describes his translation as “translated out of the Latin, and French”.
+Some texts were transcribed for this project; others draw on existing digital editions. The pages linked above give fuller discussions of the editions and translations.
 
-Lodge’s text comes from EEBO-TCP A04680, released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). LatinJosephus supplies its structural correspondence with the site’s Cardwell chapters and 704 coarse units, together with the independently accepted 4,001-section Niese alignment. Lodge’s original wording and TCP source markup are preserved.
+- **Bamberg _Antiquities_.** The manuscript was transcribed by human readers in 2013–2019. Books I–VIII were corrected by human editors; further correction followed in 2026 with AI assistance.
 
-Fuller discussion: [Latin Bellum]({{site.baseurl}}/texts/latin-bellum-judaicum/), [Whiston]({{site.baseurl}}/texts/whiston/) and [Lodge]({{site.baseurl}}/texts/lodge/#bellum-witnesses).
+- **Cardwell’s _Bellum Judaicum_.** The electronic text was made in 2017 by OCR from three different scans of the printed edition. It was corrected with AI assistance in 2026. [Google Books: volume II](https://books.google.ca/books?id=zoENAAAAQAAJ&printsec=frontcover).
 
-## Lodge Antiquities Proem and Books I–XX
+- **Boysen’s _Contra Apionem_.** The starting point was the [Open Greek and Latin](https://github.com/OpenGreekAndLatin/csel-dev) digital transcription of Boysen’s 1898 edition. This was corrected and aligned for the site. [Printed edition: Internet Archive](https://archive.org/details/flaviilosephiope37joseuoft).
 
-The _Antiquities_ reader also offers Thomas Lodge’s Proem and Books I–XX from _The famous and memorable workes of Iosephus_ (London, 1602), transcribed by EEBO-TCP as A04680. The underlying TCP transcription is released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). LatinJosephus independently supplies the certified Niese segmentation of its 7,376 sections, preserving Lodge’s wording, printed chapters and source evidence. This source licence concerns the TCP transcription; it does not assign a licence to the project’s independent scholarly apparatus. The Proem is independently accessible as I.1–26; Book I narrative begins at I.27. The complete Antiquities is available in this reader.
+- **Ussani’s _De excidio Hierosolymitano_.** The electronic text is based on the digilibLT transcription of Ussani’s 1932 edition, with corrections made for this project. [Printed edition: Google Books](https://books.google.com/books?id=RWcwAAAAYAAJ&printsec=frontcover).
 
-Fuller discussion: [Lodge’s Antiquities]({{site.baseurl}}/texts/lodge/#lodge-antiquities-proem-and-books-ixx).
+- **Whiston.** The English text comes largely from the Perseus Digital Library’s electronic transcription. It has been aligned with the Latin and Greek for use in the readers. [A later printing (1856): Internet Archive](https://archive.org/details/worksofflaviusj00joseuoft).
 
-## Lodge Contra Apionem Books I–II
+- **Lodge.** The text comes from [EEBO-TCP’s transcription of the 1602 edition](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:1?rgn=div1;view=toc), released under CC0. Lodge’s spelling and marginal notes are retained.
 
-The _Contra Apionem_ reader offers Thomas Lodge’s two books from _The famous and memorable workes of Iosephus_ (London, 1602), using EEBO-TCP A04680. The original heading describes the work as “WRITTEN AGAINST APION, AS TOVCHING THE ANTIQVITIE OF THE IEWES.” The underlying TCP transcription is released under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). LatinJosephus independently aligns all 616 Niese sections, retaining the original headings, paragraphs, marginal notes, gaps and source order. Six historically MEDIUM boundaries were explicitly human approved; their interwoven or paraphrastic correspondences remain source specific. The TCP licence does not assign a licence to this independent segmentation apparatus.
+- **Pollard.** The English DEH was drafted by AI from the Latin, under Richard Matthew Pollard’s supervision and editorial direction. Subsequent review included systematic comparisons with Millet and Lauro, leading to revisions approved by Pollard.
 
-Fuller discussion: [Lodge’s Contra Apionem]({{site.baseurl}}/texts/lodge/#lodge-contra-apionem-books-iii).
+- **Millet and Lauro.** Google Books scans of the French edition of [1556](https://books.google.com/books?id=DedoAAAAcAAJ&printsec=frontcover) and the Italian edition of [1544](https://books.google.com/books?id=Ozkwtn9R1pMC&printsec=frontcover) were transcribed with Transkribus. The resulting texts underwent human-guided AI audits against the scans.
+
+Niese’s edition supplies the Greek comparison texts and the section references used for the three works of Josephus. The DEH texts and translations are brought together using Ussani’s book, chapter and paragraph divisions.

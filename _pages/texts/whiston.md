@@ -15,7 +15,9 @@ Whiston’s English translations of the _Antiquities_, the _Jewish War_ and the 
 
 ## Translation and source
 
-William Whiston’s _The Genuine Works of Flavius Josephus, the Jewish Historian_ was published in London in 1737. Its title page identifies the work as translated from Greek. [See the 1737 title and text](https://penelope.uchicago.edu/josephus/).
+William Whiston’s _The Genuine Works of Flavius Josephus, the Jewish Historian_ was published in London in 1737. Its title page identifies the work as translated from Greek. [Read the digital text at LacusCurtius](https://penelope.uchicago.edu/josephus/).
+
+[View a later printing (Auburn and Rochester: Alden and Beardsley, 1856) at the Internet Archive](https://archive.org/details/worksofflaviusj00joseuoft).
 
 The English is displayed alongside the Latin for comparison. The reader’s Niese references allow passages in the different versions to be consulted together.
 

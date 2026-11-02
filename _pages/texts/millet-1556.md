@@ -13,7 +13,7 @@ nav_parent: /texts/
 
 Jean Millet, of Saint-Amour, translated _De excidio Hierosolymitano_ from Latin into French. His _Les cinq livres de l’histoire d’Egesippe, contenans plusieurs guerres des Iuifs, & la ruine de Hierusalem_ was published at Paris by Guillaume Cavellat in 1556. The colophon names Benoist Prévost as printer and gives the date 17 January 1556.
 
-[Universal Short Title Catalogue — USTC 14879](https://ustc.ac.uk/editions/14879).
+[View the 1556 edition (Google Books)](https://books.google.com/books?id=DedoAAAAcAAJ&printsec=frontcover) · [Universal Short Title Catalogue — USTC 14879](https://ustc.ac.uk/editions/14879).
 
 ## The project’s transcription
 
