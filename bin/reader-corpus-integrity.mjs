@@ -6,7 +6,17 @@ import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 export const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const manifestSHA = 'e97cc6b2b5515af838035fcebaec5a888fb79460499aeee6de45df0c733c549f';
+const editorialAuthoritySHA = '4a5b96ef946bc934a96d99a927b6346bc1dbc0853dbc802fd50c58b9d145825d';
 const frozenSHA = 'c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c';
+const historicalManifestPath = '_docs/reader-corpus-integrity.json';
+const editorialAuthorityPath = '_docs/reader-corpus-pollard-v1.2.json';
+const releaseEvidencePaths = [
+  '_docs/LAURO_ENGLISH_V1_2_RELEASE_20261031.md',
+  '_docs/LAURO_ENGLISH_V1_2_SOURCE_QA_20261031.json'
+];
+export const readerCorpusAuthorityPaths = Object.freeze([
+  historicalManifestPath, editorialAuthorityPath, ...releaseEvidencePaths
+]);
 function files(directory, prefix = 'assets/xml') {
   return fs.readdirSync(directory, {withFileTypes:true}).flatMap(entry => {
     const relative = prefix + '/' + entry.name;
@@ -15,9 +25,37 @@ function files(directory, prefix = 'assets/xml') {
   }).sort();
 }
 export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
-  const bytes = fs.readFileSync(path.join(root, '_docs/reader-corpus-integrity.json'));
+  // Keep the original certificate sealed. The current supplement changes only
+  // the five released English books and retains each complete v1.1 record.
+  const bytes = fs.readFileSync(path.join(root, historicalManifestPath));
   assert.equal(sha(bytes), manifestSHA, 'Reviewed corpus manifest changed');
-  const manifest = JSON.parse(bytes);
+  const historicalManifest = JSON.parse(bytes);
+  const authorityBytes = fs.readFileSync(path.join(root, editorialAuthorityPath));
+  assert.equal(sha(authorityBytes), editorialAuthoritySHA, 'Pollard v1.2 authority manifest changed');
+  const authority = JSON.parse(authorityBytes);
+  assert.equal(authority.schema, 'pollard-english-corpus-authority-v1');
+  assert.equal(authority.authority_revision, 'deh-pollard-lauro-editorial-20261031-v1.2');
+  assert.deepEqual(authority.historical_corpus_manifest, {path:historicalManifestPath, sha256:manifestSHA});
+  assert.deepEqual(Object.keys(authority.release_evidence).sort(), [...releaseEvidencePaths].sort());
+  for (const [relative, expected] of Object.entries(authority.release_evidence)) {
+    assert.equal(sha(fs.readFileSync(path.join(root, relative))), expected,
+      'Pollard v1.2 release evidence changed: ' + relative);
+  }
+  const editorialEnglish = Array.from({length:5}, (_, i) => `assets/xml/deh/English/book-${String(i+1).padStart(2,'0')}.xml`);
+  assert.deepEqual(Object.keys(authority.files).sort(), [...editorialEnglish].sort(),
+    'Pollard v1.2 authority must cover exactly the five English books');
+  for (const relative of editorialEnglish) {
+    const record = authority.files[relative];
+    assert.equal(record.authority_revision, authority.authority_revision);
+    assert.equal(record.authority_commit, authority.source_commit);
+    assert.deepEqual(record.previous_authority, historicalManifest.files[relative],
+      'Historical Pollard v1.1 authority changed: ' + relative);
+    assert.equal(record.previous_authority.authority_revision, 'deh-pollard-millet-editorial-20261025-v1.1');
+    assert.equal(record.git_sha256, record.pinned_canonical_sha256);
+    assert.deepEqual(record.allowed_worktree_sha256, [record.pinned_canonical_sha256],
+      'Only the released Pollard v1.2 bytes are current authority: ' + relative);
+  }
+  const manifest = {...historicalManifest, files:{...historicalManifest.files, ...authority.files}};
   assert.deepEqual(files(path.join(root, 'assets/xml')), Object.keys(manifest.files).sort(), 'Unexpected or missing production XML');
   const checked = {};
   for (const [relative, record] of Object.entries(manifest.files)) {
@@ -34,12 +72,11 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
   const lodge = JSON.parse(lodgeBytes);
   const publicationHashes = Object.fromEntries(Object.entries(frozen).filter(([relative]) => /^assets\/xml\/(deh|bellum)\//.test(relative)));
   // The concordance remains a frozen historical source. Only the five explicitly
-  // adjudicated Pollard v1.1 files supersede its English publication bytes.
-  const editorialEnglish = Array.from({length:5}, (_, i) => `assets/xml/deh/English/book-${String(i+1).padStart(2,'0')}.xml`);
+  // adjudicated Pollard v1.2 files supersede its English publication bytes.
   for (const relative of editorialEnglish) {
     const record = manifest.files[relative];
-    assert.equal(record.authority_revision, 'deh-pollard-millet-editorial-20261025-v1.1');
-    assert(record.previous_authority.allowed_worktree_sha256.includes(frozen[relative]), 'Historical Pollard authority changed');
+    assert(record.previous_authority.previous_authority.allowed_worktree_sha256.includes(frozen[relative]),
+      'Historical Pollard authority changed');
     publicationHashes[relative] = record.pinned_canonical_sha256;
   }
   for (const book of lodge.books) publicationHashes[`assets/xml/bellum/English/Lodge1602/book-${String(book.book).padStart(2,'0')}.xml`] = book.production_sha256;
@@ -60,6 +97,9 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
     all_production_XML_parsed:parse, publication_inputs:Object.keys(publication).length,
     frozen_publication_inputs:Object.keys(publication).length-editorialEnglish.length,
     approved_editorial_revision_inputs:editorialEnglish.length,
+    approved_editorial_revision:authority.authority_revision,
+    approved_editorial_edition:authority.edition,
+    editorial_authority_manifest_sha256:sha(authorityBytes),
     publication_xml_sha256:Object.fromEntries(Object.entries(publication).map(([relative,bytes])=>[relative,sha(bytes)])),
     frozen_concordance_sha256:sha(frozenBytes), manifest_sha256:sha(bytes)}};
 }

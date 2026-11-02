@@ -9,7 +9,7 @@ import { createRequire } from "node:module";
 import { resolve, sep } from "node:path";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
-import {verifyReaderCorpus} from './reader-corpus-integrity.mjs';
+import {verifyReaderCorpus, readerCorpusAuthorityPaths} from './reader-corpus-integrity.mjs';
 const root = resolve(fileURLToPath(new URL("../", import.meta.url)));
 const args = process.argv.slice(2);
 const option = (name, fallback) => args.includes(name) ? args[args.indexOf(name)+1] : fallback;
@@ -30,7 +30,9 @@ const differences = Object.entries(historical).filter(([p,h])=>current[p]!==h)
   .map(([path,expected_sha256])=>({path,expected_sha256,current_sha256:current[path]}));
 const shadow = await mkdtemp(resolve(tmpdir(),"lodge-inventory-"));
 await cp(resolve(root,"assets/xml"),resolve(shadow,"assets/xml"),{recursive:true});
-await cp(resolve(root,"_docs/reader-corpus-integrity.json"),resolve(shadow,"_docs/reader-corpus-integrity.json"),{recursive:true});
+for (const relative of readerCorpusAuthorityPaths) {
+  await cp(resolve(root,relative),resolve(shadow,relative),{recursive:true});
+}
 assert.equal(newPaths.length,7); assert(newPaths.every(p=>p in reviewed.checked));
 await writeFile(resolve(shadow,"assets/xml/bellum/English/Lodge1602/unexpected.xml"),'<TEI xmlns="http://www.tei-c.org/ns/1.0"/>');
 const unexpected = corpus(shadow).xml_sha256;
