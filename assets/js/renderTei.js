@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setAnnotationsExpanded(document.querySelector("#annotations-header button").getAttribute("aria-expanded") !== "true"));
   if (annotationsPanel && window.ResizeObserver) new ResizeObserver(() => {
     document.documentElement.style.setProperty("--annotation-panel-space", `${annotationsPanel.hidden ? 0 : annotationsPanel.getBoundingClientRect().height + 16}px`);
+    scheduleReaderStepFit();
   }).observe(annotationsPanel);
   const bookLabel = document.getElementById("book-label");
   const bookSelectForm = document.querySelector("#book-select form");
@@ -66,6 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const niesePrevious = document.getElementById("niese-previous");
   const nieseNext = document.getElementById("niese-next");
   const viewingLevelSelectMenu = document.getElementById("level-select");
+  const readerFrame = document.getElementById("reader-frame");
+  const readerPrevious = document.getElementById("reader-previous");
+  const readerNext = document.getElementById("reader-next");
+  const readerStepStatus = document.getElementById("reader-step-status");
+  let readerLoading = true;
+  let readerStops = [];
 
   const sourceSelectMenus = {
     Latin: document.getElementById("latin-source-selector"),
@@ -606,7 +613,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title.textContent = "Canonical order from separate witness fragments";
       notice.appendChild(title);
     }
-    notice.append(text, link); panes.before(notice);
+    notice.append(text, link); (readerFrame || panes).before(notice);
   };
   const antiquitiesUnitView = (language, data) => {
     const canonicalId = `latin-${currentIdBase()}-num${state.sectionNum}`;
@@ -3520,6 +3527,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setBambergOptions();
     setSectionSelectOptions();
     setNieseSelectOptions();
+    // Rendering moves canonical nodes into the visible panes. Capture their
+    // ordered locations first, while the complete source tree is still intact.
+    readerStops = buildReadingStops();
   };
 
   const addContraApionemTransmissionNotice = () => {
@@ -3600,7 +3610,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     addLink("preface", "1", "Read Proem, Niese section 1");
     addLink("1", "27", "Read Book I, Niese section 27");
-    panes.before(notice);
+    (readerFrame || panes).before(notice);
   };
 
   const renderUI = () => {
@@ -4141,37 +4151,199 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   };
 
+  // Traverse real source/registry entries, never chapter-number arithmetic.
+  // Section menus can be narrowed to a chapter; reading forward still crosses
+  // that boundary, using the canonical book's complete sequence of units.
+  const buildReadingStops = () => {
+    const options = menu => [...(menu?.options || [])]
+      .filter(option => option.value && option.value !== "contents" && !option.disabled);
+    switch (state.viewingLevel) {
+      case "book-level": return [{bookNum: state.bookNum}];
+      case "chapter-level":
+        return options(chapterSelectMenu).map(option => ({chapterNum: option.value}));
+      case "subchapter-level":
+        return traditionalRows("subchapter").map(row => ({chapterNum: row.chapter || null, subchapterNum: row.subchapter}));
+      case "bamberg-level":
+        return bambergRows().map(row => ({bambergId: row.id}));
+      case "niese-level":
+        return canonicalNieseStartEntries().map(entry => ({nieseNum: String(entry.number)}));
+      case "section-level": {
+        const prefix = `latin-${currentIdBase()}-num`;
+        const nodes = [...(canonicalFullData?.querySelectorAll("tei-p[id], tei-milestone[id]") || [])]
+          .filter(node => node.id.startsWith(prefix) && (node.matches("tei-p")
+            || node.getAttribute("unit") === activeWork.sectionMilestoneUnit));
+        const chapters = new Map();
+        if (!usesTraditionalStructure() && !sectionLevelUsesNiese()) {
+          options(chapterSelectMenu).forEach(option => {
+            canonicalParagraphIdsForChapter(option.value).forEach(id => chapters.set(id, option.value));
+          });
+        }
+        const seen = new Set();
+        return nodes.filter(node => !seen.has(node.id) && seen.add(node.id)).map(node => ({
+          sectionNum: node.id.slice(prefix.length), chapterNum: chapters.get(node.id) ?? null
+        }));
+      }
+      default: return [];
+    }
+  };
+
+  const readingStops = () => readerStops;
+
+  const readingStopIndex = stops => stops.findIndex(stop => Object.entries(stop)
+    .every(([key, value]) => (key === "chapterNum" && state.viewingLevel === "section-level")
+      || String(state[key] ?? "") === String(value ?? "")));
+
+  const readingBooks = () => [...bookSelectMenu.options].filter(option => {
+    if (!option.value || option.disabled) return false;
+    const scheme = {"chapter-level": "chapter", "subchapter-level": "subchapter", "bamberg-level": "bamberg"}[state.viewingLevel];
+    if (!usesTraditionalStructure() || !scheme) return true;
+    const rows = scheme === "bamberg" ? bambergRegistry : traditionalRegistry;
+    return rows.some(row => (scheme === "bamberg" || row.scheme === scheme)
+      && (option.value === activeWork.preface?.value ? row.context === "Proem"
+        : row.context !== "Proem" && Number(row.book) === Number(option.value)));
+  }).map(option => option.value);
+
+  const readingUnitLabel = () => ({
+    "book-level": "book", "chapter-level": "chapter", "subchapter-level": "subchapter",
+    "bamberg-level": "Bamberg division", "niese-level": "Niese section",
+    "section-level": sectionLevelUsesNiese() ? "Niese section" : usesTraditionalStructure() ? "alignment unit" : "sub-chapter"
+  })[state.viewingLevel] || "passage";
+
+  // The annotation drawer changes the usable viewport. Size the sticky rails
+  // from their actual position so even an expanded drawer cannot cover them.
+  let readerStepFitPending = false;
+  const scheduleReaderStepFit = () => {
+    if (readerStepFitPending || !readerFrame) return;
+    readerStepFitPending = true;
+    requestAnimationFrame(() => {
+      readerStepFitPending = false;
+      const bottom = annotationsPanel && !annotationsPanel.hidden
+        ? Math.min(window.innerHeight, annotationsPanel.getBoundingClientRect().top) : window.innerHeight;
+      [readerPrevious, readerNext].forEach(button => {
+        if (!button) return;
+        const space = bottom - button.getBoundingClientRect().top - 12;
+        button.style.setProperty("--reader-step-space", `${Math.max(44, space)}px`);
+        button.style.visibility = space < 44 ? "hidden" : "";
+      });
+    });
+  };
+
+  const updateReaderSteps = () => {
+    if (!readerFrame || !readerPrevious || !readerNext) return;
+    scheduleReaderStepFit();
+    readerFrame.setAttribute("aria-busy", String(readerLoading));
+    const hidden = state.viewingLevel === "contents-level" || Boolean(invalidNieseRequest);
+    readerFrame.classList.toggle("reader-no-steps", hidden);
+    if (readerLoading || hidden) {
+      readerPrevious.disabled = readerNext.disabled = true;
+      return;
+    }
+    const stops = readingStops(), index = readingStopIndex(stops);
+    const books = readingBooks(), bookIndex = books.indexOf(state.bookNum);
+    [[readerPrevious, -1, "Previous"], [readerNext, 1, "Next"]].forEach(([button, direction, label]) => {
+      const withinBook = index < 0 ? stops.length > 0 : Boolean(stops[index + direction]);
+      const acrossBook = bookIndex >= 0 && Boolean(books[bookIndex + direction]);
+      button.disabled = !withinBook && !acrossBook;
+      const name = `${label} ${readingUnitLabel()}`;
+      button.setAttribute("aria-label", name);
+      button.title = button.disabled ? `No ${label.toLowerCase()} ${readingUnitLabel()}` : name;
+    });
+  };
+
+  const applyReadingStop = stop => {
+    state.chapterNum = null; state.subchapterNum = null; state.sectionNum = null;
+    state.nieseNum = null; state.bambergId = null;
+    Object.assign(state, stop);
+  };
+
+  const advanceReading = async direction => {
+    const button = direction < 0 ? readerPrevious : readerNext;
+    if (!button || button.disabled || readerLoading) return;
+    const previousState = {...state, sources: {...state.sources}};
+    const level = state.viewingLevel;
+    const stops = readingStops(), index = readingStopIndex(stops);
+    const next = index < 0 ? (direction > 0 ? stops[0] : stops.at(-1)) : stops[index + direction];
+    const books = readingBooks(), nextBook = books[books.indexOf(state.bookNum) + direction];
+    if (!next && !nextBook) return;
+    if (readerStepStatus) readerStepStatus.textContent = "";
+    try {
+      await setState(async () => {
+        if (next) applyReadingStop(next);
+        else {
+          applyReadingStop({bookNum: nextBook});
+          // Load the next book's own registry and canonical text before choosing
+          // its first/last unit. No intermediate location is put in history.
+          if (level !== "book-level") {
+            await fetchData();
+            const nextStops = readingStops();
+            const target = direction > 0 ? nextStops[0] : nextStops.at(-1);
+            if (!target) throw new Error("This book has no readable units at the selected level.");
+            applyReadingStop(target);
+          }
+        }
+      });
+      // A new passage begins at its heading, including when the preceding book
+      // was long. Retain keyboard focus on the same outer control.
+      readerFrame.scrollIntoView({block: "start", behavior: "instant"});
+      if (!button.disabled) button.focus({preventScroll: true});
+      if (readerStepStatus) readerStepStatus.textContent = [bookLabel.innerText, chapterLabel.innerText, sectionLabel.innerText].filter(Boolean).join(", ");
+    } catch (error) {
+      Object.assign(state, previousState);
+      try { await reload(); } catch (restoreError) { console.error(restoreError); }
+      if (readerStepStatus) readerStepStatus.textContent = "The passage could not be loaded. Please try again.";
+      console.error(error);
+    }
+  };
+
   const reload = async () => {
-    await fetchData();
-
-    if (resolvePendingUrlUnit()) {
+    readerLoading = true;
+    updateReaderSteps();
+    try {
       await fetchData();
-    }
 
-    if (normalizeNavigationState()) {
-      await fetchData();
-    }
+      if (resolvePendingUrlUnit()) {
+        await fetchData();
+      }
 
-    renderUI();
-    if (invalidNieseRequest || state.viewingLevel === "contents-level") {
-      annotatedParagraphs = [];
-      annotationsList.replaceChildren();
-      if (annotationsPanel) annotationsPanel.hidden = true;
-      const highlightWrapper = highlightCheckbox?.closest(".form-check");
-      if (highlightWrapper) highlightWrapper.hidden = true;
+      if (normalizeNavigationState()) {
+        await fetchData();
+      }
+
+      renderUI();
+      if (invalidNieseRequest || state.viewingLevel === "contents-level") {
+        annotatedParagraphs = [];
+        annotationsList.replaceChildren();
+        if (annotationsPanel) annotationsPanel.hidden = true;
+        const highlightWrapper = highlightCheckbox?.closest(".form-check");
+        if (highlightWrapper) highlightWrapper.hidden = true;
+      }
+      else await parseAnnotations();
+    } finally {
+      readerLoading = false;
+      updateReaderSteps();
     }
-    else await parseAnnotations();
   };
 
   const setState = async (callback) => {
     unsupportedNieseBook = null; // An explicit reader control selects its real book.
-    await callback();
-    await reload();
-    syncUrlFromState("push");
+    readerLoading = true;
+    updateReaderSteps();
+    try {
+      await callback();
+      await reload();
+      syncUrlFromState("push");
+    } finally {
+      readerLoading = false;
+      updateReaderSteps();
+    }
   };
 
   // Add event listeners.
   const addEventListeners = () => {
+    window.addEventListener("scroll", scheduleReaderStepFit, {passive: true});
+    window.addEventListener("resize", scheduleReaderStepFit);
+    readerPrevious?.addEventListener("click", () => advanceReading(-1));
+    readerNext?.addEventListener("click", () => advanceReading(1));
     bookSelectMenu.addEventListener("change", (event) => {
       bookLabel.innerText = (activeWork.preface && event.target.value === activeWork.preface.value)
         ? activeWork.preface.label

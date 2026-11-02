@@ -40,6 +40,12 @@ layout: default
     {% if page.permalink == '/deh/' %}
     {% include deh-parallels.html %}
     {% endif %}
+    <div id="reader-frame" class="reader-frame">
+      <div class="reader-edge reader-edge-previous">
+        <button id="reader-previous" class="reader-step" type="button" aria-label="Previous passage" aria-controls="pane-container" disabled>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>
+        </button>
+      </div>
     <div id="pane-container">
       <div id="latin" class="pane">
         <h3>Latin</h3>
@@ -56,5 +62,12 @@ layout: default
       {% endif %}
       {% include annotations-bar.html %}
     </div>
+      <div class="reader-edge reader-edge-next">
+        <button id="reader-next" class="reader-step" type="button" aria-label="Next passage" aria-controls="pane-container" disabled>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <p id="reader-step-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
   </body>
 </html>

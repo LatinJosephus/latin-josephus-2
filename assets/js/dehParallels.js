@@ -8,7 +8,7 @@ import {ajSources, ajTargets, loadAjLayer, createAjTextLoader, ajSection} from "
 const initialize = () => {
   const panel = document.getElementById("deh-parallels");
   if (!panel) return;
-  const reader = document.getElementById("pane-container");
+  const reader = document.getElementById("reader-frame") || document.getElementById("pane-container");
   const settings = document.getElementById("display-settings");
   const bookMenu = document.getElementById("parallel-book");
   const chapterMenu = document.getElementById("parallel-chapter");
