@@ -14,6 +14,7 @@ let collection=null,catalog=null,catalogPromise=null,cards=[],items=[],shown=0,s
 function node(tag,text,className){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
 function link(text,url,className){const e=node('a',text,className);e.href=url;e.target='_blank';e.rel='noopener noreferrer';return e;}
 function option(text,value){const e=node('option',text);e.value=value;return e;}
+function selectorEdition(source){return ({'deh-french-millet1556':'Millet 1556','deh-italian-lauro1544':'Lauro 1544'})[source.id]||source.edition;}
 function selectedCollections(state=null){
   if(!catalog)return [];
   const work=state?.work??els.work.value,book=state?.book??els.book.value;
@@ -45,7 +46,7 @@ function populateBooks(selected='all'){
   for(const b of books){
     const c=catalog.collections.find(c=>c.id===b.collectionId);
     const proem=c.work==='antiquities'&&b.number===1?' (including Proem)':'';
-    els.book.append(option(work==='all'?`${bookCitation({...c,...b})}${proem} · ${c.language} · ${c.edition}`:(b.label||`Book ${romanBook(b.number)}`),b.id));
+    els.book.append(option(work==='all'?`${bookCitation({...c,...b})}${proem} · ${c.language} · ${selectorEdition(c)}`:(b.label||`Book ${romanBook(b.number)}`),b.id));
   }
   els.book.value=selected;
   els.book.disabled=false;
@@ -54,7 +55,7 @@ function populateBooks(selected='all'){
 function populateControls(){
   els.work.replaceChildren();
   els.work.append(option('All available works and editions','all'));
-  for(const c of catalog.collections)els.work.append(option(`${c.label} · ${c.language} · ${c.edition}`,c.id));
+  for(const c of catalog.collections)els.work.append(option(`${c.label} · ${c.language} · ${selectorEdition(c)}`,c.id));
   els.work.value=defaultCollection(catalog);
   els.work.disabled=false;
   populateBooks();
