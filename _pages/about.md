@@ -114,11 +114,12 @@ When citing a Greek text, a translation, or a manuscript annotation, also identi
 
 ### Bibliography associated with this project
 
--   Richard Matthew Pollard, “Flavius Josephus: A Carolingian Church Father?,” in Paul Hilliard and Karen Kletter (eds.), A Companion to Josephus in the Medieval West (Leiden: Brill, 2024), pp. 61–93. (DOI: [10.1163/9789004684270_005](https://doi.org/10.1163/9789004684270_005))
+-   Jean-Félix Aubé-Pronce and Richard Matthew Pollard, “Flavius Josephus: The Most Notable Historian for the Early Middle Ages,” _Pecia_, 28 (forthcoming, 2027): @-@. (DOI: [10.1484/J.PECIA.5.158288](https://doi.org/10.1484/J.PECIA.5.158288))
+-   Richard Matthew Pollard, “Flavius Josephus: A Carolingian Church Father?,” in Paul Hilliard and Karen Kletter (eds.), _A Companion to Josephus in the Medieval West_ (Leiden: Brill, 2024), pp. 61–93. (DOI: [10.1163/9789004684270_005](https://doi.org/10.1163/9789004684270_005))
 -   Richard Matthew Pollard and Anne-Gaëlle Weber, “[Le canon des Pères à l’époque carolingienne et la place de Flavius Josèphe](https://www.academia.edu/77271923/Le_canon_des_P%C3%A8res_%C3%A0_l_%C3%A9poque_carolingienne_et_la_place_de_Flavius_Jos%C3%A8phe),” _Revue d’études augustiniennes et patristiques_, 67.2 (2021) : 275-318.
 -   Jean-Félix Aubé-Pronce and Richard Matthew Pollard, “[Annotating Flavius Josephus in the Early Middle Ages: Early Impressions from Thousands of Notes](https://books.google.ca/books?id=DZMdEAAAQBAJ&pg=PA167&lpg=PA167),” _Medievalia et Humanistica_, 46 (2021): 167-200.
--   Richard Matthew Pollard, “[Flavius Josephus: the most influential classical historian of the early Middle Ages](https://www.cambridge.org/core/books/abs/writing-the-early-medieval-west/flavius-josephus-the-most-influential-classical-historian-of-the-early-middle-ages/7084D4986AD317026EE0B5DE7D5FB9B5),” in _Writing the Early Medieval West. Studies in Honour of Rosamond McKitterick_, eds. C. West and E. Screen (Cambridge: Cambridge University Press, 2018), 15-32.
--   Richard Matthew Pollard, “[The De Excidio of ʻHegesippusʼ and the Reception of Josephus in the Early Middle Ages](https://www.brepolsonline.net/doi/abs/10.1484/J.VIATOR.5.105362?journalCode=viator),” _Viator_, vol. 46, no. 2 (2015): 65-100.
+-   Richard Matthew Pollard, “[Flavius Josephus: The Most Influential Classical Historian of the Early Middle Ages](https://www.cambridge.org/core/books/abs/writing-the-early-medieval-west/flavius-josephus-the-most-influential-classical-historian-of-the-early-middle-ages/7084D4986AD317026EE0B5DE7D5FB9B5),” in _Writing the Early Medieval West. Studies in Honour of Rosamond McKitterick_, eds. C. West and E. Screen (Cambridge: Cambridge University Press, 2018), 15-32.
+-   Richard Matthew Pollard, “[The _De Excidio_ of ʻHegesippusʼ and the Reception of Josephus in the Early Middle Ages](https://www.brepolsonline.net/doi/abs/10.1484/J.VIATOR.5.105362?journalCode=viator),” _Viator_, vol. 46, no. 2 (2015): 65-100.
 -   Richard Matthew Pollard, “[Reading Josephus at Vivarium? Annotations and Exegesis in Early Copies of the Antiquities](https://www.utpjournals.press/doi/abs/10.3138/flor.30.103?journalCode=flor),” _Florilegium_, vol. 30 (2015 for 2013): 103-142.
 
 **See also the wonderful project of our friends at Universität Bern, [Lege Josephum](https://www.legejosephum.unibe.ch/).**
@@ -143,5 +144,3 @@ When citing a Greek text, a translation, or a manuscript annotation, also identi
 ----------
 
 Latin text © Richard Matthew Pollard (UQAM), Josh Timmermann (UBC), William ‘Ben’ Glaeser (UBC 2014-15), Jonathan di Gregorio (UQAM 2016-19), Maxime Laprade (UQAM 2016-17), Jean-Félix Aubé-Pronce (UQAM 2018-19). Annotations transcribed by Jean-Félix Aubé-Pronce and Jonathan di Gregorio.
-
-Greek text used through Creative Commons license from the [Perseus Digital Library](http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0145).
