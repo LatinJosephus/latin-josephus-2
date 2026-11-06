@@ -19,7 +19,7 @@ ___
 *[Antiquitates Judaicae]({{site.baseurl}}/antiquities/)* — an account of Jewish history from Creation to the first century.
 {: .lj-home-work}
 
-*[Bellum Judaicum]({{site.baseurl}}/bellum-judaicum/)* — the history of the Jewish rebellion against the Romans, 66–73 CE.
+*[Bellum Judaicum]({{site.baseurl}}/bellum-judaicum/)* — the background to, and then the history of the Jewish rebellion against the Romans, 66–74 CE.
 {: .lj-home-work}
 
 *[Contra Apionem]({{site.baseurl}}/contra-apionem/)* — a defence of Jewish traditions and their venerability.
