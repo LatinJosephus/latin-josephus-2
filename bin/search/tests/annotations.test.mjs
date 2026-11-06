@@ -28,6 +28,21 @@ test('all reader annotation parts are indexed once, with original identities and
   }
 });
 
+test('passage pointers stay in the source siglum without appearing as manuscript names', () => {
+  const unknown = bundle.records.filter(record => !record.manuscript);
+  assert.equal(unknown.length, 15);
+  for (const [siglum, count, query] of [
+    ['book-04#latin-book04-num118', 3, '"natus abraham"'],
+    ['latin-book11-num195', 1, 'pieta'],
+  ]) {
+    const rows = bundle.records.filter(record => record.siglum === siglum);
+    assert.equal(rows.length, count);
+    assert(rows.every(record => record.manuscript === ''));
+    assert(rows.some(record => matching(query).has(record.id)));
+  }
+  assert(bundle.records.filter(record => record.work === 'deh').every(record => record.manuscript));
+});
+
 test('citations retain unit ranges and DEH chapter/prologue granularity', () => {
   const early = bundle.records.find(record => record.alignmentUnitId === 'latin-book01-num27');
   assert.equal(early.citation, 'Antiquities, Book 1, Niese §§27–33');
