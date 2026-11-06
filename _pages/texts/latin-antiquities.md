@@ -25,7 +25,7 @@ The Froben edition covers the Proem and all twenty books. Its pane follows the A
 
 The scan links open the digitised copy held by Universitätsbibliothek Basel, UBH FQ I 5.
 
-[Read Froben alongside Bamberg]({{site.baseurl}}/antiquities/?book=preface&froben=1) · [View the Basel facsimile](https://doi.org/10.3931/e-rara-100841).
+[Read Froben alongside Bamberg]({{site.baseurl}}/antiquities/?book=preface&froben=1) · [About the Froben edition]({{site.baseurl}}/texts/froben-1524/) · [View the Basel facsimile](https://doi.org/10.3931/e-rara-100841).
 
 ## Editions and manuscript source
 
