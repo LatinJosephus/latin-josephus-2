@@ -28,18 +28,24 @@ test('all reader annotation parts are indexed once, with original identities and
   }
 });
 
-test('passage pointers stay in the source siglum without appearing as manuscript names', () => {
+test('reviewed manuscript attributions preserve source sigla and leave doubtful notes unidentified', () => {
   const unknown = bundle.records.filter(record => !record.manuscript);
-  assert.equal(unknown.length, 15);
-  for (const [siglum, count, query] of [
-    ['book-04#latin-book04-num118', 3, '"natus abraham"'],
-    ['latin-book11-num195', 1, 'pieta'],
+  assert.deepEqual(unknown.map(record => record.originalFragment.trim()), [
+    '(£1 - X dans un carré)', '(£1) uerba serui ad rebecca', '(@1) licotibi*', '(@2) epist(olis)',
+  ]);
+  for (const [siglum, count, query, manuscript] of [
+    ['book-04#latin-book04-num118', 3, '"natus abraham"', 'Bern, Burgerbibliothek, Ms. 118'],
+    ['latin-book11-num195', 1, 'pieta', 'Rome, Biblioteca Apostolica Vaticana, Pal. lat. 814'],
   ]) {
     const rows = bundle.records.filter(record => record.siglum === siglum);
     assert.equal(rows.length, count);
-    assert(rows.every(record => record.manuscript === ''));
+    assert(rows.every(record => record.manuscript === manuscript));
     assert(rows.some(record => matching(query).has(record.id)));
   }
+  const laban = bundle.records.find(record => record.originalNotation === '[7r](@2)*erui *ba');
+  assert.equal(laban.manuscript, 'Leiden, Universitaire Bibliotheken, VLF 17');
+  assert.equal(laban.passageTarget, null);
+  assert.equal(laban.text, '*erui *ba');
   assert(bundle.records.filter(record => record.work === 'deh').every(record => record.manuscript));
 });
 

@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "collection": "contra-apionem-english-lodge1602",
+  "coverage": {
+    "sectionsExactlyRestored": 616,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true,
+    "allSectionTextsNonempty": true
+  },
+  "counts": {
+    "books": 2,
+    "sections": 616,
+    "runningWordTokens": 30688
+  },
+  "corpus": {
+    "path": "data/contra-apionem-english-lodge1602/corpus.json",
+    "sha256": "0afd4b4a0c8e150266f125995c8bd0aa13c2b88c1b748f7719dbcdb79212a274",
+    "bytes": 373411,
+    "records": 616
+  },
+  "books": [
+    {
+      "status": "PASS",
+      "book": 1,
+      "source": {
+        "path": "assets/xml/contra-apionem/English/Lodge1602/book-01.xml",
+        "sha256": "3dea35680c9e7bad46d7e8ecca6876be0e957c0de0c29dcc39625f044127b5fc",
+        "bytes": 174467
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/contra-apionem-english-lodge1602/book-01.corpus.json",
+        "sha256": "93fe3f831026694ab6fd11c66963a01167834729f97095f6ad0ddd612808deaa",
+        "bytes": 197433,
+        "records": 320
+      },
+      "counts": {
+        "sections": 320,
+        "runningWordTokens": 15508
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 320,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          320
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/contra-apionem-english-lodge1602/book-01.extraction-report.json",
+        "sha256": "2e0fda5e4cbb79c5c2e22663dddcb135d7a69e9462e3645762bd1c8f5524d4d1",
+        "bytes": 913
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 2,
+      "source": {
+        "path": "assets/xml/contra-apionem/English/Lodge1602/book-02.xml",
+        "sha256": "0af3a2ca46f22de52a8c481a70512a116d57463561fa739fd0754af6097b55ba",
+        "bytes": 161049
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/contra-apionem-english-lodge1602/book-02.corpus.json",
+        "sha256": "8c127b6cfbe53256a25192da9b95d11906956cac09a78ede98f34f368c8278f4",
+        "bytes": 175981,
+        "records": 296
+      },
+      "counts": {
+        "sections": 296,
+        "runningWordTokens": 15180
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 296,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          296
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/contra-apionem-english-lodge1602/book-02.extraction-report.json",
+        "sha256": "1324bf3b387b2a058ed5712951ead831ab9cef645117ce62b3887902d8f52474",
+        "bytes": 913
+      }
+    }
+  ]
+}

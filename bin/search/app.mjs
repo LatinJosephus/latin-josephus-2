@@ -14,7 +14,14 @@ let collection=null,catalog=null,catalogPromise=null,cards=[],items=[],shown=0,s
 function node(tag,text,className){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
 function link(text,url,className){const e=node('a',text,className);e.href=url;e.target='_blank';e.rel='noopener noreferrer';return e;}
 function option(text,value){const e=node('option',text);e.value=value;return e;}
-function selectorEdition(source){return ({'deh-french-millet1556':'Millet 1556','deh-italian-lauro1544':'Lauro 1544'})[source.id]||source.edition;}
+function selectorEdition(source) {
+  if (source.edition === 'Whiston') return 'Whiston (1737)';
+  return ({
+    'antiquities-latin-froben1524': 'Froben (1524)',
+    'deh-french-millet1556': 'Millet (1556)',
+    'deh-italian-lauro1544': 'Lauro (1544)',
+  })[source.id] || source.edition;
+}
 function selectedCollections(state=null){
   if(!catalog)return [];
   const work=state?.work??els.work.value,book=state?.book??els.book.value;
@@ -35,6 +42,7 @@ function updateScopeHint(){
   if(apion)els.scopeHint.textContent+=' In Boysen Latin Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
   if(collections.some(collection=>collection.id==='antiquities-latin-bamberg78'))els.scopeHint.textContent+=' The Bamberg Latin Antiquities includes the Proem with Book I. Phrases stop at marked gaps, empty source intervals, the documented Book IX lacuna, the delimited interruptions in XVI and XX, and the Proem’s end. Split portions of the same Niese section share Boolean scope; exact phrases follow physical source order. The two labelled Bellum insertions in Book XI are separate citation units.';
   if(collections.some(collection=>collection.id==='antiquities-latin-froben1524'))els.scopeHint.textContent+=' Froben results use printed pages. Whole-book phrases may cross pages, but stop at the end of the Proem.';
+  if(collections.some(collection=>collection.edition==='Lodge (1602)'))els.scopeHint.textContent+=' Lodge uses Niese sections. Exact phrases stop at marked gaps, empty sections and the end of the Antiquities Proem.';
   if(collections.some(collection=>collection.id==='antiquities-english-whiston'))els.scopeHint.textContent+=' Whiston English Antiquities phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent Niese sections in whole-book scope, but stay within one book and stop at the Proem’s end. Headings, printed citation labels and footnotes are excluded.';
   if(collections.some(collection=>collection.id==='bellum-english-whiston'))els.scopeHint.textContent+=' Whiston English Bellum includes all seven books. Its Book I preface is part of the continuous book. Supplied text in VII.208–209 remains searchable and is shown in brackets; it does not interrupt exact phrases.';
   if(collections.some(collection=>collection.id==='contra-apionem-english-whiston'))els.scopeHint.textContent+=' Whiston English Contra Apionem includes both books. Whiston’s internal division markers do not interrupt phrases. Whole-book phrases may cross adjacent Niese sections, but remain within one book and edition.';
@@ -54,9 +62,26 @@ function populateBooks(selected='all'){
   updateScopeHint();
 }
 function populateControls(){
-  els.work.replaceChildren();
-  els.work.append(option('All available works and editions','all'));
-  for(const c of catalog.collections)els.work.append(option(`${c.label} · ${c.language} · ${selectorEdition(c)}`,c.id));
+  const groups = new Map([
+    ['antiquities', {title: 'Antiquitates Judaicae', options: []}],
+    ['bellum', {title: 'Bellum Judaicum', options: []}],
+    ['contra-apionem', {title: 'Contra Apionem', options: []}],
+    ['deh', {title: 'De excidio Hierosolymitano', options: []}],
+  ]);
+  const editions = catalog.collections.slice().sort((a, b) => Number(a.language !== 'Latin') - Number(b.language !== 'Latin'));
+  for (const edition of editions) {
+    if (!groups.has(edition.work)) groups.set(edition.work, {title: edition.label, options: []});
+    const group = groups.get(edition.work);
+    group.options.push(option(`${group.title} · ${edition.language} · ${selectorEdition(edition)}`, edition.id));
+  }
+  els.work.replaceChildren(option('All available works and editions', 'all'));
+  for (const {title, options} of groups.values()) {
+    if (!options.length) continue;
+    const group = node('optgroup');
+    group.label = title;
+    group.append(...options);
+    els.work.append(group);
+  }
   els.work.value=defaultCollection(catalog);
   els.work.disabled=false;
   populateBooks();
@@ -414,7 +439,10 @@ async function annotationSearch() {
         els.work.replaceChildren(option('All annotated works', 'all'), ...Object.entries(works).map(([value, label]) => option(label, value)));
         els.work.value = Object.hasOwn(works, params.get('work')) ? params.get('work') : 'all';
         fillBooks(params.get('book'));
-        if ([...manuscript.options].some(entry => entry.value === params.get('manuscript'))) manuscript.value = params.get('manuscript');
+        const savedManuscript = params.get('manuscript');
+        const manuscriptName = savedManuscript === 'Milan BA Cimelio S.P. 11/1'
+          ? 'Milan, Biblioteca Ambrosiana, Cimelio 1' : savedManuscript;
+        if ([...manuscript.options].some(entry => entry.value === manuscriptName)) manuscript.value = manuscriptName;
         els.query.value = params.get('q') || '';
         els.fold.checked = params.get('fold') === '1';
         for (const select of [els.work, els.book, manuscript]) select.disabled = false;

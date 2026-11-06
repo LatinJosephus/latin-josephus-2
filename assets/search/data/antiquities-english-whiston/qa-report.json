@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-06T12:31:52.108Z",
+  "generatedAt": "2026-11-06T15:29:15.208Z",
   "independentVerifier": "bin/search/tests/whiston-corpus-qa.mjs",
   "readerBaseline": {
     "expectedSha256": "17bb25a5e583f63961ae06d9c1b64e0f2240bec79a2c42bec74a78f99e91bf0c",
@@ -1927,8 +1927,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "186fe2f8250e6659ad2c42054ee9f2a33516211a73b6d95742fcaba98533fab2",
-      "bytes": 77744
+      "sha256": "e7b6d3b5f30fa613c51f42306d4ab6a1dccbf7b8c7cd91ec491aa006d84dec70",
+      "bytes": 99759
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -1947,8 +1947,8 @@
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "95daf5f46901378438e1e62fb14a4682471f19de554dd626c517e9c0853c8977",
-      "bytes": 17552
+      "sha256": "5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521",
+      "bytes": 17956
     },
     "verifier": {
       "path": "bin/search/tests/whiston-corpus-qa.mjs",
@@ -3957,7 +3957,7 @@
       "purpose": "Whiston Book XX example, preserving the accepted section marker"
     }
   ],
-  "durationSeconds": 77.5,
+  "durationSeconds": 93,
   "limitations": [
     "Coverage is all accepted Whiston Antiquities Proem and Books I-XX XML; the search does not create a new edition or add other Whiston works.",
     "This source/query acceptance does not establish a new translation text or collate printed editions; browser interaction is verified separately."

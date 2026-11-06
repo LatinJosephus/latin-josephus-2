@@ -152,8 +152,13 @@ export function readerURL(record,baseURL,{section=true}={}) {
     'contra-apionem':{collection:'contra-apionem-english-whiston',edition:'Whiston',source:'whiston',scheme:'niese'},
     deh:{collection:'deh-english-pollard',edition:'Pollard v1.2',source:'pollard',scheme:'chapter-paragraph'},
   };
-  if(Object.values(englishEditions).some(edition=>edition.collection===record.collectionId)||english!==undefined){
-    const expected=englishEditions[record.work];
+  const lodge=record.collectionId?.endsWith('-english-lodge1602')||english==='lodge1602';
+  if(lodge||Object.values(englishEditions).some(edition=>edition.collection===record.collectionId)||english!==undefined){
+    const expected=lodge
+      ?(record.work!=='deh'&&Object.hasOwn(englishEditions,record.work)&&{
+        collection:record.work+'-english-lodge1602',edition:'Lodge (1602)',source:'lodge1602',scheme:'niese',
+      })
+      :englishEditions[record.work];
     if(!expected||record.language!=='English'||record.edition!==expected.edition
       ||citationScheme(record)!==expected.scheme
       ||(record.collectionId!==undefined&&record.collectionId!==expected.collection)
@@ -179,7 +184,8 @@ export function emptySourceNote(record) {
   if(record.text!=='')return '';
   if(record.textGaps?.some(gap=>gap.kind==='tei-gap'&&gap.sourceAttributes?.reason==='omitted'))return 'Text marked as omitted in the source.';
   return record.emptySource?.kind==='empty-source-interval'
-    ?'No Latin text occurs between this citation label and the next Niese marker.':'';
+    ?record.edition==='Lodge (1602)'?'No separate Lodge text occurs between these Niese markers.'
+      :'No Latin text occurs between this citation label and the next Niese marker.':'';
 }
 export function defaultCollection(catalog) {
   if(catalog.collections.some(collection=>collection.id==='bellum-latin-cardwell'))return 'bellum-latin-cardwell';

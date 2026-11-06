@@ -1,0 +1,831 @@
+{
+  "status": "PASS",
+  "collection": "antiquities-english-lodge1602",
+  "coverage": {
+    "sectionsExactlyRestored": 7376,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true,
+    "allSectionTextsNonempty": false
+  },
+  "counts": {
+    "books": 20,
+    "sections": 7376,
+    "runningWordTokens": 450629
+  },
+  "corpus": {
+    "path": "data/antiquities-english-lodge1602/corpus.json",
+    "sha256": "5903137f96645ee17298e12c394ade967c58c6bf3e83e08e12491130dc2f8a98",
+    "bytes": 5002133,
+    "records": 7376
+  },
+  "books": [
+    {
+      "status": "PASS",
+      "book": 1,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-01.xml",
+        "sha256": "aa5463ce701777bd8db32539df1bc3081e830c0a7bde4fcf5db0076f8b887031",
+        "bytes": 260789
+      },
+      "additionalSources": [
+        {
+          "path": "assets/xml/antiquities/English/Lodge1602/preface.xml",
+          "sha256": "ea3af6e844ba0158bc41c9897b1983e4fbf718ad1097e3c1b32b8b2ceb75a509",
+          "bytes": 19386
+        }
+      ],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-01.corpus.json",
+        "sha256": "03ad93d5db391008d0c6e974917ac90248911e940116f93c69bf57d69ca9118d",
+        "bytes": 259989,
+        "records": 346
+      },
+      "counts": {
+        "sections": 346,
+        "runningWordTokens": 22571
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 346,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          346
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-01.extraction-report.json",
+        "sha256": "25aeaf475c63c4b0aaf2a5ae9c57946cb4c29a5df016bbda07276a0b3aa0ce1d",
+        "bytes": 1097
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 2,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-02.xml",
+        "sha256": "69ed805eb0585ec8b93f4d330a2c69c52f5fb5aae72d583fcd8e180eade5d729",
+        "bytes": 256006
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-02.corpus.json",
+        "sha256": "d77603f9c0be85fdf743e8d7ae0d9921f20478c2ea8081f102f78322c2213083",
+        "bytes": 255811,
+        "records": 349
+      },
+      "counts": {
+        "sections": 349,
+        "runningWordTokens": 21988
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 349,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          349
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-02.extraction-report.json",
+        "sha256": "eed51ec0e1f4ac8f3612c6dd135f715e10db8f82ada963a894976267011cc298",
+        "bytes": 907
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 3,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-03.xml",
+        "sha256": "d6c7e919347594fc9e152a79da2710922f55c068c0045ab6c0b342082805b5d6",
+        "bytes": 220777
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-03.corpus.json",
+        "sha256": "f5e2a4f99ab8fd97d94d2753b81c26d0bebc92ae891ca19e9bf7b2c96dee68b7",
+        "bytes": 220150,
+        "records": 322
+      },
+      "counts": {
+        "sections": 322,
+        "runningWordTokens": 19706
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 322,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          322
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-03.extraction-report.json",
+        "sha256": "2886197a5ebb935a43847e8c4f84206b3fcb3cf9f2d2796a57ec315a2c82572f",
+        "bytes": 907
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 4,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-04.xml",
+        "sha256": "bdd423e7104210cab3cfcb437cd67f1dd872c16a820b3edfd89bb59b4655fe4f",
+        "bytes": 232553
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-04.corpus.json",
+        "sha256": "625dc2515fabdbf56d63d7d06184ef176fc9dfe1b355ee9d3c05644a956df03d",
+        "bytes": 227213,
+        "records": 331
+      },
+      "counts": {
+        "sections": 331,
+        "runningWordTokens": 21570
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 331,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          331
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-04.extraction-report.json",
+        "sha256": "694a7395725a6d6f1ba3a03d1e2ab6e1a7f4812e1acdf06405e3f983e1a5b774",
+        "bytes": 907
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 5,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-05.xml",
+        "sha256": "fcd4d982de21bd8a83ba1f2ebfd89141b1500f3f013412f3fde81c68e1b6aa4d",
+        "bytes": 260127
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-05.corpus.json",
+        "sha256": "ff266338fe7cac95cb736cf0f2bfe885ad689173cf9c1fa54702259c5c637ae3",
+        "bytes": 248330,
+        "records": 362
+      },
+      "counts": {
+        "sections": 362,
+        "runningWordTokens": 23531
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 362,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          362
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-05.extraction-report.json",
+        "sha256": "f4088b6b425115777dd6901ddf6368fdcfc83d5f0c58a7aee5eec0b877e766f3",
+        "bytes": 907
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 6,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-06.xml",
+        "sha256": "d9749fd66b25a75984ab98e0e15b59531873af8d8e21e1da691c3f309040d65e",
+        "bytes": 302529
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-06.corpus.json",
+        "sha256": "f7232b1ab547ba9c14995508da4723e56e069f67ff3ec27940753f59439c6603",
+        "bytes": 275223,
+        "records": 378
+      },
+      "counts": {
+        "sections": 378,
+        "runningWordTokens": 27637
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 378,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          378
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-06.extraction-report.json",
+        "sha256": "e27dbefaaa046ccbed23ecbbae643c121565999c3c4a20e68c2df0bda770e1f8",
+        "bytes": 907
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 7,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-07.xml",
+        "sha256": "c809b44802245653ba40eb75138208b3624243980a7333de3e1f4362c326043a",
+        "bytes": 318115
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-07.corpus.json",
+        "sha256": "9c1e504d83ab40b1b06cfc4de4b11c3fa745fb49ad83b40505209a67ed27a06d",
+        "bytes": 282692,
+        "records": 394
+      },
+      "counts": {
+        "sections": 394,
+        "runningWordTokens": 27687
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 394,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          394
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-07.extraction-report.json",
+        "sha256": "59a2c7cc0dddb88f69ef7def9ef93e3c677be35410c30a807055ff2b4ad90107",
+        "bytes": 907
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 8,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-08.xml",
+        "sha256": "a88a4d057ca18c3a19d0e6f606bdda86cbed74a7d05193a7e265968cfe0832e1",
+        "bytes": 314706
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-08.corpus.json",
+        "sha256": "93dc75fb569c2d7b173b431e042903bfe3ea041bd0c9df01aa48764a5ef0a57e",
+        "bytes": 297291,
+        "records": 420
+      },
+      "counts": {
+        "sections": 420,
+        "runningWordTokens": 28729
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 420,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          420
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-08.extraction-report.json",
+        "sha256": "25a9387c25bcced39d0aebcffd0241153e60384214719bf169d9470d4a1b60bf",
+        "bytes": 907
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 9,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-09.xml",
+        "sha256": "4e31123e6fbaa89c97089ba328c239f27bbe70c2143285cf73b82f0992fbdd17",
+        "bytes": 215046
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-09.corpus.json",
+        "sha256": "ddc4d229a7e46e2d474ae1bb9e7940e30478a01ffbf3289982ec95294ea66580",
+        "bytes": 198418,
+        "records": 291
+      },
+      "counts": {
+        "sections": 291,
+        "runningWordTokens": 18486
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 291,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          291
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-09.extraction-report.json",
+        "sha256": "3a9c6bd37168367a4196e472eff32b715d61b208236f17ba638e26b251ef4f2f",
+        "bytes": 907
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 10,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-10.xml",
+        "sha256": "b3d00d20a390e2ba45a20a8cde76fb1f194c1af7bb551567289965ec67b9886a",
+        "bytes": 195133
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-10.corpus.json",
+        "sha256": "e18f80e4b910a9c89d32cc944e7dcfc4a29ad147fdab96df5b27875c63ab8732",
+        "bytes": 186421,
+        "records": 281
+      },
+      "counts": {
+        "sections": 281,
+        "runningWordTokens": 16812
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 281,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": false,
+        "completeRange": [
+          1,
+          281
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-10.extraction-report.json",
+        "sha256": "1e939cc8e8da6cf9e29941c3511e80d3e20ab7f24b11c52308d5e971a2081d6a",
+        "bytes": 909
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 11,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-11.xml",
+        "sha256": "59263d450caa98feb36e95111fbf5fb49189223736a7762fc2e2f0cb62a2fae6",
+        "bytes": 224460
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-11.corpus.json",
+        "sha256": "c92ee6e75030c65cac940b72523b95b059062ab5380d240a0765d42441054d9d",
+        "bytes": 221906,
+        "records": 347
+      },
+      "counts": {
+        "sections": 347,
+        "runningWordTokens": 19488
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 347,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          347
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-11.extraction-report.json",
+        "sha256": "ab3de3b071dacedabef1c1190ee08d43d1acbacaf60d8ea11caff2bb69077e0c",
+        "bytes": 908
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 12,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-12.xml",
+        "sha256": "08bf8fce1ed2d05dea4fd7bb6b008b7cdce0577a5ee0f0bd07a9321e2673a3f7",
+        "bytes": 293079
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-12.corpus.json",
+        "sha256": "dd6c90b414c8f48be64c614ef6cac4dce9990d992dbd561baf20437a32c25a1b",
+        "bytes": 280000,
+        "records": 434
+      },
+      "counts": {
+        "sections": 434,
+        "runningWordTokens": 24770
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 434,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          434
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-12.extraction-report.json",
+        "sha256": "88cc56ed0de92943d9dc7acdc907910859d0c97e0dee7739a3fee1e5317e939a",
+        "bytes": 908
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 13,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-13.xml",
+        "sha256": "1dfa7085a30a782ea734ea603f1c2a1ee492e16461dcbfee7bb5b81560f8934d",
+        "bytes": 327750
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-13.corpus.json",
+        "sha256": "05cabf7fe7b8d787e7209d593e1b03a1202ac784990151e3ac38f510bfeb2482",
+        "bytes": 296846,
+        "records": 433
+      },
+      "counts": {
+        "sections": 433,
+        "runningWordTokens": 26099
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 433,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          433
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-13.extraction-report.json",
+        "sha256": "d5df395ad1fbdfdc98d14a63db08ec729d0a74b39fdbebcd8d8523d094e477fe",
+        "bytes": 908
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 14,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-14.xml",
+        "sha256": "384b080cdfdb578a0e7f67065d12803d05cccebc189111f51e377a6a718cb9ca",
+        "bytes": 341246
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-14.corpus.json",
+        "sha256": "2c23d6496c2bb7d09a58fcc0b2c820acb9ee306798fe9b61e913257ce723092c",
+        "bytes": 316920,
+        "records": 491
+      },
+      "counts": {
+        "sections": 491,
+        "runningWordTokens": 25909
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 491,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": false,
+        "completeRange": [
+          1,
+          491
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-14.extraction-report.json",
+        "sha256": "ca9a5c54eb655db7d651cd1532009c34d14f9db2e0e2b4b3ab6451c8f2034049",
+        "bytes": 909
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 15,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-15.xml",
+        "sha256": "28e9e95c781854b91c87cd57f48a34ab80d81ac9d765a902a03162a588316b7a",
+        "bytes": 289464
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-15.corpus.json",
+        "sha256": "ce0f70b98ea52febfb5b35a4c4d5d77f9a04400f6392e431bf24ef3aed5cbf20",
+        "bytes": 282133,
+        "records": 425
+      },
+      "counts": {
+        "sections": 425,
+        "runningWordTokens": 25584
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 425,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          425
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-15.extraction-report.json",
+        "sha256": "1716fecc0103fe1f913bd94c48afc53124740827d765a5e4940abc79efdd97d2",
+        "bytes": 908
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 16,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-16.xml",
+        "sha256": "e66394e4b572dd0137addda58dcf214dfb75dc2aea5c0d2c486808aa1e36e11e",
+        "bytes": 248109
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-16.corpus.json",
+        "sha256": "633f8e0fe37ff815112116427be64b5bef79d04c9b74647cc75e549c246621db",
+        "bytes": 244956,
+        "records": 404
+      },
+      "counts": {
+        "sections": 404,
+        "runningWordTokens": 20510
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 404,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          404
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-16.extraction-report.json",
+        "sha256": "100d4ccbc84f18fd103826ef0a871a11d227bc109db4326ef34e0281386384d3",
+        "bytes": 908
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 17,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-17.xml",
+        "sha256": "6ff35f8d94f27d826c7030275e2b6a582b83a76f07e7979bed991548e187fd56",
+        "bytes": 257455
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-17.corpus.json",
+        "sha256": "26e69bfbac2fe45f7210e8c9a8ca62b3aa752cf53a6bc47d4e88e0ffb1fe797e",
+        "bytes": 248302,
+        "records": 355
+      },
+      "counts": {
+        "sections": 355,
+        "runningWordTokens": 22227
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 355,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          355
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-17.extraction-report.json",
+        "sha256": "bf09ed5dec8ea7a6803860069668f27844f9c08b0afeae86c0587ba6e99f0f34",
+        "bytes": 908
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 18,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-18.xml",
+        "sha256": "c0c4b97923245ee57bd76e3d992e67caea0fa618f8a1377dc712d10c2a1dfbae",
+        "bytes": 269578
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-18.corpus.json",
+        "sha256": "012909eb9d8cf659bf6c8b0ea26a14341069c5abb651fd00f45306529667f184",
+        "bytes": 254700,
+        "records": 379
+      },
+      "counts": {
+        "sections": 379,
+        "runningWordTokens": 22714
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 379,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          379
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-18.extraction-report.json",
+        "sha256": "f55223e91717821a7d6d58b66beb67bb0c41e8731a78422a6aa6da90e0904e84",
+        "bytes": 908
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 19,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-19.xml",
+        "sha256": "43a05d447921b1b341f479864b7a405e676f421004e811f60031033214f41bb6",
+        "bytes": 240159
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-19.corpus.json",
+        "sha256": "0a04bc119df1abd6c5cef15415805c735d064272b878aef3bcc925fa78f0869a",
+        "bytes": 240926,
+        "records": 366
+      },
+      "counts": {
+        "sections": 366,
+        "runningWordTokens": 21078
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 366,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          366
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-19.extraction-report.json",
+        "sha256": "0a138df960c04ad548b313e82abe9524c586e0beed75e7758a39777f5a65645a",
+        "bytes": 908
+      }
+    },
+    {
+      "status": "PASS",
+      "book": 20,
+      "source": {
+        "path": "assets/xml/antiquities/English/Lodge1602/book-20.xml",
+        "sha256": "f742eb2565dd7fbe76b1d07f736bb059fc5dd5b48499ae0dc904fed113f9b68f",
+        "bytes": 173548
+      },
+      "additionalSources": [],
+      "corpus": {
+        "path": "data/antiquities-english-lodge1602/book-20.corpus.json",
+        "sha256": "3dfff1a661649779c21a3b1931f9b7c633cbc461001291da742c8eb4a9a1607c",
+        "bytes": 163963,
+        "records": 268
+      },
+      "counts": {
+        "sections": 268,
+        "runningWordTokens": 13533
+      },
+      "coverage": {
+        "sectionsExactlyRestored": 268,
+        "wordSequencePreserved": true,
+        "nonWhitespaceContentPreserved": true,
+        "globalIdsUnique": true,
+        "globalOrderIsConsecutive": true,
+        "allSectionTextsNonempty": true,
+        "completeRange": [
+          1,
+          268
+        ],
+        "missingSections": [],
+        "unexpectedSections": [],
+        "duplicateSections": []
+      },
+      "extractionReport": {
+        "path": "data/antiquities-english-lodge1602/book-20.extraction-report.json",
+        "sha256": "b366161fb64b3f96fcf7180bed6c6b80f89a77825b95557d071d00f952abdb7e",
+        "bytes": 908
+      }
+    }
+  ]
+}

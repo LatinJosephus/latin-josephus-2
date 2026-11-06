@@ -30,10 +30,17 @@ physical passages. Whole-book exact phrases follow French order across ordinary
 line/page/citation seams, stopping at the Prologue's end and between books.
 Printed paratext and marginalia remain outside this main-text layer.
 
-The combined catalogue has **98 book editions, 26,732 physical records and
-1,869,485 word tokens**, including **605 book-specific page records and
+The combined catalogue has **127 book editions, 38,725 physical records and
+2,529,151 word tokens**, including **605 book-specific page records and
 255,380 word tokens** for Froben. The Italian Lauro collection adds five book
 editions, 558 physical records and 105,756 word tokens.
+
+**Lodge (1602)** covers the English Antiquities (including the Proem),
+Bellum and Contra Apionem. The index follows the reader's 11,993 Niese
+sections in source order and retains Lodge's spelling. Printed headings,
+tables of contents and marginal notes are outside this main-text layer.
+Marked gaps and empty citation intervals stop exact phrases. The separately
+transmitted Antiquities Proem has its own reader links.
 French CSV exports add separate physical-source-reference, DEH-correspondence
 and source-version columns; complete-result exports preserve original spelling
 and exact source slices, including ¬ and physical line separators.

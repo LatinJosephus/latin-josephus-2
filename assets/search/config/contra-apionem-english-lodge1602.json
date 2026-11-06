@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "contra-apionem-english-lodge1602",
+  "work": "contra-apionem",
+  "label": "Contra Apionem",
+  "citationPrefix": "Contra Apionem",
+  "citationScheme": "niese",
+  "unitLabel": "Niese section",
+  "unitLabelPlural": "Niese sections",
+  "language": "English",
+  "edition": "Lodge (1602)",
+  "readerPath": "contra-apionem/",
+  "corpus": "../data/contra-apionem-english-lodge1602/corpus.json",
+  "extractionReport": "../data/contra-apionem-english-lodge1602/extraction-report.json",
+  "books": [
+    {
+      "number": 1,
+      "label": "Book I",
+      "corpus": "../data/contra-apionem-english-lodge1602/book-01.corpus.json",
+      "sections": 320,
+      "sectionRange": [
+        1,
+        320
+      ],
+      "source": "assets/xml/contra-apionem/English/Lodge1602/book-01.xml"
+    },
+    {
+      "number": 2,
+      "label": "Book II",
+      "corpus": "../data/contra-apionem-english-lodge1602/book-02.corpus.json",
+      "sections": 296,
+      "sectionRange": [
+        1,
+        296
+      ],
+      "source": "assets/xml/contra-apionem/English/Lodge1602/book-02.xml"
+    }
+  ]
+}
