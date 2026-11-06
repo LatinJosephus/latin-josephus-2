@@ -1,0 +1,533 @@
+{
+  "status": "PASS",
+  "source": {
+    "books": 20,
+    "sections": 605,
+    "tokens": 255380,
+    "bytes": 38967483
+  },
+  "assertions": 1961,
+  "totalQueries": 63,
+  "failedAssertions": 0,
+  "examples": [
+    {
+      "book": 1,
+      "query": "uocantur",
+      "occurrences": 4
+    },
+    {
+      "book": 2,
+      "query": "passuri",
+      "occurrences": 1
+    },
+    {
+      "book": 3,
+      "query": "hominibus",
+      "occurrences": 10
+    },
+    {
+      "book": 4,
+      "query": "loqueretur",
+      "occurrences": 1
+    },
+    {
+      "book": 5,
+      "query": "principatum",
+      "occurrences": 19
+    },
+    {
+      "book": 6,
+      "query": "turpitudo",
+      "occurrences": 1
+    },
+    {
+      "book": 7,
+      "query": "dominus",
+      "occurrences": 2
+    },
+    {
+      "book": 8,
+      "query": "sagittasset",
+      "occurrences": 1
+    },
+    {
+      "book": 9,
+      "query": "tyriorum",
+      "occurrences": 3
+    },
+    {
+      "book": 10,
+      "query": "recedere",
+      "occurrences": 1
+    },
+    {
+      "book": 11,
+      "query": "hierosolymitae",
+      "occurrences": 2
+    },
+    {
+      "book": 12,
+      "query": "sequentes",
+      "occurrences": 1
+    },
+    {
+      "book": 13,
+      "query": "ptolemaide",
+      "occurrences": 3
+    },
+    {
+      "book": 14,
+      "query": "senibus",
+      "occurrences": 1
+    },
+    {
+      "book": 15,
+      "query": "plueret",
+      "occurrences": 1
+    },
+    {
+      "book": 16,
+      "query": "tormentis",
+      "occurrences": 3
+    },
+    {
+      "book": 17,
+      "query": "noscuntur",
+      "occurrences": 1
+    },
+    {
+      "book": 18,
+      "query": "detinebatur",
+      "occurrences": 1
+    },
+    {
+      "book": 19,
+      "query": "agrippa",
+      "occurrences": 18
+    },
+    {
+      "book": 20,
+      "query": "consuetudo",
+      "occurrences": 1
+    }
+  ],
+  "readerBaseline": {
+    "publicationInput": false
+  },
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/antiquities-latin-froben1524/corpus.json",
+      "bytes": 2135568,
+      "sha256": "5b1b45461a92cd54b046ef7ff1920f1aaedb3c3048e6498b85b1fbc04ee47613"
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "bytes": 77744,
+      "sha256": "186fe2f8250e6659ad2c42054ee9f2a33516211a73b6d95742fcaba98533fab2"
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "bytes": 28437,
+      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89"
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "bytes": 21317,
+      "sha256": "f927579378c89bf15479d935731c9084c3a10ae71f2b74a8a9c92ee22345b3b5"
+    },
+    "concordance": {
+      "path": "bin/search/concordance.mjs",
+      "bytes": 35339,
+      "sha256": "063cd27915a04eae1dc4c835c59b91a059f88b18122eac58e5b3b5144776c442"
+    },
+    "uiUtils": {
+      "path": "bin/search/ui-utils.mjs",
+      "bytes": 17552,
+      "sha256": "95daf5f46901378438e1e62fb14a4682471f19de554dd626c517e9c0853c8977"
+    },
+    "extractor": {
+      "path": "bin/search/extract-froben.py",
+      "bytes": 7204,
+      "sha256": "37423935f6d153cb038f8aac2ebbfebe7ed2c4508533d7cbcacde5bc9018ac24"
+    },
+    "manifest": {
+      "path": "bin/search/config/antiquities-latin-froben1524.json",
+      "bytes": 4358,
+      "sha256": "ff0dbcb3138454d4818fcb74dde563bff32ea261b5036c8e4cb12dbe179d6fbe"
+    },
+    "verifier": {
+      "path": "bin/search/tests/froben-corpus-qa.mjs",
+      "bytes": 7254,
+      "sha256": "2cd1b94c895599646378a5f51f932d84cf397ab0ba437deb375df19949801503"
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-01.bundle.json",
+          "bytes": 1978119,
+          "sha256": "aa455f647661df9645075c78d0d066457d4b520099c1d283292a0d42a8644b4f"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-01.corpus.json",
+          "bytes": 108749,
+          "sha256": "950ad4406eca55dbdfc1ec4f532d405e81d8096bd6efce39d5acfc62fad3253f"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-01.json",
+          "bytes": 254825,
+          "sha256": "609d256e6508c2c647a5b57e79d8ea26d90d21b5a398d9f735de42751879d630"
+        },
+        "additionalSources": [
+          {
+            "path": "assets/data/antiquities-froben1524/preface.json",
+            "bytes": 22381,
+            "sha256": "a82dfb15b749749e8e66d369c3d2f4c9486f99654e38666122cd1b9a7325afda"
+          }
+        ]
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-02.bundle.json",
+          "bytes": 1952368,
+          "sha256": "0a79c2cdf7f8147ad3bc18f6eb5eb9c742ef0b8a265cce9f2f6570706b1e3b33"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-02.corpus.json",
+          "bytes": 106367,
+          "sha256": "1287431c2cb314a587a62fc0b46e0f59e2382e97392d0afa639e8ebde36ed32b"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-02.json",
+          "bytes": 261644,
+          "sha256": "e35d70fc9248fceb6767cf0a9ba1180bcbb6b841be36f48eba63b6a31fe984eb"
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-03.bundle.json",
+          "bytes": 1787162,
+          "sha256": "2a18982c556103d08b458fa719f7cff280029082dbe6d883d919852aff5d893d"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-03.corpus.json",
+          "bytes": 97895,
+          "sha256": "2eeafcd9577aad8c719ccb6ecdd839608a94e03eeab96cc4dd68d9ffeee492a6"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-03.json",
+          "bytes": 245313,
+          "sha256": "6852c81896acda1ac234287e0c732dd07c9da2b9a2c165448acd92a48310e5d7"
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-04.bundle.json",
+          "bytes": 1857981,
+          "sha256": "e1f57bbdd0b4f673da80ec1816c1f72f65e071140c3976820862e5e2302dc8e0"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-04.corpus.json",
+          "bytes": 100186,
+          "sha256": "e3189bbded11dc1681cf1a93fdf874715a41801d80046440fa516458db47d26c"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-04.json",
+          "bytes": 245851,
+          "sha256": "dfa8bc1be42f1020daec4788ac40fea48e9bc639c1548d10cb248ff3f3aed812"
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-05.bundle.json",
+          "bytes": 1924619,
+          "sha256": "64c77c05a0088242ecd6d43f17516f49e711beb0d68afb7ed77da81b0e212592"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-05.corpus.json",
+          "bytes": 106472,
+          "sha256": "38b17a5701c59eef78197e23513c47da1cc0bbc846b71ccabd1e3539d7d0f882"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-05.json",
+          "bytes": 280529,
+          "sha256": "46d0718144b7bfa68ef2d44ab6fb9838c8e3230f14515149d04b803a6f2317a2"
+        }
+      },
+      {
+        "book": 6,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-06.bundle.json",
+          "bytes": 2305266,
+          "sha256": "312762aa8290e35499044d3292f02459703c1d26f84905e63ce4ce57762630d0"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-06.corpus.json",
+          "bytes": 126955,
+          "sha256": "4c57a5fde19b6430c15df327bcd847ba399e86d365daef03bcd6933363cf0502"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-06.json",
+          "bytes": 304978,
+          "sha256": "bd359689318309674b693edefedf6b94bb797521847681307957368c19558d9f"
+        }
+      },
+      {
+        "book": 7,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-07.bundle.json",
+          "bytes": 2379668,
+          "sha256": "ad2f87932ed14d2807d20d8c470b938baaf97a07141f236759df76ff28d154fc"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-07.corpus.json",
+          "bytes": 133103,
+          "sha256": "3346f9f41865a644d5a82e63c5386a1bc9455fabe0ba62d9649f9de15c4fe1f3"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-07.json",
+          "bytes": 319364,
+          "sha256": "f0cf747724a4664d3d3262d7a22635adbc330ef5cf5aae37c34b2b0605c4f96d"
+        }
+      },
+      {
+        "book": 8,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-08.bundle.json",
+          "bytes": 2540008,
+          "sha256": "7dd7d09c4067b99ca507cf7b219c37e7bd4515cbcdbf985f799bc82e7e974977"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-08.corpus.json",
+          "bytes": 140427,
+          "sha256": "fec3972850ed0aa335e1e3020d731bad8d7a3d1eabb7442787f597f680b538d5"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-08.json",
+          "bytes": 327516,
+          "sha256": "5f389c2074062b7da3832c7042b2930939ca9f0f93d89513f3bc50340797f811"
+        }
+      },
+      {
+        "book": 9,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-09.bundle.json",
+          "bytes": 1650991,
+          "sha256": "9c9200d307c9c47c4fe8d769c6b063e065ff11c19ddd3c8d22e8051b13e9763b"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-09.corpus.json",
+          "bytes": 91843,
+          "sha256": "bd3dad1b80ae7f7cfa99a1dc5157a3188d893a51dea76fbde28394d2c9bb136f"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-09.json",
+          "bytes": 225539,
+          "sha256": "2c291f6d0f30b68570d80db787a65bd5092ddfcd0b1ef976c8baf28a931cbeec"
+        }
+      },
+      {
+        "book": 10,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-10.bundle.json",
+          "bytes": 1551205,
+          "sha256": "6055fee789d0ea7f56a4003312ad92e7dfa367ed4736066c844f062072cb09ba"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-10.corpus.json",
+          "bytes": 85886,
+          "sha256": "166fce8c5d675c1c806142fa1b57c194b638a721dc7b3b79f0224adbfe63fddb"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-10.json",
+          "bytes": 217281,
+          "sha256": "2f525a447f49fa1b308a47c2224e81cf7d268fca08918e21635c59ae5a0c7696"
+        }
+      },
+      {
+        "book": 11,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-11.bundle.json",
+          "bytes": 1717879,
+          "sha256": "e74f3056bc3545a630ae94ae7c0d7c47d2d7a988a4164b7c5c2989d1d9cb0d6d"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-11.corpus.json",
+          "bytes": 93099,
+          "sha256": "e01306029b93f730ecf6e7d53b3f04fcf42fdc06d2a618d51f0501f338438e02"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-11.json",
+          "bytes": 249722,
+          "sha256": "a03121185125db6fd67fc919303a4edbf92efacf0a4f57c5aca5e5ea017ff714"
+        }
+      },
+      {
+        "book": 12,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-12.bundle.json",
+          "bytes": 2057450,
+          "sha256": "63812ba390426875e95f4a21e441b68519aaa4dbe818f1aed058559f35f0ddc2"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-12.corpus.json",
+          "bytes": 112640,
+          "sha256": "3e8c2e85acc24abd830242590bb6bf0c63878290b176103799cc8efd5e19afcb"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-12.json",
+          "bytes": 322107,
+          "sha256": "ddbb34b4f5b1062841499f286e882b2da4a76a0726ed8a0c60d8cacc7532c3a5"
+        }
+      },
+      {
+        "book": 13,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-13.bundle.json",
+          "bytes": 2049757,
+          "sha256": "e73b847f7cb70b6ab4db8135aa3f23f6b5402af08f5dd2a3119232400010660a"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-13.corpus.json",
+          "bytes": 113562,
+          "sha256": "3af38402182d360cedf9029099f7d82649fe34580ab81cf65a40ba01a557bb86"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-13.json",
+          "bytes": 330512,
+          "sha256": "4a65e119752723a0b33e26a63158378849cf726e290b110e9a870b60abb739be"
+        }
+      },
+      {
+        "book": 14,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-14.bundle.json",
+          "bytes": 2216196,
+          "sha256": "9f2446915b3ce072cefea210ee402c43fa9895f52491cbf9cc7fc75d2dd23e0d"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-14.corpus.json",
+          "bytes": 124245,
+          "sha256": "7ec76c9f3591a41460c99d1b3ae6871252655c6f2034e791fabed26bcdb55d6b"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-14.json",
+          "bytes": 370371,
+          "sha256": "e1c61388123d5c18f62228cbc5f336151ac25bd1064031270a775f1f3a3fa0f4"
+        }
+      },
+      {
+        "book": 15,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-15.bundle.json",
+          "bytes": 1860133,
+          "sha256": "b22aada72555dd1b82b9d76647abe2b6076bae47c39b6eff4f71dcaaa4a47a5c"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-15.corpus.json",
+          "bytes": 100842,
+          "sha256": "d94b9db02f0d6d18f21a9449819f5349969faea19e49abf92090fe83ac9075b2"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-15.json",
+          "bytes": 298134,
+          "sha256": "0b46a3a5d1aa59c7cc19f33381eb3632e2a0559af1095ad38cc22f7a1941a143"
+        }
+      },
+      {
+        "book": 16,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-16.bundle.json",
+          "bytes": 1555154,
+          "sha256": "d0d74dce673c32034151c450025238e2e3b91268568a4251074e53d1483e5f8d"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-16.corpus.json",
+          "bytes": 84912,
+          "sha256": "61e1a1fbff9b51ef731b5d8680b6790630034864dee9ebb43fa2f0cea058bf2c"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-16.json",
+          "bytes": 265141,
+          "sha256": "47e564fcc73e46bca6e5010318045ee3b9ec021fdc379f5b400a092898b81035"
+        }
+      },
+      {
+        "book": 17,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-17.bundle.json",
+          "bytes": 2296595,
+          "sha256": "cd3016ab6a822c067730cdc211eecb4da1762c94a9de322b30e10ec46b1bb2d4"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-17.corpus.json",
+          "bytes": 125199,
+          "sha256": "70a871482dd9493a9f83f4d59bcb3fa557b363d199b942284f9cef6670f61ea9"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-17.json",
+          "bytes": 324896,
+          "sha256": "470bcbdfe296c562f0c894dff5efc762c6ac6648ae686874b4d76b763c428aa6"
+        }
+      },
+      {
+        "book": 18,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-18.bundle.json",
+          "bytes": 2287103,
+          "sha256": "7e2de1d8a332efa285ff14f6724f1ee3a0061453b824f9bc6ffd8c36ac7c2ee3"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-18.corpus.json",
+          "bytes": 123026,
+          "sha256": "4237c0f84cf0351d78e2730ec536267d23fdedac9a92f7f380353f79a0c94d3a"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-18.json",
+          "bytes": 316803,
+          "sha256": "dc906d67c0818a4d9dbf7628a4acf12bfa5761529e515627809f92db8f743ab1"
+        }
+      },
+      {
+        "book": 19,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-19.bundle.json",
+          "bytes": 1793637,
+          "sha256": "03197fa1713d43f7c70e9bdec0f4ed7b6e0e39339203bd83d00da1a8bb9be1df"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-19.corpus.json",
+          "bytes": 95151,
+          "sha256": "08899b9a0f9a0184141a169027a3076ff2cdab0b1612cd64d1cd4ef32163f7db"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-19.json",
+          "bytes": 261409,
+          "sha256": "ca5021f869e1272ad189091aa977255785b7aa7917ac955ed80e742b4848e89b"
+        }
+      },
+      {
+        "book": 20,
+        "bundle": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-20.bundle.json",
+          "bytes": 1206192,
+          "sha256": "be12a3b8d6663fdece413077d74155f3b0396d5741475364594510ffa3a1c4ac"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-latin-froben1524/book-20.corpus.json",
+          "bytes": 65066,
+          "sha256": "c2770343aa4d5ca78eb60f6dffeafdaabee1dd718121ba3642a1ff6b5d67ce1e"
+        },
+        "source": {
+          "path": "assets/data/antiquities-froben1524/book-20.json",
+          "bytes": 199676,
+          "sha256": "b958689ddb083339a72c2cb458429c6cd32b687b5e2deddbdfbba0ec77a206df"
+        }
+      }
+    ]
+  }
+}

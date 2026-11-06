@@ -4,7 +4,7 @@
  * cache key includes its collection ID. Queries return no partial results.
  */
 import { createEngine, parseQuery, SCHEMA_VERSION } from "./engine.a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89.mjs";
-import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.f054615039fbe531bc699488a0cda58f7dc2085186a38a9cf7111243218de6bf.mjs";
+import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.95daf5f46901378438e1e62fb14a4682471f19de554dd626c517e9c0853c8977.mjs";
 
 export const CATALOG_SCHEMA_VERSION = 2;
 export const qualifiedBookId = (collectionId, number) => `${collectionId}:${number}`;
@@ -219,6 +219,13 @@ export function createCollection(catalog, lunr, options = {}) {
           fail("the chapter/paragraph citations do not agree with their source records.");
         }
         citations.add(record.citationLabel);
+      } else if (collection.id === 'antiquities-latin-froben1524') {
+        if (collection.citationScheme !== 'source-span' || record.citationScheme !== 'source-span'
+          || record.work !== 'antiquities' || record.language !== 'Latin' || record.edition !== 'Froben 1524'
+          || !Number.isInteger(record.sourceImage) || record.sourceImage < 1 || !isText(record.citationLabel)
+          || (record.division !== undefined && (record.division !== 'proem' || record.book !== 1))) {
+          fail('the Froben printed-page reference is invalid.');
+        }
       } else if (collection.citationScheme === 'source-span') {
         if (record.citationScheme !== 'source-span' || !['French','Italian'].includes(record.language) || record.normalizationProfile !== ({French:'early-print-fr-v1',Italian:'early-print-it-v1'})[record.language]
           || !isText(record.sourceOccurrence) || !isText(record.citationLabel)

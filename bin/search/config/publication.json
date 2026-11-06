@@ -105,6 +105,35 @@
       "verifier": "tests/antiquities-corpus-qa.mjs",
       "qaReport": "data/antiquities-latin-bamberg78/qa-report.json"
     },
+    "antiquities-latin-froben1524": {
+      "extractor": "extract-froben.py",
+      "outputDirectory": "data/antiquities-latin-froben1524",
+      "sources": [
+        "assets/data/antiquities-froben1524/preface.json",
+        "assets/data/antiquities-froben1524/book-01.json",
+        "assets/data/antiquities-froben1524/book-02.json",
+        "assets/data/antiquities-froben1524/book-03.json",
+        "assets/data/antiquities-froben1524/book-04.json",
+        "assets/data/antiquities-froben1524/book-05.json",
+        "assets/data/antiquities-froben1524/book-06.json",
+        "assets/data/antiquities-froben1524/book-07.json",
+        "assets/data/antiquities-froben1524/book-08.json",
+        "assets/data/antiquities-froben1524/book-09.json",
+        "assets/data/antiquities-froben1524/book-10.json",
+        "assets/data/antiquities-froben1524/book-11.json",
+        "assets/data/antiquities-froben1524/book-12.json",
+        "assets/data/antiquities-froben1524/book-13.json",
+        "assets/data/antiquities-froben1524/book-14.json",
+        "assets/data/antiquities-froben1524/book-15.json",
+        "assets/data/antiquities-froben1524/book-16.json",
+        "assets/data/antiquities-froben1524/book-17.json",
+        "assets/data/antiquities-froben1524/book-18.json",
+        "assets/data/antiquities-froben1524/book-19.json",
+        "assets/data/antiquities-froben1524/book-20.json"
+      ],
+      "verifier": "tests/froben-corpus-qa.mjs",
+      "qaReport": "data/antiquities-latin-froben1524/qa-report.json"
+    },
     "antiquities-english-whiston": {
       "extractor": "extract-whiston.py",
       "outputDirectory": "data/antiquities-english-whiston",

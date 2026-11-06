@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-01T22:18:41.677Z",
+  "generatedAt": "2026-11-06T12:32:20.761Z",
   "independentVerifier": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "fdff75797a4d6c0c463ca3e7779039a852c8ab9e70d7b7b0cea969b5a1840d42",
-    "observedSha256": "fdff75797a4d6c0c463ca3e7779039a852c8ab9e70d7b7b0cea969b5a1840d42",
+    "expectedSha256": "17bb25a5e583f63961ae06d9c1b64e0f2240bec79a2c42bec74a78f99e91bf0c",
+    "observedSha256": "17bb25a5e583f63961ae06d9c1b64e0f2240bec79a2c42bec74a78f99e91bf0c",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
@@ -268,8 +268,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "ce22be91c90f791324e14b2c5c44d19a01812cbff02893ce2808e03618518574",
-      "bytes": 64225
+      "sha256": "186fe2f8250e6659ad2c42054ee9f2a33516211a73b6d95742fcaba98533fab2",
+      "bytes": 77744
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -278,8 +278,8 @@
     },
     "collection": {
       "path": "bin/search/collection.mjs",
-      "sha256": "101afa0c81034c2680f7609aa05411901f4b961638e1112523c8d66533b05b3a",
-      "bytes": 20752
+      "sha256": "f927579378c89bf15479d935731c9084c3a10ae71f2b74a8a9c92ee22345b3b5",
+      "bytes": 21317
     },
     "concordance": {
       "path": "bin/search/concordance.mjs",
@@ -288,8 +288,8 @@
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "f054615039fbe531bc699488a0cda58f7dc2085186a38a9cf7111243218de6bf",
-      "bytes": 16809
+      "sha256": "95daf5f46901378438e1e62fb14a4682471f19de554dd626c517e9c0853c8977",
+      "bytes": 17552
     },
     "verifier": {
       "path": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
@@ -323,8 +323,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "fdff75797a4d6c0c463ca3e7779039a852c8ab9e70d7b7b0cea969b5a1840d42",
-      "bytes": 178284
+      "sha256": "17bb25a5e583f63961ae06d9c1b64e0f2240bec79a2c42bec74a78f99e91bf0c",
+      "bytes": 188094
     },
     "testSources": [],
     "books": [
@@ -1007,7 +1007,7 @@
       "purpose": "Complete Bellum count"
     }
   ],
-  "durationSeconds": 29.8,
+  "durationSeconds": 28.2,
   "limitations": [
     "This validates the accepted Whiston Bellum XML, not a new translation or printed-edition collation.",
     "Browser interaction is verified separately."
