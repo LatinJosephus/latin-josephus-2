@@ -2697,9 +2697,15 @@ document.addEventListener("DOMContentLoaded", () => {
         canonicalFullData
       );
       const registry = nieseIdentityRegistry();
-      if (!registry) return entries;
-      return registry.sections.map(section => entries.find(entry => entry.number === section.number)
-        || {number: section.number, kind: "unavailable"});
+      const range = antiquitiesNieseRange();
+      const numbers = registry ? registry.sections.map(section => section.number)
+        : range ? Array.from({length: range[1] - range[0] + 1}, (_, i) => range[0] + i) : [];
+      // A shared Niese identity can be available in another witness across a Bamberg gap.
+      const starts = new Map();
+      for (const entry of entries) {
+        if (!starts.has(entry.number)) starts.set(entry.number, entry);
+      }
+      return numbers.length ? numbers.map(number => starts.get(number) || {number, kind: "unavailable"}) : entries;
     }
 
     return latinNieseStartEntries(canonicalFullData);
@@ -3708,6 +3714,20 @@ document.addEventListener("DOMContentLoaded", () => {
     addContraApionemTransmissionNotice();
     updateTraditionalNotice();
     syncNavigationControls();
+    if (activeWork.slug === "antiquities") {
+      const book = isPreface() ? "preface" : String(Number(state.bookNum));
+      let target = null;
+      switch (state.viewingLevel) {
+        case "book-level": target = book; break;
+        case "chapter-level":
+        case "subchapter-level": target = traditionalSelection()?.id; break;
+        case "section-level": target = state.sectionNum ? `latin-${currentIdBase()}-num${state.sectionNum}` : book; break;
+        case "niese-level": target = `niese-${book}-${state.nieseNum}`; break;
+      }
+      document.dispatchEvent(new CustomEvent("antiquities-view-rendered", {
+        detail: {book, target, level: state.viewingLevel, available: !invalidNieseRequest}
+      }));
+    }
     // Optional scholarly parallels live outside the textual alignment layer.
     if (activeWork.slug === "deh") {
       document.dispatchEvent(new CustomEvent("deh-view-rendered", {

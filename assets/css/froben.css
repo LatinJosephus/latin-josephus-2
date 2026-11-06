@@ -1,0 +1,120 @@
+#froben[hidden] {
+  display: none;
+}
+
+#pane-container:has(> #froben:not([hidden])) {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+#froben > h3 {
+  margin-bottom: .3rem;
+}
+
+.froben-controls {
+  margin-bottom: .7rem;
+  text-align: start;
+  font: .8rem/1.4 system-ui, sans-serif;
+}
+
+.froben-toolbar, .froben-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .25rem .6rem;
+}
+
+.froben-controls label {
+  margin: 0;
+}
+
+.froben-controls summary {
+  color: var(--global-theme-color);
+  cursor: pointer;
+  list-style: revert;
+  min-height: 1.5rem;
+}
+
+.froben-controls details[open] {
+  flex-basis: 100%;
+  order: 1;
+  padding-inline-start: .6rem;
+  border-inline-start: 2px solid var(--global-divider-color);
+}
+
+#froben-settings > label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .3rem;
+  margin-block: .35rem;
+}
+
+.froben-controls :is(select, button) {
+  max-width: 100%;
+  padding: .2rem .35rem;
+  color: inherit;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: .25rem;
+}
+
+.froben-controls :is(a, button, input, select, summary):focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+}
+
+#froben-correspondence ul {
+  max-height: 12rem;
+  overflow: auto;
+  padding-inline-start: 1.5rem;
+}
+
+#froben-source {
+  font-family: var(--lj-font-text, Georgia, serif);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.froben-heading {
+  font-weight: 600;
+  margin-block: .5em;
+}
+
+.froben-locator, .froben-notice, .froben-page-label {
+  color: var(--global-theme-color);
+  font: .8em/1.5 system-ui, sans-serif;
+}
+
+.froben-notice {
+  font-style: italic;
+}
+
+.froben-page-label {
+  margin-inline: .25em;
+  white-space: nowrap;
+}
+
+.froben-aligned {
+  padding: 0;
+  color: #292311;
+  background: #f6e6b8;
+}
+
+.froben-bamberg-target {
+  outline: 2px solid #aa8037;
+  outline-offset: .2rem;
+  background-color: #f6e6b833;
+}
+
+.froben-linked {
+  cursor: pointer;
+}
+
+.froben-linked:hover {
+  text-decoration: underline;
+}
+
+.froben-target-picker button {
+  margin: .15rem;
+}

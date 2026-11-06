@@ -11,13 +11,21 @@ nav_parent: /texts/
 
 # Latin Antiquities
 
-The Latin _Antiquities_ presented here is based on Bamberg Msc.Class.78. The complete text, including the Proem and twenty books, was published by the project in 2019 and revised in 2026.
+The project’s edition of the Latin _Antiquities_ is based on Bamberg Msc.Class.78. The complete text, including the Proem and twenty books, was published by the project in 2019 and revised in 2026.
 
 ## The project’s edition
 
 The text was prepared by R.M. Pollard, J. Timmermann, J. di Gregorio, M. Laprade and J.-F. Aubé-Pronce. The reader brings together the Latin, the Greek text and English translations, with Niese references and manuscript divisions.
 
 [Read the Antiquities]({{site.baseurl}}/antiquities/) · [View the manuscript catalogue]({{site.baseurl}}/manuscripts/).
+
+## Froben 1524
+
+The Froben edition covers the Proem and all twenty books. Its pane follows the Antiquities passage selection and can also display Froben’s own printed divisions and pages.
+
+The scan links open the digitised copy held by Universitätsbibliothek Basel, UBH FQ I 5.
+
+[Read Froben alongside Bamberg]({{site.baseurl}}/antiquities/?book=preface&froben=1) · [View the Basel facsimile](https://doi.org/10.3931/e-rara-100841).
 
 ## Editions and manuscript source
 
