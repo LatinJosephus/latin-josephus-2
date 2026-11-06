@@ -13,6 +13,7 @@ Notes on the editions, translations, manuscript annotations and textual correspo
 ## Latin texts
 
 - [*Antiquitates Judaicae* — Bamberg Msc.Class.78]({{site.baseurl}}/texts/latin-antiquities/) (s. IX, n. Italy?).
+- [*Antiquitates Judaicae* — Johann Froben (Basel, 1524)]({{site.baseurl}}/texts/froben-1524/).
 - [*Bellum Judaicum* — E. Cardwell (Oxford, 1837)]({{site.baseurl}}/texts/latin-bellum-judaicum/).
 - [*Contra Apionem* — K. Boysen (Vienna, 1898)]({{site.baseurl}}/texts/latin-contra-apionem/).
 - [*De excidio Hierosolymitano* — V. Ussani (Vienna, 1932)]({{site.baseurl}}/texts/latin-deh/).
@@ -36,13 +37,17 @@ Some texts were transcribed for this project; others draw on existing digital ed
 
 - **Bamberg _Antiquities_.** The manuscript was transcribed by human readers in 2013–2019. Books I–VIII were corrected by human editors; further correction followed in 2026 with AI assistance.
 
+- **Froben’s _Antiquities_ (1524).** The transcription is based on the [digitised Basel copy](https://www.e-rara.ch/bau_1/content/titleinfo/27897140) (UBH FQ I 5). The Proem and all twenty books can be read alongside the Bamberg text or browsed by Froben’s printed divisions and pages.
+
 - **Cardwell’s _Bellum Judaicum_.** The electronic text was made in 2017 by OCR from three different scans of the printed edition. It was corrected with AI assistance in 2026. [Google Books: volume II](https://books.google.ca/books?id=zoENAAAAQAAJ&printsec=frontcover).
 
 - **Boysen’s _Contra Apionem_.** The starting point was the [Open Greek and Latin](https://github.com/OpenGreekAndLatin/csel-dev) digital transcription of Boysen’s 1898 edition. This was corrected and aligned for the site. [Printed edition: Internet Archive](https://archive.org/details/flaviilosephiope37joseuoft).
 
 - **Ussani’s _De excidio Hierosolymitano_.** The electronic text is based on the digilibLT transcription of Ussani’s 1932 edition, with corrections made for this project. [Printed edition: Google Books](https://books.google.com/books?id=RWcwAAAAYAAJ&printsec=frontcover).
 
-- **Whiston.** The English text comes largely from the Perseus Digital Library’s electronic transcription. It has been aligned with the Latin and Greek for use in the readers. [A later printing (1856): Internet Archive](https://archive.org/details/worksofflaviusj00joseuoft).
+- **Niese’s Greek edition.** Benedict Niese’s _Flavii Iosephi opera_ (Berlin: Weidmann) supplies the Greek texts and section numbering for the _Antiquities_, _Jewish War_ and _Against Apion_. The digital texts come from the [Perseus Digital Library](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0145). [Volumes and scans]({{site.baseurl}}/about/#greek-editions-of-josephus).
+
+- **Whiston.** The English text comes largely from the electronic transcription at the [Perseus Digital Library](https://beta.perseus.tufts.edu/urn:cts:greekLit:tlg0526.tlg001.perseus-eng2/). It has been aligned with the Latin and Greek for use in the readers. [1856 printing used by Perseus (Internet Archive)](https://archive.org/details/worksofflaviusj00joseuoft).
 
 - **Lodge.** The text comes from [EEBO-TCP’s transcription of the 1602 edition](https://quod.lib.umich.edu/e/eebo/A04680.0001.001/1:1?rgn=div1;view=toc), released under CC0. Lodge’s spelling and marginal notes are retained.
 
@@ -50,7 +55,7 @@ Some texts were transcribed for this project; others draw on existing digital ed
 
 - **Millet and Lauro.** Google Books scans of the French edition of [1556](https://books.google.com/books?id=DedoAAAAcAAJ&printsec=frontcover) and the Italian edition of [1544](https://books.google.com/books?id=Ozkwtn9R1pMC&printsec=frontcover) were transcribed with Transkribus. The resulting texts underwent human-guided AI audits against the scans.
 
-Niese’s edition supplies the Greek comparison texts and the section references used for the three works of Josephus. The DEH texts and translations are brought together using Ussani’s book, chapter and paragraph divisions.
+The DEH texts and translations are brought together using Ussani’s book, chapter and paragraph divisions.
 
 ### Manuscript annotation sources
 
