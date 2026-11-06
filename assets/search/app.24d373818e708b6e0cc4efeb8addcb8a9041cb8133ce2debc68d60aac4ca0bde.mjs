@@ -1,6 +1,6 @@
-import {createCollection} from './collection.5a72274be28fd43cd43c7592c3d9337d48e284cdd4d0cd9e4add7cb536f1711f.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.f054615039fbe531bc699488a0cda58f7dc2085186a38a9cf7111243218de6bf.mjs';
-import {buildConcordance,exportConcordance} from './concordance.41605d261985ec214c0ffd38906f480c1188cecbded740aba8d02cedd1661e46.mjs';
+import {createCollection} from './collection.2d2a0730290a69755de01e456a8f19910c7b3423bbc67f319e5494835c957b8d.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.95daf5f46901378438e1e62fb14a4682471f19de554dd626c517e9c0853c8977.mjs';
+import {buildConcordance,exportConcordance} from './concordance.d53186b08bbb5b50e6c13c0033dc0679172da54b2082480fc3ba20b7245af292.mjs';
 import {createEngine} from './engine.a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89.mjs';
 
 const root=document.getElementById('lj-search');
@@ -34,6 +34,7 @@ function updateScopeHint(){
     :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
   if(apion)els.scopeHint.textContent+=' In Boysen Latin Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
   if(collections.some(collection=>collection.id==='antiquities-latin-bamberg78'))els.scopeHint.textContent+=' The Bamberg Latin Antiquities includes the Proem with Book I. Phrases stop at marked gaps, empty source intervals, the documented Book IX lacuna, the delimited interruptions in XVI and XX, and the Proem’s end. Split portions of the same Niese section share Boolean scope; exact phrases follow physical source order. The two labelled Bellum insertions in Book XI are separate citation units.';
+  if(collections.some(collection=>collection.id==='antiquities-latin-froben1524'))els.scopeHint.textContent+=' Froben results use printed pages. Whole-book phrases may cross pages, but stop at the end of the Proem.';
   if(collections.some(collection=>collection.id==='antiquities-english-whiston'))els.scopeHint.textContent+=' Whiston English Antiquities phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent Niese sections in whole-book scope, but stay within one book and stop at the Proem’s end. Headings, printed citation labels and footnotes are excluded.';
   if(collections.some(collection=>collection.id==='bellum-english-whiston'))els.scopeHint.textContent+=' Whiston English Bellum includes all seven books. Its Book I preface is part of the continuous book. Supplied text in VII.208–209 remains searchable and is shown in brackets; it does not interrupt exact phrases.';
   if(collections.some(collection=>collection.id==='contra-apionem-english-whiston'))els.scopeHint.textContent+=' Whiston English Contra Apionem includes both books. Whiston’s internal division markers do not interrupt phrases. Whole-book phrases may cross adjacent Niese sections, but remain within one book and edition.';
@@ -62,7 +63,7 @@ function populateControls(){
   $('collection-description').textContent=catalog.collections.map(c=>`${c.label} · ${c.language} · ${c.edition}`).join(' / ');
   const coverage=catalog.collections.map(collection=>{
     const count=catalog.books.filter(book=>book.collectionId===collection.id).reduce((sum,book)=>sum+(book.citationUnits??book.sections),0);
-    return `${collection.citationPrefix} (${collection.language}; ${collection.edition}): ${count.toLocaleString()} ${collection.work==='antiquities'?'citation units':citationUnitLabels([collection]).plural}`;
+    return `${collection.citationPrefix} (${collection.language}; ${collection.edition}): ${count.toLocaleString()} ${collection.work==='antiquities'&&citationScheme(collection)==='niese'?'citation units':citationUnitLabels([collection]).plural}`;
   }).join(' · ');
   $('coverage').textContent=`${catalog.books.length} book editions · ${coverage} · ${catalog.totals.tokens.toLocaleString()} words`;
   const included=catalog.collections.map(c=>`${c.label}, ${c.language}, ${c.edition} (${c.books.length} ${c.books.length===1?'book':'books'})`).join('; ');
@@ -130,7 +131,8 @@ function makeCard(card){
   for(const r of card.records)article.append(makeExcerpt(r,card.ranges[r.id],false,card.records.length>1));
   appendGapNote(article,card.records);
   if(card.records.some(r=>excerptWindows(r.text,card.ranges[r.id]||[]).some(w=>w.start>0||w.end<r.text.length))){
-    const unit=citationScheme(first)==='chapter-paragraph'?'citation unit':'section';
+    const unit=first.collectionId==='antiquities-latin-froben1524'?'page'
+      :citationScheme(first)==='chapter-paragraph'?'citation unit':'section';
     const details=node('details');details.append(node('summary',`Read the complete ${unit}${card.records.length>1?'s':''}`));
     for(const r of card.records)details.append(makeExcerpt(r,card.ranges[r.id],true,card.records.length>1));article.append(details);
   }
@@ -257,7 +259,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.ce22be91c90f791324e14b2c5c44d19a01812cbff02893ce2808e03618518574.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.186fe2f8250e6659ad2c42054ee9f2a33516211a73b6d95742fcaba98533fab2.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');

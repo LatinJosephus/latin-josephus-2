@@ -794,7 +794,9 @@ export function validateSearchSources(root, {qa = true} = {}) {
     equal(report.status, 'PASS', `Extraction did not pass: ${manifest.id}`);
     equal(report.corpus.sha256, collection.corpusSHA256, 'Extraction report describes a different corpus');
     equal(report.counts.books, manifest.books.length, 'Extraction book count differs from collection');
-    equal(report.coverage.paragraphsExactlyRestored, report.counts.narrativeParagraphs ?? report.counts.numberedParagraphs, 'Incomplete paragraph restoration');
+    const frobenPages = manifest.id === 'antiquities-latin-froben1524';
+    if (frobenPages) equal(report.coverage.pagesExactlyRestored, combined.length, 'Incomplete Froben page restoration');
+    else equal(report.coverage.paragraphsExactlyRestored, report.counts.narrativeParagraphs ?? report.counts.numberedParagraphs, 'Incomplete paragraph restoration');
     for (const key of ['wordSequencePreserved', 'nonWhitespaceContentPreserved', 'globalIdsUnique', 'globalOrderIsConsecutive'])
       equal(report.coverage[key], true, `Extraction coverage failed: ${key}`);
     if (manifest.id === 'antiquities-latin-bamberg78') {
@@ -842,8 +844,9 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(bookReport.additionalSources || [], extracted.additionalSources || [], 'Combined and per-book additional source fingerprints differ');
       equal((extracted.additionalSources || []).map(source => source.path), spec.additionalSources || [], 'Additional XML differs from the collection manifest');
       for (const source of extractedSources(extracted)) sources.push(checkIndexedXML(root, source, `${id} XML`));
-      equal(bookReport.coverage.paragraphsExactlyRestored, bookReport.counts.narrativeParagraphs ?? bookReport.counts.numberedParagraphs, 'Book has incomplete paragraph restoration');
-      if (manifest.id !== 'antiquities-latin-bamberg78') for (const [a, b] of [['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'],
+      if (frobenPages) equal(bookReport.coverage.pagesExactlyRestored, corpus.length, 'Book has incomplete Froben page restoration');
+      else equal(bookReport.coverage.paragraphsExactlyRestored, bookReport.counts.narrativeParagraphs ?? bookReport.counts.numberedParagraphs, 'Book has incomplete paragraph restoration');
+      if (!frobenPages && manifest.id !== 'antiquities-latin-bamberg78') for (const [a, b] of [['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'],
         ['sourceWordSequenceSha256', 'indexedWordSequenceSha256'],
         ['sourceNonWhitespaceContentSha256', 'indexedNonWhitespaceContentSha256']])
         equal(bookReport.coverage[a], bookReport.coverage[b], `Source coverage differs: ${id}.${a}`);
@@ -926,6 +929,10 @@ export function validateQaReport(root, {catalog, collection, configured, report}
   equal(qa.source.tokens, collection.totals.tokens, 'Independent QA token total differs');
   const expected = {corpus: collection.corpusPath, catalog: 'catalog.json', engine: catalog.source.enginePath,
     collection: 'collection.mjs', verifier: adapter.verifier};
+  if (manifest.id === 'antiquities-latin-froben1524') Object.assign(expected, {
+    concordance: 'concordance.mjs', uiUtils: 'ui-utils.mjs',
+    extractor: adapter.extractor, manifest: configured.manifestPath,
+  });
   if (manifest.id === 'contra-apionem-latin-boysen') expected.witness = 'tests/ca-source-witness.py';
   if (manifest.id === 'antiquities-latin-bamberg78') expected.witness = 'tests/antiquities-source-witness.py';
   if (manifest.id === 'antiquities-english-whiston') Object.assign(expected, {

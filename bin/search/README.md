@@ -8,7 +8,13 @@ not change the main-text coverage below. See
 [the annotation-search implementation and verification notes](../../_docs/annotation-display/ANNOTATION-SEARCH.md).
 
 This directory contains the source and verification tools for the main site's
-`/search/` page. Current coverage comprises four Latin, four English and one French collection.
+`/search/` page. The edition selector includes Froben’s 1524 Latin Antiquities, from the
+Proem through Book XX. Froben searches use the running text from the published
+reader transcription, grouped by printed page. Results open that page in the
+Froben pane. Explicit line continuations are rejoined, with words that cross a
+page break counted on the page where they begin. Printed headings and scan
+apparatus are excluded. Whole-book phrases can cross page boundaries and stop
+at the end of the Proem.
 
 **Millet 1556 French De excidio, all five books and translated Prologue:** 560
 physical French passages, 161,125 word tokens, with metadata linking to all
@@ -24,8 +30,10 @@ physical passages. Whole-book exact phrases follow French order across ordinary
 line/page/citation seams, stopping at the Prologue's end and between books.
 Printed paratext and marginalia remain outside this main-text layer.
 
-The combined catalogue has **73 book editions, 25,569 physical records and
-1,508,349 word tokens**. The earlier eight collections below retain their data.
+The combined catalogue has **98 book editions, 26,732 physical records and
+1,869,485 word tokens**, including **605 book-specific page records and
+255,380 word tokens** for Froben. The Italian Lauro collection adds five book
+editions, 558 physical records and 105,756 word tokens.
 French CSV exports add separate physical-source-reference, DEH-correspondence
 and source-version columns; complete-result exports preserve original spelling
 and exact source slices, including ¬ and physical line separators.
@@ -129,7 +137,8 @@ end of the Prologue into the Book I narrative. This is a composition boundary,
 not an inferred lacuna. Whole-book Boolean conditions can still relate
 Prologue and narrative hits within Book I.
 
-Both indexed Antiquities editions separate their Proem from the narrative:
+The indexed Antiquities editions separate their Proem from the narrative.
+For Bamberg and Whiston,
 I.1–26 are in the Proem source, and I.27 begins the narrative. In the Bamberg
 Latin, literal dotted
 interruptions, ellipses and the erased-dot spans in X.154 conservatively block

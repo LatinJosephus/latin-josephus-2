@@ -5,7 +5,7 @@
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
 import { parseQuery, tokenizeRecord, phraseBreakOffsets } from "./engine.a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89.mjs";
-import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote, spellingEquivalence } from "./ui-utils.f054615039fbe531bc699488a0cda58f7dc2085186a38a9cf7111243218de6bf.mjs";
+import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote, spellingEquivalence } from "./ui-utils.95daf5f46901378438e1e62fb14a4682471f19de554dd626c517e9c0853c8977.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;
 const IDENTITY_FIELDS = ["collectionId", "work", "book", "language", "edition"];

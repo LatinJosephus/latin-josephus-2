@@ -96,6 +96,20 @@ export function citationFor(records) {
 export function readerURL(record,baseURL,{section=true}={}) {
   const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/','contra-apionem':'contra-apionem/'}[record.work])||'bellum-judaicum/';
   const url=new URL(readerPath,baseURL);
+  if(citationScheme(record)==='source-span'&&record.collectionId==='antiquities-latin-froben1524'){
+    if(record.work!=='antiquities'||record.language!=='Latin'||record.edition!=='Froben 1524'
+      ||(section&&(!Number.isInteger(record.sourceImage)||record.sourceImage<1))){
+      throw new TypeError('Invalid Froben printed-page destination.');
+    }
+    url.searchParams.set('book',section&&record.division==='proem'?'preface':record.book??record.number);
+    url.searchParams.set('froben','1');
+    url.searchParams.set('froben-view',section?'page':'book');
+    if(section){
+      url.searchParams.set('froben-location',`froben-image-${record.sourceImage}`);
+      url.searchParams.set('froben-pages','1');
+    }
+    return url.href;
+  }
   if(citationScheme(record)==='source-span'){
     const italian=record.language==='Italian';
     if((italian ? record.readerLink?.params?.italian!=='lauro1544' : record.language!=='French'||record.readerLink?.params?.french!=='millet1556')||record.work!=='deh')throw new TypeError('Invalid physical witness destination.');

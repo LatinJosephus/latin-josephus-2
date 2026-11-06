@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "book": 1,
+  "source": {
+    "path": "assets/data/antiquities-froben1524/book-01.json",
+    "sha256": "609d256e6508c2c647a5b57e79d8ea26d90d21b5a398d9f735de42751879d630",
+    "bytes": 254825
+  },
+  "additionalSources": [
+    {
+      "path": "assets/data/antiquities-froben1524/preface.json",
+      "sha256": "a82dfb15b749749e8e66d369c3d2f4c9486f99654e38666122cd1b9a7325afda",
+      "bytes": 22381
+    }
+  ],
+  "corpus": {
+    "path": "data/antiquities-latin-froben1524/book-01.corpus.json",
+    "sha256": "950ad4406eca55dbdfc1ec4f532d405e81d8096bd6efce39d5acfc62fad3253f",
+    "bytes": 108749,
+    "records": 32
+  },
+  "counts": {
+    "pages": 32,
+    "runningWordTokens": 13380
+  },
+  "coverage": {
+    "pagesExactlyRestored": 32,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true,
+    "allSectionTextsNonempty": true,
+    "missingSections": [],
+    "unexpectedSections": [],
+    "duplicateSections": []
+  }
+}

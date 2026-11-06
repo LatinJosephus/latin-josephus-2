@@ -31,7 +31,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [78, 26127, 1614105]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [98, 26732, 1869485]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
@@ -40,6 +40,8 @@ test('search publication preserves current inputs and refuses stale or incomplet
     assert.deepEqual([ca.totals.books, ca.totals.sections, ca.totals.tokens], [2, 616, 21018]);
     const antiquities = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-bamberg78');
     assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [20, 7283, 265023]);
+    const froben = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-froben1524');
+    assert.deepEqual([froben.totals.books, froben.totals.sections, froben.totals.tokens], [20, 605, 255380]);
     const whiston = baseline.catalog.collections.find(collection => collection.id === 'antiquities-english-whiston');
     assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [20, 7376, 470938]);
     const whistonBellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-english-whiston');
@@ -52,7 +54,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
     assert.deepEqual([millet.totals.books, millet.totals.sections, millet.totals.tokens], [5, 560, 161125]);
     const lauro = baseline.catalog.collections.find(collection => collection.id === 'deh-italian-lauro1544');
       assert.deepEqual([lauro.totals.books, lauro.totals.sections, lauro.totals.tokens], [5, 558, 105756]);
-      assert.equal(result.sourceXML.length, 90);
+      assert.equal(result.sourceXML.length, 111);
     assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 35);
     assert.equal(result.assets, baseline.artifacts.length + 1);
     assert.equal(baseline.manifest.browserRelease.launcher, 'launch-v1.mjs');
@@ -85,6 +87,13 @@ test('search publication preserves current inputs and refuses stale or incomplet
       'assets/xml/antiquities/Latin/preface.xml']) {
       changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
         () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*XML/u));
+    }
+  });
+
+  await t.test('changed Froben reader data invalidate the corresponding search export', () => {
+    for (const name of ['preface', 'book-20']) {
+      changed('assets/data/antiquities-froben1524/' + name + '.json', bytes => Buffer.concat([bytes, Buffer.from(' ')]),
+        () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*antiquities-froben1524/u));
     }
   });
 

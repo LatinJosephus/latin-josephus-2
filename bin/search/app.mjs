@@ -34,6 +34,7 @@ function updateScopeHint(){
     :`All parts of the expression must match within the same ${labels.singular}. Choose whole-book scope to include phrases that cross citation-unit boundaries.${deh?' De excidio uses the reader’s chapter and paragraph citations.':''}`;
   if(apion)els.scopeHint.textContent+=' In Boysen Latin Contra Apionem, phrases do not cross the source’s asterisk-marked interruptions; Boolean conditions can relate words on either side.';
   if(collections.some(collection=>collection.id==='antiquities-latin-bamberg78'))els.scopeHint.textContent+=' The Bamberg Latin Antiquities includes the Proem with Book I. Phrases stop at marked gaps, empty source intervals, the documented Book IX lacuna, the delimited interruptions in XVI and XX, and the Proem’s end. Split portions of the same Niese section share Boolean scope; exact phrases follow physical source order. The two labelled Bellum insertions in Book XI are separate citation units.';
+  if(collections.some(collection=>collection.id==='antiquities-latin-froben1524'))els.scopeHint.textContent+=' Froben results use printed pages. Whole-book phrases may cross pages, but stop at the end of the Proem.';
   if(collections.some(collection=>collection.id==='antiquities-english-whiston'))els.scopeHint.textContent+=' Whiston English Antiquities phrases follow physical source order, including Book XI’s displaced sequence. They may cross physically adjacent Niese sections in whole-book scope, but stay within one book and stop at the Proem’s end. Headings, printed citation labels and footnotes are excluded.';
   if(collections.some(collection=>collection.id==='bellum-english-whiston'))els.scopeHint.textContent+=' Whiston English Bellum includes all seven books. Its Book I preface is part of the continuous book. Supplied text in VII.208–209 remains searchable and is shown in brackets; it does not interrupt exact phrases.';
   if(collections.some(collection=>collection.id==='contra-apionem-english-whiston'))els.scopeHint.textContent+=' Whiston English Contra Apionem includes both books. Whiston’s internal division markers do not interrupt phrases. Whole-book phrases may cross adjacent Niese sections, but remain within one book and edition.';
@@ -62,7 +63,7 @@ function populateControls(){
   $('collection-description').textContent=catalog.collections.map(c=>`${c.label} · ${c.language} · ${c.edition}`).join(' / ');
   const coverage=catalog.collections.map(collection=>{
     const count=catalog.books.filter(book=>book.collectionId===collection.id).reduce((sum,book)=>sum+(book.citationUnits??book.sections),0);
-    return `${collection.citationPrefix} (${collection.language}; ${collection.edition}): ${count.toLocaleString()} ${collection.work==='antiquities'?'citation units':citationUnitLabels([collection]).plural}`;
+    return `${collection.citationPrefix} (${collection.language}; ${collection.edition}): ${count.toLocaleString()} ${collection.work==='antiquities'&&citationScheme(collection)==='niese'?'citation units':citationUnitLabels([collection]).plural}`;
   }).join(' · ');
   $('coverage').textContent=`${catalog.books.length} book editions · ${coverage} · ${catalog.totals.tokens.toLocaleString()} words`;
   const included=catalog.collections.map(c=>`${c.label}, ${c.language}, ${c.edition} (${c.books.length} ${c.books.length===1?'book':'books'})`).join('; ');
@@ -130,7 +131,8 @@ function makeCard(card){
   for(const r of card.records)article.append(makeExcerpt(r,card.ranges[r.id],false,card.records.length>1));
   appendGapNote(article,card.records);
   if(card.records.some(r=>excerptWindows(r.text,card.ranges[r.id]||[]).some(w=>w.start>0||w.end<r.text.length))){
-    const unit=citationScheme(first)==='chapter-paragraph'?'citation unit':'section';
+    const unit=first.collectionId==='antiquities-latin-froben1524'?'page'
+      :citationScheme(first)==='chapter-paragraph'?'citation unit':'section';
     const details=node('details');details.append(node('summary',`Read the complete ${unit}${card.records.length>1?'s':''}`));
     for(const r of card.records)details.append(makeExcerpt(r,card.ranges[r.id],true,card.records.length>1));article.append(details);
   }
