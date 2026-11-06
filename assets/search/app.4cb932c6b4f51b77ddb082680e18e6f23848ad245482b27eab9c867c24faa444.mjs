@@ -316,6 +316,7 @@ async function search({writeUrl=true,fromLocation=false,example=null}={}){
   }
 }
 async function annotationSearch() {
+  const unidentifiedWitness = {value: 'unidentified', label: 'Unidentified manuscript'};
   const works = {antiquities: 'Antiquities', bellum: 'Bellum Judaicum', deh: 'De excidio'};
   const categoryNames = {textual: 'Textual annotation', symbolic: 'Symbolic annotation', untranscribable: 'Cannot be transcribed', unresolved: 'Unresolved notation'};
   const params = new URLSearchParams(location.search);
@@ -346,10 +347,14 @@ async function annotationSearch() {
     const books = [...new Map(available.map(record => [`${record.work}:${record.book}`, record])).values()];
     els.book.replaceChildren(option('All books', 'all'), ...books.map(record => option(`${works[record.work]} · Book ${romanBook(record.book)}${record.book === 1 && record.work === 'deh' ? ' (including Prologue)' : ''}`, `${record.work}:${record.book}`)));
     els.book.value = books.some(record => `${record.work}:${record.book}` === selected) ? selected : 'all';
-    const witnesses = [...new Set(available.map(record => record.manuscript))].sort((a, b) => a.localeCompare(b));
+    const names = [...new Set(available.map(record => record.manuscript))].filter(Boolean).sort((a, b) => a.localeCompare(b));
+    const choices = [option('All manuscripts', 'all'), ...names.map(name => option(name, name))];
+    if (available.some(record => !record.manuscript)) {
+      choices.push(option(unidentifiedWitness.label, unidentifiedWitness.value));
+    }
     const previous = manuscript.value;
-    manuscript.replaceChildren(option('All manuscripts', 'all'), ...witnesses.map(name => option(name, name)));
-    manuscript.value = witnesses.includes(previous) ? previous : 'all';
+    manuscript.replaceChildren(...choices);
+    manuscript.value = choices.some(choice => choice.value === previous) ? previous : 'all';
   }
   function resultURL(record) {
     // Unresolved source associations retain a link to the source book; no location is inferred.
@@ -387,7 +392,7 @@ async function annotationSearch() {
       }
       if (record.readingStatus) text.append(node('span', ` (${record.readingStatus})`, 'annotation-search-editorial'));
       if (text.textContent) article.append(text);
-      article.append(node('p', `Manuscript: ${record.manuscript}${record.folio ? ` · ${record.pagination === 'page' ? 'p.' : 'fol.'} ${record.folio}` : ''}${record.hand ? ` · Hand ${record.hand}` : ''}`, 'result-meta'));
+      article.append(node('p', `Manuscript: ${record.manuscript || unidentifiedWitness.label}${record.folio ? ` · ${record.pagination === 'page' ? 'p.' : 'fol.'} ${record.folio}` : ''}${record.hand ? ` · Hand ${record.hand}` : ''}`, 'result-meta'));
       if (record.abbreviated) article.append(node('p', 'Transcription abbreviated', 'result-meta'));
       if (record.verificationStatus !== 'verified') article.append(node('p', 'The source association has no verified textual location.', 'result-meta'));
       article.append(link(record.passageTarget ? 'View annotation in reader' : 'View source book', resultURL(record)));
@@ -402,7 +407,7 @@ async function annotationSearch() {
     els.downloadStatus.textContent = ''; els.region.setAttribute('aria-busy', 'true');
     try {
       if (!engine) {
-        const response = await fetch(new URL('./annotations.7c81c9cf1df36fd6348cf5939bba2c7b10bd881a7dffe27a49645e16ce6c1f25.bundle.json', import.meta.url), {cache: 'no-cache'});
+        const response = await fetch(new URL('./annotations.ad8d4e7a4f98b09d47017efb711b492aadac5388a3b3c5adf5a0af76c29ccdda.bundle.json', import.meta.url), {cache: 'no-cache'});
         if (!response.ok) throw new Error(`The annotation index could not be loaded (HTTP ${response.status}). Try Search again.`);
         const bundle = await response.json();
         engine = createEngine(bundle, globalThis.lunr); records = engine.records;
@@ -425,7 +430,7 @@ async function annotationSearch() {
         && (state.work === 'all' || record.work === state.work)
         && (state.book === 'all' || `${record.work}:${record.book}` === state.book)
         && (state.type === 'all' || record.category === state.type)
-        && (state.manuscript === 'all' || record.manuscript === state.manuscript))
+        && (state.manuscript === 'all' || (record.manuscript || unidentifiedWitness.value) === state.manuscript))
         .map(record => ({record, ranges: groups.get(record.id).hits.flatMap(hit => hit.spans)}));
       displayed = 0; nextPage();
       if (!matches.length) els.results.append(node('p', 'No annotations match this query and these filters.'));

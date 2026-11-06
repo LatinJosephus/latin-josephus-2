@@ -57,6 +57,10 @@ export function annotationRecords(root) {
     const interpreted = api.interpretManuscriptAnnotation(record);
     const citation = api.resolveAlignmentCitation(record.work, record.locationTargetId || record.alignmentUnitId, {includeWork: true});
     const manuscript = api.resolveManuscript(record.siglum, record.witnessLabel || record.siglum);
+    // Retain unresolved passage pointers as source sigla. A displayed manuscript
+    // name must come from either a supplied witness label or the registry.
+    const manuscriptName = manuscript.verificationStatus === 'unresolved' && !record.witnessLabel
+      ? '' : manuscript.displayName;
     for (const part of interpreted.parts) {
       const provisional = part.provisionalReading?.en;
       const segments = provisional || part.displayText
@@ -86,7 +90,7 @@ export function annotationRecords(root) {
         citation: citation.publicCitation, verificationStatus: citation.verificationStatus,
         passageTarget: citation.navigationTarget, alignmentUnitId: record.alignmentUnitId,
         locationTargetId: record.locationTargetId || record.alignmentUnitId,
-        category: part.category, manuscript: manuscript.displayName, siglum: record.siglum,
+        category: part.category, manuscript: manuscriptName, siglum: record.siglum,
         folio: part.folio?.reference || null, pagination: part.pagination || 'folio', hand: part.hand,
         abbreviated: part.abbreviated, readingStatus: provisional ? 'provisional reading' : part.displayText ? 'reviewed reading' : null,
         originalNotation: interpreted.originalNotation, originalFragment: part.notation,

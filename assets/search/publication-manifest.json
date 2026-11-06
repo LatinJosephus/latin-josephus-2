@@ -774,8 +774,8 @@
     },
     {
       "path": "bin/search/app.mjs",
-      "sha256": "dc8fa130ac8fc1b63c8474773e025b7d52e71c6c658071073f3009004b57b455",
-      "bytes": 46966
+      "sha256": "2d79eeb9d12b598bf4b8fa6f91d73bfa4af92e75da1d3a3417ec12416b3fd822",
+      "bytes": 47322
     },
     {
       "path": "bin/search/browser-release.mjs",
@@ -784,8 +784,8 @@
     },
     {
       "path": "bin/search/build-annotations.mjs",
-      "sha256": "47f0beabacf2141a536a6aa3a17cdac7ca4710b7b4c20d3660d10d5551963083",
-      "bytes": 7770
+      "sha256": "2e96f832e76b97e952e8a072cc85afebe977c1b1bf760ba07163d867102c6b72",
+      "bytes": 8055
     },
     {
       "path": "bin/search/build-index.mjs",
@@ -979,8 +979,8 @@
     },
     {
       "path": "bin/search/tests/annotations.test.mjs",
-      "sha256": "8d60e32f5671eb3d900530299bde2e3c846590b23b540de25dae254cbf059c49",
-      "bytes": 6652
+      "sha256": "62798d1f6c2b6f896434bd1d244909c816ae4cbc0b0e12a0291f5db8ef1295ca",
+      "bytes": 7353
     },
     {
       "path": "bin/search/tests/antiquities-corpus-qa.mjs",
@@ -1713,7 +1713,7 @@
     "schemaVersion": 1,
     "generatedBy": "bin/search/browser-release.mjs",
     "launcher": "launch-v1.mjs",
-    "entry": "app.24d373818e708b6e0cc4efeb8addcb8a9041cb8133ce2debc68d60aac4ca0bde.mjs",
+    "entry": "app.4cb932c6b4f51b77ddb082680e18e6f23848ad245482b27eab9c867c24faa444.mjs",
     "modules": {
       "engine.mjs": {
         "path": "engine.a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89.mjs",
@@ -1736,9 +1736,9 @@
         "bytes": 35469
       },
       "app.mjs": {
-        "path": "app.24d373818e708b6e0cc4efeb8addcb8a9041cb8133ce2debc68d60aac4ca0bde.mjs",
-        "sha256": "24d373818e708b6e0cc4efeb8addcb8a9041cb8133ce2debc68d60aac4ca0bde",
-        "bytes": 47356
+        "path": "app.4cb932c6b4f51b77ddb082680e18e6f23848ad245482b27eab9c867c24faa444.mjs",
+        "sha256": "4cb932c6b4f51b77ddb082680e18e6f23848ad245482b27eab9c867c24faa444",
+        "bytes": 47712
       }
     },
     "catalog": {
@@ -1759,35 +1759,35 @@
   },
   "artifacts": [
     {
-      "path": "annotations.7c81c9cf1df36fd6348cf5939bba2c7b10bd881a7dffe27a49645e16ce6c1f25.bundle.json",
+      "path": "annotations.ad8d4e7a4f98b09d47017efb711b492aadac5388a3b3c5adf5a0af76c29ccdda.bundle.json",
       "source": "bin/search/annotations.bundle.json",
-      "sourceSHA256": "7c81c9cf1df36fd6348cf5939bba2c7b10bd881a7dffe27a49645e16ce6c1f25",
-      "sha256": "7c81c9cf1df36fd6348cf5939bba2c7b10bd881a7dffe27a49645e16ce6c1f25",
-      "bytes": 15156013,
+      "sourceSHA256": "ad8d4e7a4f98b09d47017efb711b492aadac5388a3b3c5adf5a0af76c29ccdda",
+      "sha256": "ad8d4e7a4f98b09d47017efb711b492aadac5388a3b3c5adf5a0af76c29ccdda",
+      "bytes": 15155913,
       "role": "browser-annotations",
       "generated": true
     },
     {
-      "path": "app.24d373818e708b6e0cc4efeb8addcb8a9041cb8133ce2debc68d60aac4ca0bde.mjs",
+      "path": "app.4cb932c6b4f51b77ddb082680e18e6f23848ad245482b27eab9c867c24faa444.mjs",
       "source": "bin/search/app.mjs",
-      "sourceSHA256": "dc8fa130ac8fc1b63c8474773e025b7d52e71c6c658071073f3009004b57b455",
-      "sha256": "24d373818e708b6e0cc4efeb8addcb8a9041cb8133ce2debc68d60aac4ca0bde",
-      "bytes": 47356,
+      "sourceSHA256": "2d79eeb9d12b598bf4b8fa6f91d73bfa4af92e75da1d3a3417ec12416b3fd822",
+      "sha256": "4cb932c6b4f51b77ddb082680e18e6f23848ad245482b27eab9c867c24faa444",
+      "bytes": 47712,
       "role": "browser-module",
       "generated": true
     },
     {
       "path": "app.mjs",
       "source": "bin/search/app.mjs",
-      "sha256": "dc8fa130ac8fc1b63c8474773e025b7d52e71c6c658071073f3009004b57b455",
-      "bytes": 46966,
+      "sha256": "2d79eeb9d12b598bf4b8fa6f91d73bfa4af92e75da1d3a3417ec12416b3fd822",
+      "bytes": 47322,
       "role": "runtime"
     },
     {
       "path": "browser-release.json",
       "source": "bin/search/browser-release.mjs",
       "sourceSHA256": "eddd41533e9220661e6c626744ce4524c270217d999cf587815e8e0473963cb5",
-      "sha256": "ca8e92bae3eb4bca1ef868f5ada8ec12edeb3c49e72f4afef867ac5fffa1963d",
+      "sha256": "89d9eee02d305008f48a59ac6340a30f248cb6741e5ca9fa2025a0ec7b8dcb19",
       "bytes": 1993,
       "role": "browser-release",
       "generated": true
