@@ -1,0 +1,195 @@
+{
+  "status": "PASS",
+  "source": {
+    "books": 7,
+    "sections": 4001,
+    "tokens": 178349,
+    "bytes": 23622183
+  },
+  "assertions": 12053,
+  "totalQueries": 15,
+  "failedAssertions": 0,
+  "readerBaseline": {
+    "publicationInput": false
+  },
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/bellum-english-lodge1602/corpus.json",
+      "bytes": 2252442,
+      "sha256": "cfc697e13d1623e5b07a6f2a73cae81338dadeb7d6736c9c212340c97f592684"
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "bytes": 99759,
+      "sha256": "e7b6d3b5f30fa613c51f42306d4ab6a1dccbf7b8c7cd91ec491aa006d84dec70"
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "bytes": 28437,
+      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89"
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "bytes": 21317,
+      "sha256": "f927579378c89bf15479d935731c9084c3a10ae71f2b74a8a9c92ee22345b3b5"
+    },
+    "concordance": {
+      "path": "bin/search/concordance.mjs",
+      "bytes": 35339,
+      "sha256": "063cd27915a04eae1dc4c835c59b91a059f88b18122eac58e5b3b5144776c442"
+    },
+    "uiUtils": {
+      "path": "bin/search/ui-utils.mjs",
+      "bytes": 17956,
+      "sha256": "5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521"
+    },
+    "extractor": {
+      "path": "bin/search/extract-lodge.py",
+      "bytes": 8047,
+      "sha256": "7010835abdd7d540a76dccd429961e43c1f5ca3b7cf9d394be1cc0672923b628"
+    },
+    "manifest": {
+      "path": "bin/search/config/bellum-english-lodge1602.json",
+      "bytes": 2480,
+      "sha256": "a81711976c916434f095dd5a65d23e72ca08f85332ea82ad8b9c40bd8c26f4c8"
+    },
+    "witness": {
+      "path": "bin/search/tests/lodge-source-witness.py",
+      "bytes": 2323,
+      "sha256": "e50f69bd884d254134c9808215b4bfd8bbdeafddb72b9d5026ec456742647c6c"
+    },
+    "verifier": {
+      "path": "bin/search/tests/lodge-corpus-qa.mjs",
+      "bytes": 6117,
+      "sha256": "1c2d5f852663b91c5ac53f00707a7a8c4082842c5de1ea8af0df4bfc57f07033"
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-01.bundle.json",
+          "bytes": 5664845,
+          "sha256": "af8bf0212cc20d0e1ce9c8ae23a25401d63030e82774f0847182bcaaaf9d5922"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-01.corpus.json",
+          "bytes": 483050,
+          "sha256": "d4251e795f2d29bbbee5a7326d4d0a33bc7bcca975d9429c9ff92c862c160cc2"
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/Lodge1602/book-01.xml",
+          "bytes": 627990,
+          "sha256": "342ee56b5ecfbc92750e2a7e938222cd1eca14a60760bae80cce641a616f1119"
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-02.bundle.json",
+          "bytes": 4163244,
+          "sha256": "ee378a6838454f3d150f43b905d97670923cf2f63331ad463068a830a2a8f716"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-02.corpus.json",
+          "bytes": 385303,
+          "sha256": "72748270fea806f2ce4cce19667afcf67b014010c5bd904f6397395412460cf6"
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/Lodge1602/book-02.xml",
+          "bytes": 464116,
+          "sha256": "2fe2a6a1a16d64de610ea329145bdec6280031af7d4cc48926a64452087c3592"
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-03.bundle.json",
+          "bytes": 2623266,
+          "sha256": "15dc0eaa544ba2b59e76228f92897d5fc9e3b34c40d60658eec1a2e01b66e45f"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-03.corpus.json",
+          "bytes": 270114,
+          "sha256": "31358275a81372048e3af2591038b0e897dc9e77f87d242cd13bc06dd400a765"
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/Lodge1602/book-03.xml",
+          "bytes": 290131,
+          "sha256": "8bce0ac2b6c724ace9fd374317c0a3ddebdf69d9ef295e3a12ce374f2f3e482e"
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-04.bundle.json",
+          "bytes": 3487360,
+          "sha256": "0d9842a7e3379a9c361741b873fc739e7f8f42ec364ed60436c6fa8d89c93cdf"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-04.corpus.json",
+          "bytes": 347806,
+          "sha256": "538bd771046ee6a458e3bee384e4011e4da156789b6b84613c0ebdc1c0150e3b"
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/Lodge1602/book-04.xml",
+          "bytes": 359179,
+          "sha256": "84599af7ae85bbd5662bbd950a822420b3e48a2f88bebd527092050c7b99a32e"
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-05.bundle.json",
+          "bytes": 3232148,
+          "sha256": "041032767bed48772f6aeb4b28796709ede10bc616799a2b7e3dc6dd364e4e6f"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-05.corpus.json",
+          "bytes": 312583,
+          "sha256": "c200eb51ce126ab51d307a0fe9a4751f83952447544863debb623de8799e669c"
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/Lodge1602/book-05.xml",
+          "bytes": 320353,
+          "sha256": "cbee2a3014f2a3d4aef10c3f5ac790ac258df06a226310c35966f66254d22c2b"
+        }
+      },
+      {
+        "book": 6,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-06.bundle.json",
+          "bytes": 2269308,
+          "sha256": "ddb9a8ae8e0993780158ff8a8eb3753a6c95a64ca2436e15521855bf10b2efdb"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-06.corpus.json",
+          "bytes": 227050,
+          "sha256": "1476dee0f3c3578420024fe2428882fde5a4b2284e09878b4ced9f91db662079"
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/Lodge1602/book-06.xml",
+          "bytes": 246224,
+          "sha256": "d4034e9348d65a672e0218066992c7fae752c45dab89b30690fd243fb2f8f1b8"
+        }
+      },
+      {
+        "book": 7,
+        "bundle": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-07.bundle.json",
+          "bytes": 2182012,
+          "sha256": "045abdd1a47a21e9250b6dfef8fc533207afc7b8c27c796df161e5611727cdc2"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-english-lodge1602/book-07.corpus.json",
+          "bytes": 226554,
+          "sha256": "7555c53caf8706008ea56c8fb77599eca13878d73ffa7baf6cdfd1139bc5939a"
+        },
+        "source": {
+          "path": "assets/xml/bellum/English/Lodge1602/book-07.xml",
+          "bytes": 231593,
+          "sha256": "6ef51e6e46a59aad86a040caec54bc10bec1a34c7b4fc83c700a7edb01159af5"
+        }
+      }
+    ]
+  }
+}

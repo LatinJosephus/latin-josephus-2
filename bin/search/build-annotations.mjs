@@ -56,7 +56,7 @@ export function annotationRecords(root) {
   for (const record of source) {
     const interpreted = api.interpretManuscriptAnnotation(record);
     const citation = api.resolveAlignmentCitation(record.work, record.locationTargetId || record.alignmentUnitId, {includeWork: true});
-    const manuscript = api.resolveManuscript(record.siglum, record.witnessLabel || record.siglum);
+    const manuscript = api.resolveAnnotationManuscript(record);
     // Retain unresolved passage pointers as source sigla. A displayed manuscript
     // name must come from either a supplied witness label or the registry.
     const manuscriptName = manuscript.verificationStatus === 'unresolved' && !record.witnessLabel

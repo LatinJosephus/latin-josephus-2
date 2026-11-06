@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "source": {
+    "books": 2,
+    "sections": 616,
+    "tokens": 30688,
+    "bytes": 4534257
+  },
+  "assertions": 1862,
+  "totalQueries": 4,
+  "failedAssertions": 0,
+  "readerBaseline": {
+    "publicationInput": false
+  },
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/contra-apionem-english-lodge1602/corpus.json",
+      "bytes": 373411,
+      "sha256": "0afd4b4a0c8e150266f125995c8bd0aa13c2b88c1b748f7719dbcdb79212a274"
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "bytes": 99759,
+      "sha256": "e7b6d3b5f30fa613c51f42306d4ab6a1dccbf7b8c7cd91ec491aa006d84dec70"
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "bytes": 28437,
+      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89"
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "bytes": 21317,
+      "sha256": "f927579378c89bf15479d935731c9084c3a10ae71f2b74a8a9c92ee22345b3b5"
+    },
+    "concordance": {
+      "path": "bin/search/concordance.mjs",
+      "bytes": 35339,
+      "sha256": "063cd27915a04eae1dc4c835c59b91a059f88b18122eac58e5b3b5144776c442"
+    },
+    "uiUtils": {
+      "path": "bin/search/ui-utils.mjs",
+      "bytes": 17956,
+      "sha256": "5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521"
+    },
+    "extractor": {
+      "path": "bin/search/extract-lodge.py",
+      "bytes": 8047,
+      "sha256": "7010835abdd7d540a76dccd429961e43c1f5ca3b7cf9d394be1cc0672923b628"
+    },
+    "manifest": {
+      "path": "bin/search/config/contra-apionem-english-lodge1602.json",
+      "bytes": 1108,
+      "sha256": "65c5fc8a44d22a7c3ff40ecb208e76b2979b17fb6b29a8a1ee476c2fb906295d"
+    },
+    "witness": {
+      "path": "bin/search/tests/lodge-source-witness.py",
+      "bytes": 2323,
+      "sha256": "e50f69bd884d254134c9808215b4bfd8bbdeafddb72b9d5026ec456742647c6c"
+    },
+    "verifier": {
+      "path": "bin/search/tests/lodge-corpus-qa.mjs",
+      "bytes": 6117,
+      "sha256": "1c2d5f852663b91c5ac53f00707a7a8c4082842c5de1ea8af0df4bfc57f07033"
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/contra-apionem-english-lodge1602/book-01.bundle.json",
+          "bytes": 2296013,
+          "sha256": "7b56a36cf113beef2dd641e9a6c34de45c55a660862e3d0f88a576173043840f"
+        },
+        "corpus": {
+          "path": "bin/search/data/contra-apionem-english-lodge1602/book-01.corpus.json",
+          "bytes": 197433,
+          "sha256": "93fe3f831026694ab6fd11c66963a01167834729f97095f6ad0ddd612808deaa"
+        },
+        "source": {
+          "path": "assets/xml/contra-apionem/English/Lodge1602/book-01.xml",
+          "bytes": 174467,
+          "sha256": "3dea35680c9e7bad46d7e8ecca6876be0e957c0de0c29dcc39625f044127b5fc"
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/contra-apionem-english-lodge1602/book-02.bundle.json",
+          "bytes": 2238244,
+          "sha256": "784a9d86742398a0703795d8581d217e82bb73e12a5e6362162d5b54dcbcbd4a"
+        },
+        "corpus": {
+          "path": "bin/search/data/contra-apionem-english-lodge1602/book-02.corpus.json",
+          "bytes": 175981,
+          "sha256": "8c127b6cfbe53256a25192da9b95d11906956cac09a78ede98f34f368c8278f4"
+        },
+        "source": {
+          "path": "assets/xml/contra-apionem/English/Lodge1602/book-02.xml",
+          "bytes": 161049,
+          "sha256": "0af3a2ca46f22de52a8c481a70512a116d57463561fa739fd0754af6097b55ba"
+        }
+      }
+    ]
+  }
+}

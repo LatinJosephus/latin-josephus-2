@@ -795,7 +795,9 @@ export function validateSearchSources(root, {qa = true} = {}) {
     equal(report.corpus.sha256, collection.corpusSHA256, 'Extraction report describes a different corpus');
     equal(report.counts.books, manifest.books.length, 'Extraction book count differs from collection');
     const frobenPages = manifest.id === 'antiquities-latin-froben1524';
-    if (frobenPages) equal(report.coverage.pagesExactlyRestored, combined.length, 'Incomplete Froben page restoration');
+    const lodge = manifest.edition === 'Lodge (1602)';
+    if (lodge) equal(report.coverage.sectionsExactlyRestored, combined.length, 'Incomplete Lodge source projection');
+    else if (frobenPages) equal(report.coverage.pagesExactlyRestored, combined.length, 'Incomplete Froben page restoration');
     else equal(report.coverage.paragraphsExactlyRestored, report.counts.narrativeParagraphs ?? report.counts.numberedParagraphs, 'Incomplete paragraph restoration');
     for (const key of ['wordSequencePreserved', 'nonWhitespaceContentPreserved', 'globalIdsUnique', 'globalOrderIsConsecutive'])
       equal(report.coverage[key], true, `Extraction coverage failed: ${key}`);
@@ -807,6 +809,12 @@ export function validateSearchSources(root, {qa = true} = {}) {
         .filter(([, book]) => book.unavailable.length).map(([number, book]) => [number, book.unavailable]))}, 'Antiquities missing-citation summary differs');
       equal(combined.filter(record => record.text === '').map(record => ({book: record.book, section: record.section})),
         emptySections, 'Unexpected missing Antiquities running text');
+    } else if (lodge) {
+      const emptySections = manifest.books.flatMap(book => (book.emptySections || book.omittedSections || [])
+        .map(section => ({book: book.number, section})));
+      equal(report.coverage.allSectionTextsNonempty, !emptySections.length, 'Lodge empty-section coverage differs');
+      equal(combined.filter(record => record.text === '').map(record => ({book: record.book, section: record.section})),
+        emptySections, 'Unexpected empty Lodge citation');
     } else equal(report.coverage.allSectionTextsNonempty, true, 'Extraction coverage failed: allSectionTextsNonempty');
     for (const key of ['id', 'work', 'label', 'citationPrefix', 'language', 'edition', 'readerPath'])
       equal(collection[key], manifest[key], `Catalog metadata differs: ${manifest.id}.${key}`);
@@ -844,9 +852,10 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(bookReport.additionalSources || [], extracted.additionalSources || [], 'Combined and per-book additional source fingerprints differ');
       equal((extracted.additionalSources || []).map(source => source.path), spec.additionalSources || [], 'Additional XML differs from the collection manifest');
       for (const source of extractedSources(extracted)) sources.push(checkIndexedXML(root, source, `${id} XML`));
-      if (frobenPages) equal(bookReport.coverage.pagesExactlyRestored, corpus.length, 'Book has incomplete Froben page restoration');
+      if (lodge) equal(bookReport.coverage.sectionsExactlyRestored, corpus.length, 'Book has incomplete Lodge source projection');
+      else if (frobenPages) equal(bookReport.coverage.pagesExactlyRestored, corpus.length, 'Book has incomplete Froben page restoration');
       else equal(bookReport.coverage.paragraphsExactlyRestored, bookReport.counts.narrativeParagraphs ?? bookReport.counts.numberedParagraphs, 'Book has incomplete paragraph restoration');
-      if (!frobenPages && manifest.id !== 'antiquities-latin-bamberg78') for (const [a, b] of [['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'],
+      if (!lodge && !frobenPages && manifest.id !== 'antiquities-latin-bamberg78') for (const [a, b] of [['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'],
         ['sourceWordSequenceSha256', 'indexedWordSequenceSha256'],
         ['sourceNonWhitespaceContentSha256', 'indexedNonWhitespaceContentSha256']])
         equal(bookReport.coverage[a], bookReport.coverage[b], `Source coverage differs: ${id}.${a}`);
@@ -929,7 +938,8 @@ export function validateQaReport(root, {catalog, collection, configured, report}
   equal(qa.source.tokens, collection.totals.tokens, 'Independent QA token total differs');
   const expected = {corpus: collection.corpusPath, catalog: 'catalog.json', engine: catalog.source.enginePath,
     collection: 'collection.mjs', verifier: adapter.verifier};
-  if (manifest.id === 'antiquities-latin-froben1524') Object.assign(expected, {
+  if (manifest.edition === 'Lodge (1602)') expected.witness = 'tests/lodge-source-witness.py';
+  if (manifest.edition === 'Lodge (1602)' || manifest.id === 'antiquities-latin-froben1524') Object.assign(expected, {
     concordance: 'concordance.mjs', uiUtils: 'ui-utils.mjs',
     extractor: adapter.extractor, manifest: configured.manifestPath,
   });

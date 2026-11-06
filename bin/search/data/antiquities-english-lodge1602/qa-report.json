@@ -1,0 +1,436 @@
+{
+  "status": "PASS",
+  "source": {
+    "books": 20,
+    "sections": 7376,
+    "tokens": 450629,
+    "bytes": 61789795
+  },
+  "assertions": 22269,
+  "totalQueries": 41,
+  "failedAssertions": 0,
+  "readerBaseline": {
+    "publicationInput": false
+  },
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/antiquities-english-lodge1602/corpus.json",
+      "bytes": 5002133,
+      "sha256": "5903137f96645ee17298e12c394ade967c58c6bf3e83e08e12491130dc2f8a98"
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "bytes": 99759,
+      "sha256": "e7b6d3b5f30fa613c51f42306d4ab6a1dccbf7b8c7cd91ec491aa006d84dec70"
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "bytes": 28437,
+      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89"
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "bytes": 21317,
+      "sha256": "f927579378c89bf15479d935731c9084c3a10ae71f2b74a8a9c92ee22345b3b5"
+    },
+    "concordance": {
+      "path": "bin/search/concordance.mjs",
+      "bytes": 35339,
+      "sha256": "063cd27915a04eae1dc4c835c59b91a059f88b18122eac58e5b3b5144776c442"
+    },
+    "uiUtils": {
+      "path": "bin/search/ui-utils.mjs",
+      "bytes": 17956,
+      "sha256": "5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521"
+    },
+    "extractor": {
+      "path": "bin/search/extract-lodge.py",
+      "bytes": 8047,
+      "sha256": "7010835abdd7d540a76dccd429961e43c1f5ca3b7cf9d394be1cc0672923b628"
+    },
+    "manifest": {
+      "path": "bin/search/config/antiquities-english-lodge1602.json",
+      "bytes": 6997,
+      "sha256": "cba9824d8016f74de4e22f748eff9fce98b2059fe988799d1e497262134a74be"
+    },
+    "witness": {
+      "path": "bin/search/tests/lodge-source-witness.py",
+      "bytes": 2323,
+      "sha256": "e50f69bd884d254134c9808215b4bfd8bbdeafddb72b9d5026ec456742647c6c"
+    },
+    "verifier": {
+      "path": "bin/search/tests/lodge-corpus-qa.mjs",
+      "bytes": 6117,
+      "sha256": "1c2d5f852663b91c5ac53f00707a7a8c4082842c5de1ea8af0df4bfc57f07033"
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-01.bundle.json",
+          "bytes": 3068798,
+          "sha256": "f8b9ae80d13282d3703b0f1e94e70ea497bb6c4ed25f7cdd9ffef6f964dd140c"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-01.corpus.json",
+          "bytes": 259989,
+          "sha256": "03ad93d5db391008d0c6e974917ac90248911e940116f93c69bf57d69ca9118d"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-01.xml",
+          "bytes": 260789,
+          "sha256": "aa5463ce701777bd8db32539df1bc3081e830c0a7bde4fcf5db0076f8b887031"
+        },
+        "additionalSources": [
+          {
+            "path": "assets/xml/antiquities/English/Lodge1602/preface.xml",
+            "bytes": 19386,
+            "sha256": "ea3af6e844ba0158bc41c9897b1983e4fbf718ad1097e3c1b32b8b2ceb75a509"
+          }
+        ]
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-02.bundle.json",
+          "bytes": 3024050,
+          "sha256": "357ed6420accf505ca0e31ff2dfb01d63d1e08a81781145ececbad5ae3400d17"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-02.corpus.json",
+          "bytes": 255811,
+          "sha256": "d77603f9c0be85fdf743e8d7ae0d9921f20478c2ea8081f102f78322c2213083"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-02.xml",
+          "bytes": 256006,
+          "sha256": "69ed805eb0585ec8b93f4d330a2c69c52f5fb5aae72d583fcd8e180eade5d729"
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-03.bundle.json",
+          "bytes": 2694181,
+          "sha256": "cde66e43eef9c841ba9116eefb6b6bea8215e237c21b20de355544ea1a8d2505"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-03.corpus.json",
+          "bytes": 220150,
+          "sha256": "f5e2a4f99ab8fd97d94d2753b81c26d0bebc92ae891ca19e9bf7b2c96dee68b7"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-03.xml",
+          "bytes": 220777,
+          "sha256": "d6c7e919347594fc9e152a79da2710922f55c068c0045ab6c0b342082805b5d6"
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-04.bundle.json",
+          "bytes": 2908115,
+          "sha256": "e1c4eb850aef2aaf0a9c7f0dcfbfd043ae3de53ee9621311d8268c24394b2768"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-04.corpus.json",
+          "bytes": 227213,
+          "sha256": "625dc2515fabdbf56d63d7d06184ef176fc9dfe1b355ee9d3c05644a956df03d"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-04.xml",
+          "bytes": 232553,
+          "sha256": "bdd423e7104210cab3cfcb437cd67f1dd872c16a820b3edfd89bb59b4655fe4f"
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-05.bundle.json",
+          "bytes": 3164439,
+          "sha256": "2e3d08f11cb86379d6571c58ba9a3599f1d74211442d381449eef818ea6d14af"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-05.corpus.json",
+          "bytes": 248330,
+          "sha256": "ff266338fe7cac95cb736cf0f2bfe885ad689173cf9c1fa54702259c5c637ae3"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-05.xml",
+          "bytes": 260127,
+          "sha256": "fcd4d982de21bd8a83ba1f2ebfd89141b1500f3f013412f3fde81c68e1b6aa4d"
+        }
+      },
+      {
+        "book": 6,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-06.bundle.json",
+          "bytes": 3652428,
+          "sha256": "d6651cc4b8d87ff4a9288373b76bdefefd91274d20530d86e35fe4fa14524d52"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-06.corpus.json",
+          "bytes": 275223,
+          "sha256": "f7232b1ab547ba9c14995508da4723e56e069f67ff3ec27940753f59439c6603"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-06.xml",
+          "bytes": 302529,
+          "sha256": "d9749fd66b25a75984ab98e0e15b59531873af8d8e21e1da691c3f309040d65e"
+        }
+      },
+      {
+        "book": 7,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-07.bundle.json",
+          "bytes": 3673481,
+          "sha256": "2bf54bbb76b7e93f6b87e93655f8d79be602143dc5b071e62c92ac60e8e3048b"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-07.corpus.json",
+          "bytes": 282692,
+          "sha256": "9c1e504d83ab40b1b06cfc4de4b11c3fa745fb49ad83b40505209a67ed27a06d"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-07.xml",
+          "bytes": 318115,
+          "sha256": "c809b44802245653ba40eb75138208b3624243980a7333de3e1f4362c326043a"
+        }
+      },
+      {
+        "book": 8,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-08.bundle.json",
+          "bytes": 3813758,
+          "sha256": "4c7efae1b7f7f2f3f9c95978a63b51ebbacda945b92b1ef123f3a2c45932cbc3"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-08.corpus.json",
+          "bytes": 297291,
+          "sha256": "93dc75fb569c2d7b173b431e042903bfe3ea041bd0c9df01aa48764a5ef0a57e"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-08.xml",
+          "bytes": 314706,
+          "sha256": "a88a4d057ca18c3a19d0e6f606bdda86cbed74a7d05193a7e265968cfe0832e1"
+        }
+      },
+      {
+        "book": 9,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-09.bundle.json",
+          "bytes": 2500799,
+          "sha256": "58a94317b8f3f52b7072671951bdf831b68561e327fe12d97c7f613a7e1bb4c3"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-09.corpus.json",
+          "bytes": 198418,
+          "sha256": "ddc4d229a7e46e2d474ae1bb9e7940e30478a01ffbf3289982ec95294ea66580"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-09.xml",
+          "bytes": 215046,
+          "sha256": "4e31123e6fbaa89c97089ba328c239f27bbe70c2143285cf73b82f0992fbdd17"
+        }
+      },
+      {
+        "book": 10,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-10.bundle.json",
+          "bytes": 2318209,
+          "sha256": "72915fb59499857098e70c577f45ccf11fb19f118f35a681f6728e4c4a36c56a"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-10.corpus.json",
+          "bytes": 186421,
+          "sha256": "e18f80e4b910a9c89d32cc944e7dcfc4a29ad147fdab96df5b27875c63ab8732"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-10.xml",
+          "bytes": 195133,
+          "sha256": "b3d00d20a390e2ba45a20a8cde76fb1f194c1af7bb551567289965ec67b9886a"
+        }
+      },
+      {
+        "book": 11,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-11.bundle.json",
+          "bytes": 2695086,
+          "sha256": "eb8ba2c97a69c137e711495a7b8d1cdc599513bef6e65c7a4b8dddf48a349a8f"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-11.corpus.json",
+          "bytes": 221906,
+          "sha256": "c92ee6e75030c65cac940b72523b95b059062ab5380d240a0765d42441054d9d"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-11.xml",
+          "bytes": 224460,
+          "sha256": "59263d450caa98feb36e95111fbf5fb49189223736a7762fc2e2f0cb62a2fae6"
+        }
+      },
+      {
+        "book": 12,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-12.bundle.json",
+          "bytes": 3433233,
+          "sha256": "e25e3ea3e00faf056d408da1a4898abcf4fcd50c6e61ccd6839542dc8ce115fb"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-12.corpus.json",
+          "bytes": 280000,
+          "sha256": "dd6c90b414c8f48be64c614ef6cac4dce9990d992dbd561baf20437a32c25a1b"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-12.xml",
+          "bytes": 293079,
+          "sha256": "08bf8fce1ed2d05dea4fd7bb6b008b7cdce0577a5ee0f0bd07a9321e2673a3f7"
+        }
+      },
+      {
+        "book": 13,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-13.bundle.json",
+          "bytes": 3591447,
+          "sha256": "177ffbfa46a5fda5c69883ceae209715e69a18a2c8ddf998a3eb0f6a03593a9f"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-13.corpus.json",
+          "bytes": 296846,
+          "sha256": "05cabf7fe7b8d787e7209d593e1b03a1202ac784990151e3ac38f510bfeb2482"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-13.xml",
+          "bytes": 327750,
+          "sha256": "1dfa7085a30a782ea734ea603f1c2a1ee492e16461dcbfee7bb5b81560f8934d"
+        }
+      },
+      {
+        "book": 14,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-14.bundle.json",
+          "bytes": 3634320,
+          "sha256": "1edd470a6934e2b10e2425389f6ec66c8ac80bf1da4039298b3d472591e3d94e"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-14.corpus.json",
+          "bytes": 316920,
+          "sha256": "2c23d6496c2bb7d09a58fcc0b2c820acb9ee306798fe9b61e913257ce723092c"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-14.xml",
+          "bytes": 341246,
+          "sha256": "384b080cdfdb578a0e7f67065d12803d05cccebc189111f51e377a6a718cb9ca"
+        }
+      },
+      {
+        "book": 15,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-15.bundle.json",
+          "bytes": 3567110,
+          "sha256": "276171f0611f4098d198f6b6ac9748bbcf24618f2a0b014f28c39e589ea6e917"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-15.corpus.json",
+          "bytes": 282133,
+          "sha256": "ce0f70b98ea52febfb5b35a4c4d5d77f9a04400f6392e431bf24ef3aed5cbf20"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-15.xml",
+          "bytes": 289464,
+          "sha256": "28e9e95c781854b91c87cd57f48a34ab80d81ac9d765a902a03162a588316b7a"
+        }
+      },
+      {
+        "book": 16,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-16.bundle.json",
+          "bytes": 2927627,
+          "sha256": "55128ca2f7332c422eebd1a09279a79851e66ff9f877c83b6ea3fe066b1b0dd3"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-16.corpus.json",
+          "bytes": 244956,
+          "sha256": "633f8e0fe37ff815112116427be64b5bef79d04c9b74647cc75e549c246621db"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-16.xml",
+          "bytes": 248109,
+          "sha256": "e66394e4b572dd0137addda58dcf214dfb75dc2aea5c0d2c486808aa1e36e11e"
+        }
+      },
+      {
+        "book": 17,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-17.bundle.json",
+          "bytes": 3073768,
+          "sha256": "49557214398029097e39e778286314adfd44de21a9ec7ac059e5f6e3d9298b71"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-17.corpus.json",
+          "bytes": 248302,
+          "sha256": "26e69bfbac2fe45f7210e8c9a8ca62b3aa752cf53a6bc47d4e88e0ffb1fe797e"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-17.xml",
+          "bytes": 257455,
+          "sha256": "6ff35f8d94f27d826c7030275e2b6a582b83a76f07e7979bed991548e187fd56"
+        }
+      },
+      {
+        "book": 18,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-18.bundle.json",
+          "bytes": 3162250,
+          "sha256": "e45b43941cf1f4ca7d1554beb15ec8540e62c61393df29bd4ebec3c68eddf19a"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-18.corpus.json",
+          "bytes": 254700,
+          "sha256": "012909eb9d8cf659bf6c8b0ea26a14341069c5abb651fd00f45306529667f184"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-18.xml",
+          "bytes": 269578,
+          "sha256": "c0c4b97923245ee57bd76e3d992e67caea0fa618f8a1377dc712d10c2a1dfbae"
+        }
+      },
+      {
+        "book": 19,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-19.bundle.json",
+          "bytes": 2946191,
+          "sha256": "2c9c9f4e19da62bf7e605f642e7634faa592b134333ff469959d14a979a2ea5b"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-19.corpus.json",
+          "bytes": 240926,
+          "sha256": "0a04bc119df1abd6c5cef15415805c735d064272b878aef3bcc925fa78f0869a"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-19.xml",
+          "bytes": 240159,
+          "sha256": "43a05d447921b1b341f479864b7a405e676f421004e811f60031033214f41bb6"
+        }
+      },
+      {
+        "book": 20,
+        "bundle": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-20.bundle.json",
+          "bytes": 1940505,
+          "sha256": "1a19e52a84977ebfe1e10596107a1a4cd21d5c6fd5bf136c97a2ea3cc3b77262"
+        },
+        "corpus": {
+          "path": "bin/search/data/antiquities-english-lodge1602/book-20.corpus.json",
+          "bytes": 163963,
+          "sha256": "3dfff1a661649779c21a3b1931f9b7c633cbc461001291da742c8eb4a9a1607c"
+        },
+        "source": {
+          "path": "assets/xml/antiquities/English/Lodge1602/book-20.xml",
+          "bytes": 173548,
+          "sha256": "f742eb2565dd7fbe76b1d07f736bb059fc5dd5b48499ae0dc904fed113f9b68f"
+        }
+      }
+    ]
+  }
+}

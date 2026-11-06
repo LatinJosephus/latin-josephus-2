@@ -55,7 +55,7 @@
   const numberedHands = {'@': 1, '£': 2, '¢': 3, '¤': 4, '¬': 5, '¦': 6, '²': 7, '³': 8, '¼': 9};
   const escape = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
   // Expansions are verified against listWit and the site's manuscript repertory.
-  // Shelfmark conflicts retain listWit wording and are explicitly flagged.
+  // Unresolved shelfmark conflicts retain listWit wording and are explicitly flagged.
   const manuscripts = {
     BernBBMs50: ['Bern, Burgerbibliothek, Ms. 50', 'Burgerbibliothek', 'Ms. 50', 'M0083'],
     BernBBMs118: ['Bern, Burgerbibliothek, Ms. 118', 'Burgerbibliothek', 'Ms. 118', 'M0084'],
@@ -65,7 +65,7 @@
     ColognyBodmer99: ['Cologny, Fondation Martin Bodmer, Ms. 99', 'Fondation Martin Bodmer', 'Ms. 99', 'M0140'],
     CopenhagenGKS1572o: ['Copenhagen, Kongelige Bibliotek, GKS 157 fol.', 'Kongelige Bibliotek', 'GKS 157 fol.', 'M0142'],
     LeidenUBVLF17: ['Leiden, Universitaire Bibliotheken, VLF 17', 'Universitaire Bibliotheken', 'VLF 17', 'M0224'],
-    MilanBACimelioSP: ['Milan BA Cimelio S.P. 11/1', null, 'Cimelio S.P. 11/1', null, 'shelfmark-conflict'],
+    MilanBACimelioSP: ['Milan, Biblioteca Ambrosiana, Cimelio 1', 'Biblioteca Ambrosiana', 'Cimelio 1', 'M0282'],
     MonzaBCMsb20: ['Monza, Biblioteca capitolare, b20/136', 'Biblioteca capitolare', 'b20/136', 'M0294'],
     RomeBAVPalLat814: ['Rome, Biblioteca Apostolica Vaticana, Pal. lat. 814', 'Biblioteca Apostolica Vaticana', 'Pal. lat. 814', 'M0495'],
     MonteCassino123: ['Montecassino, Biblioteca dell’Abbazia, Casin. 123', 'Biblioteca dell’Abbazia', 'Casin. 123', 'M0288'],
@@ -80,9 +80,19 @@
   function resolveManuscript(siglum, fallback, lang = 'en') {
     const row = manuscripts[siglum] || deh?.resolveManuscript(siglum);
     return {siglum, displayName: (lang === 'en' && englishManuscriptNames[siglum]) || row?.[0] || fallback || siglum,
-      originalDisplayName: row?.[0] || fallback || siglum, repository: row?.[1] || null,
+      originalDisplayName: siglum === 'MilanBACimelioSP' ? 'Milan BA Cimelio S.P. 11/1' : row?.[0] || fallback || siglum,
+      repository: row?.[1] || null,
       shelfmark: row?.[2] || null, url: row?.[3] ? `/manuscripts/#ljm-${row[3]}` : null,
       verificationStatus: row ? row[4] || 'verified' : 'unresolved'};
+  }
+  function resolveAnnotationManuscript(record, lang = 'en') {
+    const review = editorialUpdates?.manuscriptAttributions;
+    const match = record.work === 'antiquities' && Number(record.occurrence || 1) === 1 &&
+      review?.entries.find(entry => entry.book === Number(record.sourceBook) && entry.unit === record.alignmentUnitId &&
+        entry.sourceSiglum === record.siglum && entry.notation === record.notation);
+    const siglum = match ? match.siglum : record.siglum;
+    const manuscript = resolveManuscript(siglum, record.witnessLabel || siglum || t(lang).unknown, lang);
+    return match ? {...manuscript, attribution: {reviewer: review.reviewer, date: review.date}} : manuscript;
   }
   function setCitationData(data) { citationData = data; }
   function resolveAlignmentCitation(work, alignmentUnitId, options = {}) {
@@ -304,7 +314,7 @@
     const lang = language(options.lang), l = t(lang), interpreted = interpretManuscriptAnnotation(record);
     const locationId = record.locationTargetId || record.alignmentUnitId;
     const citation = resolveAlignmentCitation(record.work, locationId, {lang});
-    const ms = resolveManuscript(record.siglum, record.witnessLabel || record.siglum || l.unknown, lang);
+    const ms = resolveAnnotationManuscript(record, lang);
     const number = options.startNumber || 1;
     const parts = interpreted.parts.map((part, index) => {
       const anchor = `${interpreted.anchor}-at-${part.offset}`;
@@ -340,6 +350,12 @@
             : !part.text ? l.noTranscription : l.recorded]];
       if (record.editorialSource) fields.push([l.sourceRecord, `${l.recovered}; ${record.editorialSource}`]);
       if (record.editorialEvidenceUrl) fields.push([l.evidence, record.editorialEvidenceUrl]);
+      if (ms.attribution) {
+        const {reviewer, date} = ms.attribution;
+        fields.push([l.evidence, lang === 'fr'
+          ? `Manuscrit identifié par ${reviewer} (${date}).`
+          : `Manuscript identified by ${reviewer} (${date}).`]);
+      }
       if (part.editorialExplanation) fields.push([l.evidence, part.editorialExplanation[lang] || part.editorialExplanation.en]);
       if (part.displayText || provisional) fields.push([l.originalFragment, part.text]);
       if (part.displayText) fields.push([l.reviewedReading, part.displayText]);
@@ -365,7 +381,7 @@
     return {html: `<div class="${record.sourceConvention === 'deh-csv-20261027' ? 'annotation-deh-record' : record.editorialSupplementId ? 'annotation-supplemental-record' : 'annotation-source-record'}" id="${escape(interpreted.anchor)}" data-source-siglum="${escape(record.siglum)}">${parts}${folioOnly}</div>`,
       count: interpreted.parts.length, interpreted};
   }
-  return {setCitationData, resolveAlignmentCitation, resolveManuscript, interpretManuscriptAnnotation,
+  return {setCitationData, resolveAlignmentCitation, resolveManuscript, resolveAnnotationManuscript, interpretManuscriptAnnotation,
     recordAnchor, renderAnnotation, getSupplementalAnnotations, translateEditorialDescription, annotationTextSegments, legend, labels,
     setDEHAnnotationData: data => {
       if (!deh) throw new Error('DEH annotation interpreter unavailable');

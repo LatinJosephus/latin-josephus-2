@@ -233,6 +233,60 @@
       ],
       "verifier": "tests/lauro-corpus-qa.mjs",
       "qaReport": "data/deh-italian-lauro1544/qa-report.json"
+    },
+    "antiquities-english-lodge1602": {
+      "extractor": "extract-lodge.py",
+      "outputDirectory": "data/antiquities-english-lodge1602",
+      "sources": [
+        "assets/xml/antiquities/English/Lodge1602/book-01.xml",
+        "assets/xml/antiquities/English/Lodge1602/preface.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-02.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-03.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-04.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-05.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-06.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-07.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-08.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-09.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-10.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-11.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-12.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-13.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-14.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-15.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-16.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-17.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-18.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-19.xml",
+        "assets/xml/antiquities/English/Lodge1602/book-20.xml"
+      ],
+      "verifier": "tests/lodge-corpus-qa.mjs",
+      "qaReport": "data/antiquities-english-lodge1602/qa-report.json"
+    },
+    "bellum-english-lodge1602": {
+      "extractor": "extract-lodge.py",
+      "outputDirectory": "data/bellum-english-lodge1602",
+      "sources": [
+        "assets/xml/bellum/English/Lodge1602/book-01.xml",
+        "assets/xml/bellum/English/Lodge1602/book-02.xml",
+        "assets/xml/bellum/English/Lodge1602/book-03.xml",
+        "assets/xml/bellum/English/Lodge1602/book-04.xml",
+        "assets/xml/bellum/English/Lodge1602/book-05.xml",
+        "assets/xml/bellum/English/Lodge1602/book-06.xml",
+        "assets/xml/bellum/English/Lodge1602/book-07.xml"
+      ],
+      "verifier": "tests/lodge-corpus-qa.mjs",
+      "qaReport": "data/bellum-english-lodge1602/qa-report.json"
+    },
+    "contra-apionem-english-lodge1602": {
+      "extractor": "extract-lodge.py",
+      "outputDirectory": "data/contra-apionem-english-lodge1602",
+      "sources": [
+        "assets/xml/contra-apionem/English/Lodge1602/book-01.xml",
+        "assets/xml/contra-apionem/English/Lodge1602/book-02.xml"
+      ],
+      "verifier": "tests/lodge-corpus-qa.mjs",
+      "qaReport": "data/contra-apionem-english-lodge1602/qa-report.json"
     }
   }
 }

@@ -69,6 +69,30 @@ test('editorial additions do not leak into Bellum, other books or unconfigured D
     assert.deepEqual(api.getSupplementalAnnotations(w,b), []);
   }
 });
+test('reviewed manuscript attributions preserve original notation, citations and annotation anchors', () => {
+  const entries = inventory.records.filter(record => api.resolveAnnotationManuscript(record).attribution);
+  assert.equal(entries.length, 7);
+  assert.equal(entries.reduce((sum, record) => sum + api.interpretManuscriptAnnotation(record).parts.length, 0), 11);
+  assert.deepEqual(entries.map(record => api.resolveAnnotationManuscript(record).siglum), [
+    'LeidenUBVLF17', 'BernBBMs118', 'BernBBMs118', 'LeidenUBVLF17',
+    'RomeBAVPalLat814', 'MilanBACimelioSP', 'RomeBAVPalLat814',
+  ]);
+  for (const record of entries) {
+    const before = JSON.stringify(record);
+    const resolved = api.resolveAnnotationManuscript(record);
+    const result = api.renderAnnotation(record);
+    assert(result.html.includes(resolved.displayName));
+    assert(result.html.includes('Jean-Félix Aubé-Pronce'));
+    assert.equal(result.interpreted.anchor, api.recordAnchor(record));
+    assert.equal(result.interpreted.originalNotation, record.notation);
+    assert.equal(JSON.stringify(record), before);
+    assert(!api.resolveAnnotationManuscript({...record, notation: record.notation + '.'}).attribution);
+  }
+  const milan = api.resolveManuscript('MilanBACimelioSP');
+  assert.equal(milan.url, '/manuscripts/#ljm-M0282');
+  assert.equal(milan.originalDisplayName, 'Milan BA Cimelio S.P. 11/1');
+});
+
 test('English and French distinguish partial, provisional and reviewed readings', () => {
   const html = visible(api.renderAnnotation(bern, {lang:'fr'}).html);
   assert(!html.includes('Transcription partielle')); assert(html.includes('(lecture provisoire)'));

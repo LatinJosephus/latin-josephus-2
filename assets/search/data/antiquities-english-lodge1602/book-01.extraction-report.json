@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "book": 1,
+  "source": {
+    "path": "assets/xml/antiquities/English/Lodge1602/book-01.xml",
+    "sha256": "aa5463ce701777bd8db32539df1bc3081e830c0a7bde4fcf5db0076f8b887031",
+    "bytes": 260789
+  },
+  "additionalSources": [
+    {
+      "path": "assets/xml/antiquities/English/Lodge1602/preface.xml",
+      "sha256": "ea3af6e844ba0158bc41c9897b1983e4fbf718ad1097e3c1b32b8b2ceb75a509",
+      "bytes": 19386
+    }
+  ],
+  "corpus": {
+    "path": "data/antiquities-english-lodge1602/book-01.corpus.json",
+    "sha256": "03ad93d5db391008d0c6e974917ac90248911e940116f93c69bf57d69ca9118d",
+    "bytes": 259989,
+    "records": 346
+  },
+  "counts": {
+    "sections": 346,
+    "runningWordTokens": 22571
+  },
+  "coverage": {
+    "sectionsExactlyRestored": 346,
+    "wordSequencePreserved": true,
+    "nonWhitespaceContentPreserved": true,
+    "globalIdsUnique": true,
+    "globalOrderIsConsecutive": true,
+    "allSectionTextsNonempty": true,
+    "completeRange": [
+      1,
+      346
+    ],
+    "missingSections": [],
+    "unexpectedSections": [],
+    "duplicateSections": []
+  }
+}
