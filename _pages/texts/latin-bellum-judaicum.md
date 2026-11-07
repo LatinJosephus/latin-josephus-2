@@ -23,14 +23,9 @@ Cardwell’s text is indirectly based on the Gelenius edition of 1534. The reade
 
 Some editors have made an overhasty dismissal of Cardwell's Latin version.  They imply that because its ultimate source text, the 1534 Gelenius edition, improved the text (particularly by reference to the Greek), it no longer presents anything like what medieval readers would have known.[^cardwell-editions]  Painstaking collation of the text for this project, and word-by-word comparison with the recent edition of _Bellum_ book 1 by Bernd Bader (2019), shows that these concerns are rather overblown.  **Cardwell's text is not too different from what Bader has restored, and therefore well represents the medieval text**.
 
-Andreas Ammann describes how the extent of Gelenius’s revisions varies across the seven books of the Latin _Bellum_.[^ammann-gelenius]
+Indeed, Andreas Ammann describes how the extent of Gelenius’s revisions varies across the seven books of the Latin _Bellum_.[^ammann-gelenius]
 
-> Es gilt desweiteren zu bemerken, dass die Emendationsdichte über die ganzen sieben Bücher des _Bellum Judaicum_ variiert: Während die Frequenz der Verbesserungen an einigen Stellen, wie in unserem Exempel, recht hoch ist, wurden auf anderen Seiten nur ein paar kleinere oder manchmal sogar gar keine Texteingriffe vorgenommen. Dies ist auch damit zu erklären, dass der spätantike Übersetzer des _Bellum_ des Griechischen durchaus mächtig war und der Überlieferungszustand des Textes überdies nicht allzu schlecht ist. Aus diesem Grund gab es für Gelenius bei diesem Werk des Josephus auch weniger Anlass zu Korrekturen.
-{: lang="de" }
-
-**English translation**
-
-> The density of emendations also varies across the seven books of the _Bellum Judaicum_. Corrections are quite frequent in some passages, as in our example. On other pages, Gelenius made only a few minor changes to the text, and sometimes none at all. This is partly because the late antique translator of the _Bellum_ had a good command of Greek and because the text was reasonably well preserved. Gelenius therefore had less reason to make corrections to this work of Josephus.
+> The density of emendations also varies across the seven books of the _Bellum Judaicum_. Corrections are quite frequent in some passages [...]. On other pages, Gelenius made only a few minor changes to the text, and sometimes none at all. This is partly because the late antique translator of the _Bellum_ had a good command of Greek and because the text was reasonably well preserved. Gelenius therefore had less reason to make corrections to this work of Josephus.
 
 Below are a few passages drawn from Book I that show why Cardwell remains valuable for studying the Latin Josephus read in the Middle Ages. Despite relying on a chain of editions going back to Gelenius, Cardwell’s text preserves distinctive vocabulary, elaborations and interpretations that differ from the edited Greek, things that one might expect Gelenius to have smoothed away. Bader’s apparatus and commentary help us to see the general reliability of Cardwell as a witness to the medieval tradition, but also reveal some occasions where the original/traditional Latin has been "improved".
 
@@ -67,3 +62,6 @@ These examples support using Cardwell as a historically mediated witness to medi
 
 [^cardwell-editions]: Bader 2019, 10; Lukas 2021, XXIII; Levenson and Martin 2016, 334.
 [^ammann-gelenius]: Andreas Ammann, [_Josephus Frobenianus. Editions- und Rezeptionsgeschichte des Flavius Josephus im Basler Humanismus_](https://doi.org/10.24894/978-3-7965-4203-9) (Basel: Schwabe Verlag, 2020), p. 98.
+
+    > Es gilt desweiteren zu bemerken, dass die Emendationsdichte über die ganzen sieben Bücher des _Bellum Judaicum_ variiert: Während die Frequenz der Verbesserungen an einigen Stellen, wie in unserem Exempel, recht hoch ist, wurden auf anderen Seiten nur ein paar kleinere oder manchmal sogar gar keine Texteingriffe vorgenommen. Dies ist auch damit zu erklären, dass der spätantike Übersetzer des _Bellum_ des Griechischen durchaus mächtig war und der Überlieferungszustand des Textes überdies nicht allzu schlecht ist. Aus diesem Grund gab es für Gelenius bei diesem Werk des Josephus auch weniger Anlass zu Korrekturen.
+    {: lang="de" style="font-size: 0.9em;" }
