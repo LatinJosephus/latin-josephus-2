@@ -1,0 +1,53 @@
+#commentary {
+  overflow-wrap: anywhere;
+  text-align: start;
+}
+
+#commentary .deh-commentary-section + .deh-commentary-section {
+  border-block-start: 1px solid var(--global-divider-color, currentColor);
+  margin-block-start: 1.4rem;
+  padding-block-start: .8rem;
+}
+
+#commentary .deh-commentary-section h4 {
+  font-size: 1rem;
+  margin-block: .6rem .75rem;
+}
+
+#commentary .deh-commentary-source + .deh-commentary-source {
+  margin-block-start: 1.1rem;
+}
+
+#commentary .deh-commentary-source h5 {
+  font: inherit;
+  font-weight: 600;
+  margin-block: 0 .4rem;
+}
+
+#commentary .deh-commentary-source--pl h5 {
+  font-style: italic;
+}
+
+#commentary figure {
+  margin: 0 0 .85rem;
+}
+
+#commentary p,
+#commentary blockquote {
+  margin: 0;
+}
+
+#commentary .deh-commentary-label {
+  font-weight: 600;
+  margin-block-end: .2rem;
+}
+
+#commentary figcaption {
+  font: .86rem/1.45 system-ui, sans-serif;
+  margin-block-start: .24rem;
+}
+
+#commentary figcaption a {
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
