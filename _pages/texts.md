@@ -31,6 +31,14 @@ Notes on the editions, translations, manuscript annotations and textual correspo
 - [Millet (1556) — French DEH]({{site.baseurl}}/texts/millet-1556/).
 - [Lauro (1544) — Italian DEH]({{site.baseurl}}/texts/lauro-1544/).
 
+## DEH commentary
+
+The *De excidio Hierosolymitano* reader includes English notes keyed to Ussani’s book, chapter and paragraph divisions. They identify people and places, explain events and allusions, and discuss parallels with Josephus and points of language.
+
+The selection includes translated notes from *Patrologia Latina* 15 (1845) and the Ussani–Mras companion volume (CSEL 66/2, 1960), excerpts from the dissertation of A. A. Bell, Jr. (1977), and English summaries of Dominique Estève’s thesis (1987). Additional reading notes draw on Cornelius Gualtherus (1575), Hermann Rönsch (1883), Elimar Klebs (1895) and Vincenzo Ussani (1906).
+
+Select **Commentary** in the reader to display the notes alongside the text. Each source group has its own typeface. References appear below the notes, with links where available. [Open the commentary at DEH II.9.1]({{site.baseurl}}/deh/?book=2&chapter=9&unit=1&commentary=1).
+
 ## Sources and preparation
 
 Some texts were transcribed for this project; others draw on existing digital editions. The pages linked above give fuller discussions of the editions and translations.
