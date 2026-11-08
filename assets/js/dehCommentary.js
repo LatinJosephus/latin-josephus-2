@@ -101,6 +101,21 @@ function readSelection() {
   toggle.checked = new URL(window.location.href).searchParams.get("commentary") === "1";
 }
 
+notes.addEventListener("click", event => {
+  const link = event.target.closest("a.deh-commentary-crossref");
+  if (!link) return;
+  const target = new URL(link.href);
+  for (const [language, edition] of [["french", "millet1556"], ["italian", "lauro1544"]]) {
+    // The reader may omit the default edition from the current URL.
+    if (document.getElementById(`${language}-pane-select`).checked) {
+      target.searchParams.set(language, edition);
+    } else {
+      target.searchParams.delete(language);
+    }
+  }
+  link.href = target.href;
+});
+
 readSelection();
 toggle.addEventListener("change", () => {
   const url = new URL(window.location.href);
