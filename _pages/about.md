@@ -1,6 +1,7 @@
 ---
 layout: info
 permalink: /about/
+main_css_version: 20261108-project-prose
 title: about
 description: The Latin Josephus Project
 nav: true
@@ -12,9 +13,11 @@ children:
       permalink: /texts/
 ---
 
-## The Latin Josephus Project
+<article class="lj-project-prose lj-project-prose--about" markdown="1">
 
-### Flavius Josephus
+# The Latin Josephus Project
+
+## Flavius Josephus
 
 [Flavius Josephus](http://en.wikipedia.org/wiki/Josephus) (c. 37–100 CE) was a historian who wrote the _Antiquities_, a history of the Jews up to Roman times, and the _Jewish War_, describing the Jewish rebellion against the Romans in 66–73 CE, as well as the _Against Apion_, a defense of Jewish traditions.
 
@@ -22,7 +25,7 @@ While Josephus originally wrote these works in Greek, they were extremely popula
 
 Before the completion of our text in 2019, the most recent publicly available edition of the Latin _Antiquities_ was that of [J. Froben, printed in 1524](https://books.google.ca/books?id=E_NCAAAAcAAJ&pg=PP7#v=onepage&q&f=false).
 
-### This Project
+## This Project
 
 This site now offers a transcription/edition of all the Latin versions of Flavius Josephus’ works:
 
@@ -36,7 +39,7 @@ Translations are provided for each of these texts.
 This project also now reproduces nearly every early medieval manuscript annotation to these texts.
 
 
-### Project History
+## Project History
 
 At UBC, in 2013, we began with the Latin *Antiquities*, based on a Carolingian era (s. IXmed) copy: [Bamberg Msc.Class.78](https://zendsbb.digitale-sammlungen.de/db/0000/sbb00000114/images/) (Blatt, no. 113). The Latin was aligned with the Greek text (from Niese), which was then aligned with the English translation produced by Whiston in 1737.
 
@@ -48,60 +51,25 @@ In 2021, the first 8 books of the _Antiquities_ were carefully corrected and man
 
 In spring 2022, the project moved to a website built by [Performant Software Solutions](https://www.performantsoftware.com/), with improved functionality (LatinJosephus v. 2.0). Early medieval annotations began to be integrated into the online edition.
 
-In autumn of 2026, the content and website were thoroughly updated and expanded (LatinJosephus v. 3.0):
+In autumn of 2026, the content and website were thoroughly updated and expanded (LatinJosephus v. 3.0).
 
- 1. The *DEH* was added, first in Ussani's Latin, then with English, then French, then Italian translations.  All of its early medieval manuscript annotations were added as well.
- 2. The *Against Apion* was added.
- 3. The previous Latin texts of the *Antiquities* and *Jewish War* were carefully corrected, removing thousands of mistakes.
- 4. Greek text was added for the *Jewish War*.
- 5. The *Antiquities*, *Jewish War*, and *Against Apion* were provided with Niese section segmentation, as well as various other divisions (e.g. Bamberg manuscript segmentation).
- 6. An English translation by Thomas Lodge (1602), based on the Latin, was added for the *Antiquities*, the *Jewish War*, and the *Against Apion*.
- 7. A powerful [search and concordance tool]({{site.baseurl}}/search/) was added, covering all original language texts, translation, and even annotations.
- 8. The most comprehensive list to date of [Latin Josephus manuscripts]({{site.baseurl}}/manuscripts/) was added.
+ 1. The [*De excidio Hierosolymitano*]({{site.baseurl}}/deh/) was added in Ussani’s Latin edition, with Richard Pollard’s English translation, Jean Millet’s French translation (1556), and Pietro Lauro’s Italian translation (1544). The reader includes early medieval manuscript annotations and an [English commentary]({{site.baseurl}}/texts/#deh-commentary). Its [parallel passage tool]({{site.baseurl}}/deh/?book=1&chapter=15&unit=3&parallel=deh-1-15-3&deh-source=ussani) lets readers compare *De excidio* with the *Jewish War* and the *Antiquities* side by side.
+ 2. The [*Against Apion*]({{site.baseurl}}/contra-apionem/) was added.
+ 3. The Latin texts of the *Antiquities* and *Jewish War* were carefully corrected, removing thousands of mistakes.
+ 4. The Greek text was added for the *Jewish War*.
+ 5. The *Antiquities*, *Jewish War*, and *Against Apion* can now be read by Niese section as well as by other divisions, including those of the Bamberg manuscript where applicable. The readers gained previous and next buttons that follow the selected level.
+ 6. Thomas Lodge’s [English translations (1602)]({{site.baseurl}}/texts/lodge/), which draw on the Latin and French, were added for the *Antiquities*, *Jewish War*, and *Against Apion*.
+ 7. A complete transcription of [Froben’s 1524 *Antiquities*]({{site.baseurl}}/texts/froben-1524/), including the Proem and all twenty books, was added alongside the Bamberg text.
+ 8. A [search and concordance tool]({{site.baseurl}}/search/) was added for the Latin texts, English, French and Italian translations, and manuscript annotations.
+ 9. A [catalogue of over 500 Latin Josephus manuscripts]({{site.baseurl}}/manuscripts/) was added.
 
-For details about the editions, translations and textual correspondences used in the readers, see [Texts]({{site.baseurl}}/texts/).
+For an introduction to Josephus and his works, see [Background]({{site.baseurl}}/background/). For details on the texts and how they were prepared, see [Our editions and translations]({{site.baseurl}}/texts/).
 
-### De excidio and Millet 1556
-
-The [De excidio reader]({{ site.baseurl }}/deh/) pairs Ussani’s Latin edition (1932)
-with Pollard’s English translation. [Jean Millet’s French translation of 1556]({{ site.baseurl }}/deh/millet-1556/)
-can also be read alongside it. Millet’s printed chapters and source order remain
-independent of Ussani’s divisions.
-
-### Lauro 1544
-
-[Lauro’s Italian translation of 1544]({{ site.baseurl }}/texts/lauro-1544/) is available
-[alongside De excidio]({{ site.baseurl }}/deh/?book=1&italian=lauro1544).
-Its passage correspondences follow Ussani’s sections while retaining Lauro’s own
-printed chapters, historical wording and editorial qualifications.
-
-#### Comparison with Lauro and further revisions
-
-Version 1.1 was systematically compared with Lauro’s Italian translation of 1544, with differences assessed against the Latin. The AI audit covered **all 558 numbered passages**, including the Prologue, and recorded **388 findings across 262 passages**; the other 296 passages yielded no material finding. A passage could have more than one finding.
-
-In **308 findings, spread across 212 passages**, Lauro’s rendering was judged less persuasive or freer. This category includes amplification and compression as well as less persuasive interpretations. Other findings concerned legitimate interpretative differences, possible differences in the underlying Latin text, or source and alignment uncertainties. **Six cases** remained classified as English interpretations worth reconsidering (category B).
-
-Following Pollard’s editorial review, **three of these six cases were selected for revision**. These revisions, prompted by the comparison with Lauro, are included in Pollard v1.2:
-
-- [I.25.1]({{ site.baseurl }}/deh/?book=1&chapter=25&unit=1&english=pollard&italian=lauro1544): Antigonus seeks to arouse hostility rather than express grief; the emphasis falls on the rhetorical purpose of his accusations rather than personal envy.
-- [III.13.1]({{ site.baseurl }}/deh/?book=3&chapter=13&unit=1&english=pollard&italian=lauro1544): the Galileans are in greater danger from their own people than from their enemies, rather than being more hostile to their own people.
-- [III.19.1]({{ site.baseurl }}/deh/?book=3&chapter=19&unit=1&english=pollard&italian=lauro1544): *decimum … et quintum ordinem* is understood as the fifteenth legion, rather than separate tenth and fifth legions.
-
-The first two revisions adopt Lauro’s interpretation. The third arose from reconsideration of the Latin: Lauro himself presents separate tenth and fifth formations. The “fifteenth legion” is therefore an interpretative decision prompted by the comparison, rather than an adoption of Lauro or a historical correction.
-
-The other three category-B cases retain the English wording, with translation-comparison notes included at the relevant passages in the reader:
-
-- [I.37.3]({{ site.baseurl }}/deh/?book=1&chapter=37&unit=3&english=pollard&italian=lauro1544): retain “a woman attached to Antony,” while recording the possible interpretation “a married woman.” Lauro’s paraphrase does not clearly resolve the distinction.
-- [II.12.2]({{ site.baseurl }}/deh/?book=2&chapter=12&unit=2&english=pollard&italian=lauro1544): retain the statement that true salvation does not lie in prosperity, while noting the possible interpretation “in second place.” Lauro’s worldly paraphrase supports the retained reading.
-- [V.20.2]({{ site.baseurl }}/deh/?book=5&chapter=20&unit=2&english=pollard&italian=lauro1544): provisionally retain the four-person enumeration, rather than construing *Adiabenus* as “of Adiabene,” qualifying Magassarus. Lauro also presents four people; the difficulty concerning *Adiabenus* remains unresolved.
-
-These notes record interpretative alternatives and qualifications, rather than textual variants. The three revisions and three notes are included in Pollard v1.2. The audit counts describe editorial findings rather than a measured accuracy percentage.
-
-### Corrections
+## Corrections
 
 The Latin transcription was very thoroughly checked and corrected in autumn of 2026.  Few errors should remain. If you spot any, please contact [pollard.richard_matthew@uqam.ca](mailto:pollard.richard_matthew@uqam.ca).
 
-### How to cite:
+## How to cite:
 
 Give the work, the passage reference displayed in the reader, a link to the passage, and the date of access. For the _Antiquities_, _Bellum Judaicum_ and _Contra Apionem_, use the book and Niese section where available. For _De excidio Hierosolymitano_, use the book, chapter and paragraph, or the Prologue paragraph. Suggested forms for the Latin texts are:
 
@@ -112,7 +80,7 @@ Give the work, the passage reference displayed in the reader, a link to the pass
 
 When citing a Greek text, a translation, or a manuscript annotation, also identify the editor, translator or manuscript shown in the reader.
 
-### Bibliography associated with this project
+## Bibliography associated with this project
 
 -   Jean-Félix Aubé-Pronce and Richard Matthew Pollard, “Flavius Josephus: The Most Notable Historian for the Early Middle Ages,” _Pecia_, 28 (forthcoming, 2027): @-@. (DOI: [10.1484/J.PECIA.5.158288](https://doi.org/10.1484/J.PECIA.5.158288))
 -   Richard Matthew Pollard, “Flavius Josephus: A Carolingian Church Father?,” in Paul Hilliard and Karen Kletter (eds.), _A Companion to Josephus in the Medieval West_ (Leiden: Brill, 2024), pp. 61–93. (DOI: [10.1163/9789004684270_005](https://doi.org/10.1163/9789004684270_005))
@@ -124,9 +92,9 @@ When citing a Greek text, a translation, or a manuscript annotation, also identi
 
 **See also the wonderful project of our friends at Universität Bern, [Lege Josephum](https://www.legejosephum.unibe.ch/).**
 
-### Some Other Resources Relating to the Latin Josephus
+## Some Other Resources Relating to the Latin Josephus
 
-#### Latin Editions of Josephus
+### Latin Editions of Josephus
 
 -   Franz Blatt, ed., [_The Latin Josephus_](https://www.worldcat.org/title/latin-josephus-i/oclc/234081365&referer=brief_results) (Aarhus, 1958): incomplete, only Antiquities I-V.
 -   Johannes Frobenius, ed., [_Flavii Iosephi Opera_](https://books.google.ca/books?id=E_NCAAAAcAAJ&pg=PP7#v=onepage&q&f=false) (Basel, 1524): the last Latin edition that was not ‘improved’ by comparison with the Greek text.
@@ -136,7 +104,7 @@ When citing a Greek text, a translation, or a manuscript annotation, also identi
 -   Bernd Bader, ed., [_Josephus Latinus: De Bello Iudaico. Buch 1_](https://www.steiner-verlag.de/Josephus-Latinus-De-Bello-Iudaico-.-Buch-1/9783515124300) (Palingenesia 119; Stuttgart, 2019): a critical edition and commentary on Book I of the Latin _Jewish War_.
 -   Randolf Lukas, ed., [_Josephus Latinus, Antiquitates Judaicae. Buch 6 und 7. Einleitung, Edition und Kommentar zur Übersetzungstechnik_](https://www.wvttrier.de/p/josephus-latinus-antiquitates-judaicae-buch-6-und-7) (Bochumer Altertumswissenschaftliches Colloquium 112; Trier, 2022): a critical edition of Books VI–VII of the Latin _Antiquities_.
 
-#### Greek Editions of Josephus
+### Greek Editions of Josephus
 
 -   Benedict Niese, ed., _Flavii Iosephi opera_ (Berlin), [vol. 1](https://archive.org/details/operajosephus01joseuoft/page/n5/mode/2up) (1887, Ant. I-V); [vol. 2](https://archive.org/details/operajosephus02joseuoft/mode/2up) (1885, Ant. VI-X); [vol. 3](https://books.google.com/books?id=HoT2o_iuTNgC&pg=PR1) (1892, Ant. XI-XV); [vol. 4](https://archive.org/details/operajosephus04joseuoft/page/n3/mode/2up) (1890, Ant. XVI-XX & Vita); [vol. 5](https://books.google.ca/books?id=rw8aAAAAYAAJ&pg=PR1#v=onepage&q&f=false) (1889, _Contra Apionem_); [vol. 6](https://archive.org/details/operajosephus06joseuoft/page/n3/mode/2up) (1894, _Bellum Judaicum_): the best critical edition of the Greek original.
 -   Arnoldus Arlenius, ed., [_Flavii Josephi opera_](https://books.google.ca/books?id=8g5nAAAAcAAJ&pg=PP7) (Basel, 1544): _editio princeps_ of the Greek text of Josephus.
@@ -144,3 +112,5 @@ When citing a Greek text, a translation, or a manuscript annotation, also identi
 ----------
 
 Latin text © Richard Matthew Pollard (UQAM), Josh Timmermann (UBC), William ‘Ben’ Glaeser (UBC 2014-15), Jonathan di Gregorio (UQAM 2016-19), Maxime Laprade (UQAM 2016-17), Jean-Félix Aubé-Pronce (UQAM 2018-19). Annotations transcribed by Jean-Félix Aubé-Pronce and Jonathan di Gregorio.
+
+</article>

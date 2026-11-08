@@ -1,10 +1,13 @@
 ---
 layout: info
 permalink: /background/
+main_css_version: 20261108-project-prose
 title: background
 description: Background
 nav: true
 ---
+
+<article class="lj-project-prose" markdown="1">
 
 # Background
 
@@ -132,3 +135,5 @@ Unlike Josephus’ other works, the *Life* received no late antique or medieval 
 - Schürer, Emil. [*Geschichte des jüdischen Volkes im Zeitalter Jesu Christi*](https://archive.org/details/geschichtejudis01schu). Vol. 1, 3rd and 4th ed. Leipzig: J. C. Hinrichs, 1901.
 - Ussani, Vincenzo. “Studi preparatori ad una edizione della traduzione latina in sette libri del Bellum Iudaicum.” *Bollettino del Comitato per la preparazione dell’edizione nazionale dei classici greci e latini*, n.s. 1 (1945), 85–102.
 - Wander, Steven H. [*Flavius Josephus and Artwork of Roman Antiquity and the Early Middle Ages*](https://reichert-verlag.de/en/keywords/archaeology_by_period_region_keyword/9783752007916_flavius_josephus_and_artwork_of_roman_antiquity_and_the_early_middle_ages-detail). Wiesbaden: Reichert, 2024.
+
+</article>
