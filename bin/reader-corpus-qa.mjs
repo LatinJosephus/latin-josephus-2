@@ -51,6 +51,6 @@ assert(fs.readFileSync(path.join(root,source)).equals(saved),'Original source un
 const site=option('--site',null);
 if(site) {
   for(const [relative,expected] of Object.entries(corpus.publication)) assert.equal(sha(fs.readFileSync(path.join(site,relative))),sha(expected),'Built frozen authority: '+relative);
-  checks.push(`all ${corpus.report.publication_inputs} generated publication inputs match literal authority hashes (${corpus.report.frozen_publication_inputs} frozen, ${corpus.report.approved_editorial_revision_inputs} approved ${corpus.report.approved_editorial_edition})`);
+  checks.push(`all ${corpus.report.publication_inputs} generated publication inputs match literal authority hashes (${corpus.report.frozen_publication_inputs} frozen, ${corpus.report.approved_editorial_revision_inputs} approved ${corpus.report.approved_editorial_edition}, ${corpus.report.approved_cardwell_erratum_inputs} Cardwell erratum)`);
 }
 console.log(JSON.stringify({...corpus.report,negative_tests:checks,source_mutation_tests_use_temporary_copies:true},null,2));

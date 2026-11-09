@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-06T15:29:15.208Z",
+  "generatedAt": "2026-11-09T21:12:23.218Z",
   "independentVerifier": "bin/search/tests/whiston-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "17bb25a5e583f63961ae06d9c1b64e0f2240bec79a2c42bec74a78f99e91bf0c",
-    "observedSha256": "17bb25a5e583f63961ae06d9c1b64e0f2240bec79a2c42bec74a78f99e91bf0c",
+    "expectedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+    "observedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
   "runtime": {
     "node": "v24.19.0",
-    "python": "3.14.7",
-    "unicode": "16.0.0",
+    "python": "3.12.14",
+    "unicode": "15.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -1927,7 +1927,7 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "e7b6d3b5f30fa613c51f42306d4ab6a1dccbf7b8c7cd91ec491aa006d84dec70",
+      "sha256": "2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580",
       "bytes": 99759
     },
     "engine": {
@@ -1982,8 +1982,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "17bb25a5e583f63961ae06d9c1b64e0f2240bec79a2c42bec74a78f99e91bf0c",
-      "bytes": 188094
+      "sha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+      "bytes": 199428
     },
     "testSources": [],
     "books": [
@@ -3957,7 +3957,7 @@
       "purpose": "Whiston Book XX example, preserving the accepted section marker"
     }
   ],
-  "durationSeconds": 93,
+  "durationSeconds": 128.9,
   "limitations": [
     "Coverage is all accepted Whiston Antiquities Proem and Books I-XX XML; the search does not create a new edition or add other Whiston works.",
     "This source/query acceptance does not establish a new translation text or collate printed editions; browser interaction is verified separately."

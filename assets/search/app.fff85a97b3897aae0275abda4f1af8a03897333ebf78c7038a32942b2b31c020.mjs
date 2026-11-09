@@ -284,7 +284,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.e7b6d3b5f30fa613c51f42306d4ab6a1dccbf7b8c7cd91ec491aa006d84dec70.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');
@@ -432,7 +432,7 @@ async function annotationSearch() {
     els.downloadStatus.textContent = ''; els.region.setAttribute('aria-busy', 'true');
     try {
       if (!engine) {
-        const response = await fetch(new URL('./annotations.63ee3d0ec7eb7b582bccf6af01237c8260e92b3d554eaef3a09f12226a06a349.bundle.json', import.meta.url), {cache: 'no-cache'});
+        const response = await fetch(new URL('./annotations.6c5b956296c7ca5b465b93f59e4178035458c43f6f18c534c19c40daa520bee3.bundle.json', import.meta.url), {cache: 'no-cache'});
         if (!response.ok) throw new Error(`The annotation index could not be loaded (HTTP ${response.status}). Try Search again.`);
         const bundle = await response.json();
         engine = createEngine(bundle, globalThis.lunr); records = engine.records;

@@ -200,7 +200,7 @@ class AllBooksExtractionTests(unittest.TestCase):
         with self.assertRaisesRegex(extract.ExtractionError, "Book division does not match"):
             extract.extract_document(self.xml[2], book_number=1)
 
-    def test_combined_report_hashes_and_book_one_pilot_identity(self):
+    def test_combined_report_hashes_and_approved_book_one_identity(self):
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)
             report = extract.build_corpus(REPOSITORY, out)
@@ -221,7 +221,7 @@ class AllBooksExtractionTests(unittest.TestCase):
             self.assertEqual(combined, json.loads((out / "corpus.json").read_bytes()))
             self.assertEqual(hashlib.sha256((out / "corpus.json").read_bytes()).hexdigest(), report["corpus"]["sha256"])
             self.assertEqual(hashlib.sha256((out / "data/book-01.corpus.json").read_bytes()).hexdigest(),
-                             "9a3619160ec2fdd70b910065f190a30553e436a3069045e0cb51e7aae56d1e4c")
+                             "6d09a8d846b356fbecb3b7d5c5cb63b4c320e23181d4c255a013387268039c28")
 
 
 if __name__ == "__main__":

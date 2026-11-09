@@ -28,7 +28,7 @@ const reportPath = file => repositoryRelativeReportPath(repositoryDir, file);
 const collectionId = 'bellum-latin-cardwell';
 const bookId = number => `${collectionId}:${number}`;
 const sourceSpecs = [
-  {book:1, sections:673, sha256:'24277e94089fd25c403662c01e104f0c6a437d5c0f125a21624651bd20e87240'},
+  {book:1, sections:673, sha256:'f19da04dba7e673c5eae51c784e2eab10327ff2952fdc5acc9745cee4dab36fe'},
   {book:2, sections:654, sha256:'6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09'},
   {book:3, sections:542, sha256:'3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49'},
   {book:4, sections:663, sha256:'8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98'},

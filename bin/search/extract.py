@@ -38,7 +38,7 @@ CONTINUATION_PARAGRAPHS = {
     3: {"latin-bellum3-num3": 3},
     6: {"latin-bellum6-num427": 427},
 }
-BOOK_ONE_PILOT_CORPUS_SHA256 = "9a3619160ec2fdd70b910065f190a30553e436a3069045e0cb51e7aae56d1e4c"
+BOOK_ONE_APPROVED_CORPUS_SHA256 = "6d09a8d846b356fbecb3b7d5c5cb63b4c320e23181d4c255a013387268039c28"
 PARAGRAPH_SEPARATOR = "\n\n"
 BOOK_TITLE = (
     "FLAVII JOSEPHI DE BELLO JUDAICO LIBRI SEPTEM, INTERPRETE RUFINO "
@@ -455,8 +455,8 @@ def build_corpus(source_root: Path, output_dir: Path) -> dict:
         corpus_bytes = json_bytes(records)
         report_bytes = json_bytes(report)
         if book_number == 1:
-            require(sha(corpus_bytes) == BOOK_ONE_PILOT_CORPUS_SHA256,
-                    "Book I corpus differs from the approved pilot; review before replacing it")
+            require(sha(corpus_bytes) == BOOK_ONE_APPROVED_CORPUS_SHA256,
+                    "Book I corpus differs from the approved text; review before replacing it")
         artifacts[corpus_path] = corpus_bytes
         artifacts[report_path] = report_bytes
         books.append({"book": book_number, "status": report["status"],
@@ -491,7 +491,7 @@ def build_corpus(source_root: Path, output_dir: Path) -> dict:
             "wordSequencePreserved": all(report["coverage"]["wordSequencePreserved"] for report in book_reports),
             "nonWhitespaceContentPreserved": all(report["coverage"]["nonWhitespaceContentPreserved"] for report in book_reports),
             "globalIdsUnique": True, "globalOrderIsConsecutive": True,
-            "globalOrderRange": [0, 4000], "bookOnePilotCorpusUnchanged": True,
+            "globalOrderRange": [0, 4000], "bookOneApprovedCorpusMatches": True,
             "completeSectionCoverageByBook": {str(book): [1, spec["sections"]] for book, spec in BOOK_SPECS.items()},
             "allSectionTextsNonempty": all(bool(record["text"]) for record in combined),
         },
