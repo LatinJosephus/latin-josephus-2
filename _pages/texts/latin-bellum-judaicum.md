@@ -27,6 +27,8 @@ Indeed, Andreas Ammann describes how the extent of Gelenius’s revisions varies
 
 > The density of emendations also varies across the seven books of the _Bellum Judaicum_. Corrections are quite frequent in some passages [...]. On other pages, Gelenius made only a few minor changes to the text, and sometimes none at all. This is partly because the late antique translator of the _Bellum_ had a good command of Greek and because the text was reasonably well preserved. Gelenius therefore had less reason to make corrections to this work of Josephus.
 
+For a detailed comparison of an example passage between the editions of Froben, Cardwell, and Bader, that illustrates Gelenius' changes, see [here]({{site.baseurl}}/texts/latin-bellum-judaicum/comparison/).
+
 Below are a few passages drawn from Book I that show why Cardwell remains valuable for studying the Latin Josephus read in the Middle Ages. Despite relying on a chain of editions going back to Gelenius, Cardwell’s text preserves distinctive vocabulary, elaborations and interpretations that differ from the edited Greek, things that one might expect Gelenius to have smoothed away. Bader’s apparatus and commentary help us to see the general reliability of Cardwell as a witness to the medieval tradition, but also reveal some occasions where the original/traditional Latin has been "improved".
 
 ### Five examples of inherited Latin readings
