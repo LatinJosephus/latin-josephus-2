@@ -1,4 +1,4 @@
-<div class="accordion card{% if page.permalink == '/deh/' %} deh-settings{% endif %}" id="display-settings">
+<div class="accordion card{% if page.permalink == '/deh/' %} deh-settings{% elsif page.permalink == '/bellum-judaicum/' %} bellum-settings{% endif %}" id="display-settings">
   <div class="accordion-item">
     <h3 class="accordion-header" id="display-settings-header">
       <button
@@ -58,7 +58,7 @@
 
         <div id="section-select">
           <form class="accordion-row hidden">
-            <label for="section-selector">{% if page.permalink == "/antiquities/" %}Select an Alignment unit:{% elsif page.permalink == '/deh/' %}Sub-chapter:{% else %}Select a sub-chapter:{% endif %}</label>
+            <label for="section-selector">{% if page.permalink == "/antiquities/" or page.permalink == "/bellum-judaicum/" %}Select an Alignment unit:{% elsif page.permalink == '/deh/' %}Sub-chapter:{% else %}Select a sub-chapter:{% endif %}</label>
             <select id="section-selector"></select>
             {% if page.permalink == "/contra-apionem/" %}
             <button type="button" id="niese-previous" aria-label="Previous Niese section">Previous</button>
@@ -173,7 +173,7 @@
 
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="level-options" id="section-level" value="section-level" />
-              <label class="form-check-label" for="section-level">{% if page.permalink == "/antiquities/" %}Alignment unit{% else %}Sub-chapter{% endif %}</label>
+              <label class="form-check-label" for="section-level">{% if page.permalink == "/antiquities/" or page.permalink == "/bellum-judaicum/" %}Alignment unit{% else %}Sub-chapter{% endif %}</label>
             </div>
 
             {% if page.permalink == "/antiquities/" %}

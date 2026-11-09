@@ -1,3 +1,31 @@
+.bellum-settings #display-settings-header .inline {
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+@media (max-width: 575px) {
+  .bellum-settings #display-settings-header .inline {
+    gap: .2rem .75rem;
+  }
+
+  .bellum-settings #book-title {
+    flex-basis: 100%;
+    margin: 0;
+  }
+
+  .bellum-settings #display-settings-header .label {
+    margin: 0;
+  }
+
+  .bellum-settings #section-label {
+    text-wrap: balance;
+  }
+
+  .bellum-settings #display-settings-header .label:empty {
+    display: none;
+  }
+}
+
 .reader-citation-toolbar {
   display: flex;
   justify-content: flex-end;
