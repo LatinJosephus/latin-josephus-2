@@ -50,6 +50,9 @@
           <li class="nav-item {% if page.url == '/manuscripts/' %}active{% endif %}">
               <a class="nav-link" href="{{ '/manuscripts/' | relative_url }}"{% if page.url == '/manuscripts/' %} aria-current="page"{% endif %}>manuscripts</a>
           </li>
+          <li class="nav-item {% if page.url == '/library-catalogues/' %}active{% endif %}">
+              <a class="nav-link" href="{{ '/library-catalogues/' | relative_url }}"{% if page.url == '/library-catalogues/' %} aria-current="page"{% endif %}>catalogues</a>
+          </li>
           {% endif %}
           <li class="nav-item {% if page.title == p.title %}active{% endif %}">
               <a class="nav-link" href="{{ p.url | relative_url }}">
