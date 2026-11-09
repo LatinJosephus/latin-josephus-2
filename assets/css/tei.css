@@ -1,3 +1,77 @@
+.reader-citation-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: .65rem;
+}
+
+.reader-citation-button {
+  padding: .35rem .7rem;
+  border: 1px solid var(--lj-brand-rule);
+  border-radius: .25rem;
+  background: var(--lj-brand-surface);
+  color: var(--lj-brand-accent);
+}
+
+.reader-citation-button:hover:not(:disabled),
+.reader-citation-button:focus-visible {
+  border-color: var(--lj-brand-accent);
+}
+
+.reader-citation-button:disabled {
+  opacity: .55;
+}
+
+#reader-citation {
+  box-sizing: border-box;
+  width: min(36rem, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  padding: clamp(1rem, 4vw, 1.5rem);
+  border: 1px solid var(--lj-brand-rule);
+  border-radius: .5rem;
+  background: var(--lj-brand-surface);
+  color: var(--lj-brand-ink);
+}
+
+#reader-citation::backdrop {
+  background: rgba(0, 0, 0, .45);
+}
+
+#reader-citation-heading {
+  font-size: 1.35rem;
+}
+
+#reader-citation-source {
+  max-width: 100%;
+  padding: .2rem .35rem;
+  border: 1px solid var(--lj-brand-rule);
+  border-radius: .25rem;
+  color: inherit;
+  background: var(--lj-brand-paper);
+}
+
+#reader-citation-text {
+  margin-block: .9rem;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+
+#reader-citation-text a {
+  color: var(--lj-brand-accent);
+  text-decoration: underline;
+}
+
+.reader-citation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+#reader-citation-status {
+  margin: .35rem 0 0;
+  min-height: 1.5em;
+  font-size: .9em;
+}
+
 tei-div {
   display: block;
 }

@@ -8,7 +8,7 @@ layout: default
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tei.css?v=20261025-pollard-v1.1">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tei.css?v=20261108-reader-citations">
     {% if page.permalink == '/antiquities/' %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/froben.css">
     {% endif %}
@@ -41,6 +41,20 @@ layout: default
   </head>
   <body>
     {% include display-settings.html %}
+    <div class="reader-citation-toolbar">
+      <button id="cite-view" class="reader-citation-button" type="button" aria-haspopup="dialog" disabled>Cite this view</button>
+    </div>
+    <dialog id="reader-citation" aria-labelledby="reader-citation-heading">
+      <h2 id="reader-citation-heading">Cite this view</h2>
+      <label for="reader-citation-source">Text to cite</label>
+      <select id="reader-citation-source"></select>
+      <p id="reader-citation-text"></p>
+      <form method="dialog" class="reader-citation-actions">
+        <button id="reader-citation-copy" class="reader-citation-button" type="button" autofocus>Copy citation</button>
+        <button class="reader-citation-button" type="submit">Close</button>
+      </form>
+      <p id="reader-citation-status" role="status"></p>
+    </dialog>
     {% if page.permalink == '/deh/' %}
     {% include deh-parallels.html %}
     {% endif %}

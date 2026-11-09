@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const readerPrevious = document.getElementById("reader-previous");
   const readerNext = document.getElementById("reader-next");
   const readerStepStatus = document.getElementById("reader-step-status");
+  const citeViewButton = document.getElementById("cite-view");
+  let readerHasCitation = false;
   let readerLoading = true;
   let readerStops = [];
 
@@ -4229,6 +4231,120 @@ document.addEventListener("DOMContentLoaded", () => {
     "section-level": sectionLevelUsesNiese() ? "Niese section" : usesTraditionalStructure() ? "alignment unit" : "sub-chapter"
   })[state.viewingLevel] || "passage";
 
+  const citationReference = () => {
+    const book = isPreface() ? "1" : String(Number(state.bookNum));
+    const bookName = isPreface() ? "Proem" : "Book " + book;
+    const niese = state.viewingLevel === "niese-level" ? state.nieseNum
+      : sectionLevelUsesNiese() && state.viewingLevel === "section-level" ? state.sectionNum : null;
+    if (niese) return book + "." + niese;
+    if (activeWork.slug === "deh" && state.viewingLevel === "section-level") {
+      return sectionDisplayLabel().replace(/^\[(.*)\]$/, "$1");
+    }
+    if (activeWork.slug === "deh" && state.chapterNum === "0") return "Prologue";
+    return [bookName, chapterLabel.textContent, sectionLabel.textContent].filter(Boolean).join(", ");
+  };
+
+  const citationCredits = {
+    bamberg78: ["Latin — Bamberg 78", "eds. R.M. Pollard, J. Timmermann, J. di Gregorio, M. Laprade, and J.-F. Aubé-Pronce, 2013–2019, revised 2026"],
+    cardwell: ["Latin — Cardwell (1837)", "ed. E. Cardwell (1837), electronic edition by R.M. Pollard, 2017, revised 2026"],
+    boysen: ["Latin — Boysen (1898)", "ed. K. Boysen (1898), electronic edition by R.M. Pollard, 2026"],
+    ussani: ["Latin — Ussani (1932)", "ed. V. Ussani (1932), electronic edition by R.M. Pollard, 2026"],
+    froben: ["Latin — Froben (1524)", "Basel: Johann Froben, 1524"],
+    whiston: ["English — Whiston (1737)", "trans. William Whiston (1737)"],
+    lodge1602: ["English — Lodge (1602)", "trans. Thomas Lodge (1602)"],
+    pollard: ["English — Pollard v1.2", "trans. R.M. Pollard, v1.2 (2026)"],
+    millet1556: ["French — Millet (1556)", "trans. Jean Millet (1556)"],
+    lauro1544: ["Italian — Lauro (1544)", "trans. Pietro Lauro (1544)"],
+    niese: ["Greek — Niese", "ed. B. Niese"]
+  };
+
+  // These editions can display a printed division or folio independently of
+  // the main reader's location. Use the active controls in that case.
+  const nativeCitationReference = source => {
+    const prefix = {froben: "froben", millet1556: "millet", lauro1544: "lauro"}[source];
+    if (!prefix) return null;
+    const book = isPreface() ? "Proem" : "Book " + Number(state.bookNum);
+    const option = suffix => document.getElementById(prefix + "-" + suffix)?.selectedOptions[0]?.textContent;
+    const mode = document.getElementById(prefix + "-view")?.value;
+    switch (mode) {
+      case "page":
+      case "chapter":
+      case "division":
+        return [book, option(mode)].filter(Boolean).join(", ");
+      case "preliminary": return "Preliminary matter";
+      case "book":
+      case "source": return book;
+      case "running": {
+        const aligned = document.getElementById(prefix + "-ussani");
+        if (aligned?.value) return option("ussani");
+        const unit = new URLSearchParams(window.location.search).get("froben-unit");
+        if (prefix === "froben" && unit) return book + ", Bamberg alignment unit " + unit.split("-num").at(-1);
+        return null;
+      }
+      default: return null;
+    }
+  };
+
+  const initReaderCitation = () => {
+    if (!citeViewButton) return;
+    const dialog = document.getElementById("reader-citation");
+    const select = document.getElementById("reader-citation-source");
+    const text = document.getElementById("reader-citation-text");
+    const status = document.getElementById("reader-citation-status");
+    const update = () => {
+      const source = select.value;
+      const title = document.createElement("cite");
+      title.textContent = activeWork.slug === "deh" ? "De excidio Hierosolymitano" : activeWork.title;
+      const author = activeWork.slug === "deh" ? "" :
+        (["bamberg78", "cardwell", "boysen", "froben"].includes(source)
+          ? "Flavius Josephus (Latin trans.), " : "Flavius Josephus, ");
+      const reference = nativeCitationReference(source) || citationReference();
+      const url = new URL(window.location.href);
+      if (!url.searchParams.has("book")) url.searchParams.set("book", isPreface() ? "preface" : String(Number(state.bookNum)));
+      const link = document.createElement("a");
+      link.textContent = link.href = url.href;
+      text.replaceChildren(author, title, ", " + reference + ", " + citationCredits[source][1] + ", ", link);
+      status.textContent = "";
+    };
+    citeViewButton.addEventListener("click", () => {
+      const visible = pane => pane && !pane.hidden && !pane.classList.contains("hidden");
+      const sources = [
+        viewData.Latin && state.sources.Latin,
+        visible(document.getElementById("froben")) && document.getElementById("froben-view") && "froben",
+        visible(englishPane) && viewData.English && state.sources.English,
+        visible(greekPane) && viewData.Greek && !viewData.Greek.matches('tei-p[type="latin-fallback"]') && "niese",
+        visible(frenchPane) && document.getElementById("millet-view") && state.sources.French,
+        visible(italianPane) && document.getElementById("lauro-view") && state.sources.Italian
+      ].filter(source => citationCredits[source]);
+      select.replaceChildren(...sources.map(source => new Option(citationCredits[source][0], source)));
+      if (!select.value) return;
+      update();
+      dialog.showModal();
+    });
+    select.addEventListener("change", update);
+    document.getElementById("reader-citation-copy").addEventListener("click", async () => {
+      try {
+        if (typeof ClipboardItem !== "function" || !navigator.clipboard?.write) throw new Error();
+        await navigator.clipboard.write([new ClipboardItem({
+          "text/plain": new Blob([text.textContent], {type: "text/plain"}),
+          "text/html": new Blob([text.innerHTML], {type: "text/html"})
+        })]);
+      } catch {
+        try {
+          await navigator.clipboard.writeText(text.textContent);
+        } catch {
+          const range = document.createRange();
+          range.selectNodeContents(text);
+          window.getSelection()?.removeAllRanges();
+          window.getSelection()?.addRange(range);
+          status.textContent = "Citation selected. Use your device’s copy command.";
+          return;
+        }
+      }
+      status.textContent = "Citation copied.";
+    });
+  };
+
   // The annotation drawer changes the usable viewport. Size the sticky rails
   // from their actual position so even an expanded drawer cannot cover them.
   let readerStepFitPending = false;
@@ -4249,6 +4365,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateReaderSteps = () => {
+    if (citeViewButton) citeViewButton.disabled = readerLoading || !readerHasCitation;
     if (!readerFrame || !readerPrevious || !readerNext) return;
     scheduleReaderStepFit();
     readerFrame.setAttribute("aria-busy", String(readerLoading));
@@ -4316,6 +4433,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const reload = async () => {
+    readerHasCitation = false;
     readerLoading = true;
     updateReaderSteps();
     try {
@@ -4330,6 +4448,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       renderUI();
+      readerHasCitation = !invalidNieseRequest && Boolean(viewData.Latin || viewData.English || viewData.Greek);
       if (invalidNieseRequest || state.viewingLevel === "contents-level") {
         annotatedParagraphs = [];
         annotationsList.replaceChildren();
@@ -4360,6 +4479,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Add event listeners.
   const addEventListeners = () => {
+    initReaderCitation();
     window.addEventListener("scroll", scheduleReaderStepFit, {passive: true});
     window.addEventListener("resize", scheduleReaderStepFit);
     readerPrevious?.addEventListener("click", () => advanceReading(-1));
