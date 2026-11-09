@@ -50,6 +50,8 @@ git -C $pagesCheckout -c remote.origin.mirror=false push --no-follow-tags --recu
 if ($LASTEXITCODE -ne 0) { throw 'Pages push failed' }
 ```
 
+During the next routine update, remove `deployment-check-20261109.txt` from the root of both the source repository (`v2-development`) and the Pages repository (`main`). Leave the test file live until that update.
+
 ## Historical Millet release preservation and QA
 
 Keep the frozen Millet/Ussani master, original PAGE XML, source-line payloads, canonical mappings and offsets unchanged. Publish the nine intended slim `assets/data/deh-millet1556` assets with the reader runtime and generated pages; do not publish the multi-gigabyte transcription evidence or recovery archives.
