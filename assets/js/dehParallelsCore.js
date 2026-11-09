@@ -1,18 +1,18 @@
 /* Shared publication and excerpt logic; canonical XML and editorial data are read-only. */
 export const frozenSha = "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c";
 // v1 accepts the literal reviewed bytes or their exact LF checkout equivalent.
-// Frozen sources reproduce their original SHA; the five approved Pollard v1.1
-// files use explicit successor hashes, without rewriting the frozen concordance.
+// Frozen sources reproduce their original SHA; the five approved Pollard v1.2
+// files use the successor hashes from _docs/reader-corpus-pollard-v1.2.json.
 // No text/XML normalization occurs.
 export const sourceIntegrityPolicy = "reviewed-crlf-or-exact-lf-v1";
 export const pollardPublicationHashes = Object.freeze({
-  1: "1f8a50242272c8cbb2fe2054c10e318cf00d0aab91b508eb1ca9e7a9e6a60b47",
-  2: "b87360225888e3e66950905eb047bded590302bb28b2b0f4c43fdbf8b089db2c",
-  3: "f6c0c7ea4140e40bbe72d6a9293e5cbe6df73d15271d41d88d72a5eefd14e08c",
-  4: "1e5bf28ece4f00954924fe5aa9a704e647289a0c83e7e08ca99944b8412c0370",
-  5: "4df33b9d0409644e5f9f2bcacb87ca507e5ff2272d72d1a0b1c73e14f2484c91"
+  1: "357aaf62eff572083f9c14ecf68885866ef2ce66db8687d260038d269510d603",
+  2: "0e32075e99eeb8ced876cfb737197102bff976ff7f48faf00a3b19baeb505896",
+  3: "b245bb313b56877cc51146af03cfe373be9f071eaec2a34de14f1e6e10f31ad3",
+  4: "534150fafa5370458a78b90000e26806f4b6f01a5b563ec1f9f31be5c11c0c45",
+  5: "da4dbbabf578becb7c253a52495a9801a408fc7c72597a3bd2ac7f9883bbf34b"
 });
-const previousPollardHashes = Object.freeze({
+const frozenPollardHashes = Object.freeze({
   1: "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
   2: "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
   3: "e5dc0d008801809385c8bcaf43c5ee2d42d861b572968e3ba6f6659543175d6b",
@@ -21,7 +21,7 @@ const previousPollardHashes = Object.freeze({
 });
 export const romanBooks = ["", "I", "II", "III", "IV", "V", "VI", "VII"];
 export const sources = {
-  pollard: { work: "deh", language: "English", lang: "en", identity: "Pollard v1.1 — English translation of the Latin DEH." },
+  pollard: { work: "deh", language: "English", lang: "en", identity: "Pollard v1.2 — English translation of the Latin DEH." },
   ussani: { work: "deh", language: "Latin", lang: "la", identity: "Ussani (1932) — critical Latin text of DEH." },
   niese: { work: "bellum", language: "Greek", lang: "grc", identity: "Niese — Greek Bellum." },
   whiston: { work: "bellum", language: "English", lang: "en", identity: "Whiston — English translation of the Greek Bellum." },
@@ -113,7 +113,7 @@ export function createTextLoader(xmlBase, hashes) {
       cache.set(key, fetch(url).then(async response => {
         let expectedHash = hashes[`assets/xml/${path}`];
         if (sourceKey === "pollard") {
-          if (expectedHash !== previousPollardHashes[book]) throw new Error(`${sourceKey} Book ${book} differs from the frozen reviewed authority.`);
+          if (expectedHash !== frozenPollardHashes[book]) throw new Error(`${sourceKey} Book ${book} differs from the frozen reviewed authority.`);
           expectedHash = pollardPublicationHashes[book];
         }
         const text = await checkedBytes(response, expectedHash, `${sourceKey} Book ${book}`, true);
