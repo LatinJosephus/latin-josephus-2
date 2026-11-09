@@ -53,7 +53,7 @@ In spring 2022, the project moved to a website built by [Performant Software Sol
 
 In autumn of 2026, the content and website were thoroughly updated and expanded (LatinJosephus v. 3.0).
 
- 1. The [*De excidio Hierosolymitano*]({{site.baseurl}}/deh/) was added in Ussani’s Latin edition, with Richard Pollard’s English translation, Jean Millet’s French translation (1556), and Pietro Lauro’s Italian translation (1544). The reader includes early medieval manuscript annotations and an [English commentary]({{site.baseurl}}/texts/#deh-commentary). Its [parallel passage tool]({{site.baseurl}}/deh/?book=1&chapter=15&unit=3&parallel=deh-1-15-3&deh-source=ussani) lets readers compare *De excidio* with the *Jewish War* and the *Antiquities* side by side.
+ 1. The [*De excidio Hierosolymitano*]({{site.baseurl}}/deh/) was added in Ussani’s Latin edition, with Richard Pollard’s English translation, Jean Millet’s French translation (1556), and Pietro Lauro’s Italian translation (1544). The reader includes early medieval manuscript annotations and an [English commentary]({{site.baseurl}}/texts/#deh-commentary), with notes drawn from Dominique Estève’s thesis among other sources. Its [parallel passage tool]({{site.baseurl}}/deh/?book=1&chapter=15&unit=3&parallel=deh-1-15-3&deh-source=pollard) lets readers compare Ussani’s Latin or Pollard’s English (v1.2) with the *Jewish War* and the *Antiquities* side by side.
  2. The [*Against Apion*]({{site.baseurl}}/contra-apionem/) was added.
  3. The Latin texts of the *Antiquities* and *Jewish War* were carefully corrected, removing thousands of mistakes.
  4. The Greek text was added for the *Jewish War*.
@@ -61,9 +61,12 @@ In autumn of 2026, the content and website were thoroughly updated and expanded 
  6. Thomas Lodge’s [English translations (1602)]({{site.baseurl}}/texts/lodge/), which draw on the Latin and French, were added for the *Antiquities*, *Jewish War*, and *Against Apion*.
  7. A complete transcription of [Froben’s 1524 *Antiquities*]({{site.baseurl}}/texts/froben-1524/), including the Proem and all twenty books, was added alongside the Bamberg text.
  8. A [search and concordance tool]({{site.baseurl}}/search/) was added for the Latin texts, English, French and Italian translations, and manuscript annotations.
- 9. A [catalogue of over 500 Latin Josephus manuscripts]({{site.baseurl}}/manuscripts/) was added.
+ 9. A [catalogue of over 500 Latin Josephus manuscripts]({{site.baseurl}}/manuscripts/) was added. Recent updates include [Boysen’s sigla and manuscript families]({{site.baseurl}}/manuscripts/#ljm-ref-boysen) for *Against Apion*, a [witness in Trento]({{site.baseurl}}/manuscripts/#ljm-A0020), and revised records for Casanatense 718 and 719.
+ 10. A [survey of early medieval library catalogues]({{site.baseurl}}/library-catalogues/) traces references to Josephus and Hegesippus in booklists, inventories, and records of gifts up to c. 1000.
+ 11. The [Background page]({{site.baseurl}}/background/) was expanded with an introduction to Josephus and his works, their Latin versions, and a bibliography.
+ 12. All four readers gained a **Cite this view** button that copies a citation for the selected passage and edition, with a link back to that view.
 
-For an introduction to Josephus and his works, see [Background]({{site.baseurl}}/background/). For details on the texts and how they were prepared, see [Our editions and translations]({{site.baseurl}}/texts/).
+For details on the texts and how they were prepared, see [Our editions and translations]({{site.baseurl}}/texts/).
 
 ## Corrections
 
