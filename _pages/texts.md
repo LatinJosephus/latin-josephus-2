@@ -16,7 +16,13 @@ Notes on the editions, translations, manuscript annotations and textual correspo
 - [*Antiquitates Judaicae* — Johann Froben (Basel, 1524)]({{site.baseurl}}/texts/froben-1524/).
 - [*Bellum Judaicum* — E. Cardwell (Oxford, 1837)]({{site.baseurl}}/texts/latin-bellum-judaicum/).
 - [*Contra Apionem* — K. Boysen (Vienna, 1898)]({{site.baseurl}}/texts/latin-contra-apionem/).
-- [*De excidio Hierosolymitano* — V. Ussani (Vienna, 1932)]({{site.baseurl}}/texts/latin-deh/).
+- {: #deh-downloads } [*De excidio Hierosolymitano* — V. Ussani (Vienna, 1932)]({{site.baseurl}}/texts/latin-deh/).
+  <span class="d-block ml-3 small">
+    Download for offline reading ·
+    <a href="{{ '/assets/downloads/deh/deh-ussani-latin.epub' | relative_url }}" download aria-label="Download the Latin DEH as EPUB">EPUB</a> ·
+    <a href="{{ '/assets/downloads/deh/deh-ussani-latin.pdf' | relative_url }}" download aria-label="Download the Latin DEH as PDF">PDF</a> ·
+    <a href="#deh-english-downloads">English downloads</a>
+  </span>
 
 ## Manuscript annotations
 
@@ -27,7 +33,12 @@ Notes on the editions, translations, manuscript annotations and textual correspo
 
 - [Whiston (1737) — English *Antiquities*, *Jewish War* and *Against Apion*]({{site.baseurl}}/texts/whiston/).
 - [Lodge (1602) — English *Antiquities*, *Jewish War* and *Against Apion*]({{site.baseurl}}/texts/lodge/).
-- [Pollard (2026)— English DEH]({{site.baseurl}}/texts/pollard/).
+- {: #deh-english-downloads } [Pollard (2026)— English DEH]({{site.baseurl}}/texts/pollard/).
+  <span class="d-block ml-3 small">
+    Download for offline reading ·
+    <a href="{{ '/assets/downloads/deh/deh-pollard-english.epub' | relative_url }}" download aria-label="Download the English DEH as EPUB">EPUB</a> ·
+    <a href="{{ '/assets/downloads/deh/deh-pollard-english.pdf' | relative_url }}" download aria-label="Download the English DEH as PDF">PDF</a>
+  </span>
 - [Millet (1556) — French DEH]({{site.baseurl}}/texts/millet-1556/).
 - [Lauro (1544) — Italian DEH]({{site.baseurl}}/texts/lauro-1544/).
 

@@ -73,3 +73,7 @@
 # Preserve current Pollard authority and released English bytes on every checkout.
 /_docs/reader-corpus-pollard-v1.2.json -text
 /assets/xml/deh/English/book-0[1-5].xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+
+# Preserve the exact DEH downloads on checkout.
+/assets/downloads/deh/*.epub binary
+/assets/downloads/deh/*.pdf binary

@@ -42,6 +42,9 @@ layout: default
   <body>
     {% include display-settings.html %}
     <div class="reader-citation-toolbar">
+      {% if page.permalink == '/deh/' %}
+      <a class="small align-self-center mr-3" href="{{ '/texts/#deh-downloads' | relative_url }}" target="_blank" rel="noopener">Downloads</a>
+      {% endif %}
       <button id="cite-view" class="reader-citation-button" type="button" aria-haspopup="dialog" disabled>Cite this view</button>
     </div>
     <dialog id="reader-citation" aria-labelledby="reader-citation-heading">
