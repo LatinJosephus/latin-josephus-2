@@ -1,17 +1,16 @@
-# LatinJosephus public preview: publishing handoff
+# LatinJosephus Pages publishing handoff
 
-Verified 24 October 2026 by MilletWorkBot2, from the editor's explicit identification of the preview, existing Git remotes and the previous release publisher. Keep this reference with the project so a successor does not need to rediscover the hosting arrangement.
+The separate Pages repository became the production site on 9 November 2026. It publishes from the root of `main` with `www.latinjosephus.org` as its custom domain. The release procedure below follows the preview handoff verified on 24 October 2026.
 
 ## Repositories and destinations
 
 | Purpose | Repository | Branch / address |
 | --- | --- | --- |
 | Development source | https://github.com/LatinJosephus/latin-josephus-2.git | `v2-development` |
-| Public preview, generated static files | https://github.com/LatinJosephus/LatinJosephus.github.io.git | `main` |
-| Preview website | https://latinjosephus.github.io/ | GitHub Pages |
-| Preview DEH reader | https://latinjosephus.github.io/deh/ | Same static Pages publication |
+| Production, generated static files | https://github.com/LatinJosephus/LatinJosephus.github.io.git | `main` |
+| Production website | https://www.latinjosephus.org/ | GitHub Pages |
 
-The preview does **not** deploy automatically from the development repository. The source repository also has an upstream remote, `https://github.com/performant-software/latin-josephus-2.git`; that remote and the source `master` branch are not the preview publishing targets. The production domain `www.latinjosephus.org` is a separate destination and is outside the Millet preview request.
+Publish the generated site to the separate Pages repository. Use `LatinJosephus/latin-josephus-2` and `v2-development` for source changes.
 
 Known local checkouts:
 
@@ -30,17 +29,28 @@ Its final source commit was `e3fe7b1a677dd340d707d544bdb7e90bc84a08cb`; its fina
 
 Follow the same two-repository procedure:
 
-1. Read the live remote branch heads. Snapshot the original repositories' local heads, status, index, configuration and working files. Preserve unrelated work.
-2. Finish and test the exact source commit in an isolated worktree. Build the static site, run the existing publication/corpus gates, and prepare a separate preview commit directly atop the current live preview `main`.
-3. Review every static output difference. Preserve unrelated published files, search data, all scholarly inputs and exact character-offset assets. Do not publish private recovery material merely because Jekyll copied it into a local build.
-4. Preserve `.nojekyll`. The verified preview tree has no `CNAME`; do not copy the production-domain `CNAME` from the local build into this preview repository.
-5. Record the source and preview commit/tree IDs, exact file hashes, tests and rollback bases. Recheck live heads immediately before release; an unexpected change requires reassessment.
-6. After the editor authorises publication of the prepared candidate, push the exact source commit to source `v2-development`, then the exact static preview commit to preview `main`. Use normal non-forced pushes, with mirror mode, follow-tags and submodule recursion disabled. Verify the resulting remote heads. A completed first target can be skipped on a verified retry.
-7. Verify the GitHub Pages `pages-build-deployment` result and the public URLs and assets. A successful Git push alone does not certify that Pages has served the new version.
+1. Read the live remote branch heads and Pages settings. Snapshot the original repositories' local heads, status, index, configuration and working files. Preserve unrelated work.
+2. Finish and test the exact source commit in an isolated worktree. Build the static site with `bundle exec jekyll build` and run the existing publication and corpus gates. Fetch `main` in an isolated Pages checkout and fast-forward it to include any remote changes, including commits to `CNAME`.
+3. Copy only reviewed build outputs into the Pages checkout and review every static difference. Preserve unrelated published files, search data, all scholarly inputs and exact character-offset assets. Keep private recovery material out of the publication.
+4. Keep the root `CNAME` and `.nojekyll` from the Pages checkout. Exclude both paths from the copy and verify both are unchanged in the publication diff. `CNAME` must contain exactly `www.latinjosephus.org`.
+5. Record the source and Pages commit/tree IDs, exact file hashes, tests and rollback bases. Recheck live heads immediately before release and review any unexpected change before proceeding.
+6. After the editor authorises publication, push the exact source commit to `v2-development`. Use the required check below to publish the exact static commit to Pages `main`. Use normal non-forced pushes with mirror mode, follow-tags and submodule recursion disabled. Verify the resulting remote heads. A completed first target can be skipped on a verified retry.
+7. Verify the GitHub Pages `pages-build-deployment` result, the custom domain in Pages settings, and the live HTTPS URLs and assets.
 
-The existing `bin/deploy` script is **not** this procedure: it defaults to `master`/`gh-pages`, rewrites a checkout and force-pushes. Do not use it for the separate public preview.
+Use the separate-repository procedure for this site. The legacy `bin/deploy` script rewrites a checkout and force-pushes to a branch of the source repository.
 
-## Millet release preservation and QA
+### Required check before the Pages push
+
+In PowerShell, run this block from the source checkout with `$pagesCheckout` set to the separate Pages checkout and `$pagesCommit` set to the full SHA of the reviewed static commit. The check reads both files from the commit being pushed and stops the push if either is missing or `CNAME` has different bytes.
+
+```powershell
+node bin/check-pages-domain.mjs $pagesCheckout $pagesCommit
+if ($LASTEXITCODE -ne 0) { throw 'Pages domain check failed' }
+git -C $pagesCheckout -c remote.origin.mirror=false push --no-follow-tags --recurse-submodules=no origin "${pagesCommit}:refs/heads/main"
+if ($LASTEXITCODE -ne 0) { throw 'Pages push failed' }
+```
+
+## Historical Millet release preservation and QA
 
 Keep the frozen Millet/Ussani master, original PAGE XML, source-line payloads, canonical mappings and offsets unchanged. Publish the nine intended slim `assets/data/deh-millet1556` assets with the reader runtime and generated pages; do not publish the multi-gigabyte transcription evidence or recovery archives.
 
