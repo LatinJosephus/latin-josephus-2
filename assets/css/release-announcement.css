@@ -1,0 +1,150 @@
+.lj-release {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-block: clamp(2rem, 4.5vw, 4rem) 3.5rem;
+  color: var(--global-text-color);
+}
+
+.lj-release__copy {
+  max-width: 43rem;
+  margin-inline: auto;
+  font-size: 1.17rem;
+  line-height: 1.65;
+}
+
+.lj-release__header {
+  padding-block-end: 1.45rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.lj-release__header h1 {
+  margin-block: 0 0.75rem;
+  font-size: clamp(2.4rem, 5vw, 4.15rem);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+
+.lj-release__subtitle {
+  margin-block: 0 1rem;
+  font-size: clamp(1.16rem, 2.5vw, 1.48rem);
+  line-height: 1.4;
+}
+
+.lj-release__date {
+  margin: 0;
+  color: var(--global-theme-color);
+  font: 600 1rem/1.4 var(--lj-font-ui);
+}
+
+.lj-release__introduction {
+  padding-block-start: 1.5rem;
+}
+
+.lj-release__section {
+  margin-block-start: clamp(2rem, 4vw, 3rem);
+}
+
+.lj-release__section h2 {
+  margin-block: 0 0.65rem;
+  font-size: clamp(1.85rem, 3.25vw, 2.65rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.lj-release :is(h2, figure),
+#release-content {
+  scroll-margin-top: calc(var(--lj-header-height) + 1rem);
+}
+
+.lj-release__copy p:not(.lj-release__date) {
+  margin-block-end: 0.85rem;
+}
+
+.lj-release__copy li + li {
+  margin-block-start: 0.5rem;
+}
+
+.lj-release strong {
+  font-weight: 700;
+}
+
+.lj-release a {
+  color: var(--global-theme-color);
+  text-decoration: underline;
+  text-underline-offset: 0.17em;
+}
+
+.lj-release :is(a, summary):focus-visible,
+.lj-release-skip:focus {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+}
+
+.lj-release-skip:focus {
+  position: fixed;
+  z-index: 1100;
+  inset-block-start: 0.6rem;
+  inset-inline-start: 0.6rem;
+  padding: 0.45rem 0.75rem;
+  background: var(--global-bg-color);
+  color: var(--global-theme-color);
+}
+
+.lj-release__figure {
+  margin: 1.6rem 0 0;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.35rem;
+  background: var(--lj-brand-surface);
+}
+
+.lj-release__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.34rem 0.34rem 0 0;
+}
+
+.lj-release__caption {
+  max-width: 45rem;
+  margin-inline: auto;
+  padding: 1rem clamp(0.85rem, 3vw, 1.4rem) 1.1rem;
+  font-size: 1.03rem;
+  line-height: 1.55;
+}
+
+.lj-release__caption p {
+  margin: 0;
+}
+
+.lj-release__figure-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-block-start: 0.5rem;
+}
+
+.lj-release__figure-links,
+.lj-release__description summary {
+  font-family: var(--lj-font-ui);
+  font-size: 1rem;
+}
+
+.lj-release__description {
+  margin-block-start: 0.5rem;
+}
+
+.lj-release__description summary {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.lj-release__description[open] p {
+  margin-block-start: 0.4rem;
+}
+
+.lj-release__director {
+  margin-block-start: 1.5rem;
+  padding-block-start: 1rem;
+  border-top: 1px solid var(--global-divider-color);
+}

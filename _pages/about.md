@@ -53,6 +53,8 @@ In spring 2022, the project moved to a website built by [Performant Software Sol
 
 In autumn of 2026, the content and website were thoroughly updated and expanded (LatinJosephus v. 3.0).
 
+[Latin Josephus 3.0 — Read the release announcement]({{ '/releases/3.0/' | relative_url }})
+
  1. The [*De excidio Hierosolymitano*]({{site.baseurl}}/deh/) was added in Ussani’s Latin edition, with Richard Pollard’s English translation, Jean Millet’s French translation (1556), and Pietro Lauro’s Italian translation (1544). The reader includes early medieval manuscript annotations and an [English commentary]({{site.baseurl}}/texts/#deh-commentary), with notes drawn from Dominique Estève’s thesis among other sources. Its [parallel passage tool]({{site.baseurl}}/deh/?book=1&chapter=15&unit=3&parallel=deh-1-15-3&deh-source=pollard) lets readers compare Ussani’s Latin or Pollard’s English (v1.2) with the *Jewish War* and the *Antiquities* side by side.
  2. The [*Against Apion*]({{site.baseurl}}/contra-apionem/) was added.
  3. The Latin texts of the *Antiquities* and *Jewish War* were carefully corrected, removing thousands of mistakes.

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html{% if page.release_date %} lang="en"{% endif %}>
 
   <head>
     {% if page.redirect %}<meta http-equiv="refresh" content="3; url={{ site.baseurl }}/" />{% endif %}
@@ -8,6 +8,7 @@
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
+    {% if page.release_date %}<a class="sr-only sr-only-focusable lj-release-skip" href="#release-content">Skip to the announcement</a>{% endif -%}
     <!-- Header -->
 
     {% include header.html %}

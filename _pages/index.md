@@ -14,6 +14,8 @@ This project allows the scholars of today to read Josephus in the Latin versions
 
 This site was thoroughly revised and expanded in autumn of 2026.
 
+[Latin Josephus 3.0 — Read the release announcement]({{ '/releases/3.0/' | relative_url }})
+
 ___
 
 *[Antiquitates Judaicae]({{site.baseurl}}/antiquities/)* — an account of Jewish history from Creation to the first century.

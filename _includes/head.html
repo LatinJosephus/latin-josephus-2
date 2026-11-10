@@ -8,10 +8,10 @@
   | {{ page.title }}
   {% endif %}
 </title>
-<meta name="description" content="{{ site.description }}">
+<meta name="description" content="{% if page.release_date %}{{ page.description | escape }}{% else %}{{ site.description }}{% endif %}">
 
 <!-- Open Graph -->
-{% if site.serve_og_meta %}
+{% if site.serve_og_meta and page.release_date == nil %}
 <meta property="og:site_name" content="{{ site.description }}" />
 <meta property="og:type" content="object" />
 <meta property="og:title" content="{{ site.name }}" />
@@ -44,7 +44,21 @@
 <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="{{ '/assets/img/brand/bamberg/bamberg-micro-icon-dark.svg' | relative_url }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/brand/bamberg/bamberg-favicon-light-180.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ page.main_css_version | default: '20261102-reader-steps' }}">
-<link rel="canonical" href="{{ page.url | replace:'index.html','' | relative_url }}">
+<link rel="canonical" href="{% if page.release_date %}{{ page.url | absolute_url }}{% else %}{{ page.url | replace:'index.html','' | relative_url }}{% endif %}">{% if page.release_date %}
+<meta name="author" content="{{ page.author | escape }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ page.description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ page.og_image | absolute_url }}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="2880">
+<meta property="og:image:height" content="1620">
+<meta property="og:image:alt" content="{{ page.og_image_alt | escape }}">
+<meta property="article:published_time" content="{{ page.release_date }}">
+<link rel="stylesheet" href="{{ '/assets/css/release-announcement.css' | relative_url }}">{% endif %}
 
 {% if site.enable_darkmode %}
 <!-- Dark Mode -->
