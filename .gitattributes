@@ -60,6 +60,9 @@
 /bin/cibuild -text
 /bin/prepare-reader-publication.mjs -text
 
+# The Book IX Greek source is bound to its exact bytes in the DEH display layer.
+/assets/xml/antiquities/Greek/book-09.xml -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+
 # Audited AJ display derivative and its independent certification retain bytes.
 /assets/data/deh-aj-display.v1.json -text
 /_includes/deh-parallels.html -text

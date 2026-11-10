@@ -5,6 +5,7 @@ in XML-parser-normalized body text, including whitespace and annotation text.
 They are evidence coordinates, not replacements for the stored DOM boundaries.
 """
 import argparse
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -175,13 +176,48 @@ def capture(args):
                       'selected_text_changes':sum(s['selected_text_changed'] for c in components for s in c['sections']),
                       'raw_selected_text_changes':sum(s['raw_selected_text_changed'] for c in components for s in c['sections'])},indent=2))
 
+def historical_records_sha(root, layer):
+    restoration = layer.get('antiquities_ix_greek_restoration')
+    if restoration is None:
+        return records_sha(layer)
+
+    history = copy.deepcopy(layer)
+    relative = 'assets/xml/antiquities/Greek/book-09.xml'
+    greek = Source(root / relative)
+    assert sha(greek.bytes) == layer['source_sha256'][relative]
+    checked = []
+    for record in history['records']:
+        for component in record['components']:
+            if component['frozen_target']['book'] != 9:
+                continue
+            for section in component['sections']['Greek']:
+                checked.append(section['number'])
+                assert section['excludedParagraphs'] == []
+                section['excludedParagraphs'] = ['greek-book09-num51']
+                for span in section['spans']:
+                    for edge, number in [('start', section['number']), ('end', section['number'] + 1)]:
+                        point = span[edge]
+                        node = greek.locate(point)
+                        assert node.tag.endswith('}num') and node.text == f'[{number}]'
+                        assert point['path'][:2] == [1, 1] and len(point['path']) == 4
+                        assert point['side'] == 'before'
+                        point['path'][2] -= 7
+    assert restoration == {
+        'inserted_paragraphs': 7,
+        'rebased_parallel_sections': checked,
+        'provenance': '_docs/antiquities-ix-greek-restoration.md'
+    }
+    assert checked == [216, 222, 223, 224, 225, 226, 227]
+    return records_sha(history)
+
+
 def verify(root):
     root = Path(root).resolve()
     cert = read(root / CERT)
     layer = read(root / 'assets/data/deh-aj-display.v1.json')
     assert len(cert['components']) == 44 and len({c['deh_id'] for c in cert['components']}) == 31
     assert not cert['editorial_questions']
-    assert records_sha(layer) == cert['unchanged_records_sha256'], 'Frozen targets, witness notes, exclusions or section boundaries changed'
+    assert historical_records_sha(root, layer) == cert['unchanged_records_sha256'], 'Frozen targets, witness notes, exclusions or section boundaries changed'
     assert current_components(root, layer) == cert['current_components'], 'Certified Latin boundaries, selected passages or coordinates changed'
     for book, record in cert['source_topology'].items():
         assert sha((root / f'assets/xml/antiquities/Latin/book-{int(book):02}.xml').read_bytes()) == record['current_sha256']

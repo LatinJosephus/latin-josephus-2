@@ -1,0 +1,11 @@
+# Greek restoration of Antiquities IX.51–109
+
+The Greek text follows Benedictus Niese, *Flavii Iosephi Opera*, vol. II, Berlin, Weidmann, 1885, pp. 279–291. The collated scan is the University of Chicago copy, [HathiTrust scan chi.20489450](https://hdl.handle.net/2027/chi.20489450), PDF pages 287–299. Its SHA-256 is `040c1570bc25730fa2c98b2f9ae847646af67919b6a634c2685628601de12b44`.
+
+The transcription base is [Perseus Digital Library, Tufts University, `tlg0526.tlg001.perseus-grc2`](https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/01b725d835e6e733062ffd79e0efdbae1ba06e5c/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml), SHA-256 `64879910ecab63ca197146bf0c6e45849914c12221e1fb858c2a417bd65439f0`. The adapted passage is available under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The restoration re-encodes the Perseus sections in the project's TEI and collates their wording and starts against the printed narrative. Page breaks and line-end hyphenation are joined. Apostrophes and quotation marks follow the adjoining Greek transcription's typography.
+
+Niese prints two asterisks before the surviving words at §51 and records Hudson's observation of a lacuna in the apparatus on p. 279. The restored text includes both asterisks. It also preserves Niese's square brackets around the editorial deletion at §100. Marginal numbers identify the printed line. Where the line contains the end of one sentence and the beginning of another, the cut follows the Perseus section start within that line.
+
+The restoration spans 59 sections in the eight printed subdivisions. The paragraph starts are §§51, 60, 74, 87, 95, 99, 102, and 105. The preceding §50 and the following §110 were checked against the print and retain their existing text. The project uses the established Latin omission anchor for alignment unit 51, with explicit Greek boundaries at §§51 and 110. The Bamberg pane records its lacuna independently. The Whiston pane retains the 1856 text and apparatus and identifies that printing in its provenance notice.
+
+Two *De excidio* II.12.3 comparisons cite IX.216 and IX.222–227. Their Greek locators follow the same source paragraphs after the insertion. All seven excerpts match the prior raw text exactly. The published citation targets and the Latin boundary certificate are preserved.

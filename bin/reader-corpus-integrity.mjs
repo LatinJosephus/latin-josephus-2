@@ -13,6 +13,15 @@ const historicalManifestPath = '_docs/reader-corpus-integrity.json';
 const cardwellBookOnePath = 'assets/xml/bellum/Latin/book-01.xml';
 const cardwellBookOneSourceHash = 'f19da04dba7e673c5eae51c784e2eab10327ff2952fdc5acc9745cee4dab36fe';
 const editorialAuthorityPath = '_docs/reader-corpus-pollard-v1.2.json';
+const antiquitiesNineRestoration = {
+  'assets/xml/antiquities/Greek/book-09.xml': [
+    'c52107e1b5dd74bc3f4cb3a8afac347e39e2857ce4e7ae3cac1054069af7ec3a'
+  ],
+  'assets/xml/antiquities/structure.xml': [
+    '912235105834a044516460f7246042f8ad99f72c44aba8f6487506c1f9f0f73d',
+    'a08aa263d6ff01692fb32864f5890e4bea18ec38124554059718ee623c9af76c'
+  ],
+};
 const releaseEvidencePaths = [
   '_docs/LAURO_ENGLISH_V1_2_RELEASE_20261031.md',
   '_docs/LAURO_ENGLISH_V1_2_SOURCE_QA_20261031.json'
@@ -64,8 +73,17 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
     allowed_worktree_sha256: [cardwellBookOneSourceHash, cardwellBookOnePublicationHash],
     previous_authority: historicalManifest.files[cardwellBookOnePath]
   };
+  const restoredAntiquities = Object.fromEntries(
+    Object.entries(antiquitiesNineRestoration).map(([relative, hashes]) => [relative, {
+      git_sha256: hashes[0],
+      pinned_canonical_sha256: hashes[0],
+      allowed_worktree_sha256: hashes,
+      previous_authority: historicalManifest.files[relative]
+    }])
+  );
   const manifest = {...historicalManifest,
-    files:{...historicalManifest.files, ...authority.files, [cardwellBookOnePath]:cardwellBookOne}};
+    files:{...historicalManifest.files, ...authority.files, [cardwellBookOnePath]:cardwellBookOne,
+      ...restoredAntiquities}};
   assert.deepEqual(files(path.join(root, 'assets/xml')), Object.keys(manifest.files).sort(), 'Unexpected or missing production XML');
   const checked = {};
   for (const [relative, record] of Object.entries(manifest.files)) {
