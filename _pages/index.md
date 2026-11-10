@@ -16,8 +16,6 @@ This site was thoroughly revised and expanded in autumn of 2026.
 
 [Latin Josephus 3.0 — Read the release announcement]({{ '/releases/3.0/' | relative_url }})
 
-**Scholarly corpus and research data** — [Download and cite the archived v3.0 dataset on Zenodo](https://doi.org/10.5281/zenodo.24120761).
-
 ___
 
 *[Antiquitates Judaicae]({{site.baseurl}}/antiquities/)* — an account of Jewish history from Creation to the first century.
@@ -39,5 +37,7 @@ ___
 [View a list]({{site.baseurl}}/manuscripts/) of all known Latin manuscripts of the four works above.
 
 ___
+
+**Scholarly corpus and research data** — [Download and cite the archived v3.0 dataset on Zenodo](https://doi.org/10.5281/zenodo.24120761).
 
 This website is produced by [Richard Matthew Pollard](https://professeurs.uqam.ca/professeur/pollard.richard_matthew/), département d’Histoire, Université du Québec à Montréal. Much of the content was produced with the assistance of Jean-Félix Aubé-Pronce.
