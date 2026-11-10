@@ -432,7 +432,7 @@ async function annotationSearch() {
     els.downloadStatus.textContent = ''; els.region.setAttribute('aria-busy', 'true');
     try {
       if (!engine) {
-        const response = await fetch(new URL('./annotations.c0f71f8b35e55076e0735bfe5ebbb4c2a4894dd216664ef86b404b7065337962.bundle.json', import.meta.url), {cache: 'no-cache'});
+        const response = await fetch(new URL('./annotations.034434117f789ed50d348d87332bc3f43f10a76b19ac2fd031903dc878d2bf93.bundle.json', import.meta.url), {cache: 'no-cache'});
         if (!response.ok) throw new Error(`The annotation index could not be loaded (HTTP ${response.status}). Try Search again.`);
         const bundle = await response.json();
         engine = createEngine(bundle, globalThis.lunr); records = engine.records;

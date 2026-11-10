@@ -500,11 +500,12 @@ document.addEventListener("DOMContentLoaded", () => {
     state.subchapterNum = rows[0]?.subchapter || null;
     if (!state.subchapterNum) state.viewingLevel = isPreface() ? "book-level" : "chapter-level";
   };
-  const structuralUnavailable = (language, reason) => {
+  const structuralUnavailable = (language, reason, {showSubstitutionNotice = true} = {}) => {
     const notice = document.createElement("div");
     notice.className = "alert alert-secondary structural-unavailable";
     notice.setAttribute("role", "status");
-    notice.textContent = `${language}: ${reason} No nearby text has been substituted.`;
+    notice.textContent = `${language}: ${reason}`;
+    if (showSubstitutionNotice) notice.textContent += " No nearby text has been substituted.";
     return notice;
   };
   const traditionalPoint = (data, locator) => {
@@ -2487,7 +2488,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const wrapper = document.createElement("tei-div2");
       wrapper.setAttribute("type", "niese-section"); wrapper.setAttribute("n", String(wanted));
       wrapper.dataset.syntheticSection = "niese-derived";
-      wrapper.appendChild(structuralUnavailable(language, identity[language].note || "This section is unavailable in this source."));
+      wrapper.appendChild(structuralUnavailable(language,
+        identity[language].note || "This section is unavailable in this source.",
+        {showSubstitutionNotice: identity[language].showSubstitutionNotice}));
       return wrapper;
     }
     if (identity?.[language]?.spans) {
