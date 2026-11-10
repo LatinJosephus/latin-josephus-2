@@ -85,6 +85,20 @@ Give the work, the passage reference displayed in the reader, a link to the pass
 
 When citing a Greek text, a translation, or a manuscript annotation, also identify the editor, translator or manuscript shown in the reader.
 
+## Download and cite the scholarly corpus
+
+The scholarly texts and supporting research data underlying LatinJosephus.org are preserved in an openly accessible, citable archive on Zenodo.
+
+The v3.0 deposit includes the XML editions and translations of the *Antiquitates Judaicae*, *Bellum Judaicum*, *Contra Apionem* and *De excidio Hierosolymitano*, together with historical transcriptions, textual alignments, manuscript annotations and associated documentation.
+
+The archive preserves the scholarly data independently of the website and makes it available for research, verification and reuse, subject to the licences applicable to individual components.
+
+[**Download the Latin Josephus Scholarly Corpus (Zenodo, v3.0)**](https://doi.org/10.5281/zenodo.24120761)
+
+Pollard, R. M. (2026). *The Latin Josephus Scholarly Corpus. XML Texts, Historical Transcriptions and Scholarly Data* \[Dataset\]. Zenodo. [https://doi.org/10.5281/ZENODO.24120761](https://doi.org/10.5281/zenodo.24120761)
+
+The Zenodo record’s **v1** label refers to the first deposit of the v3.0 corpus.
+
 ## Bibliography associated with this project
 
 -   Jean-Félix Aubé-Pronce and Richard Matthew Pollard, “Flavius Josephus: The Most Notable Historian for the Early Middle Ages,” _Pecia_, 28 (forthcoming, 2027): @-@. (DOI: [10.1484/J.PECIA.5.158288](https://doi.org/10.1484/J.PECIA.5.158288))

@@ -16,6 +16,8 @@ This site was thoroughly revised and expanded in autumn of 2026.
 
 [Latin Josephus 3.0 — Read the release announcement]({{ '/releases/3.0/' | relative_url }})
 
+**Scholarly corpus and research data** — [Download and cite the archived v3.0 dataset on Zenodo](https://doi.org/10.5281/zenodo.24120761).
+
 ___
 
 *[Antiquitates Judaicae]({{site.baseurl}}/antiquities/)* — an account of Jewish history from Creation to the first century.
