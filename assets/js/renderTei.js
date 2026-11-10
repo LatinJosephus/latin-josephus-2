@@ -2593,10 +2593,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    if (identity?.[language]?.note) {
+    let noteText = identity?.[language]?.note;
+    if (language === "Latin" && nieseBookKey(state.bookNum) === 7
+      && wanted >= 68 && wanted <= 99) {
+      const gap = wrapper.querySelector('tei-gap[reason="omitted"]');
+      if (wanted === 68 || gap) {
+        noteText = "Bamberg’s lacuna begins partway through VII.68 and continues through VII.99. "
+          + "Lukas (2022, pp. lxvi–lxvii) identifies this gap in the early Gamma subgroup γ.1.1.";
+        // Replace the older labels in the display copy, keeping the paragraph IDs for annotations.
+        const placeholder = gap?.previousSibling;
+        if (placeholder?.nodeType === Node.TEXT_NODE && placeholder.textContent.trim() === "Omitted in Bamberg MS") {
+          placeholder.remove();
+        }
+        gap?.remove();
+      }
+    }
+    if (noteText) {
       const note = document.createElement("p");
       note.className = "alert alert-secondary niese-correspondence-note";
-      note.setAttribute("role", "note"); note.textContent = identity[language].note;
+      note.setAttribute("role", "note"); note.textContent = noteText;
       wrapper.insertBefore(note, wrapper.firstChild);
     }
     return wrapper;
