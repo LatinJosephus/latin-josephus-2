@@ -148,3 +148,54 @@
   padding-block-start: 1rem;
   border-top: 1px solid var(--global-divider-color);
 }
+
+#video-demonstration {
+  scroll-margin-top: calc(var(--lj-header-height) + 1rem);
+}
+
+.lj-release__video-figure {
+  max-width: 52rem;
+  margin: 1rem auto 0;
+}
+
+.lj-release__video-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.lj-release__video-figure video:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+}
+
+.lj-release__video-figure .lj-release__caption {
+  padding: 0.65rem 0 0;
+  text-align: center;
+}
+
+.lj-release__video-transcript {
+  margin-block-start: 1rem;
+}
+
+.lj-release__video-transcript h3 {
+  margin-block: 1.35rem 0.45rem;
+  font-size: 1.4rem;
+}
+
+.lj-release__video-transcript h4 {
+  margin-block: 1rem 0.35rem;
+  font-size: 1.2rem;
+}
+
+.lj-release__video-transcript h5 {
+  margin-block: 0.55rem 0;
+  font: 600 1rem/1.45 var(--lj-font-ui);
+}
+
+.lj-release__video-transcript time {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

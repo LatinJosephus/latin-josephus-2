@@ -1,0 +1,154 @@
+{% assign release_media = '/assets/media/releases/3.0/' %}
+{% assign demo_mp4 = release_media | append: 'LatinJosephus_v3_Demo.mp4' %}
+{% assign demo_poster = release_media | append: 'LatinJosephus_v3_Poster.webp' %}
+{% assign demo_en = release_media | append: 'LatinJosephus_v3_Demo_en.vtt' %}
+{% assign demo_fr = release_media | append: 'LatinJosephus_v3_Demo_fr.vtt' %}
+<section class="lj-release__section" id="video-demonstration" aria-labelledby="video-demonstration-title">
+  <div class="lj-release__copy">
+    <h2 id="video-demonstration-title">See Latin Josephus 3.0 in action</h2>
+    <p>A brief guided tour of the project's parallel texts, connections between the <em>De excidio</em> and Josephus, medieval manuscript annotations, and cross-corpus searching.</p>
+  </div>
+
+  <figure class="lj-release__video-figure">
+    <video id="release-demo-video" aria-labelledby="release-video-caption"
+      width="1920" height="1080" controls playsinline preload="metadata" disablepictureinpicture
+      poster="{{ demo_poster | relative_url }}">
+      <source src="{{ demo_mp4 | relative_url }}" type="video/mp4">
+      <track kind="captions" src="{{ demo_en | relative_url }}" srclang="en" label="English captions" default>
+      <track kind="subtitles" src="{{ demo_fr | relative_url }}" srclang="fr" label="Sous-titres français">
+      <p><a href="{{ demo_mp4 | relative_url }}">Open the demonstration video</a>.</p>
+    </video>
+    <figcaption class="lj-release__caption" id="release-video-caption">
+      Latin Josephus 3.0 — A guided demonstration (1 min 48 sec). Narrated by Richard Matthew Pollard.
+    </figcaption>
+  </figure>
+
+  <details class="lj-release__copy lj-release__description lj-release__video-transcript">
+    <summary>Read the video transcript</summary>
+
+    <section lang="en" aria-labelledby="release-transcript-en">
+      <h3 id="release-transcript-en">English transcript</h3>
+      <p>The timestamps indicate the start of each spoken section. Screen descriptions accompany the recorded narration.</p>
+      <h4><time datetime="PT0S">00:00.000</time> · Official logo</h4>
+      <h5>On screen</h5>
+      <p>The official Latin Josephus wordmark holds on a cream background and dissolves into the homepage.</p>
+      <h4><time datetime="PT5.03S">00:05.030</time> · Homepage</h4>
+      <p>Josephus was widely read throughout the medieval Latin West.</p>
+      <h5>On screen</h5>
+      <p>The homepage shows the project title, the 3.0 release announcement, and the four works available in the reader.</p>
+      <h4><time datetime="PT9.8S">00:09.800</time> · Bellum Judaicum VII.251–252</h4>
+      <p>Latin Josephus 3.0 lets us compare his <em>Jewish War</em> in Greek, in its late-antique Latin translation, and in Thomas Lodge’s English translation of 1602.</p>
+      <p>As we advance to the next passage, all three texts move together. Even Lodge’s marginal notes can be displayed.</p>
+      <h5>On screen</h5>
+      <p>Cardwell’s Latin, Lodge’s 1602 English and Niese’s Greek are displayed in adjacent panes. The right-hand Next passage control advances all three from Niese §251 to §252. The pointer comes to rest by the italic dating note in Lodge’s text.</p>
+      <h4><time datetime="PT31.89S">00:31.890</time> · De excidio V.42.3 and Bellum Judaicum VI.239</h4>
+      <p>But Josephus was not simply translated. He was also rewritten.</p>
+      <p>The <em>De excidio Hierosolymitano</em> is a late-antique Christian adaptation of the <em>Jewish War</em>.</p>
+      <p>Here we can open the corresponding passage in Josephus and compare how the two accounts present the Roman arguments for destroying the Temple of Jerusalem.</p>
+      <h5>On screen</h5>
+      <p>The pointer selects <strong>Compare with Bellum</strong> in Pollard’s English pane. The comparison shows Pollard’s V.42.3 beside Whiston’s VI.239. Both excerpts present arguments concerning the destruction of the Temple. The citation under Whiston’s excerpt then opens VI.239 in the <em>Bellum</em> reader.</p>
+      <h4><time datetime="PT55.24S">00:55.240</time> · Manuscript annotations in Antiquitates Judaicae III.215</h4>
+      <p>We can also recover traces of medieval reading.</p>
+      <p>In the <em>Jewish Antiquities</em>, passages containing annotations can be highlighted, and their transcriptions examined.</p>
+      <p>This example includes a marginal annotation from Codex Bodmer 98.</p>
+      <h5>On screen</h5>
+      <p>The reader shows the Latin text based on Bamberg 78 beside Whiston’s English. The pointer enables <strong>Highlight annotated paragraphs</strong>, closes the settings, and selects <strong>20 annotations</strong>. The first note reads <em>de lapide sardonice scribit quomodo fulgeret in ueste sacerdotis</em>. The project associates it with III.214–218 and credits Cologny, Fondation Martin Bodmer, Cod. Bodmer 98, fol. 77r, Hand 2.</p>
+      <h4><time datetime="PT1M13.7S">01:13.700</time> · Cross-corpus concordance</h4>
+      <p>Finally, we can search across different works and translations.</p>
+      <p>Searching for the exact phrase “holy of holies” produces five results across three works.</p>
+      <p>Notice that the same passage of the <em>Jewish War</em> appears twice, once in Whiston’s English translation, and once in Lodge’s.</p>
+      <h5>On screen</h5>
+      <p>The query field receives the phrase <strong>“holy of holies”</strong> in quotation marks with the scope set to <strong>All available works and editions</strong>. After <strong>Search</strong> is selected, the count shows five occurrences. The concordance shows <em>Antiquities</em> III.125 in Whiston, <em>Bellum</em> V.219 in Whiston and Lodge, and <em>De excidio</em> I.31.3 and V.9.4 in Pollard. The arrow indicates Whiston’s and Lodge’s rows in succession.</p>
+      <h4><time datetime="PT1M37.46S">01:37.460</time> · Closing homepage</h4>
+      <p>And these are only a few of the possibilities.</p>
+      <p>Explore the Latin Josephus Project at latinjosephus.org.</p>
+      <h5>On screen</h5>
+      <p>The homepage returns with <strong>latinjosephus.org</strong> in the browser’s address bar. The address remains visible for about two and a quarter seconds after the final words.</p>
+    </section>
+
+    <section lang="fr" aria-labelledby="release-transcript-fr">
+      <h3 id="release-transcript-fr">Transcription française</h3>
+      <p>Les horodatages indiquent le début de chaque section parlée. Des descriptions de l’image accompagnent la traduction de la narration.</p>
+      <h4><time datetime="PT0S">00:00.000</time> · Logo officiel</h4>
+      <h5>À l’écran</h5>
+      <p>Le logotype officiel de Latin Josephus apparaît sur fond crème, puis laisse place à la page d’accueil par un fondu.</p>
+      <h4><time datetime="PT5.03S">00:05.030</time> · Page d’accueil</h4>
+      <p>Josèphe était largement lu dans l’Occident latin médiéval.</p>
+      <h5>À l’écran</h5>
+      <p>La page d’accueil affiche le titre du projet, l’annonce de la version 3.0 et les quatre œuvres consultables.</p>
+      <h4><time datetime="PT9.8S">00:09.800</time> · Guerre des Juifs VII.251–252</h4>
+      <p>Latin Josephus 3.0 permet de comparer sa <em>Guerre des Juifs</em> en grec, dans sa traduction latine de l’Antiquité tardive et dans la traduction anglaise de Thomas Lodge, parue en 1602.</p>
+      <p>À la section suivante, les trois textes avancent ensemble. On peut même afficher les notes marginales de Lodge.</p>
+      <h5>À l’écran</h5>
+      <p>Le latin de Cardwell, l’anglais de Lodge (1602) et le grec de Niese sont affichés côte à côte. La commande de droite fait passer les trois textes du §251 au §252 de Niese. Le pointeur s’arrête devant la note de datation en italiques dans le texte de Lodge.</p>
+      <h4><time datetime="PT31.89S">00:31.890</time> · De excidio V.42.3 et Guerre des Juifs VI.239</h4>
+      <p>Mais Josèphe n’a pas seulement été traduit. Il a aussi été réécrit.</p>
+      <p>Le <em>De excidio Hierosolymitano</em> date de l’Antiquité tardive. C’est une adaptation chrétienne de la <em>Guerre des Juifs</em>.</p>
+      <p>On peut ici ouvrir le passage correspondant chez Josèphe et comparer, dans les deux récits, les arguments des Romains en faveur de la destruction du Temple de Jérusalem.</p>
+      <h5>À l’écran</h5>
+      <p>Le pointeur sélectionne <strong>Compare with Bellum</strong> dans le volet de la traduction anglaise de Pollard. L’écran affiche V.42.3 dans la traduction de Pollard à côté de VI.239 dans celle de Whiston. Les deux extraits exposent des arguments relatifs à la destruction du Temple. Le lien sous l’extrait de Whiston ouvre ensuite VI.239 dans le lecteur de la <em>Guerre des Juifs</em>.</p>
+      <h4><time datetime="PT55.24S">00:55.240</time> · Annotations manuscrites dans les Antiquités judaïques III.215</h4>
+      <p>On retrouve aussi des traces des lectures médiévales.</p>
+      <p>Dans les <em>Antiquités judaïques</em>, on peut surligner les passages annotés et consulter la transcription des notes.</p>
+      <p>Cet exemple présente une note marginale du Codex Bodmer 98.</p>
+      <h5>À l’écran</h5>
+      <p>Le lecteur présente le latin établi d’après Bamberg 78 à côté de l’anglais de Whiston. Le pointeur active <strong>Highlight annotated paragraphs</strong>, replie les réglages et sélectionne <strong>20 annotations</strong>. La première note se lit <em>de lapide sardonice scribit quomodo fulgeret in ueste sacerdotis</em>. Le projet l’associe à III.214–218 et l’attribue au Cod. Bodmer 98, fol. 77r, main 2, conservé à la Fondation Martin Bodmer, à Cologny.</p>
+      <h4><time datetime="PT1M13.7S">01:13.700</time> · Concordance dans l’ensemble du corpus</h4>
+      <p>Enfin, on peut chercher dans plusieurs œuvres et traductions.</p>
+      <p>Une recherche sur l’expression exacte « holy of holies » donne cinq résultats dans trois œuvres.</p>
+      <p>On voit deux fois le même passage de la <em>Guerre des Juifs</em>, une fois dans la traduction anglaise de Whiston, et une fois dans celle de Lodge.</p>
+      <h5>À l’écran</h5>
+      <p>La requête <strong>« holy of holies »</strong> est saisie entre guillemets avec l’option <strong>All available works and editions</strong>. La commande <strong>Search</strong> affiche un total de cinq occurrences. La concordance réunit <em>Antiquités judaïques</em> III.125 dans la traduction de Whiston, <em>Guerre des Juifs</em> V.219 dans celles de Whiston et de Lodge, et <em>De excidio</em> I.31.3 et V.9.4 dans celle de Pollard. La flèche désigne successivement les lignes de Whiston et de Lodge.</p>
+      <h4><time datetime="PT1M37.46S">01:37.460</time> · Retour à la page d’accueil</h4>
+      <p>Ce ne sont là que quelques possibilités.</p>
+      <p>Découvrez le projet Latin Josephus sur latinjosephus.org.</p>
+      <h5>À l’écran</h5>
+      <p>La page d’accueil réapparaît. L’adresse <strong>latinjosephus.org</strong> reste visible dans la barre du navigateur pendant un peu plus de deux secondes après les derniers mots.</p>
+    </section>
+  </details>
+</section>
+
+<script>
+  (() => {
+    const video = document.getElementById('release-demo-video');
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) video.pause();
+    });
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": {{ page.url | absolute_url | append: '#video-demonstration' | jsonify }},
+  "name": "Latin Josephus 3.0 — A Guided Demonstration",
+  "description": "A guided introduction to the project's textual comparisons, medieval annotations, and cross-corpus search.",
+  "duration": "PT1M47.5S",
+  "inLanguage": "en",
+  "encodingFormat": "video/mp4",
+  "contentUrl": {{ demo_mp4 | absolute_url | jsonify }},
+  "thumbnailUrl": {{ demo_poster | absolute_url | jsonify }},
+  "contributor": {
+    "@type": "Role",
+    "roleName": "Narrator",
+    "contributor": { "@type": "Person", "name": "Richard Matthew Pollard" }
+  },
+  "caption": [
+    {
+      "@type": "MediaObject",
+      "name": "English captions",
+      "inLanguage": "en",
+      "encodingFormat": "text/vtt",
+      "contentUrl": {{ demo_en | absolute_url | jsonify }}
+    },
+    {
+      "@type": "MediaObject",
+      "name": "Sous-titres français",
+      "inLanguage": "fr",
+      "encodingFormat": "text/vtt",
+      "contentUrl": {{ demo_fr | absolute_url | jsonify }}
+    }
+  ]
+}
+</script>
