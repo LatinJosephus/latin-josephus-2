@@ -12,9 +12,7 @@ For 1000 years, medieval readers eagerly studied the works of the Jewish histori
 
 This project allows the scholars of today to read Josephus in the Latin versions known during the Middle Ages, including these notes, alongside the original Greek, and translations into English, French, and Italian.
 
-This site was thoroughly revised and expanded in autumn of 2026. **Scholarly corpus and research data** — [Download and cite the archived v3.0 dataset on Zenodo](https://doi.org/10.5281/zenodo.24120761).
-
-[Latin Josephus 3.0 — Read the release announcement]({{ '/releases/3.0/' | relative_url }})
+This site was thoroughly revised and expanded in autumn of 2026 to [Latin Josephus 3.0 — Read the release announcement]({{ '/releases/3.0/' | relative_url }})
 
 ___
 
@@ -37,5 +35,7 @@ ___
 [View a list]({{site.baseurl}}/manuscripts/) of all known Latin manuscripts of the four works above.
 
 ___
+
+**Scholarly corpus and research data** — [Download and cite the archived v3.0 dataset on Zenodo](https://doi.org/10.5281/zenodo.24120761).
 
 This website is produced by [Richard Matthew Pollard](https://professeurs.uqam.ca/professeur/pollard.richard_matthew/), département d’Histoire, Université du Québec à Montréal. Much of the content was produced with the assistance of Jean-Félix Aubé-Pronce.
