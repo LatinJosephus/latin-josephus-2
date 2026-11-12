@@ -24,6 +24,8 @@ html[data-theme="dark"] #lj-search {
 #lj-search h1 {font:normal 43px/1.16 Georgia,"Times New Roman",serif;margin:0 0 13px;letter-spacing:-.018em}
 #lj-search .subtitle {font-size:17px;line-height:1.7;margin:0 0 12px;color:var(--muted)}
 #lj-search .coverage {font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+#lj-search .coverage strong {font-size:15px;color:var(--ink)}
+#lj-search .coverage-languages {display:block}
 #lj-search .search-panel {border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:26px 28px 0;box-shadow:0 3px 15px #25211a05}
 #lj-search .query-label {display:block;font-size:14px;font-weight:650;margin-bottom:9px}
 #lj-search .content-option {display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
@@ -53,10 +55,11 @@ html[data-theme="dark"] #lj-search .annotation-search-wording {color:#E29A83}
 #lj-search .examples {border-top:1px solid var(--line);padding:17px 0;display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
 #lj-search .example {color:var(--accent);background:var(--soft);border:1px solid transparent;border-radius:4px;padding:6px 10px;font-size:12px;line-height:1.5}
 #lj-search .example:hover {border-color:var(--accent)}
-#lj-search .syntax-guide {border-top:1px solid var(--line);margin:0 -28px;padding:14px 28px;font-size:13px}
+#lj-search .search-help {display:flow-root;border-top:1px solid var(--line);margin:0 -28px;padding:14px 28px;font-size:13px}
+#lj-search .editions-link {float:right;margin-inline-start:16px;text-decoration:underline}
 #lj-search .syntax-guide summary {color:var(--muted);cursor:pointer;font-size:13px;width:fit-content}
-#lj-search .syntax-guide[open] {padding-bottom:23px}
-#lj-search .guide-grid {display:grid;grid-template-columns:1fr 1fr;gap:32px;line-height:1.7}
+#lj-search .syntax-guide[open] {padding-bottom:9px}
+#lj-search .guide-grid {clear:both;display:grid;grid-template-columns:1fr 1fr;gap:32px;line-height:1.7}
 #lj-search .guide-grid h2 {font:600 14px/1.4 system-ui,sans-serif;margin:20px 0 12px}
 #lj-search .guide-grid p {margin:0 0 12px}
 #lj-search .guide-grid dl {margin:0}
@@ -129,7 +132,7 @@ html[data-theme="dark"] #lj-search .editorial-add {color:#8ed5a6}
   #lj-search .primary {min-width:83px;padding:10px 13px;font-size:14px}
   #lj-search .options-row {gap:13px}
   #lj-search .scope-option,#lj-search .book-option,#lj-search .work-option {flex:1 1 210px}
-  #lj-search .syntax-guide {margin:0 -18px;padding:14px 18px}
+  #lj-search .search-help {margin:0 -18px;padding:14px 18px}
   #lj-search .guide-grid {grid-template-columns:1fr;gap:0}
   #lj-search .results-heading-row {margin-top:27px;gap:12px}
   #lj-search .result-card {padding:19px 18px}
@@ -142,6 +145,9 @@ html[data-theme="dark"] #lj-search .editorial-add {color:#8ed5a6}
   #lj-search .view-button {padding:9px 12px}
   #lj-search .coverage {font-size:11px}
   #lj-search #copy-link {font-size:11px;padding:8px}
+}
+@media(max-width:500px) {
+  #lj-search .editions-link {float:none;display:inline-block;margin:0 0 8px}
 }
 @media(max-width:380px) {
   #lj-search .search-row {flex-wrap:wrap}

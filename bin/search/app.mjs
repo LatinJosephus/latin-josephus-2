@@ -85,12 +85,20 @@ function populateControls(){
   els.work.value=defaultCollection(catalog);
   els.work.disabled=false;
   populateBooks();
-  $('collection-description').textContent=catalog.collections.map(c=>`${c.label} · ${c.language} · ${c.edition}`).join(' / ');
-  const coverage=catalog.collections.map(collection=>{
-    const count=catalog.books.filter(book=>book.collectionId===collection.id).reduce((sum,book)=>sum+(book.citationUnits??book.sections),0);
-    return `${collection.citationPrefix} (${collection.language}; ${collection.edition}): ${count.toLocaleString()} ${collection.work==='antiquities'&&citationScheme(collection)==='niese'?'citation units':citationUnitLabels([collection]).plural}`;
-  }).join(' · ');
-  $('coverage').textContent=`${catalog.books.length} book editions · ${coverage} · ${catalog.totals.tokens.toLocaleString()} words`;
+  $('collection-description').hidden = true;
+  const languageTotals = new Map(['Italian', 'English', 'French', 'Latin'].map(language => [language, 0]));
+  for (const {language, totals} of catalog.collections) {
+    languageTotals.set(language, (languageTotals.get(language) ?? 0) + totals.tokens);
+  }
+  const breakdown = [...languageTotals]
+    .filter(([, words]) => words > 0)
+    .map(([language, words]) => `${language}\u00a0${words.toLocaleString()}`)
+    .join(' · ');
+  $('coverage').replaceChildren(
+    node('strong', `${catalog.totals.tokens.toLocaleString()} words`),
+    ' in the main texts',
+    node('span', breakdown, 'coverage-languages'),
+  );
   const included=catalog.collections.map(c=>`${c.label}, ${c.language}, ${c.edition} (${c.books.length} ${c.books.length===1?'book':'books'})`).join('; ');
   const bamberg=catalog.collections.some(c=>c.id==='antiquities-latin-bamberg78')?' The Bamberg Latin Antiquities covers the Proem and all twenty books. Books XI and XVI preserve the source’s split and transposed passages; the two Bellum insertions in XI have separate citations.':'';
   const whistonCollection=catalog.collections.find(c=>c.id==='antiquities-english-whiston');
@@ -347,6 +355,7 @@ async function annotationSearch() {
   const params = new URLSearchParams(location.search);
   $('content').value = 'annotations';
   $('collection-description').textContent = 'Manuscript annotations to Antiquities, Bellum Judaicum and De excidio';
+  $('collection-description').hidden = false;
   $('coverage').textContent = 'Loading the manuscript annotations…';
   $('included-text').textContent = 'Choose Main texts or Manuscript annotations in the search controls. Annotation searches cover the recorded words and English editorial descriptions shown in the reader. Each note is evaluated separately: Boolean conditions and phrases never combine different annotations. Phrases stop at untranscribed or uncertain text and between the transcription and an editorial description. Manuscript, folio and hand information accompany each result; use the manuscript filter to choose a witness. The original notation remains available under Scholarly details in the reader. Textual locations retain the reader’s verified alignment-unit ranges for Antiquities and Bellum, and whole chapters or the Prologue for De excidio.';
   const coverageGuide = $('included-text').parentElement;
