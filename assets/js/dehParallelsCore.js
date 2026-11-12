@@ -1,8 +1,10 @@
 /* Shared publication and excerpt logic; canonical XML and editorial data are read-only. */
+import {cardwellProofreadingAuthority} from "./cardwellProofreadingAuthority.js";
+
 export const frozenSha = "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c";
 // v1 accepts the literal reviewed bytes or their exact LF checkout equivalent.
 // Frozen sources reproduce their original SHA. The approved Pollard v1.2 files
-// and the Cardwell Book I erratum use their successor hashes.
+// and the reviewed Cardwell books use their successor hashes.
 // No text/XML normalization occurs.
 export const sourceIntegrityPolicy = "reviewed-crlf-or-exact-lf-v1";
 export const pollardPublicationHashes = Object.freeze({
@@ -14,7 +16,6 @@ export const pollardPublicationHashes = Object.freeze({
 });
 // The approved Bellum I.153 erratum supersedes the frozen Cardwell Book I bytes.
 export const cardwellBookOnePublicationHash = "47d5324f75cf76b9e32ac678a9cbe7caad4faaf6a230c72b70d8a016e916d175";
-const frozenCardwellBookOneHash = "1318a90b6bae500995835f45848190a94e64f8cad65c1c8514593eaf731a1f1d";
 const frozenPollardHashes = Object.freeze({
   1: "6f8fd8d3250e7cc4540b7acdac9b62765e04b89b63cdd38376bd63ff9875a0c9",
   2: "49692bf96fb1b74be37a6a675e95fab19adca94cbec941b27c7872e667c1e693",
@@ -119,9 +120,12 @@ export function createTextLoader(xmlBase, hashes) {
           if (expectedHash !== frozenPollardHashes[book]) throw new Error(`${sourceKey} Book ${book} differs from the frozen reviewed authority.`);
           expectedHash = pollardPublicationHashes[book];
         }
-        if (sourceKey === "cardwell" && book === 1) {
-          if (expectedHash !== frozenCardwellBookOneHash) throw new Error("Cardwell Book 1 differs from the frozen reviewed authority.");
-          expectedHash = cardwellBookOnePublicationHash;
+        if (sourceKey === "cardwell") {
+          const authority = cardwellProofreadingAuthority[book];
+          if (!authority || expectedHash !== authority.frozen) {
+            throw new Error("Cardwell Book " + book + " differs from the frozen reviewed authority.");
+          }
+          expectedHash = authority.publication;
         }
         const text = await checkedBytes(response, expectedHash, `${sourceKey} Book ${book}`, true);
         const xml = new DOMParser().parseFromString(text, "text/xml");

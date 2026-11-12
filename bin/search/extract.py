@@ -38,7 +38,7 @@ CONTINUATION_PARAGRAPHS = {
     3: {"latin-bellum3-num3": 3},
     6: {"latin-bellum6-num427": 427},
 }
-BOOK_ONE_APPROVED_CORPUS_SHA256 = "6d09a8d846b356fbecb3b7d5c5cb63b4c320e23181d4c255a013387268039c28"
+BOOK_ONE_APPROVED_CORPUS_SHA256 = "14388675142abea0b868149abf17adc3727e2e091bf1f3a46ebd060410ef247f"
 PARAGRAPH_SEPARATOR = "\n\n"
 BOOK_TITLE = (
     "FLAVII JOSEPHI DE BELLO JUDAICO LIBRI SEPTEM, INTERPRETE RUFINO "
@@ -91,8 +91,8 @@ def strip_prefix(text: str, section: int, chapter: int, ordinal: int,
                  *, has_niese_label: bool = True) -> tuple[str, list[dict]]:
     """Remove only independently checked, leading structural labels.
 
-    A dash after CAP. XI. and an apostrophe after CAP. XVI. in the current
-    source are deliberately retained. They are not covered by these rules.
+    These rules preserve punctuation and separators following a structural
+    label wherever the authorized source contains them.
     """
     removals: list[dict] = []
     cursor = 0

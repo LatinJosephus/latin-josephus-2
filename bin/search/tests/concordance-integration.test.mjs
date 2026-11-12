@@ -28,7 +28,7 @@ async function run(query,options={}){
 }
 
 for(const control of [
-  {query:'et',prefix:false,byBook:[844,670,395,436,448,364,278],total:3435},
+  {query:'et',prefix:false,byBook:[844,671,395,436,448,364,278],total:3436},
   {query:'sacerdot*',prefix:true,byBook:[3,7,1,4,10,8,2],total:35},
 ]){
   test(`${control.query}: every real occurrence survives section grouping and complete export`,async()=>{

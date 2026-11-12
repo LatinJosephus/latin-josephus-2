@@ -5,6 +5,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {cardwellBookOnePublicationHash} from '../assets/js/dehParallelsCore.js';
+import {cardwellProofreadingAuthority} from '../assets/js/cardwellProofreadingAuthority.js';
 export const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const manifestSHA = 'e97cc6b2b5515af838035fcebaec5a888fb79460499aeee6de45df0c733c549f';
 const editorialAuthoritySHA = '4a5b96ef946bc934a96d99a927b6346bc1dbc0853dbc802fd50c58b9d145825d';
@@ -67,12 +68,24 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
     assert.deepEqual(record.allowed_worktree_sha256, [record.pinned_canonical_sha256],
       'Only the released Pollard v1.2 bytes are current authority: ' + relative);
   }
-  const cardwellBookOne = {
+  const cardwellErratum = {
     git_sha256: cardwellBookOneSourceHash,
     pinned_canonical_sha256: cardwellBookOneSourceHash,
     allowed_worktree_sha256: [cardwellBookOneSourceHash, cardwellBookOnePublicationHash],
     previous_authority: historicalManifest.files[cardwellBookOnePath]
   };
+  const cardwellBooks = Object.fromEntries(Object.entries(cardwellProofreadingAuthority).map(([book, approved]) => {
+    const relative = 'assets/xml/bellum/Latin/book-' + book.padStart(2, '0') + '.xml';
+    const previous = book === '1' ? cardwellErratum : historicalManifest.files[relative];
+    assert(previous.allowed_worktree_sha256.includes(approved.previous),
+      'Previous Cardwell authority changed: ' + relative);
+    return [relative, {
+      git_sha256: approved.source,
+      pinned_canonical_sha256: approved.source,
+      allowed_worktree_sha256: [approved.source, approved.publication],
+      previous_authority: previous,
+    }];
+  }));
   const restoredAntiquities = Object.fromEntries(
     Object.entries(antiquitiesNineRestoration).map(([relative, hashes]) => [relative, {
       git_sha256: hashes[0],
@@ -82,7 +95,7 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
     }])
   );
   const manifest = {...historicalManifest,
-    files:{...historicalManifest.files, ...authority.files, [cardwellBookOnePath]:cardwellBookOne,
+    files:{...historicalManifest.files, ...authority.files, ...cardwellBooks,
       ...restoredAntiquities}};
   assert.deepEqual(files(path.join(root, 'assets/xml')), Object.keys(manifest.files).sort(), 'Unexpected or missing production XML');
   const checked = {};
@@ -100,16 +113,20 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
   const lodge = JSON.parse(lodgeBytes);
   const publicationHashes = Object.fromEntries(Object.entries(frozen).filter(([relative]) => /^assets\/xml\/(deh|bellum)\//.test(relative)));
   // The concordance retains its historical hashes. Publish the approved
-  // successors for the Pollard v1.2 books and the single Cardwell erratum.
+  // successors for the Pollard v1.2 and Cardwell books.
   for (const relative of editorialEnglish) {
     const record = manifest.files[relative];
     assert(record.previous_authority.previous_authority.allowed_worktree_sha256.includes(frozen[relative]),
       'Historical Pollard authority changed');
     publicationHashes[relative] = record.pinned_canonical_sha256;
   }
-  assert(cardwellBookOne.previous_authority.allowed_worktree_sha256.includes(frozen[cardwellBookOnePath]),
-    'Historical Cardwell authority changed');
-  publicationHashes[cardwellBookOnePath] = cardwellBookOnePublicationHash;
+  for (const [book, approved] of Object.entries(cardwellProofreadingAuthority)) {
+    const relative = 'assets/xml/bellum/Latin/book-' + book.padStart(2, '0') + '.xml';
+    assert.equal(frozen[relative], approved.frozen, 'Historical Cardwell authority changed: ' + relative);
+    assert(historicalManifest.files[relative].allowed_worktree_sha256.includes(approved.frozen),
+      'Historical Cardwell certificate changed: ' + relative);
+    publicationHashes[relative] = approved.publication;
+  }
   for (const book of lodge.books) publicationHashes[`assets/xml/bellum/English/Lodge1602/book-${String(book.book).padStart(2,'0')}.xml`] = book.production_sha256;
   const publication = {};
   for (const [relative, expected] of Object.entries(publicationHashes)) {
@@ -126,8 +143,8 @@ export function verifyReaderCorpus(root, {parse = true, pwsh = 'pwsh'} = {}) {
   }
   return {manifest, checked, publication, report:{status:'PASS', production_XML:Object.keys(checked).length,
     all_production_XML_parsed:parse, publication_inputs:Object.keys(publication).length,
-    frozen_publication_inputs:Object.keys(publication).length-editorialEnglish.length-1,
-    approved_cardwell_erratum_inputs:1,
+    frozen_publication_inputs:Object.keys(publication).length-editorialEnglish.length-Object.keys(cardwellBooks).length,
+    approved_cardwell_revision_inputs:Object.keys(cardwellBooks).length,
     approved_editorial_revision_inputs:editorialEnglish.length,
     approved_editorial_revision:authority.authority_revision,
     approved_editorial_edition:authority.edition,

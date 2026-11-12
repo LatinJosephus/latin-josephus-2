@@ -5,7 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {verifyReaderCorpus,sha} from './reader-corpus-integrity.mjs';
-import {createTextLoader,loadConcordance,sources,sourceIntegrityPolicy,pollardPublicationHashes,cardwellBookOnePublicationHash} from '../assets/js/dehParallelsCore.js';
+import {createTextLoader,loadConcordance,sources,sourceIntegrityPolicy,pollardPublicationHashes} from '../assets/js/dehParallelsCore.js';
+import {cardwellProofreadingAuthority} from '../assets/js/cardwellProofreadingAuthority.js';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const corpus=verifyReaderCorpus(root);
 const frozenBytes=fs.readFileSync(path.join(root,'assets/data/deh-josephus-concordance.json'));
@@ -23,7 +24,7 @@ try {
  for(const [source,identity] of Object.entries(sources))for(let book=1;book<=(identity.work==='deh'?5:7);book++){
   const relative=`assets/xml/${identity.work}/${identity.language}/book-${String(book).padStart(2,'0')}.xml`;
   const literal=corpus.publication[relative],lf=Buffer.from(literal.toString('utf8').replace(/\r\n/g,'\n'));
-  const expected = source==='cardwell' && book===1 ? cardwellBookOnePublicationHash
+  const expected = source==='cardwell' ? cardwellProofreadingAuthority[book].publication
     : source==='pollard' ? pollardPublicationHashes[book] : frozen.canonical_xml_sha256[relative];
   assert.equal(sha(literal),expected);
   assert(!lf.includes(13));if(source!=='pollard')assert(!literal.equals(lf),'Fixture lacks nonvacuous line-ending difference');

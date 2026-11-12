@@ -31,8 +31,8 @@ line/page/citation seams, stopping at the Prologue's end and between books.
 Printed paratext and marginalia remain outside this main-text layer.
 
 The combined catalogue has **127 book editions, 38,725 physical records and
-2,529,151 word tokens**, including **605 book-specific page records and
-255,380 word tokens** for Froben. The Italian Lauro collection adds five book
+2,529,030 word tokens**, including **605 book-specific page records and
+255,374 word tokens** for Froben. The Italian Lauro collection adds five book
 editions, 558 physical records and 105,756 word tokens.
 
 **Lodge (1602)** covers the English Antiquities (including the Proem),
@@ -48,7 +48,7 @@ and exact source slices, including ¬ and physical line separators.
 The pre-existing collections are:
 
 - **Cardwell's *Bellum Judaicum*, Books I–VII:** 4,001 Niese sections and
-  114,794 word tokens.
+  114,679 word tokens.
 - **Ussani's *De excidio Hierosolymitano*, Books I–V, including the Prologue:**
   558 chapter/paragraph citation units and 87,472 word tokens.
 - **Boysen's *Contra Apionem*, Books I–II:** 616 Niese sections and
@@ -71,7 +71,7 @@ The pre-existing collections are:
 - **Pollard English *De excidio Hierosolymitano*, version 1.1, Prologue and Books I–V:**
   558 chapter-and-paragraph citation units and 136,054 word tokens.
 
-These eight collections comprise **68 book editions, 25,001 citation units, and 1,347,224
+These eight collections comprise **68 book editions, 25,001 citation units, and 1,347,109
 word tokens**. Their indexes contain 25,009 physical records because four Bamberg
 Antiquities XI identities and three XVI identities have split portions.
 The Whiston English Antiquities, Bellum and Contra Apionem and Pollard English De excidio are complete; Greek editions are not indexed. Bamberg Latin Antiquities

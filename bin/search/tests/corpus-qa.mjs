@@ -28,13 +28,13 @@ const reportPath = file => repositoryRelativeReportPath(repositoryDir, file);
 const collectionId = 'bellum-latin-cardwell';
 const bookId = number => `${collectionId}:${number}`;
 const sourceSpecs = [
-  {book:1, sections:673, sha256:'f19da04dba7e673c5eae51c784e2eab10327ff2952fdc5acc9745cee4dab36fe'},
-  {book:2, sections:654, sha256:'6fd44eee69db8481d9f48680669c359c13b287144ae85584e7666b72b1da4b09'},
-  {book:3, sections:542, sha256:'3b3a5351b63f54acbff136b431d2c1a62a7c24237de0a32f1b91ad6c5029ff49'},
-  {book:4, sections:663, sha256:'8726a4d8d2408f45cf509301da0960881ed61f5699eb03f38052e87eb6bc6e98'},
-  {book:5, sections:572, sha256:'b710d8acb392063cfbe3f4730ded533a38737085167cf60edacf8622bb08bd31'},
-  {book:6, sections:442, sha256:'a93c32f5aa6b2254abb3783a23e2529bec47ae0b1f878d7582c5c34411a4e46b'},
-  {book:7, sections:455, sha256:'c9c5cc7988aab7bfd453db3901f601dc8942a9fa1a2ac5011c6c474b624e5042'},
+  {book:1, sections:673, sha256:'bb8fa202fce6f5685eb38ce3b03bb60e8e1c5c32287c530ee4ced368c708383b'},
+  {book:2, sections:654, sha256:'0a95dd23950440e306dd29c6ea7949a84d868b43b96bdcce8c484ab04ba2de57'},
+  {book:3, sections:542, sha256:'1733125e66ce5d9fe0c4f28a5d883171f468a9989b2fdbd1ca44de00dbd39b02'},
+  {book:4, sections:663, sha256:'2d665f036e8188c1227cbd9f35e850b23121e4039321f2984c29bd2513a2b6d9'},
+  {book:5, sections:572, sha256:'7f33a9571059f6ded42ec58dae9b55db3e68a1e16aa405abf681ee349360c119'},
+  {book:6, sections:442, sha256:'262e717879846c2ef1d9f147da6bcfe4e65595130554fe2879c1c5cab62b02ec'},
+  {book:7, sections:455, sha256:'17aa98990d722bdd5edd7b9e3c4a1b873bd8e50df9cb40b27c0657165676c83c'},
 ];
 const readerPath = resolve(repositoryDir, 'assets/js/renderTei.js');
 const enginePath = resolve(pilotDir, 'engine.mjs');

@@ -31,17 +31,17 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [127, 38725, 2529151]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [127, 38725, 2529030]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
-    assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114794]);
+    assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114679]);
     assert.deepEqual([deh.totals.books, deh.totals.sections, deh.totals.tokens], [5, 558, 87472]);
     const ca = baseline.catalog.collections.find(collection => collection.id === 'contra-apionem-latin-boysen');
     assert.deepEqual([ca.totals.books, ca.totals.sections, ca.totals.tokens], [2, 616, 21018]);
     const antiquities = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-bamberg78');
     assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [20, 7283, 265023]);
     const froben = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-froben1524');
-    assert.deepEqual([froben.totals.books, froben.totals.sections, froben.totals.tokens], [20, 605, 255380]);
+    assert.deepEqual([froben.totals.books, froben.totals.sections, froben.totals.tokens], [20, 605, 255374]);
     const whiston = baseline.catalog.collections.find(collection => collection.id === 'antiquities-english-whiston');
     assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [20, 7376, 470938]);
     const whistonBellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-english-whiston');

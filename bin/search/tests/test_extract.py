@@ -56,11 +56,11 @@ class ExtractionTests(unittest.TestCase):
         self.assertTrue(record["text"].startswith("At Theodorus repente superveniens"))
         self.assertNotIn("At Theodorus repente superveniens", self.by_section[86]["text"])
 
-    def test_editorial_oddities_and_punctuation_are_preserved(self):
-        self.assertIn("nortem", self.by_section[23]["text"])
-        self.assertTrue(self.by_section[218]["text"].startswith("- EODEM"))
-        self.assertTrue(self.by_section[303]["text"].startswith("' ET"))
-        self.assertTrue(self.by_section[633]["text"].startswith("6 me miserum"))
+    def test_reviewed_readings_and_punctuation_are_preserved(self):
+        self.assertIn("Nero quidem mortem obierit :", self.by_section[23]["text"])
+        self.assertTrue(self.by_section[218]["text"].startswith("EODEM tempore"))
+        self.assertTrue(self.by_section[303]["text"].startswith("ET Romani"))
+        self.assertTrue(self.by_section[633]["text"].startswith("ô me miserum"))
         all_text = " ".join(record["text"] for record in self.records)
         self.assertNotIn(extract.BOOK_TITLE, all_text)
         self.assertEqual({entry["kind"] for entry in self.report["excluded"]},
@@ -221,7 +221,7 @@ class AllBooksExtractionTests(unittest.TestCase):
             self.assertEqual(combined, json.loads((out / "corpus.json").read_bytes()))
             self.assertEqual(hashlib.sha256((out / "corpus.json").read_bytes()).hexdigest(), report["corpus"]["sha256"])
             self.assertEqual(hashlib.sha256((out / "data/book-01.corpus.json").read_bytes()).hexdigest(),
-                             "6d09a8d846b356fbecb3b7d5c5cb63b4c320e23181d4c255a013387268039c28")
+                             "14388675142abea0b868149abf17adc3727e2e091bf1f3a46ebd060410ef247f")
 
 
 if __name__ == "__main__":
