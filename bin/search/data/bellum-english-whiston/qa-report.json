@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-09T21:11:12.414Z",
+  "generatedAt": "2026-11-12T16:45:56.710Z",
   "independentVerifier": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-    "observedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+    "expectedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+    "observedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
   "runtime": {
     "node": "v24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -268,13 +268,13 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580",
+      "sha256": "d634484335b048b3b69efa6dbe663f39e46f8e889892524dd6b32a79bf7e2e7c",
       "bytes": 99759
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89",
-      "bytes": 28437
+      "sha256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603",
+      "bytes": 28833
     },
     "collection": {
       "path": "bin/search/collection.mjs",
@@ -293,13 +293,13 @@
     },
     "verifier": {
       "path": "bin/search/tests/whiston-bellum-corpus-qa.mjs",
-      "sha256": "3087ba85e12d780d6b85d6fed60faac6ee0b4abd27cbd2d1db1182ddc3970c5c",
-      "bytes": 39386
+      "sha256": "7cfc2cfe4e832f5d4bf6c98cd3aab4482419dca7d82a4f083eb8102b4ca2ec87",
+      "bytes": 39409
     },
     "witness": {
       "path": "bin/search/tests/whiston-bellum-source-witness.py",
-      "sha256": "f171e3d7e8e93a44e9b609bf5fc62b9b732369c7aadba0b659da9c1dbd0b7613",
-      "bytes": 12190
+      "sha256": "3c993fc8de61fb62f5671acff177b5e24d1ae109a0177eebc71095a05ef3d5f3",
+      "bytes": 12210
     },
     "extractor": {
       "path": "bin/search/extract-whiston-bellum.py",
@@ -323,8 +323,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-      "bytes": 199428
+      "sha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+      "bytes": 200384
     },
     "testSources": [],
     "books": [
@@ -1007,7 +1007,7 @@
       "purpose": "Complete Bellum count"
     }
   ],
-  "durationSeconds": 49.1,
+  "durationSeconds": 41.9,
   "limitations": [
     "This validates the accepted Whiston Bellum XML, not a new translation or printed-edition collation.",
     "Browser interaction is verified separately."

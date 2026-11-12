@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-09T21:12:00.999Z",
+  "generatedAt": "2026-11-12T16:45:59.999Z",
   "independentVerifier": "bin/search/tests/deh-english-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-    "observedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+    "expectedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+    "observedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
   "runtime": {
     "node": "v24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -261,13 +261,13 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580",
+      "sha256": "d634484335b048b3b69efa6dbe663f39e46f8e889892524dd6b32a79bf7e2e7c",
       "bytes": 99759
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89",
-      "bytes": 28437
+      "sha256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603",
+      "bytes": 28833
     },
     "collection": {
       "path": "bin/search/collection.mjs",
@@ -286,13 +286,13 @@
     },
     "verifier": {
       "path": "bin/search/tests/deh-english-corpus-qa.mjs",
-      "sha256": "13a4a4e65a9768f2da6dc0e602a7bfb88d40d9e382ad4050de92f3663cad000b",
-      "bytes": 40966
+      "sha256": "aebf6a6affffe1db055e6527da2946e01b1fbbabe591db1a8a7ddfc25d353b28",
+      "bytes": 40989
     },
     "witness": {
       "path": "bin/search/tests/deh-english-source-witness.py",
-      "sha256": "5d8c26f4fd440bf9f95b9de5ae13feb1e8c316579cb838cb3c0fc039caed39d4",
-      "bytes": 14863
+      "sha256": "501a5c31d3f01f7d44d5c6c9d3a04c4fbb1786c61704af20c9a8826f048cb3e9",
+      "bytes": 14883
     },
     "extractor": {
       "path": "bin/search/extract-deh-english.py",
@@ -316,8 +316,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-      "bytes": 199428
+      "sha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+      "bytes": 200384
     },
     "testSources": [
       {
@@ -1047,7 +1047,7 @@
       "purpose": "Complete English De excidio count"
     }
   ],
-  "durationSeconds": 36.9,
+  "durationSeconds": 35.2,
   "limitations": [
     "This validates the approved English De excidio v1.2 files and their exact search projection; the release log records the editorial decisions.",
     "Browser interaction is verified separately."

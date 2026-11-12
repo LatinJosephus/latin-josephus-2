@@ -19,7 +19,7 @@ const evidence = path => {
   return {path, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex')};
 };
 const words = text => [...text.matchAll(/[\p{L}\p{N}][\p{L}\p{N}\p{M}]*/gu)].map(match => match[0]);
-const normalize = word => word.normalize('NFC').toLowerCase().replaceAll('ς', 'σ');
+const normalize = word => word.normalize('NFC').toLowerCase().replaceAll('ς', 'σ').replaceAll('æ', 'ae');
 const catalog = json('bin/search/catalog.json');
 const search = createCollection(catalog, lunr, {
   baseURL: 'https://qa.invalid/',

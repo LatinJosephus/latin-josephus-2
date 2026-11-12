@@ -1,7 +1,7 @@
-import {createCollection} from './collection.dc1c8929d9ebe5c3dea9903aa27794b7a6ecf010ccd4dc6311593464e2fb7aeb.mjs';
+import {createCollection} from './collection.aa9d2810369a21039b5939628a4f7827d1469517a97b7c5cad50f824aa99c52a.mjs';
 import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521.mjs';
-import {buildConcordance,exportConcordance} from './concordance.ad06f1a1b587e35eb7f398c6702cfcf865ff3dcefb95056cef4a50dabfb0e7a2.mjs';
-import {createEngine} from './engine.a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89.mjs';
+import {buildConcordance,exportConcordance} from './concordance.d8ee4506d8cc11266cb42eb16f6901ef6df29c0fd48dd980986fa00359e8d34c.mjs';
+import {createEngine} from './engine.902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603.mjs';
 
 const root=document.getElementById('lj-search');
 const $=id=>root.querySelector(`#${id}`);
@@ -324,7 +324,7 @@ function changeView(nextView){
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.d634484335b048b3b69efa6dbe663f39e46f8e889892524dd6b32a79bf7e2e7c.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');
@@ -473,7 +473,7 @@ async function annotationSearch() {
     els.downloadStatus.textContent = ''; els.region.setAttribute('aria-busy', 'true');
     try {
       if (!engine) {
-        const response = await fetch(new URL('./annotations.034434117f789ed50d348d87332bc3f43f10a76b19ac2fd031903dc878d2bf93.bundle.json', import.meta.url), {cache: 'no-cache'});
+        const response = await fetch(new URL('./annotations.f1716d2af5a972e8853de6360a76ed7040fb2a47049e078462520b31934ba59d.bundle.json', import.meta.url), {cache: 'no-cache'});
         if (!response.ok) throw new Error(`The annotation index could not be loaded (HTTP ${response.status}). Try Search again.`);
         const bundle = await response.json();
         engine = createEngine(bundle, globalThis.lunr); records = engine.records;

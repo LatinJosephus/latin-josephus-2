@@ -91,7 +91,7 @@ for (const spec of manifest.books) {
   const model = buildConcordance(result, records, {readerBase});
   const export_ = exportConcordance(model, result, {catalog, exportedAt: '2026-11-06T00:00:00Z'});
   equal(result.occurrences, records.flatMap(record => words(record.text))
-    .filter(word => word.normalize('NFC').toLowerCase().replaceAll('ς', 'σ') === query.normalize('NFC').replaceAll('ς', 'σ')).length);
+    .filter(word => word.normalize('NFC').toLowerCase().replaceAll('ς', 'σ').replaceAll('æ', 'ae') === query.normalize('NFC').replaceAll('ς', 'σ').replaceAll('æ', 'ae')).length);
   equal(export_.rowCount, result.occurrences);
   equal(model.rows.every(row => new URL(row.readerURL).searchParams.get('froben-view') === 'page'), true);
   examples.push({book: spec.number, query, occurrences: result.occurrences});

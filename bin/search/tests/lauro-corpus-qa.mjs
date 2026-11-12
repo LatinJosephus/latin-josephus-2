@@ -18,7 +18,7 @@ const evidence=name=>{const bytes=fs.readFileSync(path.join(root,name));return {
 const lunr=createRequire(import.meta.url)('../vendor/lunr.cjs');
 let assertions=0,totalQueries=0;
 const check=(a,b,message)=>{assertions++;assert.deepEqual(a,b,message);};
-const norm=value=>value.normalize('NFC').toLowerCase().replaceAll('ſ','s').replaceAll('ς','σ').normalize('NFC');
+const norm=value=>value.normalize('NFC').toLowerCase().replaceAll('ſ','s').replaceAll('ς','σ').replaceAll('æ','ae').normalize('NFC');
 
 // Character scanner with a state machine, independent of the engine's word regexp.
 function scan(text) {

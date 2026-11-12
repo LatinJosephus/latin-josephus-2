@@ -54,7 +54,7 @@ function noteExample(query, scope, result, purpose) {
   examples.push({query, scope, matchingUnits: result.matchingUnits, occurrences: result.occurrences, purpose});
 }
 
-const normalize = value => value.normalize('NFC').toLowerCase().replaceAll('ς', 'σ').normalize('NFC');
+const normalize = value => value.normalize('NFC').toLowerCase().replaceAll('ς', 'σ').replaceAll('æ', 'ae').normalize('NFC');
 function independentTokens(text) {
   const output = []; let start = null, offset = 0;
   for (const char of [...text, ' ']) {

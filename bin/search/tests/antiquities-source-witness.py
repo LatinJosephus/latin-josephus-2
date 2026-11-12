@@ -68,7 +68,7 @@ def tokens(text):
         category = unicodedata.category(text[index])[0] if index < len(text) else "Z"
         if start is not None and category not in "LMN":
             raw = text[start:index]
-            term = unicodedata.normalize("NFC", raw).lower().replace("ς", "σ")
+            term = unicodedata.normalize("NFC", raw).lower().replace("ς", "σ").replace("æ", "ae")
             result.append({"term": unicodedata.normalize("NFC", term),
                            "start": u16(text[:start]), "end": u16(text[:index])})
             start = None

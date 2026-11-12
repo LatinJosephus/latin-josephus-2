@@ -82,7 +82,7 @@ def tokens(text):
   if unicodedata.category(text[i])[0] not in 'LN':i+=1;continue
   j=i+1
   while j<len(text) and unicodedata.category(text[j])[0] in 'LMN':j+=1
-  term=unicodedata.normalize('NFC',text[i:j]).lower().replace('\u03c2','\u03c3')
+  term=unicodedata.normalize('NFC',text[i:j]).lower().replace('\u03c2','\u03c3').replace('\u00e6','ae')
   out.append({'term':unicodedata.normalize('NFC',term),'start':utf16(text[:i]),'end':utf16(text[:j])});i=j
  return out
 rows=[];books=[];ids=[]
@@ -170,7 +170,7 @@ function independentTokens(text) {
   return result;
 }
 function normalize(value, fold = false) {
-  let result = value.normalize('NFC').toLowerCase().replaceAll('ς', 'σ');
+  let result = value.normalize('NFC').toLowerCase().replaceAll('ς', 'σ').replaceAll('æ', 'ae');
   if (fold) result = result.replaceAll('v', 'u').replaceAll('j', 'i');
   return result.normalize('NFC');
 }

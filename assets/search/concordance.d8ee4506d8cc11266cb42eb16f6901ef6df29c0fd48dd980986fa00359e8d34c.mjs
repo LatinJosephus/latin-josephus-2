@@ -4,7 +4,7 @@
  * cannot distinguish repeated or overlapping occurrences. All offsets below
  * address original record.text strings in JavaScript (UTF-16) string units.
  */
-import { parseQuery, tokenizeRecord, phraseBreakOffsets } from "./engine.a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89.mjs";
+import { parseQuery, tokenizeRecord, phraseBreakOffsets } from "./engine.902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603.mjs";
 import { bookCitation, citationFor, readerURL, citationScheme, editorialMarksFor, editorialText, emptySourceNote, spellingEquivalence } from "./ui-utils.5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521.mjs";
 
 export const CONCORDANCE_SCHEMA_VERSION = 1;

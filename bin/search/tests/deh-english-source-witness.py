@@ -59,7 +59,7 @@ def scan_words(text):
         char = text[index] if index < len(text) else ' '
         category = unicodedata.category(char)[0]
         if start is not None and category not in 'LMN':
-            term = unicodedata.normalize('NFC', text[start:index]).lower().replace('ς', 'σ')
+            term = unicodedata.normalize('NFC', text[start:index]).lower().replace('ς', 'σ').replace('æ', 'ae')
             result.append({'term': unicodedata.normalize('NFC', term), 'start': start_offset, 'end': offset})
             start = start_offset = None
         if start is None and category in 'LN':

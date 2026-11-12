@@ -7,6 +7,8 @@
  */
 
 export const SCHEMA_VERSION = 1;
+const TOKENIZER_V1 = "unicode-words-nfc-case-v1";
+const TOKENIZER_V2 = "unicode-words-nfc-case-v2";
 export const QUERY_LIMITS = Object.freeze({
   characters: 2000,
   terms: 64,
@@ -31,9 +33,9 @@ export class QueryError extends Error {
   }
 }
 
-/** Case-insensitive NFC word key; Greek final sigma shares its case pair. */
+/** Case-insensitive NFC word key with equivalent spellings for σ/ς and æ/ae. */
 export function normalizeTerm(value, fold = false) {
-  let term = String(value).normalize("NFC").toLowerCase().replace(/ς/g, "σ");
+  let term = String(value).normalize("NFC").toLowerCase().replaceAll("ς", "σ").replaceAll("æ", "ae");
   if (fold) term = term.replace(/v/g, "u").replace(/j/g, "i");
   return term.normalize("NFC");
 }
@@ -167,6 +169,11 @@ function buildIndex(records, tokens, lunr, fold) {
   }).toJSON();
 }
 
+function bundleTokenizer(records) {
+  // Existing keys already support the equivalent query in books without æ.
+  return records.some(record => /[Ææ]/u.test(record.text)) ? TOKENIZER_V2 : TOKENIZER_V1;
+}
+
 /**
  * Build a deterministic, JSON-serializable search bundle from extracted TEI
  * records. This function never changes the supplied array or record objects.
@@ -200,7 +207,7 @@ export function buildBundle(inputRecords, lunr) {
   const vocabulary = new Set(tokens.flatMap((group) => group.map((token) => token.term)));
   return {
     schemaVersion: SCHEMA_VERSION,
-    tokenizer: "unicode-words-nfc-case-v1",
+    tokenizer: bundleTokenizer(records),
     records,
     tokens,
     indexes: {
@@ -418,7 +425,8 @@ function intersection(left, right) {
 
 /** Load the bundle; Lunr indexes themselves are loaded lazily per spelling mode. */
 export function createEngine(bundle, lunr) {
-  if (!bundle || bundle.schemaVersion !== SCHEMA_VERSION || !Array.isArray(bundle.records) || !Array.isArray(bundle.tokens)) {
+  if (!bundle || bundle.schemaVersion !== SCHEMA_VERSION || !Array.isArray(bundle.records)
+    || !Array.isArray(bundle.tokens) || bundle.tokenizer !== bundleTokenizer(bundle.records)) {
     throw new TypeError("Unsupported or incomplete search index. Rebuild the search bundle.");
   }
   if (!lunr?.Index?.load) throw new TypeError("Lunr with Index.load is required.");

@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-09T21:17:52.458Z",
+  "generatedAt": "2026-11-12T16:49:40.644Z",
   "independentVerifier": "bin/search/tests/antiquities-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-    "observedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+    "expectedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+    "observedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
   "runtime": {
     "node": "24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -20,7 +20,7 @@
     "sourceFiles": 21,
     "sections": 7283,
     "tokens": 265023,
-    "uniqueLiteralVocabulary": 39996
+    "uniqueLiteralVocabulary": 39994
   },
   "sources": [
     {
@@ -179,13 +179,13 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580",
+      "sha256": "d634484335b048b3b69efa6dbe663f39e46f8e889892524dd6b32a79bf7e2e7c",
       "bytes": 99759
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89",
-      "bytes": 28437
+      "sha256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603",
+      "bytes": 28833
     },
     "collection": {
       "path": "bin/search/collection.mjs",
@@ -199,13 +199,13 @@
     },
     "verifier": {
       "path": "bin/search/tests/antiquities-corpus-qa.mjs",
-      "sha256": "7c1e5ac8bbbefa05dc1327539107be6417ce71f3a7b1c38506b0e4ba9a9e7d5b",
-      "bytes": 122236
+      "sha256": "23849f40085b6d4d8379a480bdeb69e81ae0d634371d773a05d6a86516cc3c2d",
+      "bytes": 122279
     },
     "witness": {
       "path": "bin/search/tests/antiquities-source-witness.py",
-      "sha256": "cd285a194be26209f7f74354d1a01251b84abce6743b61f6f7e2e886950872a4",
-      "bytes": 55582
+      "sha256": "a3c0ef466f1bec40f1367d6ee7048057eddef420f42b850353dc878bc691d9c7",
+      "bytes": 55602
     },
     "extractionReport": {
       "path": "bin/search/data/antiquities-latin-bamberg78/extraction-report.json",
@@ -214,8 +214,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-      "bytes": 199428
+      "sha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+      "bytes": 200384
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
@@ -449,8 +449,8 @@
         "book": 10,
         "bundle": {
           "path": "bin/search/data/antiquities-latin-bamberg78/book-10.bundle.json",
-          "sha256": "2c08cd390016010149290fa22f20fa1766db8f782b247c90e1c6c0f919b6dfb0",
-          "bytes": 1998615
+          "sha256": "72af174d71bc7fd3d4e67446e9ca5907959ded55b8d7a1de4728bbac20debf3f",
+          "bytes": 1998349
         },
         "corpus": {
           "path": "bin/search/data/antiquities-latin-bamberg78/book-10.corpus.json",
@@ -1803,14 +1803,14 @@
     "CatalogCorpusHash": 20,
     "AllIndexedTokenOffsets": 20,
     "ExpectedTokenCount": 20,
-    "ExhaustiveVocabularyQueries": 191878,
-    "ExhaustiveVocabularyMatchingUnits": 191878,
-    "ExhaustiveVocabularyOccurrences": 191878,
-    "ExhaustiveVocabularyUnitIdentity": 191878,
-    "ExhaustiveVocabularyEvidence": 492071,
-    "ExhaustiveVocabularyRecordIds": 492071,
-    "ExhaustiveVocabularySections": 492071,
-    "ExhaustiveVocabularyMatchingSections": 191878,
+    "ExhaustiveVocabularyQueries": 191874,
+    "ExhaustiveVocabularyMatchingUnits": 191874,
+    "ExhaustiveVocabularyOccurrences": 191874,
+    "ExhaustiveVocabularyUnitIdentity": 191874,
+    "ExhaustiveVocabularyEvidence": 492069,
+    "ExhaustiveVocabularyRecordIds": 492069,
+    "ExhaustiveVocabularySections": 492069,
+    "ExhaustiveVocabularyMatchingSections": 191874,
     "FixtureQueries": 2480,
     "FixtureMatchingUnits": 2480,
     "FixtureOccurrences": 2480,
@@ -1823,9 +1823,9 @@
     "WildcardMatchingUnits": 10716,
     "WildcardOccurrences": 10716,
     "WildcardUnitIdentity": 10716,
-    "WildcardEvidence": 180885,
-    "WildcardRecordIds": 180885,
-    "WildcardSections": 180885,
+    "WildcardEvidence": 180623,
+    "WildcardRecordIds": 180623,
+    "WildcardSections": 180623,
     "WildcardMatchingSections": 10716,
     "WithinEveryNonemptyUnitQueries": 29000,
     "WithinEveryNonemptyUnitMatchingUnits": 29000,
@@ -2088,8 +2088,8 @@
     "MissingSelectedBookRejectsCompleteSearch": 1,
     "InputUnchangedDuringQA": 208
   },
-  "totalQueries": 293134,
-  "assertions": 3910734,
+  "totalQueries": 293130,
+  "assertions": 3909926,
   "failedAssertions": 0,
   "examples": [
     {
@@ -7845,7 +7845,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 458.39,
+  "durationSeconds": 335,
   "limitations": [
     "Automated Node/Python acceptance, not browser or visual acceptance.",
     "Reader URLs are verified with the actual UI URL helper; reader pages are not opened by this verifier.",

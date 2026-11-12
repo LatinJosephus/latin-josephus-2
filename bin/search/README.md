@@ -109,13 +109,11 @@ Double quotes make an exact phrase rather than an unordered collection of words.
 Punctuation, capitalization, and ordinary whitespace do not affect phrase
 matching. A wildcard does not consume spaces or span multiple words.
 
-Matching uses Unicode word tokens and case normalization. There is no stemming,
-lemmatization, automatic correction, or removal of common words. The optional
-**u/v and i/j equivalence** applies to Latin editions only, to both indexed
-words and the query. English is searched literally apart from case even in
-mixed selections. The control is disabled for English-only searches. Search
-normalization preserves the original displayed text and its highlight offsets.
-Accents are retained.
+Matching uses Unicode word tokens, ignores case, and treats `æ` and `ae` as
+equivalent. There is no stemming, lemmatization, automatic correction, or removal
+of common words. The optional **u/v and i/j equivalence** applies to Latin editions
+only, to both indexed words and the query. Search results show the original
+spelling and accents, with highlights at their original offsets.
 
 ### Section and whole-book scope
 
@@ -1064,9 +1062,8 @@ Git blobs use LF and the existing preview blobs use CRLF; their normalized
 bytes match exactly. Publication accepts only this line-ending equivalence.
 
 The new example `"a voice from the east"` occurs once, in VI.301. Reader links
-include `english=whiston` for section and whole-book results. English spelling
-remains literal apart from capitalization, even when Latin spelling equivalence
-is selected in a mixed-language search. Boolean conditions and phrases stay
+include `english=whiston` for section and whole-book results. English matching
+ignores case and treats `æ` and `ae` as equivalent. Boolean conditions and phrases stay
 within their own work, book, and edition.
 
 `tests/whiston-bellum-source-witness.py` independently reads the accepted XML;
@@ -1164,8 +1161,8 @@ words within Book I. No query combines evidence across different books or editio
 
 The example `"a rose among thorns"` has one occurrence, in **Prol.2**. The word
 `jews` has 262 occurrences in 158 citation units. Common words are indexed;
-`the` has 9,172 occurrences in 556 units. English spelling is retained apart
-from case; Latin u/v and i/j equivalence does not change English matching.
+`the` has 9,172 occurrences in 556 units. English matching ignores case and treats
+`æ` and `ae` as equivalent. The u/v and i/j equivalence applies to Latin editions.
 
 Result and CSV links use `deh/?book=N&chapter=C&unit=P&english=pollard`.
 The Prologue uses chapter 0; `unit` is the paragraph number within the chapter,
@@ -1198,7 +1195,7 @@ scanner and exercises occurrence counts, phrases, wildcards, Boolean scopes,
 exports and mixed-witness isolation. The publication registry runs that gate.
 
 Matching profile `early-print-it-v1` supports long s and explicit ¬ continuations.
-Accents, ß and historical spelling remain literal. Only specifically admitted
+Accents and ß are significant. Only specifically admitted
 bracketed supplied-letter ranges join their word for matching; source brackets,
 editorial qualification and original geometry remain recoverable. Italian CSVs
 have `italian_source_references_json`, separate DEH correspondences and source

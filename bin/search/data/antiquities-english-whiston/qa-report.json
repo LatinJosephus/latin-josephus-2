@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-09T21:12:23.218Z",
+  "generatedAt": "2026-11-12T16:45:53.323Z",
   "independentVerifier": "bin/search/tests/whiston-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-    "observedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+    "expectedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+    "observedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
   "runtime": {
     "node": "v24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -1927,13 +1927,13 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580",
+      "sha256": "d634484335b048b3b69efa6dbe663f39e46f8e889892524dd6b32a79bf7e2e7c",
       "bytes": 99759
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89",
-      "bytes": 28437
+      "sha256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603",
+      "bytes": 28833
     },
     "collection": {
       "path": "bin/search/collection.mjs",
@@ -1952,13 +1952,13 @@
     },
     "verifier": {
       "path": "bin/search/tests/whiston-corpus-qa.mjs",
-      "sha256": "09d03107b972529182dd9a0112fafe6aee91741b4a39e6ec81ac7beb1ace6ab0",
-      "bytes": 65681
+      "sha256": "96f08d94f3cb94c99d307f66b5348e722d52889d4ee9dd5e4a97652b7669b318",
+      "bytes": 65704
     },
     "witness": {
       "path": "bin/search/tests/whiston-source-witness.py",
-      "sha256": "f24c51936a4ed533da35a7f96e4becc66d116fc7eb31d629988efb80069a2dc6",
-      "bytes": 20120
+      "sha256": "ee30e81b9479c10423cf37f23c2ee97fbf9aee055acae03447e7c59b9d794f6c",
+      "bytes": 20140
     },
     "extractor": {
       "path": "bin/search/extract-whiston.py",
@@ -1982,8 +1982,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-      "bytes": 199428
+      "sha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+      "bytes": 200384
     },
     "testSources": [],
     "books": [
@@ -3957,7 +3957,7 @@
       "purpose": "Whiston Book XX example, preserving the accepted section marker"
     }
   ],
-  "durationSeconds": 128.9,
+  "durationSeconds": 107.3,
   "limitations": [
     "Coverage is all accepted Whiston Antiquities Proem and Books I-XX XML; the search does not create a new edition or add other Whiston works.",
     "This source/query acceptance does not establish a new translation text or collate printed editions; browser interaction is verified separately."

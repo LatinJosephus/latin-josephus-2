@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-09T21:13:02.843Z",
+  "generatedAt": "2026-11-12T16:45:05.904Z",
   "independentVerifier": "bin/search/tests/ca-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-    "observedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+    "expectedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+    "observedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
   "runtime": {
     "node": "24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -70,11 +70,11 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580"
+      "sha256": "d634484335b048b3b69efa6dbe663f39e46f8e889892524dd6b32a79bf7e2e7c"
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89"
+      "sha256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603"
     },
     "collection": {
       "path": "bin/search/collection.mjs",
@@ -86,11 +86,11 @@
     },
     "verifier": {
       "path": "bin/search/tests/ca-corpus-qa.mjs",
-      "sha256": "eaf77ea81cb3d1101cfb545cfbfbeac4dc8d15821774eb2eea6827805bd522fb"
+      "sha256": "d1d8a9b5f55ac3cd15245b7a9d42003fcffd48573a93fcd07616aca99c9d01cd"
     },
     "witness": {
       "path": "bin/search/tests/ca-source-witness.py",
-      "sha256": "2a62d59cee0bc3e1edf3e6d9263f4438ca501b266577f07f3a9209f1a8fecdb4"
+      "sha256": "1cd9b6812acafee30f05a7175a5752013d0d1df5ab7cc4e6ef04abc511dd1190"
     },
     "extractionReport": {
       "path": "bin/search/data/contra-apionem-latin-boysen/extraction-report.json",
@@ -98,7 +98,7 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c"
+      "sha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0"
     },
     "books": [
       {
@@ -1256,7 +1256,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 55.04,
+  "durationSeconds": 59.36,
   "limitations": [
     "Automated Node/Python verification, not browser or visual acceptance.",
     "Reader URLs are checked against canonical citation/ID structure; reader pages are not opened by this verifier.",

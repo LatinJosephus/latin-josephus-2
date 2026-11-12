@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-09T21:13:30.888Z",
+  "generatedAt": "2026-11-12T16:45:42.449Z",
   "independentVerifier": "bin/search/tests/deh-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-    "observedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+    "expectedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+    "observedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
   "runtime": {
     "node": "24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -139,11 +139,11 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580"
+      "sha256": "d634484335b048b3b69efa6dbe663f39e46f8e889892524dd6b32a79bf7e2e7c"
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89"
+      "sha256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603"
     },
     "collection": {
       "path": "bin/search/collection.mjs",
@@ -151,11 +151,11 @@
     },
     "verifier": {
       "path": "bin/search/tests/deh-corpus-qa.mjs",
-      "sha256": "8c746327bc7710553e4713ff14a5150be718a9a1f11c6c9ebc992512674a5140"
+      "sha256": "5f0b7259f094d70e352166e04fedb0d0ea46d95d3c00244d2a6d1c077825d094"
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c"
+      "sha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0"
     },
     "books": [
       {
@@ -991,7 +991,7 @@
       "occurrences": 0
     }
   ],
-  "durationSeconds": 84.68,
+  "durationSeconds": 95.95,
   "limitations": [
     "Automated Node/Python verification, not browser or visual acceptance.",
     "Reader URLs checked against canonical citation/ID structure; reader pages are not opened by this verifier.",

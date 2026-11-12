@@ -99,6 +99,31 @@ test("Greek and combining marks survive, with offsets into original text", () =>
   assert.equal("x 𐌀𐌁 y".slice(astral[1].start, astral[1].end), "𐌀𐌁");
 });
 
+test("æ and ae match both spellings in words, phrases, and wildcards at original offsets", () => {
+  const sources = [record(1, "dixit Cæsar"), record(2, "dixit Caesar"), record(3, "dixit Cǽsar")];
+  const ligatureBundle = buildBundle(sources, lunr);
+  const search = createEngine(ligatureBundle, lunr);
+  assert.throws(() => createEngine({...ligatureBundle, tokenizer: bundle.tokenizer}, lunr), /Rebuild the search bundle/);
+  assert.deepEqual(sections("Romæ"), [2]);
+  for (const fold of [false, true]) {
+    for (const query of ["Cæsar", "Caesar", "CÆSAR", "cæs*", "caes*"]) {
+      const result = search.search(query, {fold});
+      assert.equal(result.occurrences, 2, query);
+      const spellings = result.hitGroups.flatMap(group => group.hits.map(hit => {
+        const {recordId, start, end} = hit.spans[0];
+        return sources.find(source => source.id === recordId).text.slice(start, end);
+      }));
+      assert.deepEqual(spellings, ["Cæsar", "Caesar"], query);
+    }
+    for (const query of ['"dixit Cæsar"', '"dixit Caesar"', '"dixit CÆS*"']) {
+      const result = search.search(query, {fold});
+      assert.equal(result.occurrences, 2, query);
+      assert.deepEqual(idsOf(result), sources.slice(0, 2).map(source => source.id));
+    }
+    assert.deepEqual(idsOf(search.search("dixit AND NOT caesar", {fold})), [sources[2].id]);
+  }
+});
+
 test("exact phrases use consecutive words, ignoring punctuation", () => {
   assert.deepEqual(sections('"regis aufert Judaeorumque"'), [4]);
   assert.deepEqual(sections('"regis, aufert; Judaeorumque!"'), [4]);

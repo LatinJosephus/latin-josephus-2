@@ -202,7 +202,7 @@ function tokenize(text, record, recordIndex) {
   const result = [];
   let position = 0, start = -1, tokenText = '';
   const emit = () => {
-    if (start >= 0) result.push({term: tokenText.normalize('NFC').toLowerCase(),
+    if (start >= 0) result.push({term: tokenText.normalize('NFC').toLowerCase().replaceAll('æ', 'ae'),
       start, end: position, recordId: record.id, section: record.section, recordIndex});
     start = -1; tokenText = '';
   };
@@ -220,7 +220,7 @@ const tokenLists = records.map((r, i) => tokenize(r.text, r, i));
 const allTokens = tokenLists.flat();
 const vocabulary = [...new Set(allTokens.map(t => t.term))].sort();
 const normalize = (s, fold) => {
-  s = s.normalize('NFC').toLowerCase();
+  s = s.normalize('NFC').toLowerCase().replaceAll('æ', 'ae');
   return fold ? s.replaceAll('v', 'u').replaceAll('j', 'i') : s;
 };
 const postings = new Map([false, true].map(fold => {

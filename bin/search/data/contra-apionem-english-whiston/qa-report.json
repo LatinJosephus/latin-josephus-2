@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-09T21:11:23.993Z",
+  "generatedAt": "2026-11-12T16:45:24.638Z",
   "independentVerifier": "bin/search/tests/whiston-contra-apionem-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-    "observedSha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
+    "expectedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+    "observedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
   },
   "runtime": {
     "node": "v24.19.0",
-    "python": "3.12.14",
-    "unicode": "15.0.0",
+    "python": "3.14.7",
+    "unicode": "16.0.0",
     "xmlParser": "xml.dom.minidom"
   },
   "source": {
@@ -129,13 +129,13 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "2dd84a18554a0735766ead4dd96877137837bdb0b54bd8a6c7850045848e9580",
+      "sha256": "d634484335b048b3b69efa6dbe663f39e46f8e889892524dd6b32a79bf7e2e7c",
       "bytes": 99759
     },
     "engine": {
       "path": "bin/search/engine.mjs",
-      "sha256": "a138646ad9608b2d74b5d6c1bf7e39d190ffc34c62e22fe0ef5469bb1c4b0a89",
-      "bytes": 28437
+      "sha256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603",
+      "bytes": 28833
     },
     "collection": {
       "path": "bin/search/collection.mjs",
@@ -154,13 +154,13 @@
     },
     "verifier": {
       "path": "bin/search/tests/whiston-contra-apionem-corpus-qa.mjs",
-      "sha256": "1a31df22a702018ec340a18b1401ba7729c9848b77e52fbf79aeb3c88e61199f",
-      "bytes": 40402
+      "sha256": "14c476da1b69a4f7916dacb1a99e5c6dcbed6c21810742d0fb9de9a3c5435c20",
+      "bytes": 40425
     },
     "witness": {
       "path": "bin/search/tests/whiston-contra-apionem-source-witness.py",
-      "sha256": "701f9e43d3653d884d31ea6e1d63559d350d6af9e5f88d1c3a1e73a2d68c25ae",
-      "bytes": 10776
+      "sha256": "22eeb4fe2672d69f1e71cf8a36209a44411c5a57c0d88578be2294cdcf390b8e",
+      "bytes": 10796
     },
     "extractor": {
       "path": "bin/search/extract-whiston-contra-apionem.py",
@@ -184,8 +184,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "330bd74c2e34d3e2eece4fec7ae1b5a8f5e73854c596ae00aa7034e562e82e9c",
-      "bytes": 199428
+      "sha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+      "bytes": 200384
     },
     "testSources": [],
     "books": [
@@ -648,7 +648,7 @@
       "purpose": "Complete Contra Apionem count"
     }
   ],
-  "durationSeconds": 10.7,
+  "durationSeconds": 9.4,
   "limitations": [
     "This validates the accepted Whiston Contra Apionem XML, not a new translation or printed-edition collation.",
     "Browser interaction is verified separately."

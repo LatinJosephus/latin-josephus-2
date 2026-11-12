@@ -117,7 +117,7 @@ def tokens(text):
         j = i + 1
         while j < len(text) and unicodedata.category(text[j])[0] in "LMN":
             j += 1
-        term = unicodedata.normalize("NFC", text[i:j]).lower().replace("ς", "σ")
+        term = unicodedata.normalize("NFC", text[i:j]).lower().replace("ς", "σ").replace("æ", "ae")
         out.append({"term": unicodedata.normalize("NFC", term),
                     "start": utf16(text[:i]), "end": utf16(text[:j])})
         i = j
@@ -254,7 +254,7 @@ function independentTokens(text) {
   return result;
 }
 function normalize(value, fold = false) {
-  let result = value.normalize('NFC').toLowerCase().replaceAll('ς', 'σ');
+  let result = value.normalize('NFC').toLowerCase().replaceAll('ς', 'σ').replaceAll('æ', 'ae');
   if (fold) result = result.replaceAll('v', 'u').replaceAll('j', 'i');
   return result.normalize('NFC');
 }
