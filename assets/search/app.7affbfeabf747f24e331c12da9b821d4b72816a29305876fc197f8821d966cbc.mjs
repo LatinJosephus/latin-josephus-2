@@ -9,6 +9,12 @@ const els={query:$('query'),work:$('work'),book:$('book'),scope:$('scope'),fold:
 const readerBase=new URL(root.dataset.readerBase||'/',location.href);
 const pageSize=20;
 const defaultQuery='"sacerdos ex Hierosolymis"';
+const workLanguages = new Map([
+  ['all-latin', 'Latin'],
+  ['all-english', 'English'],
+  ['all-french', 'French'],
+  ['all-italian', 'Italian'],
+]);
 let collection=null,catalog=null,catalogPromise=null,cards=[],items=[],shown=0,sequence=0,activeSearch=null,successful=null,view='passages';
 
 function node(tag,text,className){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
@@ -22,11 +28,29 @@ function selectorEdition(source) {
     'deh-italian-lauro1544': 'Lauro (1544)',
   })[source.id] || source.edition;
 }
+function collectionsForWork(work) {
+  if (work === 'all') return catalog.collections;
+  const language = workLanguages.get(work);
+  return catalog.collections.filter(edition => language ? edition.language === language : edition.id === work);
+}
+function searchLocationState(search) {
+  const params = new URLSearchParams(search);
+  const work = params.get('work');
+  const editions = workLanguages.has(work) ? collectionsForWork(work) : [];
+  if (!editions.length) return locationState(params, catalog, defaultQuery);
+
+  // Apply the existing multi-edition link rules to this language's books.
+  const books = catalog.books.filter(book => editions.some(edition => edition.id === book.collectionId));
+  params.set('work', 'all');
+  return {...locationState(params, {collections: editions, books}, defaultQuery), work};
+}
 function selectedCollections(state=null){
   if(!catalog)return [];
   const work=state?.work??els.work.value,book=state?.book??els.book.value;
-  const bookCollection=book&&book!=='all'?catalog.books.find(entry=>entry.id===book)?.collectionId:null;
-  return catalog.collections.filter(collection=>(work==='all'||collection.id===work)&&(!bookCollection||collection.id===bookCollection));
+  const editions=collectionsForWork(work);
+  if(!book||book==='all')return editions;
+  const bookCollection=catalog.books.find(entry=>entry.id===book)?.collectionId;
+  return editions.filter(collection=>collection.id===bookCollection);
 }
 function updateScopeHint(){
   const collections=selectedCollections(),labels=citationUnitLabels(collections);
@@ -50,12 +74,16 @@ function updateScopeHint(){
 }
 function populateBooks(selected='all'){
   const work=els.work.value;
-  const books=catalog.books.filter(b=>work==='all'||b.collectionId===work);
-  els.book.replaceChildren(option(work==='all'?'All available books':'All books in this work','all'));
+  const language=workLanguages.get(work);
+  const showEdition=work==='all'||Boolean(language);
+  const editions=new Map(collectionsForWork(work).map(edition=>[edition.id,edition]));
+  const books=catalog.books.filter(book=>editions.has(book.collectionId));
+  const allBooksLabel=language?`All ${language} books`:work==='all'?'All available books':'All books in this work';
+  els.book.replaceChildren(option(allBooksLabel,'all'));
   for(const b of books){
-    const c=catalog.collections.find(c=>c.id===b.collectionId);
+    const c=editions.get(b.collectionId);
     const proem=c.work==='antiquities'&&b.number===1?' (including Proem)':'';
-    els.book.append(option(work==='all'?`${bookCitation({...c,...b})}${proem} · ${c.language} · ${selectorEdition(c)}`:(b.label||`Book ${romanBook(b.number)}`),b.id));
+    els.book.append(option(showEdition?`${bookCitation({...c,...b})}${proem} · ${c.language} · ${selectorEdition(c)}`:(b.label||`Book ${romanBook(b.number)}`),b.id));
   }
   els.book.value=selected;
   els.book.disabled=false;
@@ -75,6 +103,10 @@ function populateControls(){
     group.options.push(option(`${group.title} · ${edition.language} · ${selectorEdition(edition)}`, edition.id));
   }
   els.work.replaceChildren(option('All available works and editions', 'all'));
+  const languages = new Set(catalog.collections.map(edition => edition.language));
+  for (const [work, language] of workLanguages) {
+    if (languages.has(language)) els.work.append(option(`All ${language}`, work));
+  }
   for (const {title, options} of groups.values()) {
     if (!options.length) continue;
     const group = node('optgroup');
@@ -314,17 +346,17 @@ async function search({writeUrl=true,fromLocation=false,example=null}={}){
     const ready=await ensureCollection();if(current!==sequence)return;
     if(fromLocation){
       els.query.value=new URLSearchParams(location.search).get('q')||defaultQuery;
-      applyState(locationState(location.search,catalog,defaultQuery));
+      applyState(searchLocationState(location.search));
     }
     if(example){
       // Validate examples through the same work/book contract as saved links.
-      applyState(locationState(searchURL({query:example.query,work:example.work,book:example.book||'all',scope:example.scope||'section',fold:els.fold.checked,view},location.href).search,catalog,defaultQuery));
+      applyState(searchLocationState(searchURL({query:example.query,work:example.work,book:example.book||'all',scope:example.scope||'section',fold:els.fold.checked,view},location.href).search));
     }
     updateScopeHint();
     const state={query:els.query.value.trim(),work:els.work.value,book:els.book.value,scope:els.scope.value,fold:els.fold.checked,view};
     if(!state.query){els.query.focus();els.status.textContent='Enter a search expression.';return;}
     const result=await ready.search(state.query,{
-      collections:state.work==='all'?'all':[state.work],books:state.book==='all'?'all':[state.book],scope:state.scope,fold:state.fold,signal,
+      collections:selectedCollections(state).map(edition=>edition.id),books:state.book==='all'?'all':[state.book],scope:state.scope,fold:state.fold,signal,
       onProgress(progress){
         if(current!==sequence)return;
         const action=progress.stage==='searching'?'Searching':'Loading';
@@ -562,7 +594,7 @@ els.download.addEventListener('click',()=>{
 window.addEventListener('popstate',()=>{
   if(successful&&catalog){
     try{
-      const state=locationState(location.search,catalog,defaultQuery);
+      const state=searchLocationState(location.search);
       if(['query','work','book','scope','fold'].every(key=>state[key]===successful.state[key])){
         applyState(state);renderSuccessful();return;
       }

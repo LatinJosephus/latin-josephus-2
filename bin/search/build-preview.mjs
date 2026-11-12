@@ -4,7 +4,8 @@ import {fileURLToPath} from 'node:url';
 const here=new URL('./',import.meta.url);
 const component=readFileSync(new URL('../../_includes/search-interface.html',here),'utf8');
 const readerBase='https://latinjosephus.github.io/';
-const body=component.replaceAll('{{ include.reader_base }}',readerBase);
+const body=component.replaceAll('{{ include.reader_base }}',readerBase)
+  .replaceAll("{{ '/texts/' | relative_url }}",'https://www.latinjosephus.org/texts/');
 if(body.includes('{{')||body.includes('{%'))throw new Error('The search component contains unsupported Liquid markup; update the preview builder explicitly.');
 const html=`<!doctype html>
 <html lang="en">
