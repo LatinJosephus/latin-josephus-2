@@ -19,3 +19,12 @@ html[data-theme=dark] .ljm{--ljm-muted:#CFC2B7}
 .ljm-skip:focus{top:8px}
 @media(max-width:900px){.ljm{padding:24px 0}.ljm .ljm-filters input{width:100%;max-width:100%}.ljm .ljm-filters label:first-child{width:100%}}
 @media print{#navbar,.ljm-skip{display:none}body.fixed-top-nav{padding-top:0}}
+
+.ljm tr[data-status="lost"] > th,
+.ljm tr[data-status="lost"] > td {
+  color: var(--ljm-muted);
+}
+
+.ljm tr[data-status="lost"] .ljm-name {
+  font-style: italic;
+}
