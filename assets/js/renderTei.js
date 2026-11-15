@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const greekPane = document.getElementById("greek");
   const greekPaneCheckbox = document.getElementById("greek-pane-select");
   const highlightCheckbox = document.getElementById("highlight-annotations");
+  const ussaniPagesCheckbox = document.getElementById("ussani-page-numbers");
   const italianPane = document.getElementById("italian");
   const italianPaneCheckbox = document.getElementById("italian-pane-select");
   const latinPane = document.getElementById("latin");
@@ -366,6 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let viewData = {};
   let canonicalFullData;
   let canonicalViewData;
+  let ussaniOpeningPage = null;
   let cardwellLocations = [];
   let invalidNieseRequest = null;
   let unsupportedNieseBook = null;
@@ -3699,7 +3701,72 @@ document.addEventListener("DOMContentLoaded", () => {
     (readerFrame || panes).before(notice);
   };
 
+  const ussaniPageAtStart = (data) => {
+    const passage = data.querySelector("tei-body") || data;
+    const text = document.createTreeWalker(passage, NodeFilter.SHOW_TEXT, node =>
+      node.textContent.trim() && !node.parentElement?.closest("tei-num, [data-original]")
+        ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP
+    ).nextNode();
+    const breaks = fullData.Latin.querySelectorAll("tei-body tei-pb[n]");
+    if (!text || !breaks.length) return null;
+
+    // Books II–IV begin on the preceding page. Page numbers are consecutive
+    // across the five source files, including where one printed page spans two books.
+    let page = Number(breaks[0].getAttribute("n")) - 1;
+    for (const marker of breaks) {
+      if (!(marker.compareDocumentPosition(text) & Node.DOCUMENT_POSITION_FOLLOWING)) break;
+      page = Number(marker.getAttribute("n"));
+    }
+    return page;
+  };
+
+  const ussaniPageLink = (page) => {
+    const link = document.createElement("a");
+    link.className = "ussani-page-link";
+    link.href = `https://www.google.ca/books/edition/Hegesippi_qvi_dicitvr_historiae_libri_v/RWcwAAAAYAAJ?gbpv=1&pg=PA${page}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = `[p. ${page}]`;
+    link.setAttribute("aria-label", `Ussani p. ${page} on Google Books (opens in a new tab)`);
+    return link;
+  };
+
+  const updateUssaniPages = () => {
+    latinPane.querySelector(".ussani-opening-page")?.remove();
+    latinPane.querySelectorAll(".ussani-page-link").forEach(link => {
+      const parent = link.parentNode;
+      link.remove();
+      parent.normalize();
+    });
+    if (!ussaniPagesCheckbox.checked || !ussaniOpeningPage) return;
+
+    const opening = document.createElement("p");
+    opening.className = "ussani-opening-page";
+    opening.appendChild(ussaniPageLink(ussaniOpeningPage));
+    latinPane.querySelector("h3").after(opening);
+
+    latinPane.querySelectorAll("tei-pb[n]").forEach(marker => {
+      const page = Number(marker.getAttribute("n"));
+      if (page <= ussaniOpeningPage) return;
+
+      const link = ussaniPageLink(page);
+      const continuation = marker.nextSibling;
+      if (continuation?.nodeType !== Node.TEXT_NODE
+        || !/[\p{L}\p{M}]$/u.test(marker.previousSibling?.textContent || "")
+        || !/^\p{L}/u.test(continuation.data)) {
+        marker.appendChild(link);
+        return;
+      }
+
+      // As in the Froben reader, place the label after a word divided by the page break.
+      const wordEnd = continuation.data.search(/\s/u);
+      if (wordEnd < 0) continuation.after(link);
+      else continuation.splitText(wordEnd).before(link);
+    });
+  };
+
   const renderUI = () => {
+    ussaniOpeningPage = null;
     // Clear panes if text already loaded.
     Object.values(languagePanes).forEach(pane => {
       if (!pane) return;
@@ -3724,6 +3791,9 @@ document.addEventListener("DOMContentLoaded", () => {
           data.querySelectorAll("tei-unclear:empty").forEach(marker => {
             marker.textContent = "†";
           });
+          if (ussaniPagesCheckbox && state.sources.Latin === "ussani") {
+            ussaniOpeningPage = ussaniPageAtStart(data);
+          }
         }
 
         // Chapter milestones are editorial structure markers, not displayed
@@ -3743,6 +3813,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    if (ussaniPagesCheckbox) updateUssaniPages();
     renderInvalidNieseNotice();
     const related = invalidNieseRequest ? null : nieseIdentityRegistry()?.relatedPassage;
     if (related && (!state.nieseNum || Number(state.nieseNum) === nieseIdentityRegistry().range[1])) {
@@ -4791,6 +4862,8 @@ document.addEventListener("DOMContentLoaded", () => {
       updateLodgeNotesUI();
       syncUrlFromState("push");
     });
+
+    ussaniPagesCheckbox?.addEventListener("change", updateUssaniPages);
 
     highlightCheckbox.addEventListener("change", () => {
       annotatedParagraphs.forEach(paragraphId => {

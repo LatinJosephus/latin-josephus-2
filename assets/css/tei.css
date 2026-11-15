@@ -304,6 +304,22 @@ tei-div[data-structural-identity^="niese-"] > .niese-correspondence-note a,
 #english[data-lodge-work] .lodge-source-controls select { max-width: 100%; }
 #english[data-lodge-work] tei-div[type="chapter"] { scroll-margin-top: 6em; }
 
+#latin .ussani-opening-page {
+  margin-block: 0 .55em;
+}
+
+#latin .ussani-page-link {
+  display: inline-block;
+  color: var(--lj-brand-accent);
+  font: .8em/1.5 system-ui, sans-serif;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+#latin tei-p .ussani-page-link {
+  margin-inline: .25em;
+}
+
 /* Approved Pollard–Millet translation commentary uses the existing TEI note
    convention. Keep it after the paragraph, separate from running English. */
 #english tei-p[id^="english-deh"] > tei-note[type="uncertainty"][source^="#latin-deh"],

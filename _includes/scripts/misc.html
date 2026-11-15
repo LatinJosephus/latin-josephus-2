@@ -14,7 +14,7 @@
 <script src="{{ site.baseurl }}/assets/js/annotationEditorialEnglish.js?v={{ site.time | date: '%s' }}"></script>
 <script src="{{ site.baseurl }}/assets/js/annotationEditorialUpdates.js?v={{ site.time | date: '%s' }}"></script>
 <script src="{{ site.baseurl }}/assets/js/manuscriptAnnotations.js?v={{ site.time | date: '%s' }}"></script>
-<script src="{{ site.baseurl }}/assets/js/renderTei.js?v=20261110-antiquities-lacunae"></script>
+<script src="{{ site.baseurl }}/assets/js/renderTei.js?v={% if page.permalink == '/deh/' %}20261114-ussani-pages{% else %}20261110-antiquities-lacunae{% endif %}"></script>
 
 {% if site.enable_tooltips %}
 <!-- Enable Tooltips -->

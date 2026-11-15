@@ -35,6 +35,15 @@
           </form>
         </div>
 
+        {% if page.permalink == '/deh/' %}
+        <div class="form-check form-switch">
+          <form class="accordion-row">
+            <label class="form-check-label" for="ussani-page-numbers">Show Ussani page numbers</label>
+            <input class="form-check-input" type="checkbox" id="ussani-page-numbers" autocomplete="off" />
+          </form>
+        </div>
+        {% endif %}
+
         <div id="book-select">
           <form class="accordion-row">
             <label for="book-selector">{% if page.permalink == '/deh/' %}Book:{% else %}Select a book:{% endif %}</label>
