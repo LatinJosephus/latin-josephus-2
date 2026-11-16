@@ -2,7 +2,9 @@
 layout: info
 permalink: /texts/lodge/
 title: "Lodge — English translations"
-description: "Lodge — English translations: sources, scope and editorial work."
+description: >-
+  Thomas Lodge’s 1602 English translations of the Antiquities, Jewish War, and
+  Contra Apionem, with notes on their connection to the Latin tradition.
 nav: false
 nav_parent: /texts/
 ---

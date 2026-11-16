@@ -3,7 +3,9 @@ layout: info
 permalink: /background/
 main_css_version: 20261108-project-prose
 title: background
-description: Background
+description: >-
+  A guide to the life and works of Flavius Josephus, their transmission in
+  Latin, and the scholarship on their composition and translation.
 nav: true
 ---
 

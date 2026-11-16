@@ -2,7 +2,9 @@
 layout: info
 permalink: /texts/latin-deh/
 title: "Latin De excidio Hierosolymitano"
-description: "Latin De excidio Hierosolymitano: sources, scope and editorial work."
+description: >-
+  Vincenzo Ussani’s 1932 Latin De excidio Hierosolymitano, with notes on the
+  electronic text and links to the reader and downloadable editions.
 nav: false
 nav_parent: /texts/
 ---

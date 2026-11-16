@@ -2,7 +2,9 @@
 layout: info
 permalink: /texts/latin-bellum-judaicum/
 title: "Latin Bellum Judaicum"
-description: "Latin Bellum Judaicum: sources, scope and editorial work."
+description: >-
+  Edward Cardwell’s 1837 edition of the Latin Jewish War, its relationship to
+  the 1534 Gelenius edition, and the project’s revised electronic text.
 nav: false
 nav_parent: /texts/
 ---

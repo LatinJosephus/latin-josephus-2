@@ -2,7 +2,9 @@
 layout: info
 permalink: /texts/millet-1556/
 title: "Millet 1556 — French DEH"
-description: "Millet 1556 — French DEH: sources, scope and editorial work."
+description: >-
+  Jean Millet’s 1556 French translation of De excidio Hierosolymitano, with an
+  introduction to the Paris edition and links to the digitised source.
 nav: false
 nav_parent: /texts/
 ---

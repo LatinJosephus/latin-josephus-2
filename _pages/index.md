@@ -2,7 +2,6 @@
 layout: info
 permalink: /
 title:
-description: Index
 nav: false
 ---
 

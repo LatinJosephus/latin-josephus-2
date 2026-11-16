@@ -3,7 +3,9 @@ layout: info
 permalink: /about/
 main_css_version: 20261108-project-prose
 title: about
-description: The Latin Josephus Project
+description: >-
+  The history and scope of the Latin Josephus Project, from its edition of the
+  Bamberg Antiquities to its collection of medieval manuscript annotations.
 nav: true
 dropdown: true
 children:

@@ -2,7 +2,9 @@
 layout: info
 permalink: /texts/whiston/
 title: "Whiston — English translations"
-description: "Whiston — English translations: sources, scope and editorial work."
+description: >-
+  William Whiston’s 1737 English translations of the Antiquities, Jewish War,
+  and Contra Apionem, with notes on the sources and links to all books.
 nav: false
 nav_parent: /texts/
 ---

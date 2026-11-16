@@ -2,7 +2,10 @@
 layout: info
 permalink: /texts/latin-antiquities/
 title: "Latin Antiquities"
-description: "Latin Antiquities: sources, scope and editorial work."
+description: >-
+  Sources and editorial notes for the Latin Antiquities based on Bamberg
+  Msc.Class.78, with links to the reader, Froben 1524, and English
+  translations.
 nav: false
 nav_parent: /texts/
 ---

@@ -2,7 +2,9 @@
 layout: info
 permalink: /texts/pollard/
 title: "Pollard — English DEH"
-description: "Pollard — English DEH: sources, scope and editorial work."
+description: >-
+  Richard Matthew Pollard’s English translation of De excidio Hierosolymitano,
+  with editorial notes, version history, and EPUB and PDF editions.
 nav: false
 nav_parent: /texts/
 ---

@@ -2,7 +2,9 @@
 layout: info
 permalink: /texts/latin-contra-apionem/
 title: "Latin Contra Apionem"
-description: "Latin Contra Apionem: sources, scope and editorial work."
+description: >-
+  Karl Boysen’s 1898 Latin Contra Apionem, with notes on the printed source,
+  the project’s electronic edition, and its English translations.
 nav: false
 nav_parent: /texts/
 ---

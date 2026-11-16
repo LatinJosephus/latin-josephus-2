@@ -2,6 +2,9 @@
 layout: page
 permalink: /deh/millet-1556/
 title: Millet 1556 — French
+seo_description: >-
+  A guide to reading Jean Millet’s French De excidio alongside the Latin, with
+  notes on passage correspondences and transcription conventions.
 nav: false
 ---
 

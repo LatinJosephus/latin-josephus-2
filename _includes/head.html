@@ -8,7 +8,7 @@
   | {{ page.title }}
   {% endif %}
 </title>
-<meta name="description" content="{% if page.release_date %}{{ page.description | escape }}{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="{{ page.seo_description | default: page.description | default: site.description | normalize_whitespace | escape }}">
 
 <!-- Open Graph -->
 {% if site.serve_og_meta and page.release_date == nil %}

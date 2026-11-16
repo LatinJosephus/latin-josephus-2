@@ -2,7 +2,9 @@
 layout: info
 permalink: /texts/lauro-1544/
 title: "Lauro 1544 — Italian DEH"
-description: "Lauro 1544 — Italian DEH: sources, scope and editorial work."
+description: >-
+  Pietro Lauro’s 1544 Italian translation of De excidio Hierosolymitano, with
+  notes on the printed source, transcription, and alignment with the Latin.
 nav: false
 nav_parent: /texts/
 ---
