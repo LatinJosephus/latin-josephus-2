@@ -112,14 +112,18 @@ export function locationFromUrl(url) {
   const enabled=p.get('french')==='millet1556';
   const mode=MODES.has(p.get('millet-view'))?p.get('millet-view'):'running';
   const modernised=enabled&&!isMilletSourceMode(mode)&&p.get('millet-edition')==='modernised';
-  return {enabled,mode,modernised,chapter:p.get('millet-chapter'),page:p.get('millet-page'),canonical:p.get('millet-unit'),alignment:p.get('millet-align')!=='0',folios:p.get('millet-folios')==='1'};
+  const fullParagraphs=modernised&&mode==='running'&&p.get('millet-context')==='paragraphs';
+  return {enabled,mode,modernised,fullParagraphs,chapter:p.get('millet-chapter'),page:p.get('millet-page'),canonical:p.get('millet-unit'),alignment:p.get('millet-align')!=='0',folios:p.get('millet-folios')==='1'};
 }
 export function updateMilletUrl(url,state) {
   const u=new URL(url);
-  for(const k of ['french','millet-edition','millet-view','millet-chapter','millet-page','millet-unit','millet-align','millet-folios'])u.searchParams.delete(k);
+  for(const k of ['french','millet-edition','millet-context','millet-view','millet-chapter','millet-page','millet-unit','millet-align','millet-folios'])u.searchParams.delete(k);
   if(!state.enabled)return u;
   u.searchParams.set('french','millet1556');
-  if(state.modernised&&!isMilletSourceMode(state.mode))u.searchParams.set('millet-edition','modernised');
+  if(state.modernised&&!isMilletSourceMode(state.mode)){
+    u.searchParams.set('millet-edition','modernised');
+    if(state.mode==='running'&&state.fullParagraphs)u.searchParams.set('millet-context','paragraphs');
+  }
   if(state.mode!=='running')u.searchParams.set('millet-view',state.mode);
   if(state.mode==='chapter'&&state.chapter)u.searchParams.set('millet-chapter',state.chapter);
   if(state.mode==='page'&&state.page)u.searchParams.set('millet-page',state.page);

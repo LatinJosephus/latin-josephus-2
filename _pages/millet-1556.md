@@ -24,7 +24,7 @@ Select a Latin Ussani unit or click a linked French passage to highlight exact c
 
 The reader opens on **Original (1556)**. Choose **Modernised French** under **Millet text** to read the translated Prologue and Books I–V in modern French. This reading follows Millet’s French and retains his names, attributions and narrative choices. Editorial notes appear beneath the passages they concern.
 
-The modernised view shows complete editorial passages for the selected location. Highlights use the recorded correspondences and may include a complete replacement phrase. **Complete source** and **Preliminary matter** use the historical transcription. The share link records an explicit choice of the modernised text.
+In the current reading view, **Modernised French** shows the French aligned to the selected Ussani unit. Ellipses mark intervening text between aligned excerpts. Choose **Show full paragraphs** to read the surrounding text, then **Show aligned French** to return. Highlights in the expanded view follow the recorded correspondences and may include a complete replacement phrase. The share link records the selected edition and whether full paragraphs are open. **Complete source** and **Preliminary matter** use the historical transcription.
 
 [Read the modernised French]({{ site.baseurl }}/deh/?book=1&french=millet1556&millet-edition=modernised) · [Modernised edition data and provenance]({{ site.baseurl }}/assets/data/deh-millet1556-modernised/manifest.json).
 

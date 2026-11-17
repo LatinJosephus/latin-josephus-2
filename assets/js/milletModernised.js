@@ -1,4 +1,4 @@
-import {sha256} from './milletCore.js?v=20261117-modernised';
+import {lineAtoms, sha256} from './milletCore.js?v=20261117-millet-aligned';
 
 export function createModernisedMilletLoader(base, fetcher = fetch) {
   let manifestRequest;
@@ -43,9 +43,18 @@ export function createModernisedMilletLoader(base, fetcher = fetch) {
 
 export function modernisedMilletSelection(book, mode, view) {
   if (view.included) {
-    return book.passages.filter(passage => Object.keys(passage.correspondences).some(id => view.included.has(id)));
+    return book.passages.filter(passage => Object.entries(passage.correspondences)
+      .some(([id, ranges]) => view.included.has(id) && ranges.length > 0));
   }
   if (mode === 'running' || mode === 'book') return book.passages;
   const lines = new Set(view.lines.map(line => line.TEI_line_id));
   return book.passages.filter(passage => passage.lines.some(line => lines.has(line)));
+}
+
+export function modernisedMilletAtoms(passage, included = null) {
+  const fragments = Object.entries(passage.correspondences).flatMap(([mapping, ranges]) =>
+    ranges.map(([start_cp, end_cp]) => ({mapping, start_cp, end_cp}))
+  );
+  const atoms = lineAtoms({text_exact: passage.text}, fragments);
+  return included ? atoms.filter(atom => atom.mappings.some(id => included.has(id))) : atoms;
 }

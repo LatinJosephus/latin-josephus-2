@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {codepoints,utf16Offset,indexBook,lineAtoms,visibleLines,canonicalIds,locationFromUrl,updateMilletUrl,createMilletLoader,flowSeparator,flowGroups,readingParts,folioLabels,readingView,chapterMappings} from '../assets/js/milletCore.js';
-import {createModernisedMilletLoader,modernisedMilletSelection} from '../assets/js/milletModernised.js';
+import {createModernisedMilletLoader,modernisedMilletSelection,modernisedMilletAtoms} from '../assets/js/milletModernised.js';
 const folder=fileURLToPath(new URL('../assets/data/deh-millet1556/',import.meta.url));
 const read=name=>JSON.parse(fs.readFileSync(folder+name,'utf8'));
 const manifest=read('manifest.json'),books=manifest.books.map(b=>read(b.path));
@@ -73,7 +73,7 @@ test('one-to-many, multiple spans and absence supported without invented segment
 });
 test('stable French deep links preserve existing Latin and parallel parameters',()=>{
  const url='http://localhost:8765/deh/?book=1&chapter=8&unit=1&parallel=deh-1-8-1&bj-source=niese';
- const state={enabled:true,mode:'page',modernised:false,page:'55',chapter:null,canonical:'latin-deh1-num24',alignment:true,folios:false};const u=updateMilletUrl(url,state);
+ const state={enabled:true,mode:'page',modernised:false,fullParagraphs:false,page:'55',chapter:null,canonical:'latin-deh1-num24',alignment:true,folios:false};const u=updateMilletUrl(url,state);
  assert.equal(u.searchParams.get('parallel'),'deh-1-8-1');assert.equal(u.searchParams.get('unit'),'1');assert.deepEqual(locationFromUrl(u),state);
  assert.equal(updateMilletUrl(u,{...state,enabled:false}).searchParams.get('parallel'),'deh-1-8-1');assert(!updateMilletUrl(u,{...state,enabled:false}).searchParams.has('french'));
 });
@@ -84,12 +84,37 @@ test('modernised Millet is explicit and never replaces the source views', () => 
  const selected=updateMilletUrl(url,{...original,modernised:true});
  assert.equal(selected.searchParams.get('unit'),'1');
  assert.equal(locationFromUrl(selected).modernised,true);
+ assert.equal(locationFromUrl(selected).fullParagraphs,false);
  assert.equal(updateMilletUrl(selected,original).searchParams.has('millet-edition'),false);
  assert.equal(updateMilletUrl(selected,{...original,enabled:false,modernised:true}).searchParams.has('millet-edition'),false);
  for(const mode of ['source','preliminary']){
   const source=new URL(selected);source.searchParams.set('millet-view',mode);
   assert.equal(locationFromUrl(source).modernised,false);
  }
+});
+test('full modernised paragraphs are opt-in and shareable in the current reading view', () => {
+ const url='https://example.org/deh/?book=1&chapter=2&unit=1&french=millet1556&millet-edition=modernised';
+ const state={...locationFromUrl(url),fullParagraphs:true};
+ const context=updateMilletUrl(url,state);
+ assert.equal(context.searchParams.get('millet-context'),'paragraphs');
+ assert.deepEqual(locationFromUrl(context),state);
+ assert.equal(context.searchParams.get('unit'),'1');
+ for(const other of [{...state,modernised:false},{...state,enabled:false},{...state,mode:'book'}]){
+  const otherUrl=updateMilletUrl(context,other);
+  assert.equal(otherUrl.searchParams.has('millet-context'),false);
+  assert.equal(locationFromUrl(otherUrl).fullParagraphs,false);
+ }
+});
+test('modernised excerpts preserve exact Unicode text and the union of overlapping intervals', () => {
+ const passage={
+  text:'a😀bcdé z',
+  correspondences:{first:[[1,3],[6,8]],second:[[2,5]],adjacent:[[5,6]]}
+ };
+ const atoms=modernisedMilletAtoms(passage,new Set(['first','second']));
+ assert.deepEqual(atoms.map(atom=>[atom.start_cp,atom.end_cp]),[[1,2],[2,3],[3,5],[6,8]]);
+ assert.equal(atoms.map(atom=>atom.text).join(''),'😀bcd z');
+ assert.equal(modernisedMilletAtoms(passage).map(atom=>atom.text).join(''),passage.text);
+ assert.deepEqual(modernisedMilletAtoms(passage,new Set()),[]);
 });
 test('reviewed French covers every recorded mapping with complete passages in source order', async () => {
  const dir=new URL('../assets/data/deh-millet1556-modernised/',import.meta.url);
