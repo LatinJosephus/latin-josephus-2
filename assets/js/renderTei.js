@@ -4414,6 +4414,9 @@ document.addEventListener("DOMContentLoaded", () => {
     lauro1544: ["Italian — Lauro (1544)", "trans. Pietro Lauro (1544)"],
     niese: ["Greek — Niese", "ed. B. Niese"]
   };
+  const citationCredit = source => source === "millet1556" && frenchPane?.dataset.milletEdition === "modernised"
+    ? ["French — Millet (modernised)", "trans. Jean Millet (1556), modernised French, Latin Josephus Project (2026)"]
+    : citationCredits[source];
 
   // These editions can display a printed division or folio independently of
   // the main reader's location. Use the active controls in that case.
@@ -4460,7 +4463,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!url.searchParams.has("book")) url.searchParams.set("book", isPreface() ? "preface" : String(Number(state.bookNum)));
       const link = document.createElement("a");
       link.textContent = link.href = url.href;
-      text.replaceChildren(author, title, ", " + reference + ", " + citationCredits[source][1] + ", ", link);
+      text.replaceChildren(author, title, ", " + reference + ", " + citationCredit(source)[1] + ", ", link);
       status.textContent = "";
     };
     citeViewButton.addEventListener("click", () => {
@@ -4472,8 +4475,8 @@ document.addEventListener("DOMContentLoaded", () => {
         visible(greekPane) && viewData.Greek && !viewData.Greek.matches('tei-p[type="latin-fallback"]') && "niese",
         visible(frenchPane) && document.getElementById("millet-view") && state.sources.French,
         visible(italianPane) && document.getElementById("lauro-view") && state.sources.Italian
-      ].filter(source => citationCredits[source]);
-      select.replaceChildren(...sources.map(source => new Option(citationCredits[source][0], source)));
+      ].filter(source => citationCredit(source));
+      select.replaceChildren(...sources.map(source => new Option(citationCredit(source)[0], source)));
       if (!select.value) return;
       update();
       dialog.showModal();

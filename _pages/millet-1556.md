@@ -20,6 +20,14 @@ Enable **French** in the general reader controls. Beneath **French: Millet 1556*
 
 Select a Latin Ussani unit or click a linked French passage to highlight exact corresponding source intervals. Cross-page and multiple-span correspondences retain their actual fragments; a whole printed chapter is never highlighted merely because it contains a match. The selected Ussani unit provides a link to the existing Josephus parallels. The share link preserves the French view and selection.
 
+### Modernised French
+
+The reader opens on **Original (1556)**. Choose **Modernised French** under **Millet text** to read the translated Prologue and Books I–V in modern French. This reading follows Millet’s French and retains his names, attributions and narrative choices. Editorial notes appear beneath the passages they concern.
+
+The modernised view shows complete editorial passages for the selected location. Highlights use the recorded correspondences and may include a complete replacement phrase. **Complete source** and **Preliminary matter** use the historical transcription. The share link records an explicit choice of the modernised text.
+
+[Read the modernised French]({{ site.baseurl }}/deh/?book=1&french=millet1556&millet-edition=modernised) · [Modernised edition data and provenance]({{ site.baseurl }}/assets/data/deh-millet1556-modernised/manifest.json).
+
 ### Transcription conventions and editorial status
 
 Historical spelling, grammar, names, punctuation and occurrence-specific `oe`/`œ` remain unchanged. Long *s* is normalized to ordinary `s`; genuine nasal abbreviations are expanded. Every continued word carries `¬`, whether or not a hyphen was printed. The reading display flows across physical printed lines and joins words divided by `¬`. These markers and the exact original whitespace remain unchanged in the source XML, frozen site data and source-coordinate spans. Display-only separators and hidden division markers preserve an exact map from every source interval to the highlighted text. Native paragraph and heading groups remain distinct; Unicode is never normalized.

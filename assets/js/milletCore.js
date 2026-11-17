@@ -1,5 +1,6 @@
 /* Exact source coordinates, independent of native chapters and DOM decoration. */
 export const MODES = new Set(['running','book','source','chapter','page','preliminary']);
+export const isMilletSourceMode = mode => mode === 'source' || mode === 'preliminary';
 export const codepoints = text => Array.from(text);
 export function utf16Offset(text, cp) {
   const chars=codepoints(text);
@@ -108,13 +109,17 @@ export function folioLabels(data) {
 }
 export function locationFromUrl(url) {
   const p=new URL(url).searchParams;
-  return {enabled:p.get('french')==='millet1556',mode:MODES.has(p.get('millet-view'))?p.get('millet-view'):'running',chapter:p.get('millet-chapter'),page:p.get('millet-page'),canonical:p.get('millet-unit'),alignment:p.get('millet-align')!=='0',folios:p.get('millet-folios')==='1'};
+  const enabled=p.get('french')==='millet1556';
+  const mode=MODES.has(p.get('millet-view'))?p.get('millet-view'):'running';
+  const modernised=enabled&&!isMilletSourceMode(mode)&&p.get('millet-edition')==='modernised';
+  return {enabled,mode,modernised,chapter:p.get('millet-chapter'),page:p.get('millet-page'),canonical:p.get('millet-unit'),alignment:p.get('millet-align')!=='0',folios:p.get('millet-folios')==='1'};
 }
 export function updateMilletUrl(url,state) {
   const u=new URL(url);
-  for(const k of ['french','millet-view','millet-chapter','millet-page','millet-unit','millet-align','millet-folios'])u.searchParams.delete(k);
+  for(const k of ['french','millet-edition','millet-view','millet-chapter','millet-page','millet-unit','millet-align','millet-folios'])u.searchParams.delete(k);
   if(!state.enabled)return u;
   u.searchParams.set('french','millet1556');
+  if(state.modernised&&!isMilletSourceMode(state.mode))u.searchParams.set('millet-edition','modernised');
   if(state.mode!=='running')u.searchParams.set('millet-view',state.mode);
   if(state.mode==='chapter'&&state.chapter)u.searchParams.set('millet-chapter',state.chapter);
   if(state.mode==='page'&&state.page)u.searchParams.set('millet-page',state.page);

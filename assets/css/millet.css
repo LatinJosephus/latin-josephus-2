@@ -20,6 +20,7 @@
 #french>h3{margin-bottom:.3rem}
 #millet-controls{text-align:start;font:.8rem/1.4 system-ui,sans-serif;margin-bottom:.7rem}
 #millet-controls .millet-toolbar{display:flex;flex-wrap:wrap;gap:.2rem .8rem;align-items:baseline}
+#millet-controls .millet-edition-control{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;flex-basis:100%;margin-block-end:.2rem}
 #millet-controls .millet-highlight-control{display:flex;align-items:center;gap:.4rem;flex-basis:100%;margin:0;min-height:1.5rem}
 #millet-controls label{margin:0}
 #millet-controls select{max-width:100%;min-width:0;padding:.15rem;box-sizing:border-box;color:inherit;background:var(--global-bg-color,#fff)}
@@ -46,6 +47,9 @@
 #french .millet-annotated{text-decoration-style:dotted}
 .millet-latin-target{outline:2px solid #b38d21;outline-offset:.2rem;background-color:#fff4c233}
 #french .millet-role-heading{font-weight:600;margin-block:.25em}
+#french .millet-modernised-notes{border-inline-start:2px solid currentColor;padding-inline-start:.65em;margin-block:-.35em 1em;font:.85rem/1.5 system-ui,sans-serif;overflow-wrap:anywhere}
+#french .millet-modernised-notes summary{cursor:pointer;color:var(--global-theme-color)}
+#french .millet-modernised-notes p{margin-block:.4em}
 #french .millet-role-header,#french .millet-role-footer{font-size:.85em;opacity:.75}
 #french .millet-role-marginalia{font-style:italic;border-inline-start:1px dashed currentColor;padding-inline-start:.5rem}
 #french .millet-ancillary-label,#french .millet-empty{font:italic .9em/1.5 system-ui}

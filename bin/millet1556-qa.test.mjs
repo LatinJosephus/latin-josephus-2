@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {codepoints,utf16Offset,indexBook,lineAtoms,visibleLines,canonicalIds,locationFromUrl,updateMilletUrl,createMilletLoader,flowSeparator,flowGroups,readingParts,folioLabels,readingView,chapterMappings} from '../assets/js/milletCore.js';
+import {createModernisedMilletLoader,modernisedMilletSelection} from '../assets/js/milletModernised.js';
 const folder=fileURLToPath(new URL('../assets/data/deh-millet1556/',import.meta.url));
 const read=name=>JSON.parse(fs.readFileSync(folder+name,'utf8'));
 const manifest=read('manifest.json'),books=manifest.books.map(b=>read(b.path));
@@ -72,9 +73,56 @@ test('one-to-many, multiple spans and absence supported without invented segment
 });
 test('stable French deep links preserve existing Latin and parallel parameters',()=>{
  const url='http://localhost:8765/deh/?book=1&chapter=8&unit=1&parallel=deh-1-8-1&bj-source=niese';
- const state={enabled:true,mode:'page',page:'55',chapter:null,canonical:'latin-deh1-num24',alignment:true,folios:false};const u=updateMilletUrl(url,state);
+ const state={enabled:true,mode:'page',modernised:false,page:'55',chapter:null,canonical:'latin-deh1-num24',alignment:true,folios:false};const u=updateMilletUrl(url,state);
  assert.equal(u.searchParams.get('parallel'),'deh-1-8-1');assert.equal(u.searchParams.get('unit'),'1');assert.deepEqual(locationFromUrl(u),state);
  assert.equal(updateMilletUrl(u,{...state,enabled:false}).searchParams.get('parallel'),'deh-1-8-1');assert(!updateMilletUrl(u,{...state,enabled:false}).searchParams.has('french'));
+});
+test('modernised Millet is explicit and never replaces the source views', () => {
+ const url='https://example.org/deh/?book=2&chapter=1&unit=1&french=millet1556';
+ const original=locationFromUrl(url);
+ assert.equal(original.modernised,false);
+ const selected=updateMilletUrl(url,{...original,modernised:true});
+ assert.equal(selected.searchParams.get('unit'),'1');
+ assert.equal(locationFromUrl(selected).modernised,true);
+ assert.equal(updateMilletUrl(selected,original).searchParams.has('millet-edition'),false);
+ assert.equal(updateMilletUrl(selected,{...original,enabled:false,modernised:true}).searchParams.has('millet-edition'),false);
+ for(const mode of ['source','preliminary']){
+  const source=new URL(selected);source.searchParams.set('millet-view',mode);
+  assert.equal(locationFromUrl(source).modernised,false);
+ }
+});
+test('reviewed French covers every recorded mapping with complete passages in source order', async () => {
+ const dir=new URL('../assets/data/deh-millet1556-modernised/',import.meta.url);
+ const requests=[];
+ const readModern=async url=>{
+  const name=url.pathname.split('/').pop();requests.push(name);
+  return new Response(fs.readFileSync(new URL(name,dir)));
+ };
+ const load=createModernisedMilletLoader('http://localhost/assets/data/deh-millet1556-modernised/',readModern);
+ const reproduced=[];
+ await assert.rejects(load(1,'different release'),/do not match/);
+ for(const original of books){
+  const book=await load(original.book,manifest.version);
+  assert.strictEqual(await load(original.book,manifest.version),book);
+  reproduced.push(...book.passages);
+  for(const mapping of original.mappings){
+   const view=readingView(original,{mode:'running'},{level:'section-level'},mapping.canonical.xml_id);
+   const passages=modernisedMilletSelection(book,'running',view);
+   assert(passages.length,mapping.id);
+   assert(passages.every(passage=>Object.hasOwn(passage.correspondences,mapping.id)));
+   assert.equal(new Set(passages.map(passage=>passage.id)).size,passages.length);
+   for(const passage of passages){
+    for(const [start,end] of passage.correspondences[mapping.id])assert(0<=start&&start<end&&end<=codepoints(passage.text).length);
+   }
+  }
+ }
+ assert.equal(requests.length,6);
+ assert.deepEqual(reproduced.slice(0,3).map(passage=>passage.id),['P01','P02','P03']);
+ assert.equal(reproduced.length,1150);
+ assert.equal(new Set(reproduced.map(passage=>passage.id)).size,1150);
+ assert.equal(reproduced.at(-1).text,'FIN DE L’HISTOIRE D’EGESIPPE.');
+ const corrupt=createModernisedMilletLoader('http://localhost/',url=>url.pathname.endsWith('manifest.json')?readModern(url):new Response('{}'));
+ await assert.rejects(corrupt(1,manifest.version),/integrity/);
 });
 test('loader is book-scoped,cached,and rejects corrupted assets',async()=>{
  const requested=[];const fetcher=async url=>{requested.push(String(url));const name=new URL(url).pathname.split('/').pop();return new Response(fs.readFileSync(folder+name));};
