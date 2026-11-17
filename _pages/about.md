@@ -69,6 +69,7 @@ In autumn of 2026, the content and website were thoroughly updated and expanded 
  10. A [survey of early medieval library catalogues]({{site.baseurl}}/library-catalogues/) traces references to Josephus and Hegesippus in booklists, inventories, and records of gifts up to c. 1000.
  11. The [Background page]({{site.baseurl}}/background/) was expanded with an introduction to Josephus and his works, their Latin versions, and a bibliography.
  12. All four readers gained a **Cite this view** button that copies a citation for the selected passage and edition, with a link back to that view.
+ 13. A [modernised reading of Jean Millet’s French DEH (1556)]({{site.baseurl}}/deh/?book=1&chapter=2&unit=1&french=millet1556&millet-edition=modernised) was added. It follows the selected Ussani unit, with **Show full paragraphs** available for context. The original transcription opens by default.
 
 For details on the texts and how they were prepared, see [Our editions and translations]({{site.baseurl}}/texts/).
 

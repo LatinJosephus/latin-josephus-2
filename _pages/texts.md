@@ -39,7 +39,7 @@ Notes on the editions, translations, manuscript annotations and textual correspo
     <a href="{{ '/assets/downloads/deh/deh-pollard-english.epub' | relative_url }}" download aria-label="Download the English DEH as EPUB">EPUB</a> ·
     <a href="{{ '/assets/downloads/deh/deh-pollard-english.pdf' | relative_url }}" download aria-label="Download the English DEH as PDF">PDF</a>
   </span>
-- [Millet (1556) — French DEH]({{site.baseurl}}/texts/millet-1556/).
+- [Millet (1556) — French DEH]({{site.baseurl}}/texts/millet-1556/). [Modernised French]({{site.baseurl}}/deh/?book=1&chapter=2&unit=1&french=millet1556&millet-edition=modernised) follows the selected Ussani unit. Choose **Show full paragraphs** for context. The original transcription opens by default.
 - [Lauro (1544) — Italian DEH]({{site.baseurl}}/texts/lauro-1544/).
 
 ## DEH commentary
