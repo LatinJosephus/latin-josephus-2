@@ -23,11 +23,11 @@ if (checkbox && pane) {
   });
   window.addEventListener('popstate', readPreference);
   const load = book => {
-    if (![1,2,5].includes(book)) return Promise.resolve(null);
-    if (!requests.has(book)) requests.set(book, fetch(new URL(`../data/deh-ussani-lines/book-${String(book).padStart(2,'0')}.json`, import.meta.url))
+    if (![1,2,3,4,5].includes(book)) return Promise.resolve(null);
+    if (!requests.has(book)) requests.set(book, fetch(new URL(`../data/deh-ussani-lines/book-${String(book).padStart(2,'0')}.json?v=20261122-full`, import.meta.url))
       .then(response => { if (!response.ok) throw new Error('Printed line positions unavailable'); return response.json(); })
       .then(data => {
-        if (data.schema !== 1 || data.book !== book || data.status !== 'visually-checked-pilot') throw new Error('Invalid printed line map');
+        if (data.schema !== 1 || data.book !== book || data.status !== 'verified') throw new Error('Invalid printed line map');
         return data;
       }).catch(error => { requests.delete(book); console.warn(error.message); return null; }));
     return requests.get(book);
@@ -48,6 +48,8 @@ if (checkbox && pane) {
     .map(byte => byte.toString(16).padStart(2,'0')).join('');
   document.addEventListener('deh-view-rendered', async event => {
     const mine = ++generation;
+    pane.dataset.ussaniLineStatus = 'loading';
+    checkbox.disabled = true;
     const data = await load(Number(event.detail.book));
     if (mine !== generation) return;
     visibleMarkers = 0;
@@ -81,8 +83,8 @@ if (checkbox && pane) {
       paragraph.dataset.ussaniLineStatus = 'verified';
     }
     if (mine !== generation) return;
-    checkbox.disabled = visibleMarkers === 0;
-    pane.dataset.ussaniLineStatus = visibleMarkers ? 'ready' : 'no-pilot-positions';
+    checkbox.disabled = !data;
+    pane.dataset.ussaniLineStatus = data ? 'ready' : 'unavailable';
     applyVisibility();
   });
 }
