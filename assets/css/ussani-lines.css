@@ -1,0 +1,17 @@
+#latin .ussani-line-number { display: none; }
+#latin.ussani-lines-visible { padding-inline-start: 2.5rem; }
+#latin.ussani-lines-visible tei-p[id] { position: relative; }
+#latin.ussani-lines-visible .ussani-line-number { display: inline; }
+#latin.ussani-lines-visible .ussani-line-number::before {
+  content: attr(data-line);
+  position: absolute;
+  inset-inline-start: -1.9rem;
+  width: 1.4rem;
+  text-align: end;
+  color: var(--global-text-color-light);
+  color: color-mix(in srgb, var(--global-text-color) 60%, var(--global-bg-color));
+  font: .75rem/1.5 system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+  cursor: help;
+}
