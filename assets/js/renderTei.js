@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const greekPaneCheckbox = document.getElementById("greek-pane-select");
   const highlightCheckbox = document.getElementById("highlight-annotations");
   const ussaniPagesCheckbox = document.getElementById("ussani-page-numbers");
+  if (ussaniPagesCheckbox) {
+    try {
+      const saved = localStorage.getItem("deh-ussani-page-numbers");
+      if (saved !== null) ussaniPagesCheckbox.checked = saved === "1";
+    } catch (_) { /* Page labels also work without browser storage. */ }
+  }
   const italianPane = document.getElementById("italian");
   const italianPaneCheckbox = document.getElementById("italian-pane-select");
   const latinPane = document.getElementById("latin");
@@ -368,6 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let canonicalFullData;
   let canonicalViewData;
   let ussaniOpeningPage = null;
+  let ussaniBookPages = [];
   let cardwellLocations = [];
   let invalidNieseRequest = null;
   let unsupportedNieseBook = null;
@@ -387,6 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionNum: null,
     nieseNum: null,
     viewingLevel: 'book-level',
+    ussaniPage: null,
     lodgeNotesVisible: true,
     sources: initialSources
   };
@@ -416,6 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const clearContentsLocation = () => {
     state.chapterNum = null; state.subchapterNum = null; state.bambergId = null;
     state.nieseNum = null; state.sectionNum = null; pendingUrlUnit = null;
+    state.ussaniPage = null;
   };
   const contentsView = async language => {
     const wrapper = document.createElement("section");
@@ -826,6 +835,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "unit",
       "num",
       "niese",
+      ...(activeWork.slug === "deh" ? ["ussaniPage"] : []),
       ...(["bellum", "contra-apionem"].includes(activeWork.slug) ? ["lodgeNotes"] : []),
       ...sourceParamKeys
     ].some(key => params.has(key));
@@ -924,6 +934,7 @@ document.addEventListener("DOMContentLoaded", () => {
       explicitNum,
       nieseNum,
       sourceSelections,
+      ussaniPage: activeWork.slug === "deh" && !explicitBookInvalid ? params.get("ussaniPage") : null,
       lodgeNotesVisible: !["bellum", "contra-apionem"].includes(activeWork.slug) || params.get("lodgeNotes") !== "0",
       hasLocationParams
     };
@@ -950,6 +961,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     normalizeSourcesForBook();
     pendingUrlUnit = null;
+    state.ussaniPage = location.ussaniPage;
+
+    if (state.ussaniPage !== null && activeWork.slug === "deh") {
+      clearContentsLocation();
+      state.ussaniPage = location.ussaniPage;
+      state.chapterNum = null;
+      state.viewingLevel = "book-level";
+      if (ussaniPagesCheckbox) ussaniPagesCheckbox.checked = true;
+      return true;
+    }
 
     if (location.nieseNum && sectionLevelUsesNiese()) {
       state.sectionNum = location.nieseNum;
@@ -1084,6 +1105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "unit",
       "num",
       "niese",
+      ...(activeWork.slug === "deh" ? ["ussaniPage"] : []),
       ...(["bellum", "contra-apionem"].includes(activeWork.slug) ? ["lodgeNotes"] : []),
       ...Object.keys(activeWork.languages).map(
         language => language.toLowerCase()
@@ -1097,6 +1119,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const orderedParams = new URLSearchParams();
 
     orderedParams.set("book", numericBook);
+    if (activeWork.slug === "deh" && state.ussaniPage !== null) {
+      orderedParams.set("ussaniPage", state.ussaniPage);
+    }
 
     if (
       state.viewingLevel !== "book-level"
@@ -3591,6 +3616,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (usesCardwellSubchapters) prepareCardwellNavigation(idBase);
 
+    // Capture page context before rendering moves source nodes into the panes.
+    // Books II–IV inherit their first printed page from the preceding book.
+    ussaniBookPages = [];
+    if (activeWork.slug === "deh" && fullData.Latin) {
+      const first = ussaniPageAtStart(fullData.Latin);
+      const last = Number([...fullData.Latin.querySelectorAll("tei-body tei-pb[n]")].at(-1)?.getAttribute("n"));
+      if (first && last >= first) {
+        ussaniBookPages = Array.from({length: last - first + 1}, (_, index) => first + index);
+      }
+    }
+
     invalidNieseRequest = null;
     if (activeWork.slug === "antiquities" && state.viewingLevel === "niese-level") {
       const entries = canonicalNieseStartEntries();
@@ -3723,6 +3759,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ussaniPageLink = (page) => {
     const link = document.createElement("a");
     link.className = "ussani-page-link";
+    link.dataset.ussaniPage = String(page);
     link.href = `https://www.google.ca/books/edition/Hegesippi_qvi_dicitvr_historiae_libri_v/RWcwAAAAYAAJ?gbpv=1&pg=PA${page}`;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
@@ -3763,6 +3800,71 @@ document.addEventListener("DOMContentLoaded", () => {
       if (wordEnd < 0) continuation.after(link);
       else continuation.splitText(wordEnd).before(link);
     });
+  };
+
+  const selectUssaniPage = async page => {
+    if (readerLoading || !ussaniBookPages.includes(Number(page))) return;
+    if (ussaniPagesCheckbox) ussaniPagesCheckbox.checked = true;
+    try {
+      await setState(() => {
+        clearContentsLocation();
+        state.chapterNum = null;
+        state.viewingLevel = "book-level";
+        state.ussaniPage = String(page);
+      });
+    } catch (error) {
+      const status = document.getElementById("ussani-page-status");
+      if (status) status.textContent = "The page could not be loaded. Please try again.";
+      console.error(error);
+    }
+  };
+
+  const addUssaniPageNavigation = () => {
+    if (activeWork.slug !== "deh" || !ussaniBookPages.length || state.viewingLevel === "contents-level") return;
+    const controls = document.createElement("div");
+    controls.className = "ussani-page-navigation";
+    const label = document.createElement("label");
+    label.htmlFor = "ussani-page-selector";
+    label.textContent = "Ussani page";
+    const menu = document.createElement("select");
+    menu.id = "ussani-page-selector";
+    menu.setAttribute("aria-describedby", "ussani-page-help ussani-page-status");
+    menu.add(new Option(`Go to page… (starts on p. ${ussaniOpeningPage})`, ""));
+    ussaniBookPages.forEach(page => menu.add(new Option(String(page), String(page))));
+    const requested = state.ussaniPage;
+    const valid = requested !== null && /^[1-9]\d*$/.test(requested)
+      && ussaniBookPages.includes(Number(requested));
+    menu.value = valid ? requested : "";
+    menu.addEventListener("change", () => { if (menu.value) selectUssaniPage(menu.value); });
+    controls.append(label, menu);
+    const current = valid ? Number(requested) : ussaniOpeningPage;
+    const scan = ussaniPageLink(current);
+    scan.className = "ussani-scan-link";
+    scan.textContent = `Printed p. ${current}`;
+    scan.title = "Open the scan to check Ussani’s printed line numbers";
+    controls.appendChild(scan);
+    const help = document.createElement("small");
+    help.id = "ussani-page-help";
+    help.textContent = "Page selection opens the book at that page. Printed line numbers can be checked in the scan.";
+    const status = document.createElement("span");
+    status.id = "ussani-page-status";
+    status.setAttribute("role", "status");
+    if (requested !== null && !valid) {
+      status.textContent = `This book contains Ussani pp. ${ussaniBookPages[0]}–${ussaniBookPages.at(-1)}. The requested page is unavailable.`;
+    }
+    controls.append(help, status);
+    latinPane.querySelector("h3").after(controls);
+  };
+
+  const scrollToUssaniPage = () => {
+    if (activeWork.slug !== "deh" || state.ussaniPage === null
+      || !/^[1-9]\d*$/.test(state.ussaniPage) || !ussaniBookPages.includes(Number(state.ussaniPage))) return;
+    const target = [...latinPane.querySelectorAll(".ussani-page-link")]
+      .find(link => link.dataset.ussaniPage === state.ussaniPage);
+    if (!target) return;
+    target.classList.add("ussani-selected-page");
+    target.focus({preventScroll: true});
+    target.scrollIntoView({block: "center", behavior: "instant"});
   };
 
   const renderUI = () => {
@@ -3814,6 +3916,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (ussaniPagesCheckbox) updateUssaniPages();
+    addUssaniPageNavigation();
     renderInvalidNieseNotice();
     const related = invalidNieseRequest ? null : nieseIdentityRegistry()?.relatedPassage;
     if (related && (!state.nieseNum || Number(state.nieseNum) === nieseIdentityRegistry().range[1])) {
@@ -4617,6 +4720,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (highlightWrapper) highlightWrapper.hidden = true;
       }
       else await parseAnnotations();
+      scrollToUssaniPage();
     } finally {
       readerLoading = false;
       updateReaderSteps();
@@ -4628,6 +4732,7 @@ document.addEventListener("DOMContentLoaded", () => {
     readerLoading = true;
     updateReaderSteps();
     try {
+      if (activeWork.slug === "deh") state.ussaniPage = null;
       await callback();
       await reload();
       syncUrlFromState("push");
@@ -4866,7 +4971,11 @@ document.addEventListener("DOMContentLoaded", () => {
       syncUrlFromState("push");
     });
 
-    ussaniPagesCheckbox?.addEventListener("change", updateUssaniPages);
+    ussaniPagesCheckbox?.addEventListener("change", () => {
+      try { localStorage.setItem("deh-ussani-page-numbers", ussaniPagesCheckbox.checked ? "1" : "0"); }
+      catch (_) { /* Storage is optional. */ }
+      updateUssaniPages();
+    });
 
     highlightCheckbox.addEventListener("change", () => {
       annotatedParagraphs.forEach(paragraphId => {

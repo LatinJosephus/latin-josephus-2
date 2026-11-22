@@ -320,6 +320,28 @@ tei-div[data-structural-identity^="niese-"] > .niese-correspondence-note a,
   margin-inline: .25em;
 }
 
+#latin .ussani-page-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem .75rem;
+  margin-block: 0 1rem;
+  font: .875rem/1.5 system-ui, sans-serif;
+}
+
+#latin .ussani-page-navigation label { margin: 0; }
+#latin .ussani-page-navigation select {
+  max-width: 100%;
+  min-height: 2.25rem;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+}
+#latin .ussani-page-navigation small,
+#latin #ussani-page-status { flex-basis: 100%; font-size: .8125rem; }
+#latin #ussani-page-status:empty { display: none; }
+#latin .ussani-scan-link { color: var(--lj-brand-accent); text-decoration: underline; }
+#latin .ussani-selected-page { outline: 2px solid currentColor; outline-offset: 3px; }
+
 /* Approved Pollard–Millet translation commentary uses the existing TEI note
    convention. Keep it after the paragraph, separate from running English. */
 #english tei-p[id^="english-deh"] > tei-note[type="uncertainty"][source^="#latin-deh"],
