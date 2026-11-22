@@ -320,27 +320,28 @@ tei-div[data-structural-identity^="niese-"] > .niese-correspondence-note a,
   margin-inline: .25em;
 }
 
-#latin .ussani-page-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: .5rem .75rem;
-  margin-block: 0 1rem;
-  font: .875rem/1.5 system-ui, sans-serif;
-}
-
-#latin .ussani-page-navigation label { margin: 0; }
-#latin .ussani-page-navigation select {
-  max-width: 100%;
-  min-height: 2.25rem;
+#display-settings #ussani-page-selector {
+  width: 4.5rem;
+  min-width: 0;
+  margin-inline-start: .35rem;
+  padding: .1rem 1.1rem .1rem .35rem;
+  font-size: .875rem;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m2 2 4 4 4-4' fill='none' stroke='%23888' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-position: right .3rem center;
+  background-repeat: no-repeat;
 }
-#latin .ussani-page-navigation small,
-#latin #ussani-page-status { flex-basis: 100%; font-size: .8125rem; }
-#latin #ussani-page-status:empty { display: none; }
-#latin .ussani-scan-link { color: var(--lj-brand-accent); text-decoration: underline; }
+#display-settings #ussani-page-selector[hidden],
+#ussani-page-status:empty { display: none; }
+#ussani-page-status { font-size: .875rem; }
 #latin .ussani-selected-page { outline: 2px solid currentColor; outline-offset: 3px; }
+
+@media (max-width: 575px) {
+  #display-settings.deh-settings .form-switch .accordion-row { min-width: 0; width: 100%; }
+  #display-settings.deh-settings .form-switch .form-check-label { min-width: 0; white-space: normal; }
+}
 
 /* Approved Pollard–Millet translation commentary uses the existing TEI note
    convention. Keep it after the paragraph, separate from running English. */

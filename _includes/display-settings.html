@@ -185,6 +185,15 @@
               <label class="form-check-label" for="section-level">{% if page.permalink == "/antiquities/" or page.permalink == "/bellum-judaicum/" %}Alignment unit{% else %}Sub-chapter{% endif %}</label>
             </div>
 
+            {% if page.permalink == '/deh/' %}
+            <div class="form-check form-check-inline ussani-page-option">
+              <input class="form-check-input" type="radio" name="level-options" id="ussani-page-level" value="ussani-page-level" />
+              <label class="form-check-label" for="ussani-page-level">Ussani page</label>
+              <select id="ussani-page-selector" aria-label="Ussani page number" aria-describedby="ussani-page-status" hidden></select>
+            </div>
+            <span id="ussani-page-status" role="status"></span>
+            {% endif %}
+
             {% if page.permalink == "/antiquities/" %}
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="level-options" id="bamberg-level" value="bamberg-level" />

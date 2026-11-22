@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const greekPaneCheckbox = document.getElementById("greek-pane-select");
   const highlightCheckbox = document.getElementById("highlight-annotations");
   const ussaniPagesCheckbox = document.getElementById("ussani-page-numbers");
+  const ussaniPageSelectMenu = document.getElementById("ussani-page-selector");
   if (ussaniPagesCheckbox) {
     try {
       const saved = localStorage.getItem("deh-ussani-page-numbers");
@@ -3430,7 +3431,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (niesePrevious) niesePrevious.disabled = citationIndex <= 0;
     if (nieseNext) nieseNext.disabled = citationIndex < 0 || citationIndex >= citations.length - 1;
 
-    const levelControl = document.getElementById(state.viewingLevel);
+    const pageSelected = activeWork.slug === "deh" && state.viewingLevel === "book-level" && state.ussaniPage !== null;
+    if (ussaniPageSelectMenu) ussaniPageSelectMenu.hidden = !pageSelected;
+    const levelControl = document.getElementById(pageSelected ? "ussani-page-level" : state.viewingLevel);
     if (state.viewingLevel === "contents-level") viewingLevelSelectMenu.querySelectorAll("input[type=radio]").forEach(control => { control.checked = false; });
     if (levelControl) levelControl.checked = true;
   };
@@ -3819,41 +3822,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const addUssaniPageNavigation = () => {
-    if (activeWork.slug !== "deh" || !ussaniBookPages.length || state.viewingLevel === "contents-level") return;
-    const controls = document.createElement("div");
-    controls.className = "ussani-page-navigation";
-    const label = document.createElement("label");
-    label.htmlFor = "ussani-page-selector";
-    label.textContent = "Ussani page";
-    const menu = document.createElement("select");
-    menu.id = "ussani-page-selector";
-    menu.setAttribute("aria-describedby", "ussani-page-help ussani-page-status");
-    menu.add(new Option(`Go to page… (starts on p. ${ussaniOpeningPage})`, ""));
-    ussaniBookPages.forEach(page => menu.add(new Option(String(page), String(page))));
+  const updateUssaniPageNavigation = () => {
+    if (!ussaniPageSelectMenu) return;
+    ussaniPageSelectMenu.replaceChildren();
+    ussaniBookPages.forEach(page => ussaniPageSelectMenu.add(new Option(String(page), String(page))));
     const requested = state.ussaniPage;
     const valid = requested !== null && /^[1-9]\d*$/.test(requested)
       && ussaniBookPages.includes(Number(requested));
-    menu.value = valid ? requested : "";
-    menu.addEventListener("change", () => { if (menu.value) selectUssaniPage(menu.value); });
-    controls.append(label, menu);
-    const current = valid ? Number(requested) : ussaniOpeningPage;
-    const scan = ussaniPageLink(current);
-    scan.className = "ussani-scan-link";
-    scan.textContent = `Printed p. ${current}`;
-    scan.title = "Open the scan to check Ussani’s printed line numbers";
-    controls.appendChild(scan);
-    const help = document.createElement("small");
-    help.id = "ussani-page-help";
-    help.textContent = "Page selection opens the book at that page. Printed line numbers can be checked in the scan.";
-    const status = document.createElement("span");
-    status.id = "ussani-page-status";
-    status.setAttribute("role", "status");
+    ussaniPageSelectMenu.value = valid ? requested : String(ussaniOpeningPage);
+    const status = document.getElementById("ussani-page-status");
+    status.textContent = "";
     if (requested !== null && !valid) {
       status.textContent = `This book contains Ussani pp. ${ussaniBookPages[0]}–${ussaniBookPages.at(-1)}. The requested page is unavailable.`;
     }
-    controls.append(help, status);
-    latinPane.querySelector("h3").after(controls);
   };
 
   const scrollToUssaniPage = () => {
@@ -3916,7 +3897,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (ussaniPagesCheckbox) updateUssaniPages();
-    addUssaniPageNavigation();
+    updateUssaniPageNavigation();
     renderInvalidNieseNotice();
     const related = invalidNieseRequest ? null : nieseIdentityRegistry()?.relatedPassage;
     if (related && (!state.nieseNum || Number(state.nieseNum) === nieseIdentityRegistry().range[1])) {
@@ -4873,8 +4854,17 @@ document.addEventListener("DOMContentLoaded", () => {
     niesePrevious?.addEventListener("click", () => advanceNiese(-1));
     nieseNext?.addEventListener("click", () => advanceNiese(1));
     viewingLevelSelectMenu.addEventListener("change", (event) => {
+      if (!event.target.matches("input[type=radio]")) return;
       setState(() => {
         const nextLevel = event.target.value;
+        if (activeWork.slug === "deh" && nextLevel === "ussani-page-level") {
+          const page = ussaniOpeningPage || ussaniBookPages[0];
+          clearContentsLocation();
+          state.viewingLevel = "book-level";
+          state.ussaniPage = String(page);
+          if (ussaniPagesCheckbox) ussaniPagesCheckbox.checked = true;
+          return;
+        }
         if (usesCardwellSubchapters) {
           setCardwellViewingLevel(nextLevel);
           return;
@@ -4970,6 +4960,8 @@ document.addEventListener("DOMContentLoaded", () => {
       updateLodgeNotesUI();
       syncUrlFromState("push");
     });
+
+    ussaniPageSelectMenu?.addEventListener("change", () => selectUssaniPage(ussaniPageSelectMenu.value));
 
     ussaniPagesCheckbox?.addEventListener("change", () => {
       try { localStorage.setItem("deh-ussani-page-numbers", ussaniPagesCheckbox.checked ? "1" : "0"); }
