@@ -1,0 +1,4 @@
+{%- assign code = site.data.manuscript_ids[include.record] -%}
+{%- if code -%}
+<a class="ljm-ms-id" id="{{ code }}" href="#{{ code }}" title="Permanent link">{{ code }}</a>
+{%- endif -%}
