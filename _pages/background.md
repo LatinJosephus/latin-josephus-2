@@ -51,7 +51,7 @@ Based on internal clues, it was composed in the later fourth-century CE, likely 
 #### Latin Version 2: Literal translation in seven books
 {: #latin-version-2-literal-translation-in-7-books }
 
-This literal Latin version was once ascribed to Rufinus, an attribution that is almost certainly false (Ussani 1945 and Levenson and Martin 2016). Its date and origin remain mysterious, though most seem to think it dates to *c.* 400.
+This literal Latin version was once ascribed to Rufinus, an attribution that is almost certainly false (Giuliana Ussani 1945 and Levenson and Martin 2016). Its date and origin remain mysterious, though most seem to think it dates to *c.* 400.
 
 The text was first edited in [Johann Schüssler’s 1470 Augsburg edition](https://digi.landesbibliothek.at/viewer/fullscreen/Ink-646/395/) ([ISTC ij00481000](https://data.cerl.org/istc/ij00481000)). The last edition where the Latin was not “improved” is that of Johann Froben in 1524 at Basel, which descends (for the *BJ*) from the manuscript Dresden SLUB A.111 (1438).
 
@@ -135,7 +135,7 @@ Unlike Josephus’ other works, the *Life* received no late antique or medieval 
 - Pollard, Richard Matthew. “[De excidio Hierosolymitano.](https://doi.org/10.1163/2589-7993_EECO_SIM_036378)” In *Brill Encyclopedia of Early Christianity Online*, edited by David G. Hunter, Paul J. J. van Geest and Bert Jan Lietaert Peerbolte. Brill, 2024.
 - Rocca, Samuele. “[The Jewish War.](https://doi.org/10.1093/9780197539101.003.0002)” In *The Oxford Handbook of Josephus*, edited by Kenneth R. Atkinson, 17–28. Oxford: Oxford University Press, 2026.
 - Schürer, Emil. [*Geschichte des jüdischen Volkes im Zeitalter Jesu Christi*](https://archive.org/details/geschichtejudis01schu). Vol. 1, 3rd and 4th ed. Leipzig: J. C. Hinrichs, 1901.
-- Ussani, Vincenzo. “Studi preparatori ad una edizione della traduzione latina in sette libri del Bellum Iudaicum.” *Bollettino del Comitato per la preparazione dell’edizione nazionale dei classici greci e latini*, n.s. 1 (1945), 85–102.
+- Ussani, Giuliana. “Studi preparatorii ad una edizione della traduzione latina in sette libri del *Bellum Iudaicum*.” *Bollettino del Comitato per la preparazione della Edizione Nazionale dei Classici Greci e Latini*, n.s., fasc. 1 (1945), 85–102.
 - Wander, Steven H. [*Flavius Josephus and Artwork of Roman Antiquity and the Early Middle Ages*](https://reichert-verlag.de/en/keywords/archaeology_by_period_region_keyword/9783752007916_flavius_josephus_and_artwork_of_roman_antiquity_and_the_early_middle_ages-detail). Wiesbaden: Reichert, 2024.
 
 </article>
