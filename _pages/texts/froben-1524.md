@@ -19,6 +19,8 @@ In the reader, Froben can be read alongside the [Bamberg text]({{site.baseurl}}/
 
 [Read Froben alongside Bamberg]({{site.baseurl}}/antiquities/?book=preface&froben=1) · [Search Froben]({{site.baseurl}}/search/?work=antiquities-latin-froben1524&q=%22historiam%20conscribere%22).
 
+The same volume contains the [_Bellum Judaicum_]({{site.baseurl}}/texts/froben-1524/bellum/).
+
 ## Printed edition
 
 Flavius Josephus, _Flavii Iosephi, patria Hierosolymitani, religione Iudaei, inter Graecos historiographos, cum primis facundi, opera quaedam_ (Basel: Johann Froben, September 1524). [VD16 J 956](https://gateway-bayern.de/TP61/start.do?Query=1012=%22%5c%22VD16+J+956%5c%22%22+IN+%5b2%5d&Language=De&View=vd16).

@@ -12,8 +12,8 @@ layout: default
     {% if page.permalink == '/bellum-judaicum/' %}
     <link rel="stylesheet" href="{{ '/assets/css/bellum-facsimiles.css' | relative_url }}?v=20261126-passages">
     {% endif %}
-    {% if page.permalink == '/antiquities/' %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/froben.css">
+    {% if page.permalink == '/antiquities/' or page.permalink == '/bellum-judaicum/' %}
+    <link rel="stylesheet" href="{{ '/assets/css/froben.css' | relative_url }}?v=20261126-froben-bellum">
     {% endif %}
     {% if page.permalink == '/deh/' %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/deh-parallels.css?v={{ site.time | date: '%s' }}">
@@ -78,9 +78,15 @@ layout: default
       <div id="latin" class="pane">
         <h3>Latin</h3>
       </div>
-      {% if page.permalink == '/antiquities/' %}
-      <div id="froben" class="pane hidden" hidden data-scan-base="{{ site.froben_scan_base | escape }}"
-           data-about="{{ '/texts/latin-antiquities/#froben-1524' | relative_url }}">
+      {% if page.permalink == '/antiquities/' or page.permalink == '/bellum-judaicum/' %}
+      <div id="froben" class="pane hidden" hidden
+           {% if page.permalink == '/bellum-judaicum/' %}
+           data-bellum-source="{{ '/assets/data/bellum-froben1524/reader.json' | relative_url }}"
+           data-about="{{ '/texts/froben-1524/bellum/' | relative_url }}"
+           {% else %}
+           data-scan-base="{{ site.froben_scan_base | escape }}"
+           data-about="{{ '/texts/latin-antiquities/#froben-1524' | relative_url }}"
+           {% endif %}>
         <h3>Latin: Froben 1524</h3>
       </div>
       {% endif %}

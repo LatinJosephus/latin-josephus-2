@@ -21,6 +21,8 @@ Cardwell’s text is indirectly based on the Gelenius edition of 1534. The reade
 
 [Read the Bellum Judaicum]({{site.baseurl}}/bellum-judaicum/) · [View Cardwell’s Latin volume (Google Books)](https://books.google.ca/books?id=zoENAAAAQAAJ&printsec=frontcover).
 
+The reader also presents [Johann Froben’s 1524 edition]({{site.baseurl}}/texts/froben-1524/bellum/). [Read Froben alongside Cardwell]({{site.baseurl}}/bellum-judaicum/?book=1&niese=1&froben=1).
+
 ## Cardwell as a witness to the medieval Latin tradition
 
 Some editors have made an overhasty dismissal of Cardwell's Latin version.  They imply that because its ultimate source text, the 1534 Gelenius edition, improved the text (particularly by reference to the Greek), it no longer presents anything like what medieval readers would have known.[^cardwell-editions]  Painstaking collation of the text for this project, and word-by-word comparison with the recent edition of _Bellum_ book 1 by Bernd Bader (2019), shows that these concerns are rather overblown.  **Cardwell's text is not too different from what Bader has restored, and therefore well represents the medieval text**.

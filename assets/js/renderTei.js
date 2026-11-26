@@ -3946,12 +3946,22 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTraditionalNotice();
     syncNavigationControls();
     if (activeWork.slug === "bellum") {
+      const idBase = currentIdBase();
+      const section = state.viewingLevel === "niese-level" && canonicalViewData ? Number(state.nieseNum) : null;
+      let target = "latin-" + idBase;
+      if (section) {
+        target = "niese-" + idBase + "-" + section;
+      } else if (["section-level", "subchapter-level"].includes(state.viewingLevel) && state.sectionNum) {
+        target += "-num" + state.sectionNum;
+      } else if (state.viewingLevel === "chapter-level" && state.chapterNum !== null) {
+        target += "-chapter" + state.chapterNum;
+      }
       document.dispatchEvent(new CustomEvent("bellum-view-rendered", {
         detail: {
           book: Number(state.bookNum),
-          section: state.viewingLevel === "niese-level" && canonicalViewData
-            ? Number(state.nieseNum)
-            : null
+          section,
+          target,
+          available: Boolean(viewData.Latin)
         }
       }));
     }
@@ -4147,7 +4157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (usesCitationDerivedChapters()) {
       latinChapters = citationDerivedChapterNumbers();
     } else {
-      canonicalFullData.getElementsByTagName("tei-div2").forEach(el => {
+      canonicalFullData.querySelectorAll("tei-div2").forEach(el => {
         // Null checking for chapters that are missing IDs.
         if (el.id.split("-")[2]) {
           const chapterNumber = parseInt(
@@ -4515,6 +4525,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // These editions can display a printed division or folio independently of
   // the main reader's location. Use the active controls in that case.
   const nativeCitationReference = source => {
+    if (source === "froben" && activeWork.slug === "bellum") {
+      return document.getElementById("froben")?.dataset.citationReference || null;
+    }
     const prefix = {froben: "froben", millet1556: "millet", lauro1544: "lauro"}[source];
     if (!prefix) return null;
     const book = isPreface() ? "Proem" : "Book " + Number(state.bookNum);

@@ -49,7 +49,7 @@ const pointKey = ([image, id]) => `${image}:${id}`;
 const unitLabel = id => `Bamberg alignment unit ${id.split("-num").at(-1)}`;
 const nieseLabel = number => element("tei-num", `[${number}]`, {class: "niese-generated froben-niese-number"});
 
-function indexBook(data) {
+function indexText(data, labelForNiese = entry => entry.number) {
   const rows = [];
   const byRow = new Map();
   let offset = 0;
@@ -84,18 +84,20 @@ function indexBook(data) {
       for (let i = first; i < end; i++) moved.add(i);
     }
   }
-  const byId = new Map([data.book, ...data.chapters, ...data.subchapters, ...data.alignmentUnits,
-    ...data.niese, ...data.divisions].map(entry => [entry.id, entry]));
+  const alignmentUnits = data.alignmentUnits || [];
+  const byId = new Map([...(data.books || [data.book]), ...data.chapters, ...data.subchapters,
+    ...alignmentUnits, ...data.niese, ...data.divisions, ...(data.frobenBooks || [])].map(entry => [entry.id, entry]));
   const offsets = item => (item?.spans || []).map(span => [point(span.start).offset, point(span.end).offset]);
-  const units = new Map(data.alignmentUnits.filter(item => item.spans.length).map(item => [item.id, offsets(item)]));
+  const units = new Map(alignmentUnits.filter(item => item.spans.length).map(item => [item.id, offsets(item)]));
   const links = [...units].flatMap(([id, ranges]) => ranges.map(([lo, hi]) => [lo, hi, id]));
   const nieseStarts = new Map();
-  for (const {number, spans, status} of data.niese) {
+  for (const entry of data.niese) {
+    const {spans, status} = entry;
     // An overlapping date phrase can label its own excerpt but is not a new section in the running text.
     if (!spans.length || status === "parallel-partial") continue;
     const {i, cp} = point(spans[0].start);
     const starts = nieseStarts.get(rows[i]) || [];
-    starts.push([cp, number]);
+    starts.push([cp, labelForNiese(entry)]);
     nieseStarts.set(rows[i], starts);
   }
   return {rows, point, moved, placed, approved, byId, offsets, units, links, nieseStarts};
@@ -129,7 +131,88 @@ function sliceRows(index, span, placeHeadings) {
   return parts;
 }
 
-function appendReading(root, parts, pages, shown, scanLink, intervals, nieseStarts) {
+function selectControl(id, label, values, current, change) {
+  const menu = element("select", undefined, {id});
+  values.forEach(([value, text]) => menu.add(new Option(text, value)));
+  menu.value = current || "";
+  menu.addEventListener("change", () => change(menu.value));
+  const control = element("label", label, {for: id});
+  control.append(menu);
+  return control;
+}
+
+function checkbox(id, label, checked, change) {
+  const input = element("input", undefined, {id, type: "checkbox"});
+  input.checked = checked;
+  input.addEventListener("change", () => change(input.checked));
+  const control = element("label", undefined, {for: id, class: "froben-checkbox"});
+  control.append(input, label);
+  return control;
+}
+
+function frobenDetails(id, title, open, onToggle) {
+  const details = element("details", undefined, {id});
+  details.open = open;
+  details.addEventListener("toggle", () => {
+    if (details.isConnected) onToggle(details.open);
+  });
+  details.append(element("summary", title));
+  return details;
+}
+
+function frobenControls({about, settingsOpen, onSettingsToggle, highlight, onHighlight}) {
+  const controls = element("div", undefined, {class: "froben-controls", "aria-label": "Froben reading controls"});
+  const toolbar = element("div", undefined, {class: "froben-toolbar"});
+  const settings = frobenDetails("froben-settings", "Settings", settingsOpen, onSettingsToggle);
+  const share = element("a", "Link", {id: "froben-share", href: location.href, "aria-label": "Link to this Froben view"});
+  toolbar.append(element("a", "About", {href: about, "aria-label": "About the Froben 1524 edition"}),
+    settings, checkbox("froben-highlight", "Highlight correspondences", highlight, onHighlight), share);
+  controls.append(toolbar);
+  return {controls, settings, share};
+}
+
+function pageSteps(pages, selection, navigate) {
+  const at = pages.findIndex(page => page.id === selection);
+  const steps = element("div", undefined, {class: "froben-toolbar"});
+  for (const [delta, name, label] of [[-1, "previous", "Previous page"], [1, "next", "Next page"]]) {
+    const button = element("button", label, {type: "button", id: "froben-" + name + "-page"});
+    const target = pages[at + delta];
+    button.disabled = !target;
+    if (target) button.addEventListener("click", () => navigate(target.id));
+    steps.append(button);
+  }
+  return steps;
+}
+
+function latinTargets(latin, id) {
+  const key = CSS.escape(id);
+  return latin.querySelectorAll(`[id="${key}"], [sameAs~="#${key}"], [sameAs~="${key}"]`);
+}
+
+function correspondingUnits(index, active, bookId) {
+  const related = active?.id === bookId ? [] : index.offsets(active);
+  const targets = index.units.has(active?.id) ? [active.id] : [...index.units].filter(([, ranges]) =>
+    ranges.some(([a, b]) => related.some(([lo, hi]) => a < hi && lo < b))).map(([id]) => id);
+  return {related, targets};
+}
+
+function correspondenceDetails({targets, label, href, message, open, onToggle}) {
+  const details = frobenDetails("froben-correspondence", "Correspondence", open, onToggle);
+  if (targets.length) {
+    const list = element("ul");
+    for (const id of targets) {
+      const li = element("li");
+      li.append(element("a", label(id), {href: href(id)}));
+      list.append(li);
+    }
+    details.append(list);
+  } else {
+    details.append(element("p", message));
+  }
+  return details;
+}
+
+function appendReading(root, parts, pages, shown, scanLink, intervals, nieseStarts, formatNiese = number => number) {
   let paragraph;
   let previous;
   for (const [i, {row, cp, text}] of parts.entries()) {
@@ -178,7 +261,7 @@ function appendReading(root, parts, pages, shown, scanLink, intervals, nieseStar
       }
       if (i + 1 === edges.length) continue;
       for (const [offset, number] of starts) {
-        if (offset === cp + lo) line.append(nieseLabel(number));
+        if (offset === cp + lo) line.append(nieseLabel(formatNiese(number)));
       }
       const hi = edges[i + 1];
       const textPart = chars.slice(lo, hi).join("");
@@ -205,7 +288,7 @@ function start() {
   const pane = document.getElementById("froben");
   const toggle = document.getElementById("froben-pane-select");
   const latin = document.getElementById("latin");
-  if (!pane || !toggle || !latin) return;
+  if (!pane || pane.dataset.bellumSource || !toggle || !latin) return;
   let state = locationState();
   let navigation;
   let data;
@@ -238,34 +321,10 @@ function start() {
     return element("a", text, {href: href.href, target: "_blank", rel: "noopener"});
   }
 
-  function select(id, label, values, current, change) {
-    const menu = element("select", undefined, {id});
-    values.forEach(([value, text]) => menu.add(new Option(text, value)));
-    menu.value = current || "";
-    menu.addEventListener("change", () => change(menu.value));
-    const control = element("label", label, {for: id});
-    control.append(menu);
-    return control;
-  }
-
-  function checkbox(id, label, checked, change) {
-    const input = element("input", undefined, {id, type: "checkbox"});
-    input.checked = checked;
-    input.addEventListener("change", () => change(input.checked));
-    const control = element("label", undefined, {for: id, class: "froben-checkbox"});
-    control.append(input, label);
-    return control;
-  }
-
   function update(changes) {
     Object.assign(state, changes);
     writeUrl(true);
     render();
-  }
-
-  function bambergTargets(id) {
-    const key = CSS.escape(id);
-    return latin.querySelectorAll(`[id="${key}"], [sameAs~="#${key}"], [sameAs~="${key}"]`);
   }
 
   function unitUrl(id) {
@@ -280,7 +339,7 @@ function start() {
 
   function chooseUnit(id, locate = false) {
     if (!index.units.has(id)) return;
-    const target = bambergTargets(id)[0];
+    const target = latinTargets(latin, id)[0];
     if (locate && !target) {
       window.location.assign(unitUrl(id).href);
       return;
@@ -291,6 +350,8 @@ function start() {
 
   function render() {
     const focus = pane.contains(document.activeElement) ? document.activeElement.id : null;
+    settingsOpen = pane.querySelector("#froben-settings")?.open ?? settingsOpen;
+    correspondenceOpen = pane.querySelector("#froben-correspondence")?.open ?? correspondenceOpen;
     pane.replaceChildren(element("h3", "Latin: Froben 1524"));
     latin.querySelectorAll(".froben-bamberg-target").forEach(node => node.classList.remove("froben-bamberg-target"));
     const active = index.byId.get(state.unit || navigation.target);
@@ -305,68 +366,37 @@ function start() {
       state.location = selected?.id || null;
     }
 
-    const controls = element("div", undefined, {class: "froben-controls", "aria-label": "Froben reading controls"});
-    const toolbar = element("div", undefined, {class: "froben-toolbar"});
-    const settings = element("details", undefined, {id: "froben-settings"});
-    settings.open = settingsOpen;
-    settings.addEventListener("toggle", () => { if (settings.isConnected) settingsOpen = settings.open; });
-    settings.append(element("summary", "Settings"), select("froben-view", "Froben display", Object.entries(modes),
+    const {controls, settings, share} = frobenControls({
+      about: pane.dataset.about, settingsOpen, onSettingsToggle: open => { settingsOpen = open; },
+      highlight: state.highlight, onHighlight: highlight => update({highlight})
+    });
+    settings.append(selectControl("froben-view", "Froben display", Object.entries(modes),
       state.mode, mode => update({mode, location: null})));
     if (state.mode === "division") {
-      settings.append(select("froben-division", "Printed division",
+      settings.append(selectControl("froben-division", "Printed division",
         native.map(d => [d.id, flowHeading(d.label || d.id)]), state.location, location => update({location})));
     }
     if (state.mode === "page") {
-      settings.append(select("froben-page", "Scan page", pages.map(p => [p.id, p.display]),
+      settings.append(selectControl("froben-page", "Scan page", pages.map(p => [p.id, p.display]),
         state.location, location => update({location})));
-      const at = pages.findIndex(page => page.id === state.location);
-      const steps = element("div", undefined, {class: "froben-toolbar"});
-      for (const [delta, label] of [[-1, "Previous page"], [1, "Next page"]]) {
-        const button = element("button", label, {type: "button"});
-        const target = pages[at + delta];
-        button.disabled = !target;
-        button.addEventListener("click", () => update({location: target.id}));
-        steps.append(button);
-      }
-      settings.append(steps);
+      settings.append(pageSteps(pages, state.location, location => update({location})));
     }
     settings.append(checkbox("froben-pages", "Show printed page labels", state.pages, pages => update({pages})));
-    settings.append(select("froben-unit", "Aligned passage", [["", "Follow the reader"],
+    settings.append(selectControl("froben-unit", "Aligned passage", [["", "Follow the reader"],
       ...[...index.units.keys()].map(id => [id, unitLabel(id)])], state.unit, unit => {
       if (unit) chooseUnit(unit, true);
       else update({unit: null});
     }));
-    toolbar.append(element("a", "About", {href: pane.dataset.about, "aria-label": "About the Froben 1524 edition"}),
-      settings, checkbox("froben-highlight", "Highlight correspondences", state.highlight,
-      highlight => update({highlight})), element("a", "Link", {id: "froben-share", href: location.href,
-      "aria-label": "Link to this Froben view"}));
-    controls.append(toolbar);
-
-    const related = active?.id === data.book.id ? [] : index.offsets(active);
-    const targets = index.units.has(active?.id) ? [active.id] : [...index.units].filter(([, ranges]) =>
-      ranges.some(([a, b]) => related.some(([lo, hi]) => a < hi && lo < b))).map(([id]) => id);
+    const {related, targets} = correspondingUnits(index, active, data.book.id);
     if (state.highlight) {
-      targets.forEach(id => bambergTargets(id).forEach(node => node.classList.add("froben-bamberg-target")));
+      targets.forEach(id => latinTargets(latin, id).forEach(node => node.classList.add("froben-bamberg-target")));
     }
-    const correspondence = element("details", undefined, {id: "froben-correspondence"});
-    correspondence.open = correspondenceOpen;
-    correspondence.addEventListener("toggle", () => {
-      if (correspondence.isConnected) correspondenceOpen = correspondence.open;
+    const correspondence = correspondenceDetails({
+      targets, label: unitLabel, href: id => unitUrl(id).href,
+      open: correspondenceOpen, onToggle: open => { correspondenceOpen = open; },
+      message: active && active.id !== data.book.id ? "No Bamberg alignment unit is recorded for this selection."
+        : "Select a passage or alignment unit to see its recorded correspondences."
     });
-    correspondence.append(element("summary", "Correspondence"));
-    if (targets.length) {
-      const list = element("ul");
-      for (const id of targets) {
-        const li = element("li");
-        li.append(element("a", unitLabel(id), {href: unitUrl(id).href}));
-        list.append(li);
-      }
-      correspondence.append(list);
-    } else {
-      const message = active && active.id !== data.book.id ? "No Bamberg alignment unit is recorded for this selection."
-        : "Select a passage or alignment unit to see its recorded correspondences.";
-      correspondence.append(element("p", message));
-    }
     controls.append(correspondence);
     pane.append(controls);
 
@@ -425,7 +455,7 @@ function start() {
     pane.dataset.frobenReady = navigation.book;
     pane.dataset.frobenSelection = selected?.id || "";
     writeUrl();
-    document.getElementById("froben-share").href = location.href;
+    share.href = location.href;
     if (focus) document.getElementById(focus)?.focus({preventScroll: true});
   }
 
@@ -451,7 +481,7 @@ function start() {
           element("p", "Loading Froben text…", {role: "status"}));
         const loaded = await bookData(book);
         if (version !== generation) return;
-        index = indexBook(loaded);
+        index = indexText(loaded);
         data = loaded;
       }
       if (!index.units.has(state.unit)) state.unit = null;
@@ -491,3 +521,8 @@ function start() {
 
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
 else start();
+
+export {
+  modes, preferences, locationState, element, flowHeading, indexText, sliceRows, appendReading,
+  selectControl, checkbox, frobenControls, pageSteps, latinTargets, correspondingUnits, correspondenceDetails
+};

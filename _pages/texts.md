@@ -15,6 +15,7 @@ Notes on the editions, translations, manuscript annotations and textual correspo
 - [*Antiquitates Judaicae* — Bamberg Msc.Class.78]({{site.baseurl}}/texts/latin-antiquities/) (s. IX, n. Italy?).
 - [*Antiquitates Judaicae* — Johann Froben (Basel, 1524)]({{site.baseurl}}/texts/froben-1524/).
 - [*Bellum Judaicum* — E. Cardwell (Oxford, 1837)]({{site.baseurl}}/texts/latin-bellum-judaicum/).
+- [*Bellum Judaicum* — Johann Froben (Basel, 1524)]({{site.baseurl}}/texts/froben-1524/bellum/).
 - [*Contra Apionem* — K. Boysen (Vienna, 1898)]({{site.baseurl}}/texts/latin-contra-apionem/).
 - {: #deh-downloads } [*De excidio Hierosolymitano* — V. Ussani (Vienna, 1932)]({{site.baseurl}}/texts/latin-deh/).
   <span class="d-block ml-3 small">
