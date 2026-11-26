@@ -321,6 +321,15 @@ function changeView(nextView){
   if(!successful||view===nextView)return;
   view=nextView;renderSuccessful();saveLocation({...successful.state,view});
 }
+async function fetchSearchBundle(url, options) {
+  const response = await fetch(url, options);
+  if (!response.ok || !url.pathname.endsWith('.json.gz')) return response;
+  const bytes = new Uint8Array(await response.arrayBuffer());
+  // Fetch may already have decoded a response served with Content-Encoding.
+  if (bytes[0] !== 0x1f || bytes[1] !== 0x8b) return new Response(bytes);
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return new Response(stream);
+}
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
@@ -328,7 +337,7 @@ async function ensureCollection(){
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');
-    const ready=createCollection(loaded,globalThis.lunr,{baseURL:new URL('./',import.meta.url)});
+    const ready=createCollection(loaded,globalThis.lunr,{baseURL:new URL('./',import.meta.url),fetchImpl:fetchSearchBundle});
     catalog=loaded;populateControls();collection=ready;
     return collection;
   })().catch(error=>{catalogPromise=null;throw error;});

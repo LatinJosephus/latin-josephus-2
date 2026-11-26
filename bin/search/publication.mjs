@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {gunzipSync, gzipSync} from 'node:zlib';
 import {editorialMarksFor} from './ui-utils.mjs';
 import {phraseBreakOffsets, tokenizeRecord} from './engine.mjs';
 import {planBrowserRelease, BROWSER_LAUNCHER_NAME} from './browser-release.mjs';
@@ -18,6 +19,7 @@ import {validateLauroSourceProjection} from './lauro-publication.mjs';
 export const SOURCE_DIRECTORY = 'bin/search';
 export const ASSET_DIRECTORY = 'assets/search';
 export const MANIFEST_NAME = 'publication-manifest.json';
+const PAGES_MAX_BYTES = 1_000_000_000;
 export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 export const jsonBytes = value => Buffer.from(JSON.stringify(value, null, 2) + '\n');
 const posix = value => value.split(path.sep).join('/');
@@ -990,11 +992,64 @@ export function validateQaReport(root, {catalog, collection, configured, report}
     readerEvidenceIsHistorical: true};
 }
 
+function compressSearchData(root, item, output, target, previous) {
+  const original = fs.readFileSync(inside(root, item.source));
+  if (previous?.encoding === 'gzip' && previous.sourceSHA256 === item.sha256 &&
+      previous.sourceBytes === original.length && fs.existsSync(inside(output, target, {exists: false}))) {
+    const bytes = fs.readFileSync(inside(output, target));
+    if (bytes.length === previous.bytes && sha256(bytes) === previous.sha256) {
+      // A newer encoder may produce a different stream for the same input.
+      try {
+        if (gunzipSync(bytes, {maxOutputLength: original.length}).equals(original)) return bytes;
+      } catch {
+        // Build a fresh stream when the previous export cannot be decoded.
+      }
+    }
+  }
+  const bytes = gzipSync(original, {level: 3});
+  bytes[9] = 255; // Platform-neutral gzip OS identifier.
+  return bytes;
+}
+
+function planPublishedData(root, {artifacts, catalog, config, audits}) {
+  const contents = new Map(), paths = new Map();
+  const output = inside(root, ASSET_DIRECTORY, {directory: true, exists: false});
+  const previous = fs.existsSync(inside(output, MANIFEST_NAME, {exists: false})) ? readJSON(output, MANIFEST_NAME) : null;
+  const previousArtifacts = new Map((previous?.artifacts || []).map(item => [item.path, item]));
+  function generated(item, target, bytes) {
+    contents.set(target, bytes);
+    return {...item, path: target, sourceSHA256: item.sha256, sourceBytes: item.bytes,
+      sha256: sha256(bytes), bytes: bytes.length, generated: true};
+  }
+
+  const packed = artifacts.map(item => {
+    if (!item.path.startsWith('data/') || !item.path.endsWith('.json')) return item;
+    const target = item.path + '.gz';
+    const bytes = compressSearchData(root, item, output, target, previousArtifacts.get(target));
+    paths.set(item.path, target);
+    return {...generated(item, target, bytes), encoding: 'gzip'};
+  });
+  const publishedPath = relative => paths.get(relative) || relative;
+  const catalogBytes = jsonBytes({...catalog,
+    collections: catalog.collections.map(entry => ({...entry, corpusPath: publishedPath(entry.corpusPath),
+      extractionReportPath: publishedPath(entry.extractionReportPath)})),
+    books: catalog.books.map(entry => ({...entry, path: publishedPath(entry.path),
+      corpusPath: publishedPath(entry.corpusPath)})),
+  });
+  const publishedAudits = audits.map(audit => ({...audit,
+    extractionReport: {...audit.extractionReport, path: publishedPath(audit.extractionReport.path)},
+    qa: {...audit.qa, path: publishedPath(audit.qa.path)},
+  }));
+  const exported = packed.map(item => item.path === config.catalog ? generated(item, item.path, catalogBytes) : item);
+  return {artifacts: exported, contents, catalogBytes, audits: publishedAudits};
+}
+
 export function publicationPlan(root) {
   const validated = validateSearchSources(root);
   validateAnnotationBundle(root);
-  const browser = planBrowserRelease(root);
-  const artifacts = [...validated.artifacts, ...browser.artifacts].sort((a, b) => a.path.localeCompare(b.path, 'en'));
+  const published = planPublishedData(root, validated);
+  const browser = planBrowserRelease(root, {catalogBytes: published.catalogBytes});
+  const artifacts = [...published.artifacts, ...browser.artifacts].sort((a, b) => a.path.localeCompare(b.path, 'en'));
   equal(new Set(artifacts.map(item => item.path)).size, artifacts.length, 'Browser and canonical exports collide');
   assert(validated.config.runtime.includes(BROWSER_LAUNCHER_NAME), 'The versioned browser launcher is not an approved runtime');
   const manifest = {
@@ -1003,7 +1058,7 @@ export function publicationPlan(root) {
     sourceDirectory: SOURCE_DIRECTORY, assetDirectory: ASSET_DIRECTORY,
     catalog: validated.config.catalog,
     inputs: sourceInputs(root, validated.sources.map(source => source.path)),
-    collections: validated.audits, totals: validated.totals,
+    collections: published.audits, totals: validated.totals,
     validation: {sourceAndArtifactHashes: 'PASS', extractionCoverage: 'PASS', independentCorpusQA: 'PASS',
       xmlCheckoutComparison: 'CRLF-to-LF only; extraction and QA reports retain exact indexed-source hashes',
       unitTests: {status: 'PASS', commands: unitTestCommands(root)},
@@ -1011,7 +1066,8 @@ export function publicationPlan(root) {
     browserRelease: browser.descriptor,
     artifacts,
   };
-  return {...validated, manifest, bytes: jsonBytes(manifest), artifacts, generatedContents: browser.contents};
+  return {...validated, manifest, bytes: jsonBytes(manifest), artifacts,
+    generatedContents: new Map([...published.contents, ...browser.contents])};
 }
 
 /** Export audited sources and deterministic browser projections; delete only previously owned obsolete files. */
@@ -1048,6 +1104,20 @@ export function exportSearchAssets(root, plan = publicationPlan(root)) {
   return verifySearchAssets(root);
 }
 
+function publishedSize(directory, atRoot = true) {
+  let bytes = 0;
+  for (const entry of fs.readdirSync(directory, {withFileTypes: true})) {
+    if (atRoot && entry.name === '.git') continue;
+    const filename = path.join(directory, entry.name);
+    if (entry.isDirectory()) bytes += publishedSize(filename, false);
+    else {
+      assert(entry.isFile(), `Unexpected file type in generated site: ${filename}`);
+      bytes += fs.statSync(filename).size;
+    }
+  }
+  return bytes;
+}
+
 /** Read-only gate used before Jekyll and after it, including established reader publication. */
 export function verifySearchAssets(root, {site} = {}) {
   const plan = publicationPlan(root);
@@ -1065,6 +1135,11 @@ export function verifySearchAssets(root, {site} = {}) {
     const destination = path.resolve(site);
     assert(destination !== path.resolve(root) && !path.resolve(root).startsWith(destination + path.sep),
       'Generated site must be separate from repository sources');
+    const siteBytes = publishedSize(destination);
+    assert(siteBytes <= PAGES_MAX_BYTES, `Generated site is ${siteBytes} bytes. GitHub Pages allows ${PAGES_MAX_BYTES} bytes.`);
+    result.siteBytes = siteBytes;
+    result.siteLimitBytes = PAGES_MAX_BYTES;
+    result.siteHeadroomBytes = PAGES_MAX_BYTES - siteBytes;
     const siteAssets = inside(destination, ASSET_DIRECTORY, {directory: true});
     equal(sorted(listing(siteAssets)), expectedFiles, 'Generated search inventory differs from approved export');
     equal(fs.readFileSync(inside(siteAssets, MANIFEST_NAME)), plan.bytes, 'Generated publication manifest differs');

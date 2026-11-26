@@ -4,8 +4,9 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {gunzipSync, gzipSync} from 'node:zlib';
 import test from 'node:test';
-import {publicationPlan, exportSearchAssets, verifySearchAssets} from '../publication.mjs';
+import {jsonBytes, publicationPlan, exportSearchAssets, sha256, verifySearchAssets} from '../publication.mjs';
 
 const repository = path.resolve(fileURLToPath(new URL('../../../', import.meta.url)));
 
@@ -220,9 +221,32 @@ test('search publication preserves current inputs and refuses stale or incomplet
   });
 
   await t.test('a damaged exported bundle is rejected', () => {
-    const relative = `assets/search/${baseline.catalog.books[0].path}`;
+    const browserCatalog = JSON.parse(baseline.generatedContents.get(baseline.manifest.browserRelease.catalog.path));
+    const published = browserCatalog.books[0];
+    const source = baseline.catalog.books[0];
+    const relative = `assets/search/${published.path}`;
+    assert.equal(published.path, source.path + '.gz');
+    assert.equal(published.sha256, source.sha256);
+    assert.deepEqual(gunzipSync(fs.readFileSync(path.join(fixture, relative))),
+      fs.readFileSync(path.join(fixture, 'bin/search', source.path)));
     changed(relative, bytes => Buffer.concat([bytes, Buffer.from('\n')]),
       () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed exported search asset/u));
+  });
+
+  await t.test('an approved gzip export can come from a different encoder', () => {
+    const packed = baseline.artifacts.find(item => item.encoding === 'gzip' && item.path.endsWith('.bundle.json.gz'));
+    const relative = `assets/search/${packed.path}`;
+    const original = fs.readFileSync(path.join(fixture, packed.source));
+    const alternative = gzipSync(original, {level: 1});
+    assert.notEqual(sha256(alternative), packed.sha256);
+    changed(relative, () => alternative, () => {
+      changed('assets/search/publication-manifest.json', bytes => {
+        const manifest = JSON.parse(bytes);
+        const item = manifest.artifacts.find(artifact => artifact.path === packed.path);
+        Object.assign(item, {sha256: sha256(alternative), bytes: alternative.length});
+        return jsonBytes(manifest);
+      }, () => assert.equal(verifySearchAssets(fixture).status, 'PASS'));
+    });
   });
 
   await t.test('unmanaged export files are reported and are not deleted', () => {

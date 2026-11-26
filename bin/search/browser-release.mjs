@@ -27,7 +27,7 @@ const moduleName = (name, sha256) => `${name.slice(0, -4)}.${sha256}.mjs`;
  * ordinary `sha256` and `bytes` describe the browser output, not that source.
  * The caller must export contents.get(item.path), never blindly copy source.
  */
-export function planBrowserRelease(root) {
+export function planBrowserRelease(root, {catalogBytes = null} = {}) {
   const sourceDirectory = path.resolve(root, 'bin/search');
   const inputs = new Map();
   const contents = new Map();
@@ -49,7 +49,7 @@ export function planBrowserRelease(root) {
     return {path: item.path, sha256: item.sha256, bytes: item.bytes};
   }
 
-  const catalogBytes = source('catalog.json');
+  catalogBytes ||= source('catalog.json');
   // The data contract is verified by publication.mjs; this also refuses a
   // damaged or non-JSON catalog before preparing browser URLs.
   const catalogJSON = JSON.parse(catalogBytes.toString('utf8'));

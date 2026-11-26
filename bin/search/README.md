@@ -583,6 +583,12 @@ runtime and evidence bytes to `assets/search/`, recording their source inputs
 and fingerprints in `publication-manifest.json`. Source changes during a build
 cause it to stop so the build can be repeated against a consistent snapshot.
 
+The published JSON files under `assets/search/data/` use lossless gzip. The
+search page decompresses each book on first load and verifies the original
+index bytes against the catalogue. The scholarly sources and evidence in
+`bin/search/` remain directly readable as JSON. The generated site check counts
+the publication files and reports the remaining space under the 1 GB limit.
+
 Use `--force-qa` to rerun the independent verifier even when its existing report
 is current. Select a Python interpreter with `--python /path/to/python3`, or
 set `SEARCH_PYTHON` for that command. A fresh independent QA run checks its

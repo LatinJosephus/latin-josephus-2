@@ -57,9 +57,16 @@
       }));
     }
     const map = await lineMaps.get(url);
-    const parts = map?.sections[position.join(".")];
+    const key = position.join(".");
+    const omission = map?.omissions?.[key];
+    if (omission) return {map, omission};
+    const parts = map?.sections[key];
     return parts?.length ? {map, parts} : null;
   }
+
+  const locatorUnit = witness => witness.folioUnit === "page" ? "page" : "folio";
+  const locatorPrefix = witness => witness.folioUnit === "page" ? "p. " : "f. ";
+  const columnBox = (map, part) => map.columnBoxes?.[part.scan]?.[part.column];
 
   function openPassage(witness, position, excerpt, folios) {
     const dialog = document.createElement("dialog");
@@ -88,7 +95,7 @@
       if (!folio) continue;
       const section = document.createElement("section");
       const locator = document.createElement("h3");
-      locator.textContent = "f. " + part.folio + part.column;
+      locator.textContent = locatorPrefix(witness) + part.folio + part.column;
       if (part.lines) {
         const [start, end] = part.lines;
         locator.textContent += start === end ? ", line " + start : ", lines " + start + "–" + end;
@@ -100,8 +107,14 @@
         note.textContent = part.note;
         section.append(note);
       }
-      if (part.box) {
-        const [x, y, width, height] = part.box;
+      const box = part.box || columnBox(map, part);
+      if (box) {
+        const [x, y, width, height] = box;
+        if (!part.box) {
+          const note = document.createElement("p");
+          note.textContent = part.inferred ? "Estimated column location" : "Column view";
+          section.append(note);
+        }
         const frame = document.createElement("div");
         frame.className = "facsimile-crop";
         const scanSize = map.scanSizes?.[part.scan];
@@ -109,16 +122,17 @@
         const cropHeight = scanSize ? height * scanSize[1] / map.height : height;
         frame.style.aspectRatio = cropWidth + "/" + cropHeight;
         const image = document.createElement("img");
-        image.alt = "Passage on " + locator.textContent;
+        image.alt = (part.box ? "Passage on " : "Column image on ") + locator.textContent;
         const status = document.createElement("p");
         status.textContent = "Loading image…";
         const details = document.createElement("details");
         const contextLabel = document.createElement("summary");
-        contextLabel.textContent = "Show the passage on the folio";
+        contextLabel.textContent = "Show the " + (part.box ? "passage" : "column") + " on the " + locatorUnit(witness);
         const context = document.createElement("div");
         context.className = "facsimile-folio-context";
         const fullImage = document.createElement("img");
-        fullImage.alt = "Scan of f. " + part.folio + " with the passage marked";
+        fullImage.alt = "Scan of " + locatorPrefix(witness) + part.folio +
+          (part.box ? " with the passage marked" : " with the column marked");
         const marked = document.createElement("span");
         marked.className = "facsimile-crop-outline";
         marked.setAttribute("aria-hidden", "true");
@@ -154,12 +168,24 @@
         }
         section.append(status, frame, details);
         const extension = map.scanExtension === "jpg" ? ".jpg" : ".webp";
-        const scanURL = new URL(String(part.scan).padStart(4, "0") + extension, map.images);
+        const service = map.iiif?.services?.[part.scan];
+        const scanURL = service ? new URL(service + "/full/" + map.iiif.pageSize + "/0/default.jpg") :
+          new URL(String(part.scan).padStart(4, "0") + extension, map.images);
+        let passageImage = part.image;
+        if (service && !passageImage) {
+          const region = [x / map.width, y / map.height, width / map.width, height / map.height]
+            .map(fraction => (100 * fraction).toFixed(4)).join(",");
+          passageImage = service + "/pct:" + region + "/" + map.iiif.regionSize + "/0/default.jpg";
+        }
         const showScanCrop = () => {
           frame.style.aspectRatio = cropWidth + "/" + cropHeight;
           image.style.width = 100 * map.width / width + "%";
           image.style.left = -100 * x / width + "%";
           image.style.top = -100 * y / height + "%";
+          if (service) {
+            image.src = scanURL.href;
+            return;
+          }
           fetch(scanURL, {signal: controller.signal}).then(response => {
             if (!response.ok) throw new Error("Scan request failed");
             return response.blob();
@@ -173,7 +199,7 @@
             if (!controller.signal.aborted) unavailable();
           });
         };
-        let usingPassageImage = Boolean(part.image);
+        let usingPassageImage = Boolean(passageImage);
         image.addEventListener("error", () => {
           if (usingPassageImage) {
             usingPassageImage = false;
@@ -187,13 +213,13 @@
           if (part.imageSize) frame.style.aspectRatio = part.imageSize.join("/");
           image.style.left = "0";
           image.style.top = "0";
-          image.src = new URL(part.image, map.images).href;
+          image.src = new URL(passageImage, map.images).href;
           details.addEventListener("toggle", () => {
             if (details.open && !fullImage.getAttribute("src")) fullImage.src = scanURL.href;
           });
           fullImage.addEventListener("error", () => {
             fullImage.removeAttribute("src");
-            fullImage.alt = "Folio image unavailable.";
+            fullImage.alt = "Full scan unavailable.";
           });
         } else {
           showScanCrop();
@@ -207,7 +233,7 @@
       fullFolio.href = folio.url;
       fullFolio.target = "_blank";
       fullFolio.rel = "noopener";
-      fullFolio.textContent = "Open full folio";
+      fullFolio.textContent = "Open full " + locatorUnit(witness);
       section.append(fullFolio);
       dialog.append(section);
     }
@@ -218,11 +244,14 @@
       const record = document.createElement("a");
       record.href = witness.digitisation.url;
       record.textContent = witness.digitisation.credit || witness.shelfmark;
-      record.title = witness.digitisation.urn;
-      const rights = document.createElement("a");
-      rights.href = witness.digitisation.rightsUrl;
-      rights.textContent = witness.digitisation.rightsLabel;
-      source.append("Images from ", record, " · ", rights);
+      if (witness.digitisation.urn) record.title = witness.digitisation.urn;
+      source.append("Images from ", record);
+      if (witness.digitisation.rightsUrl && witness.digitisation.rightsLabel) {
+        const rights = document.createElement("a");
+        rights.href = witness.digitisation.rightsUrl;
+        rights.textContent = witness.digitisation.rightsLabel;
+        source.append(" · ", rights);
+      }
       dialog.append(source);
     }
 
@@ -254,22 +283,35 @@
       link.target = "_blank";
       link.rel = "noopener";
       const columns = folio.columnLabels;
-      link.textContent = "f. " + folio.label + columns.join("–");
+      link.textContent = locatorPrefix(witness) + folio.label + columns.join("–");
       const columnLabel = columns.length === 1 ? "column " : "columns ";
       link.setAttribute("aria-label",
-        witness.label + ", folio " + folio.label + ", " + columnLabel + columns.join(" and ") + " (opens in a new tab)"
+        witness.label + ", " + locatorUnit(witness) + " " + folio.label + ", " + columnLabel + columns.join(" and ") + " (opens in a new tab)"
       );
       item.append(link);
       links.append(item);
     }
     entry.append(label, shelfmark);
-    if (excerpt?.parts.some(part => part.box)) {
+    if (excerpt?.omission) {
+      const note = document.createElement("p");
+      note.textContent = (excerpt.omission.label || "Passage omitted.") + " " + excerpt.omission.note;
+      entry.append(note);
+    }
+    if (excerpt?.parts?.some(part => part.inferred)) {
+      const note = document.createElement("p");
+      note.textContent = "Column location estimated from neighboring passages.";
+      entry.append(note);
+    }
+    const hasPassage = excerpt?.parts?.some(part => part.box);
+    const hasColumn = excerpt?.parts?.some(part => columnBox(excerpt.map, part));
+    if (hasPassage || hasColumn) {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "facsimile-show-passage";
       button.setAttribute("aria-haspopup", "dialog");
-      button.setAttribute("aria-label", witness.label + ", show passage");
-      button.textContent = "Show passage";
+      const name = hasPassage ? "Show passage" : "Show column";
+      button.setAttribute("aria-label", witness.label + ", " + name.toLowerCase());
+      button.textContent = name;
       button.addEventListener("click", () => openPassage(witness, position, excerpt, folios));
       entry.append(button);
     }
@@ -302,6 +344,10 @@
       const rendered = await Promise.all(records.map(async witness => {
         const excerpt = await loadPassage(witness, position);
         const folios = witness.folios.flatMap(folio => {
+          if (excerpt?.omission) {
+            return folio.label === excerpt.omission.folio ?
+              [{...folio, columnLabels: [excerpt.omission.column]}] : [];
+          }
           const columnLabels = folio.columns
             .filter(column => compare(column.start, position) <= 0 && compare(position, column.end) <= 0)
             .filter(column => !excerpt || excerpt.parts.some(part => part.folio === folio.label && part.column === column.label))

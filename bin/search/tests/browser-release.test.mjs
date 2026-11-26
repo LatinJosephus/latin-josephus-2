@@ -5,6 +5,8 @@ import os from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {runInNewContext} from 'node:vm';
+import {gzipSync} from 'node:zlib';
 import test from 'node:test';
 import {BROWSER_MODULES, planBrowserRelease} from '../browser-release.mjs';
 import {validateBrowserRelease} from '../launch-v1.mjs';
@@ -68,6 +70,28 @@ test('changed annotation data changes its content address and the app without al
   assert.notEqual(before.artifacts.find(item => item.role === 'browser-annotations').path, after.artifacts.find(item => item.role === 'browser-annotations').path);
   assert.deepEqual(before.descriptor.catalog, after.descriptor.catalog);
   assert.deepEqual(before.descriptor.modules['engine.mjs'], after.descriptor.modules['engine.mjs']);
+});
+
+test('the browser transport passes the original UTF-8 search bytes to the audited loader', async t => {
+  const release = planBrowserRelease(fixture(t));
+  const app = release.contents.get(release.descriptor.entry).toString('utf8');
+  assert.match(app, /fetchImpl:fetchSearchBundle/u);
+  const start = app.indexOf('async function fetchSearchBundle(');
+  const end = app.indexOf('async function ensureCollection(', start);
+  assert.ok(start >= 0 && end > start);
+  const original = Buffer.from('{"text":"Hierosolymæ"}');
+  const url = new URL('https://example.test/search/book-01.bundle.json.gz');
+  for (const body of [gzipSync(original), original]) {
+    const fetchBook = runInNewContext(app.slice(start, end) + '\nfetchSearchBundle', {
+      fetch: async request => {
+        assert.equal(request, url);
+        return new Response(body);
+      },
+      Response, Blob, DecompressionStream,
+    });
+    const result = await fetchBook(url);
+    assert.deepEqual(Buffer.from(await result.arrayBuffer()), original);
+  }
 });
 
 test('a changed engine changes both intermediate modules and the app, so cached imports cannot survive an upgrade', t => {
