@@ -143,6 +143,12 @@
               <input class="form-check-input" type="checkbox" id="greek-pane-select" value="greek" checked />
               <label class="form-check-label" for="greek-pane-select">Greek</label>
             </div>
+              {% if page.permalink == '/bellum-judaicum/' %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="facsimiles-pane-select" aria-controls="bellum-facsimiles" />
+                <label class="form-check-label" for="facsimiles-pane-select">Manuscript facsimiles</label>
+              </div>
+              {% endif %}
           </div>
         </div>
 

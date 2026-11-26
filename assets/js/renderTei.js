@@ -3945,6 +3945,16 @@ document.addEventListener("DOMContentLoaded", () => {
     addContraApionemTransmissionNotice();
     updateTraditionalNotice();
     syncNavigationControls();
+    if (activeWork.slug === "bellum") {
+      document.dispatchEvent(new CustomEvent("bellum-view-rendered", {
+        detail: {
+          book: Number(state.bookNum),
+          section: state.viewingLevel === "niese-level" && canonicalViewData
+            ? Number(state.nieseNum)
+            : null
+        }
+      }));
+    }
     if (activeWork.slug === "antiquities") {
       const book = isPreface() ? "preface" : String(Number(state.bookNum));
       let target = null;

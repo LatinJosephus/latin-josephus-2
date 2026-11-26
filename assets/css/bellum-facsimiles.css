@@ -1,0 +1,195 @@
+.bellum-reader-panes {
+  min-width: 0;
+}
+
+.bellum-reader-panes.has-facsimiles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "facsimiles" "texts";
+  gap: .75rem;
+  align-items: start;
+}
+
+.bellum-reader-panes #pane-container {
+  grid-area: texts;
+}
+
+.bellum-facsimiles {
+  grid-area: facsimiles;
+  padding: .9rem 1rem;
+  border: 1px solid var(--lj-brand-rule, #d8dce1);
+  border-radius: .45rem;
+  background: var(--lj-brand-surface, #fff);
+  color: var(--lj-brand-ink, #252a30);
+}
+
+.bellum-facsimiles h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.bellum-facsimiles .facsimiles-reference,
+.bellum-facsimiles .facsimiles-status {
+  margin: .4rem 0 0;
+  font-size: .875rem;
+}
+
+.bellum-facsimiles .facsimiles-reference {
+  font-variant-numeric: tabular-nums;
+}
+
+.bellum-facsimiles .facsimile-witnesses,
+.bellum-facsimiles .facsimile-folios {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bellum-facsimiles .facsimile-witnesses > li {
+  margin-top: .75rem;
+  padding-top: .7rem;
+  border-top: 1px solid var(--lj-brand-rule, #d8dce1);
+}
+
+.bellum-facsimiles .facsimile-witness-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.bellum-facsimiles .facsimile-shelfmark {
+  margin: .15rem 0 .5rem;
+  font-size: .875rem;
+}
+
+.bellum-facsimiles .facsimile-folios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.bellum-facsimiles .facsimile-folios a {
+  display: inline-block;
+  padding: .3rem .5rem;
+  border: 1px solid var(--lj-brand-rule, #d8dce1);
+  border-radius: .25rem;
+  text-decoration: underline;
+  text-underline-offset: .13em;
+  white-space: nowrap;
+}
+
+.bellum-facsimiles .facsimile-folios a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.facsimile-show-passage,
+.facsimile-passage header button {
+  border: 1px solid var(--lj-brand-rule, #d8dce1);
+  background: var(--lj-brand-surface, #fff);
+  color: var(--lj-brand-ink, #252a30);
+  border-radius: .25rem;
+  padding: .3rem .65rem;
+  cursor: pointer;
+}
+
+.facsimile-show-passage {
+  margin-bottom: .55rem;
+  font-weight: 600;
+}
+
+.facsimile-passage {
+  width: min(45rem, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  padding: 1rem;
+  border: 1px solid var(--lj-brand-rule, #d8dce1);
+  border-radius: .45rem;
+  background: var(--lj-brand-surface, #fff);
+  color: var(--lj-brand-ink, #252a30);
+}
+
+.facsimile-passage::backdrop {
+  background: rgba(20, 26, 32, .65);
+}
+
+.facsimile-passage header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+}
+
+.facsimile-passage h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.facsimile-passage h3 {
+  margin: 0 0 .35rem;
+  font-size: 1rem;
+}
+
+.facsimile-passage section {
+  margin-top: .85rem;
+}
+
+.facsimile-passage section > a {
+  display: inline-block;
+  margin-top: .3rem;
+}
+
+.facsimile-passage details {
+  margin-top: .45rem;
+}
+
+.facsimile-passage .facsimile-image-credit {
+  margin: .85rem 0 0;
+  font-size: .85em;
+}
+
+.facsimile-folio-context {
+  position: relative;
+  margin-top: .35rem;
+}
+
+.facsimile-folio-context img {
+  display: block;
+  width: 100%;
+}
+
+.facsimile-crop {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f6eddb;
+}
+
+.facsimile-passage .facsimile-crop img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  height: auto;
+}
+
+.facsimile-crop-outline {
+  position: absolute;
+  border: 2px solid #14647d;
+  pointer-events: none;
+}
+
+@media (min-width: 65rem) {
+  .bellum-reader-panes.has-facsimiles {
+    grid-template-columns: minmax(0, 1fr) clamp(11rem, 15vw, 14rem);
+    grid-template-areas: "texts facsimiles";
+  }
+
+  .bellum-reader-panes.has-facsimiles #pane-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  }
+
+  .bellum-facsimiles {
+    position: sticky;
+    top: calc(var(--lj-header-height, 76px) + 12px);
+  }
+}
