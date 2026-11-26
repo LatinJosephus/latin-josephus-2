@@ -104,7 +104,10 @@
         const [x, y, width, height] = part.box;
         const frame = document.createElement("div");
         frame.className = "facsimile-crop";
-        frame.style.aspectRatio = width + "/" + height;
+        const scanSize = map.scanSizes?.[part.scan];
+        const cropWidth = scanSize ? width * scanSize[0] / map.width : width;
+        const cropHeight = scanSize ? height * scanSize[1] / map.height : height;
+        frame.style.aspectRatio = cropWidth + "/" + cropHeight;
         const image = document.createElement("img");
         image.alt = "Passage on " + locator.textContent;
         const status = document.createElement("p");
@@ -150,8 +153,10 @@
           frame.append(outline);
         }
         section.append(status, frame, details);
-        const scanURL = new URL(String(part.scan).padStart(4, "0") + ".webp", map.images);
+        const extension = map.scanExtension === "jpg" ? ".jpg" : ".webp";
+        const scanURL = new URL(String(part.scan).padStart(4, "0") + extension, map.images);
         const showScanCrop = () => {
+          frame.style.aspectRatio = cropWidth + "/" + cropHeight;
           image.style.width = 100 * map.width / width + "%";
           image.style.left = -100 * x / width + "%";
           image.style.top = -100 * y / height + "%";
@@ -179,6 +184,7 @@
         });
         if (usingPassageImage) {
           image.style.width = "100%";
+          if (part.imageSize) frame.style.aspectRatio = part.imageSize.join("/");
           image.style.left = "0";
           image.style.top = "0";
           image.src = new URL(part.image, map.images).href;
@@ -211,7 +217,7 @@
       source.className = "facsimile-image-credit";
       const record = document.createElement("a");
       record.href = witness.digitisation.url;
-      record.textContent = witness.shelfmark;
+      record.textContent = witness.digitisation.credit || witness.shelfmark;
       record.title = witness.digitisation.urn;
       const rights = document.createElement("a");
       rights.href = witness.digitisation.rightsUrl;
