@@ -81,7 +81,7 @@
     const {map, parts} = excerpt;
     const regions = parts.flatMap(part => [
       part,
-      ...(part.otherRegions || []).map(region => ({...part, lines: undefined, highlight: undefined, ...region})),
+      ...(part.otherRegions || []).map(region => ({...part, lines: undefined, highlight: undefined, image: undefined, ...region})),
     ]);
     for (const part of regions) {
       const folio = folios.find(record => record.label === part.folio);
@@ -107,9 +107,6 @@
         frame.style.aspectRatio = width + "/" + height;
         const image = document.createElement("img");
         image.alt = "Passage on " + locator.textContent;
-        image.style.width = 100 * map.width / width + "%";
-        image.style.left = -100 * x / width + "%";
-        image.style.top = -100 * y / height + "%";
         const status = document.createElement("p");
         status.textContent = "Loading image…";
         const details = document.createElement("details");
@@ -135,7 +132,6 @@
           status.hidden = false;
           status.textContent = "Passage image unavailable.";
         };
-        image.addEventListener("error", unavailable, {once: true});
         image.addEventListener("load", () => {
           status.hidden = true;
           frame.hidden = false;
@@ -155,18 +151,47 @@
         }
         section.append(status, frame, details);
         const scanURL = new URL(String(part.scan).padStart(4, "0") + ".webp", map.images);
-        fetch(scanURL, {signal: controller.signal}).then(response => {
-          if (!response.ok) throw new Error("Scan request failed");
-          return response.blob();
-        }).then(blob => {
-          if (controller.signal.aborted) return;
-          const objectURL = URL.createObjectURL(blob);
-          imageURLs.push(objectURL);
-          image.src = objectURL;
-          fullImage.src = objectURL;
-        }).catch(() => {
-          if (!controller.signal.aborted) unavailable();
+        const showScanCrop = () => {
+          image.style.width = 100 * map.width / width + "%";
+          image.style.left = -100 * x / width + "%";
+          image.style.top = -100 * y / height + "%";
+          fetch(scanURL, {signal: controller.signal}).then(response => {
+            if (!response.ok) throw new Error("Scan request failed");
+            return response.blob();
+          }).then(blob => {
+            if (controller.signal.aborted) return;
+            const objectURL = URL.createObjectURL(blob);
+            imageURLs.push(objectURL);
+            image.src = objectURL;
+            fullImage.src = objectURL;
+          }).catch(() => {
+            if (!controller.signal.aborted) unavailable();
+          });
+        };
+        let usingPassageImage = Boolean(part.image);
+        image.addEventListener("error", () => {
+          if (usingPassageImage) {
+            usingPassageImage = false;
+            showScanCrop();
+          } else {
+            unavailable();
+          }
         });
+        if (usingPassageImage) {
+          image.style.width = "100%";
+          image.style.left = "0";
+          image.style.top = "0";
+          image.src = new URL(part.image, map.images).href;
+          details.addEventListener("toggle", () => {
+            if (details.open && !fullImage.getAttribute("src")) fullImage.src = scanURL.href;
+          });
+          fullImage.addEventListener("error", () => {
+            fullImage.removeAttribute("src");
+            fullImage.alt = "Folio image unavailable.";
+          });
+        } else {
+          showScanCrop();
+        }
       } else {
         const status = document.createElement("p");
         status.textContent = "Column location";
