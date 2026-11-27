@@ -33,6 +33,37 @@
       }
     },
     {
+      "id": "bellum-latin-froben1524",
+      "work": "bellum",
+      "label": "Bellum Judaicum",
+      "citationPrefix": "Bellum",
+      "language": "Latin",
+      "edition": "Froben 1524",
+      "readerPath": "bellum-judaicum/",
+      "books": [
+        "bellum-latin-froben1524:1",
+        "bellum-latin-froben1524:2",
+        "bellum-latin-froben1524:3",
+        "bellum-latin-froben1524:4",
+        "bellum-latin-froben1524:5",
+        "bellum-latin-froben1524:6",
+        "bellum-latin-froben1524:7"
+      ],
+      "citationScheme": "niese",
+      "manifestPath": "config/bellum-latin-froben1524.json",
+      "manifestSHA256": "22513ef99313f14b6dc52146e55511b73c0970f58eeabba5b88b00c14958bfdf",
+      "corpusPath": "data/bellum-latin-froben1524/corpus.json.gz",
+      "corpusSHA256": "cfe40a4dbb07620018b1c991541e9d8a7f584901e8ea65c7bf9c422c92d02d79",
+      "extractionReportPath": "data/bellum-latin-froben1524/extraction-report.json.gz",
+      "extractionReportSHA256": "e5632261f6aa9b1a19b91a5513f9858d2f335f4e5578bd5b4178a74c68dc3c5a",
+      "totals": {
+        "books": 7,
+        "sections": 4001,
+        "tokens": 111984,
+        "bytes": 30494843
+      }
+    },
+    {
       "id": "deh-latin-ussani",
       "work": "deh",
       "label": "De excidio Hierosolymitano",
@@ -589,6 +620,104 @@
       "sha256": "53ca2c930836f3d4dd8f0eb3257019e75a07e9d15093678cb08b2b29629ddb52",
       "corpusPath": "data/book-07.corpus.json.gz",
       "corpusSHA256": "d4c63a957974e8c8b2a7badddfa124dd188bb27e6ef76032005b0da1275e8c8c"
+    },
+    {
+      "id": "bellum-latin-froben1524:1",
+      "collectionId": "bellum-latin-froben1524",
+      "number": 1,
+      "label": "Book I (including Prologue)",
+      "sections": 673,
+      "tokens": 26831,
+      "vocabulary": 9036,
+      "bytes": 6800833,
+      "path": "data/bellum-latin-froben1524/book-01.bundle.json.gz",
+      "sha256": "8430e4db6ddfcdcc34a2fd6b9459bbef734336c704460f7b873682198940efad",
+      "corpusPath": "data/bellum-latin-froben1524/book-01.corpus.json.gz",
+      "corpusSHA256": "970a8f23a5d49e4e8d4a406c1a86a31f83e99cc62245b70b89f3ab0a03ddfb0a"
+    },
+    {
+      "id": "bellum-latin-froben1524:2",
+      "collectionId": "bellum-latin-froben1524",
+      "number": 2,
+      "label": "Book II",
+      "sections": 654,
+      "tokens": 21233,
+      "vocabulary": 7830,
+      "bytes": 5618124,
+      "path": "data/bellum-latin-froben1524/book-02.bundle.json.gz",
+      "sha256": "1e2a8c368bfd3fa966471b30ffa6148c4d18ce6191d4592603e8ec5041c85212",
+      "corpusPath": "data/bellum-latin-froben1524/book-02.corpus.json.gz",
+      "corpusSHA256": "0a13851e8e9423327ba988852bb67dbd471dc7a3764790dd5eae44ff9b19aefb"
+    },
+    {
+      "id": "bellum-latin-froben1524:3",
+      "collectionId": "bellum-latin-froben1524",
+      "number": 3,
+      "label": "Book III",
+      "sections": 542,
+      "tokens": 12780,
+      "vocabulary": 5307,
+      "bytes": 3624744,
+      "path": "data/bellum-latin-froben1524/book-03.bundle.json.gz",
+      "sha256": "469622270057eb055b915415c4aa9510add639e91948193fe0da1a286b8128f7",
+      "corpusPath": "data/bellum-latin-froben1524/book-03.corpus.json.gz",
+      "corpusSHA256": "fde53f56003226cb681278c943d9b38443701c1ec9f01292efa7cd88aaa0e43c"
+    },
+    {
+      "id": "bellum-latin-froben1524:4",
+      "collectionId": "bellum-latin-froben1524",
+      "number": 4,
+      "label": "Book IV",
+      "sections": 663,
+      "tokens": 15519,
+      "vocabulary": 6220,
+      "bytes": 4399996,
+      "path": "data/bellum-latin-froben1524/book-04.bundle.json.gz",
+      "sha256": "e98f304b9eb4f5cb9f998264579c12b9509f87d423967ad07cf033b3da9e5425",
+      "corpusPath": "data/bellum-latin-froben1524/book-04.corpus.json.gz",
+      "corpusSHA256": "1a17bddb1a4ac3c4ed37fce29a2525c28cef7dc2e11d34065b0d4699c93be69f"
+    },
+    {
+      "id": "bellum-latin-froben1524:5",
+      "collectionId": "bellum-latin-froben1524",
+      "number": 5,
+      "label": "Book V",
+      "sections": 572,
+      "tokens": 14524,
+      "vocabulary": 5836,
+      "bytes": 4049536,
+      "path": "data/bellum-latin-froben1524/book-05.bundle.json.gz",
+      "sha256": "d0b3b7405d0363c9c49297232893041fb28c8efc2e3bfe9383e6400f585fcc3a",
+      "corpusPath": "data/bellum-latin-froben1524/book-05.corpus.json.gz",
+      "corpusSHA256": "b1fef6522a1fb7dadb0527dc2274f0ad3caa014e31a5bf4eb9ad598011bfade8"
+    },
+    {
+      "id": "bellum-latin-froben1524:6",
+      "collectionId": "bellum-latin-froben1524",
+      "number": 6,
+      "label": "Book VI",
+      "sections": 442,
+      "tokens": 10623,
+      "vocabulary": 4579,
+      "bytes": 2996804,
+      "path": "data/bellum-latin-froben1524/book-06.bundle.json.gz",
+      "sha256": "89155822c67b62d2aeb6b45015a4f9d5695ebbec7bacc944c07f7c97f57186b0",
+      "corpusPath": "data/bellum-latin-froben1524/book-06.corpus.json.gz",
+      "corpusSHA256": "30cda30a5b5c75b7a5cea12ebb5b28f653dd350f3c93516c0af6bb13a2d7b38c"
+    },
+    {
+      "id": "bellum-latin-froben1524:7",
+      "collectionId": "bellum-latin-froben1524",
+      "number": 7,
+      "label": "Book VII",
+      "sections": 455,
+      "tokens": 10474,
+      "vocabulary": 4625,
+      "bytes": 3004806,
+      "path": "data/bellum-latin-froben1524/book-07.bundle.json.gz",
+      "sha256": "707a7ff458e0f244417f92e028b4a05f26d16d039004139e88b7674530d8fef1",
+      "corpusPath": "data/bellum-latin-froben1524/book-07.corpus.json.gz",
+      "corpusSHA256": "ceeb54d9d803c308bdac161139ac92c68387267c05eeb342926d075154354e6d"
     },
     {
       "id": "deh-latin-ussani:1",
@@ -2665,14 +2794,14 @@
     }
   ],
   "totals": {
-    "books": 127,
-    "sections": 38725,
-    "tokens": 2529030,
-    "bytes": 376548792
+    "books": 134,
+    "sections": 42726,
+    "tokens": 2641014,
+    "bytes": 407043635
   },
   "source": {
     "manifestPath": "config/collections.json",
-    "manifestSHA256": "393710361b3a86aab1fa88b781117b767fdd1a049e497526e5b3d4b18a6c489f",
+    "manifestSHA256": "0adfa6903387a7392f65f832ffdfbc8bde735bd8b4103ec5e7c8c912a857e1a5",
     "enginePath": "engine.mjs",
     "engineSHA256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603",
     "lunrPath": "vendor/lunr.cjs",

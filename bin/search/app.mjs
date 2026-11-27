@@ -24,6 +24,7 @@ function selectorEdition(source) {
   if (source.edition === 'Whiston') return 'Whiston (1737)';
   return ({
     'antiquities-latin-froben1524': 'Froben (1524)',
+    'bellum-latin-froben1524': 'Froben (1524)',
     'deh-french-millet1556': 'Millet (1556)',
     'deh-italian-lauro1544': 'Lauro (1544)',
   })[source.id] || source.edition;
@@ -187,12 +188,19 @@ function makeExcerpt(record,rawRanges,full=false,label=false){
   }
   return p;
 }
+function frobenLocation(records){
+  const editions=records.filter(record=>record.collectionId==='bellum-latin-froben1524');
+  if(!editions.length)return '';
+  const printed=[...new Set(editions.flatMap(record=>record.frobenSource.printedBooks.map(book=>book.label)))];
+  const images=[...new Set(editions.flatMap(record=>record.sourcePieces.map(piece=>piece.pageLabel)))];
+  return ` · ${printed.join('; ')} · ${images.length>2?`${images[0]}–${images.at(-1)}`:images.join('; ')}`;
+}
 function makeCard(card){
   const article=node('article',undefined,'result-card');
   const header=node('div',undefined,'result-header');
   const first=card.records[0];
   const h=node('h3',undefined,'result-title');h.append(link(citationFor(card.records),readerURL(first,readerBase)));header.append(h);
-  header.append(node('span',`${first.language} · ${first.edition} · ${passageDivisionLabel(card.records)}`,'result-meta'));article.append(header);
+  header.append(node('span',`${first.language} · ${first.edition} · ${passageDivisionLabel(card.records)}${frobenLocation(card.records)}`,'result-meta'));article.append(header);
   for(const r of card.records)article.append(makeExcerpt(r,card.ranges[r.id],false,card.records.length>1));
   appendGapNote(article,card.records);
   if(card.records.some(r=>excerptWindows(r.text,card.ranges[r.id]||[]).some(w=>w.start>0||w.end<r.text.length))){
@@ -210,7 +218,7 @@ function appendGapNote(parent,records){
 function concordanceHeader(row){
   const header=node('div',undefined,'result-header');
   const h=node('h3',undefined,'result-title');h.append(link(row.citation,row.readerURL));header.append(h);
-  header.append(node('span',`${row.language} · ${row.edition}`,'result-meta'));
+  header.append(node('span',`${row.language} · ${row.edition}${frobenLocation(row.records)}`,'result-meta'));
   return header;
 }
 function makeConcordanceRow(row){
@@ -277,6 +285,7 @@ function summarize(result,model){
 function resultContext(result,model){
   const parts=[];
   const collections=catalog.collections.filter(collection=>result.selectedCollections.includes(collection.id)),labels=citationUnitLabels(collections);
+  if(collections.some(collection=>collection.id==='bellum-latin-froben1524'))parts.push('Froben 1524 Bellum: the Prologue and all seven books use the accepted reader transcription and Niese correspondence. Search book numbers follow Cardwell/Niese; Froben’s printed books and divisions are identified separately. Explicit word continuations are rejoined, and Latin spelling options apply. Links open the Froben witness.');
   if(collections.some(collection=>collection.id==='deh-italian-lauro1544'))parts.push('Lauro 1544 Italian: accepted corrected-199 diplomatic display and provisional correspondence. Each physical Italian passage is indexed once in source order. Long ſ matches s; ß, accents and historical spelling remain literal. Explicit ¬ word divisions join for matching. Accepted bracketed supplied letters join their word for matching; brackets remain visible and identify editorial supply, not certified print. Italian folios and DEH correspondences are recorded separately. Reader links open the Italian witness.');
   if(collections.some(collection=>collection.id==='deh-french-millet1556'))parts.push('Millet 1556 French: semi-final r1 transcription and provisional accepted correspondence. Each physical French passage is indexed once in source order. References distinguish French folios from DEH correspondences. Long ſ matches s; explicit ¬ continuations join for matching. Apostrophes and hyphens separate words; accents remain significant. French spelling is unaffected by the Latin equivalence setting. Reader links open the French source leaf.');
   if(view==='concordance'){

@@ -1,0 +1,550 @@
+{
+  "status": "PASS",
+  "source": {
+    "books": 7,
+    "sections": 4001,
+    "tokens": 111984
+  },
+  "books": [
+    {
+      "book": 1,
+      "sections": 673,
+      "sourceRows": 2711,
+      "paragraphRows": 2645,
+      "explicitContinuations": 1430,
+      "tokens": 26831
+    },
+    {
+      "book": 2,
+      "sections": 654,
+      "sourceRows": 2185,
+      "paragraphRows": 2116,
+      "explicitContinuations": 1116,
+      "tokens": 21233
+    },
+    {
+      "book": 3,
+      "sections": 542,
+      "sourceRows": 1281,
+      "paragraphRows": 1234,
+      "explicitContinuations": 635,
+      "tokens": 12780
+    },
+    {
+      "book": 4,
+      "sections": 663,
+      "sourceRows": 1569,
+      "paragraphRows": 1521,
+      "explicitContinuations": 800,
+      "tokens": 15519
+    },
+    {
+      "book": 5,
+      "sections": 572,
+      "sourceRows": 1439,
+      "paragraphRows": 1401,
+      "explicitContinuations": 655,
+      "tokens": 14524
+    },
+    {
+      "book": 6,
+      "sections": 442,
+      "sourceRows": 1075,
+      "paragraphRows": 1032,
+      "explicitContinuations": 574,
+      "tokens": 10623
+    },
+    {
+      "book": 7,
+      "sections": 455,
+      "sourceRows": 1039,
+      "paragraphRows": 1011,
+      "explicitContinuations": 485,
+      "tokens": 10474
+    }
+  ],
+  "assertions": 544108,
+  "totalQueries": 99285,
+  "failedAssertions": 0,
+  "examples": [
+    {
+      "book": 1,
+      "q": "Iudae*",
+      "scope": "section",
+      "fold": false,
+      "units": 109,
+      "occurrences": 120,
+      "exportRows": 120
+    },
+    {
+      "book": 1,
+      "q": "NOT zzzzfrobenabsent",
+      "scope": "book",
+      "fold": false,
+      "units": 1,
+      "occurrences": 0,
+      "exportRows": 1
+    },
+    {
+      "book": 1,
+      "q": "zzzzfrobenabsent",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 1,
+      "q": "\"quoniam bellum\"",
+      "scope": "section",
+      "fold": false,
+      "units": 1,
+      "occurrences": 1,
+      "exportRows": 1
+    },
+    {
+      "book": 2,
+      "q": "Iudae*",
+      "scope": "section",
+      "fold": false,
+      "units": 142,
+      "occurrences": 163,
+      "exportRows": 163
+    },
+    {
+      "book": 2,
+      "q": "NOT zzzzfrobenabsent",
+      "scope": "book",
+      "fold": false,
+      "units": 1,
+      "occurrences": 0,
+      "exportRows": 1
+    },
+    {
+      "book": 2,
+      "q": "zzzzfrobenabsent",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 2,
+      "q": "\"quoniam bellum\"",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 3,
+      "q": "Iudae*",
+      "scope": "section",
+      "fold": false,
+      "units": 65,
+      "occurrences": 70,
+      "exportRows": 70
+    },
+    {
+      "book": 3,
+      "q": "NOT zzzzfrobenabsent",
+      "scope": "book",
+      "fold": false,
+      "units": 1,
+      "occurrences": 0,
+      "exportRows": 1
+    },
+    {
+      "book": 3,
+      "q": "zzzzfrobenabsent",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 3,
+      "q": "\"quoniam bellum\"",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 4,
+      "q": "Iudae*",
+      "scope": "section",
+      "fold": false,
+      "units": 31,
+      "occurrences": 31,
+      "exportRows": 31
+    },
+    {
+      "book": 4,
+      "q": "NOT zzzzfrobenabsent",
+      "scope": "book",
+      "fold": false,
+      "units": 1,
+      "occurrences": 0,
+      "exportRows": 1
+    },
+    {
+      "book": 4,
+      "q": "zzzzfrobenabsent",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 4,
+      "q": "\"quoniam bellum\"",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 5,
+      "q": "Iudae*",
+      "scope": "section",
+      "fold": false,
+      "units": 67,
+      "occurrences": 68,
+      "exportRows": 68
+    },
+    {
+      "book": 5,
+      "q": "NOT zzzzfrobenabsent",
+      "scope": "book",
+      "fold": false,
+      "units": 1,
+      "occurrences": 0,
+      "exportRows": 1
+    },
+    {
+      "book": 5,
+      "q": "zzzzfrobenabsent",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 5,
+      "q": "\"quoniam bellum\"",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 6,
+      "q": "Iudae*",
+      "scope": "section",
+      "fold": false,
+      "units": 74,
+      "occurrences": 75,
+      "exportRows": 75
+    },
+    {
+      "book": 6,
+      "q": "NOT zzzzfrobenabsent",
+      "scope": "book",
+      "fold": false,
+      "units": 1,
+      "occurrences": 0,
+      "exportRows": 1
+    },
+    {
+      "book": 6,
+      "q": "zzzzfrobenabsent",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 6,
+      "q": "\"quoniam bellum\"",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 7,
+      "q": "Iudae*",
+      "scope": "section",
+      "fold": false,
+      "units": 67,
+      "occurrences": 74,
+      "exportRows": 74
+    },
+    {
+      "book": 7,
+      "q": "NOT zzzzfrobenabsent",
+      "scope": "book",
+      "fold": false,
+      "units": 1,
+      "occurrences": 0,
+      "exportRows": 1
+    },
+    {
+      "book": 7,
+      "q": "zzzzfrobenabsent",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    },
+    {
+      "book": 7,
+      "q": "\"quoniam bellum\"",
+      "scope": "section",
+      "fold": false,
+      "units": 0,
+      "occurrences": 0,
+      "exportRows": 0
+    }
+  ],
+  "readerBaseline": {
+    "publicationInput": false
+  },
+  "verifiedFiles": {
+    "corpus": {
+      "path": "bin/search/data/bellum-latin-froben1524/corpus.json",
+      "bytes": 12600591,
+      "sha256": "cfe40a4dbb07620018b1c991541e9d8a7f584901e8ea65c7bf9c422c92d02d79"
+    },
+    "catalog": {
+      "path": "bin/search/catalog.json",
+      "bytes": 104841,
+      "sha256": "99bff77a2dd050720c37c1b9e3beca8a88d528069304077d51f78545a6e97a53"
+    },
+    "engine": {
+      "path": "bin/search/engine.mjs",
+      "bytes": 28833,
+      "sha256": "902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603"
+    },
+    "collection": {
+      "path": "bin/search/collection.mjs",
+      "bytes": 21914,
+      "sha256": "19adf74e570efdb8bda042f2b5e73d853fc82178c7dfb0c324825cb84022d008"
+    },
+    "concordance": {
+      "path": "bin/search/concordance.mjs",
+      "bytes": 36241,
+      "sha256": "8f44d68dd609ad1c732e3b7d83757e39636b254f53e5a8ebb65f313dafd0c665"
+    },
+    "uiUtils": {
+      "path": "bin/search/ui-utils.mjs",
+      "bytes": 18700,
+      "sha256": "d580d046c41f1c5e13d8956209592ea62eccf0ba975790bf43d4d775edd4f221"
+    },
+    "extractor": {
+      "path": "bin/search/extract-froben-bellum.py",
+      "bytes": 11209,
+      "sha256": "202ef041ef52b0f79b6bf4c84ea0e074160546c61006abd454b850fd5b745924"
+    },
+    "manifest": {
+      "path": "bin/search/config/bellum-latin-froben1524.json",
+      "bytes": 2309,
+      "sha256": "22513ef99313f14b6dc52146e55511b73c0970f58eeabba5b88b00c14958bfdf"
+    },
+    "verifier": {
+      "path": "bin/search/tests/froben-bellum-corpus-qa.mjs",
+      "bytes": 13279,
+      "sha256": "b770a3aa06312da54f722d6488d836b33ba503dcd5fd5fa221a931ec67b82b01"
+    },
+    "sourceGate": {
+      "path": "bin/search/froben-bellum-publication.mjs",
+      "bytes": 7936,
+      "sha256": "5f6d08ecd99ed0c33122108f0c772936a310841abd4c294a1cba3da03da29654"
+    },
+    "originalReader": {
+      "path": "assets/js/renderTei.js",
+      "bytes": 209457,
+      "sha256": "f724833b1b6521547e2ae740c30555a4b9ade1e00810ca92a00ca02b58b2fbde"
+    },
+    "books": [
+      {
+        "book": 1,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-01.bundle.json",
+          "bytes": 6800833,
+          "sha256": "8430e4db6ddfcdcc34a2fd6b9459bbef734336c704460f7b873682198940efad"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-01.corpus.json",
+          "bytes": 2641006,
+          "sha256": "970a8f23a5d49e4e8d4a406c1a86a31f83e99cc62245b70b89f3ab0a03ddfb0a"
+        },
+        "source": {
+          "path": "assets/data/bellum-froben1524/reader.json",
+          "bytes": 2564900,
+          "sha256": "7817b7bc22def4486431a29aecef7565f0d3be87e941ca5dae29726737500e5e"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-01.extraction-report.json",
+          "bytes": 567774,
+          "sha256": "4a9e992151180ac495558fe89ab21187bfeab0e36e9119c576043818b2ba800b"
+        }
+      },
+      {
+        "book": 2,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-02.bundle.json",
+          "bytes": 5618124,
+          "sha256": "1e2a8c368bfd3fa966471b30ffa6148c4d18ce6191d4592603e8ec5041c85212"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-02.corpus.json",
+          "bytes": 2269506,
+          "sha256": "0a13851e8e9423327ba988852bb67dbd471dc7a3764790dd5eae44ff9b19aefb"
+        },
+        "source": {
+          "path": "assets/data/bellum-froben1524/reader.json",
+          "bytes": 2564900,
+          "sha256": "7817b7bc22def4486431a29aecef7565f0d3be87e941ca5dae29726737500e5e"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-02.extraction-report.json",
+          "bytes": 458768,
+          "sha256": "a41b99b805a08421484837ec33a285a65dcffefb75b19ff2c387197cc0f0a29f"
+        }
+      },
+      {
+        "book": 3,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-03.bundle.json",
+          "bytes": 3624744,
+          "sha256": "469622270057eb055b915415c4aa9510add639e91948193fe0da1a286b8128f7"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-03.corpus.json",
+          "bytes": 1546254,
+          "sha256": "fde53f56003226cb681278c943d9b38443701c1ec9f01292efa7cd88aaa0e43c"
+        },
+        "source": {
+          "path": "assets/data/bellum-froben1524/reader.json",
+          "bytes": 2564900,
+          "sha256": "7817b7bc22def4486431a29aecef7565f0d3be87e941ca5dae29726737500e5e"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-03.extraction-report.json",
+          "bytes": 269218,
+          "sha256": "9ccf0c929f5526fe0cc7994870ba6927830cd7c5f9881488722fa83284dd80a2"
+        }
+      },
+      {
+        "book": 4,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-04.bundle.json",
+          "bytes": 4399996,
+          "sha256": "e98f304b9eb4f5cb9f998264579c12b9509f87d423967ad07cf033b3da9e5425"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-04.corpus.json",
+          "bytes": 1889019,
+          "sha256": "1a17bddb1a4ac3c4ed37fce29a2525c28cef7dc2e11d34065b0d4699c93be69f"
+        },
+        "source": {
+          "path": "assets/data/bellum-froben1524/reader.json",
+          "bytes": 2564900,
+          "sha256": "7817b7bc22def4486431a29aecef7565f0d3be87e941ca5dae29726737500e5e"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-04.extraction-report.json",
+          "bytes": 329598,
+          "sha256": "15d792652bdea2f1505700d6bed46f93c5712780f695ea91b676dbae9d6b9a42"
+        }
+      },
+      {
+        "book": 5,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-05.bundle.json",
+          "bytes": 4049536,
+          "sha256": "d0b3b7405d0363c9c49297232893041fb28c8efc2e3bfe9383e6400f585fcc3a"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-05.corpus.json",
+          "bytes": 1711048,
+          "sha256": "b1fef6522a1fb7dadb0527dc2274f0ad3caa014e31a5bf4eb9ad598011bfade8"
+        },
+        "source": {
+          "path": "assets/data/bellum-froben1524/reader.json",
+          "bytes": 2564900,
+          "sha256": "7817b7bc22def4486431a29aecef7565f0d3be87e941ca5dae29726737500e5e"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-05.extraction-report.json",
+          "bytes": 302391,
+          "sha256": "bcafb3e4cb79726ee87d38eaf38e23d14e3919605c8685e9d9e29a650763c68e"
+        }
+      },
+      {
+        "book": 6,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-06.bundle.json",
+          "bytes": 2996804,
+          "sha256": "89155822c67b62d2aeb6b45015a4f9d5695ebbec7bacc944c07f7c97f57186b0"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-06.corpus.json",
+          "bytes": 1262259,
+          "sha256": "30cda30a5b5c75b7a5cea12ebb5b28f653dd350f3c93516c0af6bb13a2d7b38c"
+        },
+        "source": {
+          "path": "assets/data/bellum-froben1524/reader.json",
+          "bytes": 2564900,
+          "sha256": "7817b7bc22def4486431a29aecef7565f0d3be87e941ca5dae29726737500e5e"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-06.extraction-report.json",
+          "bytes": 226012,
+          "sha256": "da79aa488fdb29deea8327a29029999d789b12552731c03b1d3ca501fe860cef"
+        }
+      },
+      {
+        "book": 7,
+        "bundle": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-07.bundle.json",
+          "bytes": 3004806,
+          "sha256": "707a7ff458e0f244417f92e028b4a05f26d16d039004139e88b7674530d8fef1"
+        },
+        "corpus": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-07.corpus.json",
+          "bytes": 1281511,
+          "sha256": "ceeb54d9d803c308bdac161139ac92c68387267c05eeb342926d075154354e6d"
+        },
+        "source": {
+          "path": "assets/data/bellum-froben1524/reader.json",
+          "bytes": 2564900,
+          "sha256": "7817b7bc22def4486431a29aecef7565f0d3be87e941ca5dae29726737500e5e"
+        },
+        "extractionReport": {
+          "path": "bin/search/data/bellum-latin-froben1524/book-07.extraction-report.json",
+          "bytes": 218512,
+          "sha256": "bede1dd672c1dc134e0805cf4df91426f3891713cae47f9bda4ec4af40d3810d"
+        }
+      }
+    ]
+  },
+  "method": "Independent accepted-span/source geometry control plus Unicode character scanner, independent literal/folded postings and Boolean/phrase/wildcard oracle; all vocabulary, Niese seams, physical page transitions, original offsets, reader routes, exports and mixed-witness isolation.",
+  "limitations": [
+    "Engineering validation of the already accepted transcription and correspondence; no new editorial or alignment decisions. Actual browser and native downloads are verified separately."
+  ]
+}

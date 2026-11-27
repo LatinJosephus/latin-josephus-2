@@ -1,6 +1,6 @@
-import {createCollection} from './collection.aa9d2810369a21039b5939628a4f7827d1469517a97b7c5cad50f824aa99c52a.mjs';
-import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521.mjs';
-import {buildConcordance,exportConcordance} from './concordance.d8ee4506d8cc11266cb42eb16f6901ef6df29c0fd48dd980986fa00359e8d34c.mjs';
+import {createCollection} from './collection.97109e20ef3ed950293298d2f7670df91c96093779fdd8b9a481e712744ae274.mjs';
+import {buildResultCards,citationFor,bookCitation,romanBook,readerURL,locationState,searchURL,mergedRanges,excerptWindows,citationScheme,citationUnitLabels,excerptCitation,defaultCollection,annotatedTextSegments,passageDivisionLabel,emptySourceNote,textLanguage,spellingEquivalence} from './ui-utils.d580d046c41f1c5e13d8956209592ea62eccf0ba975790bf43d4d775edd4f221.mjs';
+import {buildConcordance,exportConcordance} from './concordance.d0edf0b0abbec7a221bbb90c947ee4e246ae973b4b857d6c6991a7e132fb25c0.mjs';
 import {createEngine} from './engine.902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603.mjs';
 
 const root=document.getElementById('lj-search');
@@ -24,6 +24,7 @@ function selectorEdition(source) {
   if (source.edition === 'Whiston') return 'Whiston (1737)';
   return ({
     'antiquities-latin-froben1524': 'Froben (1524)',
+    'bellum-latin-froben1524': 'Froben (1524)',
     'deh-french-millet1556': 'Millet (1556)',
     'deh-italian-lauro1544': 'Lauro (1544)',
   })[source.id] || source.edition;
@@ -187,12 +188,19 @@ function makeExcerpt(record,rawRanges,full=false,label=false){
   }
   return p;
 }
+function frobenLocation(records){
+  const editions=records.filter(record=>record.collectionId==='bellum-latin-froben1524');
+  if(!editions.length)return '';
+  const printed=[...new Set(editions.flatMap(record=>record.frobenSource.printedBooks.map(book=>book.label)))];
+  const images=[...new Set(editions.flatMap(record=>record.sourcePieces.map(piece=>piece.pageLabel)))];
+  return ` · ${printed.join('; ')} · ${images.length>2?`${images[0]}–${images.at(-1)}`:images.join('; ')}`;
+}
 function makeCard(card){
   const article=node('article',undefined,'result-card');
   const header=node('div',undefined,'result-header');
   const first=card.records[0];
   const h=node('h3',undefined,'result-title');h.append(link(citationFor(card.records),readerURL(first,readerBase)));header.append(h);
-  header.append(node('span',`${first.language} · ${first.edition} · ${passageDivisionLabel(card.records)}`,'result-meta'));article.append(header);
+  header.append(node('span',`${first.language} · ${first.edition} · ${passageDivisionLabel(card.records)}${frobenLocation(card.records)}`,'result-meta'));article.append(header);
   for(const r of card.records)article.append(makeExcerpt(r,card.ranges[r.id],false,card.records.length>1));
   appendGapNote(article,card.records);
   if(card.records.some(r=>excerptWindows(r.text,card.ranges[r.id]||[]).some(w=>w.start>0||w.end<r.text.length))){
@@ -210,7 +218,7 @@ function appendGapNote(parent,records){
 function concordanceHeader(row){
   const header=node('div',undefined,'result-header');
   const h=node('h3',undefined,'result-title');h.append(link(row.citation,row.readerURL));header.append(h);
-  header.append(node('span',`${row.language} · ${row.edition}`,'result-meta'));
+  header.append(node('span',`${row.language} · ${row.edition}${frobenLocation(row.records)}`,'result-meta'));
   return header;
 }
 function makeConcordanceRow(row){
@@ -277,6 +285,7 @@ function summarize(result,model){
 function resultContext(result,model){
   const parts=[];
   const collections=catalog.collections.filter(collection=>result.selectedCollections.includes(collection.id)),labels=citationUnitLabels(collections);
+  if(collections.some(collection=>collection.id==='bellum-latin-froben1524'))parts.push('Froben 1524 Bellum: the Prologue and all seven books use the accepted reader transcription and Niese correspondence. Search book numbers follow Cardwell/Niese; Froben’s printed books and divisions are identified separately. Explicit word continuations are rejoined, and Latin spelling options apply. Links open the Froben witness.');
   if(collections.some(collection=>collection.id==='deh-italian-lauro1544'))parts.push('Lauro 1544 Italian: accepted corrected-199 diplomatic display and provisional correspondence. Each physical Italian passage is indexed once in source order. Long ſ matches s; ß, accents and historical spelling remain literal. Explicit ¬ word divisions join for matching. Accepted bracketed supplied letters join their word for matching; brackets remain visible and identify editorial supply, not certified print. Italian folios and DEH correspondences are recorded separately. Reader links open the Italian witness.');
   if(collections.some(collection=>collection.id==='deh-french-millet1556'))parts.push('Millet 1556 French: semi-final r1 transcription and provisional accepted correspondence. Each physical French passage is indexed once in source order. References distinguish French folios from DEH correspondences. Long ſ matches s; explicit ¬ continuations join for matching. Apostrophes and hyphens separate words; accents remain significant. French spelling is unaffected by the Latin equivalence setting. Reader links open the French source leaf.');
   if(view==='concordance'){
@@ -333,7 +342,7 @@ async function fetchSearchBundle(url, options) {
 async function ensureCollection(){
   if(collection)return collection;
   if(!catalogPromise)catalogPromise=(async()=>{
-    const response=await fetch(new URL('./catalog.3d07ef53e86f2fcc9f897a05d52db31b435d817ccb284544501d091c5d0290e3.json',import.meta.url),{cache:'no-cache'});
+    const response=await fetch(new URL('./catalog.a4dead9b4db5286f75f707e1970be09345a2b4c5b0a2ae2daa8916cd427e7607.json',import.meta.url),{cache:'no-cache'});
     if(!response.ok)throw new Error(`The text catalogue could not be loaded (HTTP ${response.status}). Please try Search again.`);
     const loaded=await response.json();
     if(!globalThis.lunr)throw new Error('The search library did not load. Please reload this page.');

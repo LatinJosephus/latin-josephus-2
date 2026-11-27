@@ -219,6 +219,11 @@ export function createCollection(catalog, lunr, options = {}) {
           fail("the chapter/paragraph citations do not agree with their source records.");
         }
         citations.add(record.citationLabel);
+      } else if (collection.id === 'bellum-latin-froben1524') {
+        if(record.citationScheme!=='niese'||record.work!=='bellum'||record.language!=='Latin'||record.edition!=='Froben 1524'
+          ||record.sourceId!==`niese-bellum${record.book}-${record.section}`||!Array.isArray(record.sourcePieces)||!record.sourcePieces.length
+          ||record.frobenSource?.nieseId!==record.sourceId||record.readerLink?.params?.froben!=='1'
+          ||record.readerLink.params.book!==record.book||record.readerLink.params.niese!==record.section)fail('the Froben Bellum witness contract is incomplete.');
       } else if (collection.id === 'antiquities-latin-froben1524') {
         if (collection.citationScheme !== 'source-span' || record.citationScheme !== 'source-span'
           || record.work !== 'antiquities' || record.language !== 'Latin' || record.edition !== 'Froben 1524'

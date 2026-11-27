@@ -16,6 +16,25 @@ page break counted on the page where they begin. Printed headings and scan
 apparatus are excluded. Whole-book phrases can cross page boundaries and stop
 at the end of the Proem.
 
+**Froben (1524), Latin Bellum:** all seven Cardwell/Niese reader books and the
+embedded Prologue are indexed from the unchanged released
+`assets/data/bellum-froben1524/reader.json`: 4,001 accepted Niese spans and
+111,984 running-word tokens. Printed Froben books and divisions are separate
+provenance; printed Book VII begins in reader Book VI. Results and unhighlighted
+book matches explicitly open the Froben pane at the correct reader scope.
+`extract-froben-bellum.py` partitions paragraph text once, excludes printed
+headings/marginalia, and retains original line coordinates. Explicit continuation
+clusters join in the search projection; original single/doubled markers remain
+in provenance. The two accepted breaks before ampersands retain the punctuation
+and do not manufacture a word. Existing Latin case/NFC and optional u/v, i/j
+matching apply. No reader, transcription or accepted boundary is revised.
+`froben-bellum-publication.mjs` independently checks every source interval and
+source-to-search coordinate. The corpus verifier separately scans every token
+and uses independent postings and Boolean/phrase/wildcard controls.
+CSV adds `froben_source_references_json` and the accepted `source_version`;
+source pieces in `source_segments_json` retain original UTF-16 line offsets,
+while accepted Niese spans retain their original code-point coordinates.
+
 **Millet 1556 French De excidio, all five books and translated Prologue:** 560
 physical French passages, 161,125 word tokens, with metadata linking to all
 558 accepted canonical DEH targets. The semi-final r1 transcription and its
@@ -30,9 +49,9 @@ physical passages. Whole-book exact phrases follow French order across ordinary
 line/page/citation seams, stopping at the Prologue's end and between books.
 Printed paratext and marginalia remain outside this main-text layer.
 
-The combined catalogue has **127 book editions, 38,725 physical records and
-2,529,030 word tokens**, including **605 book-specific page records and
-255,374 word tokens** for Froben. The Italian Lauro collection adds five book
+The combined catalogue has **134 book editions, 42,726 physical records and
+2,641,014 word tokens**, including **605 book-specific page records and
+255,374 word tokens** for Froben's Antiquities. The Italian Lauro collection adds five book
 editions, 558 physical records and 105,756 word tokens.
 
 **Lodge (1602)** covers the English Antiquities (including the Proem),

@@ -287,6 +287,16 @@
       ],
       "verifier": "tests/lodge-corpus-qa.mjs",
       "qaReport": "data/contra-apionem-english-lodge1602/qa-report.json"
+    },
+    "bellum-latin-froben1524": {
+      "extractor": "extract-froben-bellum.py",
+      "outputDirectory": "data/bellum-latin-froben1524",
+      "sources": [
+        "assets/data/bellum-froben1524/reader.json"
+      ],
+      "sharedSource": "assets/data/bellum-froben1524/reader.json",
+      "verifier": "tests/froben-bellum-corpus-qa.mjs",
+      "qaReport": "data/bellum-latin-froben1524/qa-report.json"
     }
   }
 }

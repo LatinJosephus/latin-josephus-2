@@ -96,6 +96,14 @@ export function citationFor(records) {
 export function readerURL(record,baseURL,{section=true}={}) {
   const readerPath=record.readerPath||({bellum:'bellum-judaicum/',antiquities:'antiquities/',deh:'deh/','contra-apionem':'contra-apionem/'}[record.work])||'bellum-judaicum/';
   const url=new URL(readerPath,baseURL);
+  if(record.collectionId==='bellum-latin-froben1524'){
+    if(record.work!=='bellum'||record.language!=='Latin'||record.edition!=='Froben 1524'||citationScheme(record)!=='niese'
+      ||!Number.isInteger(record.book)||record.book<1||record.book>7||!Number.isInteger(record.section)||record.section<1
+      ||record.sourceId!==`niese-bellum${record.book}-${record.section}`||record.readerLink?.params?.froben!=='1'
+      ||record.readerLink.params.book!==record.book||record.readerLink.params.niese!==record.section)throw new TypeError('Invalid Froben Bellum witness destination.');
+    url.searchParams.set('book',record.book);if(section)url.searchParams.set('niese',record.section);
+    url.searchParams.set('froben','1');return url.href;
+  }
   if(citationScheme(record)==='source-span'&&record.collectionId==='antiquities-latin-froben1524'){
     if(record.work!=='antiquities'||record.language!=='Latin'||record.edition!=='Froben 1524'
       ||(section&&(!Number.isInteger(record.sourceImage)||record.sourceImage<1))){

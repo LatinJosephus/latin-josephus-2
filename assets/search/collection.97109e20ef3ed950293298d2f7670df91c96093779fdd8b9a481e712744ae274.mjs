@@ -4,7 +4,7 @@
  * cache key includes its collection ID. Queries return no partial results.
  */
 import { createEngine, parseQuery, SCHEMA_VERSION } from "./engine.902b3125565860767e1481f808c6db95dc71122a615f7d6ac5050bdc4d187603.mjs";
-import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521.mjs";
+import { bookCitation, citationFor, editorialMarksFor, romanBook } from "./ui-utils.d580d046c41f1c5e13d8956209592ea62eccf0ba975790bf43d4d775edd4f221.mjs";
 
 export const CATALOG_SCHEMA_VERSION = 2;
 export const qualifiedBookId = (collectionId, number) => `${collectionId}:${number}`;
@@ -219,6 +219,11 @@ export function createCollection(catalog, lunr, options = {}) {
           fail("the chapter/paragraph citations do not agree with their source records.");
         }
         citations.add(record.citationLabel);
+      } else if (collection.id === 'bellum-latin-froben1524') {
+        if(record.citationScheme!=='niese'||record.work!=='bellum'||record.language!=='Latin'||record.edition!=='Froben 1524'
+          ||record.sourceId!==`niese-bellum${record.book}-${record.section}`||!Array.isArray(record.sourcePieces)||!record.sourcePieces.length
+          ||record.frobenSource?.nieseId!==record.sourceId||record.readerLink?.params?.froben!=='1'
+          ||record.readerLink.params.book!==record.book||record.readerLink.params.niese!==record.section)fail('the Froben Bellum witness contract is incomplete.');
       } else if (collection.id === 'antiquities-latin-froben1524') {
         if (collection.citationScheme !== 'source-span' || record.citationScheme !== 'source-span'
           || record.work !== 'antiquities' || record.language !== 'Latin' || record.edition !== 'Froben 1524'

@@ -15,6 +15,7 @@ import {validateWhistonContraApionemSourceProjection} from './whiston-contra-api
 import {validateDehEnglishSourceProjection} from './deh-english-publication.mjs';
 import {validateMilletSourceProjection} from './millet-publication.mjs';
 import {validateLauroSourceProjection} from './lauro-publication.mjs';
+import {validateFrobenBellumSourceProjection,FROBEN_BELLUM_SOURCE} from './froben-bellum-publication.mjs';
 
 export const SOURCE_DIRECTORY = 'bin/search';
 export const ASSET_DIRECTORY = 'assets/search';
@@ -797,8 +798,10 @@ export function validateSearchSources(root, {qa = true} = {}) {
     equal(report.corpus.sha256, collection.corpusSHA256, 'Extraction report describes a different corpus');
     equal(report.counts.books, manifest.books.length, 'Extraction book count differs from collection');
     const frobenPages = manifest.id === 'antiquities-latin-froben1524';
+    const frobenBellum = manifest.id === 'bellum-latin-froben1524', sharedSources = new Map();
+    if (frobenBellum) equal(adapter.sharedSource,FROBEN_BELLUM_SOURCE,'Froben Bellum must bind its one released shared reader');
     const lodge = manifest.edition === 'Lodge (1602)';
-    if (lodge) equal(report.coverage.sectionsExactlyRestored, combined.length, 'Incomplete Lodge source projection');
+    if (lodge || frobenBellum) equal(report.coverage.sectionsExactlyRestored, combined.length, 'Incomplete section source projection');
     else if (frobenPages) equal(report.coverage.pagesExactlyRestored, combined.length, 'Incomplete Froben page restoration');
     else equal(report.coverage.paragraphsExactlyRestored, report.counts.narrativeParagraphs ?? report.counts.numberedParagraphs, 'Incomplete paragraph restoration');
     for (const key of ['wordSequencePreserved', 'nonWhitespaceContentPreserved', 'globalIdsUnique', 'globalOrderIsConsecutive'])
@@ -824,7 +827,8 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(collection[key], manifest[key], `Catalog citation metadata differs: ${manifest.id}.${key}`);
     equal(collection.books, manifest.books.map(book => `${manifest.id}:${book.number}`), 'Collection book identities differ');
     equal(report.books.map(book => book.book), manifest.books.map(book => book.number), 'Extraction book order differs');
-    equal(sorted(report.books.flatMap(book => extractedSources(book).map(source => source.path))), sorted(adapter.sources),
+    const reportedSources = report.books.flatMap(book => extractedSources(book).map(source => source.path));
+    equal(sorted(frobenBellum ? [...new Set(reportedSources)] : reportedSources), sorted(adapter.sources),
       `Extracted XML differs from the approved source list: ${manifest.id}`);
     const collectionTotals = {books: 0, sections: 0, tokens: 0, bytes: 0};
     let order = 0;
@@ -853,11 +857,15 @@ export function validateSearchSources(root, {qa = true} = {}) {
       equal(bookReport.source, extracted.source, 'Combined and per-book source fingerprints differ');
       equal(bookReport.additionalSources || [], extracted.additionalSources || [], 'Combined and per-book additional source fingerprints differ');
       equal((extracted.additionalSources || []).map(source => source.path), spec.additionalSources || [], 'Additional XML differs from the collection manifest');
-      for (const source of extractedSources(extracted)) sources.push(checkIndexedXML(root, source, `${id} XML`));
-      if (lodge) equal(bookReport.coverage.sectionsExactlyRestored, corpus.length, 'Book has incomplete Lodge source projection');
+      for (const source of extractedSources(extracted)) {
+        const checked = checkIndexedXML(root,source,`${id} XML`);
+        if (frobenBellum && sharedSources.has(source.path)) equal(checked,sharedSources.get(source.path),'Shared Froben reader fingerprint differs');
+        else { sources.push(checked); sharedSources.set(source.path,checked); }
+      }
+      if (lodge || frobenBellum) equal(bookReport.coverage.sectionsExactlyRestored, corpus.length, 'Book has incomplete section source projection');
       else if (frobenPages) equal(bookReport.coverage.pagesExactlyRestored, corpus.length, 'Book has incomplete Froben page restoration');
       else equal(bookReport.coverage.paragraphsExactlyRestored, bookReport.counts.narrativeParagraphs ?? bookReport.counts.numberedParagraphs, 'Book has incomplete paragraph restoration');
-      if (!lodge && !frobenPages && manifest.id !== 'antiquities-latin-bamberg78') for (const [a, b] of [['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'],
+      if (!lodge && !frobenPages && !frobenBellum && manifest.id !== 'antiquities-latin-bamberg78') for (const [a, b] of [['rawParagraphSequenceSha256', 'restoredParagraphSequenceSha256'],
         ['sourceWordSequenceSha256', 'indexedWordSequenceSha256'],
         ['sourceNonWhitespaceContentSha256', 'indexedNonWhitespaceContentSha256']])
         equal(bookReport.coverage[a], bookReport.coverage[b], `Source coverage differs: ${id}.${a}`);
@@ -874,6 +882,7 @@ export function validateSearchSources(root, {qa = true} = {}) {
       if (manifest.id === 'deh-english-pollard') validateDehEnglishSourceProjection(corpus, bookReport, manifest, spec, root);
       if (manifest.id === 'deh-french-millet1556') validateMilletSourceProjection(corpus, bookReport, manifest, spec, root);
       if (manifest.id === 'deh-italian-lauro1544') validateLauroSourceProjection(corpus, bookReport, manifest, spec, root);
+      if (frobenBellum) validateFrobenBellumSourceProjection(corpus,bookReport,manifest,spec,root);
       const bundleArtifact = artifact(book.path, book.sha256, 'bundle');
       equal(bundleArtifact.item.bytes, book.bytes, `Bundle byte count differs: ${id}`);
       const bundle = bundleArtifact.value();
@@ -941,10 +950,11 @@ export function validateQaReport(root, {catalog, collection, configured, report}
   const expected = {corpus: collection.corpusPath, catalog: 'catalog.json', engine: catalog.source.enginePath,
     collection: 'collection.mjs', verifier: adapter.verifier};
   if (manifest.edition === 'Lodge (1602)') expected.witness = 'tests/lodge-source-witness.py';
-  if (manifest.edition === 'Lodge (1602)' || manifest.id === 'antiquities-latin-froben1524') Object.assign(expected, {
+  if (manifest.edition === 'Lodge (1602)' || ['antiquities-latin-froben1524','bellum-latin-froben1524'].includes(manifest.id)) Object.assign(expected, {
     concordance: 'concordance.mjs', uiUtils: 'ui-utils.mjs',
     extractor: adapter.extractor, manifest: configured.manifestPath,
   });
+  if (manifest.id === 'bellum-latin-froben1524') expected.sourceGate = 'froben-bellum-publication.mjs';
   if (manifest.id === 'contra-apionem-latin-boysen') expected.witness = 'tests/ca-source-witness.py';
   if (manifest.id === 'antiquities-latin-bamberg78') expected.witness = 'tests/antiquities-source-witness.py';
   if (manifest.id === 'antiquities-english-whiston') Object.assign(expected, {

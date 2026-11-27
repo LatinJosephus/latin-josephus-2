@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "generatedAt": "2026-11-12T17:41:29.450Z",
+  "generatedAt": "2026-11-27T21:34:40.161Z",
   "independentVerifier": "bin/search/tests/whiston-contra-apionem-corpus-qa.mjs",
   "readerBaseline": {
-    "expectedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
-    "observedSha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
+    "expectedSha256": "f724833b1b6521547e2ae740c30555a4b9ade1e00810ca92a00ca02b58b2fbde",
+    "observedSha256": "f724833b1b6521547e2ae740c30555a4b9ade1e00810ca92a00ca02b58b2fbde",
     "provenance": "explicit-argument",
     "preservationDuringRunRequired": true,
     "publicationInput": false
@@ -129,8 +129,8 @@
     },
     "catalog": {
       "path": "bin/search/catalog.json",
-      "sha256": "1206318bd0733b3f8144d30d357674b77503676db1005dac1a9c30fecb0ec068",
-      "bytes": 99759
+      "sha256": "99bff77a2dd050720c37c1b9e3beca8a88d528069304077d51f78545a6e97a53",
+      "bytes": 104841
     },
     "engine": {
       "path": "bin/search/engine.mjs",
@@ -139,18 +139,18 @@
     },
     "collection": {
       "path": "bin/search/collection.mjs",
-      "sha256": "f927579378c89bf15479d935731c9084c3a10ae71f2b74a8a9c92ee22345b3b5",
-      "bytes": 21317
+      "sha256": "19adf74e570efdb8bda042f2b5e73d853fc82178c7dfb0c324825cb84022d008",
+      "bytes": 21914
     },
     "concordance": {
       "path": "bin/search/concordance.mjs",
-      "sha256": "063cd27915a04eae1dc4c835c59b91a059f88b18122eac58e5b3b5144776c442",
-      "bytes": 35339
+      "sha256": "8f44d68dd609ad1c732e3b7d83757e39636b254f53e5a8ebb65f313dafd0c665",
+      "bytes": 36241
     },
     "uiUtils": {
       "path": "bin/search/ui-utils.mjs",
-      "sha256": "5e56b7b348531e7dd902b37fc2cdc82525f223795c0f0bbdabd15100d3c2d521",
-      "bytes": 17956
+      "sha256": "d580d046c41f1c5e13d8956209592ea62eccf0ba975790bf43d4d775edd4f221",
+      "bytes": 18700
     },
     "verifier": {
       "path": "bin/search/tests/whiston-contra-apionem-corpus-qa.mjs",
@@ -184,8 +184,8 @@
     },
     "originalReader": {
       "path": "assets/js/renderTei.js",
-      "sha256": "eb135e0c6d35c528c86ef10c69e59ed8149eaa99d87322d6b06fe435530ac7f0",
-      "bytes": 200384
+      "sha256": "f724833b1b6521547e2ae740c30555a4b9ade1e00810ca92a00ca02b58b2fbde",
+      "bytes": 209457
     },
     "testSources": [],
     "books": [
@@ -648,7 +648,7 @@
       "purpose": "Complete Contra Apionem count"
     }
   ],
-  "durationSeconds": 7.6,
+  "durationSeconds": 8.8,
   "limitations": [
     "This validates the accepted Whiston Contra Apionem XML, not a new translation or printed-edition collation.",
     "Browser interaction is verified separately."

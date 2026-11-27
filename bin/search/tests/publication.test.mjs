@@ -32,7 +32,7 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an unchanged source and asset set passes', () => {
     const result = verifySearchAssets(fixture);
     assert.equal(result.status, 'PASS');
-    assert.deepEqual([result.books, result.sections, result.tokens], [127, 38725, 2529030]);
+    assert.deepEqual([result.books, result.sections, result.tokens], [134, 42726, 2641014]);
     const bellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-cardwell');
     const deh = baseline.catalog.collections.find(collection => collection.id === 'deh-latin-ussani');
     assert.deepEqual([bellum.totals.books, bellum.totals.sections, bellum.totals.tokens], [7, 4001, 114679]);
@@ -43,6 +43,8 @@ test('search publication preserves current inputs and refuses stale or incomplet
     assert.deepEqual([antiquities.totals.books, antiquities.totals.sections, antiquities.totals.tokens], [20, 7283, 265023]);
     const froben = baseline.catalog.collections.find(collection => collection.id === 'antiquities-latin-froben1524');
     assert.deepEqual([froben.totals.books, froben.totals.sections, froben.totals.tokens], [20, 605, 255374]);
+    const frobenBellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-latin-froben1524');
+    assert.deepEqual([frobenBellum.totals.books, frobenBellum.totals.sections, frobenBellum.totals.tokens], [7, 4001, 111984]);
     const whiston = baseline.catalog.collections.find(collection => collection.id === 'antiquities-english-whiston');
     assert.deepEqual([whiston.totals.books, whiston.totals.sections, whiston.totals.tokens], [20, 7376, 470938]);
     const whistonBellum = baseline.catalog.collections.find(collection => collection.id === 'bellum-english-whiston');
@@ -55,7 +57,8 @@ test('search publication preserves current inputs and refuses stale or incomplet
     assert.deepEqual([millet.totals.books, millet.totals.sections, millet.totals.tokens], [5, 560, 161125]);
     const lauro = baseline.catalog.collections.find(collection => collection.id === 'deh-italian-lauro1544');
       assert.deepEqual([lauro.totals.books, lauro.totals.sections, lauro.totals.tokens], [5, 558, 105756]);
-      assert.equal(result.sourceXML.length, 141);
+      assert.equal(result.sourceXML.length, 142);
+    assert.equal(result.sourceXML.filter(source => source.path === 'assets/data/bellum-froben1524/reader.json').length, 1);
     assert.equal(result.sourceXML.filter(source => source.path.includes('/English/')).length, 65);
     assert.equal(result.assets, baseline.artifacts.length + 1);
     assert.equal(baseline.manifest.browserRelease.launcher, 'launch-v1.mjs');
@@ -65,6 +68,11 @@ test('search publication preserves current inputs and refuses stale or incomplet
   await t.test('an XML change is rejected before old text can be published', () => {
     changed('assets/xml/bellum/Latin/book-01.xml', bytes => Buffer.concat([bytes, Buffer.from('\n<!-- source changed -->\n')]),
       () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed.*XML/u));
+  });
+
+  await t.test('a released Froben Bellum reader change invalidates all seven shared-source books', () => {
+    changed('assets/data/bellum-froben1524/reader.json', bytes => Buffer.concat([bytes, Buffer.from('\n')]),
+      () => assert.throws(() => verifySearchAssets(fixture), /Stale or changed|released Froben Bellum/u));
   });
 
   await t.test('a De excidio source change is rejected before its old index can be published', () => {
