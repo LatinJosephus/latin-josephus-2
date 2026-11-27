@@ -173,7 +173,8 @@
         section.append(status, frame, details);
         const extension = map.scanExtension === "jpg" ? ".jpg" : ".webp";
         const service = map.iiif?.services?.[part.scan];
-        const scanURL = service ? new URL(service + "/full/" + map.iiif.pageSize + "/0/default.jpg") :
+        const localFallback = service && map.iiif.localFallback;
+        const scanURL = service && !localFallback ? new URL(service + "/full/" + map.iiif.pageSize + "/0/default.jpg") :
           new URL(String(part.scan).padStart(4, "0") + extension, map.images);
         let passageImage = part.image;
         if (service && !passageImage) {
@@ -182,7 +183,7 @@
           passageImage = service + "/pct:" + region + "/" + map.iiif.regionSize + "/0/default.jpg";
         }
         const showScanCrop = () => {
-          frame.style.aspectRatio = cropWidth + "/" + cropHeight;
+          frame.style.aspectRatio = localFallback ? width + "/" + height : cropWidth + "/" + cropHeight;
           image.style.width = 100 * map.width / width + "%";
           image.style.left = -100 * x / width + "%";
           image.style.top = -100 * y / height + "%";
@@ -204,10 +205,17 @@
           });
         };
         let usingPassageImage = Boolean(passageImage);
+        let fallbackTimer;
+        const cancelFallback = () => clearTimeout(fallbackTimer);
+        const fallBackToScan = () => {
+          if (!usingPassageImage || controller.signal.aborted) return;
+          usingPassageImage = false;
+          cancelFallback();
+          showScanCrop();
+        };
         image.addEventListener("error", () => {
           if (usingPassageImage) {
-            usingPassageImage = false;
-            showScanCrop();
+            fallBackToScan();
           } else {
             unavailable();
           }
@@ -217,6 +225,11 @@
           if (part.imageSize) frame.style.aspectRatio = part.imageSize.join("/");
           image.style.left = "0";
           image.style.top = "0";
+          if (localFallback) {
+            fallbackTimer = setTimeout(fallBackToScan, 5000);
+            image.addEventListener("load", cancelFallback, {once: true});
+            controller.signal.addEventListener("abort", cancelFallback, {once: true});
+          }
           image.src = new URL(passageImage, map.images).href;
           details.addEventListener("toggle", () => {
             if (details.open && !fullImage.getAttribute("src")) fullImage.src = scanURL.href;
