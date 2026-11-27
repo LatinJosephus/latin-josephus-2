@@ -10,7 +10,7 @@ layout: default
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tei.css?v={% if page.permalink == '/deh/' %}20261122-ussani-compact{% else %}20261109-bellum-reading-levels{% endif %}">
     {% if page.permalink == '/bellum-judaicum/' %}
-    <link rel="stylesheet" href="{{ '/assets/css/bellum-facsimiles.css' | relative_url }}?v=20261126-passages">
+    <link rel="stylesheet" href="{{ '/assets/css/bellum-facsimiles.css' | relative_url }}?v=20261127-witness-catalogue">
     {% endif %}
     {% if page.permalink == '/antiquities/' or page.permalink == '/bellum-judaicum/' %}
     <link rel="stylesheet" href="{{ '/assets/css/froben.css' | relative_url }}?v=20261126-froben-bellum">
@@ -111,7 +111,8 @@ layout: default
     </div>
     {% if page.permalink == '/bellum-judaicum/' %}
       <aside id="bellum-facsimiles" class="bellum-facsimiles" hidden aria-labelledby="bellum-facsimiles-heading"
-             data-catalogue-url="{{ '/assets/data/bellum-facsimiles.v2.json' | relative_url }}?v=20261126-vienna-lines">
+             data-catalogue-url="{{ '/assets/data/bellum-facsimiles.v2.json' | relative_url }}?v=20261127-witness-catalogue"
+             data-manuscripts-url="{{ '/manuscripts/' | relative_url }}">
         <h2 id="bellum-facsimiles-heading">Manuscript facsimiles</h2>
         <div aria-live="polite" aria-atomic="true">
           <p id="bellum-facsimiles-reference" class="facsimiles-reference" hidden></p>

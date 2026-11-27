@@ -11,6 +11,7 @@
   let renderVersion = 0;
   const lineMaps = new Map();
   const catalogueURL = new URL(panel.dataset.catalogueUrl, window.location.href);
+  const manuscriptsURL = new URL(panel.dataset.manuscriptsUrl, window.location.href);
 
   const compare = (a, b) => a[0] - b[0] || a[1] - b[1];
 
@@ -271,11 +272,18 @@
     const entry = document.createElement("li");
     const label = document.createElement("h3");
     label.className = "facsimile-witness-name";
-    label.textContent = witness.label;
-
-    const shelfmark = document.createElement("p");
-    shelfmark.className = "facsimile-shelfmark";
-    shelfmark.textContent = witness.shelfmark;
+    const record = document.createElement("a");
+    record.href = new URL("#" + witness.id, manuscriptsURL).href;
+    record.textContent = witness.label;
+    record.title = witness.shelfmark;
+    label.append(record);
+    if (witness.levensonMartinFamily) {
+      const family = document.createElement("span");
+      family.className = "facsimile-witness-family";
+      family.textContent = "L–M " + witness.levensonMartinFamily;
+      family.title = "Levenson–Martin (2016), fig. 21.1 · BJ 6.193–213 and names at 6.237–238";
+      label.append(" ", family);
+    }
 
     const links = document.createElement("ul");
     links.className = "facsimile-folios";
@@ -294,7 +302,7 @@
       item.append(link);
       links.append(item);
     }
-    entry.append(label, shelfmark);
+    entry.append(label);
     if (excerpt?.omission) {
       const note = document.createElement("p");
       note.textContent = (excerpt.omission.label || "Passage omitted.") + " " + excerpt.omission.note;

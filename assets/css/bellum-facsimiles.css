@@ -53,14 +53,24 @@
 }
 
 .bellum-facsimiles .facsimile-witness-name {
-  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .1rem .35rem;
+  margin: 0 0 .4rem;
   font-size: 1rem;
   font-weight: 600;
 }
 
-.bellum-facsimiles .facsimile-shelfmark {
-  margin: .15rem 0 .5rem;
-  font-size: .875rem;
+.bellum-facsimiles .facsimile-witness-name a {
+  text-decoration: underline;
+  text-underline-offset: .13em;
+}
+
+.bellum-facsimiles .facsimile-witness-family {
+  font-size: .8em;
+  font-weight: 400;
+  white-space: nowrap;
 }
 
 .bellum-facsimiles .facsimile-folios {
@@ -79,6 +89,7 @@
   white-space: nowrap;
 }
 
+.bellum-facsimiles .facsimile-witness-name a:focus-visible,
 .bellum-facsimiles .facsimile-folios a:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
