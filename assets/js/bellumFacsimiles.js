@@ -280,7 +280,7 @@
     if (witness.levensonMartinFamily) {
       const family = document.createElement("span");
       family.className = "facsimile-witness-family";
-      family.textContent = "L–M " + witness.levensonMartinFamily;
+      family.textContent = "L-M family " + witness.levensonMartinFamily;
       family.title = "Levenson–Martin (2016), fig. 21.1 · BJ 6.193–213 and names at 6.237–238";
       label.append(" ", family);
     }
