@@ -42,7 +42,10 @@
 
   async function loadPassage(witness, position) {
     if (!witness.lineMap) return null;
-    const url = new URL(witness.lineMap, catalogueURL).href;
+    const mapURL = new URL(witness.lineMap, catalogueURL);
+    const version = catalogueURL.searchParams.get("v");
+    if (version && !mapURL.searchParams.has("v")) mapURL.searchParams.set("v", version);
+    const url = mapURL.href;
     if (!lineMaps.has(url)) {
       lineMaps.set(url, fetch(url).then(async response => {
         if (!response.ok) throw new Error("Passage map request failed");
