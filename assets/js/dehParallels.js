@@ -5,6 +5,8 @@ import {
 } from "./dehParallelsCore.js?v=20261109-bellum-i153";
 
 import {ajSources, ajTargets, loadAjLayer, createAjTextLoader, ajSection} from "./dehAntiquitiesCore.js?v=20261014-aj-v1";
+import {dehReadingUrl, dehComparisonUrl, parallelReference} from "./dehParallelLinks.js?v=20261127-reciprocal-parallels";
+const antiquitiesRomanBooks = [...romanBooks,"VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX"];
 const initialize = () => {
   const panel = document.getElementById("deh-parallels");
   if (!panel) return;
@@ -19,6 +21,7 @@ const initialize = () => {
   let concordance, ajPromise;
   const getAj = () => ajPromise ||= loadAjLayer(panel.dataset.ajAlignmentUrl,panel.dataset.ajAlignmentSha,concordance).then(layer => ({layer,load:createAjTextLoader(new URL(panel.dataset.xmlBase,window.location.href),layer)})).catch(e => {ajPromise=null;throw e;});
   const bjMenu = document.getElementById("parallel-bj-source");
+  const returnLink = document.getElementById("parallel-return-josephus");
   const status = document.getElementById("parallel-status");
   const dehText = document.getElementById("parallel-deh-text");
   const bjText = document.getElementById("parallel-bj-text");
@@ -27,21 +30,18 @@ const initialize = () => {
   let navigation, loadText;
   let generation = 0;
 
-  const readingUrl = record => {
-    const url = new URL(window.location.href);
-    ["num", "niese", "parallel", "deh-source", "bj-source", "parallel-work", "aj-source"].forEach(key => url.searchParams.delete(key));
-    url.searchParams.set("book", record.deh.book);
-    url.searchParams.set("chapter", record.deh.chapter);
-    url.searchParams.set("unit", record.deh.unit);
-    url.hash = "";
-    return url;
+  const comparisonUrl = (record, dehSource, source, work = bjTargets(record).length ? "BJ" : "AJ") => {
+    const params = new URLSearchParams(window.location.search);
+    const reference = (params.get("parallel-work") || "BJ") === work ? params.get("parallel-ref") : null;
+    return dehComparisonUrl(window.location.href, record, {dehSource, source, work, reference});
   };
-  const comparisonUrl = (record, dehSource = "pollard", bjSource = "whiston", work = bjTargets(record).length ? "BJ" : "AJ") => {
-    const url = readingUrl(record);
-    url.searchParams.set("parallel", record.id);
-    url.searchParams.set("deh-source", dehSource);
-    if (work === "AJ") {url.searchParams.set("parallel-work","AJ");url.searchParams.set("aj-source",ajSources[bjSource] ? bjSource : "aj_whiston");}
-    else url.searchParams.set("bj-source", sources[bjSource]?.work === "bellum" ? bjSource : "whiston");
+  const josephusReadingUrl = (work, source, book, section) => {
+    const url = new URL(work === "AJ" ? panel.dataset.antiquitiesUrl : panel.dataset.bellumUrl, window.location.href);
+    url.searchParams.set("book", book);
+    url.searchParams.set("niese", section);
+    // The ordinary Bellum reader retains its existing Greek source key.
+    const readerSource = work === "AJ" ? ajSources[source].readerKey : source === "niese" ? "current" : source;
+    url.searchParams.set(allSources[source].language.toLowerCase(), readerSource);
     return url;
   };
   const fillMenu = (menu, options, selected) => {
@@ -59,6 +59,8 @@ const initialize = () => {
   const renderComparison = async record => {
     const currentGeneration = ++generation;
     const dehSource = dehMenu.value, bjSource = bjMenu.value, work = workMenu.value;
+    const shareUrl = comparisonUrl(record, dehSource, bjSource, work);
+    const reference = parallelReference(record, work, shareUrl.searchParams.get("parallel-ref"));
     dehText.replaceChildren();
     bjText.replaceChildren();
     dehText.lang = sources[dehSource].lang;
@@ -67,8 +69,20 @@ const initialize = () => {
     document.getElementById("parallel-deh-title").textContent = `DEH ${record.deh.citation}`;
     document.getElementById("parallel-deh-identity").textContent = sources[dehSource].identity;
     document.getElementById("parallel-bj-identity").textContent = allSources[bjSource].identity;
-    document.getElementById("parallel-close").href = readingUrl(record);
-    document.getElementById("parallel-share").href = comparisonUrl(record, dehSource, bjSource, work);
+    document.getElementById("parallel-close").href = dehReadingUrl(window.location.href, record);
+    document.getElementById("parallel-share").href = shareUrl;
+    if (returnLink) {
+      returnLink.hidden = !reference;
+      if (reference) {
+        const books = work === "AJ" ? antiquitiesRomanBooks : romanBooks;
+        returnLink.href = josephusReadingUrl(work, bjSource, reference.book, reference.section);
+        returnLink.textContent = `Return to ${work === "AJ" ? "Antiquities" : "Bellum"} ${books[reference.book]}.${reference.section}`;
+      }
+    }
+    const markReference = (fragment, book, section) => {
+      if (reference?.book === book && reference.section === section) fragment.classList.add("parallel-reference-section");
+      return fragment;
+    };
     try {
       // Verify the selected canonical target before showing either source.
       const canonical = await loadText("ussani", record.deh.book);
@@ -84,17 +98,20 @@ const initialize = () => {
         const aj = await getAj();
         const entry = aj.layer.records.find(r => r.id === record.id);
         if (!entry) throw new Error("No AJ correspondence recorded for this unit.");
-        const romans = ["","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX"];
         for (const [i,c] of entry.components.entries()) {
           const ref=c.frozen_target, item=document.createElement("li");item.dataset.order=ref.order;item.dataset.book=ref.book;item.dataset.componentId=c.component_id;
-          const heading=document.createElement("h4");heading.textContent=`AJ ${romans[ref.book]}.${ref.section_start}${ref.section_end!==ref.section_start?`–${ref.section_end}`:""}`;item.append(heading);
+          const heading=document.createElement("h4");heading.textContent=`AJ ${antiquitiesRomanBooks[ref.book]}.${ref.section_start}${ref.section_end!==ref.section_start?`–${ref.section_end}`:""}`;item.append(heading);
           if (c.display_note) {const note=document.createElement("p");note.className="parallel-editorial-note";note.textContent=c.display_note;item.append(note);}
           for (const a of c.annotations) {const note=document.createElement("p");note.className="parallel-editorial-note";note.textContent=`${a.raw_token} — ${a.interpretation} (${a.editorial_decision})`;item.append(note);}
           const data=await aj.load(bjSource,ref.book);
-          for (const section of c.sections[ajSources[bjSource].language]) item.append(namespaceIds(ajSection(data,section),`parallel-aj-${i}-${section.number}`));
-          const link=document.createElement("a"),url=new URL(panel.dataset.antiquitiesUrl,window.location.href);
-          url.searchParams.set("book",ref.book);url.searchParams.set("niese",ref.section_start);url.searchParams.set(ajSources[bjSource].language.toLowerCase(),ajSources[bjSource].readerKey);
-          link.href=url;link.textContent=`Open AJ ${romans[ref.book]}.${ref.section_start} in the Antiquities reader`;item.append(link);components.append(item);
+          for (const section of c.sections[ajSources[bjSource].language]) {
+            item.append(markReference(namespaceIds(ajSection(data, section), `parallel-aj-${i}-${section.number}`), ref.book, section.number));
+          }
+          const link = document.createElement("a");
+          link.href = josephusReadingUrl(work, bjSource, ref.book, ref.section_start);
+          link.textContent = `Open AJ ${antiquitiesRomanBooks[ref.book]}.${ref.section_start} in the Antiquities reader`;
+          item.append(link);
+          components.append(item);
         }
       }
       // Filter BJ without sorting, merging or deduplicating authoritative targets.
@@ -115,15 +132,11 @@ const initialize = () => {
           component.appendChild(note);
         }
         for (let section = ref.section_start; section <= ref.section_end; section += 1) {
-          component.appendChild(namespaceIds(bellumSection(indexes.get(data), section), `parallel-bj-${componentIndex}-${section}`));
+          const excerpt = namespaceIds(bellumSection(indexes.get(data), section), `parallel-bj-${componentIndex}-${section}`);
+          component.appendChild(markReference(excerpt, ref.book, section));
         }
         const link = document.createElement("a");
-        const url = new URL(panel.dataset.bellumUrl, window.location.href);
-        url.searchParams.set("book", ref.book);
-        url.searchParams.set("niese", ref.section_start);
-        // The ordinary Bellum reader retains its existing Greek source key.
-        url.searchParams.set(allSources[bjSource].language.toLowerCase(), bjSource === "niese" ? "current" : bjSource);
-        link.href = url;
+        link.href = josephusReadingUrl(work, bjSource, ref.book, ref.section_start);
         link.textContent = `Open BJ ${romanBooks[ref.book]}.${ref.section_start} in the Bellum reader`;
         component.appendChild(link);
         components.appendChild(component);
@@ -212,7 +225,7 @@ const initialize = () => {
       panel.hidden = false;
       status.textContent = `Comparison unavailable: ${error.message}`;
       const url = new URL(window.location.href);
-      ["parallel", "deh-source", "bj-source", "parallel-work", "aj-source"].forEach(key => url.searchParams.delete(key));
+      ["parallel", "deh-source", "bj-source", "parallel-work", "aj-source", "parallel-ref"].forEach(key => url.searchParams.delete(key));
       document.getElementById("parallel-close").href = url;
     }
   });

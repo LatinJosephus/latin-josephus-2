@@ -1440,6 +1440,7 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper.dataset.englishSegmentation = exact ? "exact" : "containing-context";
     wrapper.appendChild(content);
     const label = makeGeneratedNieseLabel(first);
+    label.dataset.dehParallelSections = String(first);
     // Keep the display citation in the opening source paragraph, as in Latin.
     const firstParagraph = wrapper.querySelector("tei-p");
     (firstParagraph || wrapper).prepend(label);
@@ -2785,6 +2786,31 @@ document.addEventListener("DOMContentLoaded", () => {
     return bellumNieseView(language, data, nieseNum);
   };
 
+  const markJosephusParallelStarts = (language, data) => {
+    if (!data) return;
+
+    let entries;
+    if (language === "English") {
+      entries = englishNieseStartEntries(data);
+    } else if (activeWork.slug === "antiquities") {
+      entries = antiquitiesNieseStartEntries(language, data);
+    } else if (language === "Latin") {
+      entries = latinNieseStartEntries(data);
+    } else {
+      const prefix = `greek-${currentIdBase()}-num`;
+      entries = [...data.querySelectorAll(`tei-p[id^="${prefix}"]`)]
+        .map(node => ({node, number: Number(node.id.slice(prefix.length))}));
+    }
+
+    // Carry certified starts into display fragments without adding text or changing boundaries.
+    for (const {number, node} of entries) {
+      if (!Number.isSafeInteger(number) || number < 1 || !node.closest("tei-body")
+        || node.closest("tei-note, tei-app, tei-rdg, [data-original]")) continue;
+      const numbers = node.dataset.dehParallelSections;
+      node.dataset.dehParallelSections = numbers ? `${numbers} ${number}` : String(number);
+    }
+  };
+
   const antiquitiesBookNumberingDisplayCopy = (language, data) => {
     const auditedWhistonBook = String(state.bookNum) === "preface"
       || [1, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].includes(Number(state.bookNum));
@@ -3640,6 +3666,11 @@ document.addEventListener("DOMContentLoaded", () => {
           first: entries[0]?.number, last: entries.at(-1)?.number};
       }
     }
+    if (["bellum", "antiquities"].includes(activeWork.slug) && !isPreface()
+      && !["niese-level", "contents-level"].includes(state.viewingLevel)) {
+      Object.entries(fullData).forEach(([language, data]) => markJosephusParallelStarts(language, data));
+    }
+
     canonicalViewData = invalidNieseRequest ? null : selectCanonicalView(canonicalFullData, idBase);
 
     Object.entries(fullData).forEach(([language, data]) => {
@@ -3960,6 +3991,7 @@ document.addEventListener("DOMContentLoaded", () => {
         detail: {
           book: Number(state.bookNum),
           section,
+          level: state.viewingLevel,
           target,
           available: Boolean(viewData.Latin)
         }
@@ -3967,6 +3999,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (activeWork.slug === "antiquities") {
       const book = isPreface() ? "preface" : String(Number(state.bookNum));
+      const section = state.viewingLevel === "niese-level" && !invalidNieseRequest ? Number(state.nieseNum) : null;
       let target = null;
       switch (state.viewingLevel) {
         case "book-level": target = book; break;
@@ -3976,7 +4009,7 @@ document.addEventListener("DOMContentLoaded", () => {
         case "niese-level": target = `niese-${book}-${state.nieseNum}`; break;
       }
       document.dispatchEvent(new CustomEvent("antiquities-view-rendered", {
-        detail: {book, target, level: state.viewingLevel, available: !invalidNieseRequest}
+        detail: {book, section, target, level: state.viewingLevel, available: !invalidNieseRequest}
       }));
     }
     // Optional scholarly parallels live outside the textual alignment layer.

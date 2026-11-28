@@ -15,8 +15,10 @@ layout: default
     {% if page.permalink == '/antiquities/' or page.permalink == '/bellum-judaicum/' %}
     <link rel="stylesheet" href="{{ '/assets/css/froben.css' | relative_url }}?v=20261126-froben-bellum">
     {% endif %}
+    {% if page.permalink == '/deh/' or page.permalink == '/antiquities/' or page.permalink == '/bellum-judaicum/' %}
+    <link rel="stylesheet" href="{{ '/assets/css/deh-parallels.css' | relative_url }}?v=20261127-inline-deh-parallels">
+    {% endif %}
     {% if page.permalink == '/deh/' %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/deh-parallels.css?v={{ site.time | date: '%s' }}">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/millet.css?v=20261117-modernised">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/lauro.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/deh-commentary.css">
@@ -74,7 +76,10 @@ layout: default
     {% if page.permalink == '/bellum-judaicum/' %}
     <div class="bellum-reader-panes">
     {% endif %}
-    <div id="pane-container">
+    <div id="pane-container"{% if page.permalink == '/antiquities/' or page.permalink == '/bellum-judaicum/' %}
+         data-work="{% if page.permalink == '/antiquities/' %}AJ{% else %}BJ{% endif %}"
+         data-alignment-url="{{ '/assets/data/deh-josephus-concordance.json' | relative_url }}"
+         data-deh-url="{{ '/deh/' | relative_url }}"{% endif %}>
       <div id="latin" class="pane">
         <h3>Latin</h3>
       </div>
