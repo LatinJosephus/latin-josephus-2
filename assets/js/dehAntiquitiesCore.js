@@ -16,14 +16,42 @@ async function checked(url, hash, label) {
 export async function loadAjLayer(url, expectedHash, concordance) {
   const layer = JSON.parse(await checked(url, expectedHash, "AJ display layer"));
   if (layer.schema_version !== 1 || layer.concordance_sha256 !== "c8f59a9bdfd8c49350b4d2656d1c685f4c4a63bd96450ddfd218ac3c07ca743c") throw new Error("Unrecognized AJ display authority.");
-  const expected = concordance.records.filter(r => ajTargets(r).length);
+  const frozenTargets = record => ajTargets(record).filter(ref => !ref.bell);
+  const expected = concordance.records.filter(record => frozenTargets(record).length);
   if (layer.records.length !== expected.length) throw new Error("Incomplete AJ display coverage.");
   layer.records.forEach((r,i) => {
-    const source = expected[i], targets = ajTargets(source);
+    const source = expected[i], targets = frozenTargets(source);
     if (r.id !== source.id || r.deh_xml_id !== source.deh.xml_id || r.components.length !== targets.length
       || r.components.some((c,j) => JSON.stringify(c.frozen_target) !== JSON.stringify(targets[j]))) throw new Error("AJ display targets differ from the frozen concordance.");
   });
-  return layer;
+  if (!concordance.bellAntiquities) return layer;
+
+  const bell = concordance.bellAntiquities;
+  const byId = new Map(layer.records.map(record => [record.id, record]));
+  const records = concordance.records.flatMap(record => {
+    const additions = ajTargets(record).filter(ref => ref.bell).map(ref => {
+      const sections = {Greek: [], Latin: [], English: []};
+      for (let number = ref.section_start; number <= ref.section_end; number++) {
+        const witnesses = bell.sections[ref.book]?.[number];
+        for (const [language, entries] of Object.entries(sections)) {
+          const section = witnesses?.[language];
+          if (!section || section.number !== number) {
+            throw new Error(`Bell’s Antiquities ${ref.book}.${number} is unavailable in ${language}.`);
+          }
+          entries.push(section);
+        }
+      }
+      return {component_id: `${record.id}-aj-${ref.order}`, target: ref, annotations: [], sections};
+    });
+    const original = byId.get(record.id);
+    if (!additions.length) return original ? [original] : [];
+    return [{
+      id: record.id, deh_xml_id: record.deh.xml_id,
+      components: [...(original?.components || []), ...additions]
+    }];
+  });
+
+  return {...layer, records, source_sha256: {...bell.source_sha256, ...layer.source_sha256}};
 }
 export function createAjTextLoader(xmlBase, layer) {
   const cache = new Map(), tei = new CETEI();

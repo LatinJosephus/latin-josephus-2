@@ -1,5 +1,5 @@
-import {bjTargets, publicationRecords, sources} from "./dehParallelsCore.js?v=20261109-bellum-i153";
-import {ajSources} from "./dehAntiquitiesCore.js?v=20261014-aj-v1";
+import {bjTargets, publicationRecords, sources} from "./dehParallelsCore.js?v=20261127-bell-parallels";
+import {ajSources} from "./dehAntiquitiesCore.js?v=20261127-bell-parallels";
 
 const comparisonParameters = ["parallel", "deh-source", "bj-source", "parallel-work", "aj-source", "parallel-ref"];
 
@@ -51,7 +51,9 @@ export function josephusParallelBooks(data, work) {
         const matches = sections.get(number);
         const supplementary = (matches.get(record.id)?.supplementary ?? true)
           && target.relationship_role === "supplementary_parallel";
-        matches.set(record.id, {record, supplementary});
+        const match = {record, supplementary};
+        if (target.bell?.kind === "possible_allusion") match.possibleAllusion = true;
+        matches.set(record.id, match);
       }
     }
   }

@@ -80,3 +80,6 @@
 # Preserve the exact DEH downloads on checkout.
 /assets/downloads/deh/*.epub binary
 /assets/downloads/deh/*.pdf binary
+
+# Retain the exact bytes of the hash-checked Bell supplement.
+/assets/data/deh-bell-parallels.v1.json -text

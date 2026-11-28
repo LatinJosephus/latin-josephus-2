@@ -1,12 +1,23 @@
 /* Isolated extension of reviewed DEH correspondences to both Josephus works. */
 import {
   sources, romanBooks, bjTargets, componentCitation, publicationRecords,
-  loadConcordance, createTextLoader, dehParagraphs, bellumIndex, bellumSection, namespaceIds
-} from "./dehParallelsCore.js?v=20261109-bellum-i153";
+  loadPublishedConcordance, createTextLoader, dehParagraphs, bellumIndex, bellumSection, namespaceIds
+} from "./dehParallelsCore.js?v=20261127-bell-parallels";
 
-import {ajSources, ajTargets, loadAjLayer, createAjTextLoader, ajSection} from "./dehAntiquitiesCore.js?v=20261014-aj-v1";
-import {dehReadingUrl, dehComparisonUrl, parallelReference} from "./dehParallelLinks.js?v=20261127-reciprocal-parallels";
+import {ajSources, ajTargets, loadAjLayer, createAjTextLoader, ajSection} from "./dehAntiquitiesCore.js?v=20261127-bell-parallels";
+import {dehReadingUrl, dehComparisonUrl, parallelReference} from "./dehParallelLinks.js?v=20261127-bell-parallels";
 const antiquitiesRomanBooks = [...romanBooks,"VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX"];
+const bellKinds = {alternative_account: "Alternative account. ", possible_allusion: "Possible allusion. "};
+
+function appendBellNote(component, ref) {
+  if (!ref.bell) return;
+  const {kind, pages, note} = ref.bell;
+  const evidence = document.createElement("p");
+  evidence.className = "parallel-editorial-note";
+  evidence.textContent = `${bellKinds[kind] || ""}Bell (1977), ${pages}. ${note}`;
+  component.append(evidence);
+}
+
 const initialize = () => {
   const panel = document.getElementById("deh-parallels");
   if (!panel) return;
@@ -99,8 +110,13 @@ const initialize = () => {
         const entry = aj.layer.records.find(r => r.id === record.id);
         if (!entry) throw new Error("No AJ correspondence recorded for this unit.");
         for (const [i,c] of entry.components.entries()) {
-          const ref=c.frozen_target, item=document.createElement("li");item.dataset.order=ref.order;item.dataset.book=ref.book;item.dataset.componentId=c.component_id;
+          const ref = c.frozen_target ?? c.target;
+          const item = document.createElement("li");
+          item.dataset.order = ref.order;
+          item.dataset.book = ref.book;
+          item.dataset.componentId = c.component_id;
           const heading=document.createElement("h4");heading.textContent=`AJ ${antiquitiesRomanBooks[ref.book]}.${ref.section_start}${ref.section_end!==ref.section_start?`–${ref.section_end}`:""}`;item.append(heading);
+          appendBellNote(item, ref);
           if (c.display_note) {const note=document.createElement("p");note.className="parallel-editorial-note";note.textContent=c.display_note;item.append(note);}
           for (const a of c.annotations) {const note=document.createElement("p");note.className="parallel-editorial-note";note.textContent=`${a.raw_token} — ${a.interpretation} (${a.editorial_decision})`;item.append(note);}
           const data=await aj.load(bjSource,ref.book);
@@ -125,6 +141,7 @@ const initialize = () => {
         const heading = document.createElement("h4");
         heading.textContent = componentCitation(ref);
         component.appendChild(heading);
+        appendBellNote(component, ref);
         if (ref.relationship_role === "supplementary_parallel") {
           const note = document.createElement("p");
           note.className = "parallel-editorial-note";
@@ -210,7 +227,7 @@ const initialize = () => {
     window.history.pushState({}, "", comparisonUrl(record, dehMenu.value, bjMenu.value, (workMenu.value === "AJ" && ajTargets(record).length) ? "AJ" : bjTargets(record).length ? "BJ" : "AJ"));
     renderComparison(record);
   }));
-  loadConcordance(panel.dataset.alignmentUrl).then(data => {
+  loadPublishedConcordance(panel.dataset.alignmentUrl).then(data => {
     publicationRecords(data);
     concordance=data;
     records = data.records.filter(r=>bjTargets(r).length || ajTargets(r).length);

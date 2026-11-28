@@ -1,5 +1,5 @@
-import {loadConcordance} from "./dehParallelsCore.js?v=20261109-bellum-i153";
-import {dehComparisonUrl, josephusParallelBooks} from "./dehParallelLinks.js?v=20261127-reciprocal-parallels";
+import {loadPublishedConcordance} from "./dehParallelsCore.js?v=20261127-bell-parallels";
+import {dehComparisonUrl, josephusParallelBooks} from "./dehParallelLinks.js?v=20261127-bell-parallels";
 
 const sourcesByWork = {
   BJ: {latin: ["ussani", "cardwell"], english: ["pollard", "whiston"], greek: ["ussani", "niese"]},
@@ -53,11 +53,11 @@ if (reader?.dataset.work) {
           const matches = sections.get(section);
           if (!matches) continue;
 
-          for (const {record, supplementary} of matches.values()) {
+          for (const {record, supplementary, possibleAllusion} of matches.values()) {
             const link = document.createElement("a");
             const reference = `${book}.${section}`;
             const destination = `DEH${matches.size > 1 ? ` ${record.deh.citation}` : ""}`;
-            const qualifier = supplementary ? " (supplementary)" : "";
+            const qualifier = possibleAllusion ? " (possible allusion)" : supplementary ? " (supplementary)" : "";
             link.className = "deh-parallel-link josephus-parallel-link";
             link.href = dehComparisonUrl(dehBase, record, {work, source, dehSource, reference});
             link.textContent = `Compare${exact ? "" : ` §${section}`} with ${destination}${qualifier}`;
@@ -77,7 +77,7 @@ if (reader?.dataset.work) {
     if (books) {
       updateLinks();
     } else if (!pending && view.available && view.level !== "contents-level" && Number(view.book) > 0) {
-      pending = loadConcordance(alignmentUrl).then(data => {
+      pending = loadPublishedConcordance(alignmentUrl).then(data => {
         books = josephusParallelBooks(data, work);
         updateLinks();
       }).catch(error => {

@@ -64,9 +64,10 @@ export function publicationRecords(data) {
       }
       previousOrder = target.order;
       if (target.work !== "BJ") continue;
+      const editorialStatus = target.bell ? "published_bell_parallel" : "reviewed_recorded_parallel";
       if (!positive(target.book) || target.book > 7 || !positive(target.section_start)
         || !positive(target.section_end) || target.section_end < target.section_start
-        || target.open_ended !== false || target.editorial_status !== "reviewed_recorded_parallel"
+        || target.open_ended !== false || target.editorial_status !== editorialStatus
         || target.validation?.coordinate_status !== "passed" || target.validation.closed_reference !== true
         || !["Greek", "Latin", "English"].every(source => target.validation.sources?.[source] === true)
         || !["primary_parallel", "supplementary_parallel"].includes(target.relationship_role)
@@ -103,6 +104,47 @@ async function checkedBytes(response, expectedHash, label, allowLFCheckout = fal
 
 export async function loadConcordance(url) {
   return JSON.parse(await checkedBytes(await fetch(url), frozenSha, "concordance"));
+}
+
+export async function loadPublishedConcordance(url) {
+  const supplementUrl = new URL("../data/deh-bell-parallels.v1.json", import.meta.url);
+  const supplement = fetch(supplementUrl)
+    .then(response => checkedBytes(response, "0b699132a2ffece9e8a17ea18e67aed127bb1e410efc001ad838c46cf12c00db", "Bell parallels"))
+    .then(JSON.parse)
+    .catch(error => {
+      console.warn("Could not load Bell’s DEH parallels.", error);
+      return null;
+    });
+  const [data, bell] = await Promise.all([loadConcordance(url), supplement]);
+  if (!bell) return data;
+  if (bell.schema_version !== 1 || bell.concordance_sha256 !== frozenSha) {
+    throw new Error("Unrecognized Bell parallels.");
+  }
+
+  const byId = new Map(data.records.map(record => [record.id, record]));
+  const additions = new Map();
+  for (const {deh_id, work, book, section_start, section_end, kind, pages, note} of bell.targets) {
+    const record = byId.get(deh_id);
+    if (!record) throw new Error(`Unknown DEH unit in Bell parallels: ${deh_id}.`);
+    if (!additions.has(deh_id)) additions.set(deh_id, []);
+    const targets = additions.get(deh_id);
+    targets.push({
+      order: ((targets.at(-1) || record.josephus.targets.at(-1))?.order ?? 0) + 1,
+      work, book, section_start, section_end,
+      relationship_role: "primary_parallel",
+      editorial_status: "published_bell_parallel",
+      open_ended: false,
+      parenthetical: false,
+      validation: {coordinate_status: "passed", closed_reference: true, sources: {Greek: true, Latin: true, English: true}},
+      bell: {kind, pages, note}
+    });
+  }
+
+  const records = data.records.map(record => additions.has(record.id) ? {
+    ...record,
+    josephus: {...record.josephus, targets: [...record.josephus.targets, ...additions.get(record.id)]}
+  } : record);
+  return {...data, records, bellAntiquities: bell.antiquities};
 }
 
 export function createTextLoader(xmlBase, hashes) {
